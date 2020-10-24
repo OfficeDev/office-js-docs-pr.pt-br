@@ -1,81 +1,81 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 06/05/2020
+ms.date: 10/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 51bec98cd0de1d00b4bfbcda372e450ce040d8b9
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293419"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741152"
 ---
-# <a name="tutorial-create-an-excel-task-pane-add-in"></a><span data-ttu-id="f68a8-103">Tutorial: criar um suplemento do painel de tarefas no Excel</span><span class="sxs-lookup"><span data-stu-id="f68a8-103">Tutorial: Create an Excel task pane add-in</span></span>
+# <a name="tutorial-create-an-excel-task-pane-add-in"></a><span data-ttu-id="73274-103">Tutorial: criar um suplemento do painel de tarefas no Excel</span><span class="sxs-lookup"><span data-stu-id="73274-103">Tutorial: Create an Excel task pane add-in</span></span>
 
-<span data-ttu-id="f68a8-104">Neste tutorial: você criará um suplemento do painel de tarefas no Excel</span><span class="sxs-lookup"><span data-stu-id="f68a8-104">In this tutorial, you'll create an Excel task pane add-in that:</span></span>
+<span data-ttu-id="73274-104">Neste tutorial: você criará um suplemento do painel de tarefas no Excel</span><span class="sxs-lookup"><span data-stu-id="73274-104">In this tutorial, you'll create an Excel task pane add-in that:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="f68a8-105">Cria uma tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-105">Creates a table</span></span>
-> * <span data-ttu-id="f68a8-106">Filtra e classifica uma tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-106">Filters and sorts a table</span></span>
-> * <span data-ttu-id="f68a8-107">Cria um gráfico</span><span class="sxs-lookup"><span data-stu-id="f68a8-107">Creates a chart</span></span>
-> * <span data-ttu-id="f68a8-108">Congela um cabeçalho de tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-108">Freezes a table header</span></span>
-> * <span data-ttu-id="f68a8-109">Protege uma planilha</span><span class="sxs-lookup"><span data-stu-id="f68a8-109">Protects a worksheet</span></span>
-> * <span data-ttu-id="f68a8-110">Abre uma caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="f68a8-110">Opens a dialog</span></span>
+> * <span data-ttu-id="73274-105">Cria uma tabela</span><span class="sxs-lookup"><span data-stu-id="73274-105">Creates a table</span></span>
+> * <span data-ttu-id="73274-106">Filtra e classifica uma tabela</span><span class="sxs-lookup"><span data-stu-id="73274-106">Filters and sorts a table</span></span>
+> * <span data-ttu-id="73274-107">Cria um gráfico</span><span class="sxs-lookup"><span data-stu-id="73274-107">Creates a chart</span></span>
+> * <span data-ttu-id="73274-108">Congela um cabeçalho de tabela</span><span class="sxs-lookup"><span data-stu-id="73274-108">Freezes a table header</span></span>
+> * <span data-ttu-id="73274-109">Protege uma planilha</span><span class="sxs-lookup"><span data-stu-id="73274-109">Protects a worksheet</span></span>
+> * <span data-ttu-id="73274-110">Abre uma caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="73274-110">Opens a dialog</span></span>
 
 > [!TIP]
-> <span data-ttu-id="f68a8-111">Se você já concluiu o inicio rápido do [Criar um suplemento do painel de tarefas no Excel](../quickstarts/excel-quickstart-jquery.md) usando o gerador Yeoman e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Criar uma tabela](#create-a-table) para iniciar este tutorial.</span><span class="sxs-lookup"><span data-stu-id="f68a8-111">If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.</span></span>
+> <span data-ttu-id="73274-111">Se você já concluiu o inicio rápido do [Criar um suplemento do painel de tarefas no Excel](../quickstarts/excel-quickstart-jquery.md) usando o gerador Yeoman e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Criar uma tabela](#create-a-table) para iniciar este tutorial.</span><span class="sxs-lookup"><span data-stu-id="73274-111">If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="f68a8-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="f68a8-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="73274-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="73274-112">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## <a name="create-your-add-in-project"></a><span data-ttu-id="f68a8-113">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-113">Create your add-in project</span></span>
+## <a name="create-your-add-in-project"></a><span data-ttu-id="73274-113">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-113">Create your add-in project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="f68a8-114">**Escolha o tipo de projeto:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="f68a8-114">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="f68a8-115">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="f68a8-115">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="f68a8-116">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="f68a8-116">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="f68a8-117">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="f68a8-117">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="73274-114">**Escolha o tipo de projeto:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="73274-114">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="73274-115">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="73274-115">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="73274-116">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="73274-116">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="73274-117">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="73274-117">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Gerador do Yeoman](../images/yo-office-excel.png)
 
-<span data-ttu-id="f68a8-119">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="f68a8-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="73274-119">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="73274-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-## <a name="create-a-table"></a><span data-ttu-id="f68a8-120">Criar uma tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-120">Create a table</span></span>
+## <a name="create-a-table"></a><span data-ttu-id="73274-120">Criar uma tabela</span><span class="sxs-lookup"><span data-stu-id="73274-120">Create a table</span></span>
 
-<span data-ttu-id="f68a8-121">Nesta etapa do tutorial, você testará no programa se o suplemento é compatível com a versão atual do Excel do usuário, adicionará uma tabela a uma planilha, depois preencherá e formatará a tabela com os dados.</span><span class="sxs-lookup"><span data-stu-id="f68a8-121">In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Excel, add a table to a worksheet, populate the table with data, and format it.</span></span>
+<span data-ttu-id="73274-121">Nesta etapa do tutorial, você testará no programa se o suplemento é compatível com a versão atual do Excel do usuário, adicionará uma tabela a uma planilha, depois preencherá e formatará a tabela com os dados.</span><span class="sxs-lookup"><span data-stu-id="73274-121">In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Excel, add a table to a worksheet, populate the table with data, and format it.</span></span>
 
-### <a name="code-the-add-in"></a><span data-ttu-id="f68a8-122">Codificação do suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-122">Code the add-in</span></span>
+### <a name="code-the-add-in"></a><span data-ttu-id="73274-122">Codificação do suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-122">Code the add-in</span></span>
 
-1. <span data-ttu-id="f68a8-123">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="f68a8-123">Open the project in your code editor.</span></span>
+1. <span data-ttu-id="73274-123">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="73274-123">Open the project in your code editor.</span></span>
 
-2. <span data-ttu-id="f68a8-124">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-124">Open the file **./src/taskpane/taskpane.html**.</span></span>  <span data-ttu-id="f68a8-125">Ele contém a marcação HTML para o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-125">This file contains the HTML markup for the task pane.</span></span>
+2. <span data-ttu-id="73274-124">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-124">Open the file **./src/taskpane/taskpane.html**.</span></span>  <span data-ttu-id="73274-125">Ele contém a marcação HTML para o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-125">This file contains the HTML markup for the task pane.</span></span>
 
-3. <span data-ttu-id="f68a8-126">Localize o elemento `<main>` e exclua todas as linhas que aparecem após a marca de abertura `<main>` e antes da marca de fechamento `</main>`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-126">Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.</span></span>
+3. <span data-ttu-id="73274-126">Localize o elemento `<main>` e exclua todas as linhas que aparecem após a marca de abertura `<main>` e antes da marca de fechamento `</main>`.</span><span class="sxs-lookup"><span data-stu-id="73274-126">Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.</span></span>
 
-4. <span data-ttu-id="f68a8-127">Adicione a seguinte marcação imediatamente após a marca de abertura `<main>`:</span><span class="sxs-lookup"><span data-stu-id="f68a8-127">Add the following markup immediately after the opening `<main>` tag:</span></span>
+4. <span data-ttu-id="73274-127">Adicione a seguinte marcação imediatamente após a marca de abertura `<main>`:</span><span class="sxs-lookup"><span data-stu-id="73274-127">Add the following markup immediately after the opening `<main>` tag:</span></span>
 
     ```html
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. <span data-ttu-id="f68a8-128">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-128">Open the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="f68a8-129">Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.</span><span class="sxs-lookup"><span data-stu-id="f68a8-129">This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.</span></span>
+5. <span data-ttu-id="73274-128">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-128">Open the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="73274-129">Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.</span><span class="sxs-lookup"><span data-stu-id="73274-129">This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.</span></span>
 
-6. <span data-ttu-id="f68a8-130">Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="f68a8-130">Remove all references to the `run` button and the `run()` function by doing the following:</span></span>
+6. <span data-ttu-id="73274-130">Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="73274-130">Remove all references to the `run` button and the `run()` function by doing the following:</span></span>
 
-    - <span data-ttu-id="f68a8-131">Localize e exclua a linha `document.getElementById("run").onclick = run;`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-131">Locate and delete the line `document.getElementById("run").onclick = run;`.</span></span>
+    - <span data-ttu-id="73274-131">Localize e exclua a linha `document.getElementById("run").onclick = run;`.</span><span class="sxs-lookup"><span data-stu-id="73274-131">Locate and delete the line `document.getElementById("run").onclick = run;`.</span></span>
 
-    - <span data-ttu-id="f68a8-132">Localize e exclua toda a função `run()`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-132">Locate and delete the entire `run()` function.</span></span>
+    - <span data-ttu-id="73274-132">Localize e exclua toda a função `run()`.</span><span class="sxs-lookup"><span data-stu-id="73274-132">Locate and delete the entire `run()` function.</span></span>
 
-7. <span data-ttu-id="f68a8-133">Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o seguinte código imediatamente após ela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-133">Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line.</span></span> <span data-ttu-id="f68a8-134">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-134">Note:</span></span>
+7. <span data-ttu-id="73274-133">Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o seguinte código imediatamente após ela.</span><span class="sxs-lookup"><span data-stu-id="73274-133">Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line.</span></span> <span data-ttu-id="73274-134">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-134">Note:</span></span>
 
-    - <span data-ttu-id="f68a8-135">a primeira parte desse código determina se a versão do usuário do Excel é compatível com uma versão do Excel.js que inclui todas as APIs que esta série de tutoriais usará.</span><span class="sxs-lookup"><span data-stu-id="f68a8-135">The first part of this code determines whether the user's version of Excel supports a version of Excel.js that includes all the APIs that this series of tutorials will use.</span></span> <span data-ttu-id="f68a8-136">Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte.</span><span class="sxs-lookup"><span data-stu-id="f68a8-136">In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs.</span></span> <span data-ttu-id="f68a8-137">Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.</span><span class="sxs-lookup"><span data-stu-id="f68a8-137">This will enable the user to still make use of the parts of the add-in that are supported by their version of Excel.</span></span>
+    - <span data-ttu-id="73274-135">a primeira parte desse código determina se a versão do usuário do Excel é compatível com uma versão do Excel.js que inclui todas as APIs que esta série de tutoriais usará.</span><span class="sxs-lookup"><span data-stu-id="73274-135">The first part of this code determines whether the user's version of Excel supports a version of Excel.js that includes all the APIs that this series of tutorials will use.</span></span> <span data-ttu-id="73274-136">Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte.</span><span class="sxs-lookup"><span data-stu-id="73274-136">In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs.</span></span> <span data-ttu-id="73274-137">Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.</span><span class="sxs-lookup"><span data-stu-id="73274-137">This will enable the user to still make use of the parts of the add-in that are supported by their version of Excel.</span></span>
 
-    - <span data-ttu-id="f68a8-138">A segunda parte desse código adiciona um manipulador de eventos para o botão `create-table`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-138">The second part of this code adds an event handler for the `create-table` button.</span></span>
+    - <span data-ttu-id="73274-138">A segunda parte desse código adiciona um manipulador de eventos para o botão `create-table`.</span><span class="sxs-lookup"><span data-stu-id="73274-138">The second part of this code adds an event handler for the `create-table` button.</span></span>
 
     ```js
     // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
@@ -87,13 +87,13 @@ ms.locfileid: "47293419"
     document.getElementById("create-table").onclick = createTable;
     ```
 
-8. <span data-ttu-id="f68a8-139">Adicione a seguinte função ao final do arquivo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-139">Add the following function to the end of the file.</span></span> <span data-ttu-id="f68a8-140">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-140">Note:</span></span>
+8. <span data-ttu-id="73274-139">Adicione a seguinte função ao final do arquivo.</span><span class="sxs-lookup"><span data-stu-id="73274-139">Add the following function to the end of the file.</span></span> <span data-ttu-id="73274-140">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-140">Note:</span></span>
 
-    - <span data-ttu-id="f68a8-p106">A lógica de negócios de Excel.js será adicionada à função que passar por `Excel.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p106">Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.</span></span>
+    - <span data-ttu-id="73274-p106">A lógica de negócios de Excel.js será adicionada à função que passar por `Excel.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.</span><span class="sxs-lookup"><span data-stu-id="73274-p106">Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.</span></span>
 
-    - <span data-ttu-id="f68a8-144">O método `context.sync` envia todos os comandos da fila para execução no Excel.</span><span class="sxs-lookup"><span data-stu-id="f68a8-144">The `context.sync` method sends all queued commands to Excel for execution.</span></span>
+    - <span data-ttu-id="73274-144">O método `context.sync` envia todos os comandos da fila para execução no Excel.</span><span class="sxs-lookup"><span data-stu-id="73274-144">The `context.sync` method sends all queued commands to Excel for execution.</span></span>
 
-    - <span data-ttu-id="f68a8-p107">`Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p107">The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow.</span></span> 
+    - <span data-ttu-id="73274-p107">`Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-p107">The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow.</span></span> 
 
     ```js
     function createTable() {
@@ -116,13 +116,13 @@ ms.locfileid: "47293419"
     }
     ```
 
-9. <span data-ttu-id="f68a8-147">Na função `createTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-147">Within the `createTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-148">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-148">Note:</span></span>
+9. <span data-ttu-id="73274-147">Na função `createTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-147">Within the `createTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-148">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-148">Note:</span></span>
 
-    - <span data-ttu-id="f68a8-p109">O código cria uma tabela usando o método `add` da coleção de tabelas de uma planilha, que sempre existe, mesmo que esteja vazia. Essa é a maneira padrão em que os objetos Excel.js são criados. Não há APIs de construtor de classe e você nunca usa um operador `new` para criar um objeto do Excel. Em vez disso, você adiciona a um objeto de coleção pai.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p109">The code creates a table by using the `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.</span></span>
+    - <span data-ttu-id="73274-p109">O código cria uma tabela usando o método `add` da coleção de tabelas de uma planilha, que sempre existe, mesmo que esteja vazia. Essa é a maneira padrão em que os objetos Excel.js são criados. Não há APIs de construtor de classe e você nunca usa um operador `new` para criar um objeto do Excel. Em vez disso, você adiciona a um objeto de coleção pai.</span><span class="sxs-lookup"><span data-stu-id="73274-p109">The code creates a table by using the `add` method of a worksheet's table collection, which always exists even if it is empty. This is the standard way that Excel.js objects are created. There are no class constructor APIs, and you never use a `new` operator to create an Excel object. Instead, you add to a parent collection object.</span></span>
 
-    - <span data-ttu-id="f68a8-p110">O primeiro parâmetro do método `add` é o intervalo apenas da linha superior da tabela, e não de todo o intervalo que a tabela por fim usará. Isso ocorre porque quando o suplemento preenche as linhas de dados (na próxima etapa), ele adiciona novas linhas à tabela em vez de gravar valores nas células das linhas existentes. Esse é um padrão comum, porque o número de linhas que uma tabela terá geralmente é desconhecido quando a tabela é criada.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p110">The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a common pattern, because the number of rows a table will have is often unknown when the table is created.</span></span>
+    - <span data-ttu-id="73274-p110">O primeiro parâmetro do método `add` é o intervalo apenas da linha superior da tabela, e não de todo o intervalo que a tabela por fim usará. Isso ocorre porque quando o suplemento preenche as linhas de dados (na próxima etapa), ele adiciona novas linhas à tabela em vez de gravar valores nas células das linhas existentes. Esse é um padrão comum, porque o número de linhas que uma tabela terá geralmente é desconhecido quando a tabela é criada.</span><span class="sxs-lookup"><span data-stu-id="73274-p110">The first parameter of the `add` method is the range of only the top row of the table, not the entire range the table will ultimately use. This is because when the add-in populates the data rows (in the next step), it will add new rows to the table instead of writing values to the cells of existing rows. This is a common pattern, because the number of rows a table will have is often unknown when the table is created.</span></span>
 
-    - <span data-ttu-id="f68a8-156">Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.</span><span class="sxs-lookup"><span data-stu-id="f68a8-156">Table names must be unique across the entire workbook, not just the worksheet.</span></span>
+    - <span data-ttu-id="73274-156">Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.</span><span class="sxs-lookup"><span data-stu-id="73274-156">Table names must be unique across the entire workbook, not just the worksheet.</span></span>
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -130,11 +130,11 @@ ms.locfileid: "47293419"
     expensesTable.name = "ExpensesTable";
     ```
 
-10. <span data-ttu-id="f68a8-157">Na função `createTable()`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-157">Within the `createTable()` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="f68a8-158">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-158">Note:</span></span>
+10. <span data-ttu-id="73274-157">Na função `createTable()`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-157">Within the `createTable()` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="73274-158">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-158">Note:</span></span>
 
-    - <span data-ttu-id="f68a8-159">Os valores das células de um intervalo são definidos em uma matriz de matrizes.</span><span class="sxs-lookup"><span data-stu-id="f68a8-159">The cell values of a range are set with an array of arrays.</span></span>
+    - <span data-ttu-id="73274-159">Os valores das células de um intervalo são definidos em uma matriz de matrizes.</span><span class="sxs-lookup"><span data-stu-id="73274-159">The cell values of a range are set with an array of arrays.</span></span>
 
-    - <span data-ttu-id="f68a8-p112">Novas linhas são criadas em uma tabela ao chamar o método `add` do conjunto de linhas da tabela. Você pode adicionar várias linhas em uma única chamada de `add` ao incluir várias matrizes de valores de células na matriz pai que é passada como segundo parâmetro.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p112">New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter.</span></span>
+    - <span data-ttu-id="73274-p112">Novas linhas são criadas em uma tabela ao chamar o método `add` do conjunto de linhas da tabela. Você pode adicionar várias linhas em uma única chamada de `add` ao incluir várias matrizes de valores de células na matriz pai que é passada como segundo parâmetro.</span><span class="sxs-lookup"><span data-stu-id="73274-p112">New rows are created in a table by calling the `add` method of the table's row collection. You can add multiple rows in a single call of `add` by including multiple cell value arrays in the parent array that is passed as the second parameter.</span></span>
 
     ```js
     expensesTable.getHeaderRowRange().values =
@@ -151,16 +151,16 @@ ms.locfileid: "47293419"
     ]);
     ```
 
-11. <span data-ttu-id="f68a8-162">Na função `createTable()`, substitua `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-162">Within the `createTable()` function, replace `TODO3` with the following code.</span></span> <span data-ttu-id="f68a8-163">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-163">Note:</span></span>
+11. <span data-ttu-id="73274-162">Na função `createTable()`, substitua `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-162">Within the `createTable()` function, replace `TODO3` with the following code.</span></span> <span data-ttu-id="73274-163">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-163">Note:</span></span>
 
-    - <span data-ttu-id="f68a8-164">O código recebe uma referência para a coluna **quantidade** ao passar o índice com base em zero para o método `getItemAt` do conjunto de colunas da tabela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-164">The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection.</span></span>
+    - <span data-ttu-id="73274-164">O código recebe uma referência para a coluna **quantidade** ao passar o índice com base em zero para o método `getItemAt` do conjunto de colunas da tabela.</span><span class="sxs-lookup"><span data-stu-id="73274-164">The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection.</span></span>
 
         > [!NOTE]
-        > <span data-ttu-id="f68a8-165">Os objetos do conjunto Excel.js, como `TableCollection`, `WorksheetCollection`, e `TableColumnCollection`, têm a propriedade `items` que é como uma matriz dos tipos de objetos filhos, como `Table` ou `Worksheet` ou `TableColumn`; mas um objeto `*Collection` não é uma matriz.</span><span class="sxs-lookup"><span data-stu-id="f68a8-165">Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.</span></span>
+        > <span data-ttu-id="73274-165">Os objetos do conjunto Excel.js, como `TableCollection`, `WorksheetCollection`, e `TableColumnCollection`, têm a propriedade `items` que é como uma matriz dos tipos de objetos filhos, como `Table` ou `Worksheet` ou `TableColumn`; mas um objeto `*Collection` não é uma matriz.</span><span class="sxs-lookup"><span data-stu-id="73274-165">Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.</span></span>
 
-    - <span data-ttu-id="f68a8-166">O código formata o intervalo da coluna **quantidade** como Euros com um segundo decimal.</span><span class="sxs-lookup"><span data-stu-id="f68a8-166">The code then formats the range of the **Amount** column as Euros to the second decimal.</span></span> 
+    - <span data-ttu-id="73274-166">O código formata o intervalo da coluna **quantidade** como Euros com um segundo decimal.</span><span class="sxs-lookup"><span data-stu-id="73274-166">The code then formats the range of the **Amount** column as Euros to the second decimal.</span></span> 
 
-    - <span data-ttu-id="f68a8-p114">Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p114">Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.</span></span>
+    - <span data-ttu-id="73274-p114">Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.</span><span class="sxs-lookup"><span data-stu-id="73274-p114">Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.</span></span>
 
     ```js
     expensesTable.columns.getItemAt(3).getRange().numberFormat = [['\u20AC#,##0.00']];
@@ -168,67 +168,67 @@ ms.locfileid: "47293419"
     expensesTable.getRange().format.autofitRows();
     ```
 
-12. <span data-ttu-id="f68a8-170">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-170">Verify that you've saved all of the changes you've made to the project.</span></span>
+12. <span data-ttu-id="73274-170">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-170">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-171">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-171">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-171">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-171">Test the add-in</span></span>
 
-1. <span data-ttu-id="f68a8-172">Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-172">Complete the following steps to start the local web server and sideload your add-in.</span></span>
+1. <span data-ttu-id="73274-172">Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="73274-172">Complete the following steps to start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="f68a8-173">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-173">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="f68a8-174">Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="f68a8-174">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="73274-173">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="73274-173">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="73274-174">Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="73274-174">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
     > [!TIP]
-    > <span data-ttu-id="f68a8-175">Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de continuar.</span><span class="sxs-lookup"><span data-stu-id="f68a8-175">If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding.</span></span> <span data-ttu-id="f68a8-176">O servidor Web local é iniciado quando este comando é executado.</span><span class="sxs-lookup"><span data-stu-id="f68a8-176">When you run this command, the local web server starts.</span></span>
+    > <span data-ttu-id="73274-175">Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de continuar.</span><span class="sxs-lookup"><span data-stu-id="73274-175">If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding.</span></span> <span data-ttu-id="73274-176">O servidor Web local é iniciado quando este comando é executado.</span><span class="sxs-lookup"><span data-stu-id="73274-176">When you run this command, the local web server starts.</span></span>
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - <span data-ttu-id="f68a8-177">Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-177">To test your add-in in Excel, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f68a8-178">Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="f68a8-178">This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.</span></span>
+    - <span data-ttu-id="73274-177">Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-177">To test your add-in in Excel, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73274-178">Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="73274-178">This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.</span></span>
 
         ```command&nbsp;line
         npm start
         ```
 
-    - <span data-ttu-id="f68a8-179">Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-179">To test your add-in in Excel on the web, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f68a8-180">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="f68a8-180">When you run this command, the local web server will start (if it's not already running).</span></span>
+    - <span data-ttu-id="73274-179">Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-179">To test your add-in in Excel on the web, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73274-180">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="73274-180">When you run this command, the local web server will start (if it's not already running).</span></span>
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        <span data-ttu-id="f68a8-181">Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="f68a8-181">To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
+        <span data-ttu-id="73274-181">Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="73274-181">To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
 
-2. <span data-ttu-id="f68a8-182">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-182">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="73274-182">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="73274-182">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
 
-3. <span data-ttu-id="f68a8-184">No painel de tarefas, escolha o botão **Criar tabela**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-184">In the task pane, choose the **Create Table** button.</span></span>
+3. <span data-ttu-id="73274-184">No painel de tarefas, escolha o botão **Criar tabela**.</span><span class="sxs-lookup"><span data-stu-id="73274-184">In the task pane, choose the **Create Table** button.</span></span>
 
     ![Tutorial do Excel: Criar tabela](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table"></a><span data-ttu-id="f68a8-186">Filtrar e classificar uma tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-186">Filter and sort a table</span></span>
+## <a name="filter-and-sort-a-table"></a><span data-ttu-id="73274-186">Filtrar e classificar uma tabela</span><span class="sxs-lookup"><span data-stu-id="73274-186">Filter and sort a table</span></span>
 
-<span data-ttu-id="f68a8-187">Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou anteriormente.</span><span class="sxs-lookup"><span data-stu-id="f68a8-187">In this step of the tutorial, you'll filter and sort the table that you created previously.</span></span>
+<span data-ttu-id="73274-187">Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou anteriormente.</span><span class="sxs-lookup"><span data-stu-id="73274-187">In this step of the tutorial, you'll filter and sort the table that you created previously.</span></span>
 
-### <a name="filter-the-table"></a><span data-ttu-id="f68a8-188">Filtrar a tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-188">Filter the table</span></span>
+### <a name="filter-the-table"></a><span data-ttu-id="73274-188">Filtrar a tabela</span><span class="sxs-lookup"><span data-stu-id="73274-188">Filter the table</span></span>
 
-1. <span data-ttu-id="f68a8-189">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-189">Open the file **./src/taskpane/taskpane.html**.</span></span>
+1. <span data-ttu-id="73274-189">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-189">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="f68a8-190">Localize o elemento `<button>` para o botão `create-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f68a8-190">Locate the `<button>` element for the `create-table` button, and add the following markup after that line:</span></span>
+2. <span data-ttu-id="73274-190">Localize o elemento `<button>` para o botão `create-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="73274-190">Locate the `<button>` element for the `create-table` button, and add the following markup after that line:</span></span>
 
     ```html
     <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-3. <span data-ttu-id="f68a8-191">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-191">Open the file **./src/taskpane/taskpane.js**.</span></span>
+3. <span data-ttu-id="73274-191">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-191">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="f68a8-192">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="f68a8-192">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line:</span></span>
+4. <span data-ttu-id="73274-192">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="73274-192">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line:</span></span>
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
     ```
 
-5. <span data-ttu-id="f68a8-193">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-193">Add the following function to the end of the file:</span></span>
+5. <span data-ttu-id="73274-193">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-193">Add the following function to the end of the file:</span></span>
 
     ```js
     function filterTable() {
@@ -248,11 +248,11 @@ ms.locfileid: "47293419"
     }
     ```
 
-6. <span data-ttu-id="f68a8-194">Na função `filterTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-194">Within the `filterTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-195">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-195">Note:</span></span>
+6. <span data-ttu-id="73274-194">Na função `filterTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-194">Within the `filterTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-195">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-195">Note:</span></span>
 
-   - <span data-ttu-id="f68a8-p120">O código primeiro faz referência à coluna que precisa de filtragem ao passar o nome da coluna para o método `getItem`, em vez de passar o índice para o método `getItemAt` como o método `createTable` faz. Como os usuários podem mover as colunas da tabela, a coluna de um determinado índice pode mudar depois da criação da tabela. Portanto, é mais seguro usar o nome da coluna como referência dela. Usamos de forma segura `getItemAt` em um tutorial anterior porque usamos o mesmo método que cria a tabela. Assim não existe a chance de um usuário mover a coluna.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p120">The code first gets a reference to the column that needs filtering by passing the column name to the `getItem` method, instead of passing its index to the `getItemAt` method as the `createTable` method does. Since users can move table columns, the column at a given index might change after the table is created. Hence, it is safer to use the column name to get a reference to the column. We used `getItemAt` safely in the preceding tutorial, because we used it in the very same method that creates the table, so there is no chance that a user has moved the column.</span></span>
+   - <span data-ttu-id="73274-p120">O código primeiro faz referência à coluna que precisa de filtragem ao passar o nome da coluna para o método `getItem`, em vez de passar o índice para o método `getItemAt` como o método `createTable` faz. Como os usuários podem mover as colunas da tabela, a coluna de um determinado índice pode mudar depois da criação da tabela. Portanto, é mais seguro usar o nome da coluna como referência dela. Usamos de forma segura `getItemAt` em um tutorial anterior porque usamos o mesmo método que cria a tabela. Assim não existe a chance de um usuário mover a coluna.</span><span class="sxs-lookup"><span data-stu-id="73274-p120">The code first gets a reference to the column that needs filtering by passing the column name to the `getItem` method, instead of passing its index to the `getItemAt` method as the `createTable` method does. Since users can move table columns, the column at a given index might change after the table is created. Hence, it is safer to use the column name to get a reference to the column. We used `getItemAt` safely in the preceding tutorial, because we used it in the very same method that creates the table, so there is no chance that a user has moved the column.</span></span>
 
-   - <span data-ttu-id="f68a8-200">O método `applyValuesFilter` é um dos vários métodos de filtragem do objeto `Filter`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-200">The `applyValuesFilter` method is one of several filtering methods on the `Filter` object.</span></span>
+   - <span data-ttu-id="73274-200">O método `applyValuesFilter` é um dos vários métodos de filtragem do objeto `Filter`.</span><span class="sxs-lookup"><span data-stu-id="73274-200">The `applyValuesFilter` method is one of several filtering methods on the `Filter` object.</span></span>
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -261,25 +261,25 @@ ms.locfileid: "47293419"
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ``` 
 
-### <a name="sort-the-table"></a><span data-ttu-id="f68a8-201">Classificar a tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-201">Sort the table</span></span>
+### <a name="sort-the-table"></a><span data-ttu-id="73274-201">Classificar a tabela</span><span class="sxs-lookup"><span data-stu-id="73274-201">Sort the table</span></span>
 
-1. <span data-ttu-id="f68a8-202">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-202">Open the file **./src/taskpane/taskpane.html**.</span></span>
+1. <span data-ttu-id="73274-202">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-202">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="f68a8-203">Localize o elemento `<button>` para o botão `filter-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f68a8-203">Locate the `<button>` element for the `filter-table` button, and add the following markup after that line:</span></span> 
+2. <span data-ttu-id="73274-203">Localize o elemento `<button>` para o botão `filter-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="73274-203">Locate the `<button>` element for the `filter-table` button, and add the following markup after that line:</span></span> 
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. <span data-ttu-id="f68a8-204">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-204">Open the file **./src/taskpane/taskpane.js**.</span></span>
+3. <span data-ttu-id="73274-204">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-204">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="f68a8-205">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `filter-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="f68a8-205">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line:</span></span>
+4. <span data-ttu-id="73274-205">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `filter-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="73274-205">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line:</span></span>
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. <span data-ttu-id="f68a8-206">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-206">Add the following function to the end of the file:</span></span>
+5. <span data-ttu-id="73274-206">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-206">Add the following function to the end of the file:</span></span>
 
     ```js
     function sortTable() {
@@ -298,13 +298,13 @@ ms.locfileid: "47293419"
     }
     ```
 
-6. <span data-ttu-id="f68a8-207">Na função `sortTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-207">Within the `sortTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-208">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-208">Note:</span></span>
+6. <span data-ttu-id="73274-207">Na função `sortTable()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-207">Within the `sortTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-208">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-208">Note:</span></span>
 
-   - <span data-ttu-id="f68a8-209">O código cria uma matriz de objetos `SortField`, que possui apenas um membro, pois o suplemento é classificado apenas na coluna Merchant.</span><span class="sxs-lookup"><span data-stu-id="f68a8-209">The code creates an array of `SortField` objects, which has just one member since the add-in only sorts on the Merchant column.</span></span>
+   - <span data-ttu-id="73274-209">O código cria uma matriz de objetos `SortField`, que possui apenas um membro, pois o suplemento é classificado apenas na coluna Merchant.</span><span class="sxs-lookup"><span data-stu-id="73274-209">The code creates an array of `SortField` objects, which has just one member since the add-in only sorts on the Merchant column.</span></span>
 
-   - <span data-ttu-id="f68a8-210">A propriedade `key` de um objeto `SortField` é o índice baseado em zero da coluna usada para classificação.</span><span class="sxs-lookup"><span data-stu-id="f68a8-210">The `key` property of a `SortField` object is the zero-based index of the column used for sorting.</span></span> <span data-ttu-id="f68a8-211">As linhas da tabela são classificadas com base nos valores da coluna referenciada.</span><span class="sxs-lookup"><span data-stu-id="f68a8-211">The rows of the table are sorted based on the values in the referenced column.</span></span>
+   - <span data-ttu-id="73274-210">A propriedade `key` de um objeto `SortField` é o índice baseado em zero da coluna usada para classificação.</span><span class="sxs-lookup"><span data-stu-id="73274-210">The `key` property of a `SortField` object is the zero-based index of the column used for sorting.</span></span> <span data-ttu-id="73274-211">As linhas da tabela são classificadas com base nos valores da coluna referenciada.</span><span class="sxs-lookup"><span data-stu-id="73274-211">The rows of the table are sorted based on the values in the referenced column.</span></span>
 
-   - <span data-ttu-id="f68a8-212">O membro `sort` de uma `Table` é um objeto `TableSort`, não um método.</span><span class="sxs-lookup"><span data-stu-id="f68a8-212">The `sort` member of a `Table` is a `TableSort` object, not a method.</span></span> <span data-ttu-id="f68a8-213">Os `SortField`s são passados para o método `apply` do objeto `TableSort`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-213">The `SortField`s are passed to the `TableSort` object's `apply` method.</span></span>
+   - <span data-ttu-id="73274-212">O membro `sort` de uma `Table` é um objeto `TableSort`, não um método.</span><span class="sxs-lookup"><span data-stu-id="73274-212">The `sort` member of a `Table` is a `TableSort` object, not a method.</span></span> <span data-ttu-id="73274-213">Os `SortField`s são passados para o método `apply` do objeto `TableSort`.</span><span class="sxs-lookup"><span data-stu-id="73274-213">The `SortField`s are passed to the `TableSort` object's `apply` method.</span></span>
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -319,43 +319,43 @@ ms.locfileid: "47293419"
     expensesTable.sort.apply(sortFields);
     ```
 
-7. <span data-ttu-id="f68a8-214">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-214">Verify that you've saved all of the changes you've made to the project.</span></span>
+7. <span data-ttu-id="73274-214">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-214">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-215">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-215">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-215">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-215">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. <span data-ttu-id="f68a8-216">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-216">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
+2. <span data-ttu-id="73274-216">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-216">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="f68a8-217">Se a tabela que você adicionou anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **Criar tabela** no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-217">If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.</span></span>
+3. <span data-ttu-id="73274-217">Se a tabela que você adicionou anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **Criar tabela** no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-217">If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.</span></span>
 
-4. <span data-ttu-id="f68a8-218">Escolha os botões **Filtrar Tabela** e **Classificar Tabela**, em qualquer ordem.</span><span class="sxs-lookup"><span data-stu-id="f68a8-218">Choose the **Filter Table** button and the **Sort Table** button, in either order.</span></span>
+4. <span data-ttu-id="73274-218">Escolha os botões **Filtrar Tabela** e **Classificar Tabela**, em qualquer ordem.</span><span class="sxs-lookup"><span data-stu-id="73274-218">Choose the **Filter Table** button and the **Sort Table** button, in either order.</span></span>
 
     ![Tutorial do Excel: filtrar e classificar tabela](../images/excel-tutorial-filter-and-sort-table-2.png)
 
-## <a name="create-a-chart"></a><span data-ttu-id="f68a8-220">Criar um gráfico</span><span class="sxs-lookup"><span data-stu-id="f68a8-220">Create a chart</span></span>
+## <a name="create-a-chart"></a><span data-ttu-id="73274-220">Criar um gráfico</span><span class="sxs-lookup"><span data-stu-id="73274-220">Create a chart</span></span>
 
-<span data-ttu-id="f68a8-221">Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que você criou anteriormente e depois vai formatar o gráfico.</span><span class="sxs-lookup"><span data-stu-id="f68a8-221">In this step of the tutorial, you'll create a chart using data from the table that you created previously, and then format the chart.</span></span>
+<span data-ttu-id="73274-221">Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que você criou anteriormente e depois vai formatar o gráfico.</span><span class="sxs-lookup"><span data-stu-id="73274-221">In this step of the tutorial, you'll create a chart using data from the table that you created previously, and then format the chart.</span></span>
 
-### <a name="chart-a-chart-using-table-data"></a><span data-ttu-id="f68a8-222">Gráfico de um gráfico com dados de tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-222">Chart a chart using table data</span></span>
+### <a name="chart-a-chart-using-table-data"></a><span data-ttu-id="73274-222">Gráfico de um gráfico com dados de tabela</span><span class="sxs-lookup"><span data-stu-id="73274-222">Chart a chart using table data</span></span>
 
-1. <span data-ttu-id="f68a8-223">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-223">Open the file **./src/taskpane/taskpane.html**.</span></span>
+1. <span data-ttu-id="73274-223">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-223">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="f68a8-224">Localize o elemento `<button>` para o botão `sort-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f68a8-224">Locate the `<button>` element for the `sort-table` button, and add the following markup after that line:</span></span> 
+2. <span data-ttu-id="73274-224">Localize o elemento `<button>` para o botão `sort-table` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="73274-224">Locate the `<button>` element for the `sort-table` button, and add the following markup after that line:</span></span> 
 
     ```html
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-3. <span data-ttu-id="f68a8-225">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-225">Open the file **./src/taskpane/taskpane.js**.</span></span>
+3. <span data-ttu-id="73274-225">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-225">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="f68a8-226">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="f68a8-226">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line:</span></span>
+4. <span data-ttu-id="73274-226">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="73274-226">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line:</span></span>
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
     ```
 
-5. <span data-ttu-id="f68a8-227">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-227">Add the following function to the end of the file:</span></span>
+5. <span data-ttu-id="73274-227">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-227">Add the following function to the end of the file:</span></span>
 
     ```js
     function createChart() {
@@ -378,7 +378,7 @@ ms.locfileid: "47293419"
     }
     ```
 
-6. <span data-ttu-id="f68a8-228">Na função `createChart()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-228">Within the `createChart()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-229">Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-229">Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.</span></span>
+6. <span data-ttu-id="73274-228">Na função `createChart()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-228">Within the `createChart()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-229">Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.</span><span class="sxs-lookup"><span data-stu-id="73274-229">Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.</span></span>
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -386,23 +386,23 @@ ms.locfileid: "47293419"
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-7. <span data-ttu-id="f68a8-230">Na função `createChart()`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-230">Within the `createChart()` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="f68a8-231">Observe os seguintes parâmetros:</span><span class="sxs-lookup"><span data-stu-id="f68a8-231">Note the following parameters:</span></span>
+7. <span data-ttu-id="73274-230">Na função `createChart()`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-230">Within the `createChart()` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="73274-231">Observe os seguintes parâmetros:</span><span class="sxs-lookup"><span data-stu-id="73274-231">Note the following parameters:</span></span>
 
-   - <span data-ttu-id="f68a8-p126">O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p126">The first parameter to the `add` method specifies the type of chart. There are several dozen types.</span></span>
+   - <span data-ttu-id="73274-p126">O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos.</span><span class="sxs-lookup"><span data-stu-id="73274-p126">The first parameter to the `add` method specifies the type of chart. There are several dozen types.</span></span>
 
-   - <span data-ttu-id="f68a8-234">O segundo parâmetro especifica um intervalo de dados a incluir no gráfico.</span><span class="sxs-lookup"><span data-stu-id="f68a8-234">The second parameter specifies the range of data to include in the chart.</span></span>
+   - <span data-ttu-id="73274-234">O segundo parâmetro especifica um intervalo de dados a incluir no gráfico.</span><span class="sxs-lookup"><span data-stu-id="73274-234">The second parameter specifies the range of data to include in the chart.</span></span>
 
-   - <span data-ttu-id="f68a8-235">O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna.</span><span class="sxs-lookup"><span data-stu-id="f68a8-235">The third parameter determines whether a series of data points from the table should be charted row-wise or column-wise.</span></span> <span data-ttu-id="f68a8-236">A opção `auto` informa ao Excel para decidir o melhor método.</span><span class="sxs-lookup"><span data-stu-id="f68a8-236">The option `auto` tells Excel to decide the best method.</span></span>
+   - <span data-ttu-id="73274-235">O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna.</span><span class="sxs-lookup"><span data-stu-id="73274-235">The third parameter determines whether a series of data points from the table should be charted row-wise or column-wise.</span></span> <span data-ttu-id="73274-236">A opção `auto` informa ao Excel para decidir o melhor método.</span><span class="sxs-lookup"><span data-stu-id="73274-236">The option `auto` tells Excel to decide the best method.</span></span>
 
     ```js
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
     ```
 
-8. <span data-ttu-id="f68a8-237">Na função `createChart()`, substitua `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-237">Within the `createChart()` function, replace `TODO3` with the following code.</span></span> <span data-ttu-id="f68a8-238">A maior parte do código é autoexplicativa.</span><span class="sxs-lookup"><span data-stu-id="f68a8-238">Most of this code is self-explanatory.</span></span> <span data-ttu-id="f68a8-239">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-239">Note:</span></span>
+8. <span data-ttu-id="73274-237">Na função `createChart()`, substitua `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-237">Within the `createChart()` function, replace `TODO3` with the following code.</span></span> <span data-ttu-id="73274-238">A maior parte do código é autoexplicativa.</span><span class="sxs-lookup"><span data-stu-id="73274-238">Most of this code is self-explanatory.</span></span> <span data-ttu-id="73274-239">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-239">Note:</span></span>
    
-   - <span data-ttu-id="f68a8-p129">Os parâmetros do método `setPosition` especificam as células da esquerda superior e da direita inferior da área da planilha que deve conter o gráfico. O Excel ajusta detalhes como a largura da linha para criar uma boa aparência para o gráfico no espaço fornecido.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p129">The parameters to the `setPosition` method specify the upper left and lower right cells of the worksheet area that should contain the chart. Excel can adjust things like line width to make the chart look good in the space it has been given.</span></span>
+   - <span data-ttu-id="73274-p129">Os parâmetros do método `setPosition` especificam as células da esquerda superior e da direita inferior da área da planilha que deve conter o gráfico. O Excel ajusta detalhes como a largura da linha para criar uma boa aparência para o gráfico no espaço fornecido.</span><span class="sxs-lookup"><span data-stu-id="73274-p129">The parameters to the `setPosition` method specify the upper left and lower right cells of the worksheet area that should contain the chart. Excel can adjust things like line width to make the chart look good in the space it has been given.</span></span>
    
-   - <span data-ttu-id="f68a8-p130">“Série” é um conjunto de pontos de dados de uma coluna da tabela. Como há apenas uma coluna sem cadeia de caracteres na tabela, o Excel deduz que essa é a única coluna de pontos de dados no gráfico. Ele interpreta outra colunas como rótulos do gráfico. Portanto, haverá apenas uma série no gráfico e será necessário o índice 0. Ele será rotulado como “Valor em &euro;”.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p130">A "series" is a set of data points from a column of the table. Since there is only one non-string column in the table, Excel infers that the column is the only column of data points to chart. It interprets the other columns as chart labels. So there will be just one series in the chart and it will have index 0. This is the one to label with "Value in &euro;".</span></span>
+   - <span data-ttu-id="73274-p130">“Série” é um conjunto de pontos de dados de uma coluna da tabela. Como há apenas uma coluna sem cadeia de caracteres na tabela, o Excel deduz que essa é a única coluna de pontos de dados no gráfico. Ele interpreta outra colunas como rótulos do gráfico. Portanto, haverá apenas uma série no gráfico e será necessário o índice 0. Ele será rotulado como “Valor em &euro;”.</span><span class="sxs-lookup"><span data-stu-id="73274-p130">A "series" is a set of data points from a column of the table. Since there is only one non-string column in the table, Excel infers that the column is the only column of data points to chart. It interprets the other columns as chart labels. So there will be just one series in the chart and it will have index 0. This is the one to label with "Value in &euro;".</span></span>
 
     ```js
     chart.setPosition("A15", "F30");
@@ -414,43 +414,43 @@ ms.locfileid: "47293419"
     chart.series.getItemAt(0).name = 'Value in &euro;';
     ```
 
-9. <span data-ttu-id="f68a8-247">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-247">Verify that you've saved all of the changes you've made to the project.</span></span>
+9. <span data-ttu-id="73274-247">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-247">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-248">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-248">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-248">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-248">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. <span data-ttu-id="f68a8-249">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-249">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
+2. <span data-ttu-id="73274-249">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-249">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="f68a8-250">Se a tabela que você adicionou anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **Criar tabela** e depois os botões **Filtrar Tabela** e **Classificar Tabela**, em qualquer ordem.</span><span class="sxs-lookup"><span data-stu-id="f68a8-250">If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.</span></span>
+3. <span data-ttu-id="73274-250">Se a tabela que você adicionou anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **Criar tabela** e depois os botões **Filtrar Tabela** e **Classificar Tabela**, em qualquer ordem.</span><span class="sxs-lookup"><span data-stu-id="73274-250">If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.</span></span>
 
-4. <span data-ttu-id="f68a8-p131">Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p131">Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.</span></span>
+4. <span data-ttu-id="73274-p131">Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.</span><span class="sxs-lookup"><span data-stu-id="73274-p131">Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.</span></span>
 
     ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header"></a><span data-ttu-id="f68a8-255">Congelar um cabeçalho de tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-255">Freeze a table header</span></span>
+## <a name="freeze-a-table-header"></a><span data-ttu-id="73274-255">Congelar um cabeçalho de tabela</span><span class="sxs-lookup"><span data-stu-id="73274-255">Freeze a table header</span></span>
 
-<span data-ttu-id="f68a8-p132">Quando uma tabela for longa o suficiente para que um usuário precise rolar para ver algumas linhas, a linha de cabeçalho poderá ficar fora da vista. Nesta etapa do tutorial, você precisará congelar a linha do cabeçalho da tabela que criou anteriormente para que ela permaneça visível, mesmo que o usuário role ao longo da planilha.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p132">When a table is long enough that a user must scroll to see some rows, the header row can scroll out of sight. In this step of the tutorial, you'll freeze the header row of the table that you created previously, so that it remains visible even as the user scrolls down the worksheet.</span></span>
+<span data-ttu-id="73274-p132">Quando uma tabela for longa o suficiente para que um usuário precise rolar para ver algumas linhas, a linha de cabeçalho poderá ficar fora da vista. Nesta etapa do tutorial, você precisará congelar a linha do cabeçalho da tabela que criou anteriormente para que ela permaneça visível, mesmo que o usuário role ao longo da planilha.</span><span class="sxs-lookup"><span data-stu-id="73274-p132">When a table is long enough that a user must scroll to see some rows, the header row can scroll out of sight. In this step of the tutorial, you'll freeze the header row of the table that you created previously, so that it remains visible even as the user scrolls down the worksheet.</span></span>
 
-### <a name="freeze-the-tables-header-row"></a><span data-ttu-id="f68a8-258">Congelar a linha de cabeçalho da tabela</span><span class="sxs-lookup"><span data-stu-id="f68a8-258">Freeze the table's header row</span></span>
+### <a name="freeze-the-tables-header-row"></a><span data-ttu-id="73274-258">Congelar a linha de cabeçalho da tabela</span><span class="sxs-lookup"><span data-stu-id="73274-258">Freeze the table's header row</span></span>
 
-1. <span data-ttu-id="f68a8-259">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-259">Open the file **./src/taskpane/taskpane.html**.</span></span>
+1. <span data-ttu-id="73274-259">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-259">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="f68a8-260">Localize o elemento `<button>` para o botão `create-chart` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f68a8-260">Locate the `<button>` element for the `create-chart` button, and add the following markup after that line:</span></span> 
+2. <span data-ttu-id="73274-260">Localize o elemento `<button>` para o botão `create-chart` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="73274-260">Locate the `<button>` element for the `create-chart` button, and add the following markup after that line:</span></span> 
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-3. <span data-ttu-id="f68a8-261">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-261">Open the file **./src/taskpane/taskpane.js**.</span></span>
+3. <span data-ttu-id="73274-261">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-261">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="f68a8-262">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="f68a8-262">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line:</span></span>
+4. <span data-ttu-id="73274-262">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela:</span><span class="sxs-lookup"><span data-stu-id="73274-262">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line:</span></span>
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
-5. <span data-ttu-id="f68a8-263">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-263">Add the following function to the end of the file:</span></span>
+5. <span data-ttu-id="73274-263">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-263">Add the following function to the end of the file:</span></span>
 
     ```js
     function freezeHeader() {
@@ -469,44 +469,44 @@ ms.locfileid: "47293419"
     }
     ```
 
-6. <span data-ttu-id="f68a8-264">Na função `freezeHeader()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-264">Within the `freezeHeader()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-265">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-265">Note:</span></span>
+6. <span data-ttu-id="73274-264">Na função `freezeHeader()`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-264">Within the `freezeHeader()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-265">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-265">Note:</span></span>
 
-   - <span data-ttu-id="f68a8-266">A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.</span><span class="sxs-lookup"><span data-stu-id="f68a8-266">The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.</span></span>
+   - <span data-ttu-id="73274-266">A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.</span><span class="sxs-lookup"><span data-stu-id="73274-266">The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.</span></span>
 
-   - <span data-ttu-id="f68a8-267">O método `freezeRows` usa como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar.</span><span class="sxs-lookup"><span data-stu-id="f68a8-267">The `freezeRows` method takes as a parameter the number of rows, from the top, that are to be pinned in place.</span></span> <span data-ttu-id="f68a8-268">Passamos `1` para fixar a primeira linha no lugar.</span><span class="sxs-lookup"><span data-stu-id="f68a8-268">We pass `1` to pin the first row in place.</span></span>
+   - <span data-ttu-id="73274-267">O método `freezeRows` usa como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar.</span><span class="sxs-lookup"><span data-stu-id="73274-267">The `freezeRows` method takes as a parameter the number of rows, from the top, that are to be pinned in place.</span></span> <span data-ttu-id="73274-268">Passamos `1` para fixar a primeira linha no lugar.</span><span class="sxs-lookup"><span data-stu-id="73274-268">We pass `1` to pin the first row in place.</span></span>
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
-7. <span data-ttu-id="f68a8-269">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-269">Verify that you've saved all of the changes you've made to the project.</span></span>
+7. <span data-ttu-id="73274-269">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-269">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-270">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-270">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-270">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-270">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. <span data-ttu-id="f68a8-271">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-271">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
+2. <span data-ttu-id="73274-271">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-271">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="f68a8-272">Se a tabela que você adicionou anteriormente neste tutorial estiver presente na planilha, faça a exclusão dela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-272">If the table you added previously in this tutorial is present in the worksheet, delete it.</span></span>
+3. <span data-ttu-id="73274-272">Se a tabela que você adicionou anteriormente neste tutorial estiver presente na planilha, faça a exclusão dela.</span><span class="sxs-lookup"><span data-stu-id="73274-272">If the table you added previously in this tutorial is present in the worksheet, delete it.</span></span>
 
-4. <span data-ttu-id="f68a8-273">No painel de tarefas, escolha o botão **Criar tabela**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-273">In the task pane, choose the **Create Table** button.</span></span>
+4. <span data-ttu-id="73274-273">No painel de tarefas, escolha o botão **Criar tabela**.</span><span class="sxs-lookup"><span data-stu-id="73274-273">In the task pane, choose the **Create Table** button.</span></span>
 
-5. <span data-ttu-id="f68a8-274">No painel de tarefas, escolha o botão **Congelar Cabeçalho**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-274">In the task pane, choose the **Freeze Header** button.</span></span>
+5. <span data-ttu-id="73274-274">No painel de tarefas, escolha o botão **Congelar Cabeçalho**.</span><span class="sxs-lookup"><span data-stu-id="73274-274">In the task pane, choose the **Freeze Header** button.</span></span>
 
-6. <span data-ttu-id="f68a8-275">Role a planilha para baixo o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior mesmo ao rolar até que as primeiras linhas fiquem fora da vista.</span><span class="sxs-lookup"><span data-stu-id="f68a8-275">Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.</span></span>
+6. <span data-ttu-id="73274-275">Role a planilha para baixo o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior mesmo ao rolar até que as primeiras linhas fiquem fora da vista.</span><span class="sxs-lookup"><span data-stu-id="73274-275">Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.</span></span>
 
     ![Tutorial do Excel: congelar cabeçalho](../images/excel-tutorial-freeze-header-2.png)
 
-## <a name="protect-a-worksheet"></a><span data-ttu-id="f68a8-277">Proteger uma planilha</span><span class="sxs-lookup"><span data-stu-id="f68a8-277">Protect a worksheet</span></span>
+## <a name="protect-a-worksheet"></a><span data-ttu-id="73274-277">Proteger uma planilha</span><span class="sxs-lookup"><span data-stu-id="73274-277">Protect a worksheet</span></span>
 
-<span data-ttu-id="f68a8-278">Nesta etapa do tutorial, você adicionará um botão à faixa de opções que ativa ou desativa a proteção da planilha.</span><span class="sxs-lookup"><span data-stu-id="f68a8-278">In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.</span></span>
+<span data-ttu-id="73274-278">Nesta etapa do tutorial, você adicionará um botão à faixa de opções que ativa ou desativa a proteção da planilha.</span><span class="sxs-lookup"><span data-stu-id="73274-278">In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.</span></span>
 
-### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a><span data-ttu-id="f68a8-279">Configure o manifesto para adicionar um segundo botão à faixa de opções</span><span class="sxs-lookup"><span data-stu-id="f68a8-279">Configure the manifest to add a second ribbon button</span></span>
+### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a><span data-ttu-id="73274-279">Configure o manifesto para adicionar um segundo botão à faixa de opções</span><span class="sxs-lookup"><span data-stu-id="73274-279">Configure the manifest to add a second ribbon button</span></span>
 
-1. <span data-ttu-id="f68a8-280">Abra o arquivo de manifesto **./manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-280">Open the manifest file **./manifest.xml**.</span></span>
+1. <span data-ttu-id="73274-280">Abra o arquivo de manifesto **./manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="73274-280">Open the manifest file **./manifest.xml**.</span></span>
 
-2. <span data-ttu-id="f68a8-281">Localize o elemento `<Control>`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-281">Locate the `<Control>` element.</span></span> <span data-ttu-id="f68a8-282">Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-282">This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in.</span></span> <span data-ttu-id="f68a8-283">Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-283">We're going to add a second button to the same group on the **Home** ribbon.</span></span> <span data-ttu-id="f68a8-284">Entre a marca de fechamento `</Control>` e a marca de fechamento`</Group>`, adicione a marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-284">In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.</span></span>
+2. <span data-ttu-id="73274-281">Localize o elemento `<Control>`.</span><span class="sxs-lookup"><span data-stu-id="73274-281">Locate the `<Control>` element.</span></span> <span data-ttu-id="73274-282">Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento.</span><span class="sxs-lookup"><span data-stu-id="73274-282">This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in.</span></span> <span data-ttu-id="73274-283">Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**.</span><span class="sxs-lookup"><span data-stu-id="73274-283">We're going to add a second button to the same group on the **Home** ribbon.</span></span> <span data-ttu-id="73274-284">Entre a marca de fechamento `</Control>` e a marca de fechamento`</Group>`, adicione a marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-284">In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.</span></span>
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -526,19 +526,19 @@ ms.locfileid: "47293419"
     </Control>
     ```
 
-3. <span data-ttu-id="f68a8-285">No XML que você acabou de adicionar ao arquivo de manifesto, substitua `TODO1` por uma sequência que forneça ao botão um ID exclusivo nesse arquivo de manifesto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-285">Within the XML you just added to the manifest file, replace `TODO1` with a string that gives the button an ID that is unique within this manifest file.</span></span> <span data-ttu-id="f68a8-286">Como nosso botão ativará ou desativará a proteção da planilha, use "ToggleProtection".</span><span class="sxs-lookup"><span data-stu-id="f68a8-286">Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection".</span></span> <span data-ttu-id="f68a8-287">Quando você terminar, a marca de abertura para o elemento `Control` deverá ficar assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-287">When you are done, the opening tag for the `Control` element should look like this:</span></span>
+3. <span data-ttu-id="73274-285">No XML que você acabou de adicionar ao arquivo de manifesto, substitua `TODO1` por uma sequência que forneça ao botão um ID exclusivo nesse arquivo de manifesto.</span><span class="sxs-lookup"><span data-stu-id="73274-285">Within the XML you just added to the manifest file, replace `TODO1` with a string that gives the button an ID that is unique within this manifest file.</span></span> <span data-ttu-id="73274-286">Como nosso botão ativará ou desativará a proteção da planilha, use "ToggleProtection".</span><span class="sxs-lookup"><span data-stu-id="73274-286">Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection".</span></span> <span data-ttu-id="73274-287">Quando você terminar, a marca de abertura para o elemento `Control` deverá ficar assim:</span><span class="sxs-lookup"><span data-stu-id="73274-287">When you are done, the opening tag for the `Control` element should look like this:</span></span>
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. <span data-ttu-id="f68a8-288">Os próximos três `TODO`s definem IDs de recurso ou `resid`s.</span><span class="sxs-lookup"><span data-stu-id="f68a8-288">The next three `TODO`s set resource IDs, or `resid`s.</span></span> <span data-ttu-id="f68a8-289">Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="f68a8-289">A resource is a string, and you'll create these three strings in a later step.</span></span> <span data-ttu-id="f68a8-290">Por enquanto, você precisa fornecer IDs aos recursos.</span><span class="sxs-lookup"><span data-stu-id="f68a8-290">For now, you need to give IDs to the resources.</span></span> <span data-ttu-id="f68a8-291">O rótulo do botão deve ser "Toggle Protection", mas o *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", para que o elemento `Label` fique assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-291">The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:</span></span>
+4. <span data-ttu-id="73274-288">Os próximos três `TODO`s definem IDs de recurso ou `resid`s.</span><span class="sxs-lookup"><span data-stu-id="73274-288">The next three `TODO`s set resource IDs, or `resid`s.</span></span> <span data-ttu-id="73274-289">Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="73274-289">A resource is a string, and you'll create these three strings in a later step.</span></span> <span data-ttu-id="73274-290">Por enquanto, você precisa fornecer IDs aos recursos.</span><span class="sxs-lookup"><span data-stu-id="73274-290">For now, you need to give IDs to the resources.</span></span> <span data-ttu-id="73274-291">O rótulo do botão deve ser "Toggle Protection", mas o *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", para que o elemento `Label` fique assim:</span><span class="sxs-lookup"><span data-stu-id="73274-291">The button label should read "Toggle Protection", but the *ID* of this string should be "ProtectionButtonLabel", so the `Label` element should look like this:</span></span>
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. <span data-ttu-id="f68a8-292">O elemento `SuperTip` define a dica de ferramenta do botão.</span><span class="sxs-lookup"><span data-stu-id="f68a8-292">The `SuperTip` element defines the tool tip for the button.</span></span> <span data-ttu-id="f68a8-293">O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel".</span><span class="sxs-lookup"><span data-stu-id="f68a8-293">The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel".</span></span> <span data-ttu-id="f68a8-294">A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off".</span><span class="sxs-lookup"><span data-stu-id="f68a8-294">The tool tip description will be "Click to turn protection of the worksheet on and off".</span></span> <span data-ttu-id="f68a8-295">Mas o `resid` será "ProtectionButtonToolTip".</span><span class="sxs-lookup"><span data-stu-id="f68a8-295">But the `resid` should be "ProtectionButtonToolTip".</span></span> <span data-ttu-id="f68a8-296">Portanto, quando você terminar, o elemento `SuperTip` deverá ficar assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-296">So, when you are done, the `SuperTip` element should look like this:</span></span> 
+5. <span data-ttu-id="73274-292">O elemento `SuperTip` define a dica de ferramenta do botão.</span><span class="sxs-lookup"><span data-stu-id="73274-292">The `SuperTip` element defines the tool tip for the button.</span></span> <span data-ttu-id="73274-293">O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel".</span><span class="sxs-lookup"><span data-stu-id="73274-293">The tool tip title should be the same as the button label, so we use the very same resource ID: "ProtectionButtonLabel".</span></span> <span data-ttu-id="73274-294">A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off".</span><span class="sxs-lookup"><span data-stu-id="73274-294">The tool tip description will be "Click to turn protection of the worksheet on and off".</span></span> <span data-ttu-id="73274-295">Mas o `resid` será "ProtectionButtonToolTip".</span><span class="sxs-lookup"><span data-stu-id="73274-295">But the `resid` should be "ProtectionButtonToolTip".</span></span> <span data-ttu-id="73274-296">Portanto, quando você terminar, o elemento `SuperTip` deverá ficar assim:</span><span class="sxs-lookup"><span data-stu-id="73274-296">So, when you are done, the `SuperTip` element should look like this:</span></span> 
 
     ```xml
     <Supertip>            
@@ -548,21 +548,21 @@ ms.locfileid: "47293419"
     ```
 
    > [!NOTE] 
-   > <span data-ttu-id="f68a8-p139">Em um suplemento de produção,não é recomendável usar o mesmo ícone para dois botões diferentes; mas, para simplificar este tutorial, faremos isso. Portanto, a marcação `Icon` em nosso novo `Control` é apenas uma cópia do elemento `Icon` do `Control` existente.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p139">In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`.</span></span> 
+   > <span data-ttu-id="73274-p139">Em um suplemento de produção,não é recomendável usar o mesmo ícone para dois botões diferentes; mas, para simplificar este tutorial, faremos isso. Portanto, a marcação `Icon` em nosso novo `Control` é apenas uma cópia do elemento `Icon` do `Control` existente.</span><span class="sxs-lookup"><span data-stu-id="73274-p139">In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`.</span></span> 
 
-6. <span data-ttu-id="f68a8-299">O elemento `Action` dentro do elemento original `Control` tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abre um painel de tarefas; ele executará uma função personalizada criada em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="f68a8-299">The `Action` element inside the original `Control` element has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step.</span></span> <span data-ttu-id="f68a8-300">Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-300">So, replace `TODO5` with `ExecuteFunction`, which is the action type for buttons that trigger custom functions.</span></span> <span data-ttu-id="f68a8-301">A marca de abertura para o elemento `Action` deve ficar assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-301">The opening tag for the `Action` element should look like this:</span></span>
+6. <span data-ttu-id="73274-299">O elemento `Action` dentro do elemento original `Control` tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abre um painel de tarefas; ele executará uma função personalizada criada em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="73274-299">The `Action` element inside the original `Control` element has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step.</span></span> <span data-ttu-id="73274-300">Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="73274-300">So, replace `TODO5` with `ExecuteFunction`, which is the action type for buttons that trigger custom functions.</span></span> <span data-ttu-id="73274-301">A marca de abertura para o elemento `Action` deve ficar assim:</span><span class="sxs-lookup"><span data-stu-id="73274-301">The opening tag for the `Action` element should look like this:</span></span>
  
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
-7. <span data-ttu-id="f68a8-p141">O elemento `Action` original tem elementos filhos que especificam uma ID do painel de tarefas e uma URL da página que deve ser aberta no painel de tarefas. No entanto, um elemento `Action` do tipo `ExecuteFunction` tem um único elemento filho que nomeia a função executada pelo controle. Você criará essa função em uma etapa posterior e ela será chamada de `toggleProtection`. Então, substitua `TODO6` pela marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="f68a8-p141">The original `Action` element has child elements that specify a task pane ID and a URL of the page that should be opened in the task pane. But an `Action` element of the `ExecuteFunction` type has a single child element that names the function that the control executes. You'll create that function in a later step, and it will be called `toggleProtection`. So, replace `TODO6` with the following markup:</span></span>
+7. <span data-ttu-id="73274-p141">O elemento `Action` original tem elementos filhos que especificam uma ID do painel de tarefas e uma URL da página que deve ser aberta no painel de tarefas. No entanto, um elemento `Action` do tipo `ExecuteFunction` tem um único elemento filho que nomeia a função executada pelo controle. Você criará essa função em uma etapa posterior e ela será chamada de `toggleProtection`. Então, substitua `TODO6` pela marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="73274-p141">The original `Action` element has child elements that specify a task pane ID and a URL of the page that should be opened in the task pane. But an `Action` element of the `ExecuteFunction` type has a single child element that names the function that the control executes. You'll create that function in a later step, and it will be called `toggleProtection`. So, replace `TODO6` with the following markup:</span></span>
  
     ```xml
     <FunctionName>toggleProtection</FunctionName>
     ```
 
-    <span data-ttu-id="f68a8-306">A marcação `Control` inteira deve ter a aparência a seguir:</span><span class="sxs-lookup"><span data-stu-id="f68a8-306">The entire `Control` markup should now look like the following:</span></span>
+    <span data-ttu-id="73274-306">A marcação `Control` inteira deve ter a aparência a seguir:</span><span class="sxs-lookup"><span data-stu-id="73274-306">The entire `Control` markup should now look like the following:</span></span>
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -582,27 +582,27 @@ ms.locfileid: "47293419"
     </Control>
     ```
 
-8. <span data-ttu-id="f68a8-307">Role para baixo até a seção `Resources` do manifesto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-307">Scroll down to the `Resources` section of the manifest.</span></span>
+8. <span data-ttu-id="73274-307">Role para baixo até a seção `Resources` do manifesto.</span><span class="sxs-lookup"><span data-stu-id="73274-307">Scroll down to the `Resources` section of the manifest.</span></span>
 
-9. <span data-ttu-id="f68a8-308">Adicione a seguinte marcação como filho do elemento `bt:ShortStrings`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-308">Add the following markup as a child of the `bt:ShortStrings` element.</span></span>
+9. <span data-ttu-id="73274-308">Adicione a seguinte marcação como filho do elemento `bt:ShortStrings`.</span><span class="sxs-lookup"><span data-stu-id="73274-308">Add the following markup as a child of the `bt:ShortStrings` element.</span></span>
 
     ```xml
     <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
     ```
 
-10. <span data-ttu-id="f68a8-309">Adicione a seguinte marcação como filho do elemento `bt:LongStrings`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-309">Add the following markup as a child of the `bt:LongStrings` element.</span></span>
+10. <span data-ttu-id="73274-309">Adicione a seguinte marcação como filho do elemento `bt:LongStrings`.</span><span class="sxs-lookup"><span data-stu-id="73274-309">Add the following markup as a child of the `bt:LongStrings` element.</span></span>
 
     ```xml
     <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
     ```
 
-11. <span data-ttu-id="f68a8-310">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-310">Save the file.</span></span>
+11. <span data-ttu-id="73274-310">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="73274-310">Save the file.</span></span>
 
-### <a name="create-the-function-that-protects-the-sheet"></a><span data-ttu-id="f68a8-311">Criar a função que protege a planilha</span><span class="sxs-lookup"><span data-stu-id="f68a8-311">Create the function that protects the sheet</span></span>
+### <a name="create-the-function-that-protects-the-sheet"></a><span data-ttu-id="73274-311">Criar a função que protege a planilha</span><span class="sxs-lookup"><span data-stu-id="73274-311">Create the function that protects the sheet</span></span>
 
-1. <span data-ttu-id="f68a8-312">Abra o arquivo **.\commands\commands.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-312">Open the file **.\commands\commands.js**.</span></span>
+1. <span data-ttu-id="73274-312">Abra o arquivo **.\commands\commands.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-312">Open the file **.\commands\commands.js**.</span></span>
 
-2. <span data-ttu-id="f68a8-313">Adicione a seguinte função imediatamente após a função `action`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-313">Add the following function immediately after the `action` function.</span></span> <span data-ttu-id="f68a8-314">Especificamos um parâmetro `args` para a função, e a última linha da função chama `args.completed`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-314">Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`.</span></span> <span data-ttu-id="f68a8-315">Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-315">This is a requirement for all add-in commands of type **ExecuteFunction**.</span></span> <span data-ttu-id="f68a8-316">Ele sinaliza para o aplicativo do cliente Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.</span><span class="sxs-lookup"><span data-stu-id="f68a8-316">It signals the Office client application that the function has finished and the UI can become responsive again.</span></span>
+2. <span data-ttu-id="73274-313">Adicione a seguinte função imediatamente após a função `action`.</span><span class="sxs-lookup"><span data-stu-id="73274-313">Add the following function immediately after the `action` function.</span></span> <span data-ttu-id="73274-314">Especificamos um parâmetro `args` para a função, e a última linha da função chama `args.completed`.</span><span class="sxs-lookup"><span data-stu-id="73274-314">Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`.</span></span> <span data-ttu-id="73274-315">Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**.</span><span class="sxs-lookup"><span data-stu-id="73274-315">This is a requirement for all add-in commands of type **ExecuteFunction**.</span></span> <span data-ttu-id="73274-316">Ele sinaliza para o aplicativo do cliente Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.</span><span class="sxs-lookup"><span data-stu-id="73274-316">It signals the Office client application that the function has finished and the UI can become responsive again.</span></span>
 
     ```js
     function toggleProtection(args) {
@@ -622,13 +622,13 @@ ms.locfileid: "47293419"
     }
     ```
 
-3. <span data-ttu-id="f68a8-317">Adicione a seguinte linha ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-317">Add the following line to the end of the file:</span></span>
+3. <span data-ttu-id="73274-317">Adicione a seguinte linha ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-317">Add the following line to the end of the file:</span></span>
 
     ```js
     g.toggleProtection = toggleProtection;
     ```
 
-4. <span data-ttu-id="f68a8-318">Na função `toggleProtection`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-318">Within the `toggleProtection` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f68a8-319">O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão.</span><span class="sxs-lookup"><span data-stu-id="f68a8-319">This code uses the worksheet object's protection property in a standard toggle pattern.</span></span> <span data-ttu-id="f68a8-320">O `TODO2` será explicado na próxima seção.</span><span class="sxs-lookup"><span data-stu-id="f68a8-320">The `TODO2` will be explained in the next section.</span></span>
+4. <span data-ttu-id="73274-318">Na função `toggleProtection`, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-318">Within the `toggleProtection` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="73274-319">O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão.</span><span class="sxs-lookup"><span data-stu-id="73274-319">This code uses the worksheet object's protection property in a standard toggle pattern.</span></span> <span data-ttu-id="73274-320">O `TODO2` será explicado na próxima seção.</span><span class="sxs-lookup"><span data-stu-id="73274-320">The `TODO2` will be explained in the next section.</span></span>
 
     ```js
     var sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -643,23 +643,23 @@ ms.locfileid: "47293419"
     }
     ``` 
 
-### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a><span data-ttu-id="f68a8-321">Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f68a8-321">Add code to fetch document properties into the task pane's script objects</span></span>
+### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a><span data-ttu-id="73274-321">Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="73274-321">Add code to fetch document properties into the task pane's script objects</span></span>
 
-<span data-ttu-id="f68a8-322">Em cada função criada neste tutorial até agora, você enfileirou comandos para *gravar* no documento do Office.</span><span class="sxs-lookup"><span data-stu-id="f68a8-322">In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document.</span></span> <span data-ttu-id="f68a8-323">Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado.</span><span class="sxs-lookup"><span data-stu-id="f68a8-323">Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed.</span></span> <span data-ttu-id="f68a8-324">No entanto, o código que você adicionou na última etapa chama o `sheet.protection.protected property`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-324">However, the code you added in the last step calls the `sheet.protection.protected property`.</span></span> <span data-ttu-id="f68a8-325">Essa é uma diferença significativa das funções anteriores que você escreveu, porque o objeto `sheet` é apenas um objeto proxy que existe no script do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-325">This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script.</span></span> <span data-ttu-id="f68a8-326">O objeto proxy não conhece o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real.</span><span class="sxs-lookup"><span data-stu-id="f68a8-326">The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value.</span></span> <span data-ttu-id="f68a8-327">Para evitar um erro de exceção, você deve primeiro buscar o status de proteção do documento e usá-lo para definir o valor de`sheet.protection.protected`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-327">To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`.</span></span> <span data-ttu-id="f68a8-328">Esse processo de busca tem três etapas:</span><span class="sxs-lookup"><span data-stu-id="f68a8-328">This fetching process has three steps:</span></span>
+<span data-ttu-id="73274-322">Em cada função criada neste tutorial até agora, você enfileirou comandos para *gravar* no documento do Office.</span><span class="sxs-lookup"><span data-stu-id="73274-322">In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document.</span></span> <span data-ttu-id="73274-323">Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado.</span><span class="sxs-lookup"><span data-stu-id="73274-323">Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed.</span></span> <span data-ttu-id="73274-324">No entanto, o código que você adicionou na última etapa chama o `sheet.protection.protected property`.</span><span class="sxs-lookup"><span data-stu-id="73274-324">However, the code you added in the last step calls the `sheet.protection.protected property`.</span></span> <span data-ttu-id="73274-325">Essa é uma diferença significativa das funções anteriores que você escreveu, porque o objeto `sheet` é apenas um objeto proxy que existe no script do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-325">This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script.</span></span> <span data-ttu-id="73274-326">O objeto proxy não conhece o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real.</span><span class="sxs-lookup"><span data-stu-id="73274-326">The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value.</span></span> <span data-ttu-id="73274-327">Para evitar um erro de exceção, você deve primeiro buscar o status de proteção do documento e usá-lo para definir o valor de`sheet.protection.protected`.</span><span class="sxs-lookup"><span data-stu-id="73274-327">To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`.</span></span> <span data-ttu-id="73274-328">Esse processo de busca tem três etapas:</span><span class="sxs-lookup"><span data-stu-id="73274-328">This fetching process has three steps:</span></span>
 
-   1. <span data-ttu-id="f68a8-329">Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.</span><span class="sxs-lookup"><span data-stu-id="f68a8-329">Queue a command to load (that is; fetch) the properties that your code needs to read.</span></span>
+   1. <span data-ttu-id="73274-329">Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.</span><span class="sxs-lookup"><span data-stu-id="73274-329">Queue a command to load (that is; fetch) the properties that your code needs to read.</span></span>
 
-   2. <span data-ttu-id="f68a8-330">Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-330">Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.</span></span>
+   2. <span data-ttu-id="73274-330">Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.</span><span class="sxs-lookup"><span data-stu-id="73274-330">Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.</span></span>
 
-   3. <span data-ttu-id="f68a8-331">Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-331">Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.</span></span>
+   3. <span data-ttu-id="73274-331">Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.</span><span class="sxs-lookup"><span data-stu-id="73274-331">Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.</span></span>
 
-<span data-ttu-id="f68a8-332">Essas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.</span><span class="sxs-lookup"><span data-stu-id="f68a8-332">These steps must be completed whenever your code needs to *read* information from the Office document.</span></span>
+<span data-ttu-id="73274-332">Essas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.</span><span class="sxs-lookup"><span data-stu-id="73274-332">These steps must be completed whenever your code needs to *read* information from the Office document.</span></span>
 
-1. <span data-ttu-id="f68a8-333">Na função `toggleProtection`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-333">Within the `toggleProtection` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="f68a8-334">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-334">Note:</span></span>
+1. <span data-ttu-id="73274-333">Na função `toggleProtection`, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-333">Within the `toggleProtection` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="73274-334">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-334">Note:</span></span>
    
-   - <span data-ttu-id="f68a8-p146">Todos os objetos do Excel têm um método `load`. Especifique as propriedades do objeto que você deseja ler no parâmetro como uma cadeia de caracteres de nomes delimitados por vírgulas. Nesse caso, a propriedade que você precisa ler é uma subpropriedade de `protection`. Referencie a subpropriedade quase exatamente como você faria em qualquer lugar do seu código, mas usando uma barra (“/”) em vez de um ponto (".").</span><span class="sxs-lookup"><span data-stu-id="f68a8-p146">Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.</span></span>
+   - <span data-ttu-id="73274-p146">Todos os objetos do Excel têm um método `load`. Especifique as propriedades do objeto que você deseja ler no parâmetro como uma cadeia de caracteres de nomes delimitados por vírgulas. Nesse caso, a propriedade que você precisa ler é uma subpropriedade de `protection`. Referencie a subpropriedade quase exatamente como você faria em qualquer lugar do seu código, mas usando uma barra (“/”) em vez de um ponto (".").</span><span class="sxs-lookup"><span data-stu-id="73274-p146">Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.</span></span>
 
-   - <span data-ttu-id="f68a8-339">Para garantir que a lógica de botão de alternância, `sheet.protection.protected`, não seja executada até após `sync` ser concluído e o `sheet.protection.protected` ser atribuída ao valor correto buscado no documento, ele será movido (na próxima etapa) para uma função `then` que não será executada até `sync` ser concluído.</span><span class="sxs-lookup"><span data-stu-id="f68a8-339">To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed.</span></span> 
+   - <span data-ttu-id="73274-339">Para garantir que a lógica de botão de alternância, `sheet.protection.protected`, não seja executada até após `sync` ser concluído e o `sheet.protection.protected` ser atribuída ao valor correto buscado no documento, ele será movido (na próxima etapa) para uma função `then` que não será executada até `sync` ser concluído.</span><span class="sxs-lookup"><span data-stu-id="73274-339">To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed.</span></span> 
 
     ```js
     sheet.load('protection/protected');
@@ -673,21 +673,21 @@ ms.locfileid: "47293419"
         //        does not run until the toggle logic has been queued.
     ``` 
 
-2. <span data-ttu-id="f68a8-p147">Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Excel.run`. Você adicionará um novo `context.sync` final em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p147">You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Excel.run`. You will add a new final `context.sync`, in a later step.</span></span>
+2. <span data-ttu-id="73274-p147">Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Excel.run`. Você adicionará um novo `context.sync` final em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="73274-p147">You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Excel.run`. You will add a new final `context.sync`, in a later step.</span></span>
 
-3. <span data-ttu-id="f68a8-342">Recorte a estrutura `if ... else` na função `toggleProtection` e a cole no lugar de `TODO3`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-342">Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.</span></span>
+3. <span data-ttu-id="73274-342">Recorte a estrutura `if ... else` na função `toggleProtection` e a cole no lugar de `TODO3`.</span><span class="sxs-lookup"><span data-stu-id="73274-342">Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.</span></span>
 
-4. <span data-ttu-id="f68a8-p148">Substitua `TODO4` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-p148">Replace `TODO4` with the following code. Note:</span></span>
+4. <span data-ttu-id="73274-p148">Substitua `TODO4` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-p148">Replace `TODO4` with the following code. Note:</span></span>
 
-   - <span data-ttu-id="f68a8-345">Passar o método `sync` para uma função `then` garante que ele não seja executado até que `sheet.protection.unprotect()` ou `sheet.protection.protect()` seja enfileirado.</span><span class="sxs-lookup"><span data-stu-id="f68a8-345">Passing the `sync` method to a `then` function ensures that it does not run until either `sheet.protection.unprotect()` or `sheet.protection.protect()` has been queued.</span></span>
+   - <span data-ttu-id="73274-345">Passar o método `sync` para uma função `then` garante que ele não seja executado até que `sheet.protection.unprotect()` ou `sheet.protection.protect()` seja enfileirado.</span><span class="sxs-lookup"><span data-stu-id="73274-345">Passing the `sync` method to a `then` function ensures that it does not run until either `sheet.protection.unprotect()` or `sheet.protection.protect()` has been queued.</span></span>
 
-   - <span data-ttu-id="f68a8-346">O método `then` invoca qualquer função que é passada para ele e não é recomendável que `sync` seja chamado duas vezes, portanto, remova os “()” do fim de `context.sync`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-346">The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of `context.sync`.</span></span>
+   - <span data-ttu-id="73274-346">O método `then` invoca qualquer função que é passada para ele e não é recomendável que `sync` seja chamado duas vezes, portanto, remova os “()” do fim de `context.sync`.</span><span class="sxs-lookup"><span data-stu-id="73274-346">The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of `context.sync`.</span></span>
 
     ```js
     .then(context.sync);
     ```
 
-   <span data-ttu-id="f68a8-347">Quando terminar, a função inteira deve se parecer com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="f68a8-347">When you are done, the entire function should look like the following:</span></span>
+   <span data-ttu-id="73274-347">Quando terminar, a função inteira deve se parecer com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="73274-347">When you are done, the entire function should look like the following:</span></span>
 
     ```js
     function toggleProtection(args) {
@@ -717,68 +717,68 @@ ms.locfileid: "47293419"
     }
     ```
 
-5. <span data-ttu-id="f68a8-348">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-348">Verify that you've saved all of the changes you've made to the project.</span></span>
+5. <span data-ttu-id="73274-348">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-348">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-349">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-349">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-349">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-349">Test the add-in</span></span>
 
-1. <span data-ttu-id="f68a8-350">Feche todos os aplicativos do Office, incluindo o Excel.</span><span class="sxs-lookup"><span data-stu-id="f68a8-350">Close all Office applications, including Excel.</span></span>
+1. <span data-ttu-id="73274-350">Feche todos os aplicativos do Office, incluindo o Excel.</span><span class="sxs-lookup"><span data-stu-id="73274-350">Close all Office applications, including Excel.</span></span>
 
-2. <span data-ttu-id="f68a8-351">Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache.</span><span class="sxs-lookup"><span data-stu-id="f68a8-351">Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder.</span></span> <span data-ttu-id="f68a8-352">Isso é necessário para limpar totalmente a versão anterior do suplemento do</span><span class="sxs-lookup"><span data-stu-id="f68a8-352">This is necessary to completely clear the old version of the add-in from the</span></span>
+2. <span data-ttu-id="73274-351">Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache.</span><span class="sxs-lookup"><span data-stu-id="73274-351">Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder.</span></span> <span data-ttu-id="73274-352">Isso é necessário para limpar totalmente a versão anterior do suplemento do</span><span class="sxs-lookup"><span data-stu-id="73274-352">This is necessary to completely clear the old version of the add-in from the</span></span>
 
-    - <span data-ttu-id="f68a8-353">No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-353">For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span></span>
+    - <span data-ttu-id="73274-353">No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span><span class="sxs-lookup"><span data-stu-id="73274-353">For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span></span>
 
-    - <span data-ttu-id="f68a8-354">No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-354">For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.</span></span>
+    - <span data-ttu-id="73274-354">No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.</span><span class="sxs-lookup"><span data-stu-id="73274-354">For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.</span></span>
     
         > [!NOTE]
-        > <span data-ttu-id="f68a8-355">Se essa pasta não existir, verifique as seguintes pastas. Se encontrada, exclua o conteúdo da pasta:</span><span class="sxs-lookup"><span data-stu-id="f68a8-355">If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:</span></span>
-        >    - <span data-ttu-id="f68a8-356">`~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)</span><span class="sxs-lookup"><span data-stu-id="f68a8-356">`~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)</span></span>
-        >    - <span data-ttu-id="f68a8-357">`~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)</span><span class="sxs-lookup"><span data-stu-id="f68a8-357">`~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)</span></span>
+        > <span data-ttu-id="73274-355">Se essa pasta não existir, verifique as seguintes pastas. Se encontrada, exclua o conteúdo da pasta:</span><span class="sxs-lookup"><span data-stu-id="73274-355">If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder:</span></span>
+        >    - <span data-ttu-id="73274-356">`~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)</span><span class="sxs-lookup"><span data-stu-id="73274-356">`~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)</span></span>
+        >    - <span data-ttu-id="73274-357">`~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)</span><span class="sxs-lookup"><span data-stu-id="73274-357">`~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)</span></span>
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-3. <span data-ttu-id="f68a8-358">Se o servidor da Web local já estiver em execução, feche a janela de comando do nó para interrompê-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-358">If the local web server is already running, stop it by closing the node command window.</span></span>
+3. <span data-ttu-id="73274-358">Se o servidor da Web local já estiver em execução, feche a janela de comando do nó para interrompê-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-358">If the local web server is already running, stop it by closing the node command window.</span></span>
 
-4. <span data-ttu-id="f68a8-359">Como o arquivo de manifesto foi atualizado, você deve carregar o suplemento novamente usando esse arquivo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-359">Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file.</span></span> <span data-ttu-id="f68a8-360">Inicie o servidor Web local e realize o sideload no seu suplemento:</span><span class="sxs-lookup"><span data-stu-id="f68a8-360">Start the local web server and sideload your add-in:</span></span> 
+4. <span data-ttu-id="73274-359">Como o arquivo de manifesto foi atualizado, você deve carregar o suplemento novamente usando esse arquivo.</span><span class="sxs-lookup"><span data-stu-id="73274-359">Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file.</span></span> <span data-ttu-id="73274-360">Inicie o servidor Web local e realize o sideload no seu suplemento:</span><span class="sxs-lookup"><span data-stu-id="73274-360">Start the local web server and sideload your add-in:</span></span> 
 
-    - <span data-ttu-id="f68a8-361">Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-361">To test your add-in in Excel, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f68a8-362">Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="f68a8-362">This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.</span></span>
+    - <span data-ttu-id="73274-361">Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-361">To test your add-in in Excel, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73274-362">Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="73274-362">This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.</span></span>
 
         ```command&nbsp;line
         npm start
         ```
 
-    - <span data-ttu-id="f68a8-363">Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-363">To test your add-in in Excel on the web, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f68a8-364">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="f68a8-364">When you run this command, the local web server will start (if it's not already running).</span></span>
+    - <span data-ttu-id="73274-363">Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-363">To test your add-in in Excel on the web, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73274-364">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="73274-364">When you run this command, the local web server will start (if it's not already running).</span></span>
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        <span data-ttu-id="f68a8-365">Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="f68a8-365">To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
+        <span data-ttu-id="73274-365">Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="73274-365">To use your add-in, open a new document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
 
-5. <span data-ttu-id="f68a8-366">Na guia **Página Inicial** no Excel, escolha o botão **Proteger Planilha**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-366">On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button.</span></span> <span data-ttu-id="f68a8-367">A maioria dos controles da faixa de opções está desabilitada e esmaecida, como mostra a captura de tela a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-367">Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.</span></span> 
+5. <span data-ttu-id="73274-366">Na guia **Página Inicial** no Excel, escolha o botão **Proteger Planilha**.</span><span class="sxs-lookup"><span data-stu-id="73274-366">On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button.</span></span> <span data-ttu-id="73274-367">A maioria dos controles da faixa de opções está desabilitada e esmaecida, como mostra a captura de tela a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-367">Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.</span></span> 
 
     ![Tutorial do Excel - Faixa de Opções com a Proteção Ativada](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. <span data-ttu-id="f68a8-369">Escolha uma célula como se quisesse alterar o conteúdo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-369">Choose a cell as you would if you wanted to change its content.</span></span> <span data-ttu-id="f68a8-370">O Excel exibe uma mensagem de erro indicando que a planilha está protegida.</span><span class="sxs-lookup"><span data-stu-id="f68a8-370">Excel displays an error message indicating that the worksheet is protected.</span></span>
+6. <span data-ttu-id="73274-369">Escolha uma célula como se quisesse alterar o conteúdo.</span><span class="sxs-lookup"><span data-stu-id="73274-369">Choose a cell as you would if you wanted to change its content.</span></span> <span data-ttu-id="73274-370">O Excel exibe uma mensagem de erro indicando que a planilha está protegida.</span><span class="sxs-lookup"><span data-stu-id="73274-370">Excel displays an error message indicating that the worksheet is protected.</span></span>
 
-7. <span data-ttu-id="f68a8-371">Escolha o botão **Proteger Planilha** novamente. Os controles são reabilitados, e você pode alterar os valores das células novamente.</span><span class="sxs-lookup"><span data-stu-id="f68a8-371">Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.</span></span>
+7. <span data-ttu-id="73274-371">Escolha o botão **Proteger Planilha** novamente. Os controles são reabilitados, e você pode alterar os valores das células novamente.</span><span class="sxs-lookup"><span data-stu-id="73274-371">Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.</span></span>
 
-## <a name="open-a-dialog"></a><span data-ttu-id="f68a8-372">Abrir uma caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="f68a8-372">Open a dialog</span></span>
+## <a name="open-a-dialog"></a><span data-ttu-id="73274-372">Abrir uma caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="73274-372">Open a dialog</span></span>
 
-<span data-ttu-id="f68a8-p155">Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, passa uma mensagem do processo de caixa de diálogo para o processo de painel de tarefas e fecha a caixa de diálogo. As caixas de diálogo do Suplemento do Office são *não modais*: o usuário pode continuar a interagir com o documento no aplicativo do Office e com a página host no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p155">In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the Office application and with the host page in the task pane.</span></span>
+<span data-ttu-id="73274-p155">Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, passa uma mensagem do processo de caixa de diálogo para o processo de painel de tarefas e fecha a caixa de diálogo. As caixas de diálogo do Suplemento do Office são *não modais*: o usuário pode continuar a interagir com o documento no aplicativo do Office e com a página host no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-p155">In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the Office application and with the host page in the task pane.</span></span>
 
-### <a name="create-the-dialog-page"></a><span data-ttu-id="f68a8-375">Crie a página da caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="f68a8-375">Create the dialog page</span></span>
+### <a name="create-the-dialog-page"></a><span data-ttu-id="73274-375">Crie a página da caixa de diálogo</span><span class="sxs-lookup"><span data-stu-id="73274-375">Create the dialog page</span></span>
 
-1. <span data-ttu-id="f68a8-376">Na pasta **./src** localizada na raiz do projeto, crie uma pasta chamada **dialogs**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-376">In the **./src** folder that's located at the root of the project, create a new folder named **dialogs**.</span></span>
+1. <span data-ttu-id="73274-376">Na pasta **./src** localizada na raiz do projeto, crie uma pasta chamada **dialogs**.</span><span class="sxs-lookup"><span data-stu-id="73274-376">In the **./src** folder that's located at the root of the project, create a new folder named **dialogs**.</span></span>
 
-2. <span data-ttu-id="f68a8-377">Na pasta **./src/dialogs**, crie um novo arquivo chamado **popup.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-377">In the **./src/dialogs** folder, create new file named **popup.html**.</span></span>
+2. <span data-ttu-id="73274-377">Na pasta **./src/dialogs**, crie um novo arquivo chamado **popup.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-377">In the **./src/dialogs** folder, create new file named **popup.html**.</span></span>
 
-3. <span data-ttu-id="f68a8-378">Adicione a seguinte marcação a **popup.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-378">Add the following markup to **popup.html**.</span></span> <span data-ttu-id="f68a8-379">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-379">Note:</span></span>
+3. <span data-ttu-id="73274-378">Adicione a seguinte marcação a **popup.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-378">Add the following markup to **popup.html**.</span></span> <span data-ttu-id="73274-379">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-379">Note:</span></span>
 
-   - <span data-ttu-id="f68a8-380">A página possui um campo `<input>` onde o usuário digitará seu nome e um botão que enviará esse nome para o painel de tarefas em que será exibido.</span><span class="sxs-lookup"><span data-stu-id="f68a8-380">The page has an `<input>` field where the user will enter their name, and a button that will send this name to the task pane where it will display.</span></span>
+   - <span data-ttu-id="73274-380">A página possui um campo `<input>` onde o usuário digitará seu nome e um botão que enviará esse nome para o painel de tarefas em que será exibido.</span><span class="sxs-lookup"><span data-stu-id="73274-380">The page has an `<input>` field where the user will enter their name, and a button that will send this name to the task pane where it will display.</span></span>
 
-   - <span data-ttu-id="f68a8-381">a marcação carrega um script chamado **popup.js** que você criará em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="f68a8-381">The markup loads a script named **popup.js** that you will create in a later step.</span></span>
+   - <span data-ttu-id="73274-381">a marcação carrega um script chamado **popup.js** que você criará em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="73274-381">The markup loads a script named **popup.js** that you will create in a later step.</span></span>
 
-   - <span data-ttu-id="f68a8-382">Ela também carrega a biblioteca Office.js porque esta será usada em **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-382">It also loads the Office.js library because it will be used in **popup.js**.</span></span>
+   - <span data-ttu-id="73274-382">Ela também carrega a biblioteca Office.js porque esta será usada em **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-382">It also loads the Office.js library because it will be used in **popup.js**.</span></span>
 
     ```html
     <!DOCTYPE html>
@@ -803,11 +803,11 @@ ms.locfileid: "47293419"
     </html>
     ```
 
-4. <span data-ttu-id="f68a8-383">Na pasta **./src/dialogs**, crie um arquivo chamado **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-383">In the **./src/dialogs** folder, create new file named **popup.js**.</span></span>
+4. <span data-ttu-id="73274-383">Na pasta **./src/dialogs**, crie um arquivo chamado **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-383">In the **./src/dialogs** folder, create new file named **popup.js**.</span></span>
 
-5. <span data-ttu-id="f68a8-384">Adicione o código a seguir a **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-384">Add the following code to **popup.js**.</span></span> <span data-ttu-id="f68a8-385">Observe o seguinte sobre este código:</span><span class="sxs-lookup"><span data-stu-id="f68a8-385">Note the following about this code:</span></span>
+5. <span data-ttu-id="73274-384">Adicione o código a seguir a **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-384">Add the following code to **popup.js**.</span></span> <span data-ttu-id="73274-385">Observe o seguinte sobre este código:</span><span class="sxs-lookup"><span data-stu-id="73274-385">Note the following about this code:</span></span>
 
-   - <span data-ttu-id="f68a8-386">*Todas as páginas que chamam APIs na biblioteca Office.JS devem primeiro garantir que a biblioteca tenha sido totalmente inicializada.*</span><span class="sxs-lookup"><span data-stu-id="f68a8-386">*Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.*</span></span> <span data-ttu-id="f68a8-387">A melhor maneira de fazer isso é chamando o método `Office.onReady()`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-387">The best way to do that is to call the `Office.onReady()` method.</span></span> <span data-ttu-id="f68a8-388">Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-388">If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`.</span></span> <span data-ttu-id="f68a8-389">A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office.js; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.</span><span class="sxs-lookup"><span data-stu-id="f68a8-389">The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.</span></span>
+   - <span data-ttu-id="73274-386">*Todas as páginas que chamam APIs na biblioteca Office.JS devem primeiro garantir que a biblioteca tenha sido totalmente inicializada.*</span><span class="sxs-lookup"><span data-stu-id="73274-386">*Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.*</span></span> <span data-ttu-id="73274-387">A melhor maneira de fazer isso é chamando o método `Office.onReady()`.</span><span class="sxs-lookup"><span data-stu-id="73274-387">The best way to do that is to call the `Office.onReady()` method.</span></span> <span data-ttu-id="73274-388">Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`.</span><span class="sxs-lookup"><span data-stu-id="73274-388">If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`.</span></span> <span data-ttu-id="73274-389">A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office.js; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.</span><span class="sxs-lookup"><span data-stu-id="73274-389">The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.</span></span>
 
     ```js
     (function () {
@@ -825,13 +825,13 @@ ms.locfileid: "47293419"
     }());
     ```
 
-6. <span data-ttu-id="f68a8-p159">Substitua `TODO1` pelo código a seguir. Você criará a função `sendStringToParentPage` na próxima etapa.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p159">Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.</span></span>
+6. <span data-ttu-id="73274-p159">Substitua `TODO1` pelo código a seguir. Você criará a função `sendStringToParentPage` na próxima etapa.</span><span class="sxs-lookup"><span data-stu-id="73274-p159">Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.</span></span>
 
     ```js
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. <span data-ttu-id="f68a8-p160">Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p160">Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON.</span></span>
+7. <span data-ttu-id="73274-p160">Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON.</span><span class="sxs-lookup"><span data-stu-id="73274-p160">Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON.</span></span>
 
     ```js
     function sendStringToParentPage() {
@@ -841,19 +841,19 @@ ms.locfileid: "47293419"
     ```
 
 > [!NOTE]
-> <span data-ttu-id="f68a8-395">O arquivo **popup.html** e o arquivo **popup.js** que ele carrega são executados em um processo totalmente separado do Microsoft Edge ou do Internet Explorer 11 no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-395">The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane.</span></span> <span data-ttu-id="f68a8-396">Se o **popup.js** foi transcompilado no mesmo arquivo **bundle.js** que o arquivo **app.js**, o suplemento precisará carregar duas cópias do arquivo **bundle.js**, o que anula o propósito do agrupamento.</span><span class="sxs-lookup"><span data-stu-id="f68a8-396">If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling.</span></span> <span data-ttu-id="f68a8-397">Portanto, esse suplemento não transcompila o arquivo **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-397">Therefore, this add-in does not transpile the **popup.js** file at all.</span></span>
+> <span data-ttu-id="73274-395">O arquivo **popup.html** e o arquivo **popup.js** que ele carrega são executados em um processo totalmente separado do Microsoft Edge ou do Internet Explorer 11 no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="73274-395">The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane.</span></span> <span data-ttu-id="73274-396">Se o **popup.js** foi transcompilado no mesmo arquivo **bundle.js** que o arquivo **app.js**, o suplemento precisará carregar duas cópias do arquivo **bundle.js**, o que anula o propósito do agrupamento.</span><span class="sxs-lookup"><span data-stu-id="73274-396">If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling.</span></span> <span data-ttu-id="73274-397">Portanto, esse suplemento não transcompila o arquivo **popup.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-397">Therefore, this add-in does not transpile the **popup.js** file at all.</span></span>
 
-### <a name="update-webpack-config-settings"></a><span data-ttu-id="f68a8-398">Atualizar as configurações webpack config</span><span class="sxs-lookup"><span data-stu-id="f68a8-398">Update webpack config settings</span></span>
+### <a name="update-webpack-config-settings"></a><span data-ttu-id="73274-398">Atualizar as configurações webpack config</span><span class="sxs-lookup"><span data-stu-id="73274-398">Update webpack config settings</span></span>
 
-<span data-ttu-id="f68a8-399">Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as seguintes etapas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-399">Open the file **webpack.config.js** in the root directory of the project and complete the following steps.</span></span>
+<span data-ttu-id="73274-399">Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as seguintes etapas.</span><span class="sxs-lookup"><span data-stu-id="73274-399">Open the file **webpack.config.js** in the root directory of the project and complete the following steps.</span></span>
 
-1. <span data-ttu-id="f68a8-400">Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `popup`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-400">Locate the `entry` object within the `config` object and add a new entry for `popup`.</span></span>
+1. <span data-ttu-id="73274-400">Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `popup`.</span><span class="sxs-lookup"><span data-stu-id="73274-400">Locate the `entry` object within the `config` object and add a new entry for `popup`.</span></span>
 
     ```js
     popup: "./src/dialogs/popup.js"
     ```
 
-    <span data-ttu-id="f68a8-401">Após fazer isso, o novo objeto `entry` ficará assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-401">After you've done this, the new `entry` object will look like this:</span></span>
+    <span data-ttu-id="73274-401">Após fazer isso, o novo objeto `entry` ficará assim:</span><span class="sxs-lookup"><span data-stu-id="73274-401">After you've done this, the new `entry` object will look like this:</span></span>
 
     ```js
     entry: {
@@ -864,7 +864,7 @@ ms.locfileid: "47293419"
     },
     ```
   
-2. <span data-ttu-id="f68a8-402">Localize a matriz `plugins` no objeto `config` e adicione o seguinte objeto ao final dela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-402">Locate the `plugins` array within the `config` object and add the following object to the end of that array.</span></span>
+2. <span data-ttu-id="73274-402">Localize a matriz `plugins` no objeto `config` e adicione o seguinte objeto ao final dela.</span><span class="sxs-lookup"><span data-stu-id="73274-402">Locate the `plugins` array within the `config` object and add the following object to the end of that array.</span></span>
 
     ```js
     new HtmlWebpackPlugin({
@@ -874,7 +874,7 @@ ms.locfileid: "47293419"
     })
     ```
 
-    <span data-ttu-id="f68a8-403">Após fazer isso, a nova matriz `plugins` ficará assim:</span><span class="sxs-lookup"><span data-stu-id="f68a8-403">After you've done this, the new `plugins` array will look like this:</span></span>
+    <span data-ttu-id="73274-403">Após fazer isso, a nova matriz `plugins` ficará assim:</span><span class="sxs-lookup"><span data-stu-id="73274-403">After you've done this, the new `plugins` array will look like this:</span></span>
 
     ```js
     plugins: [
@@ -903,45 +903,45 @@ ms.locfileid: "47293419"
     ],
     ```
 
-3. <span data-ttu-id="f68a8-404">Se o servidor da Web local estiver em execução, feche a janela de comando do nó para interrompê-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-404">If the local web server is running, stop it by closing the node command window.</span></span>
+3. <span data-ttu-id="73274-404">Se o servidor da Web local estiver em execução, feche a janela de comando do nó para interrompê-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-404">If the local web server is running, stop it by closing the node command window.</span></span>
 
-4. <span data-ttu-id="f68a8-405">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-405">Run the following command to rebuild the project.</span></span>
+4. <span data-ttu-id="73274-405">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-405">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-### <a name="open-the-dialog-from-the-task-pane"></a><span data-ttu-id="f68a8-406">Abra a caixa de diálogo do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f68a8-406">Open the dialog from the task pane</span></span>
+### <a name="open-the-dialog-from-the-task-pane"></a><span data-ttu-id="73274-406">Abra a caixa de diálogo do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="73274-406">Open the dialog from the task pane</span></span>
 
-1. <span data-ttu-id="f68a8-407">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-407">Open the file **./src/taskpane/taskpane.html**.</span></span>
+1. <span data-ttu-id="73274-407">Abra o arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="73274-407">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="f68a8-408">Localize o elemento `<button>` para o botão `freeze-header` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f68a8-408">Locate the `<button>` element for the `freeze-header` button, and add the following markup after that line:</span></span>
+2. <span data-ttu-id="73274-408">Localize o elemento `<button>` para o botão `freeze-header` e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="73274-408">Locate the `<button>` element for the `freeze-header` button, and add the following markup after that line:</span></span>
 
     ```html
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-3. <span data-ttu-id="f68a8-409">A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-409">The dialog will prompt the user to enter a name and pass the user's name to the task pane.</span></span> <span data-ttu-id="f68a8-410">O painel de tarefas o exibirá em um rótulo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-410">The task pane will display it in a label.</span></span> <span data-ttu-id="f68a8-411">Imediatamente após o `button` que você adicionou, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="f68a8-411">Immediately after the `button` that you just added, add the following markup:</span></span>
+3. <span data-ttu-id="73274-409">A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-409">The dialog will prompt the user to enter a name and pass the user's name to the task pane.</span></span> <span data-ttu-id="73274-410">O painel de tarefas o exibirá em um rótulo.</span><span class="sxs-lookup"><span data-stu-id="73274-410">The task pane will display it in a label.</span></span> <span data-ttu-id="73274-411">Imediatamente após o `button` que você adicionou, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="73274-411">Immediately after the `button` that you just added, add the following markup:</span></span>
 
     ```html
     <label id="user-name"></label><br/><br/>
     ```
 
-4. <span data-ttu-id="f68a8-412">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-412">Open the file **./src/taskpane/taskpane.js**.</span></span>
+4. <span data-ttu-id="73274-412">Abra o arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="73274-412">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-5. <span data-ttu-id="f68a8-413">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o seguinte código após ela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-413">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line.</span></span> <span data-ttu-id="f68a8-414">Você criará o método `openDialog` em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="f68a8-414">You'll create the `openDialog` method in a later step.</span></span>
+5. <span data-ttu-id="73274-413">Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o seguinte código após ela.</span><span class="sxs-lookup"><span data-stu-id="73274-413">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line.</span></span> <span data-ttu-id="73274-414">Você criará o método `openDialog` em uma etapa posterior.</span><span class="sxs-lookup"><span data-stu-id="73274-414">You'll create the `openDialog` method in a later step.</span></span>
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. <span data-ttu-id="f68a8-415">Adicione a seguinte declaração ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-415">Add the following declaration to the end of the file.</span></span> <span data-ttu-id="f68a8-416">Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-416">This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.</span></span>
+6. <span data-ttu-id="73274-415">Adicione a seguinte declaração ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="73274-415">Add the following declaration to the end of the file.</span></span> <span data-ttu-id="73274-416">Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="73274-416">This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.</span></span>
 
     ```js
     var dialog = null;
     ```
 
-7. <span data-ttu-id="f68a8-417">Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-417">Add the following function to the end of the file (after the declaration of `dialog`).</span></span> <span data-ttu-id="f68a8-418">É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-418">The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`.</span></span> <span data-ttu-id="f68a8-419">Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os aplicativos do Office, portanto, ela faz parte da API Comum de JavaScript do Office, não da API específica do Excel.</span><span class="sxs-lookup"><span data-stu-id="f68a8-419">This is because the API to open a dialog is shared among all Office applications, so it is part of the Office JavaScript Common API, not the Excel-specific API.</span></span>
+7. <span data-ttu-id="73274-417">Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`.</span><span class="sxs-lookup"><span data-stu-id="73274-417">Add the following function to the end of the file (after the declaration of `dialog`).</span></span> <span data-ttu-id="73274-418">É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`.</span><span class="sxs-lookup"><span data-stu-id="73274-418">The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`.</span></span> <span data-ttu-id="73274-419">Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os aplicativos do Office, portanto, ela faz parte da API Comum de JavaScript do Office, não da API específica do Excel.</span><span class="sxs-lookup"><span data-stu-id="73274-419">This is because the API to open a dialog is shared among all Office applications, so it is part of the Office JavaScript Common API, not the Excel-specific API.</span></span>
 
     ```js
     function openDialog() {
@@ -949,13 +949,13 @@ ms.locfileid: "47293419"
     }
     ```
 
-8. <span data-ttu-id="f68a8-p166">Substitua `TODO1` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-p166">Replace `TODO1` with the following code. Note:</span></span>
+8. <span data-ttu-id="73274-p166">Substitua `TODO1` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-p166">Replace `TODO1` with the following code. Note:</span></span>
 
-   - <span data-ttu-id="f68a8-422">O método`displayDialogAsync` abre uma caixa de diálogo no centro da tela.</span><span class="sxs-lookup"><span data-stu-id="f68a8-422">The `displayDialogAsync` method opens a dialog in the center of the screen.</span></span>
+   - <span data-ttu-id="73274-422">O método`displayDialogAsync` abre uma caixa de diálogo no centro da tela.</span><span class="sxs-lookup"><span data-stu-id="73274-422">The `displayDialogAsync` method opens a dialog in the center of the screen.</span></span>
 
-   - <span data-ttu-id="f68a8-423">O primeiro parâmetro é a URL da página a ser aberta.</span><span class="sxs-lookup"><span data-stu-id="f68a8-423">The first parameter is the URL of the page to open.</span></span>
+   - <span data-ttu-id="73274-423">O primeiro parâmetro é a URL da página a ser aberta.</span><span class="sxs-lookup"><span data-stu-id="73274-423">The first parameter is the URL of the page to open.</span></span>
 
-   - <span data-ttu-id="f68a8-p167">O segundo parâmetro passa opções. `height` e `width` são porcentagens do tamanho da janela do aplicativo do Office.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p167">The second parameter passes options. `height` and `width` are percentages of the size of the Office application's window.</span></span>
+   - <span data-ttu-id="73274-p167">O segundo parâmetro passa opções. `height` e `width` são porcentagens do tamanho da janela do aplicativo do Office.</span><span class="sxs-lookup"><span data-stu-id="73274-p167">The second parameter passes options. `height` and `width` are percentages of the size of the Office application's window.</span></span>
 
     ```js
     Office.context.ui.displayDialogAsync(
@@ -966,15 +966,15 @@ ms.locfileid: "47293419"
     );
     ```
 
-### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a><span data-ttu-id="f68a8-426">Processar a mensagem da caixa de diálogo e depois fechá-la</span><span class="sxs-lookup"><span data-stu-id="f68a8-426">Process the message from the dialog and close the dialog</span></span>
+### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a><span data-ttu-id="73274-426">Processar a mensagem da caixa de diálogo e depois fechá-la</span><span class="sxs-lookup"><span data-stu-id="73274-426">Process the message from the dialog and close the dialog</span></span>
 
-1. <span data-ttu-id="f68a8-427">Na função `openDialog` no arquivo **./src/taskpane/taskpane.js**, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f68a8-427">Within the `openDialog` function in the file **./src/taskpane/taskpane.js**, replace `TODO2` with the following code.</span></span> <span data-ttu-id="f68a8-428">Observação:</span><span class="sxs-lookup"><span data-stu-id="f68a8-428">Note:</span></span>
+1. <span data-ttu-id="73274-427">Na função `openDialog` no arquivo **./src/taskpane/taskpane.js**, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="73274-427">Within the `openDialog` function in the file **./src/taskpane/taskpane.js**, replace `TODO2` with the following code.</span></span> <span data-ttu-id="73274-428">Observação:</span><span class="sxs-lookup"><span data-stu-id="73274-428">Note:</span></span>
 
-   - <span data-ttu-id="f68a8-429">O retorno de chamada é executado imediatamente depois que a caixa de diálogo é aberta com êxito e antes de usuário executar a ação na caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-429">The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.</span></span>
+   - <span data-ttu-id="73274-429">O retorno de chamada é executado imediatamente depois que a caixa de diálogo é aberta com êxito e antes de usuário executar a ação na caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="73274-429">The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.</span></span>
 
-   - <span data-ttu-id="f68a8-430">O `result.value` é o objeto que atua como intermediário entre os contextos de execução das páginas pai e de diálogo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-430">The `result.value` is the object that acts as an intermediary between the execution contexts of the parent and dialog pages.</span></span>
+   - <span data-ttu-id="73274-430">O `result.value` é o objeto que atua como intermediário entre os contextos de execução das páginas pai e de diálogo.</span><span class="sxs-lookup"><span data-stu-id="73274-430">The `result.value` is the object that acts as an intermediary between the execution contexts of the parent and dialog pages.</span></span>
 
-   - <span data-ttu-id="f68a8-p169">A função `processMessage` será criada em uma etapa posterior. Esse identificador processará os valores que sejam enviados da página da caixa de diálogo com chamadas da função `messageParent`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p169">The `processMessage` function will be created in a later step. This handler will process any values that are sent from the dialog page with calls of the `messageParent` function.</span></span>
+   - <span data-ttu-id="73274-p169">A função `processMessage` será criada em uma etapa posterior. Esse identificador processará os valores que sejam enviados da página da caixa de diálogo com chamadas da função `messageParent`.</span><span class="sxs-lookup"><span data-stu-id="73274-p169">The `processMessage` function will be created in a later step. This handler will process any values that are sent from the dialog page with calls of the `messageParent` function.</span></span>
 
     ```js
     function (result) {
@@ -983,7 +983,7 @@ ms.locfileid: "47293419"
     }
     ```
 
-2. <span data-ttu-id="f68a8-433">Adicione a seguinte função após a função `openDialog`.</span><span class="sxs-lookup"><span data-stu-id="f68a8-433">Add the following function after the `openDialog` function.</span></span>
+2. <span data-ttu-id="73274-433">Adicione a seguinte função após a função `openDialog`.</span><span class="sxs-lookup"><span data-stu-id="73274-433">Add the following function after the `openDialog` function.</span></span>
 
     ```js
     function processMessage(arg) {
@@ -992,34 +992,33 @@ ms.locfileid: "47293419"
     }
     ```
 
-3. <span data-ttu-id="f68a8-434">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f68a8-434">Verify that you've saved all of the changes you've made to the project.</span></span>
+3. <span data-ttu-id="73274-434">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="73274-434">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="f68a8-435">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f68a8-435">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="73274-435">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="73274-435">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. <span data-ttu-id="f68a8-436">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f68a8-436">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
+2. <span data-ttu-id="73274-436">Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="73274-436">If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="f68a8-437">Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-437">Choose the **Open Dialog** button in the task pane.</span></span>
+3. <span data-ttu-id="73274-437">Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-437">Choose the **Open Dialog** button in the task pane.</span></span>
 
-4. <span data-ttu-id="f68a8-438">Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a.</span><span class="sxs-lookup"><span data-stu-id="f68a8-438">While the dialog is open, drag it and resize it.</span></span> <span data-ttu-id="f68a8-439">Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f68a8-439">Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.</span></span>
+4. <span data-ttu-id="73274-438">Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a.</span><span class="sxs-lookup"><span data-stu-id="73274-438">While the dialog is open, drag it and resize it.</span></span> <span data-ttu-id="73274-439">Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="73274-439">Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.</span></span>
 
-5. <span data-ttu-id="f68a8-440">Na caixa de diálogo, digite um nome e escolha o botão **OK**.</span><span class="sxs-lookup"><span data-stu-id="f68a8-440">In the dialog, enter a name and choose the **OK** button.</span></span> <span data-ttu-id="f68a8-441">O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.</span><span class="sxs-lookup"><span data-stu-id="f68a8-441">The name appears on the task pane and the dialog closes.</span></span>
+5. <span data-ttu-id="73274-440">Na caixa de diálogo, digite um nome e escolha o botão **OK**.</span><span class="sxs-lookup"><span data-stu-id="73274-440">In the dialog, enter a name and choose the **OK** button.</span></span> <span data-ttu-id="73274-441">O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.</span><span class="sxs-lookup"><span data-stu-id="73274-441">The name appears on the task pane and the dialog closes.</span></span>
 
-6. <span data-ttu-id="f68a8-p172">Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.</span><span class="sxs-lookup"><span data-stu-id="f68a8-p172">Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.</span></span>
+6. <span data-ttu-id="73274-p172">Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.</span><span class="sxs-lookup"><span data-stu-id="73274-p172">Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.</span></span>
 
     ![Tutorial do Excel - Caixa de diálogo](../images/excel-tutorial-dialog-open-2.png)
 
-## <a name="next-steps"></a><span data-ttu-id="f68a8-447">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="f68a8-447">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="73274-447">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="73274-447">Next steps</span></span>
 
-<span data-ttu-id="f68a8-448">Neste tutorial você criou um suplemento do Excel que interage com tabelas, gráficos, planilhas e caixas de diálogo em uma pasta de trabalho do Excel.</span><span class="sxs-lookup"><span data-stu-id="f68a8-448">In this tutorial, you've created an Excel task pane add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook.</span></span> <span data-ttu-id="f68a8-449">Para saber mais sobre o desenvolvimento de suplementos do Excel, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="f68a8-449">To learn more about building Excel add-ins, continue to the following article:</span></span>
+<span data-ttu-id="73274-448">Neste tutorial você criou um suplemento do Excel que interage com tabelas, gráficos, planilhas e caixas de diálogo em uma pasta de trabalho do Excel.</span><span class="sxs-lookup"><span data-stu-id="73274-448">In this tutorial, you've created an Excel task pane add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook.</span></span> <span data-ttu-id="73274-449">Para saber mais sobre o desenvolvimento de suplementos do Excel, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="73274-449">To learn more about building Excel add-ins, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="f68a8-450">Visão geral dos suplementos do Excel</span><span class="sxs-lookup"><span data-stu-id="f68a8-450">Excel add-ins overview</span></span>](../excel/excel-add-ins-overview.md)
+> [<span data-ttu-id="73274-450">Visão geral dos suplementos do Excel</span><span class="sxs-lookup"><span data-stu-id="73274-450">Excel add-ins overview</span></span>](../excel/excel-add-ins-overview.md)
 
-## <a name="see-also"></a><span data-ttu-id="f68a8-451">Confira também</span><span class="sxs-lookup"><span data-stu-id="f68a8-451">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="73274-451">Confira também</span><span class="sxs-lookup"><span data-stu-id="73274-451">See also</span></span>
 
-* [<span data-ttu-id="f68a8-452">Visão geral da plataforma Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="f68a8-452">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
-* [<span data-ttu-id="f68a8-453">Criando Suplementos do Office </span><span class="sxs-lookup"><span data-stu-id="f68a8-453">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
-* [<span data-ttu-id="f68a8-454">Desenvolver Suplementos do Office </span><span class="sxs-lookup"><span data-stu-id="f68a8-454">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
-* [<span data-ttu-id="f68a8-455">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="f68a8-455">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="73274-452">Visão geral da plataforma Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="73274-452">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+* [<span data-ttu-id="73274-453">Desenvolver Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="73274-453">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
+* [<span data-ttu-id="73274-454">Modelo de objeto JavaScript do Excel em Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="73274-454">Excel JavaScript object model in Office Add-ins</span></span>](../excel/excel-add-ins-core-concepts.md)
