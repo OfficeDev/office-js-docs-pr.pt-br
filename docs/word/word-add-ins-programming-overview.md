@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Word
-description: Conheça as noções básicas de suplementos do Word
-ms.date: 07/28/2020
+description: Aprenda o básico dos Suplementos do Word.
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b531ec5c2a5fa1e3e9366f703a57e815a5711b5a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d0dae515df3d8fb3ec1bcb12f553b21b341552ad
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293069"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740844"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -83,6 +83,7 @@ Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publ
 
 ## <a name="see-also"></a>Confira também
 
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
+* [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 * [Referências da API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md)

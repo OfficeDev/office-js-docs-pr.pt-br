@@ -1,15 +1,15 @@
 ---
 title: Guia do iniciante
 description: Um caminho recomendado para iniciantes, através dos recursos de aprendizado dos Suplementos do Office.
-ms.date: 04/16/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: fd4f1902b196399e011631a7dabaecb59a8974f9
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a51ffc437c9d1946b886d1e665836dd6d76f52d2
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292465"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741068"
 ---
 # <a name="beginners-guide"></a>Guia do iniciante
 
@@ -28,7 +28,7 @@ Deseja começar a criar suas próprias extensões do Office para várias platafo
 Sabemos que você está ansioso para começar a codificar, mas há algumas coisas sobre os Suplementos do Office que você deve ler antes de abrir o IDE ou o editor de código.
 
 - [Visão Geral da Plataforma de Suplementos do Office](office-add-ins.md): Descubra o que são os suplementos da Web do Office e como eles diferem das formas mais antigas de estender o Office, como os suplementos do VSTO.
-- [Criação de Suplementos do Office](office-add-ins-fundamentals.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida de suplementos do Office, incluindo ferramentas, criação de uma Interface de Usuário do suplemento e uso das APIs JavaScript para interagir com o documento do Office.
+- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida do suplemento do Office, incluindo ferramentas, criando uma interface de usuário do suplemento e usando as APIs de JavaScript para interagir com o documento do Office.
 
 Existem muitos links nesses artigos, mas se você é iniciante nos suplementos do Office, recomendamos que você volte aqui quando os tiver lido e continue na próxima seção.
 
@@ -73,3 +73,4 @@ Parabéns por concluir o caminho de aprendizado para iniciantes dos Suplementos 
   - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
   - [Implantar e publicar Suplementos do Office](../publish/publish.md)
   - [Recursos](../resources/resources-links-help.md)
+  - [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

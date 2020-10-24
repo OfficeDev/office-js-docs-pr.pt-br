@@ -1,16 +1,16 @@
 ---
 title: Suplementos do PowerPoint
 description: Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 314b441f3d4b6d2188ed630fe2b254aec42a86bc
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006448"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740837"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -193,7 +193,8 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Exemplos de Código do PowerPoint](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Ler e gravar dados na seleção ativa em um documento ou planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

@@ -1,21 +1,21 @@
 ---
 title: Desenvolver Suplementos do Office com o Visual Studio
-description: Como desenvolver Suplementos do Office com o Visual Studio
-ms.date: 12/31/2019
+description: Como desenvolver Suplementos do Office com Visual Studio.
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292824"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741103"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
 Esse artigo descreve como usar o Visual Studio para desenvolver um suplemento do Office. Caso você já tenha criado seu suplemento, você pode pular para a seção [Desenvolver o suplemento usando o Visual Studio](#develop-the-add-in-using-visual-studio).
 
 > [!NOTE]
-> Como uma alternativa ao uso do Visual Studio, você pode optar por usar o gerador Yeoman para suplementos do Office e o VS Code para criar um suplemento do Office. Para obter mais informações sobre essa opção, confira [Criar um suplemento do Office](../overview/office-add-ins-fundamentals.md#creating-an-office-add-in).
+> Como uma alternativa ao uso do Visual Studio, você pode optar por usar o gerador Yeoman para suplementos do Office e o VS Code para criar um suplemento do Office. Para obter mais informações sobre essa escolha, consulte [Criando um Suplemento do Office](../develop/develop-overview.md)#creating-an-office-add-in).
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Criar o projeto de suplemento usando o Visual Studio
 
@@ -53,7 +53,6 @@ Enquanto você estiver desenvolvendo seu suplemento no Visual Studio, seu suplem
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
 - [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)

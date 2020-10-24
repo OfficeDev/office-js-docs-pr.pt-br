@@ -1,15 +1,15 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 09/18/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135225"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741138"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -80,7 +80,7 @@ Para começar a criar suplementos do Outlook, experimente o seguinte.
 
 
 ## <a name="see-also"></a>Confira também
-
+- [Saiba mais sobre o Programa de Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
 - [Licenciar suplementos do Office e do SharePoint](/office/dev/store/license-your-add-ins)

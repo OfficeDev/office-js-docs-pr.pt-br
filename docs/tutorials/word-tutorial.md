@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294217"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741131"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.
+8. Substitua `TODO3` pelo seguinte código. Este novo parágrafo demonstrará o fato de que o novo texto **_não_*_ faz parte do intervalo original selecionado. O intervalo original ainda possui apenas o texto que tinha quando foi selecionado.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -543,7 +543,7 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>Substitua o texto de um intervalo.
 
-1. Abra o arquivo **./src/taskpane/taskpane.html**.
+1. Abra o arquivo _*./src/taskpane/taskpane.html**.
 
 2. Localize o elemento `<button>` para o botão `insert-text-outside-range` e adicione a seguinte marcação após essa linha: 
 
@@ -945,5 +945,5 @@ Neste tutorial, você criou um suplemento do painel de tarefas do Word que inser
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+

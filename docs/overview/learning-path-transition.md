@@ -1,15 +1,15 @@
 ---
 title: Guia do desenvolvedor do suplemento VSTO
 description: Um roteiro recomendado para desenvolvedores experientes de suplemento do VSTO para recursos de aprendizagem de suplementos Web do Office.
-ms.date: 05/10/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1dca15a4d286e3bfa5b7ba4a502bb9161bf3257f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292437"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741061"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guia do desenvolvedor do suplemento VSTO
 
@@ -33,7 +33,7 @@ Por esses motivos, uma boa parte deste artigo duplica o caminho de aprendizagem 
 Sabemos que você está ansioso para começar a codificar, mas há algumas coisas sobre os Suplementos do Office que você deve ler antes de abrir o IDE ou o editor de código.
 
 - [Visão Geral da Plataforma de Suplementos do Office](office-add-ins.md): Descubra o que são os suplementos da Web do Office e como eles diferem das formas mais antigas de estender o Office, como os suplementos do VSTO.
-- [Criação de Suplementos do Office](office-add-ins-fundamentals.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida de suplementos do Office, incluindo ferramentas, criação de uma Interface de Usuário do suplemento e uso das APIs JavaScript para interagir com o documento do Office.
+- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida do Suplemento do Office, incluindo ferramentas, criando uma interface de usuário do suplemento e usando as APIs de JavaScript para interagir com o documento do Office.
 
 Existem muitos links nesses artigos, mas se você estiver migrando para os suplementos Web do Office, recomendamos que você volte aqui quando os tiver lido e continue na próxima seção.
 
@@ -86,3 +86,4 @@ Parabéns por concluir o roteiro de aprendizagem para desenvolvedores de supleme
   - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
   - [Implantar e publicar Suplementos do Office](../publish/publish.md)
   - [Recursos](../resources/resources-links-help.md)
+  - [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

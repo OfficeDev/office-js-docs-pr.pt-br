@@ -1,16 +1,16 @@
 ---
 title: Visão geral da programação da API JavaScript do OneNote
 description: Saiba mais sobre a API JavaScript do OneNote para suplementos do OneNote na Web.
-ms.date: 07/28/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86a388c2e8a89b97d82083964e0fcf120f310e66
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294056"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741117"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -135,7 +135,8 @@ O diagrama a seguir representa o que está disponível atualmente na API JavaScr
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
+- [Saiba mais sobre Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Criar seu primeiro suplemento do OneNote](../quickstarts/onenote-quickstart.md)
 - [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 04/03/2020
+ms.date: 10/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4043fa56d844ca1160c61dd94d229172682c3af2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a4c2dd7d475458439436dc7499d5f26f2c8eafb0
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292334"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741173"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -221,8 +221,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
-* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
-* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+* [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

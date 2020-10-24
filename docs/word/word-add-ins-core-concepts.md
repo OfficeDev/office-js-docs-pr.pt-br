@@ -1,14 +1,14 @@
 ---
 title: Modelo de objeto de JavaScript do Word em Suplementos do Office
 description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
-ms.date: 09/04/2020
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
-ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
+ms.openlocfilehash: c85c56987ef5de7c087064ac668f137326089642
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "47963833"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740865"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 
@@ -48,3 +48,4 @@ Para entender as APIs do Word, você deve entender como os componentes de um doc
 - [Criar seu primeiro suplemento do Word](../quickstarts/word-quickstart.md)
 - [Tutorial de suplemento do Word](../tutorials/word-tutorial.md)
 - [Referências da API JavaScript do Word](/javascript/api/word)
+- [Saiba mais sobre o Programa de Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

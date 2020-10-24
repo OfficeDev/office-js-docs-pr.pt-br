@@ -1,16 +1,16 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 02/13/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9a504a81bb15e36f937328e2f7cbb674f416842d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292409"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741047"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -50,7 +50,7 @@ O manifesto é um arquivo XML que especifica configurações e recursos do suple
 
 - O nome de exibição, a descrição, a ID, a versão e a localidade padrão do suplemento.
 
-- Como o suplemento se integra ao Office.  
+- Como o suplemento se integra ao Office.  
 
 - O nível de permissão e os requisitos de acesso a dados para o suplemento.
 
@@ -69,26 +69,26 @@ Os suplementos do Office podem fazer o seguinte em um aplicativo cliente do Offi
 -  Estender a funcionalidade (qualquer aplicativo do Office)
 
 -  Criar novos objetos (Excel ou PowerPoint)
- 
+ 
 ### <a name="extend-office-functionality"></a>Estender a funcionalidade do Office
 
-Você pode adicionar novas funcionalidades a aplicativos do Office por meio do seguinte:  
+Você pode adicionar novas funcionalidades a aplicativos do Office por meio do seguinte:  
 
 -  Botões de faixa de opções e comandos de menu personalizados (coletivamente chamados "comandos de suplemento")
 
 -  Painéis de tarefas inseríveis
 
-Painéis personalizados de interface do usuário e de tarefa são especificados no manifesto do suplemento.  
+Painéis personalizados de interface do usuário e de tarefa são especificados no manifesto do suplemento.  
 
-#### <a name="custom-buttons-and-menu-commands"></a>Botões e comandos de menu personalizados  
+#### <a name="custom-buttons-and-menu-commands"></a>Botões e comandos de menu personalizados  
 
-Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções, tanto no Office para Área de Trabalho do Windows quanto no Office Online. Isso facilita o acesso dos usuários ao suplemento diretamente do aplicativo do Office. Botões de comando podem iniciar diferentes ações, como mostrar um painel de tarefas com código HTML personalizado ou executar uma função JavaScript.  
+Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções, tanto no Office para Área de Trabalho do Windows quanto no Office Online. Isso facilita o acesso dos usuários ao suplemento diretamente do aplicativo do Office. Botões de comando podem iniciar diferentes ações, como mostrar um painel de tarefas com código HTML personalizado ou executar uma função JavaScript.  
 
 *Figura 3. Comandos do suplemento na faixa de opções*
 
 ![Botões e comandos de menu personalizados](../images/about-addins-addincommands.png)
 
-#### <a name="task-panes"></a>Painéis de tarefas  
+#### <a name="task-panes"></a>Painéis de tarefas  
 
 Você pode usar painéis de tarefas, além dos comandos de suplemento, para permitir que os usuários interajam com sua solução. Os clientes que não dão suporte aos comandos de suplemento (Office 2013 e Office para iPad) executarão seu suplemento como um painel de tarefas. Os usuários iniciam os suplementos do painel de tarefas através do botão **Meus suplementos** na guia **Inserir**.
 
@@ -98,7 +98,7 @@ Você pode usar painéis de tarefas, além dos comandos de suplemento, para perm
 
 ### <a name="extend-outlook-functionality"></a>Estender a funcionalidade do Outlook
 
-Os suplementos do Outlook podem estender a faixa de opções do aplicativo do Office e também serem exibidos contextualmente ao lado de um item do Outlook quando você o exibe ou redige. Eles podem funcionar com uma mensagem de email, uma solicitação de reunião, uma resposta de reunião, um cancelamento de reunião ou um compromisso quando um usuário estiver visualizando um item recebido, respondendo ou criando um novo item. 
+Os suplementos do Outlook podem estender a faixa de opções do aplicativo do Office e também serem exibidos contextualmente ao lado de um item do Outlook quando você o exibe ou redige. Eles podem funcionar com uma mensagem de email, uma solicitação de reunião, uma resposta de reunião, um cancelamento de reunião ou um compromisso quando um usuário estiver visualizando um item recebido, respondendo ou criando um novo item. 
 
 Os suplementos do Outlook podem acessar informações contextuais do item, como o endereço ou a ID de rastreamento, e usar esses dados para acessar informações adicionais no servidor e de serviços Web para criar experiências de usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação no aplicativo cliente do Outlook para fornecer uma experiência perfeita na área de trabalho, na Web e em dispositivos móveis e tablet.
 
@@ -118,13 +118,13 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter uma introdução mais detalhada ao desenvolvimento de Suplementos do Office, confira [Criando Suplementos do Offices](../overview/office-add-ins-fundamentals.md).
+Para obter uma introdução mais detalhada sobre o desenvolvimento de Suplementos do Office, confira [Desenvolver suplementos do Office](../develop/develop-overview.md).
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
 - [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publicar Suplementos do Office](../publish/publish.md)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

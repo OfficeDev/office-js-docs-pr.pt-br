@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: O suplemento do Excel permite que você estenda a funcionalidade do aplicativo Excel em várias plataformas, como Windows, Mac, iPad e em um navegador.
-ms.date: 07/05/2019
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9c6f86bd5e50d97e395517d8a4887fac3554f867
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609759"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740851"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -122,6 +122,7 @@ Introdução à [criação de seu primeiro suplemento do Excel](../quickstarts/e
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Saiba mais sobre Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

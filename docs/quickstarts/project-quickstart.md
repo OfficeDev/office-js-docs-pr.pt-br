@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 04/03/2020
+ms.date: 10/14/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 8bb92b7a6c2d4610a962c2b2a84d38fb545ddd34
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ba6d6d0917e43311370188b46a7c2d26b8c916ae
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294308"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741187"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -104,7 +104,7 @@ Office.context.document.getSelectedTaskAsync(
     Execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado.
 
     ```command&nbsp;line
-    npm start
+    npm run dev server
     ```
 
 3. Em Project, crie um plano de projeto simples.
@@ -126,6 +126,5 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Project!
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)

@@ -1,16 +1,16 @@
 ---
 title: Suplementos do painel de tarefas para Project
 description: Saiba mais sobre os suplementos do painel de tarefas para Project.
-ms.date: 09/26/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1925e83f3c740172a22da3f2f03bf589785b9b46
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292402"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740823"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -195,7 +195,8 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)

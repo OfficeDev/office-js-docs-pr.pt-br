@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: Saiba como criar um suplemento do painel de tarefas do OneNote simples usando a API JS do Office.
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0e4022b9f2b91b03cb260f2d56fc3bac2a0ddaae
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292318"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741159"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -81,7 +81,7 @@ try {
 2. Inicie o servidor Web local e realize o sideload no seu suplemento.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
 
     > [!TIP]
     > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.
@@ -126,7 +126,6 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote!
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
