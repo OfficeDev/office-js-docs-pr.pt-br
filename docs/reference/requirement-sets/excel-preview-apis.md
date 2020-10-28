@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as futuras APIs JavaScript do Excel.
-ms.date: 09/15/2020
+ms.date: 10/26/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9ddc1405d4bc13087780e8950b36d9b3b4b04069
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a1cb3afb28f69ff5b0c0bd03bfae9877dda91906
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819788"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774737"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -26,7 +26,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs de visualização e APIs previamente lançadas), consulte [todas as APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
+A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévia. Para obter uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs de visualização e APIs previamente lançadas), consulte [todas as APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -92,7 +92,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Obtém a ID da tabela na qual o filtro é aplicado.|
 ||[tipo](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtém a ID da planilha que contém a tabela.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da pasta de trabalho.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da pasta de trabalho.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da tabela dinâmica é mostrado no nível da pasta de trabalho.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Retorna uma coleção de modos de exibição de planilha que estão presentes na planilha.|
