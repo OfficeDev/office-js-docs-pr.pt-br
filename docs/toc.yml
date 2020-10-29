@@ -1056,9 +1056,14 @@
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
         - name: Conjuntos de requisitos da API
-          href: reference/requirement-sets/powerpoint-api-requirement-sets.md
-          displayName: PowerPoint
-        - name: Referência da API
+          items:
+            - name: Visão Geral
+              href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+              displayName: PowerPoint
+            - name: APIs de pré-visualização do PowerPoint
+              href: reference/requirement-sets/powerpoint-preview-apis.md
+              displayName: PowerPoint
+        - name: Referência de API
           href: reference/powerpoint-api-reference.md
           displayName: PowerPoint
         - name: Obter todo o documento por meio de um suplemento
