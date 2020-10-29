@@ -3,12 +3,12 @@ title: Disponibilidade de aplicativos e plataformas do cliente Office para Suple
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: a179eebcb39107633e6ca265bbc89be822ffb63b
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 587a89f948aff37e6c8c1bf699fc10a915867788
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741054"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774709"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
@@ -380,7 +380,7 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Caixa de correio 1.8</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.9">Caixa de correio 1.9</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Caixa de correio 1.9</a>
     </td>
     <td>Não disponível</td>
   </tr>
