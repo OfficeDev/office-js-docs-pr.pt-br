@@ -4,12 +4,12 @@ title: Configure o suplemento do Excel para compartilhar o tempo de execução d
 ms.prod: excel
 description: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador e executar a faixa de opções, o painel de tarefas e o código de função personalizado no mesmo tempo de execução.
 localization_priority: Priority
-ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292633"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906019"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configure o suplemento do Excel para usar um tempo de execução JavaScript compartilhado
 
@@ -23,7 +23,7 @@ No entanto, você pode configurar o suplemento do Excel para compartilhar códig
 
 Se você estiver iniciando um novo projeto, siga estas etapas para usar o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda às solicitações com as seguintes respostas:
 
-```command line
+```command line
 yo office
 ```
 
@@ -106,13 +106,13 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
    > new HtmlWebpackPlugin({
    >     filename: "taskpane.html",
    >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", “functions”]
+   >     chunks: ["polyfill", "taskpane", "functions"]
    > }),
    >```
 
 9. Salve suas alterações e recompile o projeto.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
