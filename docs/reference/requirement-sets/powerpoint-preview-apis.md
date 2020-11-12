@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização JavaScript do PowerPoint
 description: Detalhes sobre as APIs JavaScript do PowerPoint em breve.
-ms.date: 10/26/2020
+ms.date: 11/09/2020
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 27a51054f930b560d2d2f9a00fc172394b26830d
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: b53b6638b16b2028342003b9a77aa59e7406d5f3
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774805"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996519"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>APIs de visualização JavaScript do PowerPoint
 
@@ -30,16 +30,16 @@ A tabela a seguir lista as APIs JavaScript do PowerPoint atualmente em versão p
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[formatação](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|Especifica a formatação a ser usada durante a inserção do slide.|
-||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|Especifica os slides da apresentação de origem que serão inseridos na apresentação atual. Esses slides são representados por suas IDs que podem ser recuperadas de um `Slide` objeto.|
+||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|Especifica os slides da apresentação de origem que serão inseridos na apresentação atual.|
 ||[targetSlideId](/javascript/api/powerpoint/powerpoint.insertslideoptions#targetslideid)|Especifica onde os novos slides serão inseridos na apresentação.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[insertSlidesFromBase64 (base64file: cadeia de caracteres, opções?: PowerPoint. InsertSlideOptions)](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|Insere os slides especificados de uma apresentação na apresentação atual.|
 ||[slides](/javascript/api/powerpoint/powerpoint.presentation#slides)|Retorna uma coleção ordenada de slides da apresentação.|
-|[Slide](/javascript/api/powerpoint/powerpoint.slide)|[delete()](/javascript/api/powerpoint/powerpoint.slide#delete--)|Exclui o slide da apresentação. Não fará nada se o slide não existir.|
+|[Slide](/javascript/api/powerpoint/powerpoint.slide)|[delete()](/javascript/api/powerpoint/powerpoint.slide#delete--)|Exclui o slide da apresentação.|
 ||[id](/javascript/api/powerpoint/powerpoint.slide#id)|Obtém a ID exclusiva do slide.|
-|[Slidecollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.slidecollection#getcount--)|Obtém o número de slides na coleção.|
-||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitem-key-)|Obtém um slide usando sua ID exclusiva. Uma exceção é lançada se o slide não existir.|
+|[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.slidecollection#getcount--)|Obtém o número de slides na coleção.|
+||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitem-key-)|Obtém um slide usando sua ID exclusiva.|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemat-index-)|Obtém um slide usando seu índice baseado em zero na coleção.|
-||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemornullobject-id-)|Obtém um slide usando sua ID exclusiva. Retorna um objeto cuja `isNullObject` propriedade é definida como `true` se o slide não existir.|
+||[getItemOrNullObject(id: string)](/javascript/api/powerpoint/powerpoint.slidecollection#getitemornullobject-id-)|Obtém um slide usando sua ID exclusiva.|
 ||[items](/javascript/api/powerpoint/powerpoint.slidecollection#items)|Obtém os itens filhos carregados nesta coleção.|
 
 ## <a name="see-also"></a>Confira também

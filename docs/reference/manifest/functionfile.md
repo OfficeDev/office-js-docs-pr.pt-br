@@ -1,18 +1,23 @@
 ---
 title: Elemento FunctionFile no arquivo de manifesto
 description: Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
-ms.date: 10/09/2018
+ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: db447a904c04d07d51119f1eac2556af536a647c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4c47c3e4b824f2b93aaea17cef88e01f748d6f95
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611838"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996442"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
-Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário. O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O `resid` atributo do `FunctionFile` elemento é definido como o valor do `id` atributo de um `Url` elemento no `Resources` elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas por botões de comando do suplemento sem interface do usuário, conforme definido pelo [elemento Control](control.md).
+Especifica o arquivo de código-fonte para as operações que um suplemento expõe de uma das seguintes maneiras:
+
+* Comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
+* Atalhos de teclado que executam uma função JavaScript.
+
+O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O `resid` atributo do `FunctionFile` elemento é definido como o valor do `id` atributo de um `Url` elemento no `Resources` elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas por botões de comando do suplemento sem interface do usuário, conforme definido pelo [elemento Control](control.md).
 
 Veja a seguir um exemplo do `FunctionFile` elemento.
 

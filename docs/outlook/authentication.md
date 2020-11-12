@@ -1,20 +1,20 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 08/20/2020
+ms.date: 11/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 54584483b7d4fd75e3f2d6c3188465333e9f58d5
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293965"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996393"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
-O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
+O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 
-## <a name="single-sign-on-access-token-preview"></a>Token de acesso de logon único (visualização)
+## <a name="single-sign-on-access-token"></a>Token de acesso de logon único
 
 Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento autenticar e obter tokens de acesso para fazer uma chamada para a [API do Microsoft Graph](/graph/overview). Esse recurso reduz conflitos porque o usuário não precisa inserir credenciais.
 

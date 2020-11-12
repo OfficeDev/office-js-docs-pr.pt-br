@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,3
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1,3.
-ms.date: 07/26/2019
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ee72e8bde7b768b2edb3dcff5217325e2336e3ab
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 520755fe4b77008da866098d851f47ae3833bf13
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819816"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996470"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
@@ -33,27 +33,27 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[refreshAll ()](/javascript/api/excel/excel.pivottablecollection#refreshall--)|Atualiza todas as tabelas dinâmicas da coleção.|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView ()](/javascript/api/excel/excel.range#getvisibleview--)|Representa as linhas visíveis do intervalo atual.|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[fórmulas](/javascript/api/excel/excel.rangeview#formulas)|Representa a fórmula em notação A1.|
-||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
+||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasr1c1)|Representa a fórmula em notação no estilo L1C1.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getrange--)|Obtém o intervalo pai associado à RangeView atual.|
 ||[numberFormat](/javascript/api/excel/excel.rangeview#numberformat)|Representa o código de formato de número do Excel para determinada célula.|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|Representa os endereços de célula da RangeView. Somente leitura.|
-||[columnCount](/javascript/api/excel/excel.rangeview#columncount)|Retorna o número de colunas visíveis. Somente leitura.|
-||[índice](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice da RangeView. Somente leitura.|
-||[Validação](/javascript/api/excel/excel.rangeview#rowcount)|Retorna o número de linhas visíveis. Somente leitura.|
-||[rows](/javascript/api/excel/excel.rangeview#rows)|Representa uma coleção de exibições de tabelas associadas ao intervalo. Somente leitura.|
-||[text](/javascript/api/excel/excel.rangeview#text)|Valores de texto do intervalo especificado. O valor de texto não depende da largura da célula. A substituição pelo sinal #, que ocorre na interface de usuário do Excel, não afeta o valor de texto retornado pela API. Somente leitura.|
-||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|Representa o tipo de dados de cada célula. Somente leitura.|
-||[values](/javascript/api/excel/excel.rangeview#values)|Representa os valores brutos da exibição do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|Obtém uma linha RangeView por meio de seu índice. Indexado com zero.|
+||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|Representa os endereços de célula da RangeView.|
+||[columnCount](/javascript/api/excel/excel.rangeview#columncount)|O número de colunas visíveis.|
+||[índice](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice da RangeView.|
+||[Validação](/javascript/api/excel/excel.rangeview#rowcount)|O número de linhas visíveis.|
+||[rows](/javascript/api/excel/excel.rangeview#rows)|Representa uma coleção de exibições de tabelas associadas ao intervalo.|
+||[text](/javascript/api/excel/excel.rangeview#text)|Valores de texto do intervalo especificado.|
+||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|Representa o tipo de dados de cada célula.|
+||[values](/javascript/api/excel/excel.rangeview#values)|Representa os valores brutos da exibição do intervalo especificado.|
+|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|Obtém uma linha RangeView por meio de seu índice.|
 ||[items](/javascript/api/excel/excel.rangeviewcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|Indica se a primeira coluna contém uma formatação especial.|
-||[highlightLastColumn](/javascript/api/excel/excel.table#highlightlastcolumn)|Indica se a última coluna contém uma formatação especial.|
-||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Indica se as colunas mostram formatação em faixas nas quais as colunas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
-||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Indica se as linhas mostram formatação em faixas nas quais as linhas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
-||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Indica se os botões de filtro estão visíveis na parte superior de cada cabeçalho da coluna. Essa configuração só será permitida se a tabela tiver uma linha de cabeçalho.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[Tabelas dinâmicas](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho. Somente leitura.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[Tabelas dinâmicas](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha. Somente leitura.|
+|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|Especifica se a primeira coluna contém formatação especial.|
+||[highlightLastColumn](/javascript/api/excel/excel.table#highlightlastcolumn)|Especifica se a última coluna contém formatação especial.|
+||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Especifica se as colunas mostram a formatação em tiras nas quais as colunas ímpares são realçadas de forma diferente de mesmo para tornar a leitura da tabela mais fácil.|
+||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Especifica se as linhas mostram a formatação em tiras nas quais as linhas ímpares são realçadas de forma diferente de mesmo para tornar a leitura da tabela mais fácil.|
+||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Especifica se os botões de filtro estão visíveis na parte superior de cada cabeçalho de coluna.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[Tabelas dinâmicas](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[Tabelas dinâmicas](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha.|
 
 ## <a name="see-also"></a>Confira também
 

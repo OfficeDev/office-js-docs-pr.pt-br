@@ -1,19 +1,19 @@
 ---
 title: Conjuntos de requisitos comuns da API
 description: Especifica quais plataformas e compilações do Office oferecem suporte às APIs de faixa de opções dinâmicas.
-ms.date: 08/26/2020
+ms.date: 11/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f734931817111ce52f779946e1f983ecc9238d3a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 878670367b253fa7700434681244b43b9cfa36a7
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293489"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996512"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 O conjunto de API da faixa de opções suporta o controle programático de quando comandos de suplemento personalizados (ou seja, botões de faixa de opções personalizados e itens de menu) estão habilitados e desabilitados.
 
@@ -21,13 +21,13 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 |  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1,1  | N/D | N/D | Consulte suporte<br>seção abaixo | N/D | 16,38 | Em breve | N/D|
+| RibbonApi 1,1  | N/D | N/D | Consulte suporte<br>seção abaixo | N/A | 16,38 | Novembro de 2020 | N/A|
 
-> **&#42;** A API da faixa de opções só tem suporte no Excel e requer assinatura do Microsoft 365. 
+> **&#42;** A API da faixa de opções só tem suporte no Excel e requer assinatura do Microsoft 365.
 
 ## <a name="office-on-windows-subscription-support"></a>Suporte do Office no Windows (assinatura)
 
-O conjunto de requisitos é suportado no canal de consumidor versão 2006 (Build, 13001,20498 ou posterior). Para o Office no Windows, o recurso também é suportado no canal semestral e nas compilações mensais de canais corporativos disponíveis em 14 de julho de 2020 ou mais recente. As compilações mínimas suportadas para cada canal são as seguintes:  
+O conjunto de requisitos é suportado no canal de consumidor versão 2006 (Build, 13001,20498 ou posterior). Para o Office no Windows, o recurso também é suportado no canal de Semi-Annual e nas versões de canal corporativos mensais disponíveis, 14 de julho de 2020 ou mais recente. As compilações mínimas suportadas para cada canal são as seguintes:  
 
 |Canal | Versão | Build|
 |:-----|:-----|:-----|
@@ -40,7 +40,7 @@ O conjunto de requisitos é suportado no canal de consumidor versão 2006 (Build
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
-- [Números de versão e compilação de versões de canal de atualização para clientes Microsoft 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Números de versão e de build de lançamentos de canais de atualização para clientes do Microsoft 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Onde você pode encontrar a versão e o número do Build para um aplicativo cliente Microsoft 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
@@ -60,5 +60,5 @@ A API da faixa de opções 1,1 é a primeira versão da API. Para obter detalhes
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar aplicativos do Office e requisitos de API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Especificar requisitos da API e de aplicativos do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)

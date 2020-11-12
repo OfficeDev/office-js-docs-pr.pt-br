@@ -1,15 +1,15 @@
 ---
 title: O conjunto de requisitos somente online da API JavaScript do Excel
 description: Detalhes sobre o conjunto de requisitos ExcelApiOnline.
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 16c96f413424d5fc85a21419fb72cf6580c1ac18
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819802"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996526"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
@@ -40,7 +40,9 @@ Depois que a API estiver em um conjunto de requisitos de plataforma cruzada, voc
 
 ## <a name="api-list"></a>Lista de APIs
 
-No momento, não há nenhuma API no `ExcelApiOnline` conjunto de requisitos. Todas as APIs que anteriormente faziam parte deste conjunto graduaram para um conjunto de requisitos numerados e estão disponíveis em todas as plataformas.
+| Classe | Campos | Descrição |
+|:---|:---|:---|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|Retorna um objeto RangeAreas que representa as áreas mescladas neste intervalo.|
 
 ## <a name="see-also"></a>Confira também
 
