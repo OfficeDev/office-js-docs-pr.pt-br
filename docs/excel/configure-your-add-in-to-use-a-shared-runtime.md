@@ -4,12 +4,12 @@ title: Configure o suplemento do Excel para compartilhar o tempo de execução d
 ms.prod: excel
 description: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador e executar a faixa de opções, o painel de tarefas e o código de função personalizado no mesmo tempo de execução.
 localization_priority: Priority
-ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
-ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
+ms.openlocfilehash: be4e79ae54376a9574ffb0669681c2fba7cd158c
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "48906019"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996274"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configure o suplemento do Excel para usar um tempo de execução JavaScript compartilhado
 
@@ -139,7 +139,8 @@ Não projete seu suplemento para usar vários painéis de tarefas se você plane
 ## <a name="next-steps"></a>Próximas etapas
 
 - Leia o artigo [Chamar APIs do Excel de uma função personalizada](call-excel-apis-from-custom-function.md) para obter detalhes sobre o uso das APIs JavaScript do Excel e funções personalizadas do Excel em um tempo de execução compartilhado.
-- Explore o exemplo de padrões e práticas [Gerenciar a interface do usuário da faixa de opções e do painel de tarefas e executar o código no documento aberto](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) para ver um exemplo maior do tempo de execução compartilhado JavaScript em ação.
+- Explore o exemplo de padrões e práticas [Gerenciar a interface do usuário da faixa de opções e do painel de tarefas e executar o código no documento aberto](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) para conferir um exemplo maior do tempo de execução compartilhado JavaScript em ação.
+- Leia os [Atalhos de teclado personalizados em Suplementos do Office](../design/keyboard-shortcuts.md) para obter informações sobre como adicionar atalhos de teclado personalizados ao seu projeto.
 
 ## <a name="see-also"></a>Confira também
 
