@@ -1,18 +1,18 @@
 ---
-ms.date: 09/25/2020
+ms.date: 11/06/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308534"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071645"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
-Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o [arquivo de metadados JSON](custom-functions-json.md). O uso de marcações JSDoc poupa você do esforço de editar manualmente o arquivo de metadados JSON.
+Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o arquivo de metadados JSON. O uso de marcas JSDoc poupa você do esforço de [editar manualmente o arquivo de metadados JSON](custom-functions-json.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -234,7 +234,7 @@ O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` o
 
 ### <a name="returns"></a>@returns
 
-Sintaxe: @returns {_type_}
+Sintaxe: @returns { _type_ }
 
 Fornece o tipo para o valor de retorno.
 
@@ -327,5 +327,5 @@ Saiba mais sobre [convenções de nomenclatura para funções personalizadas](cu
 
 ## <a name="see-also"></a>Confira também
 
-* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

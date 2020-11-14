@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: a318c87cc5b5f45bf3b1f5fe1341b7008f5a3d2f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0f530e9d67894ebbc13c8b8a13e6219571c96ff1
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609787"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071627"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
@@ -20,7 +20,7 @@ O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Par
 
 As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as [simulações do Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
-Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a autogeração, consulte [AutoGenerate metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.
 
@@ -42,5 +42,5 @@ function roll6sided() {
 
 ## <a name="see-also"></a>Confira também
 
-* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

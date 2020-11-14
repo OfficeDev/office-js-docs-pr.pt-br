@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 3ee18eabd19be56eece465da880fae7af1c12f3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609794"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071659"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -45,7 +45,7 @@ Se você vir o erro "Não é possível abrir este suplemento de um localhost", s
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
-Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Para obter mais informações sobre esse processo, consulte [associating function Names with JSON Metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 
@@ -95,5 +95,5 @@ Saiba como [tornar as suas funções personalizadas compatíveis com as funçõe
 
 ## <a name="see-also"></a>Confira também
 
-* [Geração automática de metadados das funções personalizadas](custom-functions-json-autogeneration.md)
+* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

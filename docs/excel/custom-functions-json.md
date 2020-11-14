@@ -1,16 +1,16 @@
 ---
-ms.date: 10/22/2020
+ms.date: 11/06/2020
 description: Definir metadados JSON para funções personalizadas no Excel e associar suas propriedades de ID de função e nome.
-title: Criar metadados JSON para funções personalizadas no Excel
+title: Criar manualmente metadados JSON para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: c676abc3115082fa861a4650b11869009f168e7f
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774744"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071638"
 ---
-# <a name="create-json-metadata-for-custom-functions"></a>Criar metadados JSON para funções personalizadas
+# <a name="manually-create-json-metadata-for-custom-functions"></a>Criar manualmente metadados JSON para funções personalizadas
 
 Conforme descrito no artigo [visão geral das funções personalizadas](custom-functions-overview.md) , um projeto de funções personalizadas deve incluir um arquivo de metadados JSON e um arquivo de script (JavaScript ou TypeScript) para registrar uma função, tornando-a disponível para uso. As funções personalizadas são registradas quando o usuário executa o suplemento pela primeira vez e depois que eles estão disponíveis para o mesmo usuário em todas as pastas de trabalho.
 
@@ -18,7 +18,7 @@ Conforme descrito no artigo [visão geral das funções personalizadas](custom-f
 
 Recomendamos usar a autogeração JSON quando possível, em vez de criar seu próprio arquivo JSON. A autogeração está menos sujeita ao erro do usuário e os `yo office` arquivos do estruturado já incluem isso. Para obter mais informações sobre marcas JSDoc e o processo de autogeração JSON, consulte [AutoGenerate Metadata JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
-No entanto, você pode tornar um projeto de funções personalizadas a partir do zero, mas ele exige:
+No entanto, você pode criar um projeto de funções personalizadas a partir do zero. Esse processo exige:
 
 - Escreva o arquivo JSON.
 - Verifique se o arquivo de manifesto está conectado ao arquivo JSON.
@@ -144,7 +144,7 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 
 | Propriedade      | Tipo de dados | Obrigatório | Descrição                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | Não       | Descrição da função que é exibida aos usuários finais no Excel. Por exemplo, **Converte um valor em Celsius para Fahrenheit** .                                                            |
+| `description` | string    | Não       | Descrição da função que é exibida aos usuários finais no Excel. Por exemplo, **Converte um valor em Celsius para Fahrenheit**.                                                            |
 | `helpUrl`     | string    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Sim      | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada.                                            |
 | `name`        | string    | Sim      | O nome da função que é exibida aos usuários finais no Excel. No Excel, esse nome de função é prefixado pelo namespace de funções personalizadas que é especificado no arquivo de manifesto XML. |
@@ -172,7 +172,7 @@ A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a se
 |  `description`  |  string  |  Não |  Uma descrição do parâmetro. Isso é exibido no IntelliSense do Excel.  |
 |  `dimensionality`  |  string  |  Não  |  Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões).  |
 |  `name`  |  string  |  Sim  |  O nome do parâmetro. Esse nome é exibido no IntelliSense do Excel.  |
-|  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Pode ser **booliano** , **número** , **cadeia de caracteres** ou **qualquer** , que permita usar qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será **qualquer** . |
+|  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Pode ser **booliano** , **número** , **cadeia de caracteres** ou **qualquer** , que permita usar qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será **qualquer**. |
 |  `optional`  | booliano | Não | Se for `true`, o parâmetro será opcional. |
 |`repeating`| booliano | Não | Se `true` , os parâmetros são preenchidos de uma matriz especificada. Observe que funções todos os parâmetros de repetição são considerados parâmetros opcionais por definição.  |
 
@@ -186,7 +186,7 @@ O objeto `result` que define o tipo de informação que é retornado pela funç�
 
 ## <a name="associating-function-names-with-json-metadata"></a>Associar os nomes de função com metadados JSON
 
-Para que uma função funcione corretamente, você precisa associar a propriedade da função à `id` implementação do JavaScript. Verifique se há uma associação, caso contrário, a função não será registrada e não é utilizável no Excel. O exemplo de código a seguir mostra como fazer a Associação usando o `CustomFunctions.associate()` método. A amostra define a função personalizada `add` e associa com o objeto no arquivo de metadados JSON onde o valor da `id` propriedade é **adicionar** .
+Para que uma função funcione corretamente, você precisa associar a propriedade da função à `id` implementação do JavaScript. Verifique se há uma associação, caso contrário, a função não será registrada e não é utilizável no Excel. O exemplo de código a seguir mostra como fazer a Associação usando o `CustomFunctions.associate()` método. A amostra define a função personalizada `add` e associa com o objeto no arquivo de metadados JSON onde o valor da `id` propriedade é **adicionar**.
 
 ```js
 /**

@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a5faa4fd8af2b41a3d79ac1c978a4c550592b27e
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819508"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071666"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -178,6 +178,6 @@ ws.onerror(error){
 
 - [Valores voláteis nas funções](custom-functions-volatile.md)
 - [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
-- [Metadados de funções personalizadas](custom-functions-json.md)
+- [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
 - [Criar funções personalizadas no Excel](custom-functions-overview.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

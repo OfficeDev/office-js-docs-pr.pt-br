@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: ee193ed68ef59bfd9068bc43cd30721d6bb7b86a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609272"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071617"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
@@ -221,7 +221,7 @@ Um parâmetro de intervalo de repetição permite que vários intervalos ou núm
 
 
 ### <a name="declaring-repeating-parameters"></a>Declarando parâmetros de repetição
-No typescript, indique que o parâmetro é multidimensional. Por exemplo, `ADD(values: number[])` indicaria uma matriz unidimensional, `ADD(values:number[][])` indicaria uma matriz bidimensional e assim por diante.
+No typescript, indique que o parâmetro é multidimensional. Por exemplo,  `ADD(values: number[])` indicaria uma matriz unidimensional, `ADD(values:number[][])` indicaria uma matriz bidimensional e assim por diante.
 
 Em JavaScript, use `@param values {number[]}` para matrizes unidimensionais, `@param <name> {number[][]}` para matrizes bidimensionais e assim por diante para mais dimensões.
 
@@ -253,7 +253,7 @@ Saiba como usar [valores voláteis em suas funções personalizadas](custom-func
 ## <a name="see-also"></a>Confira também
 
 * [Receber e tratar dados com funções personalizadas](custom-functions-web-reqs.md)
-* [Metadados de funções personalizadas](custom-functions-json.md)
 * [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

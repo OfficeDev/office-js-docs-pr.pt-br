@@ -1,14 +1,14 @@
 ---
 title: Adicionar e remover os anexos em um suplemento do Outlook
 description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou os itens do Outlook anexados ao item que o usuário está redigindo.
-ms.date: 10/31/2019
+ms.date: 11/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6f146b3efc3234313191d93af05d9c0d35111829
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611670"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071701"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
 
@@ -117,6 +117,11 @@ function addItemAttachment(itemId) {
 > Você pode usar um suplemento de redação para anexar uma instância de um compromisso recorrente no Outlook na Web ou em dispositivos móveis. No entanto, em um cliente avançado do Outlook com suporte, tentar anexar uma instância resultaria na anexação da série recorrente (o compromisso mestre).
 
 ## <a name="get-attachments"></a>Obter anexos
+
+As APIs para obter anexos no modo de composição estão disponíveis no [conjunto de requisitos 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
+
+- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
 Você pode usar o método [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) para obter os anexos da mensagem ou do compromisso que está sendo composto.
 
