@@ -1,16 +1,16 @@
 ---
-ms.date: 10/14/2020
+ms.date: 11/06/2020
 description: Criar uma função personalizada no Excel para o Suplemento do Office.
 title: Criar funções personalizadas no Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741110"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071673"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -50,9 +50,9 @@ Se você usar o [Gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 ### <a name="script-file"></a>Arquivo de script
 
-O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções e comentários que definem a função.
+O arquivo de script ( **./src/functions/functions.js** ou **./src/functions/functions.ts** ) contém o código que define funções e comentários que definem a função.
 
-O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas propriedades de `description`. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas propriedades de `description`. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Gerar automaticamente os metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
+O arquivo de manifesto XML para um suplemento que define funções personalizadas ( **./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
 
 - Define o espaço de nomes das suas funções personalizadas. Um namespace se direciona para suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do seu suplemento.
 - Usa os elementos `<ExtensionPoint>` e `<Resources>` que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
@@ -99,7 +99,7 @@ Quer experimentar funções personalizadas? Confira o simples [início rápido d
 Outra maneira fácil de experimentar as funções personalizadas é usar o [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), que é um suplemento que permite com que você experimente as funções personalizadas diretamente no Excel. Você pode experimentar criar a sua própria função personalizada ou usar os exemplos disponíveis.
 
 ## <a name="see-also"></a>Confira também 
-* [Saiba mais sobre o Programa de Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Requisitos de funções personalizadas](custom-functions-requirement-sets.md)
-* [Diretrizes de nomenclatura](custom-functions-naming.md)
+* [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Conjuntos de requisitos de funções personalizadas](custom-functions-requirement-sets.md)
+* [Diretrizes de nomenclatura de funções personalizadas](custom-functions-naming.md)
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)

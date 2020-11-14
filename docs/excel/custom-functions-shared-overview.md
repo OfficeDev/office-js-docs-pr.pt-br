@@ -3,18 +3,18 @@ ms.date: 08/13/2020
 description: Aprenda a executar funções personalizadas, botões da faixa de opções e código do painel de tarefas no mesmo tempo de execução do JavaScript para coordenar cenários em seu suplemento.
 title: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado.
 localization_priority: Priority
-ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 70d13372dbe3ef40d527c781d0fd55dc0b1eb7ed
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819543"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071624"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>Visão geral: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime"></a>Visão geral: execute seu código de suplemento em um tempo de execução do Javascript compartilhado
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Ao executar o Excel no Windows ou Mac, o suplemento executará o código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de tempo de execução JavaScript separados. Isso cria limitações, como não poder compartilhar facilmente dados globais e não poder acessar todas as funcionalidades do CORS a partir de uma função customizada.
+Ao executar o Excel no Windows ou Mac, o suplemento executará o código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de tempo de execução do JavaScript separados. Isso cria limitações, como não poder compartilhar facilmente dados globais e não poder acessar todas as funcionalidades do CORS a partir de uma função customizada.
 
 No entanto, você pode configurar o suplemento do Excel para compartilhar código no mesmo tempo de execução JavaScript (também conhecido como tempo de execução compartilhado). Isso permite uma melhor coordenação entre o suplemento e o acesso ao DOM e CORS do painel de tarefas de todas as partes do suplemento.
 
