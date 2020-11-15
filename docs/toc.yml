@@ -672,20 +672,34 @@
         - name: Visão Geral
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
-        - name: Introdução às funções personalizadas do Excel
-          href: quickstarts/excel-custom-functions-quickstart-redirect.md
+        - name: Conjuntos de requisitos da API CustomFunctionsRuntime
+          href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
-        - name: Tutorial de funções personalizadas
-          href: tutorials/excel-tutorial-create-custom-functions.md
+        - name: Tutoriais
+          items:
+            - name: Criar seu primeiro suplemento com funções personalizadas
+              href: quickstarts/excel-custom-functions-quickstart-redirect.md
+              displayName: 'Excel, Custom Functions'
+            - name: Tutorial de funções personalizadas
+              href: tutorials/excel-tutorial-create-custom-functions.md
+              displayName: 'Excel, Custom Functions'
+            - name: Compartilhar dados de funções personalizadas com o tutorial do painel de tarefas
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+        - name: Diretrizes de nomenclatura
+          href: excel/custom-functions-naming.md
           displayName: 'Excel, Custom Functions'
-        - name: Dados das funções personalizadas compartilhadas com o tutorial do painel de tarefas
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-          displayName: 'Excel, Custom Functions'
-        - name: Chame APIs do Excel JS a partir da sua função personalizada
-          href: excel/call-excel-apis-from-custom-function.md
+        - name: Opções de parâmetro
+          href: excel/custom-functions-parameter-options.md
           displayName: 'Excel, Custom Functions'
         - name: Tratamento de erros
           href: excel/custom-functions-errors.md
+          displayName: 'Excel, Custom Functions'
+        - name: Gerar automaticamente metadados JSON
+          href: excel/custom-functions-json-autogeneration.md
+          displayName: 'Excel, Custom Functions'
+        - name: Chamar APIs JS do Excel
+          href: excel/call-excel-apis-from-custom-function.md
           displayName: 'Excel, Custom Functions'
         - name: Identificar um XLL equivalente
           href: excel/make-custom-functions-compatible-with-xll-udf.md
@@ -693,29 +707,14 @@
         - name: Localização
           href: excel/custom-functions-localize.md
           displayName: 'Excel, Custom Functions'
-        - name: Metadata
+        - name: Criar metadados JSON manualmente
           href: excel/custom-functions-json.md
           displayName: 'Excel, Custom Functions'
-        - name: Geração de metadados
-          href: excel/custom-functions-json-autogeneration.md
-          displayName: 'Excel, Custom Functions'
-        - name: Diretrizes de nomenclatura
-          href: excel/custom-functions-naming.md
-          displayName: 'Excel, Custom Functions'
-        - name: Opções de parâmetro
-          href: excel/custom-functions-parameter-options.md
-          displayName: 'Excel, Custom Functions'
-        - name: Conjuntos de requisitos
-          href: excel/custom-functions-requirement-sets.md
-          displayName: 'Excel, Custom Functions'
-        - name: Retornar uma matriz dinâmica
+        - name: Devolver uma matriz dinâmica
           href: excel/custom-functions-dynamic-arrays.md
           displayName: 'Excel, Custom Functions'
         - name: Tempo de execução compartilhado
           href: excel/custom-functions-shared-overview.md
-          displayName: 'Excel, Custom Functions'
-        - name: Solução de problemas
-          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
         - name: Funções personalizadas sem IU
           items:
@@ -733,6 +732,9 @@
           displayName: 'Excel, Custom Functions'
         - name: Solicitações da Web
           href: excel/custom-functions-web-reqs.md
+          displayName: 'Excel, Custom Functions'
+        - name: Solução de problemas
+          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
 - name: OneNote
   items:
