@@ -1,20 +1,20 @@
 ---
 title: Elemento CustomTab no arquivo de manifesto
 description: Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.
-ms.date: 01/24/2020
+ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: a81b64a17eeeb463d55024e189b09048b2eb96ac
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 99670b27d963060a008899a8808ca967cfd710a6
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612301"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087935"
 ---
 # <a name="customtab-element"></a>Elemento CustomTab
 
-Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento. Isso pode ser a guia padrão ( **página inicial**, de **mensagem**ou **reunião**) ou em uma guia personalizada definida pelo suplemento.
+Na faixa de opções, especifique a guia e o grupo para os comandos de suplemento. Isso pode ser a guia padrão ( **página inicial**, de **mensagem** ou **reunião**) ou em uma guia personalizada definida pelo suplemento.
 
-Nas guias personalizadas, o suplemento poderá criar até 10 grupos. Cada grupo está limitado a seis controles, independentemente da guia na qual ele aparece. Os suplementos estão limitados a uma guia personalizada.
+Nas guias personalizadas, o suplemento pode ter grupos internos ou personalizados. Os suplementos estão limitados a uma guia personalizada.
 
 O atributo **ID** deve ser exclusivo dentro do manifesto.
 
@@ -25,17 +25,31 @@ O atributo **ID** deve ser exclusivo dentro do manifesto.
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Group](group.md)      | Sim |  Define um grupo de comandos  |
+|  [Group](group.md)      | Não |  Define um grupo de comandos  |
+|  [O Microsoft Office](#officegroup)      | Não |  Representa um grupo de controle interno do Office.  |
 |  [Label](#label-tab)      | Sim |  O rótulo para CustomTab ou Group.  |
+|  [InsertAfter](#insertafter)      | Não |  Especifica que a guia personalizada deve ser imediatamente após uma guia interna especificada do Office.  |
+|  [InsertBefore](#insertbefore)      | Não |  Especifica que a guia personalizada deve ser imediatamente anterior à guia interna especificada do Office.  |
 
 ### <a name="group"></a>Group
 
-Obrigatório. Confira [Elemento Group](group.md)
+Opcional, mas, se não estiver presente, deve haver pelo **menos um elemento** de um. Confira [Elemento Group](group.md) A ordem do **grupo** e do grupo do **Office** no manifesto deve ser a ordem que você deseja que eles apareçam na guia Personalizar. Eles podem ser mesclados se houver vários elementos, mas todos devem estar acima do elemento **rótulo** .
+
+### <a name="officegroup"></a>O Microsoft Office
+
+Opcional, mas se não houver, deve haver pelo menos um elemento de **grupo** . Representa um grupo de controle interno do Office. O atributo **ID** especifica a ID do grupo interno do Office. Para localizar a ID de um grupo interno, confira [localizar as IDs de controles e grupos de controle](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). A ordem do **grupo** e do grupo do **Office** no manifesto deve ser a ordem que você deseja que eles apareçam na guia Personalizar. Eles podem ser mesclados se houver vários elementos, mas todos devem estar acima do elemento **rótulo** .
 
 ### <a name="label-tab"></a>Label (Tab)
 
 Obrigatório. O rótulo da guia personalizado. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
+### <a name="insertafter"></a>InsertAfter
+
+Opcional. Especifica que a guia personalizada deve ser imediatamente após uma guia interna especificada do Office. O valor do elemento é a ID da guia interna, como "TabHome" ou "TabReview". (Consulte [localizar as IDs de controles e grupos de controle](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups).) Se presente, deve ser após o elemento **Label** . Você não pode ter **InsertAfter** e **InsertBefore**.
+
+### <a name="insertbefore"></a>InsertBefore
+
+Opcional. Especifica que a guia personalizada deve ser imediatamente anterior à guia interna especificada do Office. O valor do elemento é a ID da guia interna, como "TabHome" ou "TabReview". (Consulte [localizar as IDs de controles e grupos de controle](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups).)  Se presente, deve ser após o elemento **Label** . Você não pode ter **InsertAfter** e **InsertBefore**.
 
 ## <a name="customtab-example"></a>Exemplo de CustomTab
 
@@ -44,7 +58,9 @@ Obrigatório. O rótulo da guia personalizado. O atributo **Resid** deve ser def
   <CustomTab id="TabCustom1">
     <Group id="msgreadCustomTab.grp1">
     </Group>
+    <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1"/>
+    <InsertAfter>TabReview</InsertAfter>
   </CustomTab>
 </ExtensionPoint>
 ```

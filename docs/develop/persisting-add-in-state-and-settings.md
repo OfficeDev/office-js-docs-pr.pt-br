@@ -1,14 +1,14 @@
 ---
 title: Persistir o estado e as configurações do suplemento
 description: Saiba como manter dados nos aplicativos Web de suplemento do Office em execução no ambiente sem estado de um controle de navegador.
-ms.date: 05/08/2020
+ms.date: 11/13/2020
 localization_priority: Normal
-ms.openlocfilehash: b885c94ed544474f101f290ab321fa12cc45de4c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 90e072d638a3a598610c4bcbb2e6af07f1196467
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293188"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087949"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -17,8 +17,8 @@ ms.locfileid: "47293188"
 Essencialmente, os suplementos do Office são aplicativos Web em execução no ambiente sem estado de um controle de navegador. Como resultado, talvez o suplemento precise persistir dados para manter a continuidade de determinados recursos ou operações entre sessões de uso do suplemento. Por exemplo, o suplemento pode ter configurações personalizadas ou outros valores que precisa salvar e recarregar na próxima vez em que for inicializado, como o modo de exibição preferido ou o local padrão de um usuário. Para fazer isso, você pode:
 
 - Use membros da API JavaScript do Office que armazenam dados como:
-    -  Pares de nome/valor em um recipiente de propriedades armazenado em um local que depende do tipo de suplemento.
-    -  XML personalizado armazenado no documento.
+  - Pares de nome/valor em um recipiente de propriedades armazenado em um local que depende do tipo de suplemento.
+  - XML personalizado armazenado no documento.
 
 - Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
@@ -52,15 +52,12 @@ Este exemplo da estrutura do conjunto de propriedades contém três valores de *
 }
 ```
 
-Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas totalmente na memória usando os `get` `set` métodos, e `remove` do objeto que corresponde ao tipo de configuração que você está criando (**Settings**, **CustomProperties**ou **RoamingSettings**).
-
+Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas totalmente na memória usando os `get` `set` métodos, e `remove` do objeto que corresponde ao tipo de configuração que você está criando (**Settings**, **CustomProperties** ou **RoamingSettings**).
 
 > [!IMPORTANT]
 > Para persistir quaisquer adições, atualizações ou exclusões feitas durante a sessão atual do suplemento para o local de armazenamento, você deve chamar o `saveAsync` método do objeto correspondente usado para trabalhar com esse tipo de configuração. Os `get` `set` métodos, e `remove` operam apenas na cópia na memória do recipiente de propriedades de configurações. Se o suplemento for fechado sem chamadas, as `saveAsync` alterações feitas nas configurações durante essa sessão serão perdidas.
 
-
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas
-
 
 Para persistir as configurações de estado ou personalizadas de um suplemento de conteúdo ou de painel de tarefas para Word, Excel ou PowerPoint, use o objeto [Settings](/javascript/api/office/office.settings) e seus métodos. O conjunto de propriedades criado com os métodos do `Settings` objeto está disponível somente para a instância do suplemento de conteúdo ou de painel de tarefas que o criou, e apenas do documento no qual ele foi salvo.
 
@@ -68,11 +65,9 @@ O `Settings` objeto é carregado automaticamente como parte do objeto [Document]
 
 Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-).
 
-
 ### <a name="creating-or-updating-a-setting-value"></a>Criar ou atualizar um valor de configuração
 
 O exemplo de código a seguir mostra como usar o método [Settings.set](/javascript/api/office/office.settings#set-name--value-) para criar uma configuração chamada `'themeColor'` com um valor `'green'`. O primeiro parâmetro do método set é _name_ (Id) da configuração a ser definida ou criada, que diferencia maiúsculas de minúsculas. O segundo parâmetro é o _value_ da configuração.
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -80,28 +75,24 @@ Office.context.document.settings.set('themeColor', 'green');
 
  A configuração com o nome especificado é criada se ainda não existir, ou seu valor é atualizado se já existir. Use o `Settings.saveAsync` método para manter as configurações novas ou atualizadas no documento.
 
-
 ### <a name="getting-the-value-of-a-setting"></a>Obter o valor de uma configuração
 
 O exemplo a seguir mostra como usar o método [Settings.get](/javascript/api/office/office.settings#get-name-) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do `get` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
-
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
  O `get` método retorna o valor que foi salvo anteriormente para o _nome_ da configuração que foi passado. Se a configuração não existir, o método retornará **null**.
 
-
 ### <a name="removing-a-setting"></a>Remover uma configuração
 
 O exemplo a seguir mostra como usar o método [Settings.remove](/javascript/api/office/office.settings#remove-name-) para remover uma configuração com o nome "themeColor". O único parâmetro do `remove` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
-
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -109,11 +100,9 @@ Office.context.document.settings.remove('themeColor');
 
 Nada acontecerá se a configuração não existir. Use o `Settings.saveAsync` método para persistir a remoção da configuração do documento.
 
-
 ### <a name="saving-your-settings"></a>Salvar suas configurações
 
-Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) para armazená-lo no documento. O único parâmetro do `saveAsync` método é _callback_, que é uma função de retorno de chamada com um único parâmetro. 
-
+Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) para armazená-lo no documento. O único parâmetro do `saveAsync` método é _callback_, que é uma função de retorno de chamada com um único parâmetro.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -125,7 +114,7 @@ Office.context.document.settings.saveAsync(function (asyncResult) {
 });
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -136,7 +125,7 @@ A função anônima passada para o `saveAsync` método como o parâmetro _callba
 > [!NOTE]
 > Esta seção discute as partes XML no contexto da API comum do JavaScript do Office com suporte no Word. A API JavaScript do Excel específica do aplicativo também fornece acesso às partes XML personalizadas. As APIs do Excel e os padrões de programação são um pouco diferentes. Para saber mais, confira [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart).
 
-Há uma opção de armazenamento adicional caso precise armazenar informações que excedem os limites de tamanho do documento Settings ou que tenham um caractere estruturado. Você pode manter a marcação XML personalizada em um suplemento do painel tarefas do Word (e do Excel, mas confira a observação na parte superior desta seção). No Word, use o objeto [CustomXmlPart](/javascript/api/office/office.customxmlpart) e seus métodos (novamente, consulte a observação acima do Excel). O código a seguir cria um componente XML personalizado e exibe sua ID e seu conteúdo no divs na página. Observe que deverá haver um atributo `xmlns` na cadeia de caracteres de XML.
+Há uma opção de armazenamento adicional quando você precisa armazenar informações que excedem os limites de tamanho das configurações do documento ou que têm um caractere estruturado. Você pode manter a marcação XML personalizada em um suplemento do painel tarefas do Word (e do Excel, mas confira a observação na parte superior desta seção). No Word, use o objeto [CustomXmlPart](/javascript/api/office/office.customxmlpart) e seus métodos (novamente, consulte a observação acima do Excel). O código a seguir cria um componente XML personalizado e exibe sua ID e seu conteúdo no divs na página. Observe que deverá haver um atributo `xmlns` na cadeia de caracteres de XML.
 
 ```js
 function createCustomXmlPart() {
@@ -189,10 +178,9 @@ function getReviewers() {
 
 Para obter informações sobre como salvar as configurações em um suplemento do Outlook, consulte [gerenciar o estado e as configurações de um suplemento do Outlook](../outlook/manage-state-and-settings-outlook.md).
 
-
 ## <a name="see-also"></a>Confira também
 
-- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)
 - [Gerenciar o estado e as configurações de um suplemento do Outlook](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

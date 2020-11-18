@@ -1,14 +1,14 @@
 ---
 title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
-ms.date: 01/10/2020
+ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 8798031410e6d71fd6d9f3f08f89a4c6f78f4692
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 35ed1b87162b84ff13cafc2084ce9ca1b1666235
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996379"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087921"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -209,7 +209,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group>
+                        <Group> (can be below <ControlGroup>)
                             <Label>
                             <Icon>
                                 <Image>
@@ -237,7 +237,9 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
                                         <SourceLocation>
                                         <Title>
                                         <FunctionName>
+                        <ControlGroup> (can be above <Group>)
                         <Label>
+                        <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
                         <Control>
                             <Label>
