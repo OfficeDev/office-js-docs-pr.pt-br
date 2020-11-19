@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 10/03/2020
+ms.date: 11/01/2020
 localization_priority: Priority
-ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 3d7d99f05e9b02712a4f416b891d3be38875525b
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370504"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087963"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -59,9 +59,24 @@ Você pode especificar se o comando está ativado ou desativado quando o supleme
 > [!NOTE]
 > Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
 
+### <a name="position-on-the-ribbon-preview"></a>Posição na faixa de opções (visualização)
+
+Você pode especificar onde uma guia personalizada é exibida na faixa de opções do aplicativo do Office, como "à direita da guia Página inicial".
+
+> [!NOTE]
+> Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para saber mais, confira [Posicionar uma guia personalizada na faixa de opções](custom-tab-placement.md).
+
+### <a name="integration-of-built-in-office-buttons-preview"></a>Integração de botões internos do Office (visualização)
+
+Você pode inserir os botões internos da faixa de opções do Office em seus grupos de comandos personalizados e nas guias personalizadas da faixa de opções.
+
+> [!NOTE]
+> Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para saber mais, confira [Integrar os botões internos do Office em guias personalizadas](built-in-button-integration.md).
+
+
 ## <a name="supported-platforms"></a>Plataformas compatíveis
 
-Os comandos de suplemento atualmente têm suporte nas seguintes plataformas.
+Os comandos de suplemento são atualmente suportados nas plataformas a seguir, exceto para limitações especificadas nas subseções de [Recursos de comandos](#command-capabilities) anteriores.
 
 - Office no Windows (Build 16.0.6769 ou superior, conectado a uma assinatura do Microsoft 365)
 - Office 2019 no Windows
@@ -88,6 +103,8 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
     - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior.
     - Nomeie seu grupo de acordo com o nome do seu suplemento. Se você tiver vários grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.
     - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.
+    - Não posicione uma guia personalizada à esquerda da guia Página inicial ou dê a ela o foco por padrão quando o documento for aberto, a menos que seu suplemento seja a principal maneira como os usuários vão interagir com o documento. Dar destaque excessivo as inconveniências do seu suplemento e incomodar os usuários e os administradores.
+    - Se o seu suplemento for a principal maneira como os usuários interagem com o documento e você tiver uma guia personalizada na faixa de opções, considere integrar na guia os botões das funções do Office que os usuários frequentemente precisarão.
 
      > [!NOTE]
      > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](/legal/marketplace/certification-policies).
