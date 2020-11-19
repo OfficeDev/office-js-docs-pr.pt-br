@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo atualizado para suplementos do Office
 description: Obter diretrizes para usar ícones de ícone de estilo atualizado em suplementos do Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 7f29de70712448e9ee7458db864fb40746412153
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d6acd2b0b17be7b00f14d63c73714c6dc83d45b7
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093928"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132204"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo atualizado para suplementos do Office
 
@@ -47,7 +47,7 @@ Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos difer
 
 Não se esqueça de redesenhar seus ícones para cada tamanho em vez de reduzi-los para que caibam.
 
-![Ilustração que mostra a recomendação de redimensionar os ícones em vez de reduzi-los](../images/icon-resizing.png)
+![Ilustração da recomendação para redesenhar ícones por tamanho, em vez de reduzir ícones. Por exemplo, você pode precisar usar menos elementos em um ícone pequeno, em vez de simplesmente dimensionar uma imagem maior.](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -78,18 +78,18 @@ The following table lists the locations for certain icon sizes.
 
 ## <a name="icon-anatomy-and-layout"></a>Anatomia e layout do ícone
 
-Os ícones do Office são geralmente compostos por um elemento básico com modificadores conceituais e de ação sobrepostos. Os modificadores de ação representam conceitos como adicionar, abrir, novo ou fechar. Os modificadores conceituais representam status, alteração ou uma descrição do ícone.
+Os ícones do Office são geralmente compostos de um elemento base com modificadores de ação e conceituais sobrepostos. Os modificadores de ação representam conceitos como adicionar, abrir, novo ou fechar. Os modificadores conceituais representam status, alteração ou uma descrição do ícone.
 
 Para criar comandos que se alinhem à interface do usuário do Office, siga as diretrizes de layout para o elemento básico e os modificadores. Isso garante que seus comandos tenham uma aparência profissional e seus clientes confiem no seu suplemento. Se você fizer exceções a essas diretrizes, faça intencionalmente.
 
 A imagem a seguir mostra o layout de elementos básicos e modificadores em um ícone do Office.
 
-![Imagem mostrando o elemento básico de um ícone no centro com um modificador no canto inferior direito e um modificador de ação no canto superior esquerdo](../images/icon-layouts.png)
+![Diagrama mostrando um elemento base Icon no centro com um modificador no canto inferior direito e um modificador de ação no canto superior esquerdo](../images/icon-layouts.png)
 
 - Elementos básicos centrais no quadro do pixel com preenchimento todo vazio.
 - Coloque modificadores de ação na parte superior esquerda.
 - Coloque modificadores conceituais no canto inferior direito.
-- Limite o número de elementos em seus ícones. Com 32 px, limite o número de modificadores a no máximo dois. Com 16 px, limite o número de modificadores a um.
+- Limite o número de elementos em seus ícones. Em 32 px, limite o número de modificadores para um máximo de dois. Em 16 px, limite o número de modificadores a um.
 
 ### <a name="base-element-padding"></a>Preenchimento do elemento básico
 
@@ -97,18 +97,18 @@ Coloque elementos básicos com tamanhos consistentes. Se os elementos básicos n
 
 ### <a name="modifiers"></a>Modificadores
 
-Todos os modificadores devem ter um recorte transparente de 1 px entre cada elemento, incluindo a tela de fundo. Os elementos não devem se sobrepor diretamente. Crie um espaço em branco entre as regras e as bordas. Os modificadores podem variar um pouco de tamanho, mas use essas dimensões como ponto de partida.
+Todos os modificadores devem ter um recorte transparente de 1 px entre cada elemento, incluindo o plano de fundo. Os elementos não devem se sobrepor diretamente. Crie um espaço em branco entre as regras e as bordas. Os modificadores podem variar um pouco de tamanho, mas use essas dimensões como ponto de partida.
 
-|**Tamanho do ícone**|**Preenchimento em torno do elemento básico**|**Tamanho do modificador**|
+|Tamanho do ícone|Preenchimento em torno do elemento básico|Tamanho do modificador|
 |:---|:---|:---|
-|16px|,0|9px|
-|20px|1px|10px|
-|24px|1px|12px|
-|32px|2px|14px|
-|40px|2px|20px|
-|48px|3px|22px|
-|64px|5px|29px|
-|80px|5px|38px|
+|16 px|,0|9 px|
+|20 px|1px|10 px|
+|24 px|1px|12 px|
+|32 px|2px|14 px|
+|40 px|2px|20 px|
+|48 px|3px|22 px|
+|64 px|5px|29 px|
+|80 px|5px|38 px|
 
 ## <a name="icon-colors"></a>Cores do ícone
 
@@ -117,32 +117,32 @@ Todos os modificadores devem ter um recorte transparente de 1 px entre cada elem
 
 Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor:
 
-- Use cor para transmitir significado, não como enfeite. Ela deve destacar ou enfatizar uma ação, status ou um elemento que diferencie explicitamente a marca. 
+- Use cor para transmitir significado, não como enfeite. Ela deve destacar ou enfatizar uma ação, status ou um elemento que diferencie explicitamente a marca.
 - Se possível, use somente uma cor além do cinza. Limite as cores adicionais a no máximo duas.
-- As cores devem ter uma aparência consistente em todos os tamanhos de ícone. Os ícones do Office têm paletas de cores um pouco diferentes para tamanhos de ícones diferentes. Ícones com 16 px e menores são um pouco mais escuros e mais vibrantes do que os ícones de 32 px e maiores. Sem esses ajustes sutis, as cores parecem variar entre os tamanhos.
+- As cores devem ter uma aparência consistente em todos os tamanhos de ícone. Os ícones do Office têm paletas de cores um pouco diferentes para tamanhos de ícones diferentes. 16 px e ícones menores são levemente mais escuros e mais vibrantes do que 32 px e ícones maiores. Sem esses ajustes sutis, as cores parecem variar entre os tamanhos.
 
-|**Nome da cor**|**RGB**|**Hex**|**Cor**|**Categoria**|
+|Nome da cor|RGB|Hex|Cor|Categoria|
 |:---|:---|:---|:---|:---|
-|Texto Cinza (80)|80, 80, 80|#505050| ![Imagem colorida texto cinza 80](../images/color-text-gray-80.png) |Texto|
-|Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Imagem colorida texto cinza 95](../images/color-text-gray-95.png) |Texto|
-|Texto Cinza (105)|105, 105, 105|#696969| ![Imagem colorida texto cinza 105](../images/color-text-gray-105.png) |Texto|
-|Cinza Escuro 32|128, 128, 128|#808080| ![Imagem colorida cinza escuro 32](../images/color-dark-gray-32.png) |32 e acima|
-|Cinza Médio 32|158, 158, 158|#9E9E9E| ![Imagem colorida cinza médio 32](../images/color-medium-gray-32.png) |32 e acima|
-|Cinza Claro TODO|179, 179, 179|#B3B3B3| ![Imagem colorida cinza claro todo](../images/color-light-gray-all.png) |Todos os tamanhos|
-|Cinza Escuro 16|114, 114, 114|#727272| ![Imagem colorida cinza escuro 16](../images/color-dark-gray-16.png) |16 e abaixo|
-|Cinza Médio 16|144, 144, 144|#909090| ![Imagem colorida cinza médio 16](../images/color-medium-gray-16.png) |16 e abaixo|
-|Azul 32|77, 130, 184|#4d82B8| ![Imagem colorida azul 32](../images/color-blue-32.png) |32 e acima|
-|Azul 16|74, 125, 177|#4A7DB1| ![Imagem colorida azul 16](../images/color-blue-16.png) |16 e abaixo|
-|Amarelo TODO|234, 194, 130|#EAC282| ![Imagem colorida amarelo todo](../images/color-yellow-all.png) |Todos os tamanhos|
-|Laranja 32|231, 142, 70|#E78E46| ![Imagem colorida laranja 32](../images/color-orange-32.png) |32 e acima|
-|Laranja 16|227, 142, 70|#E3751C| ![Imagem colorida laranja 16](../images/color-orange-16.png) |16 e abaixo|
-|Rosa TODO|230, 132, 151|#E68497| ![Imagem colorida rosa todo](../images/color-pink-all.png) |Todos os tamanhos|
-|Verde 32|118, 167, 151|#76A797| ![Imagem colorida verde 32](../images/color-green-32.png) |32 e acima|
-|Verde 16|104, 164, 144|#68A490| ![Imagem colorida verde 16](../images/color-green-16.png) |16 e abaixo|
-|Vermelho 32|216, 99, 68|#D86344| ![Imagem colorida vermelho 32](../images/color-red-32.png) |32 e acima|
-|Vermelho 16|214, 85, 50|#D65532| ![Imagem colorida vermelho 16](../images/color-red-16.png) |16 e abaixo|
-|Roxo 32|152, 104, 185|#9868B9| ![Imagem colorida roxo 32](../images/color-purple-32.png) |32 e acima|
-|Roxo 16|137, 89, 171|#8959AB| ![Imagem colorida roxo 16](../images/color-purple-16.png) |16 e abaixo|
+|Texto Cinza (80)|80, 80, 80|#505050| ![Cor cinza 80 para texto](../images/color-text-gray-80.png) |Texto|
+|Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Cor cinza 95 para texto](../images/color-text-gray-95.png) |Texto|
+|Texto Cinza (105)|105, 105, 105|#696969| ![Cor cinza 105 para texto](../images/color-text-gray-105.png) |Texto|
+|Cinza Escuro 32|128, 128, 128|#808080| ![Cor cinza escuro para 32 px e maior](../images/color-dark-gray-32.png) |32 px e superior|
+|Cinza Médio 32|158, 158, 158|#9E9E9E| ![Cor cinza médio para 32 px e maior](../images/color-medium-gray-32.png) |32 px e superior|
+|Cinza Claro TODO|179, 179, 179|#B3B3B3| ![Cor cinza claro para todos os tamanhos de imagem](../images/color-light-gray-all.png) |Todos os tamanhos|
+|Cinza Escuro 16|114, 114, 114|#727272| ![Cor cinza escuro para 16 px e menor](../images/color-dark-gray-16.png) |16 px e abaixo|
+|Cinza Médio 16|144, 144, 144|#909090| ![Cor cinza médio para 16 px e menor](../images/color-medium-gray-16.png) |16 e abaixo|
+|Azul 32|77, 130, 184|#4d82B8| ![Cor azul para 32 px e maior](../images/color-blue-32.png) |32 px e superior|
+|Azul 16|74, 125, 177|#4A7DB1| ![Cor azul para 16 px e menor](../images/color-blue-16.png) |16 px e abaixo|
+|Amarelo TODO|234, 194, 130|#EAC282| ![Cor amarela para todos os tamanhos de imagem](../images/color-yellow-all.png) |Todos os tamanhos|
+|Laranja 32|231, 142, 70|#E78E46| ![Cor laranja para 32 px e maior](../images/color-orange-32.png) |32 px e superior|
+|Laranja 16|227, 142, 70|#E3751C| ![Cor laranja para 16 px e menor](../images/color-orange-16.png) |16 px e abaixo|
+|Rosa TODO|230, 132, 151|#E68497| ![Cor rosa para todos os tamanhos de imagem](../images/color-pink-all.png) |Todos os tamanhos|
+|Verde 32|118, 167, 151|#76A797| ![Cor verde para 32 px e maior](../images/color-green-32.png) |32 px e superior|
+|Verde 16|104, 164, 144|#68A490| ![Cor verde para 16 px e menor](../images/color-green-16.png) |16 px e abaixo|
+|Vermelho 32|216, 99, 68|#D86344| ![Cor vermelha para 32 px e maior](../images/color-red-32.png) |32 px e superior|
+|Vermelho 16|214, 85, 50|#D65532| ![Cor vermelha para 16 px e menor](../images/color-red-16.png) |16 px e abaixo|
+|Roxo 32|152, 104, 185|#9868B9| ![Cor roxa para 32 px e maior](../images/color-purple-32.png) |32 px e superior|
+|Roxo 16|137, 89, 171|#8959AB| ![Cor roxa para 16 px e menor](../images/color-purple-16.png) |16 px e abaixo|
 
 ## <a name="icons-in-high-contrast-modes"></a>Ícones em modos de alto contraste
 

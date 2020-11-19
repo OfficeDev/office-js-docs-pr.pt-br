@@ -3,28 +3,24 @@ title: Associar a regiões em um documento ou em uma planilha
 description: Saiba como usar a associação para garantir o acesso consistente a uma região ou um elemento específico de um documento ou planilha por meio de um identificador.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8fe754dedc2313f2a56dab71491dbdf8026085e1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1db267e7adc1e6b5f33dec644164d061ce6fb4a9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608387"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131925"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
 
 O acesso a dados baseado em associação permite que os suplementos de conteúdo e de painéis de tarefas acessem determinada região de um documento ou planilha por meio de um identificador. Primeiro, o suplemento precisa estabelecer a associação. Para isso, ele chama um dos métodos que associa uma parte do documento a um identificador exclusivo: [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Depois que a associação é estabelecida, o suplemento pode usar o identificador fornecido para acessar os dados contidos na região associada do documento ou da planilha. A criação de associações proporciona o seguinte valor para o seu suplemento:
 
-
 - Permite o acesso a estruturas comuns de dados em aplicativos compatíveis do Office, como: tabelas, intervalos ou texto (uma execução contígua de caracteres).
-
 - Habilita operações de leitura/gravação sem exigir que o usuário realize uma seleção.
-
 - Estabelece uma relação entre o suplemento e os dados presentes no documento. As associações estão presentes no documento e podem ser acessadas em um momento posterior.
 
 A criação de uma associação também permite que você se inscreva em eventos de alteração de seleção e de dados que apresentem um escopo definido para essa região específica do documento ou da planilha. Isso significa que o suplemento só é notificado sobre alterações que ocorrem dentro da região associada, e não sobre alterações gerais que ocorrem em todo o documento ou planilha.
 
 O objeto [Bindings] expõe um método [getAllAsync], que dá acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID, usando o método Bindings.[getByIdAsync] ou [Office.select]. Você pode estabelecer novas associações e remover as existentes usando um dos seguintes métodos do objeto [Bindings]: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync] ou [releaseByIdAsync].
-
 
 ## <a name="binding-types"></a>Tipos de associação
 
@@ -34,7 +30,7 @@ Há [três tipos diferentes de associações][Office. BindingType] que você esp
 
     No Word, a maioria das seleções contíguas são válidas, enquanto no Excel apenas as seleções de células únicas podem ser usadas para uma associação de texto. No Excel, só há suporte para texto sem formatação. No Word, há suporte para três formatos: texto sem formatação, HTML e Open XML do Office.
 
-2. **[Matrix Binding][matrixbinding] ** -vincula a uma região fixa de um documento que contém dados tabulares sem cabeçalhos. Os dados em uma vinculação de matriz são gravados ou lidos como uma **matriz**dimensional de duas dimensões, que em JavaScript é implementada como uma matriz de matrizes. Por exemplo, duas linhas de valores **string** em duas colunas podem ser gravadas ou lidas como ` [['a', 'b'], ['c', 'd']]`, e uma única coluna de três linhas pode ser gravada ou lida como `[['a'], ['b'], ['c']]`.
+2. **[Matrix Binding][matrixbinding]** -vincula a uma região fixa de um documento que contém dados tabulares sem cabeçalhos. Os dados em uma vinculação de matriz são gravados ou lidos como uma **matriz** dimensional de duas dimensões, que em JavaScript é implementada como uma matriz de matrizes. Por exemplo, duas linhas de valores **string** em duas colunas podem ser gravadas ou lidas como `[['a', 'b'], ['c', 'd']]`, e uma única coluna de três linhas pode ser gravada ou lida como `[['a'], ['b'], ['c']]`.
 
     No Excel, qualquer seleção contígua de células pode ser usada para estabelecer uma associação de matriz. No Word, apenas as tabelas dão suporte à associação de matriz.
 
@@ -50,7 +46,6 @@ Depois que uma associação é criada usando um dos três métodos "addfrom" do 
 ## <a name="add-a-binding-to-the-users-current-selection"></a>Adicionar uma associação à seleção atual do usuário
 
 O exemplo a seguir mostra como adicionar uma associação de texto chamada `myBinding` à seleção atual em um documento usando o método [addFromSelectionAsync].
-
 
 ```js
 Office.context.document.bindings.addFromSelectionAsync(Office.BindingType.Text, { id: 'myBinding' }, function (asyncResult) {
@@ -77,7 +72,6 @@ A função anônima transmitida para a função como o parâmetro _callback_ fin
 
 O exemplo a seguir mostra como adicionar uma associação de texto chamada `myBinding` usando o método [addFromPromptAsync]. Este método permite ao usuário especificar o intervalo da associação usando o prompt de seleção de intervalo interno do aplicativo.
 
-
 ```js
 function bindFromPrompt() {
     Office.context.document.bindings.addFromPromptAsync(Office.BindingType.Text, { id: 'myBinding' }, function (asyncResult) {
@@ -99,21 +93,17 @@ Neste exemplo, o tipo de associação especificado é texto. Isso significa que 
 
 O segundo parâmetro é um objeto que contém a ID da nova associação que está sendo criada. Se uma ID não for especificada, uma será gerada automaticamente.
 
-A função anônima transmitida para a função como o terceiro parâmetro _callback_ é executada quando a criação da associação é concluída. Quando a função de retorno de chamada é executada, o objeto [AsyncResult] contém o status da chamada e a associação recém-criada.
+A função anônima passada para a função como o terceiro parâmetro de _retorno de chamada_ é executado quando a criação da associação é concluída. Quando a função de retorno de chamada é executada, o objeto [AsyncResult] contém o status da chamada e a vinculação recém-criada.
 
 A Figura 1 mostra o prompt de seleção do intervalo interno no Excel.
 
-
 *Figura 1. Selecionar IU de Dados do Excel*
 
-![Excel Select Data UI](../images/agave-api-overview-excel-selection-ui.png)
-
+![Captura de tela mostrando a caixa de diálogo selecionar dados](../images/agave-api-overview-excel-selection-ui.png)
 
 ## <a name="add-a-binding-to-a-named-item"></a>Adicionar uma associação a um item nomeado
 
-
 O exemplo a seguir mostra como adicionar uma associação ao `myRange` Item nomeado existente como uma associação "Matrix" usando o método [addFromNamedItemAsync] e atribui a associação `id` como "myMatrix".
-
 
 ```js
 function bindNamedItem() {
@@ -135,12 +125,10 @@ function write(message){
 
 **Para o Excel**, o `itemName` parâmetro do método [addFromNamedItemAsync] pode se referir a um intervalo nomeado existente, um intervalo especificado com o estilo de `A1` referência `("A1:A3")` ou uma tabela. Por padrão, a adição de uma tabela no Excel atribui o nome "Tabela1" à primeira tabela que você adicionar, "Tabela2" para a segunda tabela adicionada e assim por diante. Para atribuir um nome significativo para uma tabela na interface do usuário do Excel, use a `Table Name` Propriedade nas **ferramentas de tabela | Guia Design** da faixa de opções.
 
-
 > [!NOTE]
-> No Excel, ao especificar uma tabela como um item nomeado, você deve qualificar totalmente o nome para incluir o nome da planilha no nome da tabela neste formato:`"Sheet1!Table1"`
+> No Excel, ao especificar uma tabela como um item nomeado, você deve qualificar totalmente o nome para incluir o nome da planilha no nome da tabela neste formato: `"Sheet1!Table1"`
 
 O exemplo a seguir cria uma associação no Excel com as três primeiras células na coluna A ( `"A1:A3"` ), atribui a ID `"MyCities"` e, em seguida, grava três nomes de cidades nessa associação.
-
 
 ```js
  function bindingFromA1Range() {
@@ -172,7 +160,6 @@ Por padrão, um controle de conteúdo não tem `Title*` valor atribuído. Para a
 
 O exemplo a seguir cria uma associação de texto no Word para um controle de conteúdo de Rich Text denominado `"FirstName"` , atribui a **ID** `"firstName"` e, em seguida, exibe essas informações.
 
-
 ```js
 function bindContentControl() {
     Office.context.document.bindings.addFromNamedItemAsync('FirstName', 
@@ -194,9 +181,7 @@ function write(message){
 
 ## <a name="get-all-bindings"></a>Obter todas as associações
 
-
 O exemplo a seguir mostra como obter todas as associações em um documento usando o método Bindings.[getAllAsync].
-
 
 ```js
 Office.context.document.bindings.getAllAsync(function (asyncResult) {
@@ -215,18 +200,15 @@ function write(message){
 
 A função anônima que é passada para a função como o `callback` parâmetro é executada quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult` , que contém uma matriz de associações no documento. A matriz é repetida para criar uma cadeia de caracteres contendo as IDs das vinculações. A cadeia de caracteres é, então, exibida em uma caixa de mensagem.
 
-
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obter uma associação por ID usando o método getByIdAsync do objeto Bindings
 
-
 O exemplo a seguir mostra como usar o método [getByIdAsync] para obter uma associação em um documento ao especificar sua ID. Este exemplo supõe que uma associação nomeada `'myBinding'` foi adicionada ao documento usando um dos métodos descritos anteriormente neste tópico.
-
 
 ```js
 Office.context.document.bindings.getByIdAsync('myBinding', function (asyncResult) {
     if (asyncResult.status == Office.AsyncResultStatus.Failed) {
         write('Action failed. Error: ' + asyncResult.error.message);
-    } 
+    }
     else {
         write('Retrieved binding with type: ' + asyncResult.value.type + ' and id: ' + asyncResult.value.id);
     }
@@ -242,12 +224,9 @@ No exemplo, o primeiro `id` parâmetro é a ID da associação a ser recuperada.
 
 A função anônima que é passada para a função como o segundo parâmetro de _retorno de chamada_ é executada quando a operação é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o status da chamada e as vinculações com a ID "myBinding".
 
-
 ## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Obter uma associação pela ID usando o método selecionado do objeto Office
 
-
 O exemplo a seguir mostra como usar o método [Office.select] para obter a promessa de um objeto [Binding] em um documento especificando sua ID em uma cadeia de caracteres do seletor. Em seguida, chama o método Binding.[getDataAsync] para obter os dados na associação especificada. Este exemplo supõe que uma associação denominada `'myBinding'` foi adicionada ao documento usando um dos métodos descritos anteriormente neste tópico.
-
 
 ```js
 Office.select("bindings#myBinding", function onError(){}).getDataAsync(function (asyncResult) {
@@ -270,7 +249,6 @@ function write(message){
 
 ## <a name="release-a-binding-by-id"></a>Liberar uma associação pela ID
 
-
 O exemplo a seguir mostra como usar o método [releaseByIdAsync] para liberar uma associação em um documento, especificando sua ID.
 
 ```js
@@ -288,12 +266,9 @@ No exemplo, o primeiro parâmetro `id` é a ID da associação a liberar.
 
 A função anônima que é transmitida para a função como o segundo parâmetro é um retorno de chamada executado quando a operação é concluída. A função é chamada com um único parâmetro, [asyncResult], que contém o status da chamada.
 
-
 ## <a name="read-data-from-a-binding"></a>Ler os dados de uma associação
 
-
 O exemplo a seguir mostra como usar o método [getDataAsync] para obter dados de uma associação existente.
-
 
 ```js
 myBinding.getDataAsync(function (asyncResult) {
@@ -310,15 +285,13 @@ function write(message){
 }
 ```
 
- `myBinding` é uma variável que contém uma associação de texto existente no documento. Como alternativa, é possível usar [Office.select] para acessar a associação pela ID, e iniciar sua chamada para o método [getDataAsync], assim: 
+`myBinding` é uma variável que contém uma associação de texto existente no documento. Como alternativa, é possível usar [Office.select] para acessar a associação pela ID, e iniciar sua chamada para o método [getDataAsync], assim: 
 
-```js 
+```js
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-
 A função anônima transmitida para a função é um retorno de chamada executado quando a operação é concluída. A propriedade [AsyncResult].value contém os dados em `myBinding`. O tipo do valor depende do tipo de associação. A associação neste exemplo é uma associação de texto. Portanto, o valor conterá uma cadeia de caracteres. Para obter mais exemplos de como trabalhar com as associações de tabela e matriz, confira o tópico do método [getDataAsync].
-
 
 ## <a name="write-data-to-a-binding"></a>Gravar dados em uma associação
 
@@ -328,7 +301,7 @@ O exemplo a seguir mostra como usar o método [setDataAsync] para definir os dad
 myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 ```
 
- `myBinding` é uma variável que contém uma associação de texto existente no documento.
+`myBinding` é uma variável que contém uma associação de texto existente no documento.
 
 No exemplo, o primeiro parâmetro é o valor a ser definido `myBinding` . Como esta é uma associação de texto, o valor é uma `string`. Diferentes tipos de associação aceitam diferentes tipos de dados.
 
@@ -337,12 +310,9 @@ A função anônima que é transmitida para a função é um retorno de chamada 
 > [!NOTE]
 > A partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao escrever e atualizar dados em tabelas associadas](../excel/excel-add-ins-tables.md).
 
-
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detectar alterações nos dados ou a seleção em uma associação
 
-
 O exemplo a seguir mostra como anexar um manipulador de eventos ao evento [DataChanged](/javascript/api/office/office.binding) de uma associação com uma id "MyBinding".
-
 
 ```js
 function addHandler() {
@@ -360,7 +330,7 @@ function write(message){
 
 `myBinding` é uma variável que contém uma associação de texto existente no documento.
 
-O primeiro parâmetro _EventType_ do método [addHandlerAsync] especifica o nome do evento a ser inscrito. [Office.EventType] é uma enumeração de valores de tipos de eventos disponíveis. `Office.EventType.BindingDataChanged`avalia a cadeia de caracteres "bindingDataChanged".
+O primeiro parâmetro _EventType_ do método [addHandlerAsync] especifica o nome do evento a ser inscrito. [Office.EventType] é uma enumeração de valores de tipos de eventos disponíveis. `Office.EventType.BindingDataChanged` avalia a cadeia de caracteres "bindingDataChanged".
 
 A `dataChanged` função que é passada para a função como o segundo parâmetro _Handler_ é um manipulador de eventos que é executado quando os dados na associação são alterados. A função é chamada com um único parâmetro, _eventArgs_, que contém uma referência para a vinculação. Essa associação pode ser usada para recuperar os dados atualizados.
 
@@ -368,12 +338,9 @@ Da mesma forma, é possível detectar quando um usuário altera a seleção em u
 
 Você pode adicionar vários manipuladores de eventos para um determinado evento chamando o método [addHandlerAsync] novamente e transmitindo uma função do manipulador de eventos adicional para o parâmetro `handler`. Isso funcionará corretamente, contanto que o nome de cada função do manipulador de eventos seja exclusivo.
 
-
 ### <a name="remove-an-event-handler"></a>Remover um manipulador de eventos
 
-
 Para remover um manipulador de eventos de um evento, chame o método [removeHandlerAsync] passando o tipo de evento como o primeiro parâmetro _eventType_ e o nome da função do manipulador de eventos a remover como o segundo parâmetro _handler_. Por exemplo, a função a seguir removerá a função de manipulador de eventos `dataChanged` adicionada no exemplo da seção anterior.
-
 
 ```js
 function removeEventHandlerFromBinding() {
@@ -382,14 +349,12 @@ function removeEventHandlerFromBinding() {
 }
 ```
 
-
 > [!IMPORTANT]
 > Se o parâmetro _Handler_ opcional for omitido quando o método [removeHandlerAsync] for chamado, todos os manipuladores de eventos para o especificado `eventType` serão removidos.
 
-
 ## <a name="see-also"></a>Confira também
 
-- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md) 
+- [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Programação assíncrona nos Suplementos do Office](asynchronous-programming-in-office-add-ins.md)
 - [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 
@@ -416,7 +381,6 @@ function removeEventHandlerFromBinding() {
 [Office.select]:        /javascript/api/office 
 [Office.EventType]:     /javascript/api/office/office.eventtype 
 [Document.bindings]:    /javascript/api/office/office.document
-
 
 [TableBinding.rowCount]: /javascript/api/office/office.tablebinding
 [BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs

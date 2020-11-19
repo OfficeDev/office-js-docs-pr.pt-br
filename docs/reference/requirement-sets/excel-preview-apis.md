@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as futuras APIs JavaScript do Excel.
-ms.date: 11/09/2020
+ms.date: 11/17/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7617ef03d7ef6b0ef6dcd1dbe12e88b58e1228fe
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 083741d35d3e881c2e46b186c4e93591bf7f4834
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996540"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131763"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -23,6 +23,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 |:--- |:--- |:--- |
 | Tipos de dados vinculados | Adiciona suporte para tipos de dados conectados ao Excel a partir de fontes externas. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | Exibições de planilha nomeadas | Fornece controle programático de modos de exibição de planilha por usuário. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+| Tarefas | Transforme comentários em tarefas atribuídas aos usuários. | [Tarefa](/javascript/api/excel/excel.task) |
 
 ## <a name="api-list"></a>Lista de APIs
 
@@ -30,6 +31,12 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask (email: cadeia de caracteres)](/javascript/api/excel/excel.comment#assigntask-email-)|Atribui a tarefa anexada ao comentário para o usuário fornecido como o único destinatário.|
+||[getTask ()](/javascript/api/excel/excel.comment#gettask--)|Obtém a tarefa associada a este comentário.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Obtém a tarefa associada a este comentário.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask (email: cadeia de caracteres)](/javascript/api/excel/excel.commentreply#assigntask-email-)|Atribui a tarefa anexada ao comentário para o usuário fornecido como o único destinatário.|
+||[getTask ()](/javascript/api/excel/excel.commentreply#gettask--)|Obtém a tarefa associada a este comentário.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|Obtém a tarefa associada a este comentário.|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[DataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|O nome do provedor de dados para o tipo de dados vinculados.|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|A data e a hora da zona de tempo local desde que a pasta de trabalho foi aberta quando o tipo de dados vinculados foi atualizado pela última vez.|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|O nome do tipo de dados vinculados.|
@@ -93,11 +100,61 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Obtém a ID da tabela na qual o filtro é aplicado.|
 ||[tipo](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtém a ID da planilha que contém a tabela.|
+|[Tarefa](/javascript/api/excel/excel.task)|[AddAssigne (email: cadeia de caracteres)](/javascript/api/excel/excel.task#addassignee-email-)|Adiciona um destinatário à tarefa.|
+||[applyChanges (taskChanges: Excel. TaskChanges)](/javascript/api/excel/excel.task#applychanges-taskchanges-)|Aplica as alterações determinadas à tarefa.|
+||[destinatários](/javascript/api/excel/excel.task#assignees)|Obtém os usuários aos quais a tarefa é atribuída.|
+||[Retire](/javascript/api/excel/excel.task#comment)|Obtém o comentário associado à tarefa.|
+||[dueDate](/javascript/api/excel/excel.task#duedate)|Obtém a data e hora de conclusão da tarefa.|
+||[historyRecords](/javascript/api/excel/excel.task#historyrecords)|Obtém os registros de histórico da tarefa.|
+||[id](/javascript/api/excel/excel.task#id)|Obtém a ID da tarefa.|
+||[percentComplete](/javascript/api/excel/excel.task#percentcomplete)|Obtém a porcentagem de conclusão da tarefa.|
+||[prioridade](/javascript/api/excel/excel.task#priority)|Obtém a prioridade da tarefa.|
+||[startDate](/javascript/api/excel/excel.task#startdate)|Obtém a data e hora de início da tarefa.|
+||[title](/javascript/api/excel/excel.task#title)|Obtém o título da tarefa.|
+||[removeAllAssignees()](/javascript/api/excel/excel.task#removeallassignees--)|Remove todos os destinatários da tarefa.|
+||[removeAssignee (email: cadeia de caracteres)](/javascript/api/excel/excel.task#removeassignee-email-)|Remove um destinatário da tarefa.|
+||[setPercentComplete (PorcentagemConcluída: número)](/javascript/api/excel/excel.task#setpercentcomplete-percentcomplete-)|Altera a conclusão da tarefa.|
+||[SetPriority (prioridade: número)](/javascript/api/excel/excel.task#setpriority-priority-)|Altera a prioridade da tarefa.|
+||[setStartDateAndDueDate (startDate: Date, dueDate: Date)](/javascript/api/excel/excel.task#setstartdateandduedate-startdate--duedate-)|Altera as datas de início e de conclusão da tarefa.|
+||[setTitle (título: cadeia de caracteres)](/javascript/api/excel/excel.task#settitle-title-)|Altera o título da tarefa.|
+|[TaskChanges](/javascript/api/excel/excel.taskchanges)|[dueDate](/javascript/api/excel/excel.taskchanges#duedate)|Define uma nova data de conclusão para a tarefa, no fuso horário UTC.|
+||[emailsToAssign](/javascript/api/excel/excel.taskchanges#emailstoassign)|Define endereços de email dos usuários a serem atribuídos à tarefa.|
+||[emailsToUnassign](/javascript/api/excel/excel.taskchanges#emailstounassign)|Define endereços de email dos usuários para cancelar a atribuição da tarefa.|
+||[percentComplete](/javascript/api/excel/excel.taskchanges#percentcomplete)|Define uma nova porcentagem de conclusão para a tarefa.|
+||[prioridade](/javascript/api/excel/excel.taskchanges#priority)|Define uma nova prioridade para a tarefa.|
+||[removeAllPreviousAssignees](/javascript/api/excel/excel.taskchanges#removeallpreviousassignees)|Define se a alteração deve remover todos os destinatários anteriores da tarefa.|
+||[startDate](/javascript/api/excel/excel.taskchanges#startdate)|Define uma nova data de início para a tarefa, no fuso horário UTC.|
+||[title](/javascript/api/excel/excel.taskchanges#title)|Define um novo título para a tarefa.|
+|[Taskcollection](/javascript/api/excel/excel.taskcollection)|[getCount()](/javascript/api/excel/excel.taskcollection#getcount--)|Obtém o número de tarefas na coleção.|
+||[getItem(key: string)](/javascript/api/excel/excel.taskcollection#getitem-key-)|Obtém uma tarefa usando sua ID.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskcollection#getitemat-index-)|Obtém uma tarefa por seu índice na coleção.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.taskcollection#getitemornullobject-key-)|Obtém uma tarefa usando sua ID.|
+||[items](/javascript/api/excel/excel.taskcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[TaskHistoryRecord](/javascript/api/excel/excel.taskhistoryrecord)|[AnchorID](/javascript/api/excel/excel.taskhistoryrecord#anchorid)|Representa a ID do objeto para o qual a tarefa é ancorada (por exemplo, commentId para tarefas anexadas a comentários).|
+||[destinatário](/javascript/api/excel/excel.taskhistoryrecord#assignee)|Representa o usuário atribuído à tarefa para um tipo de registro de "Assign", ou o usuário para cancelar a atribuição da tarefa para um tipo de registro de "cancelamento de atribuição".|
+||[attributionUser](/javascript/api/excel/excel.taskhistoryrecord#attributionuser)|Representa o usuário que criou ou alterou a tarefa.|
+||[dueDate](/javascript/api/excel/excel.taskhistoryrecord#duedate)|Representa a data de conclusão da tarefa.|
+||[historyRecordCreatedDate](/javascript/api/excel/excel.taskhistoryrecord#historyrecordcreateddate)|Representa a data de criação do registro de histórico de tarefas.|
+||[id](/javascript/api/excel/excel.taskhistoryrecord#id)|ID do registro de histórico.|
+||[percentComplete](/javascript/api/excel/excel.taskhistoryrecord#percentcomplete)|Representa a porcentagem de conclusão da tarefa.|
+||[prioridade](/javascript/api/excel/excel.taskhistoryrecord#priority)|Representa a prioridade da tarefa.|
+||[startDate](/javascript/api/excel/excel.taskhistoryrecord#startdate)|Representa a data de início da tarefa.|
+||[title](/javascript/api/excel/excel.taskhistoryrecord#title)|Representa o título da tarefa.|
+||[type](/javascript/api/excel/excel.taskhistoryrecord#type)|Representa o tipo de registro do histórico de tarefas.|
+||[undoHistoryId](/javascript/api/excel/excel.taskhistoryrecord#undohistoryid)|Representa a propriedade TaskHistoryRecord.id que foi desfeita para o tipo de registro de histórico "desfazer".|
+|[TaskHistoryRecordCollection](/javascript/api/excel/excel.taskhistoryrecordcollection)|[getCount()](/javascript/api/excel/excel.taskhistoryrecordcollection#getcount--)|Obtém o número de registros de histórico na coleção para a tarefa.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskhistoryrecordcollection#getitemat-index-)|Obtém um registro de histórico de tarefas usando seu índice na coleção.|
+||[items](/javascript/api/excel/excel.taskhistoryrecordcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[Usuário](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|Representa o nome para exibição do usuário.|
+||[email](/javascript/api/excel/excel.user#email)|Representa o endereço de email do usuário.|
+||[uid](/javascript/api/excel/excel.user#uid)|Representa a ID exclusiva do usuário.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da pasta de trabalho.|
+||[tarefas](/javascript/api/excel/excel.workbook#tasks)|Retorna uma coleção de tarefas que estão presentes na pasta de trabalho.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da tabela dinâmica é mostrado no nível da pasta de trabalho.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Retorna uma coleção de modos de exibição de planilha que estão presentes na planilha.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando o filtro é aplicado em uma planilha específica.|
+||[tarefas](/javascript/api/excel/excel.worksheet#tasks)|Retorna uma coleção de tarefas que estão presentes na planilha.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[tipo](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Obtém o tipo do evento.|

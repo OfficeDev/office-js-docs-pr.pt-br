@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o logon único (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: a72cef54083499cbf1f772dd7258a1cac1fd42c6
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 553477e3045aa6482688ad4fd2489f50d5f2b98d
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651948"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131945"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -40,14 +40,13 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
 > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Complete" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
 
-
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade v2.0 do Azure AD
 
 1. Acesse a página [Portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar o seu aplicativo.
 
-1. Entre com as credenciais de ***administrador*** em seu Microsoft 365 locação. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as credenciais do **_admin_* _ no seu Microsoft 365 locação. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
-1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
+1. Selecione _ * novo registro * *. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
     * Defina **Nome** para `Office-Add-in-ASPNET-SSO`.
     * Defina **Tipos de conta com suporte** para **Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**. (Se você quiser que o suplemento possa ser usado somente por usuários no locatário em que você está os registrando, escolha **Contas somente neste diretório organizacional...**, mas execute algumas etapas adicionais. Confira **Configuração para locatário único** abaixo.)
@@ -71,10 +70,10 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Preencha os campos para configurar os prompts de consentimento de usuário e administrador com os valores que são apropriados para o `access_as_user` escopo, o que permite que o aplicativo cliente do Office Use as APIs Web do seu suplemento com os mesmos direitos que o usuário atual. Sugestões:
 
-    - **Título de autorização de administrador:** Office pode funcionar como o usuário.
-    - **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-    - **Título de autorização de usuário:** O Office pode funcionar como se fosse você.
-    - **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que você possui.
+    * **Título de autorização de administrador:** Office pode funcionar como o usuário.
+    * **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
+    * **Título de autorização de usuário:** O Office pode funcionar como se fosse você.
+    * **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que você possui.
 
 1. Verifique se o **Estado** está definido como **Habilitado**.
 
@@ -85,11 +84,11 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Na seção **Aplicativos clientes autorizados**, você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada.
 
-    - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
-    - `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
+    * `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
     Para cada ID, siga estas etapas:
 
@@ -114,11 +113,11 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 1. Na mesma página, escolha o botão **conceder permissão de administrador para [nome do locatário]** e, em seguida, selecione **Aceitar** para a confirmação exibida.
 
     > [!NOTE]
-    > Depois de escolher **Conceder consentimento de administrador para [nome do locatário]**, você verá uma mensagem solicitando que você tente novamente alguns minutos depois, para que a solicitação de consentimento possa ser construída. Em caso afirmativo, você pode começar a trabalhar na próxima seção, ***mas não se esqueça de voltar para o portal e pressionar este botão***!
+    > Depois de escolher **Conceder consentimento de administrador para [nome do locatário]**, você verá uma mensagem solicitando que você tente novamente alguns minutos depois, para que a solicitação de consentimento possa ser construída. Em caso afirmativo, você pode começar a trabalhar na próxima seção,*_mas não se esquecer de voltar ao portal e pressionar este botão_* _!
 
 ## <a name="configure-the-solution"></a>Configurar a solução
 
-1. Na raiz da pasta **Before** (antes), abra o arquivo de solução (.sln) no **Visual Studio**. Clique com o botão direito do mouse no nó superior no **Gerenciador de Soluções** (no nó Solução, não em qualquer um dos nós do projeto) e selecione **Configurar projetos de inicialização**.
+1. Na raiz da pasta _ *antes* de *, abra o arquivo de solução (. sln) no **Visual Studio**. Clique com o botão direito do mouse no nó superior no **Gerenciador de Soluções** (no nó Solução, não em qualquer um dos nós do projeto) e selecione **Configurar projetos de inicialização**.
 
 1. Em **Propriedades Comuns**, selecione **Projeto de Inicialização** e **Vários projetos de inicialização**. Verifique se a **Ação** para ambos os projetos está definida como **Iniciar** e se o projeto terminado em "...WebAPI" está listado primeiro. Feche a caixa de diálogo.
 
@@ -149,7 +148,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 1. Substitua o espaço reservado "{$application_GUID here$}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. Os sinais "$" não fazem parte da ID, portanto não os inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
 
   > [!NOTE]
-  > O valor **Recurso** é o**URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
+  > O valor **Recurso** é o **URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
 1. Salve e feche o arquivo.
 
@@ -572,9 +571,9 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 1. Substitua `TODO 3b` pelo código a seguir. Sobre este código, observe:
 
     * Se a chamada para o Azure AD contiver pelo menos um escopo (permissão) que não tenha sido consentido pelo usuário ou por um administrador de locatários (ou se o consentimento foi revogado), o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS65001`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
-    *  Se a chamada para o Azure AD contiver pelo menos um escopo que Azure AD não reconhece, o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS70011`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
-    *  A descrição completa é incluída porque 70011 é retornado em outras condições e ele deverá ser processado neste suplemento somente quando significar que há um escopo inválido.
-    *  O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** contendo as informações de erro seja incluída na resposta HTTP.
+    * Se a chamada para o Azure AD contiver pelo menos um escopo que Azure AD não reconhece, o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS70011`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
+    * A descrição completa é incluída porque 70011 é retornado em outras condições e ele deverá ser processado neste suplemento somente quando significar que há um escopo inválido.
+    * O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** contendo as informações de erro seja incluída na resposta HTTP.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))
@@ -583,7 +582,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     }
     ```
 
-1. Substitua `TODO 3c` pelo seguinte código para lidar com todas as outras **MsalServiceException**s. Conforme observado anteriormente,
+1. Substitua `TODO 3c` pelo seguinte código para lidar com todas as outras **MsalServiceException** s. Conforme observado anteriormente,
 
     ```csharp
     else

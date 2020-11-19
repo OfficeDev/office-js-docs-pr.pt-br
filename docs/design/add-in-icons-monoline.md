@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monoline para suplementos do Office
 description: Obter diretrizes para usar ícones de ícone de estilo monoline em suplementos do Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: f5e2125494fde21f22f82bee8252e79a3396c773
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 264aa9e01bd70924cfee01a864c515c8c7a4d138
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293041"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132197"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monoline para suplementos do Office
 
@@ -22,21 +22,21 @@ As diretrizes a seguir são para desenvolvedores de terceiros que desejam criar 
 
 ### <a name="design-principles"></a>Princípios de design
 
--   Simples, limpo, claro.
--   Conter apenas elementos necessários.
--   Estilo de ícone do Windows inspirado.
--   Acessível a todos os usuários.
+- Simples, limpo, claro.
+- Conter apenas elementos necessários.
+- Estilo de ícone do Windows inspirado.
+- Acessível a todos os usuários.
 
 #### <a name="conveying-meaning"></a>Transmitir significado
 
--   Use elementos descritivos, como uma página para representar um documento ou envelope para representar emails.
--   Use o mesmo elemento para representar o mesmo conceito, ou seja, mail é sempre representado por um envelope, não um carimbo.
--   Use uma metáfora principal durante o desenvolvimento do conceito.
+- Use elementos descritivos, como uma página para representar um documento ou envelope para representar emails.
+- Use o mesmo elemento para representar o mesmo conceito, ou seja, mail é sempre representado por um envelope, não um carimbo.
+- Use uma metáfora principal durante o desenvolvimento do conceito.
 
 #### <a name="reduction-of-elements"></a>Redução dos elementos
 
--   Reduza o ícone ao seu significado principal, usando apenas os elementos essenciais para a metáfora.
--   Limitar o número de elementos em um ícone a dois, independentemente do tamanho do ícone.
+- Reduza o ícone ao seu significado principal, usando apenas os elementos essenciais para a metáfora.
+- Limitar o número de elementos em um ícone a dois, independentemente do tamanho do ícone.
 
 #### <a name="consistency"></a>Consistência
 
@@ -56,15 +56,15 @@ Monolinha é um estilo mínimo limpo. Tudo usa cor plana, o que significa que n�
 
 ### <a name="sizes"></a>Coincidi
 
-Recomendamos que você produza cada ícone em todos esses tamanhos para suportar dispositivos DPI alto. Os tamanhos absolutamente *exigidos* são 16px, 20px e medianiz 32px, já que são os tamanhos 100%.
+Recomendamos que você produza cada ícone em todos esses tamanhos para suportar dispositivos DPI alto. Os tamanhos absolutamente *necessários* são 16 px, 20 px e 32 px, pois esses são os tamanhos de 100%.
 
-**16px, 20px, medianiz 24px, medianiz 32px, 40px, 48px, 64px, 80px, 96px**
+**16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 ### <a name="layout"></a>Layout
 
 Veja a seguir um exemplo de layout de ícone com um modificador.
 
-![Exemplo de ícone com modificador](../images/monolineicon1.png)  ![O mesmo exemplo com textos explicativos de plano de fundo de grade para base, modificador, enchimento e recorte.](../images/monolineicon2.png)
+![Diagrama de ícone com modificador no canto inferior direito](../images/monolineicon1.png)  ![Diagrama do mesmo ícone com plano de fundo de grade e textos explicativos adicionados para base, modificador, enchimento e recorte](../images/monolineicon2.png)
 
 #### <a name="elements"></a>Elementos
 
@@ -72,58 +72,60 @@ Veja a seguir um exemplo de layout de ícone com um modificador.
 
 - **Modificador** Qualquer elemento que sobrepõe a base; ou seja, um modificador que normalmente representa uma ação ou um status. Ele modifica o elemento base agindo como uma adição, alteração ou descritor.
 
-![Grade com as áreas de área base e modificador.](../images/monolineicon3.png)
+![Diagrama de grade com áreas de base e modificadores chamadas out](../images/monolineicon3.png)
 
 ### <a name="construction"></a>Construção
 
 #### <a name="element-placement"></a>Posicionamento do elemento
 
-Os elementos base são colocados no centro do ícone dentro do preenchimento. Se ele não puder ser colocado perfeitamente centralizado, a base deverá ter um erro no canto superior direito. No exemplo a seguir, o ícone está perfeitamente centralizado:
+Os elementos base são colocados no centro do ícone dentro do preenchimento. Se ele não puder ser colocado perfeitamente centralizado, a base deverá ter um erro no canto superior direito. No exemplo a seguir, o ícone está perfeitamente centralizado.
 
-![Imagem mostrando o ícone perfeitamente centralizado](../images/monolineicon4.png)
+![Diagrama mostrando o ícone perfeitamente centralizado](../images/monolineicon4.png)
 
 No exemplo a seguir, o ícone é erring à esquerda.
 
-![Imagem mostrando o ícone que ERRs à esquerda](../images/monolineicon5.png)
+![Diagrama mostrando o ícone que ERRs à esquerda em 1 px](../images/monolineicon5.png)
 
 Modificadores quase sempre são colocados no canto inferior direito da tela de ícones. Em alguns casos raros, os modificadores são colocados em um canto diferente. Por exemplo, se o elemento base não puder ser reconhecível com o modificador no canto inferior direito, considere colocá-lo no canto superior esquerdo.
 
-![Imagem mostrando alguns ícones com o modificador no canto inferior direito, mas um com o modificador no canto superior esquerdo](../images/monolineicon6.png)
+![Diagrama mostrando quatro ícones com o modificador no canto inferior direito e um ícone com o modificador na parte superior esquerda](../images/monolineicon6.png)
 
 #### <a name="padding"></a>Padding
 
-Cada ícone de tamanho tem uma quantidade especificada de preenchimento em torno do ícone. O elemento base permanece dentro do preenchimento, mas o modificador deve arredondar para a borda da tela, estendendo-o para fora do preenchimento---para a borda da borda do ícone. As imagens a seguir mostram o preenchimento recomendado a ser usado para cada um dos tamanhos de ícone.
+Cada ícone de tamanho tem uma quantidade especificada de preenchimento em torno do ícone. O elemento base permanece dentro do preenchimento, mas o modificador deve arredondar para a borda da tela, estendendo-o de fora do preenchimento para a borda da borda do ícone. As imagens a seguir mostram o preenchimento recomendado a ser usado para cada um dos tamanhos de ícone.
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![ícone 16 px com enchimento 0 px](../images/monolineicon7.png)|![ícone de 20 px com enchimento de 1 px](../images/monolineicon8.png)|![ícone de 24 PX com enchimento de 1 px](../images/monolineicon9.png)|![32 px Icon com preenchimento de 2 px](../images/monolineicon10.png)|![40 PX Icon com preenchimento de 2 px](../images/monolineicon11.png)|![48 PX ícone com preenchimento de 3 px](../images/monolineicon12.png)|![64 PX Icon com preenchimento de 4 px](../images/monolineicon13.png)|![80 PX Icon com preenchimento de 5 px](../images/monolineicon14.png)|![96 PX Icon com preenchimento de 6 px](../images/monolineicon15.png)|
+|![ícone 16 px com preenchimento 0px](../images/monolineicon7.png)|![ícone de 20 px com preenchimento 1 px](../images/monolineicon8.png)|![ícone de 24 PX com preenchimento 1 px](../images/monolineicon9.png)|![32 px Icon com preenchimento 2 px](../images/monolineicon10.png)|![40 PX Icon com preenchimento 2 px](../images/monolineicon11.png)|![48 PX Icon com preenchimento 3 px](../images/monolineicon12.png)|![64 PX Icon com preenchimento 4px](../images/monolineicon13.png)|![80 PX Icon com preenchimento 5px](../images/monolineicon14.png)|![96 PX Icon com preenchimento 6px](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>Espessuras de linha
 
 Monolinha é um estilo dominado por formas de linha e contorno. Dependendo de qual tamanho você está produzindo, o ícone deve usar os pesos de linha a seguir.
 
-|**Tamanho do ícone:**|**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
+|Tamanho do ícone:|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**Espessura da linha:**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-||![ícone 16 px](../images/monolineicon16.png)|![ícone de 20 px](../images/monolineicon17.png)|![ícone de 24 px](../images/monolineicon18.png)|![ícone da 32 px](../images/monolineicon19.png)|![ícone da 40 px](../images/monolineicon20.png)|![ícone da 48 px](../images/monolineicon21.png)|![ícone da 64 px](../images/monolineicon22.png)|![ícone da 80 px](../images/monolineicon23.png)|![ícone da 96 px](../images/monolineicon24.png)|
+|**Ícone de exemplo:**|![ícone 16 px](../images/monolineicon16.png)|![ícone de 20 px](../images/monolineicon17.png)|![ícone de 24 px](../images/monolineicon18.png)|![ícone da 32 px](../images/monolineicon19.png)|![ícone da 40 px](../images/monolineicon20.png)|![ícone da 48 px](../images/monolineicon21.png)|![ícone da 64 px](../images/monolineicon22.png)|![ícone da 80 px](../images/monolineicon23.png)|![ícone da 96 px](../images/monolineicon24.png)|
 
 #### <a name="cutouts"></a>Recortes
 
 Quando um elemento Icon é colocado na parte superior de outro elemento, um recorte (do elemento inferior) é usado para fornecer espaço entre os dois elementos, principalmente para fins de legibilidade. Isso geralmente ocorre quando um modificador é colocado na parte superior de um elemento base, mas também há casos em que nenhum dos elementos é um modificador. Esses recortes entre os dois elementos são, às vezes, chamados de "Gap".
 
-O tamanho da lacuna deve ter a mesma largura que a espessura da linha usada nesse tamanho. Se estiver fazendo um ícone de 16px, a largura do espaço seria 1 px e, se for um ícone 48px, a lacuna deverá ser 2 px. O exemplo a seguir mostra um ícone medianiz 32px com uma lacuna de 1 px entre o modificador e a base subjacente.
+O tamanho da lacuna deve ter a mesma largura que a espessura da linha usada nesse tamanho. Se estiver fazendo um ícone de 16 px, a largura do espaço seria 1 px e, se for um ícone de 48 px, a lacuna deverá ser 2 px. O exemplo a seguir mostra um ícone de 32 px com uma lacuna de 1 px entre o modificador e a base subjacente.
 
-![medianiz 32px com uma lacuna de 1 px entre o modificador e a base de base](../images/monolineicon25.png)
+![32 px Icon com uma lacuna de 1 px entre o modificador e a base subjacente](../images/monolineicon25.png)
 
-Em alguns casos, a lacuna pode ser aumentada em 1/2 px se o modificador tiver uma borda diagonal ou curva e a lacuna padrão não fornecer separação suficiente. Isso provavelmente afetará somente os ícones com espessura de linha 1 px; 16px, 20px, medianiz 24px e medianiz 32px.
+Em alguns casos, a lacuna pode ser aumentada por uma 1/2 px se o modificador tiver uma borda diagonal ou curva e a lacuna padrão não fornecer separação suficiente. Isso provavelmente afetará somente os ícones com espessura de linha 1 PX: 16 px, 20 px, 24 PX e 32 px.
 
 #### <a name="background-fills"></a>Preenchimentos de plano de fundo
 
-A maioria dos ícones no conjunto de ícones monoline exige preenchimentos de plano de fundo. No entanto, há casos em que o objeto não teria um preenchimento naturalmente, portanto, nenhum preenchimento deve ser aplicado. Os ícones a seguir têm um preenchimento branco:
+A maioria dos ícones no conjunto de ícones monoline exige preenchimentos de plano de fundo. No entanto, há casos em que o objeto não teria um preenchimento naturalmente, portanto, nenhum preenchimento deve ser aplicado. Os ícones a seguir têm um preenchimento branco.
 
-![Cinco ícones têm um preenchimento branco](../images/monolineicon26.png)
+![Compilação de cinco ícones com preenchimento branco](../images/monolineicon26.png)
 
-Os ícones a seguir não têm preenchimento. (O ícone de engrenagem é incluído para mostrar que o orifício central não está preenchido.) ![Cinco ícones sem preenchimento](../images/monolineicon27.png)
+Os ícones a seguir não têm preenchimento. (O ícone de engrenagem é incluído para mostrar que o orifício central não está preenchido.)
+
+![Compilação de cinco ícones sem preenchimento](../images/monolineicon27.png)
 
 ##### <a name="best-practices-for-fills"></a>Práticas recomendadas para preenchimentos
 
@@ -147,9 +149,9 @@ A paleta de cores foi projetada para simplificar e acessibilidade. Ele contém 4
 
 #### <a name="palette"></a>Paleta
 
-![Quatro tonalidades de cinza em monolinha](../images/monoline-grayshades.png)
+![Quatro tonalidades de cinza em monolinha: cinza escuro para autônomo ou contorno, cinza médio para contorno ou conteúdo, cinza muito claro para preenchimento de plano de fundo e cinza claro para preenchimento](../images/monoline-grayshades.png)
 
-![A paleta de cores em monoline](../images/monoline-colors.png)
+![A paleta de cores em monoline inclui uma tonalidade azul, verde, amarelo, vermelho e roxo para autônomo, contorno e preenchimento](../images/monoline-colors.png)
 
 #### <a name="how-to-use-color"></a>Como usar cores
 
@@ -161,7 +163,7 @@ Na paleta de cores monoline, todas as cores têm variações autônomas, de estr
 
 A seguir estão exemplos de como usar cores.
 
-![Três ícones com cor em uma borda ou preenchimento ou ambos](../images/monolineicon28.png)
+![Compilação de três ícones com cor em uma borda ou preenchimento ou ambos](../images/monolineicon28.png)
 
 A situação mais comum será ter um elemento usando cinza escuro autônomo com preenchimento de plano de fundo.
 
@@ -174,20 +176,19 @@ Ao usar um preenchimento colorido, ele sempre deve estar com sua cor de contorno
 
 A cor deve ser usada para transmitir o significado do ícone, em vez de um ornamento. Ela deve **realçar a ação** para o usuário. Quando um modificador é adicionado a um elemento base que tem cor, o elemento base é normalmente transformado em cinza escuro e preenchimento de plano de fundo para que o modificador possa ser o elemento de cor, como o caso abaixo com o modificador "X" sendo adicionado à base da imagem no ícone da extrema esquerda do conjunto a seguir.
 
-![Cinco ícones que usam cores](../images/monolineicon29.png)
+![Compilação de cinco ícones que usam cores](../images/monolineicon29.png)
 
 Você deve limitar seus ícones a **uma** cor adicional, diferente da estrutura de tópicos e do preenchimento mencionados acima. No entanto, é possível usar mais cores se for vital para a metáfora, com um limite de duas cores adicionais além de cinza. Em casos raros, há exceções quando são necessárias mais cores. Estes são bons exemplos de ícones que usam apenas uma cor.
 
-  ![Uma imagem de cinco ícones com uma cor cada](../images/monolineicon30.png)
+  ![Compilação de cinco ícones que cada um usa uma cor](../images/monolineicon30.png)
 
 Mas os ícones a seguir usam muitas cores.
 
-  ![Uma imagem de cinco ícones com várias cores](../images/monolineicon31.png)
-
+  ![Compilação de cinco ícones que cada um usa várias cores](../images/monolineicon31.png)
 
 Use **cinza médio** para "conteúdo" interno, como linhas de grade em um ícone de uma planilha. Cores interiores adicionais são usadas quando o conteúdo precisa mostrar o comportamento do controle.
 
-![Cinco ícones com elementos interiores de cinza médio](../images/monolineicon32.png)
+![Compilação de cinco ícones com elementos interiores de cinza médio](../images/monolineicon32.png)
 
 #### <a name="text-lines"></a>Linhas de texto
 

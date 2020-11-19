@@ -3,12 +3,12 @@ title: Obter o JavaScript IntelliSense no Visual Studio 2019
 description: Saiba como usar o JSDoc para criar o IntelliSense para suas variáveis de JavaScript, objetos, parâmetros e valores de retorno.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 963945c3ac627ab48fe8b491cd778e9cab973e16
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 495e43994d78b1e01374e348e6d21d41d9611212
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608157"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131805"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obter o JavaScript IntelliSense no Visual Studio 2019
 
@@ -48,7 +48,8 @@ A técnica básica é incluir antes da variável (ou do parâmetro e assim por d
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![IntelliSense para variável](../images/intellisense-vs17-var.png)
+
+![Captura de tela mostrando o trecho do IntelliSense para a variável ' subsetrange '](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>Parâmetro
 
@@ -58,7 +59,8 @@ function myFunc(paragraphs){
 
 }
 ```
-![IntelliSense para parâmetro](../images/intellisense-vs17-param.png)
+
+![Captura de tela mostrando o trecho do IntelliSense para o parâmetro ' parares ' (parâmetro ' Paragraphs ' no exemplo JavaScript)](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -68,7 +70,8 @@ function myFunc() {
 
 }
 ```
-![IntelliSense para valor de retorno](../images/intellisense-vs17-return.png)
+
+![Captura de tela mostrando o trecho do IntelliSense para ' myFunc () ' valor de retorno](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>Tipos complexos
 
@@ -80,7 +83,8 @@ function myFunc() {
 
 }
 ```
-![IntelliSense para tipo complexo](../images/intellisense-vs17-complex-type.png)
+
+![Captura de tela mostrando o IntelliSense para declaração de tipo complexo de ' var Minhavar; ' por exemplo](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ce0482e108e7b8774442a2b0669a0e76bb401f9
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740858"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132176"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -19,13 +19,12 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 ## <a name="provide-clear-value"></a>Fornecer um valor claro
 
 - Crie suplementos que ajudem os usuários a concluir tarefas de forma rápida e eficiente. Concentre-se nos cenários que fazem sentido para aplicativos do Office. Por exemplo:
- - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
- - Habilite novos cenários no Office.
- - Inserir serviços complementares nos aplicativos do Office.
- - Melhore a experiência do Office para aumentar a produtividade.
+  - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
+  - Habilite novos cenários no Office.
+  - Inserir serviços complementares nos aplicativos do Office.
+  - Melhore a experiência do Office para aumentar a produtividade.
 - Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
 - Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
-
 
 ## <a name="create-an-engaging-first-run-experience"></a>Criar uma experiência envolvente na primeira execução
 
@@ -37,11 +36,11 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
 - Forneça uma interface do usuário informativa e torne sua interface do usuário pessoal.
 
-   ![Uma captura de tela que mostra um painel de tarefas de suplemento com etapas de introdução ao lado de um suplemento sem etapas de introdução](../images/contoso-part-catalog-do-dont.png)
+  ![Captura de tela mostrando uma comparação "do" vs. "não". O exemplo "do" mostra um suplemento que inclui um botão que os usuários podem clicar para começar. O exemplo "não" mostra um suplemento sem procedimentos introdutórios ou botões.](../images/contoso-part-catalog-do-dont.png)
 
 - Se seu suplemento de conteúdo estiver vinculado a dados no documento do usuário, inclua exemplos de dados ou um modelo para mostrar aos usuários o formato de dados a ser usado.
 
-   ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../images/add-in-title.png)
+  ![Captura de tela mostrando uma comparação "do" vs. "não". O exemplo "do" mostra um suplemento que inclui um botão que os usuários podem clicar para inserir dados de exemplo. O exemplo "não" mostra um suplemento sem dados de exemplo ou botões.](../images/add-in-title.png)
 
 - Ofereça [avaliações gratuitas](/office/dev/store/decide-on-a-pricing-model). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 
@@ -100,7 +99,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Certifique-se de que todas as interações do usuário respondam em menos de um segundo.
 
--  Forneça indicadores de carregamento para operações com longa execução.
+- Forneça indicadores de carregamento para operações com longa execução.
 
 - Use uma CDN para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
 
@@ -108,7 +107,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Se o tempo de execução das operações demorar, forneça feedback aos usuários. Observe os limites relacionados na tabela a seguir. Saiba mais em [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md).
 
-  |**Classe de interação**|**Destino**|**Limite superior**|**Percepção humana**|
+  |Classe de interação|Target|Limite superior|Percepção humana|
   |:-----|:-----|:-----|:-----|
   |Instantâneo|<=50 ms|100 ms|Nenhum atraso considerável.|
   |Rápida|50 – 100 ms.|200 ms|Atraso mínimo considerável. Não são necessários comentários.|
@@ -142,4 +141,4 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-- [Saiba mais sobre o programa de desenvolvedor 365 da Microsoft](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

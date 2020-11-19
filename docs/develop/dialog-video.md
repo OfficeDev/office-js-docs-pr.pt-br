@@ -3,12 +3,12 @@ title: Use a caixa de diálogo do Office para reproduzir um vídeo
 description: Saiba como abrir e reproduzir um vídeo na caixa de diálogo do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e150206b60fdff852621971fd4417ff9bdfe7eb3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f0d524996b105061b8e5d1b584d8b3e0d44eec7c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608164"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131770"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Usar a caixa de diálogo do Office para mostrar um vídeo
 
@@ -19,7 +19,7 @@ Este artigo explica como reproduzir um vídeo em uma caixa de diálogo do suplem
 
 Para reproduzir um vídeo em uma caixa de diálogo com a API de diálogo do Office, siga estas etapas:
 
-1. Criar uma página contendo um iframe e nenhum outro conteúdo. A página deve estar no mesmo domínio que a página host. Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). No `src` atributo do iframe, aponte para a URL de um vídeo online. O protocolo da URL do vídeo deve ser HTTPS. Neste artigo, chamaremos esta página "Video. DialogBox. html". Veja a seguir um exemplo da marcação:
+1. Criar uma página contendo um iframe e nenhum outro conteúdo. A página deve estar no mesmo domínio que a página host. Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). No `src` atributo do iframe, aponte para a URL de um vídeo online. O protocolo da URL do vídeo deve ser HTTPS. Neste artigo, chamaremos esta página "video.dialogbox.html". Veja a seguir um exemplo da marcação:
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"
@@ -33,4 +33,4 @@ Para reproduzir um vídeo em uma caixa de diálogo com a API de diálogo do Offi
 
 Para ver um exemplo de reprodução de vídeo em uma caixa de diálogo, confira o [padrão de design do roteiro de vídeo](../design/first-run-experience-patterns.md#video-placemat).
 
-![Captura de tela de um vídeo sendo executado em uma caixa de diálogo de suplemento](../images/video-placemats-dialog-open.png)
+![Captura de tela mostrando um vídeo reproduzindo em uma caixa de diálogo de suplemento na frente do Excel](../images/video-placemats-dialog-open.png)

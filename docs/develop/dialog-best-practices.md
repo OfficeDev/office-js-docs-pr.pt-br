@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como as práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: ffd609175276dc648805469847288fd2ff4f825c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279494"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131784"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -43,7 +43,7 @@ Para obter as práticas recomendadas no design da caixa de diálogo, consulte [c
 
 A tentativa de exibir uma caixa de diálogo ao usar o Office na Web pode fazer com que o bloqueador de pop-up do navegador bloqueie a caixa de diálogo. O Office na Web tem um recurso que permite que as caixas de diálogo do suplemento sejam uma exceção para o bloqueador de pop-ups do navegador. Quando o código chamar o `displayDialogAsync` método, o Office na Web abrirá um prompt semelhante ao seguinte.
 
-![O prompt que um suplemento pode gerar para evitar bloqueadores de pop-ups no navegador.](../images/dialog-prompt-before-open.png)
+![Captura de tela mostrando o prompt com uma breve descrição e os botões de permitir e ignorar que um suplemento pode gerar para evitar bloqueadores de pop-ups no navegador](../images/dialog-prompt-before-open.png)
 
 Se o usuário escolher **permitir**, a caixa de diálogo do Office será aberta. Se o usuário escolher **ignorar**, o prompt será fechado e a caixa de diálogo do Office não será aberta. Em vez disso, o `displayDialogAsync` método retorna o erro 12009. O código deve capturar esse erro e fornecer uma experiência alternativa que não requer uma caixa de diálogo ou exibir uma mensagem para o usuário que avisa que o suplemento exige que eles permitam a caixa de diálogo. (Para saber mais sobre 12009, confira [erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 

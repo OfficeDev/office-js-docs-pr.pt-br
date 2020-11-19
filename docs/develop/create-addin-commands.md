@@ -3,12 +3,12 @@ title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos de interface do usuário, adicionar botões ou listas e realizar ações.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 9257e7ba840db31149ae606c7f2c072c433140ad
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292894"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131914"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -29,7 +29,9 @@ Este artigo descreve como editar seu manifesto para definir comandos de suplemen
 > [!NOTE]
 > Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, consulte [comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md)
 
-A imagem a seguir representa uma visão geral dos elementos dos comandos de suplemento no manifesto. ![Visão geral dos elementos dos comandos de suplemento no manifesto](../images/version-overrides.png)
+A imagem a seguir representa uma visão geral dos elementos dos comandos de suplemento no manifesto.
+
+![Visão geral dos elementos de comandos de suplemento no manifesto. O nó superior aqui é VersionOverrides com hosts e recursos filhos. Em hosts são host e DesktopFormFactor. Em DesktopFormFactor são Functionfile e ExtensionPoint. Em ExtensionPoint são CustomTab ou OfficeTab e menu do Office. Na guia CustomTab ou Office são agrupar e, em seguida, em ação. Em menu do Office estão controle e ação. Em recursos (filho de VersionOverrides) são imagens, URLs, ShortStrings e LongStrings.](../images/version-overrides.png)
 
 ## <a name="step-1-start-from-a-sample"></a>Etapa 1: iniciar usando uma amostra
 
@@ -37,7 +39,7 @@ A imagem a seguir representa uma visão geral dos elementos dos comandos de supl
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Etapa 2: criar um suplemento de painel de tarefas
 
-Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Não é possível usar comandos de suplemento com suplementos de conteúdo. Se for atualizar um manifesto existente, você deverá adicionar o **XML namespaces** apropriado, além do elemento **VersionOverrides** ao manifesto, conforme descrito na [Etapa 3: adicionar o elemento VersionOverrides](#step-3-add-versionoverrides-element).
+Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Você não pode usar comandos de suplemento com suplementos de conteúdo. Se você estiver atualizando um manifesto existente, você deve adicionar os **namespaces XML** apropriados, bem como adicionar o elemento **VersionOverrides** ao manifesto, conforme descrito na [etapa 3: Adicionar o elemento VersionOverrides](#step-3-add-versionoverrides-element).
 
 O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há comandos de suplemento nesse manifesto porque não há elemento **VersionOverrides**. O Office 2013 não dá suporte a comandos de suplemento, mas com a adição de **VersionOverrides** a esse manifesto, o suplemento será executado no Office 2013 e no Office 2016. No Office 2013, o suplemento não exibirá comandos de suplemento e usa o valor de **SourceLocation** para executar seu suplemento como um único suplemento de painel de tarefas. No Office 2016, se nenhum elemento **VersionOverrides** estiver incluído, **SourceLocation** será usado para executar o suplemento. Entretanto, se você incluir **VersionOverrides**, o suplemento exibirá apenas os comandos de suplemento e não exibirá o suplemento como um único suplemento de painel de tarefas.
   
@@ -74,14 +76,14 @@ O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há 
 
 O elemento **VersionOverrides** é o elemento raiz que contém a definição do comando de suplemento. **VersionOverrides** é um elemento filho do elemento **OfficeApp** no manifesto. A tabela a seguir lista os atributos do elemento **VersionOverrides**.
 
-|**Atributo**|**Descrição**|
+|Atributo|Descrição|
 |:-----|:-----|
 |**xmlns** <br/> | Obrigatório. O local do esquema, que deve ser `http://schemas.microsoft.com/office/taskpaneappversionoverrides`. <br/> |
 |**xsi:type** <br/> |Obrigatório. A versão do esquema. A versão descrita neste artigo é "VersionOverridesV1_0".  <br/> |
 
 A tabela a seguir identifica os elementos filho de **VersionOverrides**.
   
-|**Elemento**|**Descrição**|
+|Elemento|Descrição|
 |:-----|:-----|
 |**Descrição** <br/> |Opcional. Descreve o suplemento. Esse elemento filho **Description** substitui um elemento **Description** anterior na parte pai do manifesto. O atributo **resid** para esse elemento **Description** é definido como a **id** de um elemento **String**. O elemento **String** contém o texto para **Description**. <br/> |
 |**Requisitos** <br/> |Opcional. Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Esse elemento filho **Requirements** substitui o elemento **Requirements** na parte pai do manifesto. Para obter mais informações, consulte [especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
@@ -210,7 +212,7 @@ O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparec
 Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valores de atributo **PrimaryCommandSurface** e **ContextMenu** e os elementos filho que devem ser usados com cada um.
 
 > [!IMPORTANT]
-> Para os elementos que contêm um atributo ID, forneça uma ID exclusiva. Recomendamos usar o nome da sua empresa com a ID. Por exemplo, use o seguinte formato: `<CustomTab id="mycompanyname.mygroupname">` 
+> Para os elementos que contêm um atributo ID, forneça uma ID exclusiva. Recomendamos usar o nome da sua empresa com a ID. Por exemplo, use o seguinte formato: `<CustomTab id="mycompanyname.mygroupname">`
   
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -244,7 +246,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 </ExtensionPoint>
 ```
 
-|**Elemento**|**Descrição**|
+|Elemento|Descrição|
 |:-----|:-----|
 |**CustomTab** <br/> |Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. <br/> |
 |**OfficeTab** <br/> |Obrigatório se você deseja estender uma guia padrão da faixa de opções do aplicativo do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de tabulação a serem usados com o atributo **ID** , consulte [Tab Values for the Office app default Ribbon Tabs](../reference/manifest/officetab.md).  <br/> |
@@ -301,7 +303,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 </Control>
 ```
 
-|**Elementos**|**Descrição**|
+|Elementos|Descrição|
 |:-----|:-----|
 |**Label** <br/> |Obrigatório. O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
@@ -372,7 +374,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 </Control>
 ```
 
-|**Elementos**|**Descrição**|
+|Elementos|Descrição|
 |:-----|:-----|
 |**Label** <br/> |Obrigatório. O texto do item de menu raiz. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
@@ -417,7 +419,7 @@ Veja a seguir um exemplo de como usar o elemento **Resources**. Cada recurso pod
 </Resources>
 ```
 
-|**Recurso**|**Descrição**|
+|Recurso|Descrição|
 |:-----|:-----|
 |**Images**/ **Image** <br/> | Fornece a URL HTTPS para um arquivo de imagem. Cada imagem precisa definir os três tamanhos de imagem necessários: <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  Os seguintes tamanhos de imagem também têm suporte, mas não são obrigatórios: <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
 |**Urls**/ **Url** <br/> |Fornece um local para a URL HTTPS. Uma URL pode ter no máximo 2048 caracteres.  <br/> |
@@ -431,7 +433,7 @@ Veja a seguir um exemplo de como usar o elemento **Resources**. Cada recurso pod
 
 No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa de opções usando as guias padrão da interface de usuário do Office. A tabela a seguir lista os valores que podem ser usados para o atributo **id** do elemento **OfficeTab**. Os valores da guia diferenciam maiúsculas de minúsculas.
 
-|**Aplicativo cliente do Office**|**Valores de guia**|
+|Aplicativo cliente do Office|Valores de guia|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

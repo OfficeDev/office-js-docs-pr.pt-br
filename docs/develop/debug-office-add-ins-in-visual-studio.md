@@ -3,16 +3,16 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7c49e3019c22af0b5d44a382b33187e5d2de4ceb
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1de4ead92cb26ba68663d9473ad26c40a3c83459
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430475"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131882"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
-Este artigo descreve como usar o Visual Studio 2019 para depurar um suplemento do Office na área de trabalho do cliente Office no Windows. Se você estiver usando outra versão do Visual Studio, os procedimentos poderão variar um pouco. 
+Este artigo descreve como usar o Visual Studio 2019 para depurar um suplemento do Office na área de trabalho do cliente Office no Windows. Se você estiver usando outra versão do Visual Studio, os procedimentos poderão variar um pouco.
 
 > [!NOTE]
 > Você não pode usar o Visual Studio para depurar suplementos do Office na Web ou Mac. Para obter informações sobre a depuração nestas plataformas, confira [Depurar suplementos do Office no Office na Web](../testing/debug-add-ins-in-office-online.md) ou [Depurar suplementos do Office no Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
@@ -31,7 +31,7 @@ Antes de iniciar a depuração, revise as propriedades de cada projeto para conf
 
 ### <a name="add-in-project-properties"></a>Propriedades do projeto de suplemento
 
-Abrir a janela **Propriedades**para o projeto de suplemento revisar as propriedades do projeto:
+Abrir a janela **Propriedades** para o projeto de suplemento revisar as propriedades do projeto:
 
 1. No **Explorador de soluções** Escolha o projeto do suplemento (*não* o projeto do aplicativo Web).
 
@@ -39,7 +39,7 @@ Abrir a janela **Propriedades**para o projeto de suplemento revisar as proprieda
 
 A tabela a seguir descreve as propriedades do projeto.
 
-|**Property**|**Descrição**|
+|Propriedade|Descrição|
 |:-----|:-----|
 |**Iniciar Ação**|Especifica o modo de depuração do suplemento. Atualmente, só **cliente de área de trabalho do Office** modo tem suporte para projetos de suplementos do Office.|
 |**Iniciar documento**<br/> (apenas suplementos Excel, PowerPoint e Word)|Especifica o documento a ser aberto quando você iniciar o projeto.|
@@ -53,11 +53,11 @@ A tabela a seguir descreve as propriedades do projeto.
 |**Pasta do projeto**|O local do arquivo do projeto.|
 
 > [!NOTE]
-> Para um suplemento do Outlook, você pode optar por especificar valores para uma ou mais das propriedades *Apenas suplemento Outlook* na janela**Propriedades** mas isso não é necessário.
+> Para um suplemento do Outlook, você pode optar por especificar valores para uma ou mais das propriedades *Apenas suplemento Outlook* na janela **Propriedades** mas isso não é necessário.
 
 ### <a name="web-application-project-properties"></a>Propriedades do projeto de aplicativo Web
 
-Abrir a janela **Propriedades**para o projeto de aplicativo Web para revisar as propriedades do projeto:
+Abrir a janela **Propriedades** para o projeto de aplicativo Web para revisar as propriedades do projeto:
 
 1. No **Gerenciador de soluções**, escolha o projeto de aplicativo Web.
 
@@ -65,7 +65,7 @@ Abrir a janela **Propriedades**para o projeto de aplicativo Web para revisar as 
 
 A tabela a seguir descreve as propriedades do projeto de aplicativo web que são mais relevantes para projetos de suplementos do Office.
 
-|**Property**|**Descrição**|
+|Propriedade|Descrição|
 |:-----|:-----|
 |**SSL habilitado**|Especifica se o SSL está habilitado no site. Essa propriedade deve ser definida como **Verdadeira** para projetos de suplementos do Office.|
 |**URL SSL**|Especifica a URL HTTPS segura para o site. Somente leitura.|
@@ -129,9 +129,9 @@ Se o suplemento não estiver visível no documento exibido no aplicativo do Offi
 
 1. No Excel, PowerPoint ou Word, escolha o **Inserir** pressione tab e, em seguida, escolha a seta para baixo à direita de **Meus suplementos**.
 
-    ![Inserir faixa de opções no Excel no Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
+    ![Captura de tela mostrando a faixa de opções de inserção no Excel no Windows com a seta meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
 
-2. Na lista de suplementos disponíveis, localize a seção**suplementos do desenvolvedor** e selecione o seu suplemento para registrar.
+2. Na lista de suplementos disponíveis, localize a seção **suplementos do desenvolvedor** e selecione o seu suplemento para registrar.
 
 3. No Visual Studio, defina pontos de interrupção no seu código.
 

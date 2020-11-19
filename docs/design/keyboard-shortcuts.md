@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em suplementos do Office
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao suplemento do Office.
 ms.date: 11/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f95c26067203a4ec2659aa6a632403c96ed81674
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 40009dd92787b7c220bb8cfc741cffb2e4b68a9e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996671"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132036"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>Adicionar atalhos de teclado personalizados para seus suplementos do Office (visualização)
 
@@ -81,7 +81,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     }
     ```
 
-    Para obter mais informações sobre os objetos JSON, consulte [construir os objetos Action](#constructing-the-action-objects) e [criar os objetos de atalho](#constructing-the-shortcut-objects). O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+    Para obter mais informações sobre os objetos JSON, consulte [construir os objetos Action](#constructing-the-action-objects) e [criar os objetos de atalho](#constructing-the-shortcut-objects). O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Observação: o link para o esquema pode não estar funcionando no início do período de visualização.)
 
     > [!NOTE]
     > Você pode usar o "controle" em vez de "CTRL" neste artigo.
@@ -103,7 +103,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     ```
 
 1. Para continuar o exemplo, use `'SHOWTASKPANE'` como o primeiro parâmetro.
-1. Para o corpo da função, use o método [Office. AddIn. showTaskpane](/javascript/api/office/office.addin.md#showastaskpane--) para abrir o painel de tarefas do suplemento. Quando você terminar, o código deverá ser semelhante ao seguinte:
+1. Para o corpo da função, use o método [Office. AddIn. showTaskpane](/javascript/api/office/office.addin#showastaskpane--) para abrir o painel de tarefas do suplemento. Quando você terminar, o código deverá ser semelhante ao seguinte:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-1. Adicione uma segunda chamada de `Office.actions.associate` função para mapear a `HIDETASKPANE` ação para uma função que chama [Office. AddIn. Hide](/javascript/api/office/office.addin.md#hide--). Este é um exemplo:
+1. Adicione uma segunda chamada de `Office.actions.associate` função para mapear a `HIDETASKPANE` ação para uma função que chama [Office. AddIn. Hide](/javascript/api/office/office.addin#hide--). Este é um exemplo:
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -161,7 +161,7 @@ Este é um exemplo:
     ]
 ```
 
-O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Observação: o link para o esquema pode não estar funcionando no início do período de visualização.)
 
 ### <a name="constructing-the-shortcut-objects"></a>Construir os objetos de atalho
 
@@ -195,10 +195,10 @@ Este é um exemplo:
     ]
 ```
 
-O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+O esquema completo para o JSON de atalhos está em [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Observação: o link para o esquema pode não estar funcionando no início do período de visualização.)
 
 > [!NOTE]
-> As dicas de teclas, também conhecidas como atalhos de chave sequencial, como o atalho do Excel para escolher uma cor de preenchimento **ALT + H** , não são compatíveis com os suplementos do Office.
+> As dicas de teclas, também conhecidas como atalhos de chave sequencial, como o atalho do Excel para escolher uma cor de preenchimento **ALT + H**, não são compatíveis com os suplementos do Office.
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>Usando atalhos quando o foco está no painel de tarefas
 
@@ -210,7 +210,7 @@ Durante o período de visualização, não há nenhum sistema para determinar o 
 
 No momento, não há solução alternativa quando dois ou mais suplementos registraram o mesmo atalho de teclado, mas você pode minimizar conflitos com o Excel com essas boas práticas:
 
-- Use apenas atalhos de teclado com o seguinte padrão em seu suplemento: * *Ctrl + Shift + Alt +* x * * *, onde *x* é outra tecla.
+- Use apenas atalhos de teclado com o seguinte padrão em seu suplemento: **Ctrl + Shift + Alt +* x * * *, onde *x* é outra tecla.
 - Se você precisar de mais atalhos de teclado, verifique a [lista de atalhos de teclado do Excel](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)e evite usar qualquer um deles no suplemento.
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Atalhos do navegador que não podem ser substituídos

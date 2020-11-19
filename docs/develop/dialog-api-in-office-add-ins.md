@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba mais sobre a criação de uma caixa de diálogo em um suplemento do Office.
 ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741082"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131756"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -30,7 +30,7 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
-![Comandos de suplemento](../images/auth-o-dialog-open.png)
+![Captura de tela mostrando a caixa de diálogo com 3 opções de entrada exibidas na frente da palavra](../images/auth-o-dialog-open.png)
 
 A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é não *modal*, e o usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver um.
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> - A URL usa o protocolo HTTP**S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
+> - A URL usa o protocolo HTTP **S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
 > - A caixa de diálogo é igual ao domínio da página de host, que pode ser a página em um painel de tarefas ou o [arquivo de função](../reference/manifest/functionfile.md) de um comando de suplemento. Isso é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` deve estar no mesmo domínio que a página de host.
 
 > [!IMPORTANT]
@@ -98,9 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - A função `messageParent` só pode ser chamada em uma página com o mesmo domínio (incluindo o protocolo e a porta) da página host.
-> - A `messageParent` função é uma das *only* duas APIs do Office js que podem ser chamadas na caixa de diálogo. 
+> - A `messageParent` função é uma das *only* duas APIs do Office js que podem ser chamadas na caixa de diálogo.
 > - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported` . Para saber mais, confira [especificar requisitos de API e aplicativos do Office](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, essa API não tem suporte no Outlook 2016 1-time Purchase (ou seja, a versão MSI).
-
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
 

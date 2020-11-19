@@ -3,12 +3,12 @@ title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um suplemento do Office podem usar o logon único (SSO) para buscar dados do Microsoft Graph.
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e87c86b5302bde8122485b837759fa327251c656
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292901"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131910"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
@@ -17,7 +17,6 @@ Os usuários entram no Office (plataformas online, de dispositivos móveis e de 
 > [!NOTE]
 > A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
-
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Arquitetura de suplemento para SSO e Microsoft Graph
 
@@ -29,7 +28,7 @@ O manifesto do suplemento contém a marcação que especifica como ele está reg
 
 O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao Microsoft Graph.
 
-![Diagrama que mostra o processo de SSO](../images/sso-access-to-microsoft-graph.png)
+![Diagrama mostrando o processo de SSO](../images/sso-access-to-microsoft-graph.png)
 
 1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
 2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.

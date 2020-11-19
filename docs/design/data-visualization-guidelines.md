@@ -3,19 +3,18 @@ title: Diretrizes de estilo de visualização de dados para Suplementos do Offic
 description: Obtenha algumas boas práticas de visualização de dados em um suplemento do Office.
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: d03bbb471c3e538aade2f5308bbfa9220c93615b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608548"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132071"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.
 
-Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar o cromado para suas visualizações de dados. O Office UI Fabric inclui estilos e componentes que se integram perfeitamente com a aparência do Office. 
-
+Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar o cromado para suas visualizações de dados. O Office UI Fabric inclui estilos e componentes que se integram perfeitamente com a aparência do Office.
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
 ![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
@@ -26,7 +25,7 @@ Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/
 
 As visualizações de dados compartilham uma estrutura geral e elementos visuais e interativos comuns, incluindo títulos, rótulos e plotagens de dados, conforme mostrado na figura a seguir.
 
-![Imagem de um gráfico de linhas com título, eixos, legenda e área de plotagem rotulada](../images/excel-charts-visualization.png)
+![Gráfico de linhas com título, eixos, legenda e área de plotagem rotulada](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Títulos de gráfico
 
@@ -65,7 +64,7 @@ Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabri
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 
-![Imagem de uma visualização de dados com linhas de grade](../images/data-visualization.png)
+![Visualização de dados do gráfico de linhas com linhas de grade](../images/data-visualization.png)
 
 ### <a name="legends"></a>Legendas
 
@@ -118,7 +117,7 @@ A animação segue o estímulo. Os elementos visuais devem se mover na mesma dir
 
 Crie uma percepção de causalidade. Quando preparar animações:
 
-- Prepare uma coisa de cada vez. 
+- Prepare uma coisa de cada vez.
 - Prepare as mudanças nos eixos antes da mudança na tinta dos dados.
 - Prepare e anime objetos como um grupo se eles estiverem se movendo na mesma velocidade e na mesma direção.
 - Prepare elementos de dados em grupos de não mais do que 4 a 5 objetos. Os espectadores têm dificuldade de acompanhar mais de 4 e 5 objetos independentemente.
@@ -127,7 +126,7 @@ A animação adiciona significado.
 
 - Animações aumentam a compreensão do usuário das alterações nos dados, fornecem contexto e atuam como uma camada de anotação não verbal.
 - A animação deve ocorrer em um espaço de coordenadas significativo da visualização.
-- Personalize a animação para o visual. 
+- Personalize a animação para o visual.
 - Evite animações gratuitas.
 
 A animação segue os dados.
@@ -141,7 +140,7 @@ A animação segue os dados.
 - Torne todos os elementos interativos, como botões de ação ou listas de escolha, acessíveis a partir de um teclado.
 - Envie eventos de acessibilidade para leitores de tela para anunciar alterações de foco, dicas de ferramentas e assim por diante.
 
-## <a name="see-also"></a>Confira também 
+## <a name="see-also"></a>Confira também
 
 - [As cinco melhores bibliotecas para criar visualizações de dados](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Exibição Visual de informações quantitativas](https://www.edwardtufte.com/tufte/books_vdqi)

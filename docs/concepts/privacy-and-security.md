@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de suplementos do Office.
 ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: e7b301c6bbc28cdcb00d178d52b1c916a5e645a9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370518"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132169"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -32,7 +32,7 @@ Além disso, a estrutura de tempo de execução fornece os seguintes benefícios
 
 E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos.
 
-As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e navegadores da web.
+As seções a seguir descrevem brevemente como a arquitetura de tempo de execução oferece suporte à execução de suplementos nos clientes do Office em dispositivos baseados no Windows, em dispositivos Mac OS X e em navegadores da Web.
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
@@ -42,13 +42,13 @@ Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar
 
 *Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
 
-![Infraestrutura de cliente avançado](../images/dk2-agave-overview-02.png)
+![Diagrama mostrando a infraestrutura avançada de cliente](../images/dk2-agave-overview-02.png)
 
-Como mostrado na figura a seguir, em um computador de mesa Mac OS X, a página da Web do suplemento é hospedada em um processo de host de tempo de execução WebKit em área restrita que ajuda a fornecer um nível semelhante de segurança e proteção de desempenho.
+Conforme mostrado na figura a seguir, em uma área de trabalho do Mac OS X, a página da Web do suplemento é hospedada dentro de um processo de host de tempo de execução de área restrita, que ajuda a fornecer um nível semelhante de segurança e proteção de desempenho.
 
-*Figura 2. Ambiente de execução dos Suplementos do Office nos clientes Mac OS X*
+*Figura 2. Ambiente de tempo de execução de suplementos do Office em clientes do Mac OS X*
 
-![Apps for Office runtime environment on OS X Mac](../images/dk2-agave-overview-mac-02.png)
+![Diagrama mostrando aplicativos para o ambiente de tempo de execução do Office no Mac OS X](../images/dk2-agave-overview-mac-02.png)
 
 O tempo de execução de Suplementos do Office gerencia a comunicação entre processos, a conversão de eventos e chamadas à API JavaScript em itens nativos, bem como o suporte de comunicação remota da interface do usuário para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicitação de reunião ou compromisso.
 
@@ -56,10 +56,9 @@ O tempo de execução de Suplementos do Office gerencia a comunicação entre pr
 
 Em clientes Web com suporte, os suplementos do Office são hospedados em um **iframe** que é executado usando o atributo de **área restrita** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que oferece suporte a suplementos no Office em execução no navegador, e os componentes relevantes (o cliente da Web, o **iframe**, o tempo de execução de suplementos do Office e a API JavaScript para Office) que são necessários para dar suporte a eles.
 
-
 *Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
 
-![Infraestrutura do cliente Web](../images/dk2-agave-overview-03.png)
+![Diagrama mostrando a infraestrutura de cliente da Web](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>Integridade do suplemento no AppSource
 
@@ -95,7 +94,7 @@ A plataforma de suplemento aborda as preocupações de privacidade dos usuários
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não tenha usado anteriormente, o aplicativo cliente do Office solicitará que o usuário Conceda permissão para que o suplemento seja executado no documento. Em um ambiente organizacional, o aplicativo cliente do Office também solicita o usuário se o documento vier de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis da **central de confiabilidade** no cliente do Office do host (aberto nas opções de **arquivo**configurações da central de confiabilidade da central de confiabilidade dos  >  **Options**  >  **Trust Center**  >  **Trust Center Settings**  >  **catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo**  >  **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis da **central de confiabilidade** no cliente do Office do host (aberto nas opções de **arquivo** configurações da central de confiabilidade da central de confiabilidade dos  >  **Options**  >  **Trust Center**  >  **Trust Center Settings**  >  **catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo**  >  **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma de suplementos fornece segurança e desempenho aos usuários finais das seguintes maneiras.
 
@@ -156,7 +155,7 @@ Para obter mais informações sobre permissões para suplementos do Outlook, con
 
 Como os suplementos do Office são páginas da Web que são executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador. Por padrão, uma página da Web em um domínio não pode fazer chamadas de serviço Web [XMLHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não seja aquele em que está hospedado.
 
-Uma maneira de superar essa limitação é usar JSON/P--fornecer um proxy para o serviço Web, incluindo uma marca de **script** com um atributo **src** que aponta para um script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts serão executados onde estiverem inseridos e funcionarão como esperado.
+Uma maneira de superar essa limitação é usar JSON/P--fornecer um proxy para o serviço Web, incluindo uma marca de **script** com um atributo **src** que aponta para um script hospedado em outro domínio. Você pode criar as marcas **script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts serão executados onde estiverem inseridos e funcionarão como esperado.
 
 A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook. 
 
@@ -179,7 +178,6 @@ O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o a
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Dicas para evitar scripts mal-intencionados entre sites
 
 Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado por meio do documento ou de campos no suplemento. Um desenvolvedor deve processar a entrada do usuário para evitar a execução de JavaScript de um usuário mal-intencionado em seu domínio. Veja a seguir algumas práticas recomendadas a serem seguidas para lidar com a entrada do usuário a partir de um documento ou de uma mensagem de email ou por meio de campos em um suplemento.
-
 
 - Em vez da propriedade DOM [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), use as propriedades [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) e [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) quando apropriado. Siga este procedimento para obter suporte para o Internet Explorer e o Firefox entre navegadores.
 
@@ -227,11 +225,11 @@ Os desenvolvedores também devem anotar as práticas de segurança a seguir.
 
 - Os suplementos de conteúdo e de painel de tarefas assumem o uso das mesmas configurações de SSL que o navegador usa por padrão e permitem que a maioria do conteúdo seja fornecido apenas por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML para o suplemento.
 
-    Para certificar-se de que os suplementos não estão fornecendo conteúdo usando HTTP, ao testar suplementos, os desenvolvedores devem se certificar de que as configurações a seguir estão selecionadas em **Opções da Internet** no **painel de controle** e que nenhum aviso de segurança aparece em seus cenários de teste.
+  Para certificar-se de que os suplementos não estão fornecendo conteúdo usando HTTP, ao testar suplementos, os desenvolvedores devem se certificar de que as configurações a seguir estão selecionadas em **Opções da Internet** no **painel de controle** e que nenhum aviso de segurança aparece em seus cenários de teste.
 
-    - Certifique-se de que a configuração de segurança, **Exibir conteúdo misto**, para a zona da **Internet** esteja definida como **avisar**. Você pode fazer isso selecionando o seguinte em **Opções da Internet**: na **guia Segurança** , selecione a zona da **Internet** , selecione **nível personalizado**, rolar para procurar por **Exibir conteúdo misto**e selecione **avisar** se ainda não estiver selecionado.
+  - Certifique-se de que a configuração de segurança, **Exibir conteúdo misto**, para a zona da **Internet** esteja definida como **avisar**. Você pode fazer isso selecionando o seguinte em **Opções da Internet**: na **guia Segurança** , selecione a zona da **Internet** , selecione **nível personalizado**, rolar para procurar por **Exibir conteúdo misto** e selecione **avisar** se ainda não estiver selecionado.
 
-    - Verifique se a opção **Avisar ao alterar o modo de segurança** está marcada na guia **Avançado** da caixa de diálogo **Opções da Internet**.
+  - Verifique se a opção **Avisar ao alterar o modo de segurança** está marcada na guia **Avançado** da caixa de diálogo **Opções da Internet**.
 
 - Para garantir que os suplementos não usem excessivamente os recursos de memória ou do núcleo da CPU e causem a negação de serviço em um computador cliente, a plataforma de suplementos estabelece limites de uso de recursos. Como parte dos testes, os desenvolvedores devem verificar se o desempenho de um suplemento está dentro dos limites de uso de recursos.
 

@@ -4,12 +4,12 @@ description: Saiba mais sobre como personalizar o suplemento habilitado para SSO
 ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cc13d813e6d46296f5557d4e3374fa67aa51bc65
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430993"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132330"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -20,11 +20,11 @@ O [início rápido do SSO](sso-quickstart.md) cria um suplemento habilitado para
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um suplemento do Office que você criou seguindo as instruções no [início rápido de SSO](sso-quickstart.md).
+- Um suplemento do Office que você criou seguindo as instruções no [início rápido de SSO](sso-quickstart.md).
 
-* Pelo menos alguns arquivos e pastas armazenados no OneDrive for Business em sua assinatura do Microsoft 365.
+- Pelo menos alguns arquivos e pastas armazenados no OneDrive for Business em sua assinatura do Microsoft 365.
 
-* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
+- [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -51,7 +51,7 @@ Antes que o suplemento possa ler com êxito o conteúdo do OneDrive for Business
     > [!TIP]
     > Você pode fazer isso escolhendo o bloco de **registros do aplicativo** na home page do Azure ou usando a caixa de pesquisa na home page para localizar e escolher registros de **aplicativos**.
 
-3. Na página **registros de aplicativos** , escolha o aplicativo que você criou durante o início rápido. 
+3. Na página **registros de aplicativos** , escolha o aplicativo que você criou durante o início rápido.
     > [!TIP]
     > O **nome de exibição** do aplicativo corresponderá ao nome do suplemento que você especificou ao criar o projeto com o gerador Yeoman.
 
@@ -85,7 +85,7 @@ Para permitir que o suplemento Leia o conteúdo do OneDrive for Business do usu�
 
 - Atualize o código que faz referência à URL, aos parâmetros e ao escopo de acesso necessários do Microsoft Graph.
 
-- Atualize o código que define a interface do usuário do painel de tarefas, para que ele descreva precisamente a nova funcionalidade. 
+- Atualize o código que define a interface do usuário do painel de tarefas, para que ele descreva precisamente a nova funcionalidade.
 
 - Atualize o código que analisa a resposta do Microsoft Graph e o grava no documento ou na mensagem.
 
@@ -256,7 +256,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
         data.push(innerArray);
       }
     }
-    
+
     const rangeAddress = `B5:B${5 + (data.length - 1)}`;
     const range = sheet.getRange(rangeAddress);
     range.values = data;
@@ -355,7 +355,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     for (let i = 0; i < data.length; i++) {
         objectNames += data[i] + "<br/>";
     }
-    
+
     Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
 }
 ```
@@ -586,20 +586,20 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 3. No aplicativo cliente do Office, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. A imagem a seguir mostra esse botão no Excel.
 
-    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
+    ![Captura de tela mostrando o botão suplemento realçado na faixa de opções do Excel](../images/excel-quickstart-addin-3b.png)
 
-4. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
+4. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO.
 
 5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
+    ![Captura de tela mostrando caixa de diálogo de permissões solicitadas com o botão aceitar](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 6. O suplemento lê os dados do OneDrive for Business do usuário conectado e grava os nomes dos 10 arquivos e pastas principais no documento. A imagem a seguir mostra um exemplo de nomes de arquivos e pastas gravados em uma planilha do Excel.
 
-    ![Informações sobre o OneDrive for Business na planilha do Excel](../images/sso-onedrive-info-excel.png)
+    ![Captura de tela mostrando informações sobre o OneDrive for Business na planilha do Excel](../images/sso-onedrive-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -608,32 +608,32 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 1. Na pasta raiz do projeto, execute o seguinte comando para compilar o projeto e iniciar o servidor Web local.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode ter que executar o prompt de comando ou o terminal como administrador para que as alterações sejam feitas.
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-2. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)para realizar o sideload do suplemento do Outlook. Certifique-se de que você está conectado ao Outlook com um usuário que é membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 
+2. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)para realizar o sideload do suplemento do Outlook. Certifique-se de que você está conectado ao Outlook com um usuário que é membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido.
 
 3. Escreva uma nova mensagem no Outlook.
 
 4. Na janela redigir mensagem, escolha o botão **Exibir painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
 
-    ![Botão do suplemento do Outlook](../images/outlook-sso-ribbon-button.png)
+    ![Captura de tela mostrando o botão realçado da faixa de opções na janela de mensagens de redação do Outlook](../images/outlook-sso-ribbon-button.png)
 
-5. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
+5. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO.
 
 6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
+    ![Captura de tela da caixa de diálogo solicitar permissões com o botão aceitar realçado](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 7. O suplemento lê os dados do OneDrive for Business do usuário conectado e grava os nomes dos 10 arquivos e pastas principais no corpo da mensagem de email.
 
-    ![Informações sobre o OneDrive for Business na mensagem do Outlook](../images/sso-onedrive-info-outlook.png)
+    ![Captura de tela mostrando as informações do OneDrive for Business na janela de mensagem de redação do Outlook](../images/sso-onedrive-info-outlook.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
