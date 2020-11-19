@@ -189,6 +189,10 @@
                       href: develop/create-addin-commands.md
                     - name: Habilitar e Desabilitar Comandos de Suplemento
                       href: design/disable-add-in-commands.md
+                    - name: Integrar botões do Office incorporados em guias personalizadas
+                      href: design/built-in-button-integration.md
+                    - name: Posicione uma guia personalizada sobre a faixa de opções
+                      href: design/custom-tab-placement.md
                 - name: Suplementos de conteúdo
                   href: design/content-add-ins.md
                 - name: Caixas de diálogo
