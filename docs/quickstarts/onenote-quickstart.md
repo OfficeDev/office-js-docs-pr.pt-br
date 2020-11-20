@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do OneNote simp
 ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 0e4022b9f2b91b03cb260f2d56fc3bac2a0ddaae
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: de0729a483057a61be3793e299995aa05d287441
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741159"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132288"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -29,7 +29,7 @@ Neste artigo, você verá o processo de criação de um suplemento do painel de 
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
 
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-onenote.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -37,7 +37,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 ## <a name="explore-the-project"></a>Explore o projeto
 
-O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. 
+O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.
 
 - O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
 - O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
@@ -102,19 +102,19 @@ try {
 
     - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
-    - Se você estiver conectado com a sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha **Carregar Meu Suplemento**. 
+    - Se você estiver conectado com a sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha **Carregar Meu Suplemento**.
 
     A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
 
-    <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+    <img alt="Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-5. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
+5. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**.
 
 6. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
 
 7. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
-    ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in-4.png)
+    ![Captura de tela apresentando o suplemento criado com base nesse passo a passo: exibir o painel de opções do painel de tarefas e o painel de tarefas no OneNote](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -125,9 +125,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote!
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-

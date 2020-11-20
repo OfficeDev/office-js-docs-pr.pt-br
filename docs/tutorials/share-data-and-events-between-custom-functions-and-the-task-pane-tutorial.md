@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819627"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131777"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -23,7 +23,7 @@ Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do 
 
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda às solicitações com as seguintes respostas:
 
-```command line
+```command line
 yo office
 ```
 
@@ -31,7 +31,7 @@ yo office
 - Escolha um tipo de script: **JavaScript**
 - Qual será o nome do seu suplemento? **Meu suplemento do Office**
 
-![Captura de tela das solicitações de resposta do seu Office para criar o projeto de suplemento.](../images/yo-office-excel-project.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-excel-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -96,7 +96,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 8. Salve suas alterações e recompile o projeto.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -200,7 +200,7 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
 5. Salve o arquivo.
 6. Compilar o projeto
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -208,7 +208,7 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
 
 - Inicie o projeto usando o comando a seguir.
 
-  ```command line
+  ```command line
   npm run start
   ```
 
