@@ -1,59 +1,60 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 10/02/2020
+ms.date: 11/12/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370532"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132379"
 ---
-# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="93443-103">Tutorial: criar uma mensagem para compor o suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="93443-103">Tutorial: Build a message compose Outlook add-in</span></span>
+# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="b916a-103">Tutorial: criar uma mensagem para compor o suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="b916a-103">Tutorial: Build a message compose Outlook add-in</span></span>
 
-<span data-ttu-id="93443-104">Este tutorial ensina como criar um suplemento que pode ser usado em mensagens no modo de redação do Outlook para inserir conteúdo no corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
+<span data-ttu-id="b916a-104">Este tutorial ensina como criar um suplemento que pode ser usado em mensagens no modo de redação do Outlook para inserir conteúdo no corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
 
-<span data-ttu-id="93443-105">Neste tutorial, você vai:</span><span class="sxs-lookup"><span data-stu-id="93443-105">In this tutorial, you will:</span></span>
+<span data-ttu-id="b916a-105">Neste tutorial, você vai:</span><span class="sxs-lookup"><span data-stu-id="b916a-105">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="93443-106">Criar um projeto de um suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="93443-106">Create an Outlook add-in project</span></span>
-> * <span data-ttu-id="93443-107">Definir botões de renderização na janela de mensagem de texto</span><span class="sxs-lookup"><span data-stu-id="93443-107">Define buttons that will render in the compose message window</span></span>
-> * <span data-ttu-id="93443-108">Implementar uma experiência de primeira execução que coleta informações do usuário e busca os dados de um serviço externo</span><span class="sxs-lookup"><span data-stu-id="93443-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
-> * <span data-ttu-id="93443-109">Implementar um botão sem interface do usuário que chame uma função</span><span class="sxs-lookup"><span data-stu-id="93443-109">Implement a UI-less button that invokes a function</span></span>
-> * <span data-ttu-id="93443-110">Implementar um painel de tarefas que insere o conteúdo no corpo de uma mensagem</span><span class="sxs-lookup"><span data-stu-id="93443-110">Implement a task pane that inserts content into the body of a message</span></span>
+>
+> - <span data-ttu-id="b916a-106">Criar um projeto de um suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="b916a-106">Create an Outlook add-in project</span></span>
+> - <span data-ttu-id="b916a-107">Definir botões de renderização na janela de mensagem de texto</span><span class="sxs-lookup"><span data-stu-id="b916a-107">Define buttons that will render in the compose message window</span></span>
+> - <span data-ttu-id="b916a-108">Implementar uma experiência de primeira execução que coleta informações do usuário e busca os dados de um serviço externo</span><span class="sxs-lookup"><span data-stu-id="b916a-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
+> - <span data-ttu-id="b916a-109">Implementar um botão sem interface do usuário que chame uma função</span><span class="sxs-lookup"><span data-stu-id="b916a-109">Implement a UI-less button that invokes a function</span></span>
+> - <span data-ttu-id="b916a-110">Implementar um painel de tarefas que insere o conteúdo no corpo de uma mensagem</span><span class="sxs-lookup"><span data-stu-id="b916a-110">Implement a task pane that inserts content into the body of a message</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="93443-111">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="93443-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="b916a-111">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="b916a-111">Prerequisites</span></span>
 
-- <span data-ttu-id="93443-112">[Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="93443-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+- <span data-ttu-id="b916a-112">[Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="b916a-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
 
-- <span data-ttu-id="93443-113">A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:</span><span class="sxs-lookup"><span data-stu-id="93443-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+- <span data-ttu-id="b916a-113">A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:</span><span class="sxs-lookup"><span data-stu-id="b916a-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
 
     ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="93443-114">Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.</span><span class="sxs-lookup"><span data-stu-id="93443-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+    > <span data-ttu-id="b916a-114">Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.</span><span class="sxs-lookup"><span data-stu-id="b916a-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
 
-- <span data-ttu-id="93443-115">Outlook 2016 ou posterior no Windows (conectado a uma conta do Microsoft 365) ou Outlook na Web</span><span class="sxs-lookup"><span data-stu-id="93443-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
+- <span data-ttu-id="b916a-115">Outlook 2016 ou posterior no Windows (conectado a uma conta do Microsoft 365) ou Outlook na Web</span><span class="sxs-lookup"><span data-stu-id="b916a-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
 
-- <span data-ttu-id="93443-116">Uma conta [GitHub](https://www.github.com) </span><span class="sxs-lookup"><span data-stu-id="93443-116">A [GitHub](https://www.github.com) account</span></span>
+- <span data-ttu-id="b916a-116">Uma conta [GitHub](https://www.github.com) </span><span class="sxs-lookup"><span data-stu-id="b916a-116">A [GitHub](https://www.github.com) account</span></span>
 
-## <a name="setup"></a><span data-ttu-id="93443-117">Configurar</span><span class="sxs-lookup"><span data-stu-id="93443-117">Setup</span></span>
+## <a name="setup"></a><span data-ttu-id="b916a-117">Configurar</span><span class="sxs-lookup"><span data-stu-id="b916a-117">Setup</span></span>
 
-<span data-ttu-id="93443-118">O suplemento que você criará neste tutorial lerá [gists](https://gist.github.com) da conta do GitHub do usuário e adicionará a essência selecionada ao corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-118">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message.</span></span> <span data-ttu-id="93443-119">Conclua as etapas a seguir para criar duas gists novas que você pode usar para testar o suplemento que você vai criar.</span><span class="sxs-lookup"><span data-stu-id="93443-119">Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
+<span data-ttu-id="b916a-p101">O suplemento que você criará neste tutorial lerá [gists](https://gist.github.com) da conta GitHub do usuário e adicionará o gist selecionado ao corpo de uma mensagem. Conclua as etapas a seguir para criar dois novos gists que você pode usar para testar o suplemento que será criado.</span><span class="sxs-lookup"><span data-stu-id="b916a-p101">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message. Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
 
-1. <span data-ttu-id="93443-120">[Faça logon no GitHub](https://github.com/login).</span><span class="sxs-lookup"><span data-stu-id="93443-120">[Login to GitHub](https://github.com/login).</span></span>
+1. <span data-ttu-id="b916a-120">[Faça logon no GitHub](https://github.com/login).</span><span class="sxs-lookup"><span data-stu-id="b916a-120">[Login to GitHub](https://github.com/login).</span></span>
 
-1. <span data-ttu-id="93443-121">[Crie uma nova gist.](https://gist.github.com)</span><span class="sxs-lookup"><span data-stu-id="93443-121">[Create a new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="b916a-121">[Crie uma nova gist.](https://gist.github.com)</span><span class="sxs-lookup"><span data-stu-id="b916a-121">[Create a new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="93443-122">No campo\*\*descrição do gist... \*\*, insira **a Markdown Olá Mundo**.</span><span class="sxs-lookup"><span data-stu-id="93443-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
+    - <span data-ttu-id="b916a-122">No campo **descrição do gist...**, insira **a Markdown Olá Mundo**.</span><span class="sxs-lookup"><span data-stu-id="b916a-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
 
-    - <span data-ttu-id="93443-123">No campo \*\*nome do arquivo como extensão... \*\* campo, insira **test.md**.</span><span class="sxs-lookup"><span data-stu-id="93443-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
+    - <span data-ttu-id="b916a-123">No campo **nome do arquivo como extensão...** campo, insira **test.md**.</span><span class="sxs-lookup"><span data-stu-id="b916a-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
 
-    - <span data-ttu-id="93443-124">Adicione a redução a seguir na caixa de texto multilinha:</span><span class="sxs-lookup"><span data-stu-id="93443-124">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="b916a-124">Adicione a redução a seguir na caixa de texto multilinha:</span><span class="sxs-lookup"><span data-stu-id="b916a-124">Add the following markdown to the multiline textbox:</span></span>
 
         ```markdown
         # Hello World
@@ -69,15 +70,15 @@ ms.locfileid: "48370532"
           ```
         ```
 
-    - <span data-ttu-id="93443-125">Selecione o botão **criar gist público**.</span><span class="sxs-lookup"><span data-stu-id="93443-125">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="b916a-125">Selecione o botão **criar gist público**.</span><span class="sxs-lookup"><span data-stu-id="b916a-125">Select the **Create public gist** button.</span></span>
 
-1. <span data-ttu-id="93443-126">[Criar outro novo gist](https://gist.github.com).</span><span class="sxs-lookup"><span data-stu-id="93443-126">[Create another new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="b916a-126">[Criar outro novo gist](https://gist.github.com).</span><span class="sxs-lookup"><span data-stu-id="b916a-126">[Create another new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="93443-127">No campo\*\*descrição do gist... **, insira \*\* Olá Mundo**.</span><span class="sxs-lookup"><span data-stu-id="93443-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
+    - <span data-ttu-id="b916a-127">No campo **descrição do gist...**, insira **Olá Mundo**.</span><span class="sxs-lookup"><span data-stu-id="b916a-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
 
-    - <span data-ttu-id="93443-128">No campo \*\*nome do arquivo como extensão... \*\* campo, insira **test.html**.</span><span class="sxs-lookup"><span data-stu-id="93443-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
+    - <span data-ttu-id="b916a-128">No campo **nome do arquivo como extensão...** campo, insira **test.html**.</span><span class="sxs-lookup"><span data-stu-id="b916a-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
 
-    - <span data-ttu-id="93443-129">Adicione a redução a seguir na caixa de texto multilinha:</span><span class="sxs-lookup"><span data-stu-id="93443-129">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="b916a-129">Adicione a redução a seguir na caixa de texto multilinha:</span><span class="sxs-lookup"><span data-stu-id="b916a-129">Add the following markdown to the multiline textbox:</span></span>
 
         ```HTML
         <html>
@@ -95,107 +96,108 @@ ms.locfileid: "48370532"
         </html>
         ```
 
-    - <span data-ttu-id="93443-130">Selecione o botão **criar gist público**.</span><span class="sxs-lookup"><span data-stu-id="93443-130">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="b916a-130">Selecione o botão **criar gist público**.</span><span class="sxs-lookup"><span data-stu-id="b916a-130">Select the **Create public gist** button.</span></span>
 
-## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="93443-131">Criar um projeto de um suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="93443-131">Create an Outlook add-in project</span></span>
+## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="b916a-131">Criar um projeto de um suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="b916a-131">Create an Outlook add-in project</span></span>
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - <span data-ttu-id="93443-132">**Escolha o tipo de projeto** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="93443-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="b916a-132">**Escolha o tipo de projeto** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="b916a-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
 
-    - <span data-ttu-id="93443-133">**Escolha o tipo de script** - `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="93443-133">**Choose a script type** - `JavaScript`</span></span>
+    - <span data-ttu-id="b916a-133">**Escolha o tipo de script** - `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="b916a-133">**Choose a script type** - `JavaScript`</span></span>
 
-    - <span data-ttu-id="93443-134">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="93443-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
+    - <span data-ttu-id="b916a-134">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="b916a-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
 
-    - <span data-ttu-id="93443-135">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="93443-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
+    - <span data-ttu-id="b916a-135">**Você gostaria de dar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="b916a-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yeoman-prompts-2.png)
-    
-    <span data-ttu-id="93443-137">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="93443-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yeoman-prompts-2.png)
+
+    <span data-ttu-id="b916a-137">Após concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="b916a-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-1. <span data-ttu-id="93443-138">Navegue até o diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="93443-138">Navigate to the root directory of the project.</span></span>
+1. <span data-ttu-id="b916a-138">Navegue até o diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="b916a-138">Navigate to the root directory of the project.</span></span>
 
     ```command&nbsp;line
     cd "Git the gist"
     ```
 
-1. <span data-ttu-id="93443-139">Este suplemento usará as seguintes bibliotecas:</span><span class="sxs-lookup"><span data-stu-id="93443-139">This add-in will use the following libraries:</span></span>
+1. <span data-ttu-id="b916a-139">Este suplemento usará as seguintes bibliotecas:</span><span class="sxs-lookup"><span data-stu-id="b916a-139">This add-in will use the following libraries:</span></span>
 
-    - <span data-ttu-id="93443-140">Biblioteca [Showdown](https://github.com/showdownjs/showdown) para converter o Markdown para HTML</span><span class="sxs-lookup"><span data-stu-id="93443-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
-    - <span data-ttu-id="93443-141">Biblioteca [URI.js](https://github.com/medialize/URI.js) para criar URLs relativos.</span><span class="sxs-lookup"><span data-stu-id="93443-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
-    - <span data-ttu-id="93443-142">Biblioteca [jquery](https://jquery.com/) para simplificar as interações com o DOM.</span><span class="sxs-lookup"><span data-stu-id="93443-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
+    - <span data-ttu-id="b916a-140">Biblioteca [Showdown](https://github.com/showdownjs/showdown) para converter o Markdown para HTML</span><span class="sxs-lookup"><span data-stu-id="b916a-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
+    - <span data-ttu-id="b916a-141">Biblioteca [URI.js](https://github.com/medialize/URI.js) para criar URLs relativos.</span><span class="sxs-lookup"><span data-stu-id="b916a-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
+    - <span data-ttu-id="b916a-142">Biblioteca [jquery](https://jquery.com/) para simplificar as interações com o DOM.</span><span class="sxs-lookup"><span data-stu-id="b916a-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
 
-     <span data-ttu-id="93443-143">Para instalar essas ferramentas para o seu projeto, execute o seguinte comando no diretório raiz do projeto:</span><span class="sxs-lookup"><span data-stu-id="93443-143">To install these tools for your project, run the following command in the root directory of the project:</span></span>
+     <span data-ttu-id="b916a-143">Para instalar essas ferramentas para o seu projeto, execute o seguinte comando no diretório raiz do projeto:</span><span class="sxs-lookup"><span data-stu-id="b916a-143">To install these tools for your project, run the following command in the root directory of the project:</span></span>
 
     ```command&nbsp;line
     npm install showdown urijs jquery --save
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="93443-144">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="93443-144">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="b916a-144">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="b916a-144">Update the manifest</span></span>
 
-<span data-ttu-id="93443-145">O manifesto controla como o suplemento é exibido no Outlook.</span><span class="sxs-lookup"><span data-stu-id="93443-145">The manifest for an add-in controls how it appears in Outlook.</span></span> <span data-ttu-id="93443-146">Ele define a maneira como o suplemento aparece na lista de suplementos e os botões que aparecem na faixa de opções, além de definir as URLs para os arquivos HTML e JavaScript usados pelo suplemento.</span><span class="sxs-lookup"><span data-stu-id="93443-146">It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
+<span data-ttu-id="b916a-p102">O manifesto controla como o suplemento é exibido no Outlook. Ele define a maneira como o suplemento aparece na lista de suplementos e os botões que aparecem na faixa de opções, além de definir as URLs para os arquivos HTML e JavaScript usados pelo suplemento.</span><span class="sxs-lookup"><span data-stu-id="b916a-p102">The manifest for an add-in controls how it appears in Outlook. It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
 
-#### <a name="specify-basic-information"></a><span data-ttu-id="93443-147">Especifique as informações básicas</span><span class="sxs-lookup"><span data-stu-id="93443-147">Specify basic information</span></span>
+#### <a name="specify-basic-information"></a><span data-ttu-id="b916a-147">Especificar as informações básicas</span><span class="sxs-lookup"><span data-stu-id="b916a-147">Specify basic information</span></span>
 
-<span data-ttu-id="93443-148">Faça as seguintes atualizações no arquivo**manifest.xml**para especificar algumas informações básicas sobre o suplemento:</span><span class="sxs-lookup"><span data-stu-id="93443-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:</span></span>
+<span data-ttu-id="b916a-148">Faça as seguintes atualizações no arquivo **manifest.xml** para especificar algumas informações básicas sobre o suplemento:</span><span class="sxs-lookup"><span data-stu-id="b916a-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:</span></span>
 
-1. <span data-ttu-id="93443-149">Encontre o elemento `ProviderName` e substitua o valor padrão pelo nome da sua empresa.</span><span class="sxs-lookup"><span data-stu-id="93443-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
+1. <span data-ttu-id="b916a-149">Encontre o elemento `ProviderName` e substitua o valor padrão pelo nome da sua empresa.</span><span class="sxs-lookup"><span data-stu-id="b916a-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
-1. <span data-ttu-id="93443-150">Localize o elemento`Description`, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="93443-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
+
+1. <span data-ttu-id="b916a-150">Localize o elemento`Description`, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="b916a-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
     ```
 
-#### <a name="test-the-generated-add-in"></a><span data-ttu-id="93443-151">Testar o suplemento gerado</span><span class="sxs-lookup"><span data-stu-id="93443-151">Test the generated add-in</span></span>
+#### <a name="test-the-generated-add-in"></a><span data-ttu-id="b916a-151">Testar o suplemento gerado</span><span class="sxs-lookup"><span data-stu-id="b916a-151">Test the generated add-in</span></span>
 
-<span data-ttu-id="93443-152">Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para confirmar que o projeto está configurado corretamente.</span><span class="sxs-lookup"><span data-stu-id="93443-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
+<span data-ttu-id="b916a-152">Antes de prosseguir, vamos testar o suplemento básico que o gerador criou para confirmar que o projeto está configurado corretamente.</span><span class="sxs-lookup"><span data-stu-id="b916a-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="93443-153">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="93443-153">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="93443-154">Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="93443-154">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span> <span data-ttu-id="93443-155">Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.</span><span class="sxs-lookup"><span data-stu-id="93443-155">You may also have to run your command prompt or terminal as an administrator for the changes to be made.</span></span>
+> <span data-ttu-id="b916a-p103">Os suplementos do Office devem usar HTTPS, não HTTP, mesmo quando você estiver desenvolvendo. Se for solicitado a instalação de um certificado após executar o comando a seguir, aceite o prompt para instalar o certificado que o gerador Yeoman fornece. Talvez também seja necessário executar o terminal ou o prompt de comando como administrador para que as alterações sejam feitas.</span><span class="sxs-lookup"><span data-stu-id="b916a-p103">Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.</span></span>
 
-1. <span data-ttu-id="93443-156">Execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="93443-156">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="93443-157">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="93443-157">When you run this command, the local web server will start (if it's not already running).</span></span>
+1. <span data-ttu-id="b916a-p104">Execute o seguinte comando no diretório raiz do projeto. Ao executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="b916a-p104">Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="93443-158">Siga as instruções em [Realizar sideload nos Suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="93443-158">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
+1. <span data-ttu-id="b916a-158">Siga as instruções em [Realizar sideload nos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="b916a-158">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
 
-1. <span data-ttu-id="93443-159">No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**.</span><span class="sxs-lookup"><span data-stu-id="93443-159">In Outlook, open an existing message and select the **Show Taskpane** button.</span></span> <span data-ttu-id="93443-160">Se tudo tiver sido configurado corretamente, o painel de tarefas será aberto e exibirá a página de boas-vindas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="93443-160">If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
+1. <span data-ttu-id="b916a-p105">No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**. Se tudo estiver configurado corretamente, o painel de tarefas será aberto e renderizará a página de boas-vindas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="b916a-p105">In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
 
-    ![Captura de tela do botão e do painel de tarefas adicionado pela amostra](../images/button-and-pane.png)
+    ![Captura de tela do botão "Mostrar Painel de Tarefas" e do Git do painel de tarefas de gist adicionado pelo exemplo](../images/button-and-pane.png)
 
-## <a name="define-buttons"></a><span data-ttu-id="93443-162">Definir botões</span><span class="sxs-lookup"><span data-stu-id="93443-162">Define buttons</span></span>
+## <a name="define-buttons"></a><span data-ttu-id="b916a-162">Definir botões</span><span class="sxs-lookup"><span data-stu-id="b916a-162">Define buttons</span></span>
 
-<span data-ttu-id="93443-163">Agora que você verificou que o complemento básico funciona, você pode personalizá-lo para adicionar mais funcionalidades.</span><span class="sxs-lookup"><span data-stu-id="93443-163">Now that you've verified the base add-in works, you can customize it to add more functionality.</span></span> <span data-ttu-id="93443-164">Por padrão, o manifesto define apenas os botões para a janela de mensagem de leitura.</span><span class="sxs-lookup"><span data-stu-id="93443-164">By default, the manifest only defines buttons for the read message window.</span></span> <span data-ttu-id="93443-165">Vamos atualizar o manifesto para remover os botões na janela de mensagem de leitura e definir dois novos botões para a janela de mensagem de texto:</span><span class="sxs-lookup"><span data-stu-id="93443-165">Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
+<span data-ttu-id="b916a-p106">Agora que você verificou que o suplemento básico funciona, você pode personalizá-lo para adicionar mais funcionalidades. Por padrão, o manifesto só define os botões para a janela de leitura de mensagem. Atualizaremos o manifesto para remover os botões da janela de leitura de mensagem e definir dois novos botões para a janela de composição de mensagem:</span><span class="sxs-lookup"><span data-stu-id="b916a-p106">Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
 
-- <span data-ttu-id="93443-166">**Inserir gist**: um botão que abre um painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="93443-166">**Insert gist**: a button that opens a task pane</span></span>
+- <span data-ttu-id="b916a-166">**Inserir gist**: um botão que abre um painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="b916a-166">**Insert gist**: a button that opens a task pane</span></span>
 
-- <span data-ttu-id="93443-167">**Inserir gist padrão**: um botão que invoca uma função</span><span class="sxs-lookup"><span data-stu-id="93443-167">**Insert default gist**: a button that invokes a function</span></span>
+- <span data-ttu-id="b916a-167">**Inserir gist padrão**: um botão que invoca uma função</span><span class="sxs-lookup"><span data-stu-id="b916a-167">**Insert default gist**: a button that invokes a function</span></span>
 
-### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="93443-168">Remover o ponto de extensão MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="93443-168">Remove the MessageReadCommandSurface extension point</span></span>
+### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="b916a-168">Remover o ponto de extensão MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="b916a-168">Remove the MessageReadCommandSurface extension point</span></span>
 
-<span data-ttu-id="93443-169">Abra o arquivo **manifest. XML** e localize o elemento `ExtensionPoint` com tipo `MessageReadCommandSurface`.</span><span class="sxs-lookup"><span data-stu-id="93443-169">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`.</span></span> <span data-ttu-id="93443-170">Exclua esse elemento `ExtensionPoint`(incluindo a marca de fechamento) para remover os botões na janela de mensagem de leitura.</span><span class="sxs-lookup"><span data-stu-id="93443-170">Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
+<span data-ttu-id="b916a-p107">Abra o arquivo **manifest.xml** e localize o elemento `ExtensionPoint` com o tipo `MessageReadCommandSurface`. Exclua este elemento `ExtensionPoint` (incluindo a marca de fechamento) para remover os botões da janela de leitura de mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-p107">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
 
-### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="93443-171">Adicionar o ponto de extensão MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="93443-171">Add the MessageComposeCommandSurface extension point</span></span>
+### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="b916a-171">Adicionar o ponto de extensão MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="b916a-171">Add the MessageComposeCommandSurface extension point</span></span>
 
-<span data-ttu-id="93443-172">Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`.</span><span class="sxs-lookup"><span data-stu-id="93443-172">Locate the line in the manifest that reads `</DesktopFormFactor>`.</span></span> <span data-ttu-id="93443-173">Imediatamente antes dessa linha, insira a marcação XML a seguir.</span><span class="sxs-lookup"><span data-stu-id="93443-173">Immediately before this line, insert the following XML markup.</span></span> <span data-ttu-id="93443-174">Observe o seguinte sobre esta marcação:</span><span class="sxs-lookup"><span data-stu-id="93443-174">Note the following about this markup:</span></span>
+<span data-ttu-id="b916a-p108">Localize a linha no manifesto que lê `</DesktopFormFactor>`. Imediatamente antes desta linha, insira a seguinte marcação XML. Observe o seguinte sobre esta marcação:</span><span class="sxs-lookup"><span data-stu-id="b916a-p108">Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup:</span></span>
 
-- <span data-ttu-id="93443-175">`ExtensionPoint` com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-175">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
+- <span data-ttu-id="b916a-175">`ExtensionPoint` com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-175">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
 
-- <span data-ttu-id="93443-176">Ao usar um elemento `OfficeTab` com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="93443-176">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
+- <span data-ttu-id="b916a-176">Ao usar um elemento `OfficeTab` com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="b916a-176">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
 
-- <span data-ttu-id="93443-177">O elemento `Group` define o agrupamento dos novos botões, com um rótulo definido pelo recurso `groupLabel`.</span><span class="sxs-lookup"><span data-stu-id="93443-177">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
+- <span data-ttu-id="b916a-177">O elemento `Group` define o agrupamento dos novos botões, com um rótulo definido pelo recurso `groupLabel`.</span><span class="sxs-lookup"><span data-stu-id="b916a-177">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
 
-- <span data-ttu-id="93443-178">O primeiro elemento `Control` contém um elemento `Action` com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="93443-178">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
+- <span data-ttu-id="b916a-178">O primeiro elemento `Control` contém um elemento `Action` com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="b916a-178">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
 
-- <span data-ttu-id="93443-179">O segundo elemento `Control` contém um elemento `Action` com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.</span><span class="sxs-lookup"><span data-stu-id="93443-179">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
+- <span data-ttu-id="b916a-179">O segundo elemento `Control` contém um elemento `Action` com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.</span><span class="sxs-lookup"><span data-stu-id="b916a-179">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
 
 ```xml
 <!-- Message Compose -->
@@ -238,13 +240,13 @@ ms.locfileid: "48370532"
 </ExtensionPoint>
 ```
 
-### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="93443-180">Atualização de recursos no manifesto</span><span class="sxs-lookup"><span data-stu-id="93443-180">Update resources in the manifest</span></span>
+### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="b916a-180">Atualização de recursos no manifesto</span><span class="sxs-lookup"><span data-stu-id="b916a-180">Update resources in the manifest</span></span>
 
-<span data-ttu-id="93443-181">O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido.</span><span class="sxs-lookup"><span data-stu-id="93443-181">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid.</span></span> <span data-ttu-id="93443-182">Você especificará estas informações na seção `Resources` do manifesto.</span><span class="sxs-lookup"><span data-stu-id="93443-182">You'll specify this information in the `Resources` section of the manifest.</span></span>
+<span data-ttu-id="b916a-p109">O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Especifique essas informações na seção `Resources` do manifesto.</span><span class="sxs-lookup"><span data-stu-id="b916a-p109">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `Resources` section of the manifest.</span></span>
 
-1. <span data-ttu-id="93443-183">Localize o elemento `Resources` no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).</span><span class="sxs-lookup"><span data-stu-id="93443-183">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
+1. <span data-ttu-id="b916a-183">Localize o elemento `Resources` no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).</span><span class="sxs-lookup"><span data-stu-id="b916a-183">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
 
-1. <span data-ttu-id="93443-184">No mesmo local, adicione a seguinte marcação para substituir o elemento `Resources` que você acabou de remover:</span><span class="sxs-lookup"><span data-stu-id="93443-184">In that same location, add the following markup to replace the `Resources` element you just removed:</span></span>
+1. <span data-ttu-id="b916a-184">No mesmo local, adicione a seguinte marcação para substituir o elemento `Resources` que você acabou de remover:</span><span class="sxs-lookup"><span data-stu-id="b916a-184">In that same location, add the following markup to replace the `Resources` element you just removed:</span></span>
 
     ```xml
     <Resources>
@@ -271,39 +273,37 @@ ms.locfileid: "48370532"
     </Resources>
     ```
 
-1. <span data-ttu-id="93443-185">Salve suas alterações no manifesto.</span><span class="sxs-lookup"><span data-stu-id="93443-185">Save your changes to the manifest.</span></span>
+1. <span data-ttu-id="b916a-185">Salve suas alterações no manifesto.</span><span class="sxs-lookup"><span data-stu-id="b916a-185">Save your changes to the manifest.</span></span>
 
-### <a name="reinstall-the-add-in"></a><span data-ttu-id="93443-186">Reinstalar o suplemento</span><span class="sxs-lookup"><span data-stu-id="93443-186">Reinstall the add-in</span></span>
+### <a name="reinstall-the-add-in"></a><span data-ttu-id="b916a-186">Reinstalar o suplemento</span><span class="sxs-lookup"><span data-stu-id="b916a-186">Reinstall the add-in</span></span>
 
-<span data-ttu-id="93443-187">Como você já instalou o suplemento a partir de um arquivo, você precisa reinstalá-lo para que as alterações de manifesto entrem em vigor.</span><span class="sxs-lookup"><span data-stu-id="93443-187">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
+<span data-ttu-id="b916a-187">Como você já instalou o suplemento a partir de um arquivo, você precisa reinstalá-lo para que as alterações de manifesto entrem em vigor.</span><span class="sxs-lookup"><span data-stu-id="b916a-187">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
 
-1. <span data-ttu-id="93443-188">Siga as instruções em [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar a seção **Suplementos personalizados** na parte inferior da caixa de diálogo **Meus suplementos**.</span><span class="sxs-lookup"><span data-stu-id="93443-188">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to locate the **Custom add-ins** section at the bottom of the **My add-ins** dialog box.</span></span>
+1. <span data-ttu-id="b916a-188">Siga as instruções para remover o **Git de gist** de [suplementos de sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).</span><span class="sxs-lookup"><span data-stu-id="b916a-188">Follow the instructions to remove **Git the gist** from [sideloaded add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).</span></span>
 
-1. <span data-ttu-id="93443-189">Selecione o botão **...** ao lado da entrada **Git the Gist** e escolha **Remover**.</span><span class="sxs-lookup"><span data-stu-id="93443-189">Select the **...** button next to the **Git the gist** entry and then choose **Remove**.</span></span>
+1. <span data-ttu-id="b916a-189">Fechar a janela **Meus suplementos**.</span><span class="sxs-lookup"><span data-stu-id="b916a-189">Close the **My add-ins** window.</span></span>
 
-1. <span data-ttu-id="93443-190">Fechar a janela **Meus suplementos**.</span><span class="sxs-lookup"><span data-stu-id="93443-190">Close the **My add-ins** window.</span></span>
+1. <span data-ttu-id="b916a-190">O botão personalizado deve desaparecer momentaneamente da faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="b916a-190">The custom button should disappear from the ribbon momentarily.</span></span>
 
-1. <span data-ttu-id="93443-191">O botão personalizado deve desaparecer momentaneamente da faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="93443-191">The custom button should disappear from the ribbon momentarily.</span></span>
+1. <span data-ttu-id="b916a-191">Siga as instruções em [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para reinstalar o suplemento utilizando o arquivo **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="b916a-191">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
 
-1. <span data-ttu-id="93443-192">Siga as instruções em [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para reinstalar o suplemento utilizando o arquivo **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="93443-192">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
+<span data-ttu-id="b916a-192">Depois de reinstalar o suplemento, você pode verificar se ele foi instalado com êxito verificando os comandos **Inserir gist** e **Inserir gist padrão** na janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-192">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window.</span></span> <span data-ttu-id="b916a-193">Observe que nada acontece quando você escolhe um destes itens, porque você ainda não terminou de criar este suplemento.</span><span class="sxs-lookup"><span data-stu-id="b916a-193">Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
 
-<span data-ttu-id="93443-193">Depois de reinstalar o suplemento, você pode verificar se ele foi instalado com êxito verificando os comandos **Inserir gist** e **Inserir gist padrão** na janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-193">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window.</span></span> <span data-ttu-id="93443-194">Observe que nada acontece quando você escolhe um destes itens, porque você ainda não terminou de criar este suplemento.</span><span class="sxs-lookup"><span data-stu-id="93443-194">Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
+- <span data-ttu-id="b916a-194">Se você estiver executando este suplemento no Outlook 2016 ou posterior no Windows, você verá dois novos botões na faixa de opções da janela de composição de mensagem: **Inserir gist** e **Inserir gist padrão**.</span><span class="sxs-lookup"><span data-stu-id="b916a-194">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
 
-- <span data-ttu-id="93443-195">Se você estiver executando este suplemento no Outlook 2016 ou posterior no Windows, deverá ver dois novos botões na faixa de opções da janela de composição da mensagem: **Inserir gist** e **Inserir gist padrão**.</span><span class="sxs-lookup"><span data-stu-id="93443-195">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
+    ![Captura de tela do menu flutuante da faixa de opções do Outlook no Windows com os botões do suplemento em destaque](../images/add-in-buttons-in-windows.png)
 
-    ![Uma captura de tela da faixa de opções no Outlook no Windows com os botões do suplemento destacados](../images/add-in-buttons-in-windows.png)
+- <span data-ttu-id="b916a-196">Se você estiver usando este suplemento no Outlook na Web, você verá um botão na parte inferior da janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-196">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window.</span></span> <span data-ttu-id="b916a-197">Selecione esse botão para ver as opções **Inserir gist** e **Inserir gist padrão**.</span><span class="sxs-lookup"><span data-stu-id="b916a-197">Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
 
-- <span data-ttu-id="93443-197">Se você estiver usando este suplemento no Outlook na Web, você verá um botão na parte inferior da janela de composição de mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-197">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window.</span></span> <span data-ttu-id="93443-198">Selecione esse botão para ver as opções **Insert Gist** e **Insert Default Gist**.</span><span class="sxs-lookup"><span data-stu-id="93443-198">Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
+    ![Captura de tela do formulário de composição de mensagem no Outlook na Web com o botão suplemento e o menu pop-up em destaque](../images/add-in-buttons-in-owa.png)
 
-    ![Uma captura de tela do formulário de composição da mensagem no Outlook na Web com o botão suplemento e o menu pop-up realçado](../images/add-in-buttons-in-owa.png)
+## <a name="implement-a-first-run-experience"></a><span data-ttu-id="b916a-199">Implementar uma experiência de primeira execução</span><span class="sxs-lookup"><span data-stu-id="b916a-199">Implement a first-run experience</span></span>
 
-## <a name="implement-a-first-run-experience"></a><span data-ttu-id="93443-200">Implementando uma experiência de primeira execução</span><span class="sxs-lookup"><span data-stu-id="93443-200">Implement a first-run experience</span></span>
+<span data-ttu-id="b916a-200">Este suplemento precisa ser capaz de ler gists da conta do GitHub do usuário e identificar qual deles o usuário escolheu como a essência padrão.</span><span class="sxs-lookup"><span data-stu-id="b916a-200">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist.</span></span> <span data-ttu-id="b916a-201">Para obter esses objetivos, o suplemento deverá solicitar ao usuário para fornecer o nome de usuário do GitHub e escolher uma essência padrão do seu conjunto de gists existentes.</span><span class="sxs-lookup"><span data-stu-id="b916a-201">In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists.</span></span> <span data-ttu-id="b916a-202">Conclua as etapas nesta seção para implementar uma experiência de primeira execução que será exibida uma caixa de diálogo para obter essas informações do usuário.</span><span class="sxs-lookup"><span data-stu-id="b916a-202">Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
 
-<span data-ttu-id="93443-201">Este suplemento precisa ser capaz de ler gists da conta do GitHub do usuário e identificar qual deles o usuário escolheu como a essência padrão.</span><span class="sxs-lookup"><span data-stu-id="93443-201">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist.</span></span> <span data-ttu-id="93443-202">Para obter esses objetivos, o suplemento deverá solicitar ao usuário para fornecer o nome de usuário do GitHub e escolher uma essência padrão do seu conjunto de gists existentes.</span><span class="sxs-lookup"><span data-stu-id="93443-202">In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists.</span></span> <span data-ttu-id="93443-203">Conclua as etapas nesta seção para implementar uma experiência de primeira execução que será exibida uma caixa de diálogo para obter essas informações do usuário.</span><span class="sxs-lookup"><span data-stu-id="93443-203">Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
+### <a name="collect-data-from-the-user"></a><span data-ttu-id="b916a-203">Coletar dados do usuário</span><span class="sxs-lookup"><span data-stu-id="b916a-203">Collect data from the user</span></span>
 
-### <a name="collect-data-from-the-user"></a><span data-ttu-id="93443-204">Coletar dados do usuário</span><span class="sxs-lookup"><span data-stu-id="93443-204">Collect data from the user</span></span>
-
-<span data-ttu-id="93443-205">Para começar, vamos criar o UI para a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="93443-205">Let's start by creating the UI for the dialog itself.</span></span> <span data-ttu-id="93443-206">Dentro da pasta **./src**, crie uma nova subpasta chamada **configurações**.</span><span class="sxs-lookup"><span data-stu-id="93443-206">Within the **./src** folder, create a new subfolder named **settings**.</span></span> <span data-ttu-id="93443-207">Na pasta **./src/settings**, crie um arquivo chamado **dialog.html** e adicione a marcação a seguir para definir um formulário bem básico com uma entrada de texto para um nome de usuário do GitHub e uma lista vazia para gists que serão preenchidas por meio de JavaScript.</span><span class="sxs-lookup"><span data-stu-id="93443-207">In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
+<span data-ttu-id="b916a-204">Para começar, vamos criar o UI para a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="b916a-204">Let's start by creating the UI for the dialog itself.</span></span> <span data-ttu-id="b916a-205">Dentro da pasta **./src**, crie uma nova subpasta chamada **configurações**.</span><span class="sxs-lookup"><span data-stu-id="b916a-205">Within the **./src** folder, create a new subfolder named **settings**.</span></span> <span data-ttu-id="b916a-206">Na pasta **./src/settings**, crie um arquivo chamado **dialog.html** e adicione a marcação a seguir para definir um formulário bem básico com uma entrada de texto para um nome de usuário do GitHub e uma lista vazia para gists que serão preenchidas por meio de JavaScript.</span><span class="sxs-lookup"><span data-stu-id="b916a-206">In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -377,7 +377,7 @@ ms.locfileid: "48370532"
 </html>
 ```
 
-<span data-ttu-id="93443-208">Em seguida, crie um arquivo na pasta **./src/settings** chamado **dialog.css** e adicione o seguinte código para especificar os estilos que são usados pelo **dialog.html**.</span><span class="sxs-lookup"><span data-stu-id="93443-208">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
+<span data-ttu-id="b916a-207">Em seguida, crie um arquivo na pasta **./src/settings** chamado **dialog.css** e adicione o seguinte código para especificar os estilos que são usados pelo **dialog.html**.</span><span class="sxs-lookup"><span data-stu-id="b916a-207">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
 
 ```CSS
 section {
@@ -412,7 +412,7 @@ ul {
 }
 ```
 
-<span data-ttu-id="93443-209">Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa.</span><span class="sxs-lookup"><span data-stu-id="93443-209">Now that you've defined the dialog UI, you can write the code that makes it actually do something.</span></span> <span data-ttu-id="93443-210">Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código.</span><span class="sxs-lookup"><span data-stu-id="93443-210">Create a file in the **./src/settings** folder named **dialog.js** and add the following code.</span></span> <span data-ttu-id="93443-211">Observe que o código usa jQuery registrar eventos e usa o `messageParent` função enviar as opções do usuário para o chamador.</span><span class="sxs-lookup"><span data-stu-id="93443-211">Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
+<span data-ttu-id="b916a-208">Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa.</span><span class="sxs-lookup"><span data-stu-id="b916a-208">Now that you've defined the dialog UI, you can write the code that makes it actually do something.</span></span> <span data-ttu-id="b916a-209">Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código.</span><span class="sxs-lookup"><span data-stu-id="b916a-209">Create a file in the **./src/settings** folder named **dialog.js** and add the following code.</span></span> <span data-ttu-id="b916a-210">Observe que o código usa jQuery registrar eventos e usa o `messageParent` função enviar as opções do usuário para o chamador.</span><span class="sxs-lookup"><span data-stu-id="b916a-210">Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
 
 ```js
 (function(){
@@ -516,17 +516,17 @@ ul {
 })();
 ```
 
-#### <a name="update-webpack-config-settings"></a><span data-ttu-id="93443-212">Atualizar as configurações webpack config</span><span class="sxs-lookup"><span data-stu-id="93443-212">Update webpack config settings</span></span>
+#### <a name="update-webpack-config-settings"></a><span data-ttu-id="b916a-211">Atualizar as configurações webpack config</span><span class="sxs-lookup"><span data-stu-id="b916a-211">Update webpack config settings</span></span>
 
-<span data-ttu-id="93443-213">Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as seguintes etapas.</span><span class="sxs-lookup"><span data-stu-id="93443-213">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
+<span data-ttu-id="b916a-212">Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as seguintes etapas.</span><span class="sxs-lookup"><span data-stu-id="b916a-212">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
 
-1. <span data-ttu-id="93443-214">Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `dialog`.</span><span class="sxs-lookup"><span data-stu-id="93443-214">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
+1. <span data-ttu-id="b916a-213">Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `dialog`.</span><span class="sxs-lookup"><span data-stu-id="b916a-213">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
 
     ```js
     dialog: "./src/settings/dialog.js"
     ```
 
-    <span data-ttu-id="93443-215">Após fazer isso, o novo objeto `entry` terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="93443-215">After you've done this, the new `entry` object will look like this:</span></span>
+    <span data-ttu-id="b916a-214">Após fazer isso, o novo objeto `entry` terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="b916a-214">After you've done this, the new `entry` object will look like this:</span></span>
 
     ```js
     entry: {
@@ -537,7 +537,7 @@ ul {
     },
     ```
 
-1. <span data-ttu-id="93443-216">Localize a `plugins` matriz dentro do `config` objeto.</span><span class="sxs-lookup"><span data-stu-id="93443-216">Locate the `plugins` array within the `config` object.</span></span> <span data-ttu-id="93443-217">Na `patterns` matriz do `new CopyWebpackPlugin` objeto, adicione uma nova entrada depois da `taskpane.css` entrada.</span><span class="sxs-lookup"><span data-stu-id="93443-217">In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.</span></span>
+1. <span data-ttu-id="b916a-215">Localize a `plugins` matriz dentro do `config` objeto.</span><span class="sxs-lookup"><span data-stu-id="b916a-215">Locate the `plugins` array within the `config` object.</span></span> <span data-ttu-id="b916a-216">Na `patterns` matriz do `new CopyWebpackPlugin` objeto, adicione uma nova entrada depois da `taskpane.css` entrada.</span><span class="sxs-lookup"><span data-stu-id="b916a-216">In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.</span></span>
 
     ```js
     {
@@ -546,7 +546,7 @@ ul {
     },
     ```
 
-    <span data-ttu-id="93443-218">Após fazer isso, o `new CopyWebpackPlugin` objeto terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="93443-218">After you've done this, the `new CopyWebpackPlugin` object will look like this:</span></span>
+    <span data-ttu-id="b916a-217">Após fazer isso, o `new CopyWebpackPlugin` objeto terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="b916a-217">After you've done this, the `new CopyWebpackPlugin` object will look like this:</span></span>
 
     ```js
       new CopyWebpackPlugin({
@@ -573,7 +573,7 @@ ul {
       ]}),
     ```
 
-1. <span data-ttu-id="93443-219">Localize a `plugins` matriz no `config` objeto e adicione esse novo objeto ao final dela.</span><span class="sxs-lookup"><span data-stu-id="93443-219">Locate the `plugins` array within the `config` object and add this new object to the end of that array.</span></span>
+1. <span data-ttu-id="b916a-218">Localize a `plugins` matriz no `config` objeto e adicione esse novo objeto ao final dela.</span><span class="sxs-lookup"><span data-stu-id="b916a-218">Locate the `plugins` array within the `config` object and add this new object to the end of that array.</span></span>
 
     ```js
     new HtmlWebpackPlugin({
@@ -583,7 +583,7 @@ ul {
     })
     ```
 
-    <span data-ttu-id="93443-220">Após fazer isso, a nova `plugins` matriz terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="93443-220">After you've done this, the new `plugins` array will look like this:</span></span>
+    <span data-ttu-id="b916a-219">Após fazer isso, a nova `plugins` matriz terá a seguinte aparência:</span><span class="sxs-lookup"><span data-stu-id="b916a-219">After you've done this, the new `plugins` array will look like this:</span></span>
 
     ```js
     plugins: [
@@ -628,25 +628,25 @@ ul {
     ],
     ```
 
-1. <span data-ttu-id="93443-221">Se o servidor Web estiver em execução, feche a janela de comando do nó.</span><span class="sxs-lookup"><span data-stu-id="93443-221">If the web server is running, close the node command window.</span></span>
+1. <span data-ttu-id="b916a-220">Se o servidor Web estiver em execução, feche a janela de comando do nó.</span><span class="sxs-lookup"><span data-stu-id="b916a-220">If the web server is running, close the node command window.</span></span>
 
-1. <span data-ttu-id="93443-222">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="93443-222">Run the following command to rebuild the project.</span></span>
+1. <span data-ttu-id="b916a-221">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="b916a-221">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-1. <span data-ttu-id="93443-223">Execute o seguinte comando para iniciar o servidor Web.</span><span class="sxs-lookup"><span data-stu-id="93443-223">Run the following command to start the web server.</span></span>
+1. <span data-ttu-id="b916a-222">Execute o seguinte comando para iniciar o servidor Web.</span><span class="sxs-lookup"><span data-stu-id="b916a-222">Run the following command to start the web server.</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-### <a name="fetch-data-from-github"></a><span data-ttu-id="93443-224">Buscar dados do GitHub</span><span class="sxs-lookup"><span data-stu-id="93443-224">Fetch data from GitHub</span></span>
+### <a name="fetch-data-from-github"></a><span data-ttu-id="b916a-223">Buscar dados do GitHub</span><span class="sxs-lookup"><span data-stu-id="b916a-223">Fetch data from GitHub</span></span>
 
-<span data-ttu-id="93443-225">As **dialog.js** arquivo que você criou Especifica que o suplemento deverá ser carregada gists quando o `change` incêndios evento para o campo de nome de usuário do GitHub.</span><span class="sxs-lookup"><span data-stu-id="93443-225">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field.</span></span> <span data-ttu-id="93443-226">Para recuperar gists do usuário do GitHub, você usará o [GitHub Gists API](https://developer.github.com/v3/gists/).</span><span class="sxs-lookup"><span data-stu-id="93443-226">To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
+<span data-ttu-id="b916a-224">As **dialog.js** arquivo que você criou Especifica que o suplemento deverá ser carregada gists quando o `change` incêndios evento para o campo de nome de usuário do GitHub.</span><span class="sxs-lookup"><span data-stu-id="b916a-224">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field.</span></span> <span data-ttu-id="b916a-225">Para recuperar gists do usuário do GitHub, você usará o [GitHub Gists API](https://developer.github.com/v3/gists/).</span><span class="sxs-lookup"><span data-stu-id="b916a-225">To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
 
-<span data-ttu-id="93443-227">Dentro da pasta **./src**, crie uma nova subpasta chamada **auxiliares**.</span><span class="sxs-lookup"><span data-stu-id="93443-227">Within the **./src** folder, create a new subfolder named **helpers**.</span></span> <span data-ttu-id="93443-228">Na pasta **./src/helpers**, crie um arquivo chamado **gist-api.js** e adicione o seguinte código para recuperar gists do usuário no GitHub e criar a lista de gists.</span><span class="sxs-lookup"><span data-stu-id="93443-228">In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
+<span data-ttu-id="b916a-226">Dentro da pasta **./src**, crie uma nova subpasta chamada **auxiliares**.</span><span class="sxs-lookup"><span data-stu-id="b916a-226">Within the **./src** folder, create a new subfolder named **helpers**.</span></span> <span data-ttu-id="b916a-227">Na pasta **./src/helpers**, crie um arquivo chamado **gist-api.js** e adicione o seguinte código para recuperar gists do usuário no GitHub e criar a lista de gists.</span><span class="sxs-lookup"><span data-stu-id="b916a-227">In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
 
 ```js
 function getUserGists(user, callback) {
@@ -717,21 +717,21 @@ function buildFileList(files) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="93443-229">Você deve ter notado que não há nenhum botão para invocar a caixa de diálogo de configurações.</span><span class="sxs-lookup"><span data-stu-id="93443-229">You may have noticed that there's no button to invoke the settings dialog.</span></span> <span data-ttu-id="93443-230">Em vez disso, o suplemento verificará se ele foi configurado quando o usuário seleciona o botão **Inserir gist padrão** ou o botão **Inserir gist**.</span><span class="sxs-lookup"><span data-stu-id="93443-230">Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button.</span></span> <span data-ttu-id="93443-231">Se o suplemento ainda não tiver sido configurado, a caixa de diálogo de configurações solicitará que o usuário o configure antes de prosseguir.</span><span class="sxs-lookup"><span data-stu-id="93443-231">If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
+> <span data-ttu-id="b916a-228">Você deve ter notado que não há nenhum botão para invocar a caixa de diálogo de configurações.</span><span class="sxs-lookup"><span data-stu-id="b916a-228">You may have noticed that there's no button to invoke the settings dialog.</span></span> <span data-ttu-id="b916a-229">Em vez disso, o suplemento verificará se ele foi configurado quando o usuário seleciona o botão **Inserir gist padrão** ou o botão **Inserir gist**.</span><span class="sxs-lookup"><span data-stu-id="b916a-229">Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button.</span></span> <span data-ttu-id="b916a-230">Se o suplemento ainda não tiver sido configurado, a caixa de diálogo de configurações solicitará que o usuário o configure antes de prosseguir.</span><span class="sxs-lookup"><span data-stu-id="b916a-230">If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
 
-## <a name="implement-a-ui-less-button"></a><span data-ttu-id="93443-232">Implementar um botão sem interface do usuário</span><span class="sxs-lookup"><span data-stu-id="93443-232">Implement a UI-less button</span></span>
+## <a name="implement-a-ui-less-button"></a><span data-ttu-id="b916a-231">Implementar um botão sem interface do usuário</span><span class="sxs-lookup"><span data-stu-id="b916a-231">Implement a UI-less button</span></span>
 
-<span data-ttu-id="93443-233">O botão **Inserir gist padrão** do suplemento é um botão sem interface do usuário que invocará uma função JavaScript, em vez de abrir um painel de tarefas como muitos dos botões suplementares.</span><span class="sxs-lookup"><span data-stu-id="93443-233">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do.</span></span> <span data-ttu-id="93443-234">Quando o usuário seleciona o botão **Inserir gist padrão**, a função JavaScript correspondente verificará se o suplemento foi configurado.</span><span class="sxs-lookup"><span data-stu-id="93443-234">When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
+<span data-ttu-id="b916a-232">O botão **Inserir gist padrão** do suplemento é um botão sem interface do usuário que invocará uma função JavaScript, em vez de abrir um painel de tarefas como muitos dos botões suplementares.</span><span class="sxs-lookup"><span data-stu-id="b916a-232">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do.</span></span> <span data-ttu-id="b916a-233">Quando o usuário seleciona o botão **Inserir gist padrão**, a função JavaScript correspondente verificará se o suplemento foi configurado.</span><span class="sxs-lookup"><span data-stu-id="b916a-233">When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
 
-- <span data-ttu-id="93443-235">Se o suplemento já tiver sido configurado, a função carregará o conteúdo do gist selecionado pelo usuário como padrão e o inserirá no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-235">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
+- <span data-ttu-id="b916a-234">Se o suplemento já tiver sido configurado, a função carregará o conteúdo do gist selecionado pelo usuário como padrão e o inserirá no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-234">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
 
-- <span data-ttu-id="93443-236">Se o suplemento ainda não tiver sido configurado, a caixa de diálogo de configurações solicitará ao usuário que forneça as informações necessárias.</span><span class="sxs-lookup"><span data-stu-id="93443-236">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
+- <span data-ttu-id="b916a-235">Se o suplemento ainda não tiver sido configurado, a caixa de diálogo de configurações solicitará ao usuário que forneça as informações necessárias.</span><span class="sxs-lookup"><span data-stu-id="b916a-235">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
 
-### <a name="update-the-function-file-html"></a><span data-ttu-id="93443-237">Atualizar o arquivo de função (HTML)</span><span class="sxs-lookup"><span data-stu-id="93443-237">Update the function file (HTML)</span></span>
+### <a name="update-the-function-file-html"></a><span data-ttu-id="b916a-236">Atualizar o arquivo de função (HTML)</span><span class="sxs-lookup"><span data-stu-id="b916a-236">Update the function file (HTML)</span></span>
 
-<span data-ttu-id="93443-238">Uma função invocada por um botão sem interface do usuário devem ser definidas no arquivo especificado pelo elemento `FunctionFile` no manifesto para o fator forma correspondente.</span><span class="sxs-lookup"><span data-stu-id="93443-238">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor.</span></span> <span data-ttu-id="93443-239">O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.</span><span class="sxs-lookup"><span data-stu-id="93443-239">This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
+<span data-ttu-id="b916a-237">Uma função invocada por um botão sem interface do usuário devem ser definidas no arquivo especificado pelo elemento `FunctionFile` no manifesto para o fator forma correspondente.</span><span class="sxs-lookup"><span data-stu-id="b916a-237">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor.</span></span> <span data-ttu-id="b916a-238">O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.</span><span class="sxs-lookup"><span data-stu-id="b916a-238">This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
 
-<span data-ttu-id="93443-240">Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pela marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="93443-240">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="b916a-239">Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pela marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="b916a-239">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -759,9 +759,9 @@ function buildFileList(files) {
 </html>
 ```
 
-### <a name="update-the-function-file-javascript"></a><span data-ttu-id="93443-241">Atualizar o arquivo de função (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="93443-241">Update the function file (JavaScript)</span></span>
+### <a name="update-the-function-file-javascript"></a><span data-ttu-id="b916a-240">Atualizar o arquivo de função (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b916a-240">Update the function file (JavaScript)</span></span>
 
-<span data-ttu-id="93443-242">Abra o arquivo **./src/commands/commands.js** e substitua todo o conteúdo pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="93443-242">Open the file **./src/commands/commands.js** and replace the entire contents with the following code.</span></span> <span data-ttu-id="93443-243">Observe que, se a função`insertDefaultGist` determinar que o suplemento ainda não foi configurado, ele adicionará o parâmetro `?warn=1` à URL de caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="93443-243">Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL.</span></span> <span data-ttu-id="93443-244">Isso faz com que a caixa de diálogo de configurações renderize a barra de mensagens que está definida em **./settings/dialog.html**, para informar ao usuário porque está vendo a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="93443-244">Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
+<span data-ttu-id="b916a-241">Abra o arquivo **./src/commands/commands.js** e substitua todo o conteúdo pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="b916a-241">Open the file **./src/commands/commands.js** and replace the entire contents with the following code.</span></span> <span data-ttu-id="b916a-242">Observe que, se a função`insertDefaultGist` determinar que o suplemento ainda não foi configurado, ele adicionará o parâmetro `?warn=1` à URL de caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="b916a-242">Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL.</span></span> <span data-ttu-id="b916a-243">Isso faz com que a caixa de diálogo de configurações renderize a barra de mensagens que está definida em **./settings/dialog.html**, para informar ao usuário porque está vendo a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="b916a-243">Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
 
 ```js
 var config;
@@ -858,9 +858,9 @@ var g = getGlobal();
 g.insertDefaultGist = insertDefaultGist;
 ```
 
-### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="93443-245">Criar um arquivo para gerenciar configurações</span><span class="sxs-lookup"><span data-stu-id="93443-245">Create a file to manage configuration settings</span></span>
+### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="b916a-244">Criar um arquivo para gerenciar configurações</span><span class="sxs-lookup"><span data-stu-id="b916a-244">Create a file to manage configuration settings</span></span>
 
-<span data-ttu-id="93443-246">O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe.</span><span class="sxs-lookup"><span data-stu-id="93443-246">The HTML function file references a file named **addin-config.js**, which doesn't yet exist.</span></span> <span data-ttu-id="93443-247">Crie um arquivo chamado **addin-config.js** na pasta **./src/helpers** e adicione o seguinte código.</span><span class="sxs-lookup"><span data-stu-id="93443-247">Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code.</span></span> <span data-ttu-id="93443-248">O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.RoamingSettings) para definir valores de configuração.</span><span class="sxs-lookup"><span data-stu-id="93443-248">This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
+<span data-ttu-id="b916a-245">O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe.</span><span class="sxs-lookup"><span data-stu-id="b916a-245">The HTML function file references a file named **addin-config.js**, which doesn't yet exist.</span></span> <span data-ttu-id="b916a-246">Crie um arquivo chamado **addin-config.js** na pasta **./src/helpers** e adicione o seguinte código.</span><span class="sxs-lookup"><span data-stu-id="b916a-246">Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code.</span></span> <span data-ttu-id="b916a-247">O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.RoamingSettings) para definir valores de configuração.</span><span class="sxs-lookup"><span data-stu-id="b916a-247">This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
 
 ```js
 function getConfig() {
@@ -880,15 +880,15 @@ function setConfig(config, callback) {
 }
 ```
 
-### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="93443-249">Criar novas funções para processar gists</span><span class="sxs-lookup"><span data-stu-id="93443-249">Create new functions to process gists</span></span>
+### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="b916a-248">Criar novas funções para processar gists</span><span class="sxs-lookup"><span data-stu-id="b916a-248">Create new functions to process gists</span></span>
 
-<span data-ttu-id="93443-250">Em seguida, abra o arquivo **./src/helpers/gist-api.js** e adicione as seguintes funções.</span><span class="sxs-lookup"><span data-stu-id="93443-250">Next, open the **./src/helpers/gist-api.js** file and add the following functions.</span></span> <span data-ttu-id="93443-251">Observe o seguinte:</span><span class="sxs-lookup"><span data-stu-id="93443-251">Note the following:</span></span>
+<span data-ttu-id="b916a-249">Em seguida, abra o arquivo **./src/helpers/gist-api.js** e adicione as seguintes funções.</span><span class="sxs-lookup"><span data-stu-id="b916a-249">Next, open the **./src/helpers/gist-api.js** file and add the following functions.</span></span> <span data-ttu-id="b916a-250">Observe o seguinte:</span><span class="sxs-lookup"><span data-stu-id="b916a-250">Note the following:</span></span>
 
-- <span data-ttu-id="93443-252">Se a essência contiver HTML, o suplemento inserirá o HTML como está no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-252">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
+- <span data-ttu-id="b916a-251">Se a essência contiver HTML, o suplemento inserirá o HTML como está no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-251">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
 
-- <span data-ttu-id="93443-253">Se o gist contiver redução, ele usará a biblioteca[Showdown](https://github.com/showdownjs/showdown) para converter a redução em HTML e, em seguida, inserirá o HTML resultante no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-253">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
+- <span data-ttu-id="b916a-252">Se o gist contiver redução, ele usará a biblioteca[Showdown](https://github.com/showdownjs/showdown) para converter a redução em HTML e, em seguida, inserirá o HTML resultante no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-252">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
 
-- <span data-ttu-id="93443-254">Se a essência contiver algo diferente de HTML ou redução, o suplemento a inserirá no corpo da mensagem como um trecho de código.</span><span class="sxs-lookup"><span data-stu-id="93443-254">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
+- <span data-ttu-id="b916a-253">Se a essência contiver algo diferente de HTML ou redução, o suplemento a inserirá no corpo da mensagem como um trecho de código.</span><span class="sxs-lookup"><span data-stu-id="b916a-253">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
 
 ```js
 function getGist(gistId, callback) {
@@ -938,32 +938,32 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="93443-255">Testar o botão</span><span class="sxs-lookup"><span data-stu-id="93443-255">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="b916a-254">Testar o botão</span><span class="sxs-lookup"><span data-stu-id="b916a-254">Test the button</span></span>
 
-<span data-ttu-id="93443-256">Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado.</span><span class="sxs-lookup"><span data-stu-id="93443-256">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="93443-257">Conclua as seguintes etapas para testar o botão**Inserir Gist Padrão**.</span><span class="sxs-lookup"><span data-stu-id="93443-257">Then complete the following steps to test the **Insert default gist** button.</span></span>
+<span data-ttu-id="b916a-255">Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado.</span><span class="sxs-lookup"><span data-stu-id="b916a-255">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="b916a-256">Conclua as seguintes etapas para testar o botão **Inserir Gist Padrão**.</span><span class="sxs-lookup"><span data-stu-id="b916a-256">Then complete the following steps to test the **Insert default gist** button.</span></span>
 
-1. <span data-ttu-id="93443-258">Abra o Outlook e redija uma nova mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-258">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="b916a-257">Abra o Outlook e redija uma nova mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-257">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="93443-259">Na janela de mensagem de texto, selecione o botão **Inserir Gist Padrão**.</span><span class="sxs-lookup"><span data-stu-id="93443-259">In the compose message window, select the **Insert default gist** button.</span></span> <span data-ttu-id="93443-260">Você deve ser solicitado a configurar o suplemento.</span><span class="sxs-lookup"><span data-stu-id="93443-260">You should be prompted to configure the add-in.</span></span>
+1. <span data-ttu-id="b916a-258">Na janela de composição de mensagem, selecione o botão **Inserir gist padrão**.</span><span class="sxs-lookup"><span data-stu-id="b916a-258">In the compose message window, select the **Insert default gist** button.</span></span> <span data-ttu-id="b916a-259">Você verá uma caixa de diálogo na qual é possível configurar o suplemento, começando com o prompt para definir seu nome de usuário do GitHub.</span><span class="sxs-lookup"><span data-stu-id="b916a-259">You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.</span></span>
 
-    ![Captura de tela do prompt do suplemento a ser configurado](../images/addin-prompt-configure.png)
+    ![Captura de tela do prompt de diálogo para configurar o suplemento](../images/addin-prompt-configure.png)
 
-1. <span data-ttu-id="93443-262">Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists.</span><span class="sxs-lookup"><span data-stu-id="93443-262">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of gists.</span></span> <span data-ttu-id="93443-263">Selecione um gist para ser o padrão e selecione **Done**.</span><span class="sxs-lookup"><span data-stu-id="93443-263">Select a gist to be the default, and select **Done**.</span></span>
+1. <span data-ttu-id="b916a-261">Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists públicos.</span><span class="sxs-lookup"><span data-stu-id="b916a-261">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists.</span></span> <span data-ttu-id="b916a-262">Selecione um gist para ser o padrão e selecione **Concluído**.</span><span class="sxs-lookup"><span data-stu-id="b916a-262">Select a gist to be the default, and select **Done**.</span></span>
 
     ![Captura de tela de caixa de diálogo de configurações do suplemento](../images/addin-settings.png)
 
-1. <span data-ttu-id="93443-265">Clique no botão **Insert Default Gist** novamente.</span><span class="sxs-lookup"><span data-stu-id="93443-265">Select the **Insert default gist** button again.</span></span> <span data-ttu-id="93443-266">Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.</span><span class="sxs-lookup"><span data-stu-id="93443-266">This time, you should see the contents of the gist inserted into the body of the email.</span></span>
+1. <span data-ttu-id="b916a-264">Selecione o botão **Inserir gist padrão** novamente.</span><span class="sxs-lookup"><span data-stu-id="b916a-264">Select the **Insert default gist** button again.</span></span> <span data-ttu-id="b916a-265">Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.</span><span class="sxs-lookup"><span data-stu-id="b916a-265">This time, you should see the contents of the gist inserted into the body of the email.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="93443-267">Outlook no Windows: Para selecionar as configurações mais recentes, talvez seja necessário fechar e reabrir a janela de composição de mensagens.</span><span class="sxs-lookup"><span data-stu-id="93443-267">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
+   > <span data-ttu-id="b916a-266">Outlook no Windows: Para selecionar as configurações mais recentes, talvez seja necessário fechar e reabrir a janela de composição de mensagens.</span><span class="sxs-lookup"><span data-stu-id="b916a-266">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
 
-## <a name="implement-a-task-pane"></a><span data-ttu-id="93443-268">Implementar um painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="93443-268">Implement a task pane</span></span>
+## <a name="implement-a-task-pane"></a><span data-ttu-id="b916a-267">Implementar um painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="b916a-267">Implement a task pane</span></span>
 
-<span data-ttu-id="93443-269">O botão **Inserir gist** deste suplemento abrirá o painel de tarefas e exibirá os gists do usuário.</span><span class="sxs-lookup"><span data-stu-id="93443-269">This add-in's **Insert gist** button will open a task pane and display the user's gists.</span></span> <span data-ttu-id="93443-270">Em seguida, o usuário pode selecionar uma das gists para inserir no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-270">The user can then select one of the gists to insert into the body of the message.</span></span> <span data-ttu-id="93443-271">Se o usuário ainda não tiver configurado o suplemento, ele será solicitado a fazê-lo.</span><span class="sxs-lookup"><span data-stu-id="93443-271">If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
+<span data-ttu-id="b916a-268">O botão **Inserir gist** deste suplemento abrirá o painel de tarefas e exibirá os gists do usuário.</span><span class="sxs-lookup"><span data-stu-id="b916a-268">This add-in's **Insert gist** button will open a task pane and display the user's gists.</span></span> <span data-ttu-id="b916a-269">Em seguida, o usuário pode selecionar uma das gists para inserir no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-269">The user can then select one of the gists to insert into the body of the message.</span></span> <span data-ttu-id="b916a-270">Se o usuário ainda não tiver configurado o suplemento, ele será solicitado a fazê-lo.</span><span class="sxs-lookup"><span data-stu-id="b916a-270">If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
 
-### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="93443-272">Especificar o arquivo HTML para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="93443-272">Specify the HTML for the task pane</span></span>
+### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="b916a-271">Especificar o arquivo HTML para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="b916a-271">Specify the HTML for the task pane</span></span>
 
-<span data-ttu-id="93443-273">No projeto que você criou, o painel de tarefas HTML é especificado no arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="93443-273">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="93443-274">Abra o arquivo e substitua todo o conteúdo pela seguinte marcação.</span><span class="sxs-lookup"><span data-stu-id="93443-274">Open that file and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="b916a-272">No projeto que você criou, o painel de tarefas HTML é especificado no arquivo **./src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="b916a-272">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="b916a-273">Abra o arquivo e substitua todo o conteúdo pela seguinte marcação.</span><span class="sxs-lookup"><span data-stu-id="b916a-273">Open that file and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -1025,9 +1025,9 @@ function buildBodyContent(gist, callback) {
 </html>
 ```
 
-### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="93443-275">Especificar o CSS para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="93443-275">Specify the CSS for the task pane</span></span>
+### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="b916a-274">Especificar o CSS para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="b916a-274">Specify the CSS for the task pane</span></span>
 
-<span data-ttu-id="93443-276">No projeto que você criou, o painel de tarefas CSS é especificado no arquivo **./src/taskpane/taskpane.css**.</span><span class="sxs-lookup"><span data-stu-id="93443-276">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**.</span></span> <span data-ttu-id="93443-277">Abra o arquivo e substitua todo o conteúdo pelo seguinte código.</span><span class="sxs-lookup"><span data-stu-id="93443-277">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="b916a-275">No projeto que você criou, o painel de tarefas CSS é especificado no arquivo **./src/taskpane/taskpane.css**.</span><span class="sxs-lookup"><span data-stu-id="b916a-275">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**.</span></span> <span data-ttu-id="b916a-276">Abra o arquivo e substitua todo o conteúdo pelo seguinte código.</span><span class="sxs-lookup"><span data-stu-id="b916a-276">Open that file and replace the entire contents with the following code.</span></span>
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1185,9 +1185,9 @@ ul {
           background: transparent; }
 ```
 
-### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="93443-278">Especificar o JavaScript para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="93443-278">Specify the JavaScript for the task pane</span></span>
+### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="b916a-277">Especificar o JavaScript para o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="b916a-277">Specify the JavaScript for the task pane</span></span>
 
-<span data-ttu-id="93443-279">No projeto que você criou, o painel de tarefas JavaScript é especificado no arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="93443-279">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="93443-280">Abra o arquivo e substitua todo o conteúdo pelo seguinte código.</span><span class="sxs-lookup"><span data-stu-id="93443-280">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="b916a-278">No projeto que você criou, o painel de tarefas JavaScript é especificado no arquivo **./src/taskpane/taskpane.js**.</span><span class="sxs-lookup"><span data-stu-id="b916a-278">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="b916a-279">Abra o arquivo e substitua todo o conteúdo pelo seguinte código.</span><span class="sxs-lookup"><span data-stu-id="b916a-279">Open that file and replace the entire contents with the following code.</span></span>
 
 ```js
 (function(){
@@ -1299,21 +1299,21 @@ ul {
 })();
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="93443-281">Testar o botão</span><span class="sxs-lookup"><span data-stu-id="93443-281">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="b916a-280">Testar o botão</span><span class="sxs-lookup"><span data-stu-id="b916a-280">Test the button</span></span>
 
-<span data-ttu-id="93443-282">Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado.</span><span class="sxs-lookup"><span data-stu-id="93443-282">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="93443-283">Conclua as seguintes etapas para testar o botão **Inserir gist** botão.</span><span class="sxs-lookup"><span data-stu-id="93443-283">Then complete the following steps to test the **Insert gist** button.</span></span>
+<span data-ttu-id="b916a-281">Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado.</span><span class="sxs-lookup"><span data-stu-id="b916a-281">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="b916a-282">Conclua as seguintes etapas para testar o botão **Inserir gist** botão.</span><span class="sxs-lookup"><span data-stu-id="b916a-282">Then complete the following steps to test the **Insert gist** button.</span></span>
 
-1. <span data-ttu-id="93443-284">Abra o Outlook e redija uma nova mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-284">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="b916a-283">Abra o Outlook e redija uma nova mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-283">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="93443-285">Na janela de mensagem de texto, selecione o botão **Inserir gist**.</span><span class="sxs-lookup"><span data-stu-id="93443-285">In the compose message window, select the **Insert gist** button.</span></span> <span data-ttu-id="93443-286">Você verá um painel de tarefas aberto à direita do formulário de texto.</span><span class="sxs-lookup"><span data-stu-id="93443-286">You should see a task pane open to the right of the compose form.</span></span>
+1. <span data-ttu-id="b916a-284">Na janela de mensagem de texto, selecione o botão **Inserir gist**.</span><span class="sxs-lookup"><span data-stu-id="b916a-284">In the compose message window, select the **Insert gist** button.</span></span> <span data-ttu-id="b916a-285">Você verá um painel de tarefas aberto à direita do formulário de texto.</span><span class="sxs-lookup"><span data-stu-id="b916a-285">You should see a task pane open to the right of the compose form.</span></span>
 
-1. <span data-ttu-id="93443-287">No painel de tarefas, selecione a gist **Olá mundo Html** e selecione **Inserir** para inserir esse gist no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-287">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
+1. <span data-ttu-id="b916a-286">No painel de tarefas, selecione o gist **Olá Mundo Html** e selecione **Inserir** para inserir esse gist no corpo da mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-286">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
 
-![Captura de tela do painel de tarefas do suplemento](../images/addin-taskpane.png)
+![Captura de tela do painel de tarefas do suplemento e o conteúdo gist selecionado exibido no corpo da mensagem](../images/addin-taskpane.png)
 
-## <a name="next-steps"></a><span data-ttu-id="93443-289">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="93443-289">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="b916a-288">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="b916a-288">Next steps</span></span>
 
-<span data-ttu-id="93443-290">Neste tutorial, você criou um suplemento do Outlook que pode ser usado no modo de composição de mensagens para inserir conteúdo no corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="93443-290">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span> <span data-ttu-id="93443-291">Para saber mais sobre o desenvolvimento de suplementos do Outlook, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="93443-291">To learn more about developing Outlook add-ins, continue to the following article:</span></span>
+<span data-ttu-id="b916a-289">Neste tutorial, você criou um suplemento do Outlook que pode ser usado no modo de composição de mensagens para inserir conteúdo no corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="b916a-289">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span> <span data-ttu-id="b916a-290">Para saber mais sobre o desenvolvimento de suplementos do Outlook, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="b916a-290">To learn more about developing Outlook add-ins, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="93443-292">APIs de suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="93443-292">Outlook add-in APIs</span></span>](../outlook/apis.md)
+> [<span data-ttu-id="b916a-291">APIs de suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="b916a-291">Outlook add-in APIs</span></span>](../outlook/apis.md)
