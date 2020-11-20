@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o React
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e reagir.
-ms.date: 04/03/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a893ea78943f7a2687d005e6e1e24a9528c730ce
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 143c5254a2a6bb00fba44373878baf5626443777
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612330"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132295"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Criar um suplemento do painel de tarefas do Excel usando o React
 
@@ -29,7 +29,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do painel de t
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Gerador do Yeoman](../images/yo-office-excel-react-2.png)
+![Captura de tela da interface de linha de comando do gerador do suplemento do Yeoman Office, com o tipo de projeto definido para a estrutura React](../images/yo-office-excel-react-2.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -54,15 +54,15 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+3. No Excel, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
+    ![Captura de tela do menu página inicial do Excel, com o botão Mostrar Painel de tarefas realçado](../images/excel-quickstart-addin-3b.png)
 
 4. Selecione um intervalo de células na planilha.
 
 5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
 
-    ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
+    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto e o botão Executar realçado no painel de tarefas do suplemento](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -74,6 +74,6 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel us
 ## <a name="see-also"></a>Confira também
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

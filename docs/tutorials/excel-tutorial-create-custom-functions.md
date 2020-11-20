@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159140"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131791"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -38,7 +38,7 @@ Neste tutorial, você vai:
     * **Escolha o tipo de script:** `JavaScript`
     * **Qual será o nome do suplemento?** `starcount`
 
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/starcountPrompt.png)
+    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas](../images/starcountPrompt.png)
     
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -81,11 +81,11 @@ Para usar o suplemento de funções personalizadas, abra uma nova pasta de traba
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
 
-   ![Inserir a faixa de opções no Excel na Web com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
-3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
+3. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
 4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
@@ -107,7 +107,7 @@ As `ADD` função personalizada calcula a soma dos dois números que você forne
 
 Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `getStarCount` que mostra quantas estrelas um determinado repositório do GitHub tem.
 
-1. No projeto**Contagem de estrelas** localize o arquivo **./src/functions/functions.js** e abra-o no seu editor de código. 
+1. No projeto **Contagem de estrelas** localize o arquivo **./src/functions/functions.js** e abra-o no seu editor de código. 
 
 2. Em **function.js**, adicione o código a seguir: 
 
@@ -149,10 +149,10 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
 
 3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
-    ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
+    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
@@ -161,7 +161,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
-3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
+3. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
 4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
@@ -177,7 +177,7 @@ A função `getStarCount` retorna o número de estrelas que um repositório tem 
 
 No exemplo de código a seguir, você perceberá que há duas funções, `currentTime` e `clock`. A função `currentTime` é uma função estática que não usa streaming. Ele retorna a data como uma cadeia de caracteres. A função `clock` usa a função `currentTime` para fornecer o novo horário a cada segundo a uma célula no Excel. Ele usa o `invocation.setResult` para fornecer o horário para a célula do Excel e `invocation.onCanceled` para controlar o que acontece quando a função é cancelada.
 
-1. No projeto**contagem de estrelas**, adicione o código a seguir **./src/functions/functions.js** e salve o arquivo.
+1. No projeto **contagem de estrelas**, adicione o código a seguir **./src/functions/functions.js** e salve o arquivo.
 
 ```JS
 /**
@@ -217,10 +217,10 @@ function clock(invocation) {
 
 1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
 
 3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
-    ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
+    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
@@ -228,7 +228,7 @@ function clock(invocation) {
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
-3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
+3. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
 4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 

@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Angular
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o lado a lado.
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 602b17dae29dfc43ab6b37648c3ad2f7fcfe86af
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5898d9bd3072e829c35afac90348cb844f96011c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741180"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132316"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 
@@ -29,7 +29,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
+![Captura de tela da interface de linha de comando do gerador de suplemento do Yeoman Office, com tipo de projeto definido para a estrutura Angular](../images/yo-office-excel-angular-2.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -56,13 +56,13 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
+    ![Captura de tela do menu inicial do Excel, com o botão Mostrar painel de tarefas destacado](../images/excel-quickstart-addin-3b.png)
 
-4. Selecione um intervalo de células na planilha.
+4. Selecione qualquer intervalo de células na planilha.
 
 5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
 
-    ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
+    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto e o botão Executar realçado no painel de tarefas do suplemento](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

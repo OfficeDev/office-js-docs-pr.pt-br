@@ -4,18 +4,18 @@ description: Saiba como criar um Suplemento do PowerPoint simples usando a API J
 ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e2720ce1c894f2692e797c5c1ae76c09fb3d5d72
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 47ca14b4dd8ab67ffc20551b1e13ca62cc75ee34
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741194"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132358"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
 Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do PowerPoint.
 
-## <a name="create-the-add-in"></a>Criar o suplemento 
+## <a name="create-the-add-in"></a>Criar o suplemento
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -37,7 +37,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `PowerPoint`
 
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -81,13 +81,13 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
         Para usar o seu suplemento, abra um novo documento no PowerPoint na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+3. No PowerPoint, insira um novo slide em branco, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1c.png)
+    ![Captura de tela do PowerPoint com o botão Mostrar Painel de tarefas realçado](../images/powerpoint_quickstart_addin_1c.png)
 
 4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no slide atual.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3c.png)
+    ![Captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3c.png)
 
 ### <a name="next-steps"></a>Próximas etapas
 
@@ -103,14 +103,14 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 
 1. No Visual Studio, escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web **, em seguida, selecione **Próximo**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.
 
 3. Nomeie seu projeto e selecione **Criar**.
 
-4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
+4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.
 
 5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -118,7 +118,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 ### <a name="update-the-code"></a>Atualizar o código
 
 1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -240,17 +240,17 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 
 1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do PowerPoint com o botão Mostrar Painel de Tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
+    ![Captura de tela do PowerPoint com o ícone Mostrar Painel de tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
 
 3. No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2.png)
+    ![Captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2.png)
 
-4. No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.
+4. No painel de tarefas, escolha o botão **Inserir texto** para adicionar o texto no slide selecionado.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
+    ![Captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
@@ -262,5 +262,5 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)

@@ -4,23 +4,24 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741131"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131827"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
 Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 
 > [!div class="checklist"]
-> * Insere um intervalo de texto
-> * Formatos de texto
-> * Substitui e insere texto em vários locais
-> * Insere imagens, HTML e tabelas
-> * Cria e atualiza os controles de conteúdo 
+>
+> - Insere um intervalo de texto
+> - Formatos de texto
+> - Substitui e insere texto em vários locais
+> - Insere imagens, HTML e tabelas
+> - Cria e atualiza os controles de conteúdo
 
 > [!TIP]
 > Se você já concluiu o início rápido [Criar um suplemento do painel de tarefas do Word](../quickstarts/word-quickstart.md) e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Inserir um intervalo de texto](#insert-a-range-of-text) para iniciar o tutorial.
@@ -38,7 +39,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -91,7 +92,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
    - O método `context.sync` envia todos os comandos da fila para execução no Word.
 
-   - `Word.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir. 
+   - `Word.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.
 
     ```js
     function insertParagraph() {
@@ -154,15 +155,15 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do aplicativo Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-2b.png)
+    ![Captura de tela exibindo o botão Mostrar Painel de tarefas realçado no Word](../images/word-quickstart-addin-2b.png)
 
 3. No painel de tarefas, escolha o botão **Inserir Parágrafo**.
 
 4. Faça uma alteração no parágrafo.
 
-5. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
+5. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo aparece acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
 
-    ![Tutorial do Word: Inserir Parágrafo](../images/word-tutorial-insert-paragraph-2.png)
+    ![Captura de tela mostrando o botão Inserir Parágrafo no suplemento](../images/word-tutorial-insert-paragraph-2.png)
 
 ## <a name="format-text"></a>Formatar texto
 
@@ -191,7 +192,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     ```js
     function applyStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to style text.
 
             return context.sync();
@@ -203,20 +204,20 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
             }
         });
     }
-    ``` 
+    ```
 
 6. Na função `applyStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
-    ``` 
+    ```
 
 ### <a name="apply-a-custom-style-to-text"></a>Aplicar um estilo personalizado ao texto
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `apply-style` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `apply-style` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -235,7 +236,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     ```js
     function applyCustomStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply the custom style.
 
             return context.sync();
@@ -247,14 +248,14 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
             }
         });
     }
-    ``` 
+    ```
 
 6. Na função `applyCustomStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
-    ``` 
+    ```
 
 7. Verifique se você salvou todas as alterações feitas no projeto.
 
@@ -262,7 +263,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `apply-custom-style` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `apply-custom-style` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -281,7 +282,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     ```js
     function changeFont() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply a different font.
 
             return context.sync();
@@ -293,7 +294,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
             }
         });
     }
-    ``` 
+    ```
 
 6. Na função `changeFont()`, substitua `TODO1` pelo código a seguir. O código recebe uma referência para o segundo parágrafo usando o método `ParagraphCollection.getFirst` encadeado para o método `Paragraph.getNext`.
 
@@ -304,7 +305,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
             bold: true,
             size: 18
         });
-    ``` 
+    ```
 
 7. Verifique se você salvou todas as alterações feitas no projeto.
 
@@ -324,7 +325,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 7. Escolha o botão **Alterar Fonte**. A fonte do segundo parágrafo muda para 18 pt, negrito, Courier New.
 
-    ![Tutorial do Word: Aplicar estilos e fonte](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![Captura de tela mostrando os resultados da aplicação de estilos e fontes definidas para os botões de suplemento Aplicar Estilo, Aplicar Estilo Personalizado e Alterar a fonte](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## <a name="replace-text-and-insert-text"></a>Substituir texto e inserir texto
 
@@ -334,7 +335,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `change-font` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `change-font` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
@@ -347,6 +348,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
+
 5. Adicione a seguinte função ao final do arquivo:
 
     ```js
@@ -370,7 +372,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
             }
         });
     }
-    ``` 
+    ```
 
 6. Na função `insertTextIntoRange()`, substitua `TODO1` pelo código a seguir. Observação:
 
@@ -378,7 +380,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
    - O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser inserida no objeto `Range`.
 
-   - O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Além de "Fim", as outras opções possíveis são "Início", "Antes", "Depois" e "Substituir". 
+   - O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Além de "Fim", as outras opções possíveis são "Início", "Antes", "Depois" e "Substituir".
 
    - A diferença entre "Fim" e "Depois" é que "Fim" insere o novo texto dentro o final do intervalo existente, mas "Depois" cria um novo intervalo com a cadeia de caracteres e insere o novo intervalo após o intervalo existente. Da mesma forma, "Início" insere o texto dentro do início do intervalo existente, e "Antes" insere um novo intervalo. "Substituir" substitui o texto do intervalo existente pela cadeia de caracteres do primeiro parâmetro.
 
@@ -465,7 +467,7 @@ function insertTextIntoRange() {
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-text-into-range` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `insert-text-into-range` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -529,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Substitua `TODO3` pelo seguinte código. Este novo parágrafo demonstrará o fato de que o novo texto **_não_*_ faz parte do intervalo original selecionado. O intervalo original ainda possui apenas o texto que tinha quando foi selecionado.
+8. Substitua `TODO3` pelo seguinte código. Este novo parágrafo demonstrará o fato de que o novo texto **_não_* _ faz parte do intervalo original selecionado. O intervalo original ainda possui apenas o texto que tinha quando foi selecionado.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,7 +547,7 @@ function insertTextIntoRange() {
 
 1. Abra o arquivo _*./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-text-outside-range` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `insert-text-outside-range` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -606,9 +608,9 @@ function insertTextIntoRange() {
 
 8. No documento, selecione a palavra "vários". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
-9. Escolha o botão **Alterar Termo de Quantidade**. "muitos" substitui o texto selecionado.
+9. Escolha o botão **Alterar Termo de Quantidade**. Observe que "muitos" substitui o texto selecionado.
 
-    ![Tutorial do Word: texto adicionado e substituído](../images/word-tutorial-text-replace-2.png)
+    ![Captura de tela mostrando os resultados da escolha dos botões de suplemento Inserir Abreviatura, Adicionar Informações da Versão e Alterar Quantidade de Termo](../images/word-tutorial-text-replace-2.png)
 
 ## <a name="insert-images-html-and-tables"></a>Inserir imagens, HTML e tabelas
 
@@ -616,7 +618,7 @@ Nesta etapa do tutorial, você aprenderá a inserir imagens, HTML e tabelas no d
 
 ### <a name="define-an-image"></a>Definir uma imagem
 
-Conclua as seguintes etapas para definir a imagem que será inserida no documento na próxima parte deste tutorial. 
+Conclua as seguintes etapas para definir a imagem que será inserida no documento na próxima parte deste tutorial.
 
 1. Na raiz do projeto, crie um novo arquivo chamado **base64Image.js**.
 
@@ -631,7 +633,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `replace-text` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `replace-text` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
@@ -680,7 +682,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-image` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `insert-image` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
@@ -693,6 +695,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
+
 5. Adicione a seguinte função ao final do arquivo:
 
     ```js
@@ -727,7 +730,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-html` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `insert-html` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
@@ -804,7 +807,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 6. Escolha o botão **Inserir Tabela**. Uma tabela é inserida após o segundo parágrafo.
 
-    ![Tutorial do Word: Inserir imagem, HTML e tabela](../images/word-tutorial-insert-image-html-table-2.png)
+    ![Captura de tela mostrando os resultados de escolha dos botões de suplemento Inserir Imagem, Inserir HTML e Inserir Tabela](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## <a name="create-and-update-content-controls"></a>Criar e atualizar os controles de conteúdo
 
@@ -819,7 +822,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-table` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `insert-table` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
@@ -832,6 +835,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
+
 5. Adicione a seguinte função ao final do arquivo:
 
     ```js
@@ -876,7 +880,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `create-content-control` e adicione a seguinte marcação após essa linha: 
+2. Localize o elemento `<button>` para o botão `create-content-control` e adicione a seguinte marcação após essa linha:
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
@@ -931,9 +935,9 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 4. No documento, selecione o texto "Office 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
 
-7. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
+5. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
 
-    ![Tutorial do Word - Criar o controle de conteúdo e alterar seu texto](../images/word-tutorial-content-control-2.png)
+    ![Captura de tela mostrando os resultados da escolha dos botões de suplemento Criar Controle de Conteúdo e Renomear Serviço](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -944,6 +948,5 @@ Neste tutorial, você criou um suplemento do painel de tarefas do Word que inser
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
-
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)

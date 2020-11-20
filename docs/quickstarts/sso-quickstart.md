@@ -4,27 +4,27 @@ description: Use o gerador Yeoman para construir um Suplemento Office Node.js qu
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3524b149b10a37e8143b20e704e1f58e2ad10074
-ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
+ms.openlocfilehash: c611d41e56b2a5d1320ee1f25ca732ac80077172
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "48906033"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132225"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Use o gerador Yeoman para criar um Suplemento do Office que utilize o logon único.
 
 Neste artigo, você seguirá pelo processo de uso do gerador Yeoman para criar um Suplemento do Office para Excel, Outlook, Word ou PowerPoint que usa o logon único (SSO) sempre que possível, e usa um método alternativo de autenticação do usuário quando não há suporte ao SSO.
 
 > [!TIP]
-> Antes de tentar concluir o início rápido, revise [Habilitar o logon único para Suplementos do Office](../develop/sso-in-office-add-ins.md) para aprender conceitos básicos sobre o SSO em Suplementos do Office. 
- 
+> Antes de tentar concluir o início rápido, revise [Habilitar o logon único para Suplementos do Office](../develop/sso-in-office-add-ins.md) para aprender conceitos básicos sobre o SSO em Suplementos do Office.
+
 O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, automatizando as etapas necessárias para configurar o SSO no Azure e gerando o código necessário para um suplemento usar o SSO. Para um passo a passo detalhado descrevendo como concluir manualmente as etapas que o gerador Yeoman automatiza, confira o tutorial [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
+- [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
-* A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
+- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,7 +32,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-* Se você estiver usando um Mac e não tiver a CLI do Azure instalada no computador, instale o [Homebrew](https://brew.sh/). O script de configuração do SSO executado durante o início rápido usará o Homebrew para instalar a CLI do Azure e, em seguida, usará a CLI do Azure para configurar o SSO no Azure.
+- Se você estiver usando um Mac e não tiver a CLI do Azure instalada no computador, instale o [Homebrew](https://brew.sh/). O script de configuração do SSO executado durante o início rápido usará o Homebrew para instalar a CLI do Azure e, em seguida, usará a CLI do Azure para configurar o SSO no Azure.
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
@@ -46,7 +46,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 - **Qual será o nome do suplemento?** `My SSO Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-sso-excel.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-sso-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -111,14 +111,14 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
+    ![Captura de tela mostrando a caixa de diálogo solicitar permissões com o botão Aceitar destacado](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 6. O suplemento recupera as informações de perfil do usuário conectado e as grava no documento. A imagem a seguir mostra um exemplo de informações de perfil gravadas em uma planilha do Excel.
 
-    ![Informações de perfil de usuário na planilha do Excel](../images/sso-user-profile-info-excel.png)
+    ![Captura de tela mostrando informações de perfil do usuário na planilha do Excel](../images/sso-user-profile-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -137,22 +137,22 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 3. Escreva uma nova mensagem no Outlook.
 
-4. Na janela redigir mensagem, escolha o botão **Exibir painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
+4. Na janela redigir mensagem, escolha o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
 
-    ![Botão do suplemento do Outlook](../images/outlook-sso-ribbon-button.png)
+    ![Captura de tela mostrando o botão da faixa de opções do suplemento destacado na janela de composição de mensagem do Outlook](../images/outlook-sso-ribbon-button.png)
 
 5. Na parte inferior do painel de tarefas, escolha o botão **Obter Informações do Meu Perfil de Usuário** para iniciar o processo de SSO.
 
 6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
+    ![Captura de tela da caixa de diálogo de permissões solicitadas com o botão Aceitar destacado](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 7. O suplemento recupera as informações de perfil do usuário conectado e as grava no corpo da mensagem do e-mail.
 
-    ![Informações de perfil de usuário na mensagem do Outlook](../images/sso-user-profile-info-outlook.png)
+    ![Captura de tela mostrando informações de perfil de usuário na janela de composição de mensagem do Outlook](../images/sso-user-profile-info-outlook.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
