@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214607"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132267"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -46,10 +46,10 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
     - **Qual será o nome do suplemento?** - `My Office Add-in`
 
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** - `Outlook`
+    - **Você gostaria de dar suporte para qual aplicativo cliente do Office?** - `Outlook`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-outlook.png)
-    
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-outlook.png)
+
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -62,7 +62,7 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
 ### <a name="explore-the-project"></a>Explore o projeto
 
-O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. 
+O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.
 
 - O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
 - O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
@@ -110,16 +110,16 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 1. Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela de uma janela de mensagem do Outlook com o botão do suplemento realçado](../images/quick-start-button-1.png)
+    ![Captura de tela de uma janela de mensagem do Outlook com o botão da faixa de opções do suplemento realçado](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > Se você receber a mensagem de erro "Não é possível abrir este suplemento do localhost" no painel de tarefas, siga as etapas descritas no [artigo de solução de problemas](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.
 
-    ![Uma captura de tela do painel de tarefas do suplemento com o link Executar realçado](../images/quick-start-task-pane-2.png)
+    ![Captura de tela do painel de tarefas do suplemento com o link Executar realçado](../images/quick-start-task-pane-2.png)
 
-    ![Uma captura de tela do painel de tarefas do suplemento exibindo o assunto da mensagem](../images/quick-start-task-pane-3.png)
+    ![Captura de tela do painel de tarefas do suplemento exibindo o assunto da mensagem](../images/quick-start-task-pane-3.png)
 
 ### <a name="next-steps"></a>Próximas etapas
 
@@ -267,7 +267,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 1. Usando o Visual Studio, teste o suplemento do Outlook recém-criado ao pressionar F5 ou o botão **Iniciar**. O suplemento será hospedado localmente no IIS.
 
-1. Na caixa de diálogo**Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**. Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.
+1. Na caixa de diálogo **Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**. Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.
 
     > [!NOTE]
     > Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Microsoft 365. Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).

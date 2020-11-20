@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 10/14/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: ba6d6d0917e43311370188b46a7c2d26b8c916ae
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: a7f9b00a9f2782e014f1060d59505d7e876a969e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741187"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132253"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -29,9 +29,9 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
 - **Qual será o nome do suplemento?** `My Office Add-in`
-- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
+- **Você gostaria de dar suporte para qual aplicativo cliente do Office?** `Project`
 
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -39,7 +39,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 ## <a name="explore-the-project"></a>Explore o projeto
 
-O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. 
+O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.
 
 - O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
 - O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.

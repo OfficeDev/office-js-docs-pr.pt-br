@@ -3,12 +3,12 @@ title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 4f65284730e1211b0628139b7f22c55deb7a6fec
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741089"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131889"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -87,7 +87,7 @@ O Script Lab é um suplemento que permite explorar a API JavaScript para Office 
 
 O vídeo de um minuto a seguir mostra o Script Lab em ação.
 
-[![Visualização de vídeo mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
+[![Vídeo curto mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
 
 Para saber mais sobre o Script Lab, confira [Explorar as APIs JavaScript para Office usando o Script Lab](../overview/explore-with-script-lab.md).
 
@@ -99,11 +99,11 @@ Um suplemento do Office pode estender a interface do usuário do Office usando c
 
 - Os contêineres HTML como [painéis de tarefas](../design/task-pane-add-ins.md), [suplementos de conteúdo](../design/content-add-ins.md) e [caixas de diálogo](../design/dialog-boxes.md) podem ser usadas para exibir a interface do usuário personalizada e expor uma funcionalidade adicional em um aplicativo do Office. O conteúdo e a funcionalidade de cada painel de tarefas, suplemento de conteúdo ou caixa de diálogo são derivados de uma página da Web que você especifica. Essas páginas da Web podem usar a API JavaScript para Office para interagir com o conteúdo do documento do Office no qual o suplemento está sendo executado, além disso, também pode fazer outras coisas que as páginas da Web geralmente fazem, como chamar serviços Web externos, facilitar a autenticação do usuário e mais.
 
-A imagem a seguir mostra um comando de suplemento na faixa de opções, um painel de tarefas à direita do documento e uma caixa de diálogo ou suplemento de conteúdo sobre o documento.
+A imagem a seguir mostra um comando de suplemento na faixa de opções, um painel de tarefas à direita do documento, uma caixa de diálogo ou suplemento de conteúdo sobre o documento.
 
-![Uma imagem que mostra comandos de suplemento na faixa de opções, um painel de tarefas e uma caixa de diálogo em um documento do Office](../images/add-in-ui-elements.png)
+![Diagrama mostrando comandos de suplemento na faixa de opções, um painel de tarefas e um suplemento de conteúdo/caixa de diálogo em um documento do Office](../images/add-in-ui-elements.png)
 
-Para obter mais informações sobre como estender a Interface de Usuário do Office e projetar a Experiência de Usuário do suplemento, consulte [Elementos da Interface do Usuário do Office para Suplementos do Office](../design/interface-elements.md).
+Para obter mais informações sobre como estender a Interface de Usuário do Office e projetar a Experiência de Usuário do suplemento, confira [Elementos da Interface do Usuário do Office para Suplementos do Office](../design/interface-elements.md).
 
 ## <a name="next-steps"></a>Próximos passos
 

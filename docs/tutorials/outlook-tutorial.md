@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 10/02/2020
+ms.date: 11/12/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370532"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132379"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -18,11 +18,12 @@ Este tutorial ensina como criar um suplemento que pode ser usado em mensagens no
 Neste tutorial, você vai:
 
 > [!div class="checklist"]
-> * Criar um projeto de um suplemento do Outlook
-> * Definir botões de renderização na janela de mensagem de texto
-> * Implementar uma experiência de primeira execução que coleta informações do usuário e busca os dados de um serviço externo
-> * Implementar um botão sem interface do usuário que chame uma função
-> * Implementar um painel de tarefas que insere o conteúdo no corpo de uma mensagem
+>
+> - Criar um projeto de um suplemento do Outlook
+> - Definir botões de renderização na janela de mensagem de texto
+> - Implementar uma experiência de primeira execução que coleta informações do usuário e busca os dados de um serviço externo
+> - Implementar um botão sem interface do usuário que chame uma função
+> - Implementar um painel de tarefas que insere o conteúdo no corpo de uma mensagem
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -43,15 +44,15 @@ Neste tutorial, você vai:
 
 ## <a name="setup"></a>Configurar
 
-O suplemento que você criará neste tutorial lerá [gists](https://gist.github.com) da conta do GitHub do usuário e adicionará a essência selecionada ao corpo de uma mensagem. Conclua as etapas a seguir para criar duas gists novas que você pode usar para testar o suplemento que você vai criar.
+O suplemento que você criará neste tutorial lerá [gists](https://gist.github.com) da conta GitHub do usuário e adicionará o gist selecionado ao corpo de uma mensagem. Conclua as etapas a seguir para criar dois novos gists que você pode usar para testar o suplemento que será criado.
 
 1. [Faça logon no GitHub](https://github.com/login).
 
 1. [Crie uma nova gist.](https://gist.github.com)
 
-    - No campo**descrição do gist... **, insira **a Markdown Olá Mundo**.
+    - No campo **descrição do gist...**, insira **a Markdown Olá Mundo**.
 
-    - No campo **nome do arquivo como extensão... ** campo, insira **test.md**.
+    - No campo **nome do arquivo como extensão...** campo, insira **test.md**.
 
     - Adicione a redução a seguir na caixa de texto multilinha:
 
@@ -73,9 +74,9 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
 
 1. [Criar outro novo gist](https://gist.github.com).
 
-    - No campo**descrição do gist... **, insira ** Olá Mundo**.
+    - No campo **descrição do gist...**, insira **Olá Mundo**.
 
-    - No campo **nome do arquivo como extensão... ** campo, insira **test.html**.
+    - No campo **nome do arquivo como extensão...** campo, insira **test.html**.
 
     - Adicione a redução a seguir na caixa de texto multilinha:
 
@@ -107,11 +108,11 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
 
     - **Qual será o nome do suplemento?** - `Git the gist`
 
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** - `Outlook`
+    - **Você gostaria de dar suporte para qual aplicativo cliente do Office?** - `Outlook`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yeoman-prompts-2.png)
-    
-    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yeoman-prompts-2.png)
+
+    Após concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -137,15 +138,16 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
 
 O manifesto controla como o suplemento é exibido no Outlook. Ele define a maneira como o suplemento aparece na lista de suplementos e os botões que aparecem na faixa de opções, além de definir as URLs para os arquivos HTML e JavaScript usados pelo suplemento.
 
-#### <a name="specify-basic-information"></a>Especifique as informações básicas
+#### <a name="specify-basic-information"></a>Especificar as informações básicas
 
-Faça as seguintes atualizações no arquivo**manifest.xml**para especificar algumas informações básicas sobre o suplemento:
+Faça as seguintes atualizações no arquivo **manifest.xml** para especificar algumas informações básicas sobre o suplemento:
 
 1. Encontre o elemento `ProviderName` e substitua o valor padrão pelo nome da sua empresa.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
+
 1. Localize o elemento`Description`, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.
 
     ```xml
@@ -154,26 +156,26 @@ Faça as seguintes atualizações no arquivo**manifest.xml**para especificar alg
 
 #### <a name="test-the-generated-add-in"></a>Testar o suplemento gerado
 
-Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para confirmar que o projeto está configurado corretamente.
+Antes de prosseguir, vamos testar o suplemento básico que o gerador criou para confirmar que o projeto está configurado corretamente.
 
 > [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
+> Os suplementos do Office devem usar HTTPS, não HTTP, mesmo quando você estiver desenvolvendo. Se for solicitado a instalação de um certificado após executar o comando a seguir, aceite o prompt para instalar o certificado que o gerador Yeoman fornece. Talvez também seja necessário executar o terminal ou o prompt de comando como administrador para que as alterações sejam feitas.
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do projeto. Ao executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. Siga as instruções em [Realizar sideload nos Suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.
+1. Siga as instruções em [Realizar sideload nos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.
 
-1. No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**. Se tudo tiver sido configurado corretamente, o painel de tarefas será aberto e exibirá a página de boas-vindas do suplemento.
+1. No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**. Se tudo estiver configurado corretamente, o painel de tarefas será aberto e renderizará a página de boas-vindas do suplemento.
 
-    ![Captura de tela do botão e do painel de tarefas adicionado pela amostra](../images/button-and-pane.png)
+    ![Captura de tela do botão "Mostrar Painel de Tarefas" e do Git do painel de tarefas de gist adicionado pelo exemplo](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>Definir botões
 
-Agora que você verificou que o complemento básico funciona, você pode personalizá-lo para adicionar mais funcionalidades. Por padrão, o manifesto define apenas os botões para a janela de mensagem de leitura. Vamos atualizar o manifesto para remover os botões na janela de mensagem de leitura e definir dois novos botões para a janela de mensagem de texto:
+Agora que você verificou que o suplemento básico funciona, você pode personalizá-lo para adicionar mais funcionalidades. Por padrão, o manifesto só define os botões para a janela de leitura de mensagem. Atualizaremos o manifesto para remover os botões da janela de leitura de mensagem e definir dois novos botões para a janela de composição de mensagem:
 
 - **Inserir gist**: um botão que abre um painel de tarefas
 
@@ -181,11 +183,11 @@ Agora que você verificou que o complemento básico funciona, você pode persona
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>Remover o ponto de extensão MessageReadCommandSurface
 
-Abra o arquivo **manifest. XML** e localize o elemento `ExtensionPoint` com tipo `MessageReadCommandSurface`. Exclua esse elemento `ExtensionPoint`(incluindo a marca de fechamento) para remover os botões na janela de mensagem de leitura.
+Abra o arquivo **manifest.xml** e localize o elemento `ExtensionPoint` com o tipo `MessageReadCommandSurface`. Exclua este elemento `ExtensionPoint` (incluindo a marca de fechamento) para remover os botões da janela de leitura de mensagem.
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Adicionar o ponto de extensão MessageComposeCommandSurface
 
-Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente antes dessa linha, insira a marcação XML a seguir. Observe o seguinte sobre esta marcação:
+Localize a linha no manifesto que lê `</DesktopFormFactor>`. Imediatamente antes desta linha, insira a seguinte marcação XML. Observe o seguinte sobre esta marcação:
 
 - `ExtensionPoint` com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela de composição de mensagem.
 
@@ -240,7 +242,7 @@ Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente an
 
 ### <a name="update-resources-in-the-manifest"></a>Atualização de recursos no manifesto
 
-O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Você especificará estas informações na seção `Resources` do manifesto.
+O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Especifique essas informações na seção `Resources` do manifesto.
 
 1. Localize o elemento `Resources` no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).
 
@@ -277,9 +279,7 @@ O código anterior faz referência a rótulos, dicas de ferramentas e URLs que v
 
 Como você já instalou o suplemento a partir de um arquivo, você precisa reinstalá-lo para que as alterações de manifesto entrem em vigor.
 
-1. Siga as instruções em [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar a seção **Suplementos personalizados** na parte inferior da caixa de diálogo **Meus suplementos**.
-
-1. Selecione o botão **...** ao lado da entrada **Git the Gist** e escolha **Remover**.
+1. Siga as instruções para remover o **Git de gist** de [suplementos de sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 1. Fechar a janela **Meus suplementos**.
 
@@ -289,15 +289,15 @@ Como você já instalou o suplemento a partir de um arquivo, você precisa reins
 
 Depois de reinstalar o suplemento, você pode verificar se ele foi instalado com êxito verificando os comandos **Inserir gist** e **Inserir gist padrão** na janela de composição de mensagem. Observe que nada acontece quando você escolhe um destes itens, porque você ainda não terminou de criar este suplemento.
 
-- Se você estiver executando este suplemento no Outlook 2016 ou posterior no Windows, deverá ver dois novos botões na faixa de opções da janela de composição da mensagem: **Inserir gist** e **Inserir gist padrão**.
+- Se você estiver executando este suplemento no Outlook 2016 ou posterior no Windows, você verá dois novos botões na faixa de opções da janela de composição de mensagem: **Inserir gist** e **Inserir gist padrão**.
 
-    ![Uma captura de tela da faixa de opções no Outlook no Windows com os botões do suplemento destacados](../images/add-in-buttons-in-windows.png)
+    ![Captura de tela do menu flutuante da faixa de opções do Outlook no Windows com os botões do suplemento em destaque](../images/add-in-buttons-in-windows.png)
 
-- Se você estiver usando este suplemento no Outlook na Web, você verá um botão na parte inferior da janela de composição de mensagem. Selecione esse botão para ver as opções **Insert Gist** e **Insert Default Gist**.
+- Se você estiver usando este suplemento no Outlook na Web, você verá um botão na parte inferior da janela de composição de mensagem. Selecione esse botão para ver as opções **Inserir gist** e **Inserir gist padrão**.
 
-    ![Uma captura de tela do formulário de composição da mensagem no Outlook na Web com o botão suplemento e o menu pop-up realçado](../images/add-in-buttons-in-owa.png)
+    ![Captura de tela do formulário de composição de mensagem no Outlook na Web com o botão suplemento e o menu pop-up em destaque](../images/add-in-buttons-in-owa.png)
 
-## <a name="implement-a-first-run-experience"></a>Implementando uma experiência de primeira execução
+## <a name="implement-a-first-run-experience"></a>Implementar uma experiência de primeira execução
 
 Este suplemento precisa ser capaz de ler gists da conta do GitHub do usuário e identificar qual deles o usuário escolheu como a essência padrão. Para obter esses objetivos, o suplemento deverá solicitar ao usuário para fornecer o nome de usuário do GitHub e escolher uma essência padrão do seu conjunto de gists existentes. Conclua as etapas nesta seção para implementar uma experiência de primeira execução que será exibida uma caixa de diálogo para obter essas informações do usuário.
 
@@ -940,19 +940,19 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>Testar o botão
 
-Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão**Inserir Gist Padrão**.
+Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir Gist Padrão**.
 
 1. Abra o Outlook e redija uma nova mensagem.
 
-1. Na janela de mensagem de texto, selecione o botão **Inserir Gist Padrão**. Você deve ser solicitado a configurar o suplemento.
+1. Na janela de composição de mensagem, selecione o botão **Inserir gist padrão**. Você verá uma caixa de diálogo na qual é possível configurar o suplemento, começando com o prompt para definir seu nome de usuário do GitHub.
 
-    ![Captura de tela do prompt do suplemento a ser configurado](../images/addin-prompt-configure.png)
+    ![Captura de tela do prompt de diálogo para configurar o suplemento](../images/addin-prompt-configure.png)
 
-1. Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists. Selecione um gist para ser o padrão e selecione **Done**.
+1. Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists públicos. Selecione um gist para ser o padrão e selecione **Concluído**.
 
     ![Captura de tela de caixa de diálogo de configurações do suplemento](../images/addin-settings.png)
 
-1. Clique no botão **Insert Default Gist** novamente. Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.
+1. Selecione o botão **Inserir gist padrão** novamente. Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.
 
    > [!NOTE]
    > Outlook no Windows: Para selecionar as configurações mais recentes, talvez seja necessário fechar e reabrir a janela de composição de mensagens.
@@ -1307,9 +1307,9 @@ Salvar todas as suas alterações e executar `npm run dev-server` do prompt de c
 
 1. Na janela de mensagem de texto, selecione o botão **Inserir gist**. Você verá um painel de tarefas aberto à direita do formulário de texto.
 
-1. No painel de tarefas, selecione a gist **Olá mundo Html** e selecione **Inserir** para inserir esse gist no corpo da mensagem.
+1. No painel de tarefas, selecione o gist **Olá Mundo Html** e selecione **Inserir** para inserir esse gist no corpo da mensagem.
 
-![Captura de tela do painel de tarefas do suplemento](../images/addin-taskpane.png)
+![Captura de tela do painel de tarefas do suplemento e o conteúdo gist selecionado exibido no corpo da mensagem](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
