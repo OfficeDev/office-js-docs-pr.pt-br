@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 11/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175546"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408838"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 
@@ -188,7 +188,7 @@ Neste cenário, você adicionará o tratamento para compor novos itens.
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do projeto. Ao executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run dev-server
@@ -219,6 +219,7 @@ Algumas APIs do Office.js que alteram ou alteram a interface do usuário não s�
   - `displayDialogAsync`
   - `messageParent`
 - Em `Office.context.auth` :
+  - `getAccessToken`
   - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>Confira também
