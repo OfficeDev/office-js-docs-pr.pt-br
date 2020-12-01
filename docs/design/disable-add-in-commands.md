@@ -1,14 +1,14 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 11/07/2020
+ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a9994ae25285c876236879e65861ee3cc59f7e5
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
+ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996386"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "49505461"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -32,7 +32,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 As APIs Enable/Disable pertencem ao conjunto de requisitos [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
 
 > [!NOTE]
-> O conjunto de requisitos **RibbonApi 1,1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do manifesto `<Requirements>` . Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se, *e somente se* , essa chamada retornar `true` , seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` Devoluções `false` , todos os comandos de suplemento personalizados são habilitados todo o tempo. Você deve projetar seu suplemento de produção e quaisquer instruções no aplicativo para considerar como funcionará quando o conjunto de requisitos **RibbonApi 1,1** não for suportado. Para obter mais informações e exemplos de como usar o `isSetSupported` , consulte [especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md), principalmente [usar verificações de tempo de execução em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (A seção [define o elemento requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à faixa de opções 1,1.)
+> O conjunto de requisitos **RibbonApi 1,1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do manifesto `<Requirements>` . Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se, *e somente se*, essa chamada retornar `true` , seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` Devoluções `false` , todos os comandos de suplemento personalizados são habilitados todo o tempo. Você deve projetar seu suplemento de produção e quaisquer instruções no aplicativo para considerar como funcionará quando o conjunto de requisitos **RibbonApi 1,1** não for suportado. Para obter mais informações e exemplos de como usar o `isSetSupported` , consulte [especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md), principalmente [usar verificações de tempo de execução em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (A seção [define o elemento requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à faixa de opções 1,1.)
 
 ## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
@@ -116,7 +116,7 @@ Um cenário comum em que o estado da faixa de opções deve mudar é quando um e
 
 Considere um cenário em que um botão deve ser ativado quando e somente quando um gráfico é ativado. A primeira etapa é definir o elemento [Enabled](../reference/manifest/enabled.md) para o botão no manifesto como `false`. Veja um exemplo acima.
 
-Segundo, atribua manipuladores. Isso geralmente é feito no método **Office.onReady** , como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos **onActivated** e **onDeactivated** de todos os gráficos da planilha.
+Segundo, atribua manipuladores. Isso geralmente é feito no método **Office.onReady**, como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos **onActivated** e **onDeactivated** de todos os gráficos da planilha.
 
 ```javascript
 Office.onReady(async () => {
@@ -143,6 +143,10 @@ function enableChartFormat() {
 ```
 
 Quarto, defina o manipulador `disableChartFormat`. Seria idêntico a `enableChartFormat`, exceto que a propriedade **enabled** do objeto button seria configurada como `false`.
+
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Alternar a visibilidade da guia e o status habilitado de um botão ao mesmo tempo
+
+O método **requestUpdate** também é usado para alternar a visibilidade de uma guia contextual personalizada. Para obter detalhes sobre esse e exemplos de código, consulte [habilitar e desabilitar comandos de suplemento](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Prática recomendada: Teste se há erros de status do controle
 
