@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 07/09/2020
+ms.date: 12/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: dea2125ccd64eba2e3f1695c8ca1111a710321a4
+ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093879"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "49530924"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
@@ -75,12 +75,18 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
 1. Selecione o botão **Obter Suplementos** na faixa de opções.
 
-    ![Faixa de opções do Outlook 2016 apontando para o botão Store](../images/outlook-sideload-desktop-store.png)
+    ![Faixa de opções do Outlook 2016 apontando para obter o botão de suplementos](../images/outlook-sideload-desktop-store.png)
 
-    > [!NOTE]
-    > Caso não veja o botão **Obter Suplementos** em sua versão do Outlook, selecione o botão **Store** na faixa de opções.
+    > [!IMPORTANT]
+    > Se você não vir o botão **obter suplementos** em sua versão do Outlook, selecione:
+    >
+    > - O botão **armazenar** na faixa de opções, se disponível.
+    >
+    >   OU
+    >
+    > - Menu **arquivo** e, em seguida, selecione o botão **gerenciar suplementos** na guia **informações** para abrir a caixa de diálogo **suplementos** no Outlook na Web.<br>Você pode ver mais sobre a experiência da Web na seção anterior [Sideload um suplemento no Outlook na Web](#sideload-an-add-in-in-outlook-on-the-web).
 
-1. Selecione **Suplementos** e, depois, **Meus suplementos**.
+1. Se houver guias próximas à parte superior da caixa de diálogo, verifique se a guia **suplementos** está selecionada. Escolha **meus suplementos**.
 
     ![Caixa de diálogo da Loja do Outlook 2016 com a opção Meus suplementos selecionada](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -94,10 +100,10 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
 1. Abra o Outlook 2013 no Windows.
 
-1. Selecione o menu **arquivo** e, em seguida, selecione o botão **gerenciar suplementos** na guia **informações** . o Outlook abrirá um navegador.
+1. Selecione o menu **arquivo** e, em seguida, selecione o botão **gerenciar suplementos** na guia **informações** . O Outlook abrirá a versão da Web em um navegador.
 
 1. Siga as etapas na seção [Sideload um suplemento no Outlook na Web](#sideload-an-add-in-in-outlook-on-the-web) de acordo com a sua versão do Outlook na Web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
 
-Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas anteriormente neste artigo para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências ( `...` ) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do.
+Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas anteriormente neste artigo para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista os suplementos instalados do. Escolha as reticências ( `...` ) para o suplemento e escolha **remover** para remover esse suplemento específico.
