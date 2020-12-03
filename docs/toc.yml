@@ -188,6 +188,8 @@ items:
                         href: design/add-in-commands.md
                       - name: Criar comandos de suplemento
                         href: develop/create-addin-commands.md
+                      - name: Criar guias contextuais personalizadas
+                        href: design/contextual-tabs.md
                       - name: Habilitar e Desabilitar Comandos de Suplemento
                         href: design/disable-add-in-commands.md
                       - name: Integrar botões do Office incorporados em guias personalizadas
@@ -1117,7 +1119,7 @@ items:
       - name: Visão geral
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
-      - name: Referência da API
+      - name: Referência de API
         href: reference/visio-api-reference.md
         displayName: Visio
   - name: Word
