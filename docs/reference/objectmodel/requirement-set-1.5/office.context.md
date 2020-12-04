@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,5
 description: Membros do objeto Office. Context disponíveis para suplementos do Outlook usando o conjunto de requisitos de API da caixa de correio 1,5.
-ms.date: 03/18/2020
+ms.date: 12/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 64f3a0bb131b85a41c7f840e8b7afb617ae821dd
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 966c2065268d973ac8476fda839d2a6cdf038f4e
+ms.sourcegitcommit: 1737026df569b62957d38b62c0b16caee4f0cdfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430601"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "49570734"
 ---
 # <a name="context-mailbox-requirement-set-15"></a>contexto (conjunto de requisitos de caixa de correio 1,5)
 
@@ -30,9 +30,9 @@ O Office. Context fornece interfaces compartilhadas usadas por suplementos em to
 | [contentLanguage](#contentlanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [la](#diagnostics-contextinformation) | Escrever<br>Ler | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [principal](#host-hosttype) | Escrever<br>Ler | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [principal](#host-hosttype) | Escrever<br>Ler | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true) | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | Escrever<br>Ler | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [plataforma](#platform-platformtype) | Escrever<br>Ler | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [plataforma](#platform-platformtype) | Escrever<br>Ler | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true) | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [atende](#requirements-requirementsetsupport) | Escrever<br>Ler | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Ler | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ui](#ui-ui) | Escrever<br>Ler | [UI](/javascript/api/office/office.ui?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -100,7 +100,10 @@ Obtém informações sobre o ambiente no qual o suplemento está sendo executado
 ##### <a name="example"></a>Exemplo
 
 ```js
-console.log(JSON.stringify(Office.context.diagnostics));
+var contextInfo = Office.context.diagnostics;
+console.log("Office application: " + contextInfo.host);
+console.log("Office version: " + contextInfo.version);
+console.log("Platform: " + contextInfo.platform);
 ```
 
 <br>
@@ -155,6 +158,9 @@ function write(message){
 
 Obtém o aplicativo do Office que está hospedando o suplemento.
 
+> [!NOTE]
+> Como alternativa, você pode usar a propriedade [Office. Context. Diagnostics](#diagnostics-contextinformation) para obter o host.
+
 ##### <a name="type"></a>Tipo
 
 *   [HostType](/javascript/api/office/office.hosttype)
@@ -163,7 +169,7 @@ Obtém o aplicativo do Office que está hospedando o suplemento.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1,5|
 |[Modo do Outlook aplicável](../../../outlook/outlook-add-ins-overview.md#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
@@ -181,6 +187,9 @@ console.log(JSON.stringify(Office.context.host));
 
 Fornece a plataforma na qual o suplemento está sendo executado.
 
+> [!NOTE]
+> Como alternativa, você pode usar a propriedade [Office. Context. Diagnostics](#diagnostics-contextinformation) para obter a plataforma.
+
 ##### <a name="type"></a>Tipo
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
@@ -189,7 +198,7 @@ Fornece a plataforma na qual o suplemento está sendo executado.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1,5|
 |[Modo do Outlook aplicável](../../../outlook/outlook-add-ins-overview.md#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
