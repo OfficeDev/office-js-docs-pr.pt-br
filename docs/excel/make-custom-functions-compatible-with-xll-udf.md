@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 3a4793053950fccca74de4b9ebf8998a7d635d67
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: c34dcf5ef546fa0f337b2cbd11cca7d5e25e2de3
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672684"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603775"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -61,12 +61,12 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 | **Plataformas compatíveis** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | **Formatos de arquivo com suporte** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Preenchimento automático de fórmula** | Não | Sim | Sim |
-| **Streaming** | Possível via xlfRTD e o retorno de chamada XLL. | Não | Sim |
+| **Streaming** | Possível via xlfRTD e o retorno de chamada XLL. | Sim | Sim |
 | **Localização de funções** | Não | Não. O nome e a ID devem corresponder às funções de XLL existentes. | Sim |
 | **Funções voláteis** | Sim | Sim | Sim |
 | **Suporte para recálculo de vários encadeamentos** | Sim | Sim | Sim |
 | **Comportamento de cálculo** | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| **Conjuntos de requisitos** | N/A | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
+| **Conjuntos de requisitos** | N/D | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
 
 ## <a name="see-also"></a>Confira também
 

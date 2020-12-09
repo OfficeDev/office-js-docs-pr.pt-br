@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,10
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1,10.
-ms.date: 11/09/2020
+ms.date: 11/19/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b7bfd8038883dc527721d648b2b75d7187886f49
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 951835a040b767bc9cf802be4d3bb0790b49fc06
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996239"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603782"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>O que há de novo na API JavaScript do Excel 1,10
 
@@ -19,7 +19,7 @@ O ExcelApi 1,10 introduziu os principais recursos, como comentários, contornos 
 |:--- |:--- |:--- |
 | [Comments](../../excel/excel-add-ins-comments.md) | Adicione, edite e exclua comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | [Descreve](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | Agrupar linhas e colunas para formar contornos recolhíveis. | [Intervalo](/javascript/api/excel/excel.range), [planilha](/javascript/api/excel/excel.worksheet) |
-| [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | Insira e configure as segmentações de dados em tabelas e Tabelas dinâmicas. | [Segmentação de dados](/javascript/api/excel/excel.slicer) |
+| [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | Insira e configure as segmentações de dados em tabelas e Tabelas dinâmicas. | [Segmentação de dados](/javascript/api/excel/excel.slicer) |
 | [Mais eventos de planilha](../../excel/excel-add-ins-events.md) | Ouvir eventos Click e Sort na planilha. | [Planilha (eventos)](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>Lista de APIs
