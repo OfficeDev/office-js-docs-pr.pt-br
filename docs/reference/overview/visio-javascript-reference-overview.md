@@ -1,24 +1,25 @@
 ---
 title: Visão geral da API JavaScript do Visio
 description: Visão geral da API JavaScript do Visio.
-ms.date: 06/20/2019
+ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 5a544d93c1a41f6c913381ee8d67d375646b2883
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717527"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603789"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
-Você pode usar as APIs JavaScript do Visio para inserir diagramas do Visio no SharePoint Online. Um diagrama integrado do Visio é um diagrama armazenado em uma biblioteca de documentos do SharePoint e exibido em uma página do SharePoint. Para integrar um diagrama do Visio, exiba-o em um elemento `<iframe>` de HTML. Em seguida, você pode usar APIs JavaScript do Visio para trabalhar via programação com o diagrama integrado.
+Você pode usar as APIs do Visio JavaScript para incorporar diagramas do Visio em páginas *clássicas* do SharePoint no Microsoft Office SharePoint Online. (Este recurso de extensibilidade não é compatível com o Microsoft Office SharePoint Online local ou nas páginas do SharePoint Framework.)
+
+Um diagrama integrado do Visio é um diagrama armazenado em uma biblioteca de documentos do SharePoint e exibido em uma página do SharePoint. Para integrar um diagrama do Visio, exiba-o em um elemento `<iframe>` de HTML. Em seguida, você pode usar APIs JavaScript do Visio para trabalhar via programação com o diagrama integrado.
 
 ![Diagrama do Visio em um iframe na página do SharePoint junto com a Web Part do editor de script](../images/visio-api-block-diagram.png)
-
 
 É possível usar as APIs JavaScript do Visio para:
 
@@ -67,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>Objetos proxy
 
-Os objetos JavaScript do Visio declarados e usados em um suplemento são objetos proxy dos objetos reais de um documento do Visio. Todas as ações executadas em objetos proxy não são percebidas no Visio, e o estado do documento do Visio não é percebido em objetos proxy, até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
+Os objetos JavaScript do Visio declarados e usados em uma sessão incorporada são objetos proxy para os objetos reais em um documento do Visio. Todas as ações executadas em objetos proxy não são percebidas no Visio, e o estado do documento do Visio não é percebido em objetos proxy, até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
 
 Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações nesses objetos não são realizadas até que o método `sync()` seja executado.
 
@@ -77,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-O método `sync()` sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio, com a execução de instruções enfileiradas no contexto e com a recuperação de propriedades de objetos carregados do Office para uso no código. Este método retorna uma promessa, que é resolvida quando o sistema conclui a sincronização. 
+O método `sync()` sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio, com a execução de instruções enfileiradas no contexto e com a recuperação de propriedades de objetos carregados do Office para uso no código. Este método retorna uma promessa, que é resolvida quando o sistema conclui a sincronização.
 
 ## <a name="load"></a>load()
 
-O método `load()` é usado para preencher os objetos proxy criados na camada JavaScript do suplemento. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Você pode usar esse objeto para colocar a configuração das respectivas propriedades em fila e para invocar métodos. No entanto, você deve invocar inicialmente os métodos `load()` e `sync()` para as relações ou propriedades do objeto de leitura. O método load() realizado nas propriedades e relações que devem ser carregadas quando você chama o método `sync()`.
+O método `load()` é usado para preencher os objetos proxy criados na camada JavaScript do suplemento. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Você pode usar esse objeto para colocar a configuração das respectivas propriedades em fila e para invocar métodos. No entanto, para ler as propriedades ou relações do objeto, os métodos `load()`e `sync()` precisam ser chamados primeiro. O método load() leva nas propriedades e relações que precisam ser carregadas quando o método `sync()` é chamado.
 
 A seguir, é mostrada a sintaxe do método `load()`.
 
