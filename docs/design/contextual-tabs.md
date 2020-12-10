@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em suplementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao suplemento do Office.
 ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 49a773aca0651b88c972c24a4cde0aa1e300d5e7
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: d8617c7dd8748d15393c0e38c527062e5894e791
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505550"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612733"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Criar guias contextuais personalizadas em suplementos do Office (visualização)
 
@@ -117,7 +117,7 @@ Criaremos um exemplo de um blob JSON de guias contextual passo a passo. (O esque
     - A `id` propriedade deve ser exclusiva entre todos os grupos na guia. Use uma ID breve e descritiva.
     - O `label` é uma cadeia de caracteres amigável para servir como o rótulo do grupo.
     - O `icon` valor da propriedade é uma matriz de objetos que especifica os ícones que o grupo terá na faixa de opções, dependendo do tamanho da faixa de opções e da janela do aplicativo do Office.
-    - O `controls` valor da propriedade é uma matriz de objetos que especificam os botões e outros controles no grupo. Deve haver pelo menos um e *não mais de 6 em um grupo*.
+    - O `controls` valor da propriedade é uma matriz de objetos que especifica os botões e menus no grupo. Deve haver pelo menos um e *não mais de 6 em um grupo*.
 
     > [!IMPORTANT]
     > *O número total de controles na guia inteira não pode ser superior a 20.* Por exemplo, você poderia ter 3 grupos com 6 controles cada e um quarto grupo com 2 controles, mas não pode ter quatro grupos com 6 controles cada.  
@@ -135,7 +135,7 @@ Criaremos um exemplo de um blob JSON de guias contextual passo a passo. (O esque
     }
     ```
 
-1. Todos os grupos devem ter um ícone de pelo menos dois tamanhos, 32x32 PX e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos 16x16, 20x20, 24x24, 40x40, 48x48 e 64x64. O Office decide qual ícone usar com base no tamanho da faixa de opções e na janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se a janela e os tamanhos de faixa de opções forem grandes o suficiente para que pelo menos um dos *controles* no grupo apareça, então nenhum ícone de grupo aparecerá. Por exemplo, Assista ao grupo **estilos** na faixa de opções do Word à medida que você encolhe e expande a janela do Word.) Sobre essa marcação, observe:
+1. Todos os grupos devem ter um ícone de pelo menos dois tamanhos, 32x32 PX e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos 16x16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 PX e 64x64 px. O Office decide qual ícone usar com base no tamanho da faixa de opções e na janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se a janela e os tamanhos de faixa de opções forem grandes o suficiente para que pelo menos um dos *controles* no grupo apareça, então nenhum ícone de grupo aparecerá. Por exemplo, Assista ao grupo **estilos** na faixa de opções do Word à medida que você encolhe e expande a janela do Word.) Sobre essa marcação, observe:
 
     - Ambas as propriedades são obrigatórias.
     - A `size` unidade de medida de propriedade é pixels. Os ícones são sempre quadrados, portanto, o número é a altura e a largura.
@@ -193,7 +193,7 @@ Criaremos um exemplo de um blob JSON de guias contextual passo a passo. (O esque
 Veja a seguir o exemplo completo do blob JSON:
 
 ```json
-'{
+`{
   "actions": [
     {
       "id": "executeWriteData",
@@ -246,7 +246,7 @@ Veja a seguir o exemplo completo do blob JSON:
       ]
     }
   ]
-}'
+}`
 ```
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Registrar a guia contextual com o Office com o requestCreateControls
@@ -260,7 +260,7 @@ Apresentamos um exemplo a seguir. Observe que a cadeia de caracteres JSON deve s
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ` ... `; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -289,7 +289,7 @@ Office.onReady(async () => {
 });
 ```
 
-Em seguida, defina os manipuladores. Veja a seguir um exemplo simples de um `showDataTab` , mas consulte [tratamento de erros](#error-handling) posteriormente neste artigo para obter uma versão mais robusta da função. Sobre este código, observe:
+Em seguida, defina os manipuladores. Veja a seguir um exemplo simples de a `showDataTab` , mas consulte [tratamento do erro HostRestartNeeded](#handling-the-hostrestartneeded-error) posteriormente neste artigo para obter uma versão mais robusta da função. Sobre este código, observe:
 
 - O Office controla quando atualiza o estado da faixa de opções. O método  [Office. Ribbon. requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) enfileira uma solicitação para atualizar. O método resolverá o `Promise` objeto assim que ele enfileirar a solicitação, não quando a faixa de opções realmente for atualizada.
 - O parâmetro para o `requestUpdate` método é um objeto [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifica a Tabulação por sua ID *exatamente conforme especificado no JSON* e (2) especifica a visibilidade da guia.
@@ -363,7 +363,59 @@ function myContextChanges() {
 }
 ```
 
-## <a name="error-handling"></a>Tratamento de erros
+## <a name="localizing-the-json-blob"></a>Localizando o blob JSON
+
+O blob JSON que é passado para `requestCreateControls` não é localizado da mesma maneira que a marcação de manifesto para guias centrais personalizadas é localizada (que é descrita em [localização de controle do manifesto](../develop/localization.md#control-localization-from-the-manifest)). Em vez disso, a localização deve ocorrer no tempo de execução usando BLOBs JSON distintos para cada localidade. Sugerimos que você use uma `switch` instrução que testa a propriedade [Office. Context. displayLanguage](/javascript/api/office/office.context#displayLanguage) . Este é um exemplo:
+
+```javascript
+function GetContextualTabsJsonSupportedLocale () {
+    var displayLanguage = Office.context.displayLanguage;
+
+        switch (displayLanguage) {
+            case 'en-US':
+                return `{
+                    "actions": [
+                        // actions omitted
+                     ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Data",
+                          "groups": [
+                              // groups omitted
+                          ]
+                        }
+                    ]
+                }`;
+
+            case 'fr-FR':
+                return `{
+                    "actions": [
+                        // actions omitted 
+                    ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Données",
+                          "groups": [
+                              // groups omitted
+                          ]
+                       }
+                    ]
+               }`;
+
+            // Other cases omitted
+       }
+}
+```
+
+Em seguida, o código chama a função para obter o blob localizado que é passado para `requestCreateControls` , como no exemplo a seguir:
+
+```javascript
+var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+```
+
+## <a name="handling-the-hostrestartneeded-error"></a>Manipular o erro HostRestartNeeded
 
 Em alguns cenários, o Office não consegue atualizar a faixa de opções e retornará um erro. Por exemplo, se o suplemento for atualizado e o suplemento atualizado tiver um conjunto diferente de comandos de suplemento personalizados, o aplicativo do Office deverá ser fechado e reaberto. Até que isso ocorra, o método `requestUpdate` retornará o erro `HostRestartNeeded`. Veja um exemplo de como lidar com esse erro a seguir. Nesse caso, o método `reportError` exibe o erro para o usuário.
 

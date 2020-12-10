@@ -3,12 +3,12 @@ title: Conjunto de requisitos do modo de visualização de API para suplementos 
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 2f83f81dcf7aa7ab0e3a48fff4279c1e08ba6286
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626593"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612747"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -114,7 +114,7 @@ Adicionado suporte do Outlook ao `Runtimes` elemento manifest. Ele faz referênc
 
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (clássico)
+**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
 
 <br>
 
@@ -162,7 +162,7 @@ Adição de uma nova enumeração `ComposeType` disponível no modo de composiç
 
 ### <a name="notification-messages-with-actions"></a>Mensagens de notificação com ações
 
-Este recurso permite que o suplemento inclua uma mensagem de notificação com uma ação personalizada além da ação padrão de **ignorar** .
+Este recurso permite que o suplemento inclua uma mensagem de notificação com uma ação personalizada além da ação padrão de **ignorar** . No Outlook moderno na Web, este recurso está disponível somente no modo de composição.
 
 #### <a name="officenotificationmessagedetailsactions"></a>[Office. NotificationMessageDetails. Actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
 

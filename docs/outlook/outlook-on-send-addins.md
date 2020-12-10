@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 11/25/2020
+ms.date: 12/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d2c82e5a44509257b82f9c871e57730b1e98f26
-ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
+ms.openlocfilehash: 2ad30d2cbfef61d383c13af452557b7406608723
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "49530931"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612754"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -299,8 +299,8 @@ Por motivos de conformidade, os administrador podem precisar garantir que os usu
 
 |Status da política|Resultado|
 |---|---|
-|Desabilitado|Envio permitido. É possível enviar uma mensagem ou item de reunião sem executar o suplemento Ao enviar, mesmo que o suplemento ainda não tenha sido atualizado no Exchange.|
-|Habilitado|É permitido enviar somente quando o suplemento foi atualizado do Exchange; caso contrário, o envio está bloqueado.|
+|Desabilitado|Os manifestos atualmente baixados dos suplementos ao enviar (não necessariamente as versões mais recentes) são executados em mensagens ou itens de reunião enviados. Este é o status/comportamento padrão.|
+|Habilitado|Depois que os manifestos mais recentes dos suplementos de envio são baixados do Exchange, os suplementos são executados em itens de mensagem ou de reunião enviados. Caso contrário, Send será bloqueado.|
 
 #### <a name="manage-the-on-send-policy"></a>Gerenciar a política Ao enviar
 
@@ -332,8 +332,8 @@ Por motivos de conformidade, os administradores podem precisar garantir que os u
 
 |Estado da chave|Resultado|
 |---|---|
-|falso|Envio permitido. É possível enviar uma mensagem ou item de reunião sem executar o suplemento Ao enviar, mesmo que o suplemento ainda não tenha sido atualizado no Exchange.|
-|verdadeiro|É permitido enviar somente quando o suplemento foi atualizado do Exchange; caso contrário, o envio estará bloqueado e o botão **Enviar** será desabilitado.|
+|falso|Os manifestos atualmente baixados dos suplementos ao enviar (não necessariamente as versões mais recentes) são executados em mensagens ou itens de reunião enviados. Este é o estado/comportamento padrão.|
+|verdadeiro|Depois que os manifestos mais recentes dos suplementos de envio são baixados do Exchange, os suplementos são executados em itens de mensagem ou de reunião enviados. Caso contrário, Send será bloqueado e o botão **Enviar** será desabilitado.|
 
 ---
 
@@ -355,9 +355,9 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 
 |Cenário|Recurso Ao enviar da caixa de correio 1|Recurso Ao enviar da caixa de correio 2|Sessão Web do Outlook (clássico)|Resultado|Com suporte?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|duas|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|3D|Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
+|1 |Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|2 |Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|3 |Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
 |4 |Habilitado|Desabilitado|Nova sessão|Nenhum suplemento Ao envio é executado; item de mensagem ou de reunião é enviado.|Com suporte.|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navegador da Web (Outlook moderno), Windows, Mac
@@ -370,8 +370,8 @@ Para impor o Ao enviar, os administradores devem garantir que a política tenha 
 
 |Cenário|Política Ao enviar da caixa de correio 1|Suplementos Ao enviar habilitados?|Ação da caixa de correio 1|Resultado|Com suporte?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
-|duas|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
+|1 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
+|2 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>Caixa de correio do usuário com recurso/política de suplemento Ao enviar habilitado, os suplementos com suporte à funcionalidade Ao enviar estão instalados e habilitados e o modo offline está habilitado
 
