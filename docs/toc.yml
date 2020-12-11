@@ -717,7 +717,7 @@ items:
           - name: Criar metadados JSON manualmente
             href: excel/custom-functions-json.md
             displayName: 'Excel, Custom Functions'
-          - name: Devolver uma matriz dinâmica
+          - name: Retornar uma matriz dinâmica
             href: excel/custom-functions-dynamic-arrays.md
             displayName: 'Excel, Custom Functions'
           - name: Tempo de execução compartilhado
@@ -1083,6 +1083,9 @@ items:
           - name: Referência de API
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
+          - name: Inserir e excluir slides em uma apresentação
+            href: powerpoint/insert-slides-into-presentation.md
+            displayName: PowerPoint
           - name: Obter todo o documento por meio de um suplemento
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
             displayName: PowerPoint
@@ -1119,7 +1122,7 @@ items:
       - name: Visão geral
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
-      - name: Referência de API
+      - name: Referência da API
         href: reference/visio-api-reference.md
         displayName: Visio
   - name: Word
