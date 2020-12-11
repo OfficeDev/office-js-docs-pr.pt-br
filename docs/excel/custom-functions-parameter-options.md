@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/09/2020
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
+ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071617"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49624663"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. O Excel passará um intervalo de dados de célula como uma matriz bidimensional.
 
-Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o parâmetro `values`, que é um tipo de parâmetro `Excel.CustomFunctionDimensionality.matrix`. Observe que, nos metadados JSON dessa função, a propriedade do parâmetro `type` é definida como `matrix` .
+Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o parâmetro `values` e a sintaxe JSDOC `number[][]` define a propriedade do parâmetro `dimensionality` como `matrix` nos metadados JSON para essa função. 
 
 ```js
 /**
