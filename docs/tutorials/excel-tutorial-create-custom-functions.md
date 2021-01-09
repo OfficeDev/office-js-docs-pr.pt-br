@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131791"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789202"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -243,4 +243,4 @@ function clock(invocation) {
 Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Em seguida, você pode modificar seu projeto para usar um tempo de execução compartilhado, facilitando a interação com o painel de tarefas. Siga as etapas no seguinte artigo:
 
 > [!div class="nextstepaction"]
-> [Configure seu suplemento para usar um tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
+> [Configure seu suplemento para usar um tempo de execução compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

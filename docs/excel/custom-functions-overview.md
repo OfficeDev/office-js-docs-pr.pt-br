@@ -5,12 +5,12 @@ title: Criar funções personalizadas no Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071673"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789125"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -50,7 +50,7 @@ Se você usar o [Gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 ### <a name="script-file"></a>Arquivo de script
 
-O arquivo de script ( **./src/functions/functions.js** ou **./src/functions/functions.ts** ) contém o código que define funções e comentários que definem a função.
+O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções e comentários que definem a função.
 
 O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas propriedades de `description`. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Gerar automaticamente os metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
@@ -70,13 +70,13 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas ( **./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
+O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
 
 - Define o espaço de nomes das suas funções personalizadas. Um namespace se direciona para suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do seu suplemento.
 - Usa os elementos `<ExtensionPoint>` e `<Resources>` que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
 - Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas. Observe que usar um tempo de execução compartilhado significa que seu suplemento usará o Internet Explorer 11, não o Microsoft Edge.
 
-Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md).
+Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 Para ver um manifesto funcional completo de um suplemento de amostra, consulte [esse repositório do GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 

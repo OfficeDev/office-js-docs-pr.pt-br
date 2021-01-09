@@ -1,30 +1,30 @@
 ---
 title: Tempos de execução no arquivo de manifesto
-description: O elemento de Runtime especifica o tempo de execução do seu suplemento.
+description: O elemento Runtimes especifica o tempo de execução do seu complemento.
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: afbcc6a909c51d2ed56292ef1541193f7f698d28
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159357"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789160"
 ---
-# <a name="runtimes-element"></a>Elemento de runtimes
+# <a name="runtimes-element"></a>Elemento Runtimes
 
-Especifica o tempo de execução do seu suplemento. Filho do [`<Host>`](host.md) elemento.
+Especifica o tempo de execução do seu complemento. Filho do [`<Host>`](host.md) elemento.
 
 > [!NOTE]
-> Ao executar no Office no Windows, seu suplemento usa o navegador Internet Explorer 11.
+> Ao executar no Office no Windows, seu complemento usa o navegador Internet Explorer 11.
 
-No Excel, esse elemento permite que a faixa de opções, o painel de tarefas e as funções personalizadas usem o mesmo tempo de execução. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+No Excel, esse elemento permite que a faixa de opções, o painel de tarefas e as funções personalizadas usem o mesmo tempo de execução. Para saber mais, confira Configurar seu complemento do Excel para usar um tempo de execução [JavaScript compartilhado.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 
-No Outlook, esse elemento habilita a ativação de suplementos baseada em eventos. Para obter mais informações, consulte [Configure Your Outlook Add-in for Event-based Activation](../../outlook/autolaunch.md).
+No Outlook, esse elemento habilita a ativação de um complemento baseado em eventos. Para saber mais, confira [Configurar seu complemento do Outlook para ativação baseada em eventos.](../../outlook/autolaunch.md)
 
-**Tipo de suplemento:** Painel de tarefas, email
+**Tipo de complemento:** Painel de tarefas, Email
 
 > [!IMPORTANT]
-> **Outlook**: o recurso de ativação baseado em eventos está atualmente [em versão prévia](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e disponível apenas no Outlook na Web. Para obter mais informações, consulte [como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
+> **Outlook**: o recurso de ativação baseada em eventos está atualmente em [visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e só está disponível no Outlook na Web. Para obter mais informações, [consulte Como visualizar o recurso de ativação baseada em eventos.](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -42,7 +42,7 @@ No Outlook, esse elemento habilita a ativação de suplementos baseada em evento
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do suplemento. |
+| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do seu complemento. |
 
 ## <a name="see-also"></a>Confira também
 
