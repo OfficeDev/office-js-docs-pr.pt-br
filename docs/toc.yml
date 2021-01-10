@@ -89,6 +89,10 @@ items:
               - name: Abrir automaticamente um painel de tarefas com um documento
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: Configure seu suplemento para usar um tempo de execução compartilhado
+                href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+              - name: Executar o código no documento aberto
+                href: develop/run-code-on-document-open.md
           - name: Manifesto
             items:
               - name: Visão geral
@@ -216,6 +220,8 @@ items:
                     href: design/task-pane-add-ins.md
               - name: Atalhos de teclado
                 href: design/keyboard-shortcuts.md
+              - name: Mostrar ou ocultar um Suplemento do Office no painel de tarefas
+                href: develop/show-hide-add-in.md
               - name: Localização
                 href: develop/localization.md
               - name: Recursos
@@ -623,9 +629,6 @@ items:
           - name: Formatação condicional de intervalos
             href: excel/excel-add-ins-conditional-formatting.md
             displayName: Excel
-          - name: Configure seu suplemento para usar um tempo de execução compartilhado
-            href: excel/configure-your-add-in-to-use-a-shared-runtime.md
-            displayName: Excel
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -653,14 +656,8 @@ items:
           - name: Intervalos (avançados)
             href: excel/excel-add-ins-ranges-advanced.md
             displayName: Excel
-          - name: Executar o código no documento aberto
-            href: excel/run-code-on-document-open.md
-            displayName: Excel
           - name: Formas
             href: excel/excel-add-ins-shapes.md
-            displayName: Excel
-          - name: Mostrar ou ocultar um suplemento do Office em um tempo de execução compartilhado
-            href: excel/show-hide-add-in.md
             displayName: Excel
           - name: Tabelas
             href: excel/excel-add-ins-tables.md
@@ -719,9 +716,6 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Retornar uma matriz dinâmica
             href: excel/custom-functions-dynamic-arrays.md
-            displayName: 'Excel, Custom Functions'
-          - name: Tempo de execução compartilhado
-            href: excel/custom-functions-shared-overview.md
             displayName: 'Excel, Custom Functions'
           - name: Funções personalizadas sem IU
             items:
