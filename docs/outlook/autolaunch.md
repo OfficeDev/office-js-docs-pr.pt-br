@@ -1,55 +1,55 @@
 ---
-title: Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
-description: Saiba como configurar seu suplemento do Outlook para ativação baseada em eventos.
+title: Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
+description: Saiba como configurar seu complemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 11/24/2020
+ms.date: 01/06/2021
 localization_priority: Normal
-ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
-ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
+ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "49408838"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839828"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
+# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 
-Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Este recurso permite que seu suplemento Execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a todos os itens. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário. No momento, há suporte para os eventos a seguir.
+Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode integrar com o painel de tarefas e a funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
 
-- `OnNewMessageCompose`: Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar)
+- `OnNewMessageCompose`: Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar)
 - `OnNewAppointmentOrganizer`: Ao criar um novo compromisso
 
   > [!IMPORTANT]
-  > Este recurso não **é ativado** na edição de um item, por exemplo, um rascunho ou um compromisso existente.
+  > Esse recurso não **é** ativado na edição de um item, por exemplo, um rascunho ou um compromisso existente.
 
-Ao final deste passo a passo, você terá um suplemento que é executado sempre que uma nova mensagem é criada.
+No final deste passo a passo, você terá um complemento que é executado sempre que uma nova mensagem é criada.
 
 > [!IMPORTANT]
-> Este recurso só tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Microsoft 365. Veja [como visualizar o recurso de ativação baseado em eventos](#how-to-preview-the-event-based-activation-feature) neste artigo para obter mais detalhes.
+> Esse recurso só tem suporte para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Microsoft 365. Veja [como visualizar o recurso de ativação baseada em eventos](#how-to-preview-the-event-based-activation-feature) neste artigo para obter mais detalhes.
 >
-> Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em suplementos de produção.
+> Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>Como visualizar o recurso de ativação baseado em eventos
+## <a name="how-to-preview-the-event-based-activation-feature"></a>Como visualizar o recurso de ativação baseada em eventos
 
-Convidamos você a experimentar o recurso de ativação baseada em eventos! Informe-nos seus cenários e saiba como podemos melhorar enviando seus comentários por meio do GitHub (consulte a seção **comentários** no final desta página).
+Convidamos você a experimentar o recurso de ativação baseada em eventos! Conheça seus cenários e como podemos melhorar nos fazendo comentários por meio do GitHub (confira a seção **Comentários** no final desta página).
 
 Para visualizar esse recurso:
 
-- Faça referência à biblioteca **beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é encontrado em CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com o `npm install --save-dev @types/office-js-preview` .
-- [Configure o lançamento direcionado no seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+- Fazer referência **à biblioteca beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) tipo para compilação de TypeScript e IntelliSense é encontrado na CDN e [definitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview` .
+- [Configure o lançamento direcionado no locatário do Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de complemento com o gerador Yeoman para Os Complementos do Office.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar a ativação baseada em eventos do suplemento, você deve configurar o elemento de [tempos de execução](../reference/manifest/runtimes.md) e o ponto de extensão [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) no manifesto. Por enquanto, `DesktopFormFactor` é o único fator de forma com suporte.
+Para habilitar a ativação baseada em eventos do seu complemento, você deve configurar o elemento [Runtimes](../reference/manifest/runtimes.md) e o ponto de extensão [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) no manifesto. Por enquanto, `DesktopFormFactor` é o único fator forma com suporte.
 
-1. Em seu editor de código, abra o projeto de início rápido.
+1. No editor de código, abra o projeto de início rápido.
 
-1. Abra o arquivo **manifest.xml** localizado na raiz do seu projeto.
+1. Abra o **manifest.xml** arquivo localizado na raiz do projeto.
 
-1. Selecione o `<VersionOverrides>` nó inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo seguinte XML.
+1. Selecione o nó `<VersionOverrides>` inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -150,32 +150,43 @@ Para habilitar a ativação baseada em eventos do suplemento, você deve configu
 </VersionOverrides>
 ```
 
-O Outlook no Windows usa um arquivo JavaScript, enquanto o Outlook na Web usa um arquivo HTML que faz referência ao mesmo arquivo JavaScript. Você deve fornecer referências a esses arquivos no manifesto, uma vez que a plataforma do Outlook determina se deve usar HTML ou JavaScript com base no cliente do Outlook. Assim, para configurar a manipulação de eventos, forneça o local do HTML no `Runtime` elemento e, em seguida, em seu `Override` elemento filho, forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
+O Outlook no Windows usa um arquivo JavaScript, enquanto o Outlook na Web usa um arquivo HTML que faz referência ao mesmo arquivo JavaScript. Você deve fornecer referências a ambos os arquivos no manifesto, pois a plataforma do Outlook determina se é necessário usar HTML ou JavaScript com base no cliente do Outlook. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML no elemento e, em seguida, em seu elemento filho forneça o local do arquivo JavaScript embutido ou referenciado `Runtime` `Override` pelo HTML.
 
 > [!TIP]
-> Para saber mais sobre manifestos para suplementos do Outlook, confira [manifestos de suplementos do Outlook](manifests.md).
+> Para saber mais sobre manifestos para os complementos do Outlook, confira [manifestos de complementos do Outlook.](manifests.md)
 
 ## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
 
-Você precisa implementar o tratamento dos eventos selecionados.
+Você precisa implementar a manipulação para os eventos selecionados.
 
-Neste cenário, você adicionará o tratamento para compor novos itens.
+Neste cenário, você adicionará a manipulação para composição de novos itens.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** em seu editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** seu editor de código.
 
-1. Após a `action` função, insira as seguintes funções de JavaScript.
+1. Após a `action` função, insira as seguintes funções JavaScript.
 
     ```js
     function onMessageComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
     function onAppointmentComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
-    function setSubject() {
-      Office.context.mailbox.item.subject.setAsync("Set by an event-based add-in!");
+    function setSubject(event) {
+      Office.context.mailbox.item.subject.setAsync(
+        "Set by an event-based add-in!",
+        {
+          "asyncContext" : event
+        },
+        function (asyncResult) {
+          // Handle success or error.
+          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
+          }
+    
+          // Call event.completed() after all work is done.
+          asyncResult.asyncContext.completed();
+        });
     }
     ```
 
@@ -188,7 +199,7 @@ Neste cenário, você adicionará o tratamento para compor novos itens.
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do projeto. Ao executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run dev-server
@@ -198,17 +209,17 @@ Neste cenário, você adicionará o tratamento para compor novos itens.
 
 1. No Outlook na Web, crie uma nova mensagem.
 
-    ![Uma captura de tela de uma janela de mensagem no Outlook na Web com o assunto definido em redigir.](../images/outlook-web-autolaunch.png)
+    ![Uma captura de tela de uma janela de mensagem no Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch.png)
 
-## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações de ativação baseada em evento
+## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações da ativação baseada em eventos
 
-Os suplementos que ativam com base em eventos são projetados para serem executados de forma curta, até 330 segundos. Recomendamos que você tenha seu suplemento chamar o `event.completed` método para sinalizá-lo a concluir o processamento do evento de lançamento. O suplemento também termina quando o usuário fecha a janela de redação.
+Os complementos que são ativados com base em eventos são projetados para serem de curta duração, até 330 segundos apenas. Recomendamos que seu complemento chame o método para sinalizar que ele `event.completed` concluiu o processamento do evento de lançamento. O complemento também termina quando o usuário fecha a janela de redação.
 
-Se o usuário tiver vários suplementos que se inscreveram no mesmo evento, a plataforma do Outlook iniciará os suplementos sem nenhuma ordem específica. Atualmente, apenas cinco suplementos baseados em eventos podem estar ativamente em execução. Qualquer suplemento adicional é enviado para uma fila e, em seguida, executado como os suplementos ativos anteriormente são concluídos ou desativados.
+Se o usuário tiver vários complementos que se inscrevem no mesmo evento, a plataforma do Outlook inicia os complementos sem uma ordem específica. Atualmente, apenas cinco complementos baseados em eventos podem ser executados ativamente. Quaisquer outros complementos são pressionados para uma fila e executados à medida que os complementos ativos anteriormente são concluídos ou desativados.
 
-O usuário pode alternar ou navegar para fora do item de email atual onde o suplemento começou a ser executado. O suplemento que foi iniciado concluirá a operação em segundo plano.
+O usuário pode alternar ou sair do item de email atual onde o complemento começou a ser executado. O complemento que foi lançado concluirá sua operação em segundo plano.
 
-Algumas APIs do Office.js que alteram ou alteram a interface do usuário não são permitidas a partir de suplementos baseados em eventos. A seguir estão as APIs bloqueadas.
+Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas a partir de complementos baseados em eventos. A seguir estão as APIs bloqueadas.
 
 - Em `Office.context.mailbox` :
   - `displayAppointmentForm`

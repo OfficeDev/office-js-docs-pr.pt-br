@@ -3,12 +3,12 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 01/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c10774287aa34cdc193d72c22487a40fabb9479e
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 8fc0f0d9f0664c3a4ba1c343306d779106b27862
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789195"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839737"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -199,7 +199,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="web-browser---modern-outlook"></a>[Navegador da Web – Outlook moderno](#tab/modern)
 
-Os suplementos para Outlook na Web (modernos) que usam o recurso Ao enviar devem ser executados para qualquer usuário que os tenha instalado. No entanto, se os usuários precisarem executar os complementos Ao enviar para atender aos padrões de conformidade, a política de caixa de correio deverá ter o sinalizador *OnSendAddinsEnabled* definido para que a edição do item não seja permitida enquanto os complementos estão sendo processadas ao `true` enviar.
+Os suplementos para Outlook na Web (modernos) que usam o recurso Ao enviar devem ser executados para qualquer usuário que os tenha instalado. No entanto, se os usuários precisam executar os complementos Ao enviar para atender aos padrões de conformidade, a política de caixa de correio deve ter o sinalizador *OnSendAddinsEnabled* definido para que a edição do item não seja permitida enquanto os complementos estão sendo processadas ao `true` enviar.
 
 Para instalar um novo suplemento, execute os seguintes cmdlets do PowerShell do Exchange Online.
 
@@ -218,7 +218,7 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 Os administradores podem impor a conformidade ao enviar executando cmdlets do PowerShell do Exchange Online.
 
-Para todos os usuários, não permitir a edição durante o processamento de complementos ao enviar:
+Para todos os usuários, para não permitir a edição durante o processamento de complementos ao enviar:
 
 1. Criar uma nova política de caixa de correio do Outlook na Web.
 
@@ -477,7 +477,7 @@ A API Ao enviar requer `VersionOverrides v1_1`. Veja a seguir como adicionar o n
 > [!NOTE]
 > Para obter mais informações, confira o seguinte:
 > - [Manifestos de suplementos do Outlook](manifests.md)
-> - [Manifesto XML dos Suplementos do Office](../overview/add-in-manifests.md)
+> - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
 
 
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>Objetos `Event` e `item`, e os métodos `body.getAsync` e `body.setAsync`

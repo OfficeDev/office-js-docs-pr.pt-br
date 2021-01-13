@@ -1,23 +1,23 @@
 ---
-title: Publicar suplementos do Office usando a implantação centralizada por meio do centro de administração do Microsoft 365
-description: Saiba como usar a implantação centralizada para implantar suplementos internos, bem como suplementos fornecidos por ISVs.
-ms.date: 11/17/2020
+title: Publicar Os Complementos do Office usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365
+description: Saiba como usar a Implantação Centralizada para implantar os complementos internos, bem como os complementos fornecidos por ISVs.
+ms.date: 01/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e0657f1b6d1b7dc3e61398b1237d1546261613e8
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: c1f36d1ad640adbecdd3338200e742e76831a67a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132309"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839751"
 ---
-# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publicar suplementos do Office usando a implantação centralizada por meio do centro de administração do Microsoft 365
+# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publicar Os Complementos do Office usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365
 
-O centro de administração do Microsoft 365 facilita para um administrador implantar os suplementos do Office para usuários e grupos dentro de sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
+O Centro de administração do Microsoft 365 torna mais fácil para um administrador implantar Os Complementos do Office para usuários e grupos dentro de sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
 
-O centro de administração do Microsoft 365 atualmente oferece suporte aos seguintes cenários.
+Atualmente, o Centro de administração do Microsoft 365 oferece suporte aos seguintes cenários.
 
 - Implantação Centralizada de suplementos novos e atualizados para usuários, grupos ou para uma organização.
-- Implantação para várias plataformas de cliente, incluindo Windows, Mac e a Web. Para o Outlook, a implantação para iOS e Android também é suportada. (No entanto, enquanto a instalação do Excel, Outlook, Word e suplementos do PowerPoint no iPad é suportada, a implantação centralizada para iPad **não** é suportada.)
+- Implantação em várias plataformas cliente, incluindo Windows, Mac e a Web. Para o Outlook, a implantação para iOS e Android também é suportada. (No entanto, embora a instalação do usuário dos complementos Excel, Outlook, Word e PowerPoint no iPad seja suportada, a Implantação Centralizada para iPad não **é** suportada.)
 - Implantação no idioma inglês e para locatários no mundo inteiro.
 - Implantação de suplementos hospedados na nuvem.
 - Implantação de suplementos hospedados em um firewall.
@@ -25,10 +25,10 @@ O centro de administração do Microsoft 365 atualmente oferece suporte aos segu
 - Instalação automática de um suplemento para usuários que iniciam o aplicativo do Office.
 - Remoção automática de um suplemento para os usuários se o administrador desativar ou excluir o suplemento ou se os usuários forem removidos do Azure Active Directory ou de um grupo no qual o suplemento foi implantado.
 
-A implantação centralizada é a maneira recomendada para o administrador do Microsoft 365 implantar suplementos do Office em uma organização, desde que a organização atenda a todos os requisitos para usar a implantação centralizada. Para obter informações sobre como determinar se sua organização pode usar a implantação centralizada, consulte [determinar se a implantação centralizada de suplementos funciona para sua organização do Microsoft 365](/office365/admin/manage/centralized-deployment-of-add-ins).
+A Implantação Centralizada é a maneira recomendada para um administrador do Microsoft 365 implantar Os Complementos do Office em uma organização, desde que a organização atenda a todos os requisitos para usar a Implantação Centralizada. Para obter informações sobre como determinar se sua organização pode usar a Implantação Centralizada, confira Determinar se a Implantação Centralizada de complementos funciona para sua organização do [Microsoft 365.](/office365/admin/manage/centralized-deployment-of-add-ins)
 
 > [!NOTE]
-> Em um ambiente local sem conexão com o Microsoft 365, ou para implantar suplementos do SharePoint ou suplementos do Office que são direcionados para o Office 2013, use um [Catálogo de aplicativos do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). Para implantar suplementos COM ou VSTO, use o Windows Installer ou o recurso ClickOnce, como descrito em [Implantando uma solução do Office](/visualstudio/vsto/deploying-an-office-solution).
+> Em um ambiente local sem conexão com o Microsoft 365, ou para implantar os complementos do SharePoint ou do Office destinados ao Office 2013, use um catálogo de aplicativos do [SharePoint.](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) Para implantar suplementos COM ou VSTO, use o Windows Installer ou o recurso ClickOnce, como descrito em [Implantando uma solução do Office](/visualstudio/vsto/deploying-an-office-solution).
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Abordagem recomendada para implantar Suplementos do Office
 
@@ -44,14 +44,14 @@ Dependendo do tamanho do público-alvo, convém adicionar etapas a ou remover et
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>Publicar um suplemento por meio da Implantação Centralizada
 
-Antes de começar, confirme se a sua organização atende a todos os requisitos para usar a implantação centralizada, conforme descrito em [determinar se a implantação centralizada de suplementos funciona para sua organização do Microsoft 365](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
+Antes de começar, confirme se sua organização atende a todos os requisitos para usar a Implantação Centralizada, conforme descrito em Determinar se a Implantação Centralizada de complementos funciona para sua organização do [Microsoft 365.](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)
 
 Se sua organização atender aos requisitos, conclua as etapas a seguir para publicar um suplemento do Office por meio da Implantação Centralizada:
 
-1. Entre no Microsoft 365 com sua conta corporativa ou de educação.
+1. Entre no Microsoft 365 com sua conta de trabalho ou de educação.
 2. Selecione o ícone do inicializador de aplicativos no canto superior esquerdo e escolha **Administrador**.
 3. No menu de navegação, pressione **Mostrar mais** e, em seguida, escolha **Configurações** > **Serviços e suplementos**.
-4. Se você vir uma mensagem na parte superior da página anunciando o novo centro de administração do Microsoft 365, escolha a mensagem para ir para a visualização do centro de administração (consulte [About The Microsoft 365 Admin Center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
+4. If you see a message on the top of the page announcing the new Microsoft 365 admin center, choose the message to go to the Admin Center Preview (see [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 5. Escolha **Implantar Suplemento** na parte superior da página.
 6. Escolha **Avançar** depois de analisar os requisitos.
 7. Escolha uma das opções a seguir na página **Implantação Centralizada**:
@@ -60,32 +60,32 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
     - **Tenho o arquivo de manifesto (.xml) neste dispositivo.** Para esta opção, escolha **Navegar** para localizar o arquivo de manifesto (.xml) que você deseja usar.
     - **Tenho uma URL para o arquivo de manifesto.** Para esta opção, digite a URL do manifesto no campo fornecido.
 
-    ![Caixa de diálogo novo Add-In no centro de administração do Microsoft 365](../images/new-add-in.png)
+    ![New Add-In dialog in Microsoft 365 admin center](../images/new-add-in.png)
 
 8. Se tiver selecionado a opção para adicionar um suplemento da Office Store, escolha o suplemento. É possível exibir suplementos disponíveis por meio das categorias **Sugeridos para você**, **Classificação** ou **Nome**. Você pode adicionar apenas suplementos gratuitos da Office Store. Atualmente não é possível adicionar suplementos pagos.
 
     > [!NOTE]
     > Com a opção da Office Store, as atualizações e os aprimoramentos do suplemento estão disponíveis automaticamente para usuários sem necessidade de intervenção.
 
-    ![Selecionar uma caixa de diálogo de suplemento no centro de administração do Microsoft 365](../images/select-an-add-in.png)
+    ![Select an add-In dialog in Microsoft 365 admin center](../images/select-an-add-in.png)
 
-9. Escolha **continuar** após analisar os detalhes do suplemento, política de privacidade e termos de licença.
+9. Escolha **Continuar** depois de revisar os detalhes do complemento, a Política de Privacidade e os Termos de Licença.
 
-    ![Página de suplemento selecionada no centro de administração do Microsoft 365](../images/selected-add-in-admin-center.png)
+    ![Página de complemento selecionada no Centro de administração do Microsoft 365](../images/selected-add-in-admin-center.png)
 
-10. Na página **atribuir usuários** , escolha **todos**, **usuários/grupos específicos** ou **apenas eu**. Use a caixa Pesquisar para encontrar usuários e grupos para quem você quer implantar o suplemento. Para suplementos do Outlook, você também pode escolher o método de implantação **fixo**, **disponível** ou **opcional**.
+10. Na página **Atribuir Usuários,** escolha **Todos**, **Usuários/Grupos Específicos** ou **Somente eu**. Use a caixa Pesquisar para encontrar usuários e grupos para quem você quer implantar o suplemento. Para os complementos do Outlook, você também pode escolher o método de implantação **Fixo**, **Disponível** ou **Opcional**.
 
-    ![Gerenciar quem tem acesso e método de implantação no centro de administração do Microsoft 365](../images/manage-users-deployment-admin-center.png)
-
-    > [!NOTE]
-    > Os suplementos que utilizam [logon único (SSO)](../develop/sso-in-office-add-ins.md) solicitarão que o administrador concorde com os escopos listados no manifesto do suplemento.  Se o mesmo serviço de backup for usado em vários suplementos (a mesma ID de aplicativo do Azure é usada com SSO em suplementos diferentes), os escopos de cada suplemento serão solicitados a fornecer o consentimento de cada implantação. Esta página também exibirá a lista de permissões que o suplemento requer.
-
-11. Quando terminar, escolha **implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
+    ![Gerenciar quem tem acesso e método de implantação no Centro de administração do Microsoft 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Quando um administrador escolhe **implantar**, o consentimento é fornecido para todos os usuários.
+    > Os complementos que utilizam o [SSO (logo único)](../develop/sso-in-office-add-ins.md) solicitarão que o administrador consenta com os escopos listados no manifesto do complemento.  Se o mesmo serviço de backing for usado em vários complementos (a mesma ID de aplicativo do Azure é usada com SSO em diferentes complementos), os escopos para cada complemento serão solicitados a consentir com cada implantação. Esta página também exibirá a lista de permissões que o add-in exige.
 
-    ![lista de aplicativos no centro de administração do Microsoft 365](../images/citations.png)
+11. Quando terminar, escolha **Implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
+
+    > [!NOTE]
+    > Quando um administrador escolhe **Implantar,** o consentimento é dado para todos os usuários.
+
+    ![lista de aplicativos no Centro de administração do Microsoft 365](../images/citations.png)
 
 > [!TIP]
 > Quando você implanta um novo suplemento para usuários e/ou grupos em sua organização, envie um email descrevendo quando e como usar o suplemento e incluindo links para conteúdo relevante da Ajuda, perguntas frequentes ou outros recursos de suporte.
@@ -98,7 +98,7 @@ Os administradores podem atribuir um suplemento a todos na organização ou a us
 
 - **Usuários**: Se você atribuir um suplemento a usuários individuais, será necessário atualizar as configurações da Central de implantação para o suplemento sempre que quiser atribuí-lo a outros usuários. Da mesma forma, será necessário atualizar as configurações da Central de implantação para o suplemento sempre que você quiser remover o acesso do usuário ao suplemento.
 
-- **Grupos**: Se você atribuir um suplemento a um grupo, os usuários adicionados ao grupo serão atribuídos automaticamente ao suplemento. Da mesma forma, quando um usuário é removido de um grupo, ele automaticamente perde o acesso ao suplemento. Em ambos os casos, nenhuma ação adicional é necessária do Microsoft 365 admin.
+- **Grupos**: Se você atribuir um suplemento a um grupo, os usuários adicionados ao grupo serão atribuídos automaticamente ao suplemento. Da mesma forma, quando um usuário é removido de um grupo, ele automaticamente perde o acesso ao suplemento. Em ambos os casos, nenhuma ação adicional é necessária do administrador do Microsoft 365.
 
 Em geral, para facilitar a manutenção, recomendamos atribuir suplementos usando grupos sempre que possível. No entanto, em situações em que você deseja restringir o acesso do suplemento a um número muito pequeno de usuários, pode ser mais prático atribuir o suplemento a usuários específicos.
 
@@ -114,16 +114,16 @@ A tabela a seguir descreve os estados diferentes de um suplemento.
 
 ## <a name="updating-office-add-ins-that-are-published-via-centralized-deployment"></a>Atualizar suplementos do Office que são publicados por meio de Implantação Centralizada
 
-Depois de um suplemento do Office ter sido publicado por meio de Implantação Centralizada, as alterações feitas ao aplicativo Web do suplemento automaticamente estarão disponíveis para todos os usuários assim que as alterações forem implementadas no aplicativo Web. As alterações feitas a um [arquivo de manifesto XML](../develop/add-in-manifests.md) de um suplemento, por exemplo, para atualizar o ícone, texto ou comandos do suplemento, ocorrem da seguinte maneira:
+Depois que um Complemento do Office tiver sido publicado por meio da Implantação Centralizada, todas as alterações feitas no aplicativo Web do complemento estarão automaticamente disponíveis para todos os usuários depois que essas alterações são implementadas no aplicativo Web. As alterações feitas no arquivo de manifesto [XML](../develop/add-in-manifests.md) de um complemento para, por exemplo, atualizar o ícone, o texto ou os comandos de um complemento, ocorrem da seguinte forma:
 
-- **Suplemento de linha de negócios**: se um administrador carregou um arquivo de manifesto explicitamente (seja de seu dispositivo ou apontando para uma URL) ao implementar a implantação centralizada por meio do centro de administração do Microsoft 365, o administrador deve carregar um novo arquivo de manifesto que contenha as alterações desejadas. Depois que o arquivo de manifesto atualizado for carregado, o suplemento será atualizado na próxima vez que os aplicativos relevantes do Office iniciarem.
+- **Complemento** de linha de negócios: se um administrador tiver carregado explicitamente um arquivo de manifesto (do dispositivo ou apontando para uma URL) ao implementar a Implantação Centralizada por meio do Centro de administração do Microsoft 365, o administrador deverá carregar um novo arquivo de manifesto que contenha as alterações desejadas. Depois que o arquivo de manifesto atualizado for carregado, o suplemento será atualizado na próxima vez que os aplicativos relevantes do Office iniciarem.
 
   > [!NOTE]
-  > Um administrador não precisa remover um suplemento de LOB para fazer uma atualização. Na seção suplementos, o administrador pode simplesmente escolher o suplemento de LOB e invocar essa funcionalidade pressionando o botão **Atualizar suplemento** presente no canto inferior direito.
+  > Um administrador não precisa remover um complemento LOB para fazer uma atualização. Na seção Add-ins, o administrador pode simplesmente escolher o complemento LOB  e invocar essa funcionalidade pressionando o botão Atualizar o complemento presente no canto inferior direito.
   >
-  > ![A captura de tela mostra a caixa de diálogo atualizar suplemento no centro de administração do Microsoft 365](../images/update-add-in-admin-center.png)
+  > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center](../images/update-add-in-admin-center.png)
 
-- **Suplemento da Office Store**: se um administrador selecionou um suplemento da Office Store ao implementar a implantação centralizada por meio do centro de administração do Microsoft 365 e as atualizações de suplemento na Office Store, o suplemento será atualizado posteriormente via implantação centralizada. Na próxima vez que os aplicativos relevantes do Office iniciarem, o suplemento será atualizado.
+- Complemento **da Office Store:** se um administrador tiver selecionado um complemento da Office Store ao implementar a Implantação Centralizada por meio do Centro de administração do Microsoft 365 e as atualizações de complemento na Office Store, o complemento será atualizado posteriormente por meio da Implantação Centralizada. Pode levar até 24 horas para que as atualizações de complementos da Loja fluam para todos os usuários finais. Após essa duração, na próxima vez que os aplicativos relevantes do Office reiniciarem para esses usuários, o complemento será atualizado. Os usuários também podem acionar uma Atualização Manual para obter a versão mais recente do complemento da Loja selecionando Inserir  >  **Add-ins** de Guia Administração Gerenciado  >  **Guia**  >  **Atualizar.**
 
 ## <a name="end-user-experience-with-add-ins"></a>Experiência do usuário final com suplementos
 
@@ -131,7 +131,7 @@ Depois que um suplemento tiver sido publicado por meio de Implantação Centrali
 
 Se o suplemento tiver suporte para comandos, eles serão exibidos na Faixa de Opções do Office a todos os usuários para os quais o suplemento for implantado. No exemplo a seguir, o comando **Pesquisar Citação** aparece na faixa de opções para o suplemento **Citações**.
 
-![A captura de tela mostra uma seção da faixa de opções do aplicativo do Office com o comando de citação realçado no suplemento de citações](../images/search-citation.png)
+![Screenshot shows a section of the Office app ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
 
 Caso contrário, os usuários podem adicioná-lo ao aplicativo do Office da seguinte maneira:
 
@@ -151,4 +151,4 @@ No entanto, para o Outlook 2016 ou posterior, os usuários podem fazer o seguint
 
 ## <a name="see-also"></a>Confira também
 
-- [Determinar se a implantação centralizada de suplementos funciona para sua organização do Microsoft 365](/office365/admin/manage/centralized-deployment-of-add-ins)
+- [Determinar se a Implantação Centralizada de complementos funciona para sua organização do Microsoft 365](/office365/admin/manage/centralized-deployment-of-add-ins)

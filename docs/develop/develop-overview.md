@@ -3,19 +3,19 @@ title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 02ef856d17a82f9e63a555bae09d53d91e6ccc9c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131889"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839940"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
 > [!TIP]
 > Análise a [Visão geral da plataforma de Suplementos do Office](../overview/office-add-ins.md) antes de ler este artigo.
 
-Todos os Suplementos do Office criados com base na plataforma de Suplementos do Office. Para qualquer suplemento que você criar, você precisará entender conceitos importantes como disponibilidade de aplicativo e plataforma, padrões de programação da API do Office JavaScript, como especificar as configurações e recursos de um suplemento no arquivo de manifesto, como projetar a Interface do Usuário, experiência e muito mais. Conceitos básicos de desenvolvimento como esses são abordados aqui na seção **Ciclo de vida de desenvolvimento** > **Desenvolver** da documentação. Análise as informações contidas aqui antes de explorar a documentação específica do aplicativo que corresponde ao suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
+Todos os Suplementos do Office são criados com base na plataforma de Suplementos do Office. Para qualquer suplemento que você criar, você precisará entender conceitos importantes como disponibilidade de aplicativo e plataforma, padrões de programação da API do Office JavaScript, como especificar as configurações e recursos de um suplemento no arquivo de manifesto, como projetar a Interface do Usuário, experiência e muito mais. Conceitos básicos de desenvolvimento como esses são abordados aqui na seção **Ciclo de vida de desenvolvimento** > **Desenvolver** da documentação. Análise as informações contidas aqui antes de explorar a documentação específica do aplicativo que corresponde ao suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
 
 ## <a name="creating-an-office-add-in"></a>Criar um Suplemento do Office
 
@@ -99,7 +99,7 @@ Um suplemento do Office pode estender a interface do usuário do Office usando c
 
 - Os contêineres HTML como [painéis de tarefas](../design/task-pane-add-ins.md), [suplementos de conteúdo](../design/content-add-ins.md) e [caixas de diálogo](../design/dialog-boxes.md) podem ser usadas para exibir a interface do usuário personalizada e expor uma funcionalidade adicional em um aplicativo do Office. O conteúdo e a funcionalidade de cada painel de tarefas, suplemento de conteúdo ou caixa de diálogo são derivados de uma página da Web que você especifica. Essas páginas da Web podem usar a API JavaScript para Office para interagir com o conteúdo do documento do Office no qual o suplemento está sendo executado, além disso, também pode fazer outras coisas que as páginas da Web geralmente fazem, como chamar serviços Web externos, facilitar a autenticação do usuário e mais.
 
-A imagem a seguir mostra um comando de suplemento na faixa de opções, um painel de tarefas à direita do documento, uma caixa de diálogo ou suplemento de conteúdo sobre o documento.
+A imagem a seguir mostra um comando de suplemento na faixa de opções, um painel de tarefas à direita do documento e uma caixa de diálogo ou suplemento de conteúdo sobre o documento.
 
 ![Diagrama mostrando comandos de suplemento na faixa de opções, um painel de tarefas e um suplemento de conteúdo/caixa de diálogo em um documento do Office](../images/add-in-ui-elements.png)
 
@@ -111,7 +111,7 @@ Este artigo descreveu as diferentes maneiras de criar suplementos do Office, apr
 
 ### <a name="create-an-office-add-in"></a>Criar um Suplemento do Office
 
-Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](/office/dev/add-ins/). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](/office/dev/add-ins/).
+Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](../index.yml). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](../index.yml).
 
 ### <a name="learn-more"></a>Saiba mais
 

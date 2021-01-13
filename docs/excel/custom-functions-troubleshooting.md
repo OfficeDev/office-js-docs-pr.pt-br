@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071659"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839835"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -37,7 +37,7 @@ Geralmente, estes erros correspondem aos erros que você já deve estar familiar
 
 Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para saber mais, confira [Limpar o cache do Office](../testing/clear-cache.md).
 
-## <a name="common-issues"></a>Problemas comuns
+## <a name="common-problems-and-solutions"></a>Problemas comuns e soluções
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
 
@@ -53,7 +53,7 @@ Quando o Excel está aguardando a conclusão de uma função personalizada, ele 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
 
-Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para que o servidor de desenvolvimento pare de funcionar.
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para que o servidor dev pare de ser executado.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
@@ -76,7 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Para obter mais informações sobre esse processo, consulte [associating function Names with JSON Metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Para obter mais informações sobre esse processo, consulte [Associando nomes de função com metadados JSON.](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)
+
+## <a name="known-issues"></a>Problemas conhecidos
+
+Problemas conhecidos são rastreados e relatados no repositório GitHub de funções [personalizadas do Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

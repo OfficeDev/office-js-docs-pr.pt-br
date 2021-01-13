@@ -1,25 +1,25 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
-description: Saiba como configurar um suplemento do Office para abrir automaticamente quando um documento é aberto.
+description: Saiba como configurar um Complemento do Office para abrir automaticamente quando um documento é aberto.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 85b421a569ccb83c3d07f0f10fd4767929332f96
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9c9d64594f98cc45c56b3251bf6750457bd5a37c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093704"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839954"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
-Você pode usar comandos de suplemento em seu suplemento do Office para estender a interface do usuário do Office adicionando botões à faixa de opções do aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
+Você pode usar comandos de complemento no seu Complemento do Office para estender a interface do usuário do Office adicionando botões à faixa de opções do aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
 Alguns cenários exigem que um painel de tarefas seja exibido automaticamente ao abrir um documento, sem a interação explícita do usuário. Você pode usar o recurso autoopen do painel de tarefas, apresentado no conjunto de requisitos AddInCommands 1.1, para abrir automaticamente um painel de tarefas quando necessário.
 
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
-Quando um usuário lançar suplementos que não usam comandos de suplemento, por exemplo, suplementos que são executados no Office 2013, eles serão inseridos no documento e persistirão nesse documento. Como resultado, quando outros usuários abrem o documento, é solicitado que eles instalem o suplemento, e o painel de tarefas abrirá. O desafio desse modelo é que, em muitos casos, os usuários não querem que o suplemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam avisados para instalar esse suplemento quando abrirem o documento.
+Quando um usuário lançar suplementos que não usam comandos de suplemento, por exemplo, suplementos que são executados no Office 2013, eles serão inseridos no documento e persistirão nesse documento. Como resultado, quando outros usuários abrem o documento, é solicitado que eles instalem o suplemento, e o painel de tarefas abrirá. O desafio com esse modelo é que, em muitos casos, os usuários não querem que o complemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam avisados para instalar esse suplemento quando abrirem o documento.
 
 Com o recurso autoopen, você pode explicitamente definir, ou permitir que o usuário defina, se um suplemento do painel de tarefas irá persistir em um documento específico.
 
@@ -40,8 +40,8 @@ Aplique as seguintes práticas recomendadas ao usar o recurso autoopen:
   - Quando o documento precisa do suplemento para funcionar corretamente. Por exemplo, uma planilha que inclui valores de ações que são atualizados periodicamente por um suplemento. O suplemento deverá abrir automaticamente quando a planilha for aberta para manter os valores atualizados.
   - Quando é muito provável que o usuário sempre utilizará o suplemento com um determinado documento. Por exemplo, um suplemento que ajuda os usuários a preencher ou alterar dados em um documento puxando informações de um sistema de back-end.
 - Permita que os usuários ativem ou desativem o recurso autoopen. Inclua uma opção em sua interface de usuário para que eles possam escolher quando não querem mais que o suplemento abra automaticamente no painel de tarefas.  
-- Use a detecção de conjunto de requisitos para determinar se o recurso AutoOpen está disponível e forneça um comportamento de fallback se não for.
-- Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não fizer sentido para que seu suplemento abra automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
+- Use a detecção de conjunto de requisitos para determinar se o recurso autoopen está disponível e fornecer um comportamento de fallback se não estiver.
+- Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não faz sentido o seu complemento abrir automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
 
     > [!NOTE]
     > Se a Microsoft detectar abuso do recurso autoopen, seu suplemento poderá ser rejeitado no AppSource.
@@ -118,13 +118,13 @@ A parte `webextension` também inclui uma referência para a loja ou o catálogo
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|A ID do ativo do suplemento no AppSource (confira a observação)|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (confira a observação)|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
-|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha excatalog é a linha a ser usada com suplementos que usam implantação centralizada no centro de administração do Microsoft 365.|A versão no manifesto do suplemento.
+|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
 > [!NOTE]
 > Para localizar a ID de ativos e a versão de um suplemento no AppSource, vá para a página inicial do suplemento no AppSource. A ID de ativo aparece na barra de endereços no navegador. A versão aparece na seção **Detalhes** da página.
 
-Saiba mais sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx).
+Saiba mais sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](/openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1).
 
 O exemplo a seguir mostra como adicionar a parte `taskpane`.
 
@@ -147,7 +147,7 @@ Uma maneira fácil de escrever o XML é primeiro executar seu suplemento e [marc
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 
-Você pode implantar uma versão de teste do seu suplemento que abrirá automaticamente um painel de tarefas usando a implantação centralizada por meio do centro de administração do Microsoft 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
+Você pode implantar uma versão de teste do seu complemento que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -159,9 +159,9 @@ Você pode implantar uma versão de teste do seu suplemento que abrirá automati
 </we:webextension>
 ```
 
-Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para experimentar a implantação centralizada e verificar se o suplemento funciona conforme o esperado. Se você ainda não tem uma assinatura do Microsoft 365, é possível obter uma assinatura gratuita, de 90 dias, redimensionada pela Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
+Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para experimentar a Implantação Centralizada e verificar se o seu complemento funciona conforme o esperado. Se você ainda não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura gratuita e renovável de 90 dias do Microsoft 365 in joining ao programa de desenvolvedores [do Microsoft 365.](https://developer.microsoft.com/office/dev-program)
 
 ## <a name="see-also"></a>Confira também
 
 Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Ingresse no programa de desenvolvedor do Microsoft 365](/office/developer-program/office-365-developer-program).
+[Participe do programa de desenvolvedores do Microsoft 365.](/office/developer-program/office-365-developer-program)

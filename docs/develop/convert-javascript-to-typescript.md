@@ -1,24 +1,24 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
-description: Saiba como converter um projeto de suplemento do Office no Visual Studio para usar TypeScript.
+description: Saiba como converter um projeto de complemento do Office no Visual Studio para usar o TypeScript.
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430482"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839961"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!IMPORTANT]
-> Este artigo descreve as etapas *mínimas* necessárias para garantir que, quando você pressionar F5, o código seja transportado para JavaScript, que então é suplementos foi feito automaticamente no Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas com a `var` palavra-chave em vez de `let` e não são declaradas com um tipo especificado. Para aproveitar ao máximo a rigidez de tipos de TypeScript, considere fazer mais alterações no código. 
+> Este artigo descreve  as etapas mínimas necessárias para garantir que, quando você pressionar F5, o código será transpilado para JavaScript, que será então sideloadado automaticamente para o Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas com a palavra-chave em vez de e `var` `let` não são declaradas com um tipo especificado. Para aproveitar ao máximo a digitação forte do TypeScript, considere fazer outras alterações no código. 
 
 > [!NOTE]
-> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](/office/dev/add-ins/) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
+> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -38,11 +38,11 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 1. No Visual Studio, escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web **, em seguida, selecione **Próximo**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web**, em seguida, selecione **Próximo**.
 
 3. Nomeie seu projeto e selecione **Criar**.
 
-4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
+4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel** e clique em **Concluir** para criar o projeto.
 
 5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
@@ -56,7 +56,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 4. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
 
-5. Com a guia **procurar** selecionada, insira **jQuery. TypeScript. DefinitelyTyped**. Instale este pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições do jQuery TypeScript sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado pelo Visual Studio, chamado **packages.config**.
+5. Com a **guia** Procurar selecionada, insira **jquery. TypeScript.DefinitelyTyped**. Instale esse pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições jQuery TypeScript sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado pelo Visual Studio, chamado **packages.config**.
 
     > [!NOTE]
     > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.

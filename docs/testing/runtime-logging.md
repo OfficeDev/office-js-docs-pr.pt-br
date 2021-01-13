@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ba3c4cf4d94007cd0dc96480a7805f507d358c2
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308527"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840066"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -61,7 +61,7 @@ Habilitar o log de tempo de execução na linha de comando é a maneira mais rá
 2. Adicione a chave do registro `RuntimeLogging` em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`
 
     > [!NOTE]
-    > Se a `Developer` chave (pasta) ainda não existir em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` , complete as etapas a seguir para criá-la.
+    > Se a `Developer` chave (pasta) ainda não existir `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` em , conclua as etapas a seguir para crie-la.
     >
     > 1. Clique com o botão direito do mouse na chave (pasta) **WEF** e selecione **Novo** > **Chave**.
     > 1. Nomeie a nova chave como **Developer**.
@@ -73,7 +73,7 @@ Habilitar o log de tempo de execução na linha de comando é a maneira mais rá
 
 A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`.
 
-![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Log de tempo de execução no Mac
 
@@ -87,7 +87,7 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    Defina `<bundle id>` como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente:
+    De `<bundle id>` definida como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente:
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -128,10 +128,6 @@ Para usar o log do tempo de execução para solucionar problemas ao carregar um 
 2. Se nada acontecer e você não vir seu suplemento (e ele não estiver aparecendo na caixa de diálogo de suplementos), abra o arquivo de log.
 
 3. Procure pela ID de seu suplemento no arquivo de log, definida no seu manifesto. No arquivo de log, essa ID está marcada como `SolutionId`.
-
-No exemplo a seguir, o arquivo de log identifica um controle que aponta para um arquivo de recurso que não existe. Neste exemplo, a correção seria reparar o erro de digitação no manifesto ou adicionar o recurso que está faltando.
-
-![Captura de tela de um arquivo de log com uma entrada que especifica uma identificação de recurso que não foi encontrado](http://i.imgur.com/f8bouLA.png)
 
 ## <a name="known-issues-with-runtime-logging"></a>Problemas conhecidos com o log de tempo de execução
 
