@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do PowerPoint
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do PowerPoint.
-ms.date: 10/26/2020
+ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: cf9ab510e4b35a140c77ee958279cb85a2189fa2
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: 63f11f1810b38471a27766843f512da193394838
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774723"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840080"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do PowerPoint
 
@@ -19,8 +19,8 @@ A tabela a seguir lista os conjuntos de requisitos do PowerPoint, os aplicativos
 
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [Visualização](powerpoint-preview-apis.md)  | Use a versão mais recente do Office para experimentar APIs de visualização (pode ser necessário ingressar no [Programa Office Insider](https://insider.office.com)). |
-| PowerPointApi 1.1 | Versão 1810 (Build 11001.20074) ou posterior | 2.17 ou posterior | 16.19 ou posterior | Outubro de 2018 |
+| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Versão 2011 (Compilação 13426.20184) ou superior| ainda não<br>com suporte | 16.43 ou superior | outubro de 2020 |
+| [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Versão 1810 (Build 11001.20074) ou posterior | 2.17 ou posterior | 16.19 ou posterior | Outubro de 2018 |
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 
@@ -31,6 +31,10 @@ Para saber mais sobre as versões do Office e os números de build, confira:
 ## <a name="powerpoint-javascript-api-11"></a>API JavaScript do PowerPoint 1.1
 
 O PowerPoint JavaScript API 1.1 contém uma [única API para criar uma nova apresentação](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-). Para obter detalhes sobre a API, confira [Criar uma apresentação](../../powerpoint/powerpoint-add-ins.md#create-a-presentation).
+
+## <a name="powerpoint-javascript-api-12"></a>API JavaScript do PowerPoint 1.2
+
+A API JavaScript do PowerPoint 1.2 adiciona suporte para inserir slides de outra apresentação do PowerPoint na apresentação atual e para excluir slides. Para obter detalhes sobre as APIs, consulte [Inserir e excluir slides em uma apresentação do PowerPoint](../../powerpoint/insert-slides-into-presentation.md).
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>Como usar os conjuntos de requisitos do PowerPoint em tempo de execução e no manifesto
 
@@ -53,7 +57,7 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](../manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o aplicativo do Office não for compatível com os conjuntos de requisitos ou métodos de API especificados no `Requirements` elemento do manifesto, o suplemento não será executado nesse aplicativo ou plataforma, e não será exibido na lista de suplementos mostrados no **Meus suplementos** . Se o seu suplemento exige um conjunto específico de requisitos para funcionalidade total, mas pode fornecer um valor mesmo para os usuários nas plataformas que não têm suporte para o conjunto de requisitos, recomendamos verificar o suporte a requisitos no tempo de execução conforme descrito acima, em vez de definir o suporte ao conjunto de requisitos no manifesto.
+Você pode usar o [elemento Requirements](../manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se o aplicativo ou plataforma do Office não suportar os conjuntos de requisitos ou métodos de API que são especificados no elemento `Requirements` do manifesto, o suplemento não será executado nesse aplicativo ou plataforma e não será exibido no lista de suplementos que são mostrados em **Meus suplementos**. Se o seu suplemento requer um conjunto de requisitos específico para funcionalidade total, mas pode fornecer valor até mesmo para usuários em plataformas que não oferecem suporte ao conjunto de requisitos, recomendamos que você verifique o suporte ao requisito no tempo de execução conforme descrito acima, em vez de definir o suporte ao conjunto de requisitos no manifesto.
 
 O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica que o suplemento deve ser carregado em todos os aplicativos do cliente do Office que oferecem suporte ao conjunto de requisitos da versão 1.1 ou superior do PowerPointApi.
 

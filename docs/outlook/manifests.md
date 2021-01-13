@@ -1,14 +1,14 @@
 ---
 title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324937"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839821"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -274,9 +274,11 @@ Se as permissões solicitadas do suplemento mudarem, os usuários serão solicit
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-O elemento **VersionOverrides** é o local das informações de comandos do suplemento. Saiba mais sobre esse elemento em [Definir comandos de suplemento no manifesto](../develop/define-add-in-commands.md).
+O elemento **VersionOverrides** é a localização das informações para os [ comandos de suplemento](add-in-commands-for-outlook.md).
 
 Este elemento também é onde os suplementos definem o suporte para [suplementos móveis](add-mobile-support.md).
+
+Para uma discussão sobre este elemento, consulte [Criar comandos de suplementos em seu manifesto para Excel, PowerPoint e Word ](../develop/create-addin-commands.md).
 
 ## <a name="localization"></a>Localização
 
@@ -324,7 +326,7 @@ Os suplementos do Outlook especificam o elemento **Hosts** da seguinte maneira.
 </OfficeApp>
 ```
 
-Isso é separado do elemento **Hosts** dentro do elemento **VersionOverrides**, que é discutido em [Definir comandos de suplemento em seu manifesto](../develop/define-add-in-commands.md).
+Isso é separado do elemento **Hosts** dentro do elemento **VersionOverrides**, que é discutido em [Criar comandos de suplemento in em seu manifesto para Excel, PowerPoint e Word](../develop/create-addin-commands.md).
 
 ## <a name="requirements"></a>Requirements
 
@@ -420,7 +422,7 @@ Para obter detalhes e exemplos das regras de ativação, confira [Regras de ativ
 
 ## <a name="next-steps-add-in-commands"></a>Próximas etapas: Comandos de suplemento
 
-Após definir um manifesto básico, [defina os comandos de suplemento para seu suplemento](../develop/define-add-in-commands.md). Os comandos de suplemento apresentam um botão na faixa de opções para que os usuários possam ativar o suplemento de uma maneira simples e intuitiva. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
+Depois de definir um manifesto básico, defina os comandos de suplemento para seu suplemento. Os comandos de suplemento apresentam um botão na faixa de opções para que os usuários possam ativar o suplemento de uma maneira simples e intuitiva. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
 
 Para obter um exemplo de suplemento que defina comandos de suplementos, confira [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 
