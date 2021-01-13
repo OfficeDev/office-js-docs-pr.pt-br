@@ -1071,8 +1071,14 @@ items:
               - name: Visão Geral
                 href: reference/requirement-sets/powerpoint-api-requirement-sets.md
                 displayName: PowerPoint
-              - name: APIs de pré-visualização do PowerPoint
+              - name: Visualização do conjunto de requisitos do PowerPointApi
                 href: reference/requirement-sets/powerpoint-preview-apis.md
+                displayName: PowerPoint
+              - name: Conjunto de requisitos do PowerPointApi 1.2
+                href: reference/requirement-sets/powerpoint-api-1-2-requirement-set.md
+                displayName: PowerPoint
+              - name: Conjunto de requisitos do PowerPointApi 1.1
+                href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
                 displayName: PowerPoint
           - name: Referência de API
             href: reference/powerpoint-api-reference.md
