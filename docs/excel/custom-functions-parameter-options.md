@@ -1,14 +1,14 @@
 ---
-ms.date: 12/09/2020
+ms.date: 12/21/2020
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
-ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
+ms.openlocfilehash: 312046551236e96e67de6f63f3e3511aba6f50ce
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "49624663"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735526"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
@@ -229,22 +229,64 @@ Para o JSON com autoria, certifique-se de que seu parâmetro é especificado com
 
 ## <a name="invocation-parameter"></a>Parâmetro de invocação
 
-Cada função personalizada é automaticamente passada um `invocation` argumento como o último argumento. Esse argumento pode ser usado para recuperar contexto adicional, como o endereço da célula de chamada. Ou pode ser usado para enviar informações para o Excel, como um manipulador de função para [cancelar uma função](custom-functions-web-reqs.md#make-a-streaming-function). Mesmo que você declare nenhum parâmetro, sua função personalizada tem esse parâmetro. Esse argumento não aparece para um usuário no Excel. Se você deseja usar `invocation` em sua função personalizada, declare-a como o último parâmetro.
+Cada função personalizada é automaticamente passada um `invocation` argumento como o último parâmetro de entrada, mesmo que ele não seja explicitamente declarado. Esse `invocation` parâmetro corresponde ao objeto de [invocação](/javascript/api/custom-functions-runtime/customfunctions.invocation) . O `Invocation` objeto pode ser usado para recuperar contexto adicional, como o endereço da célula que chamou sua função personalizada. Para acessar o `Invocation` objeto, você deve declarar `invocation` como o último parâmetro em sua função personalizada. 
 
-No exemplo de código a seguir, o `invocation` contexto é explicitamente declarado para sua referência.
+> [!NOTE]
+> O `invocation` parâmetro não aparece como um argumento de função personalizada para usuários no Excel.
+
+O exemplo a seguir mostra como usar o `invocation` parâmetro para retornar o endereço da célula que chamou sua função personalizada. Este exemplo usa a propriedade [Address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) do `Invocation` objeto. Para acessar o `Invocation` objeto, primeiro Declare `CustomFunctions.Invocation` como um parâmetro no seu JSDoc. Em seguida, declare `@requiresAddress` no JSDoc para acessar a `address` Propriedade do `Invocation` objeto. Por fim, na função, recupere e retorne a `address` propriedade. 
 
 ```js
 /**
- * Add two numbers.
+ * Return the address of the cell that invoked the custom function. 
  * @customfunction
- * @param {number} first First number.
- * @param {number} second Second number.
- * @returns {number} The sum of the two (or optionally three) numbers.
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
  */
-function add(first, second, invocation) {
-  return first + second;
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
 }
 ```
+
+No Excel, uma função personalizada chamando a `address` Propriedade do `Invocation` objeto retornará o endereço absoluto após o formato `SheetName!RelativeCellAddress` na célula que chamou a função. Por exemplo, se o parâmetro input estiver localizado em uma planilha chamada **Prices** na célula F6, o valor de endereço de parâmetro retornado será `Prices!F6` . 
+
+O `invocation` parâmetro também pode ser usado para enviar informações para o Excel. Consulte [fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function) para saber mais.
+
+## <a name="detect-the-address-of-a-parameter"></a>Detectar o endereço de um parâmetro
+
+Em combinação com o [parâmetro de chamada](#invocation-parameter), você pode usar o objeto de [invocação](/javascript/api/custom-functions-runtime/customfunctions.invocation) para recuperar o endereço de um parâmetro de entrada de função personalizada. Quando invocado, a propriedade [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) do `Invocation` objeto permite que uma função retorne os endereços de todos os parâmetros de entrada. 
+
+Isso é útil em cenários em que os tipos de dados de entrada podem variar. O endereço de um parâmetro de entrada pode ser usado para verificar o formato de número do valor de entrada. O formato de número pode ser ajustado antes da entrada, se necessário. O endereço de um parâmetro de entrada também pode ser usado para detectar se o valor de entrada tem qualquer propriedade relacionada que possa ser relevante para os cálculos subsequentes. 
+
+>[!IMPORTANT]
+> A `parameterAddresses` Propriedade atualmente só funciona com [metadados JSON criados manualmente](custom-functions-json.md). Para retornar endereços de parâmetro, o `options` objeto deve ter a `requiresParameterAddresses` propriedade definida como `true` e o `result` objeto deve ter a `dimensionality` propriedade definida como `matrix` .
+
+A função personalizada a seguir tem três parâmetros de entrada, recupera a `parameterAddresses` Propriedade do `Invocation` objeto para cada parâmetro e, em seguida, retorna os endereços. 
+
+```js
+/**
+ * Return the address of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+Quando uma função personalizada chamando a `parameterAddresses` propriedade é executada, o endereço do parâmetro é retornado seguindo o formato `SheetName!RelativeCellAddress` na célula que chamou a função. Por exemplo, se o parâmetro input estiver localizado em uma planilha chamada **custos** na célula D8, o valor de endereço de parâmetro retornado será `Costs!D8` . Se a função personalizada tiver vários parâmetros e mais de um endereço de parâmetro for retornado, os endereços retornados serão despejados em várias células, decrescente verticalmente da célula que chamou a função. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
