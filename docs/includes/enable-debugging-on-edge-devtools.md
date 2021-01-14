@@ -1,5 +1,5 @@
 Quando o suplemento estiver sendo executado no Microsoft Edge, o código sem interface de usuário não será capaz de anexá-lo a um depurador por padrão.
-O código sem interface de usuário é qualquer código executado enquanto o painel de tarefas não está visível, como comandos de suplemento. Para habilitar a depuração, execute os seguintes comandos do [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+O código sem interface de usuário é qualquer código executado enquanto o painel de tarefas não está visível, como comandos de suplemento. Para habilitar a depuração, execute os seguintes comandos do [Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
 1. Execute o comando a seguir para obter informações para o pacote de aplicativos do **Microsoft.Win32WebViewHost**.
     
