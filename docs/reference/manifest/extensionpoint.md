@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: d4d3a7cbb34f3fc5ed03a8e084e516b5e5803ad8
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641386"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771316"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -77,9 +77,9 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**OfficeTab**|Obrigatório se você deseja estender uma guia padrão da faixa de opções do aplicativo do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. Para saber mais, confira [OfficeTab](officetab.md).|
 |**OfficeMenu**|Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> - **ContextMenuText** para o Excel ou Word. Exibe o item no menu de contexto quando o texto for selecionado e o usuário clicar com o botão direito do mouse no texto selecionado. <br/> - **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha.|
 |**Group**|Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. |
-|**Label**|Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. |
-|**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno ou quando muitos botões são exibidos. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho da imagem em pixels. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels. |
-|**Tooltip**|Opcional. A dica de ferramenta do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. |
+|**Label**|Obrigatório. O rótulo do grupo. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
+|**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **Image** . O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
+|**Tooltip**|Opcional. A dica de ferramenta do grupo. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
 |**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho de **recursos** relacionados sejam adicionados um de cada vez.|
 |**Script**|Links para o arquivo JavaScript com a definição de função personalizada e o código de registro Esse elemento não é usado na Visualização do Desenvolvedor. Em vez disso, a página HTML é responsável por carregar todos os arquivos JavaScript.|
 |**Page**|Links para a página HTML de suas funções personalizadas.|
@@ -272,7 +272,7 @@ Este ponto de extensão coloca uma alternância apropriada de modo na superfíci
 |:-----|:-----|
 |  [Control](control.md) |  Adiciona um botão à superfície de comando.  |
 
-`ExtensionPoint`elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
+`ExtensionPoint` elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
 
 O `Control` elemento contido neste ponto de extensão deve ter o `xsi:type` atributo definido como `MobileButton` .
 
@@ -362,7 +362,7 @@ O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor d
 
 #### <a name="label"></a>Label
 
-Obrigatório. O rótulo do grupo. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
+Obrigatório. O rótulo do grupo. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
 #### <a name="highlight-requirements"></a>Requisitos de realce
 

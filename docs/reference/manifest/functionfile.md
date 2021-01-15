@@ -3,12 +3,12 @@ title: Elemento FunctionFile no arquivo de manifesto
 description: Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c47c3e4b824f2b93aaea17cef88e01f748d6f95
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 44bfd514025b8a23f4f6acdf3fec004485ca4c5a
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996442"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771390"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
@@ -17,7 +17,7 @@ Especifica o arquivo de código-fonte para as operações que um suplemento exp�
 * Comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
 * Atalhos de teclado que executam uma função JavaScript.
 
-O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O `resid` atributo do `FunctionFile` elemento é definido como o valor do `id` atributo de um `Url` elemento no `Resources` elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas por botões de comando do suplemento sem interface do usuário, conforme definido pelo [elemento Control](control.md).
+O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O `resid` atributo do `FunctionFile` elemento não pode ter mais de 32 caracteres e é definido como o valor do `id` atributo de um `Url` elemento no `Resources` elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas por botões de comando de suplemento sem interface do usuário, conforme definido pelo [elemento Control](control.md).
 
 Veja a seguir um exemplo do `FunctionFile` elemento.
 

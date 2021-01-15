@@ -3,11 +3,11 @@ Os Suplementos muitas vezes são armazenados em cache no Office para Mac por que
 Você pode limpar o cache usando o menu personalidade de qualquer suplemento do painel de tarefas.
 - Escolha o menu personalidade. Em seguida, escolha **Limpar Cache da Web**.
     > [!NOTE]
-    > Você deve executar a versão 10.13.6 ou mais recente do macOS para visualizar o menu personalidade.
+    > Você deve executar o macOS versão 10.13.6 ou posterior para ver o menu personalidade.
 
     ![Captura de tela da opção limpar cache da web em um menu de personalidade.](../images/mac-clear-cache-menu.png)
 
-Você também pode limpar o cache manualmente ao excluir o conteúdo na `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` pasta.
+Você também pode limpar o cache manualmente ao excluir o conteúdo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
 > [!NOTE]
 > Se essa pasta não existir, verifique as seguintes pastas. Se encontrada, exclua o conteúdo da pasta:

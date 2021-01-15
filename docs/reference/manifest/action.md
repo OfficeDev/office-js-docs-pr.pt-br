@@ -3,16 +3,16 @@ title: Elemento Action no arquivo de manifesto
 description: Este elemento Especifica a ação a ser executada quando o usuário seleciona um botão ou controle de menu.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 92c783a15d104aba0adb722ab887391b4511ebed
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e345d0a1682e0125373a309e1e56eb2d6298ac7d
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094446"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771407"
 ---
 # <a name="action-element"></a>Elemento Action
 
-Especifica a ação a ser executada quando o usuário seleciona um controle de [botão](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls) .
+Especifica a ação a ser executada quando o usuário seleciona um controle de  [botão](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls) .
 
 ## <a name="attributes"></a>Atributos
 
@@ -26,9 +26,9 @@ Especifica a ação a ser executada quando o usuário seleciona um controle de [
 |:-----|:-----|
 |  [FunctionName](#functionname) |    Especifica o nome da função a executar. |
 |  [SourceLocation](#sourcelocation) |    Especifica o local do arquivo de origem para essa ação. |
-|  [TaskpaneId](#taskpaneid) | Especifica a ID do contêiner do painel de tarefas.|
-|  [Title](#title) | Especifica o título personalizado do painel de tarefas.|
-|  [SupportsPinning](#supportspinning) | Especifica se um painel de tarefas tem suporte para fixação, que mantém o painel de tarefas aberto quando o usuário altera a seleção.|
+|  [TaskpaneId](#taskpaneid) | Especifica a ID do contêiner do painel de tarefas.|
+|  [Title](#title) | Especifica o título personalizado do painel de tarefas.|
+|  [SupportsPinning](#supportspinning) | Especifica se um painel de tarefas tem suporte para fixação, que mantém o painel de tarefas aberto quando o usuário altera a seleção.|
   
 
 ## <a name="xsitype"></a>xsi:type
@@ -50,7 +50,7 @@ Elemento obrigatório quando **xsi:type** é "ExecuteFunction". Especifica o nom
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Elemento obrigatório quando **xsi: Type** for "ShowTaskpane". Especifica o local do arquivo de origem para essa ação. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Url** no elemento **Urls** do elemento [Resources](resources.md).
+Elemento obrigatório quando **xsi: Type** for "ShowTaskpane". Especifica o local do arquivo de origem para essa ação. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **URL** no elemento **URLs** do elemento [Resources](resources.md) .
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -60,7 +60,7 @@ Elemento obrigatório quando **xsi: Type** for "ShowTaskpane". Especifica o loca
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-Elemento opcional quando  **xsi:type** for "ShowTaskpane". Especifica a ID do contêiner do painel de tarefas. Quando você tiver várias ações "ShowTaskpane", use uma **TaskpaneId** diferente se desejar ter um painel independente para cada uma. Use a mesma **TaskpaneId** para diferentes ações que compartilhem o mesmo painel. Quando os usuários escolhem comandos que compartilham a mesma **TaskpaneId**, o contêiner do painel permanece aberto, mas o conteúdo do painel é substituído pela ação "SourceLocation" correspondente.
+Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica a ID do contêiner do painel de tarefas. Quando você tiver várias ações "ShowTaskpane", use uma **TaskpaneId** diferente se desejar ter um painel independente para cada uma. Use a mesma **TaskpaneId** para diferentes ações que compartilhem o mesmo painel. Quando os usuários escolhem comandos que compartilham o mesmo **TaskpaneId**, o contêiner do painel permanece aberto, mas o conteúdo do painel é substituído pela ação correspondente "SourceLocation".
 
 > [!NOTE]
 > Esse elemento não tem suporte no Outlook.
@@ -102,9 +102,9 @@ O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Par
 
 ## <a name="title"></a>Cargo
 
-Elemento opcional quando  **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
+Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
 
-O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que você não atribui o **título** a uma cadeia de caracteres diretamente. Em vez disso, atribua um ID de recurso (Resid), que é definido na seção **recursos** do manifesto.
+O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que você não atribui o **título** a uma cadeia de caracteres diretamente. Em vez disso, você atribui a ele uma ID de recurso (Resid), que é definida na seção **recursos** do manifesto e não pode ter mais de 32 caracteres.
 
 ```xml
 <Action xsi:type="ShowTaskpane">

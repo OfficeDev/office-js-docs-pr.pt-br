@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/22/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071645"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735554"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -63,7 +63,6 @@ Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvoc
 
 Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
----
 <a id="customfunction"></a>
 
 ### <a name="customfunction"></a>@customfunction
@@ -133,7 +132,6 @@ No exemplo a seguir, a frase "Uma função que soma dois números" é a descriç
  */
 ```
 
----
 <a id="helpurl"></a>
 
 ### <a name="helpurl"></a>@helpurl
@@ -153,7 +151,6 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
  */
 ```
 
----
 <a id="param"></a>
 
 ### <a name="param"></a>@param
@@ -220,7 +217,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="requiresAddress"></a>
 
 ### <a name="requiresaddress"></a>@requiresAddress
@@ -229,12 +225,28 @@ Indica que o endereço da célula onde a função está sendo avaliada deve ser 
 
 O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço.
 
----
+O exemplo a seguir mostra como usar o `invocation` parâmetro em combinação com `@requiresAddress` para retornar o endereço da célula que chamou sua função personalizada. Consulte [parâmetro de chamada](custom-functions-parameter-options.md#invocation-parameter) para obter mais informações.
+
+```js
+/**
+ * Return the address of the cell that invoked the custom function. 
+ * @customfunction
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
+ */
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
+}
+```
+
 <a id="returns"></a>
 
 ### <a name="returns"></a>@returns
 
-Sintaxe: @returns { _type_ }
+Sintaxe: @returns {_type_}
 
 Fornece o tipo para o valor de retorno.
 
@@ -255,7 +267,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="streaming"></a>
 
 ### <a name="streaming"></a>@streaming
@@ -271,7 +282,6 @@ Exceções lançadas por uma função de streaming são ignoradas. `setResult()`
 
 As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
----
 <a id="volatile"></a>
 
 ### <a name="volatile"></a>@volatile

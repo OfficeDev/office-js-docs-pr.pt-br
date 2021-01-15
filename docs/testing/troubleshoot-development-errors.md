@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de desenvolvimento com suplementos do Office
 description: Saiba como solucionar erros de desenvolvimento em suplementos do Office.
-ms.date: 09/08/2020
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 5801146165446352ec806f6f832e9976f96467ac
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409378"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771421"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com suplementos do Office
 
@@ -64,6 +64,17 @@ Verifique a documentação de referência da propriedade para ver se ela é some
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
+
+## <a name="getting-error-this-add-in-is-no-longer-available"></a>Obter erro: "este suplemento não está mais disponível"
+
+A seguir estão algumas das causas desse erro. Se você descobrir causas adicionais, diga-nos com a ferramenta de feedback na parte inferior da página.
+
+- Se você estiver usando o Visual Studio, pode haver um problema com o Sideload. Feche todas as instâncias do host do Office e do Visual Studio. Reinicie o Visual Studio e tente pressionar F5 novamente.
+- O manifesto do suplemento foi removido de seu local de implantação, como implantação centralizada, um catálogo do SharePoint ou um compartilhamento de rede.
+- O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o suplemento do host do Office e, em seguida, substitua o manifesto original pelo manifesto alterado. Você precisa limpar o cache do Office para remover todos os rastros do original. Consulte a seção [as alterações nos comandos de suplemento, incluindo botões de faixa de opções e itens de menu, não entram em vigor](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) anteriormente neste artigo.
+- O manifesto do suplemento tem um `resid` que não está definido em nenhum lugar na seção de [recursos](../reference/manifest/resources.md) do manifesto ou há uma incompatibilidade na ortografia do `resid` local de origem entre onde é usado e onde está definido na `<Resources>` seção.
+- Há um `resid` atributo em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo, e o `id` atributo do recurso correspondente na `<Resources>` seção, não podem ter mais de 32 caracteres.
+- O suplemento tem um comando personalizado do suplemento, mas você está tentando executá-lo em uma plataforma que não dá suporte a eles. Para saber mais, confira [conjuntos de requisitos de comandos de suplemento](../reference/requirement-sets/add-in-commands-requirement-sets.md).
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O suplemento não funciona na borda, mas funciona em outros navegadores
 

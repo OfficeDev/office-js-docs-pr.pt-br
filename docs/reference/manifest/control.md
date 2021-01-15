@@ -3,12 +3,12 @@ title: Elemento Control no arquivo de manifesto
 description: Define a função JavaScript que executa e aciona ou inicia um painel de tarefas.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 55faa52e5020691967e65b33c2d975535405b2a4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 820ef39ba2b4ac296e5f5d598d5f45cc2ded701d
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612316"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771372"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -31,8 +31,8 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .        |
-|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md)  .        |
+|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
@@ -149,8 +149,8 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .      |
-|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .      |
+|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos que [Button control](#button-control).|
@@ -248,7 +248,7 @@ O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .        |
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md)  .        |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
 

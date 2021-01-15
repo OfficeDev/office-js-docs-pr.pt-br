@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/22/2020
 description: Definir metadados JSON para funções personalizadas no Excel e associar suas propriedades de ID de função e nome.
 title: Criar manualmente metadados JSON para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 80a71c640caacbd865b0dd253f03258a64c9b1bf
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071638"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735547"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar manualmente metadados JSON para funções personalizadas
 
@@ -158,10 +158,11 @@ O objeto `options` permite que você personalize alguns aspectos de como e quand
 
 | Propriedade          | Tipo de dados | Obrigatório                               | Descrição |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, o Excel chamará o manipulador `CancelableInvocation` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. As funções de cancelamento normalmente são usadas apenas para funções assíncronas que retornam um único resultado e precisam lidar com o cancelamento de uma solicitação de dados. Uma função não pode ser streaming e cancelamento. Para obter mais informações, consulte a observação próxima ao final de [fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `requiresAddress` | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true` , sua função personalizada pode acessar o endereço da célula que invocou sua função personalizada. Para obter o endereço da célula que chamou sua função personalizada, use Context. Address em sua função personalizada. As funções personalizadas não podem ser definidas como streaming e requiresAddress. Ao usar essa opção, o parâmetro "invocar" deve ser o último parâmetro passado em opções. |
-| `stream`          | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `StreamingInvocation.setResult`. Para saber mais informações, confira [Funções de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `volatile`        | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true` , a função será recalculada sempre que o Excel for recalculado, em vez de apenas quando os valores dependentes da fórmula tiverem sido alterados. Uma função não pode ser de streaming e volátil ao mesmo tempo. Se as propriedades `stream` e `volatile` forem definidas como `true`, a opção volátil será ignorada. |
+| `cancelable`      | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, o Excel chamará o manipulador `CancelableInvocation` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. As funções de cancelamento normalmente são usadas apenas para funções assíncronas que retornam um único resultado e precisam lidar com o cancelamento de uma solicitação de dados. Uma função não pode usar as `stream` `cancelable` Propriedades e. |
+| `requiresAddress` | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true` , sua função personalizada pode acessar o endereço da célula que a invocou. A `address` Propriedade do [parâmetro de invocação](custom-functions-parameter-options.md#invocation-parameter) contém o endereço da célula que invocou sua função personalizada. Uma função não pode usar as `stream` `requiresAddress` Propriedades e. |
+| `requiresParameterAddresses` | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true` , sua função personalizada pode acessar os endereços dos parâmetros de entrada da função. Essa propriedade deve ser usada em combinação com a `dimensionality` Propriedade do objeto [Result](#result) e `dimensionality` deve ser definida como `matrix` . Consulte [detectar o endereço de um parâmetro](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) para obter mais informações. |
+| `stream`          | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `StreamingInvocation.setResult`. Para obter mais informações, consulte [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `volatile`        | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true` , a função será recalculada sempre que o Excel for recalculado, em vez de apenas quando os valores dependentes da fórmula tiverem sido alterados. Uma função não pode usar as `stream` `volatile` Propriedades e. Se as `stream` `volatile` Propriedades e forem definidas como `true` , a propriedade volátil será ignorada. |
 
 ### <a name="parameters"></a>parâmetros
 
@@ -170,9 +171,9 @@ A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a se
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Não |  Uma descrição do parâmetro. Isso é exibido no IntelliSense do Excel.  |
-|  `dimensionality`  |  string  |  Não  |  Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões).  |
+|  `dimensionality`  |  string  |  Não  |  Deve ser `scalar` (um valor não matriz) ou `matrix` (uma matriz bidimensional).  |
 |  `name`  |  string  |  Sim  |  O nome do parâmetro. Esse nome é exibido no IntelliSense do Excel.  |
-|  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Pode ser **booliano** , **número** , **cadeia de caracteres** ou **qualquer** , que permita usar qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será **qualquer**. |
+|  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. O pode ser `boolean` , `number` , `string` ou `any` , que permite o uso de qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será `any` . |
 |  `optional`  | booliano | Não | Se for `true`, o parâmetro será opcional. |
 |`repeating`| booliano | Não | Se `true` , os parâmetros são preenchidos de uma matriz especificada. Observe que funções todos os parâmetros de repetição são considerados parâmetros opcionais por definição.  |
 
@@ -182,7 +183,8 @@ O objeto `result` que define o tipo de informação que é retornado pela funç�
 
 | Propriedade         | Tipo de dados | Obrigatório | Descrição                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | Não       | Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões). |
+| `dimensionality` | string    | Não       | Deve ser `scalar` (um valor não matriz) ou `matrix` (uma matriz bidimensional). |
+| `type` | string    | Não       | O tipo de dados do resultado. Pode ser `boolean` , `number` , `string` ou `any` (que permite usar qualquer um dos três tipos anteriores). Se essa propriedade não for especificada, o tipo de dados padrão será `any` . |
 
 ## <a name="associating-function-names-with-json-metadata"></a>Associar os nomes de função com metadados JSON
 

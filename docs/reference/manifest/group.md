@@ -3,12 +3,12 @@ title: Elemento Group no arquivo de manifesto
 description: Define um grupo de controles da interface do usuário em uma guia.
 ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ee8d499767eccb95b4fdf9ceb91dd2cd12bce95
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 3872ece926cc399ed2b30d4dabaacfb741e060ab
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087942"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771391"
 ---
 # <a name="group-element"></a>Elemento Group
 
@@ -35,7 +35,7 @@ Obrigatório. O identificador exclusivo do grupo. É uma cadeia de caracteres co
 
 ### <a name="label"></a>Rótulo
 
-Obrigatório. O rótulo do grupo. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
+Obrigatório. O rótulo do grupo. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
 ### <a name="icon"></a>Ícone
 

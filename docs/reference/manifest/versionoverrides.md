@@ -3,12 +3,12 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: a744772c01c57c41a9dc20ee0accea5f070c3ff3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 772eaa416909d24f8035ed3e1445d1e4f06a244e
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819823"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771302"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -38,7 +38,7 @@ A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor *
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
+|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](resources.md). O `resid` atributo do elemento **Description** não pode ter mais de 32 caracteres e é definido como o valor do `id` atributo do `String` elemento que contém o texto.|
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
 |  [Hosts](hosts.md)                |  Sim  |  Especifica uma coleção de aplicativos do Office. O elemento hosts filho substitui o elemento hosts na parte pai do manifesto.  |
 |  [Resources](resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
