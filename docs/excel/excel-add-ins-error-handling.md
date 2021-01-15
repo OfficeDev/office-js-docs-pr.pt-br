@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erros com a API JavaScript do Excel
 description: Saiba mais sobre a lógica de tratamento de erros da API JavaScript do Excel para levar em conta os erros de tempo de execução.
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
-ms.openlocfilehash: fd863e9783336ba9121312ba06aae03330d57562
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789118"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870641"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a API JavaScript do Excel
 
@@ -82,7 +82,11 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|
 |`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma planilha de Macro ou Gráfico.|
 
+> [!NOTE]
+> A tabela anterior lista mensagens de erro que você pode encontrar ao usar a API JavaScript do Excel. Se você estiver trabalhando com a API comum em vez da API JavaScript do Excel específica do aplicativo, confira códigos de erro da API comum do [Office](../reference/javascript-api-for-office-error-codes.md) para saber mais sobre mensagens de erro relevantes.
+
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Objeto OfficeExtension.Error (API JavaScript para Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
+- [Códigos de erro comuns da API do Office](../reference/javascript-api-for-office-error-codes.md)

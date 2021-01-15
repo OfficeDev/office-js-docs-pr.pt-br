@@ -1,14 +1,14 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 11/20/2020
+ms.date: 01/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: 798dd723e0388becdd3419c5af87ceb360d32a41
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505461"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870627"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -21,18 +21,18 @@ Você também pode especificar se o comando está habilitado ou desabilitado qua
 >
 > - [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Suporte apenas a aplicativos e plataformas do Office
+## <a name="office-application-and-platform-support-only"></a>Suporte somente a aplicativos e plataformas do Office
 
-As APIs descritas neste artigo estão disponíveis apenas no Excel e apenas no Office no Windows, Office no Mac e no Office na Web.
+As APIs descritas neste artigo só estão disponíveis no Excel e somente no Office no Windows, no Office no Mac e no Office na Web.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativos e plataformas do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os complementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativos e plataformas do Office dá suporte a APIs de que um complemento precisa. Para saber mais, confira versões [do Office e conjuntos de requisitos.](../develop/office-versions-and-requirement-sets.md)
 
-As APIs Enable/Disable pertencem ao conjunto de requisitos [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
+As APIs de habilitar/desabilitar pertencem ao conjunto [de requisitos RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 > [!NOTE]
-> O conjunto de requisitos **RibbonApi 1,1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do manifesto `<Requirements>` . Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se, *e somente se*, essa chamada retornar `true` , seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` Devoluções `false` , todos os comandos de suplemento personalizados são habilitados todo o tempo. Você deve projetar seu suplemento de produção e quaisquer instruções no aplicativo para considerar como funcionará quando o conjunto de requisitos **RibbonApi 1,1** não for suportado. Para obter mais informações e exemplos de como usar o `isSetSupported` , consulte [especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md), principalmente [usar verificações de tempo de execução em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (A seção [define o elemento requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à faixa de opções 1,1.)
+> O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do `<Requirements>` manifesto. Para testar o suporte, seu código deve `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` chamar. Se e *somente se , essa* chamada retornar , seu código pode chamar as `true` APIs habilitar/desabilitar. Se a chamada de retorno for retornada, todos os comandos de complemento `isSetSupported` `false` personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos de uso, consulte Especificar aplicativos do Office e requisitos de API , especialmente usar verificações de tempo de execução `isSetSupported` [em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). [](../develop/specify-office-hosts-and-api-requirements.md) (A seção [Definir o elemento Requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à Faixa de Opções 1.1.)
 
 ## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
@@ -76,10 +76,10 @@ Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do
 
 As etapas essenciais para alterar o status habilitado de um Comando de Suplemento são:
 
-1. Criar um objeto [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifique o comando e sua guia pai por seus IDs, conforme especificado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
+1. Crie um [objeto RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifica o comando e seu grupo pai e guia, por suas IDs conforme declarado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
 2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
 
-Apresentamos um exemplo simples a seguir. Observe que "MyButton" e "OfficeAddinTab1" são copiados do manifesto.
+Apresentamos um exemplo simples a seguir. Observe que "MyButton", "OfficeAddinTab1" e "CustomGroup111" são copiados do manifesto.
 
 ```javascript
 function enableButton() {
@@ -87,13 +87,20 @@ function enableButton() {
         tabs: [
             {
                 id: "OfficeAppTab1", 
-                controls: [
-                {
-                    id: "MyButton", 
-                    enabled: true
-                }
-            ]}
-        ]});
+                groups: [
+                    {
+                      id: "CustomGroup111",
+                      controls: [
+                        {
+                            id: "MyButton", 
+                            enabled: true
+                        }
+                      ]
+                    }
+                ]
+            }
+        ]
+    });
 }
 ```
 
@@ -102,7 +109,8 @@ Também fornecemos várias interfaces (tipos) para facilitar a construção do o
 ```typescript
 const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
+    const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -135,8 +143,18 @@ Terceiro, defina o manipulador `enableChartFormat`. A seguir, é apresentado um 
 
 ```javascript
 function enableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: true};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: true
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -144,9 +162,9 @@ function enableChartFormat() {
 
 Quarto, defina o manipulador `disableChartFormat`. Seria idêntico a `enableChartFormat`, exceto que a propriedade **enabled** do objeto button seria configurada como `false`.
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Alternar a visibilidade da guia e o status habilitado de um botão ao mesmo tempo
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Visibilidade da guia de alternância e o status habilitado de um botão ao mesmo tempo
 
-O método **requestUpdate** também é usado para alternar a visibilidade de uma guia contextual personalizada. Para obter detalhes sobre esse e exemplos de código, consulte [habilitar e desabilitar comandos de suplemento](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
+O **método requestUpdate** também é usado para alternar a visibilidade de uma guia contextual personalizada. Para obter detalhes sobre este e exemplo de código, confira [Criar guias contextuais personalizadas em Complementos do Office.](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Prática recomendada: Teste se há erros de status do controle
 
@@ -159,8 +177,18 @@ O exemplo a seguir mostra uma função que desativa um botão e registra o statu
 
 ```javascript
 function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: false
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 
@@ -191,8 +219,18 @@ Em alguns cenários, o Office não consegue atualizar a faixa de opções e reto
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var button = {
+                      id: "ChartFormatButton", 
+                      enabled: false
+                     };
+        var parentGroup = {
+                           id: "MyGroup",
+                           controls: [button]
+                          };
+        var parentTab = {
+                         id: "CustomChartTab", 
+                         groups: [parentGroup]
+                        };
         var ribbonUpdater = {tabs: [parentTab]};
         await Office.ribbon.requestUpdate(ribbonUpdater);
 

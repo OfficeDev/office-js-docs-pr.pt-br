@@ -1,16 +1,16 @@
 ---
 title: Criar guias contextuais personalizadas em Complementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao seu Complemento do Office.
-ms.date: 11/20/2020
+ms.date: 01/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 3939e3338c734e1d6400dc261b59e35de63e5779
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 12286ef675a938e4abd8dd3caa90cd97586cb6d7
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789132"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870634"
 ---
-# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Criar guias contextuais personalizadas em Complementos do Office (visualização)
+# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Crie guias contextuais Personalizadas em Suplementos do Office (pré-visualização)
 
 Uma guia contextual é um controle guia oculto na faixa de opções do Office que é exibido na linha da guia quando um evento especificado ocorre no documento do Office. Por exemplo, a **guia Design de** Tabela que aparece na faixa de opções do Excel quando uma tabela é selecionada. Você pode incluir guias contextuais personalizadas no seu complemento do Office e especificar quando elas ficam visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
 
@@ -104,7 +104,7 @@ Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (
     ```json
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
 
       ]
@@ -204,7 +204,7 @@ Veja a seguir o exemplo completo do blob JSON:
   "tabs": [
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
         {
           "id": "CustomGroup111",
@@ -274,7 +274,7 @@ Comece atribuindo manipuladores. Isso geralmente é feito no método como no exe
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string.
+    const contextualTabJSON = ` ... `; // Assign the JSON string.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 
@@ -313,8 +313,8 @@ A biblioteca JavaScript do Office também fornece várias interfaces (tipos) par
 
 ```typescript
 const showDataTab = async () => {
-    const myContextualTab: Tab = {id: "CtxTab1", visible: true};
-    const ribbonUpdater: RibbonUpdaterData = { tabs: [ myContextualTab ]};
+    const myContextualTab: Office.Tab = {id: "CtxTab1", visible: true};
+    const ribbonUpdater: Office.RibbonUpdaterData = { tabs: [ myContextualTab ]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
@@ -333,13 +333,20 @@ function myContextChanges() {
             },
             {
                 id: "OfficeAppTab1",
-                controls: [
-                {
-                    id: "MyButton",
-                    enabled: true
-                }
+                groups: [
+                    {
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                            }
+                        ]
+                    }
+                ]
             ]}
-        ]});
+        ]
+    });
 }
 ```
 
@@ -352,14 +359,20 @@ function myContextChanges() {
             {
                 id: "CtxTab1",
                 visible: true,
-                controls: [
+                groups: [
                     {
-                        id: "MyButton",
-                        enabled: true
-                    }
-                ]
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                           }
+                       ]
+                   }
+               ]
             }
-        ]});
+        ]
+    });
 }
 ```
 
@@ -380,7 +393,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Data",
+                          "label": "Contoso Data",
                           "groups": [
                               // groups omitted
                           ]
@@ -396,7 +409,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Données",
+                          "label": "Contoso Données",
                           "groups": [
                               // groups omitted
                           ]

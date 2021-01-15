@@ -1,20 +1,28 @@
 ---
 title: Obter anexos em um suplemento do Outlook
 description: Seu suplemento pode usar a API de anexos para enviar informações sobre os anexos a um serviço remoto.
-ms.date: 08/20/2020
+ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 57191820e27bc78431d0a7c97ffd6b8f23e75f4b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293909"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870648"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obter anexos de um item do Outlook a partir do servidor
 
-Um suplemento do Outlook não pode passar os anexos de um item selecionado diretamente para o serviço remoto que é executado em seu servidor. Em vez disso, o suplemento pode usar a API de anexos para enviar informações sobre os anexos ao serviço remoto. Em seguida, o serviço pode contatar o Exchange Server diretamente para recuperar os anexos.
+Você pode obter os anexos de um item do Outlook de algumas maneiras, mas a opção que você usa depende do seu cenário.
 
-Para enviar informações de anexo para o serviço remoto, você pode usar as propriedades e a função abaixo:
+1. Envie as informações de anexo ao seu serviço remoto.
+
+    Seu complemento pode usar a API de anexos para enviar informações sobre os anexos ao serviço remoto. Em seguida, o serviço pode contatar o Exchange Server diretamente para recuperar os anexos.
+
+1. Use a API [getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponível no conjunto de requisitos 1.8. Formatos com suporte: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+
+    Essa API pode ser útil se o EWS/REST não estiver disponível (por exemplo, devido à configuração de administração do seu servidor Exchange) ou se o seu complemento quiser usar o conteúdo base64 diretamente em HTML ou JavaScript. Além disso, a API está disponível em cenários de composição em que o anexo pode ainda não ter sido sincronizado com o Exchange; confira Gerenciar anexos de um item em um formulário de composição no Outlook para saber `getAttachmentContentAsync` mais. [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
+
+Este artigo detalha a primeira opção. Para enviar informações de anexo ao serviço remoto, use as propriedades e a função a seguir.
 
 - Propriedade [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities)&ndash;: fornece a URL dos Serviços Web do Exchange (EWS) no Exchange Server que hospeda a caixa de correio. Seu serviço usa essa URL para chamar o método [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) do EWS.
 
@@ -24,7 +32,7 @@ Para enviar informações de anexo para o serviço remoto, você pode usar as pr
 
 ## <a name="using-the-attachments-api"></a>Usar a API de anexos
 
-Para usar a API de anexos e obter anexos de uma caixa de correio do Exchange, execute as seguintes etapas:
+Para usar a API de anexos para obter anexos de uma caixa de correio do Exchange, execute as etapas a seguir.
 
 1. Mostre o suplemento quando o usuário estiver exibindo uma mensagem ou um compromisso que contém um anexo.
 
@@ -412,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Criar suplementos do Outlook para formulários de leitura](read-scenario.md)
 - [Explorar os recursos do EWS Managed API, do EWS e dos serviços Web no Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Introdução aos aplicativos clientes de API gerenciada por EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [SSO de suplemento do Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
