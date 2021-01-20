@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erros com a API JavaScript do Excel
 description: Saiba mais sobre a lógica de tratamento de erros da API JavaScript do Excel para levar em conta os erros de tempo de execução.
-ms.date: 01/13/2021
+ms.date: 01/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: 00aa1ae1c8ed39b21146d86090df912a8804c8b3
+ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870641"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "49908903"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a API JavaScript do Excel
 
@@ -56,7 +56,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`AccessDenied` |Você não pode realizar a operação solicitada.|
 |`ActivityLimitReached`|O limite de atividades foi alcançado.|
 |`ApiNotAvailable`|A API solicitada não está disponível.|
-|`ApiNotFound`|Não foi possível encontrar a API que você está tentando usar. Ele pode estar disponível em uma versão mais recente do Excel. Confira o [artigo sobre conjuntos de requisitos](../reference/requirement-sets/excel-api-requirement-sets.md) da API JavaScript do Excel para saber mais.|
+|`ApiNotFound`|Não foi possível encontrar a API que você está tentando usar. Ele pode estar disponível em uma versão mais recente do Excel. Confira o [artigo sobre conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md) para saber mais.|
 |`BadPassword`|A senha fornecida está incorreta.|
 |`Conflict`|A solicitação não pôde ser processada devido a um conflito.|
 |`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está ausente.|
@@ -71,7 +71,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`InvalidSelection`|A seleção atual é inválida para esta operação.|
 |`ItemAlreadyExists`|O recurso que está sendo criado já existe.|
 |`ItemNotFound` |O recurso solicitado não existe.|
-|`NonBlankCellOffSheet`|A solicitação para inserir novas células não pode ser concluída porque ela tiraria as células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.|
+|`NonBlankCellOffSheet`|O Microsoft Excel não pode inserir novas células porque tiraria as células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.|
 |`NotImplemented`|O recurso solicitado não foi implementado.|
 |`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Confira o [artigo Limites de recursos e otimização](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) de desempenho para Os Complementos do Office para obter mais informações.|
 |`RequestAborted`|A solicitação foi anulada durante o tempo de execução.|
