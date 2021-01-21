@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 11/09/2020
+ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 627c8ce235a69e6da4a15c7064a2937b1fed5d05
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132365"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916465"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -56,7 +56,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. No Excel, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Captura de tela do menu Página inicial do Excel, com o botão Mostrar Painel de tarefas realçado](../images/excel-quickstart-addin-3b.png)
 
@@ -82,7 +82,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web**, em seguida, selecione **Próximo**.
 
-3. Nomeie seu projeto e selecione **Criar**.
+3. Nomeie seu projeto **ExcelWebAddIn1** e selecione **Criar**.
 
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel** e clique em **Concluir** para criar o projeto.
 
@@ -176,7 +176,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. No **Gerenciador de Soluções**, vá para o projeto de suplemento **ExcelWebAddIn1** e abra o diretório **ExcelWebAddIn1Manifest**. Este diretório contém seu arquivo de manifesto, **ExcelWebAddIn1.xml**. O arquivo de manifesto XML define as configurações e recursos do suplemento. Consulte a seção anterior [Explorar a solução Visual Studio](#explore-the-visual-studio-solution) para obter mais informações sobre os dois projetos criados por sua solução Visual Studio. 
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -200,9 +200,9 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 1. Use o Visual Studio, teste o suplemento recém-criado do Excel pressionando **F5** ou escolha o botão **Iniciar** para iniciar o Excel com o botão do suplemento **Exibir painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS. Se for solicitado que você confie em um certificado, faça-o para permitir que o suplemento se conecte ao seu aplicativo do Office.
 
-2. No Excel, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela do menu página inicial do Excel, com o botão Mostrar Painel de tarefas realçado](../images/excel-quickstart-addin-2a.png)
+    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado](../images/excel-quickstart-addin-2a.png)
 
 3. Selecione um intervalo de células na planilha.
 
