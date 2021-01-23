@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 09/22/2020
+ms.date: 01/22/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ae14416cd7fbcfeca10e4ace25997395fc9b44c1
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132267"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944331"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -42,13 +42,13 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
     - **Escolha o tipo de projeto** - `Office Add-in Task Pane project`
 
-    - **Escolha o tipo de script** - `Javascript`
+    - **Escolha o tipo de script** - `JavaScript`
 
     - **Qual será o nome do suplemento?** - `My Office Add-in`
 
-    - **Você gostaria de dar suporte para qual aplicativo cliente do Office?** - `Outlook`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** - `Outlook`
 
-    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-outlook.png)
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-outlook-1.png)
 
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
