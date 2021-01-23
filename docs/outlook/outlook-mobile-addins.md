@@ -1,20 +1,20 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
-description: Os suplementos do Outlook Mobile têm suporte em todas as contas de negócios do Microsoft 365, contas do Outlook.com e o suporte é disponibilizado em breve para contas do gmail.
+description: Os complementos do Outlook Mobile têm suporte em todas as contas comerciais do Microsoft 365, em Outlook.com e o suporte estará em breve nas contas do Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 34fbb01d596c4da38fe81438088cd71d8c7e152a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 24d396f67a3d73f7c3c357be7861164f586a50da
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093893"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944316"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
 
-Os suplementos do Outlook Mobile têm suporte em todas as contas de negócios do Microsoft 365, contas do Outlook.com e o suporte é disponibilizado em breve para contas do gmail.
+Os complementos do Outlook Mobile têm suporte em todas as contas comerciais do Microsoft 365, em Outlook.com e o suporte estará em breve nas contas do Gmail.
 
 **Um painel de tarefas de exemplo no Outlook no iOS**
 
@@ -27,7 +27,7 @@ Os suplementos do Outlook Mobile têm suporte em todas as contas de negócios do
 ![Uma captura de tela do painel de tarefas no Outlook no Android](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> Os suplementos não funcionam na versão moderna do Outlook em um navegador móvel. Para obter mais informações, consulte [Outlook em seu navegador móvel está sendo atualizado](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
+> Os complementos não funcionam na versão moderna do Outlook em um navegador móvel. Para saber mais, confira [o Outlook em seu navegador móvel que está sendo atualizado.](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
 
 ## <a name="whats-different-on-mobile"></a>Qual é a diferença no celular?
 
@@ -35,7 +35,7 @@ Os suplementos do Outlook Mobile têm suporte em todas as contas de negócios do
     - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
     - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Em geral, só há suporte para o modo de leitura de mensagens no momento. Isso significa que `MobileMessageReadCommandSurface` é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do seu manifesto. No entanto, o modo organizador de compromissos tem suporte para suplementos integrados de provedor de reunião online que, em vez disso, declare o [ponto de extensão MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
+- Em geral, somente o modo De leitura de mensagem é suportado no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, o modo Organizador de Compromissos é suportado para os complementos integrados do provedor de reunião online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um complemento móvel do Outlook para um provedor de reuniões online](online-meeting.md) para saber mais sobre esse cenário.
 
 - A API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
 
@@ -69,7 +69,7 @@ Para testar um suplemento no Outlook Mobile, você pode carregar um suplemento p
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 
-A solução de problemas no Mobile pode ser difícil, já que você pode não ter as ferramentas para as quais você está acostumado. No entanto, uma opção de solução de problemas no iOS é usar o Fiddler (Confira [este tutorial sobre como usá-lo com um dispositivo IOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+A solução de problemas em dispositivos móveis pode ser difícil, pois talvez você não tenha as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS).](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)
 
 ## <a name="next-steps"></a>Próximas etapas
 

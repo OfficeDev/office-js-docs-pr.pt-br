@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Complementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao seu Complemento do Office.
 ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c9593c98bf7cc7f4e270037768be1e2de06aeb3
-ms.sourcegitcommit: 1d33ea6dd3a55fd3bc9af48737ad6d7369d30cd8
+ms.openlocfilehash: d9258b962c2cfa6aa7e3686087ed8a2e31a7d651
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "49934342"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944309"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Crie guias contextuais Personalizadas em Suplementos do Office (pré-visualização)
 
@@ -35,7 +35,7 @@ Uma guia contextual é um controle guia oculto na faixa de opções do Office qu
 
 A experiência do usuário para guias contextuais personalizadas segue o padrão das guias contextuais internas do Office. A seguir estão os princípios básicos para as guias contextuais personalizadas de posicionamento:
 
-- Quando uma guia contextual personalizada está visível, ela aparece na extremidade direita da faixa de opções.
+- Quando uma guia contextual personalizada é visível, ela aparece na extremidade direita da faixa de opções.
 - Se uma ou mais guias contextuais e uma ou mais guias contextuais personalizadas de complementos estão visíveis ao mesmo tempo, as guias contextuais personalizadas estão sempre à direita de todas as guias contextuais.
 - Se o seu add-in tiver mais de uma guia contextual e houver contextos nos quais mais de uma está visível, eles aparecerão na ordem em que estão definidos no seu complemento. (A direção tem a mesma direção do idioma do Office, ou seja, da esquerda para a direita, nos idiomas da esquerda para a direita, mas da direita para a esquerda nos idiomas da direita para a esquerda.) Consulte [Definir os grupos e controles que aparecem na guia](#define-the-groups-and-controls-that-appear-on-the-tab) para obter detalhes sobre como defini-los.
 - Se mais de um complemento tiver uma guia contextual visível em um contexto específico, elas aparecerão na ordem em que os complementos foram lançados.
@@ -61,7 +61,7 @@ Ao contrário das guias principais personalizadas, que são definidas com XML no
 > [!NOTE]
 > A estrutura das propriedades e subpropriedades do blob JSON (e os nomes de chave) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no manifesto XML.
 
-Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (O esquema completo para a guia contextual JSON está [dynamic-ribbon.schema.jsem](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Este link pode não estar funcionando no período de visualização antecipada para guias contextuais. Se o link não estiver funcionando, você poderá encontrar o rascunho mais recente do esquema em rascunho [dynamic-ribbon.schema.jsem](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).) Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter o IntelliSense e validar seu JSON. Para obter mais informações, consulte Edição JSON com o Visual Studio Code - esquemas [e configurações JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
+Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (O esquema completo para a guia contextual JSON está [dynamic-ribbon.schema.jsem](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Esse link pode não estar funcionando no período de visualização para guias contextuais. Se o link não estiver funcionando, você poderá encontrar o rascunho mais recente do esquema em rascunho [dynamic-ribbon.schema.jsem](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon/1.0/dynamic-ribbon.schema.json).) Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter o IntelliSense e validar seu JSON. Para obter mais informações, consulte Edição JSON com o Visual Studio Code - esquemas [e configurações JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
 
 
 1. Comece criando uma cadeia de caracteres JSON com duas propriedades de matriz nomeadas `actions` e `tabs` . A matriz é uma especificação de todas as funções que podem ser executadas por `actions` controles na guia contextual. A `tabs` matriz define uma ou mais guias contextuais, até um máximo de *20*.
@@ -114,13 +114,13 @@ Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (
 1. No exemplo contínuo simples, a guia contextual tem apenas um único grupo. Adicione o seguinte como o único membro da `groups` matriz. Sobre essa marcação, observe:
 
     - Todas as propriedades são necessárias.
-    - A `id` propriedade deve ser exclusiva entre todos os grupos na guia. Use uma ID breve e descritiva.
+    - A propriedade deve ser exclusiva entre todos os grupos na guia. Use uma ID breve `id` e descritiva.
     - É `label` uma cadeia de caracteres amigável para servir como o rótulo do grupo.
     - O valor da propriedade é uma matriz de objetos que especificam os ícones que o grupo terá na faixa de opções, dependendo do tamanho da faixa de opções e da janela do aplicativo `icon` do Office.
     - O `controls` valor da propriedade é uma matriz de objetos que especificam os botões e menus no grupo. Deve haver pelo menos um.
 
     > [!IMPORTANT]
-    > *O número total de controles na guia inteira não pode ser maior que 20.* Por exemplo, você pode ter 3 grupos com 6 controles cada e um quarto grupo com 2 controles, mas não pode ter 4 grupos com 6 controles cada.  
+    > *O número total de controles na guia inteira não pode ser maior que 20.* Por exemplo, você pode ter 3 grupos com 6 controles cada e um quarto grupo com 2 controles, mas não pode ter 4 grupos com 6 controles cada um.  
 
     ```json
     {
@@ -135,7 +135,7 @@ Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (
     }
     ```
 
-1. Cada grupo deve ter um ícone de pelo menos dois tamanhos, 32 x 32 px e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos de 16 x 16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px e 64x64 px. O Office decide qual ícone usar com base no tamanho da faixa de opções e da janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se os tamanhos da janela e da  faixa de opções são grandes o suficiente para que pelo menos um dos controles do grupo apareça, nenhum ícone de grupo é exibido. Por exemplo, assista ao grupo **Estilos** na faixa de opções do Word conforme você reduz e expande a janela do Word.) Sobre essa marcação, observe:
+1. Cada grupo deve ter um ícone de pelo menos dois tamanhos, 32 x 32 px e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos de 16 x 16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px e 64x64 px. O Office decide qual ícone usar com base no tamanho da faixa de opções e da janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se os tamanhos da janela e da  faixa de opções são grandes o suficiente para que pelo menos um dos controles do grupo apareça, nenhum ícone de grupo será exibido. Por exemplo, assista ao grupo **Estilos** na faixa de opções do Word enquanto você reduz e expande a janela do Word.) Sobre essa marcação, observe:
 
     - Ambas as propriedades são necessárias.
     - A `size` unidade de medida da propriedade é pixels. Os ícones são sempre quadrados, portanto, o número é a altura e a largura.
@@ -251,7 +251,7 @@ Veja a seguir o exemplo completo do blob JSON:
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Registrar a guia contextual com o Office com requestCreateControls
 
-A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Isso geralmente é feito na função atribuída a `Office.initialize` ou com o `Office.onReady` método. Para saber mais sobre esses métodos e como inicializar o add-in, confira Inicializar seu [complemento do Office.](../develop/initialize-add-in.md) No entanto, você pode chamar o método a qualquer momento após a inicialização.
+A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Isso geralmente é feito na função atribuída a `Office.initialize` ou com o `Office.onReady` método. Para saber mais sobre esses métodos e como inicializar o add-in, confira [Inicializar seu complemento do Office.](../develop/initialize-add-in.md) No entanto, você pode chamar o método a qualquer momento após a inicialização.
 
 > [!IMPORTANT]
 > O `requestCreateControls` método pode ser chamado apenas uma vez em uma determinada sessão de um complemento. Um erro será lançado se for chamado novamente.
@@ -268,9 +268,9 @@ Office.onReady(async () => {
 
 ## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>Especificar os contextos quando a guia ficará visível com requestUpdate
 
-Normalmente, uma guia contextual personalizada deve aparecer quando um evento iniciado pelo usuário altera o contexto do complemento. Considere um cenário no qual a guia deve estar visível quando, e somente quando, um gráfico (na planilha padrão de uma pasta de trabalho do Excel) é ativado.
+Normalmente, uma guia contextual personalizada deve aparecer quando um evento iniciado pelo usuário altera o contexto do complemento. Considere um cenário em que a guia deve estar visível quando, e somente quando, um gráfico (na planilha padrão de uma pasta de trabalho do Excel) é ativado.
 
-Comece atribuindo manipuladores. Isso geralmente é feito no método como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos de todos os `Office.onReady` gráficos `onActivated` na `onDeactivated` planilha.
+Comece atribuindo manipuladores. Isso geralmente é feito no método como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos e a todos os `Office.onReady` gráficos `onActivated` na `onDeactivated` planilha.
 
 ```javascript
 Office.onReady(async () => {
