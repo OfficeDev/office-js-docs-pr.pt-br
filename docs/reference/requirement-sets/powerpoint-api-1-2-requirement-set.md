@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos 1.2 da API JavaScript do PowerPoint
 description: Detalhes sobre o conjunto de requisitos do PowerPointApi 1.2.
-ms.date: 01/08/2021
+ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0f6d1e766de81fef5d071152f6116ab56613ec9d
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 0aa82b8edc6aab65ebcce7c6bfcb50471c9e38e9
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49841523"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043873"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>Quais são as novidades na API JavaScript do PowerPoint 1.2
 
@@ -19,7 +19,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
-| Inserir e excluir slides | Permite a inserção de slides existentes na apresentação atual de outra apresentação, bem como a capacidade de excluir slides. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| [Inserir e excluir slides](../../powerpoint/insert-slides-into-presentation.md) | Permite a inserção de slides existentes na apresentação atual de outra apresentação, bem como a capacidade de excluir slides. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## <a name="api-list"></a>Lista de APIs
 
@@ -42,5 +42,5 @@ A tabela a seguir lista o conjunto de requisitos 1.2 da API JavaScript do PowerP
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do PowerPoint](/javascript/api/powerpoint?view=powerpoint-js-1.2&preserve-view=true)
+- [Documentação de Referência da API JavaScript do PowerPoint](/javascript/api/powerpoint?view=powerpoint-js-1.2&preserve-view=true)
 - [Conjuntos de requisitos de API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md)

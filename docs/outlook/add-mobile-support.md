@@ -3,16 +3,16 @@ title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 90f3f9b4e22c446713f7503d6372e0b7a13bf9ee
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607614"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043866"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
-O uso de comandos de suplemento no Outlook Mobile permite que os usuários acessem a mesma funcionalidade (com algumas [limitações](#code-considerations)) já existentes no Outlook na Web, no Windows e no Mac. A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
+O uso de comandos de add-in no Outlook Mobile permite [](#code-considerations)que os usuários acessem a mesma funcionalidade (com algumas limitações) que eles já têm no Outlook na Web, no Windows e no Mac. A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 
 ## <a name="updating-the-manifest"></a>Atualização do manifesto
 
@@ -20,7 +20,7 @@ A primeira etapa para habilitar os comandos de suplemento no Outlook Mobile é d
 
 Esse elemento contém todas as informações para carregar o suplemento em clientes móveis. Isso permite que você defina elementos de interface completamente diferentes e arquivos JavaScript para a experiência móvel.
 
-O exemplo a seguir mostra um único botão de painel de tarefas em um `MobileFormFactor` elemento.
+O exemplo a seguir mostra um único botão do painel de tarefas em um `MobileFormFactor` elemento.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -72,7 +72,7 @@ Criar um suplemento para o Mobile traz algumas considerações adicionais.
 
 O método [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportado no Outlook Mobile. Os suplementos devem preferir obter as informações da API Office.js sempre que possível. Se os suplementos exigem informações que não são expostas pela API Office.js devem usar as [APIs REST do Outlook](/outlook/rest/) para acessar as caixas de correio do usuário.
 
-O conjunto de requisitos de caixa de correio 1,5 introduziu uma nova versão do [Office. Context. Mailbox. getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova propriedade [Office. Context. Mailbox. restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) que pode ser usada para localizar o ponto de extremidade da API REST para o usuário.
+O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão do [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova propriedade [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) que pode ser usada para encontrar o ponto de extremidade da API REST para o usuário.
 
 ### <a name="pinch-zoom"></a>Pinçar e zoom
 
@@ -84,11 +84,11 @@ Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, 
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 
-Atualmente, os suplementos do Outlook Mobile dão suporte à ativação apenas durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os suplementos integrados do provedor de reunião online podem ser ativados no modo organizador de compromisso. Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre essa exceção.
+Atualmente, os suplementos do Outlook Mobile dão suporte à ativação apenas durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os complementos integrados do provedor de reunião online podem ser ativados no modo Organizador de Compromissos. Consulte o [artigo Criar um complemento móvel do Outlook para um provedor](online-meeting.md) de reuniões online para saber mais sobre essa exceção.
 
 ### <a name="unsupported-apis"></a>APIs sem suporte
 
-As APIs introduzidas no conjunto de requisitos 1,6 ou posterior não são suportadas pelo Outlook Mobile. As seguintes APIs de conjuntos de requisitos anteriores também não são suportadas.
+As APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suportadas pelo Outlook Mobile. As seguintes APIs de conjuntos de requisitos anteriores também não são suportadas.
 
   - [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
   - [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
@@ -109,4 +109,4 @@ As APIs introduzidas no conjunto de requisitos 1,6 ou posterior não são suport
 
 ## <a name="see-also"></a>Confira também
 
-[Suporte ao conjunto de requisitos](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

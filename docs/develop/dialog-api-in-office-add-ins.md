@@ -1,21 +1,21 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
-description: Saiba mais sobre a criação de uma caixa de diálogo em um suplemento do Office.
-ms.date: 10/21/2020
+description: Conheça as noções básicas da criação de uma caixa de diálogo em um complemento do Office.
+ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: bece18d6b861db97c1f4b455e8ab4ff9ce83a5a8
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131756"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043880"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
 Você pode usar a [API de Caixa de diálogo do Office](/javascript/api/office/office.ui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
 
 > [!NOTE]
-> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). Atualmente, a API de caixa de diálogo tem suporte para Excel, PowerPoint e Word. O suporte do Outlook está incluído em vários conjuntos de requisitos de caixa de correio &mdash; consulte a referência da API para obter mais detalhes.
+> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). Atualmente, a API da Caixa de Diálogo tem suporte para Excel, PowerPoint e Word. O suporte do Outlook está incluído em vários conjuntos de requisitos de Caixa de Correio. Consulte &mdash; a referência de API para obter mais detalhes.
 
 Um cenário fundamental para a API de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
 
@@ -26,13 +26,13 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 - Hospedar um vídeo que seria muito pequeno se fosse confinado em um painel de tarefas.
 
 > [!NOTE]
-> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Por exemplo, confira o exemplo [Suplemento do Excel JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
+> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, confira o exemplo [do JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) do Complemento do Excel.
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
-![Captura de tela mostrando a caixa de diálogo com 3 opções de entrada exibidas na frente da palavra](../images/auth-o-dialog-open.png)
+![Captura de tela mostrando a caixa de diálogo com três opções de entrada exibidas na frente do Word](../images/auth-o-dialog-open.png)
 
-A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é não *modal*, e o usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver um.
+A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela *não émodal*– um usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver um.
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>Abrir uma caixa de diálogo em uma página de host
 
@@ -61,7 +61,7 @@ Por padrão, a caixa de diálogo ocupará 80% da altura e da largura na tela do 
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
 ```
 
-Para ver um suplemento de exemplo que faz isso, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
+Para ver um suplemento de exemplo que faz isso, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example). Para obter mais exemplos que `displayDialogAsync` usam, consulte [Exemplos](#samples).
 
 Defina os dois valores como 100% para ter uma verdadeira experiência de tela inteira. O máximo real é 99,5%, e a janela ainda poderá ser movida e redimensionada.
 
@@ -86,7 +86,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que:
 
 - A página atual na caixa de diálogo esteja no mesmo domínio da página host.
-- A biblioteca da API JavaScript do Office é carregada na página. (Como qualquer página que usa a biblioteca da API JavaScript do Office, o script para a página deve atribuir um método à `Office.initialize` propriedade, embora possa ser um método vazio. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md).
+- A biblioteca da API JavaScript do Office é carregada na página. (Como qualquer página que usa a biblioteca da API JavaScript do Office, o script para a página deve atribuir um método à propriedade, embora possa `Office.initialize` ser um método vazio. Para obter detalhes, [confira Inicializar o seu Complemento do Office.)](initialize-add-in.md)
 
 O código na caixa de diálogo use a função [messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres ou um valor booliano para a página host. A cadeia de caracteres pode ser uma palavra, uma frase, um blob XML, um JSON em formato de cadeia de caracteres ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres. Este é um exemplo:
 
@@ -98,8 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - A função `messageParent` só pode ser chamada em uma página com o mesmo domínio (incluindo o protocolo e a porta) da página host.
-> - A `messageParent` função é uma das *only* duas APIs do Office js que podem ser chamadas na caixa de diálogo.
-> - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported` . Para saber mais, confira [especificar requisitos de API e aplicativos do Office](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, essa API não tem suporte no Outlook 2016 1-time Purchase (ou seja, a versão MSI).
+> - A `messageParent` função é uma das *duas* APIs JS do Office que podem ser chamadas na caixa de diálogo.
+> - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported` . Para saber mais sobre isso, confira [Especificar aplicativos do Office e requisitos de API.](specify-office-hosts-and-api-requirements.md) No entanto, na caixa de diálogo, essa API não é suportada na compra única do Outlook 2016 (ou seja, a versão MSI).
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - O Office transmite o objeto `arg` para o manipulador. Sua propriedade `message` é o booliano ou a cadeia de caracteres enviada pela chamada de `messageParent` na caixa de diálogo. Neste exemplo, é uma representação em formato de um perfil de usuário de um serviço como a conta da Microsoft ou o Google, para que seja desserializado de volta para um objeto com `JSON.parse` .
+> - O Office transmite o objeto `arg` para o manipulador. Sua propriedade `message` é o booliano ou a cadeia de caracteres enviada pela chamada de `messageParent` na caixa de diálogo. Neste exemplo, é uma representação em cadeia de caracteres do perfil de um usuário de um serviço como a conta da Microsoft ou o Google, portanto, ela é desserlizada de volta para um objeto com `JSON.parse` .
 > - A implementação de `showUserName` não é mostrada. Ela pode exibir uma mensagem de boas-vindas personalizada no painel de tarefas.
 
 Quando a interação do usuário com a caixa de diálogo for concluída, seu manipulador de mensagem fechará a caixa de diálogo, conforme mostrado neste exemplo.
@@ -170,7 +170,7 @@ Para ver um exemplo de um suplemento que faz isso, consulte [Inserir gráficos d
 
 ### <a name="conditional-messaging"></a>Mensagens condicionais
 
-Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que um usuário entre em um provedor de identidade como a conta da Microsoft ou Google, ele enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
+Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que um usuário entre em um provedor de identidade como a conta da Microsoft ou o Google, ela enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
 
 ```js
 if (loginSuccess) {
@@ -212,11 +212,11 @@ function processMessage(arg) {
 
 ## <a name="pass-information-to-the-dialog-box"></a>Transmitir informações para a caixa diálogo
 
-O suplemento pode enviar mensagens da [página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando [Dialog. messageChild](/javascript/api/office/office.dialog#messagechild-message-).
+Seu complemento pode enviar mensagens da página [host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
 
-### <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` na página host
+### <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` da página host
 
-Quando você chama a API de diálogo do Office para abrir uma caixa de diálogo, um objeto [Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha maior escopo do que o método [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Este é um exemplo:
+Quando você chama a API de caixa de diálogo do Office para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o [método displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Veja um exemplo a seguir:
 
 ```javascript
 var dialog;
@@ -235,9 +235,9 @@ function processMessage(arg) {
 }
 ```
 
-Este `Dialog` objeto tem um método [messageChild](/javascript/api/office/office.dialog#messagechild-message-) que envia qualquer cadeia de caracteres, incluindo dados em formato, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. O código deve lidar com esse evento, conforme mostrado na próxima seção.
+Esse objeto tem um método messageChild que envia qualquer cadeia de `Dialog` caracteres, incluindo [](/javascript/api/office/office.dialog#messagechild-message-) dados em cadeia de caracteres, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. Seu código deve manipular esse evento, conforme mostrado na próxima seção.
 
-Considere um cenário em que a interface do usuário da caixa de diálogo está relacionada à planilha ativa no momento e a posição da planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia as propriedades de planilha do Excel para a caixa de diálogo. Nesse caso, a planilha atual é chamada "minha planilha" e é a segunda planilha da pasta de trabalho. Os dados são encapsulados em um objeto e em formato para que possam ser passados `messageChild` .
+Considere um cenário no qual a interface do usuário da caixa de diálogo está relacionada à planilha ativa no momento e à posição dessa planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia as propriedades da planilha do Excel para a caixa de diálogo. Nesse caso, a planilha atual se chama "Minha Planilha" e é a segunda planilha na pasta de trabalho. Os dados são encapsulados em um objeto e stringificados para que possam ser passados para `messageChild` .
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -252,7 +252,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Manipular DialogParentMessageReceived na caixa de diálogo
 
-No JavaScript da caixa de diálogo, registre um manipulador para o `DialogParentMessageReceived` evento com o método [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Isso geralmente é feito nos [métodos Office. onReady ou Office.initialize](initialize-add-in.md), conforme mostrado no seguinte. (Um exemplo mais robusto é o seguinte.)
+No JavaScript da caixa de diálogo, registre um manipulador para o evento com o método `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Isso geralmente é feito nos métodos [Office.onReady ou Office.initialize,](initialize-add-in.md)conforme mostrado a seguir. (Um exemplo mais robusto está abaixo.)
 
 ```javascript
 Office.onReady()
@@ -263,7 +263,7 @@ Office.onReady()
     });
 ```
 
-Em seguida, defina o `onMessageFromParent` manipulador. O código a seguir continua o exemplo da seção anterior. Observe que o Office passa um argumento para o manipulador e que a `message` Propriedade do objeto Argument contém a cadeia de caracteres da página host. Neste exemplo, a mensagem é convertida para um objeto e o jQuery é usado para definir o título superior da caixa de diálogo para corresponder ao novo nome da planilha.
+Em seguida, defina o `onMessageFromParent` manipulador. O código a seguir continua o exemplo da seção anterior. Observe que o Office passa um argumento para o manipulador e que a propriedade do objeto de argumento contém a `message` cadeia de caracteres da página host. Neste exemplo, a mensagem é revertida para um objeto e jQuery é usado para definir o título superior da caixa de diálogo para corresponder ao novo nome da planilha.
 
 ```javascript
 function onMessageFromParent(event) {
@@ -272,7 +272,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-É uma prática recomendada verificar se o manipulador está registrado corretamente. Você pode fazer isso passando um retorno de chamada para o `addHandlerAsync` método. Isso é executado quando a tentativa de registrar o manipulador é concluída. Use o manipulador para registrar ou mostrar um erro se o manipulador não tiver sido registrado com êxito. Apresentamos um exemplo a seguir. Observe que `reportError` é uma função, não definida aqui, que registra ou exibe o erro.
+É uma prática adequada verificar se o manipulador está registrado corretamente. Você pode fazer isso passando um retorno de chamada para o `addHandlerAsync` método. Isso é executado quando a tentativa de registrar o manipulador é concluída. Use o manipulador para registrar ou mostrar um erro se o manipulador não tiver sido registrado com êxito. Apresentamos um exemplo a seguir. Observe que `reportError` é uma função, não definida aqui, que registra ou exibe o erro.
 
 ```javascript
 Office.onReady()
@@ -290,15 +290,15 @@ function onRegisterMessageComplete(asyncResult) {
 }
 ```
 
-### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Mensagem condicional da página pai para a caixa de diálogo
+### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Mensagens condicionais da página pai para a caixa de diálogo
 
-Como você pode fazer várias `messageChild` chamadas a partir da página host, mas tem apenas um manipulador na caixa de diálogo para o `DialogParentMessageReceived` evento, o manipulador deve usar a lógica condicional para distinguir mensagens diferentes. Você pode fazer isso de uma maneira que seja precisamente paralela à forma como você estruturaria mensagens condicionais quando a caixa de diálogo estiver enviando uma mensagem para a página host, conforme descrito em [mensagens condicionais](#conditional-messaging).
+Como você pode fazer várias chamadas da página host, mas tem apenas um manipulador na caixa de diálogo para o evento, o manipulador deve usar lógica condicional para distinguir `messageChild` `DialogParentMessageReceived` mensagens diferentes. Você pode fazer isso de uma maneira que seja exatamente paralela a como você estruturaria as mensagens condicionais quando a caixa de diálogo está enviando uma mensagem para a página host, conforme descrito em mensagens [condicionais.](#conditional-messaging)
 
 > [!NOTE]
-> Em algumas situações, a `messageChild` API, que faz parte do conjunto de [requisitos DialogApi 1,2](../reference/requirement-sets/dialog-api-requirement-sets.md), pode não ser suportada. Algumas maneiras alternativas para mensagens de pai para caixa de diálogo são descritas em [maneiras alternativas de passar mensagens para uma caixa de diálogo da página host](parent-to-dialog.md).
+> Em algumas situações, a API, que faz parte do conjunto de requisitos `messageChild` [DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)pode não ter suporte. Algumas maneiras alternativas para mensagens pai para caixa de diálogo são descritas em maneiras alternativas de passar mensagens para uma caixa de diálogo [de sua página host.](parent-to-dialog.md)
 
 > [!IMPORTANT]
-> O [conjunto de requisitos DialogApi 1,2](../reference/requirement-sets/dialog-api-requirement-sets.md) não pode ser especificado na `<Requirements>` seção de um manifesto de suplemento. Você precisará verificar o suporte para DialogApi 1,2 em tempo de execução usando o método [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) . O suporte para requisitos de manifesto está em desenvolvimento.
+> O [conjunto de requisitos DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) não pode ser especificado na seção `<Requirements>` de um manifesto de um complemento. Você terá que verificar se há suporte para DialogApi 1.2 no tempo de execução usando o [método isSetSupported.](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) O suporte para requisitos de manifesto está em desenvolvimento.
 
 ## <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 
@@ -346,3 +346,34 @@ Confira [Manipulando erros e eventos na caixa de diálogo do Office](dialog-hand
 ## <a name="next-steps"></a>Próximas etapas
 
 Saiba mais sobre as armadilhas e as práticas recomendadas para a API de diálogo do Office em [práticas recomendadas e regras para a API do Office Dialog](dialog-best-practices.md).
+
+## <a name="samples"></a>Exemplos
+
+Todos os exemplos a seguir `displayDialogAsync` usam. Alguns têm servidores baseados em NodeJS e outros têm servidores ASP.NET/IIS-based, mas a lógica de uso do método é a mesma, independentemente de como o lado do servidor do add-in é implementado.
+
+**Noções básicas:**
+
+- [Exemplo da API da caixa de diálogo do suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)
+- [Conteúdo de treinamento/criação de complementos (vários exemplos)](https://github.com/OfficeDev/TrainingContent/tree/2db14a16774e1539a3eebae7dada4798142b8493/OfficeAddin)
+
+**Exemplos mais complexos:**
+
+- [ASPNET do Microsoft Graph para o complemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Exemplo de monetização SAAS de um complemento do Office](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Visualizador de Tokens de Complementos do Outlook](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
+- [Mensagem Acionável do Complemento do Outlook](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Compartilhamento de Complementos do Outlook com o OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Cenário de Tempo de Execução Compartilhado do Excel](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
+- [Guias rápidos asPNET de um complemento do Excel](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
+- [Word Add-in JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
+- [OAuth do cliente AngularJS do Word Add-in](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+- [Suplemento do Office Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Office Add-in OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Código de padrões de design da UX de um complemento do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
