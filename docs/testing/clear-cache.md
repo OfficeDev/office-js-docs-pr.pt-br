@@ -2,13 +2,13 @@
 title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 05/22/2020
-localization_priority: Normal
-ms.openlocfilehash: fe8184a5bd084450c3be6d3d13707bf92f5c508f
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530489"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043901"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -18,24 +18,24 @@ Além disso, se você fizer alterações no manifesto do seu suplemento (por exe
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
-Para remover todos os suplementos do suplementos foi feito do Excel, Word e PowerPoint, exclua o conteúdo da pasta:
+Para remover todos os suplementos carregados do Excel, Word e PowerPoint, exclua o conteúdo da pasta:
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-Se a seguinte pasta existir, exclua o conteúdo também:
+Se a pasta a seguir existir, exclua seu conteúdo também:
 
 ```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas em suplementos do [Sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências ( `...` ) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do. Se essa remoção de suplemento não funcionar, exclua o conteúdo da `Wef` pasta conforme indicado anteriormente para Excel, Word e PowerPoint.
+Para remover um suplemento sideload do Outlook, use as etapas descritas em [Suplementos Sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **Suplementos Personalizados** da caixa de diálogo que lista seus suplementos instalados. Escolha as reticências (`...`) para o suplemento e, em seguida, escolha **Remover** para remover esse suplemento específico. Se a remoção do suplemento não funcionar, exclua o conteúdo da pasta `Wef` conforme observado anteriormente para Excel, Word e PowerPoint.
 
 Além disso, para limpar o cache do Office no Windows 10 quando o suplemento estiver sendo executado no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
 
 > [!TIP]
-> Se você quiser que o suplemento do suplementos foi feito reflita alterações recentes em seus arquivos de origem HTML ou JavaScript, você não precisará limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **F5** para recarregar o suplemento.
+> Se você deseja apenas que o suplemento sideloaded reflita as alterações recentes em seus arquivos de origem HTML ou JavaScript, não deve ser necessário limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **F5** para recarregar o suplemento.
 
 > [!NOTE]
 > Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface de usuário, por exemplo, um que use o recurso [em envio](../outlook/outlook-on-send-addins.md), você precisará adicionar um painel de tarefas ao seu suplemento que use o mesmo domínio para [SourceLocation](../reference/manifest/sourcelocation.md), antes de poder usar as etapas a seguir para limpar o cache.
