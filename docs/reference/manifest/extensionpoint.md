@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944302"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104816"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -305,7 +305,7 @@ As `Icon` imagens devem estar em escala de cinza usando código hexaxa ou seu eq
 ### <a name="launchevent-preview"></a>LaunchEvent (visualização)
 
 > [!NOTE]
-> Esse ponto de extensão só tem suporte na [visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Microsoft 365.
+> Esse ponto de extensão só tem suporte na [visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365.
 
 Esse ponto de extensão permite que um complemento seja ativado com base em eventos com suporte no fator forma da área de trabalho. Atualmente, os únicos eventos com suporte são `OnNewMessageCompose` e `OnNewAppointmentOrganizer` . Para saber mais sobre esse cenário, confira o artigo Configurar seu [complemento do Outlook para ativação baseada em](../../outlook/autolaunch.md) eventos.
 

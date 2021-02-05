@@ -1,14 +1,14 @@
 ---
 title: Tempos de execução no arquivo de manifesto
 description: O elemento Runtimes especifica o tempo de execução do seu complemento.
-ms.date: 06/01/2020
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: afbcc6a909c51d2ed56292ef1541193f7f698d28
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 74bb2b432f46d5876601052003e20ff843e13b06
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789160"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104823"
 ---
 # <a name="runtimes-element"></a>Elemento Runtimes
 
@@ -24,7 +24,7 @@ No Outlook, esse elemento habilita a ativação de um complemento baseado em eve
 **Tipo de complemento:** Painel de tarefas, Email
 
 > [!IMPORTANT]
-> **Outlook**: o recurso de ativação baseada em eventos está atualmente em [visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e só está disponível no Outlook na Web. Para obter mais informações, [consulte Como visualizar o recurso de ativação baseada em eventos.](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)
+> **Outlook**: o recurso de ativação baseada em eventos está atualmente em [visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e só está disponível no Outlook na Web e no Windows. Para obter mais informações, [consulte Como visualizar o recurso de ativação baseada em eventos.](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -42,8 +42,8 @@ No Outlook, esse elemento habilita a ativação de um complemento baseado em eve
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do seu complemento. |
+| [Runtime](runtime.md) | Sim |  O tempo de execução do seu complemento. |
 
 ## <a name="see-also"></a>Confira também
 
-- [Tempo de execução](runtime.md)
+- [Runtime](runtime.md)
