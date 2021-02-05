@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 11/09/2020
+ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: c11b253d8cc55ce4bac8a44bde1ddf7baa91f89e
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771365"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104865"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -396,7 +396,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
    - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna. A opção `auto` informa ao Excel para decidir o melhor método.
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
+    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 8. Na função `createChart()`, substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
@@ -408,11 +408,11 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     ```js
     chart.setPosition("A15", "F30");
     chart.title.text = "Expenses";
-    chart.legend.position = "right"
+    chart.legend.position = "Right";
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in &euro;';
+    chart.series.getItemAt(0).name = 'Value in \u20AC';
     ```
 
 9. Verifique se você salvou todas as alterações feitas no projeto.
