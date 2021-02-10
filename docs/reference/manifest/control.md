@@ -1,14 +1,14 @@
 ---
 title: Elemento Control no arquivo de manifesto
 description: Define a função JavaScript que executa e aciona ou inicia um painel de tarefas.
-ms.date: 01/10/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 820ef39ba2b4ac296e5f5d598d5f45cc2ded701d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771372"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173980"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -31,19 +31,21 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md)  .        |
-|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)        |
+|  **ToolTip**    |Não|A dica de ferramenta do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
-|  [Enabled](enabled.md)    | Não |  Especifica se o controle está habilitado quando o suplemento é iniciado.  |
+|  [Enabled](enabled.md)    | Não |  Especifica se o controle está habilitado quando o complemento é lançado.  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Não |  Especifica se o botão deve aparecer em combinações de aplicativos e plataformas que suportam guias contextuais personalizadas. Se usado, ele deve ser o *primeiro* elemento filho. |
 
 ### <a name="executefunction-button-example"></a>Exemplo do botão ExecuteFunction
 
-No exemplo a seguir, o botão é desabilitado quando o suplemento é iniciado. Ele pode ser habilitado programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
+No exemplo a seguir, o botão é desabilitado quando o complemento é lançado. Ela pode ser habilitada programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="funcReadButtonLabel" />
   <Supertip>
     <Title resid="funcReadSuperTipTitle" />
@@ -149,16 +151,18 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .      |
-|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)      |
+|  **ToolTip**    |Não|A dica de ferramenta do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
-|  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos que [Button control](#button-control).|
+|  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos do [Controle de botão](#button-control).|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Não |  Especifica se o menu deve aparecer em combinações de aplicativos e plataformas que suportam guias contextuais personalizadas. Se usado, ele deve ser o *primeiro* elemento filho. |
 
 ### <a name="menu-control-examples"></a>Exemplo de controle de menu
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
   <Supertip>
@@ -221,6 +225,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
   </Icon>
   <Items>
     <Item id="msgReadMenuItem1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Label resid="menuItem1ReadLabel" />
       <Supertip>
         <Title resid="menuItem1ReadLabel" />
@@ -248,7 +253,7 @@ O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md)  .        |
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)        |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
 

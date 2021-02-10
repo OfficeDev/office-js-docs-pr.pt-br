@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em visualização para os complementos do Outlook.
-ms.date: 02/02/2021
+ms.date: 02/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 39dd1221f4dea9674c89cdaad20024ce408f8db3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 92ba3510af0c8b9ebdf9ca4368c889b821a9cb3b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104837"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173952"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -46,7 +46,7 @@ Os complementos agora podem ser ativados em itens protegidos por IRM. Para ativa
 
 #### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
 
-Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo redação.
+Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo Redação.
 
 **Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365)
 
@@ -88,7 +88,7 @@ Adicionado suporte para a funcionalidade de ativação baseada em eventos em com
 
 Adicionado `LaunchEvent` suporte ao ponto de extensão para manifesto. Ele configura a funcionalidade de ativação baseada em eventos.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
 
 #### <a name="launchevents-manifest-element"></a>[Elemento de manifesto LaunchEvents](../../manifest/launchevents.md)
 
@@ -98,7 +98,7 @@ Elemento `LaunchEvents` adicionado ao manifesto. Ele dá suporte à configuraç�
 
 #### <a name="runtimes-manifest-element"></a>[Elemento de manifesto runtimes](../../manifest/runtimes.md)
 
-Adicionado suporte do Outlook ao elemento `Runtimes` de manifesto. Ele faz referência aos arquivos HTML e JavaScript necessários para a funcionalidade de ativação baseada em eventos.
+Adicionado suporte do Outlook ao `Runtimes` elemento de manifesto. Ele faz referência aos arquivos HTML e JavaScript necessários para a funcionalidade de ativação baseada em eventos.
 
 **Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
@@ -128,31 +128,31 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 Adicionada uma nova função ao objeto que adiciona ou substitui a `Body` assinatura no corpo do item no modo Redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo Redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
 
 Adicionada uma nova função que obtém o tipo de composição de uma mensagem no modo redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
-Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no item no modo redação.
+Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no item no modo Redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officemailboxenumscomposetype"></a>[Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
 
 Adicionada uma nova enum `ComposeType` disponível no modo Redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização)](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -220,13 +220,13 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 Adicionado um novo objeto que representa os dados de sessão de um item.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365)
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
-Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no modo redação.
+Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no modo Redação.
 
-**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365)
+**Disponível em:** Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
 
 ## <a name="see-also"></a>Confira também
 

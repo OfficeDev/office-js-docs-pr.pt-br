@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
-ms.date: 01/13/2021
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c7d13c0be2cc9a86effd512e0ce88dcc2c004f6b
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: f34e1922c105b11b1f8be803ee1708c229951937
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870662"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173938"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
@@ -53,7 +53,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: mais de um controle de conteúdo com o mesmo nome existe e falha na colisão está definido como **verdadeiro.**|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|Não é possível associar o item nomeado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo coerção _table_.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos ou o objeto `addRowsAsync` nos dados da matriz de tipo de `deleteAllDataValuesAsync` `TableBinding` _coerção._|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os ou os métodos `addRowsAsync` do objeto nos dados da matriz de tipo de `deleteAllDataValuesAsync` `TableBinding` _coerção._|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|
@@ -81,10 +81,10 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |8021|Fora do intervalo|O valor de índice de coluna está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de colunas.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
-|9021|Salvar Erro|Erro de conexão ao tentar salvar o item no servidor.|O item não pôde ser salvo. No modo Online, isso pode ser devido a um erro de conexão do servidor.|
+|9021|Salvar Erro|Erro de conexão ao tentar salvar o item no servidor.|O item não pôde ser salvo. Isso pode ser devido a um erro de conexão do servidor se estiver usando o Modo Online na área de trabalho do Outlook ou devido a uma tentativa de salvar um item de rascunho que foi excluído do exchange server.|
 |9022|Mensagem em erro de armazenamento diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro armazenamento.|A ID do EWS para a mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
 |9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à rede ou à Internet.|
-|9043|Tipo de anexo não suportado|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, lançará esse erro se o anexo for uma imagem incorporada no formato Rich Text ou se for um tipo de item diferente de um email ou item de calendário (como um contato ou item de `item.getAttachmentContentAsync` tarefa).|
+|9043|Tipo de anexo não suportado|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, lançará esse erro se o anexo for uma imagem incorporada no formato Rich Text ou se for um tipo de item que não seja um email ou item de calendário (como um contato ou item de `item.getAttachmentContentAsync` tarefa).|
 |12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12004|||O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|
