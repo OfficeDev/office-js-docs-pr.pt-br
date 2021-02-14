@@ -1,14 +1,14 @@
 ---
 title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 827c11c5c8666bc1478e36bb9568c536a61c1f63
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 737448a498741ec0327939dc9e562fc04d78a8e5
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408793"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234174"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -16,12 +16,12 @@ Um catálogo de aplicativos é um conjunto de sites dedicado em um aplicativo da
 
 > [!IMPORTANT]
 > - Catálogos de aplicativo no SharePoint não oferecem suporte a recursos de suplemento que são implementados no nó `VersionOverrides` do [manifesto do suplemento](../develop/add-in-manifests.md), como por exemplo comandos de suplemento.
-> - Se você estiver direcionando um ambiente híbrido ou de nuvem, recomendamos [usar a implantação centralizada por meio do centro de administração do Microsoft 365](../publish/centralized-deployment.md) para publicar seus suplementos.
+> - Se você estiver direcionando para um ambiente híbrido ou de nuvem, recomendamos usar a Implantação Centralizada por meio do Centro de administração do [Microsoft 365](../publish/centralized-deployment.md) para publicar seus complementos.
 > - Catálogos de aplicativos no SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, envie-os para a [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ## <a name="create-an-app-catalog"></a>Criar um catálogo de aplicativos
 
-Conclua as etapas em uma das seções a seguir para criar um catálogo de aplicativos com o SharePoint Server local ou no Office 365.
+Conclua as etapas em uma das seções a seguir para criar um catálogo de aplicativos com o SharePoint Server local ou no Microsoft 365.
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>Para criar um catálogo de aplicativos para o SharePoint Server no local
 
@@ -31,23 +31,23 @@ Depois de criar o catálogo de aplicativos, siga as etapas para [publicar um Sup
 
 ### <a name="to-create-an-app-catalog-on-microsoft-365"></a>Para criar um catálogo de aplicativos no Microsoft 365
 
-Para criar o catálogo de aplicativos do SharePoint, siga as instruções em [criar o conjunto de sites do catálogo de aplicativos](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Depois de criar o catálogo de aplicativos, siga as etapas na próxima seção para publicar um suplemento do Office.
+Para criar o catálogo de aplicativos do SharePoint, siga as instruções em Criar o conjunto de sites [do Catálogo de Aplicativos.](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection) Depois de criar o catálogo de aplicativos, siga as etapas na próxima seção para publicar um Complemento do Office.
 
 ## <a name="publish-an-office-add-in"></a>Publicar um Suplemento do Office
 
-Conclua as etapas em uma das seções a seguir para publicar um suplemento do Office em um catálogo de aplicativos no Microsoft 365 ou no SharePoint Server local.
+Conclua as etapas em uma das seções a seguir para publicar um Complemento do Office em um catálogo de aplicativos no Microsoft 365 ou no SharePoint Server local.
 
-### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Para publicar um suplemento do Office em um catálogo de aplicativos do SharePoint no Microsoft 365
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Para publicar um Complemento do Office em um catálogo de aplicativos do SharePoint no Microsoft 365
 
 1. Vá para a [página Sites ativos do novo centro de administração do SharePoint](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) e entre com uma conta que tenha [permissões de administrador](/sharepoint/sharepoint-admin-role) da sua organização.
 
     > [!NOTE]
-    > Se você tiver o Microsoft 365 Alemanha, [entre no centro de administração do microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041)e navegue até o centro de administração do SharePoint e abra a página mais recursos. <br>Se você tiver o Microsoft 365 operado pela 21Vianet (China), entre no centro [de administração do microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627)e navegue até o centro de administração do SharePoint e abra a página mais recursos.
+    > Se você tiver o Microsoft 365 Germany, entre no centro de administração do [Microsoft 365,](https://go.microsoft.com/fwlink/p/?linkid=848041)navegue até o centro de administração do SharePoint e abra a página Mais recursos. <br>Se você tiver o Microsoft 365 operado pela 21Vianet (China), entre no Centro de administração do [Microsoft 365,](https://go.microsoft.com/fwlink/p/?linkid=850627)navegue até o centro de administração do SharePoint e abra a página Mais recursos.
 
 1. Abra o site do catálogo de aplicativos selecionando sua URL na coluna URL.
 
     > [!NOTE]
-    > Se você acabou de criar o site de catálogo de aplicativos na seção anterior, pode levar alguns minutos para que o site termine a configuração.
+    > Se você acabou de criar o site de catálogo de aplicativos na seção anterior, pode levar alguns minutos para o site terminar de configurar.
 
 1. Escolha **Distribuir aplicativos para o Office**.
 1. Na página **Aplicativos do Office**, escolha **Novo**.
@@ -81,7 +81,7 @@ Para aplicativos do Office online, você pode encontrar suplementos do Office no
 Para aplicativos do Office na área de trabalho, você pode encontrar suplementos do Office no catálogo de aplicativos concluindo as etapas a seguir.
 
 1. Abra o aplicativo da área de trabalho do Office (Excel, Word ou PowerPoint)
-1. Escolha **Arquivo** > **Opções** > ** Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**.
+1. Escolha **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**.
 1. Digite a URL do catálogo de aplicativos do SharePoint na caixa **URL do catálogo** e escolha **Adicionar catálogo**.
     Use a forma mais curta da URL. Por exemplo, se a URL do catálogo de aplicativos do SharePoint for:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>/AgaveCatalog`
@@ -93,4 +93,4 @@ Para aplicativos do Office na área de trabalho, você pode encontrar suplemento
 1. Na caixa de diálogo Suplementos do Office, escolha a guia **MINHA ORGANIZAÇÃO**. Os Suplementos do Office estão listados.
 1. Escolha um suplemento do Office e, em seguida, escolha **Adicionar**.
 
-Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos [arquivos de modelo administrativo (admx/adml) para os aplicativos do Microsoft 365, no office 2019 e no office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e foram encontrados em **User. Administrativos\Microsoft Office 2016 \ segurança confiabilidade \ catálogos**.
+Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos arquivos de Modelo Administrativo [(ADMX/ADML) do Microsoft 365 Apps, Office 2019 e Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e estão disponíveis em Configuração do **Usuário\Políticas\Modelos Administrativos\Microsoft Office 2016\Configurações de Segurança\Central de Confiações\Catálogos Confiáveis.**

@@ -4,12 +4,12 @@ description: Um caminho recomendado para iniciantes, através dos recursos de ap
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d4d3a6b7211474e3278273b94f1cb3a12535404
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 154d7b5e1a9e135ea583ae6b1afa4ac9e95e9c69
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839688"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234223"
 ---
 # <a name="beginners-guide"></a>Guia do iniciante
 
@@ -28,7 +28,7 @@ Deseja começar a criar suas próprias extensões do Office para várias platafo
 Sabemos que você está ansioso para começar a codificar, mas há algumas coisas sobre os Suplementos do Office que você deve ler antes de abrir o IDE ou o editor de código.
 
 - [Visão Geral da Plataforma de Suplementos do Office](office-add-ins.md): Descubra o que são os suplementos da Web do Office e como eles diferem das formas mais antigas de estender o Office, como os suplementos do VSTO.
-- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida do suplemento do Office, incluindo ferramentas, criando uma interface de usuário do suplemento e usando as APIs de JavaScript para interagir com o documento do Office.
+- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e ciclo de vida do Suplemento do Office, incluindo as ferramentas, criando um suplemento na Interface do Usuário e usando APIs de JavaScript para interagir com o documento do Office.
 
 Existem muitos links nesses artigos, mas se você é iniciante nos suplementos do Office, recomendamos que você volte aqui quando os tiver lido e continue na próxima seção.
 

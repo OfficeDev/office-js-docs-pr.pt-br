@@ -1,22 +1,22 @@
 ---
 title: Abra o Excel na sua página da Web e insrir seu Complemento do Office
 description: Abra o Excel na sua página da Web e insrir seu Complemento do Office.
-ms.date: 09/15/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: a88cc647fc1dba8ab6e6ddc0b504aab96517026a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 437174b2fe9d04e3b25d42159efe7b38f45eb90c
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839863"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237921"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Abra o Excel na sua página da Web e insrir seu Complemento do Office
 
-:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Imagem do botão do Excel em sua página da Web abrindo um novo documento do Excel com o seu complemento incorporado e abrindo automaticamente.":::
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Imagem do botão do Excel em sua página da Web abrindo um novo documento do Excel com seu complemento incorporado e abrindo automaticamente.":::
 
 Estenda seu aplicativo Web SaaS para que os clientes possam abrir seus dados em uma página da Web diretamente para o Microsoft Excel. Um cenário comum é que os clientes trabalharão com dados em seu aplicativo Web. Em seguida, eles vão querer copiar os dados em um documento do Excel. Por exemplo, eles podem querer executar análises adicionais usando o Excel. Normalmente, o cliente é solicitado a exportar os dados para um arquivo, como um arquivo .csv, e, em seguida, importar esses dados para o Excel. Eles também precisam adicionar manualmente o seu Complemento do Office ao documento.
 
-Reduza o número de etapas para um único clique em sua página da Web que gera e abre o documento do Excel. Você também pode inserir seu Complemento do Office dentro do documento e exibi-lo quando o documento for aberto. Isso garante que o cliente ainda tenha acesso aos recursos do aplicativo. Quando o documento é aberto, os dados que o cliente selecionou e o Seu Complemento do Office já estão disponíveis para que ele continue funcionando.
+Reduza o número de etapas para um único clique em sua página da Web que gera e abre o documento do Excel. Você também pode inserir o seu Complemento do Office dentro do documento e exibi-lo quando o documento for aberto. Isso garante que o cliente ainda tenha acesso aos recursos do aplicativo. Quando o documento é aberto, os dados que o cliente selecionou e o Seu Complemento do Office já estão disponíveis para que eles continuem funcionando.
 
 Este artigo mostra o código e as técnicas para implementar esse cenário em seu próprio aplicativo Web SaaS.
 
@@ -31,7 +31,7 @@ Primeiro, vamos aprender a criar um documento do Excel a partir de uma página d
 
 ### <a name="how-the-sample-works"></a>Como funciona o exemplo
 
-O código de exemplo usa o SDK OOXML para inserir o complemento Script Lab no documento do Excel que você escolher. As informações a seguir são retiradas da [ **seção Sobre o código**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) no arquivo leia-me.
+O código de exemplo usa o SDK OOXML para inserir o complemento Script Lab no documento do Excel que você escolher. The following Information is taken from the [ **About the code** section](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) in the readme file.
 
 O arquivo **Home.aspx.cs:**
 
@@ -57,7 +57,7 @@ O **método GenerateWebExtensionPart1Content** no arquivo **OOXMLHelper.cs** def
 We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "wa104380862", Version = "1.1.0.0", Store = "en-US", StoreType = "OMEX" };
 ```
 
-- O **valor de StoreType** é "OMEX", um alias do Microsoft AppSource.
+- O **valor StoreType** é "OMEX", um alias do Microsoft AppSource.
 - O **valor** da Loja é "en-US" encontrado na seção de cultura do Microsoft AppSource para o Script Lab.
 - O **valor da Id** é a ID de ativo do Microsoft AppSource para o Script Lab.
 
@@ -96,7 +96,7 @@ Recomendamos carregar novos documentos no OneDrive se o cliente usar o OneDrive.
 
 ### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Use um início rápido para criar um novo aplicativo Web do Microsoft Graph
 
-1. Acesse e siga as etapas para criar e abrir um exemplo de código de início rápido que interage com os serviços do [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) Office 365.
+1. Acesse e siga as etapas para criar e abrir um exemplo de código de início [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) rápido que interage com os serviços do Office.
 1. In **step 1: Pick you language or platform**, choose ASP.NET **MVC**. Embora as etapas deste procedimento usem a ASP.NET MVC, as etapas seguem um padrão que se aplica a qualquer linguagem ou plataforma.
 1. Na **etapa 2: Obter uma ID** e um segredo do aplicativo, escolha **Obter uma ID e um segredo do aplicativo.**
 1. Entre em sua conta do Microsoft 365.  
@@ -176,7 +176,7 @@ O exemplo de código armazena uma ID de trecho no novo documento do Excel usando
 Normalmente, quando o cliente abre um documento do Excel a partir do seu site, ele espera que o documento contenha alguns dados do site. Há algumas maneiras de gravar dados no documento.
 
 - **Use o SDK OOXML para gravar os dados.** Você pode usar o SDK para gravar diretamente quaisquer dados no documento. Essa abordagem será útil se você quiser que os dados sejam disponibilizados assim que o documento for aberto.
-- **Passe uma propriedade de consulta personalizada para o seu complemento do Office.** Ao gerar o documento, você incorpora uma propriedade personalizada para o complemento do Office que contém uma cadeia de caracteres de consulta que recupera todos os dados necessários. Quando o seu complemento é aberto, ele recupera a consulta, executa a consulta e usa a API JS do Office para inserir o resultado da consulta no documento.
+- **Passe uma propriedade de consulta personalizada para o seu Complemento do Office.** Ao gerar o documento, você incorpora uma propriedade personalizada para o Add-in do Office que contém uma cadeia de caracteres de consulta que recupera todos os dados necessários. Quando o seu complemento é aberto, ele recupera a consulta, executa a consulta e usa a API JS do Office para inserir o resultado da consulta no documento.
 
 ### <a name="working-with-the-ooxml-sdk"></a>Trabalhando com o OOXML SDK
 

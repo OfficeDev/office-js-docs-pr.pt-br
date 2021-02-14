@@ -1,18 +1,18 @@
 ---
 title: Usar o Office UI Fabric React em Suplementos do Office
 description: Aprenda a usar o Office UI Fabric React em suplementos do Office.
-ms.date: 09/09/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131980"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237725"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
-O Office UI Fabric é uma estrutura de front-end JavaScript destinada à criação de experiências de usuário para Office e Office 365. Se você criar o suplemento usando o React, considere o uso do Fabric React para criar a experiência do usuário. O Fabric fornece diversos componentes da experiência de usuário baseados no React, como botões e caixas de seleção, que você pode usar no suplemento.
+O Office UI Fabric é uma estrutura de front-end JavaScript para criar experiências de usuário para o Office. Se você criar seu complemento usando o React, considere usar o Fabric React para criar sua experiência do usuário. O Fabric fornece vários componentes da UX baseados no React, como botões ou caixas de seleção, que você pode usar no seu complemento.
 
 Este artigo descreve como criar um suplemento usando o React e componentes do Fabric React.
 
@@ -36,7 +36,7 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando as solicitações e respostas para o gerador yeoman em uma interface de linha de comando](../images/yo-office-word-react.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-word-react.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Nó de suporte.
 
@@ -78,7 +78,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 3. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e botão criando um componente Reagir que usa componentes UX do Fabric React.
 
-    ![Captura de tela mostrando o aplicativo Word com o botão Mostrar faixa de opções do painel de tarefas realçado e o botão Executar e imediatamente anterior ao texto realçado no painel de tarefas](../images/word-task-pane-yo-default.png)
+    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>Criar um componente React que use o Fabric React
 
@@ -170,7 +170,7 @@ Adicionar o `ButtonPrimaryExample` componente ao suplemento abrindo **src\compon
 
 No Word, o painel de tarefas do suplemento será atualizado automaticamente quando você salvar as alterações em **App.tsx**. O texto padrão e o botão na parte inferior do painel de tarefas agora mostram a IU definida pelo `ButtonPrimaryExample` componente. Feche o botão **Insert text...** para inserir o texto no documento.
 
-![Captura de tela mostrando o aplicativo Word com o "inserir texto..." e imediatamente anterior ao texto realçado](../images/word-task-pane-with-react-component.png)
+![Captura de tela mostrando o aplicativo Word com o "Inserir texto..." botão e texto imediatamente anterior realçada](../images/word-task-pane-with-react-component.png)
 
 Parabéns, você criou com êxito um suplemento do painel de tarefas usando React e o Office UI Fabric React!
 

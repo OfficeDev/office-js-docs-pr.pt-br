@@ -1,30 +1,30 @@
 ---
-title: Sideload suplementos do Office para teste de um compartilhamento de rede
-description: Saiba como Sideload um suplemento do Office para teste de um compartilhamento de rede
+title: Realizar sideload de Complementos do Office para teste de um compartilhamento de rede
+description: Saiba como realizar o sideload de um Complemento do Office para teste de um compartilhamento de rede
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 268fb79c6340aa2d0b8e8278683a0c47b3b60c0e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7e584b5543d988ed51f932254d48981d51afa0fc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611243"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237970"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Sideload suplementos do Office para teste de um compartilhamento de rede
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Realizar sideload de Complementos do Office para teste de um compartilhamento de rede
 
-Você pode testar um suplemento do Office em um cliente do Office que está no Windows publicando o manifesto em um compartilhamento de arquivo de rede (instruções abaixo). Essa opção de implantação deve ser usada quando você concluiu o desenvolvimento e o teste em um localhost e deseja testar o suplemento de um servidor não-local ou uma conta de nuvem.
+Você pode testar um Complemento do Office em um cliente do Office que está no Windows publicando o manifesto em um compartilhamento de arquivos de rede (instruções abaixo). Essa opção de implantação deve ser usada quando você tiver concluído o desenvolvimento e o teste em um localhost e quiser testar o complemento de uma conta de nuvem ou servidor não local.
 
 > [!IMPORTANT]
-> Não há suporte para a implantação pelo compartilhamento de rede para suplementos de produção. Este método tem as seguintes limitações:
+> A implantação por compartilhamento de rede não tem suporte para os complementos de produção. Esse método tem as seguintes limitações:
 > 
-> - O suplemento só pode ser instalado em computadores Windows.
-> - Se uma nova versão de um suplemento alterar a faixa de opções, cada usuário terá que reinstalar o suplemento.
+> - O complemento só pode ser instalado em computadores Windows.
+> - Se uma nova versão de um complemento mudar a faixa de opções, cada usuário terá que reinstalar o complemento.
 
 
 > [!NOTE]
 > Se o projeto de suplemento tiver sido criado com uma versão suficientemente recente do [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office), o suplemento realizará sideload automaticamente no cliente de desktop do Office ao executar o `npm start`.
 
-Este artigo aplica-se somente ao teste dos suplementos do Word, Excel, PowerPoint e Project e apenas no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
+Este artigo se aplica somente ao teste de complementos do Word, Excel, PowerPoint e Project e somente no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
 
 - [Realizar sideload de suplementos do Office no Office na Web para teste](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -40,7 +40,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 2. Abra o menu de contexto na pasta que você deseja usar como catálogo de pasta compartilhada (clique com o botão direito) e escolha **Propriedades**.
 
-3. Dentro da janela de diálogo **Propriedades** abra a guia **Compartilhamento**e escolha o botão **Compartilhar**.
+3. Dentro da janela de diálogo **Propriedades** abra a guia **Compartilhamento** e escolha o botão **Compartilhar**.
 
     ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o botão Compartilhamento realçado](../images/sideload-windows-properties-dialog.png)
 
@@ -64,7 +64,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 4. Escolha **Catálogos de Suplemento Confiáveis**.
 
-5. Na caixa**Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
+5. Na caixa **Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
 
     ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
 
@@ -74,7 +74,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
     ![Caixa de diálogo Central de confiabilidade com catálogo selecionado](../images/sideload-windows-trust-center-dialog.png)
 
-8. Escolha o botão **OK** para fechar a janela de diálogo **Opções** .
+8. Escolha o **botão OK** para fechar a janela **de diálogo** Opções.
 
 9. Feche e abra novamente o aplicativo do Office para que as alterações tenham efeito.
 
@@ -126,9 +126,9 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 4. Selecione o nome do suplemento e escolha **Adicionar** para inseri-lo.
 
-## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
+## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento de sideload
 
-Você pode remover um suplemento suplementos foi feito anteriormente limpando o cache do Office em seu computador. Os detalhes sobre como limpar o cache no Windows podem ser encontrados no artigo [limpar o cache do Office](clear-cache.md#clear-the-office-cache-on-windows).
+Você pode remover um complemento de sideload anteriormente limpando o cache do Office em seu computador. Detalhes sobre como limpar o cache no Windows podem ser encontrados no artigo [Limpar o cache do Office.](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>Confira também
 

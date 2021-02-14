@@ -3,12 +3,12 @@ title: LaunchEvents no arquivo de manifesto (visualização)
 description: O elemento LaunchEvents configura seu complemento para ser ativado com base em eventos com suporte.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 9df059879018d79a61f1c900888c8d197e0b9880
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 59c52aa3f60e69e2bdda84718c6123f02942fedc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104809"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237977"
 ---
 # <a name="launchevents-element-preview"></a>Elemento LaunchEvents (visualização)
 

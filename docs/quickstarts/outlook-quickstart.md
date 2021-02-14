@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 01/22/2021
+ms.date: 02/09/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ae14416cd7fbcfeca10e4ace25997395fc9b44c1
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 2ba89f400feaf0664ad98f47d8c933431341466e
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944331"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234188"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -98,10 +98,10 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 > [!NOTE]
 > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executa este comando, o servidor web local será iniciado (se ainda não estiver em execução) e seu suplemento será transferido.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.
@@ -134,7 +134,7 @@ Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook
     > [!NOTE]
     > Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada.
 
-- Office 365
+- Microsoft 365
 
     > [!NOTE]
     > Se você não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura gratuita inscrevendo-se no [programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program).

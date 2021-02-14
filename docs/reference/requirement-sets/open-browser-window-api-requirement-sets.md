@@ -1,44 +1,42 @@
 ---
 title: Abrir conjuntos de requisitos de janela do navegador
-description: Especifica quais plataformas e compilações do Office suportam a API openBrowserWindow.
-ms.date: 09/16/2020
+description: Especifica quais plataformas e builds do Office suportam a API openBrowserWindow.
+ms.date: 02/09/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8bc26525bf64ed87d46d85cd1248f79696d67f2b
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: 759c8265b27fab4589e68fe3f2f90a2a283ef005
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175504"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237956"
 ---
-# <a name="open-browser-window-api-requirement-sets"></a>Abrir conjuntos de requisitos da API da janela do navegador
+# <a name="open-browser-window-api-requirement-sets"></a>Abrir conjuntos de requisitos da API da Janela do Navegador
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-O conjunto de APIs do OpenBrowserWindow permite que suplementos Abram um navegador para realizar tarefas que não podem ser executadas sempre no controle de WebView em modo seguro dentro do suplemento propriamente dito; por exemplo, baixar um arquivo PDF quando o controle de WebView é fornecido pelo Microsoft Edge.
+O conjunto de APIs OpenBrowserWindow permite que os complementos abram um navegador para realizar tarefas que nem sempre podem ser realizadas no controle de modo de visualização da Web em área externa dentro do próprio complemento; por exemplo, baixar um arquivo PDF quando o controle de webview for fornecido pelo Microsoft Edge.
 
-Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos de API do OpenBrowserWindow, os aplicativos host do Office que dão suporte a esse conjunto de requisitos e os números de compilação ou versão para o aplicativo do Office.
+Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API OpenBrowserWindow, os aplicativos host do Office que suportam esse conjunto de requisitos e os números de versão ou build do aplicativo do Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows ou posterior<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365) |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows ou posterior<br>(compra avulsa) | Office no Windows<br>(Conectado à assinatura do Microsoft 365) |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| OpenBrowserWindowApi 1,1  | N/D | Versão 1810 (Build 16.0.11001.20074) ou posterior | 16.0.0.0 ou posterior | 16.0.0.0 ou posterior | N/D | N/D|
+| OpenBrowserWindowApi 1.1  | N/D | Versão 1810 (Build 16.0.11001.20074) ou posterior | 16.0.0.0 ou posterior | 16.0.0.0 ou posterior | N/D | N/D|
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
-- 
-  [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Números de versão e build de versões de canal de atualização para o Microsoft 365 Apps](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- 
-  [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Onde você pode encontrar o número de versão e build de um aplicativo cliente do Office](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
 Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
-## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1,1
+## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1.1
 
-O OpenBrowserWindowApi 1,1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o tópico de referência do [Office. Context. UI](/javascript/api/office/office.context#ui) .
+O OpenBrowserWindowApi 1.1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o tópico de referência [Office.context.ui.](/javascript/api/office/office.context#ui)
 
 ## <a name="see-also"></a>Confira também
 

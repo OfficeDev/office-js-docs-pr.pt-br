@@ -3,12 +3,12 @@ title: Elemento WebApplicationInfo no arquivo de manifesto
 description: Documentação de referência do elemento WebApplicationInfo para arquivos de manifesto de Complementos do Office (XML).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: abbb4b97047fda378da71963f3f522fae4d72ccc
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839702"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234160"
 ---
 # <a name="webapplicationinfo-element"></a>Elemento WebApplicationInfo
 
@@ -18,7 +18,7 @@ Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém inf
 - Um *cliente* do OAuth 2.0 que pode exigir permissões para o Microsoft Graph.
 
 > [!NOTE]
-> Atualmente, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais sobre os programas para os quais a API de logon único tem suporte no momento, consulte [Conjuntos de requisitos da IdentityAPI](../requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação moderna para o locatário do Office 365. Para saber como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais sobre os programas para os quais a API de logon único tem suporte no momento, consulte [Conjuntos de requisitos da IdentityAPI](../requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 **WebApplicationInfo** é um elemento filho do elemento [VersionOverrides](versionoverrides.md) no manifesto.  
 

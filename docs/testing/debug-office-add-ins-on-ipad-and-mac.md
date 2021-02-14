@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office em um Mac
-description: Saiba como usar um Mac para depurar suplementos do Office
-ms.date: 11/26/2019
+description: Saiba como usar um Mac para depurar Os Complementos do Office.
+ms.date: 10/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 12785a195c336e0de8c619379a3839bd15079b2c
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b2164e3ed672b2911db6841fad24441b67882204
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094124"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237942"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 
@@ -18,7 +18,7 @@ Como os suplementos são desenvolvidos usando HTML e Javascript, são projetados
 
 Se você tiver um suplemento que mostre a interface do usuário em um painel de tarefas ou em um suplemento de conteúdo, o Safari Web Inspector poderá ser usado para depurar um Suplemento do Office.
 
-Para poder depurar Suplementos do Office no Mac, você deverá ter o Mac OS High Sierra E o Mac Office Versão: 16.9.1 (build 18012504) ou posterior. Se você não tiver uma compilação Mac do Office, poderá obter uma participando do [programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
+Para poder depurar Os Complementos do Office no Mac, você deve ter o Mac OS High Sierra E o Mac Office versão 16.9.1 (build 18012504) ou posterior. Se você não tiver um build do Office Mac, poderá obter um inando no programa de desenvolvedores do [Microsoft 365.](https://developer.microsoft.com/office/dev-program)
 
 Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperExtras` do aplicativo relevante do Office da seguinte maneira:
 
@@ -29,6 +29,9 @@ Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperEx
 - `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+    > [!IMPORTANT]
+    > As builds da Mac App Store do Office não são suportadas pelo `OfficeWebAddinDeveloperExtras` sinalizador.
 
 Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento](sideload-an-office-add-in-on-ipad-and-mac.md). Clique com o botão direito do mouse no suplemento e você verá a opção **Inspecionar Elemento** no menu de contexto. Marque essa opção e ela exibirá o inspetor, onde você poderá definir os pontos de interrupção e depurar o suplemento.
 

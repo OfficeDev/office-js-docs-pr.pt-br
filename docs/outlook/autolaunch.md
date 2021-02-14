@@ -4,12 +4,12 @@ description: Saiba como configurar seu complemento do Outlook para ativação ba
 ms.topic: article
 ms.date: 02/03/2021
 localization_priority: Normal
-ms.openlocfilehash: a4fce335738d1bcff2be43e4e609998be89fca20
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: d9108b4debea5e59503f3c935a537e5fafde00c8
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104845"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234272"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 
@@ -164,7 +164,7 @@ Você precisa implementar a manipulação para os eventos selecionados.
 
 Neste cenário, você adicionará a manipulação para composição de novos itens.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** seu editor de código.
 
 1. Após a `action` função, insira as seguintes funções JavaScript.
 
@@ -214,13 +214,11 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciar (se ainda não estiver em execução) e o seu complemento será sideloaded.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
-
-1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.
 
 1. No Outlook na Web, crie uma nova mensagem.
 

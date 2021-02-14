@@ -1,18 +1,18 @@
 ---
 title: Publicar Os Complementos do Office usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365
 description: Saiba como usar a Implantação Centralizada para implantar os complementos internos, bem como os complementos fornecidos por ISVs.
-ms.date: 01/12/2021
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1f36d1ad640adbecdd3338200e742e76831a67a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 479c80e2898f4c875f0c108fc6ab40fe54a4de1a
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839751"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234202"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publicar Os Complementos do Office usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365
 
-O Centro de administração do Microsoft 365 torna mais fácil para um administrador implantar Os Complementos do Office para usuários e grupos dentro de sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
+O Centro de administração do Microsoft 365 facilita a implantação de Complementos do Office para usuários e grupos em sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
 
 Atualmente, o Centro de administração do Microsoft 365 oferece suporte aos seguintes cenários.
 
@@ -80,7 +80,7 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
     > [!NOTE]
     > Os complementos que utilizam o [SSO (logo único)](../develop/sso-in-office-add-ins.md) solicitarão que o administrador consenta com os escopos listados no manifesto do complemento.  Se o mesmo serviço de backing for usado em vários complementos (a mesma ID de aplicativo do Azure é usada com SSO em diferentes complementos), os escopos para cada complemento serão solicitados a consentir com cada implantação. Esta página também exibirá a lista de permissões que o add-in exige.
 
-11. Quando terminar, escolha **Implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
+11. Quando terminar, escolha **Implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Agora você verá seu complemento juntamente com outros aplicativos do Office.
 
     > [!NOTE]
     > Quando um administrador escolhe **Implantar,** o consentimento é dado para todos os usuários.

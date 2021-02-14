@@ -1,14 +1,14 @@
 ---
 title: Requisitos de suplementos do Outlook
 description: Há diversos requisitos para os servidores e clientes para que os Suplementos do Outlook possam carregar e funcionar de maneira apropriada.
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 353c03fc0cdfe83c5f775df09dfb7c6b23cca191
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: dd7831ce8ebd1165f920fe24775f46cd8cd7f91c
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294000"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234293"
 ---
 # <a name="outlook-add-in-requirements"></a>Requisitos de suplementos do Outlook
 
@@ -22,11 +22,11 @@ Há diversos requisitos para os servidores e clientes para que os Suplementos do
    - Outlook 2016 ou posterior no Mac
    - Outlook no iOS
    - Outlook no Android
-   - Outlook na web para o Exchange 2016 ou posterior e Office 365
+   - Outlook na Web para o Exchange 2016 ou posterior
    - Outlook na Web para Exchange 2013
    - Outlook.com
 
-- O cliente deve estar conectado a um servidor do Exchange ou ao Microsoft 365 usando uma conexão direta. Ao configurar o cliente, o usuário deve escolher um tipo de conta do **Exchange**, **Office 365** ou **Outlook.com**. Se o cliente estiver configurado para se conectar com POP3 ou IMAP, os suplementos não serão carregados.
+- O cliente deve estar conectado a um servidor Exchange ou Microsoft 365 usando uma conexão direta. Ao configurar o cliente, o usuário deve escolher um tipo de conta do **Exchange**, **Office** ou **Outlook.com**. Se o cliente estiver configurado para se conectar com POP3 ou IMAP, os suplementos não serão carregados.
 
 ## <a name="mail-server-requirements"></a>Requisitos de servidor de email
 

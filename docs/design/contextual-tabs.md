@@ -3,16 +3,16 @@ title: Criar guias contextuais personalizadas em Complementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao seu Complemento do Office.
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 67588e04d6ea95bc581c51e274c8135cfa5afd50
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 0badd779f22edc9b4659908409764bea1cde44f5
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173917"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237718"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Crie guias contextuais Personalizadas em Suplementos do Office (pré-visualização)
 
-Uma guia contextual é um controle guia oculto na faixa de opções do Office que é exibido na linha da guia quando um evento especificado ocorre no documento do Office. Por exemplo, a **guia Design de** Tabela que aparece na faixa de opções do Excel quando uma tabela é selecionada. Você pode incluir guias contextuais personalizadas no seu complemento do Office e especificar quando elas ficam visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
+Uma guia contextual é um controle guia oculto na faixa de opções do Office que é exibido na linha da guia quando um evento especificado ocorre no documento do Office. Por exemplo, a **guia Design de** Tabela que aparece na faixa de opções do Excel quando uma tabela é selecionada. Você pode incluir guias contextuais personalizadas no seu Add-in do Office e especificar quando elas ficam visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
 
 > [!NOTE]
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
@@ -35,7 +35,7 @@ Uma guia contextual é um controle guia oculto na faixa de opções do Office qu
 
 A experiência do usuário para guias contextuais personalizadas segue o padrão das guias contextuais internas do Office. A seguir estão os princípios básicos para as guias contextuais personalizadas de posicionamento:
 
-- Quando uma guia contextual personalizada é visível, ela aparece na extremidade direita da faixa de opções.
+- Quando uma guia contextual personalizada está visível, ela aparece na extremidade direita da faixa de opções.
 - Se uma ou mais guias contextuais e uma ou mais guias contextuais personalizadas de complementos estão visíveis ao mesmo tempo, as guias contextuais personalizadas ficam sempre à direita de todas as guias contextuais.
 - Se o seu add-in tiver mais de uma guia contextual e houver contextos nos quais mais de uma está visível, eles aparecerão na ordem em que estão definidos no seu complemento. (A direção tem a mesma direção do idioma do Office, ou seja, da esquerda para a direita, nos idiomas da esquerda para a direita, mas da direita para a esquerda nos idiomas da direita para a esquerda.) Consulte [Definir os grupos e controles que aparecem na guia](#define-the-groups-and-controls-that-appear-on-the-tab) para obter detalhes sobre como defini-los.
 - Se mais de um complemento tiver uma guia contextual visível em um contexto específico, elas aparecerão na ordem em que os complementos foram lançados.
@@ -135,7 +135,7 @@ Vamos construir um exemplo de um blob JSON de guias contextuais passo a passo. (
     }
     ```
 
-1. Cada grupo deve ter um ícone de pelo menos dois tamanhos, 32 x 32 px e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos de 16 x 16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px e 64x64 px. O Office decide qual ícone usar com base no tamanho da faixa de opções e da janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se os tamanhos da janela e da  faixa de opções são grandes o suficiente para que pelo menos um dos controles do grupo apareça, nenhum ícone de grupo será exibido. Por exemplo, assista ao grupo **Estilos** na faixa de opções do Word enquanto você reduz e expande a janela do Word.) Sobre essa marcação, observe:
+1. Cada grupo deve ter um ícone de pelo menos dois tamanhos, 32 x 32 px e 80x80 px. Opcionalmente, você também pode ter ícones de tamanhos de 16 x 16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px e 64x64 px. O Office decide qual ícone usar com base no tamanho da faixa de opções e da janela do aplicativo do Office. Adicione os seguintes objetos à matriz de ícones. (Se os tamanhos da janela e da  faixa de opções são grandes o suficiente para que pelo menos um dos controles do grupo apareça, nenhum ícone de grupo é exibido. Por exemplo, assista ao grupo **Estilos** na faixa de opções do Word conforme você reduz e expande a janela do Word.) Sobre essa marcação, observe:
 
     - Ambas as propriedades são necessárias.
     - A `size` unidade de medida da propriedade é pixels. Os ícones são sempre quadrados, portanto, o número é a altura e a largura.
@@ -251,7 +251,7 @@ Veja a seguir o exemplo completo do blob JSON:
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Registrar a guia contextual com o Office com requestCreateControls
 
-A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Isso geralmente é feito na função atribuída a `Office.initialize` ou com o `Office.onReady` método. Para saber mais sobre esses métodos e como inicializar o add-in, confira [Inicializar seu complemento do Office.](../develop/initialize-add-in.md) No entanto, você pode chamar o método a qualquer momento após a inicialização.
+A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Isso geralmente é feito na função atribuída a `Office.initialize` ou com o `Office.onReady` método. Para saber mais sobre esses métodos e como inicializar o add-in, confira Inicializar seu [complemento do Office.](../develop/initialize-add-in.md) No entanto, você pode chamar o método a qualquer momento após a inicialização.
 
 > [!IMPORTANT]
 > O `requestCreateControls` método pode ser chamado apenas uma vez em uma determinada sessão de um complemento. Um erro será lançado se for chamado novamente.
@@ -270,7 +270,7 @@ Office.onReady(async () => {
 
 Normalmente, uma guia contextual personalizada deve aparecer quando um evento iniciado pelo usuário altera o contexto do complemento. Considere um cenário no qual a guia deve estar visível quando, e somente quando, um gráfico (na planilha padrão de uma pasta de trabalho do Excel) é ativado.
 
-Comece atribuindo manipuladores. Isso geralmente é feito no método como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos e a todos os `Office.onReady` gráficos `onActivated` na `onDeactivated` planilha.
+Comece atribuindo manipuladores. Isso geralmente é feito no método como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos de todos os `Office.onReady` gráficos `onActivated` na `onDeactivated` planilha.
 
 ```javascript
 Office.onReady(async () => {
@@ -307,7 +307,7 @@ async function showDataTab() {
 }
 ```
 
-O manipulador para ocultar a guia é quase idêntico, exceto pelo fato de que ele define `visible` a propriedade novamente como `false` .
+O manipulador para ocultar a guia é quase idêntico, exceto pelo fato de que ele define a `visible` propriedade novamente como `false` .
 
 A biblioteca JavaScript do Office também fornece várias interfaces (tipos) para facilitar a construção do `RibbonUpdateData` objeto. A seguir está `showDataTab` a função em TypeScript e ela faz uso desses tipos.
 
@@ -493,7 +493,7 @@ Essa estratégia simples usa uma guia principal personalizada que espelha uma gu
 
 Para obter mais exemplos, consulte [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-Quando uma guia pai, um grupo ou um menu é marcado com , ela não fica visível e toda a marcação filha é ignorada, quando guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se algum desses elementos filho tem o `<OverriddenByRibbonApi>` elemento ou qual é seu valor. A implicação disso é que, se um item de menu, controle ou grupo deve estar visível em todos os contextos, ele não só não deve ser marcado com , mas seu menu ancestral, grupo e guia também não devem ser marcados dessa `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` maneira. 
+Quando uma guia pai, um grupo ou um menu é marcado com , ela não fica visível e toda a marcação filha é ignorada, quando guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se qualquer um desses elementos filho tem o `<OverriddenByRibbonApi>` elemento ou qual é seu valor. A implicação disso é que, se um item de menu, controle ou grupo deve estar visível em todos os contextos, ele não só não deve ser marcado com , mas seu menu ancestral, grupo e guia também não devem ser marcados dessa `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` maneira. 
 
 > [!IMPORTANT]
 > Não marque todos *os elementos* filho de uma guia, grupo ou menu `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` com. Isso é óbvio se o elemento pai estiver marcado por `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` motivos determinados no parágrafo anterior. Além disso, se você o deixar de fora do pai (ou defini-lo como ), o pai aparecerá independentemente de as guias contextuais personalizadas serem suportadas, mas ela estará vazia quando elas são `<OverriddenByRibbonApi>` `false` suportadas. Portanto, se todos os elementos filho não devem aparecer quando guias contextuais personalizadas são suportadas, marque o pai e somente o pai, com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
@@ -504,7 +504,7 @@ Como alternativa, o seu complemento pode definir um painel de tarefas com contro
 
 ### <a name="handle-the-hostrestartneeded-error"></a>Manipular o erro HostRestartNeeded
 
-Em alguns cenários, o Office não consegue atualizar a faixa de opções e retornará um erro. Por exemplo, se o suplemento for atualizado e o suplemento atualizado tiver um conjunto diferente de comandos de suplemento personalizados, o aplicativo do Office deverá ser fechado e reaberto. Até que isso ocorra, o método `requestUpdate` retornará o erro `HostRestartNeeded`. Seu código deve lidar com esse erro. Veja a seguir um exemplo de como. Nesse caso, o método `reportError` exibe o erro para o usuário.
+Em alguns cenários, o Office não consegue atualizar a faixa de opções e retornará um erro. Por exemplo, se o suplemento for atualizado e o suplemento atualizado tiver um conjunto diferente de comandos de suplemento personalizados, o aplicativo do Office deverá ser fechado e reaberto. Até que isso ocorra, o método `requestUpdate` retornará o erro `HostRestartNeeded`. Seu código deve lidar com esse erro. Veja a seguir um exemplo de como fazer isso. Nesse caso, o método `reportError` exibe o erro para o usuário.
 
 ```javascript
 function showDataTab() {

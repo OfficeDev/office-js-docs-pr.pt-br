@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 5633832085fa488a02ab4b45abb6c266e66dfe80
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: c58efb8b9b9b663ddf8caf371a5a0e221ab31486
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990516"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234216"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
@@ -520,7 +520,7 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(Interface do Usuário atual,<br>conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
@@ -538,6 +538,26 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Caixa de correio 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup>
+    </td>
+    <td>Não disponível</td>
+  </tr>
+  <tr>
+    <td>Office no Mac<br>(nova Interface do Usuário (visualização)<sup>3</sup>,<br>conectado a uma assinatura do Microsoft 365)</td>
+    <td>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de Suplemento</a>
+    </td>
+    <td>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3"> Caixa de correio 1.3</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4"> Caixa de correio 1.4</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5"> Caixa de correio 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a>
     </td>
     <td>Não disponível</td>
   </tr>
@@ -601,6 +621,8 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
 > <sup>1</sup> Para exigir o conjunto 1.3 da API de Identidade no código do suplemento, verifique se ele tem suporte ligando para `isSetSupported('IdentityAPI', '1.3')`. Não há suporte para declará-lo no manifesto do seu suplemento. Você também pode determinar se a API tem suporte, verificando se ela não é `undefined`. Para mais detalhes, confira [Usar APIs de conjuntos de requisitos posteriores](../reference/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
 >
 > <sup>2</sup> Adicionado com atualizações pós-lançamento.
+>
+> <sup>3</sup> O suporte para a nova Interface do Usuário do Mac (visualização) está disponível no Outlook versão 16.38.506. Para mais informações, consulte a seção [Suporte de Suplemento no Outlook na nova Interface do Usuário do Mac](../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview).
 
 > [!IMPORTANT]
 > O suporte ao cliente para um conjunto de requisitos pode ser restringido pelo suporte do servidor Exchange. Consulte [Conjuntos de requisitos da API JavaScript do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes sobre o intervalo de conjuntos de requisitos suportado pelo servidor Exchange e pelos clientes Outlook.

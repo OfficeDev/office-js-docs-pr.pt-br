@@ -5,12 +5,12 @@ title: Documentação de Referência da API JavaScript do Office
 description: Saiba mais sobre as APIs JavaScript do Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 128f4fa146ace079c8999083b49fe83b68120b07
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 8c467003bfd3481f35864225876e3ee024910eef
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741124"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234153"
 ---
 # <a name="api-reference-documentation"></a>Documentação de referência da API
 
@@ -122,7 +122,7 @@ Você deve usar APIs específicas do aplicativo sempre que possível e usar APIs
                     </div>
                     <div class="cardText">
                         <h3>Referência da API comum</h3>
-                        <p><a href="/javascript/api/office">APIs do JavaScript que podem ser usadas por qualquer suplemento do Office.</a></p>
+                        <p><a href="/javascript/api/office">APIs de JavaScript que podem ser utilizadas por qualquer Suplemento do Office.</a></p>
                     </div>
                 </div>
             </div>

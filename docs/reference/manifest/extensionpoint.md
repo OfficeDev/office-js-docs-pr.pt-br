@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104816"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237704"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -80,7 +80,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**Label**|Obrigatório. O rótulo do grupo. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
 |**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Image.** O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
 |**Tooltip**|Opcional. A dica de ferramenta do grupo. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
-|**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **de Recursos** relacionados sejam adicionados um de cada vez.|
+|**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **de recursos** relacionados sejam adicionados um de cada vez.|
 |**Script**|Links para o arquivo JavaScript com a definição de função personalizada e o código de registro Esse elemento não é usado na Visualização do Desenvolvedor. Em vez disso, a página HTML é responsável por carregar todos os arquivos JavaScript.|
 |**Page**|Links para a página HTML de suas funções personalizadas.|
 

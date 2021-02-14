@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 01/08/2021
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 8fc0f0d9f0664c3a4ba1c343306d779106b27862
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 495bcd65f9b69a14b20548de000ff84ea938c418
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839737"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237809"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,7 +25,7 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso Ao enviar. Não há suporte para combinações excluídas.
 
-| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização cumulativa 1 ou posterior) |
+| Client | Exchange Online | Exchange 2016 local<br>(Atualização cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.30 ou posterior|Sim|Não|Não|
@@ -33,7 +33,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 |Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Sim|Sim|
 
 > [!NOTE]
-> O recurso Ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte o servidor atual e o suporte [ao](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) cliente para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O recurso Ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte o servidor atual e o suporte [ao cliente](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 > [!IMPORTANT]
 > Os complementos que usam o recurso Ao enviar não são permitidos no [AppSource.](https://appsource.microsoft.com)
@@ -71,11 +71,13 @@ A captura de tela a seguir mostra uma barra de informações que notifica que o 
 
 Atualmente, o recurso Ao enviar tem as seguintes limitações.
 
-- **Recurso Append-on-send** &ndash; se você chamar o [corpo. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) no manipulador Ao enviar, um erro é retornado.
+- **Recurso Append-on-send** &ndash; Se você chamar o [corpo. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) no manipulador Ao enviar, um erro é retornado.
 - **AppSource** &ndash; Você não pode publicar suplementos do Outlook que usem o recurso Ao enviar no [AppSource](https://appsource.microsoft.com), pois eles falharão na validação do AppSource. Os suplementos que usam o recurso Ao enviar devem ser implantados pelos administradores.
 - **Manifesto** &ndash; Somente um evento `ItemSend` tem suporte por suplemento. Se você tiver dois ou mais eventos `ItemSend` em um manifesto, haverá falha na validação.
 - **Desempenho**&ndash; Várias idas e voltas ao servidor Web que hospeda o suplemento podem afetar o desempenho do suplemento. Considere os efeitos sobre o desempenho quando você cria suplemento que exigem várias mensagens ou operações baseadas em reuniões.
 - **Enviar mais tarde** (somente Mac) &ndash; Se houver suplementos Ao enviar, o recurso **Enviar mais tarde** ficará indisponível.
+
+Além disso, não é recomendável que você chame o manipulador de eventos Ao enviar, pois o fechamento do item deve acontecer automaticamente após a conclusão `item.close()` do evento.
 
 ### <a name="mailbox-typemode-limitations"></a>Limitações de tipo/modo de caixa de correio
 

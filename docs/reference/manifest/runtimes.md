@@ -3,12 +3,12 @@ title: Tempos de execução no arquivo de manifesto
 description: O elemento Runtimes especifica o tempo de execução do seu complemento.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 74bb2b432f46d5876601052003e20ff843e13b06
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: fd672e2592b2e9bfdf7abb0d293b93202d4ad210
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104823"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237963"
 ---
 # <a name="runtimes-element"></a>Elemento Runtimes
 
@@ -42,8 +42,8 @@ No Outlook, esse elemento habilita a ativação de um complemento baseado em eve
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Runtime](runtime.md) | Sim |  O tempo de execução do seu complemento. |
+| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do seu complemento. |
 
 ## <a name="see-also"></a>Confira também
 
-- [Runtime](runtime.md)
+- [Tempo de execução](runtime.md)

@@ -1,38 +1,38 @@
 ---
-title: Implementar Append-on-Send no suplemento do Outlook
-description: Saiba como implementar o recurso Append-on-Send em seu suplemento do Outlook.
+title: Implementar append-on-send no seu complemento do Outlook
+description: Saiba como implementar o recurso append-on-send no seu complemento do Outlook.
 ms.topic: article
-ms.date: 10/14/2020
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 62234f580f6ff6be418f1c252510f234e297b0c6
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626453"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234286"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar Append-on-Send no suplemento do Outlook
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar append-on-send no seu complemento do Outlook
 
-Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
+No final deste passo a passo, você terá um complemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem é enviada.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1,9. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de complemento com o gerador Yeoman para Os Complementos do Office.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar o recurso Append-on-Send no suplemento, você deve incluir a `AppendOnSend` permissão na coleção de [ExtendedPermissions](../reference/manifest/extendedpermissions.md).
+Para habilitar o recurso append-on-send no seu complemento, você deve incluir a permissão na coleção `AppendOnSend` de [ExtendedPermissions](../reference/manifest/extendedpermissions.md).
 
-Para esse cenário, em vez de executar a `action` função ao escolher o botão **executar uma ação** , você executará a `appendOnSend` função.
+Para esse cenário, em vez de executar a função ao escolher o botão Executar uma `action` ação, você executará a  `appendOnSend` função.
 
-1. Em seu editor de código, abra o projeto de início rápido.
+1. No editor de código, abra o projeto de início rápido.
 
-1. Abra o arquivo **manifest.xml** localizado na raiz do seu projeto.
+1. Abra o **manifest.xml** arquivo localizado na raiz do projeto.
 
-1. Selecione o `<VersionOverrides>` nó inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo seguinte XML.
+1. Selecione o nó `<VersionOverrides>` inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,18 +120,18 @@ Para esse cenário, em vez de executar a `action` função ao escolher o botão 
     ```
 
 > [!TIP]
-> Para saber mais sobre manifestos para suplementos do Outlook, confira [manifestos de suplementos do Outlook](manifests.md).
+> Para saber mais sobre manifestos para os complementos do Outlook, confira [manifestos de complementos do Outlook.](manifests.md)
 
-## <a name="implement-append-on-send-handling"></a>Implementar a manipulação de Append-on-Send
+## <a name="implement-append-on-send-handling"></a>Implementar a manipulação append-on-send
 
-Em seguida, implemente Append no evento Send.
+Em seguida, implemente a aplicação de acordo com o evento de envio.
 
 > [!IMPORTANT]
-> Se o suplemento também implementar o [tratamento de eventos ao enviar usando `ItemSend` ](outlook-on-send-addins.md), a chamada `AppendOnSendAsync` no manipulador de envio retornará um erro, pois esse cenário não é suportado.
+> Se o seu complemento [ `ItemSend` ](outlook-on-send-addins.md)também implementa a manipulação de eventos ao enviar usando , chamar o manipulador Ao enviar retornará um erro, pois não há suporte para `AppendOnSendAsync` esse cenário.
 
-Para este cenário, você implementará o acréscimo de um aviso de isenção de responsabilidade ao item quando o usuário enviar.
+Para esse cenário, você implementará a aplicação de um aviso de isenção de responsabilidade ao item quando o usuário enviar.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** em seu editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** seu editor de código.
 
 1. Após a `action` função, insira a seguinte função JavaScript.
 
@@ -167,21 +167,19 @@ Para este cenário, você implementará o acréscimo de um aviso de isenção de
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado se ainda não estiver em execução.
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será lançado se ele ainda não estiver em execução e o seu complemento será sideloaded. 
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
-1. Siga as instruções em [Sideload suplementos do Outlook para teste](sideload-outlook-add-ins-for-testing.md).
+1. Crie uma nova mensagem e adicione-se à **linha** Para.
 
-1. Crie uma nova mensagem e adicione-a à linha **para** .
+1. No menu faixa de opções ou estouro, escolha **Executar uma ação.**
 
-1. No menu faixa de opções ou estouro, escolha **executar uma ação**.
+1. Envie a mensagem e abra-a  na pasta Itens Enviados ou na Caixa de Entrada para exibir o aviso de isenção de responsabilidade. 
 
-1. Envie a mensagem e, em seguida, abra-a na pasta **caixa de entrada** ou **itens enviados** para exibir o aviso de isenção de responsabilidade anexado.
-
-    ![Uma captura de tela de uma mensagem de exemplo com a isenção de responsabilidade anexada em enviar no Outlook na Web.](../images/outlook-web-append-disclaimer.png)
+    ![Uma captura de tela de uma mensagem de exemplo com o aviso de isenção de responsabilidade anexado ao enviar no Outlook na Web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Confira também
 

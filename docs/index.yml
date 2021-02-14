@@ -1,102 +1,118 @@
-### YamlMime:Landing
+### YamlMime:Hub
 title: Documentação de Suplementos do Office
-summary: Use a plataforma de suplementos do Office para criar soluções que estendem aplicativos do Office e interajam com o conteúdo em documentos do Office e em mensagens de email e itens de calendário do Outlook. Com os suplementos do Office, você pode usar tecnologias familiares da Web, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office na Web, Windows, Mac, Android e iOS.
+summary: Use a plataforma de Complementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo em documentos do Office e em itens de calendário e mensagens de email do Outlook. Com os Complementos do Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executados no Office na Web, no Windows, no Mac e em dispositivos móveis.
+brand: office
 metadata:
   title: Documentação de Suplementos do Office
   description: Saiba como criar suplementos do Office.
-  ms.prod: non-product-specific
-  ms.topic: landing-page
+  services: service
+  ms.service: service
+  ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 07/31/2020
-  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.date: 02/12/2021
+  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
+  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363713"
-landingContent:
-- title: Sobre os Suplementos do Office
-  linkLists:
-  - linkListType: concept
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "50238054"
+highlightedContent:
+  items:
+  - itemType: overview
+    title: Visão geral da plataforma de Suplementos do Office
+    url: overview/office-add-ins.md
+  - itemType: quickstart
+    title: Configurar um complemento do Excel em 5 minutos
+    url: quickstarts/excel-quickstart-jquery.md
+  - itemType: learn
+    title: 'Microsoft Learn: Introdução à personalização do cliente do Office com os complementos'
+    url: /learn/modules/intro-office-add-ins
+  - itemType: learn
+    title: 'Microsoft Learn: Estender os clientes do Office com Os Complementos do Office'
+    url: /learn/paths/m365-office-add-in-associate
+  - itemType: whats-new
+    title: Blog do desenvolvedor do Microsoft 365
+    url: https://developer.microsoft.com/office/blogs/technology/add-ins
+  - itemType: how-to-guide
+    title: Guia para iniciantes dos Complementos do Office
+    url: overview/learning-path-beginner.md
+  - itemType: reference
+    title: Documentação de Referência da API JavaScript do Office
+    url: /javascript/api/overview
+  - itemType: sample
+    title: 'GitHub: padrões e práticas para os complementos do Office'
+    url: https://github.com/OfficeDev/PnP-OfficeAddins
+conceptualContent:
+  title: Sua jornada de desenvolvedor
+  summary: ''
+  items:
+  - title: Explorar
     links:
-    - text: Visão geral da plataforma de Suplementos do Office
-      url: overview/office-add-ins.md
-  - linkListType: learn
+    - url: overview/learning-path-beginner.md
+      itemType: get-started
+      text: Introdução aos Suplementos do Office
+    - url: overview/explore-with-script-lab.md
+      itemType: sample
+      text: Testar e experimentar com o Script Lab
+    - url: quickstarts/outlook-quickstart.md
+      itemType: quickstart
+      text: Configurar um complemento do Outlook em 5 minutos
+    - url: quickstarts/powerpoint-quickstart.md
+      itemType: quickstart
+      text: Configurar um complemento do PowerPoint em 5 minutos
+  - title: Compilar
     links:
-    - text: Introdução à personalização do cliente do Office com suplementos
-      url: /learn/modules/intro-office-add-ins/
-    - text: Estender clientes do Office com suplementos do Office
-      url: /learn/paths/m365-office-add-in-associate/
-  - linkListType: overview
+    - url: tutorials/excel-tutorial.md
+      itemType: tutorial
+      text: Desenvolver um complemento completo do Excel
+    - url: tutorials/outlook-tutorial.md
+      itemType: tutorial
+      text: Descobrir o tutorial de complemento do Outlook
+    - url: overview/patterns-and-practices-overview.md
+      itemType: sample
+      text: Usar padrões e práticas comuns
+    - url: /javascript/api/overview
+      itemType: reference
+      text: Ler documentação de referência da API
+  - title: Testar e depurar
     links:
-    - text: Documentação de suplementos do Excel
-      url: excel/index.yml
-    - text: Documentação de suplementos do OneNote
-      url: onenote/index.yml
-    - text: Documentação de suplementos do Outlook
-      url: outlook/index.yml
-    - text: Documentação de suplementos do PowerPoint
-      url: powerpoint/index.yml
-    - text: Documentação de suplementos do Project
-      url: project/index.yml
-    - text: Documentação de suplementos do Word
-      url: word/index.yml
-- title: Introdução
-  linkLists:
-  - linkListType: get-started
+    - url: testing/test-debug-office-add-ins.md
+      itemType: overview
+      text: Confira a visão geral da depuração
+    - url: testing/testing-and-troubleshooting.md
+      itemType: concept
+      text: Solucionar problemas de erros de usuário
+    - url: testing/troubleshoot-manifest.md
+      itemType: architecture
+      text: Verificar o manifesto de um complemento
+  - title: Implantar
     links:
-    - text: Introdução aos Suplementos do Office
-      url: overview/learning-path-beginner.md
-    - text: Explore a API JavaScript do Office usando o Script Lab
-      url: overview/explore-with-script-lab.md
-  - linkListType: quickstart
+    - url: publish/publish.md
+      itemType: deploy
+      text: Explorar opções de implantação
+    - url: publish/centralized-deployment.md
+      itemType: deploy
+      text: Saiba mais sobre a Implantação Centralizada
+  - title: Publicar
     links:
-    - text: Início rápido do suplemento do Excel
-      url: quickstarts/excel-quickstart-jquery.md
-    - text: Início rápido de funções personalizadas do Excel
-      url: quickstarts/excel-custom-functions-quickstart.md
-    - text: Início rápido do suplemento do OneNote
-      url: quickstarts/onenote-quickstart.md
-    - text: Início rápido do suplemento do Outlook
-      url: quickstarts/outlook-quickstart.md
-    - text: Início rápido do suplemento do PowerPoint
-      url: quickstarts/powerpoint-quickstart.md
-    - text: Início rápido do suplemento do Project
-      url: quickstarts/project-quickstart.md
-    - text: Início rápido do suplemento do Word
-      url: quickstarts/word-quickstart.md
-    - text: Início rápido logon único (SSO).
-      url: quickstarts/sso-quickstart.md
-- title: Tutoriais
-  linkLists:
-  - linkListType: tutorial
+    - url: /office/dev/store
+      itemType: overview
+      text: Validar seu Complemento do Office
+    - url: /office/dev/store/add-in-submission-guide
+      itemType: how-to-guide
+      text: Revise o guia de envio da App Store do Microsoft 365
+  - title: Envolver
     links:
-    - text: Tutorial de suplemento do Excel
-      url: tutorials/excel-tutorial.md
-    - text: Tutorial de funções personalizadas do Excel
-      url: tutorials/excel-tutorial-create-custom-functions.md
-    - text: Tutorial de suplemento do Outlook
-      url: tutorials/outlook-tutorial.md
-    - text: Tutorial de suplemento do PowerPoint
-      url: tutorials/powerpoint-tutorial.md
-    - text: Tutorial de suplemento do Word
-      url: tutorials/word-tutorial.md
-- title: Recursos
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Tire dúvidas
-      url: https://stackoverflow.com/questions/tagged/office-js
-    - text: Relatar problemas
-      url: https://github.com/officedev/office-js/issues
-    - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
-    - text: Documentação dos suplementos COM ou VSTO
-      url: /office/client-developer/office-client-development
-    - text: Repositório de amostras PnP de suplementos do Office
-      url: https://github.com/OfficeDev/PnP-OfficeAddins
-    - text: Blogs de suplementos do Office
-      url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
-    - text: Recursos adicionais
-      url: resources/resources-links-help.md
+    - url: https://developer.microsoft.com/office
+      itemType: whats-new
+      text: Participe do Programa para Desenvolvedores
+    - url: https://officespdev.uservoice.com
+      itemType: architecture
+      text: Solicitar recursos
+    - url: https://stackoverflow.com/questions/tagged/office-js
+      itemType: reference
+      text: Fazer perguntas sobre Office.js no Stack Overflow
+    - url: https://github.com/OfficeDev/office-js/issues
+      itemType: reference
+      text: Relatar um bug ou problema

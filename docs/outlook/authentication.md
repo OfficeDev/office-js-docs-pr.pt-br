@@ -1,14 +1,14 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 11/10/2020
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 54584483b7d4fd75e3f2d6c3188465333e9f58d5
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: b53647c8a38051096ef59e7b784f8a00964aa73f
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996393"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234279"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -20,7 +20,7 @@ Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento
 
 > [!NOTE]
 > A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 

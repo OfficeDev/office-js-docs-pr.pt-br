@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook.
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8838a1fb08b37218bf02a8dc0760a317c2e90e86
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: d3a9255ccba922ecaef5aafe8407e98d4ab2fc33
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990509"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234139"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -112,7 +112,7 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 >
 > <sup>3</sup> O suporte de 1.3 no Outlook 2013 foi adicionado como parte da atualização de [8 de dezembro de 2015 do Outlook 2013 (KB3114349).](https://support.microsoft.com/kb/3114349). O suporte para a versão 1.4 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 13 de setembro de 2016 (KB3118280)](https://support.microsoft.com/help/3118280). O suporte para a versão 1.4 no Outlook 2016 (compra única) foi adicionado como parte da [atualização para o Office 2016 de 3 de julho de 2018 (KB4022223)](https://support.microsoft.com/help/4022223).
 >
-> <sup>4</sup> O suporte à pré-visualização do novo Outlook no Mac está disponível a partir da versão 16.38.506. Para obter mais informações, confira a seção [Novo Outlook no Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#new-outlook-on-mac-preview).
+> <sup>4</sup> O suporte para a nova Interface do Usuário do Mac (visualização) está disponível no Outlook versão 16.38.506. Para mais informações, consulte a seção [Suporte de Suplemento no Outlook na nova Interface do Usuário do Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview).
 >
 > <sup>5</sup> No momento, existem considerações adicionais ao se projetar e implementar suplementos para clientes móveis. Por exemplo, o único modo suportado é o Message Read. Para obter mais detalhes, consulte [considerações de código ao adicionar suporte aos comandos de suplemento do Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
 

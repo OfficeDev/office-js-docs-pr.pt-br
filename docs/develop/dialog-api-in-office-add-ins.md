@@ -1,21 +1,21 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
-description: Conheça as noções básicas da criação de uma caixa de diálogo em um complemento do Office.
+description: Conheça as noções básicas da criação de uma caixa de diálogo em um Complemento do Office.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: bece18d6b861db97c1f4b455e8ab4ff9ce83a5a8
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: 9061b4c048a133572e615152d61df611e5f15068
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043880"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237858"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
 Você pode usar a [API de Caixa de diálogo do Office](/javascript/api/office/office.ui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
 
 > [!NOTE]
-> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). Atualmente, a API da Caixa de Diálogo tem suporte para Excel, PowerPoint e Word. O suporte do Outlook está incluído em vários conjuntos de requisitos de Caixa de Correio. Consulte &mdash; a referência de API para obter mais detalhes.
+> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). Atualmente, a API da Caixa de Diálogo tem suporte para Excel, PowerPoint e Word. O suporte do Outlook está incluído em vários conjuntos de requisitos de Caixa de &mdash; Correio, consulte a referência de API para obter mais detalhes.
 
 Um cenário fundamental para a API de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
 
@@ -26,13 +26,13 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 - Hospedar um vídeo que seria muito pequeno se fosse confinado em um painel de tarefas.
 
 > [!NOTE]
-> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, confira o exemplo [do JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) do Complemento do Excel.
+> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, confira o exemplo [do JavaScript SalesTracker para o](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) Complemento do Excel.
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
 ![Captura de tela mostrando a caixa de diálogo com três opções de entrada exibidas na frente do Word](../images/auth-o-dialog-open.png)
 
-A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela *não émodal*– um usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver um.
+A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela *não émodal*– um usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver uma.
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>Abrir uma caixa de diálogo em uma página de host
 
@@ -98,7 +98,7 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - A função `messageParent` só pode ser chamada em uma página com o mesmo domínio (incluindo o protocolo e a porta) da página host.
-> - A `messageParent` função é uma das *duas* APIs JS do Office que podem ser chamadas na caixa de diálogo.
+> - A `messageParent` função é uma das *duas* APIs do Office JS que podem ser chamadas na caixa de diálogo.
 > - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported` . Para saber mais sobre isso, confira [Especificar aplicativos do Office e requisitos de API.](specify-office-hosts-and-api-requirements.md) No entanto, na caixa de diálogo, essa API não é suportada na compra única do Outlook 2016 (ou seja, a versão MSI).
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
@@ -235,9 +235,9 @@ function processMessage(arg) {
 }
 ```
 
-Esse objeto tem um método messageChild que envia qualquer cadeia de `Dialog` caracteres, incluindo [](/javascript/api/office/office.dialog#messagechild-message-) dados em cadeia de caracteres, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. Seu código deve manipular esse evento, conforme mostrado na próxima seção.
+Esse objeto tem um método messageChild que envia qualquer cadeia de `Dialog` caracteres, [](/javascript/api/office/office.dialog#messagechild-message-) incluindo dados em cadeia de caracteres, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. Seu código deve manipular esse evento, conforme mostrado na próxima seção.
 
-Considere um cenário no qual a interface do usuário da caixa de diálogo está relacionada à planilha ativa no momento e à posição dessa planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia as propriedades da planilha do Excel para a caixa de diálogo. Nesse caso, a planilha atual se chama "Minha Planilha" e é a segunda planilha na pasta de trabalho. Os dados são encapsulados em um objeto e stringificados para que possam ser passados para `messageChild` .
+Considere um cenário no qual a interface do usuário da caixa de diálogo está relacionada à planilha ativa no momento e à posição dessa planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia as propriedades da planilha do Excel para a caixa de diálogo. Nesse caso, a planilha atual é chamada de "Minha Planilha" e é a segunda planilha na pasta de trabalho. Os dados são encapsulados em um objeto e stringificados para que possam ser passados para `messageChild` .
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -292,10 +292,10 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Mensagens condicionais da página pai para a caixa de diálogo
 
-Como você pode fazer várias chamadas da página host, mas tem apenas um manipulador na caixa de diálogo para o evento, o manipulador deve usar lógica condicional para distinguir `messageChild` `DialogParentMessageReceived` mensagens diferentes. Você pode fazer isso de uma maneira que seja exatamente paralela a como você estruturaria as mensagens condicionais quando a caixa de diálogo está enviando uma mensagem para a página host, conforme descrito em mensagens [condicionais.](#conditional-messaging)
+Como você pode fazer várias chamadas da página host, mas tem apenas um manipulador na caixa de diálogo para o evento, o manipulador deve usar lógica condicional para distinguir `messageChild` `DialogParentMessageReceived` mensagens diferentes. Você pode fazer isso de uma maneira que seja precisamente paralela a como estruturaria as mensagens condicionais quando a caixa de diálogo está enviando uma mensagem para a página host, conforme descrito em mensagens [condicionais.](#conditional-messaging)
 
 > [!NOTE]
-> Em algumas situações, a API, que faz parte do conjunto de requisitos `messageChild` [DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)pode não ter suporte. Algumas maneiras alternativas para mensagens pai para caixa de diálogo são descritas em maneiras alternativas de passar mensagens para uma caixa de diálogo [de sua página host.](parent-to-dialog.md)
+> Em algumas situações, a API, que faz parte do conjunto de requisitos `messageChild` [DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)pode não ter suporte. Algumas maneiras alternativas para mensagens pai-para-caixa de diálogo são descritas de maneiras alternativas de passar mensagens para uma caixa de diálogo [de sua página host](parent-to-dialog.md).
 
 > [!IMPORTANT]
 > O [conjunto de requisitos DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) não pode ser especificado na seção `<Requirements>` de um manifesto de um complemento. Você terá que verificar se há suporte para DialogApi 1.2 no tempo de execução usando o [método isSetSupported.](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) O suporte para requisitos de manifesto está em desenvolvimento.
@@ -362,7 +362,7 @@ Todos os exemplos a seguir `displayDialogAsync` usam. Alguns têm servidores bas
 - [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Exemplo de monetização SAAS de um complemento do Office](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Exemplo de monetização SAAS de complemento do Office](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
 - [Visualizador de Tokens de Complementos do Outlook](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)

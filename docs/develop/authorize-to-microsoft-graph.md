@@ -1,14 +1,14 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um Complemento do Office podem usar o SSO (single sign-on) para buscar dados do Microsoft Graph.
-ms.date: 07/30/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: d6d06b9d7ff42b72495f513ed2c6b8f6f36df1d0
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 2f72b19023d9c5fdb8e35466bbd64269cbab81ec
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839968"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237859"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
@@ -16,7 +16,7 @@ Os usuários entram no Office (plataformas online, de dispositivos móveis e de 
 
 > [!NOTE]
 > A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Arquitetura de suplemento para SSO e Microsoft Graph
 
@@ -71,9 +71,9 @@ Quando um administrador do Microsoft 365 adquire um complemento do [AppSource,](
 
 Se o seu código passar a opção na chamada de , like , o Office pode solicitar o consentimento do usuário se o `allowConsentPrompt` `getAccessToken` Azure AD relata ao Office que o consentimento ainda não foi concedido ao `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` complemento. No entanto, por motivos de segurança, o Office só pode solicitar que o usuário consenta com o escopo do Azure `profile` AD. *O Office não pode solicitar consentimento para quaisquer escopos do Microsoft Graph,* nem mesmo `User.Read` . Isso significa que, se o usuário conceder consentimento no prompt, o Office retornará um token de bootstrap. Mas a tentativa de trocar o token de bootstrap por um token de acesso para o Microsoft Graph falhará com o erro AADSTS65001, o que significa que o consentimento (para escopos do Microsoft Graph) não foi concedido.
 
-Seu código pode e deve lidar com esse erro voltando a um sistema alternativo de autenticação, que solicitará ao usuário o consentimento para os escopos do Microsoft Graph. (Para exemplos de código, confira Criar um Node.js do Office que usa o single [sign-on](create-sso-office-add-ins-nodejs.md) e criar um ASP.NET Do Office que usa o single [sign-on](create-sso-office-add-ins-aspnet.md) e os exemplos aos que eles vinculam.) Mas todo o processo requer várias viagens de ida e volta ao Azure AD. Você pode evitar essa penalidade de desempenho incluindo `forMSGraphAccess` a opção na chamada de ; por `getAccessToken` exemplo, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Isso sinaliza para o Office que seu complemento precisa de escopos do Microsoft Graph. O Office pedirá ao Azure AD para verificar se o consentimento para os escopos do Microsoft Graph já foi concedido ao complemento. Se tiver sido, o token de bootstrap será retornado. Se não tiver, a chamada retornará `getAccessToken` o erro 13012. Seu código pode lidar com esse erro voltando a um sistema alternativo de autenticação imediatamente, sem tentar trocar tokens com o Azure AD.
+Seu código pode e deve lidar com esse erro voltando a um sistema alternativo de autenticação, que solicitará ao usuário o consentimento para os escopos do Microsoft Graph. (Para ver exemplos de código, confira Criar um Node.js do Office que usa o single [sign-on](create-sso-office-add-ins-nodejs.md) e criar um ASP.NET Do Office que usa o single [sign-on](create-sso-office-add-ins-aspnet.md) e os exemplos aos que eles vinculam.) Mas todo o processo requer várias viagens de ida e volta ao Azure AD. Você pode evitar essa penalidade de desempenho incluindo `forMSGraphAccess` a opção na chamada de ; por `getAccessToken` exemplo, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Isso sinaliza para o Office que seu complemento precisa de escopos do Microsoft Graph. O Office pedirá ao Azure AD para verificar se o consentimento para os escopos do Microsoft Graph já foi concedido ao complemento. Se tiver sido, o token de bootstrap será retornado. Se não tiver, a chamada retornará `getAccessToken` o erro 13012. Seu código pode lidar com esse erro voltando a um sistema alternativo de autenticação imediatamente, sem tentar trocar tokens com o Azure AD.
 
-Como prática melhor, sempre passe para quando o seu complemento for distribuído no AppSource e precisar de `forMSGraphAccess` `getAccessToken` escopos do Microsoft Graph.
+Como prática prática, sempre passe para quando o seu complemento for distribuído no AppSource e precisar de `forMSGraphAccess` `getAccessToken` escopos do Microsoft Graph.
 
 > [!TIP]
 > Se você desenvolver um complemento do Outlook que usa SSO e  realizar o sideload dele para teste, o Office sempre retornará o erro 13012 quando for passado, mesmo que o consentimento do administrador tenha sido `forMSGraphAccess` `getAccessToken` concedido. Por esse motivo, você deve comentar a `forMSGraphAccess` opção **ao desenvolver** um complemento do Outlook. Certifique-se de descompactar a opção ao implantar para produção. O falso 13012 só acontece quando você está fazendo sideload no Outlook.

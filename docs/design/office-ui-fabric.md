@@ -1,18 +1,18 @@
 ---
 title: Office UI Fabric em suplementos do Office
-description: Obtenha uma visão geral de como usar os componentes do Office UI Fabric em suplementos do Office.
-ms.date: 10/29/2020
+description: Obter uma visão geral de como usar os componentes do Office UI Fabric em Complementos do Office.
+ms.date: 2/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c4a13c615fe63183f595e24895b9fe6054fdc05d
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 9799d98d795486203e4bcc23bffc043c2ead6e28
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996372"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237676"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric em suplementos do Office
 
-O Office UI Fabric é uma estrutura de front-end JavaScript destinada à criação de experiências de usuário para Office e Office 365. O Fabric fornece componentes com foco em efeitos visuais que você pode estender, reformular e usar no suplemento do Office. Como o Fabric usa a linguagem de design da Microsoft, os componentes da experiência de usuário do Fabric são semelhantes a uma extensão natural do Office.
+O Office UI Fabric é uma estrutura de front-end JavaScript para criar experiências de usuário para o Office. O Fabric fornece componentes com foco em efeitos visuais que você pode estender, reformular e usar no suplemento do Office. Como o Fabric usa a linguagem de design da Microsoft, os componentes da experiência de usuário do Fabric são semelhantes a uma extensão natural do Office.
 
 Se estiver criando um suplemento, recomendamos usar o Office UI Fabric para criar a experiência de usuário. O uso do Office UI Fabric é opcional.
 
@@ -44,9 +44,9 @@ Para começar a usar o Fabric Core:
 
 ## <a name="use-fabric-components"></a>Uso dos componentes do Fabric
 
-O Fabric fornece uma variedade de componentes do UX que você pode usar para criar seu suplemento. Não esperamos que todos os componentes do Fabric sejam usados por um único suplemento. Determinar os melhores componentes para a experiência do seu cenário e do usuário (por exemplo, pode ser difícil exibir um [breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb) no painel de tarefas corretamente).
+O Fabric fornece uma variedade de componentes da UX que você pode usar para criar seu complemento. Não esperamos que todos os componentes do Fabric sejam usados por um único complemento. Determine os melhores componentes para seu cenário e experiência do usuário [](https://developer.microsoft.com/fabric#/components/breadcrumb) (por exemplo, pode ser difícil exibir corretamente uma navegação de navegação no painel de tarefas).
 
-Veja a seguir uma lista de [componentes de UX de reagem de malha](https://developer.microsoft.com/fluentui#/controls/web) comum que recomendamos para uso em um suplemento:
+Veja a seguir uma lista de componentes comuns da experiência de usuário do [Fabric React](https://developer.microsoft.com/fluentui#/controls/web) que recomendamos para uso em um complemento:
 
 - [Botão](https://developer.microsoft.com/fabric#/components/button)
 - [Caixa de seleção](https://developer.microsoft.com/fabric#/components/checkbox)
@@ -63,4 +63,4 @@ Você pode usar diferentes estruturas do JavaScript, como Angular ou React, para
 |**Framework**|**Exemplo**|
 |:------------|:----------|
 |**React**|[Uso do Office UI Fabric React em suplementos do Office](using-office-ui-fabric-react.md )|
-|**Angular**| [Considere quebrar componentes do Fabric com componentes angulares 2](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
+|**Angular**| [Considere a possibilidade de quebra de componentes do Fabric com componentes do Angular 2](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
