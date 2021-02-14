@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7460ca65313480cc4518bdfb30447dc83288debe
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741047"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237760"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -82,7 +82,7 @@ Painéis personalizados de interface do usuário e de tarefa são especificados 
 
 #### <a name="custom-buttons-and-menu-commands"></a>Botões e comandos de menu personalizados  
 
-Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções, tanto no Office para Área de Trabalho do Windows quanto no Office Online. Isso facilita o acesso dos usuários ao suplemento diretamente do aplicativo do Office. Botões de comando podem iniciar diferentes ações, como mostrar um painel de tarefas com código HTML personalizado ou executar uma função JavaScript.  
+Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções do Office na Web e no Windows. Isso facilita o acesso dos usuários ao seu suplemento diretamente no aplicativo do Office. Os botões de comando podem iniciar ações diferentes, como mostrar um painel de tarefas com HTML personalizado ou executar uma função JavaScript.  
 
 *Figura 3. Comandos do suplemento na faixa de opções*
 
@@ -123,8 +123,8 @@ Para obter uma introdução mais detalhada sobre o desenvolvimento de Suplemento
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
-- [Publicar Suplementos do Office](../publish/publish.md)
+- [Publish Office Add-ins](../publish/publish.md)
 - [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

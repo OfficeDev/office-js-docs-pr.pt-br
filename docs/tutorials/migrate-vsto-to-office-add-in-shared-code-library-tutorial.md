@@ -1,39 +1,39 @@
 ---
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 ms.prod: non-product-specific
-description: Tutorial sobre como compartilhar código entre um suplemento VSTO e um suplemento do Office.
-title: 'Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office usando uma biblioteca de códigos compartilhado'
+description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
+title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 localization_priority: Priority
-ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131742"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238089"
 ---
-# <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office com uma biblioteca de códigos compartilhadas
+# <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
 Os suplementos do Visual Studio Tools for Office (VSTO) são ótimos para a ampliação do Office para fornecer soluções para seus negócios ou para outras pessoas. Eles já estão por aqui há muito tempo e há milhares de soluções criadas com o VSTO. No entanto, eles só são executados no Office no Windows. Não é possível executar suplementos VSTO no Mac, online ou em plataformas móveis.
 
-Os suplementos do Office usam HTML, JavaScript e tecnologias da Web adicionais para criar soluções do Office em todas as plataformas. Migrar seu suplemento existente do VSTO para um suplemento do Office é uma ótima maneira de disponibilizá-lo em todas as plataformas.
+Os suplementos do Office usam HTML, JavaScript e tecnologias da Web adicionais para criar soluções do Office em todas as plataformas. Migrar seu Suplemento VSTO existente para um Suplemento do Office é uma ótima maneira de disponibilizá-lo em todas as plataformas.
 
-Talvez você queira manter o suplemento VSTO e um novo suplemento do Office que tenham a mesma funcionalidade. Isso permite que você continue servindo aos clientes que usam o suplemento VSTO no Office no Windows. Isso também permite fornecer a mesma funcionalidade em um suplemento do Office para clientes em todas as plataformas. Você também pode [tornar seu suplemento do Office compatível com o suplemento VSTO existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+Talvez você queira manter o Suplemento VSTO e um novo Suplemento do Office que tenham a mesma funcionalidade. Isso permite que você continue servindo aos clientes que usam o suplemento VSTO no Office no Windows. Isso também permite fornecer a mesma funcionalidade em um Suplemento do Office para clientes em todas as plataformas. Você também pode [Tornar seu Suplemento do Office compatível com o Suplemento VSTO existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
-No entanto, é melhor evitar a reconfiguração de todo o código de seu suplemento VSTO para o suplemento do Office. Este tutorial mostra como evitar a reconfiguração de código usando uma biblioteca compartilhadas de códigos para ambos os suplementos.
+No entanto, é melhor evitar a reconfiguração de todo o código de seu Suplemento VSTO para o Suplemento do Office. Este tutorial mostra como evitar a reconfiguração de código usando uma biblioteca compartilhadas de códigos para ambos os suplementos.
 
 ## <a name="shared-code-library"></a>Biblioteca de códigos compartilhados
 
-Este tutorial orientará você pelas etapas de identificação e compartilhamento de códigos comuns entre seu suplemento VSTO e um suplemento moderno do Office. Ele usa um exemplo de suplemento VSTO muito simples para as etapas para que você possa se concentrar nas habilidades e técnicas necessárias para trabalhar com seus próprios suplementos do VSTO.
+Este tutorial orientará você pelas etapas de identificação e compartilhamento de códigos comuns entre seu Suplemento VSTO e um Suplemento do Office moderno. Ele usa um exemplo de suplemento VSTO muito simples para as etapas para que você possa se concentrar nas habilidades e técnicas necessárias para trabalhar com seus próprios suplementos do VSTO.
 
-O diagrama a seguir mostra como a biblioteca de códigos compartilhada funciona para migração. O código comum é refatorado em uma nova biblioteca de códigos compartilhadas. O código pode permanecer escrito em seu idioma original, como o C# ou o VB. Isso significa que você pode continuar usando o código do suplemento VSTO existente, criando uma referência do projeto. Quando você cria o suplemento do Office, ele também usa a biblioteca compartilhadas de códigos chamando-a por APIs REST.
+O diagrama a seguir mostra como a biblioteca de códigos compartilhada funciona para migração. O código comum é refatorado em uma nova biblioteca de códigos compartilhadas. O código pode permanecer escrito em seu idioma original, como o C# ou o VB. Isso significa que você pode continuar usando o código do suplemento VSTO existente, criando uma referência do projeto. Ao criar o Suplemento do Office, ele também usará a biblioteca de códigos compartilhados chamando-a através de APIs REST.
 
-![Diagrama de suplemento VSTO e suplemento do Office usando uma biblioteca de códigos compartilhados](../images/vsto-migration-shared-code-library.png)
+![Diagrama de Suplemento VSTO e Suplemento do Office usando uma biblioteca de códigos compartilhados](../images/vsto-migration-shared-code-library.png)
 
 Habilidades e técnicas neste tutorial:
 
 - Criar uma biblioteca de classe compartilhada, refatorando o código em uma biblioteca de classe do .NET.
 - Crie um invólucro da API REST usando ASP.NET Core para a biblioteca de classe compartilhada.
-- Chame a API REST do suplemento do Office para acessar o código compartilhado.
+- Chame a API REST do Suplemento do Office para acessar o código compartilhado.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -50,17 +50,17 @@ Para configurar seu ambiente de desenvolvimento:
 
 Também são necessários:
 
-- Uma conta do Microsoft 365. Você pode se cadastrar no [programa de desenvolvedores do Microsoft 365](https://aka.ms/devprogramsignup), que inclui um ano de assinatura gratuita do Office 365.
+- Uma conta do Microsoft 365. Participe do [programa para desenvolvedores do Microsoft 365](https://aka.ms/devprogramsignup) que oferece uma assinatura renovável do Microsoft 365 de 90 dias que inclui aplicativos do Office.
 - Um Locatário do Microsoft Azure. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>O suplemento VSTO do analisador de células
 
-Este tutorial usa a solução PnP [Biblioteca compartilhada do suplemento VSTO para o suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). A pasta **/start** contém a solução de suplemento VSTO que você migrará. Sua meta é migrar o suplemento VSTO para um suplemento moderno do Office, quando possível.
+Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). A pasta **/start** contém a solução de suplemento VSTO que você migrará. Sua meta é migrar o Suplemento VSTO para um Suplemento do Office moderno, quando possível.
 
 > [!NOTE]
 > O exemplo usa C#, mas você pode aplicar as técnicas deste tutorial a um suplemento VSTO escrito em qualquer linguagem .NET.
 
-1. Baixe a solução PnP [Biblioteca compartilhada do suplemento VSTO para o suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration)para trabalhar em um arquivo em seu computador.
+1. Baixe a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) para trabalhar em um arquivo em seu computador.
 1. Inicie o Visual Studio 2019 e abra a solução **/start/Cell-Analyzer.sln**.
 1. No menu **Depurar**, selecione **Iniciar Depuração**.
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no projeto **Cell-Analyzer** e escolha **Propriedades**.
@@ -72,17 +72,17 @@ O suplemento é um painel de tarefas personalizado do Excel. Você pode selecion
 
 ![Captura de tela do suplemento VSTO do Analisador de células executado em Excel com o botão "Mostrar Unicode" e Seção de resultados vazia](../images/pnp-cell-analyzer-vsto-add-in.png)
 
-## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>Análise dos tipos de código no Suplemento VSTO
+## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>Análise de tipos de código no suplemento VSTO
 
 A primeira técnica a ser aplicada é analisar o suplemento para quais partes do código podem ser compartilhadas. Em geral, o Project é dividido em três tipos de códigos.
 
 ### <a name="ui-code"></a>Código IU
 
-O código da IU interage com o usuário. O código da interface de usuário do VSTO funciona com formulários do Windows. Os suplementos do Office usam HTML, CSS e JavaScript para IU. Devido a essas diferenças, não é possível compartilhar o código da interface do usuário com o suplemento do Office. A IU deve ser recriada em JavaScript.
+O código da IU interage com o usuário. O código da interface de usuário do VSTO funciona com formulários do Windows. Os suplementos do Office usam HTML, CSS e JavaScript para IU. Devido a essas diferenças, não é possível compartilhar o código da interface de usuário com o Suplemento do Office. A IU deve ser recriada em JavaScript.
 
 ### <a name="document-code"></a>Código do documento
 
-O código VSTO interage com o documento por meio de objetos .NET, como `Microsoft.Office.Interop.Excel.Range`. No entanto, os suplementos do Office usam a biblioteca Office.js. Embora sejam similares, eles não são exatamente iguais. Portanto, você não pode compartilhar o código de interação do documento com o suplemento do Office.
+O código VSTO interage com o documento por meio de objetos .NET, como `Microsoft.Office.Interop.Excel.Range`. No entanto, os suplementos do Office usam a biblioteca Office.js. Embora sejam similares, eles não são exatamente iguais. Portanto, você não pode compartilhar o código de interação do documento com o Suplemento do Office.
 
 ### <a name="logic-code"></a>Código lógico
 
@@ -91,10 +91,10 @@ A lógica empresarial, algoritmos, funções auxiliares e um código semelhante 
 Vamos examinar o suplemento VSTO. No código a seguir, cada seção é identificada como um código de documento, IU ou de algoritmo.
 
 ```csharp
-// **_ UI CODE _*_
+// *** UI CODE ***
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // _*_ DOCUMENT CODE _*_
+    // *** DOCUMENT CODE ***
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // _*_ ALGORITHM CODE _*_
+    // *** ALGORITHM CODE ***
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -115,16 +115,16 @@ private void btnUnicode_Click(object sender, EventArgs e)
         result += $"{c}: {unicode}\r\n";
     }
 
-    // _*_ UI CODE _*_
+    // *** UI CODE ***
     //Output the result
     txtResult.Text = result;
 }
 ```
 
-Com essa abordagem, você pode ver que uma seção de código pode ser compartilhada com o suplemento do Office. O código a seguir precisará ser refatorado em uma biblioteca de classe separada.
+Com essa abordagem, você pode ver que uma seção de código pode ser compartilhada com o Suplemento do Office. O código a seguir precisará ser refatorado em uma biblioteca de classe separada.
 
 ```csharp
-// _*_ ALGORITHM CODE _*_
+// *** ALGORITHM CODE ***
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,8 +139,8 @@ foreach (char c in cellValue)
 
 Os suplementos do VSTO são criados no Visual Studio como projetos .NET, portanto, reutilizaremos o .NET o máximo possível para simplificar. Nossa próxima técnica é criar uma biblioteca de classe e um código compartilhado de refatoração nessa biblioteca de classe.
 
-1. Caso você ainda não o tenha feito, inicie o Visual Studio 2019 e abra a solução *\start\Cell-Analyzer.sln**.
-2. Clique com botão direito do mouse da solução em **Gerenciador de soluções** e escolha **Adicionar > Novo projeto**.
+1. Caso ainda não o tenha feito, inicie o Visual Studio 2019 e abra a solução **\start\Cell-Analyzer.sln**.
+2. Clique com botão direito do mouse da solução no **Gerenciador de Soluções** e escolha **Adicionar > Novo Projeto**.
 3. Na caixa de diálogo **Adicionar um novo projeto**, escolha **Biblioteca de Classe (.NET Framework)** e escolha **Próximo**.
     > [!NOTE]
     > Não use a biblioteca de classe central do .NET porque ela não funcionará com seu projeto do VSTO.
@@ -171,7 +171,7 @@ public class CellOperations
 
 ### <a name="use-the-shared-class-library-in-the-vsto-add-in"></a>Use a biblioteca de classe compartilhada no suplemento VSTO
 
-Agora, você precisa atualizar o suplemento VSTO para usar a biblioteca de classe. É importante que o suplemento VSTO e o suplemento do Office usem a mesma biblioteca de classes compartilhadas para que correções de bugs futuras ou recursos sejam feitos em um único local.
+Agora, você precisa atualizar o suplemento VSTO para usar a biblioteca de classe. É importante que o Suplemento VSTO e o Suplemento do Office usem a mesma biblioteca de classes compartilhadas para que correções de bugs ou recursos futuros sejam feitos em um único local.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse em **Cell-Analyzer** e escolha **Adicionar referência**.
 2. Selecione **CellAnalyzerSharedLibrary** e escolha **OK**.
@@ -199,7 +199,7 @@ Agora, você precisa atualizar o suplemento VSTO para usar a biblioteca de class
 
 ## <a name="create-a-rest-api-wrapper"></a>Criar um invólucro da API REST
 
-O suplemento VSTO pode usar a biblioteca de classes compartilhadas diretamente, uma vez que ambos são projetos .NET. No entanto, o suplemento do Office não poderá usar o .NET, uma vez que ele usa o JavaScript. Em seguida, você precisará criar um invólucro da API REST. Isso permite que o suplemento do Office chame uma API REST, que passa a chamada para a biblioteca de classes compartilhadas.
+O suplemento VSTO pode usar a biblioteca de classes compartilhadas diretamente, uma vez que ambos são projetos .NET. No entanto, o Suplemento do Office não poderá usar o .NET, uma vez que ele usa o JavaScript. Em seguida, você precisará criar um invólucro da API REST. Isso permite que o Suplemento do Office chame uma API REST, que passa a chamada para a biblioteca de classes compartilhadas.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no **Cell-Analyzer** e escolha **Adicionar > Novo Projeto**.
 2. Em **Adicionar uma nova caixa de diálogo do projeto**, escolha **Aplicativo Web ASP.NET Core** e escolha **Próximo**.
@@ -233,9 +233,9 @@ O suplemento VSTO pode usar a biblioteca de classes compartilhadas diretamente, 
 15. No menu **Depurar**, selecione **Iniciar Depuração**.
 16. Um navegador será iniciado. Insira a seguinte URL para testar se a API REST está funcionando: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. Você pode reutilizar o número da porta na URL no navegador que o Visual Studio iniciou. Você deverá ver uma cadeia de caracteres retornada com valores Unicode para cada caractere.
 
-## <a name="create-the-office-add-in"></a>Criar o suplemento do Office
+## <a name="create-the-office-add-in"></a>Criar o Suplemento do Office
 
-Quando você cria o suplemento do Office, ele faz uma chamada para a API REST. Mas, primeiro, você precisa obter o número da porta do servidor da API REST e salvá-lo para mais tarde.
+Ao criar o Suplemento do Office, ele faz uma chamada para a API REST. Mas, primeiro, você precisa obter o número da porta do servidor da API REST e salvá-lo para mais tarde.
 
 ### <a name="save-the-ssl-port-number"></a>Salve o número da porta SSL
 
@@ -243,9 +243,9 @@ Quando você cria o suplemento do Office, ele faz uma chamada para a API REST. M
 2. No projeto **CellAnalyzerRESTAPI**, expanda **Propriedades** e abra o arquivo **launchSettings. JSON**.
 3. Localize a linha de código com o valor **sslPort**, copie o número da porta e salve-o em algum lugar.
 
-### <a name="add-the-office-add-in-project"></a>Adicione o projeto de suplemento do Office
+### <a name="add-the-office-add-in-project"></a>Adicione o projeto do Suplemento do Office
 
-Para simplificar, mantenha todo o código em uma solução. Adicione o projeto do suplemento do Office à solução existente do Visual Studio. No entanto, se você estiver familiarizado com o [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office) e do Código do Visual Studio, também poderá executar `yo office` para criar o projeto. As etapas são muito semelhantes.
+Para simplificar, mantenha todo o código em uma solução. Adicione o projeto do Suplemento do Office à solução existente do Visual Studio. No entanto, se você estiver familiarizado com o [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office) e do Código do Visual Studio, também poderá executar `yo office` para criar o projeto. As etapas são muito semelhantes.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse na solução **Cell-Analyzer** e escolha **Adicionar > Novo projeto**.
 2. Na **caixa de diálogo Adicionar um novo projeto**, clique em **Suplemento do Web Add-in** e escolha **Próximo**.
@@ -261,7 +261,7 @@ Dois projetos serão criados:
 - **CellAnalyzerOfficeAddin** - este projeto configura os arquivos XML de manifesto que descrevem o suplemento, para que o Office possa carregá-lo corretamente. Ele contém o ID, nome, descrição e outras informações sobre o suplemento.
 - **CellAnalyzerOfficeAddinWeb** - este projeto contém recursos da Web para seu suplemento, como HTML, CSS e scripts. Ele também configura uma instância do IIS Express para hospedar seu suplemento como um aplicativo Web.
 
-### <a name="add-ui-and-functionality-to-the-office-add-in"></a>Adicionar interface de usuário e funcionalidade ao suplemento do Office
+### <a name="add-ui-and-functionality-to-the-office-add-in"></a>Adicionar interface de usuário e funcionalidade ao Suplemento do Office
 
 1. No **Gerenciador de soluções**, expanda o projeto **CellAnalyzerOfficeAddinWeb**.
 2. Abra o arquivo **Home.HTML** e substitua o conteúdo de `<body>` pela seguinte HTML.
@@ -308,11 +308,11 @@ Dois projetos serão criados:
 
 4. No código anterior, digite o número **sslPort** que você salvou anteriormente pelo arquivo **. JSON**.
 
-No código anterior, a cadeia de caracteres retornada será processada para substituir alimentações de linha de retorno de carro por marcas `<br>` HTML. Algumas vezes, você pode encontrar situações em que um valor de retorno que funcione perfeitamente para o .NET precisará ser ajustado no suplemento do Office para trabalhar conforme o esperado no suplemento VSTO . Nesse caso, a API REST e a biblioteca de classes compartilhadas só se preocupam em retornar a cadeia de caracteres. O método `showUnicode()` é responsável pela formatação de valores retornados corretamente para a apresentação.
+No código anterior, a cadeia de caracteres retornada será processada para substituir alimentações de linha de retorno de carro por marcas `<br>` HTML. Algumas vezes, você pode encontrar situações em que um valor de retorno que funcione perfeitamente para o .NET precisará ser ajustado no Suplemento do Office para trabalhar conforme o esperado no Suplemento VSTO . Nesse caso, a API REST e a biblioteca de classes compartilhadas só se preocupam em retornar a cadeia de caracteres. O método `showUnicode()` é responsável pela formatação de valores retornados corretamente para a apresentação.
 
-### <a name="allow-cors-from-the-office-add-in"></a>Permitir CORS no suplemento do Office
+### <a name="allow-cors-from-the-office-add-in"></a>Permitir CORS no Suplemento do Office
 
-A biblioteca do Office. js exige o CORS nas chamadas de saída, como a realizada na chamada `ajax` para o servidor de API REST. Use as etapas a seguir para permitir chamadas do suplemento do Office para a API REST.
+A biblioteca do Office. js exige o CORS nas chamadas de saída, como a realizada na chamada `ajax` para o servidor de API REST. Use as etapas a seguir para permitir chamadas do Suplemento do Office para a API REST.
 
 1. No **Gerenciador de soluções**, selecione o projeto **CellAnalyzerOfficeAddinWeb**.
 2. No menu **Exibir**, escolha **Janela Propriedades** (se a janela ainda não estiver sendo exibida).
@@ -417,7 +417,7 @@ public class Startup
 4. Escolha **OK**.
 5. No menu **Depurar**, selecione **Iniciar Depuração**.
 
-O Excel será executado e fará o carregamento lateral do suplemento do Office. Você pode testar se o serviço de API do localhost REST está funcionando corretamente, inserindo um valor de texto em uma célula e escolhendo o botão **Mostrar Unicode** no suplemento do Office. Ele deve chamar a API REST e exibir os valores Unicode para os caracteres de texto.
+O Excel será executado e fará o carregamento lateral do Suplemento do Office. Você pode testar se o serviço de API REST do localhost está funcionando corretamente, inserindo um valor de texto em uma célula e escolhendo o botão **Mostrar Unicode** no Suplemento do Office. Ele deve chamar a API REST e exibir os valores Unicode para os caracteres de texto.
 
 ## <a name="publish-to-an-azure-app-service"></a>Publicar em um serviço de aplicativo do Azure
 
@@ -432,9 +432,9 @@ Eventualmente, você deseja publicar o projeto da API REST na nuvem. Nas etapas 
 
 Agora você pode testar o serviço. Abra um navegador e insira uma URL que vai diretamente para o novo serviço. Por exemplo, use `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` onde *myappservice* é o nome exclusivo que você criou para o novo serviço de aplicativo.
 
-### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Usar o serviço de aplicativo Azure do suplemento do Office
+### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Usar o Serviço de Aplicativo do Azure do Suplemento do Office
 
-A etapa final é atualizar o código no suplemento do Office para usar o serviço do aplicativo Azure, em vez de localhost.
+A etapa final é atualizar o código no Suplemento do Office para usar o Serviço de Aplicativo do Azure, em vez de localhost.
 
 1. No **Gerenciador de soluções**, expanda o projeto **CellAnalyzerOfficeAddinWeb** e abra o arquivo **Home. js**.
 1. Altere a constante `url` para usar a URL do serviço do aplicativo Azure, como mostra a linha de código a seguir. Substitua `<myappservice>` pelo nome exclusivo que você criou para o novo serviço de aplicativo.
@@ -451,8 +451,8 @@ A etapa final é atualizar o código no suplemento do Office para usar o serviç
 1. Escolha **OK**.
 1. No menu **Depurar**, selecione **Iniciar Depuração**.
 
-O Excel será executado e fará o carregamento lateral do suplemento do Office. Para testar se o serviço de aplicativo está funcionando corretamente, insira um valor de texto em uma célula e escolha **Mostrar Unicode** no suplemento do Office. Ele deve chamar o serviço e exibir os valores Unicode para os caracteres de texto.
+O Excel será executado e fará o carregamento lateral do Suplemento do Office. Para testar se o Serviço de Aplicativo está funcionando corretamente, insira um valor de texto em uma célula e escolha **Mostrar Unicode** no Suplemento do Office. Ele deve chamar o serviço e exibir os valores Unicode para os caracteres de texto.
 
 ## <a name="conclusion"></a>Conclusão
 
-Neste tutorial você aprendeu a criar um suplemento do Office que usa um código compartilhado com o suplemento VSTO original. Você aprendeu como manter o código VSTO do Office no Windows e um suplemento do Office para o Office em outras plataformas. Você refatorou o código C # do VSTO em uma biblioteca compartilhada e o implantou em um Serviço de Aplicativo do Azure. Você criou um suplemento do Office que usa a biblioteca compartilhadas para que não seja necessário regravar o código em JavaScript.
+Neste tutorial você aprendeu a criar um Suplemento do Office que usa um código compartilhado com o Suplemento VSTO original. Você aprendeu como manter o código VSTO do Office no Windows e um Suplemento do Office para o Office em outras plataformas. Você refatorou o código C # do VSTO em uma biblioteca compartilhada e o implantou em um Serviço de Aplicativo do Azure. Você criou um Suplemento do Office que usa a biblioteca compartilhadas para que não seja necessário regravar o código em JavaScript.

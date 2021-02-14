@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 735526c1ac85ba67d45d8a9c0b14da271e52796a
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131827"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238103"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -161,7 +161,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
 4. Faça uma alteração no parágrafo.
 
-5. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo aparece acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
+5. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
 
     ![Captura de tela mostrando o botão Inserir Parágrafo no suplemento](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -505,7 +505,7 @@ function insertTextIntoRange() {
 
 6. Na função `insertTextBeforeRange()`, substitua `TODO1` pelo código a seguir. Observação:
 
-   - O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Office 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+   - O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Microsoft 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
    - O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser adicionada.
 
@@ -531,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Substitua `TODO3` pelo seguinte código. Este novo parágrafo demonstrará o fato de que o novo texto **_não_* _ faz parte do intervalo original selecionado. O intervalo original ainda possui apenas o texto que tinha quando foi selecionado.
+8. Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,7 +545,7 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>Substitua o texto de um intervalo.
 
-1. Abra o arquivo _*./src/taskpane/taskpane.html**.
+1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 2. Localize o elemento `<button>` para o botão `insert-text-outside-range` e adicione a seguinte marcação após essa linha:
 
@@ -602,13 +602,13 @@ function insertTextIntoRange() {
 
 5. Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.
 
-6. No documento, selecione a frase "Office 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
+6. No documento, selecione a frase "Microsoft 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
-7. Escolha o botão **Adicionar Informações de Versão**. "Office 2019" está inserido entre "Office 2016" e "Office 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.
+7. Escolha o botão **Adicionar Informações de Versão**. O "Office 2019" está inserido entre o "Office 2016" e o "Microsoft 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.
 
 8. No documento, selecione a palavra "vários". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
-9. Escolha o botão **Alterar Termo de Quantidade**. Observe que "muitos" substitui o texto selecionado.
+9. Escolha o botão **Alterar Termo de Quantidade**. "muitos" substitui o texto selecionado.
 
     ![Captura de tela mostrando os resultados da escolha dos botões de suplemento Inserir Abreviatura, Adicionar Informações da Versão e Alterar Quantidade de Termo](../images/word-tutorial-text-replace-2.png)
 
@@ -857,7 +857,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 6. Na função `createContentControl()`, substitua `TODO1` pelo código a seguir. Observação:
 
-   - o código tem como objetivo dispor a frase "Office 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+   - O código tem como objetivo dispor a frase "Microsoft 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
    - A propriedade `ContentControl.title` especifica o título visível do controle de conteúdo.
 
@@ -931,9 +931,9 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 2. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-3. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo com "Office 365" no início do documento.
+3. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo com "Microsoft 365" no início do documento.
 
-4. No documento, selecione o texto "Office 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
+4. No documento, selecione o texto "Microsoft 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
 
 5. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
 
