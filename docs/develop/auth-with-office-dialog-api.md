@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 195b17d81a7a6c6de1930d3fc8710f0fce153e9f
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 1d7bb4fc6828ffeb339fc6ff053d8ba99c73f582
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131924"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237872"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -87,7 +87,7 @@ Esses objetos de contexto de autenticação e os métodos que os criam não pode
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Como usar as bibliotecas através da API da Caixa de Diálogo do Office
 
-Além dos objetos monolíticos de "contexto de autenticação", a maioria das bibliotecas fornecem APIs em um nível inferior de abstração que permite que o código crie objetos auxiliares menos monolíticos. Por exemplo, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x tem uma API para construir uma URL de logon e outra API que constrói um objeto AuthResult que contém um token de acesso em uma propriedade que pode ser acessada pelo código. Para obter exemplos de MSAL.NET em um suplemento do Office, confira: [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) e [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). Para ver um exemplo de como usar o [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) em um suplemento, confira [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React).
+Além dos objetos monolíticos de "contexto de autenticação", a maioria das bibliotecas fornecem APIs em um nível inferior de abstração que permite que o código crie objetos auxiliares menos monolíticos. Por exemplo, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x tem uma API para construir uma URL de logon e outra API que constrói um objeto AuthResult que contém um token de acesso em uma propriedade que pode ser acessada pelo código. Para obter exemplos de MSAL.NET em um Suplemento do Office, confira: [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) e [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). Para ver um exemplo de como usar o [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) em um suplemento, confira [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React).
 
 Para saber mais sobre as bibliotecas de autenticação e autorização, confira [Microsoft Graph: bibliotecas recomendadas](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples) e [Outros serviços externos: bibliotecas](auth-external-add-ins.md#libraries).
 

@@ -1,14 +1,14 @@
 ---
 title: Versões do Office e conjuntos de requisitos
-description: Suporte a plataformas do Office.js usando API JavaScript
-ms.date: 07/07/2020
+description: Suporte a plataformas do Office.js usando API JavaScript.
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 14b88402b1ee563d992b6f37f95be4fa7f337388
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293209"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237662"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -62,4 +62,4 @@ Há várias maneiras de especificar quais aplicativos do Office e conjuntos de r
 - [Especificar requisitos da API e de aplicativos do Office](../develop/specify-office-hosts-and-api-requirements.md)
 - [Instalar a última versão do Office](../develop/install-latest-office-version.md)
 - [Visão geral dos canais de atualização do Microsoft 365 Apps](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Tirar o máximo proveito do Office com o Office 365](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [Reinvente a produtividade com o Microsoft 365 e o Microsoft Teams](https://products.office.com/compare-all-microsoft-office-products?tab=2)

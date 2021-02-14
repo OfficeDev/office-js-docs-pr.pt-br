@@ -4,12 +4,12 @@ description: Um roteiro recomendado para desenvolvedores experientes de suplemen
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1dca15a4d286e3bfa5b7ba4a502bb9161bf3257f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741061"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238012"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guia do desenvolvedor do suplemento VSTO
 
@@ -33,7 +33,7 @@ Por esses motivos, uma boa parte deste artigo duplica o caminho de aprendizagem 
 Sabemos que você está ansioso para começar a codificar, mas há algumas coisas sobre os Suplementos do Office que você deve ler antes de abrir o IDE ou o editor de código.
 
 - [Visão Geral da Plataforma de Suplementos do Office](office-add-ins.md): Descubra o que são os suplementos da Web do Office e como eles diferem das formas mais antigas de estender o Office, como os suplementos do VSTO.
-- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e do ciclo de vida do Suplemento do Office, incluindo ferramentas, criando uma interface de usuário do suplemento e usando as APIs de JavaScript para interagir com o documento do Office.
+- [Desenvolva Suplementos do Office](../develop/develop-overview.md): Obtenha uma visão geral do desenvolvimento e ciclo de vida do Suplemento do Office, incluindo as ferramentas, criando um suplemento na Interface do Usuário e usando APIs de JavaScript para interagir com o documento do Office.
 
 Existem muitos links nesses artigos, mas se você estiver migrando para os suplementos Web do Office, recomendamos que você volte aqui quando os tiver lido e continue na próxima seção.
 
@@ -64,7 +64,7 @@ Entenda os objetivos do manifesto de suplemento Web e veja uma introdução à s
 
 ## <a name="step-6-for-vsto-developers-only-reuse-your-vsto-code"></a>Etapa 6 (somente para desenvolvedores do VSTO): Reutilize seu código de VSTO
 
-Você pode reutilizar alguns dos códigos de suplemento do VSTO em um suplemento Web do Office, movendo-os para o back-end do seu aplicativo Web no servidor e disponibilizando-o para o JavaScript ou TypeScript como uma API da Web. Para obter instruções, confira [Tutorial: compartilhar código entre um suplemento do VSTO e um suplemento do Office usando uma biblioteca de códigos compartilhados](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
+Você pode reutilizar alguns dos códigos de suplemento do VSTO em um suplemento Web do Office, movendo-os para o back-end do seu aplicativo Web no servidor e disponibilizando-o para o JavaScript ou TypeScript como uma API da Web. Para obter instruções, confira [Tutorial: compartilhar código entre um Suplemento do VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

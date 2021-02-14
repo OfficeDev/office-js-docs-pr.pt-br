@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 256a4653ca4ec160370f15f3f2e514bcea5ac4fe
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: fb4771daacd2e666d57c238b950803a70a3b0fc0
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839842"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237690"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -19,7 +19,7 @@ Seu suplemento também pode obter consentimento do usuário para acessar seus da
 Há duas maneiras de realizar a autentificação e autorização.
 
 - **O Logon Único do Office(SSO)**: Um sistema que permite que o login do usuário no Office também funcione como um login para o suplemento. Opcionalmente, o suplemento também pode usar as credenciais do usuário do Office para autorizar o suplemento ao Microsoft Graph. (As fontes que não são da Microsoft não podem ser acessadas por este sistema.)
-- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como os suplementos do Office (e outros aplicativos web) autenticavam os usuários e aplicativos autorizados antes de existir um sistema de SSO Office e isto ainda é usado em cenários onde o SSO do Office não pode ser usado. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente mesmo quando o SSO estiver disponível; por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquele com o qual eles estão atualmente registrados no Office.
+- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como os Suplementos do Office (e outros aplicativos Web) autenticavam os usuários e aplicativos autorizados antes de existir um sistema de SSO do Office e isto ainda é usado em cenários onde o SSO do Office não pode ser usado. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente mesmo quando o SSO estiver disponível; por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquele com o qual eles estão atualmente registrados no Office.
 
 O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplemento. Os detalhes estão incluídos mais adiante neste artigo.
 
