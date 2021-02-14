@@ -2,18 +2,18 @@
 title: Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 description: Saiba como configurar seu complemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d9108b4debea5e59503f3c935a537e5fafde00c8
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234272"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238040"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 
-Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode integrar com o painel de tarefas e a funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
+Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar com o painel de tarefas e a funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
 
 - `OnNewMessageCompose`: Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar)
 - `OnNewAppointmentOrganizer`: Ao criar um novo compromisso
@@ -164,7 +164,7 @@ Você precisa implementar a manipulação para os eventos selecionados.
 
 Neste cenário, você adicionará a manipulação para composição de novos itens.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** seu editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** editor de código.
 
 1. Após a `action` função, insira as seguintes funções JavaScript.
 
@@ -214,7 +214,7 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciar (se ainda não estiver em execução) e o seu complemento será sideloaded.
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executa este comando, o servidor web local será iniciado (se ainda não estiver em execução) e seu suplemento será transferido.
 
     ```command&nbsp;line
     npm start
@@ -230,7 +230,7 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações da ativação baseada em eventos
 
-Espera-se que os complementos ativados com base em eventos sejam de curta duração, leve e o mais não ofensivo possível. Para sinalizar que o seu complemento concluiu o processamento do evento de lançamento, recomendamos que você chame o `event.completed` método. Se essa chamada não for feita, o tempo limite do complemento será de aproximadamente 300 segundos, o período máximo permitido para a execução de complementos baseados em eventos. O complemento também termina quando o usuário fecha a janela de redação.
+Espera-se que os complementos que são ativados com base em eventos sejam de curta duração, leve e o mais inconsidores quanto possível. Para sinalizar que o seu complemento concluiu o processamento do evento de lançamento, recomendamos que você chame o `event.completed` método. Se essa chamada não for feita, o tempo limite do complemento será de aproximadamente 300 segundos, o período máximo permitido para a execução de complementos baseados em eventos. O complemento também termina quando o usuário fecha a janela de redação.
 
 Se o usuário tiver vários complementos que se inscrevem no mesmo evento, a plataforma do Outlook inicia os complementos sem uma ordem específica. Atualmente, apenas cinco complementos baseados em eventos podem ser executados ativamente. Quaisquer outros complementos são pressionados para uma fila e executados à medida que os complementos ativos anteriormente são concluídos ou desativados.
 
@@ -238,17 +238,19 @@ O usuário pode alternar ou sair do item de email atual onde o complemento come�
 
 Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas a partir de complementos baseados em eventos. Veja a seguir as APIs bloqueadas:
 
+- Em `Office.context.auth` :
+  - `getAccessToken`
+  - `getAccessTokenAsync`
 - Em `Office.context.mailbox` :
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
+- Em `Office.context.mailbox.item` :
+  - `close`
 - Em `Office.context.ui` :
   - `displayDialogAsync`
   - `messageParent`
-- Em `Office.context.auth` :
-  - `getAccessToken`
-  - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>Confira também
 
