@@ -1202,7 +1202,7 @@ items:
     items:
       - name: Guia do desenvolvedor do suplemento VSTO
         href: overview/learning-path-transition.md
-      - name: Compartilhar código de Suplemento VSTO com o suplemento do Office
+      - name: Compartilhar o código de Suplemento VSTO com o Suplemento do Office
         href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
       - name: Faça seu suplemento do Office ser compatível com um suplemento COM existente
         href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
