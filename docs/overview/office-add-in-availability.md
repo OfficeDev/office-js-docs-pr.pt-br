@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 02/08/2021
+ms.date: 02/12/2021
 localization_priority: Priority
-ms.openlocfilehash: c58efb8b9b9b663ddf8caf371a5a0e221ab31486
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 862263232c8869e800d3200e20655d8fd075303f
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234216"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270732"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
@@ -508,6 +508,7 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
     <td>Office no iOS<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organizador de compromissos (Redigir): reunião online</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de Suplemento</a>
     </td>
     <td>

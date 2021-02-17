@@ -1,26 +1,26 @@
 ---
-title: Solucionando problemas de suplementos do Excel
-description: Saiba como solucionar erros de desenvolvimento em suplementos do Excel.
-ms.date: 09/08/2020
+title: Solução de problemas de complementos do Excel
+description: Saiba como solucionar erros de desenvolvimento em Complementos do Excel.
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 1bdd96772d3a221ca3a02e3d5dfcfa16561dd5f1
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 0efc8b4d25d9d748975146e187104972e4ad58a9
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409372"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270725"
 ---
-# <a name="troubleshooting-excel-add-ins"></a>Solucionando problemas de suplementos do Excel
+# <a name="troubleshooting-excel-add-ins"></a>Solução de problemas de complementos do Excel
 
-Este artigo discute a solução de problemas exclusivos para o Excel. Use a ferramenta de comentários na parte inferior da página para sugerir outros problemas que podem ser adicionados ao artigo.
+Este artigo discute a solução de problemas que são exclusivos do Excel. Use a ferramenta de comentários na parte inferior da página para sugerir outros problemas que podem ser adicionados ao artigo.
 
-## <a name="api-limitations-when-the-active-workbook-switches"></a>Limitações de API quando a pasta de trabalho ativa alterna
+## <a name="api-limitations-when-the-active-workbook-switches"></a>Limitações de API quando a agenda ativa é alternada
 
-Os suplementos para Excel se destinam a operar em uma única pasta de trabalho por vez. Os erros podem ocorrer quando uma pasta de trabalho separada da que está executando o suplemento Obtém o foco. Isso ocorre apenas quando determinados métodos estão no processo de chamada quando o foco é alterado.
+Os complementos do Excel se destinam a operar em uma única planilha de cada vez. Erros podem surgir quando uma área de trabalho separada da que está executando o complemento ganha foco. Isso só acontece quando métodos específicos estão sendo chamados quando o foco muda.
 
-As seguintes APIs são afetadas por essa opção de pasta de trabalho:
+As seguintes APIs são afetadas por essa opção de livro de trabalho:
 
-|API JavaScript do Excel | Erro gerado |
+|API JavaScript do Excel | Erro lançado |
 |--|--|
 | `Chart.activate` | GeneralException |
 | `Range.select` | GeneralException |
@@ -40,13 +40,63 @@ As seguintes APIs são afetadas por essa opção de pasta de trabalho:
 | `WorksheetFreezePanes.unfreeze` | GeneralException |
 
 > [!NOTE]
-> Isso aplica-se apenas a várias pastas de trabalho do Excel abertas no Windows ou Mac.
+> Isso só se aplica a várias planilhas do Excel abertas no Windows ou Mac.
 
 ## <a name="coauthoring"></a>Coautoria
 
-Veja [coautoria em suplementos do Excel](co-authoring-in-excel-add-ins.md) para padrões a serem usados com eventos em um ambiente de coautoria. O artigo também aborda possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+Confira [Coautor nos complementos do Excel](co-authoring-in-excel-add-ins.md) para padrões a usar com eventos em um ambiente de coautor. O artigo também discute possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+
+## <a name="known-issues"></a>Problemas Conhecidos
+
+### <a name="binding-events-return-temporary-binding-obects"></a>Eventos de associação `Binding` retornam obects temporários
+
+[BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) e [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) retornam um objeto temporário que contém a ID do objeto que gerou o `Binding` `Binding` evento. Use essa ID com `BindingCollection.getItem(id)` para recuperar o objeto que gerou o `Binding` evento.
+
+O exemplo de código a seguir mostra como usar essa ID de associação temporária para recuperar o objeto `Binding` relacionado. No exemplo, um ouvinte de eventos é atribuído a uma associação. O ouvinte chama `getBindingId` o método quando o evento é `onDataChanged` disparado. O `getBindingId` método usa a ID do objeto temporário para recuperar o objeto que gerou o `Binding` `Binding` evento.
+
+```js
+Excel.run(function (context) {
+    // Retrieve your binding.
+    var binding = context.workbook.bindings.getItemAt(0);
+
+    return context.sync().then(function () {
+        // Register an event listener to detect changes to your binding
+        // and then trigger the `getBindingId` method when the data changes. 
+        binding.onDataChanged.add(getBindingId);
+
+        return context.sync();
+    });
+});
+
+function getBindingId(eventArgs) {
+    return Excel.run(function (context) {
+        // Get the temporary binding object and load its ID. 
+        var tempBindingObject = eventArgs.binding;
+        tempBindingObject.load("id");
+
+        // Use the temporary binding object's ID to retrieve the original binding object. 
+        var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+
+        // You now have the binding object that raised the event: `originalBindingObject`. 
+    });
+}
+```
+
+### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>Formato e `useStandardHeight` problemas da `useStandardWidth` célula
+
+A [propriedade useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) `CellPropertiesFormat` não funciona corretamente no Excel na Web. Devido a um problema na interface do usuário do Excel na Web, definir a propriedade para calcular a altura de forma `useStandardHeight` `true` imprecisa nessa plataforma. Por exemplo, uma altura padrão **de 14 é** modificada para **14,25** no Excel na Web.
+
+Em todas as plataformas, as propriedades [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) e [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) devem `CellPropertiesFormat` ser definidas apenas como `true` . A definição dessas propriedades `false` não tem efeito. 
+
+### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>Método `getImage` Range sem suporte no Excel para Mac
+
+O método [GetImage](/javascript/api/excel/excel.range#getImage__) de intervalo não tem suporte no Excel para Mac no momento. Consulte [o problema OfficeDev/office-js #235](https://github.com/OfficeDev/office-js/issues/235) para o status atual.
+
+### <a name="range-return-character-limit"></a>Limite de caracteres de retorno de intervalo
+
+Os [métodos Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) e [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) têm um limite de cadeia de caracteres de endereço de 8192 caracteres. Quando esse limite é excedido, a cadeia de caracteres do endereço é truncada para 8192 caracteres.
 
 ## <a name="see-also"></a>Confira também
 
-- [Solucionar erros de desenvolvimento com suplementos do Office](../testing/troubleshoot-development-errors.md)
+- [Solucionar erros de desenvolvimento com os Complementos do Office](../testing/troubleshoot-development-errors.md)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)

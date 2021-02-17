@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237704"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270718"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -264,7 +264,7 @@ Os elementos **Control** contidos neste ponto de extensão precisam ter o atribu
 Esse ponto de extensão coloca uma alternância apropriada ao modo na superfície de comando para um compromisso no fator forma móvel. Um organizador da reunião pode criar uma reunião online. Um participante pode participar subsequentemente da reunião online. Para saber mais sobre esse cenário, consulte o artigo Criar um complemento [móvel do Outlook para um provedor de reuniões online.](../../outlook/online-meeting.md)
 
 > [!NOTE]
-> Esse ponto de extensão só tem suporte no Android com uma assinatura do Microsoft 365.
+> Esse ponto de extensão só tem suporte no Android e no iOS com uma assinatura do Microsoft 365.
 
 #### <a name="child-elements"></a>Elementos filho
 
