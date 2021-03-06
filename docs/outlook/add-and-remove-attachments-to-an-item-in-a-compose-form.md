@@ -1,28 +1,28 @@
 ---
 title: Adicionar e remover os anexos em um suplemento do Outlook
-description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou os itens do Outlook anexados ao item que o usuário está redigindo.
-ms.date: 11/11/2020
+description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou itens do Outlook anexados ao item que o usuário está compondo.
+ms.date: 02/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 6f146b3efc3234313191d93af05d9c0d35111829
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: da426813e865f5607ec3e2c65252e8a406d889e2
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071701"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505497"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
 
-A API JavaScript do Office fornece várias APIs que você pode usar para gerenciar anexos de um item quando o usuário está redigindo.
+A API JavaScript do Office fornece várias APIs que você pode usar para gerenciar anexos de um item quando o usuário está compondo.
 
 ## <a name="attach-a-file-or-outlook-item"></a>Anexar um arquivo ou item do Outlook
 
 Você pode anexar um arquivo ou item do Outlook a um formulário de composição usando o método apropriado para o tipo de anexo.
 
 - [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um arquivo
-- [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um arquivo usando sua cadeia de caracteres Base64
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um item do Outlook
+- [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um arquivo usando sua cadeia de caracteres base64
+- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): Anexar um item do Outlook
 
-Estes são métodos assíncronos, o que significa que a execução pode prosseguir sem esperar que a ação seja concluída. Dependendo do local original e do tamanho do anexo que está sendo adicionado, a chamada assíncrona poderá levar algum tempo para ser concluída.
+Esses são métodos assíncronos, o que significa que a execução pode continuar sem aguardar a conclusão da ação. Dependendo do local original e do tamanho do anexo que está sendo adicionado, a chamada assíncrona pode demorar um pouco para ser concluída.
 
 Se houver tarefas que dependam da conclusão da ação, você deverá executá-las em um método de retorno de chamada. Esse método de retorno de chamada é opcional e é invocado quando o carregamento do anexo é concluído. O método de retorno de chamada usa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) como um parâmetro de saída que fornece qualquer status, erro e valor retornado da adição do anexo. Se o retorno de chamada requer parâmetros adicionais, você pode especificá-los no parâmetro opcional `options.asyncContext`. `options.asyncContext` pode ser de qualquer tipo que seu método de retorno de chamada espere.
 
@@ -37,11 +37,11 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 Você pode verificar o sucesso ou o erro de uma chamada de método assíncrono no método de retorno de chamada usando as propriedades `status` e `error` do objeto `AsyncResult`. Se a anexação for concluída com êxito, você poderá usar a propriedade `AsyncResult.value` para obter a ID do anexo. A ID do anexo é um número inteiro que você pode usar posteriormente para remover o anexo.
 
 > [!NOTE]
-> Como prática recomendada, você só deverá usar a ID do anexo para remover um anexo se o mesmo suplemento tiver adicionado esse anexo na mesma sessão. No Outlook na Web e dispositivos móveis, a ID do anexo é válida apenas dentro da mesma sessão. Uma sessão é finalizada quando o usuário fecha o suplemento ou se o usuário começa a redigir em um formulário embutido e, subsequentemente, sai do formulário embutido para continuar em uma janela separada.
+> A ID do anexo é válida somente dentro da mesma sessão e não tem garantia de mapear para o mesmo anexo entre as sessões. Os exemplos de quando uma sessão acabou incluem quando o usuário fecha o complemento ou se o usuário começa a compor em um formulário em linha e, subsequentemente, sai do formulário em linha para continuar em uma janela separada.
 
 ### <a name="attach-a-file"></a>Anexar um arquivo
 
-Você pode anexar um arquivo a uma mensagem ou compromisso em um formulário de composição usando o `addFileAttachmentAsync` método e especificando o URI do arquivo. Você também pode usar o `addFileAttachmentFromBase64Async` método, mas especificar a cadeia de caracteres Base64 como entrada. Se o arquivo estiver protegido, você poderá incluir uma identidade ou um token de autenticação apropriado como um parâmetro de cadeia de caracteres de consulta de URI. O Exchange fará uma chamada à URI para obter o anexo, e o serviço Web que protege o arquivo precisará usar o token como um meio de autenticação.
+Você pode anexar um arquivo a uma mensagem ou compromisso em um formulário de composição usando o método e especificando o `addFileAttachmentAsync` URI do arquivo. Você também pode usar o `addFileAttachmentFromBase64Async` método, mas especificar a cadeia de caracteres base64 como entrada. Se o arquivo estiver protegido, você poderá incluir uma identidade ou um token de autenticação apropriado como um parâmetro de cadeia de caracteres de consulta de URI. O Exchange fará uma chamada à URI para obter o anexo, e o serviço Web que protege o arquivo precisará usar o token como um meio de autenticação.
 
 O exemplo de JavaScript a seguir é um suplemento de redação que anexa um arquivo, picture.png, de um servidor Web à mensagem ou ao compromisso que está sendo redigido. O método de retorno de chamada usa `asyncResult` como um parâmetro, verifica o status de resultado e obtém a ID do anexo caso o método tenha êxito.
 
@@ -54,18 +54,17 @@ Office.initialize = function () {
         // being composed.
         // When the attachment finishes uploading, the
         // callback method is invoked and gets the attachment ID.
-        // You can optionally pass any object that you would  
-        // access in the callback method as an argument to  
+        // You can optionally pass any object that you would
+        // access in the callback method as an argument to
         // the asyncContext parameter.
         Office.context.mailbox.item.addFileAttachmentAsync(
             `https://webserver/picture.png`,
             'picture.png',
             { asyncContext: null },
             function (asyncResult) {
-                if (asyncResult.status == Office.AsyncResultStatus.Failed){
+                if (asyncResult.status === Office.AsyncResultStatus.Failed){
                     write(asyncResult.error.message);
-                }
-                else {
+                } else {
                     // Get the ID of the attached file.
                     var attachmentID = asyncResult.value;
                     write('ID of added attachment: ' + attachmentID);
@@ -82,9 +81,9 @@ function write(message){
 
 ### <a name="attach-an-outlook-item"></a>Anexar um item do Outlook
 
-Você pode anexar um item do Outlook (por exemplo, um item de email, calendário ou contato) a uma mensagem ou a um compromisso em um formulário de redação, especificando a ID do item dos EWS (Serviços Web do Exchange) e usando o método `addItemAttachmentAsync`. Você pode obter a ID dos EWS de um item de email, calendário, contato ou tarefa na caixa de correio do usuário, usando o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) e acessando a operação [FindItem](/exchange/client-developer/web-service-reference/finditem-operation) do EWS. A propriedade [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) também fornece a ID dos EWS de um item existente em um formulário de leitura.
+Você pode anexar um item do Outlook (por exemplo, email, calendário ou item de contato) a uma mensagem ou compromisso em um formulário de redação especificando a ID dos Serviços Web do Exchange (EWS) do item e usando o `addItemAttachmentAsync` método. Você pode obter a ID do EWS de um email, calendário, contato ou item de tarefa na caixa de correio do usuário usando o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) e acessando a operação EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). A propriedade [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) também fornece a ID dos EWS de um item existente em um formulário de leitura.
 
-A seguinte função JavaScript, `addItemAttachment` , estende o primeiro exemplo acima e adiciona um item como um anexo ao email ou compromisso que está sendo composto. A função utiliza como argumento a ID dos EWS do item que será anexado. Se a conexão for bem-sucedida, ela receberá a ID de anexo para processamento adicional, incluindo a remoção desse anexo na mesma sessão.
+A função JavaScript a seguir, , estende o primeiro exemplo acima e adiciona um item como um anexo ao email ou compromisso `addItemAttachment` que está sendo composto. A função utiliza como argumento a ID dos EWS do item que será anexado. Se a anexação for bem-sucedida, ela obtém a ID do anexo para processamento posterior, incluindo a remoção desse anexo na mesma sessão.
 
 ```js
 // Adds the specified item as an attachment to the composed item.
@@ -102,10 +101,9 @@ function addItemAttachment(itemId) {
         'Welcome email',
         { asyncContext: null },
         function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
+            if (asyncResult.status === Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
-            }
-            else {
+            } else {
                 var attachmentID = asyncResult.value;
                 write('ID of added attachment: ' + attachmentID);
             }
@@ -114,22 +112,22 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> Você pode usar um suplemento de redação para anexar uma instância de um compromisso recorrente no Outlook na Web ou em dispositivos móveis. No entanto, em um cliente avançado do Outlook com suporte, tentar anexar uma instância resultaria na anexação da série recorrente (o compromisso mestre).
+> Você pode usar um complemento de composição para anexar uma instância de um compromisso recorrente no Outlook na Web ou em dispositivos móveis. No entanto, em um cliente de área de trabalho do Outlook com suporte, tentar anexar uma instância resultaria em anexar a série recorrente (o compromisso pai).
 
 ## <a name="get-attachments"></a>Obter anexos
 
-As APIs para obter anexos no modo de composição estão disponíveis no [conjunto de requisitos 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
+APIs para obter anexos no modo de redação estão disponíveis no conjunto [de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
 
 - [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 - [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
-Você pode usar o método [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) para obter os anexos da mensagem ou do compromisso que está sendo composto.
+Você pode usar o [método getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) para obter os anexos da mensagem ou do compromisso que está sendo composto.
 
-Para obter o conteúdo de um anexo, você pode usar o método [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Os formatos suportados estão listados na enumeração [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
+Para obter o conteúdo de um anexo, você pode usar o [método getAttachmentContentAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) Os formatos com suporte estão listados na [enumeração AttachmentContentFormat.](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
-Você deve fornecer um método de retorno de chamada para verificar o status e o erro usando o `AsyncResult` objeto Parameter de saída. Você também pode passar qualquer parâmetro adicional para o método de retorno de chamada usando o `asyncContext` parâmetro Optional.
+Você deve fornecer um método de retorno de chamada para verificar o status e qualquer erro usando o `AsyncResult` objeto de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para o método de retorno de chamada usando o parâmetro `asyncContext` opcional.
 
-O seguinte exemplo de JavaScript Obtém os anexos e permite que você configure a manipulação distinta para cada formato de anexo com suporte.
+O exemplo JavaScript a seguir obtém os anexos e permite configurar o tratamento distinto para cada formato de anexo com suporte.
 
 ```js
 var item = Office.context.mailbox.item;
@@ -167,23 +165,23 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>Remover um anexo
 
-Você pode remover um anexo de arquivo ou item de um item de mensagem ou compromisso em um formulário de composição especificando a ID correspondente do anexo e usando o método [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Você só deve remover os anexos que o mesmo suplemento adicionou na mesma sessão. Semelhante aos `addFileAttachmentAsync` métodos e `addItemAttachmentAsync` , `removeAttachmentAsync` é um método assíncrono. Você deve fornecer um método de retorno de chamada para verificar o status e o erro usando o `AsyncResult` objeto Parameter de saída. Você também pode passar qualquer parâmetro adicional para o método de retorno de chamada usando o `asyncContext` parâmetro Optional.
+Você pode remover um anexo de arquivo ou item de uma mensagem ou item de compromisso em um formulário de composição especificando a ID de anexo correspondente ao usar o [método removeAttachmentAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
-A seguinte função JavaScript, `removeAttachment` , continua a estender os exemplos acima e remove o anexo especificado do email ou compromisso que está sendo composto. A função utiliza como argumento a ID do anexo a ser removido. Você pode obter a ID de um anexo após uma chamada bem-sucedida, `addFileAttachmentAsync` `addFileAttachmentFromBase64Async` ou de `addItemAttachmentAsync` método, e armazená-lo para uma `removeAttachmentAsync` chamada de método subsequente.
+> [!IMPORTANT]
+> Se você estiver usando o conjunto de requisitos 1.7 ou anterior, você deve remover apenas anexos que o mesmo complemento adicionou na mesma sessão.
+
+Semelhante aos `addFileAttachmentAsync` métodos , e é um método `addItemAttachmentAsync` `getAttachmentsAsync` `removeAttachmentAsync` assíncrono. Você deve fornecer um método de retorno de chamada para verificar o status e qualquer erro usando o `AsyncResult` objeto de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para o método de retorno de chamada usando o parâmetro `asyncContext` opcional.
+
+A função JavaScript a seguir, , continua a estender os exemplos acima e remove o anexo especificado do email ou compromisso `removeAttachment` que está sendo composto. A função utiliza como argumento a ID do anexo a ser removido. Você pode obter a ID de um anexo após uma chamada bem-sucedida , ou método, e `addFileAttachmentAsync` usá-lo em uma chamada de método `addFileAttachmentFromBase64Async` `addItemAttachmentAsync` `removeAttachmentAsync` subsequente. Você também pode chamar (introduzido no conjunto de requisitos 1.8) para obter os anexos e suas IDs para essa sessão `getAttachmentsAsync` de complemento.
 
 ```js
 // Removes the specified attachment from the composed item.
-// ID is the Exchange identifier of the attachment to be
-// removed.
 function removeAttachment(attachmentId) {
-    // When the attachment is removed, the
-    // callback method is invoked. Here, the callback
-    // method uses an asyncResult parameter and gets
-    // the ID of the removed attachment if the removal
-    // succeeds.
-    // You can optionally pass any object you wish to
-    // access in the callback method as an argument to
-    // the asyncContext parameter.
+    // When the attachment is removed, the callback method is invoked.
+    // Here, the callback method uses an asyncResult parameter and
+    // gets the ID of the removed attachment if the removal succeeds.
+    // You can optionally pass any object you wish to access in the
+    // callback method as an argument to the asyncContext parameter.
     Office.context.mailbox.item.removeAttachmentAsync(
         attachmentId,
         { asyncContext: null },

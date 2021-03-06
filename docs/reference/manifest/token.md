@@ -1,18 +1,18 @@
 ---
-title: Elemento token no arquivo de manifesto
+title: Elemento Token no arquivo de manifesto
 description: Especifica um token ou curinga que pode ser usado com modelos de URL no manifesto.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e26af44c566ab09ac81c8194e1ae7d85aaac327
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996669"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505364"
 ---
-# <a name="token-element"></a>Elemento token
+# <a name="token-element"></a>Elemento Token
 
-Define um token de URL individual.
+Define um token de URL individual. Para obter mais informações sobre o uso desse elemento, consulte [Trabalhar com substituições estendidas do manifesto](../../develop/extended-overrides.md).
 
 **Tipo de suplemento:** Painel de tarefas
 
@@ -24,7 +24,7 @@ Define um token de URL individual.
 
 ## <a name="contained-in"></a>Contido em
 
-[Sinais](tokens.md)
+[Tokens](tokens.md)
 
 ## <a name="can-contain"></a>Pode conter
 
@@ -36,9 +36,9 @@ Define um token de URL individual.
 
 |Atributo|Descrição|
 |:-----|:-----|
-|DefaultValue|Valor padrão para esse token se nenhuma condição em qualquer `<Override>` elemento filho corresponder.|
-|Nome|Nome do token. Esse nome é definido pelo usuário. O tipo do token é determinado pelo atributo Type.|
-|xsi:type|Define o tipo de token. Este atributo deve ser definido como um de:  `"RequirementsToken"` ou  `"LocaleToken"` .|
+|DefaultValue|Valor padrão para esse token se nenhuma condição em qualquer `<Override>` elemento filho corresponde.|
+|Nome|Nome do token. Esse nome é definido pelo usuário. O tipo do token é determinado pelo atributo type.|
+|xsi:type|Define o tipo de Token. Esse atributo deve ser definido como um dos:  `"RequirementsToken"` , ou  `"LocaleToken"` .|
 
 ## <a name="example"></a>Exemplo
 

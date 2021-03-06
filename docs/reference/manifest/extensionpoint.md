@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e5b638969730be47c30c98d4fc231e58d492ac36
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270718"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505462"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -77,10 +77,10 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**OfficeTab**|Obrigatório se você quiser estender uma guia padrão da faixa de opções do aplicativo do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. Para saber mais, confira [OfficeTab](officetab.md).|
 |**OfficeMenu**|Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> - **ContextMenuText** para o Excel ou Word. Exibe o item no menu de contexto quando o texto for selecionado e o usuário clicar com o botão direito do mouse no texto selecionado. <br/> - **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha.|
 |**Group**|Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. |
-|**Label**|Obrigatório. O rótulo do grupo. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
-|**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Image.** O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
-|**Tooltip**|Opcional. A dica de ferramenta do grupo. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
-|**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **de recursos** relacionados sejam adicionados um de cada vez.|
+|**Label**|Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
+|**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Image.** O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
+|**Tooltip**|Opcional. A dica de ferramenta do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
+|**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **dos Recursos** relacionados sejam adicionados um de cada vez.|
 |**Script**|Links para o arquivo JavaScript com a definição de função personalizada e o código de registro Esse elemento não é usado na Visualização do Desenvolvedor. Em vez disso, a página HTML é responsável por carregar todos os arquivos JavaScript.|
 |**Page**|Links para a página HTML de suas funções personalizadas.|
 
@@ -225,6 +225,9 @@ Este ponto de extensão coloca botões na faixa de opções para o formulário e
 
 Este ponto de extensão coloca botões na faixa de opções para a extensão do módulo.
 
+> [!IMPORTANT]
+> Registrar eventos [de Caixa de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível com esse ponto de extensão.
+
 #### <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Descrição  |
@@ -261,10 +264,12 @@ Os elementos **Control** contidos neste ponto de extensão precisam ter o atribu
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Esse ponto de extensão coloca uma alternância apropriada ao modo na superfície de comando para um compromisso no fator forma móvel. Um organizador da reunião pode criar uma reunião online. Um participante pode participar subsequentemente da reunião online. Para saber mais sobre esse cenário, consulte o artigo Criar um complemento [móvel do Outlook para um provedor de reuniões online.](../../outlook/online-meeting.md)
+Esse ponto de extensão coloca uma alternância apropriada para o modo na superfície de comando para um compromisso no fator de forma móvel. Um organizador de reunião pode criar uma reunião online. Um participante pode participar posteriormente da reunião online. Para saber mais sobre esse cenário, consulte o artigo Criar um complemento [móvel](../../outlook/online-meeting.md) do Outlook para um provedor de reunião online.
 
 > [!NOTE]
-> Esse ponto de extensão só tem suporte no Android e no iOS com uma assinatura do Microsoft 365.
+> Esse ponto de extensão só tem suporte para Android e iOS com uma assinatura do Microsoft 365.
+>
+> Registrar eventos [de Caixa de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível com esse ponto de extensão.
 
 #### <a name="child-elements"></a>Elementos filho
 
@@ -272,11 +277,11 @@ Esse ponto de extensão coloca uma alternância apropriada ao modo na superfíci
 |:-----|:-----|
 |  [Control](control.md) |  Adiciona um botão à superfície de comando.  |
 
-`ExtensionPoint` desse tipo só pode ter um elemento filho: um `Control` elemento.
+`ExtensionPoint` elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
 
 O `Control` elemento contido neste ponto de extensão deve ter o atributo definido como `xsi:type` `MobileButton` .
 
-As `Icon` imagens devem estar em escala de cinza usando código hexaxa ou seu equivalente em outros `#919191` [formatos de cor.](https://convertingcolors.com/hex-color-919191.html)
+As `Icon` imagens devem estar em escala de cinza usando código hexaxa `#919191` ou seu equivalente em outros [formatos de cor.](https://convertingcolors.com/hex-color-919191.html)
 
 #### <a name="example"></a>Exemplo
 
@@ -305,15 +310,18 @@ As `Icon` imagens devem estar em escala de cinza usando código hexaxa ou seu eq
 ### <a name="launchevent-preview"></a>LaunchEvent (visualização)
 
 > [!NOTE]
-> Esse ponto de extensão só tem suporte na [visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365.
+> Esse ponto de extensão só é suportado na [visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365.
 
-Esse ponto de extensão permite que um complemento seja ativado com base em eventos com suporte no fator forma da área de trabalho. Atualmente, os únicos eventos com suporte são `OnNewMessageCompose` e `OnNewAppointmentOrganizer` . Para saber mais sobre esse cenário, confira o artigo Configurar seu [complemento do Outlook para ativação baseada em](../../outlook/autolaunch.md) eventos.
+Esse ponto de extensão permite que um complemento seja ativado com base em eventos suportados no fator de formulário da área de trabalho. Atualmente, os únicos eventos com suporte `OnNewMessageCompose` são e `OnNewAppointmentOrganizer` . Para saber mais sobre esse cenário, consulte o artigo Configurar seu [complemento do Outlook para ativação baseada em](../../outlook/autolaunch.md) eventos.
+
+> [!IMPORTANT]
+> Registrar eventos [de Caixa de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível com esse ponto de extensão.
 
 #### <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Descrição  |
 |:-----|:-----|
-| [LaunchEvents](launchevents.md) |  Lista de [LaunchEvent para](launchevent.md) ativação baseada em eventos.  |
+| [LaunchEvents](launchevents.md) |  Lista de [LaunchEvent](launchevent.md) para ativação baseada em evento.  |
 | [SourceLocation](sourcelocation.md) |  O local do arquivo JavaScript de origem.  |
 
 #### <a name="example"></a>Exemplo
@@ -331,7 +339,10 @@ Esse ponto de extensão permite que um complemento seja ativado com base em even
 
 ### <a name="events"></a>Eventos
 
-Este ponto de extensão adiciona um manipulador de eventos para um evento especificado. Para obter mais informações sobre como usar esse ponto de extensão, consulte o recurso Ao [enviar para os complementos do Outlook.](../../outlook/outlook-on-send-addins.md)
+Este ponto de extensão adiciona um manipulador de eventos para um evento especificado. Para obter mais informações sobre como usar esse ponto de extensão, consulte Recurso Ao [enviar para os complementos do Outlook](../../outlook/outlook-on-send-addins.md).
+
+> [!IMPORTANT]
+> Registrar eventos [de Caixa de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível com esse ponto de extensão.
 
 | Elemento | Descrição  |
 |:-----|:-----|
@@ -349,6 +360,9 @@ Este ponto de extensão adiciona um manipulador de eventos para um evento especi
 
 Este ponto extensão adiciona uma ativação do suplemento contextual em um tipo de entidade especificada.
 
+> [!IMPORTANT]
+> Registrar eventos [de Caixa de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível com esse ponto de extensão.
+
 O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor de atributo `xsi:type` de `VersionOverridesV1_1`.
 
 > [!NOTE]
@@ -362,7 +376,7 @@ O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor d
 
 #### <a name="label"></a>Label
 
-Obrigatório. O rótulo do grupo. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)
+Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)
 
 #### <a name="highlight-requirements"></a>Requisitos de realce
 

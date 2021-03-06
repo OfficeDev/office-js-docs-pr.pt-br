@@ -1,18 +1,18 @@
 ---
 title: Elemento Action no arquivo de manifesto
-description: Este elemento Especifica a ação a ser executada quando o usuário seleciona um botão ou controle de menu.
-ms.date: 07/07/2020
+description: Esse elemento especifica a ação a ser executar quando o usuário seleciona um botão ou um controle de menu.
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e345d0a1682e0125373a309e1e56eb2d6298ac7d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771407"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505406"
 ---
 # <a name="action-element"></a>Elemento Action
 
-Especifica a ação a ser executada quando o usuário seleciona um controle de  [botão](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls) .
+Especifica a ação a ser executar quando o usuário seleciona um [controle Button](control.md#button-control) ou [Menu.](control.md#menu-dropdown-button-controls)
 
 ## <a name="attributes"></a>Atributos
 
@@ -29,7 +29,6 @@ Especifica a ação a ser executada quando o usuário seleciona um controle de  
 |  [TaskpaneId](#taskpaneid) | Especifica a ID do contêiner do painel de tarefas.|
 |  [Title](#title) | Especifica o título personalizado do painel de tarefas.|
 |  [SupportsPinning](#supportspinning) | Especifica se um painel de tarefas tem suporte para fixação, que mantém o painel de tarefas aberto quando o usuário altera a seleção.|
-  
 
 ## <a name="xsitype"></a>xsi:type
 
@@ -37,6 +36,9 @@ Este atributo especifica o tipo de ação realizada quando o usuário seleciona 
 
 - `ExecuteFunction`
 - `ShowTaskpane`
+
+> [!IMPORTANT]
+> O registro [de eventos de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) Caixa de Correio e [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) não está disponível quando **xsi:type** é `ExecuteFunction` .
 
 ## <a name="functionname"></a>FunctionName
 
@@ -50,7 +52,7 @@ Elemento obrigatório quando **xsi:type** é "ExecuteFunction". Especifica o nom
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Elemento obrigatório quando **xsi: Type** for "ShowTaskpane". Especifica o local do arquivo de origem para essa ação. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **URL** no elemento **URLs** do elemento [Resources](resources.md) .
+Elemento obrigatório quando **xsi:type** é "ShowTaskpane". Especifica o local do arquivo de origem para essa ação. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento Url no elemento **Urls** no elemento [Resources.](resources.md) 
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -104,7 +106,7 @@ O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Par
 
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
 
-O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que você não atribui o **título** a uma cadeia de caracteres diretamente. Em vez disso, você atribui a ele uma ID de recurso (Resid), que é definida na seção **recursos** do manifesto e não pode ter mais de 32 caracteres.
+O exemplo a seguir mostra uma ação que usa o **elemento Title.** Observe que você não atribui o **Título** a uma cadeia de caracteres diretamente. Em vez disso, você atribui a ele uma ID de recurso (resid), que é definida na seção **Recursos** do manifesto e não pode ter mais de 32 caracteres.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,9 +134,10 @@ O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que 
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Embora o `SupportsPinning` elemento tenha sido introduzido no [conjunto de requisitos 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), atualmente só há suporte para assinantes do Microsoft 365 usando o seguinte.
-> - Outlook 2016 ou posterior no Windows (compilação 7628,1000 ou posterior)
-> - Outlook 2016 ou posterior no Mac (Build 16.13.503 ou posterior)
+> Embora o elemento tenha sido introduzido no conjunto de requisitos `SupportsPinning` [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele atualmente só tem suporte para assinantes do Microsoft 365 usando o seguinte.
+>
+> - Outlook 2016 ou posterior no Windows (build 7628.1000 ou posterior)
+> - Outlook 2016 ou posterior no Mac (build 16.13.503 ou posterior)
 > - Outlook na Web moderno
 
 ```xml

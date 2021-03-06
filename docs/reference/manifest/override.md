@@ -1,27 +1,27 @@
 ---
 title: Elemento Override no arquivo de manifesto
-description: O elemento override permite que você especifique o valor de uma configuração, dependendo de uma condição especificada.
+description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c66503f9f95155a096b1b6fb23332eed8422da6
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996309"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505336"
 ---
 # <a name="override-element"></a>Elemento Override
 
 Fornece uma maneira de substituir o valor de uma configuração de manifesto, dependendo de uma condição especificada. Há dois tipos de condições:
 
 - Uma localidade do Office diferente do padrão.
-- Um padrão de suporte ao conjunto de requisitos diferente do padrão padrão.
+- Um padrão de suporte ao conjunto de requisitos que é diferente do padrão padrão.
 
-Há dois tipos de `<Override>` elementos, um é para substituições de localidade, chamado **LocaleTokenOverride** , e o outro para o conjunto de requisitos substitui, chamado **RequirementTokenOverride**. Mas não há nenhum `type` parâmetro para o `<Override>` elemento. A diferença é determinada pelo elemento pai e o tipo do elemento pai. Um `<Override>` elemento que está dentro de um `<Token>` elemento `xsi:type` , cujo é `RequirementToken` , deve ser do tipo **RequirementTokenOverride**. Um `<Override>` elemento dentro de qualquer outro elemento pai ou dentro `<Override>` de um elemento do tipo `LocaleToken` deve ser do tipo **LocaleTokenOverride**. Cada tipo é descrito em seções separadas abaixo.
+Há dois tipos de elementos, um é para substituições de localidade, chamado `<Override>` **LocaleTokenOverride** e o outro para substituições de conjunto de requisitos, chamado **RequirementTokenOverride**. Mas não há parâmetro `type` para o `<Override>` elemento. A diferença é determinada pelo elemento pai e pelo tipo do elemento pai. Um elemento que está dentro de um elemento cujo é , deve ser do `<Override>` `<Token>` tipo `xsi:type` `RequirementToken` **RequirementTokenOverride**. Um elemento dentro de qualquer outro elemento pai ou dentro de um elemento de tipo deve ser do `<Override>` `<Override>` tipo `LocaleToken` **LocaleTokenOverride**. Cada tipo é descrito em seções separadas abaixo. Para obter mais informações sobre o uso desse elemento quando ele é filho de um elemento, consulte Trabalhar com substituições `<Token>` [estendidas do manifesto](../../develop/extended-overrides.md).
 
-## <a name="override-element-of-type-localetokenoverride"></a>Elemento override do tipo LocaleTokenOverride
+## <a name="override-element-of-type-localetokenoverride"></a>Substituir elemento do tipo LocaleTokenOverride
 
-Um `<Override>` elemento expressa um condicional e pode ser lido como um "If... Then... " instrução. Se o `<Override>` elemento for do tipo **LocaleTokenOverride** , o `Locale` atributo será a condição e o `Value` atributo será o consequent. Por exemplo, o seguinte é lido "se a configuração de localidade do Office for fr-fr, o nome para exibição será" Lecteur Vidéo "."
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **LocaleTokenOverride**, o atributo será a condição e o `Locale` atributo será o `Value` conseqüente. Por exemplo, o seguinte é lido "Se a configuração de localidade do Office for fr-fr, o nome de exibição será 'Lecteur vidéo'".
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -92,9 +92,9 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "If... 
 - [Localização para suplementos do Office](../../develop/localization.md)
 - [Atalhos de teclado para o SharePoint](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a>Elemento override do tipo RequirementTokenOverride
+## <a name="override-element-of-type-requirementtokenoverride"></a>Substituir elemento do tipo RequirementTokenOverride
 
-Um `<Override>` elemento expressa um condicional e pode ser lido como um "If... Then... " instrução. Se o `<Override>` elemento for do tipo **RequirementTokenOverride** , o elemento filho `<Requirements>` expressará a condição e o `Value` atributo será o consequent. Por exemplo, o primeiro `<Override>` no seguinte é lido "se a plataforma atual suportar o FeatureOne versão 1,7, use a cadeia de caracteres ' oldAddinVersion ' no lugar do `${token.requirements}` token na URL do avô `<ExtendedOverrides>` (em vez da cadeia de caracteres padrão" upgrade ")."
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RequirementTokenOverride**, o elemento filho expressará a condição `<Requirements>` e o atributo será o `Value` conseqüente. Por exemplo, o primeiro na seguinte leitura é "Se a plataforma atual dá suporte ao FeatureOne versão 1.7, use a cadeia de caracteres 'oldAddinVersion' no lugar do token na URL do vô-vô (em vez da cadeia de caracteres `<Override>` `${token.requirements}` padrão `<ExtendedOverrides>` 'upgrade')."
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -146,7 +146,7 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "If... 
 
 |Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
-|Valor|cadeia de caracteres|obrigatório|Valor do token avô quando a condição for atendida.|
+|Valor|cadeia de caracteres|obrigatório|Valor do token de vôvão quando a condição for atendida.|
 
 ### <a name="example"></a>Exemplo
 

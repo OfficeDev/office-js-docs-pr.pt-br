@@ -1,18 +1,18 @@
 ---
 title: Elemento ExtendedOverrides no arquivo de manifesto
 description: Especifica as URLs para uma extensão formatada por JSON do manifesto.
-ms.date: 11/06/2020
+ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 76491af34d1caf0ec266826df97a5363e336b85d
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996670"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505469"
 ---
 # <a name="extendedoverrides-element"></a>Elemento ExtendedOverrides
 
-Especifica as URLs completas para arquivos formatados por JSON que estendem o manifesto.
+Especifica as URLs completas para arquivos formatados com JSON que estendem o manifesto. Para obter informações detalhadas sobre o uso desse elemento e seus elementos [descendentes,](../../develop/extended-overrides.md)consulte Trabalhar com substituições estendidas do manifesto .
 
 **Tipo de suplemento:** Painel de tarefas
 
@@ -30,16 +30,27 @@ Especifica as URLs completas para arquivos formatados por JSON que estendem o ma
 
 |Elemento|Conteúdo|Email|TaskPane|
 |:-----|:-----|:-----|:-----|
-|[Sinais](tokens.md)|||x|
+|[Tokens](tokens.md)|||x|
 
 ## <a name="attributes"></a>Atributos
 
 |Atributo|Descrição|
 |:-----|:-----|
-|URL (obrigatório)| A URL completa do arquivo JSON de substituições estendidas. Pode ser um modelo de URL que usa tokens definidos pelo elemento [tokens](tokens.md) .|
-|ResourcesUrl (opcional) | A URL completa de um arquivo que fornece recursos suplementares, como cadeias de caracteres localizadas, para o arquivo especificado no `Url` atributo. Pode ser um modelo de URL que usa tokens definidos pelo elemento [tokens](tokens.md) .|
+|URL (obrigatório)| A URL completa do arquivo JSON substitui estendido. No futuro, esse valor pode ser um modelo de URL que usa tokens definidos pelo [elemento Tokens.](tokens.md) Consulte [Exemplos](#examples).|
+|ResourcesUrl (opcional) | A URL completa de um arquivo que fornece recursos suplementares, como cadeias de caracteres localizadas, para o arquivo especificado no `Url` atributo. Pode ser um modelo de URL que usa tokens definidos pelo [elemento Tokens.](tokens.md)|
 
-## <a name="example"></a>Exemplo
+## <a name="examples"></a>Exemplos
+
+```XML
+<OfficeApp ...>
+  <!-- other elements omitted -->
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json"
+                     ResourceUrl="https://contoso.com/addin/my-resources.json">
+  </ExtendedOverrides>
+</OfficeApp>
+```
+
+No futuro, esse valor pode ser um modelo de URL que usa tokens definidos pelo [elemento Tokens.](tokens.md) Apresentamos um exemplo a seguir.
 
 ```XML
 <OfficeApp ...>
