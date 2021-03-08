@@ -97,6 +97,8 @@ items:
             items:
               - name: Visão geral
                 href: develop/add-in-manifests.md
+              - name: Substituições estendidas
+                href: develop/extended-overrides.md
               - name: Localizar a ordem correta dos elementos do manifesto
                 href: develop/manifest-element-ordering.md
               - name: Atualizar a versão da API e do manifesto
