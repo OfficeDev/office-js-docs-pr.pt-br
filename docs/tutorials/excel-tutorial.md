@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104865"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613931"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -36,7 +36,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
-- **Escolha o tipo de script:** `Javascript`
+- **Escolha o tipo de script:** `JavaScript`
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
