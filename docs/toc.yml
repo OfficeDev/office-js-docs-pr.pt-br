@@ -706,7 +706,7 @@ items:
           - name: Gerar automaticamente metadados JSON
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: Chamar APIs JS do Excel
+          - name: Chamar APIs de JavaScript do Excel
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
           - name: Identificar um XLL equivalente
@@ -1089,7 +1089,10 @@ items:
           - name: Referência de API
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
-          - name: Inserir e excluir slides em uma apresentação
+          - name: Adicionar e excluir slides
+            href: powerpoint/add-slides.md
+            displayName: PowerPoint
+          - name: Inserir slides
             href: powerpoint/insert-slides-into-presentation.md
             displayName: PowerPoint
           - name: Obter todo o documento por meio de um suplemento
