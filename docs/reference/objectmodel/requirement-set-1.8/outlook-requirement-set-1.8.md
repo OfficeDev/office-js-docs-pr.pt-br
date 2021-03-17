@@ -1,18 +1,18 @@
 ---
 title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
-description: Conjunto de requisitos 1,8 para a API do suplemento do Outlook.
-ms.date: 10/14/2020
+description: Conjunto de requisitos 1.8 para API de complemento do Outlook.
+ms.date: 03/10/2021
 localization_priority: Normal
-ms.openlocfilehash: d175cc84aa123c6a941ea57cfe4ff2114d693d32
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
+ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626586"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "50830962"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+O subconjunto de API de complemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um complemento do Outlook.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
@@ -23,12 +23,12 @@ O conjunto de requisitos 1.8 inclui todos os recursos do [Conjunto de requisitos
 
 - Adicionadas novas APIs para anexos, categorias, acesso de representante, local aprimorado, cabeçalhos da Internet e recursos de bloqueio ao enviar.
 - Adicionado o parâmetro opcional `options` ao Event.completed.
-- Adição de suporte `AttachmentsChanged` e `EnhancedLocationsChanged` eventos.
+- Adicionado suporte para `AttachmentsChanged` e `EnhancedLocationsChanged` eventos.
 
 ### <a name="change-log"></a>Log de mudanças
 
 - Adicionado [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa o conteúdo de um anexo.
-- Adicionado [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true): Adiciona um novo objeto que representa os detalhes de um anexo no modo de composição.
+- [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)adicionado : adiciona um novo objeto que representa os detalhes de um anexo no modo Redação.
 - Adicionado [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa as categorias de um item.
 - Adicionado [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa os detalhes de uma categoria (nome e cor associada).
 - Adicionado [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa o conjunto de locais em um compromisso.
@@ -36,7 +36,7 @@ O conjunto de requisitos 1.8 inclui todos os recursos do [Conjunto de requisitos
 - Adicionado [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa um local. Somente leitura.
 - Adicionado [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa a ID de um local.
 - Adicionado [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa a lista mestre de categorias em uma caixa de correio.
-- Adicionado [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa as propriedades de um compromisso ou item de mensagem em uma pasta, calendário ou caixa de correio compartilhados.
+- [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true)adicionado : adiciona um novo objeto que representa as propriedades de um compromisso ou item de mensagem em uma pasta compartilhada.
 - Adicionado [elemento de manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md): adiciona um elemento filho ao elemento de manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 - Adicionado [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties): adiciona uma nova propriedade que representa a lista principal de categorias em uma caixa de correio.
 - Adicionado [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa o conjunto de categorias em um item.

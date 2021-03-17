@@ -1,20 +1,20 @@
 ---
 title: Elemento Type no arquivo de manifesto
-description: O elemento Type Especifica se o suplemento equivalente é um suplemento de COM ou um XLL.
-ms.date: 03/16/2020
+description: O elemento Type especifica se o complemento equivalente é um complemento COM ou um XLL.
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: b59f903af39facd7543e7384189817d5365cf8c9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5af3359c232e91b097311bfc06fc9b1c932b0703
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604556"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836806"
 ---
 # <a name="type-element"></a>Elemento Type
 
-Especifica se o suplemento equivalente é um suplemento de COM ou um XLL.
+Especifica se o complemento equivalente é um complemento COM ou um XLL.
 
-**Tipo de suplemento:** Painel de tarefas, função personalizada
+**Tipo de complemento:** Painel de tarefas, função Personalizada
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -24,16 +24,16 @@ Especifica se o suplemento equivalente é um suplemento de COM ou um XLL.
 
 ## <a name="contained-in"></a>Contido em
 
-[EquivalentAdd-in](equivalentaddin.md)
+[EquivalentAddin](equivalentaddin.md)
 
-## <a name="add-in-type-values"></a>Valores de tipo de suplemento
+## <a name="add-in-type-values"></a>Valores de tipo de complemento
 
 Você deve especificar um dos seguintes valores para o `Type` elemento.
 
-- COM: especifica o suplemento equivalente é um suplemento de COM.
-- XLL: especifica o suplemento equivalente é um XLL do Excel.
+- COM: Especifica que o complemento equivalente é um complemento COM.
+- XLL: Especifica que o complemento equivalente é um XLL do Excel.
 
 ## <a name="see-also"></a>Confira também
 
 - [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Torne o seu suplemento do Office compatível com um suplemento COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

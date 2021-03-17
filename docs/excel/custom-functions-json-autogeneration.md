@@ -1,18 +1,18 @@
 ---
-ms.date: 12/22/2020
+ms.date: 03/15/2021
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
-ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
+ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "49735554"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836862"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
-Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o arquivo de metadados JSON. O uso de marcas JSDoc poupa você do esforço de [editar manualmente o arquivo de metadados JSON](custom-functions-json.md).
+Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o arquivo de metadados JSON. O uso de marcas JSDoc salva você do esforço de editar manualmente o arquivo de [metadados JSON.](custom-functions-json.md)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -39,20 +39,20 @@ No exemplo a seguir, a frase "Calcula o volume de uma esfera." é a descrição 
 
 ## <a name="jsdoc-tags"></a>Marcações JSDoc
 
-As seguintes marcas JSDoc são suportadas nas funções personalizadas do Excel.
+As seguintes marcas JSDoc são suportadas em funções personalizadas do Excel.
 
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) nome de identificação
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ nome e descrição
 * [@requiresAddress](#requiresAddress)
+* [@requiresParameterAddresses](#requiresParameterAddresses)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
 * [@volatile](#volatile)
 
 ---
 <a id="cancelable"></a>
-
 ### <a name="cancelable"></a>@cancelable
 
 Indica que uma função personalizada executa uma ação quando a função é cancelada.
@@ -71,7 +71,7 @@ Sintaxe: @customfunction _id_ _nome_
 
 Essa marca indica que a função JavaScript/TypeScript é uma função personalizada do Excel. É necessário criar metadados para a função personalizada.
 
-Veja a seguir um exemplo dessa marca.
+O exemplo a seguir mostra um exemplo dessa marca.
 
 ```js
 /**
@@ -120,7 +120,7 @@ No exemplo a seguir, Inc é a `id`da função e `increment` é o `name`.
 
 ### <a name="description"></a>descrição
 
-Uma descrição aparece para os usuários no Excel à medida que estão inserindo a função e especifica o que a função faz. Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função.
+Uma descrição aparece para os usuários no Excel enquanto eles ingressam na função e especifica o que a função faz. Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função.
 
 No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `ADD`.
 
@@ -133,14 +133,13 @@ No exemplo a seguir, a frase "Uma função que soma dois números" é a descriç
 ```
 
 <a id="helpurl"></a>
-
 ### <a name="helpurl"></a>@helpurl
 
 Sintaxe: @helpurl _url_
 
 A _url_ fornecida é exibida no Excel.
 
-No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
+No exemplo a seguir, `helpurl` o é `www.contoso.com/weatherhelp` .
 
 ```js
 /**
@@ -152,15 +151,14 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
 ```
 
 <a id="param"></a>
-
 ### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}` Especifica as informações de tipo nas chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo padrão `any` será usado.
-* `name` Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `{type}` especifica as informações de tipo em chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo `any` padrão será usado.
+* `name` especifica o parâmetro ao @param se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Para denotar um parâmetro de função personalizado como opcional:
@@ -187,7 +185,7 @@ O exemplo a seguir mostra uma função ADD que adiciona dois ou três números, 
 
 Sintaxe de TypeScript: @param nome _descrição_
 
-* `name` Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `name` especifica o parâmetro ao @param se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
@@ -223,9 +221,9 @@ function add(first: number, second: number): number {
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço.
+O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar `@requiresAddress` . Quando a função é chamada, a propriedade `address` conterá o endereço.
 
-O exemplo a seguir mostra como usar o `invocation` parâmetro em combinação com `@requiresAddress` para retornar o endereço da célula que chamou sua função personalizada. Consulte [parâmetro de chamada](custom-functions-parameter-options.md#invocation-parameter) para obter mais informações.
+O exemplo a seguir mostra como usar o parâmetro em combinação com para retornar o endereço da célula que `invocation` `@requiresAddress` invocou sua função personalizada. Consulte [o parâmetro Invocation](custom-functions-parameter-options.md#invocation-parameter) para obter mais informações.
 
 ```js
 /**
@@ -242,8 +240,39 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-<a id="returns"></a>
+<a id="requiresParameterAddresses"></a>
+### <a name="requiresparameteraddresses"></a>@requiresParameterAddresses
 
+Indica que a função deve retornar os endereços dos parâmetros de entrada. 
+
+O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar  `@requiresParameterAddresses` . O comentário JSDoc também deve incluir uma marca especificando que o valor de retorno seja uma `@returns` matriz, como `@returns {string[][]}` ou `@returns {number[][]}` . Consulte [Tipos de matriz](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) para obter informações adicionais. 
+
+Quando a função for chamada, a `parameterAddresses` propriedade conterá os endereços dos parâmetros de entrada.
+
+O exemplo a seguir mostra como usar o parâmetro em combinação com para `invocation` `@requiresParameterAddresses` retornar os endereços de três parâmetros de entrada. Consulte [Detectar o endereço de um parâmetro para](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) obter mais informações. 
+
+```js
+/**
+ * Return the addresses of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+<a id="returns"></a>
 ### <a name="returns"></a>@returns
 
 Sintaxe: @returns {_type_}
@@ -268,7 +297,6 @@ function add(first: number, second: number): number {
 ```
 
 <a id="streaming"></a>
-
 ### <a name="streaming"></a>@streaming
 
 Usado para indicar que uma função personalizada é uma função de streaming. 
@@ -276,14 +304,13 @@ Usado para indicar que uma função personalizada é uma função de streaming.
 O último parâmetro é do tipo `CustomFunctions.StreamingInvocation<ResultType>` .
 A função retorna `void` .
 
-As funções de streaming não retornam valores diretamente, em vez de chamarem `setResult(result: ResultType)` usando o último parâmetro.
+As funções de streaming não retornam valores diretamente, em vez disso, elas chamam `setResult(result: ResultType)` usando o último parâmetro.
 
 Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro. Para obter um exemplo de uma função de streaming e mais informações, confira [, criar uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function).
 
 As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
 <a id="volatile"></a>
-
 ### <a name="volatile"></a>@volatile
 
 Uma função volátil é aquela cujo resultado não é o mesmo de um momento para o outro, mesmo que não receba argumentos ou os argumentos não mudem. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
@@ -315,7 +342,7 @@ Um valor pode ser representado usando um dos seguintes tipos: `boolean``number``
 
 ### <a name="matrix-type"></a>Tipo de matriz
 
-Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números. `string[][]` indica uma matriz de cadeias de caracteres.
+Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números e indica uma matriz de `string[][]` cadeias de caracteres.
 
 ### <a name="error-type"></a>Tipo de erro
 
@@ -325,7 +352,7 @@ Uma função de streaming pode indicar um erro chamando `setResult()` com um tip
 
 ### <a name="promise"></a>Promessa
 
-Uma função pode retornar uma promessa, que fornece o valor quando a promessa é resolvida. Se a promessa for rejeitada, será gerado um erro.
+Uma função personalizada pode retornar uma promessa que fornece o valor quando a promessa é resolvida. Se a promessa for rejeitada, a função personalizada lançará um erro.
 
 ### <a name="other-types"></a>Outros tipos
 
@@ -337,5 +364,5 @@ Saiba mais sobre [convenções de nomenclatura para funções personalizadas](cu
 
 ## <a name="see-also"></a>Confira também
 
-* [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
+* [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

@@ -1,20 +1,20 @@
 ---
 title: Elemento EquivalentAddin no arquivo de manifesto
-description: Especifica a compatibilidade COM versões anteriores para um suplemento COM equivalente ou XLL.
-ms.date: 06/19/2019
+description: Especifica a compatibilidade com vertida para um complemento COM ou XLL equivalente.
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 412a3ce7bd12d886b7b88b5b84938e28295aba5d
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611558"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836834"
 ---
 # <a name="equivalentaddin-element"></a>Elemento EquivalentAddin
 
-Especifica a compatibilidade COM versões anteriores para um suplemento COM equivalente ou XLL.
+Especifica a compatibilidade com vertida para um complemento COM ou XLL equivalente.
 
-**Tipo de suplemento:** Painel de tarefas, função personalizada
+**Tipo de complemento:** Painel de tarefas, função Personalizada
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -26,7 +26,7 @@ Especifica a compatibilidade COM versões anteriores para um suplemento COM equi
 
 ## <a name="contained-in"></a>Contido em
 
-[EquivalentAdd-ins](equivalentaddins.md)
+[EquivalentAddins](equivalentaddins.md)
 
 ## <a name="must-contain"></a>Deve conter
 
@@ -34,14 +34,14 @@ Especifica a compatibilidade COM versões anteriores para um suplemento COM equi
 
 ## <a name="can-contain"></a>Pode conter
 
-[ProgID](progid.md) 
- [Nome do arquivo](filename.md)
+[ProgId](progid.md) 
+ [FileName](filename.md)
 
 ## <a name="remarks"></a>Comentários
 
-Para especificar um suplemento de COM como o suplemento equivalente, forneça os `ProgId` `Type` elementos e. Para especificar um XLL como o suplemento equivalente, forneça os `FileName` `Type` elementos e.
+Para especificar um complemento COM como o complemento equivalente, forneça os `ProgId` elementos `Type` e. Para especificar uma XLL como o complemento equivalente, forneça os `FileName` elementos `Type` e.
 
 ## <a name="see-also"></a>Confira também
 
 - [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Torne o seu suplemento do Office compatível com um suplemento COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

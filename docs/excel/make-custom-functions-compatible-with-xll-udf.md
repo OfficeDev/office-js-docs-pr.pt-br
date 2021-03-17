@@ -1,34 +1,35 @@
 ---
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
-description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
-ms.date: 08/13/2020
+description: Habilitar a compatibilidade com funções definidas pelo usuário do Excel XLL que tenham funcionalidade equivalente às suas funções personalizadas
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c34dcf5ef546fa0f337b2cbd11cca7d5e25e2de3
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 32146e7eebb963e8d800b619ef052457e40f2ac6
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603775"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836813"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
-Se você tiver os XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um suplemento do Excel para estender seus recursos de solução para outras plataformas, como online ou em um Mac. No entanto, os suplementos do Excel não possuem todas as funcionalidades disponíveis em XLLs. Dependendo da funcionalidade que sua solução usa, o XLL pode fornecer uma experiência melhor do que as funções personalizadas do suplemento do Excel no Excel no Windows.
+Se você tiver XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um complemento do Excel para estender seus recursos de solução para outras plataformas, como online ou em um Mac. No entanto, os complementos do Excel não têm toda a funcionalidade disponível em XLLs. Dependendo da funcionalidade que sua solução usa, a XLL pode oferecer uma experiência melhor do que as funções personalizadas do complemento do Excel no Excel no Windows.
 
 > [!NOTE]
-> O suplemento de COM e a compatibilidade do XLL UDF são compatíveis com as seguintes plataformas, quando conectados a uma assinatura do Microsoft 365:
+> O complemento COM e a compatibilidade UDF XLL são compatíveis com as seguintes plataformas, quando conectadas a uma assinatura do Microsoft 365:
+>
 > - Excel Online
 > - Excel no Windows (versão 1904 ou posterior)
-> - Excel no Mac (versão 13,329 ou posterior)
+> - Excel no Mac (versão 13.329 ou posterior)
 >
-> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Microsoft 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Se você ainda não tem uma assinatura do Microsoft 365, é possível uma assinatura gratuita, de 90 dias, redimensionada para o Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
+> Para usar o complemento COM e a compatibilidade UDF XLL no Excel na Web, faça logon usando sua assinatura do Microsoft 365 ou uma [conta da Microsoft.](https://account.microsoft.com/account) Se você ainda não tiver uma assinatura do Microsoft 365, poderá ter uma assinatura do Microsoft [365](https://developer.microsoft.com/office/dev-program)renovável de 90 dias gratuita, juntando-se ao programa de desenvolvedor do Microsoft 365 .
 
-## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar o XLL equivalente no manifesto
+## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar XLL equivalente no manifesto
 
-Para habilitar a compatibilidade com um XLL existente, identifique o XLL equivalente no manifesto do suplemento do Excel. O Excel usará as funções do XLL em vez de suas funções personalizadas do suplemento do Excel ao executar o Windows.
+Para habilitar a compatibilidade com uma XLL existente, identifique a XLL equivalente no manifesto do seu complemento do Excel. O Excel usará as funções XLL em vez de funções personalizadas do seu complemento do Excel ao ser executado no Windows.
 
-Para definir o XLL equivalente para suas funções personalizadas, especifique o `FileName` do XLL. Quando o usuário abre uma pasta de trabalho com funções do XLL, o Excel converte as funções em funções compatíveis. Em seguida, a pasta de trabalho usa o XLL quando aberto no Excel no Windows, e ele usará as funções personalizadas do seu suplemento do Excel quando ele for aberto online ou em um Mac.
+Para definir a XLL equivalente para suas funções personalizadas, especifique o `FileName` da XLL. Quando o usuário abre uma planilha com funções da XLL, o Excel converte as funções em funções compatíveis. A planilha usa a XLL quando aberta no Excel no Windows e usará funções personalizadas do seu complemento do Excel quando aberta online ou em um Mac.
 
-O exemplo a seguir mostra como especificar um suplemento de COM e um XLL como equivalente. Em geral, você especifica ambos. Para concluir, este exemplo mostra tanto no contexto. Eles são identificados por seus `ProgId` e, `FileName` respectivamente. O `EquivalentAddins` elemento deve ser posicionado imediatamente antes da `VersionOverrides` marca de fechamento. Para obter mais informações sobre a compatibilidade do suplemento COM, consulte [tornar o suplemento do Excel compatível com um suplemento de com existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+O exemplo a seguir mostra como especificar um complemento COM e uma XLL como equivalente. Muitas vezes, você especificará ambos. Para completar, este exemplo mostra ambos no contexto. Eles são identificados por `ProgId` seus e `FileName` respectivamente. O `EquivalentAddins` elemento deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento. Para obter mais informações sobre compatibilidade com o complemento COM, consulte Tornar seu Add-in do Office compatível com um [add-in COM existente.](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 
 ```xml
 <VersionOverrides>
@@ -48,27 +49,27 @@ O exemplo a seguir mostra como especificar um suplemento de COM e um XLL como eq
 ```
 
 > [!NOTE]
-> Se um suplemento declarar suas funções personalizadas para serem compatíveis com XLL, alterar o manifesto posteriormente poderá quebrar a pasta de trabalho de um usuário, pois ele alterará o formato de arquivo.
+> Se um complemento declarar que suas funções personalizadas são compatíveis com XLL, alterar o manifesto posteriormente pode quebrar a pasta de trabalho do usuário porque ele alterará o formato de arquivo.
 
-## <a name="custom-function-behavior-for-xll-compatible-functions"></a>Comportamento de função personalizada para funções compatíveis com XLL
+## <a name="custom-function-behavior-for-xll-compatible-functions"></a>Comportamento de função personalizado para funções compatíveis com XLL
 
-As funções XLL de um suplemento são convertidas em funções personalizadas compatíveis com o XLL quando uma planilha é aberta e há um suplemento equivalente disponível. Na próxima vez que você salvar, as funções XLL serão gravadas no arquivo em um modo compatível para que funcionem com as funções personalizadas XLL e suplemento do Excel (quando estiverem em outras plataformas).
+As funções XLL de um complemento são convertidas em funções personalizadas compatíveis com XLL quando uma planilha é aberta e há um complemento equivalente disponível. Na próxima salvação, as funções XLL são escritas no arquivo em um modo compatível para que elas funcionem com as funções personalizadas do complemento XLL e do Excel (quando em outras plataformas).
 
-A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuário, funções personalizadas compatíveis e funções personalizadas de suplemento do Excel.
+A tabela a seguir compara recursos entre funções definidas pelo usuário XLL, funções personalizadas compatíveis com XLL e funções personalizadas de complemento do Excel.
 
-|         |Função de XLL definida pelo usuário |Funções personalizadas compatíveis com XLL |Função personalizada de suplemento do Excel |
+|         |Função definida pelo usuário XLL |Funções personalizadas compatíveis com XLL |Função personalizada do complemento do Excel |
 |---------|---------|---------|---------|
 | **Plataformas compatíveis** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | **Formatos de arquivo com suporte** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Preenchimento automático de fórmula** | Não | Sim | Sim |
-| **Streaming** | Possível via xlfRTD e o retorno de chamada XLL. | Sim | Sim |
-| **Localização de funções** | Não | Não. O nome e a ID devem corresponder às funções de XLL existentes. | Sim |
+| **Streaming** | Possível por meio de retorno de chamada xlfRTD e XLL. | Sim | Sim |
+| **Localização de funções** | Não | Não. O Nome e a ID devem corresponder às funções existentes da XLL. | Sim |
 | **Funções voláteis** | Sim | Sim | Sim |
-| **Suporte para recálculo de vários encadeamentos** | Sim | Sim | Sim |
-| **Comportamento de cálculo** | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| **Conjuntos de requisitos** | N/D | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
+| **Suporte a recálculo com vários threads** | Sim | Sim | Sim |
+| **Comportamento de cálculo** | Sem interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
+| **Conjuntos de requisitos** | N/D | CustomFunctions 1.1 e posterior | CustomFunctions 1.1 e posterior |
 
 ## <a name="see-also"></a>Confira também
 
-- [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Torne o seu suplemento do Office compatível com um suplemento COM existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
