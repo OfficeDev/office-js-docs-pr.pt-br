@@ -138,6 +138,8 @@ items:
                     href: develop/troubleshoot-sso-in-office-add-ins.md
               - name: 'Solicitar permissões para uso da API em suplementos '
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: Cookies ITP e de terceiros
+                href: develop/itp-and-third-party-cookies.md
           - name: Interface do usuário (UI) e experiência do usuário (UX)
             items:
               - name: Visão Geral
