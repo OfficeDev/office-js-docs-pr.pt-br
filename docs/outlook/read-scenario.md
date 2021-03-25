@@ -1,56 +1,51 @@
 ---
 title: Criar suplementos do Outlook para formulários de leitura
 description: Suplementos de leitura são suplementos do Outlook que são ativados no painel de leitura ou no inspetor de leitura do Outlook.
-ms.date: 04/12/2018
+ms.date: 03/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 815234ed046b4c00b91f5acd6cd2c4dcd226dba2
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 495b4d947ec965481859c3262d3b67b93f57a5c0
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605301"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51177996"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>Criar suplementos do Outlook para formulários de leitura
 
-Suplementos de leitura são suplementos do Outlook que são ativados no painel de leitura ou no inspetor de leitura do Outlook. Ao contrário dos suplementos de redação (suplementos do Outlook que são ativados quando um usuário está criando uma mensagem ou um compromisso), os suplementos de leitura ficam disponíveis quando os usuários: 
+Suplementos de leitura são suplementos do Outlook que são ativados no painel de leitura ou no inspetor de leitura do Outlook. Ao contrário dos suplementos de redação (suplementos do Outlook que são ativados quando um usuário está criando uma mensagem ou um compromisso), os suplementos de leitura ficam disponíveis quando os usuários:
 
 - Visualizam um email, uma solicitação de reunião, uma resposta de reunião ou um cancelamento da reunião.
 
    > [!NOTE]
    > O Outlook não ativa suplementos no formulário de leitura para determinados tipos de mensagens, como itens que são anexos de outra mensagem, itens na pasta de rascunhos do Outlook ou itens que estão criptografados ou protegidos de outras maneiras.
-    
+
 - Exibem um item de reunião em que o usuário é um participante.
-    
+
 - Exibem um item de reunião em que o usuário é o organizador (somente versão RTM do Outlook 2013 e do Exchange 2013).
-    
+
    > [!NOTE]
    > Desde a versão Office 2013 SP1, se o usuário estiver exibindo um item de reunião que o usuário tenha organizado, apenas suplementos redigidos poderão realizar a ativação e estar disponíveis. Os suplementos de leitura não estão mais disponíveis nesse cenário.
 
-
 Em cada um desses cenários de leitura, o Outlook ativa suplementos quando suas condições de ativação são atendidas e os usuários podem escolher e abrir suplementos ativados na barra de suplemento no Painel de Leitura ou inspetor de leitura. A figura a seguir mostra o suplemento **Bing Mapas** ativado e aberto quando o usuário está lendo uma mensagem que contém um endereço geográfico.
-
 
 **Painel do suplemento mostrando o suplemento Bing Mapas funcionando, no caso de uma mensagem selecionada do Outlook que contém um endereço**
 
-![Bing Map mail app in Outlook](../images/bing-maps-add-in.jpg)
-
+![Bing Map mail app in Outlook](../images/outlook-detected-entity-card.png)
 
 ## <a name="types-of-add-ins-available-in-read-mode"></a>Tipos de suplementos disponíveis no modo de leitura
 
 Suplementos de leitura podem ser uma combinação dos tipos a seguir.
 
-- [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md)   
+- [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md)
 - [Suplementos contextuais do Outlook](contextual-outlook-add-ins.md)
-    
 
 ## <a name="api-features-available-to-read-add-ins"></a>Recursos de API disponíveis para suplementos de leitura
 
-- Para ativar suplementos em formulários de leitura: confira a Tabela 1 em [Especificar regras de ativação em um manifesto](activation-rules.md#specify-activation-rules-in-a-manifest).    
-- [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](use-regular-expressions-to-show-an-outlook-add-in.md)    
-- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md)    
-- [Extrair cadeias de caracteres de entidade de um item do Outlook](extract-entity-strings-from-an-item.md)   
+- Para ativar suplementos em formulários de leitura, consulte a Tabela 1 em [Especificar regras de ativação em um manifesto](activation-rules.md#specify-activation-rules-in-a-manifest).
+- [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](use-regular-expressions-to-show-an-outlook-add-in.md)
+- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md)
+- [Extrair cadeias de caracteres de entidade de um item do Outlook](extract-entity-strings-from-an-item.md)
 - [Obter anexos de um item do Outlook a partir do servidor](get-attachments-of-an-outlook-item.md)
-    
 
 ## <a name="see-also"></a>Confira também
 
