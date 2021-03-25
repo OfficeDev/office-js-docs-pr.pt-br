@@ -4,12 +4,12 @@ description: Os suplementos do Outlook são integrações criadas por terceiros 
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 14f3cf3ab4f647337047764f7403150237ff59cb
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741138"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178066"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -48,6 +48,7 @@ Os suplementos do Outlook são ativados quando o usuário está redigindo ou len
 - Protegido por IRM (Gerenciamento de Direitos de Informação) ou criptografado de outras maneiras para proteção. Uma mensagem assinada digitalmente é um exemplo, já que a assinatura digital se baseia em um desses mecanismos.
 
   > [!IMPORTANT]
+  >
   > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
   >
   > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
@@ -80,7 +81,7 @@ Para começar a criar suplementos do Outlook, experimente o seguinte.
 
 
 ## <a name="see-also"></a>Confira também
-- [Saiba mais sobre o Programa de Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
 - [Licenciar suplementos do Office e do SharePoint](/office/dev/store/license-your-add-ins)

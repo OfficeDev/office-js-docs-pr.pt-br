@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 03/09/2021
+ms.date: 03/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 09bc44e78f202474757317b4b07bce50d6235aa1
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 70e255601fd36a2f9101d56161846616691f5100
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836897"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178052"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,7 +25,7 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar. Não há suporte para combinações excluídas.
 
-| Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
+| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.30 ou posterior|Sim|Não|Não|
@@ -306,7 +306,7 @@ Por motivos de conformidade, os administrador podem precisar garantir que os usu
 
 #### <a name="manage-the-on-send-policy"></a>Gerenciar a política Ao enviar
 
-Por padrão, a política Ao enviar está desabilitada. Os administradores podem habilitar a política Ao enviar ao certificar-se de que a configuração de política de grupo do usuário **Desabilitar o envio quando as extensões da Web não puderem ser carregadas** esteja definida como **Habilitada**. Para desabilitar a política para um usuário, o administrador deve defini-la como **Desabilitada**. Para gerenciar essa configuração de política, você pode fazer o seguinte.
+Por padrão, a política Ao enviar está desabilitada. Os administradores podem habilitar a política Ao enviar ao certificar-se de que a configuração de política de grupo do usuário **Desabilitar o envio quando as extensões da Web não puderem ser carregadas** esteja definida como **Habilitada**. Para desabilitar a política para um usuário, o administrador deve defini-la como **Desabilitada**. Para gerenciar essa configuração de política, você pode fazer o seguinte:
 
 1. Baixe a [ferramenta de Modelos Administrativos](https://www.microsoft.com/download/details.aspx?id=49030) mais recente.
 1. Abra o Editor de Política de Grupo Local (**gpedit.msc**).
@@ -319,7 +319,7 @@ Por padrão, a política Ao enviar está desabilitada. Os administradores podem 
 
 Os suplementos para Outlook no Mac que usam o recurso Ao enviar devem ser executados para qualquer usuário que os tenha instalado. No entanto, se os usuários precisarem executar o suplemento para atender aos padrões de conformidade, a configuração de caixa de correio a seguir deverá ser aplicada ao computador de cada usuário. Esta configuração ou chave é compatível com CFPreference. Isso significa que é possível defini-la usando um software de gerenciamento empresarial para Mac, como o Jamf Pro.
 
-|||
+||Valor|
 |:---|:---|
 |**Domínio**|com.microsoft.outlook|
 |**Chave**|OnSendAddinsWaitForLoad|

@@ -3,12 +3,12 @@ title: Desenvolva seu Complemento do Office para trabalhar com ITP ao usar cooki
 description: Como trabalhar com ITP e Os Complementos do Office ao usar cookies de terceiros
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 48db782a8a8a179183fdd1bdfdfd55ee1c5698d4
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836904"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178038"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Desenvolva seu Complemento do Office para trabalhar com ITP ao usar cookies de terceiros
 
@@ -60,7 +60,7 @@ No navegador Safari, os usuários finais podem alternar a caixa de seleção Imp
 
 ## <a name="see-also"></a>Confira também
 
-- [Manipular a ITP no Safari e em outros navegadores onde cookies de terceiros são bloqueados](https://docs.microsoft.com/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [Manipular a ITP no Safari e em outros navegadores onde cookies de terceiros são bloqueados](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [Prevenção de Rastreamento no WebKit](https://webkit.org/tracking-prevention/)
 - ["Área de Privacidade" do Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
 - [Apresentando a API de Acesso ao Armazenamento](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

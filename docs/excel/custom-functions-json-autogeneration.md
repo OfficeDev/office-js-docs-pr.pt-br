@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836862"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178045"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -245,11 +245,11 @@ function getAddress(first, second, invocation) {
 
 Indica que a função deve retornar os endereços dos parâmetros de entrada. 
 
-O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar  `@requiresParameterAddresses` . O comentário JSDoc também deve incluir uma marca especificando que o valor de retorno seja uma `@returns` matriz, como `@returns {string[][]}` ou `@returns {number[][]}` . Consulte [Tipos de matriz](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) para obter informações adicionais. 
+O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar  `@requiresParameterAddresses` . O comentário JSDoc também deve incluir uma marca especificando que o valor de retorno seja uma `@returns` matriz, como `@returns {string[][]}` ou `@returns {number[][]}` . Consulte [Tipos de matriz](#matrix-type) para obter informações adicionais. 
 
 Quando a função for chamada, a `parameterAddresses` propriedade conterá os endereços dos parâmetros de entrada.
 
-O exemplo a seguir mostra como usar o parâmetro em combinação com para `invocation` `@requiresParameterAddresses` retornar os endereços de três parâmetros de entrada. Consulte [Detectar o endereço de um parâmetro para](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) obter mais informações. 
+O exemplo a seguir mostra como usar o parâmetro em combinação com para `invocation` `@requiresParameterAddresses` retornar os endereços de três parâmetros de entrada. Consulte [Detectar o endereço de um parâmetro para](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) obter mais informações. 
 
 ```js
 /**
