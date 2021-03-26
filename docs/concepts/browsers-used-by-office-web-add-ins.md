@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 02/24/2021
+ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: e3297cde10136fad3e044b682957eb6cc60e2e1d
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 4dc9e6a49aa54583f6c10f6b94653038a6798ea2
+ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505210"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "51221364"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -32,8 +32,8 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Não| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Não importa|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _E_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Não importa|Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Não |Microsoft Edge<sup>2, 3, 4 com</sup> WebView original (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>5</sup>|  Microsoft Edge<sup>2, 3, 4</sup> com WebView2 (baseado em Chromium) |
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Não |Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>2, 3</sup> com WebView2 (baseado em Chromium) |
 
 <sup>1</sup> Consulte a página [histórico de atualizações](/officeupdates/update-history-office365-proplus-by-date) e como encontrar [a versão do cliente do Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) e o canal de atualização para obter mais detalhes.
 
@@ -41,9 +41,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou `Runtimes` do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup> A versão do WebView2 para Os Complementos do Office está em andamento. Como resultado, o Microsoft Edge com WebView original (EdgeHTML) ainda pode ser usado para o seu complemento, mesmo quando o computador tem as versões necessárias do Windows e do Office e o controle WebView2 está instalado no computador. Para usuários de canal mensal, esperamos que essa distribuição seja concluída até o final de março de 2021. A distribuição será posteriormente para clientes Semi-Annual Channel. Atualizaremos essa página assim que tiver essas informações disponíveis.
-
-<sup>5</sup> O controle WebView2 inbeddable deve ser instalado além da instalação do Microsoft Edge para que o Office possa in-locar. Para instalá-lo, consulte [Microsoft Edge WebView2 / Embed web content ... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4 O</sup> controle WebView2 inbeddable deve ser instalado além da instalação do Microsoft Edge para que o Office possa in-locar. Para instalá-lo, consulte [Microsoft Edge WebView2 / Embed web content ... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 
 
