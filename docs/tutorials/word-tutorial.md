@@ -590,7 +590,7 @@ function insertTextIntoRange() {
 
 7. <span data-ttu-id="ad70c-288">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="ad70c-288">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="ad70c-289">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="ad70c-289">Test the add-in</span></span>
+### <a name="test-the-add-in-1"></a><span data-ttu-id="ad70c-289">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="ad70c-289">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
