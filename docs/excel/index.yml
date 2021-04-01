@@ -6,38 +6,38 @@ metadata:
   description: Recursos para saber mais sobre suplementos do Excel.
   ms.prod: excel
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0d860e532431f090ad152ff3b33d8aba2ad88e24
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363559"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435309"
 landingContent:
-- title: Sobre os suplementos do Excel
+- title: Sobre os complementos do Excel
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são suplementos do Excel?
+    - text: O que são os complementos do Excel?
       url: excel-add-ins-overview.md
   - linkListType: quickstart
     links:
     - text: Criar o seu primeiro suplemento do Excel
       url: ../quickstarts/excel-quickstart-jquery.md
-    - text: Explorar APIs com o script Lab
+    - text: Explorar APIs com Script Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Usar a API JavaScript do Excel para interagir com objetos e o conteúdo da pasta de trabalho
+    - text: Usar a API JavaScript do Excel para interagir com objetos e conteúdo de planilha
       url: ../reference/overview/excel-add-ins-reference-overview.md
     - text: Adicionar funções personalizadas ao Excel
       url: custom-functions-overview.md
-    - text: Testar e depurar um suplemento do Excel
+    - text: Testar e depurar um complemento do Excel
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um suplemento do Excel
+    - text: Implantar e publicar um complemento do Excel
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos do Office
+- title: Principais conceitos de Complementos do Office
   linkLists:
   - linkListType: overview
     links:
@@ -58,7 +58,7 @@ landingContent:
     - text: Tire dúvidas
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office

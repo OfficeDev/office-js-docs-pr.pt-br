@@ -6,20 +6,20 @@ metadata:
   description: Recursos para saber mais sobre suplementos do Project.
   ms.prod: project
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 06234275e8344b2de01a65d5821a7420d6c7aba8
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 0803558dbf4e8e9edbd2d43f273bbbe40216849e
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47364035"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435288"
 landingContent:
-- title: Sobre os suplementos do Project
+- title: Sobre os complementos do Project
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são suplementos do Project?
+    - text: O que são os complementos do Project?
       url: project-add-ins.md
     - text: JavaScript API para Project
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Testar e depurar suplementos do Project
+    - text: Testar e depurar um Project Add-ins
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar suplementos do Project
+    - text: Implantar e publicar um Project Add-ins
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos do Office
+- title: Principais conceitos de Complementos do Office
   linkLists:
   - linkListType: overview
     links:
@@ -54,7 +54,7 @@ landingContent:
     - text: Tire dúvidas
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office

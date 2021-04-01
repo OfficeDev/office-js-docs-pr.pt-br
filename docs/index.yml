@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Documentação de Suplementos do Office
-summary: Use a plataforma de Complementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo em documentos do Office e em itens de calendário e mensagens de email do Outlook. Com os Complementos do Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executados no Office na Web, no Windows, no Mac e em dispositivos móveis.
+summary: Use a plataforma de Complementos do Office para criar soluções que estendem aplicativos do Office e interagem com conteúdo em documentos do Office e em mensagens de email do Outlook e itens de calendário. Com os Complementos do Office, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executados no Office na Web, Windows, Mac e celular.
 brand: office
 metadata:
   title: Documentação de Suplementos do Office
@@ -10,13 +10,13 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 02/12/2021
-  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
-  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+  ms.date: 03/29/2021
+  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "50238054"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435246"
 highlightedContent:
   items:
   - itemType: overview
@@ -29,13 +29,13 @@ highlightedContent:
     title: 'Microsoft Learn: Introdução à personalização do cliente do Office com os complementos'
     url: /learn/modules/intro-office-add-ins
   - itemType: learn
-    title: 'Microsoft Learn: Estender os clientes do Office com Os Complementos do Office'
+    title: 'Microsoft Learn: Extend Office clients with Office Add-ins'
     url: /learn/paths/m365-office-add-in-associate
   - itemType: whats-new
-    title: Blog do desenvolvedor do Microsoft 365
+    title: Blog do Desenvolvedor do Microsoft 365
     url: https://developer.microsoft.com/office/blogs/technology/add-ins
   - itemType: how-to-guide
-    title: Guia para iniciantes dos Complementos do Office
+    title: Guia iniciante dos Complementos do Office
     url: overview/learning-path-beginner.md
   - itemType: reference
     title: Documentação de Referência da API JavaScript do Office
@@ -68,7 +68,7 @@ conceptualContent:
       text: Desenvolver um complemento completo do Excel
     - url: tutorials/outlook-tutorial.md
       itemType: tutorial
-      text: Descobrir o tutorial de complemento do Outlook
+      text: Descobrir o tutorial do complemento do Outlook
     - url: overview/patterns-and-practices-overview.md
       itemType: sample
       text: Usar padrões e práticas comuns
@@ -79,7 +79,7 @@ conceptualContent:
     links:
     - url: testing/test-debug-office-add-ins.md
       itemType: overview
-      text: Confira a visão geral da depuração
+      text: Confira a visão geral de depuração
     - url: testing/testing-and-troubleshooting.md
       itemType: concept
       text: Solucionar problemas de erros de usuário
@@ -93,26 +93,26 @@ conceptualContent:
       text: Explorar opções de implantação
     - url: publish/centralized-deployment.md
       itemType: deploy
-      text: Saiba mais sobre a Implantação Centralizada
+      text: Saiba mais sobre Implantação Centralizada
   - title: Publicar
     links:
     - url: /office/dev/store
       itemType: overview
-      text: Validar seu Complemento do Office
+      text: Validar seu Add-in do Office
     - url: /office/dev/store/add-in-submission-guide
       itemType: how-to-guide
-      text: Revise o guia de envio da App Store do Microsoft 365
-  - title: Envolver
+      text: Revisar o guia de envio da Loja de Aplicativos do Microsoft 365
+  - title: Envolva-se
     links:
     - url: https://developer.microsoft.com/office
       itemType: whats-new
-      text: Participe do Programa para Desenvolvedores
-    - url: https://officespdev.uservoice.com
+      text: Ingressar no Programa de Desenvolvedores
+    - url: /answers/products/m365
       itemType: architecture
       text: Solicitar recursos
     - url: https://stackoverflow.com/questions/tagged/office-js
       itemType: reference
-      text: Fazer perguntas sobre Office.js no Stack Overflow
+      text: Fazer perguntas sobre Office.js sobre Stack Overflow
     - url: https://github.com/OfficeDev/office-js/issues
       itemType: reference
       text: Relatar um bug ou problema

@@ -6,14 +6,14 @@ metadata:
   description: Recursos para aprender sobre a incorporação de diagramas do Visio no Microsoft Office SharePoint Online.
   ms.prod: visio
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: a58aedff61bd2edf52b6b2b3a748c7206c8af9c3
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: HT
+  ms.openlocfilehash: 0bff5d74874ddc499a216d38e7b418f9cdf6a08c
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679406"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435253"
 landingContent:
 - title: Sobre a API JavaScript do Visio
   linkLists:
@@ -36,7 +36,7 @@ landingContent:
     - text: Tire dúvidas
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office
