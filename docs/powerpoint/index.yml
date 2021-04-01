@@ -1,25 +1,25 @@
 ### YamlMime:Landing
 title: Documentação de suplementos do PowerPoint
-summary: Com os suplementos do PowerPoint, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no PowerPoint em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do PowerPoint.
+summary: Com os complementos do PowerPoint, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executado no PowerPoint em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do PowerPoint.
 metadata:
   title: Documentação de suplementos do PowerPoint
   description: Recursos para saber mais sobre suplementos do PowerPoint.
   ms.prod: powerpoint
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 4d74bb0150d21cc1fe31a5e5a311c2ddd2150879
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 047b49ece238efac495da5a74e1699e2ccdcfea5
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363685"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435295"
 landingContent:
-- title: Sobre os suplementos do PowerPoint
+- title: Sobre os complementos do PowerPoint
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são suplementos do PowerPoint?
+    - text: O que são os complementos do PowerPoint?
       url: powerpoint-add-ins.md
     - text: API JavaScript para PowerPoint
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Testar e depurar os suplementos do PowerPoint
+    - text: Testar e depurar um complemento do PowerPoint
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um suplemento do PowerPoint
+    - text: Implantar e publicar um complemento do PowerPoint
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos do Office
+- title: Principais conceitos de Complementos do Office
   linkLists:
   - linkListType: overview
     links:
@@ -56,7 +56,7 @@ landingContent:
     - text: Tire dúvidas
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office

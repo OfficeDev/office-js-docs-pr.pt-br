@@ -1,41 +1,41 @@
 ### YamlMime:Landing
 title: Documentação de suplementos do Word
-summary: Com os suplementos do Word, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no Word em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do Word.
+summary: Com os complementos do Word, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que pode ser executado no Word em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do Word.
 metadata:
   title: Documentação de suplementos do Word
   description: Recursos para saber mais sobre suplementos do Word
   ms.prod: word
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: b9b464711f87211f4f10014c145acb2d66f327ef
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: cea0e108bcefef31c71b6499b3fa8918e7f5bae6
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363741"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435239"
 landingContent:
-- title: Sobre os suplementos do Word
+- title: Sobre os complementos do Word
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são suplementos do Word?
+    - text: O que são os complementos do Word?
       url: word-add-ins-programming-overview.md
   - linkListType: quickstart
     links:
     - text: Criar seu primeiro suplemento do Word
       url: ../quickstarts/word-quickstart.md
-    - text: Explorar APIs com o script Lab
+    - text: Explorar APIs com Script Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Usar a API JavaScript do Word para interagir com o conteúdo e os metadados do documento
+    - text: Use a API JavaScript do Word para interagir com o conteúdo do documento e os metadados
       url: ../reference/overview/word-add-ins-reference-overview.md
-    - text: Testar e depurar um suplemento do Word
+    - text: Testar e depurar um complemento do Word
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um suplemento do Word
+    - text: Implantar e publicar um complemento do Word
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos do Office
+- title: Principais conceitos de Complementos do Office
   linkLists:
   - linkListType: overview
     links:
@@ -56,7 +56,7 @@ landingContent:
     - text: Tire dúvidas
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Solicitar recursos
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office
