@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2020
+ms.date: 03/30/2021
 description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839835"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506137"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -37,11 +37,11 @@ Geralmente, estes erros correspondem aos erros que você já deve estar familiar
 
 Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para saber mais, confira [Limpar o cache do Office](../testing/clear-cache.md).
 
-## <a name="common-problems-and-solutions"></a>Problemas comuns e soluções
+## <a name="common-problems-and-solutions"></a>Problemas e soluções comuns
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Não é possível abrir o complemento do localhost: use uma isenção de loopback local
 
-Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+Se você vir o erro "Não podemos abrir esse complemento do localhost", você precisará habilitar uma isenção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
@@ -53,7 +53,7 @@ Quando o Excel está aguardando a conclusão de uma função personalizada, ele 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
 
-Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para que o servidor dev pare de ser executado.
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para o servidor de dev parar de executar.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
@@ -76,11 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Para obter mais informações sobre esse processo, consulte [Associando nomes de função com metadados JSON.](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)
+Para obter mais informações sobre esse processo, consulte [Associando nomes de função a metadados JSON.](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Problemas conhecidos são rastreados e relatados no repositório GitHub de funções [personalizadas do Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
+Problemas conhecidos são rastreados e relatados no repositório do GitHub de Funções [Personalizadas do Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

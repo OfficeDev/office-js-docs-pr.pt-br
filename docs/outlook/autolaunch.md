@@ -2,42 +2,42 @@
 title: Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 description: Saiba como configurar seu complemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: a3e2167adec824934d1bc20d0e6613f9057e5c70
-ms.sourcegitcommit: 7cd501d0fdbbd4636bd08647b638dd5ca4c7c630
+ms.openlocfilehash: b9a4460b05af14f57eecb1bf4181c706843537b2
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50282993"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506144"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu complemento do Outlook para ativação baseada em eventos (visualização)
 
-Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode integrar com o painel de tarefas e a funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
+Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
 
 - `OnNewMessageCompose`: Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar)
 - `OnNewAppointmentOrganizer`: Ao criar um novo compromisso
 
   > [!IMPORTANT]
-  > Esse recurso não **é** ativado na edição de um item, por exemplo, um rascunho ou um compromisso existente.
+  > Esse recurso não **é** ativado ao editar um item, por exemplo, um rascunho ou um compromisso existente.
 
 No final deste passo a passo, você terá um complemento que é executado sempre que uma nova mensagem é criada.
 
 > [!IMPORTANT]
-> Esse recurso só tem suporte para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365. Veja [como visualizar o recurso de ativação baseada em eventos](#how-to-preview-the-event-based-activation-feature) neste artigo para obter mais detalhes.
+> Esse recurso só é suportado para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365. Confira [Como visualizar o recurso de ativação](#how-to-preview-the-event-based-activation-feature) baseada em evento neste artigo para obter mais detalhes.
 >
 > Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>Como visualizar o recurso de ativação baseada em eventos
+## <a name="how-to-preview-the-event-based-activation-feature"></a>Como visualizar o recurso de ativação baseada em evento
 
-Convidamos você a experimentar o recurso de ativação baseada em eventos! Conheça seus cenários e como podemos melhorar nos fazendo comentários por meio do GitHub (confira a seção **Comentários** no final desta página).
+Convidamos você a experimentar o recurso de ativação baseada em evento! Deixe-nos saber seus cenários e como podemos melhorar nos dando feedback por meio do GitHub (consulte a seção **Comentários** no final desta página).
 
 Para visualizar esse recurso:
 
 - Para o Outlook na Web:
-  - [Configure o lançamento direcionado no locatário do Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
-  - Fazer referência **à biblioteca beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) tipo para compilação de TypeScript e IntelliSense é encontrado na CDN e [definitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview` .
-- Para o Outlook no Windows: o build mínimo necessário é 16.0.13729.20000. Participe do [programa Office Insider](https://insider.office.com) para acessar as versões beta do Office.
+  - [Configure a versão direcionada no locatário do Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+  - Fazer referência **à biblioteca beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) tipo para a compilação TypeScript e IntelliSense é encontrado na CDN e em [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview` .
+- Para o Outlook no Windows: o build mínimo necessário é 16.0.13729.20000. Participe do [programa Office Insider para](https://insider.office.com) acesso a builds beta do Office.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
@@ -45,13 +45,13 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar a ativação baseada em eventos do seu complemento, você deve configurar o elemento [Runtimes](../reference/manifest/runtimes.md) e o ponto de extensão [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) no `VersionOverridesV1_1` nó do manifesto. Por enquanto, `DesktopFormFactor` é o único fator forma com suporte.
+Para habilitar a ativação baseada em evento do seu add-in, você deve configurar o elemento [Runtimes](../reference/manifest/runtimes.md) e o ponto de extensão [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) `VersionOverridesV1_1` no nó do manifesto. Por enquanto, `DesktopFormFactor` é o único fator de formulário suportado.
 
 1. No editor de código, abra o projeto de início rápido.
 
-1. Abra o **manifest.xml** arquivo localizado na raiz do projeto.
+1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione o nó inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir `<VersionOverrides>` e salve suas alterações.
+1. Selecione o nó `<VersionOverrides>` inteiro (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir e salve suas alterações.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -153,18 +153,18 @@ Para habilitar a ativação baseada em eventos do seu complemento, você deve co
 </VersionOverrides>
 ```
 
-O Outlook no Windows usa um arquivo JavaScript, enquanto o Outlook na Web usa um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências a ambos os arquivos no nó do manifesto, pois a plataforma do Outlook finalmente determina se deve usar HTML ou JavaScript com base no `Resources` cliente do Outlook. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML no elemento e, em seguida, em seu elemento filho forneça o local do arquivo JavaScript embutido ou referenciado `Runtime` `Override` pelo HTML.
+O Outlook no Windows usa um arquivo JavaScript, enquanto o Outlook na Web usa um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências a ambos os arquivos no nó do manifesto, pois a plataforma do Outlook determina se deve usar HTML ou JavaScript com base `Resources` no cliente do Outlook. Como tal, para configurar o tratamento de eventos, forneça o local do HTML no elemento e, em seguida, em seu elemento filho forneça o local do arquivo JavaScript embutido ou referenciado `Runtime` `Override` pelo HTML.
 
 > [!TIP]
-> Para saber mais sobre manifestos para os complementos do Outlook, confira [manifestos de complementos do Outlook.](manifests.md)
+> Para saber mais sobre manifestos para os complementos do Outlook, consulte [Manifestos de complemento do Outlook](manifests.md).
 
-## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
+## <a name="implement-event-handling"></a>Implementar o tratamento de eventos
 
-Você precisa implementar a manipulação para os eventos selecionados.
+Você precisa implementar o tratamento para os eventos selecionados.
 
-Neste cenário, você adicionará a manipulação para composição de novos itens.
+Nesse cenário, você adicionará a manipulação para compor novos itens.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** no editor de código.
 
 1. Após a `action` função, insira as seguintes funções JavaScript.
 
@@ -200,7 +200,7 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
-1. Para as funções funcionarem no **Outlook no Windows,** adicione o seguinte código JavaScript no final do arquivo.
+1. Para que as funções funcionem no **Outlook no Windows,** adicione o seguinte código JavaScript no final do arquivo.
 
     ```js
     if (Office.actions) {
@@ -210,7 +210,7 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
     }
     ```
 
-    **Observação:** a verificação `Office.actions` garante que o Outlook na Web ignore essas instruções.
+    **Observação**: verificar `Office.actions` se o Outlook na Web ignora essas instruções.
 
 1. Salve suas alterações.
 
@@ -230,19 +230,32 @@ Neste cenário, você adicionará a manipulação para composição de novos ite
 
     ![Captura de tela de uma janela de mensagem no Outlook no Windows com o assunto definido na composição](../images/outlook-win-autolaunch.png)
 
-## <a name="debug"></a>Depurar
+    > [!NOTE]
+    > Se você vir o erro "Não podemos abrir esse complemento do localhost", você precisará habilitar uma isenção de loopback.
+    >
+    > 1. Close Outlook.
+    > 2. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfs.exe** não está em execução.
+    > 3. Execute o seguinte comando.
+    >
+    >     ```command&nbsp;line
+    >     call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >     ```
+    >
+    > 4. Reinicie o Outlook.
 
-À medida que você implementa sua própria funcionalidade, talvez seja necessário depurar seu código. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
+## <a name="debug"></a>Depuração
 
-## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações da ativação baseada em eventos
+À medida que você implementa sua própria funcionalidade, talvez seja necessário depurar seu código. Para obter orientações sobre como depurar a ativação de um add-in baseado em eventos, consulte [Depurar](debug-autolaunch.md)seu complemento do Outlook baseado em eventos.
 
-Espera-se que os complementos ativados com base em eventos sejam de curta duração, leve e o mais não ofensivo possível. Para sinalizar que o seu complemento concluiu o processamento do evento de lançamento, recomendamos que você chame o `event.completed` método. Se essa chamada não for feita, o tempo limite do complemento será de aproximadamente 300 segundos, o período máximo permitido para a execução de complementos baseados em eventos. O complemento também termina quando o usuário fecha a janela de redação.
+## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações de ativação baseada em evento
 
-Se o usuário tiver vários complementos que se inscrevem no mesmo evento, a plataforma do Outlook inicia os complementos sem uma ordem específica. Atualmente, apenas cinco complementos baseados em eventos podem ser executados ativamente. Quaisquer outros complementos são pressionados para uma fila e executados à medida que os complementos ativos anteriormente são concluídos ou desativados.
+Os complementos que são ativados com base em eventos devem ser curtos, leves e não invasivos possíveis. Para sinalizar que o seu complemento concluiu o processamento do evento de lançamento, recomendamos que você chame o método de seu `event.completed` complemento. Se essa chamada não for feita, o complemento terá um tempo limite de aproximadamente 300 segundos, o tempo máximo permitido para a execução de complementos baseados em eventos. O complemento também termina quando o usuário fecha a janela de composição.
 
-O usuário pode alternar ou sair do item de email atual onde o complemento começou a ser executado. O complemento que foi lançado concluirá sua operação em segundo plano.
+Se o usuário tiver vários complementos inscritos no mesmo evento, a plataforma do Outlook iniciará os complementos em nenhuma ordem específica. Atualmente, apenas cinco complementos baseados em eventos podem ser executados ativamente. Quaisquer complementos adicionais são pressionados para uma fila e executados conforme os complementos ativos anteriormente são concluídos ou desativados.
 
-Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas a partir de complementos baseados em eventos. Veja a seguir as APIs bloqueadas:
+O usuário pode alternar ou navegar para longe do item de email atual onde o complemento começou a ser executado. O complemento que foi lançado terminará sua operação em segundo plano.
+
+Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de complementos baseados em eventos. Veja a seguir as APIs bloqueadas:
 
 - Em `Office.context.auth` :
   - `getAccessToken`
@@ -260,5 +273,5 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 ## <a name="see-also"></a>Confira também
 
-[Manifestos de complementos](manifests.md) 
- do Outlook [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
+[Manifestos de complemento do](manifests.md) 
+ Outlook [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
