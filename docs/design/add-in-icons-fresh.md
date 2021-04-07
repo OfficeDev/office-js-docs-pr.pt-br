@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de ícone de estilo novo para os Complementos do Office
-description: Obter diretrizes para usar ícones de estilo atualizados em Complementos do Office.
-ms.date: 03/24/2021
+description: Diretrizes para usar ícones de estilo atualizados em Complementos do Office.
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b26146ed86be221a829f32ef2062df5c1ae0b2b2
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221414"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604663"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para os Complementos do Office
 
@@ -44,6 +44,9 @@ Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos difer
 - 48 px
 - 64 px (recomendado, melhor para Mac)
 - 80 px (obrigatório)
+
+> [!IMPORTANT]
+> Para uma imagem que seja o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.
 
 Não se esqueça de redesenhar seus ícones para cada tamanho em vez de reduzi-los para que caibam.
 

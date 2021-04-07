@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: b9f4d07122779a893bd10e8d28b4f1b329125630
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506130"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604628"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -50,7 +50,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, então para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você tem duas opções:
 >
 > - Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou javaScript posterior ou em TypeScript e compile seu código para JavaScript do ES5 usando um compilador como [o babel](https://babeljs.io/) ou [o tsc](https://www.typescriptlang.org/index.html).
-> - Escreva em ECMAScript 2015 ou posterior JavaScript, mas também carregue uma biblioteca de [polifilamento,](https://wikipedia.org/wiki/Polyfill_(programming)) como [core-js,](https://github.com/zloirock/core-js) que permite ao IE executar seu código.
+> - Escreva em ECMAScript 2015 ou posterior JavaScript, mas também carregue uma biblioteca de [polifilamento,](https://en.wikipedia.org/wiki/Polyfill_(programming)) como [core-js,](https://github.com/zloirock/core-js) que permite ao IE executar seu código.
 >
 > Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
@@ -58,7 +58,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 ### <a name="service-workers-are-not-working"></a>Os Trabalhadores do Serviço não estão funcionando
 
-Os Complementos do Office não suportam Os Funcionários de Serviço quando o [Microsoft Edge WebView](/microsoft-edge/hosting/webview) original é usado. Eles são suportados com o WebView2 de Borda baseado em [Chromium.](/microsoft-edge/hosting/webview2)
+Os Complementos do Office não suportam Os Funcionários de Serviço quando o Microsoft Edge WebView original, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), é usado. Eles são suportados com o WebView2 de Borda baseado em [Chromium.](/microsoft-edge/hosting/webview2)
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>Barra de rolagem não aparece no painel de tarefas
 

@@ -1,18 +1,18 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
-description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
-ms.date: 08/24/2020
+description: Exemplos de código que mostram como executar tarefas comuns com planilhas ou recursos no nível do aplicativo usando a API JavaScript do Excel.
+ms.date: 04/05/2021
 localization_priority: Normal
-ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819501"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604649"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais o `Workbook` objeto oferece suporte, consulte [objeto WORKBOOK (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Workbook` objeto, consulte [Objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
 
 O objeto Workbook é o ponto de entrada para que se suplemento interaja com o Excel. Ele mantém conjuntos de planilhas, tabelas, Tabelas Dinâmicas e muito mais, através dos quais os dados do Excel são acessados e alterados. O objeto [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) dá a seu suplemento acesso a todos os dados de pastas de trabalho através de planilhas individuais. Especificamente, ele permite seu suplemento adicione planilhas, navegue entre elas e atribua manipuladores a eventos de planilhas. O artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md) descreve como acessar e editar planilhas.
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 O método `createWorkbook` também cria uma cópia de uma pasta de trabalho existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .xlsx como parâmetro opcional. A pasta de trabalho resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo. xlsx válido.
 
-Você pode obter a pasta de trabalho atual do suplemento como uma cadeia de caracteres codificada em base64 usando a [divisão de arquivos](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
+Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de caracteres codificada com base64 usando o [corte de arquivo](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
 
 ```js
 var myFile = document.getElementById("file");
@@ -75,15 +75,19 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual (visualização)
 
 > [!NOTE]
-> O método `WorksheetCollection.addFromBase64` no momento só está disponível na visualização pública e somente no Office no Windows e Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> No `Workbook.insertWorksheetsFromBase64` momento, o método só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
-O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma pasta de trabalho [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) tem o método `addFromBase64` para inserir cópias de planilhas da pasta de trabalho de destino nela mesma. O outro arquivo da pasta de trabalho é passado como em cadeia de caracteres codificado em base 64, como a chamada `Excel.createWorkbook`.
+O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o método para inserir cópias das planilhas da pasta de trabalho de destino em `insertWorksheetsFromBase64` si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada. 
 
 ```TypeScript
-addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-O exemplo a seguir mostra planilhas da pasta de trabalho que estão sendo inseridas em uma pasta de trabalho atual, logo após a planilha ativa. Observe que `null` é passado para o parâmetro `sheetNamesToInsert?: string[]`. Isso significa que todas as planilhas são inseridas.
+O exemplo a seguir insere outra lista de trabalho na lista de trabalho atual. As novas planilhas são inseridas após a planilha ativa. Observe que `[]` é passado como o parâmetro para a propriedade [InsertWorksheetOptions.](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` Isso significa que todas as planilhas da pasta de trabalho existente são inseridas na pasta de trabalho atual.
+
+> [!IMPORTANT]
+> O `insertWorksheetsFromBase64` método é suportado para o Excel no Windows, Mac e na Web. Não há suporte para iOS. Além disso, no Excel na Web, esse método não dá suporte a planilhas de origem com elementos PivotTable, Chart, Comment ou Slicer. Se esses objetos estão presentes, o `insertWorksheetsFromBase64` método retorna o erro no Excel na `UnsupportedFeature` Web. 
 
 ```js
 var myFile = document.getElementById("file");
@@ -91,22 +95,26 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // strip off the metadata before the base64-encoded string
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
-
-        var sheets = context.workbook.worksheets;
-        sheets.addFromBase64(
-            workbookContents,
-            null, // get all the worksheets
-            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
-            sheets.getActiveWorksheet() // insert them after the active worksheet
-        );
-        return context.sync();
+        // Remove the metadata before the base64-encoded string.
+        const startIndex = reader.result.toString().indexOf("base64,");
+        const workbookContents = reader.result.toString().substr(startIndex + 7);
+            
+        // Retrieve the workbook.
+        const workbook = context.workbook;
+            
+        // Set up the insert options. 
+        var options = { 
+            sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
+            positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
+            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            
+         // Insert the workbook. 
+         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         return context.sync();
     });
 };
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read in the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -129,7 +137,7 @@ Excel.run(function (context) {
 
 O método `protect` aceita um parâmetro opcional de cadeia de caracteres. Esta cadeia de caracteres representa a senha necessária para um usuário ignorar a proteção e alterar a estrutura da pasta de trabalho.
 
-A proteção também ser definida no nível da planilha para prevenir a edição de dados indesejada. Para saber mais, confira a seção **Proteção de dados**do artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md#data-protection).
+A proteção também ser definida no nível da planilha para prevenir a edição de dados indesejada. Para saber mais, confira a seção **Proteção de dados** do artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md#data-protection).
 
 > [!NOTE]
 > Para saber mais sobre a proteção de pastas de trabalho no Excel, confira o artigo [Proteger uma pasta de trabalho](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
@@ -173,7 +181,7 @@ Excel.run(function (context) {
 
 #### <a name="worksheet-level-custom-properties"></a>Propriedades personalizadas no nível da planilha
 
-As propriedades personalizadas também podem ser definidas no nível da planilha. Eles são semelhantes às propriedades personalizadas no nível do documento, exceto pelo fato de que a mesma chave pode ser repetida em diferentes planilhas. O exemplo a seguir mostra como criar uma propriedade **personalizada chamada** MySheet com o valor "Alpha" na planilha atual e, em seguida, recuperá-la.
+As propriedades personalizadas também podem ser definidas no nível da planilha. Elas são semelhantes às propriedades personalizadas no nível do documento, exceto que a mesma chave pode ser repetida em planilhas diferentes. O exemplo a seguir mostra como criar uma propriedade personalizada chamada **WorksheetGroup** com o valor "Alfa" na planilha atual e, em seguida, recuperá-la.
 
 ```js
 Excel.run(function (context) {
@@ -220,15 +228,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings"></a>Configurações de cultura de aplicativo do Access
+## <a name="access-application-culture-settings"></a>Configurações de cultura de aplicativos do Access
 
-Uma pasta de trabalho tem configurações de idioma e cultura que afetam o modo como determinados dados são exibidos. Essas configurações podem ajudar a localizar dados quando os usuários do seu suplemento estiverem compartilhando pastas de trabalho em diferentes idiomas e culturas. O suplemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja os dados em seu próprio formato de cultura.
+Uma workbook tem configurações de idioma e cultura que afetam a forma como determinados dados são exibidos. Essas configurações podem ajudar a localização de dados quando os usuários do seu complemento estão compartilhando as guias de trabalho em diferentes idiomas e culturas. Seu complemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja dados no formato de sua própria cultura.
 
-`Application.cultureInfo` define as configurações de cultura do sistema como um objeto [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contém configurações como o separador decimal numérico ou o formato de data.
+`Application.cultureInfo`define as configurações de cultura do sistema como um [objeto CultureInfo.](/javascript/api/excel/excel.cultureinfo) Isso contém configurações como o separador decimal numérico ou o formato de data.
 
-Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas no `CultureInfo` objeto. As alterações locais são mantidas como propriedades no nível do [aplicativo](/javascript/api/excel/excel.application), como `Application.decimalSeparator` .
+Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas no `CultureInfo` objeto. Quaisquer alterações locais são mantidas como [propriedades de](/javascript/api/excel/excel.application)nível de aplicativo, como `Application.decimalSeparator` .
 
-O exemplo a seguir altera o caractere separador decimal de uma cadeia de caracteres numérica de um ', ' para o caractere usado pelas configurações do sistema.
+O exemplo a seguir altera o caractere separador decimal de uma cadeia numérica de um ',' para o caractere usado pelas configurações do sistema.
 
 ```js
 // This will convert a number like "14,37" to "14.37"
@@ -358,6 +366,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md)
 - [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md)

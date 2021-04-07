@@ -1,14 +1,14 @@
 ---
 title: Elemento Resources no arquivo de manifesto
 description: O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641267"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604614"
 ---
 # <a name="resources-element"></a>Elemento Resources
 
@@ -29,7 +29,8 @@ Cada recurso pode ter um ou mais elementos filhos **Override** para definir um r
 > Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.
 
 ### <a name="images"></a>Imagens
-Cada ícone deve ter três elementos **images** , um para cada um dos três tamanhos obrigatórios:
+
+Cada ícone deve ter três **elementos Images,** um para cada um dos três tamanhos obrigatórios:
 
 - 16 x 16
 - 32x32
@@ -44,7 +45,9 @@ Os seguintes tamanhos adicionais também têm suporte, mas não são obrigatóri
 - 64x64
 
 > [!IMPORTANT]
-> O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.
+>
+> - Se essa imagem for o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.
+> - O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.
 
 ## <a name="resources-examples"></a>Exemplos de recursos
 
