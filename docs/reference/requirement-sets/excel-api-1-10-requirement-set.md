@@ -1,51 +1,51 @@
 ---
-title: Conjunto de requisitos de API JavaScript do Excel 1,10
-description: Detalhes sobre o conjunto de requisitos do ExcelApi 1,10.
-ms.date: 11/19/2020
+title: Conjunto de requisitos da API JavaScript do Excel 1.10
+description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.10.
+ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 951835a040b767bc9cf802be4d3bb0790b49fc06
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 1bafdd2064166019c5c3f22aa4da1a2d0ec73f08
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603782"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650818"
 ---
-# <a name="whats-new-in-excel-javascript-api-110"></a>O que há de novo na API JavaScript do Excel 1,10
+# <a name="whats-new-in-excel-javascript-api-110"></a>Novidades na API JavaScript do Excel 1.10
 
-O ExcelApi 1,10 introduziu os principais recursos, como comentários, contornos e Segmentações de tópicos. Ele também adicionou suporte a eventos para clicar e classificar em nível de planilha.
+O ExcelApi 1.10 introduziu os principais recursos, como comentários, contornos e slicers. Ele também adicionou suporte a eventos para clique e classificação no nível da planilha.
 
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
 | [Comments](../../excel/excel-add-ins-comments.md) | Adicione, edite e exclua comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| [Descreve](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | Agrupar linhas e colunas para formar contornos recolhíveis. | [Intervalo](/javascript/api/excel/excel.range), [planilha](/javascript/api/excel/excel.worksheet) |
+| [Outlines](../../excel/excel-add-ins-ranges-group.md) | Linhas e colunas de grupo para formar contornos retrálíveis. | [Intervalo,](/javascript/api/excel/excel.range) [Planilha](/javascript/api/excel/excel.worksheet) |
 | [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | Insira e configure as segmentações de dados em tabelas e Tabelas dinâmicas. | [Segmentação de dados](/javascript/api/excel/excel.slicer) |
-| [Mais eventos de planilha](../../excel/excel-add-ins-events.md) | Ouvir eventos Click e Sort na planilha. | [Planilha (eventos)](/javascript/api/excel/excel.worksheet#events) |
+| [Mais eventos de planilha](../../excel/excel-add-ins-events.md) | Ouça clique e classificar eventos na planilha. | [Planilha (Eventos)](/javascript/api/excel/excel.worksheet#events) |
 
-## <a name="api-list"></a>Lista de APIs
+## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,10. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,10 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,10 ou anterior](/javascript/api/excel?view=excel-js-1.10&preserve-view=true).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1.10. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos da API JavaScript do Excel 1.10 ou anterior, consulte APIs do Excel no conjunto de requisitos [1.10](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)ou anterior .
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|O conteúdo do comentário.|
 ||[delete()](/javascript/api/excel/excel.comment#delete--)|Exclui o comentário e todas as respostas conectadas.|
-||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Obtém a célula em que este comentário está localizado.|
+||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Obtém a célula onde este comentário está localizado.|
 ||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Obtém o email do autor do comentário.|
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|Obtém o nome do autor do comentário.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Obtém o horário de criação do comentário.|
-||[id](/javascript/api/excel/excel.comment#id)|Especifica o identificador de comentários.|
+||[id](/javascript/api/excel/excel.comment#id)|Especifica o identificador de comentário.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Representa uma coleção de objetos de resposta associados ao comentário.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[Add (cellAddress: String de intervalo \| , Content: String, ContentType?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Cadeia \| de caracteres de intervalo, conteúdo: cadeia de caracteres, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada.|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Obtém o número de comentários na coleção.|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Obtém um comentário da coleção com base em seu ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Obtém um comentário da coleção com base em sua posição.|
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Obtém o comentário da célula especificada.|
-||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Obtém o comentário ao qual a resposta fornecida está conectada.|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Obtém o comentário ao qual a resposta dada está conectada.|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|O conteúdo da resposta de comentário.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|O conteúdo da resposta ao comentário.|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Exclui a resposta do comentário. |
-||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Obtém a célula em que esta resposta de comentário está localizada.|
+||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Obtém a célula onde esta resposta de comentário está localizada.|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Obtém o comentário pai desta resposta.|
 ||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Obtém o email do autor da resposta do comentário.|
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Obtém o nome do autor da resposta do comentário.|
@@ -56,7 +56,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Retorna uma resposta de comentário identificada pela respectiva ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Obtém uma resposta de comentário com base em sua posição na coleção.|
 ||[items](/javascript/api/excel/excel.commentreplycollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Especifica se a lista de campos pode ser exibida na interface do usuário.|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Especifica se a lista de campos pode ser mostrada na interface do usuário.|
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Exclui a Tabela Dinâmica.|
 ||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate--)|Cria uma duplicata desta Tabela Dinâmica com cópias de todos os elementos de estilo.|
 ||[name](/javascript/api/excel/excel.pivottablestyle#name)|Obtém o nome da Tabela Dinâmica.|
@@ -68,14 +68,14 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitemornullobject-name-)|Obtém um PivotTableStyle por nome.|
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[setDefault (newDefaultStyle: PivotTableStyle \| cadeia de caracteres)](/javascript/api/excel/excel.pivottablestylecollection#setdefault-newdefaultstyle-)|Define a Tabela Dinâmica padrão para uso no escopo do objeto pai.|
-|[Range](/javascript/api/excel/excel.range)|[Grupo (groupOption: Excel. GroupOption)](/javascript/api/excel/excel.range#group-groupoption-)|Agrupa colunas e linhas de uma estrutura de tópicos.|
-||[hideGroupDetails (groupOption: Excel. GroupOption)](/javascript/api/excel/excel.range#hidegroupdetails-groupoption-)|Ocultar detalhes do grupo de linhas ou colunas.|
+|[Range](/javascript/api/excel/excel.range)|[group(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#group-groupoption-)|Grupos colunas e linhas para um contorno.|
+||[hideGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#hidegroupdetails-groupoption-)|Ocultar detalhes da linha ou do grupo de colunas.|
 ||[height](/javascript/api/excel/excel.range#height)|Retorna a distância em pontos, para zoom de 100%, da borda superior do intervalo até a borda inferior do intervalo.|
 ||[left](/javascript/api/excel/excel.range#left)|Retorna a distância em pontos, para zoom de 100%, da borda esquerda da planilha para a borda esquerda do intervalo.|
 ||[top](/javascript/api/excel/excel.range#top)|Retorna a distância em pontos, para zoom de 100%, da borda superior da planilha até a borda superior do intervalo.|
 ||[width](/javascript/api/excel/excel.range#width)|Retorna a distância em pontos, para zoom de 100%, da borda esquerda do intervalo até a borda direita do intervalo.|
-||[showGroupDetails (groupOption: Excel. GroupOption)](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|Mostrar detalhes do grupo de linhas ou colunas.|
-||[Desagrupar (groupOption: Excel. GroupOption)](/javascript/api/excel/excel.range#ungroup-groupoption-)|Desagrupa colunas e linhas de uma estrutura de tópicos.|
+||[showGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|Mostrar detalhes da linha ou do grupo de colunas.|
+||[ungroup(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#ungroup-groupoption-)|Desagrupa colunas e linhas para um contorno.|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyto-destinationsheet-)|Copia e cola um objeto Forma.|
 ||[placement](/javascript/api/excel/excel.shape#placement)|Representa como o objeto é anexado às células abaixo dela.|
 |[Segmentação de dados](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|Representa a legenda da segmentação de dados.|
@@ -89,7 +89,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|Verdadeiro se todos os filtros atualmente aplicados na segmentação de dados estiverem desmarcados.|
 ||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Representa a coleção de SlicerItems que faz parte da segmentação de dados.|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Representa a planilha que contém a segmentação de dados.|
-||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Seleciona itens de segmentação de itens com base em suas chaves.|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Seleciona itens de slicer com base em suas chaves.|
 ||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Representa a ordem de classificação dos itens na segmentação de dados.|
 ||[style](/javascript/api/excel/excel.slicer#style)|Valor da constante que representa o estilo da Segmentação de dados.|
 ||[top](/javascript/api/excel/excel.slicer#top)|Representa a distância, em pontos, da borda superior da segmentação de dados na parte superior da planilha.|
@@ -98,7 +98,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getCount()](/javascript/api/excel/excel.slicercollection#getcount--)|Retorna o número de segmentações de dados na coleção.|
 ||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getitem-key-)|Obtém um objeto de segmentação de dados usando seu respectivo nome ou ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getitemat-index-)|Obtém uma segmentação de dados com base em sua posição na coleção.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getitemornullobject-key-)|Obtém uma segmentação de código usando seu nome ou ID.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getitemornullobject-key-)|Obtém uma slicer usando seu nome ou id.|
 ||[items](/javascript/api/excel/excel.slicercollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isselected)|True se o item da segmentação de dados estiver selecionado.|
 ||[hasData](/javascript/api/excel/excel.sliceritem#hasdata)|True se o item de segmentação de dados tiver dados.|
@@ -153,12 +153,12 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Retorna um conjunto de todos os objetos Comments na planilha.|
 ||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Ocorre quando uma ou mais colunas são classificadas.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Ocorre quando uma ou mais linhas são classificadas.|
-||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Ocorre quando uma ação com clique/tocado à esquerda acontece na planilha.|
+||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Ocorre quando uma ação clicada à esquerda/mapeada ocorre na planilha.|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Retorna uma coleção de slicers que fazem parte da planilha.|
-||[showOutlineLevels (translevels: Number, columnLevels: Number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Mostra grupos de linhas ou colunas por seus níveis de estrutura de tópicos.|
+||[showOutlineLevels(rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Mostra grupos de linhas ou colunas por seus níveis de contorno.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Ocorre quando uma ou mais colunas são classificadas.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Ocorre quando uma ou mais linhas são classificadas.|
-||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Ocorre quando a operação com o botão esquerdo/tocado acontece na coleção de planilhas.|
+||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Ocorre quando a operação clicada à esquerda/mapeada ocorre na coleção de planilhas.|
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Obtém o endereço do intervalo que representa as áreas classificadas de uma planilha específica.|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Obtém a origem do evento.|
 ||[tipo](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#type)|Obtém o tipo do evento.|
@@ -168,7 +168,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[tipo](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|Obtém o id da planilha onde a classificação aconteceu.|
 |[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|Obtém o endereço que representa a célula que foi clicada/tocada para uma planilha específica.|
-||[offsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|A distância, em pontos, do ponto de clique com o botão esquerdo/tocado à esquerda (ou à direita para idiomas da direita para a esquerda) da linha de grade da célula com clique à esquerda/tocado.|
+||[offsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|A distância, em pontos, do ponto de grade clicado/mapeado para a esquerda (ou direita para idiomas da direita para a esquerda) da célula clicada/mapeada à esquerda.|
 ||[offsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsety)|A distância, em pontos, desde o ponto clicado/tocado com o botão esquerdo até a borda da linha de grade superior da célula clicada/tocada com o botão esquerdo.|
 ||[tipo](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetid)|Obtém o id da planilha na qual a célula foi clicada com o botão esquerdo/tocada.|

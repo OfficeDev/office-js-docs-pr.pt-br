@@ -1,14 +1,14 @@
 ---
 title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
-description: Saiba como a biblioteca JavaScript do Excel permite que o suplemento realize operações e defina propriedades em vários intervalos simultaneamente.
-ms.date: 04/30/2019
+description: Saiba como a biblioteca JavaScript do Excel permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609766"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650888"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
@@ -16,7 +16,7 @@ A biblioteca de JavaScript do Excel permite que o suplemento realize operações
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Um conjunto de intervalos (possivelmente não contíguos) é representado por um objeto [RangeAreas](/javascript/api/excel/excel.rangeareas) . Possui propriedades e métodos semelhantes ao tipo `Range` (muitos com os mesmos nomes ou semelhantes), mas foram feitos ajustes para:
+Um conjunto de intervalos (possivelmente desconfiados) é representado por um [objeto RangeAreas.](/javascript/api/excel/excel.rangeareas) Possui propriedades e métodos semelhantes ao tipo `Range` (muitos com os mesmos nomes ou semelhantes), mas foram feitos ajustes para:
 
 - Os tipos de dados para propriedades e o comportamento dos setters e getters.
 - Os tipos de dados dos parâmetros do método e os comportamentos do método.
@@ -49,7 +49,7 @@ Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-o
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Methods
+##### <a name="methods"></a>Métodos
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-o
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()`(nomeado `getOffsetRangeAreas` no `RangeAreas` objeto)
+- `getOffsetRange()` (nomeado `getOffsetRangeAreas` no `RangeAreas` objeto)
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()`(nomeado `getUsedRangeAreas` no `RangeAreas` objeto)
-- `getUsedRangeOrNullObject()`(nomeado `getUsedRangeAreasOrNullObject` no `RangeAreas` objeto)
+- `getUsedRange()` (nomeado `getUsedRangeAreas` no `RangeAreas` objeto)
+- `getUsedRangeOrNullObject()` (nomeado `getUsedRangeAreasOrNullObject` no `RangeAreas` objeto)
 - `load()`
 - `set()`
 - `setDirty()`
@@ -94,7 +94,7 @@ Quando você tiver um objeto `RangeAreas`, você pode criar outros usando os mé
 > É possível adicionar diretamente intervalos adicionais para um objeto `RangeAreas`. Por exemplo, o conjunto `RangeAreas.areas` não tem um método`add`.
 
 > [!WARNING]
-> Tente adicionar ou excluir membros diretamente à matriz`RangeAreas.areas.items`. Isso levará a um comportamento indesejável no seu código. Por exemplo, é possível enviar um objeto adicional `Range` para a matriz, mas isso causará erros porque as propriedades e métodos `RangeAreas` se comportam como se o novo item não estivesse ali. Por exemplo, a propriedade `areaCount` não inclui intervalos transferidos dessa maneira e o `RangeAreas.getItemAt(index)` gera um erro se `index` for maior que `areasCount-1`. Da mesma forma, excluir um objeto `Range` na matriz `RangeAreas.areas.items` obtendo uma referência a ele e chamando seu método `Range.delete` causa bugs: embora o `Range`objeto* seja *excluído, as propriedades e métodos do objeto pai `RangeAreas` se comportam ou tentam se comportar, como se ele ainda existisse. Por exemplo, se o seu código chamar `RangeAreas.calculate`, o Office tentará calcular o intervalo, mas haverá erro porque o objeto de intervalo desapareceu.
+> Tente adicionar ou excluir membros diretamente à matriz`RangeAreas.areas.items`. Isso levará a um comportamento indesejável no seu código. Por exemplo, é possível enviar um objeto adicional `Range` para a matriz, mas isso causará erros porque as propriedades e métodos `RangeAreas` se comportam como se o novo item não estivesse ali. Por exemplo, a propriedade `areaCount` não inclui intervalos transferidos dessa maneira e o `RangeAreas.getItemAt(index)` gera um erro se `index` for maior que `areasCount-1`. Da mesma forma, excluir um objeto `Range` na matriz `RangeAreas.areas.items` obtendo uma referência a ele e chamando seu método `Range.delete` causa bugs: embora o `Range`objeto *seja* excluído, as propriedades e métodos do objeto pai `RangeAreas` se comportam ou tentam se comportar, como se ele ainda existisse. Por exemplo, se o seu código chamar `RangeAreas.calculate`, o Office tentará calcular o intervalo, mas haverá erro porque o objeto de intervalo desapareceu.
 
 ## <a name="set-properties-on-multiple-ranges"></a>Definir as propriedades em vários intervalos
 
@@ -119,7 +119,7 @@ Este exemplo se aplica a cenários nos quais você pode codificar os endereços 
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>Obter células especiais de vários intervalos
 
-As `getSpecialCells` e `getSpecialCellsOrNullObject` métodos no `RangeAreas` objeto funciona analogamente para métodos de mesmo nome no `Range` objeto. Esses métodos retornam as células com característica especificada de todos os intervalos no `RangeAreas.areas` conjunto. Confira a seção [Localizar células especiais em um intervalo](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) para saber mais sobre células especiais.
+As `getSpecialCells` e `getSpecialCellsOrNullObject` métodos no `RangeAreas` objeto funciona analogamente para métodos de mesmo nome no `Range` objeto. Esses métodos retornam as células com característica especificada de todos os intervalos no `RangeAreas.areas` conjunto. Para obter mais detalhes sobre células especiais, consulte [Find special cells within a range](excel-add-ins-ranges-special-cells.md).
 
 Ao chamar as `getSpecialCells` ou `getSpecialCellsOrNullObject` método em um `RangeAreas` objeto:
 
@@ -180,5 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Trabalhe com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md)
-- [Trabalhe com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md)
+- [Ler ou gravar em um intervalo grande usando a API JavaScript do Excel](excel-add-ins-ranges-large.md)

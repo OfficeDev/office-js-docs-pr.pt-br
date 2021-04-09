@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel.
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 0720715a38ff81196433d207148c63ffcd475003
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408646"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652199"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -166,7 +166,7 @@ Excel.run(function (context) {
 
 ### <a name="copy-an-existing-worksheet"></a>Copiar uma planilha existente
 
-`Worksheet.copy` adiciona uma nova planilha que é uma cópia de uma planilha existente. O nome da nova planilha terá um número anexado ao final, consistente com a cópia de uma planilha feita pela Interface do Usuário do Excel (por exemplo, **MySheet (2) **). `Worksheet.copy` pode-se usar dois parâmetros, ambos opcionais:
+`Worksheet.copy` adiciona uma nova planilha que é uma cópia de uma planilha existente. O nome da nova planilha terá um número anexado ao final, consistente com a cópia de uma planilha feita pela Interface do Usuário do Excel (por exemplo, **MySheet (2)**). `Worksheet.copy` pode-se usar dois parâmetros, ambos opcionais:
 
 - `positionType` -Um [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) enum especificando o local da pasta de trabalho em que a nova planilha deve ser adicionada.
 - `relativeTo` -Se o `positionType` for `Before` ou `After`, você precisa especificar uma planilha relativa à qual a nova planilha deve ser adicionada (esse parâmetro responde a pergunta "antes ou depois?").
@@ -331,11 +331,11 @@ As imagens a seguir mostram os intervalos retornados pela propriedade `address` 
 
 ![Dados da tabela no Excel antes de serem classificados](../images/excel-sort-event-before.png)
 
-Se uma classificação de cima para baixo for realizada no "**Q1**" (os valores em "**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`:
+Se uma classificação de cima para baixo for realizada no "**Q1**&quot; (os valores em &quot;**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`:
 
 ![Dados da tabela no Excel após uma classificação de cima para baixo. As linhas que foram movidas são realçadas.](../images/excel-sort-event-after-row.png)
 
-Se uma classificação da esquerda para a direita for executada em "**Quinces**" (os valores em "**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address`:
+Se uma classificação da esquerda para a direita for executada em "**Quinces**&quot; (os valores em &quot;**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address`:
 
 ![Dados da tabela no Excel após uma classificação da esquerda para a direita. As colunas que foram movidas são realçadas.](../images/excel-sort-event-after-column.png)
 
@@ -386,7 +386,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > Esta seção descreve como localizar as células e intervalos usando as funções do objeto `Worksheet`. Encontre mais informações de recuperação de intervalo nos artigos específicos do objeto.
-> - Confira os exemplos que mostram como obter um intervalo em uma planilha usando o objeto `Range` em [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md).
+> - Para exemplos que mostram como obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando `Range` [a API JavaScript do Excel](excel-add-ins-ranges-get.md).
 > - Para obter exemplos que mostram como obter intervalos de um objeto `Table`, confira [Trabalhar com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
@@ -495,4 +495,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
