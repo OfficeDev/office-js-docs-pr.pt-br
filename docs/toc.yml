@@ -623,6 +623,9 @@ items:
           - name: Chamar funções internas
             href: excel/excel-add-ins-worksheet-functions.md
             displayName: Excel
+          - name: Células
+            href: excel/excel-add-ins-cells.md
+            displayName: Excel
           - name: Gráficos
             href: excel/excel-add-ins-charts.md
             displayName: Excel
@@ -632,14 +635,8 @@ items:
           - name: Comentários
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: Formatação condicional de intervalos
-            href: excel/excel-add-ins-conditional-formatting.md
-            displayName: Excel
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: Adiar a execução enquanto a célula está sendo editada
-            href: excel/excel-add-ins-delay-in-cell-edit.md
             displayName: Excel
           - name: Tratamento de erros
             href: excel/excel-add-ins-error-handling.md
@@ -647,21 +644,71 @@ items:
           - name: Eventos
             href: excel/excel-add-ins-events.md
             displayName: Excel
-          - name: Intervalos múltiplos
-            href: excel/excel-add-ins-multiple-ranges.md
-            displayName: Excel
           - name: Otimização de desempenho
             href: excel/performance.md
             displayName: Excel
           - name: Tabela Dinâmica
             href: excel/excel-add-ins-pivottables.md
             displayName: Excel
-          - name: Intervalos (fundamentais)
-            href: excel/excel-add-ins-ranges.md
-            displayName: Excel
-          - name: Intervalos (avançados)
-            href: excel/excel-add-ins-ranges-advanced.md
-            displayName: Excel
+          - name: Intervalos e células
+            items:
+              - name: Obter um intervalo
+                href: excel/excel-add-ins-ranges-get.md
+                displayName: Excel
+              - name: Inserir um intervalo de células
+                href: excel/excel-add-ins-ranges-insert.md
+                displayName: Excel
+              - name: Limpar ou excluir um intervalo de células
+                href: excel/excel-add-ins-ranges-clear-delete.md
+                displayName: Excel
+              - name: Definir ou obter o intervalo selecionado
+                href: excel/excel-add-ins-ranges-set-get.md
+                displayName: Excel
+              - name: 'Definir ou obter valores, texto ou fórmulas'
+                href: excel/excel-add-ins-ranges-set-get-values.md
+                displayName: Excel
+              - name: Definir formato do intervalo
+                href: excel/excel-add-ins-ranges-set-format.md
+                displayName: Excel
+              - name: Formatação condicional de intervalos
+                href: excel/excel-add-ins-conditional-formatting.md
+                displayName: Excel
+              - name: Ler ou gravar em um intervalo não limitado
+                href: excel/excel-add-ins-ranges-unbounded.md
+                displayName: Excel
+              - name: Ler ou gravar em um intervalo grande
+                href: excel/excel-add-ins-ranges-large.md
+                displayName: Excel
+              - name: Localizar uma célula usando a cadeia de correspondência
+                href: excel/excel-add-ins-ranges-string-match.md
+                displayName: Excel
+              - name: Trabalhar com datas usando o plug-in Moment-MSDate
+                href: excel/excel-add-ins-ranges-dates.md
+                displayName: Excel
+              - name: Localizar células especiais em um intervalo
+                href: excel/excel-add-ins-ranges-special-cells.md
+                displayName: Excel
+              - name: 'Recortar, copiar e colar'
+                href: excel/excel-add-ins-ranges-cut-copy-paste.md
+                displayName: Excel
+              - name: Remover duplicatas
+                href: excel/excel-add-ins-ranges-remove-duplicates.md
+                displayName: Excel
+              - name: Agrupar dados de uma estrutura de tópicos
+                href: excel/excel-add-ins-ranges-group.md
+                displayName: Excel
+              - name: Lidar com matrizes dinâmicas e fórmulas despejadas
+                href: excel/excel-add-ins-ranges-dynamic-arrays.md
+                displayName: Excel
+              - name: Obter precedentes de fórmula
+                href: excel/excel-add-ins-ranges-precedents.md
+                displayName: Excel
+              - name: Adiar a execução enquanto a célula está sendo editada
+                href: excel/excel-add-ins-delay-in-cell-edit.md
+                displayName: Excel
+              - name: Trabalhar com vários intervalos
+                href: excel/excel-add-ins-multiple-ranges.md
+                displayName: Excel
           - name: Formas
             href: excel/excel-add-ins-shapes.md
             displayName: Excel

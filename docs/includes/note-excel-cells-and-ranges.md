@@ -1,0 +1,2 @@
+> [!NOTE]
+> A API JavaScript do Excel não tem um objeto ou classe "Célula". Em vez disso, a API JavaScript do Excel define todas as células do Excel como objetos `Range`. Uma célula individual na interface do usuário do Excel se traduz em um objeto `Range` com uma célula na API JavaScript do Excel. Um único objeto `Range` também pode conter várias células contíguas. Confira [Trabalhar com células usando a API JavaScript do Excel](/office/dev/add-ins/excel/excel-add-ins-cells) para saber mais.

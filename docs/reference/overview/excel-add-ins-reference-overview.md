@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do Excel
 description: Saiba mais sobre as APIs JavaScript do Excel
-ms.date: 07/28/2020
+ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e589bd7ce814211759cc731d828e9c180339ea1f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 80340b4990b56b2ba4d51f2a028480af3e267828
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293657"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650804"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
@@ -21,15 +21,15 @@ Um suplemento do Excel interage com objetos no Excel usando a API JavaScript do 
 
 Esta seção da documentação concentra-se na API JavaScript do Excel, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Excel na Web ou para o Excel 2016 ou posterior. Para obter mais informações do API comum, consulte [Modelo do objeto do JavaScript API comum](../../develop/office-javascript-api-object-model.md).
 
-## <a name="learn-programming-concepts"></a>Aprenda conceitos de programação
+## <a name="learn-object-model-concepts"></a>Aprender os conceitos do modelo de objeto
 
-Veja [Conceitos fundamentais de programação com a API de JavaScript do Excel](../../excel/excel-add-ins-core-concepts.md) para obter informações sobre conceitos de programação importantes.
+Confira o [Modelo de objeto JavaScript do Excel em suplementos do Office](../../excel/excel-add-ins-core-concepts.md) para obter informações sobre conceitos importantes do modelo de objeto.
 
 Para ter a experiência prática com o uso da API de JavaScript do Excel para acessar objetos no Excel, conclua o [Tutorial do suplemento do Excel](../../tutorials/excel-tutorial.md).
 
 ## <a name="learn-api-capabilities"></a>Conheça os recursos da API
 
-Cada recurso principal da API do Excel tem um artigo explorando o que pode ser feito e o modelo de objeto relevante.
+Cada recurso principal da API do Excel possui um artigo ou conjunto de artigos explorando o que esse recurso pode fazer e o modelo de objeto relevante.
 
 * [Gráficos](../../excel/excel-add-ins-charts.md)
 * [Comentário](../../excel/excel-add-ins-comments.md)
@@ -37,9 +37,9 @@ Cada recurso principal da API do Excel tem um artigo explorando o que pode ser f
 * [Funções personalizadas](../../excel/custom-functions-overview.md)
 * [Validação de dados](../../excel/excel-add-ins-data-validation.md)
 * [Eventos](../../excel/excel-add-ins-events.md)
-* [Vários intervalos (RangeArea)](../../excel/excel-add-ins-multiple-ranges.md)
-* [PivotTables](../../excel/excel-add-ins-pivottables.md)
-* [Intervalos](../../excel/excel-add-ins-ranges.md) e [APIs de Faixa Avançada](../../excel/excel-add-ins-ranges-advanced.md)
+* [Tabelas Dinâmicas](../../excel/excel-add-ins-pivottables.md)
+* [Faixas](../../excel/excel-add-ins-ranges-get.md) e [Células](../../excel/excel-add-ins-cells.md)
+* [RangeAreas (vários intervalos)](../../excel/excel-add-ins-multiple-ranges.md)
 * [Formas](../../excel/excel-add-ins-shapes.md)
 * [Tabelas](../../excel/excel-add-ins-tables.md)
 * [Pastas de trabalho e APIs no Nível do Aplicativo](../../excel/excel-add-ins-workbooks.md)

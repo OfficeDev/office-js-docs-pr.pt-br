@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2020
+ms.date: 04/08/2021
 title: Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 localization_priority: Priority
-ms.openlocfilehash: e1248ce28a45ad63ac9b02093a39810ee042bb80
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789221"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652186"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -23,11 +23,11 @@ Se você estiver iniciando um novo projeto, siga estas etapas para usar o [ gera
 
 Faça um dos seguintes:
 
-- Para gerar um suplemento do Excel com funções personalizadas, execute o comando `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js`.
-    
+- Para gerar um suplemento do Excel com funções personalizadas, execute o comando `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
+
     ou
-    
-- Para gerar um suplemento do PowerPoint, execute o comando `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js`.
+
+- Para gerar um suplemento do PowerPoint, execute o comando `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`.
 
 O gerador criará o projeto e instalará os componentes do Node de suporte.
 
@@ -36,9 +36,9 @@ O gerador criará o projeto e instalará os componentes do Node de suporte.
 Siga estas etapas para um projeto novo ou existente para configurá-lo para usar um tempo de execução compartilhado. Estas etapas pressupõem que você gerou seu projeto usando o [Gerador Yeoman para Suplementos do Office ](https://github.com/OfficeDev/generator-office).
 
 1. Inicie o Visual Studio Code e abra o projeto de suplemento do Excel ou PowerPoint que você gerou.
-2. Abra o arquivo **manifest.xml**.
-3. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o tempo de execução compartilhado em vez do tempo de execução da função personalizada. O XML deve aparecer da seguinte maneira.
-    
+1. Abra o arquivo **manifest.xml**.
+1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](../reference/requirement-sets/shared-runtime-requirement-sets.md) em vez do tempo de execução da função personalizada. O XML deve aparecer da seguinte maneira.
+
     ```xml
     <Requirements>
     <Sets DefaultMinVersion="1.1">
@@ -46,8 +46,8 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
     </Sets>
     </Requirements>
     ```
-        
-4. Localize a `<VersionOverrides>`seção e adicione a seguinte`<Runtimes>` seção apenas dentro da `<Host ...>`marca. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na ` <bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+
+1. Localize a `<VersionOverrides>`seção e adicione a seguinte`<Runtimes>` seção apenas dentro da `<Host ...>`marca. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na ` <bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
 
    ```xml
    <VersionOverrides ...>
@@ -60,7 +60,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
        ...
    ```
 
-5. Se você gerou um Suplemento do Excel com funções personalizadas, localize o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
+1. Se você gerou um Suplemento do Excel com funções personalizadas, localize o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -71,7 +71,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
    ...
    ```
 
-6. Localize a marca`<FunctionFile ...>` e altere o `resid` de **Commands.Url** para **Taskpane.Url**. Observe que, se você não tiver comandos de ação, não terá uma entrada **FunctionFile** e pode pular esta etapa.
+1. Localize a marca`<FunctionFile ...>` e altere o `resid` de **Commands.Url** para **Taskpane.Url**. Observe que, se você não tiver comandos de ação, não terá uma entrada **FunctionFile** e pode pular esta etapa.
 
     ```xml
     </GetStarted>
@@ -80,15 +80,15 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
     ...
     ```
 
-7. Salve o arquivo **manifest.xml**.
+1. Salve o arquivo **manifest.xml**.
 
 ## <a name="configure-the-webpackconfigjs-file"></a>Configurar o arquivo webpack.config.js
 
 O **webpack.config.js** construirá vários carregadores de tempo de execução. É necessário modificá-lo para carregar apenas o tempo de execução JavaScript compartilhado por meio do arquivo **taskpane.html**.
 
 1. Inicie o Visual Studio Code e abra o projeto de suplemento do Excel ou PowerPoint que você gerou.
-2. Abra o arquivo **webpack.config.js**.
-3. Se o arquivo **webpack.config.js** tiver o seguinte código de plug-in **functions.html**, remova-o.
+1. Abra o arquivo **webpack.config.js**.
+1. Se o arquivo **webpack.config.js** tiver o seguinte código de plug-in **functions.html**, remova-o.
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -98,7 +98,7 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
       })
     ```
 
-4. Se o seu arquivo **webpack.config.js** tiver o seguinte código de plug-in **functions.html**, remova-o.
+1. Se o seu arquivo **webpack.config.js** tiver o seguinte código de plug-in **functions.html**, remova-o.
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -108,7 +108,7 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
       })
     ```
 
-5. Se o seu projeto usou as **functions** ou os blocos de **commands**, adicione-os à lista de blocos conforme mostrado a seguir (o código a seguir é para se o seu projeto usou os dois blocos).
+1. Se o seu projeto usou as **functions** ou os blocos de **commands**, adicione-os à lista de blocos conforme mostrado a seguir (o código a seguir é para se o seu projeto usou os dois blocos).
 
     ```javascript
       new HtmlWebpackPlugin({
@@ -118,7 +118,7 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
       })
     ```
 
-6. Salvar suas alterações e reconstrua o projeto.
+1. Salvar suas alterações e reconstrua o projeto.
 
    ```command line
    npm run build
@@ -132,27 +132,28 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
 É possível confirmar que está usando o tempo de execução de JavaScript compartilhado corretamente usando as instruções a seguir.
 
 1. Abra o arquivo **manifest.xml**.
-2. Localize a seção `<Control xsi:type="Button" id="TaskpaneButton">` e altere o seguinte `<Action ...>` XML.
-    
+1. Localize a seção `<Control xsi:type="Button" id="TaskpaneButton">` e altere o seguinte `<Action ...>` XML.
+
     de:
-    
+
     ```xml
     <Action xsi:type="ShowTaskpane">
       <TaskpaneId>ButtonId1</TaskpaneId>
       <SourceLocation resid="Taskpane.Url"/>
     </Action>
     ```
-    
+
     para:
-    
+
     ```xml
     <Action xsi:type="ExecuteFunction">
       <FunctionName>action</FunctionName>
     </Action>
     ```
-3. Abra o arquivo **./src/commands/commands.js**.
-4. Substitua a função **ação** pelo código abaixo. Isso atualizará a função para abrir e modificar o botão do painel de tarefas para incrementar um contador. Abrir e acessar o DOM do painel de tarefas a partir de um comando só funciona com o tempo de execução JavaScript compartilhado.
-    
+
+1. Abra o arquivo **./src/commands/commands.js**.
+1. Substitua a função **ação** pelo código abaixo. Isso atualizará a função para abrir e modificar o botão do painel de tarefas para incrementar um contador. Abrir e acessar o DOM do painel de tarefas a partir de um comando só funciona com o tempo de execução JavaScript compartilhado.
+
     ```javascript
     var _count=0;
     
@@ -167,7 +168,7 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
     }
     ```
 
-5. Salve suas alterações e execute o projeto.
+1. Salve suas alterações e execute o projeto.
 
    ```command line
    npm start
@@ -179,7 +180,7 @@ Cada vez que você selecionar o botão suplementos, ele mudará o texto do botã
 
 Ao adicionar o elemento `Runtime`, você também especifica uma vida útil com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar os recursos, como iniciar o suplemento quando o documento for aberto, continuar executando o código após o fechamento do painel de tarefas ou usar o CORS e o DOM nas funções personalizadas.
 
->[!NOTE]
+> [!NOTE]
 > O valor padrão de tempo de vida é `short`, mas recomendamos usar o `long` em suplementos do Excel. Se você definir o tempo de execução como `short` neste exemplo, o suplemento do Excel será iniciado quando um dos botões da faixa de opções for pressionado, mas poderá ser encerrado depois que o manipulador da faixa de opções for concluído. Da mesma forma, o suplemento será iniciado quando o painel de tarefas for aberto, mas pode ser encerrado quando o painel de tarefas for fechado.
 
 ```xml
@@ -188,7 +189,7 @@ Ao adicionar o elemento `Runtime`, você também especifica uma vida útil com u
 </Runtimes>
 ```
 
->[!NOTE]
+> [!NOTE]
 > Se seu suplemento inclui o elemento `Runtimes` no manifesto (necessário para um tempo de execução compartilhado), ele utiliza o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
 ## <a name="about-the-shared-javascript-runtime"></a>Sobre o tempo de execução de JavaScript compartilhado
@@ -200,14 +201,14 @@ No entanto, você pode configurar o Suplemento do Office para compartilhar códi
 Configurar um tempo de execução compartilhado permite os seguintes cenários.
 
 - Seu Suplemento do Office pode usar recursos adicionais da IU:
-    - [Adicionar atalhos de teclado Personalizados aos Suplementos do Office (pré-visualização)](../design/keyboard-shortcuts.md)
-    - [Crie guias contextuais Personalizadas em Suplementos do Office (pré-visualização)](../design/contextual-tabs.md)
-    - [Ativar e Desativar Comandos de Suplemento](../design/disable-add-in-commands.md)
-    - [Execute o código em seu Suplemento do Office quando o documento for aberto](run-code-on-document-open.md)
-    - [Mostre ou oculte o painel de tarefas de seu Suplemento do Office ](show-hide-add-in.md)
+  - [Adicionar atalhos de teclado Personalizados aos Suplementos do Office (pré-visualização)](../design/keyboard-shortcuts.md)
+  - [Crie guias contextuais Personalizadas em Suplementos do Office (pré-visualização)](../design/contextual-tabs.md)
+  - [Ativar e Desativar Comandos de Suplemento](../design/disable-add-in-commands.md)
+  - [Execute o código em seu Suplemento do Office quando o documento for aberto](run-code-on-document-open.md)
+  - [Mostre ou oculte o painel de tarefas de seu Suplemento do Office ](show-hide-add-in.md)
 - Para suplementos do Excel:
-    - As funções personalizadas terão suporte CORS completo.
-    - Funções personalizadas podem chamar APIs Office.js para ler dados de documentos de planilhas.
+  - As funções personalizadas terão suporte CORS completo.
+  - Funções personalizadas podem chamar APIs Office.js para ler dados de documentos de planilhas.
 
 Para o Office no Windows, o tempo de execução compartilhado requer uma instância do navegador Microsoft Internet Explorer 11, conforme explicado em [Navegadores usados ​​por suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, todos os botões que seu suplemento exibir na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo tempo de execução do JavaScript.
 

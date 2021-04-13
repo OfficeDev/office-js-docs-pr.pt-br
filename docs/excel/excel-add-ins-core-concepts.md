@@ -1,16 +1,17 @@
 ---
-title: Conceitos fundamentais de programação com a API JavaScript do Excel
-description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 07/28/2020
+title: Modelo de objeto JavaScript do Excel em suplementos do Office
+description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel e como usá-los para criar suplementos para o Excel.
+ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: dde7dc66e0746fc4d9cf91ed3df824fab05c109d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 50833deb4d996f577db9d3e40db21f1799e7f2f7
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292584"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650896"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
+# <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 
 Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para desenvolver suplementos para o Excel 2016 ou versões posteriores. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
 
@@ -34,16 +35,17 @@ A imagem a seguir ilustra quando você pode usar a API JavaScript do Excel ou as
 
 ![Imagem das diferentes entre a API JS do Excel e as APIs comuns](../images/excel-js-api-common-api.png)
 
-## <a name="object-model"></a>Modelo de objetos
+## <a name="excel-specific-object-model"></a>Modelo de objeto específico do Excel
 
 Para entender as APIs do Excel, você deve entender como os componentes de uma pasta de trabalho estão relacionados entre si.
 
 * Uma **Pasta de trabalho** contém uma ou mais **Planilhas**.
-* Uma **Planilha** concede acesso a células por meio de objetos de **Intervalo**.
+* Uma **Planilha** contém coleções desses objetos de dados que estão presentes na planilha individual e dá acesso às células por meio de **Intervalo** de objetos.
 * Um **Intervalo** representa um grupo de células contíguas.
 * Os **Intervalos** são usados para criar e colocar **Tabelas**, **Gráficos**, **Formas** e outras visualizações de dados ou objetos da organização.
-* Uma **Planilha** contém coleções desses objetos de dados que estão presentes na planilha individual.
 * As **Pastas de trabalho** contêm coleções de alguns desses objetos de dados (por exemplo, **Tabelas**) para toda a **Pasta de trabalho**.
+
+[!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ### <a name="ranges"></a>Intervalos
 
@@ -99,6 +101,8 @@ Esse exemplo cria os seguintes dados na planilha atual:
 
 ![Um registro de vendas mostrando as linhas de valores, uma coluna de fórmulas e cabeçalhos formatados.](../images/excel-overview-range-sample.png)
 
+Para obter mais informações, confira [Definir e obter valores de intervalo, texto ou fórmulas usando a API JavaScript do Excel](excel-add-ins-ranges-set-get-values.md).
+
 ### <a name="charts-tables-and-other-data-objects"></a>Gráficos, tabelas e outros objetos de dados
 
 As APIs JavaScript do Excel podem criar e manipular estruturas de dados e visualizações no Excel. As tabelas e gráficos são dois dos objetos mais usados, mas as APIs oferecem suporte a tabelas dinâmicas, formas, imagens e muito mais.
@@ -121,6 +125,8 @@ Usar esse código de exemplo na planilha com os dados anteriores cria a tabela a
 
 ![Uma tabela criada a partir do registro de vendas anterior.](../images/excel-overview-table-sample.png)
 
+Para obter mais informações, confira [Trabalho com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
+
 #### <a name="creating-a-chart"></a>Criar um gráfico
 
 Crie gráficos para visualizar os dados em um intervalo. As APIs suportam inúmeras variedades de gráficos que podem ser personalizadas de acordo com suas necessidades.
@@ -140,113 +146,7 @@ Executar esse exemplo na planilha com a tabela anterior cria o seguinte gráfico
 
 ![Um gráfico de colunas mostrando as quantidades de três itens do registro de vendas anterior.](../images/excel-overview-chart-sample.png)
 
-## <a name="run-options"></a>Executar opções
-
-`Excel.run` tem uma sobrecarga que recebe um objeto [RunOptions](/javascript/api/excel/excel.runoptions). Este contém um conjunto de propriedades que afetam o comportamento de plataforma quando a função é executada. A propriedade a seguir tem suporte no momento:
-
-* `delayForCellEdit`: Determina se o Excel atrasa solicitação em lote até que o usuário sai do modo de edição de célula. Quando **verdadeira**, a solicitação em lote é atrasada e executada quando o usuário sai do modo de edição de célula. Quando **falsa**, a solicitação em lote falha automaticamente se o usuário está no modo de edição de célula (causando um erro para alcançar o usuário). O comportamento padrão sem nenhuma propriedade `delayForCellEdit` especificada é equivalente a quando é **falsa**.
-
-```js
-Excel.run({ delayForCellEdit: true }, function (context) { ... })
-```
-
-## <a name="null-or-blank-property-values"></a>valores de propriedade nulos ou em branco
-
-`null` e as cadeias de caracteres esvaziadas têm implicações especiais nas APIs JavaScript do Excel. Elas são usadas para representar células vazias, sem formatação ou valores padrão. Essa seção detalha o uso da `null` e de uma cadeia de caracteres vazia ao obter e definir as propriedades.
-
-### <a name="null-input-in-2-d-array"></a>entrada nula em uma matriz 2D
-
-No Excel, um intervalo é representado por uma matriz 2D, onde a primeira dimensão é linhas e a segunda dimensão é colunas. Para definir valores, o formato do número ou a fórmula apenas para células específicas em um intervalo, especifique os valores, o formato do número ou a fórmula para essas células na matriz 2D, bem como `null` para todas as outras células na matriz 2D.
-
-Por exemplo, para atualizar o formato do número apenas para uma célula em um intervalo e manter o formato de número existente para todas as outras células no intervalo, especifique o novo formato de número para a célula a ser atualizada e `null` para todas as outras células. O trecho de código a seguir define um novo formato de número para a quarta célula no intervalo e não altera o formato de número para as primeiras três células no intervalo.
-
-```js
-range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
-range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
-```
-
-### <a name="null-input-for-a-property"></a>entrada nula para uma propriedade
-
-`null` não é uma entrada válida para uma propriedade única. Por exemplo, o trecho de código a seguir não é válido, pois a propriedade `values` do intervalo não pode ser definida como `null`.
-
-```js
-range.values = null;
-```
-
-Da mesma forma, o seguinte snippet de código não é válido, pois `null` não é um valor válido para a propriedade `color`.
-
-```js
-range.format.fill.color =  null;
-```
-
-### <a name="null-property-values-in-the-response"></a>Valores da propriedade nula na resposta
-
-A formatação de propriedades como `size` e `color` conterá valores `null` na resposta quando valores diferentes existirem no intervalo especificado. Por exemplo, se você recuperar um intervalo e carregar sua propriedade `format.font.color`:
-
-* Se todas as células no intervalo tiverem a mesma cor de fonte, `range.format.font.color` especificará essa cor.
-* Se houver várias cores de fonte dentro do intervalo, `range.format.font.color` será `null`.
-
-### <a name="blank-input-for-a-property"></a>Entrada em branco para uma propriedade
-
-Quando você especificar um valor em branco para uma propriedade (isto é, duas aspas sem espaço entre elas `''`), ele será interpretado como uma instrução para limpar ou redefinir a propriedade. Por exemplo:
-
-* Se você especificar um valor em branco para a propriedade `values` de um intervalo, o conteúdo do intervalo será apagado.
-* Se você especificar um valor em branco para a propriedade `numberFormat`, o formato de número será redefinido para `General`.
-* Se você especificar um valor em branco para a propriedade `formula` e a propriedade `formulaLocale`, os valores de fórmula serão apagados.
-
-### <a name="blank-property-values-in-the-response"></a>Valores da propriedade em branco na resposta
-
-Para operações de leitura, um valor de propriedade em branco na resposta (isto é, duas aspas sem espaço entre elas `''`) indica que a célula não contém dados nem valor. No primeiro exemplo abaixo, a primeira e a última célula no intervalo não contêm dados. No segundo exemplo, as primeiras duas células no intervalo não contêm uma fórmula.
-
-```js
-range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
-```
-
-```js
-range.formula = [['', '', '=Rand()']];
-```
-
-## <a name="requirement-sets"></a>Conjuntos de requisitos
-
-Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um aplicativo do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md).
-
-### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
-
-O exemplo de código a seguir mostra como determinar se o aplicativo do Office, onde o suplemento está em execução, dá suporte ao conjunto de requisitos da API especificado.
-
-```js
-if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
-  /// perform actions
-}
-else {
-  /// provide alternate flow/logic
-}
-```
-
-### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
-
-Você pode usar o [elemento Requirements](../reference/manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o aplicativo do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no `Requirements`elemento do manifesto, o suplemento não será executado nesse aplicativo ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**.
-
-O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos cliente do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
-
-```xml
-<Requirements>
-   <Sets DefaultMinVersion="1.3">
-      <Set Name="ExcelApi" MinVersion="1.3"/>
-   </Sets>
-</Requirements>
-```
-
-> [!NOTE]
-> Para disponibilizar seu suplemento em todas as plataformas de um aplicativo do Office, como Excel Online, Windows e iPad, é recomendável verificar o suporte a requisitos no tempo de execução, em vez de definir o suporte ao conjunto de requisitos no manifesto.
-
-### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
-
-Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
-
-## <a name="handle-errors"></a>Lidar com erros
-
-Quando ocorre um erro de API, a API retorna um objeto `error` que contém um código e uma mensagem. Para saber mais sobre o tratamento de erros, incluindo uma lista de erros da API, confira [Tratamento de erro](excel-add-ins-error-handling.md).
+Para obter mais informações, confira [Trabalho com gráficos usando a API JavaScript do Excel](excel-add-ins-charts.md).
 
 ## <a name="see-also"></a>Confira também
 
@@ -254,4 +154,3 @@ Quando ocorre um erro de API, a API retorna um objeto `error` que contém um có
 * [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Otimização de desempenho da API JavaScript do Excel](../excel/performance.md)
 * [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-* [Problemas comuns de codificação e comportamentos inesperados da plataforma](../develop/common-coding-issues.md).
