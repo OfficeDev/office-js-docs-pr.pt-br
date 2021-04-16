@@ -1,64 +1,64 @@
 ---
-title: Trabalhar com Tabelas Dinâmicas usando a API JavaScript do Excel
-description: Use a API JavaScript do Excel para criar Tabelas Dinâmicas e interagir com seus componentes.
-ms.date: 01/26/2021
+title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
+description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
+ms.date: 04/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 9832322d40bbeb247685ff2498bdce42975c0377
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: a76d2401784c7ca52c2c54342ccce21b53097a58
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043908"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862341"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com Tabelas Dinâmicas usando a API JavaScript do Excel
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
-As Tabelas Dinâmicas simplificam conjuntos de dados maiores. Eles permitem a manipulação rápida de dados agrupados. A API JavaScript do Excel permite que seu complemento crie Tabelas Dinâmicas e interaja com seus componentes. Este artigo descreve como as Tabelas Dinâmicas são representadas pela API JavaScript do Office e fornece exemplos de código para cenários principais.
+Tabelas dinâmicas simplificam conjuntos de dados maiores. Eles permitem a manipulação rápida de dados agrupados. A API JavaScript do Excel permite que seu complemento crie Tabelas Dinâmicas e interaja com seus componentes. Este artigo descreve como as Tabelas Dinâmicas são representadas pela API JavaScript do Office e fornece exemplos de código para cenários principais.
 
-Se você não estiver familiarizado com a funcionalidade de Tabelas Dinâmicas, considere explorá-las como um usuário final.
-Consulte [Criar uma Tabela Dinâmica para analisar dados de planilha](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para ter uma boa cartilha nessas ferramentas.
+Se você não estiver familiarizado com a funcionalidade das Tabelas Dinâmicas, considere explorá-las como um usuário final.
+Consulte [Criar uma Tabela Dinâmica para analisar dados de planilha](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para uma boa cartilha nessas ferramentas.
 
 > [!IMPORTANT]
-> As Tabelas Dinâmicas criadas com OLAP não têm suporte no momento. Também não há suporte para o Power Pivot.
+> As Tabelas Dinâmicas criadas com o OLAP não são suportadas no momento. Também não há suporte para o Power Pivot.
 
 ## <a name="object-model"></a>Modelo de objetos
 
-A [Tabela Dinâmica](/javascript/api/excel/excel.pivottable) é o objeto central para Tabelas Dinâmicas na API JavaScript do Office.
+A [Tabela Dinâmica](/javascript/api/excel/excel.pivottable) é o objeto central para tabelas dinâmicas na API JavaScript do Office.
 
-- `Workbook.pivotTables` e `Worksheet.pivotTables` são [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que contêm as [Tabelas Dinâmicas](/javascript/api/excel/excel.pivottable) na pasta de trabalho e na planilha, respectivamente.
-- Uma [tabela dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) que tem várias [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
-- Essas [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) podem ser adicionadas a coleções de hierarquias específicas para definir como os dados de tabela dinâmica (conforme explicado na [seção a seguir).](#hierarchies)
+- `Workbook.pivotTables` e `Worksheet.pivotTables` são [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que contêm as [Tabelas Dinâmicas](/javascript/api/excel/excel.pivottable) na pasta de trabalho e planilha, respectivamente.
+- Uma [Tabela Dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) que tem vários [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Essas [pivotHierarchies](/javascript/api/excel/excel.pivothierarchy) podem ser adicionadas a coleções de hierarquia específicas para definir como os dados de pivot de tabela dinâmica (conforme explicado na [seção a seguir](#hierarchies)).
 - Um [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contém [um PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) que tem exatamente um [PivotField](/javascript/api/excel/excel.pivotfield). Se o design se expandir para incluir tabelas dinâmicas OLAP, isso poderá mudar.
-- Um [PivotField](/javascript/api/excel/excel.pivotfield) pode ter um ou mais [PivotFilters aplicados,](/javascript/api/excel/excel.pivotfilters) desde que [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) do campo seja atribuído a uma categoria de hierarquia. 
-- Um [PivotField](/javascript/api/excel/excel.pivotfield) contém [um PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) que tem vários [PivotItems](/javascript/api/excel/excel.pivotitem).
-- Uma [Tabela Dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotLayout](/javascript/api/excel/excel.pivotlayout) que define onde [pivotFields](/javascript/api/excel/excel.pivotfield) e [PivotItems](/javascript/api/excel/excel.pivotitem) são exibidos na planilha.
+- Um [PivotField](/javascript/api/excel/excel.pivotfield) pode ter um ou mais [PivotFilters aplicados,](/javascript/api/excel/excel.pivotfilters) desde que [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) do campo seja atribuído a uma categoria de hierarquia.
+- Um [PivotField](/javascript/api/excel/excel.pivotfield) contém um [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) que tem vários [PivotItems](/javascript/api/excel/excel.pivotitem).
+- Uma [Tabela Dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotLayout](/javascript/api/excel/excel.pivotlayout) que define onde os [PivotFields](/javascript/api/excel/excel.pivotfield) e [PivotItems](/javascript/api/excel/excel.pivotitem) são exibidos na planilha. O layout também controla algumas configurações de exibição para a Tabela Dinâmica.
 
-Vamos ver como essas relações se aplicam a alguns dados de exemplo. Os dados a seguir descrevem as vendas de árvores de vários farms. Ele será o exemplo ao longo deste artigo.
+Vejamos como essas relações se aplicam a alguns dados de exemplo. Os dados a seguir descrevem as vendas de frutas de vários farms. Ele será o exemplo ao longo deste artigo.
 
-![Uma coleção de vendas de árvores de diferentes tipos de farms diferentes.](../images/excel-pivots-raw-data.png)
+![Uma coleção de vendas de frutas de diferentes tipos de farms diferentes.](../images/excel-pivots-raw-data.png)
 
-Esses dados de vendas de farm de árvores serão usados para fazer uma Tabela Dinâmica. Cada coluna, como **Tipos,** é um `PivotHierarchy` . A **hierarquia Tipos** contém o campo **Tipos.** O **campo Tipos** contém os itens **Apple**, **Kiwi**, **Limão**, **Verde-limão** e **Laranja**.
+Esses dados de vendas de farm de frutas serão usados para fazer uma tabela dinâmica. Cada coluna, como **Tipos,** é `PivotHierarchy` um . A **hierarquia Tipos** contém o campo **Tipos.** O **campo Tipos** contém os itens **Apple,** **Kiwi,** **Limão,** **Lima** e **Laranja**.
 
 ### <a name="hierarchies"></a>Hierarquias
 
-As Tabelas Dinâmicas são organizadas com base em quatro categorias de hierarquia: [linha](/javascript/api/excel/excel.rowcolumnpivothierarchy), [coluna,](/javascript/api/excel/excel.rowcolumnpivothierarchy) [dados](/javascript/api/excel/excel.datapivothierarchy)e [filtro.](/javascript/api/excel/excel.filterpivothierarchy)
+As Tabelas Dinâmicas são organizadas com base em quatro categorias de hierarquia: [linha,](/javascript/api/excel/excel.rowcolumnpivothierarchy) [coluna,](/javascript/api/excel/excel.rowcolumnpivothierarchy) [dados](/javascript/api/excel/excel.datapivothierarchy)e [filtro](/javascript/api/excel/excel.filterpivothierarchy).
 
-Os dados do farm mostrados anteriormente têm cinco hierarquias: **Farms**, **Tipo** **,** Classificação , Caixas **vendidas** no farm e **Engradados vendidos em um farm.** Cada hierarquia só pode existir em uma das quatro categorias. Se **Type** for adicionado às hierarquias de colunas, ele também não poderá estar nas hierarquias de linha, dados ou filtro. Se **Type** for adicionado subsequentemente às hierarquias de linhas, ele será removido das hierarquias de colunas. Esse comportamento é o mesmo se a atribuição de hierarquia é feita por meio da interface do usuário do Excel ou das APIs JavaScript do Excel.
+Os dados do farm mostrados anteriormente têm cinco hierarquias: **Farms**, **Type**, **Classification,** **Crates Sold at Farm** e **Crates Sold Fim de Semana.** Cada hierarquia só pode existir em uma das quatro categorias. Se **Type** for adicionado a hierarquias de coluna, ele também não poderá estar na linha, dados ou hierarquias de filtro. Se **Type** for subsequentemente adicionado às hierarquias de linha, ele será removido das hierarquias de coluna. Esse comportamento é o mesmo se a atribuição de hierarquia é feita por meio da interface do usuário do Excel ou das APIs JavaScript do Excel.
 
-Hierarquias de linha e coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linhas **de Farms** agrupa todos os conjuntos de dados do mesmo farm. A escolha entre a hierarquia de linha e coluna define a orientação da tabela dinâmica.
+Hierarquias de linhas e colunas definem como os dados serão agrupados. Por exemplo, uma hierarquia de linhas **de Farms** agrupa todos os conjuntos de dados do mesmo farm. A escolha entre a hierarquia de linha e coluna define a orientação da Tabela Dinâmica.
 
-Hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e coluna. Uma Tabela Dinâmica com uma hierarquia de linhas de **Farms** e uma hierarquia de dados de **Engradado** vendido mostra a soma total (por padrão) de todas as diferentes árvores para cada farm.
+Hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e coluna. Uma Tabela Dinâmica com uma hierarquia de linhas de **Farms** e uma hierarquia de dados de **Engradados Vendidos por** Atacado mostra a soma total (por padrão) de todas as diferentes frutas para cada farm.
 
-Hierarquias de filtro incluem ou excluem dados da tabela dinâmica com base em valores dentro desse tipo filtrado. Uma hierarquia de filtros **de Classificação** com o tipo **Organic** selected mostra apenas os dados de árvores orgânicas.
+Hierarquias de filtro incluem ou excluem dados do pivô com base nos valores dentro desse tipo filtrado. Uma hierarquia de filtro de **Classificação com** o tipo **Organic** selecionado mostra apenas dados para frutas orgânicas.
 
-Aqui estão os dados do farm novamente, juntamente com uma Tabela Dinâmica. A Tabela Dinâmica está  usando **Farm** e Tipo como **hierarquias** de linha, Engradados vendidos em farm e engradados **vendidos como hierarquias** de  dados (com a função de agregação padrão de soma) e Classificação como uma hierarquia de filtros (com Produtos Orgânicas selecionados). 
+Aqui estão os dados do farm novamente, juntamente com uma tabela dinâmica. A Tabela Dinâmica  está usando **Farm** e **Type** como hierarquias de linha, Caixas **Vendidas** no Farm e Engradados Vendidos por Atacado como **hierarquias** de dados (com a função de agregação padrão de soma) e Classificação como uma hierarquia de filtro (com a **seleção** orgânica).
 
-![Uma seleção de dados de vendas de resultado ao lado de uma Tabela Dinâmica com hierarquias de linha, dados e filtro.](../images/excel-pivot-table-and-data.png)
+![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linha, dados e filtro.](../images/excel-pivot-table-and-data.png)
 
-Essa Tabela Dinâmica pode ser gerada por meio da API JavaScript ou da interface do usuário do Excel. Ambas as opções permitem mais manipulação por meio de complementos.
+Essa Tabela Dinâmica pode ser gerada por meio da API JavaScript ou por meio da interface do usuário do Excel. Ambas as opções permitem mais manipulação por meio de complementos.
 
-## <a name="create-a-pivottable"></a>Criar uma Tabela Dinâmica
+## <a name="create-a-pivottable"></a>Criar uma tabela dinâmica
 
-As Tabelas Dinâmicas precisam de um nome, fonte e destino. A fonte pode ser um endereço de intervalo ou um nome de tabela (passado como `Range` um `string` , ou `Table` tipo). O destino é um endereço de intervalo (dado como um `Range` ou `string` ).
+As Tabelas Dinâmicas precisam de um nome, fonte e destino. A origem pode ser um endereço de intervalo ou um nome de tabela (passado como `Range` `string` , ou `Table` tipo). O destino é um endereço de intervalo (dado como a `Range` ou `string` ).
 Os exemplos a seguir mostram várias técnicas de criação de tabela dinâmica.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Criar uma tabela dinâmica com endereços de intervalo
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="create-a-pivottable-at-the-workbook-level"></a>Criar uma Tabela Dinâmica no nível da agenda
+### <a name="create-a-pivottable-at-the-workbook-level"></a>Criar uma Tabela Dinâmica no nível da workbook
 
 ```js
 Excel.run(function (context) {
@@ -104,7 +104,7 @@ Excel.run(function (context) {
 
 ## <a name="use-an-existing-pivottable"></a>Usar uma tabela dinâmica existente
 
-As Tabelas Dinâmicas criadas manualmente também podem ser acessadas por meio da coleção de Tabelas Dinâmicas da pasta de trabalho ou de planilhas individuais. O código a seguir obtém uma tabela dinâmica **chamada My Pivot** da lista de trabalho.
+As Tabelas Dinâmicas criadas manualmente também são acessíveis por meio da coleção PivotTable da pasta de trabalho ou de planilhas individuais. O código a seguir obtém uma Tabela Dinâmica chamada **Meu Pivô** da lista de trabalho.
 
 ```js
 Excel.run(function (context) {
@@ -113,13 +113,13 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="add-rows-and-columns-to-a-pivottable"></a>Adicionar linhas e colunas a uma Tabela Dinâmica
+## <a name="add-rows-and-columns-to-a-pivottable"></a>Adicionar linhas e colunas a uma tabela dinâmica
 
 Linhas e colunas giram os dados em torno dos valores desses campos.
 
-A adição **da coluna Farm** gira todas as vendas em torno de cada farm. Adicionar as **linhas Tipo** **e** Classificação divide ainda mais os dados com base em quais árvores foram vendidas e se foram orgânicas ou não.
+A **adição da coluna Farm** gira todas as vendas ao redor de cada farm. Adicionar as **linhas Tipo** e **Classificação** quebra ainda mais os dados com base em quais frutas foram vendidas e se foram orgânicas ou não.
 
-![Uma Tabela Dinâmica com uma coluna de Farm e linhas Tipo e Classificação.](../images/excel-pivots-table-rows-and-columns.png)
+![Uma tabela dinâmica com uma coluna farm e linhas Tipo e Classificação.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```js
 Excel.run(function (context) {
@@ -149,11 +149,11 @@ Excel.run(function (context) {
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Adicionar hierarquias de dados à Tabela Dinâmica
 
-As hierarquias de dados preenchem a Tabela Dinâmica com informações a combinar com base nas linhas e colunas. A adição das hierarquias de dados de Engradados **vendidos** no farm e engradados vendidos **no** farm fornece somas dessas figuras para cada linha e coluna.
+Hierarquias de dados preenchem a Tabela Dinâmica com informações para combinar com base nas linhas e colunas. A adição das hierarquias de dados de **Caixas Vendidas** no Farm e caixas **vendidas por** atacado fornece somas desses números para cada linha e coluna.
 
-No exemplo, **Farm** e **Type** são linhas, com as vendas de engradados como os dados.
+No exemplo, **Farm** e **Type** são linhas, com as vendas do engradado como os dados.
 
-![Uma Tabela Dinâmica mostrando o total de vendas de diferentes árvores com base no farm de onde elas vieram.](../images/excel-pivots-data-hierarchy.png)
+![Uma Tabela Dinâmica mostrando o total de vendas de diferentes frutas com base no farm de onde eles vieram.](../images/excel-pivots-data-hierarchy.png)
 
 ```js
 Excel.run(function (context) {
@@ -172,19 +172,19 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Layouts de tabela dinâmica e obter dados de tabela dinâmica
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Layouts de tabela dinâmica e informações dinâmicas
 
 Um [PivotLayout](/javascript/api/excel/excel.pivotlayout) define o posicionamento das hierarquias e seus dados. Você acessa o layout para determinar os intervalos onde os dados são armazenados.
 
-O diagrama a seguir mostra quais chamadas de função de layout correspondem a quais intervalos da tabela dinâmica.
+O diagrama a seguir mostra quais chamadas de função de layout correspondem a quais intervalos da Tabela Dinâmica.
 
 ![Um diagrama mostrando quais seções de uma tabela dinâmica são retornadas pelas funções de intervalo de obter do layout.](../images/excel-pivots-layout-breakdown.png)
 
 ### <a name="get-data-from-the-pivottable"></a>Obter dados da tabela dinâmica
 
-O layout define como a tabela dinâmica é exibida na planilha. Isso significa que `PivotLayout` o objeto controla os intervalos usados para elementos de tabela dinâmica. Use os intervalos fornecidos pelo layout para obter dados coletados e agregados pela Tabela Dinâmica. Em particular, use `PivotLayout.getDataBodyRange` para acessar o que a Tabela Dinâmica produz.
+O layout define como a Tabela Dinâmica é exibida na planilha. Isso significa que `PivotLayout` o objeto controla os intervalos usados para elementos de tabela dinâmica. Use os intervalos fornecidos pelo layout para obter dados coletados e agregados pela Tabela Dinâmica. Em particular, use `PivotLayout.getDataBodyRange` para acessar os dados produzidos pela Tabela Dinâmica.
 
-O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica passando pelo layout (o **total geral** da soma dos engradados **vendidos** no farm e a soma das colunas de animais **vendidos no** exemplo anterior). Esses valores são somados para um total final, que é exibido na célula **E30** (fora da tabela dinâmica).
+O código a seguir demonstra como obter a última linha dos dados de tabela dinâmica passando pelo layout (o **Grande Total** da Soma de Caixas **Vendidas** no Farm e a Soma das **colunas De Engradados Vendidos** por Atacado no exemplo anterior). Esses valores são, em seguida, resumidos para um total final, que é exibido na célula **E30** (fora da Tabela Dinâmica).
 
 ```js
 Excel.run(function (context) {
@@ -204,21 +204,74 @@ Excel.run(function (context) {
 
 ### <a name="layout-types"></a>Tipos de layout
 
-As Tabelas Dinâmicas têm três estilos de layout: Compacto, Contorno e Tabular. Vimos o estilo compacto nos exemplos anteriores.
+As Tabelas Dinâmicas têm três estilos de layout: Compact, Outline e Tabular. Vimos o estilo compacto nos exemplos anteriores.
 
 Os exemplos a seguir usam os estilos de contorno e tabular, respectivamente. O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.
 
-#### <a name="outline-layout"></a>Layout da estrutura de contorno
+#### <a name="outline-layout"></a>Layout de estrutura de estrutura
 
-![Uma Tabela Dinâmica usando o layout da estrutura de estrutura de estrutura.](../images/excel-pivots-outline-layout.png)
+![Uma tabela dinâmica usando o layout de estrutura de estrutura.](../images/excel-pivots-outline-layout.png)
 
 #### <a name="tabular-layout"></a>Layout tabular
 
 ![Uma tabela dinâmica usando o layout tabular.](../images/excel-pivots-tabular-layout.png)
 
-## <a name="delete-a-pivottable"></a>Excluir uma Tabela Dinâmica
+#### <a name="pivotlayout-type-switch-code-sample"></a>Exemplo de código de opção do tipo PivotLayout
 
-As Tabelas Dinâmicas são excluídas usando seu nome.
+```js
+Excel.run(function (context) {
+    // Change the PivotLayout.type to a new type.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.layout.load("layoutType");
+    return context.sync().then(function () {
+        // Cycle between the three layout types.
+        if (pivotTable.layout.layoutType === "Compact") {
+            pivotTable.layout.layoutType = "Outline";
+        } else if (pivotTable.layout.layoutType === "Outline") {
+            pivotTable.layout.layoutType = "Tabular";
+        } else {
+            pivotTable.layout.layoutType = "Compact";
+        }
+    
+        return context.sync();
+    });
+});
+```
+
+### <a name="other-pivotlayout-functions"></a>Outras funções PivotLayout
+
+Por padrão, tabelas dinâmicas ajustam tamanhos de linha e coluna conforme necessário. Isso é feito quando a Tabela Dinâmica é atualizada. `PivotLayout.autoFormat` especifica esse comportamento. Qualquer alteração de tamanho de linha ou coluna feita pelo seu complemento persiste quando `autoFormat` é `false` . Além disso, as configurações padrão de uma tabela dinâmica mantêm qualquer formatação personalizada na Tabela Dinâmica (como preenchimentos e alterações de fonte). Definir `PivotLayout.preserveFormatting` para aplicar o formato padrão quando `false` atualizado.
+
+Um também controla as configurações de header e de linha total, como as células de dados vazias são `PivotLayout` exibidas e as opções de texto [alt.](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) A [referência PivotLayout](/javascript/api/excel/excel.pivotlayout) fornece uma lista completa desses recursos.
+
+> [!NOTE]
+> Parte da funcionalidade PivotLayout mencionada aqui está disponível apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+O exemplo de código a seguir faz com que as células de dados vazias exibem a cadeia de caracteres , formate o intervalo do corpo para um alinhamento horizontal consistente e garante que as alterações de formatação permaneçam mesmo após a atualização da Tabela `"--"` Dinâmica.
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.pivotTables.getItem("Farm Sales");
+    var pivotLayout = pivotTable.layout;
+
+    // Set a default value for an empty cell in the PivotTable. This doesn't include cells left blank by the layout.
+    pivotLayout.emptyCellText = "--";
+
+    // Set the text alignment to match the rest of the PivotTable.
+    pivotLayout.getDataBodyRange().format.horizontalAlignment = Excel.HorizontalAlignment.right;
+
+    // Ensure empty cells are filled with a default value.
+    pivotLayout.fillEmptyCells = true;
+
+    // Ensure that the format settings persist, even after the PivotTable is refreshed and recalculated.
+    pivotLayout.preserveFormatting = true;
+    return context.sync();
+});
+```
+
+## <a name="delete-a-pivottable"></a>Excluir uma tabela dinâmica
+
+Tabelas Dinâmicas são excluídas usando seu nome.
 
 ```js
 Excel.run(function (context) {
@@ -227,37 +280,37 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="filter-a-pivottable"></a>Filtrar uma Tabela Dinâmica
+## <a name="filter-a-pivottable"></a>Filtrar uma tabela dinâmica
 
-O método principal para filtrar dados de tabela dinâmica é com PivotFilters. As slicers oferecem um método de filtragem alternativo e menos flexível. 
+O método principal para filtrar dados de tabela dinâmica é com PivotFilters. As slicers oferecem um método alternativo de filtragem menos flexível.
 
-[Os PivotFilters](/javascript/api/excel/excel.pivotfilters) filtram dados com [](#hierarchies) base nas quatro categorias de hierarquia de uma Tabela Dinâmica (filtros, colunas, linhas e valores). Há quatro tipos de PivotFilters, permitindo filtragem baseada em data do calendário, análise de cadeia de caracteres, comparação de números e filtragem com base em uma entrada personalizada. 
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) filtram dados com base [](#hierarchies) nas quatro categorias de hierarquia de uma tabela dinâmica (filtros, colunas, linhas e valores). Há quatro tipos de PivotFilters, permitindo filtragem baseada em data de calendário, análise de cadeia de caracteres, comparação de números e filtragem com base em uma entrada personalizada.
 
-[As slicers](/javascript/api/excel/excel.slicer) podem ser aplicadas a tabelas dinâmicas e tabelas regulares do Excel. Quando aplicadas a uma tabela dinâmica, as slicers funcionam como um [PivotManualFilter](#pivotmanualfilter) e permitem a filtragem com base em uma entrada personalizada. Ao contrário de PivotFilters, as slicers têm um [componente de interface do usuário do Excel.](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Com a `Slicer` classe, você cria esse componente da interface do usuário, gerencia a filtragem e controla sua aparência visual. 
+[As slicers](/javascript/api/excel/excel.slicer) podem ser aplicadas a tabelas dinâmicas e tabelas regulares do Excel. Quando aplicada a uma Tabela Dinâmica, as slicers funcionam como um [PivotManualFilter](#pivotmanualfilter) e permitem a filtragem com base em uma entrada personalizada. Ao contrário de PivotFilters, as slicers têm um [componente de interface do usuário do Excel.](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Com a `Slicer` classe, você cria esse componente de interface do usuário, gerencia a filtragem e controla sua aparência visual.
 
 ### <a name="filter-with-pivotfilters"></a>Filtrar com PivotFilters
 
-[Os PivotFilters](/javascript/api/excel/excel.pivotfilters) permitem filtrar dados [](#hierarchies) de Tabela Dinâmica com base nas quatro categorias de hierarquia (filtros, colunas, linhas e valores). No modelo de objeto de tabela dinâmica, `PivotFilters` são aplicados a [um PivotField](/javascript/api/excel/excel.pivotfield)e cada um pode `PivotField` ter um ou mais `PivotFilters` atribuídos. Para aplicar PivotFilters a um PivotField, o [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) correspondente do campo deve ser atribuído a uma categoria de hierarquia. 
+[Os PivotFilters](/javascript/api/excel/excel.pivotfilters) permitem filtrar dados [](#hierarchies) de tabela dinâmica com base nas quatro categorias de hierarquia (filtros, colunas, linhas e valores). No modelo de objeto pivotTable, `PivotFilters` são aplicados a um [PivotField](/javascript/api/excel/excel.pivotfield), e cada um pode `PivotField` ter um ou mais `PivotFilters` atribuídos . Para aplicar PivotFilters a um PivotField, a [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) correspondente do campo deve ser atribuída a uma categoria de hierarquia.
 
 #### <a name="types-of-pivotfilters"></a>Tipos de PivotFilters
 
-| Tipo de filtro | Finalidade do filtro | Referência da API JavaScript do Excel |
+| Tipo de filtro | Finalidade de filtro | Referência da API JavaScript do Excel |
 |:--- |:--- |:--- |
-| DateFilter | Filtragem baseada em data do calendário. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| DateFilter | Filtragem baseada em data de calendário. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
 | LabelFilter | Filtragem de comparação de texto. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
 | ManualFilter | Filtragem de entrada personalizada. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
 | ValueFilter | Filtragem de comparação de números. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
 
 #### <a name="create-a-pivotfilter"></a>Criar um PivotFilter
 
-Para filtrar dados de tabela dinâmica com um `Pivot*Filter` (como um `PivotDateFilter` ), aplique o filtro a um [PivotField](/javascript/api/excel/excel.pivotfield). Os quatro exemplos de código a seguir mostram como usar cada um dos quatro tipos de PivotFilters. 
+Para filtrar dados de tabela dinâmica com um (como um ), aplique o `Pivot*Filter` filtro a um `PivotDateFilter` [PivotField](/javascript/api/excel/excel.pivotfield). Os quatro exemplos de código a seguir mostram como usar cada um dos quatro tipos de PivotFilters.
 
 ##### <a name="pivotdatefilter"></a>PivotDateFilter
 
-O primeiro exemplo de código aplica  um [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) ao PivotField data atualizada, ocultando todos os dados anteriores a **2020-08-01**. 
+O primeiro exemplo de código aplica  um [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) ao PivotField Atualizado de Data, ocultando todos os dados antes **de 2020-08-01**.
 
-> [!IMPORTANT] 
-> Um `Pivot*Filter` não pode ser aplicado a um PivotField, a menos que PivotHierarchy desse campo seja atribuído a uma categoria de hierarquia. No exemplo de código a seguir, o valor deve ser adicionado à categoria da Tabela Dinâmica antes que possa `dateHierarchy` `rowHierarchies` ser usado para filtragem.
+> [!IMPORTANT]
+> Um `Pivot*Filter` não pode ser aplicado a um PivotField, a menos que PivotHierarchy desse campo seja atribuída a uma categoria de hierarquia. No exemplo de código a seguir, o deve ser adicionado à categoria da tabela dinâmica antes de poder `dateHierarchy` `rowHierarchies` ser usado para filtragem.
 
 ```js
 Excel.run(function (context) {
@@ -289,11 +342,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> Os três trechos de código a seguir exibem apenas trechos de filtro específicos, em vez de chamadas `Excel.run` completas.
+> Os três trechos de código a seguir exibem apenas trechos específicos do filtro, em vez de chamadas `Excel.run` completas.
 
 ##### <a name="pivotlabelfilter"></a>PivotLabelFilter
 
-O segundo trecho de código demonstra como aplicar um [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) a **Type** PivotField, usando a propriedade para excluir rótulos que começam com a `LabelFilterCondition.beginsWith` letra **L**. 
+O segundo trecho de código demonstra como aplicar um [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) ao **Tipo** PivotField, usando a propriedade para excluir rótulos que começam com a `LabelFilterCondition.beginsWith` letra **L**.
 
 ```js
     // Get the "Type" field.
@@ -312,7 +365,7 @@ O segundo trecho de código demonstra como aplicar um [PivotLabelFilter](/javasc
 
 ##### <a name="pivotmanualfilter"></a>PivotManualFilter
 
-O terceiro trecho de código aplica um filtro manual com  [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) ao campo Classificação, filtrando dados que não incluem a classificação **orgânica**. 
+O terceiro trecho de código aplica um filtro manual com  [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) ao campo Classificação, filtrando dados que não incluem a classificação **Orgânica**.
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
@@ -323,7 +376,7 @@ O terceiro trecho de código aplica um filtro manual com  [PivotManualFilter](/j
 
 ##### <a name="pivotvaluefilter"></a>PivotValueFilter
 
-Para comparar números, use um filtro de valor com [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), conforme mostrado no trecho de código final. A comparação dos dados no Farm PivotField com os dados no PivotField de Campos Dinâmicas de Engradados vendidos, incluindo apenas farms cuja soma de engradados vendidos excede o valor `PivotValueFilter` **500**.   
+Para comparar números, use um filtro de valor com [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), conforme mostrado no trecho de código final. O compara os dados no Farm PivotField com os dados no Campo Pivô de Engradados Vendidos por Atacado, incluindo apenas farms cuja soma de caixas vendidas excede o valor `PivotValueFilter` **de 500**.  
 
 ```js
     // Get the "Farm" field.
@@ -342,7 +395,7 @@ Para comparar números, use um filtro de valor com [PivotValueFilter](/javascrip
 
 #### <a name="remove-pivotfilters"></a>Remover PivotFilters
 
-Para remover todos os PivotFilters, aplique o `clearAllFilters` método a cada PivotField, conforme mostrado no exemplo de código a seguir. 
+Para remover todos os PivotFilters, aplique o `clearAllFilters` método a cada PivotField, conforme mostrado no exemplo de código a seguir.
 
 ```js
 Excel.run(function (context) {
@@ -362,22 +415,22 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>Filtrar com slicers
 
-[As slicers](/javascript/api/excel/excel.slicer) permitem que os dados sejam filtrados de uma tabela ou tabela dinâmica do Excel. Uma slicer usa valores de uma coluna especificada ou PivotField para filtrar as linhas correspondentes. Esses valores são armazenados [como objetos SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer` objeto . Seu complemento pode ajustar esses filtros, assim como os usuários[(por meio da interface do usuário do Excel).](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) A slicer fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
+[As slicers](/javascript/api/excel/excel.slicer) permitem que os dados sejam filtrados de uma tabela ou tabela dinâmica do Excel. Uma slicer usa valores de uma coluna especificada ou PivotField para filtrar linhas correspondentes. Esses valores são armazenados [como objetos SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer` . O seu complemento pode ajustar esses filtros, assim como os usuários ([por meio da interface do usuário do Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). A slicer fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
 
-![Dados de filtragem de uma slicer em uma tabela dinâmica.](../images/excel-slicer.png)
+![Uma filtragem de dados de uma slicer em uma tabela dinâmica.](../images/excel-slicer.png)
 
 > [!NOTE]
-> As técnicas descritas nesta seção concentram-se em como usar as slicers conectadas a Tabelas Dinâmicas. As mesmas técnicas também se aplicam ao uso de slicers conectados a tabelas.
+> As técnicas descritas nesta seção se concentram em como usar slicers conectados a Tabelas Dinâmicas. As mesmas técnicas também se aplicam ao uso de slicers conectados a tabelas.
 
 #### <a name="create-a-slicer"></a>Criar uma slicer
 
-Você pode criar uma slicer em uma pasta de trabalho ou planilha usando o `Workbook.slicers.add` método ou `Worksheet.slicers.add` método. Isso adiciona uma slicer à [SlicerCollection](/javascript/api/excel/excel.slicercollection) do objeto `Workbook` `Worksheet` ou especificado. O `SlicerCollection.add` método tem três parâmetros:
+Você pode criar uma slicer em uma pasta de trabalho ou planilha usando o `Workbook.slicers.add` método ou `Worksheet.slicers.add` o método. Isso adiciona uma slicer à [SlicerCollection](/javascript/api/excel/excel.slicercollection) do objeto `Workbook` `Worksheet` especificado ou. O `SlicerCollection.add` método tem três parâmetros:
 
-- `slicerSource`: a fonte de dados na qual a nova slicer se baseia. Pode ser uma cadeia de caracteres , ou `PivotTable` `Table` representando o nome ou a ID de um `PivotTable` ou `Table` .
-- `sourceField`: O campo na fonte de dados pelo qual filtrar. Pode ser uma `PivotField` cadeia de `TableColumn` caracteres , ou representando o nome ou a ID de um `PivotField` ou `TableColumn` .
-- `slicerDestination`: a planilha onde a nova slicer será criada. Pode ser um `Worksheet` objeto ou o nome ou A ID de um `Worksheet` . Esse parâmetro é desnecessário quando é `SlicerCollection` acessado por meio de `Worksheet.slicers` . Nesse caso, a planilha da coleção é usada como destino.
+- `slicerSource`: A fonte de dados na qual a nova slicer é baseada. Pode ser uma `PivotTable` cadeia de `Table` caracteres , ou que representa o nome ou a ID de um `PivotTable` ou `Table` .
+- `sourceField`: O campo na fonte de dados pelo qual filtrar. Pode ser uma `PivotField` cadeia de `TableColumn` caracteres , ou que representa o nome ou a ID de um `PivotField` ou `TableColumn` .
+- `slicerDestination`: A planilha onde a nova slicer será criada. Pode ser um `Worksheet` objeto ou o nome ou a ID de um `Worksheet` . Esse parâmetro é desnecessário quando o `SlicerCollection` é acessado por meio de `Worksheet.slicers` . Nesse caso, a planilha da coleção é usada como destino.
 
-O exemplo de código a seguir adiciona uma nova slicer à **planilha** Dinâmica. A origem da slicer é a Tabela Dinâmica **de Vendas** do Farm e filtra usando os **dados Type.** A slicer também é chamada de **Slicer de** Fatia para referência futura.
+O exemplo de código a seguir adiciona uma nova slicer à **planilha** Dinâmica. A origem da slicer é a Tabela Dinâmica de Vendas do **Farm** e filtra usando os **dados Type.** A slicer também é chamada **de Fruit Slicer** para referência futura.
 
 ```js
 Excel.run(function (context) {
@@ -393,12 +446,12 @@ Excel.run(function (context) {
 
 #### <a name="filter-items-with-a-slicer"></a>Filtrar itens com uma slicer
 
-A slicer filtra a Tabela Dinâmica com itens do `sourceField` . O `Slicer.selectItems` método define os itens que permanecem na slicer. Esses itens são passados para o método como um `string[]` , representando as chaves dos itens. Todas as linhas que contêm esses itens permanecem na agregação da Tabela Dinâmica. Chamadas subsequentes `selectItems` para definir a lista com as chaves especificadas nessas chamadas.
+A slicer filtra a Tabela Dinâmica com itens do `sourceField` . O `Slicer.selectItems` método define os itens que permanecem na slicer. Esses itens são passados para o método como `string[]` um , representando as chaves dos itens. Todas as linhas que contêm esses itens permanecem na agregação da tabela dinâmica. Chamadas subsequentes `selectItems` para definir a lista como as chaves especificadas nessas chamadas.
 
 > [!NOTE]
-> Se `Slicer.selectItems` for passado um item que não está na fonte de dados, será lançado `InvalidArgument` um erro. O conteúdo pode ser verificado por meio da `Slicer.slicerItems` propriedade, que é uma [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
+> Se `Slicer.selectItems` for passado um item que não está na fonte de dados, será `InvalidArgument` lançado um erro. O conteúdo pode ser verificado por meio `Slicer.slicerItems` da propriedade, que é [uma SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
 
-O exemplo de código a seguir mostra três itens sendo selecionados para a slicer: **Limão**, **Verde-limão** e **Laranja**.
+O exemplo de código a seguir mostra três itens que estão sendo selecionados para a slicer: **Limão,** **Limão** e **Laranja**.
 
 ```js
 Excel.run(function (context) {
@@ -409,7 +462,7 @@ Excel.run(function (context) {
 });
 ```
 
-Para remover todos os filtros da slicer, use o `Slicer.clearFilters` método, conforme mostrado no exemplo a seguir.
+Para remover todos os filtros da slicer, use o método, conforme `Slicer.clearFilters` mostrado no exemplo a seguir.
 
 ```js
 Excel.run(function (context) {
@@ -421,7 +474,7 @@ Excel.run(function (context) {
 
 #### <a name="style-and-format-a-slicer"></a>Estilo e formatar uma slicer
 
-Você pode ajustar as configurações de exibição de uma slicer por meio de `Slicer` propriedades. O exemplo de código a seguir define o estilo como **SlicerStyleLight6**, define o texto na parte superior da slicer como **Tipos** de Árvores , coloca a slicer na posição **(395, 15)** na camada de desenho e define o tamanho da slicer como **135x150** pixels.
+Você pode ajustar as configurações de exibição de uma slicer por meio de `Slicer` propriedades. O exemplo de código a seguir define o estilo como **SlicerStyleLight6**, define o texto na parte superior da slicer como **Tipos** de Frutas , coloca a slicer na posição **(395, 15)** na camada de desenho e define o tamanho da slicer como **135x150** pixels.
 
 ```js
 Excel.run(function (context) {
@@ -448,13 +501,13 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="change-aggregation-function"></a>Alterar a função de agregação
+## <a name="change-aggregation-function"></a>Função Alterar agregação
 
 Hierarquias de dados têm seus valores agregados. Para conjuntos de dados de números, essa é uma soma por padrão. A `summarizeBy` propriedade define esse comportamento com base em um tipo [AggregationFunction.](/javascript/api/excel/excel.aggregationfunction)
 
-Os tipos de função de agregação atualmente suportados são `Sum` `Count` , `Average` e `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` (o padrão).
+Os tipos de função de agregação atualmente suportados são `Sum` , , , , , , , , , `Count` , , , `Average` , , `Max` e `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` (o padrão).
 
-Os exemplos de código a seguir altera a agregação para as médias dos dados.
+Os exemplos de código a seguir modificam a agregação como médias dos dados.
 
 ```js
 Excel.run(function (context) {
@@ -472,19 +525,19 @@ Excel.run(function (context) {
 
 ## <a name="change-calculations-with-a-showasrule"></a>Alterar cálculos com um ShowAsRule
 
-As Tabelas Dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna de forma independente. Um [ShowAsRule altera](/javascript/api/excel/excel.showasrule) a hierarquia de dados para valores de saída com base em outros itens na tabela dinâmica.
+As Tabelas Dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna independentemente. Um [ShowAsRule](/javascript/api/excel/excel.showasrule) altera a hierarquia de dados para valores de saída com base em outros itens na Tabela Dinâmica.
 
 O `ShowAsRule` objeto tem três propriedades:
 
-- `calculation`: o tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão é `none` ).
-- `baseField`: [PivotField](/javascript/api/excel/excel.pivotfield) na hierarquia que contém os dados base antes da aplicação do cálculo. Como as Tabelas Dinâmicas do Excel têm um mapeamento de hierarquia para um de campo, você usará o mesmo nome para acessar a hierarquia e o campo.
-- `baseItem`: o [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo. Nem todos os cálculos exigem esse campo.
+- `calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão é `none` ).
+- `baseField`: [PivotField](/javascript/api/excel/excel.pivotfield) na hierarquia que contém os dados base antes da aplicação do cálculo. Como as Tabelas Dinâmicas do Excel têm um mapeamento de hierarquia para campo, você usará o mesmo nome para acessar a hierarquia e o campo.
+- `baseItem`: [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo. Nem todos os cálculos exigem esse campo.
 
-O exemplo a seguir define o cálculo na Soma de Caixas **vendidas** na hierarquia de dados do farm como uma porcentagem do total da coluna.
-Ainda queremos que a granularidade se estenda até o nível do tipo de resultado, portanto, vamos usar a hierarquia de linhas **Type** e seu campo subjacente.
-O exemplo também tem **Farm** como a primeira hierarquia de linhas, portanto, as entradas totais do farm exibem a porcentagem pela qual cada farm também é responsável pela produção.
+O exemplo a seguir define o cálculo na Soma de **Caixas Vendidas** na hierarquia de dados do Farm como uma porcentagem do total da coluna.
+Ainda queremos que a granularidade se estenda até o nível de tipo de frutas, portanto, vamos usar a hierarquia de linha **Type** e seu campo subjacente.
+O exemplo também tem **Farm** como a hierarquia da primeira linha, portanto, o total de entradas do farm exibe a porcentagem que cada farm também é responsável por produzir.
 
-![Uma Tabela Dinâmica mostrando as porcentagens de vendas de árvores relativas ao total geral para farms individuais e tipos de árvores individuais em cada farm.](../images/excel-pivots-showas-percentage.png)
+![Uma Tabela Dinâmica mostrando as porcentagens de vendas de frutas em relação ao total geral para farms individuais e tipos de frutas individuais em cada farm.](../images/excel-pivots-showas-percentage.png)
 
 ```js
 Excel.run(function (context) {
@@ -504,12 +557,12 @@ Excel.run(function (context) {
 });
 ```
 
-O exemplo anterior definiu o cálculo para a coluna, em relação ao campo de uma hierarquia de linhas individual. Quando o cálculo estiver relacionado a um item individual, use a `baseItem` propriedade.
+O exemplo anterior definiu o cálculo como a coluna, em relação ao campo de uma hierarquia de linha individual. Quando o cálculo se refere a um item individual, use a `baseItem` propriedade.
 
-O exemplo a seguir mostra o `differenceFrom` cálculo. Ele exibe a diferença das entradas da hierarquia de dados de vendas do farm em relação às de **farms A.**
-O farm é, portanto, vemos as diferenças entre os outros farms, bem como os detalhamentos de cada tipo de like fruit ( Type também é uma hierarquia de linhas `baseField` neste exemplo). 
+O exemplo a seguir mostra o `differenceFrom` cálculo. Ele exibe a diferença das entradas de hierarquia de dados de vendas de caixa de farm em relação às de **A Farms**.
+The is Farm , so we see the differences between the other farms, well as breakdowns for each type of like fruit ( Type is also `baseField` a row hierarchy in this example). 
 
-![Uma Tabela Dinâmica mostrando as diferenças de vendas de árvores entre "Farms A" e os outros. Isso mostra a diferença no total de vendas de árvores dos farms e nas vendas de tipos de árvores. Se "A Farms" não tiver vendido um tipo específico de resultado, "#N/A" será exibido.](../images/excel-pivots-showas-differencefrom.png)
+![Uma Tabela Dinâmica mostrando as diferenças de vendas de frutas entre "A Farms" e as outras. Isso mostra a diferença no total de vendas de frutas dos farms e nas vendas de tipos de frutas. Se "A Farms" não vender um tipo específico de frutas, "#N/A" será exibido.](../images/excel-pivots-showas-differencefrom.png)
 
 ```js
 Excel.run(function (context) {

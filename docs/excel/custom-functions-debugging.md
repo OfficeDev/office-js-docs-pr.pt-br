@@ -1,18 +1,18 @@
 ---
-ms.date: 07/10/2020
+ms.date: 04/09/2021
 description: Saiba como depurar suas funções personalizadas do Excel que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 00065a465a22f83891dfb207943102b079e96a0f
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178073"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862334"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
-A depuração de funções personalizadas que não usam um painel de tarefas ou outros elementos de interface do usuário (funções personalizadas sem interface do usuário) pode ser realizada por vários meios, dependendo de qual plataforma você estiver usando.
+Este artigo discute a depuração *apenas* para funções personalizadas que não usam um painel de tarefas ou outros elementos de interface do usuário (funções personalizadas sem interface do usuário). 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -33,7 +33,9 @@ No Mac:
 
 ## <a name="requirements"></a>Requisitos
 
-Antes de começar a depurar, você deve usar o gerador [Yeoman](https://github.com/OfficeDev/generator-office) para Os Complementos do Office para criar um projeto de funções personalizadas. Para obter orientações sobre como criar um projeto de funções personalizadas, consulte o [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
+Esse processo de depuração funciona **apenas** para funções personalizadas sem interface do usuário, que não usam um painel de tarefas ou outros elementos da interface do usuário. Uma função personalizada sem interface do usuário pode ser criada seguindo as etapas no tutorial Criar funções [personalizadas](../tutorials/excel-tutorial-create-custom-functions.md) no Excel e removendo todos os elementos do painel de tarefas e da interface do usuário instalados pelo gerador [Yeoman](https://www.npmjs.com/package/generator-office)para Os Complementos do Office.
+
+Observe que esse processo de depuração não é compatível com projetos de funções personalizadas usando um [tempo de execução compartilhado.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Usar o depurador de código VS para Área de Trabalho do Excel
 

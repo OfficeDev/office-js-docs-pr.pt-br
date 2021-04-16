@@ -1,14 +1,14 @@
 ---
 title: Recursos adicionais de suplementos do Office
 description: Recursos úteis no tópico de Complementos do Office
-ms.date: 03/29/2021
+ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 97059d27dc95e3d31a6ef8c72b59434c55fcf7ce
-ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+ms.openlocfilehash: de774386acca2825734ac50096b83d562df0263b
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "51435316"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862320"
 ---
 # <a name="office-add-ins-additional-resources"></a>Recursos adicionais de suplementos do Office
 
@@ -18,7 +18,7 @@ Esses recursos oferecem informações adicionais e suporte para o desenvolviment
 |-----------------|------------|
 |**Referência da API JavaScript do Office** | Poste perguntas API para [pilha excedente](https://stackoverflow.com/questions/tagged/office-js) usando a `office-js` marca e também incluir a `outlook-web-addins` marcação, caso sua pergunta se relacione com os suplementos do Outlook. Observe que pilha excedente tem diretrizes, como solicitar um título descritivo e uma descrição do problema completo e concisos detalhes suficientes para reproduzir o problema. Não cobrimos solicitações de recursos ou perguntas muito abrangentes. Novos usuários devem acessar a [Central de ajuda de Stack Overflow](https://stackoverflow.com/help/how-to-ask) para ver mais detalhes.|
 |**Auxiliares da API JavaScript para Office**| Se você tiver um problema (bug) com a API JavaScript do Office, envie um problema para o repositório <a href="https://github.com/officedev/office-js/issues" target="_blank">OfficeDev/office–js</a> GitHub.|
-|**Solicitações de recursos de API JavaScript do Office**| Para enviar uma solicitação de recurso para a API JavaScript do Office, use o Site do [Microsoft 365 em Q&A.](/answers/products/m365)|
+|**Solicitações de recursos de API JavaScript do Office**| Para enviar uma solicitação de recurso para a API JavaScript do Office, poste sua ideia para a Comunidade Técnica da Plataforma de Desenvolvedores [do Microsoft 365.](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)|
 |**Problemas de documentação**| Se você encontrar um problema (bug) com a documentação, envie um problema para o repositório gitHub do <a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office-js-docs-pr.</a>|
 |**Atualizações de documentação**| Para fazer alterações na documentação por conta própria, escolha o **link** Editar em um artigo e envie uma solicitação pull para o repositório gitHub do <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office-js-docs-pr.</a>|
 |**Script Lab**| Se você quiser explorar APIs JavaScript do Office ou experimentar APIs de visualização, você pode usar o Script Lab no Excel, Outlook, PowerPoint e Word. Para saber mais, consulte [Explorar a API JavaScript do Office usando o Script Lab](../overview/explore-with-script-lab.md). |

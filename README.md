@@ -25,7 +25,7 @@ Se seu problema não estiver relacionado à documentação de Complementos do Of
 
 - Para fazer uma pergunta sobre como usar a API Office.js, poste sua pergunta em Stack Overflow e marque-a com a marca "office-js" ( http://stackoverflow.com/questions/tagged/office-js) .
 - Para relatar um problema com a API ou plataforma Office.js, crie o problema no repositório do OfficeDev/office-js ( , que membros da equipe de produtos monitoram para problemas relatados pelo https://github.com/OfficeDev/office-js) cliente.
-- Para enviar uma solicitação de recurso para a API ou plataforma Office.js, poste sua ideia no [Microsoft 365](https://docs.microsoft.com/answers/products/m365)em Q&A , ou se a solicitação de recurso já existir lá, adicione seu voto nele.
+- Para enviar uma solicitação de recurso para a API ou plataforma Office.js, poste sua ideia na Comunidade Técnica da Plataforma de Desenvolvedores do [Microsoft 365](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)ou, se a solicitação de recurso já existir, adicione seu voto a favor.
 
 ## <a name="join-the-microsoft-365-developer-program"></a>Participe do Programa para Desenvolvedores do Microsoft 365
 
