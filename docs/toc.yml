@@ -1147,6 +1147,9 @@ items:
           - name: Obter todo o documento por meio de um suplemento
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
             displayName: PowerPoint
+          - name: 'Use rótulos personalizados em apresentações, slides e formas'
+            href: powerpoint/tagging-presentations-slides-shapes.md
+            displayName: PowerPoint
           - name: Usar temas de documentos em seus suplementos do PowerPoint
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
             displayName: PowerPoint
