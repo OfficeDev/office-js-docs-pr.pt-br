@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as futuras APIs JavaScript do Excel.
-ms.date: 04/02/2021
+ms.date: 04/16/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e4e0066830d10ad3b466d33b5a59d31efe4b9777
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 004d73bfd6faa74acd8abe2592684e21f13058ad
+ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604656"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "51917104"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -34,7 +34,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em visualização
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|Limpa os critérios de filtro do AutoFiltro.|
-|[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
+|[Comentário](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
 ||[getTask()](/javascript/api/excel/excel.comment#gettask--)|Obtém a tarefa associada a este comentário.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Obtém a tarefa associada a este comentário.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getitemornullobject-commentid-)|Obtém um comentário da coleção com base em seu ID.|
@@ -88,7 +88,11 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em visualização
 ||[clear()](/javascript/api/excel/excel.identitycollection#clear--)|Remove todas as identidades de usuário da coleção.|
 ||[getCount()](/javascript/api/excel/excel.identitycollection#getcount--)|Obtém o número de itens na coleção.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getitemat-index-)|Obtém uma identidade de usuário de documento usando seu índice na coleção.|
+||[items](/javascript/api/excel/excel.identitycollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[remove(assignee: Identity)](/javascript/api/excel/excel.identitycollection#remove-assignee-)|Remove uma identidade de usuário da coleção.|
+|[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|Representa o nome para exibição do usuário.|
+||[email](/javascript/api/excel/excel.identityentity#email)|Representa o endereço de email do usuário.|
+||[id](/javascript/api/excel/excel.identityentity#id)|Representa a ID exclusiva do usuário.|
 |[InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)|[positionType](/javascript/api/excel/excel.insertworksheetoptions#positiontype)|A posição de inserção, na pasta de trabalho atual, das novas planilhas.|
 ||[relativeTo](/javascript/api/excel/excel.insertworksheetoptions#relativeto)|A planilha na pasta de trabalho atual que é referenciada para o `WorksheetPositionType` parâmetro.|
 ||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetnamestoinsert)|Os nomes de planilhas individuais a inserir.|
@@ -151,17 +155,18 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em visualização
 ||[tipo](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtém a ID da planilha que contém a tabela.|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|Obtém uma tabela pelo nome ou ID.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertworksheetsfrombase64-base64file--options-)|Insere as planilhas especificadas de uma pasta de trabalho de origem na pasta de trabalho atual.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertworksheetsfrombase64-base64file--options-)|Insere as planilhas especificadas de uma pasta de trabalho de origem na pasta de trabalho atual.|
 ||[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da lista de trabalho.|
 ||[onActivated](/javascript/api/excel/excel.workbook#onactivated)|Ocorre quando a guia de trabalho é ativada.|
 ||[tasks](/javascript/api/excel/excel.workbook#tasks)|Retorna uma coleção de tarefas que estão presentes na workbook.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da Tabela Dinâmica é mostrado no nível da lista de trabalho.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[tipo](/javascript/api/excel/excel.workbookactivatedeventargs#type)|Obtém o tipo do evento.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando um filtro é aplicado em uma planilha específica.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando um filtro é aplicado em uma planilha específica.|
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheet#onformulachanged)|Ocorre quando uma ou mais fórmulas são alteradas nesta planilha.|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabid)|Retorna um valor que representa essa planilha que pode ser lido pelo Open Office XML.|
 ||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Retorna uma coleção de tarefas presentes na planilha.|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|Representa a origem do gatilho do evento.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onformulachanged)|Ocorre quando uma ou mais fórmulas são alteradas em qualquer planilha dessa coleção.|

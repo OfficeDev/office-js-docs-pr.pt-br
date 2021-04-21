@@ -3,12 +3,12 @@ title: Desenvolva seu Complemento do Office para trabalhar com ITP ao usar cooki
 description: Como trabalhar com ITP e Os Complementos do Office ao usar cookies de terceiros
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 468147e923bb27638e45879104db75b99d014986
+ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178038"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "51917090"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Desenvolva seu Complemento do Office para trabalhar com ITP ao usar cookies de terceiros
 
@@ -54,9 +54,9 @@ if (document.hasStorageAccess) {
 
 Cookies de terceiros são cookies carregados em um iframe, onde o domínio é diferente do quadro de nível superior. A ITP pode afetar cenários complexos de autenticação, onde uma caixa de diálogo pop-up é usada para inserir credenciais e, em seguida, o acesso a cookies é necessário por um iframe de um complemento para concluir o fluxo de autenticação. A ITP também pode afetar cenários de autenticação silenciosa, onde você já usou uma caixa de diálogo pop-up para autenticar, mas o uso subsequente do complemento tenta autenticar por meio de um iframe oculto.
 
-Ao desenvolver os Complementos do Office no Mac, o acesso a cookies de terceiros é bloqueado pelo MacOS Big Sur SDK. Isso porque a ITP do WebKit está habilitada por padrão no navegador Safari e o WKWebview bloqueia todos os cookies de terceiros. O Office no Mac versão 16.44 ou posterior é integrado ao MacOS Big Sur SDK.
+Ao desenvolver os Complementos do Office no Mac, o acesso a cookies de terceiros é bloqueado pelo MacOS Big Sur SDK. Isso porque a ITP WKWebView está habilitada por padrão no navegador Safari e o WKWebView bloqueia todos os cookies de terceiros. O Office no Mac versão 16.44 ou posterior é integrado ao MacOS Big Sur SDK.
 
-No navegador Safari, os usuários finais podem alternar a caixa de seleção Impedir rastreamento entre **sites** em **Privacidade** de Preferência para desativar  >   a ITP. No entanto, a ITP não pode ser desligada para o controle WebKit2 incorporado.
+No navegador Safari, os usuários finais podem alternar a caixa de seleção Impedir rastreamento entre **sites** em **Privacidade** de Preferência para desativar  >   a ITP. No entanto, a ITP não pode ser desligada para o controle WKWebView incorporado.
 
 ## <a name="see-also"></a>Confira também
 
