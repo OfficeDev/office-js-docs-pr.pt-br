@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 03/17/2021
+ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 70e255601fd36a2f9101d56161846616691f5100
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 126323527d74553aa7fd7e0c8cf1e5e5d89471ff
+ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178052"
+ms.lasthandoff: 04/23/2021
+ms.locfileid: "51959177"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -23,12 +23,13 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 ## <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
 
-A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar. Não há suporte para combinações excluídas.
+A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar, incluindo a Atualização Cumulativa mínima necessária quando aplicável. Não há suporte para combinações excluídas.
 
 | Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
-|Mac:<br>build 16.30 ou posterior|Sim|Não|Não|
+|Mac:<br>build 16.30 a 16.46|Sim|Não|Não|
+|Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
 |Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|
 |Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Sim|Sim|
 
