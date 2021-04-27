@@ -3,12 +3,12 @@ title: Microsoft Office da comunidade de complementos
 description: Os recursos e Microsoft Office de chamada da comunidade de complementos mensais
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: bad2ad176d0a843f5d03ec58b3db365a02ecbbe1
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: fbd2acdd7b6153829473dd0ea29290d02e6f8c84
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959290"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024315"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de complementos
 
@@ -23,7 +23,7 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Chamada da comunidade de complementos do Office - 11 de novembro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
 - [Chamada da comunidade de complementos do Office - 14 de outubro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
 - [Chamada da comunidade de Complementos do Office - 9 de setembro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Chamada da comunidade de Complementos do Office - 12 de agosto de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%e2%80%af)
+- [Chamada da comunidade de Complementos do Office - 12 de agosto de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
 - [Chamada da comunidade de complementos do Office - 8 de julho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Chamada da comunidade de complementos do Office - 10 de junho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 

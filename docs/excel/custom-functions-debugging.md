@@ -1,14 +1,14 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: Saiba como depurar suas funções personalizadas do Excel que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
-ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
+ms.openlocfilehash: c6954af4638ae416c789af339d35187467e37b7f
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51862334"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024322"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -53,7 +53,7 @@ Você pode usar o VS Code para depurar funções personalizadas sem interface do
 ### <a name="start-the-vs-code-debugger"></a>Iniciar o depurador de código VS
 
 4. Escolha **Exibir > Executar ou** insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
-5. No menu suspenso Executar, escolha **Área de Trabalho do Excel (Edge Chromium)**.
+5. No menu suspenso Executar, escolha **Área de Trabalho do Excel (Funções Personalizadas).**
 6. Selecione **F5** (ou selecione **Executar -> Iniciar Depuração** no menu) para começar a depuração. Uma nova planilha do Excel será aberta com seu complemento já sideload e pronto para uso.
 
 ### <a name="start-debugging"></a>Iniciar a depuração
