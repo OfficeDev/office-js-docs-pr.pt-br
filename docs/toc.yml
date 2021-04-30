@@ -1257,6 +1257,8 @@ items:
         href: develop/authentication-pnp.md
       - name: Lidar com a sua solução do Office de escala DPI e DPI alto
         href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+      - name: Chamada à comunidade de Suplementos do Office
+        href: overview/office-add-ins-community-call.md
   - name: Recursos de transição VSTO e COM
     items:
       - name: Guia do desenvolvedor do suplemento VSTO
