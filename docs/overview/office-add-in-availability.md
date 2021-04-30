@@ -1,18 +1,18 @@
 ---
 title: Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 04/09/2021
+ms.date: 04/29/2021
 localization_priority: Priority
-ms.openlocfilehash: 23b965930e74621e154efb2f8f14b5877fbc56f2
-ms.sourcegitcommit: 841bcad3c6c5139fd0953707c0be73ce890fa463
+ms.openlocfilehash: fa87a8d9e57a7b509328a90856c51449269a82b9
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "51687473"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100310"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
-Seu Suplemento do Office pode depender de um aplicativo específico do Office, um conjunto de requisitos, um membro de API ou uma versão da API para funcionar conforme o esperado. As tabelas a seguir contêm as plataformas disponíveis, os pontos de extensão, os conjuntos de requisitos de API e os conjuntos de requisitos comuns de API que são compatíveis atualmente com cada aplicativo do Office.
+Para funcionar conforme o esperado, o Suplemento do Office pode depender de um aplicativo específico do Office, um conjunto de requisitos, um membro da API ou uma versão da API. As tabelas a seguir contêm as plataformas disponíveis, pontos de extensão, conjuntos de requisitos de API e APIs comuns que são atualmente suportados para cada aplicativo do Office.
 
 <br>
 
@@ -572,7 +572,8 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4"> Caixa de correio 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5"> Caixa de correio 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Caixa de correio 1.8</a>
     </td>
     <td>Não disponível</td>
   </tr>
