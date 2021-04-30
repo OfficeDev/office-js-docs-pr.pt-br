@@ -1,25 +1,25 @@
 ---
-title: Gerenciar o estado e as configurações de um suplemento do Outlook
-description: Saiba como persistir o estado e as configurações do suplemento para um suplemento do Outlook.
-ms.date: 04/22/2020
+title: Gerenciar estado e configurações para um Outlook de dados
+description: Saiba como persistir o estado e as configurações do Outlook de um complemento.
+ms.date: 04/29/2021
 localization_priority: Normal
-ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 6652034ffa6844d22fd725adc5adcc4a4063c1cb
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293839"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100282"
 ---
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar o estado e as configurações de um suplemento do Outlook
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de dados
 
 > [!NOTE]
-> Revise o [estado e as configurações do suplemento persistentes](../develop/persisting-add-in-state-and-settings.md) na seção **principais conceitos** desta documentação antes de ler este artigo.
+> Revise o estado e as configurações persistentes do [add-in](../develop/persisting-add-in-state-and-settings.md) na seção **Conceitos principais** desta documentação antes de ler este artigo.
 
-Para suplementos do Outlook, a API JavaScript do Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do suplemento entre as sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
+Para Outlook, Office API JavaScript do Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
 
 |**Objeto**|**Local de armazenamento**|
-|:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|A caixa de correio do Exchange Server do usuário onde o suplemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "mover-se" com o usuário e estão disponíveis para o suplemento quando ele está sendo executado no contexto de qualquer cliente com suporte que tenha acesso à caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|
+|:-----|:-----|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|A caixa de correio Exchange servidor do usuário onde o complemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "circular" com o usuário e estão disponíveis para o add-in quando ele está em execução no contexto de qualquer cliente com suporte acessando a caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|A mensagem, o compromisso ou o item de solicitação de reunião com o qual o suplemento está trabalhando. As propriedades personalizadas de itens de suplementos do Outlook estão disponíveis apenas para o suplemento que as criou e apenas por meio do item em que estão salvas.|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Como salvar configurações na caixa de correio do usuário para suplementos do Outlook como configurações móveis
@@ -28,22 +28,10 @@ Um suplemento do Outlook pode usar o objeto [RoamingSettings](/javascript/api/ou
 
 ### <a name="loading-roaming-settings"></a>Carregar configurações de roaming
 
-Um suplemento do Outlook normalmente carrega configurações móveis no manipulador de eventos [Office.initialize](/javascript/api/office). O exemplo de código JavaScript a seguir mostra como carregar configurações móveis existentes.
+O exemplo de código JavaScript a seguir mostra como carregar configurações móveis existentes.
 
 ```js
-var _mailbox;
-var _settings;
-
-// The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
-    $(document).ready(function () {
-    // After the DOM is loaded, add-in-specific code can run.
-   // Initialize instance variables to access API objects.
-    _mailbox = Office.context.mailbox;
-    _settings = Office.context.roamingSettings;
-    });
-}
+var _settings = Office.context.roamingSettings;
 ```
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>Criar ou atribuir uma configuração móvel
@@ -88,7 +76,7 @@ Para poder usar propriedades personalizadas para uma mensagem, um compromisso ou
 
 ### <a name="custom-properties-example"></a>Exemplo de propriedades personalizadas
 
-O exemplo a seguir mostra um conjunto simplificado de funções para um suplemento do Outlook que usa propriedades personalizadas. Você pode usar esse exemplo como ponto de partida para o suplemento do Outlook que usa propriedades personalizadas. 
+O exemplo a seguir mostra um conjunto simplificado de funções para um suplemento do Outlook que usa propriedades personalizadas. Você pode usar esse exemplo como ponto de partida para o suplemento do Outlook que usa propriedades personalizadas.
 
 Um suplemento do Outlook que usa essas funções recupera as propriedades personalizadas chamando o método **obter** na variável `_customProps`, conforme mostrado no exemplo a seguir.
 
@@ -146,6 +134,25 @@ function saveCallback(asyncResult) {
     }
 }
 ```
+
+### <a name="platform-behavior-in-emails"></a>Comportamento da plataforma em emails
+
+A tabela a seguir resume o comportamento de propriedades personalizadas salvas em emails para vários Outlook clientes.
+
+|Cenário|Windows|Web|Mac|
+|---|---|---|---|
+|Nova composição|null|null|null|
+|Responder, responder a todos|null|null|null|
+|Encaminhar|Carrega as propriedades do pai|null|null|
+|Item enviado de nova composição|null|null|null|
+|Item enviado de resposta ou resposta a todos|null|null|null|
+|Item enviado do forward|Remove as propriedades do pai se não for salva|null|null|
+
+Para lidar com a situação Windows:
+
+1. Verifique se há propriedades existentes na inicialização do seu add-in e mantenha-os ou desmarcar-os conforme necessário.
+1. Ao definir propriedades personalizadas, inclua uma propriedade adicional para indicar se as propriedades personalizadas foram adicionadas durante a leitura da mensagem ou pelo modo de leitura do complemento. Isso ajudará você a diferenciar se a propriedade foi criada durante a composição ou herdada do pai.
+1. Você também pode usar [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (atualmente em visualização) para verificar se o usuário está encaminhando um email ou respondendo.
 
 ## <a name="see-also"></a>Confira também
 

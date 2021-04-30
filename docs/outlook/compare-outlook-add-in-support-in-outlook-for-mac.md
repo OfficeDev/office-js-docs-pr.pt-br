@@ -1,45 +1,45 @@
 ---
-title: Comparar o suporte ao complemento do Outlook no Outlook no Mac
-description: Saiba como o suporte ao complemento no Outlook no Mac se compara a outros clientes do Outlook.
-ms.date: 03/19/2021
+title: Comparar Outlook suporte a um Outlook no Mac
+description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
+ms.date: 04/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 5a3e964b2659c6201cd22e9e55fb01d049540069
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: fa643a423d058324618061f20c2028b6dd484bc9
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178059"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100303"
 ---
-# <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar o suporte ao complemento do Outlook no Outlook no Mac com outros clientes do Outlook
+# <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
-Você pode criar e executar um complemento do Outlook da mesma maneira no Outlook no Mac, como nos outros clientes, incluindo o Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada cliente. As mesmas chamadas do complemento para a API JavaScript do Office geralmente funcionam da mesma maneira, exceto para as áreas descritas na tabela a seguir.
+Você pode criar e executar um Outlook do mesmo modo no Outlook no Mac como nos outros clientes, incluindo o Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada cliente. As mesmas chamadas do add-in para a API JavaScript Office geralmente funcionam da mesma maneira, exceto para as áreas descritas na tabela a seguir.
 
 Para saber mais, confira [implantar e instalar suplementos do Outlook para teste](testing-and-tips.md).
 
-Para obter informações sobre o novo suporte à interface do usuário, consulte [Suporte a complementos no Outlook na nova interface do usuário do Mac.](#add-in-support-in-outlook-on-new-mac-ui-preview)
+Para obter informações sobre o novo suporte à interface do usuário, consulte Suporte ao [Outlook nova interface do usuário do Mac.](#add-in-support-in-outlook-on-new-mac-ui-preview)
 
 | Área | Outlook na Web, Windows e dispositivos móveis | Outlook no Mac |
 |:-----|:-----|:-----|
-| Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**OBSERVAÇÃO**: no Outlook no Mac, somente a com build 16.35.308 ou posterior oferece suporte para salvar uma reunião. Caso contrário, `saveAsync` o método falhará quando chamado de uma reunião no modo de redação. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
+| Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**OBSERVAÇÃO**: Outlook no Mac, apenas a com build 16.35.308 ou posterior oferece suporte para salvar uma reunião. Caso contrário, `saveAsync` o método falhará quando chamado de uma reunião no modo de redação. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
 | Instâncias de uma série de compromissos recorrentes | <ul><li>Pode obter a ID do item e outras propriedades de um compromisso mestre ou a instância de compromisso de uma série recorrente.</li><li>Pode usar [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para exibir uma instância ou o mestre de uma série recorrente.</li></ul> | <ul><li>Pode obter a ID do item e outras propriedades do compromisso mestre, mas não de uma instância de uma série recorrente.</li><li>Pode exibir o compromisso mestre de uma série recorrente. Sem a ID do item, não pode exibir uma instância de uma série recorrente.</li></ul> |
 | Tipo de destinatário do participante de um compromisso | Pode usar [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) para identificar o tipo de destinatário de um participante. | `EmailAddressDetails.recipientType` retorna `undefined` para participantes do compromisso. |
-| Cadeia de caracteres de versão do aplicativo cliente | O formato da cadeia de caracteres de versão retornada [por diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) depende do tipo real de cliente. Por exemplo:<ul><li>Outlook no Windows: `15.0.4454.1002`</li><li>Outlook na Web: `15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão `Diagnostics.hostVersion` retornada pelo Outlook no Mac: `15.0 (140325)` |
-| Propriedades personalizadas de um item | Se a rede falhar, um suplemento ainda poderá acessar as propriedades personalizadas armazenadas em cache. | Como o Outlook no Mac não armazena em cache propriedades personalizadas, se a rede ficar para baixo, os complementos não poderão acessá-las. |
+| Cadeia de caracteres de versão do aplicativo cliente | O formato da cadeia de caracteres de versão retornada [por diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) depende do tipo real de cliente. Por exemplo:<ul><li>Outlook no Windows:`15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão `Diagnostics.hostVersion` retornada por Outlook no Mac:`15.0 (140325)` |
+| Propriedades personalizadas de um item | Se a rede falhar, um suplemento ainda poderá acessar as propriedades personalizadas armazenadas em cache. | Como Outlook no Mac não armazena propriedades personalizadas em cache, se a rede ficar para baixo, os complementos não poderão acessá-las. |
 | Detalhes de anexo | O tipo de conteúdo e os nomes de anexos em [um objeto AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dependem do tipo de cliente:<ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` não contém nenhuma extensão de nome de arquivo. Por exemplo, se o anexo é uma mensagem que tem o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` sempre inclui uma extensão de nome de arquivo. Anexos que são itens de email têm uma extensão .eml, e compromissos têm uma extensão .ics. Por exemplo, se um anexo é um email com o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity.eml"`.<p>**Observação**: se um arquivo for anexado programaticamente (por exemplo, por meio de um suplemento) sem uma extensão, `AttachmentDetails.name` não conterá essa extensão como parte do nome do arquivo.</p></li></ul> |
 | Cadeia de caracteres que representa o fuso horário nas propriedades `dateTimeCreated` e `dateTimeModified` |Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | Precisão do tempo de `dateTimeCreated` e `dateTimeModified` | Se um suplemento usar o código a seguir, a precisão será de até um milissegundo:<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| A precisão é de até um segundo. |
 
-## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Suporte ao complemento no Outlook na nova interface do usuário do Mac (visualização)
+## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Suporte ao complemento no Outlook nova interface do usuário do Mac (visualização)
 
-Os complementos do Outlook agora têm suporte na nova interface do usuário do Mac (visualização), até o conjunto de requisitos 1.7. No entanto, os seguintes conjuntos de requisitos e recursos **ainda não** são suportados.
+Outlook os complementos agora são suportados na nova interface do usuário do Mac (visualização), até o conjunto de requisitos 1.7. No entanto, os seguintes conjuntos de requisitos e recursos **ainda não** são suportados.
 
-- Conjuntos de requisitos de API 1,8 e 1,9
+- Conjunto de requisitos de API 1.9
 - Ao enviar
 - Pop-out da janela de composição
 - Suporte a pastas compartilhadas
 - `saveAsync` ao compor uma reunião
 
-Recomendamos que você visualize o Outlook na nova interface do usuário do Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentar, consulte Outlook for Mac - Notas de versão para [builds do Insider Fast](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+Recomendamos que você visualize Outlook na nova interface do usuário do Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentar, consulte Outlook para Mac - Notas de versão para [builds do Insider Fast.](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)
 
 Você pode determinar qual versão da interface do usuário você está, da seguinte forma.
 
