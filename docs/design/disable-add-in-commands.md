@@ -1,38 +1,38 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 01/12/2021
+ms.date: 04/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 798dd723e0388becdd3419c5af87ceb360d32a41
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: 2ba0470c33237fa4627cf98cc5d106f6b7d8a57c
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870627"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253330"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
 Quando alguma funcionalidade do seu suplemento deve estar disponível apenas em determinados contextos, você pode habilitar ou desabilitar programaticamente seus Comandos de Suplemento personalizados. Por exemplo, uma função que altera o cabeçalho de uma tabela só deve ser ativada quando o cursor estiver em uma tabela.
 
-Você também pode especificar se o comando está habilitado ou desabilitado quando o aplicativo cliente do Office é aberto.
+Você também pode especificar se o comando está habilitado ou desabilitado quando o aplicativo Office cliente é aberto.
 
 > [!NOTE]
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
 >
 > - [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Suporte somente a aplicativos e plataformas do Office
+## <a name="office-application-and-platform-support-only"></a>Office suporte somente a aplicativos e plataformas
 
-As APIs descritas neste artigo só estão disponíveis no Excel e somente no Office no Windows, no Office no Mac e no Office na Web.
+As APIs descritas neste artigo estão disponíveis apenas no Excel e somente no Office no Windows, Office no Mac e Office na Web.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os complementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativos e plataformas do Office dá suporte a APIs de que um complemento precisa. Para saber mais, confira versões [do Office e conjuntos de requisitos.](../develop/office-versions-and-requirement-sets.md)
+Os conjuntos de requisitos são grupos nomeados de membros da API. Office Os complementos usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação Office aplicativo e plataforma oferece suporte a APIs que um complemento precisa. Para obter mais informações, [consulte Office versões e conjuntos de requisitos.](../develop/office-versions-and-requirement-sets.md)
 
-As APIs de habilitar/desabilitar pertencem ao conjunto [de requisitos RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 > [!NOTE]
-> O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do `<Requirements>` manifesto. Para testar o suporte, seu código deve `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` chamar. Se e *somente se , essa* chamada retornar , seu código pode chamar as `true` APIs habilitar/desabilitar. Se a chamada de retorno for retornada, todos os comandos de complemento `isSetSupported` `false` personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos de uso, consulte Especificar aplicativos do Office e requisitos de API , especialmente usar verificações de tempo de execução `isSetSupported` [em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). [](../develop/specify-office-hosts-and-api-requirements.md) (A seção [Definir o elemento Requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à Faixa de Opções 1.1.)
+> O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do `<Requirements>` manifesto. Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se e *somente se*, essa chamada retornar , seu código poderá chamar `true` as APIs habilitar/desabilitar. Se a chamada de retornar , todos os `isSetSupported` `false` comandos de complemento personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e qualquer instrução no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos de uso, consulte Especificar Office aplicativos e requisitos de API, especialmente Usar verificações de tempo de execução `isSetSupported` [em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). [](../develop/specify-office-hosts-and-api-requirements.md) (A seção [Definir o elemento Requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à Faixa de Opções 1.1.)
 
 ## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
@@ -112,11 +112,11 @@ const enableButton = async () => {
     const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
     const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
-O Office controla quando atualiza o estado da faixa de opções. O método **requestUpdate()** adiciona uma solicitação para atualização à fila de espera. O método resolverá o objeto Promise assim que a solicitação estiver na fila, não quando a faixa de opções for de fato atualizada.
+Você pode `await` chamar **requestUpdate()** se a função pai for assíncrona, mas observe que o aplicativo Office controla quando atualiza o estado da faixa de opções. O método **requestUpdate()** adiciona uma solicitação para atualização à fila de espera. O método resolverá o objeto promise assim que tiver enraizado a solicitação, não quando a faixa de opções realmente for atualizada.
 
 ## <a name="change-the-state-in-response-to-an-event"></a>Alterar o estado em resposta a um evento
 
@@ -156,7 +156,7 @@ function enableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -164,7 +164,7 @@ Quarto, defina o manipulador `disableChartFormat`. Seria idêntico a `enableChar
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Visibilidade da guia de alternância e o status habilitado de um botão ao mesmo tempo
 
-O **método requestUpdate** também é usado para alternar a visibilidade de uma guia contextual personalizada. Para obter detalhes sobre este e exemplo de código, confira [Criar guias contextuais personalizadas em Complementos do Office.](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)
+O **método requestUpdate** também é usado para alternar a visibilidade de uma guia contextual personalizada. Para obter detalhes sobre isso e o código de exemplo, consulte [Create custom contextual tabs in Office Add-ins](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Prática recomendada: Teste se há erros de status do controle
 
@@ -190,7 +190,7 @@ function disableChartFormat() {
                      groups: [parentGroup]
                     };
     var ribbonUpdater = {tabs: [parentTab]};
-    await Office.ribbon.requestUpdate(ribbonUpdater);
+    Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
 }
@@ -232,7 +232,7 @@ function disableChartFormat() {
                          groups: [parentGroup]
                         };
         var ribbonUpdater = {tabs: [parentTab]};
-        await Office.ribbon.requestUpdate(ribbonUpdater);
+        Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;
     }

@@ -3,12 +3,12 @@ title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 04/29/2021
 localization_priority: Normal
-ms.openlocfilehash: fa643a423d058324618061f20c2028b6dd484bc9
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 33134b3997730a14ea85608368d097e7b9d287ad
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100303"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253317"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
@@ -41,12 +41,12 @@ Outlook os complementos agora são suportados na nova interface do usuário do M
 
 Recomendamos que você visualize Outlook na nova interface do usuário do Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentar, consulte Outlook para Mac - Notas de versão para [builds do Insider Fast.](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)
 
-Você pode determinar qual versão da interface do usuário você está, da seguinte forma.
+Você pode determinar qual versão da interface do usuário você está, da seguinte forma:
 
 **Interface do usuário atual**
 
-&nbsp;&nbsp;&nbsp;&nbsp;![Interface do usuário atual no Mac](../images/outlook-on-mac-classic.png)
+![Interface do usuário atual no Mac](../images/outlook-on-mac-classic.png)
 
 **Nova interface do usuário (visualização)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;![Nova interface do usuário em visualização no Mac](../images/outlook-on-mac-new.png)
+![Nova interface do usuário em visualização no Mac](../images/outlook-on-mac-new.png)

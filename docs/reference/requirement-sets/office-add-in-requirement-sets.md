@@ -1,22 +1,22 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
-description: Saiba mais sobre os conjuntos de requisitos da API comum do Office.
-ms.date: 09/17/2020
+description: Saiba mais sobre os conjuntos de requisitos Office API comum.
+ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135218"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253344"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Procurando conjuntos de requisitos de API *específicos do aplicativo* ? Confira os seguintes conjuntos de requisitos de API:
+> Procurando os conjuntos *de requisitos* de API específicos do aplicativo? Confira os seguintes conjuntos de requisitos de API:
 >
 > - [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
 > - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
@@ -29,10 +29,10 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 ## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
-As seções a seguir listam os conjuntos de requisitos de API comuns, os métodos em cada conjunto e os aplicativos cliente do Office que dão suporte a esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
+As seções a seguir listam os conjuntos de requisitos da API comum, os métodos em cada conjunto e os Office cliente que suportam esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
 
 > [!TIP]
-> Precisa de informações sobre onde os suplementos e conjuntos de requisitos são compatíveis com o aplicativo do Office e a versão? Confira [disponibilidade de aplicativos e plataformas de cliente do Office para suplementos do Office](../../overview/office-add-in-availability.md).
+> Precisa de informações sobre onde os complementos e conjuntos de requisitos têm suporte Office aplicativo e versão? Consulte [Office disponibilidade de aplicativo cliente e plataforma para Office de complementos](../../overview/office-add-in-availability.md).
 
 ### <a name="activeview"></a>ActiveView
 
@@ -60,7 +60,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel 2016 e posterior no Windows<br>Excel Online<br>Excel 2016 e posterior no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
+| Excel 2016 e posteriormente Windows<br>Excel Online<br>Excel 2016 e posterior no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
 
 ---
 
@@ -156,7 +156,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Confira [abrir conjuntos de requisitos da API da janela do navegador](open-browser-window-api-requirement-sets.md). | Office. Context. UI. openBrowserWindow |
+| Consulte [Open Browser Window API requirement sets](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
 
 ---
 
@@ -172,7 +172,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
+| Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
 
 ---
 
@@ -180,11 +180,11 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Confira [conjuntos de requisitos de API da faixa](ribbon-api-requirement-sets.md)de opções. | Office. Ribbon. requestUpdate |
+| Consulte [Conjuntos de requisitos da API da Faixa de Opções](ribbon-api-requirement-sets.md). | Office.ribbon.requestUpdate |
 
 ---
 
-### <a name="selection"></a>Seleção
+### <a name="selection"></a>Selection
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
@@ -204,7 +204,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Confira [conjuntos de requisitos de tempo de execução compartilhados](shared-runtime-requirement-sets.md). | Office. AddIn. getStartupBehavior<br>Office. AddIn. Hide<br>Office. AddIn. onVisibilityModeChanged<br>Office. AddIn. setStartupBehavior<br>Office. AddIn. showAsTaskpane<br> |
+| Consulte [Conjuntos de requisitos de tempo de execução compartilhados.](shared-runtime-requirement-sets.md) | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 
@@ -250,9 +250,9 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos que não fazem parte de um conjunto de requisitos
 
-Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para obter mais informações, consulte [especificar aplicativos do Office e requisitos de API](../../develop/specify-office-hosts-and-api-requirements.md).
+Os métodos a seguir na OFFICE JavaScript não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para obter mais informações, consulte [Specify Office applications and API requirements](../../develop/specify-office-hosts-and-api-requirements.md).
 
-|**Nome do método**|**Suporte a aplicativos do Office**|
+|**Nome do método**|**Office suporte a aplicativos**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Acesse aplicativos web, Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
 |Document.getFilePropertiesAsync|Excel no Windows, Excel Online, Excel no iPad, Excel no Mac, PowerPoint no Windows, PowerPoint Online, PowerPoint no iPad, PowerPoint no Mac, Word no Windows, Word Online, Word no iPad e Word no Mac|

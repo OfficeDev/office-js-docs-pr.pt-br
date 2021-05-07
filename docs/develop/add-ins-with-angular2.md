@@ -1,27 +1,27 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
-description: Obtenha orientações para usar o angular para criar um suplemento do Office como um aplicativo de página única.
-ms.date: 09/24/2020
+description: Use Angular para criar um Office como um aplicativo de página única.
+ms.date: 05/03/2021
 localization_priority: Normal
-ms.openlocfilehash: c0f1050154339a5732b4f61bb8961ebecaffc342
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 1aba8f90cc70221a42b7bebb5e34775ed369f32e
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279474"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253337"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
 Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Suplemento do Office como um aplicativo de página única.
 
 > [!NOTE]
-> Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? É possível contribuir com este artigo no [GitHub](https://github.com/OfficeDev/office-js-docs) ou enviando seus comentários por meio de uma [questão](https://github.com/OfficeDev/office-js-docs-pr/issues) no repositório. 
+> Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? Você pode contribuir para [este artigo no GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ou fornecer seus comentários enviando um [problema](https://github.com/OfficeDev/office-js-docs-pr/issues) no repo.
 
 Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## <a name="install-the-typescript-type-definitions"></a>Instalar as definições de tipo TypeScript
 
-Abra uma janela de nodejs e insira o seguinte na linha de comando:
+Abra uma Node.js e insira o seguinte na linha de comando:
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize
 
-Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md). O Office chama esse método imediatamente depois de inicializar as bibliotecas JavaScript do Office.
+Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).) Office chama esse método imediatamente após ter inicializado as bibliotecas Office JavaScript.
 
 **O seu código de inicialização do Angular deve ser chamado dentro do método atribuído a `Office.initialize`** para garantir que as bibliotecas JavaScript do Office inicializem primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
 
@@ -59,9 +59,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   // Other module properties suppressed
 })
 export class AppModule { }
-``` 
+```
 
-Se você definir suas rotas em um módulo de roteamento distinto, há uma forma alternativa para especificar a estratégia de localização de hash. No seu arquivo .ts do módulo de roteamento, transmita um objeto de configuração para a função `forRoot` que especifica a estratégia. O código a seguir é um exemplo. 
+Se você definir suas rotas em um módulo de roteamento distinto, há uma forma alternativa para especificar a estratégia de localização de hash. No seu arquivo .ts do módulo de roteamento, transmita um objeto de configuração para a função `forRoot` que especifica a estratégia. O código a seguir é um exemplo.
 
 ```js
 import { RouterModule, Routes } from '@angular/router';
@@ -76,26 +76,13 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-
-## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Considere a possibilidade de dispor componentes do Fabric com componentes do Angular
-
-Recomendamos o uso do estilo [UI Fabric](https://developer.microsoft.com/fabric#) em seu suplemento. O UI Fabric para a Web está disponível em duas versões: 
-
-- O [Fabric React](https://developer.microsoft.com/fabric#/controls/web) oferece componentes robustos, acessíveis e atualizados que são altamente personalizáveis.
-
-- O [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) é um conjunto de classes CSS e mixins de Sass que oferecem acesso a cores, animações, fontes, ícones e grade do Fabric.
-
-Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
-
-
 ## <a name="using-the-office-dialog-api-with-angular"></a>Usando a API de diálogo do Office com Angular
 
 A API da caixa de diálogo Suplemento do Office permite que o suplemento abra uma página em uma caixa de diálogo não modal que pode trocar informações com a página principal, normalmente em um painel de tarefas.
 
-O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro, ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro, ou você pode transmitir a URL de uma rota em um aplicativo do Angular.
 
-É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a propriedade [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), que não é acessível a partir do código no painel de tarefas.  
-
+É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a [propriedade Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) que não é acessível a partir do código no painel de tarefas.  
 
 ## <a name="trigger-the-ui-update"></a>Acionar a atualização da interface do usuário
 
@@ -119,14 +106,13 @@ export class MyComponent {
 
 O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](https://rxjs-dev.firebaseapp.com/) oficial.
 
-Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`. 
+Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`.
 
 ### <a name="pushing-instead-of-pulling"></a>Obter em vez de enviar
 
-Seu código "obtém" objetos `Promise` atribuindo-os a variáveis, mas objetos `Observable` "enviam" seus valores para objetos que se *inscrevem* no `Observable`. Os assinantes são objetos `Observer`. O benefício da arquitetura push é que novos membros podem ser adicionados à matriz `Observable` ao longo do tempo. Quando um novo membro é adicionado, todos os objetos `Observer` que assinam o `Observable` recebem uma notificação. 
+Seu código "obtém" objetos `Promise` atribuindo-os a variáveis, mas objetos `Observable` "enviam" seus valores para objetos que se *inscrevem* no `Observable`. Os assinantes são objetos `Observer`. O benefício da arquitetura push é que novos membros podem ser adicionados à matriz `Observable` ao longo do tempo. Quando um novo membro é adicionado, todos os objetos `Observer` que assinam o `Observable` recebem uma notificação.
 
-O `Observer` é configurado para processar cada novo objeto (chamado o "próximo" objeto) com uma função. (Ele também é configurado para responder a um erro e a uma notificação de conclusão. Consulte a próxima seção para obter um exemplo.) Por esse motivo, os objetos `Observable` podem ser usados em uma maior variedade de cenários do que os objetos `Promise`. Por exemplo, além de retornarem um `Observable` de uma chamada AJAX, a maneira como você pode retornar um `Promise`, um `Observable` pode ser retornado de um manipulador de eventos, como o manipulador de eventos "modificado" de uma caixa de texto. Cada vez que um usuário insere texto na caixa, todos os objetos `Observer` inscritos reagem imediatamente usando o texto mais recente e/ou o estado atual do aplicativo como entrada. 
-
+O `Observer` é configurado para processar cada novo objeto (chamado o "próximo" objeto) com uma função. (Ele também é configurado para responder a um erro e a uma notificação de conclusão. Consulte a próxima seção para obter um exemplo.) Por esse motivo, os objetos `Observable` podem ser usados em uma maior variedade de cenários do que os objetos `Promise`. Por exemplo, além de retornarem um `Observable` de uma chamada AJAX, a maneira como você pode retornar um `Promise`, um `Observable` pode ser retornado de um manipulador de eventos, como o manipulador de eventos "modificado" de uma caixa de texto. Cada vez que um usuário insere texto na caixa, todos os objetos `Observer` inscritos reagem imediatamente usando o texto mais recente e/ou o estado atual do aplicativo como entrada.
 
 ### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>Aguardando a conclusão de todas as chamadas assíncronas
 
@@ -136,7 +122,7 @@ Quando quiser garantir que um retorno de chamada só seja executado quando todos
 myPromise.all([x, y, z]).then(
   // TODO: Callback logic goes here
 )
-``` 
+```
 
 Para fazer o mesmo com um objeto `Observable`, use o método [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md).  
 
@@ -150,11 +136,11 @@ const subscription = source.subscribe(
   err => console.log('Error: ' + err),
   () => console.log('Completed')
 );
-``` 
+```
 
 ## <a name="compile-the-angular-application-using-the-ahead-of-time-aot-compiler"></a>Compilar o aplicativo Angular usando o compilador AOT (Ahead-of-Time)
 
-O desempenho do aplicativo é um dos aspectos mais importantes da experiência do usuário. Um aplicativo Angular pode ser otimizado usando o compilador Angular AOT (Ahead-of-Time) para compilar o aplicativo durante a compilação. Ele converte todo o código-fonte (modelos HTML e TypeScript) em um código JavaScript eficiente. Se você compilar o aplicativo com o compilador AOT, nenhuma compilação adicional ocorrerá no tempo de execução, o que resultará em um processamento mais rápido e solicitações assíncronas mais rápidas para modelos HTML. Além disso, o tamanho geral do aplicativo diminui, pois o compilador Angular não precisa ser incluído no aplicativo para distribuição. 
+O desempenho do aplicativo é um dos aspectos mais importantes da experiência do usuário. Um aplicativo Angular pode ser otimizado usando o compilador Angular AOT (Ahead-of-Time) para compilar o aplicativo durante a compilação. Ele converte todo o código-fonte (modelos HTML e TypeScript) em um código JavaScript eficiente. Se você compilar o aplicativo com o compilador AOT, nenhuma compilação adicional ocorrerá no tempo de execução, o que resultará em um processamento mais rápido e solicitações assíncronas mais rápidas para modelos HTML. Além disso, o tamanho geral do aplicativo diminui, pois o compilador Angular não precisa ser incluído no aplicativo para distribuição.
 
 Para usar o compilador AOT, adicione `--aot` aos comandos `ng build` ou `ng serve`:
 
@@ -165,3 +151,11 @@ ng serve --aot
 
 > [!NOTE]
 > Para saber mais sobre o compilador Angular AOT (Ahead-of-Time), consulte o [guia oficial](https://angular.io/guide/aot-compiler).
+
+## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
+
+Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de algumas APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado `window.history` Windows clientes da área de trabalho. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as APIs adicionando o código a seguir à página `window.history` **index.html do** seu complemento.
+
+```js
+<script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>
+```

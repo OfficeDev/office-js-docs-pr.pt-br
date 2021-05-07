@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 04/29/2021
+ms.date: 05/03/2021
 localization_priority: Priority
-ms.openlocfilehash: fa87a8d9e57a7b509328a90856c51449269a82b9
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 3566c096f48ddaed671f211086d2e36964f63b4d
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100310"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253372"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
@@ -573,7 +573,8 @@ Para funcionar conforme o esperado, o Suplemento do Office pode depender de um a
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5"> Caixa de correio 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Caixa de correio 1.8</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Caixa de correio 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup>
     </td>
     <td>Não disponível</td>
   </tr>
@@ -832,7 +833,6 @@ Para funcionar conforme o esperado, o Suplemento do Office pode depender de um a
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#matrixbindings">MatrixBindings</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#matrixcoercion">MatrixCoercion</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#ooxmlcoercion">OoxmlCoercion</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#pdffile">PdfFile</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#selection">Selection</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#settings">Configurações</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#tablebindings">TableBindings</a><br>

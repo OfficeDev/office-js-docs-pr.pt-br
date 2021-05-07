@@ -2,37 +2,41 @@
 title: Configurar seu Outlook para ativação baseada em eventos (visualização)
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 04/29/2021
+ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 45f9ff16b3aca0a1fb8f3a8ee3d9ffa8e0f33ea2
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 0052f08e9c6a3903f4adb48efca3ff29a6d21467
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100296"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253316"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu Outlook para ativação baseada em eventos (visualização)
 
-Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário. Atualmente, os seguintes eventos são suportados.
-
-|Evento|Descrição|
-|---|---|
-|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|
-|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|
-|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.|
-|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.|
-|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.|
-|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.|
-|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.|
-|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|
-|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|
+Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário.
 
 No final deste passo a passo, você terá um complemento que é executado sempre que um novo item é criado e define o assunto.
 
 > [!IMPORTANT]
-> Esse recurso só é [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) suportado para visualização Outlook na Web e no Windows com uma assinatura Microsoft 365. Confira [Como visualizar o recurso de ativação](#how-to-preview-the-event-based-activation-feature) baseada em evento neste artigo para obter mais detalhes.
+> Esse recurso só é [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) suportado para visualização Outlook na Web e no Windows com uma assinatura Microsoft 365. Para obter mais detalhes, [consulte Como visualizar o recurso de ativação](#how-to-preview-the-event-based-activation-feature) baseada em evento neste artigo.
 >
 > Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
+
+## <a name="supported-events"></a>Eventos com suporte
+
+Atualmente, os seguintes eventos são suportados.
+
+|Evento|Descrição|Clientes|
+|---|---|---|
+|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|Windows, web|
+|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|Windows, web|
+|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.|Windows|
+|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.|Windows|
+|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.|Windows|
+|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.|Windows|
+|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.|Windows|
+|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|Windows|
+|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Windows|
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>Como visualizar o recurso de ativação baseada em evento
 
@@ -43,7 +47,11 @@ Para visualizar esse recurso:
 - Para Outlook na Web:
   - [Configure a versão direcionada em seu Microsoft 365 locatário](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Fazer referência **à biblioteca beta** no CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) tipo para a compilação typeScript e IntelliSense é encontrado no CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview` .
-- Para Outlook no Windows: o build mínimo necessário é 16.0.13729.20000. Participe do [programa Office Insider](https://insider.office.com) para acessar Office beta.
+- Para Outlook no Windows:
+  - O build mínimo necessário é 16.0.14026.20000. Participe do [programa Office Insider](https://insider.office.com) para acessar Office beta.
+  - Configure o Registro:
+    1. Crie a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` .
+    1. Adicione uma entrada chamada `EnableBetaAPIsInJavaScript` e desmarcar o valor como `1` .
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
@@ -279,5 +287,5 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 ## <a name="see-also"></a>Confira também
 
-[Outlook manifestos](manifests.md) 
- de complemento [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
+- [Manifestos de suplementos do Outlook](manifests.md)
+- [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
