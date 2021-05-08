@@ -1,29 +1,29 @@
 ---
-title: Atalhos de teclado personalizados em Complementos do Office
-description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Complemento do Office.
-ms.date: 02/02/2021
+title: Atalhos de teclado personalizados em Office de complementos
+description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
+ms.date: 05/05/2021
 localization_priority: Normal
-ms.openlocfilehash: c767c6d5bc23f0a44422452839cd8bdf87bd8715
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 42c0b5190d0fc71f137284950bcb983f16845fca
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505196"
+ms.lasthandoff: 05/07/2021
+ms.locfileid: "52266101"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>Adicionar atalhos de teclado personalizados aos seus Complementos do Office (visualização)
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
-Atalhos de teclado, também conhecidos como combinações de teclas, permitem que os usuários do seu complemento funcionem com mais eficiência e melhoram a acessibilidade do complemento para usuários com deficiências, fornecendo uma alternativa ao mouse.
+Atalhos de teclado, também conhecidos como combinações de teclas, permitem que os usuários do seu complemento funcionem com mais eficiência. Atalhos de teclado também melhoram a acessibilidade do complemento para usuários com deficiências, fornecendo uma alternativa ao mouse.
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> Para começar com uma versão de trabalho de um complemento com atalhos de teclado já habilitados, clone e execute o exemplo atalhos de teclado [do Excel.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Quando você estiver pronto para adicionar atalhos de teclado ao seu próprio complemento, continue com este artigo.
+> Para começar com uma versão de trabalho de um add-in com atalhos de teclado já habilitados, clone e execute o exemplo Excel [Atalhos de Teclado.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Quando você estiver pronto para adicionar atalhos de teclado ao seu próprio complemento, continue com este artigo.
 
 Há três etapas para adicionar atalhos de teclado a um complemento:
 
 1. [Configure o manifesto do complemento](#configure-the-manifest).
 1. [Crie ou edite o arquivo JSON de atalhos](#create-or-edit-the-shortcuts-json-file) para definir ações e atalhos de teclado.
-1. [Adicione uma ou mais chamadas de](#create-a-mapping-of-actions-to-their-functions) tempo de execução da API [Office.actions.associate](/javascript/api/office/office.actions#associate) para mapear uma função para cada ação.
+1. [Adicione uma ou mais chamadas de tempo de](#create-a-mapping-of-actions-to-their-functions) execução da API [Office.actions.associate](/javascript/api/office/office.actions#associate) para mapear uma função para cada ação.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -68,23 +68,23 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
             {
                 "action": "SHOWTASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+UP"
+                    "default": "Ctrl+Alt+Up"
                 }
             },
             {
                 "action": "HIDETASKPANE",
                 "key": {
-                    "default": "CTRL+SHIFT+DOWN"
+                    "default": "Ctrl+Alt+Down"
                 }
             }
         ]
     }
     ```
 
-    Para obter mais informações sobre os objetos JSON, consulte [Constructing the action objects](#constructing-the-action-objects) and [Constructing the shortcut objects](#constructing-the-shortcut-objects). O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+    Para obter mais informações sobre os objetos JSON, consulte [Construct the action objects](#construct-the-action-objects) and Construct the shortcut [objects](#construct-the-shortcut-objects). O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
     > [!NOTE]
-    > Você pode usar "CONTROL" no lugar de "CTRL" ao longo deste artigo.
+    > Você pode usar "CONTROL" no lugar de "Ctrl" ao longo deste artigo.
 
     Em uma etapa posterior, as ações serão mapeadas para as funções que você escrever. Neste exemplo, mais tarde você mapeará SHOWTASKPANE para uma função que chama o método e `Office.addin.showAsTaskpane` HIDETASKPANE para uma função que chama o `Office.addin.hide` método.
 
@@ -117,7 +117,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-1. Adicione uma segunda chamada de `Office.actions.associate` função para mapear a ação para uma função que chama `HIDETASKPANE` [Office.addin.hide](/javascript/api/office/office.addin#hide--). Veja um exemplo a seguir:
+1. Adicione uma segunda chamada de função para mapear a ação para uma função que `Office.actions.associate` `HIDETASKPANE` chama [Office.addin.hide](/javascript/api/office/office.addin#hide--). Veja um exemplo a seguir:
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -131,13 +131,13 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de tarefas pressionando a tecla de seta **Ctrl+Shift+Up** e a tecla de seta **Ctrl+Shift+Down.** Esse é o mesmo comportamento mostrado no exemplo [do excel keyboard shortcuts add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de tarefas pressionando **Ctrl+Alt+Up** e **Ctrl+Alt+Down.** O mesmo comportamento é mostrado no exemplo Excel [atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado no Office PnP de GitHub.
 
 ## <a name="details-and-restrictions"></a>Detalhes e restrições
 
-### <a name="constructing-the-action-objects"></a>Construir os objetos de ação
+### <a name="construct-the-action-objects"></a>Construir os objetos de ação
 
-Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`action` on:
+Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`actions` on:
 
 - Os nomes das `id` propriedades e `name` são obrigatórios.
 - A `id` propriedade é usada para identificar exclusivamente a ação a ser invocada usando um atalho de teclado.
@@ -163,17 +163,17 @@ Veja um exemplo a seguir:
 
 O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
-### <a name="constructing-the-shortcut-objects"></a>Construir os objetos de atalho
+### <a name="construct-the-shortcut-objects"></a>Construir os objetos de atalho
 
 Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`shortcuts` on:
 
 - Os nomes de `action` propriedade , e são `key` `default` obrigatórios.
 - O valor da propriedade é uma cadeia de caracteres e deve corresponder a uma das `action` `id` propriedades no objeto action.
 - A propriedade pode ser qualquer combinação dos caracteres A - Z, a -z, 0 - 9 e as marcas de pontuação `default` "-", "_" e "+". (Por convenção, letras de maiúsculas e baixos não são usadas nessas propriedades.)
-- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (ALT, CTRL, SHIFT) e apenas uma outra chave.
-- Para Macs, também suportamos a chave modificadora COMMAND.
-- Para Macs, ALT é mapeado para a tecla OPTION. Para o Windows, COMMAND é mapeado para a tecla CTRL.
-- Quando dois caracteres são vinculados à mesma chave física em um teclado padrão, eles são sinônimos na propriedade; por exemplo, ALT+a e ALT+A são o mesmo atalho, assim como `default` CTRL+- e CTRL+ porque "-" e "_" são a mesma chave \_ física.
+- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (Alt, Ctrl, Shift) e apenas uma outra chave.
+- Para Macs, também há suporte para a chave do modificador de comando.
+- Para Macs, Alt é mapeado para a tecla Option. Para Windows, Command é mapeado para a tecla Ctrl.
+- Quando dois caracteres são vinculados à mesma chave física em um teclado padrão, eles são sinônimos na propriedade; por exemplo, Alt+a e Alt+A são o mesmo atalho, assim como `default` Ctrl+- e Ctrl+ porque "-" e "_" são a mesma chave \_ física.
 - O caractere "+" indica que as teclas de cada lado são pressionadas simultaneamente.
 
 Veja um exemplo a seguir:
@@ -183,13 +183,13 @@ Veja um exemplo a seguir:
         {
             "action": "SHOWTASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+UP"
+                "default": "Ctrl+Alt+Up"
             }
         },
         {
             "action": "HIDETASKPANE",
             "key": {
-                "default": "CTRL+SHIFT+DOWN"
+                "default": "Ctrl+Alt+Down"
             }
         }
     ]
@@ -198,24 +198,61 @@ Veja um exemplo a seguir:
 O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Dicas de chave, também conhecidas como atalhos de chave sequencial, como o atalho do Excel para escolher uma cor de preenchimento **Alt+H, H**, não são suportadas em Complementos do Office.
+> As Dicas de Chave, também conhecidas como atalhos de chave sequencial, como o atalho Excel para escolher uma cor de preenchimento **Alt+H, H**, não são suportadas em Office Add-ins.
 
-### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>Usando atalhos quando o foco está no painel de tarefas
+## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Evitar combinações de teclas em uso por outros complementos
 
-Atualmente, os atalhos de teclado para um Add-in do Office só podem ser invocados quando o foco do usuário está na planilha. Quando o foco do usuário está dentro da interface do usuário do Office (como o painel de tarefas), nenhum dos atalhos do complemento é ignorado. Como solução alternativa, o complemento pode definir manipuladores de teclado que podem invocar determinadas ações quando o foco do usuário está dentro da interface do usuário do complemento.
+Há muitos atalhos de teclado que já estão em uso por Office. Evite registrar atalhos de teclado para o seu complemento que já estão em uso, no entanto, pode haver algumas instâncias em que é necessário substituir atalhos de teclado existentes ou lidar com conflitos entre vários complementos que registraram o mesmo atalho de teclado.
 
-## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>Usando combinações de teclas que já são usadas pelo Office ou outro complemento
+No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez que tentar usar um atalho de teclado conflitante, observe que o nome da ação exibido nesta caixa de diálogo é a propriedade no objeto action no `name` `shortcuts.json` arquivo.
 
-Durante o período de visualização, não há nenhum sistema para determinar o que acontece quando um usuário pressiona uma combinação de teclas registrada por um complemento e também pelo Office ou por outro complemento. O comportamento é indefinido.
+![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho](../images/add-in-shortcut-conflict-modal.png)
 
-Atualmente, não há solução alternativa quando dois ou mais complementos registraram o mesmo atalho de teclado, mas você pode minimizar conflitos com o Excel com essas boas práticas:
+O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, poderá invocar o comando Redefinir Office preferências de atalho de **Complementos** da caixa de pesquisa Diga-me.  Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante:
 
-- Use apenas atalhos de teclado com o seguinte padrão no seu complemento: **Ctrl+Shift+Alt+* x***, onde *x* é outra chave.
-- Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)de teclado do Excel e evite usar qualquer um deles no seu complemento.
+![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir Office preferências de atalho do add-in](../images/add-in-reset-shortcuts-action.png)
+
+Para a melhor experiência do usuário, recomendamos que você minimize os conflitos com Excel com essas boas práticas:
+
+- Use apenas atalhos de teclado com o seguinte padrão: **Ctrl+Shift+Alt+* x***, onde *x* é alguma outra chave.
+- Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)Excel teclado e evite usar qualquer um deles no seu complemento.
+- Quando o foco do teclado estiver dentro da interface do usuário do complemento, **Ctrl+Spacebar** e **Ctrl+Shift+F10** não funcionarão, pois são atalhos de acessibilidade essenciais.
+- Em um computador Windows ou Mac, se o comando "Redefinir preferências de atalho de complementos do Office" não estiver disponível no menu de pesquisa, o usuário poderá adicionar manualmente o comando à faixa de opções personalização da faixa de opções por meio do menu de contexto.
+
+## <a name="customize-the-keyboard-shortcuts-per-platform"></a>Personalizar os atalhos de teclado por plataforma
+
+É possível personalizar atalhos para serem específicos da plataforma. Veja a seguir um exemplo do objeto que personaliza os atalhos para cada uma das seguintes `shortcuts` plataformas: `windows` , `mac` , `web` . Observe que você ainda deve ter uma tecla `default` de atalho para cada atalho.
+
+No exemplo a seguir, a chave é a chave `default` de fallback para qualquer plataforma que não seja especificada. A única plataforma não especificada é Windows, portanto, a `default` chave só se aplicará a Windows.
+
+```json
+    "shortcuts": [
+        {
+            "action": "SHOWTASKPANE",
+            "key": {
+                "default": "Ctrl+Alt+Up",
+                "mac": "Command+Shift+Up",
+                "web": "Ctrl+Alt+1",
+            }
+        },
+        {
+            "action": "HIDETASKPANE",
+            "key": {
+                "default": "Ctrl+Alt+Down",
+                "mac": "Command+Shift+Down",
+                "web": "Ctrl+Alt+2"
+            }
+        }
+    ]
+```
+
+## <a name="localize-the-keyboard-shortcuts-json"></a>Localize os atalhos de teclado JSON
+
+Se o seu add-in dá suporte a várias localidades, você precisará localizar a `name` propriedade dos objetos de ação. Além disso, se qualquer uma das localidades com suporte para o complemento tiver alfabetos ou sistemas de escrita diferentes e, portanto, teclados diferentes, talvez seja necessário localizar os atalhos também. Para obter informações sobre como localizar os atalhos de teclado JSON, consulte [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Atalhos do navegador que não podem ser substituídos
 
-Não é possível usar nenhuma das seguintes combinações de teclado. Eles são usados por navegadores e não podem ser substituídos. Esta lista é um trabalho em andamento. Se você descobrir outras combinações que não podem ser substituidas, nos avise usando a ferramenta de comentários na parte inferior desta página.
+Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usados pelo navegador não podem ser substituídos por complementos. Esta lista é um trabalho em andamento. Se você descobrir outras combinações que não podem ser substituidas, nos avise usando a ferramenta de comentários na parte inferior desta página.
 
 - Ctrl+N
 - Ctrl+Shift+N
@@ -224,11 +261,7 @@ Não é possível usar nenhuma das seguintes combinações de teclado. Eles são
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="localize-the-keyboard-shortcuts-json"></a>Localize os atalhos de teclado JSON
+## <a name="next-steps"></a>Próximas Etapas
 
-Se o seu add-in dá suporte a várias localidades, você precisará localizar a `name` propriedade dos objetos de ação. Além disso, se qualquer uma das localidades com suporte para o complemento tiver alfabetos ou sistemas de escrita diferentes e, portanto, teclados diferentes, talvez seja necessário localizar os atalhos também. Para obter informações sobre como localizar os atalhos de teclado JSON, consulte [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
-
-## <a name="next-steps"></a>Próximas etapas
-
-- Consulte o exemplo de complemento [excel-keyboard-shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts).
+- Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).
