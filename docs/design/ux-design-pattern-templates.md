@@ -1,14 +1,14 @@
 ---
 title: Padrões de design da experiência do usuário para suplementos do Office
-description: Obtenha uma visão geral dos padrões de design de interface do usuário para suplementos do Office, incluindo padrões para navegação, autenticação, primeira-execução e identidade visual.
-ms.date: 03/19/2019
+description: Obter uma visão geral dos padrões de design da interface do usuário para Office de complementos, incluindo padrões de navegação, autenticação, primeira-executar e identidade visual.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d7201cd91dbfd019a7b045a7f63c1c86a74b9142
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608457"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330105"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de design da experiência do usuário para suplementos do Office
 
@@ -16,15 +16,15 @@ O design da experiência do usuário para os suplementos do Office deve fornecer
 
 Nossos padrões de experiência do usuário são compostos de componentes. Os componentes são controles que ajudam os clientes a interagir com os elementos do software ou serviço. Botões, navegação e menus são exemplos de componentes comuns que geralmente possuem comportamentos e estilos consistentes.
 
-O Office UI Fabric renderiza componentes que têm aparência e comportamento como os de uma parte do Office. Aproveite o Fabric para se integrar facilmente ao Office. Se o suplemento tiver sua própria linguagem de componente pré-existente, não será necessário descartá-lo para usar o Fabric. Procure oportunidades para mantê-lo durante a integração ao Office. Considere maneiras de trocar elementos estilísticos, remover conflitos ou adotar estilos e comportamentos que removam a confusão para o usuário.
+[Os componentes](using-office-ui-fabric-react.md) React de interface do usuário fluente parecem e se comportam como parte do Office, assim como os componentes neutros da [estrutura do Office UI Fabric JS](fabric-core.md). Aproveite qualquer conjunto de componentes para se integrar com Office. Como alternativa, se o seu complemento tiver seu próprio idioma de componente preexistência, você não precisará descartar. Procure oportunidades para mantê-lo durante a integração ao Office. Considere maneiras de trocar elementos estilísticos, remover conflitos ou adotar estilos e comportamentos que removam a confusão para o usuário.
 
-Os padrões fornecidos são soluções de práticas recomendadas com base em cenários comuns de clientes e pesquisa de experiência do usuário. Eles servem para fornecer um ponto de entrada rápido para projetar e desenvolver suplementos, bem como orientação para alcançar o equilíbrio entre os elementos da Microsoft e da marca. Proporcionar uma experiência de usuário limpa e moderna que equilibre elementos de design da linguagem de design do Microsoft Fabric e a identidade de marca exclusiva do parceiro pode ajudar a aumentar a retenção de usuários e a adoção do seu suplemento.
+Os padrões fornecidos são soluções de práticas recomendadas com base em cenários comuns de clientes e pesquisa de experiência do usuário. Eles devem fornecer um ponto de entrada rápido para projetar e desenvolver os complementos, bem como orientações para alcançar o equilíbrio entre os elementos de marca da Microsoft e seus próprios. Fornecer uma experiência de usuário moderna e limpa que equilibra elementos de design da linguagem de design da interface do usuário fluente da Microsoft e a identidade de marca exclusiva do parceiro pode ajudar a aumentar a retenção do usuário e a adoção do seu complemento.
 
 Use os modelos padrão de experiência do usuário para:
 
 * Aplicar soluções a cenários comuns de clientes.
 * Aplicar as práticas recomendadas de design.
-* Incorporar componentes e estilos do [Office UI Fabric](https://developer.microsoft.com/fabric#/get-started).
+* Incorpore [componentes e estilos de interface do usuário](https://developer.microsoft.com/fluentui#/get-started) fluentes.
 * Criar suplementos que se integram visualmente à interface do usuário padrão do Office.
 * Idealizar e visualizar a experiência do usuário.
 
@@ -45,6 +45,6 @@ Navegar por cada agrupamento para ter uma ideia de como você pode projetar o su
 ## <a name="see-also"></a>Confira também
 
 * [Kits de ferramentas de design](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md)
-* [Introdução ao uso do Fabric React](../design/using-office-ui-fabric-react.md)
+* [Interface do usuário do Fluent](https://developer.microsoft.com/fluentui#)
+* [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
+* [Interface do usuário do Fluent React em Office de complementos](using-office-ui-fabric-react.md)

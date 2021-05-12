@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
-description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
-ms.date: 10/14/2020
+description: Aplique as práticas recomendadas ao desenvolver para criar Office de complementos.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132176"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330077"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -21,7 +21,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 - Crie suplementos que ajudem os usuários a concluir tarefas de forma rápida e eficiente. Concentre-se nos cenários que fazem sentido para aplicativos do Office. Por exemplo:
   - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
   - Habilite novos cenários no Office.
-  - Inserir serviços complementares nos aplicativos do Office.
+  - Incorporar serviços complementares em Office aplicativos.
   - Melhore a experiência do Office para aumentar a produtividade.
 - Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
 - Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
@@ -36,11 +36,11 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
 - Forneça uma interface do usuário informativa e torne sua interface do usuário pessoal.
 
-  ![Captura de tela mostrando uma comparação "do" vs. "não". O exemplo "do" mostra um suplemento que inclui um botão que os usuários podem clicar para começar. O exemplo "não" mostra um suplemento sem procedimentos introdutórios ou botões.](../images/contoso-part-catalog-do-dont.png)
+  ![Captura de tela mostrando uma comparação "Do" vs. "Don't". O exemplo "Fazer" mostra um complemento que inclui um botão que os usuários podem clicar para começar. O exemplo "Não" mostra um complemento sem etapas introdutivas ou botões.](../images/contoso-part-catalog-do-dont.png)
 
 - Se seu suplemento de conteúdo estiver vinculado a dados no documento do usuário, inclua exemplos de dados ou um modelo para mostrar aos usuários o formato de dados a ser usado.
 
-  ![Captura de tela mostrando uma comparação "do" vs. "não". O exemplo "do" mostra um suplemento que inclui um botão que os usuários podem clicar para inserir dados de exemplo. O exemplo "não" mostra um suplemento sem dados de exemplo ou botões.](../images/add-in-title.png)
+  ![Captura de tela mostrando uma comparação "Do" vs. "Don't". O exemplo "Fazer" mostra um complemento que inclui um botão que os usuários podem clicar para inserir dados de exemplo. O exemplo "Não" mostra um complemento sem dados de exemplo ou botões.](../images/add-in-title.png)
 
 - Ofereça [avaliações gratuitas](/office/dev/store/decide-on-a-pricing-model). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 
@@ -56,7 +56,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ## <a name="apply-ux-design-principles"></a>Aplicar os princípios de design de UX
 
-- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Use o [Office UI Fabric](https://developer.microsoft.com/fabric).
+- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Consulte [Design the UI of Office Add-ins](../design/add-in-design.md).
 
 - Favoreça o conteúdo através do Chrome. Evite elementos de interface do usuário supérfluos que não agregam valor à experiência do usuário.
 
@@ -76,7 +76,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a propriedade [Context. touchEnabled](/javascript/api/office/office.context#touchenabled) para detectar se o aplicativo do Office no qual o suplemento é executado está habilitado para toque.
+- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#touchenabled) para detectar se o aplicativo Office que o seu complemento executa está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
@@ -90,7 +90,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 - Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Se você está usando o [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) nos seus elementos de design, muitos desses elementos já foram tratados.
+> Se você estiver usando a [interface do usuário do Fluent React](../design/using-office-ui-fabric-react.md) seus elementos de design, muitos desses elementos são integrados ao sistema de design.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento
@@ -120,7 +120,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
 
-- Minimize as trocas de dados entre o suplemento e o documento do Office. Para obter mais informações, consulte [Evite usar o método Context. Sync em loops](correlated-objects-pattern.md).
+- Minimize as trocas de dados entre o add-in e o Office documento. Para obter mais informações, [consulte Evite usar o método context.sync em loops](correlated-objects-pattern.md).
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 
@@ -134,7 +134,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Crie um site para ajudar os usuários a encontrar e utilizar seu suplemento.
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>Usar JavaScript que suporte o Internet Explorer
+## <a name="use-javascript-that-supports-internet-explorer"></a>Usar JavaScript compatível com o Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

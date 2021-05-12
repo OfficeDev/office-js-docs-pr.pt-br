@@ -1,23 +1,23 @@
 ---
-title: Usar o Office UI Fabric React em Suplementos do Office
-description: Aprenda a usar o Office UI Fabric React em suplementos do Office.
-ms.date: 02/09/2021
+title: Interface do usuário do Fluent React em Office de complementos
+description: Saiba como usar a interface do usuário do Fluent React em Office-ins.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: cb7f04c21a52a2e4a3f271abc56aa325dd2b02fd
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237725"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330134"
 ---
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
+# <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar a interface do usuário do Fluent React em Office de complementos
 
-O Office UI Fabric é uma estrutura de front-end JavaScript para criar experiências de usuário para o Office. Se você criar seu complemento usando o React, considere usar o Fabric React para criar sua experiência do usuário. O Fabric fornece vários componentes da UX baseados no React, como botões ou caixas de seleção, que você pode usar no seu complemento.
-
-Este artigo descreve como criar um suplemento usando o React e componentes do Fabric React.
+A interface do usuário React é a estrutura de front-end javaScript de código aberto oficial projetada para criar experiências que se encaixem perfeitamente em uma ampla variedade de produtos Microsoft, incluindo Office. Ele fornece componentes robustos, atualizados e acessíveis React baseados em React que são altamente personalizáveis usando CSS-in-JS.
 
 > [!NOTE]
-> [O Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) acompanha o Fabric React, o que significa que o seu suplemento também terá acesso ao Fabric Core após a conclusão das etapas deste artigo.
+> Este artigo descreve o uso de interface do usuário fluente React no contexto de Office de complementos. Mas também é usado em uma ampla variedade de Microsoft 365 aplicativos e extensões. Para obter mais informações, [consulte Fluent UI React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) and the open source repo Fluent [UI Web](https://github.com/microsoft/fluentui).
+
+Este artigo descreve como criar um complemento criado com o React e usa componentes de interface do usuário React Fluent.
 
 ## <a name="create-an-add-in-project"></a>Criar um projeto de suplemento
 
@@ -38,7 +38,7 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 
 ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-word-react.png)
 
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Nó de suporte.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -76,13 +76,13 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
         Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e botão criando um componente Reagir que usa componentes UX do Fabric React.
+3. Para abrir o painel de tarefas do complemento, na guia **Página** Início, escolha o **botão Mostrar Painel de Tarefas.** Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e um botão criando um componente React que usa componentes de UX do fluent UI React.
 
-    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
+    ![Captura de tela mostrando o aplicativo Word com o botão mostrar faixa de opções do Painel de Tarefas realçada e o botão Executar e texto imediatamente anterior realçado no painel de tarefas](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fabric-react"></a>Criar um componente React que use o Fabric React
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>Criar um React que usa a interface do usuário do Fluent React
 
-Neste ponto, você criou um suplemento muito básico do painel de tarefas usando o React. Em seguida, siga as etapas abaixo para criar um novo componente React (`ButtonPrimaryExample`) dentro do projeto de suplemento. O componente usa o `Label` e `PrimaryButton` os componentes do Fabric React.
+Neste ponto, você criou um suplemento muito básico do painel de tarefas usando o React. Em seguida, siga as etapas abaixo para criar um novo componente React (`ButtonPrimaryExample`) dentro do projeto de suplemento. O componente usa os componentes e da interface `Label` do usuário do Fluent `PrimaryButton` React.
 
 1. Abra a pasta do projeto criada pelo gerador Yeoman e acesse **src\taskpane\components**.
 2. Nesta pasta, crie um novo arquivo chamado **Button.tsx**.
@@ -102,7 +102,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     // In the click event, write text to the document.
     await Word.run(async (context) => {
       let body = context.document.body;
-      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
       await context.sync();
     });
   }
@@ -126,10 +126,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Esse código faz o seguinte:
 
 - Faz referência à biblioteca React usando `import * as React from 'react';`.
-- Faz referência aos componentes do Fabric (`PrimaryButton`, `IButtonProps`, `Label`) que são usados para criar `ButtonPrimaryExample`.
+- Faz referência aos componentes da interface do usuário do Fluent React ( `PrimaryButton` , , ) que são usados para criar `IButtonProps` `Label` `ButtonPrimaryExample` .
 - Declara o novo `ButtonPrimaryExample` componente usando `export class ButtonPrimaryExample extends React.Component`.
 - Declara a `insertText` função que manipulará o evento do `onClick` botão.
-- Define a interface do usuário do componente do React na função `render`. A marcação HTML usa os componentes `Label` e `PrimaryButton` da Fabric React e especifica que quando `onClick` o evento for acionado, a `insertText` função será executada.
+- Define a interface do usuário do componente do React na função `render`. A marcação HTML usa os componentes e da interface do usuário do Fluent React especifica que, quando o evento for ativos, a `Label` `PrimaryButton` função será `onClick` `insertText` executado.
 
 ## <a name="add-the-react-component-to-your-add-in"></a>Adicionar o componente do React ao suplemento
 
@@ -170,13 +170,12 @@ Adicionar o `ButtonPrimaryExample` componente ao suplemento abrindo **src\compon
 
 No Word, o painel de tarefas do suplemento será atualizado automaticamente quando você salvar as alterações em **App.tsx**. O texto padrão e o botão na parte inferior do painel de tarefas agora mostram a IU definida pelo `ButtonPrimaryExample` componente. Feche o botão **Insert text...** para inserir o texto no documento.
 
-![Captura de tela mostrando o aplicativo Word com o "Inserir texto..." botão e texto imediatamente anterior realçada](../images/word-task-pane-with-react-component.png)
+![Captura de tela mostrando o aplicativo Word com o "Inserir texto..." botão e texto imediatamente anterior realçado](../images/word-task-pane-with-react-component.png)
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas usando React e o Office UI Fabric React!
+Parabéns, você criou com êxito um complemento do painel de tarefas usando o React e a interface do usuário React!
 
 ## <a name="see-also"></a>Confira também
 
-- [Office UI Fabric em Suplementos do Office](office-ui-fabric.md)
-- [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Word Add-in GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [Fabric Core em Office de complementos](fabric-core.md)
 - [Padrões de design da experiência do usuário para suplementos do Office](ux-design-pattern-templates.md)
-- [Introdução ao exemplo de código do Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)

@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 02/01/2021
+ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 56def561fee6525c6daa73fe1153f220bae503c3
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238096"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52329923"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -315,7 +315,7 @@ Para começar, vamos criar o UI para a caixa de diálogo. Dentro da pasta **./sr
   <!-- Office JavaScript API -->
   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-  <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+<!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
   <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
   <!-- Template styles -->
@@ -976,7 +976,7 @@ No projeto que você criou, o painel de tarefas HTML é especificado no arquivo 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+   <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
     <!-- Template styles -->
