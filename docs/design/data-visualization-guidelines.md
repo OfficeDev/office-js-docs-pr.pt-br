@@ -1,31 +1,26 @@
 ---
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
-description: Obtenha algumas boas práticas de visualização de dados em um suplemento do Office.
-ms.date: 01/14/2019
+description: Obter algumas práticas recomendadas para visualizar dados em um Office Desem.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ac32d7f284850fc8daef1fb1588940844123550f
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132071"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330175"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.
 
-Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar o cromado para suas visualizações de dados. O Office UI Fabric inclui estilos e componentes que se integram perfeitamente com a aparência do Office.
-<!--The following figure shows a data visualization in an add-in that uses Fabric.
-
-![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
-
--->
+Recomendamos que você use [a interface do usuário Fluent](../design/add-in-design.md) para criar o cromado para suas visualizações de dados. A interface do usuário fluente inclui estilos e componentes que se integram perfeitamente à aparência Office aparência.
 
 ## <a name="data-visualization-elements"></a>Elementos de visualização de dados
 
-As visualizações de dados compartilham uma estrutura geral e elementos visuais e interativos comuns, incluindo títulos, rótulos e plotagens de dados, conforme mostrado na figura a seguir.
+As visualizações de dados compartilham uma estrutura geral e elementos visuais e interativos comuns, incluindo títulos, rótulos e plotagem de dados, conforme mostrado na figura a seguir.
 
-![Gráfico de linhas com título, eixos, legenda e área de plotagem rotulada](../images/excel-charts-visualization.png)
+![Gráfico de linha com título, eixos, legenda e área de plotagem rotulada](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Títulos de gráfico
 
@@ -33,14 +28,14 @@ Siga estas diretrizes para títulos de gráfico:
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore a [rampa de tipos do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a IU do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore [a rampa de tipo](https://developer.microsoft.com/fluentui#/styles/web/typography) de interface do usuário fluente para tornar seus gráficos consistentes com a interface do usuário Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 ### <a name="axis-labels"></a>Rótulos dos eixos
 
 Deixe os rótulos dos eixos escuros para serem lidos claramente, com um bom contraste entre as cores do plano de fundo e do texto. Verifique se não estão tão escuros que competem com a tinta dos dados.
 
-Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando o Fabric, consulte a [paleta cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando a interface do usuário fluente, consulte a [paleta Cores Neutras](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
 
 ### <a name="data-ink"></a>Tinta dos dados
 
@@ -60,11 +55,11 @@ Para ver as práticas recomendadas para o uso de cores nas visualizações de da
 
 As linhas de grade geralmente são necessárias para a leitura precisa de um gráfico, mas elas devem ser apresentadas como um elemento visual secundário, aprimorando a tinta dos dados e não competindo com ela. Use linhas de grade estáticas finas e leves, a menos que elas tenham sido projetadas especificamente para alto contraste. Você também pode usar interação para criar linhas de grade dinâmicas, que aparecem no contexto quando um usuário interage com um gráfico.
 
-Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabric, consulte a [paleta cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para linhas de grade. Se você estiver usando a interface do usuário fluente, consulte a [paleta Cores Neutras](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 
-![Visualização de dados do gráfico de linhas com linhas de grade](../images/data-visualization.png)
+![Visualização de dados do gráfico de linha com linhas de grade](../images/data-visualization.png)
 
 ### <a name="legends"></a>Legendas
 

@@ -1,23 +1,23 @@
 ---
 title: Diretrizes de tipografia para suplementos do Office
-description: Saiba o que são os tipos de fonte e de fontes a serem usados nos suplementos do Office.
-ms.date: 09/03/2020
+description: Saiba quais tipos e tamanhos de fonte usar em Office Add-ins.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d7347e2e6ee01386d631fea8c2b388ad5b61005e
-ms.sourcegitcommit: 10463841a977e9b8415362a3ae91b0ae5eebbf89
+ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "47399561"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330000"
 ---
 # <a name="typography"></a>Tipografia
 
-Segoe é o tipo de fonte padrão para o Office. Use-a no suplemento para alinhar objetos de conteúdo, caixas de diálogo e painéis de tarefas do Office. O Office UI Fabric lhe dá acesso à fonte Segoe. Ele fornece um conjunto completo da fonte Segoe com muitas variações (incluindo espessura e tamanho da fonte) em classes CSS convenientes. Nem todos os tamanhos e espessuras do Office UI Fabric terão boa aparência em um suplemento do Office. Para obter um ajuste harmonioso ou evitar conflitos, considere o uso de um subconjunto do conjunto de fontes do Fabric. A tabela a seguir lista as classes base da malha recomendadas para uso em suplementos do Office.
+Segoe é o tipo de fonte padrão para o Office. Use-a no suplemento para alinhar objetos de conteúdo, caixas de diálogo e painéis de tarefas do Office. [O Fabric Core](fabric-core.md) oferece acesso a Segoe. Ele fornece um conjunto completo da fonte Segoe com muitas variações (incluindo espessura e tamanho da fonte) em classes CSS convenientes. Nem todos os tamanhos e pesos do Fabric Core serão ótimos em um Office Add-in. Para se ajustar harmoniosamente ou evitar conflitos, considere usar um subconjunto da rampa de tipo Fabric Core. A tabela a seguir lista as classes base do Fabric Core que recomendamos para uso em Office de complementos.
 
 > [!NOTE]
-> A cor do texto não está incluída nessas classes base. Use a opção "Neutro principal" do Fabric para a maioria dos textos em fundos brancos.
+> A cor do texto não está incluída nessas classes base. Use a "primária neutra" do Fabric Core para a maioria dos textos em plano de fundo branco.
 >
-> Para saber mais sobre a tipografia disponível, consulte [Web Typography](https://developer.microsoft.com/fluentui#/styles/web/typography).
+> Para saber mais sobre tipografia disponível, consulte [Tipografia da Web](https://developer.microsoft.com/fluentui#/styles/web/typography).
 
 |Tipo |Classe |Tamanho |Peso |Uso recomendado |
 |------ |----- |---- |------ |----------------- |

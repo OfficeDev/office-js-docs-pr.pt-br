@@ -1,22 +1,22 @@
 ---
-title: Diretrizes de ícone de estilo novo para os Complementos do Office
-description: Diretrizes para usar ícones de estilo atualizados em Complementos do Office.
-ms.date: 03/30/2021
+title: Diretrizes de ícone de estilo novo para Office de complementos
+description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604663"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330042"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para os Complementos do Office
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
-As versões do Office 2013+ (sem assinatura) do Office usam a iconografia de estilo Fresh da Microsoft. Se preferir que seus ícones corresponderem ao estilo Monoline do Microsoft 365, consulte Diretrizes de ícone de estilo monoline para Os [Complementos do Office](add-in-icons-monoline.md).
+As Office versões do 2013+ (sem assinatura) do Office usam a iconografia de estilo Fresh da Microsoft. Se você preferir que seus ícones corresponderem ao estilo monoline do Microsoft 365, consulte Diretrizes de ícone de estilo monoline para Office [Desempaco.](add-in-icons-monoline.md)
 
-## <a name="office-fresh-visual-style"></a>Estilo visual do Office Fresh
+## <a name="office-fresh-visual-style"></a>Office Estilo visual atualizado
 
-Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para se ajustar melhor aos clientes que não são de assinatura do Office.
+Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para melhor se ajustar Office clientes que não são de assinatura.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -25,10 +25,10 @@ Siga estas diretrizes ao criar seus ícones:
 |Fazer|Não fazer|
 |:---|:---|
 |Mantenha os elementos visuais simples e claros, concentrando-se nos principais elementos da comunicação.| Não usar artefatos que façam com que o ícone pareça confuso.|
-|Usar a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilizar os glifos do Office UI Fabric para comandos de complemento na faixa de opções de aplicativos do Office ou menus contextuais. Os ícones do Fabric são estilisticamente diferentes e não serão compatíveis.|
+|Usar a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilizar os glifos do Fabric Core para comandos de Aplicativo do Office faixa de opções ou menus contextuais. Os ícones do Fabric Core são estilicamente diferentes e não corresponderão.|
 |Reutilizar metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.|Não reutilizar metáforas visuais para comandos diferentes. Usar o mesmo ícone para conceitos e comportamentos diferentes pode causar confusão. |
 |Redesenhar os ícones para deixá-los pequenos ou maiores. Dedicar um tempo para redesenhar recortes, cantos e bordas arredondadas para maximizar a clareza da linha. |Não redimensionar os ícones reduzindo-os ou aumentando-os. Isso pode levar a uma baixa qualidade visual e a ações confusas. Os ícones complexos criados em um tamanho maior podem perder clareza ao ser redimensionados para ficar menores sem um redesenho. |
-|Usar um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  |Evite confiar no seu logotipo ou marca para comunicar o que um comando de suplemento faz. Nem sempre é possível reconhecer as marcas em ícones menores e quando os modificadores são aplicados. Marcas de marca geralmente conflitam com estilos de ícone de faixa de opções de aplicativo do Office e podem competir pela atenção do usuário em um ambiente saturado. |
+|Usar um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  |Evite confiar no seu logotipo ou marca para comunicar o que um comando de suplemento faz. Nem sempre é possível reconhecer as marcas em ícones menores e quando os modificadores são aplicados. Marcas de marca geralmente conflitam com Aplicativo do Office de ícone da faixa de opções e podem competir pela atenção do usuário em um ambiente saturado. |
 |Usar o formato PNG com uma tela de fundo transparente. ||
 |Evitar usar conteúdo localizável nos ícones, como caracteres tipográficos, indicações de parágrafos e pontos de interrogação. ||
 
@@ -46,7 +46,7 @@ Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos difer
 - 80 px (obrigatório)
 
 > [!IMPORTANT]
-> Para uma imagem que seja o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.
+> Para uma imagem que é o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.
 
 Não se esqueça de redesenhar seus ícones para cada tamanho em vez de reduzi-los para que caibam.
 
@@ -54,7 +54,7 @@ Não se esqueça de redesenhar seus ícones para cada tamanho em vez de reduzi-l
 
 ## <a name="icon-anatomy-and-layout"></a>Anatomia e layout do ícone
 
-Os ícones do Office geralmente são compostos por um elemento base com modificadores conceituais e de ação sobrecarracidos. Os modificadores de ação representam conceitos como adicionar, abrir, novo ou fechar. Os modificadores conceituais representam status, alteração ou uma descrição do ícone.
+Office ícones geralmente são compostos por um elemento base com modificadores conceituais e de ação sobrecarracidos. Os modificadores de ação representam conceitos como adicionar, abrir, novo ou fechar. Os modificadores conceituais representam status, alteração ou uma descrição do ícone.
 
 Para criar comandos que se alinhem à interface do usuário do Office, siga as diretrizes de layout para o elemento básico e os modificadores. Isso garante que seus comandos tenham uma aparência profissional e seus clientes confiem no seu suplemento. Se você fizer exceções a essas diretrizes, faça intencionalmente.
 
@@ -89,7 +89,7 @@ Todos os modificadores devem ter um recorte transparente de 1 px entre cada elem
 ## <a name="icon-colors"></a>Cores do ícone
 
 > [!NOTE]
-> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são processados com o Microsoft UI Fabric e a paleta de cores é diferente da paleta descrita em [Microsoft UI Fabric| Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
+> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são renderizados com a interface do usuário fluente e a paleta de cores é diferente da paleta descrita no [Microsoft UI Fabric | Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor:
 

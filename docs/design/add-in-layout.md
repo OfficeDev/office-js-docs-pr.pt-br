@@ -1,19 +1,20 @@
 ---
 title: Diretrizes de layout para Suplementos do Office
-description: Obter diretrizes sobre como fazer o layout de um painel de tarefas ou de uma caixa de diálogo em um suplemento do Office.
-ms.date: 06/27/2018
+description: Obter diretrizes sobre como layout de um painel de tarefas ou caixa de diálogo em um Office Add-in.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c88d2e9d978a22688eb10b57607750286209e5d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1eea665028abc90b2361edae45e81bc85481a429
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607663"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330007"
 ---
 # <a name="layout"></a>Layout
+
 Cada contêiner HTML inserido no Office terá um layout. Esses layouts são das telas principais do suplemento. Nelas, você criará experiências que permitem que os clientes iniciem ações, modifiquem configurações, exibam, rolem ou naveguem pelo conteúdo. Projeta o suplemento com layouts consistentes nas telas para garantir a continuidade da experiência. Se você tiver um site existente com o qual ps clientes estão familiarizados, considere a reutilização de layouts de páginas da Web existentes. Adapte-as para se ajustar de forma harmoniosa em contêineres HTML do Office.
 
-Para obter diretrizes de layout, confira [Painel de tarefas](task-pane-add-ins.md), [Conteúdo](content-add-ins.md) e [Caixa de diálogo](dialog-boxes.md). Para obter mais informações sobre como montar componentes do Office UI Fabric em layouts comuns e fluxos de experiência do usuário, confira [Modelos de padrões de design da experiência do usuário](ux-design-pattern-templates.md).
+Para obter diretrizes de layout, confira [Painel de tarefas](task-pane-add-ins.md), [Conteúdo](content-add-ins.md) e [Caixa de diálogo](dialog-boxes.md). Para obter mais informações sobre como montar o [fluent UI React](using-office-ui-fabric-react.md), ou [Office UI Fabric JS](fabric-core.md), componentes em layouts comuns e fluxos de experiência do usuário, consulte modelos de padrões de [design](ux-design-pattern-templates.md)deux .
 
 Aplique as seguintes diretrizes gerais aos layouts:
 
