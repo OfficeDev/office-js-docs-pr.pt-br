@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você criará um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 02/09/2021
+ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 35359f58831ebd4b8874247378a09e9da97e4d69
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238075"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330035"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -243,7 +243,7 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
 
 1. No arquivo **Home.html**, substitua `TODO2` pela marcação a seguir para adicionar uma seção de cabeçalho e um título ao painel de tarefas. Observação:
 
-    - Os estilos que começam com `ms-` são definidos pelo [Office UI Fabric](../design/office-ui-fabric.md), uma estrutura de front-end JavaScript para criar experiências do usuário do Office. O arquivo **Home.html** inclui uma referência à folha de estilos do Fabric.
+    - Os estilos que começam com `ms-` são definidos pelo [Fabric Core em Suplementos do Office ](../design/fabric-core.md), uma estrutura de front-end JavaScript para construir experiências do usuário para o Office. O arquivo **Home.html** inclui uma referência à folha de estilo do Fabric Core.
 
     ```html
     <div id="content-header">

@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 02/03/2021
+ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613931"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330014"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -74,7 +74,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 7. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o seguinte código imediatamente após ela. Observação:
 
-    - a primeira parte desse código determina se a versão do usuário do Excel é compatível com uma versão do Excel.js que inclui todas as APIs que esta série de tutoriais usará. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte. Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.
+    - A primeira parte desse código determina se a versão do Excel do usuário oferece suporte a uma versão do Excel.js que inclua todas as APIs que essa série de tutoriais usará. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a IU que chamaria APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento que são compatíveis com sua versão do Excel.
 
     - A segunda parte desse código adiciona um manipulador de eventos para o botão `create-table`.
 
@@ -207,18 +207,18 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     ![Captura de tela do Excel, exibindo um painel de tarefas de suplemento com um botão Criar Tabela, e uma tabela na planilha preenchida com dados de Data, Comerciante, Categoria e Quantidade](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table"></a>Filtrar e classificar uma tabela
+## <a name="filter-and-sort-a-table&quot;></a>Filtrar e classificar uma tabela
 
 Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou anteriormente.
 
-### <a name="filter-the-table"></a>Filtrar a tabela
+### <a name=&quot;filter-the-table&quot;></a>Filtrar a tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 2. Localize o elemento `<button>` para o botão `create-table` e adicione a seguinte marcação após essa linha:
 
     ```html
-    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
     ```
 
 3. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -226,7 +226,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela:
 
     ```js
-    document.getElementById("filter-table").onclick = filterTable;
+    document.getElementById(&quot;filter-table").onclick = filterTable;
     ```
 
 5. Adicione a seguinte função ao final do arquivo:
@@ -334,18 +334,18 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
     ![Captura de tela do Excel, com os botões Filtrar Tabela e Classificar Tabela visíveis no painel de tarefas do suplemento](../images/excel-tutorial-filter-and-sort-table-2.png)
 
-## <a name="create-a-chart"></a>Criar um gráfico
+## <a name="create-a-chart&quot;></a>Criar um gráfico
 
 Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que você criou anteriormente e depois vai formatar o gráfico.
 
-### <a name="chart-a-chart-using-table-data"></a>Gráfico de um gráfico com dados de tabela
+### <a name=&quot;chart-a-chart-using-table-data&quot;></a>Gráfico de um gráfico com dados de tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 2. Localize o elemento `<button>` para o botão `sort-table` e adicione a seguinte marcação após essa linha: 
 
     ```html
-    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;create-chart&quot;>Create Chart</button><br/><br/>
     ```
 
 3. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -353,7 +353,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela:
 
     ```js
-    document.getElementById("create-chart").onclick = createChart;
+    document.getElementById(&quot;create-chart").onclick = createChart;
     ```
 
 5. Adicione a seguinte função ao final do arquivo:
@@ -393,7 +393,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
    - O segundo parâmetro especifica um intervalo de dados a incluir no gráfico.
 
-   - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna. A opção `auto` informa ao Excel para decidir o melhor método.
+   - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve ser representada por linha ou coluna. A opção `auto` informa ao Excel para decidir o melhor método.
 
     ```js
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
@@ -429,18 +429,18 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
     ![Captura de tela do Excel, com um botão Criar Gráfico visível no painel de tarefas do suplemento e um gráfico na planilha exibindo dados de despesas com alimentos e educação](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header"></a>Congelar um cabeçalho de tabela
+## <a name="freeze-a-table-header&quot;></a>Congelar um cabeçalho de tabela
 
 Quando uma tabela for longa o suficiente para que um usuário precise rolar para ver algumas linhas, a linha de cabeçalho poderá ficar fora da vista. Nesta etapa do tutorial, você precisará congelar a linha do cabeçalho da tabela que criou anteriormente para que ela permaneça visível, mesmo que o usuário role ao longo da planilha.
 
-### <a name="freeze-the-tables-header-row"></a>Congelar a linha de cabeçalho da tabela
+### <a name=&quot;freeze-the-tables-header-row&quot;></a>Congelar a linha de cabeçalho da tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 2. Localize o elemento `<button>` para o botão `create-chart` e adicione a seguinte marcação após essa linha:
 
     ```html
-    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
     ```
 
 3. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -448,7 +448,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela:
 
     ```js
-    document.getElementById("freeze-header").onclick = freezeHeader;
+    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
     ```
 
 5. Adicione a seguinte função ao final do arquivo:
@@ -474,7 +474,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
    - A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.
 
-   - O método `freezeRows` usa como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar. Passamos `1` para fixar a primeira linha no lugar.
+   - O método `freezeRows` toma como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar. Passamos `1` para fixar a primeira linha no lugar.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -724,7 +724,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
 1. Feche todos os aplicativos do Office, incluindo o Excel.
 
-2. Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache. Isso é necessário para limpar completamente a versão anterior do suplemento do aplicativo cliente.
+2. Exclua o cache do Office, excluindo o conteúdo (todos os arquivos e subpastas) da pasta de cache. Isso é necessário para limpar completamente a versão antiga do suplemento do aplicativo cliente.
 
     - No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -759,7 +759,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
     ![Captura de tela da faixa de opções do Excel com o botão Alternar Proteção de Planilha realçado e habilitado. A maioria dos outros botões aparecem cinza e desabilitados.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. Escolha uma célula como se quisesse alterar o conteúdo. O Excel exibe uma mensagem de erro indicando que a planilha está protegida.
+6. Escolha uma célula como faria se quisesse alterar seu conteúdo. O Excel exibe uma mensagem de erro indicando que a planilha está protegida.
 
 7. Escolha o botão **Proteger Planilha** novamente. Os controles são reabilitados, e você pode alterar os valores das células novamente.
 
@@ -789,7 +789,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -936,7 +936,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. Adicione a seguinte declaração ao final do arquivo: Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.
+6. Adicione a seguinte declaração ao final do arquivo. Esta variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediário ao contexto de execução da página de diálogo.
 
     ```js
     var dialog = null;
@@ -1003,7 +1003,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 3. Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.
 
-4. Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.
+4. Enquanto a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas, mas não pode iniciar uma segunda caixa de diálogo a partir da mesma página do painel de tarefas.
 
 5. Na caixa de diálogo, digite um nome e escolha o botão **OK**. O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.
 
