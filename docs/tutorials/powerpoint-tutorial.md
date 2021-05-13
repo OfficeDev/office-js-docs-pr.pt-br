@@ -1,56 +1,56 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você criará um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 02/09/2021
+ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 35359f58831ebd4b8874247378a09e9da97e4d69
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238075"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330035"
 ---
-# <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a><span data-ttu-id="65cfe-103">Tutorial: Criar um Suplemento do Painel de Tarefas</span><span class="sxs-lookup"><span data-stu-id="65cfe-103">Tutorial: Create a PowerPoint task pane add-in</span></span>
+# <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a><span data-ttu-id="147ff-103">Tutorial: Criar um Suplemento do Painel de Tarefas</span><span class="sxs-lookup"><span data-stu-id="147ff-103">Tutorial: Create a PowerPoint task pane add-in</span></span>
 
-<span data-ttu-id="65cfe-104">Neste tutorial, você usará o Visual Studio para criar um Suplementos do Painel de Tarefas do PowerPoint:</span><span class="sxs-lookup"><span data-stu-id="65cfe-104">In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:</span></span>
+<span data-ttu-id="147ff-104">Neste tutorial, você usará o Visual Studio para criar um Suplementos do Painel de Tarefas do PowerPoint:</span><span class="sxs-lookup"><span data-stu-id="147ff-104">In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:</span></span>
 
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="65cfe-105">Adicionar a foto do dia do [Bing](https://www.bing.com) a um slide</span><span class="sxs-lookup"><span data-stu-id="65cfe-105">Adds the [Bing](https://www.bing.com) photo of the day to a slide</span></span>
-> - <span data-ttu-id="65cfe-106">Adicionar texto a um slide</span><span class="sxs-lookup"><span data-stu-id="65cfe-106">Adds text to a slide</span></span>
-> - <span data-ttu-id="65cfe-107">Obtém metadados do slide</span><span class="sxs-lookup"><span data-stu-id="65cfe-107">Gets slide metadata</span></span>
-> - <span data-ttu-id="65cfe-108">Navega entre slides</span><span class="sxs-lookup"><span data-stu-id="65cfe-108">Navigates between slides</span></span>
+> - <span data-ttu-id="147ff-105">Adicionar a foto do dia do [Bing](https://www.bing.com) a um slide</span><span class="sxs-lookup"><span data-stu-id="147ff-105">Adds the [Bing](https://www.bing.com) photo of the day to a slide</span></span>
+> - <span data-ttu-id="147ff-106">Adicionar texto a um slide</span><span class="sxs-lookup"><span data-stu-id="147ff-106">Adds text to a slide</span></span>
+> - <span data-ttu-id="147ff-107">Obtém metadados do slide</span><span class="sxs-lookup"><span data-stu-id="147ff-107">Gets slide metadata</span></span>
+> - <span data-ttu-id="147ff-108">Navega entre slides</span><span class="sxs-lookup"><span data-stu-id="147ff-108">Navigates between slides</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="65cfe-109">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="65cfe-109">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="147ff-109">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="147ff-109">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-## <a name="create-your-add-in-project"></a><span data-ttu-id="65cfe-110">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-110">Create your add-in project</span></span>
+## <a name="create-your-add-in-project"></a><span data-ttu-id="147ff-110">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-110">Create your add-in project</span></span>
 
-<span data-ttu-id="65cfe-111">Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usando o Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="65cfe-111">Complete the following steps to create a PowerPoint add-in project using Visual Studio.</span></span>
+<span data-ttu-id="147ff-111">Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usando o Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="147ff-111">Complete the following steps to create a PowerPoint add-in project using Visual Studio.</span></span>
 
-1. <span data-ttu-id="65cfe-112">Escolha **Criar um novo projeto**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-112">Choose **Create a new project**.</span></span>
+1. <span data-ttu-id="147ff-112">Escolha **Criar um novo projeto**.</span><span class="sxs-lookup"><span data-stu-id="147ff-112">Choose **Create a new project**.</span></span>
 
-2. <span data-ttu-id="65cfe-113">Usando a caixa de pesquisa, insira **suplemento**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-113">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="65cfe-114">Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-114">Choose **PowerPoint Web Add-in**, then select **Next**.</span></span>
+2. <span data-ttu-id="147ff-113">Usando a caixa de pesquisa, insira **suplemento**.</span><span class="sxs-lookup"><span data-stu-id="147ff-113">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="147ff-114">Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.</span><span class="sxs-lookup"><span data-stu-id="147ff-114">Choose **PowerPoint Web Add-in**, then select **Next**.</span></span>
 
-3. <span data-ttu-id="65cfe-115">Nomeie o projeto como `HelloWorld` e selecione **Criar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-115">Name the project `HelloWorld`, and select **Create**.</span></span>
+3. <span data-ttu-id="147ff-115">Nomeie o projeto como `HelloWorld` e selecione **Criar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-115">Name the project `HelloWorld`, and select **Create**.</span></span>
 
-4. <span data-ttu-id="65cfe-116">Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="65cfe-116">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="147ff-116">Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="147ff-116">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="65cfe-p102">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p102">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="147ff-p102">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="147ff-p102">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
      ![A captura de tela da janela do gerenciador de soluções do Microsoft Visual Studio mostrando HelloWorld e HelloWorldWeb, os 2 projetos na solução HelloWorld](../images/powerpoint-tutorial-solution-explorer.png)
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="65cfe-120">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="65cfe-120">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="147ff-120">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="147ff-120">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-code"></a><span data-ttu-id="65cfe-121">Código de atualização</span><span class="sxs-lookup"><span data-stu-id="65cfe-121">Update code</span></span>
+### <a name="update-code"></a><span data-ttu-id="147ff-121">Código de atualização</span><span class="sxs-lookup"><span data-stu-id="147ff-121">Update code</span></span>
 
-<span data-ttu-id="65cfe-122">Edite o código do suplemento como mostrado a seguir para criar a estrutura que você usará para implementar a funcionalidade do suplemento nas etapas subsequentes deste tutorial.</span><span class="sxs-lookup"><span data-stu-id="65cfe-122">Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.</span></span>
+<span data-ttu-id="147ff-122">Edite o código do suplemento como mostrado a seguir para criar a estrutura que você usará para implementar a funcionalidade do suplemento nas etapas subsequentes deste tutorial.</span><span class="sxs-lookup"><span data-stu-id="147ff-122">Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.</span></span>
 
-1. <span data-ttu-id="65cfe-p103">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, encontre a **div** com `id="content-main"`, substitua toda essa **div** pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p103">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.</span></span>
+1. <span data-ttu-id="147ff-p103">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, encontre a **div** com `id="content-main"`, substitua toda essa **div** pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="147ff-p103">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.</span></span>
 
     ```html
     <!-- TODO2: Create the content-header div. -->
@@ -64,7 +64,7 @@ ms.locfileid: "50238075"
     </div>
     ```
 
-2. <span data-ttu-id="65cfe-p104">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p104">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="147ff-p104">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="147ff-p104">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     (function () {
@@ -106,21 +106,21 @@ ms.locfileid: "50238075"
     })();
     ```
 
-## <a name="insert-an-image"></a><span data-ttu-id="65cfe-128">Inserir uma imagem</span><span class="sxs-lookup"><span data-stu-id="65cfe-128">Insert an image</span></span>
+## <a name="insert-an-image"></a><span data-ttu-id="147ff-128">Inserir uma imagem</span><span class="sxs-lookup"><span data-stu-id="147ff-128">Insert an image</span></span>
 
-<span data-ttu-id="65cfe-129">Conclua as seguintes etapas para adicionar o código que recupera a foto do dia do [Bing](https://www.bing.com) e inserir as imagens em um slide.</span><span class="sxs-lookup"><span data-stu-id="65cfe-129">Complete the following steps to add code that retrieves the [Bing](https://www.bing.com) photo of the day and inserts that image into a slide.</span></span>
+<span data-ttu-id="147ff-129">Conclua as seguintes etapas para adicionar o código que recupera a foto do dia do [Bing](https://www.bing.com) e inserir as imagens em um slide.</span><span class="sxs-lookup"><span data-stu-id="147ff-129">Complete the following steps to add code that retrieves the [Bing](https://www.bing.com) photo of the day and inserts that image into a slide.</span></span>
 
-1. <span data-ttu-id="65cfe-130">Usando o Explorador de soluções, adicione uma nova pasta chamada **Controladores** ao projeto **HelloWorldWeb**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-130">Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.</span></span>
+1. <span data-ttu-id="147ff-130">Usando o Explorador de soluções, adicione uma nova pasta chamada **Controladores** ao projeto **HelloWorldWeb**.</span><span class="sxs-lookup"><span data-stu-id="147ff-130">Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.</span></span>
 
     ![A captura de tela da janela do Gerenciador de Soluções do Microsoft Visual Studio mostrando a pasta Controladores realçada no projeto HelloWorldWeb](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. <span data-ttu-id="65cfe-132">Clique com o botão direito do mouse na pasta **Controladores** e selecione **Adicionar > Novo item com scaffold...**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-132">Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.</span></span>
+2. <span data-ttu-id="147ff-132">Clique com o botão direito do mouse na pasta **Controladores** e selecione **Adicionar > Novo item com scaffold...**.</span><span class="sxs-lookup"><span data-stu-id="147ff-132">Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.</span></span>
 
-3. <span data-ttu-id="65cfe-133">Na janela da caixa de diálogo **Adicionar Scaffold**, selecione **Controlador da Web API 2 – vazio** e escolha o botão **Adicionar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-133">In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.</span></span> 
+3. <span data-ttu-id="147ff-133">Na janela da caixa de diálogo **Adicionar Scaffold**, selecione **Controlador da Web API 2 – vazio** e escolha o botão **Adicionar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-133">In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.</span></span> 
 
-4. <span data-ttu-id="65cfe-p105">Na janela da caixa de diálogo **Adicionar Controlador**, insira **PhotoController** como nome do controlador e escolha o botão **Adicionar**. O Visual Studio criará e abrirá o arquivo **PhotoController.cs**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p105">In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.</span></span>
+4. <span data-ttu-id="147ff-p105">Na janela da caixa de diálogo **Adicionar Controlador**, insira **PhotoController** como nome do controlador e escolha o botão **Adicionar**. O Visual Studio criará e abrirá o arquivo **PhotoController.cs**.</span><span class="sxs-lookup"><span data-stu-id="147ff-p105">In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.</span></span>
 
-5. <span data-ttu-id="65cfe-p106">Substitua todo o conteúdo do arquivo **PhotoController.cs** pelo código a seguir, que chama o serviço do Bing para recuperar a foto do dia como uma cadeia de caracteres com codificação Base64. Quando você usar a API JavaScript do Office para inserir uma imagem em um documento, especifique os dados de imagem como uma cadeia de caracteres com codificação Base64.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p106">Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.</span></span>
+5. <span data-ttu-id="147ff-p106">Substitua todo o conteúdo do arquivo **PhotoController.cs** pelo código a seguir, que chama o serviço do Bing para recuperar a foto do dia como uma cadeia de caracteres com codificação Base64. Quando você usar a API JavaScript do Office para inserir uma imagem em um documento, especifique os dados de imagem como uma cadeia de caracteres com codificação Base64.</span><span class="sxs-lookup"><span data-stu-id="147ff-p106">Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.</span></span>
 
     ```csharp
     using System;
@@ -168,7 +168,7 @@ ms.locfileid: "50238075"
     }
     ```
 
-6. <span data-ttu-id="65cfe-p107">No arquivo **Home.html**, substitua `TODO1` pela marcação a seguir. Essa marcação define o botão **Inserir Imagem** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p107">In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.</span></span>
+6. <span data-ttu-id="147ff-p107">No arquivo **Home.html**, substitua `TODO1` pela marcação a seguir. Essa marcação define o botão **Inserir Imagem** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p107">In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.</span></span>
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -178,13 +178,13 @@ ms.locfileid: "50238075"
     </button>
     ```
 
-7. <span data-ttu-id="65cfe-140">No arquivo **Home.js**, substitua `TODO1` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Imagem**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-140">In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.</span></span>
+7. <span data-ttu-id="147ff-140">No arquivo **Home.js**, substitua `TODO1` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Imagem**.</span><span class="sxs-lookup"><span data-stu-id="147ff-140">In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.</span></span>
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. <span data-ttu-id="65cfe-p108">No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função `insertImage`. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p108">In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.</span></span>
+8. <span data-ttu-id="147ff-p108">No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função `insertImage`. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p108">In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.</span></span>
 
     ```js
     function insertImage() {
@@ -199,11 +199,11 @@ ms.locfileid: "50238075"
     }
     ```
 
-9. <span data-ttu-id="65cfe-p109">No arquivo **Home.js**, substitua `TODO3` pelo código a seguir para definir a função `insertImageFromBase64String`. Esta função usa a API JavaScript do Office para inserir a imagem no documento. Observação:</span><span class="sxs-lookup"><span data-stu-id="65cfe-p109">In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:</span></span>
+9. <span data-ttu-id="147ff-p109">No arquivo **Home.js**, substitua `TODO3` pelo código a seguir para definir a função `insertImageFromBase64String`. Esta função usa a API JavaScript do Office para inserir a imagem no documento. Observação:</span><span class="sxs-lookup"><span data-stu-id="147ff-p109">In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:</span></span>
 
-    - <span data-ttu-id="65cfe-146">A opção `coercionType` especificada como segundo parâmetro da solicitação `setSelectedDataAsync` indica o tipo de dados inserido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-146">The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.</span></span>
+    - <span data-ttu-id="147ff-146">A opção `coercionType` especificada como segundo parâmetro da solicitação `setSelectedDataAsync` indica o tipo de dados inserido.</span><span class="sxs-lookup"><span data-stu-id="147ff-146">The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.</span></span>
 
-    - <span data-ttu-id="65cfe-147">O objeto `asyncResult` encapsula o resultado da solicitação `setSelectedDataAsync`, incluindo informações de status e de erro caso a solicitação tenha falhado.</span><span class="sxs-lookup"><span data-stu-id="65cfe-147">The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.</span></span>
+    - <span data-ttu-id="147ff-147">O objeto `asyncResult` encapsula o resultado da solicitação `setSelectedDataAsync`, incluindo informações de status e de erro caso a solicitação tenha falhado.</span><span class="sxs-lookup"><span data-stu-id="147ff-147">The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.</span></span>
 
     ```js
     function insertImageFromBase64String(image) {
@@ -219,31 +219,31 @@ ms.locfileid: "50238075"
     }
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="65cfe-148">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-148">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="147ff-148">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-148">Test the add-in</span></span>
 
-1. <span data-ttu-id="65cfe-p110">Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p110">Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="147ff-p110">Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="147ff-p110">Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
     ![A captura de tela mostrando o botão Iniciar realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="65cfe-152">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-152">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="147ff-152">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-152">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela mostrando o botão Mostrar painel de tarefas realçado na faixa de opções página inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="65cfe-154">No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual.</span><span class="sxs-lookup"><span data-stu-id="65cfe-154">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.</span></span>
+3. <span data-ttu-id="147ff-154">No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual.</span><span class="sxs-lookup"><span data-stu-id="147ff-154">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. <span data-ttu-id="65cfe-156">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-156">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="65cfe-157">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-157">PowerPoint will automatically close when the add-in is stopped.</span></span>
+4. <span data-ttu-id="147ff-156">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-156">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="147ff-157">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="147ff-157">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![Captura de tela mostrando o botão Pare realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
 
-## <a name="customize-user-interface-ui-elements"></a><span data-ttu-id="65cfe-159">Personalizar os elementos da IU (interface do usuário)</span><span class="sxs-lookup"><span data-stu-id="65cfe-159">Customize User Interface (UI) elements</span></span>
+## <a name="customize-user-interface-ui-elements"></a><span data-ttu-id="147ff-159">Personalizar os elementos da IU (interface do usuário)</span><span class="sxs-lookup"><span data-stu-id="147ff-159">Customize User Interface (UI) elements</span></span>
 
-<span data-ttu-id="65cfe-160">Conclua as seguintes etapas para adicionar a marca que personaliza o painel de tarefas da interface do usuário.</span><span class="sxs-lookup"><span data-stu-id="65cfe-160">Complete the following steps to add markup that customizes the task pane UI.</span></span>
+<span data-ttu-id="147ff-160">Conclua as seguintes etapas para adicionar a marca que personaliza o painel de tarefas da interface do usuário.</span><span class="sxs-lookup"><span data-stu-id="147ff-160">Complete the following steps to add markup that customizes the task pane UI.</span></span>
 
-1. <span data-ttu-id="65cfe-p112">No arquivo **Home.html**, substitua `TODO2` pela marcação a seguir para adicionar uma seção de cabeçalho e um título ao painel de tarefas. Observação:</span><span class="sxs-lookup"><span data-stu-id="65cfe-p112">In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:</span></span>
+1. <span data-ttu-id="147ff-p112">No arquivo **Home.html**, substitua `TODO2` pela marcação a seguir para adicionar uma seção de cabeçalho e um título ao painel de tarefas. Observação:</span><span class="sxs-lookup"><span data-stu-id="147ff-p112">In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:</span></span>
 
-    - <span data-ttu-id="65cfe-p113">Os estilos que começam com `ms-` são definidos pelo [Office UI Fabric](../design/office-ui-fabric.md), uma estrutura de front-end JavaScript para criar experiências do usuário do Office. O arquivo **Home.html** inclui uma referência à folha de estilos do Fabric.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p113">The styles that begin with `ms-` are defined by [Office UI Fabric](../design/office-ui-fabric.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric stylesheet.</span></span>
+    - <span data-ttu-id="147ff-163">Os estilos que começam com `ms-` são definidos pelo [Fabric Core em Suplementos do Office ](../design/fabric-core.md), uma estrutura de front-end JavaScript para construir experiências do usuário para o Office.</span><span class="sxs-lookup"><span data-stu-id="147ff-163">The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office.</span></span> <span data-ttu-id="147ff-164">O arquivo **Home.html** inclui uma referência à folha de estilo do Fabric Core.</span><span class="sxs-lookup"><span data-stu-id="147ff-164">The **Home.html** file includes a reference to the Fabric Core stylesheet.</span></span>
 
     ```html
     <div id="content-header">
@@ -255,31 +255,31 @@ ms.locfileid: "50238075"
     </div>
     ```
 
-2. <span data-ttu-id="65cfe-165">No arquivo **Home.html**, localize a **div** com `class="footer"` e exclua toda a **div** para remover a seção de rodapé do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="65cfe-165">In the **Home.html** file, find the **div** with `class="footer"` and delete that entire **div** to remove the footer section from the task pane.</span></span>
+2. <span data-ttu-id="147ff-165">No arquivo **Home.html**, localize a **div** com `class="footer"` e exclua toda a **div** para remover a seção de rodapé do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="147ff-165">In the **Home.html** file, find the **div** with `class="footer"` and delete that entire **div** to remove the footer section from the task pane.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="65cfe-166">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-166">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="147ff-166">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-166">Test the add-in</span></span>
 
-1. <span data-ttu-id="65cfe-167">Usando o Visual Studio, teste o suplemento do PowerPoint ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="65cfe-167">Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="65cfe-168">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="65cfe-168">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="147ff-167">Usando o Visual Studio, teste o suplemento do PowerPoint ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="147ff-167">Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="147ff-168">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="147ff-168">The add-in will be hosted locally on IIS.</span></span>
 
     ![Captura de tela mostrando o botão Iniciar realçado no Visual Studio](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="65cfe-170">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-170">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="147ff-170">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-170">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página Inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="65cfe-172">Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.</span><span class="sxs-lookup"><span data-stu-id="65cfe-172">Notice that the task pane now contains a header section and title, and no longer contains a footer section.</span></span>
+3. <span data-ttu-id="147ff-172">Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.</span><span class="sxs-lookup"><span data-stu-id="147ff-172">Notice that the task pane now contains a header section and title, and no longer contains a footer section.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. <span data-ttu-id="65cfe-174">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-174">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="65cfe-175">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-175">PowerPoint will automatically close when the add-in is stopped.</span></span>
+4. <span data-ttu-id="147ff-174">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-174">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="147ff-175">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="147ff-175">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![Captura de tela exibindo o botão Pare realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
 
-## <a name="insert-text"></a><span data-ttu-id="65cfe-177">Inserir texto</span><span class="sxs-lookup"><span data-stu-id="65cfe-177">Insert text</span></span>
+## <a name="insert-text"></a><span data-ttu-id="147ff-177">Inserir texto</span><span class="sxs-lookup"><span data-stu-id="147ff-177">Insert text</span></span>
 
-<span data-ttu-id="65cfe-178">Conclua as seguintes etapas para adicionar o código que insere texto no slide de título que contém as fotos do dia do [Bing](https://www.bing.com).</span><span class="sxs-lookup"><span data-stu-id="65cfe-178">Complete the following steps to add code that inserts text into the title slide which contains the [Bing](https://www.bing.com) photo of the day.</span></span>
+<span data-ttu-id="147ff-178">Conclua as seguintes etapas para adicionar o código que insere texto no slide de título que contém as fotos do dia do [Bing](https://www.bing.com).</span><span class="sxs-lookup"><span data-stu-id="147ff-178">Complete the following steps to add code that inserts text into the title slide which contains the [Bing](https://www.bing.com) photo of the day.</span></span>
 
-1. <span data-ttu-id="65cfe-p116">No arquivo **Home.html**, substitua `TODO3` pela marcação a seguir. Essa marcação define o botão **Inserir Texto** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p116">In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.</span></span>
+1. <span data-ttu-id="147ff-p116">No arquivo **Home.html**, substitua `TODO3` pela marcação a seguir. Essa marcação define o botão **Inserir Texto** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p116">In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.</span></span>
 
     ```html
         <br /><br />
@@ -290,13 +290,13 @@ ms.locfileid: "50238075"
         </button>
     ```
 
-2. <span data-ttu-id="65cfe-181">No arquivo **Home.js**, substitua `TODO4` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Texto**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-181">In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.</span></span>
+2. <span data-ttu-id="147ff-181">No arquivo **Home.js**, substitua `TODO4` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Texto**.</span><span class="sxs-lookup"><span data-stu-id="147ff-181">In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.</span></span>
 
     ```js
     $('#insert-text').click(insertText);
     ```
 
-3. <span data-ttu-id="65cfe-p117">No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função `insertText`. Esta função insere texto no slide atual.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p117">In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.</span></span>
+3. <span data-ttu-id="147ff-p117">No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função `insertText`. Esta função insere texto no slide atual.</span><span class="sxs-lookup"><span data-stu-id="147ff-p117">In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.</span></span>
 
     ```js
     function insertText() {
@@ -309,33 +309,33 @@ ms.locfileid: "50238075"
     }
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="65cfe-184">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-184">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="147ff-184">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-184">Test the add-in</span></span>
 
-1. <span data-ttu-id="65cfe-185">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="65cfe-185">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="65cfe-186">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="65cfe-186">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="147ff-185">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="147ff-185">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="147ff-186">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="147ff-186">The add-in will be hosted locally on IIS.</span></span>
 
     ![Captura de tela do Microsoft Visual Studio com o botão Iniciar realçado](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="65cfe-188">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-188">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="147ff-188">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-188">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela realçando o botão Mostrar Painel de tarefas na faixa de opções da Página inicial no PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="65cfe-190">No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.</span><span class="sxs-lookup"><span data-stu-id="65cfe-190">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.</span></span>
+3. <span data-ttu-id="147ff-190">No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.</span><span class="sxs-lookup"><span data-stu-id="147ff-190">In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.</span></span>
 
     ![Captura de tela do PowerPoint com o slide atual realçado e suplemento com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
-4. <span data-ttu-id="65cfe-192">Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.</span><span class="sxs-lookup"><span data-stu-id="65cfe-192">Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.</span></span>
+4. <span data-ttu-id="147ff-192">Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.</span><span class="sxs-lookup"><span data-stu-id="147ff-192">Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Inserir Texto realçado](../images/powerpoint-tutorial-insert-text.png)
 
-5. <span data-ttu-id="65cfe-194">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-194">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="65cfe-195">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-195">PowerPoint will automatically close when the add-in is stopped.</span></span>
+5. <span data-ttu-id="147ff-194">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-194">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="147ff-195">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="147ff-195">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![Captura de tela do Microsoft Visual Studio com o botão Pare realçado](../images/powerpoint-tutorial-stop.png)
 
-## <a name="get-slide-metadata"></a><span data-ttu-id="65cfe-197">Obter metadados do slide</span><span class="sxs-lookup"><span data-stu-id="65cfe-197">Get slide metadata</span></span>
+## <a name="get-slide-metadata"></a><span data-ttu-id="147ff-197">Obter metadados do slide</span><span class="sxs-lookup"><span data-stu-id="147ff-197">Get slide metadata</span></span>
 
-<span data-ttu-id="65cfe-198">Conclua as seguintes etapas para adicionar o código que recupera os metadados para o slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="65cfe-198">Complete the following steps to add code that retrieves metadata for the selected slide.</span></span>
+<span data-ttu-id="147ff-198">Conclua as seguintes etapas para adicionar o código que recupera os metadados para o slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="147ff-198">Complete the following steps to add code that retrieves metadata for the selected slide.</span></span>
 
-1. <span data-ttu-id="65cfe-p120">No arquivo **Home.html**, substitua `TODO4` pela marcação a seguir. Essa marcação define o botão **Obter metadados do slide** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p120">In the **Home.html** file, replace `TODO4` with the following markup. This markup defines the **Get Slide Metadata** button that will appear within the add-in's task pane.</span></span>
+1. <span data-ttu-id="147ff-p120">No arquivo **Home.html**, substitua `TODO4` pela marcação a seguir. Essa marcação define o botão **Obter metadados do slide** que aparecerá no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p120">In the **Home.html** file, replace `TODO4` with the following markup. This markup defines the **Get Slide Metadata** button that will appear within the add-in's task pane.</span></span>
 
     ```html
     <br /><br />
@@ -346,13 +346,13 @@ ms.locfileid: "50238075"
     </button>
     ```
 
-2. <span data-ttu-id="65cfe-201">No arquivo **Home.js**, substitua `TODO6` pelo código a seguir para atribuir o manipulador de eventos para o botão **Obter Metadados do Slide**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-201">In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.</span></span>
+2. <span data-ttu-id="147ff-201">No arquivo **Home.js**, substitua `TODO6` pelo código a seguir para atribuir o manipulador de eventos para o botão **Obter Metadados do Slide**.</span><span class="sxs-lookup"><span data-stu-id="147ff-201">In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.</span></span>
 
     ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. <span data-ttu-id="65cfe-p121">No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função `getSlideMetadata`. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p121">In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.</span></span>
+3. <span data-ttu-id="147ff-p121">No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função `getSlideMetadata`. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p121">In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.</span></span>
 
     ```js
     function getSlideMetadata() {
@@ -368,29 +368,29 @@ ms.locfileid: "50238075"
     }
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="65cfe-204">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-204">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="147ff-204">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-204">Test the add-in</span></span>
 
-1. <span data-ttu-id="65cfe-205">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="65cfe-205">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="65cfe-206">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="65cfe-206">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="147ff-205">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="147ff-205">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="147ff-206">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="147ff-206">The add-in will be hosted locally on IIS.</span></span>
 
     ![Captura de tela realçando o botão Iniciar no Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="65cfe-208">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-208">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="147ff-208">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-208">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela realçando o botão Mostrar painel de tarefas na faixa de opções da Página Inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="65cfe-p123">No painel de tarefas, escolha o botão **Obter metadados do slide** para obter os metadados do slide selecionado. Os metadados do slide serão gravados na janela pop-up da caixa de diálogo na parte inferior do painel de tarefas. Nesse caso, a matriz `slides` dos metadados JSON contém um objeto que especifica `id`, `title` e `index` do slide selecionado. Se vários slides tivessem sido selecionados na recuperação de metadados do slide, a matriz `slides` dos metadados JSON conteria um objeto para cada slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p123">In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.</span></span>
+3. <span data-ttu-id="147ff-p123">No painel de tarefas, escolha o botão **Obter metadados do slide** para obter os metadados do slide selecionado. Os metadados do slide serão gravados na janela pop-up da caixa de diálogo na parte inferior do painel de tarefas. Nesse caso, a matriz `slides` dos metadados JSON contém um objeto que especifica `id`, `title` e `index` do slide selecionado. Se vários slides tivessem sido selecionados na recuperação de metadados do slide, a matriz `slides` dos metadados JSON conteria um objeto para cada slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="147ff-p123">In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Obter metadados do slide realçado](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. <span data-ttu-id="65cfe-215">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-215">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="65cfe-216">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-216">PowerPoint will automatically close when the add-in is stopped.</span></span>
+4. <span data-ttu-id="147ff-215">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-215">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="147ff-216">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="147ff-216">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![Captura de tela realçando o botão Pare no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
 
-## <a name="navigate-between-slides"></a><span data-ttu-id="65cfe-218">Navegar entre slides</span><span class="sxs-lookup"><span data-stu-id="65cfe-218">Navigate between slides</span></span>
+## <a name="navigate-between-slides"></a><span data-ttu-id="147ff-218">Navegar entre slides</span><span class="sxs-lookup"><span data-stu-id="147ff-218">Navigate between slides</span></span>
 
-<span data-ttu-id="65cfe-219">Conclua as seguintes etapas para adicionar o código que navega entre os slides de um documento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-219">Complete the following steps to add code that navigates between the slides of a document.</span></span>
+<span data-ttu-id="147ff-219">Conclua as seguintes etapas para adicionar o código que navega entre os slides de um documento.</span><span class="sxs-lookup"><span data-stu-id="147ff-219">Complete the following steps to add code that navigates between the slides of a document.</span></span>
 
-1. <span data-ttu-id="65cfe-p125">No arquivo **Home.html**, substitua `TODO5` pela marcação a seguir. Essa marcação define os quatro botões de navegação que aparecerão no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p125">In the **Home.html** file, replace `TODO5` with the following markup. This markup defines the four navigation buttons that will appear within the add-in's task pane.</span></span>
+1. <span data-ttu-id="147ff-p125">No arquivo **Home.html**, substitua `TODO5` pela marcação a seguir. Essa marcação define os quatro botões de navegação que aparecerão no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-p125">In the **Home.html** file, replace `TODO5` with the following markup. This markup defines the four navigation buttons that will appear within the add-in's task pane.</span></span>
 
     ```html
     <br /><br />
@@ -419,7 +419,7 @@ ms.locfileid: "50238075"
     </button>
     ```
 
-2. <span data-ttu-id="65cfe-222">No arquivo **Home.js**, substitua `TODO8` pelo código a seguir para atribuir o manipulador de eventos aos quatro botões de navegação.</span><span class="sxs-lookup"><span data-stu-id="65cfe-222">In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.</span></span>
+2. <span data-ttu-id="147ff-222">No arquivo **Home.js**, substitua `TODO8` pelo código a seguir para atribuir o manipulador de eventos aos quatro botões de navegação.</span><span class="sxs-lookup"><span data-stu-id="147ff-222">In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.</span></span>
 
     ```js
     $('#go-to-first-slide').click(goToFirstSlide);
@@ -428,7 +428,7 @@ ms.locfileid: "50238075"
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. <span data-ttu-id="65cfe-223">No arquivo **Home.js**, substitua `TODO9` pelo código a seguir para definir as funções de navegação.</span><span class="sxs-lookup"><span data-stu-id="65cfe-223">In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions.</span></span> <span data-ttu-id="65cfe-224">Cada uma dessas funções usa a função `goToByIdAsync` para selecionar um slide com base em sua posição no documento (primeiro, último, anterior e próximo).</span><span class="sxs-lookup"><span data-stu-id="65cfe-224">Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).</span></span>
+3. <span data-ttu-id="147ff-223">No arquivo **Home.js**, substitua `TODO9` pelo código a seguir para definir as funções de navegação.</span><span class="sxs-lookup"><span data-stu-id="147ff-223">In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions.</span></span> <span data-ttu-id="147ff-224">Cada uma dessas funções usa a função `goToByIdAsync` para selecionar um slide com base em sua posição no documento (primeiro, último, anterior e próximo).</span><span class="sxs-lookup"><span data-stu-id="147ff-224">Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).</span></span>
 
     ```js
     function goToFirstSlide() {
@@ -468,46 +468,46 @@ ms.locfileid: "50238075"
     }
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="65cfe-225">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="65cfe-225">Test the add-in</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="147ff-225">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="147ff-225">Test the add-in</span></span>
 
-1. <span data-ttu-id="65cfe-226">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="65cfe-226">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="65cfe-227">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="65cfe-227">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="147ff-226">Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções.</span><span class="sxs-lookup"><span data-stu-id="147ff-226">Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon.</span></span> <span data-ttu-id="147ff-227">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="147ff-227">The add-in will be hosted locally on IIS.</span></span>
 
     ![Captura de tela mostrando o botão Iniciar realçado na barra de ferramentas do Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
 
-2. <span data-ttu-id="65cfe-229">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-229">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="147ff-229">No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="147ff-229">In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página inicial no PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. <span data-ttu-id="65cfe-231">Use o botão **Novo Slide** na faixa de opções da guia **Página Inicial** para adicionar dois novos slides ao documento.</span><span class="sxs-lookup"><span data-stu-id="65cfe-231">Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.</span></span>
+3. <span data-ttu-id="147ff-231">Use o botão **Novo Slide** na faixa de opções da guia **Página Inicial** para adicionar dois novos slides ao documento.</span><span class="sxs-lookup"><span data-stu-id="147ff-231">Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.</span></span>
 
-4. <span data-ttu-id="65cfe-p128">No painel de tarefas, escolha o botão **Ir para o primeiro Slide**. O primeiro slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p128">In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.</span></span>
+4. <span data-ttu-id="147ff-p128">No painel de tarefas, escolha o botão **Ir para o primeiro Slide**. O primeiro slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="147ff-p128">In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Primeiro Slide realçado](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. <span data-ttu-id="65cfe-p129">No painel de tarefas, escolha o botão **Ir para o próximo Slide**. O próximo slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p129">In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.</span></span>
+5. <span data-ttu-id="147ff-p129">No painel de tarefas, escolha o botão **Ir para o próximo Slide**. O próximo slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="147ff-p129">In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Próximo Slide realçado](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. <span data-ttu-id="65cfe-p130">No painel de tarefas, escolha o botão **Ir Para o Slide Anterior**. O slide anterior no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p130">In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.</span></span>
+6. <span data-ttu-id="147ff-p130">No painel de tarefas, escolha o botão **Ir Para o Slide Anterior**. O slide anterior no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="147ff-p130">In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Slide Anterior realçado](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. <span data-ttu-id="65cfe-p131">No painel de tarefas, escolha o botão **Ir Para o Último Slide**. O último slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-p131">In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.</span></span>
+7. <span data-ttu-id="147ff-p131">No painel de tarefas, escolha o botão **Ir Para o Último Slide**. O último slide no documento é selecionado e exibido.</span><span class="sxs-lookup"><span data-stu-id="147ff-p131">In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.</span></span>
 
     ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Último Slide realçado](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. <span data-ttu-id="65cfe-244">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="65cfe-244">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="65cfe-245">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="65cfe-245">PowerPoint will automatically close when the add-in is stopped.</span></span>
+8. <span data-ttu-id="147ff-244">No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**.</span><span class="sxs-lookup"><span data-stu-id="147ff-244">In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button.</span></span> <span data-ttu-id="147ff-245">O PowerPoint fechará automaticamente quando o suplemento for interrompido.</span><span class="sxs-lookup"><span data-stu-id="147ff-245">PowerPoint will automatically close when the add-in is stopped.</span></span>
 
     ![Captura de tela mostrando o botão Pare realçado na barra de ferramentas do Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
 
-## <a name="next-steps"></a><span data-ttu-id="65cfe-247">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="65cfe-247">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="147ff-247">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="147ff-247">Next steps</span></span>
 
-<span data-ttu-id="65cfe-248">Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.</span><span class="sxs-lookup"><span data-stu-id="65cfe-248">In this tutorial, you've created a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.</span></span> <span data-ttu-id="65cfe-249">Para saber mais sobre a criação de suplementos do PowerPoint, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="65cfe-249">To learn more about building PowerPoint add-ins, continue to the following article:</span></span>
+<span data-ttu-id="147ff-248">Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.</span><span class="sxs-lookup"><span data-stu-id="147ff-248">In this tutorial, you've created a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.</span></span> <span data-ttu-id="147ff-249">Para saber mais sobre a criação de suplementos do PowerPoint, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="147ff-249">To learn more about building PowerPoint add-ins, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="65cfe-250">Visão geral dos Suplementos do SharePoint</span><span class="sxs-lookup"><span data-stu-id="65cfe-250">PowerPoint add-ins overview</span></span>](../powerpoint/powerpoint-add-ins.md)
+> [<span data-ttu-id="147ff-250">Visão geral dos Suplementos do SharePoint</span><span class="sxs-lookup"><span data-stu-id="147ff-250">PowerPoint add-ins overview</span></span>](../powerpoint/powerpoint-add-ins.md)
 
-## <a name="see-also"></a><span data-ttu-id="65cfe-251">Confira também</span><span class="sxs-lookup"><span data-stu-id="65cfe-251">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="147ff-251">Confira também</span><span class="sxs-lookup"><span data-stu-id="147ff-251">See also</span></span>
 
-- [<span data-ttu-id="65cfe-252">Visão geral da plataforma Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="65cfe-252">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
-- [<span data-ttu-id="65cfe-253">Desenvolver Suplementos do Office </span><span class="sxs-lookup"><span data-stu-id="65cfe-253">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
+- [<span data-ttu-id="147ff-252">Visão geral da plataforma Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="147ff-252">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+- [<span data-ttu-id="147ff-253">Desenvolver Suplementos do Office </span><span class="sxs-lookup"><span data-stu-id="147ff-253">Develop Office Add-ins</span></span>](../develop/develop-overview.md)

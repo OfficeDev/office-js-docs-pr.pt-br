@@ -144,6 +144,10 @@ items:
             items:
               - name: Visão Geral
                 href: design/add-in-design.md
+              - name: Interface do usuário Fluent React em Suplementos do Office
+                href: design/using-office-ui-fabric-react.md
+              - name: Núcleo da Malha em Suplementos do Office
+                href: design/fabric-core.md
               - name: Diretrizes
                 items:
                   - name: Acessibilidade
@@ -186,6 +190,8 @@ items:
                         href: design/first-run-experience-patterns.md
                       - name: Navegação
                         href: design/navigation-patterns.md
+              - name: Kits de ferramentas de design
+                href: design/design-toolkits.md
               - name: Elementos da interface
                 items:
                   - name: Visão Geral
@@ -228,14 +234,6 @@ items:
                 href: develop/show-hide-add-in.md
               - name: Localização
                 href: develop/localization.md
-              - name: Recursos
-                items:
-                  - name: Kits de ferramentas de design
-                    href: design/design-toolkits.md
-                  - name: Introdução ao uso do Fabric React
-                    href: design/using-office-ui-fabric-react.md
-                  - name: Office UI Fabric
-                    href: design/office-ui-fabric.md
           - name: Estruturas e IDEs
             items:
               - name: Desenvolver suplementos com o Angular
