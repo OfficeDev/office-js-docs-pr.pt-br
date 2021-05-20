@@ -1,23 +1,23 @@
 ---
 title: Tempos de execução no arquivo de manifesto
 description: O elemento Runtimes especifica o tempo de execução do seu complemento.
-ms.date: 04/16/2021
+ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f4a602c05b9af7bde9f644ef40b61a214e66cd5
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917083"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555294"
 ---
-# <a name="runtimes-element"></a>Elemento Runtimes
+# <a name="runtimes-element"></a>Elemento runtimes
 
 Especifica o tempo de execução do seu complemento. Filho do [`<Host>`](host.md) elemento.
 
 > [!NOTE]
-> Ao executar no Office no Windows, um add-in que tenha um elemento em seu manifesto não necessariamente é executado no mesmo controle `<Runtimes>` de webview como faria. Para obter mais informações sobre como as versões do Windows e do Office determinam qual controle webview normalmente é usado, consulte [Browsers used by Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). Se as condições descritas lá para o uso do Microsoft Edge com WebView2 (baseado em Chromium) são atendidas, o complemento usa esse navegador se ele tem ou não um `<Runtimes>` elemento. No entanto, quando essas condições não são atendidas, um complemento com um elemento sempre usa o Internet Explorer 11, independentemente da versão do Windows ou `<Runtimes>` do Microsoft 365.
+> Ao ser executado em Office em Windows, um complemento que tem um `<Runtimes>` elemento em seu manifesto não é necessariamente executado no mesmo controle de webview que de outra forma seria. Para obter mais informações sobre como as versões de Windows e Office determinar qual controle do webview é normalmente usado, consulte [Navegadores usados por Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). Se as condições descritas lá para o uso Microsoft Edge com o WebView2 (baseado em Chromium) forem atendidas, o complemento usará esse navegador, quer ele tenha ou não um `<Runtimes>` elemento. No entanto, quando essas condições não são atendidas, um complemento com um `<Runtimes>` elemento sempre usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão.
 
-**Tipo de complemento:** Painel de tarefas, Email
+**Tipo de complemento:** Painel de tarefas, Correio
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -37,10 +37,10 @@ Especifica o tempo de execução do seu complemento. Filho do [`<Host>`](host.md
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do seu complemento. |
+| [Tempo de execução](runtime.md) | Sim |  O tempo de execução para o seu complemento. **Importante**: No momento, você só pode definir um `<Runtime>` elemento. |
 
 ## <a name="see-also"></a>Confira também
 
 - [Tempo de execução](runtime.md)
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [Configurar seu complemento do Outlook para ativação baseada em eventos](../../outlook/autolaunch.md)
+- [Configure seu Outlook complemento para ativação baseada em eventos](../../outlook/autolaunch.md)
