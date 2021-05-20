@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentação de suplementos do Outlook
-summary: Com os complementos do Outlook, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que pode ser executado no Outlook em várias plataformas, incluindo na Web, Windows, Mac e iOS. Saiba como criar, testar, depurar e publicar suplementos do Outlook.
+summary: Com Outlook complementos, você pode usar tecnologias web familiares como HTML, CSS e JavaScript para construir uma solução que pode ser executada em Outlook em várias plataformas, incluindo na web, Windows, Mac e iOS. Saiba como criar, testar, depurar e publicar suplementos do Outlook.
 metadata:
   title: Documentação de suplementos do Outlook
   description: Recursos para saber mais sobre suplementos do Outlook.
@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0270157672cc3756485af1daf2cc088fc5f3cb4f
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435232"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555287"
 landingContent:
-- title: Sobre os Complementos do Outlook
+- title: Sobre Outlook Complementos
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são os complementos do Outlook?
+    - text: Quais são os complementos Outlook?
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -29,13 +29,13 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Usar a API JavaScript do Outlook para interagir com objetos
+    - text: Use a API JavaScript Outlook para interagir com objetos
       url: apis.md
-    - text: Testar e depurar um complemento do Outlook
+    - text: Teste e depure um complemento de Outlook
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um complemento do Outlook
+    - text: Implantar e publicar um complemento de Outlook
       url: ../publish/publish.md
-- title: Principais conceitos de Complementos do Office
+- title: Principais conceitos de suplementos Office
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Tire dúvidas
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: Solicitar recursos
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office
