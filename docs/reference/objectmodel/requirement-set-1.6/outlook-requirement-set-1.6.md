@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.6
-description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,6.
-ms.date: 02/19/2020
+description: Recursos e APIs que foram introduzidos para os Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.6.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: adcfcb49a76fd3f0df2c2c3acfc6e1861a02f3b1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cdb39eae387035f386a59b4640448b0bef25031e
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431448"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590992"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
 
 > [!NOTE]
 > Esta documentação se aplica a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o conjunto de requisitos mais recente.
 
 ## <a name="whats-new-in-16"></a>Novidades na versão 1.6
 
-O conjunto de requisitos 1.6 inclui todos os recursos do [Conjunto de requisitos 1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md). Ele adicionou os seguintes recursos.
+O conjunto de requisitos 1.6 inclui todos os recursos do conjunto de requisitos [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md). Ele adicionou os seguintes recursos.
 
 - Adicionadas novas APIs para suplementos contextuais para obter a correspondência de entidade ou regex que o usuário selecionou para ativar o suplemento.
 - Adicionada uma nova API para abrir um formulário de nova mensagem.

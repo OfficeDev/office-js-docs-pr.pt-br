@@ -1,6 +1,6 @@
 ---
 title: Elemento VersionOverrides no arquivo de manifesto
-description: Documentação de referência do elemento VersionOverrides para arquivos XML (Add-ins manifest) Office.
+description: Documentação de referência do elemento VersionOverrides para Office arquivos XML (manifesto de complementos).
 ms.date: 05/12/2021
 localization_priority: Normal
 ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
@@ -18,38 +18,38 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Sim  |  O espaço de nome do esquema VersionOverrides. Os valores permitidos variam dependendo `<VersionOverrides>` do valor **xsi:tipo** deste elemento e do valor **xsi:tipo** do `<OfficeApp>` elemento pai. Veja [os valores do Namespace](#namespace-values) abaixo.|
+|  **xmlns**       |  Sim  |  O namespace de esquema VersionOverrides. Os valores permitidos variam dependendo do valor `<VersionOverrides>` **xsi:type** deste elemento e do **valor xsi:type** do elemento `<OfficeApp>` pai. Consulte [Valores de namespace abaixo.](#namespace-values)|
 |  **xsi:type**  |  Sim  | A versão do esquema. Nesse momento, os únicos valores válidos são `VersionOverridesV1_0` e `VersionOverridesV1_1`. |
 
-### <a name="namespace-values"></a>Valores do namespace
+### <a name="namespace-values"></a>Valores de namespace
 
-A seguir, lista o valor necessário do valor **xmlns,** dependendo do valor **xsi:tipo** do `<OfficeApp>` elemento pai.
+O seguinte lista o valor necessário do valor **xmlns,** dependendo do **valor xsi:type** do elemento `<OfficeApp>` pai.
 
-- **TaskPaneApp** suporta apenas a versão 1.0 do VersionOverrides, e os **xmlns** devem ser `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
-- **ContentApp** suporta apenas a versão 1.0 do VersionOverrides, e os **xmlns** devem ser `http://schemas.microsoft.com/office/contentappversionoverrides` .
-- **O MailApp** suporta as versões 1.0 e 1.1 do VersionOverrides, de modo que o valor dos **xmlns** varia dependendo `<VersionOverrides>` do valor **xsi xsi:tipo** deste elemento:
-    - Quando **xsi:type** é `VersionOverridesV1_0` , **xmlns** deve ser `http://schemas.microsoft.com/office/mailappversionoverrides` .
-    - Quando **xsi:type** é `VersionOverridesV1_1` , **xmlns** deve ser `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
+- **TaskPaneApp dá** suporte apenas à versão 1.0 de VersionOverrides, e os **xmlns** devem ser `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
+- **ContentApp** dá suporte apenas à versão 1.0 de VersionOverrides, e os **xmlns** devem ser `http://schemas.microsoft.com/office/contentappversionoverrides` .
+- **MailApp** dá suporte às versões 1.0 e 1.1 de VersionOverrides, portanto, o valor de **xmlns** varia dependendo do valor `<VersionOverrides>` **xsi:type** deste elemento:
+    - Quando **xsi:type** for `VersionOverridesV1_0` , **xmlns** devem ser `http://schemas.microsoft.com/office/mailappversionoverrides` .
+    - Quando **xsi:type** for `VersionOverridesV1_1` , **xmlns** devem ser `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
 
 > [!NOTE]
-> Atualmente, apenas Outlook 2016 ou posterior suporta o esquema VersionOverrides v1.1 e o `VersionOverridesV1_1` tipo.
+> Atualmente, somente Outlook 2016 ou posterior suporta o esquema VersionOverrides v1.1 e o `VersionOverridesV1_1` tipo.
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](resources.md). O `resid` atributo do elemento **Descrição** não pode ter mais de 32 caracteres e é definido para o valor do atributo do elemento que contém `id` o `String` texto.|
+|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](resources.md). O atributo do elemento Description não pode ter mais de 32 caracteres e é definido como o valor do atributo do elemento `resid` que contém o  `id` `String` texto.|
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
-|  [Hosts](hosts.md)                |  Sim  |  Especifica uma coleção de Office aplicativos. O elemento hospedeiros da criança substitui o elemento Hosts na parte dos pais do manifesto.  |
+|  [Hosts](hosts.md)                |  Sim  |  Especifica uma coleção de Office aplicativos. O elemento Hosts filho substitui o elemento Hosts na parte pai do manifesto.  |
 |  [Resources](resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
-|  [EquivalentAddins](equivalentaddins.md)    |  Não  | Especifica os complementos nativos (COM/XLL) que são equivalentes ao complemento da web. O complemento da web não será ativado se um complemento nativo equivalente for instalado.|
+|  [EquivalentAddins](equivalentaddins.md)    |  Não  | Especifica os complementos nativos (COM/XLL) que são equivalentes ao complemento da Web. O complemento da Web não será ativado se um complemento nativo equivalente estiver instalado.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
-|  [WebApplicationInfo](webapplicationinfo.md)    |  Não  | Especifica detalhes sobre o registro do complemento com emissores de tokens seguros, como Azure Active Directory V2.0. |
+|  [WebApplicationInfo](webapplicationinfo.md)    |  Não  | Especifica detalhes sobre o registro do complemento com emissores de token seguro, como Azure Active Directory V2.0. |
 |  [ExtendedPermissions](extendedpermissions.md) |  Não  |  Especifica uma coleção de permissões estendidas. |
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
 
-A seguir, um exemplo de um `<VersionOverrides>` elemento típico, incluindo alguns elementos infantis que não são necessários, mas são tipicamente usados.
+A seguir está um exemplo de um elemento típico, incluindo alguns elementos filho que não são `<VersionOverrides>` necessários, mas são normalmente usados.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

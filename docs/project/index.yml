@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555210"
 landingContent:
-- title: Sobre Project complementos
+- title: Sobre Project de complementos
   linkLists:
   - linkListType: overview
     links:
-    - text: Quais são os complementos Project?
+    - text: O que Project os complementos?
       url: project-add-ins.md
     - text: JavaScript API para Project
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Teste e depure um Project Add-ins
+    - text: Testar e depurar Project Depuração de Project Depuração
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um Project Add-ins
+    - text: Implantar e publicar um Project de usuário
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos Office
+- title: Principais Office conceitos de complementos
   linkLists:
   - linkListType: overview
     links:

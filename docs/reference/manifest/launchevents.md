@@ -1,23 +1,20 @@
 ---
-title: LaunchEvents no arquivo de manifesto (visualização)
-description: O elemento LaunchEvents configura seu complemento para ser ativado com base em eventos com suporte.
-ms.date: 02/01/2021
+title: LaunchEvents no arquivo de manifesto
+description: O elemento LaunchEvents configura seu complemento para ser ativado com base em eventos suportados.
+ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 59c52aa3f60e69e2bdda84718c6123f02942fedc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 16d721ca6d9402d2bd5d19787707e146358044f0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237977"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590909"
 ---
-# <a name="launchevents-element-preview"></a>Elemento LaunchEvents (visualização)
+# <a name="launchevents-element"></a>Elemento LaunchEvents
 
-Configura o seu complemento para ativar com base em eventos com suporte. Filho do [`<ExtensionPoint>`](extensionpoint.md) elemento. Para saber mais, confira [Configurar seu complemento do Outlook para ativação baseada em eventos.](../../outlook/autolaunch.md)
+Configura seu complemento para ser ativado com base em eventos com suporte. Filho do [`<ExtensionPoint>`](extensionpoint.md) elemento. Para obter mais informações, [consulte Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 
 **Tipo de suplemento:** Email
-
-> [!IMPORTANT]
-> A ativação baseada em eventos está [atualmente em visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e só está disponível no Outlook na Web e no Windows. Para obter mais informações, [consulte Como visualizar o recurso de ativação baseada em eventos.](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,7 +31,7 @@ Configura o seu complemento para ativar com base em eventos com suporte. Filho d
 
 ## <a name="contained-in"></a>Contido em
 
-[ExtensionPoint](extensionpoint.md) ( add-in de email **LaunchEvent)**
+[ExtensionPoint](extensionpoint.md) ( Complemento de email **LaunchEvent)**
 
 ## <a name="child-elements"></a>Elementos filho
 

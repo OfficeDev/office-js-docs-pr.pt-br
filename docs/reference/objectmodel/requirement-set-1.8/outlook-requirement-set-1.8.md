@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
-description: Conjunto de requisitos 1.8 para API de complemento do Outlook.
-ms.date: 03/10/2021
+description: Conjunto de requisitos 1.8 para Outlook api de complemento.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
-ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
+ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "50830962"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590957"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
-O subconjunto de API de complemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um complemento do Outlook.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
 
 ## <a name="whats-new-in-18"></a>O que há de novo no 1.8?
 
-O conjunto de requisitos 1.8 inclui todos os recursos do [Conjunto de requisitos 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Ele adicionou os seguintes recursos.
+O conjunto de requisitos 1.8 inclui todos os recursos do conjunto [de requisitos 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Ele adicionou os seguintes recursos.
 
 - Adicionadas novas APIs para anexos, categorias, acesso de representante, local aprimorado, cabeçalhos da Internet e recursos de bloqueio ao enviar.
 - Adicionado o parâmetro opcional `options` ao Event.completed.

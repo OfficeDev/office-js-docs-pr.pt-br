@@ -8,32 +8,34 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 3f5e65b4309bf150e425fac789a1807301d5130e
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: d8466a48c3fd35532989ecb707f8f77b0b1a47bb
+  ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435302"
+  ms.lasthandoff: 05/21/2021
+  ms.locfileid: "52592014"
 landingContent:
-- title: Sobre os complementos do OneNote
+- title: Sobre OneNote de complementos
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são os complementos do OneNote?
+    - text: O que OneNote os complementos?
       url: onenote-add-ins-programming-overview.md
+    - text: OneNote Visão geral da API
+      url: /graph/integrate-with-onenote
   - linkListType: quickstart
     links:
     - text: Criar o seu primeiro suplemento do OneNote
       url: ../quickstarts/onenote-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Usar a API JavaScript do OneNote para interagir com objetos e conteúdo de bloco de anotações
+    - text: Usar a api OneNote JavaScript para interagir com objetos e conteúdo de bloco de anotações
       url: ../reference/overview/onenote-add-ins-javascript-reference.md
-    - text: Testar e depurar um complemento do OneNote
+    - text: Testar e depurar um OneNote de um add-in
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um complemento do OneNote
+    - text: Implantar e publicar um OneNote de usuário
       url: ../publish/publish.md
-- title: Principais conceitos de Complementos do Office
+- title: Principais Office conceitos de complementos
   linkLists:
   - linkListType: overview
     links:
@@ -52,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Tire dúvidas
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: Solicitar recursos
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: Relatar problemas
       url: https://github.com/officedev/office-js/issues
     - text: Recursos adicionais de suplementos do Office

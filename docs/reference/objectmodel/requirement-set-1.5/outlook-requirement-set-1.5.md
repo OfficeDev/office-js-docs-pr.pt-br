@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.5
-description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,5.
-ms.date: 12/17/2019
+description: Recursos e APIs que foram introduzidos para Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.5.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bc91ea93a6c3653dd326306139ee460132412a81
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7d780538a77f54db6f1234a6d29a3bcdea9533b0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612035"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590838"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.5
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o conjunto de requisitos mais recente.
 
 ## <a name="whats-new-in-15"></a>Novidades na versão 1.5?
 
-O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) e contém os seguintes recursos adicionais.
+O conjunto de requisitos 1.5 inclui todos os recursos do conjunto [de requisitos 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). Ele adicionou os seguintes recursos.
 
 - Adicionado suporte para [painéis de tarefas fixáveis](../../../outlook/pinnable-taskpane.md).
 - Adicionado suporte para chamar [APIs REST](../../../outlook/use-rest-api.md).
@@ -29,7 +29,7 @@ O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos
 ### <a name="change-log"></a>Log de alterações
 
 - Adicionado o [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#methods): adiciona um manipulador de eventos para um evento compatível.
-- Foi adicionado o [Office. Context. Mailbox. removeHandlerAsync](office.context.mailbox.md#methods): remove os manipuladores de eventos para um tipo de evento suportado.
+- Adicionado [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#methods): remove os manipuladores de eventos para um tipo de evento com suporte.
 - Adicionado o [Office.EventType](office.md#eventtype-string): especifica o evento associado a um manipulador de eventos e inclui suporte para o evento ItemChanged.
 - Adicionado o [Office.context.mailbox.restUrl](office.context.mailbox.md#properties): obtém a URL do ponto de extremidade REST para esta conta de email.
 - Modificado o [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#methods): Uma nova versão deste método com uma nova assinatura (`getCallbackTokenAsync([options], callback)`) foi adicionada. A versão original ainda está disponível e não é alterada.

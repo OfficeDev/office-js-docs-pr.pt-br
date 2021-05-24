@@ -1,14 +1,14 @@
 ---
 title: Gerenciar estado e configurações para um Outlook de dados
 description: Saiba como persistir o estado e as configurações do Outlook de um complemento.
-ms.date: 04/29/2021
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 6652034ffa6844d22fd725adc5adcc4a4063c1cb
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100282"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52592007"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de dados
 
@@ -152,7 +152,7 @@ Para lidar com a situação Windows:
 
 1. Verifique se há propriedades existentes na inicialização do seu add-in e mantenha-os ou desmarcar-os conforme necessário.
 1. Ao definir propriedades personalizadas, inclua uma propriedade adicional para indicar se as propriedades personalizadas foram adicionadas durante a leitura da mensagem ou pelo modo de leitura do complemento. Isso ajudará você a diferenciar se a propriedade foi criada durante a composição ou herdada do pai.
-1. Você também pode usar [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (atualmente em visualização) para verificar se o usuário está encaminhando um email ou respondendo.
+1. Para verificar se o usuário está encaminhando um email ou respondendo, você pode usar [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (disponível no conjunto de requisitos 1.10).
 
 ## <a name="see-also"></a>Confira também
 

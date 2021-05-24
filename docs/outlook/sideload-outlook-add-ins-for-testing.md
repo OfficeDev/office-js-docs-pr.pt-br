@@ -14,26 +14,26 @@ ms.locfileid: "52555189"
 
 Você pode usar sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
 
-## <a name="sideload-automatically"></a>Carga lateral automaticamente
+## <a name="sideload-automatically"></a>Sideload automaticamente
 
-Se você criou seu Outlook complemento usando [o gerador Yeoman para Office Add-ins,](https://github.com/OfficeDev/generator-office)o sideloading é melhor feito através da linha de comando. Isso aproveitará nossa ferramenta e carga lateral em todos os seus dispositivos suportados em um comando.
+Se você criou seu Outlook de usuário usando o gerador Yeoman para Office de [complementos,](https://github.com/OfficeDev/generator-office)o sideload será melhor feito através da linha de comando. Isso aproveitará nossas ferramentas e sideload em todos os dispositivos com suporte em um comando.
 
-1. Usando a linha de comando, navegue até o diretório raiz do seu projeto de complemento gerado pela Yeoman. Execute o comando `npm start`.
+1. Usando a linha de comando, navegue até o diretório raiz do seu projeto de complemento gerado pelo Yeoman. Execute o comando `npm start`.
 
-1. O Outlook o complemento será automaticamente desviado para Outlook no computador de mesa. Você verá um diálogo aparecer, informando que há uma tentativa de carregar de lado o complemento, listando o nome e a localização do arquivo manifesto. Selecione **OK**, que registrará o manifesto.
+1. Seu Outlook de usuário será automaticamente sideload para Outlook no computador da área de trabalho. Você verá uma caixa de diálogo aparecer, informando que há uma tentativa de sideload do add-in, listando o nome e o local do arquivo de manifesto. Selecione **OK**, que registrará o manifesto.
 
     > [!IMPORTANT]
     > Se o manifesto contiver um erro ou o caminho para o manifesto for inválido, você receberá uma mensagem de erro.
 
-1. Se o manifesto não contiver erros e o caminho for válido, o complemento agora será carregado lateralmente e disponível tanto na sua área de trabalho quanto em Outlook na web. Ele também será instalado em todos os seus dispositivos suportados.
+1. Se o manifesto não contiver erros e o caminho for válido, o seu complemento agora será sideload e estará disponível em sua área de trabalho e em Outlook na Web. Ele também será instalado em todos os dispositivos com suporte.
 
-## <a name="sideload-manually"></a>Carga lateral manualmente
+## <a name="sideload-manually"></a>Sideload manualmente
 
-Embora recomendemos fortemente o sideloading automaticamente através da linha de comando, conforme coberto na seção anterior, você também pode carregar manualmente um Outlook complemento com base no Outlook cliente.
+Embora seja recomendável fazer sideload automaticamente pela linha de comando, conforme abordado na seção anterior, você também pode fazer sideload manualmente de um Outlook de entrada com base no cliente Outlook.
 
 ### <a name="outlook-on-the-web"></a>Outlook na Web
 
-O processo para carregar lateralmente um complemento Outlook na web depende se você está usando a versão nova ou clássica.
+O processo de sideload de um Outlook na Web depende se você está usando a versão nova ou clássica.
 
 - Se sua barra de ferramentas de caixa de correio for parecida com a imagem a seguir, confira [Sideload de um suplemento no novo Outlook na Web](#new-outlook-on-the-web).
 
@@ -46,7 +46,7 @@ O processo para carregar lateralmente um complemento Outlook na web depende se v
 > [!NOTE]
 > Se sua organização tiver incluído seu logotipo na barra de ferramentas da caixa de correio, você verá algo um pouco diferente do mostrado nas imagens anteriores.
 
-### <a name="new-outlook-on-the-web"></a>Nova Outlook na web
+### <a name="new-outlook-on-the-web"></a>Novo Outlook na Web
 
 1. Acesse o [Outlook na Web](https://outlook.office.com).
 
@@ -66,7 +66,7 @@ O processo para carregar lateralmente um complemento Outlook na web depende se v
 
 1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
-### <a name="classic-outlook-on-the-web"></a>Outlook clássica na web
+### <a name="classic-outlook-on-the-web"></a>Os Outlook clássicos na Web
 
 1. Acesse o [Outlook na Web](https://outlook.office.com).
 
@@ -84,26 +84,26 @@ O processo para carregar lateralmente um complemento Outlook na web depende se v
 
 1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
-### <a name="outlook-on-the-desktop"></a>Outlook no desktop
+### <a name="outlook-on-the-desktop"></a>Outlook na área de trabalho
 
-#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou mais tarde
+#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou posterior
 
-1. Abra Outlook 2016 ou posteriormente em Windows ou Mac.
+1. Abra Outlook 2016 ou posterior no Windows ou Mac.
 
 1. Selecione o botão **Obter Suplementos** na faixa de opções.
 
-    ![Outlook 2016 fita apontando para obter botão Add-ins](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016 faixa de opções apontando para o botão Obter Complementos](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
-    > Se você não ver o botão **Obter complementos na** sua versão de Outlook, selecione:
+    > Se você não vir o botão **Obter Complementos** na sua versão do Outlook, selecione:
     >
-    > - **Armazene** o botão na fita, se estiver disponível.
+    > - **Botão Armazenar** na faixa de opções, se disponível.
     >
     >   OU
     >
-    > - **O** menu do arquivo e selecione o botão **Gerenciar complementos** na guia **Informações** para abrir a caixa de diálogo **Adicionar** em Outlook na web.<br>Você pode ver mais sobre a experiência da Web na seção anterior [Sideload um complemento Outlook na web](#outlook-on-the-web).
+    > - **Menu** Arquivo e selecione o botão Gerenciar  **Complementos** na guia Informações para abrir a caixa de diálogo **Dedros** no Outlook na Web.<br>Você pode ver mais sobre a experiência da Web na seção anterior Sideload an [add-in Outlook na Web](#outlook-on-the-web).
 
-1. Se houver guias próximas à parte superior da caixa de diálogo, **certifique-se** de que a guia Adicionar está selecionada. Escolha **meus complementos**.
+1. Se houver guias próximas à parte superior da caixa de diálogo, verifique se a guia **Complementos** está selecionada. Escolha **Meus complementos**.
 
     ![Caixa de diálogo da Loja do Outlook 2016 com a opção Meus suplementos selecionada](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -115,16 +115,16 @@ O processo para carregar lateralmente um complemento Outlook na web depende se v
 
 #### <a name="outlook-2013"></a>Outlook 2013
 
-1. Aberto Outlook 2013 em Windows.
+1. Abra Outlook 2013 no Windows.
 
-1. Selecione o menu **Arquivo** e selecione o botão **Gerenciar complementos** na guia **Informações.** Outlook abrirá a versão da Web em um navegador.
+1. Selecione o menu **Arquivo** e selecione o botão  **Gerenciar Complementos** na guia Informações. Outlook abrirá a versão da Web em um navegador.
 
-1. Siga os passos no [Sideload um complemento Outlook na](#outlook-on-the-web) seção web de acordo com sua versão de Outlook na web.
+1. Siga as etapas na [seção Sideload de](#outlook-on-the-web) um Outlook na Web de acordo com sua versão do Outlook na Web.
 
-## <a name="remove-a-sideloaded-add-in"></a>Remova um complemento sideloaded
+## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento com sideload
 
-Em todas as versões de Outlook, a chave para remover um complemento com carga lateral é a caixa de diálogo **My Add-ins,** que lista seus complementos instalados. Escolha a elipse `...` () para o complemento e selecione **Remover**.
+Em todas as versões do Outlook, a chave para remover um complemento sideload é a caixa de diálogo Meus **Complementos** que lista seus complementos instalados. Escolha a reellipse ( `...` ) para o complemento e selecione **Remover**.
 
-Para navegar até a caixa de diálogo **Meus Complementos** para o cliente Outlook, use as últimas etapas listadas para [sideloading manual](#sideload-manually) nas seções anteriores deste artigo.
+Para navegar até a caixa de diálogo Meus **Complementos** para seu cliente Outlook, use as últimas etapas listadas para [sideload manual](#sideload-manually) nas seções anteriores deste artigo.
 
-Para remover um complemento sideloaded de Outlook, use as etapas descritas anteriormente neste artigo para encontrar o complemento na seção **de complementos personalizados** da caixa de diálogo que lista seus complementos instalados. Escolha a elipse `...` () para o complemento e escolha **Remover** para remover esse complemento específico. Feche a caixa de diálogo.
+Para remover um complemento sideload do Outlook, use as etapas descritas anteriormente neste artigo para encontrar o add-in na seção **Complementos personalizados** da caixa de diálogo que lista seus complementos instalados. Escolha a reellipse ( ) para o complemento e `...` escolha **Remover** para remover esse complemento específico. Feche a caixa de diálogo.

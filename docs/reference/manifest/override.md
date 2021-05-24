@@ -1,32 +1,32 @@
 ---
 title: Elemento Override no arquivo de manifesto
-description: O elemento Substituir permite especificar o valor de uma configuração dependendo de uma condição especificada.
-ms.date: 05/14/2021
+description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 131d72883d050038e2df5b7d8bbca033af9e6ee4
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555154"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590901"
 ---
 # <a name="override-element"></a>Elemento Override
 
-Fornece uma maneira de substituir o valor de uma configuração manifesto, dependendo de uma condição especificada. Existem três tipos de condições:
+Fornece uma maneira de substituir o valor de uma configuração de manifesto, dependendo de uma condição especificada. Há três tipos de condições:
 
-- Uma Office local que é diferente do `LocaleToken` padrão, chamado **LocaleTokenOverride**.
-- Um padrão de suporte de conjunto de requisitos diferente do `RequirementToken` padrão padrão, chamado **RequirementTokenOverride**.
-- A fonte é diferente do padrão `Runtime` , chamado **RuntimeOverride** (atualmente em pré-visualização).
+- Uma Office local diferente do padrão `LocaleToken` , chamado **LocaleTokenOverride**.
+- Um padrão de suporte ao conjunto de requisitos diferente do `RequirementToken` padrão, chamado **RequirementTokenOverride**.
+- A origem é diferente do `Runtime` padrão , chamado **RuntimeOverride**.
 
 Um `<Override>` elemento que está dentro de um elemento deve ser do tipo `<Runtime>` **RuntimeOverride**.
 
-Não há `overrideType` atributo para o `<Override>` elemento. A diferença é determinada pelo elemento pai e pelo tipo do elemento pai. Um `<Override>` elemento que está dentro de um elemento cujo é , deve ser do tipo `<Token>` `xsi:type` `RequirementToken` **RequirementTokenOverride**. Um `<Override>` elemento dentro de qualquer outro elemento pai, ou dentro de um elemento do `<Override>` `LocaleToken` tipo, deve ser do tipo **LocaleTokenOverride**. Para obter mais informações sobre o uso desse elemento quando for filho de um `<Token>` elemento, consulte [Trabalho com substituições estendidas do manifesto](../../develop/extended-overrides.md).
+Não há `overrideType` atributo para o `<Override>` elemento. A diferença é determinada pelo elemento pai e pelo tipo do elemento pai. Um elemento que está dentro de um elemento cujo é , deve ser do `<Override>` `<Token>` tipo `xsi:type` `RequirementToken` **RequirementTokenOverride**. Um elemento dentro de qualquer outro elemento pai ou dentro de um elemento de tipo deve ser do `<Override>` `<Override>` tipo `LocaleToken` **LocaleTokenOverride**. Para obter mais informações sobre o uso desse elemento quando ele é filho de um elemento, consulte Trabalhar com substituições `<Token>` [estendidas do manifesto](../../develop/extended-overrides.md).
 
-Cada tipo é descrito em seções separadas mais tarde neste artigo.
+Cada tipo é descrito em seções separadas posteriormente neste artigo.
 
-## <a name="override-element-for-localetoken"></a>Elemento de substituição para `LocaleToken`
+## <a name="override-element-for-localetoken"></a>Elemento Override para `LocaleToken`
 
-Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ... então..." declaração. Se o `<Override>` elemento é do tipo **LocaleTokenOverride,** então o `Locale` atributo é a condição, e o atributo é `Value` o consequente. Por exemplo, o seguinte é "Se o Office configuração local for fr-fr, então o nome de exibição é 'Lecteur vidéo'."
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **LocaleTokenOverride**, o atributo será a condição e o `Locale` atributo será o `Value` conseqüente. Por exemplo, o seguinte é lido "Se a configuração de Office local for fr-fr, o nome para exibição será 'Lecteur vidéo'."
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -97,9 +97,9 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 - [Localização para suplementos do Office](../../develop/localization.md)
 - [Atalhos de teclado para o SharePoint](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-for-requirementtoken"></a>Elemento de substituição para `RequirementToken`
+## <a name="override-element-for-requirementtoken"></a>Elemento Override para `RequirementToken`
 
-Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ... então..." declaração. Se o `<Override>` elemento é do tipo **RequirementTokenOverride**, então o elemento criança `<Requirements>` expressa a condição, e o atributo é o `Value` consequente. Por exemplo, o primeiro `<Override>` a seguir é lido "Se a plataforma atual suporta o FeatureOne versão 1.7, em seguida, use string 'oldAddinVersion' no lugar do token na URL do avô `${token.requirements}` `<ExtendedOverrides>` (em vez da 'atualização' de string padrão)."
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RequirementTokenOverride**, o elemento filho expressará a condição `<Requirements>` e o atributo será o `Value` conseqüente. Por exemplo, o primeiro na seguinte leitura é "Se a plataforma atual dá suporte ao FeatureOne versão 1.7, use a cadeia de caracteres 'oldAddinVersion' no lugar do token na URL do vô-vô (em vez da cadeia de caracteres `<Override>` `${token.requirements}` padrão `<ExtendedOverrides>` 'upgrade')."
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -143,7 +143,7 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 
 ### <a name="must-contain"></a>Deve conter
 
-|Elemento|Conteúdo|Correio|TaskPane|
+|Elemento|Conteúdo|Email|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Requisitos](requirements.md)|||x|
 
@@ -151,7 +151,7 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 
 |Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
-|Valor|cadeia de caracteres|obrigatório|Valor do token avó quando a condição está satisfeita.|
+|Valor|cadeia de caracteres|obrigatório|Valor do token de vôvão quando a condição for atendida.|
 
 ### <a name="example"></a>Exemplo
 
@@ -195,14 +195,12 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 - [Definir o elemento Requirements no manifesto](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [Atalhos de teclado para o SharePoint](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-for-runtime-preview"></a>Elemento de substituição para `Runtime` (visualização)
+## <a name="override-element-for-runtime"></a>Elemento Override para `Runtime`
 
 > [!IMPORTANT]
-> Este recurso só é suportado para [visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) em Outlook na web e em Windows com uma assinatura Microsoft 365. Para obter mais detalhes, consulte [Configurar seu Outlook complemento para ativação baseada em eventos](../../outlook/autolaunch.md).
->
-> Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
+> O suporte a esse elemento foi introduzido no conjunto de requisitos de Caixa de [Correio 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) com o [recurso de ativação baseada em evento.](../../outlook/autolaunch.md) Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
-Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ... então..." declaração. Se o `<Override>` elemento é do tipo **RuntimeOverride,** então o `type` atributo é a condição, e o atributo é `resid` o consequente. Por exemplo, o seguinte é "Se o tipo é 'javascript', então o `resid` é 'JSRuntime.Url'." Outlook A área de trabalho requer esse elemento para manipuladores [de pontos de extensão LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent-preview)
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RuntimeOverride**, o atributo será a condição e o `type` atributo será o `resid` conseqüente. Por exemplo, o seguinte é ler "Se o tipo for 'javascript', será `resid` 'JSRuntime.Url'." Outlook A área de trabalho requer esse elemento [para manipuladores de pontos de extensão LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent)
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
@@ -226,8 +224,8 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 
 |Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
-|**type**|string|Sim|Especifica o idioma para esta substituição. No momento, `"javascript"` é a única opção suportada.|
-|**resid**|string|Sim|Especifica a localização do URL do arquivo JavaScript que deve substituir a localização url do HTML padrão definido no elemento [Runtime](runtime.md) do pai `resid` . O `resid` pode não ter mais de 32 caracteres e deve corresponder a um atributo de um elemento no `id` `Url` `Resources` elemento.|
+|**type**|string|Sim|Especifica o idioma para essa substituição. No momento, `"javascript"` é a única opção com suporte.|
+|**resid**|string|Sim|Especifica o local da URL do arquivo JavaScript que deve substituir o local da URL do HTML padrão definido no elemento [Runtime](runtime.md) `resid` pai. O `resid` pode ter não mais de 32 caracteres e deve corresponder a um atributo de um elemento no `id` `Url` `Resources` elemento.|
 
 ### <a name="examples"></a>Exemplos
 
@@ -246,4 +244,4 @@ Um `<Override>` elemento expressa um condicional e pode ser lido como um "Se ...
 ### <a name="see-also"></a>Confira também
 
 - [Tempo de execução](runtime.md)
-- [Configure seu Outlook complemento para ativação baseada em eventos](../../outlook/autolaunch.md)
+- [Configurar seu Outlook para ativação baseada em eventos](../../outlook/autolaunch.md)

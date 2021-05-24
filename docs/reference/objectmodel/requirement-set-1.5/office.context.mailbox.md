@@ -1,14 +1,14 @@
 ---
 title: 'Office.context.mailbox: conjunto de requisitos da versão 1.5'
-description: Outlook Mailbox API requirement set 1.5 version of the Mailbox object model.
-ms.date: 02/12/2021
+description: Outlook Conjunto de requisitos da API de Caixa de Correio versão 1.5 do modelo de objeto Mailbox.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fdb4d61725daae162c1eb41a95e0b886d5f83807
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 10561e5432aac57eb7069cf6aafed64e87c471a7
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505441"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590859"
 ---
 # <a name="mailbox-requirement-set-15"></a>mailbox (conjunto de requisitos 1.5)
 
@@ -57,8 +57,8 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 Você pode se inscrever e cancelar a assinatura dos seguintes eventos usando [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) e [removeHandlerAsync,](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#removehandlerasync-eventtype--options--callback-) respectivamente.
 
 > [!IMPORTANT]
-> Os eventos estão disponíveis apenas com o painel de tarefas.
+> Os eventos só estão disponíveis com a implementação do painel de tarefas.
 
 | Evento | Descrição | Minimum<br>conjunto de requisitos |
 |---|---|:---:|
-|`ItemChanged`| Um item do Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+|`ItemChanged`| Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

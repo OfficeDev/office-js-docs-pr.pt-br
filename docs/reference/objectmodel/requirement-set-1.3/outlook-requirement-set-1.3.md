@@ -1,29 +1,29 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
-description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,3.
-ms.date: 12/17/2019
+description: Recursos e APIs que foram introduzidos para Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.3.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bf7dc9e3977df626241cdafdebd8d4b4e473d494
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430965"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591034"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o conjunto de requisitos mais recente.
 
 ## <a name="whats-new-in-13"></a>Novidades na versão 1.3?
 
-O conjunto de requisitos 1.3 inclui todos os recursos do [Conjunto de requisitos 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Ele adicionou os seguintes recursos.
+O conjunto de requisitos 1.3 inclui todos os recursos do conjunto [de requisitos 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Ele adicionou os seguintes recursos.
 
 - Foi adicionado o suporte para [comandos de suplemento](../../../outlook/add-in-commands-for-outlook.md).
 - Foi adicionada a capacidade para salvar ou fechar um item que está sendo composto.
-- Objeto [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) avançado para permitir que os suplementos obtenham ou definam todo o corpo.
+- Objeto [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) aprimorado para permitir que os complementos recebam ou deem o corpo inteiro.
 - Foram adicionados os métodos de conversão para converter IDs entre os formatos EWS e REST.
 - Mais capacidade de adicionar mensagens de notificação à barra de informações nos itens.
 

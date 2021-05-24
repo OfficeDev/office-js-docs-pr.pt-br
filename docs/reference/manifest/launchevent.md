@@ -1,23 +1,20 @@
 ---
-title: LaunchEvent no arquivo manifesto (visualização)
-description: O elemento LaunchEvent configura seu complemento para ativar com base em eventos suportados.
-ms.date: 05/11/2021
+title: LaunchEvent no arquivo de manifesto
+description: O elemento LaunchEvent configura seu complemento para ser ativado com base em eventos suportados.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 7283e9aba9ca57793019ffe027a7f4d6e3243aa8
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555308"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591076"
 ---
-# <a name="launchevent-element-preview"></a>Elemento LaunchEvent (pré-visualização)
+# <a name="launchevent-element"></a>Elemento LaunchEvent
 
-Configura seu complemento para ativar com base em eventos suportados. Filho do [`<LaunchEvents>`](launchevents.md) elemento. Para obter mais informações, consulte [Configurar seu Outlook complemento para ativação baseada em eventos](../../outlook/autolaunch.md).
+Configura seu complemento para ser ativado com base em eventos com suporte. Filho do [`<LaunchEvents>`](launchevents.md) elemento. Para obter mais informações, [consulte Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 
 **Tipo de suplemento:** Email
-
-> [!IMPORTANT]
-> A ativação baseada em eventos está atualmente [em pré-visualização](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e disponível apenas em Outlook na web e em Windows. Para obter mais informações, consulte [Como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -40,8 +37,8 @@ Configura seu complemento para ativar com base em eventos suportados. Filho do [
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Tipo**  |  Sim  | Especifica um tipo de evento suportado. Para obter o conjunto de tipos suportados, consulte [Como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#supported-events). |
-|  **FunctionName**  |  Sim  | Especifica o nome da função JavaScript para lidar com o evento especificado no `Type` atributo. |
+|  **Tipo**  |  Sim  | Especifica um tipo de evento com suporte. Para o conjunto de tipos com suporte, consulte [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md#supported-events). |
+|  **FunctionName**  |  Sim  | Especifica o nome da função JavaScript para manipular o evento especificado no `Type` atributo. |
 
 ## <a name="see-also"></a>Confira também
 

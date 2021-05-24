@@ -10,14 +10,14 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 05/19/2021
 ms.locfileid: "52555294"
 ---
-# <a name="runtimes-element"></a>Elemento runtimes
+# <a name="runtimes-element"></a>Elemento Runtimes
 
 Especifica o tempo de execução do seu complemento. Filho do [`<Host>`](host.md) elemento.
 
 > [!NOTE]
-> Ao ser executado em Office em Windows, um complemento que tem um `<Runtimes>` elemento em seu manifesto não é necessariamente executado no mesmo controle de webview que de outra forma seria. Para obter mais informações sobre como as versões de Windows e Office determinar qual controle do webview é normalmente usado, consulte [Navegadores usados por Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). Se as condições descritas lá para o uso Microsoft Edge com o WebView2 (baseado em Chromium) forem atendidas, o complemento usará esse navegador, quer ele tenha ou não um `<Runtimes>` elemento. No entanto, quando essas condições não são atendidas, um complemento com um `<Runtimes>` elemento sempre usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão.
+> Ao executar no Office no Windows, um complemento que tenha um elemento em seu manifesto não necessariamente é executado no mesmo controle de webview como faria `<Runtimes>` de outra forma. Para obter mais informações sobre como as versões de Windows e Office determinam qual controle webview normalmente é usado, consulte [Browsers used by Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). Se as condições descritas lá para o uso de Microsoft Edge com WebView2 (baseadas em Chromium) são atendidas, o complemento usa esse navegador se ele tem ou não um `<Runtimes>` elemento. No entanto, quando essas condições não são atendidas, um complemento com um elemento sempre usa o Internet Explorer 11, independentemente da versão Windows `<Runtimes>` ou Microsoft 365.
 
-**Tipo de complemento:** Painel de tarefas, Correio
+**Tipo de complemento:** Painel de tarefas, Email
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -37,10 +37,10 @@ Especifica o tempo de execução do seu complemento. Filho do [`<Host>`](host.md
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Tempo de execução](runtime.md) | Sim |  O tempo de execução para o seu complemento. **Importante**: No momento, você só pode definir um `<Runtime>` elemento. |
+| [Tempo de execução](runtime.md) | Sim |  O tempo de execução do seu complemento. **Importante**: No momento, você só pode definir um `<Runtime>` elemento. |
 
 ## <a name="see-also"></a>Confira também
 
 - [Tempo de execução](runtime.md)
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [Configure seu Outlook complemento para ativação baseada em eventos](../../outlook/autolaunch.md)
+- [Configurar seu Outlook para ativação baseada em eventos](../../outlook/autolaunch.md)

@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
-description: Visão geral da API de suplemento do Outlook (conjunto de requisitos 1,7)
-ms.date: 12/17/2019
+description: Visão geral da API Outlook de complementos (conjunto de requisitos 1.7)
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431385"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590810"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
 
 ## <a name="whats-new-in-17"></a>Quais as novidades da versão 1.7?
 
-O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de requisitos versão 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Ele adicionou os seguintes recursos.
+O conjunto de requisitos 1.7 inclui todos os recursos do conjunto de requisitos [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Ele adicionou os seguintes recursos.
 
 - Adicionadas novas APIs referentes ao padrão de recorrência em compromissos e mensagens que são solicitações de reunião.
 - Foi modificada a propriedade item.from também estar disponível no modo Redação.
