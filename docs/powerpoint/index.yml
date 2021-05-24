@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentação de suplementos do PowerPoint
-summary: Com PowerPoint complementos, você pode usar tecnologias web familiares como HTML, CSS e JavaScript para construir uma solução que pode ser executada em PowerPoint em várias plataformas, incluindo na web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do PowerPoint.
+summary: Com os PowerPoint, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executado no PowerPoint em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do PowerPoint.
 metadata:
   title: Documentação de suplementos do PowerPoint
   description: Recursos para saber mais sobre suplementos do PowerPoint.
@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555168"
 landingContent:
-- title: Sobre PowerPoint complementos
+- title: Sobre PowerPoint de complementos
   linkLists:
   - linkListType: overview
     links:
-    - text: Quais são PowerPoint complementos?
+    - text: O que PowerPoint os complementos?
       url: powerpoint-add-ins.md
     - text: API JavaScript para PowerPoint
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Teste e depure um PowerPoint complementos
+    - text: Testar e depurar PowerPoint de um PowerPoint de um novo
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um PowerPoint complementos
+    - text: Implantar e publicar um PowerPoint de usuário
       url: ../publish/publish.md
-- title: Principais conceitos de suplementos Office
+- title: Principais Office conceitos de complementos
   linkLists:
   - linkListType: overview
     links:
