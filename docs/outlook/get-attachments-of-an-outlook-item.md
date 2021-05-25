@@ -3,26 +3,26 @@ title: Obter anexos em um suplemento do Outlook
 description: Seu suplemento pode usar a API de anexos para enviar informações sobre os anexos a um serviço remoto.
 ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: db59ce44d2ed6f120503701479b705f13727130b
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870648"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639960"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obter anexos de um item do Outlook a partir do servidor
 
-Você pode obter os anexos de um item do Outlook de algumas maneiras, mas a opção que você usa depende do seu cenário.
+Você pode obter os anexos de um item Outlook de várias maneiras, mas qual opção você usa depende do seu cenário.
 
-1. Envie as informações de anexo ao seu serviço remoto.
+1. Envie as informações de anexo para seu serviço remoto.
 
-    Seu complemento pode usar a API de anexos para enviar informações sobre os anexos ao serviço remoto. Em seguida, o serviço pode contatar o Exchange Server diretamente para recuperar os anexos.
+    Seu complemento pode usar a API de anexos para enviar informações sobre os anexos para o serviço remoto. Em seguida, o serviço pode contatar o Exchange Server diretamente para recuperar os anexos.
 
 1. Use a API [getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponível no conjunto de requisitos 1.8. Formatos com suporte: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    Essa API pode ser útil se o EWS/REST não estiver disponível (por exemplo, devido à configuração de administração do seu servidor Exchange) ou se o seu complemento quiser usar o conteúdo base64 diretamente em HTML ou JavaScript. Além disso, a API está disponível em cenários de composição em que o anexo pode ainda não ter sido sincronizado com o Exchange; confira Gerenciar anexos de um item em um formulário de composição no Outlook para saber `getAttachmentContentAsync` mais. [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
+    Essa API pode ser útil se o EWS/REST não estiver disponível (por exemplo, devido à configuração de administrador do seu servidor Exchange) ou se o seu complemento quiser usar o conteúdo base64 diretamente em HTML ou JavaScript. Além disso, a API está disponível em cenários de composição em que o anexo pode ainda não ter sincronizado com o Exchange; consulte Gerenciar anexos de um item em um formulário de redação em Outlook para saber `getAttachmentContentAsync` mais. [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
 
-Este artigo detalha a primeira opção. Para enviar informações de anexo ao serviço remoto, use as propriedades e a função a seguir.
+Este artigo detalha a primeira opção. Para enviar informações de anexo ao serviço remoto, use as seguintes propriedades e função.
 
 - Propriedade [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities)&ndash;: fornece a URL dos Serviços Web do Exchange (EWS) no Exchange Server que hospeda a caixa de correio. Seu serviço usa essa URL para chamar o método [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) do EWS.
 
@@ -32,7 +32,7 @@ Este artigo detalha a primeira opção. Para enviar informações de anexo ao se
 
 ## <a name="using-the-attachments-api"></a>Usar a API de anexos
 
-Para usar a API de anexos para obter anexos de uma caixa de correio do Exchange, execute as etapas a seguir.
+Para usar a API de anexos para obter anexos de uma caixa de correio Exchange, execute as etapas a seguir.
 
 1. Mostre o suplemento quando o usuário estiver exibindo uma mensagem ou um compromisso que contém um anexo.
 
@@ -152,7 +152,7 @@ namespace AttachmentsSample
 
 ### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>Usar a API gerenciada por EWS para obter os anexos
 
-Se você usar a [API gerenciada por EWS](https://go.microsoft.com/fwlink/?LinkID=255472) no seu serviço remoto, poderá usar o método [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) que irá construir, enviar e receber uma solicitação SOAP dos EWS para obter os anexos. Recomendamos que você use a API gerenciada por EWS porque ela requer menos linhas de código e fornece uma interface mais intuitiva para fazer chamadas aos EWS. O código a seguir faz uma solicitação para recuperar todos os anexos e retorna a contagem e os nomes dos anexos processados.
+Se você usar a [API gerenciada por EWS](/exchange/client-developer/web-service-reference/ews-managed-api-reference-for-exchange) no seu serviço remoto, poderá usar o método [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) que irá construir, enviar e receber uma solicitação SOAP dos EWS para obter os anexos. Recomendamos que você use a API gerenciada por EWS porque ela requer menos linhas de código e fornece uma interface mais intuitiva para fazer chamadas aos EWS. O código a seguir faz uma solicitação para recuperar todos os anexos e retorna a contagem e os nomes dos anexos processados.
 
 ```cs
 private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEWSManagedApi(AttachmentSampleServiceRequest request)
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Criar suplementos do Outlook para formulários de leitura](read-scenario.md)
 - [Explorar os recursos do EWS Managed API, do EWS e dos serviços Web no Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Introdução aos aplicativos clientes de API gerenciada por EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook SSO de complemento](https://github.com/OfficeDev/Outlook-Add-in-SSO)
