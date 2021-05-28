@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 05/20/2021
+ms.date: 05/26/2021
 localization_priority: Normal
-ms.openlocfilehash: a0d0b27c9b49132024c78577a4432d85542cf76f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590502"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697194"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -22,22 +22,22 @@ No final deste passo a passo, você terá um complemento que é executado sempre
 
 ## <a name="supported-events"></a>Eventos com suporte
 
-Atualmente, os seguintes eventos são suportados.
+Atualmente, os seguintes eventos são suportados na Web e Windows.
 
-|Evento|Descrição|Clientes|
-|---|---|---|
-|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|Windows, web|
-|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|Windows, web|
-|`OnMessageAttachmentsChanged`\*|Ao adicionar ou remover anexos ao compor uma mensagem.|Windows|
-|`OnAppointmentAttachmentsChanged`\*|Ao adicionar ou remover anexos durante a composição de um compromisso.|Windows|
-|`OnMessageRecipientsChanged`\*|Ao adicionar ou remover destinatários ao compor uma mensagem.|Windows|
-|`OnAppointmentAttendeesChanged`\*|Ao adicionar ou remover participantes durante a composição de um compromisso.|Windows|
-|`OnAppointmentTimeChanged`\*|Ao alterar data/hora durante a composição de um compromisso.|Windows|
-|`OnAppointmentRecurrenceChanged`\*|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|Windows|
-|`OnInfoBarDismissClicked`\*|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Windows|
+|Evento|Descrição|
+|---|---|
+|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|
+|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|
+|`OnMessageAttachmentsChanged`\*|Ao adicionar ou remover anexos ao compor uma mensagem.|
+|`OnAppointmentAttachmentsChanged`\*|Ao adicionar ou remover anexos durante a composição de um compromisso.|
+|`OnMessageRecipientsChanged`\*|Ao adicionar ou remover destinatários ao compor uma mensagem.|
+|`OnAppointmentAttendeesChanged`\*|Ao adicionar ou remover participantes durante a composição de um compromisso.|
+|`OnAppointmentTimeChanged`\*|Ao alterar data/hora durante a composição de um compromisso.|
+|`OnAppointmentRecurrenceChanged`\*|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|
+|`OnInfoBarDismissClicked`\*|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|
 
 > [!IMPORTANT]
-> \*Esse evento só tem suporte para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook no Windows com uma assinatura Microsoft 365. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo.
+> \*Esse evento só tem suporte para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) Outlook na Web e no Windows com uma assinatura Microsoft 365. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo.
 >
 > Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
 
@@ -136,10 +136,8 @@ Para habilitar a ativação baseada em evento do seu add-in, você deve configur
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <!-- Events supported on the web and on Windows. -->
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
-              <!-- Events supported only on Windows. -->
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -320,3 +318,4 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 - [Manifestos de suplementos do Outlook](manifests.md)
 - [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
+- Exemplo pnP: [use Outlook ativação baseada](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature) em evento para definir a assinatura
