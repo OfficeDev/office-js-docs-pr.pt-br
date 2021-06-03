@@ -1,50 +1,47 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 03/24/2021
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 07788c655d5c30527ac815ba2f3235cf504641f3
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604628"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727903"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
-Os Complementos do Office são aplicativos Web que são exibidos usando iFrames ao executar no Office na Web e usando controles de navegador incorporados no Office para clientes desktop e móveis. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
+Office Os complementos são aplicativos Web que são exibidos usando iFrames ao executar no Office na Web e usando controles de navegador incorporados no Office para clientes desktop e móveis. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
 
 Qual navegador é usado depende do:
 
 - O sistema operacional do computador.
-- Se o complemento está sendo executado no Office na Web, no Microsoft 365 ou no Office 2013 ou posterior.
+- Se o add-in está sendo executado em Office na Web, Microsoft 365 ou não de assinatura Office 2013 ou posterior.
 
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
-|SISTEMA OPERACIONAL|Versão do Office|WebView2 de borda (baseado em Chromium) instalado?|Navegador|
+|SISTEMA OPERACIONAL|Versão do Office|WebView2 de borda (Chromium baseado em dados) instalado?|Navegador|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |qualquer|Office na Web|Não aplicável|O navegador no qual o Office está aberto.|
 |Mac|qualquer|Não aplicável|Safari|
 |iOS|qualquer|Não aplicável|Safari|
 |Android|qualquer|Não aplicável|Chrome|
-|Windows 7, 8.1, 10 | não assinatura do Office 2013 ou posterior|Não importa|Internet Explorer 11|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Não importa|Internet Explorer 11|
 |Windows 7 | Microsoft 365| Não importa | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Não| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Não importa|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _E_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Não importa|Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Não |Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>2</sup> com WebView2 (baseado em Chromium) |
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>2</sup> com WebView2 (Chromium baseado em Chromium) |
 
-<sup>1</sup> Consulte a página [histórico de atualizações](/officeupdates/update-history-office365-proplus-by-date) e como encontrar [a versão do cliente do Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) e o canal de atualização para obter mais detalhes.
+<sup>1</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão Office cliente e [o canal](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) de atualização para obter mais detalhes.
 
-<sup>2</sup> Quando o Microsoft Edge está sendo usado, o Narrador do Windows 10 (às vezes chamado de "leitor de tela") lê a marca na página que é aberta no `<title>` painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
+<sup>2</sup> Quando o Microsoft Edge está sendo usado, o Windows 10 Narrador (às vezes chamado de "leitor de tela") lê a marca na página que é aberta no `<title>` painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
-<sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele não usará o Microsoft Edge com o `<Runtimes>` WebView original (EdgeHTML). Se as condições de uso do Microsoft Edge com WebView2 (baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele não usará Microsoft Edge com o `<Runtimes>` WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4 O</sup> controle WebView2 inbeddable deve ser instalado além da instalação do Microsoft Edge para que o Office possa in-locar. Para instalá-lo, consulte [Microsoft Edge WebView2 / Embed web content ... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
-
-
-
+<sup>4 O</sup> controle WebView2 inbeddable deve ser instalado além da instalação do Microsoft Edge para que Office possa in-lo. Para instalá-lo, [consulte Microsoft Edge WebView2 / Incorporar conteúdo da Web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, então para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você tem duas opções:
@@ -52,13 +49,15 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 > - Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou javaScript posterior ou em TypeScript e compile seu código para JavaScript do ES5 usando um compilador como [o babel](https://babeljs.io/) ou [o tsc](https://www.typescriptlang.org/index.html).
 > - Escreva em ECMAScript 2015 ou posterior JavaScript, mas também carregue uma biblioteca de [polifilamento,](https://en.wikipedia.org/wiki/Polyfill_(programming)) como [core-js,](https://github.com/zloirock/core-js) que permite ao IE executar seu código.
 >
+> Para obter mais informações sobre essas opções, consulte [Support Internet Explorer 11](../develop/support-ie-11.md).
+>
 > Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Solução de problemas do Microsoft Edge
+## <a name="troubleshooting-microsoft-edge-issues"></a>Solução de Microsoft Edge problemas
 
 ### <a name="service-workers-are-not-working"></a>Os Trabalhadores do Serviço não estão funcionando
 
-Os Complementos do Office não suportam Os Funcionários de Serviço quando o Microsoft Edge WebView original, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), é usado. Eles são suportados com o WebView2 de Borda baseado em [Chromium.](/microsoft-edge/hosting/webview2)
+Office Os complementos não suportam Os Trabalhadores do Serviço quando o webView original Microsoft Edge WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), é usado. Eles são suportados com o [Chromium WebView2](/microsoft-edge/hosting/webview2)baseado em Borda.
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>Barra de rolagem não aparece no painel de tarefas
 
