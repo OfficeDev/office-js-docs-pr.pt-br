@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330014"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727938"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -832,7 +832,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON.
+7. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro deve ser uma cadeia de caracteres, que inclui qualquer coisa que possa ser serializada como uma cadeia de caracteres, como XML ou JSON, ou qualquer tipo que possa ser convertido em uma cadeia de caracteres.
 
     ```js
     function sendStringToParentPage() {

@@ -1,18 +1,30 @@
 ---
 title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
-ms.date: 06/17/2020
+ms.date: 05/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: f794225d5ece20a430b967c8aa81ea165b573e52
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159245"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727924"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
-Esta seção contém orientações sobre testes, depuração de bugs e solução de problemas em suplementos do Office.
+Esta seção contém orientações sobre testes, depuração de bugs e solução de problemas em Suplementos do Office.
+
+## <a name="test-cross-platform-and-for-multiple-versions-of-office"></a>Testar plataforma cruzada e para várias versões do Office
+
+Os Suplementos do Office são executados em grandes plataformas, então é necessário testar um suplemento em todas as plataformas em que seus usuários podem estar executando o Office. Isso normalmente inclui o Office na Web, Office no Windows (tanto assinatura como compra avulsa), Office no Mac, Office no iOS e (para suplementos do Outlook) Office no Android. No entanto, pode haver algumas situações em que você tem certeza de que nenhum de seus usuários estará trabalhando em algumas plataformas. Por exemplo, se você estiver criando um suplemento para uma empresa que exige que seus usuários trabalhem com computadores Windows e assinatura do Office, não será necessário testar o Office no Mac ou o Windows de compra avulsa. 
+
+> [!NOTE]
+> Em computadores Windows, a versão do Windows e do Office determinarão qual controle de navegador será usado pelos suplementos. Para obter mais informações, veja [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+
+> [!IMPORTANT]
+> Os suplementos comercializados pelo AppSource passam por um processo de validação que inclui testes em todas as plataformas. Além disso, os suplementos são testados para o Office na Web em todos os principais navegadores modernos, incluindo o Microsoft Edge (WebView2 baseado em Chromium), Chrome e Safari. Teste adequadamente nessas plataformas e navegadores antes de enviar ao AppSource. Para obter mais informações sobre validação, veja [Políticas de certificação de marketplace comercial](/legal/marketplace/certification-policies), principalmente a [seção 1120.3](/legal/marketplace/certification-policies#11203-functionality) e a [página de aplicativo e disponibilidade do Suplemento do Office](../overview/office-add-in-availability.md). 
+>
+> O AppSource não usa o Internet Explorer ou a versão herdada do Microsoft Edge (WebView1) para testar suplementos no Office na Web. Porém, se um número significativo dos usuários usar esses dois navegadores para abrir o Office na Web, você deve testá-los neles. Para obter mais informações, veja [Suporte ao Internet Explorer 11](../develop/support-ie-11.md) e [Solucionando problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues). O Office ainda oferece suporte para suplementos nesses navegadores, então se você acha que encontrou um bug na execução de suplementos nos navegadores, crie um problema para o repositório [office-js](https://github.com/OfficeDev/office-js/issues/new/choose).
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>Fazer sideload de suplemento para teste
 

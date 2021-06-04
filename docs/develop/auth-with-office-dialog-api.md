@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d7bb4fc6828ffeb339fc6ff053d8ba99c73f582
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 4fa0c6aaf93792da03ac5957ed3ed904728d7529
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237872"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727917"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -50,14 +50,14 @@ Se o seu suplemento oferece ao usuário diversas opções de provedores, como a 
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorização do suplemento para um recurso externo
 
-Na Web moderna, os usuários e aplicativos da Web são entidades de segurança. O aplicativo tem sua própria identidade e permissões para recursos online, como o Microsoft 365, o Google Plus, o Facebook ou o LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
+Na Web moderna, os usuários e aplicativos Web são entidades de segurança. O aplicativo tem sua própria identidade e permissões para recursos online, como o Microsoft 365, Google Plus, Facebook ou LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
 
 - Uma lista das permissões que o aplicativo precisa.
 - Uma URL para a qual o serviço do recurso deve retornar um token de acesso quando o aplicativo acessa o serviço.  
 
 Quando um usuário invoca uma função no aplicativo que acessa os dados do usuário no serviço do recurso, ele é solicitado a entrar no serviço e a conceder ao aplicativo as permissões necessárias para os recursos do usuário. Em seguida, o serviço redireciona a janela de entrada para a URL previamente registrada e transmite o token de acesso. O aplicativo usa o token de acesso para acessar os recursos do usuário.
 
-Você pode usar a API da Caixa de Diálogo do Office para gerenciar esse processo usando um fluxo semelhante àquele descrito para os usuários entrarem. As únicas diferenças são:
+Você pode usar as APIs de Caixa de Diálogo do Office para gerenciar esse processo usando um fluxo semelhante àquele descrito para os usuários entrarem. As únicas diferenças são:
 
 - Se o usuário ainda não tiver concedido ao aplicativo as permissões necessárias, será solicitado a fazê-lo na caixa de diálogo após entrar.
 - A janela da caixa de diálogo envia o token de acesso à janela do host usando `messageParent` para enviar o token de acesso em formato de cadeia de caracteres ou armazenando o token de acesso em um local onde a janela do host poderá recuperá-lo (e usando `messageParent` para informar à janela do host que o token está disponível). O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
@@ -83,7 +83,7 @@ Como alternativa, a instância do navegador da Caixa de Diálogo do suplemento p
 
 Frequentemente, uma biblioteca relacionada à autenticação possui um método que obtém tanto um token de forma interativa, como também cria um objeto de "contexto de autenticação" retornado pelo método. O token é uma propriedade do objeto (possivelmente particular e inacessível diretamente do código). Esse objeto tem os métodos que recebem os dados do recurso. Esses métodos incluem o token nas Solicitações HTTP feitas ao provedor de recursos (por exemplo, Google, Microsoft Graph, Facebook, etc.).
 
-Esses objetos de contexto de autenticação e os métodos que os criam não podem ser usados nos Suplementos do Office. Como o logon ocorre na instância do navegador da caixa de diálogo do Office, o objeto teria que ser criado lá. Mas as chamadas de dados do recurso estão na instância do navegador do painel de tarefas e não há como enviar o objeto de uma instância para outra. Por exemplo, não é possível passar o objeto pela `messageParent`, porque a `messageParent` só pode passar valores booleanos ou cadeias de caracteres. Um objeto do JavaScript com métodos não pode ser transformado em cadeia de caracteres de maneira confiável.
+Esses objetos de contexto de autenticação e os métodos que os criam não podem ser usados nos Suplementos do Office. Como o logon ocorre na instância do navegador da caixa de diálogo do Office, o objeto teria que ser criado lá. Mas as chamadas de dados do recurso estão na instância do navegador do painel de tarefas e não há como enviar o objeto de uma instância para outra. Por exemplo, não é possível passar o objeto pelo `messageParent` porque `messageParent` só pode passar valores de cadeia de caracteres. Um objeto do JavaScript com métodos não pode ser transformado em cadeia de caracteres de maneira confiável.
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Como usar as bibliotecas através da API da Caixa de Diálogo do Office
 
