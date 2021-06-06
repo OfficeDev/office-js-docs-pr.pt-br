@@ -1,14 +1,14 @@
 ---
 title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
-ms.date: 05/05/2021
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 42c0b5190d0fc71f137284950bcb983f16845fca
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266101"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779338"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -170,7 +170,8 @@ Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`
 - Os nomes de `action` propriedade , e são `key` `default` obrigatórios.
 - O valor da propriedade é uma cadeia de caracteres e deve corresponder a uma das `action` `id` propriedades no objeto action.
 - A propriedade pode ser qualquer combinação dos caracteres A - Z, a -z, 0 - 9 e as marcas de pontuação `default` "-", "_" e "+". (Por convenção, letras de maiúsculas e baixos não são usadas nessas propriedades.)
-- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (Alt, Ctrl, Shift) e apenas uma outra chave.
+- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (Alt, Ctrl, Shift) e apenas uma outra chave. 
+- Shift não pode ser usado como a única chave modificadora. Combine Shift com Alt ou Ctrl.
 - Para Macs, também há suporte para a chave do modificador de comando.
 - Para Macs, Alt é mapeado para a tecla Option. Para Windows, Command é mapeado para a tecla Ctrl.
 - Quando dois caracteres são vinculados à mesma chave física em um teclado padrão, eles são sinônimos na propriedade; por exemplo, Alt+a e Alt+A são o mesmo atalho, assim como `default` Ctrl+- e Ctrl+ porque "-" e "_" são a mesma chave \_ física.
@@ -261,7 +262,7 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="next-steps"></a>Próximas Etapas
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).
