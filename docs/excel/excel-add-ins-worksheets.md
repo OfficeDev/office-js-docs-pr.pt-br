@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
-description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel.
-ms.date: 03/24/2020
+description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
+ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652199"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783509"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -318,6 +318,53 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
+## <a name="detect-formula-changes-preview"></a>Detectar alterações de fórmula (visualização)
+
+> [!NOTE]
+> No `Worksheet.onFormulaChanged` momento, o evento só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+Seu complemento pode acompanhar as alterações nas fórmulas em uma planilha. Isso é útil quando uma planilha está conectada a um banco de dados externo. Quando a fórmula é mudada na planilha, o evento nesse cenário dispara atualizações correspondentes no banco de dados externo.
+
+Para detectar alterações nas fórmulas, [registre](excel-add-ins-events.md#register-an-event-handler) um manipulador de eventos para o [evento onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) de uma planilha. Os manipuladores de eventos `onFormulaChanged` do evento recebem um objeto [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) quando o evento é ativos.
+
+> [!IMPORTANT]
+> O evento detecta quando uma fórmula em si muda, não o valor de dados `onFormulaChanged` resultante do cálculo da fórmula.
+
+O exemplo de código a seguir mostra como registrar o manipulador de eventos, usar o objeto para recuperar a matriz formulaDetails da fórmula alterada e imprimir detalhes sobre a fórmula alterada com as propriedades `onFormulaChanged` `WorksheetFormulaChangedEventArgs` [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
+
+> [!NOTE]
+> Esse exemplo de código só funciona quando uma única fórmula é alterada.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the formula changed event handler for this worksheet.
+    sheet.onFormulaChanged.add(formulaChangeHandler);
+
+    return context.sync();
+});
+
+function formulaChangeHandler(event) {
+    Excel.run(function (context) {
+        // Retrieve details about the formula change event.
+        // Note: This method assumes only a single formula is changed at a time. 
+        var cellAddress = event.formulaDetails[0].cellAddress;
+        var previousFormula = event.formulaDetails[0].previousFormula;
+        var source = event.source;
+    
+        // Print out the change event details.
+        console.log(
+          `The formula in cell ${cellAddress} changed. 
+          The previous formula was: ${previousFormula}. 
+          The source of the change was: ${source}.`
+        );         
+    });
+}
+```
+
 ## <a name="handle-sorting-events"></a>Manipulação de eventos de classificação
 
 Os eventos `onColumnSorted` e `onRowSorted` indicam quando quaisquer dados de planilha são classificados. Esses eventos estão conectados a objetos `Worksheet` individuais e à `WorkbookCollection` da pasta de trabalho. Eles são acionados independentemente da classificação ser realizada de forma programática ou manualmente por meio da interface de usuário do Excel.
@@ -386,7 +433,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > Esta seção descreve como localizar as células e intervalos usando as funções do objeto `Worksheet`. Encontre mais informações de recuperação de intervalo nos artigos específicos do objeto.
-> - Para exemplos que mostram como obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando `Range` [a API JavaScript do Excel](excel-add-ins-ranges-get.md).
+> - Para obter exemplos que mostram como obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando o Excel `Range` [API JavaScript](excel-add-ins-ranges-get.md).
 > - Para obter exemplos que mostram como obter intervalos de um objeto `Table`, confira [Trabalhar com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 

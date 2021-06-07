@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
-description: Uma lista de eventos para objetos JavaScript do Excel. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
-ms.date: 04/23/2021
+description: Uma lista de eventos para Excel JavaScript. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: 50d9c4c2a15a955f0a96c70464fa0165625ea6f8
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024308"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783502"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
@@ -44,6 +44,7 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
 | `onFiltered` | Ocorre quando um filtro é aplicado a um objeto. | [**Tabela**](/javascript/api/excel/excel.table#onfiltered), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered), [**Planilha**](/javascript/api/excel/excel.worksheet#onfiltered), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFormulaChanged` | Ocorre quando uma fórmula é alterada. | [**Planilha**](/javascript/api/excel/excel.worksheet#onFormulaChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
 
