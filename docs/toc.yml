@@ -701,8 +701,8 @@ items:
               - name: Lidar com matrizes dinâmicas e fórmulas despejadas
                 href: excel/excel-add-ins-ranges-dynamic-arrays.md
                 displayName: Excel
-              - name: Obter precedentes de fórmula
-                href: excel/excel-add-ins-ranges-precedents.md
+              - name: Precedentes e dependentes da fórmula
+                href: excel/excel-add-ins-ranges-precedents-dependents.md
                 displayName: Excel
               - name: Adiar a execução enquanto a célula está sendo editada
                 href: excel/excel-add-ins-delay-in-cell-edit.md
