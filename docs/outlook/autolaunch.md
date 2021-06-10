@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 05/26/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697194"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853952"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -24,28 +24,26 @@ No final deste passo a passo, você terá um complemento que é executado sempre
 
 Atualmente, os seguintes eventos são suportados na Web e Windows.
 
-|Evento|Descrição|
-|---|---|
-|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|
-|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|
-|`OnMessageAttachmentsChanged`\*|Ao adicionar ou remover anexos ao compor uma mensagem.|
-|`OnAppointmentAttachmentsChanged`\*|Ao adicionar ou remover anexos durante a composição de um compromisso.|
-|`OnMessageRecipientsChanged`\*|Ao adicionar ou remover destinatários ao compor uma mensagem.|
-|`OnAppointmentAttendeesChanged`\*|Ao adicionar ou remover participantes durante a composição de um compromisso.|
-|`OnAppointmentTimeChanged`\*|Ao alterar data/hora durante a composição de um compromisso.|
-|`OnAppointmentRecurrenceChanged`\*|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|
-|`OnInfoBarDismissClicked`\*|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|
+|Evento|Descrição|Minimum<br>conjunto de requisitos|
+|---|---|---|
+|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|1.10|
+|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|1.10|
+|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.|Visualização|
+|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.|Visualização|
+|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.|Visualização|
+|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.|Visualização|
+|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.|Visualização|
+|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|Visualização|
+|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Visualização|
 
 > [!IMPORTANT]
-> \*Esse evento só tem suporte para [visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) Outlook na Web e no Windows com uma assinatura Microsoft 365. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo.
->
-> Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em complementos de produção.
+> Os eventos ainda em visualização só estão disponíveis com uma assinatura Microsoft 365 no Outlook na Web e no Windows. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
 
-## <a name="how-to-preview"></a>Como visualizar
+### <a name="how-to-preview"></a>Como visualizar
 
-Convidamos você a experimentar os novos eventos! Deixe-nos saber seus cenários e como podemos melhorar nos dando feedback por meio GitHub (consulte a seção **Comentários** no final desta página).
+Convidamos você a experimentar os eventos agora na visualização! Deixe-nos saber seus cenários e como podemos melhorar nos dando feedback por meio GitHub (consulte a seção **Comentários** no final desta página).
 
-Para visualizar esse recurso:
+Para visualizar esses eventos:
 
 - Para Outlook na Web:
   - [Configure a versão direcionada em seu Microsoft 365 locatário](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).

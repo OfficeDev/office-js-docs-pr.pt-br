@@ -1,15 +1,15 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Saiba como executar tarefas comuns com as guias de trabalho ou recursos no nível do aplicativo usando Excel API JavaScript.
-ms.date: 06/01/2021
+ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779345"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853980"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -341,6 +341,46 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="detect-workbook-activation-preview"></a>Detectar ativação da workbook (visualização)
+
+> [!NOTE]
+> No `Workbook.onActivated` momento, o evento só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+O seu complemento pode detectar quando uma workbook é ativada. Uma workbook fica *inativa* quando o usuário alterna o foco para outra workbook, para outro aplicativo ou (em Excel na Web) para outra guia do navegador da Web. Uma workbook *é ativada quando* o usuário retorna o foco para a workbook. A ativação da workbook pode disparar funções de retorno de chamada no seu complemento, como atualizar dados da agenda de trabalho.
+
+Para detectar quando uma caixa de trabalho é ativada, [registre](excel-add-ins-events.md#register-an-event-handler) um manipulador de eventos para o [evento onActivated](/javascript/api/excel/excel.workbook#onActivated) de uma workbook. Os manipuladores de eventos `onActivated` do evento recebem um objeto [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) quando o evento é acionado.
+
+> [!IMPORTANT]
+> O `onActivated` evento não detecta quando uma workbook é aberta. Esse evento só detecta quando um usuário alterna o foco de volta para uma workbook já aberta.
+
+O exemplo de código a seguir mostra como registrar o manipulador de eventos `onActivated` e configurar uma função de retorno de chamada.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the workbook.
+    var workbook = context.workbook;
+
+    // Register the workbook activated event handler.
+    workbook.onActivated.add(workbookActivated);
+
+    return context.sync();
+});
+
+function workbookActivated(event) {
+    Excel.run(function (context) {
+        // Retrieve the workbook and load the name.
+        var workbook = context.workbook;
+        workbook.load("name");
+        
+        return context.sync().then(function () {
+            // Callback function for when the workbook is activated.
+            console.log(`The workbook ${workbook.name} was activated.`);
+        });
+    });
+}
 ```
 
 ## <a name="save-the-workbook"></a>Salvar a pasta de trabalho

@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 05/17/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 98bf56c169967ad7c994d1793afa8678d31f6892
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591055"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52854008"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -73,6 +73,18 @@ Adicionada uma nova propriedade que representa a sensibilidade de um compromisso
 Adicionado um novo número `AppointmentSensitivityType` que representa as opções de sensibilidade disponíveis em um compromisso.
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>Ativação baseada em evento
+
+Esse recurso foi lançado no [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). No entanto, eventos adicionais agora estão disponíveis na visualização. Para saber mais, confira [Eventos com suporte.](../../../outlook/autolaunch.md#supported-events)
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
 
 <br>
 
