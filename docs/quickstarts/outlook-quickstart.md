@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 02/09/2021
+ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 2ba89f400feaf0664ad98f47d8c933431341466e
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234188"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893656"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -17,7 +17,7 @@ Neste artigo, você acompanhará o processo de criação de um suplemento do pai
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) ou Visual Studio. O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio.  Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.
+Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) ou Visual Studio. O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio. Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.
 
 # <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
@@ -155,7 +155,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 |**Projeto**|**Descrição**|
 |:-----|:-----|
-|Projeto de suplemento|Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento. As configurações ajudam o aplicativo do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer. O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente. Você pode alterar essas configurações a qualquer momento modificando o arquivo XML.|
+|Projeto de suplemento|Contém apenas um arquivo de manifesto XML, que contém todas as configurações que descrevem seu add-in. Estas configurações ajudam o aplicativo Office a determinar quando seu suplemento deve ser ativado e onde o suplemento deve aparecer. O Visual Studio gera o conteúdo deste arquivo para que você possa executar o projeto e usar seu suplemento imediatamente. Você pode alterar estas configurações a qualquer momento, modificando o arquivo XML.|
 |Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você precisará implantar este projeto de aplicativo Web em um servidor Web.|
 
 ### <a name="update-the-code"></a>Atualizar o código
@@ -270,7 +270,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 1. Na caixa de diálogo **Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**. Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.
 
     > [!NOTE]
-    > Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Microsoft 365. Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).
+    > Se a caixa de diálogo **Conectar à conta de email Exchange** solicitar repetidamente que você faça o login ou se você receber um erro de que não está autorizado, o Basic Auth pode ser desativado para contas em seu locatário Microsoft 365. Para testar este suplemento, tente entrar novamente após definir a propriedade **Usar multi-fator auth** para True no diálogo de propriedades do projeto Web Add-in, ou entre usando uma [conta Microsoft](https://account.microsoft.com/account) em seu lugar.
 
 1. No Outlook na Web, escolha ou abra uma mensagem.
 
