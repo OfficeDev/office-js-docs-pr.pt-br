@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: fb4771daacd2e666d57c238b950803a70a3b0fc0
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: e9450408a1cdead8593cc901796c7156a4b415cd
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237690"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961220"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -19,9 +19,9 @@ Seu suplemento também pode obter consentimento do usuário para acessar seus da
 Há duas maneiras de realizar a autentificação e autorização.
 
 - **O Logon Único do Office(SSO)**: Um sistema que permite que o login do usuário no Office também funcione como um login para o suplemento. Opcionalmente, o suplemento também pode usar as credenciais do usuário do Office para autorizar o suplemento ao Microsoft Graph. (As fontes que não são da Microsoft não podem ser acessadas por este sistema.)
-- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como os Suplementos do Office (e outros aplicativos Web) autenticavam os usuários e aplicativos autorizados antes de existir um sistema de SSO do Office e isto ainda é usado em cenários onde o SSO do Office não pode ser usado. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente mesmo quando o SSO estiver disponível; por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquele com o qual eles estão atualmente registrados no Office.
+- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como os Suplementos do Office (e outros aplicativos Web) autenticavam os usuários e aplicativos autorizados antes de existir um sistema de SSO do Office e isto ainda é usado em cenários onde o SSO do Office não pode ser usado. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente, mesmo quando o SSO estiver disponível. Por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquela com o qual eles estão atualmente conectados no Office.
 
-O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplemento. Os detalhes estão incluídos mais adiante neste artigo.
+O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplementos. Os detalhes estão mais pra frente neste artigo.
 
 ![Uma imagem mostrando um fluxograma de decisão para habilitar a autenticação e a autorização nos Suplementos do Office](../images/authflowchart.png)
 
@@ -37,7 +37,7 @@ Você pode obter autorização para os dados do Microsoft Graph para seu supleme
 
 ## <a name="user-authentication-with-sso"></a>Autenticação do usuário com o SSO
 
-Para autenticar o usuário usando o SSO, seu código em um arquivo de função ou painel de tarefas chama o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Se o usuário não estiver conectado, o Office abrirá uma caixa de diálogo e navegará até a página de logon do Azure Active Directory. Após o usuário entrar ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um de inicialização no fluxo **On-Behalf-Of**. (Confira [Acessar o Microsoft Graph com o SSO](#access-to-microsoft-graph-with-sso).) No entanto, ele também pode ser usado como um token de ID, pois inclui várias declarações exclusivas para o usuário atual, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter orientação sobre qual propriedade usar como a ID de usuário final, consulte [Tokensde acesso da plataforma de identidade da Microsoft](/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, confira [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
+Para autenticar o usuário usando o SSO, seu código em um arquivo de função ou painel de tarefas chama o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Se o usuário não estiver conectado, o Office abrirá uma caixa de diálogo e navegará até a página de logon do Azure Active Directory. Após o usuário entrar ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um token de Bootstrap no fluxo **On Behalf Of**. (Confira [Acessar o Microsoft Graph com o SSO](#access-to-microsoft-graph-with-sso).) No entanto, ele também pode ser usado como um token de ID, pois inclui várias declarações exclusivas para o usuário atual, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter orientação sobre qual propriedade usar como a ID de usuário final, consulte [Tokensde acesso da plataforma de identidade da Microsoft](/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, confira [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
 
 Após o seu código ter extraído a declaração desejada no token, ele usará esse valor para pesquisar o usuário em uma tabela de usuário ou banco de dados de usuário que você mantém. Use o banco de dados para armazenar informações relativas ao usuário, como as preferências do usuário ou o estado da conta do usuário. Uma vez que você está usando o SSO, os usuários não entram separadamente no seu suplemento, assim você não precisa armazenar uma senha para o usuário.
 

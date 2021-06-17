@@ -1,15 +1,15 @@
 ---
-ms.date: 04/08/2021
+ms.date: 06/14/2021
 title: Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 localization_priority: Priority
-ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652186"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961255"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -31,6 +31,9 @@ Faça um dos seguintes:
 
 O gerador criará o projeto e instalará os componentes do Node de suporte.
 
+> [!NOTE]
+> Você também pode usar as etapas neste artigo para atualizar um projeto existente do Visual Studio para usar o runtime compartilhado. No entanto, talvez seja necessário atualizar os esquemas XML para o manifesto. Para obter mais informações, confira [Solucionar erros de desenvolvimento com Suplementos do Office](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
 Siga estas etapas para um projeto novo ou existente para configurá-lo para usar um tempo de execução compartilhado. Estas etapas pressupõem que você gerou seu projeto usando o [Gerador Yeoman para Suplementos do Office ](https://github.com/OfficeDev/generator-office).
@@ -40,11 +43,15 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
 1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](../reference/requirement-sets/shared-runtime-requirement-sets.md) em vez do tempo de execução da função personalizada. O XML deve aparecer da seguinte maneira.
 
     ```xml
+    <Hosts>
+      <Host Name="Workbook"/>
+    </Hosts>
     <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
     </Requirements>
+    <DefaultSettings>
     ```
 
 1. Localize a `<VersionOverrides>`seção e adicione a seguinte`<Runtimes>` seção apenas dentro da `<Host ...>`marca. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na ` <bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
@@ -53,7 +60,6 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       ...
        <Runtimes>
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>

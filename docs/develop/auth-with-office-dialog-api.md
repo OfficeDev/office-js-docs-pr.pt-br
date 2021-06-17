@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 4fa0c6aaf93792da03ac5957ed3ed904728d7529
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: fbec924eb6f8d1941be6882dc5e1a563bd011105
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727917"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961248"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -93,9 +93,9 @@ Para saber mais sobre as bibliotecas de autenticação e autorização, confira 
 
 ## <a name="samples"></a>Exemplos
 
-- [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): um suplemento com base em ASP.NET (Excel, Word ou PowerPoint) que usa a biblioteca MSAL.NET e o Fluxo de Código de Autorização para efetuar logon e obter um token de acesso para dados do Microsoft Graph.
+- [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): um suplemento com base em ASP.NET (Excel, Word ou PowerPoint) que usa a biblioteca MSAL.NET e o Fluxo de Código de Autorização para efetuar logon, e obter um token de acesso para dados do Microsoft Graph.
 - [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): semelhante a exibida acima, mas o aplicativo do Office sendo o Outlook.
-- [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): um suplemento com base em NodeJS (Excel, Word ou PowerPoint) que usa a biblioteca msal.js e o Fluxo Implícito para efetuar logon e obter um token de acesso para dados do Microsoft Graph.
+- [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): um suplemento com base em NodeJS (Excel, Word ou PowerPoint) que usa a biblioteca msal.js e o Fluxo Implícito para efetuar logon, e obter um token de acesso para dados do Microsoft Graph.
 
 
 Para saber mais, confira:
