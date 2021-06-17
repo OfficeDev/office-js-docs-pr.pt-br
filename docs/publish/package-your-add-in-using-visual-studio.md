@@ -3,12 +3,12 @@ title: Publicar seu suplemento usando o Visual Studio
 description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431182"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961241"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Publicar seu suplemento usando o Visual Studio
 
@@ -26,7 +26,7 @@ Conclua as etapas a seguir para implantar seu projeto Web usando o Visual Studio
 2. Na janela **Escolha um destino de publicação**, escolha uma das opções de publicação para o seu destino preferido. Cada destino de publicação exige que você inclua mais informações para começar, como um local de pasta ou uma Máquina Virtual do Azure. Depois de especificar um local de publicação e preencher todas as informações necessárias, selecione **Publicar**
 
     > [!NOTE]
-    > A escolha de um destino de publicação especifica o servidor que você está implantando, as credenciais necessárias para fazer logon no servidor, os bancos de dados para implantar e outras opções de implantação.
+    > Escolher um destino de publicação especifica o servidor para o que você está implantando, as credenciais necessárias para entrar no servidor, os bancos de dados a implantar e outras opções de implantação.
 
 3. Para obter mais informações sobre as etapas de implantação de cada opção de destino de publicação, confira [Primeiro contato com a implantação no Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 

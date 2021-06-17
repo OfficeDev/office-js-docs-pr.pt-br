@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: a587f6a1ad596f4006734e0d850e009c3fc145b0
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 9b3600e56db138a45e1601eaf5073126e04b65c5
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651934"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961234"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -31,7 +31,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Um editor de códigos. Recomendamos o código do Visual Studio.
 
-* Pelo menos alguns arquivos e pastas armazenados no OneDrive for Business em sua assinatura do Microsoft 365.
+* Pelo menos alguns arquivos e pastas armazenados em OneDrive for Business em sua assinatura Microsoft 365 assinatura.
 
 * Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -41,11 +41,11 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
     > [!NOTE]
     > Há três versões do exemplo:  
-    > * A pasta **inicial** é um projeto inicial. A interface de usuário e outros aspectos do suplemento que não estejam diretamente conectados ao SSO ou à autorização já foram feitos. Seções posteriores deste artigo orientam você durante o processo de conclusão.
-    > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão completa, basta seguir as instruções deste artigo, mas substituir "Begin" por "concluído" e ignorar as seções **codificadas pelo cliente** e **codificar o** lado do servidor.
+    > * A **pasta Begin** é um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
+    > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, basta seguir as instruções deste artigo, mas substitua "Begin" por "Completed" e ignore as seções **Codificar** o lado do cliente e **Codificar** o lado do servidor.
     > * A versão **SSOAutoSetup** é um exemplo concluído que automatiza a maioria das etapas para registrar o suplemento com o Azure AD e configurá-lo. Use esta versão se desejar ver um suplemento de trabalho com SSO rapidamente. Basta seguir as etapas no README da pasta. É recomendável que, em algum momento, você siga as etapas de configuração e registro manuais deste artigo para entender melhor a relação entre o Azure AD e um suplemento. 
 
-1. Abra um prompt de comando na pasta **Iniciar** .
+1. Abra um prompt de comando na **pasta** Iniciar.
 
 1. Insira `npm install` no console para instalar todas as dependências discriminadas no arquivo package.json.
 
@@ -55,40 +55,40 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Acesse a página [Portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar o seu aplicativo.
 
-1. Entre com as credenciais de ***administrador*** em seu Microsoft 365 locação. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as ***credenciais de*** administrador no seu Microsoft 365 de adoção. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
 1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
     * Defina **Nome** para `Office-Add-in-NodeJS-SSO`.
     * Defina **Tipos de conta com suporte** para **Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**.
-    * Defina o tipo de aplicativo como **Web** e, em seguida, defina **URI de redirecionamento** como ` https://localhost:44355/dialog.html` .
+    * De definir o tipo de aplicativo como **Web** e, em seguida, definir **URI de redirecionamento** como ` https://localhost:44355/dialog.html` .
     * Escolha **Registrar**.
 
 1. Na página **Office-Add-in-NodeJS-SSO**, copie e salve os valores para a **ID do aplicativo (cliente)** e a **ID do diretório (locatário)**. Use ambos os valores nos procedimentos posteriores.
 
     > [!NOTE]
-    > Este **aplicativo (cliente) ID** é o valor de "audiência" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > Essa ID de Aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
-1. Selecione **Autenticação** em **Gerenciar**. Na seção **concessão implícita** , habilite as caixas de seleção para token de **acesso** e **token de ID**. O exemplo tem um sistema de autorização de fallback que é chamado quando o SSO não está disponível. Esse sistema usa o fluxo implícito.
+1. Selecione **Autenticação** em **Gerenciar**. Na seção **Concessão implícita,** habilita as caixas de seleção para **token do Access** e token de **ID**. O exemplo tem um sistema de autorização de fallback que é chamado quando o SSO não está disponível. Esse sistema usa o fluxo implícito.
 
 1. Na parte superior da página, selecione **Salvar**.
 
 1. Selecione **Certificados e segredos** sob **Gerenciar**. Selecione o botão **Novo segredo do cliente**. Insira um valor para **Descrição** e, em seguida, selecione uma opção adequada para **Expira** e escolha **Adicionar**. *Copiar o valor de segredo do cliente imediatamente e salvá-lo com a ID de aplicativo* antes de prosseguir, pois ele será necessário em um procedimento posterior.
 
-1. Selecionar **Expor uma API** em **Gerenciar**. Selecione o link **definir** . Isso gerará o URI da ID do aplicativo no formato "api://$App ID GUID $", onde $App GUID de ID $ é a **ID do aplicativo (cliente)**.
+1. Selecionar **Expor uma API** em **Gerenciar**. Selecione o link **Definir.** Isso gerará o URI de ID do Aplicativo no formato "api://$App ID GUID$", onde $App ID GUID$ é a ID do aplicativo **(cliente).**
 
-1. Na ID gerada, insira `localhost:44355/` (Observe a barra "/" anexada ao final) entre as barras duplas e o GUID. Quando você terminar, a ID inteira deverá ter a forma `api://localhost:44355/$App ID GUID$` ; por exemplo `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` .
+1. Na ID gerada, insira (observe a barra de avanço "/" anexada ao final) entre as barras de avanço duplo e `localhost:44355/` o GUID. Quando terminar, a ID inteira deverá ter o formulário `api://localhost:44355/$App ID GUID$` ; por `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` exemplo.
 
 1. Selecione o botão **Adicionar um escopo**. No painel que se abre, insira `access_as_user` como o **Nome de escopo**.
 
 1. Definir **Quem pode consentir?** aos **Administradores e usuários**.
 
-1. Preencha os campos para configurar os prompts de consentimento de usuário e administrador com os valores que são apropriados para o `access_as_user` escopo, o que permite que o aplicativo cliente do Office Use as APIs Web do seu suplemento com os mesmos direitos que o usuário atual. Sugestões:
+1. Preencha os campos para configurar os prompts de consentimento do administrador e do usuário com valores apropriados para o escopo que permite que o aplicativo cliente Office use as APIs da Web do seu complemento com os mesmos direitos do usuário `access_as_user` atual. Sugestões:
 
-    - **Nome para exibição do consentimento do administrador**: o Office pode atuar como o usuário.
+    - **Nome de exibição** de consentimento do administrador : Office pode atuar como o usuário.
     - **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-    - **Nome para exibição do consentimento do usuário**: o Office pode agir como você.
-    - **Descrição do consentimento do usuário**: habilitar o Office para chamar as APIs Web do suplemento com os mesmos direitos que você tem.
+    - **Nome de exibição** de consentimento do usuário : Office pode atuar como você.
+    - **Descrição do** consentimento do usuário : Office para chamar as APIs da Web do complemento com os mesmos direitos que você tem.
 
 1. Verifique se o **Estado** está definido como **Habilitado**.
 
@@ -113,7 +113,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Selecione **Permissões para API** em **Gerenciar** e selecione **Adicionar uma permissão**. No painel que se abre, escolha **Microsoft Graph** e, em seguida, escolha **Permissões delegadas**.
 
-1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário para o seu suplemento; Mas a `profile` permissão é necessária para que o aplicativo do Office obtenha um token para o aplicativo Web do seu suplemento.
+1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário pelo seu próprio complemento; mas a permissão é necessária para que o aplicativo Office para obter um `profile` token para seu aplicativo Web de complemento.
 
     * Files.Read.All
     * perfil
@@ -152,10 +152,10 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{$application_GUID here$}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "$" não faz parte da ID, portanto não o inclua. Esta é a mesma ID usada para o CLIENT_ID e audiência no. ENV arquivo.
+1. Substitua o espaço reservado "{$application_GUID here$}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "$" não faz parte da ID, portanto não o inclua. Essa é a mesma ID que você usou para o CLIENT_ID e Audiência no . Arquivo ENV.
 
     > [!NOTE]
-    > O valor **Recurso** é o**URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
+    > O valor **Recurso** é o **URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
 ## <a name="code-the-client-side"></a>Codificar o lado do cliente
 
@@ -196,9 +196,9 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Substitua `TODO 1` pelo código a seguir. Sobre este código, observe:
 
     - `OfficeRuntime.auth.getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD. Um token de bootstrap é semelhante a um token de ID, mas tem uma propriedade `scp` (Scope) com o valor `access-as-user`. Esse tipo de token pode ser trocado por um aplicativo Web para um token de acesso ao Microsoft Graph.
-    - Definir a `allowSignInPrompt` opção como true significa que, se nenhum usuário estiver conectado ao Office no momento, o Office abrirá um prompt de entrada pop-up.
-    - A definição da `allowConsentPrompt` opção como true significa que, se o usuário não tiver sido remetido para permitir que o suplemento acesse o perfil AAD do usuário, o Office abrirá um prompt de consentimento. (O prompt permite que o usuário consentisse no perfil AAD do usuário, e não nos escopos do Microsoft Graph).
-    - Definir a `forMSGraphAccess` opção como true indica ao Office que o suplemento pretende usar o token de inicialização para obter um token de acesso ao Microsoft Graph, em vez de apenas usá-lo como um token de ID. Se o administrador locatário não tiver concedido consentimento para o acesso do suplemento ao Microsoft Graph, `OfficeRuntime.auth.getAccessToken` retornará o erro **13012**. O suplemento pode responder voltando para um sistema alternativo de autorização. Isso é necessário porque o Office pode solicitar apenas consentimento para o perfil do Azure AD do usuário, não para escopos do Microsoft Graph. O sistema de autorização de fallback exige que o usuário entre novamente e o usuário *pode* ser solicitado a se concordar com escopos do Microsoft Graph. Portanto, a opção `forMSGraphAccess` garante que o suplemento não fará uma troca de tokens que falhará devido à falta de consentimento. Uma vez que você concedeu consentimento de administrador em uma etapa anterior, esse cenário não acontecerá para esse suplemento. No entanto, a opção é incluída aqui para ilustrar uma prática recomendada.
+    - Definir a opção como true significa que, se nenhum usuário estiver atualmente Office, Office abrirá um prompt de entrada `allowSignInPrompt` pop-up.
+    - Definir a opção como true significa que, se o usuário não consentiu em permitir que o complemento acesse o perfil AAD do usuário, Office abrirá um prompt de `allowConsentPrompt` consentimento. (O prompt só permite que o usuário consenta com o perfil AAD do usuário, não para escopos Graph Microsoft.)
+    - Definir a opção como verdadeiros sinais Office que o complemento pretende usar o token bootstrap para obter um token de acesso para o Microsoft Graph, em vez de apenas `forMSGraphAccess` usá-lo como um token de ID. Se o administrador locatário não tiver concedido consentimento para o acesso do suplemento ao Microsoft Graph, `OfficeRuntime.auth.getAccessToken` retornará o erro **13012**. O suplemento pode responder voltando para um sistema alternativo de autorização. Isso é necessário porque o Office pode solicitar apenas consentimento para o perfil do Azure AD do usuário, não para escopos do Microsoft Graph. O sistema de autorização de fallback exige  que o usuário entre novamente e o usuário pode ser solicitado a consentir com os escopos Graph Microsoft. Portanto, a opção `forMSGraphAccess` garante que o suplemento não fará uma troca de tokens que falhará devido à falta de consentimento. Uma vez que você concedeu consentimento de administrador em uma etapa anterior, esse cenário não acontecerá para esse suplemento. No entanto, a opção é incluída aqui para ilustrar uma prática recomendada.
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
@@ -212,7 +212,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO 3` pelo seguinte. Sobre este código, observe: 
 
-    - Se o Microsoft 365 locatário tiver sido configurado para exigir a autenticação multifator, o `exchangeResponse` incluirá uma `claims` propriedade com informações sobre os outros fatores necessários. Nesse caso, `OfficeRuntime.auth.getAccessToken` deve ser chamado novamente com a opção `authChallenge` definida como o valor da propriedade de declarações. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
+    - Se o Microsoft 365 locatário tiver sido configurado para exigir autenticação multifator, o incluirá uma propriedade com informações sobre `exchangeResponse` `claims` os fatores adicionais necessários. Nesse caso, `OfficeRuntime.auth.getAccessToken` deve ser chamado novamente com a opção `authChallenge` definida como o valor da propriedade de declarações. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -249,7 +249,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Abaixo do método `getGraphData`, adicione a função a seguir. Observe que `/auth` é uma rota expressa do servidor que troca o token de inicialização com o Azure ad para obter um token de acesso para o Microsoft Graph.
+1. Abaixo do método `getGraphData`, adicione a função a seguir. Observe que é uma rota Express do lado do servidor que troca o token bootstrap com o Azure AD por um token de acesso para `/auth` o Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -286,7 +286,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         // is logged into Office, then the first call of getAccessToken should pass the 
         // `allowSignInPrompt: true` option. Since this add-in does that, you should not see
         // this error. 
-        showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again.");  
+        showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again.");  
         break;
     case 13002:
         // OfficeRuntime.auth.getAccessToken was called with the allowConsentPrompt 
@@ -483,7 +483,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO 14` pelo código a seguir, que completa o bloco `else`. Sobre este código, observe:
 
-    - A constante `tenant` é definida como "comum" porque você configurou o suplemento como multilocatário ao registrá-lo no Azure AD, especificamente quando você define **Tipos de conta com suporte** para **Contas em qualquer diretório corporativo e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**. Se, em vez disso, você optou por suportar apenas contas no mesmo locatário do Microsoft 365 em que o suplemento está registrado, o código `tenant` seria definido como o GUID do locatário. 
+    - A constante `tenant` é definida como "comum" porque você configurou o suplemento como multilocatário ao registrá-lo no Azure AD, especificamente quando você define **Tipos de conta com suporte** para **Contas em qualquer diretório corporativo e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**. Se você tivesse optado por dar suporte apenas a contas no mesmo Microsoft 365 locatário em que o complemento está registrado, nesse código seria definido como GUID do `tenant` locatário. 
     - Se a solicitação POST não for recebida, a resposta do Azure AD será convertida para JSON e enviada para o cliente. Esse objeto JSON tem uma propriedade `access_token` à qual o Azure AD atribuiu o token de acesso ao Microsoft Graph.
 
     ```javascript
@@ -571,9 +571,9 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Você deve fazer o sideload do suplemento em um aplicativo do Office (Excel, Word ou PowerPoint) para testá-lo. As instruções dependem da plataforma. Há links para instruções no [Fazer sideload de suplemento para teste](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
-1. No aplicativo do Office, na faixa de opções **Home**, selecione o botão **Mostrar suplemento** no grupo**SSO Node.js** para abrir o suplemento do painel de tarefas.
+1. No aplicativo do Office, na faixa de opções **Home**, selecione o botão **Mostrar suplemento** no grupo **SSO Node.js** para abrir o suplemento do painel de tarefas.
 
-1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de educação ou de trabalho do Microsoft 365, ou uma conta da Microsoft, e o SSO estiver funcionando conforme o esperado, os 10 primeiros nomes de arquivos e pastas no OneDrive for Business serão inseridos no documento. Isso pode levar até 15 segundos pela primeira vez. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.
+1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de Microsoft 365 Education ou de trabalho, ou uma conta da Microsoft, e o SSO estiver funcionando conforme esperado, os primeiros 10 nomes de arquivo e pasta em seu OneDrive for Business serão inseridos no documento. (Pode levar até 15 segundos na primeira vez.) Se você não estiver conectado ou estiver em um cenário que não dá suporte ao SSO, ou o SSO não estiver funcionando por qualquer motivo, você será solicitado a entrar. Depois de entrar, os nomes de arquivo e pasta aparecem.
 
 > [!NOTE]
 > Se você entrou no Office com uma ID diferente e se alguns aplicativos do Office que estavam abertos no momento continuam abertos, o Office pode não alterar de forma confiável sua ID, mesmo que pareça ter feito isso. Se isso acontecer, a chamada para o Microsoft Graph pode falhar ou os dados da ID anterior podem ser retornados. Para evitar isso, certifique-se de *fechar todos os outros aplicativos do Office* antes de pressionar **Obter nomes de arquivos do OneDrive**.

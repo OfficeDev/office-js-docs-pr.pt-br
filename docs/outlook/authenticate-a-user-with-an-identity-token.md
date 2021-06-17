@@ -3,16 +3,16 @@ title: Autenticar um usuário com um token de identidade em um suplemento.
 description: Saiba como usar o token de identidade fornecido por um suplemento do Outlook para implementar o SSO com o seu serviço.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7936ec72bca0962eda999e8b0dc3a2b1c60ad7ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606529"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961269"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Autenticar um usuário com um token de identidade para o Exchange
 
-Os tokens de identidade do usuário do Exchange fornecem uma maneira de o suplemento identificar exclusivamente um usuário do suplemento. Ao estabelecer a identidade do usuário, você pode implementar um esquema de autenticação de logon único (SSO) para seu serviço de back-end que permitirá que os clientes que usam os suplementos do Outlook se conectem ao serviço sem fazer logon. Confira [Token de identidade do usuário do Exchange](authentication.md#exchange-user-identity-token) para saber mais sobre quando usar esse tipo de token. Neste artigo, vamos dar uma olhada em uma forma simples de usar o token de identidade do Exchange para autenticar um usuário para seu back-end.
+Os tokens de identidade do usuário do Exchange fornecem uma maneira de o suplemento identificar exclusivamente um usuário do suplemento. Ao estabelecer a identidade do usuário, você pode implementar um esquema de autenticação de SSO (login único) para seu serviço back-end que permite que os clientes que estão usando os Outlook add-ins se conectem ao seu serviço sem entrar. Confira [Token de identidade do usuário do Exchange](authentication.md#exchange-user-identity-token) para saber mais sobre quando usar esse tipo de token. Neste artigo, vamos dar uma olhada em uma forma simples de usar o token de identidade do Exchange para autenticar um usuário para seu back-end.
 
 > [!IMPORTANT]
 > Isso é apenas um exemplo simples de uma implementação de SSO. Como sempre, quando você está lidando com identidade e autenticação, deve garantir que seu código atenda aos requisitos de segurança de sua organização.

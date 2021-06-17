@@ -1,16 +1,16 @@
 ---
-title: Solucionar erros de desenvolvimento com suplementos do Office
-description: Saiba como solucionar erros de desenvolvimento em suplementos do Office.
-ms.date: 01/04/2021
+title: Solucionar erros de desenvolvimento com Office de complementos
+description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
+ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771421"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961276"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com suplementos do Office
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Office de complementos
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Não é possível carregar o suplemento no painel de tarefas ou outros problemas relacionados ao manifesto do suplemento
 
@@ -22,7 +22,7 @@ Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão 
 
 #### <a name="for-windows"></a>Para Windows:
 
-Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` e exclua o conteúdo da pasta `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` , se ela existir.
+Exclua o conteúdo da `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` pasta e exclua o conteúdo da pasta , se `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` existir.
 
 #### <a name="for-mac"></a>Para Mac:
 
@@ -56,33 +56,58 @@ Se essas etapas não parecerem funcionar a princípio, talvez seja necessário l
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>As alterações feitas nos valores de propriedade não acontecem e não há mensagem de erro
+## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>Alterações feitas em valores de propriedade não ocorrem e não há mensagem de erro
 
-Verifique a documentação de referência da propriedade para ver se ela é somente leitura. Além disso, as [definições do TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) para o Office js especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta erroneamente definir a propriedade somente leitura [Chart.ID](/javascript/api/excel/excel.chart#id). Consulte também [algumas propriedades não podem ser definidas diretamente](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
+Verifique a documentação de referência da propriedade para ver se ela é somente leitura. Além disso, as [definições TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) para Office JS especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta definir erroneamente a propriedade somente [leitura](/javascript/api/excel/excel.chart#id)Chart.id . Consulte também [Algumas propriedades não podem ser definidas diretamente](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
 
-## <a name="getting-error-this-add-in-is-no-longer-available"></a>Obter erro: "este suplemento não está mais disponível"
+## <a name="getting-error-this-add-in-is-no-longer-available"></a>Recebendo um erro: "Esse add-in não está mais disponível"
 
-A seguir estão algumas das causas desse erro. Se você descobrir causas adicionais, diga-nos com a ferramenta de feedback na parte inferior da página.
+A seguir estão algumas das causas desse erro. Se você descobrir causas adicionais, conte-nos com a ferramenta de comentários na parte inferior da página.
 
-- Se você estiver usando o Visual Studio, pode haver um problema com o Sideload. Feche todas as instâncias do host do Office e do Visual Studio. Reinicie o Visual Studio e tente pressionar F5 novamente.
-- O manifesto do suplemento foi removido de seu local de implantação, como implantação centralizada, um catálogo do SharePoint ou um compartilhamento de rede.
-- O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o suplemento do host do Office e, em seguida, substitua o manifesto original pelo manifesto alterado. Você precisa limpar o cache do Office para remover todos os rastros do original. Consulte a seção [as alterações nos comandos de suplemento, incluindo botões de faixa de opções e itens de menu, não entram em vigor](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) anteriormente neste artigo.
-- O manifesto do suplemento tem um `resid` que não está definido em nenhum lugar na seção de [recursos](../reference/manifest/resources.md) do manifesto ou há uma incompatibilidade na ortografia do `resid` local de origem entre onde é usado e onde está definido na `<Resources>` seção.
-- Há um `resid` atributo em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo, e o `id` atributo do recurso correspondente na `<Resources>` seção, não podem ter mais de 32 caracteres.
-- O suplemento tem um comando personalizado do suplemento, mas você está tentando executá-lo em uma plataforma que não dá suporte a eles. Para saber mais, confira [conjuntos de requisitos de comandos de suplemento](../reference/requirement-sets/add-in-commands-requirement-sets.md).
+- Se você estiver usando Visual Studio, pode haver um problema com o sideload. Feche todas as instâncias do host Office e Visual Studio. Reinicie Visual Studio e tente pressionar F5 novamente.
+- O manifesto do add-in foi removido de seu local de implantação, como Implantação Centralizada, um catálogo SharePoint ou um compartilhamento de rede.
+- O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o complemento do host Office e substitua o manifesto original pelo manifesto alterado. Muitos precisam limpar o cache Office para remover todos os rastreamentos do original. Consulte a seção [Alterações nos comandos de complemento, incluindo](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) botões de faixa de opções e itens de menu, não entrarão em vigor anteriormente neste artigo.
+- O manifesto do add-in tem um que não é definido em qualquer lugar na seção Recursos do manifesto, ou há uma incompatibilidade na ortografia do entre onde ele é usado e onde ele é definido na `resid` [](../reference/manifest/resources.md) `resid` `<Resources>` seção.
+- Há um `resid` atributo em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo e o atributo do recurso correspondente na seção não podem ter mais de `id` `<Resources>` 32 caracteres.
+- O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento.](../reference/requirement-sets/add-in-commands-requirement-sets.md)
 
-## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O suplemento não funciona na borda, mas funciona em outros navegadores
+## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O complemento não funciona no Edge, mas funciona em outros navegadores
 
-Consulte [solução de problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
+Consulte [Solução de problemas Microsoft Edge problemas](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
 
-## <a name="excel-add-in-throws-errors-but-not-consistently"></a>O suplemento do Excel gera erros, mas não consistentemente
+## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel de complemento lança erros, mas não de forma consistente
 
-Confira [solucionar problemas de suplementos do Excel](../excel/excel-add-ins-troubleshooting.md) para possíveis causas.
+Consulte [Solução de Excel de soluções para possíveis](../excel/excel-add-ins-troubleshooting.md) causas.
+
+## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erros de validação de esquema de manifesto em Visual Studio projetos
+
+Se você estiver usando recursos mais novos que exigem alterações no arquivo de manifesto, poderá obter erros de validação Visual Studio. Por exemplo, ao adicionar o elemento para implementar o tempo de execução `<Runtimes>` javaScript compartilhado, você pode ver o seguinte erro de validação.
+
+**O elemento 'Host' no namespace ' ' tem o elemento filho http://schemas.microsoft.com/office/taskpaneappversionoverrides inválido 'Runtimes' no namespace http://schemas.microsoft.com/office/taskpaneappversionoverrides ' '**
+
+Se isso ocorrer, você poderá atualizar os arquivos XSD que Visual Studio usa para as versões mais recentes. As versões mais recentes do esquema estão [em [MS-OWEMXML]: Apêndice A: Esquema XML completo](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
+
+### <a name="locate-the-xsd-files"></a>Localizar os arquivos XSD
+
+1. Abra seu projeto em Visual Studio.
+1. No **Explorador de Soluções,** abra o arquivo manifest.xml. O manifesto normalmente está no primeiro projeto em sua solução.
+1. Escolha **Exibir Janela** de  >  **Propriedades** (F4).
+1. Na Janela **Propriedades**, escolha a reellipse (...) para abrir o **editor esquemas XML.** Aqui você pode encontrar o local exato da pasta de todos os arquivos de esquema que seu projeto usa.
+
+### <a name="update-the-xsd-files"></a>Atualizar os arquivos XSD
+
+1. Abra o arquivo XSD que você deseja atualizar em um editor de texto. O nome do esquema do erro de validação será correlacionado ao nome do arquivo XSD. Por exemplo, abra **TaskPaneAppVersionOverridesV1_0.xsd**.
+1. Localize o esquema atualizado [em [MS-OWEMXML]: Apêndice A: Esquema XML completo](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8). Por exemplo, TaskPaneAppVersionOverridesV1_0 está no [esquema taskpaneappversionoverrides](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40).
+1. Copie o texto para o editor de texto.
+1. Salve o arquivo XSD atualizado.
+1. Reinicie Visual Studio para buscar as novas alterações de arquivo XSD.
+
+Você pode repetir o processo anterior para quaisquer esquemas adicionais que estão des date.
 
 ## <a name="see-also"></a>Confira também
 

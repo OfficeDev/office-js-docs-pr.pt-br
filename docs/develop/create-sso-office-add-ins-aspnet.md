@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
-description: Um guia passo a passo sobre como criar (ou converter) um Add-in do Office com um back-ASP.NET back-in para usar o SSO (sign-on único).
+description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
 ms.date: 03/11/2021
 localization_priority: Normal
-ms.openlocfilehash: e92bac3be81254a4c15f5e071602edbe788692ac
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: 36616e3388f9768c90a957ea19b47d4ec7e45de2
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221371"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961227"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -26,7 +26,7 @@ Este artigo orienta você sobre o processo de habilitação de SSO (login único
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* Pelo menos alguns arquivos e pastas armazenados no OneDrive for Business em sua assinatura do Microsoft 365.
+* Pelo menos alguns arquivos e pastas armazenados em OneDrive for Business em sua assinatura Microsoft 365 assinatura.
 
 * Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -44,7 +44,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Acesse a página [Portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar o seu aplicativo.
 
-1. Entre com as ***credenciais de*** administrador na sua área de trabalho do Microsoft 365. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as ***credenciais de*** administrador no seu Microsoft 365 de adoção. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
 1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
@@ -53,10 +53,10 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
     * Na seção **URI de redirecionamento**, verifique se **Web** está selecionado no menu suspenso e defina o URI como ` https://localhost:44355/AzureADAuth/Authorize`.
     * Escolha **Registrar**.
 
-1. Na página **Office-Add-in-ASPNET-SSO,** copie e salve os valores da ID do Aplicativo **(cliente)** e da ID de Diretório **(locatário).** Use ambos os valores nos procedimentos posteriores.
+1. Na **página Office-Add-in-ASPNET-SSO,** copie e salve os valores para a ID de aplicativo **(cliente)** e a ID de Diretório **(locatário).** Use ambos os valores nos procedimentos posteriores.
 
     > [!NOTE]
-    > Essa ID de Aplicativo **(cliente)** é o valor "audiência" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > Essa ID de Aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Em **Gerenciar**, selecione **Certificados e segredos**. Selecione o botão **Novo segredo do cliente**. Insira um valor para **Descrição** e, em seguida, selecione uma opção adequada para **Expira** e escolha **Adicionar**. *Copiar o valor de segredo do cliente imediatamente e salvá-lo com a ID de aplicativo* antes de prosseguir, pois ele será necessário em um procedimento posterior.
 
@@ -68,12 +68,12 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Definir **Quem pode consentir?** aos **Administradores e usuários**.
 
-1. Preencha os campos para configurar os prompts de consentimento do administrador e do usuário com valores apropriados para o escopo que permite ao aplicativo cliente do Office usar as APIs da Web do seu complemento com os mesmos direitos do usuário `access_as_user` atual. Sugestões:
+1. Preencha os campos para configurar os prompts de consentimento do administrador e do usuário com valores apropriados para o escopo que permite que o aplicativo cliente Office use as APIs da Web do seu complemento com os mesmos direitos do usuário `access_as_user` atual. Sugestões:
 
-    * **Nome de exibição de** consentimento do administrador: o Office pode atuar como usuário.
+    * **Nome de exibição** de consentimento do administrador : Office pode atuar como o usuário.
     * **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-    * **Nome de exibição de consentimento do** usuário: o Office pode agir como você.
-    * **Descrição do** consentimento do usuário : Habilita o Office a chamar as APIs da Web do complemento com os mesmos direitos que você tem.
+    * **Nome de exibição** de consentimento do usuário : Office pode atuar como você.
+    * **Descrição do** consentimento do usuário : Office para chamar as APIs da Web do complemento com os mesmos direitos que você tem.
 
 1. Verifique se o **Estado** está definido como **Habilitado**.
 
@@ -98,7 +98,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Em **Gerenciar**, selecione **Permissões para API** e selecione **Adicionar uma permissão**. No painel que se abre, escolha **Microsoft Graph** e, em seguida, escolha **Permissões delegadas**.
 
-1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário pelo seu próprio complemento; mas a `profile` permissão é necessária para que o aplicativo do Office receba um token para seu aplicativo Web de complemento. (Somente Files.Read.All e o perfil são, de fato, necessários para o suplemento. Solicite os outros dois porque a biblioteca MSAL.NET exige.)
+1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário pelo seu próprio complemento; mas a permissão é necessária para que o aplicativo Office para obter um `profile` token para seu aplicativo Web de complemento. (Somente Files.Read.All e o perfil são, de fato, necessários para o suplemento. Solicite os outros dois porque a biblioteca MSAL.NET exige.)
 
     * Files.Read.All
     * offline_access
@@ -121,16 +121,16 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Em **Propriedades Comuns**, selecione **Projeto de Inicialização** e **Vários projetos de inicialização**. Verifique se a **Ação** para ambos os projetos está definida como **Iniciar** e se o projeto terminado em "...WebAPI" está listado primeiro. Feche a caixa de diálogo.
 
-1. No **Explorador de Soluções,** selecione (não clique com o botão direito do mouse) no **projeto Office-Add-in-ASPNET-SSO-WebAPI.** O painel **Propriedades** é exibido. Verifique se **SSL Habilitado** é **Verdadeiro**. Verifique se a **URL do SSL** é `http://localhost:44355/`.
+1. No **Explorador de** Soluções, selecione (não clique com o botão direito do mouse) no projeto **Office-Add-in-ASPNET-SSO-WebAPI.** O painel **Propriedades** é exibido. Verifique se **SSL Habilitado** é **Verdadeiro**. Verifique se a **URL do SSL** é `http://localhost:44355/`.
 
 1. Em "Web.config", use os valores copiados anteriormente. Defina **ida:ClientID** e **ida:Audience** para sua **ID do aplicativo (cliente)** e defina **ida:Password** para a senha de cliente. Além disso, de definir **ida:Domain** como `http://localhost:44355` (sem barra de encaminhamento "/" no final). 
 
     > [!NOTE]
-    > A **ID de aplicativo (cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > A ID de aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Se você não tiver escolhido "Somente contas neste diretório organizacional" para **TIPOS DE CONTA COM SUPORTE** ao registrar o suplemento, salve e feche o Web.config. Caso contrário, salve, mas deixe-o aberto.
 
-1. Ainda no **Explorador** de Soluções, escolha o **projeto Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da marca de fim `</VersionOverrides>`, você encontrará a marcação a seguir:
+1. Ainda no **Explorador** de Soluções, escolha o projeto **Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da marca de fim `</VersionOverrides>`, você encontrará a marcação a seguir:
 
     ```xml
     <WebApplicationInfo>
@@ -211,7 +211,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
     * `getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD e retornar ao suplemento.
     * `allowSignInPrompt` indica ao Office para solicitar que o usuário entre caso ele ainda não esteja conectado ao Office.
-    * `allowConsentPrompt` informa ao Office para solicitar que o usuário consenta em permitir que o complemento acesse o perfil AAD do usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite* que o usuário consenta em quaisquer escopos do Microsoft Graph.)
+    * `allowConsentPrompt`informa Office solicitar que o usuário consenta em permitir que o complemento acesse o perfil AAD do usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite* que o usuário consenta com quaisquer escopos Graph Microsoft.)
     * `forMSGraphAccess` instrui o Office que o suplemento pretende trocar o token de bootstrap por um token de acesso ao Micrsoft Graph, em vez de apenas usar o token de bootstrap como um token de ID. A configuração dessa opção dá ao Office a oportunidade de cancelar o processo de obtenção do token de bootstrap (e retornar o código de erro 13012) se o administrador de locatários do usuário não tiver concedido consentimento para o suplemento. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback. Se o não for usado e o administrador não tiver concedido consentimento, o token bootstrap será retornado, mas a tentativa de trocar com o fluxo on-behalf-of resultaria em `forMSGraphAccess` um erro. Portanto, a opção `forMSGraphAccess` permite ao suplemento ramificar para o sistema de fallback rapidamente.
     * Você criará a função `getData` em uma etapa posterior.
     * O parâmetro `/api/values` é a URL de um controlador do lado do servidor que fará a troca de tokens e usará o token de acesso recebido para fazer a chamada para o Microsoft Graph.
@@ -281,7 +281,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
@@ -429,9 +429,9 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
 1. Substitua o `TODO 1` pelo seguinte. Observação sobre o código:
 
-    * O código instrui o OWIN a garantir que o público especificado no token bootstrap que vem do aplicativo do Office deve corresponder ao valor especificado no web.config.
+    * O código instrui o OWIN a garantir que o público especificado no token bootstrap que vem do aplicativo Office deve corresponder ao valor especificado no web.config.
     * As contas da Microsoft têm um GUID de emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
-    * A `SaveSigninToken` `true` configuração como faz com que o OWIN salve o token de bootstrap bruto do aplicativo do Office. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
+    * A `SaveSigninToken` `true` configuração como faz com que o OWIN salve o token de inicialização bruto do aplicativo Office aplicativo. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
     * Os escopos não são validados pelo middleware OWIN. Os escopos do token de bootstrap, que devem conter `access_as_user`, são validados no controlador.
 
     ```csharp
@@ -443,10 +443,10 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     };
     ```
 
-1. Substitua `TODO 2` pelo seguinte. Observação sobre o código:
+1. Substitua `TODO 2` pelo seguinte. Observação sobre este código:
 
     * O método `UseOAuthBearerAuthentication` é chamado em vez do `UseWindowsAzureActiveDirectoryBearerAuthentication` que é mais comum, porque este último não é compatível com o ponto de extremidade V2 do Azure AD.
-    * A URL passada para o método é onde o middleware OWIN obtém instruções para obter a chave que precisa para verificar a assinatura no token bootstrap recebido do aplicativo do Office. O segmento de Autoridade da URL vem do Web.config. Ele é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
+    * A URL passada para o método é onde o middleware OWIN obtém instruções para obter a chave que precisa para verificar a assinatura no token bootstrap recebido do aplicativo Office. O segmento de Autoridade da URL vem do Web.config. Ele é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -512,10 +512,10 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
 1. Substitua `TODO 2` pelo seguinte código para montar todas as informações necessárias para obter um token do Microsoft Graph usando o fluxo "on behalf of". Sobre este código, observe:
 
-    * Seu add-in não está mais desempenhando a função de um recurso (ou audiência) ao qual o aplicativo do Office e o usuário precisam de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
+    * Seu add-in não está mais desempenhando a função de um recurso (ou audiência) ao qual o aplicativo Office usuário precisa de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
     * A partir da MSAL.NET 3.x.x, o `bootstrapContext` é apenas o token de bootstrap em si.
     * A Autoridade vem do Web.config. Ela é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
-    * A MSAL exige os escopos `openid` e `offline_access` para funcionar, mas ela lança um erro se o código solicitá-los de forma redundante. Ele também lançará um erro se seu código solicitar , que é realmente usado apenas quando o aplicativo cliente do Office recebe o token para o aplicativo Web do `profile` seu complemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
+    * A MSAL exige os escopos `openid` e `offline_access` para funcionar, mas ela lança um erro se o código solicitá-los de forma redundante. Ele também lançará um erro se seu código solicitar , que é realmente usado apenas quando o aplicativo cliente Office obtém o token para o aplicativo Web do `profile` seu complemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -530,7 +530,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. Substitua `TODO 3` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO 3` pelo código a seguir. Observação sobre este código:
 
     * O método `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` procurará primeiro no cache da MSAL, que está na memória, para fazer a correspondência com o token de acesso. Somente se não houver um, ele iniciará o fluxo "on behalf of" com o ponto de extremidade V2 do Azure AD.
     * Quaisquer exceções que não forem do tipo `MsalServiceException` são intencionalmente não detectadas, e, portanto, se propagarão para o cliente como mensagens `500 Server Error`.
@@ -556,7 +556,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 1. Substitua `TODO 3a` pelo código a seguir. Sobre este código, observe:
 
     * Se a autenticação multifator for exigida pelo recurso Microsoft Graph e o usuário ainda não a tiver fornecido, o Azure AD retornará "400 Bad Request" com o erro `AADSTS50076` e uma propriedade **Declarações**. O MSAL exibe **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações.
-    * O **valor da** propriedade Claims deve ser passado para o cliente que deve passá-lo para o aplicativo do Office, que o inclui em uma solicitação para um novo token bootstrap. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
+    * O **valor da** propriedade Claims deve ser passado para o cliente, que deve passá-lo para o aplicativo Office, que o inclui em uma solicitação para um novo token bootstrap. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
     * As APIs que criam respostas HTTP a partir de exceções não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto de resposta. É necessário criar manualmente uma mensagem que inclua esse recurso. Uma propriedade **Message** personalizada, no entanto, impede a criação de uma propriedade **ExceptionMessage**, portanto, a única maneira de obter a ID de erro `AADSTS50076` para o cliente é adicioná-la à **Message** personalizada. O JavaScript no cliente precisará descobrir se uma resposta tem uma **Message** ou **ExceptionMessage** para saber qual ler.
     * A mensagem personalizada é formatada como JSON para que o JavaScript do cliente possa analisá-la com métodos de objeto `JSON` JavaScript conhecidos.
 
@@ -606,14 +606,14 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 1. No **Gerenciador de Soluções**, selecione o nó de projeto **Office-Add-in-ASPNET-SSO** (não o nó da solução principal e não o projeto cujo nome termina em "WebAPI").
 1. No painel **Propriedades**, abra o menu suspenso **Iniciar documento** e escolha uma das três opções (Excel, Word ou PowerPoint).
 
-    ![Escolha o aplicativo cliente do Office desejado: Excel, PowerPoint ou Word](../images/SelectHost.JPG)
+    ![Escolha o aplicativo cliente Office desejado: Excel, PowerPoint ou Word](../images/SelectHost.JPG)
 
 1. Pressione F5.
 1. No aplicativo do Office, na faixa de opções **Home**, selecione **Mostrar suplemento** no grupo **SSO ASP.NET** para abrir o suplemento do painel de tarefas.
-1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta do Microsoft 365 Education ou de trabalho, ou uma conta da Microsoft, e o SSO estiver funcionando conforme esperado, os primeiros 10 nomes de arquivo e pasta no OneDrive for Business serão exibidos no painel de tarefas. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.
+1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de Microsoft 365 Education ou de trabalho, ou uma conta da Microsoft, e o SSO estiver funcionando conforme esperado, os primeiros 10 nomes de arquivo e pasta em seu OneDrive for Business serão exibidos no painel de tarefas. Se você não estiver conectado ou estiver em um cenário que não dá suporte ao SSO, ou o SSO não estiver funcionando por qualquer motivo, você será solicitado a entrar. Depois de entrar, os nomes de arquivo e pasta aparecem.
 
 ## <a name="updating-the-add-in-when-you-go-to-staging-and-production"></a>Atualizando o complemento quando você vai para preparação e produção
 
-Como todos os Complementos da Web do Office, quando você estiver pronto para mover para um servidor de preparação ou produção, você deve atualizar o domínio no manifesto com `localhost:44355` o novo domínio. Da mesma forma, você deve atualizar o domínio no arquivo web.config.
+Como todos os Office Web, quando você estiver pronto para mover para um servidor de preparação ou produção, você deve atualizar o domínio no manifesto com o `localhost:44355` novo domínio. Da mesma forma, você deve atualizar o domínio no arquivo web.config.
 
 Como o domínio aparece no registro do AAD, você precisa atualizar esse registro para usar o novo domínio no lugar de onde `localhost:44355` quer que ele apareça.
