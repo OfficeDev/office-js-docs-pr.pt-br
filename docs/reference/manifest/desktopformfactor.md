@@ -1,20 +1,20 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: Especifica as configurações de um suplemento para o fator forma da área de trabalho.
-ms.date: 10/31/2019
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 18828e6b61a45ae2dc1528b3f7a54e664af09519
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 66673d83fd8608a1ec10492d7a944b0515de61c0
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292311"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007786"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
-Especifica as configurações de um suplemento para o fator forma da área de trabalho. O fator de forma da área de trabalho inclui o Office na Web, Windows e Mac. Ele contém todas as informações do suplemento para o fator de forma da área de trabalho, exceto para o nó de **recursos** .
+Especifica as configurações de um suplemento para o fator forma da área de trabalho. O fator de formulário da área de trabalho inclui Office na Web, Windows e Mac. Ele contém todas as informações de complemento para o fator de formulário da área de trabalho, exceto para o **nó Recursos.**
 
-Cada definição de DesktopFormFactor contém o elemento **functionfile** e um ou mais elementos **ExtensionPoint** . Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
+Cada definição desktopFormFactor contém o **elemento FunctionFile** e um ou mais **elementos ExtensionPoint.** Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -22,8 +22,8 @@ Cada definição de DesktopFormFactor contém o elemento **functionfile** e um o
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
-| [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento no Word, no Excel ou no PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível nos cenários de representante. Definido como *false* por padrão. |
+| [GetStarted](getstarted.md)           | Não       | Define o texto explicante que aparece ao instalar o complemento no Word, Excel ou PowerPoint. |
+| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o Outlook está disponível em cenários de caixa de correio compartilhada (agora em visualização) e pastas compartilhadas (ou seja, acesso de representante). Definir como *false* por padrão. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
 

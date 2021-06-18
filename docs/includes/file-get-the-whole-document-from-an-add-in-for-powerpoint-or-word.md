@@ -6,11 +6,11 @@ Este artigo pressupõe que você esteja usando um editor de texto para criar o s
 
 - Em uma pasta de rede compartilhada ou em um servidor Web, você precisará dos seguintes arquivos:
 
-    - Um arquivo HTML (GetDoc_App.html) que contém a interface do usuário mais links para os arquivos JavaScript (incluindo arquivos office.js e arquivos de .js específicos do aplicativo) e arquivos CSS (Folha de Estilos em Cascata).
+  - Um arquivo HTML (GetDoc_App.html) que contém a interface do usuário mais links para os arquivos JavaScript (incluindo arquivos office.js e arquivos de .js específicos do aplicativo) e arquivos CSS (Folha de Estilos em Cascata).
 
-    - Um arquivo JavaScript (GetDoc_App.js) para conter a lógica de programação do suplemento.
+  - Um arquivo JavaScript (GetDoc_App.js) para conter a lógica de programação do suplemento.
 
-    - Um arquivo CSS (Program.css) para conter os estilos e formatação do suplemento.
+  - Um arquivo CSS (Program.css) para conter os estilos e formatação do suplemento.
 
 - Um arquivo de manifesto XML (GetDoc_App.xml) para o suplemento, disponível em uma pasta de rede compartilhada ou catálogo de suplementos. O arquivo de manifesto deve apontar para o local do arquivo HTML mencionado anteriormente.
 
@@ -18,7 +18,7 @@ Você também pode criar um complemento para o PowerPoint usando o [Visual Studi
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Conceitos fundamentais para a criação de um suplemento de painel de tarefas
 
-Antes de começar a criar esse suplemento do PowerPoint ou Word, você deve estar familiarizado com a criação de suplementos do Office e com o trabalho com solicitações HTTP. Este artigo não aborda como decodificar textos com codificação Base64 de uma solicitação HTTP em um servidor Web. 
+Antes de começar a criar esse suplemento do PowerPoint ou Word, você deve estar familiarizado com a criação de suplementos do Office e com o trabalho com solicitações HTTP. Este artigo não aborda como decodificar textos com codificação Base64 de uma solicitação HTTP em um servidor Web.
 
 ## <a name="create-the-manifest-for-the-add-in"></a>Criar o manifesto para o suplemento
 
@@ -89,7 +89,7 @@ Use o procedimento a seguir para criar uma interface de usuário simples para o 
 2. Salve o arquivo como GetDoc_App.html, usando a codificação UTF-8, em um local de rede ou um servidor Web.
 
     > [!NOTE]
-    > Certifique-se de que as marcas **head** do suplemento contenham uma marca **script** com um link válido para o arquivo office.js. 
+    > Certifique-se de que as marcas **head** do suplemento contenham uma marca **script** com um link válido para o arquivo office.js.
 
     Vamos usar alguns CSS para dar ao suplemento uma aparência simples, porém moderna e profissional. Use os seguintes CSS para definir o estilo do suplemento.
 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 // Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
-    statusInfo.innerHTML += message + "<br/>";
+    statusInfo[0].innerHTML += message + "<br/>";
 }
 ```
 

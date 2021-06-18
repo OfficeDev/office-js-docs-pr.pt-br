@@ -1,27 +1,63 @@
 ---
-title: Habilitar cenários de acesso de representante em um Outlook de entrada
-description: Descreve brevemente o acesso de representantes e discute como configurar o suporte ao complemento.
-ms.date: 02/09/2021
+title: Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
+description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
+ms.date: 06/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 256c37087b10eaf9c8025e19a4990852f9550458
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 5d7fb712b8f814184c2a444c32416d35fb1da49c
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783488"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007766"
 ---
-# <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um Outlook de entrada
+# <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
-Um proprietário de caixa de correio pode usar o recurso de acesso de representante [para permitir que outra pessoa gerencie seus emails e calendários.](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926) Este artigo especifica quais permissões delegar Office API JavaScript suporta e descreve como habilitar cenários de acesso de representante em seu Outlook de usuário.
+Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de representante) e cenários de caixa de correio compartilhada (agora em visualização [)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)no seu Outlook add-in, incluindo quais permissões a API JavaScript Office suporta.
 
 > [!IMPORTANT]
-> O acesso de representante não está disponível no Outlook android e iOS. Além disso, esse recurso não está disponível no momento com caixas de correio [compartilhadas](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) em grupo Outlook na Web. Essa funcionalidade pode ser disponibilizada no futuro.
->
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte a esse recurso foi introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
-## <a name="supported-permissions-for-delegate-access"></a>Permissões com suporte para acesso de representante
+## <a name="supported-setups"></a>Configurações com suporte
 
-A tabela a seguir descreve as permissões de representante suportadas Office API JavaScript.
+As seções a seguir descrevem configurações com suporte para caixas de correio compartilhadas (agora em visualização) e pastas compartilhadas. As APIs de recurso podem não funcionar conforme o esperado em outras configurações. Selecione a plataforma que você gostaria de aprender a configurar.
+
+### <a name="windows"></a>[Windows](#tab/windows)
+
+#### <a name="shared-folders"></a>Pastas compartilhadas
+
+O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa ao seu perfil" do artigo Gerenciar itens de calendário e email de [outra pessoa.](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5)
+
+#### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
+
+Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
+
+Um recurso Exchange Server conhecido como "automapping" está ativado por [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) padrão, o que significa que, posteriormente, a caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook do usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador tiver desabilitado a automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
+
+> [!WARNING]
+> Não **entre** na caixa de correio compartilhada com uma senha. As APIs de recurso não funcionarão nesse caso.
+
+### <a name="web-browser---modern-outlook"></a>[Navegador da Web – Outlook moderno](#tab/modern)
+
+#### <a name="shared-folders"></a>Pastas compartilhadas
+
+O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) atualizando as permissões de pasta de caixa de correio. O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa à sua lista de pastas Outlook Web App" do artigo Acessar a caixa de correio [de outra pessoa](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081).
+
+#### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
+
+Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
+
+Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook na Web](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+> [!WARNING]
+> NÃO **use** outras opções como "Abrir outra caixa de correio". As APIs de recurso podem não funcionar corretamente.
+
+---
+
+Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte a seção Itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de Outlook de complementos.
+
+## <a name="supported-permissions"></a>Permissões com suporte
+
+A tabela a seguir descreve as permissões que a API JavaScript Office suporta para representantes e usuários de caixa de correio compartilhados.
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
@@ -33,11 +69,11 @@ A tabela a seguir descreve as permissões de representante suportadas Office API
 |EditAll|32 (100000)|Pode editar todos os itens.|
 
 > [!NOTE]
-> Atualmente, a API oferece suporte para obter permissões de representante existentes, mas não definir permissões de representante.
+> Atualmente, a API oferece suporte para obter permissões existentes, mas não para definir permissões.
 
-O [objeto DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma máscara de bits para indicar as permissões do representante. Cada posição na máscara de bits representa uma permissão específica e, se estiver definida como, o `1` representante terá a respectiva permissão. Por exemplo, se o segundo bit da direita for `1` , o representante terá permissão **Gravar.** Você pode ver um exemplo de como verificar se há uma permissão específica na seção [Executar](#perform-an-operation-as-delegate) uma operação como representante posteriormente neste artigo.
+O [objeto DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma máscara de bits para indicar as permissões. Cada posição na máscara de bits representa uma permissão específica e, se estiver definida como, o `1` usuário terá a respectiva permissão. Por exemplo, se o segundo bit da direita for `1` , o usuário terá permissão **Gravar.** Você pode ver um exemplo de como verificar uma permissão específica na seção Executar uma operação como representante ou usuário de caixa de correio [compartilhada](#perform-an-operation-as-delegate-or-shared-mailbox-user) mais adiante neste artigo.
 
-## <a name="sync-across-mailbox-clients"></a>Sincronizar entre clientes de caixa de correio
+## <a name="sync-across-shared-folder-clients"></a>Sincronizar entre clientes de pasta compartilhada
 
 As atualizações de um representante para a caixa de correio do proprietário geralmente são sincronizadas entre caixas de correio imediatamente.
 
@@ -48,7 +84,7 @@ No entanto, se as operações REST ou Exchange Web Services (EWS) foram usadas p
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar cenários de acesso de representante no seu add-in, você deve definir o [elemento SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) como no `true` manifesto sob o elemento pai `DesktopFormFactor` . Atualmente, outros fatores de formulário não são suportados.
+Para habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas no seu complemento, você deve definir o [elemento SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) como no manifesto sob `true` o elemento pai `DesktopFormFactor` . Atualmente, outros fatores de formulário não são suportados.
 
 Para dar suporte a chamadas REST de um representante, de definir o nó [Permissões](../reference/manifest/permissions.md) no manifesto como `ReadWriteMailbox` .
 
@@ -79,11 +115,11 @@ O exemplo a seguir mostra `SupportsSharedFolders` o elemento definido como em um
 ...
 ```
 
-## <a name="perform-an-operation-as-delegate"></a>Executar uma operação como representante
+## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>Executar uma operação como representante ou usuário de caixa de correio compartilhada
 
-Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do representante, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
+Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do usuário, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
 
-O exemplo a seguir mostra como obter as propriedades compartilhadas de uma mensagem ou compromisso, verificar se o representante tem permissão **Gravar** e fazer uma chamada REST.
+O exemplo a seguir mostra como obter as propriedades compartilhadas de uma  mensagem ou compromisso, verificar se o representante ou usuário de caixa de correio compartilhada tem permissão Gravar e fazer uma chamada REST.
 
 ```js
 function performOperation() {
@@ -157,30 +193,35 @@ if (item.getSharedPropertiesAsync) {
 
 ## <a name="limitations"></a>Limitações
 
-Dependendo dos cenários do seu complemento, há algumas limitações a considerar ao lidar com situações de representante.
-
-### <a name="rest-and-ews"></a>REST e EWS
-
-Seu complemento pode usar REST, mas não EWS, e a permissão do add-in deve ser definida para habilitar o acesso REST à caixa de correio `ReadWriteMailbox` do proprietário.
+Dependendo dos cenários do seu complemento, há algumas limitações a considerar ao lidar com situações de pasta compartilhada ou de caixa de correio compartilhada.
 
 ### <a name="message-compose-mode"></a>Modo De composição de Mensagens
 
-No modo Redação de Mensagem, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) não é suportado Outlook na Web ou Windows a menos que as seguintes condições sejam atendidas.
+No modo Redação de Mensagem, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) não é suportado no Outlook na Web ou no Windows a menos que as seguintes condições sejam atendidas.
 
-1. O proprietário compartilha pelo menos uma pasta de caixa de correio com o representante.
-1. O representante esboça uma mensagem na pasta compartilhada.
+a. **Delegar acesso/pastas compartilhadas**
 
-    Exemplos:
+1. O proprietário da caixa de correio inicia uma mensagem. Pode ser uma nova mensagem, uma resposta ou um encaminhamento.
+1. Eles salvam a mensagem e a movem de sua própria pasta **Rascunhos** para uma pasta compartilhada com o representante.
+1. O representante abre o rascunho da pasta compartilhada e continua compondo.
 
-    - O representante responde ou encaminha um email na pasta compartilhada.
-    - O representante salva uma mensagem de rascunho e a move de sua própria pasta **Rascunhos** para a pasta compartilhada. O representante abre o rascunho da pasta compartilhada e continua compondo.
+b. **Caixa de correio compartilhada**
 
-Depois que a mensagem é enviada, ela geralmente é encontrada na pasta Itens **Enviados do** representante.
+1. Um usuário de caixa de correio compartilhado inicia uma mensagem. Pode ser uma nova mensagem, uma resposta ou um encaminhamento.
+1. Eles salvam a mensagem e a movem de sua própria pasta **Rascunhos** para uma pasta na caixa de correio compartilhada.
+1. Outro usuário de caixa de correio compartilhada abre o rascunho da caixa de correio compartilhada e continua compondo.
+
+A mensagem agora está em um contexto compartilhado e os complementos que suportam esses cenários compartilhados podem obter as propriedades compartilhadas do item. Depois que a mensagem é enviada, ela geralmente é encontrada na pasta Itens **Enviados do** remetente.
+
+### <a name="rest-and-ews"></a>REST e EWS
+
+Seu complemento pode usar REST e a permissão do complemento deve ser definida como para habilitar o acesso REST à caixa de correio do proprietário ou à caixa de correio compartilhada conforme `ReadWriteMailbox` aplicável. Não há suporte para EWS.
 
 ## <a name="see-also"></a>Confira também
 
 - [Permitir que outra pessoa gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário em Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [Adicionar uma caixa de correio compartilhada Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [Como solicitar elementos de manifesto](../develop/manifest-element-ordering.md)
 - [Máscara (computação)](https://en.wikipedia.org/wiki/Mask_(computing))
 - [Operadores de bit do JavaScript](https://www.w3schools.com/js/js_bitwise.asp)

@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 04/20/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 126323527d74553aa7fd7e0c8cf1e5e5d89471ff
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959177"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007801"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -30,8 +30,8 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.30 a 16.46|Sim|Não|Não|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
-|Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|
-|Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Sim|Sim|
+|Navegador da Web:<br>interface do usuário Outlook moderna|Sim|Não aplicável|Não aplicável|
+|Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Sim|Sim|
 
 > [!NOTE]
 > O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte o servidor atual e o suporte ao [cliente](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
@@ -47,10 +47,10 @@ Você pode usar o recurso Ao enviar para criar um suplemento do Outlook que inte
 - Verificar se a mensagem inclui uma linha de assunto
 - Definir um destinatário predeterminado
 
-A validação é feita no lado do cliente no Outlook quando o evento de envio é disparado, e o complemento tem até 5 minutos antes de terminar. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicita que o usuário tome medidas.
+A validação é feita no lado do cliente Outlook quando o evento de envio é acionado e o complemento tem até 5 minutos antes do tempo final. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicita que o usuário tome medidas.
 
 > [!NOTE]
-> No Outlook na Web, quando o recurso ao enviar é acionado em uma mensagem que está sendo composta na guia navegador do Outlook, o item é lançado para sua própria janela ou guia do navegador para concluir a validação e outros processamentos.
+> No Outlook na Web, quando o recurso ao enviar é acionado em uma mensagem que está sendo composta na guia navegador Outlook, o item é lançado para sua própria janela ou guia do navegador para concluir a validação e outros processamentos.
 
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente adicione um assunto.
 
@@ -82,16 +82,9 @@ Além disso, não é recomendável que você chame o manipulador de eventos ao e
 
 ### <a name="mailbox-typemode-limitations"></a>Limitações de tipo/modo de caixa de correio
 
-A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Atualmente, a funcionalidade não tem suporte para os seguintes tipos e modos de caixa de correio.
+A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além de situações em que os complementos não são ativados conforme o que é notado nos itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de complementos do Outlook, a funcionalidade não tem suporte no momento para o modo offline.
 
-- Caixas de correio compartilhadas\*
-- Caixas de correio de grupo
-- Modo offline
-
-O Outlook não permitirá o envio se o recurso Ao enviar estiver habilitado para esses cenários de caixa de correio. No entanto, se um usuário responder a um email em uma caixa de correio de grupo, o suplemento Ao enviar não será executado e a mensagem será enviada.
-
-> [!IMPORTANT]
-> \*A funcionalidade ao enviar deve funcionar em caixas de correio ou pastas compartilhadas se o complemento também implementar suporte para cenários de acesso [de representante.](delegate-access.md)
+Outlook permitirá o envio se o recurso ao enviar estiver habilitado para cenários de caixa de correio sem suporte. No entanto, em casos em que os Outlook não são ativados, o complemento ao enviar não será executado e a mensagem será enviada.
 
 ## <a name="multiple-on-send-add-ins"></a>Vários suplementos Ao enviar
 
@@ -219,7 +212,7 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 #### <a name="enable-the-on-send-flag"></a>Habilitar o sinalizador ao enviar
 
-Os administradores podem impor a conformidade ao enviar executando cmdlets do PowerShell do Exchange Online.
+Os administradores podem impor a conformidade ao enviar executando Exchange Online cmdlets do PowerShell.
 
 Para todos os usuários, não permitir a edição enquanto os complementos ao enviar estão processamento:
 
@@ -275,7 +268,7 @@ Para impor a conformidade ao enviar para um grupo específico de usuários, as e
 
 #### <a name="turn-off-the-on-send-flag"></a>Desativar o sinalizador ao enviar
 
-Para desativar a imposição de conformidade ao enviar para um usuário, atribua uma política de caixa de correio do Outlook na Web que não tenha o sinalizador habilitado executando os cmdlets a seguir. Neste exemplo, a política de caixa de correio é *ContosoCorpOWAPolicy*.
+Para desativar a imposição de conformidade ao enviar para um usuário, atribua uma política de caixa de correio Outlook na Web que não tenha o sinalizador habilitado executando os cmdlets a seguir. Neste exemplo, a política de caixa de correio é *ContosoCorpOWAPolicy*.
 
 ```powershell
 Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
@@ -284,7 +277,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 > [!NOTE]
 > Para saber mais sobre como usar o cmdlet **Set-OwaMailboxPolicy** para configurar as políticas de caixa de correio da Web existentes do Outlook, confira [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
 
-Para desativar a imposição de conformidade ao enviar para todos os usuários que tenham uma política específica do Outlook na caixa de correio da Web atribuída, execute os cmdlets a seguir.
+Para desativar a imposição de conformidade ao enviar para todos os usuários que tenham uma política de caixa de correio Outlook na Web específica atribuída, execute os cmdlets a seguir.
 
 ```powershell
 Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
@@ -365,16 +358,7 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navegador da Web (Outlook moderno), Windows, Mac
 
-Para impor o Ao enviar, os administradores devem garantir que a política tenha sido habilitada nas duas caixas de correio. Para saber como oferecer suporte ao acesso de representante em um suplemento, confira [Habilitar cenários de acesso de representante em um suplemento do Outlook](delegate-access.md).
-
-### <a name="group-1-is-a-modern-group-mailbox-and-user-mailbox-1-is-a-member-of-group-1"></a>O grupo 1 é uma caixa de correio do grupo moderna e a caixa de correio 1 do usuário é membro do grupo 1
-
-<br/>
-
-|Cenário|Política Ao enviar da caixa de correio 1|Suplementos Ao enviar habilitados?|Ação da caixa de correio 1|Resultado|Com suporte?|
-|:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
-|2|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
+Para impor o Ao enviar, os administradores devem garantir que a política tenha sido habilitada nas duas caixas de correio. Para saber como dar suporte ao acesso de representante em um complemento, consulte [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>Caixa de correio do usuário com recurso/política de suplemento Ao enviar habilitado, os suplementos com suporte à funcionalidade Ao enviar estão instalados e habilitados e o modo offline está habilitado
 
@@ -397,17 +381,17 @@ Os suplementos Ao enviar serão executados durante o envio se o servidor do Exch
 
 ### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>O usuário pode editar o item enquanto os complementos ao enviar estão trabalhando nele
 
-Enquanto os complementos ao enviar estão processamento de um item, o usuário pode editar o item adicionando, por exemplo, texto ou anexos inadequados. Se você quiser impedir que o usuário edite o item enquanto o seu add-in está processamento no envio, você pode implementar uma solução alternativa usando uma caixa de diálogo. Essa solução alternativa pode ser usada no Outlook na Web (clássico), Windows e Mac.
+Enquanto os complementos ao enviar estão processamento de um item, o usuário pode editar o item adicionando, por exemplo, texto ou anexos inadequados. Se você quiser impedir que o usuário edite o item enquanto o seu add-in está processamento no envio, você pode implementar uma solução alternativa usando uma caixa de diálogo. Essa solução alternativa pode ser usada em Outlook na Web (clássico), Windows e Mac.
 
 > [!IMPORTANT]
-> Outlook moderno na Web: para impedir que o usuário edite o item enquanto o seu complemento está sendo processada no envio, defina o sinalizador *OnSendAddinsEnabled* como conforme descrito na seção Instalar os complementos do Outlook que usam ao enviar anteriormente `true` neste artigo. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
+> Modern Outlook na Web: para impedir que o usuário edite o item enquanto o seu complemento está sendo processada no envio, você deve definir o sinalizador *OnSendAddinsEnabled* como conforme descrito na seção Instalar os complementos do Outlook que usam a seção ao enviar anteriormente `true` neste artigo. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
 
 No manipulador ao enviar:
 
 1. Chame [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) para abrir uma caixa de diálogo para que os cliques do mouse e os teclas sejam desabilitados.
 
     > [!IMPORTANT]
-    > Para obter esse comportamento no Outlook clássico na Web, você deve definir a propriedade [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) como no `true` parâmetro da `options` `displayDialogAsync` chamada.
+    > Para obter esse comportamento em Outlook na Web, você deve definir a [propriedade displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) como no `true` parâmetro da `options` `displayDialogAsync` chamada.
 
 1. Implemente o processamento do item.
 1. Feche a caixa de diálogo. Além disso, manipular o que acontece se o usuário fechar a caixa de diálogo.
@@ -445,7 +429,7 @@ No arquivo de manifesto `Contoso Message Body Checker.xml`, inclua o arquivo de 
 ```
 
 > [!IMPORTANT]
-> Se você estiver usando o Visual Studio 2019 para desenvolver seu complemento ao enviar, poderá receber um aviso de validação como o seguinte: "Este é um xsi:type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events 'inválido". Para resolver isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1.xsd que tenha sido fornecida como um gist do GitHub em um blog sobre [esse aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
+> Se você estiver usando o Visual Studio 2019 para desenvolver seu complemento ao enviar, poderá receber um aviso de validação como o seguinte: "Este é um xsi:type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events 'inválido". Para resolver isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1.xsd que tenha sido fornecida como um GitHub em um blog sobre esse [aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
 Para o arquivo de manifesto `Contoso Subject and CC Checker.xml`, o exemplo a seguir mostra o arquivo de função e o nome da função para chamar o evento de envio de mensagem.
 

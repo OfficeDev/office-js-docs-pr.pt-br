@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 06/08/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52854008"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007759"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -20,9 +20,9 @@ O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos,
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> Você pode ser capaz de visualizar recursos em Outlook na Web configurando a versão direcionada em [seu locatário Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) "Configure preview access" é notado nesta página para recursos aplicáveis.
+> Você pode ser capaz de visualizar recursos no Outlook na Web configurando a versão direcionada [em seu locatário Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) "Configure preview access" é notado nesta página para recursos aplicáveis.
 >
-> Para outros recursos, você pode solicitar acesso aos bits de visualização para Outlook na Web usando sua conta Microsoft 365, concluindo e enviando [esse formulário](https://aka.ms/OWAPreview). "Solicitar acesso de visualização" é notado nesses recursos.
+> Para outros recursos, você pode solicitar acesso aos bits de visualização para Outlook na Web usando sua conta Microsoft 365 concluindo e enviando [esse formulário](https://aka.ms/OWAPreview). "Solicitar acesso de visualização" é notado nesses recursos.
 
 O conjunto de requisitos de visualização inclui todos os recursos do [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
 
@@ -82,7 +82,7 @@ Adicionado um novo número `AppointmentSensitivityType` que representa as opçõ
 
 ### <a name="event-based-activation"></a>Ativação baseada em evento
 
-Esse recurso foi lançado no [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). No entanto, eventos adicionais agora estão disponíveis na visualização. Para saber mais, confira [Eventos com suporte.](../../../outlook/autolaunch.md#supported-events)
+Esse recurso foi lançado no [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). No entanto, eventos adicionais agora estão disponíveis na visualização. Para saber mais, consulte [Eventos com suporte.](../../../outlook/autolaunch.md#supported-events)
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
 
@@ -137,6 +137,18 @@ Adicionado um novo objeto que representa os dados de sessão de um item.
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no modo Redação.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
+
+<br>
+
+---
+
+---
+
+### <a name="shared-mailboxes"></a>Caixas de correio compartilhadas
+
+O suporte a recursos para pastas compartilhadas (ou seja, acesso de representante) foi lançado no conjunto [de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). No entanto, o suporte para caixas de correio compartilhadas agora está disponível na visualização. Para saber mais, consulte [Enable shared folders and shared mailbox scenarios](../../../outlook/delegate-access.md).
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
 
