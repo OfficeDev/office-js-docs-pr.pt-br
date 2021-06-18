@@ -1,27 +1,27 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 10/14/2020
+ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 14f3cf3ab4f647337047764f7403150237ff59cb
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178066"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007808"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
-Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web. Os suplementos do Outlook têm três aspectos principais:
+Os suplementos do Outlook são integrações construídas por terceiros no Outlook, utilizando nossa plataforma baseada na web. Os suplementos para Outlook têm três aspectos chave:
 
 - O mesmo suplemento e lógica de negócios funcionam em desktop (Outlook no Windows e Mac), na Web (Microsoft 365 e Outlook.com) e em dispositivos móveis.
 - Os suplementos do Outlook consistem em um manifesto, que descreve como o suplemento se integra ao Outlook (por exemplo, um botão ou um painel de tarefas), e o código JavaScript/HTML, que compõe a interface do usuário e lógica de negócios do suplemento.
 - Os suplementos do Outlook podem ser adquiridos na [AppSource](https://appsource.microsoft.com) ou [sideloaded](sideload-outlook-add-ins-for-testing.md) por usuários finais ou administradores.
 
-Os suplementos do Outlook são diferentes dos suplementos de COM ou VSTO, que são integrações mais antigas específicas do Outlook para Windows. Diferentemente dos suplementos de COM, os suplementos do Outlook não têm qualquer código fisicamente instalado no dispositivo do usuário ou no cliente do Outlook. No caso de um suplemento do Outlook, o Outlook lê o manifesto, conecta os controles especificados na interface do usuário e carrega o HTML e o JavaScript. Todos os componentes Web são executados no contexto do navegador em uma área restrita.
+Os suplementos Outlook são diferentes dos suplementos COM ou VSTO, que são integrações mais antigas específicas do Outlook rodando no Windows. Ao contrário dos COM suplementos, os suplementos Outlook não têm nenhum código fisicamente instalado no dispositivo do usuário ou no cliente Outlook. Para um Outlook suplemento, o Outlook lê o manifesto e conecta os controles especificados na IU, e depois carrega o JavaScript e o HTML. Todos os componentes da web são executados no contexto de um navegador em uma caixa de areia.
 
-Os itens do Outlook que dão suporte a suplementos incluem mensagens de email, compromissos, solicitações, respostas e cancelamentos de reunião. Cada suplemento do Outlook define o contexto no qual está disponível, incluindo os tipos de itens e se o usuário está lendo ou redigindo um item.
+Os itens do Outlook que suportam suplementos incluem mensagens de email, solicitações de reuniões, respostas e cancelamentos, e compromissos. Cada suplemento do Outlook define o contexto no qual ele está disponível, incluindo os tipos de itens e se o usuário está lendo ou compondo um item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -51,17 +51,18 @@ Os suplementos do Outlook são ativados quando o usuário está redigindo ou len
   >
   > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
   >
-  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre este recurso em visualização prévia, consultar[ Ativação de suplementos em itens protegidos pelo Gerenciamento de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Um relatório de entrega ou notificação que tem a classe de mensagem IPM.Report.*, incluindo NDRs (notificações de falha na entrega) e notificações de leitura, falha na leitura e atraso.
-
-- Um rascunho (não tem um remetente atribuído a ele) ou está na pasta Rascunhos do Outlook.
 
 - Um arquivo .msg que é um anexo de outra mensagem.
 
 - Um arquivo .msg aberto no sistema de arquivos.
 
-- Em uma caixa de correio compartilhada, na caixa de correio de outro usuário, em uma caixa de correio de arquivo morto ou em uma pasta pública.
+- Em uma [caixa de correio de grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), em uma caixa de correio compartilhada\*, em uma caixa de correio de outro usuário\*, em uma caixa de correio de arquivo, ou em uma pasta pública.
+
+  > [!IMPORTANT]
+  > \* Suporte para cenários de acesso de delegados (por exemplo, pastas compartilhadas da caixa de correio de outro usuário) foi introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Suporte a caixas de correio compartilhada está agora em visualização. Para saber mais, consultar [Habilitar pastas compartilhadas e cenários de caixas de correio compartilhada](delegate-access.md).
 
 - Usando um formulário personalizado.
 
@@ -71,16 +72,15 @@ Em geral, o Outlook pode ativar suplementos no formato de leitura para itens na 
 
 Suplementos do Outlook são compatíveis com o Outlook 2013 ou posterior no Windows, Outlook 2016 ou posterior no Mac, Outlook na Web para Exchange 2013 no local e versões posteriores, Outlook no iOS, Outlook no Android e Outlook na Web e Outlook.com. Nem todos os recursos mais recentes são compatíveis com todos os [clientes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) ao mesmo tempo. Confira os artigos e as referências de API para esses recursos e saiba com quais aplicativos eles podem ou não ter compatibilidade.
 
-
 ## <a name="get-started-building-outlook-add-ins"></a>Introdução à criação de suplementos do Outlook
 
-Para começar a criar suplementos do Outlook, experimente o seguinte.
+Para começar a construir suplementos do Outlook, tente o seguinte:
 
 - [Início Rápido](../quickstarts/outlook-quickstart.md) - Criar um painel de tarefas simples.
 - [Tutorial](../tutorials/outlook-tutorial.md) : saiba como criar um suplemento que insere gists do GitHub em uma nova mensagem.
 
-
 ## <a name="see-also"></a>Confira também
+
 - [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
