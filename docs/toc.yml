@@ -1021,8 +1021,9 @@ items:
             href: outlook/autolaunch.md
           - name: Painel de tarefas fixável
             href: outlook/pinnable-taskpane.md
-          - name: Acesso de representante
+          - name: Pastas compartilhadas e caixas de correio compartilhadas
             href: outlook/delegate-access.md
+            displayName: delegate access
           - name: Manifestos
             items:
               - name: Manifestos do suplemento do Outlook

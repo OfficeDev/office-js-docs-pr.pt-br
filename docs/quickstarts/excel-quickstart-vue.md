@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o Vue.
-ms.date: 11/09/2020
+ms.date: 06/16/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cd709910c9e69478c953c03b5e17d5512e875d91
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132344"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007815"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -34,7 +34,7 @@ Use a CLI do Vue para gerar um novo aplicativo Vue. No terminal, execute o coman
 vue create my-add-in
 ```
 
-Em seguida, selecione a predefinição `default`. Caso seja solicitado a usar o Yarn ou o NPM como um pacote, você poderá escolher qualquer um deles.
+Em seguida, selecionar o `Default` predefinido para "Vue 3" (você pode escolher usar "Vue 2", se preferir).
 
 ## <a name="generate-the-manifest-file"></a>Gerar o arquivo de manifesto.
 
@@ -59,7 +59,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
     - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
     - **Qual será o nome do suplemento?** `My Office Add-in`
-    - **Você gostaria de dar suporte para qual aplicativo cliente do Office?** `Excel`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
     ![Captura de tela da interface de linha de comando do gerador do Suplemento do Yeoman Office, com o tipo de projeto definido como apenas manifesto](../images/yo-office-manifest-only-vue.png)
 
@@ -107,16 +107,12 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
 2. Abra `src/main.js` e substitua os conteúdos pelo código a seguir:
 
    ```js
-   import Vue from 'vue';
-   import App from './App.vue';
+   import { createApp } from 'vue'
+   import App from './App.vue'
 
-   Vue.config.productionTip = false;
-
-   window.Office.initialize = () => {
-     new Vue({
-       render: h => h(App)
-     }).$mount('#app');
-   };
+   window.Office.onReady(() => {
+       createApp(App).mount('#app');
+   });
    ```
 
 3. Abra`src/App.vue` e substitua os conteúdos de arquivo pelo código a seguir:
@@ -218,7 +214,7 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel usando o Vue. Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
+Parabéns, você criou com sucesso um suplemento de painel de tarefas Excel usando a Vue! Em seguida, aprenda mais sobre as capacidades de um suplemento Excel e construa um suplemento mais complexo, seguindo junto com o tutorial do suplemento Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)
