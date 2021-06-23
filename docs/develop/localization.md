@@ -1,24 +1,24 @@
 ---
 title: Localização para Suplementos do Office
-description: Use a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo do Office ou para interpretar ou exibir dados com base na localidade dos dados.
+description: Use Office API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo Office, ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 8125bd55ce1d9dfe8e80bc4d80230555ec649787
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505273"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076003"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
-Você pode implementar qualquer esquema de localização que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas opções. Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo do Office ou para interpretar ou exibir dados com base na localidade dos dados. Você pode usar o manifesto para especificar informações descritivas e o local do arquivo do suplemento específico da localidade. Como alternativa, você pode usar o script do Microsoft Ajax para dar suporte à globalização e localização.
+Você pode implementar qualquer esquema de localização que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas opções. Você pode usar Office API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo Office, ou para interpretar ou exibir dados com base na localidade dos dados. Você pode usar o manifesto para especificar informações descritivas e o local do arquivo do suplemento específico da localidade. Como alternativa, você pode usar o script do Microsoft Ajax para dar suporte à globalização e localização.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Usar a API JavaScript para determinar cadeias de caracteres específicas da localidade
 
-A API JavaScript do Office fornece duas propriedades que suportam a exibição ou interpretação de valores consistentes com a localidade do aplicativo e dados do Office:
+A Office API JavaScript fornece duas propriedades que suportam a exibição ou interpretação de valores consistentes com a localidade do aplicativo Office dados:
 
-- [Context.displayLanguage][displayLanguage] especifica a localidade (ou idioma) da interface do usuário do aplicativo do Office. O exemplo a seguir verifica se o aplicativo do Office usa a localidade en-US ou fr-FR e exibe uma saudação específica da localidade.
+- [Context.displayLanguage][displayLanguage] especifica a localidade (ou idioma) da interface do usuário do aplicativo Office. O exemplo a seguir verifica se o aplicativo Office usa a localidade en-US ou fr-FR e exibe uma saudação específica da localidade.
 
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -48,7 +48,7 @@ A API JavaScript do Office fornece duas propriedades que suportam a exibição o
 ## <a name="control-localization-from-the-manifest"></a>Controlar a localização do manifesto
 
 
-Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidade em seu manifesto. Por padrão, a plataforma de Complementos do Office e os aplicativos cliente do Office aplicam os valores dos elementos [Description], [DisplayName,] [IconUrl,] [HighResolutionIconUrl]e [SourceLocation] a todas as localidades. Como opção, você pode dar suporte a valores específicos para localidades específicas, especificando um elemento-filho [Override]para cada localidade adicional, para qualquer um desses cinco elementos. O valor do elemento [DefaultLocale] e do atributo `Locale` do elemento [Override] é especificado de acordo com o [RFC 3066], "Marcas para a Identificação dos Idiomas". A Tabela 1 descreve o suporte de localização para esses elementos.
+Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidade em seu manifesto. Por padrão, Office plataforma de Office aplicativos cliente aplicam os valores dos elementos [Description,] [DisplayName,] [IconUrl,] [HighResolutionIconUrl]e [SourceLocation] a todas as localidades. Como opção, você pode dar suporte a valores específicos para localidades específicas, especificando um elemento-filho [Override]para cada localidade adicional, para qualquer um desses cinco elementos. O valor do elemento [DefaultLocale] e do atributo `Locale` do elemento [Override] é especificado de acordo com o [RFC 3066], "Marcas para a Identificação dos Idiomas". A Tabela 1 descreve o suporte de localização para esses elementos.
 
 *Tabela 1. Suporte de localização*
 
@@ -81,7 +81,7 @@ Por exemplo, um Suplemento do Office pode especificar [DefaultLocale] como `en-u
 ```
 
 > [!NOTE]
-> Se for preciso localizar para mais de uma área dentro de uma família de idiomas, como `de-de` e `de-at`, recomendamos que você use elementos `Override` separados para cada área. O uso apenas do nome de idioma, nesse caso, não é suportado em todas as combinações de `de` aplicativos cliente e plataformas do Office.
+> Se for preciso localizar para mais de uma área dentro de uma família de idiomas, como `de-de` e `de-at`, recomendamos que você use elementos `Override` separados para cada área. Usar apenas o nome do idioma, nesse caso, não é suportado em todas as combinações de aplicativos e plataformas Office `de` cliente.
 
 Isso significa que o suplemento pressupõe a localidade `en-us` como padrão. Os usuários veem o nome de exibição em inglês "Video player" para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso os usuários veria o nome de exibição em francês "Lecteur vidéo".
 
@@ -152,9 +152,9 @@ Para suplementos do Outlook, o elemento [SourceLocation] também atribui o fator
 
 ## <a name="localize-extended-overrides"></a>Localize substituições estendidas
 
-Alguns recursos de extensibilidade de Complementos do Office, como atalhos de teclado, são configurados com arquivos JSON hospedados em seu servidor, em vez de com o manifesto XML do complemento. Esta seção pressupõe que você esteja familiarizado com substituições estendidas. Consulte [Trabalhar com substituições estendidas do manifesto](extended-overrides.md) e do elemento [ExtendedOverrides.](../reference/manifest/extendedoverrides.md)
+Alguns recursos de extensibilidade de Office, como atalhos de teclado, são configurados com arquivos JSON hospedados em seu servidor, em vez de com o manifesto XML do complemento. Esta seção pressupõe que você esteja familiarizado com substituições estendidas. Consulte [Trabalhar com substituições estendidas do manifesto](extended-overrides.md) e do elemento [ExtendedOverrides.](../reference/manifest/extendedoverrides.md)
 
-Use o `ResourceUrl` atributo do [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) para apontar o Office para um arquivo de recursos localizados. Apresentamos um exemplo a seguir.
+Use o `ResourceUrl` atributo do [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) para apontar Office para um arquivo de recursos localizados. Apresentamos um exemplo a seguir.
 
 ```xml
     ...
@@ -215,7 +215,7 @@ O arquivo de recursos, que também é formatado por JSON, tem uma propriedade de
 }
 ```
 
-Não há `default` nenhuma propriedade no arquivo que seja um ponto para as `en-us` `fr-fr` seções e. Isso acontece porque as cadeias de caracteres padrão, que são usadas quando a localidade do aplicativo host do Office não corresponder a nenhuma das propriedades *ll-cc* no arquivo de recursos, devem ser *definidas* no próprio arquivo de substituições estendido. Definir as cadeias de caracteres padrão diretamente no arquivo de substituições estendidas garante que o Office não baixe o arquivo de recurso quando a localidade do aplicativo do Office corresponde à localidade padrão do add-in (conforme especificado no manifesto). A seguir está uma versão corrigida do exemplo anterior de um arquivo de substituições estendido que usa tokens de recurso.
+Não há `default` nenhuma propriedade no arquivo que seja um ponto para as `en-us` `fr-fr` seções e. Isso acontece porque as cadeias de caracteres padrão, que são usadas quando a localidade do aplicativo host do Office não corresponder a nenhuma das propriedades *ll-cc* no arquivo de recursos, devem ser *definidas* no próprio arquivo de substituições estendido. Definir as cadeias de caracteres padrão diretamente no arquivo de substituições estendidas garante que o Office não baixe o arquivo de recurso quando a localidade do aplicativo Office corresponde à localidade padrão do complemento (conforme especificado no manifesto). A seguir está uma versão corrigida do exemplo anterior de um arquivo de substituições estendido que usa tokens de recurso.
 
 ```json
 {
@@ -249,9 +249,9 @@ Não há `default` nenhuma propriedade no arquivo que seja um ponto para as `en-
 
 ## <a name="match-datetime-format-with-client-locale"></a>Fazer a correspondência entre o formato de data/hora e a localidade do cliente
 
-Você pode obter a localidade da interface do usuário do aplicativo cliente do Office usando a **[propriedade displayLanguage.]** Em seguida, você pode exibir valores de data e hora em um formato consistente com a localidade atual do aplicativo do Office. Uma maneira de fazer isso é preparar um arquivo de recurso que especifica o formato de exibição de data/hora a ser usado em cada localidade com suporte do seu Suplemento do Office. Em tempo de executar, o seu complemento pode usar o arquivo de recurso e corresponder ao formato de data/hora apropriado com a localidade obtida da **[propriedade displayLanguage.]**
+Você pode obter a localidade da interface do usuário do aplicativo Office cliente usando a **[propriedade displayLanguage.]** Em seguida, você pode exibir valores de data e hora em um formato consistente com a localidade atual do Office aplicativo. Uma maneira de fazer isso é preparar um arquivo de recurso que especifica o formato de exibição de data/hora a ser usado em cada localidade com suporte do seu Suplemento do Office. Em tempo de executar, o seu complemento pode usar o arquivo de recurso e corresponder ao formato de data/hora apropriado com a localidade obtida da **[propriedade displayLanguage.]**
 
-Você pode obter a localidade dos dados do aplicativo cliente do Office usando a [propriedade contentLanguage.] Com base nesse valor, você pode, então, interpretar ou exibir adequadamente as cadeias de caracteres de data/hora. Por exemplo, a localidade `jp-JP` expressa valores de data/hora como `yyyy/MM/dd`, e a localidade `fr-FR` como `dd/MM/yyyy`.
+Você pode obter a localidade dos dados do aplicativo Office cliente usando a [propriedade contentLanguage.] Com base nesse valor, você pode, então, interpretar ou exibir adequadamente as cadeias de caracteres de data/hora. Por exemplo, a localidade `jp-JP` expressa valores de data/hora como `yyyy/MM/dd`, e a localidade `fr-FR` como `dd/MM/yyyy`.
 
 
 ## <a name="use-ajax-for-globalization-and-localization"></a>Usar o Ajax para a globalização e a localização
@@ -281,10 +281,10 @@ Depois de instalar o Language Accessory Pack, você pode configurar o Office par
 
 ### <a name="create-an-office-add-in-project"></a>Criar um projeto de Suplemento do Office
 
-Você precisará criar um projeto de Visual Studio do Office 2019.
+Você precisará criar um projeto de Visual Studio de Office 2019.
 
 > [!NOTE]
-> Se você ainda não instalou o Visual Studio 2019, consulte a página Visual Studio [IDE](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você tiver instalado o Visual Studio 2019, use o Visual Studio [Instalador](/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint está instalada.
+> Se você ainda não instalou o Visual Studio 2019, consulte a página Visual Studio [IDE](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você tiver instalado o Visual Studio 2019, [](/visualstudio/install/modify-visual-studio/) use o Instalador do Visual Studio para garantir que Office/SharePoint de desenvolvimento seja instalada.
 
 1. Escolha **Criar um novo projeto**.
 
@@ -351,7 +351,7 @@ A figura a seguir mostra o elemento do cabeçalho (h1) e o elemento do parágraf
 
 *Figura 1. A interface do usuário do suplemento*
 
-![Interface de usuário do aplicativo com as seções realçadas.](../images/office15-app-how-to-localize-fig03.png)
+![Interface do usuário do aplicativo com seções destacadas.](../images/office15-app-how-to-localize-fig03.png)
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Adicionar o arquivo de recurso que contém as cadeias de caracteres localizadas
 
@@ -430,9 +430,9 @@ Para usar o arquivo de recurso no seu suplemento, você precisará adicionar a e
 
 Agora você pode usar o objeto **UIStrings** para definir as cadeias de caracteres da interface do usuário do seu suplemento.
 
-Se você quiser alterar a localização do seu complemento com base em qual idioma é usado para exibição em menus e comandos no aplicativo cliente do Office, use a propriedade **Office.context.displayLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo usar espanhol para exibição em menus e comandos, a propriedade **Office.context.displayLanguage** retornará o código de idioma es-ES.
+Se você quiser alterar a localização do seu complemento com base em qual idioma é usado para exibição em menus e comandos no aplicativo cliente do Office, use a **propriedade Office.context.displayLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo usar espanhol para exibição em menus e comandos, a propriedade **Office.context.displayLanguage** retornará o código de idioma es-ES.
 
-Se você quiser alterar a localização do seu complemento com base em qual idioma está sendo usado para editar conteúdo de documento, use a propriedade **Office.context.contentLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo usar espanhol para edição de conteúdo de documento, a propriedade **Office.context.contentLanguage** retornará o código de idioma es-ES.
+Se você quiser alterar a localização do seu complemento com base em qual idioma está sendo usado para editar o conteúdo do documento, use a propriedade **Office.context.contentLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo usar espanhol para editar o conteúdo do documento, a propriedade **Office.context.contentLanguage** retornará o código de idioma es-ES.
 
 Depois de saber o idioma que o aplicativo está usando, você pode usar **UIStrings** para obter o conjunto de cadeias de caracteres localizadas que corresponde ao idioma do aplicativo.
 
@@ -478,7 +478,7 @@ Substitua o código no arquivo Home.js pelo código a seguir. O código mostra c
 
 ### <a name="test-your-localized-add-in"></a>Testar seu suplemento localizado
 
-Para testar seu complemento localizado, altere o idioma usado para exibição ou edição no aplicativo do Office e execute o seu complemento.
+Para testar seu complemento localizado, altere o idioma usado para exibição ou edição no aplicativo Office e execute o seu complemento.
 
 Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
@@ -486,7 +486,7 @@ Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
     *Figura 2. Opções de idioma na caixa de diálogo Opções do Word*
 
-    ![Caixa de diálogo Opções do Word](../images/office15-app-how-to-localize-fig04.png)
+    ![Caixa de diálogo Opções do Word.](../images/office15-app-how-to-localize-fig04.png)
 
 2. Em **Escolher Idioma de Exibição**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Como alternativa, para alterar o idioma usado para edição, em **Escolher** Idiomas de Edição, escolha o idioma que você deseja usar para edição, por exemplo, espanhol e escolha **Definir como Padrão**.
 
@@ -501,7 +501,7 @@ Depois de executar, as cadeias de caracteres na interface do usuário do complem
 
 *Figura 3. Interface do usuário do suplemento com o texto localizado*
 
-![Aplicativo com texto localizado da interface do usuário.](../images/office15-app-how-to-localize-fig05.png)
+![Aplicativo com texto localizado da IU.](../images/office15-app-how-to-localize-fig05.png)
 
 ## <a name="see-also"></a>Confira também
 

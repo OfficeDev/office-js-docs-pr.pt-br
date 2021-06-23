@@ -1,14 +1,14 @@
 ---
 title: Chamar funções internas de planilha do Excel usando as APIs JavaScript do Excel
-description: Saiba como chamar funções internas de planilha do Excel, como `VLOOKUP` e `SUM` usar a API JavaScript do Excel.
+description: Saiba como chamar funções de Excel de planilha, como e usando Excel `VLOOKUP` `SUM` API JavaScript.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: a72fe01341295fccfee168132d8a252cd22a8332
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408681"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075709"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 
@@ -19,7 +19,7 @@ Este artigo explica como chamar funções internas de planilha do Excel, como `V
 
 ## <a name="calling-a-worksheet-function"></a>Chamar uma função de planilha
 
-O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A `value` Propriedade do `FunctionResult` objeto retornado por uma função de planilha contém o resultado da função especificada. Como mostra este exemplo, você deve ter `load` a `value` Propriedade do `FunctionResult` objeto antes de lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
+O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A propriedade do objeto retornado por `value` uma função de planilha contém o resultado da função `FunctionResult` especificada. Como este exemplo mostra, você `load` deve ter a propriedade do objeto antes de poder `value` `FunctionResult` lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +37,7 @@ return context.sync()
 
 A imagem a seguir mostra uma tabela em uma planilha do Excel com dados de vendas para vários tipos de ferramentas durante um período de três meses. Cada número da tabela representa o número de unidades vendidas de uma ferramenta específica em um mês específico. Os exemplos a seguir mostram como aplicar funções internas da planilha nesses dados.
 
-![Captura de tela dos dados de vendas no Excel para martelo, chave inglesa e serra nos meses de novembro, dezembro e janeiro](../images/worksheet-functions-chaining-results.jpg)
+![Captura de tela dos dados de vendas no Excel para Hammer, Chave Inglesa e Saw nos meses novembro, dezembro e janeiro.](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>Exemplo 1: função individual
 
@@ -126,7 +126,7 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">Função BITOR</a> | Retorna um bit "OU" de dois números |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">Função DESLOCDIRBIT</a> | Retorna um valor numérico deslocado à direita por quantidade_deslocamento bits |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Função BITXOR</a> | Retorna um bit 'Exclusivo Ou' de dois números |
-| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">Rendimento. Funções MATEMÁTICAs, ECMA_CEILING</a> | Arredonda um número para cima, para o inteiro mais próximo ou para o múltiplo mais próximo significativo |
+| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING. MATEMÁTICA, ECMA_CEILING funções</a> | Arredonda um número para cima, para o inteiro mais próximo ou para o múltiplo mais próximo significativo |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">Função TETO.PRECISO</a> | Arredonda um número para o inteiro mais próximo ou para o múltiplo mais próximo significativo. Independentemente do sinal do número, ele é arredondado para cima. |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">Função CARACT</a> | Retorna o caractere especificado pelo número de código |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">Função DIST.QUIQUA</a> | Retorna a função de densidade da probabilidade beta cumulativa |
@@ -185,7 +185,7 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">Função DESC</a> | Retorna a taxa de desconto de um título |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">Função BDMÁX</a> | Retorna o valor máximo de entradas selecionadas de banco de dados |
 | <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Função BDMÍN</a> | Retorna o valor mínimo de entradas selecionadas de um banco de dados |
-| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Dólar, funções USDOLLAR</a> | Converte um número em texto, usando o formato de moeda $ (cifrão) |
+| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Funções DOLLAR, USDOLLAR</a> | Converte um número em texto, usando o formato de moeda $ (cifrão) |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">Função MOEDADEC</a> | Converte um preço em moeda expresso como uma fração em um preço em moeda expresso como um número decimal |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">Função MOEDAFRA</a> | Converte um preço em moeda expresso como um número decimal em um preço em moeda expresso como uma fração |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">Função BDMULTIPL</a> | Multiplica os valores em um campo específico de registros que correspondem ao critério em um banco de dados |
@@ -445,6 +445,6 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
-- [Classe de funções (API JavaScript para Excel)](/javascript/api/excel/excel.functions)
-- [Objeto de funções de pasta de trabalho (API JavaScript para Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
+- [Classe Functions (API JavaScript para Excel)](/javascript/api/excel/excel.functions)
+- [Objeto Workbook Functions (API JavaScript para Excel)](/javascript/api/excel/excel.workbook#functions)

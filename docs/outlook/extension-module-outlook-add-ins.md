@@ -3,12 +3,12 @@ title: Suplementos de extensão de módulo do Outlook
 description: Crie aplicativos que sejam executados no Outlook, a fim de facilitar o acesso às informações comerciais e à ferramentas de produtividade, sem que os usuários precisem sair do Outlook.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ba25a10e0f6e8c8b3b14df7e98ff200e00717136
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3a02e93375f1c0872790d050382a14bc2c324cef
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611642"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077082"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Suplementos de extensão de módulo do Outlook
 
@@ -33,7 +33,7 @@ Quando mais de um suplemento é carregado, mostra a palavra **Suplementos**. Cli
 
 Quando você clica em uma extensão, o Outlook substitui o módulo embutido por seus módulos personalizados, para que os usuários possam interagir com o suplemento. Você pode usar todos os recursos da API JavaScript do Outlook no suplemento e criar botões de comando na faixa de opções do Outlook que interagirão com o conteúdo do suplemento. A captura de tela a seguir mostra um suplemento de exemplo integrado à barra de navegação do Outlook e que tem comandos da faixa de opções que atualizarão o conteúdo do suplemento.
 
-![Mostra a interface do usuário de uma extensão de módulo](../images/outlook-module-extension.png)
+![Mostra a interface do usuário de uma extensão de módulo.](../images/outlook-module-extension.png)
 
 ## <a name="example"></a>Exemplo
 

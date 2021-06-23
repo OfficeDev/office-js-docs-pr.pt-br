@@ -1,14 +1,14 @@
 ---
 title: Elementos da interface do usuário do Office para suplementos do Office
-description: Obtenha uma visão geral dos diferentes tipos de elementos de interface do usuário em um suplemento do Office.
+description: Obter uma visão geral dos diferentes tipos de elementos da interface do usuário em um Office Add-in.
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e5ff84cb0d8417d6fab5ec6a39575ce7ff74e23
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132043"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076326"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Elementos da interface do usuário do Office para suplementos do Office
 
@@ -16,11 +16,11 @@ Você pode usar vários tipos de elementos para estender a interface do usuário
 
 A imagem a seguir mostra os tipos de elementos de interface do usuário do Office que você pode criar.
 
-![Diagrama mostrando comandos de suplemento na faixa de opções, um painel de tarefas e um suplemento de caixa de diálogo/conteúdo em um documento do Office](../images/add-in-ui-elements.png)
+![Diagrama mostrando comandos de add-in na faixa de opções, um painel de tarefas e uma caixa de diálogo/um Office de conteúdo.](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>Comandos de suplemento
 
-Use [comandos de suplemento](add-in-commands.md) para adicionar pontos de entrada ao suplemento na faixa de opções do aplicativo do Office. Comandos iniciam ações no suplemento executando código JavaScript ou iniciando um contêiner HTML. Você pode criar dois tipos de comandos de suplemento.
+Use [comandos de add-in](add-in-commands.md) para adicionar pontos de entrada ao seu add-in à faixa Aplicativo do Office faixa de opções. Comandos iniciam ações no suplemento executando código JavaScript ou iniciando um contêiner HTML. Você pode criar dois tipos de comandos de suplemento.
 
 |Tipo de comando|Descrição|
 |:---------------|:--------------|

@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 07f2505dcfb16bf7000dca01a6d600aac9a63fa0
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253351"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075961"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -58,7 +58,7 @@ Se você usar verificações de tempo de execução, consulte a versão mais atu
 
 Quando você especifica Office aplicativos ou requisitos de API, há vários fatores a considerar. O diagrama a seguir mostra como decidir sobre qual técnica usar em seu suplemento.
 
-![Escolha a melhor opção para o seu complemento ao especificar Office aplicativos ou requisitos de API](../images/options-for-office-hosts.png)
+![Escolha a melhor opção para o seu complemento ao especificar Office aplicativos ou requisitos de API.](../images/options-for-office-hosts.png)
 
 - Se o seu add-in for executado em um Office aplicativo, de definir o `Hosts` elemento no manifesto. Para saber mais, confira [Definir o elemento Hosts](#set-the-hosts-element).
 
@@ -91,7 +91,7 @@ O `Hosts` elemento pode conter um ou mais `Host` elementos. O `Host` elemento es
 | Workbook      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
 
 > [!NOTE]
-> O `Name` atributo especifica o Office cliente que pode executar o seu add-in. Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Você não pode especificar qual plataforma pode ser usada para executar seu suplemento. Por exemplo, se você especificar , Outlook na Web e Windows pode ser usado para `Mailbox` executar o seu complemento.
+> O `Name` atributo especifica o Office cliente que pode executar o seu add-in. Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Você não pode especificar qual plataforma pode ser usada para executar seu suplemento. Por exemplo, se você especificar , Outlook na Web e Windows pode ser usado `Mailbox` para executar o seu complemento.
 
 > [!IMPORTANT]
 > Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.

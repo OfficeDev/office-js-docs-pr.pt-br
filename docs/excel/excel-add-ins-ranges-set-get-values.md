@@ -1,19 +1,19 @@
 ---
-title: Definir e obter valores de intervalo, texto ou fórmulas usando a API JavaScript do Excel
-description: Saiba como usar a API JavaScript do Excel para definir e obter valores de intervalo, texto ou fórmulas.
+title: Definir e obter valores de intervalo, texto ou fórmulas usando Excel API JavaScript
+description: Saiba como usar a EXCEL JavaScript para definir e obter valores de intervalo, texto ou fórmulas.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad6e58c6e9fe3246d23d6ef1dd298fc6c18167a2
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652763"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075744"
 ---
-# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Definir e obter valores de intervalo, texto ou fórmulas usando a API JavaScript do Excel
+# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Definir e obter valores de intervalo, texto ou fórmulas usando Excel API JavaScript
 
-Este artigo fornece exemplos de código que definir e obter valores de intervalo, texto ou fórmulas com a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que configuram e obteram valores de intervalo, texto ou fórmulas com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -39,11 +39,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-value-is-updated"></a>Dados antes da atualização do valor da célula
 
-![Dados no Excel antes da atualização do valor da célula](../images/excel-ranges-set-start.png)
+![Dados em Excel antes que o valor da célula seja atualizado.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-value-is-updated"></a>Dados após a atualização do valor da célula
 
-![Dados no Excel após a atualização do valor da célula](../images/excel-ranges-set-cell-value.png)
+![Dados em Excel depois que o valor da célula é atualizado.](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>Definir valores para um intervalo de células
 
@@ -67,11 +67,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>Dados antes da atualização dos valores da célula
 
-![Dados no Excel antes da atualização dos valores da célula](../images/excel-ranges-set-start.png)
+![Dados em Excel antes que os valores da célula sejam atualizados.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>Dados após a atualização dos valores da célula
 
-![Dados no Excel após a atualização dos valores da célula](../images/excel-ranges-set-cell-values.png)
+![Dados em Excel depois que os valores da célula são atualizados.](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>Definir fórmula para uma única célula
 
@@ -91,11 +91,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formula-is-set"></a>Dados antes da definição da fórmula da célula
 
-![Dados no Excel antes da definição da fórmula da célula](../images/excel-ranges-start-set-formula.png)
+![Dados em Excel antes que a fórmula da célula seja definida.](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formula-is-set"></a>Dados após a definição da fórmula da célula
 
-![Dados no Excel após a definição da fórmula da célula](../images/excel-ranges-set-formula.png)
+![Dados em Excel depois que a fórmula da célula é definida.](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>Definir fórmulas para um intervalo de células
 
@@ -122,11 +122,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formulas-are-set"></a>Dados antes da definição das fórmulas da célula
 
-![Dados no Excel antes da definição das fórmulas da célula](../images/excel-ranges-start-set-formula.png)
+![Dados em Excel antes que as fórmulas da célula sejam definidas.](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formulas-are-set"></a>Dados após a definição das fórmulas da célula
 
-![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
+![Dados em Excel depois que as fórmulas da célula são definidas.](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>Obter valores, texto ou fórmulas
 
@@ -151,7 +151,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
-![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
+![Dados em Excel depois que as fórmulas da célula são definidas.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (conforme registrado em log no console pelo exemplo de código acima)
 
@@ -209,7 +209,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
-![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
+![Dados em Excel depois que as fórmulas da célula são definidas.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (conforme registrado em log no console pelo exemplo de código acima)
 
@@ -267,7 +267,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
-![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
+![Dados em Excel depois que as fórmulas da célula são definidas.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (conforme registrado em log no console pelo exemplo de código acima)
 
@@ -309,6 +309,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Definir e obter intervalos usando a API JavaScript do Excel](excel-add-ins-ranges-set-get.md)
-- [Definir o formato de intervalo usando a API JavaScript do Excel](excel-add-ins-ranges-set-format.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Definir e obter intervalos usando a EXCEL JavaScript](excel-add-ins-ranges-set-get.md)
+- [Definir o formato de intervalo usando a EXCEL JavaScript](excel-add-ins-ranges-set-format.md)

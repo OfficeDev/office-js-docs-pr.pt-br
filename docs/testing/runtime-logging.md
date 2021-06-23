@@ -3,22 +3,22 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840066"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076410"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
 Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, assim como diversos erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.
 
 > [!NOTE]
-> O recurso de log de tempo de execução está atualmente disponível para o Office 2016 ou posterior na área de trabalho.
+> O recurso de log de tempo de execução está disponível para Office 2016 ou posterior na área de trabalho.
 
 > [!IMPORTANT]
-> o log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
+> O log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com seu manifesto de suplemento.
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>Use o log de tempo de execução na linha de comandos
 
@@ -60,11 +60,8 @@ Habilitar o log de tempo de execução na linha de comando é a maneira mais rá
 
 2. Adicione a chave do registro `RuntimeLogging` em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`
 
-    > [!NOTE]
-    > Se a `Developer` chave (pasta) ainda não existir `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` em , conclua as etapas a seguir para crie-la.
-    >
-    > 1. Clique com o botão direito do mouse na chave (pasta) **WEF** e selecione **Novo** > **Chave**.
-    > 1. Nomeie a nova chave como **Developer**.
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
+
 
 3. Defina o valor padrão da chave **RuntimeLogging** para o caminho completo do arquivo em que você deseja que o log seja gravado. Para obter um exemplo, veja [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).
 
@@ -73,7 +70,7 @@ Habilitar o log de tempo de execução na linha de comando é a maneira mais rá
 
 A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`.
 
-![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](../images/runtime-logging-registry.png)
+![Captura de tela do editor do Registro com uma chave do Registro RuntimeLogging.](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Log de tempo de execução no Mac
 
@@ -87,7 +84,7 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    De `<bundle id>` definida como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente:
+    De acordo com um dos seguintes valores para habilitar o log de tempo de execução `<bundle id>` para o aplicativo correspondente:
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`

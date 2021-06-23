@@ -1,19 +1,19 @@
 ---
-title: Definir o formato de um intervalo usando a API JavaScript do Excel
-description: Saiba como usar a API JavaScript do Excel para definir o formato de um intervalo.
+title: Definir o formato de um intervalo usando a EXCEL JavaScript
+description: Saiba como usar a EXCEL JavaScript para definir o formato de um intervalo.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdd78ea69fc38cbefb9d240dbc61554891c73c21
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: a09d3b4d79584e186c0be37d4a30954c4d4d0086
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652764"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075723"
 ---
-# <a name="set-range-format-using-the-excel-javascript-api"></a>Definir o formato de intervalo usando a API JavaScript do Excel
+# <a name="set-range-format-using-the-excel-javascript-api"></a>Definir o formato de intervalo usando a EXCEL JavaScript
 
-Este artigo fornece exemplos de código que configuram a cor da fonte, a cor do preenchimento e o formato de número para células em um intervalo com a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que configuram a cor da fonte, a cor do preenchimento e o formato de número para células em um intervalo com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -35,11 +35,11 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento
 
-![Dados no Excel antes da definição do formato](../images/excel-ranges-format-before.png)
+![Dados em Excel antes do formato ser definido.](../images/excel-ranges-format-before.png)
 
 ### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>Dados no intervalo após a definição da cor da fonte e da cor de preenchimento
 
-![Dados no Excel após a definição do formato](../images/excel-ranges-format-font-and-fill.png)
+![Os dados Excel depois que o formato for definido.](../images/excel-ranges-format-font-and-fill.png)
 
 ## <a name="set-number-format"></a>Definir formato de número
 
@@ -64,15 +64,15 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-before-number-format-is-set"></a>Dados no intervalo antes da definição do formato de número
 
-![Dados no Excel antes que o formato de número seja definido](../images/excel-ranges-format-font-and-fill.png)
+![Dados em Excel antes que o formato de número seja definido.](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="data-in-range-after-number-format-is-set"></a>Dados no intervalo após a definição do formato de número
 
-![Dados no Excel após o formato de número ser definido](../images/excel-ranges-format-numbers.png)
+![Dados em Excel após o formato de número ser definido.](../images/excel-ranges-format-numbers.png)
 
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Definir e obter intervalos usando a API JavaScript do Excel](excel-add-ins-ranges-set-get.md)
-- [Definir e obter valores de intervalo, texto ou fórmulas usando a API JavaScript do Excel](excel-add-ins-ranges-set-get-values.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Definir e obter intervalos usando a EXCEL JavaScript](excel-add-ins-ranges-set-get.md)
+- [Definir e obter valores de intervalo, texto ou fórmulas usando Excel API JavaScript](excel-add-ins-ranges-set-get-values.md)

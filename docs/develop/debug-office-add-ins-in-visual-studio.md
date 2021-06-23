@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2466c314345d1bf6dbfa38bc6f6508b4386fa633
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961206"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076522"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -129,7 +129,7 @@ Se o seu complemento não estiver visível no documento exibido no aplicativo Of
 
 1. No Excel, PowerPoint ou Word, escolha o **Inserir** pressione tab e, em seguida, escolha a seta para baixo à direita de **Meus suplementos**.
 
-    ![Captura de tela mostrando Insert ribbon in Excel on Windows com a seta Meus Complementos realçada](../images/excel-cf-register-add-in-1b.png)
+    ![Captura de tela mostrando Insert ribbon in Excel on Windows com a seta Meus Complementos realçada.](../images/excel-cf-register-add-in-1b.png)
 
 2. Na lista de suplementos disponíveis, localize a seção **suplementos do desenvolvedor** e selecione o seu suplemento para registrar.
 

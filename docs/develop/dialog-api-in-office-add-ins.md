@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: acb26255778a57d89b6654e7bf6e3fdc71b67d8d
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727910"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076101"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -30,7 +30,7 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
-![Captura de tela mostrando a caixa de diálogo com 3 opções de entrada exibidas na frente do Word](../images/auth-o-dialog-open.png)
+![Captura de tela mostrando a caixa de diálogo com três opções de entrada exibidas em frente ao Word.](../images/auth-o-dialog-open.png)
 
 A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é *não -um* usuário pode continuar a interagir com o documento no aplicativo Office e com a página no painel de tarefas, se houver um.
 

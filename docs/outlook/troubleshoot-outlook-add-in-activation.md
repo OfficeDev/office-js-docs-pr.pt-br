@@ -3,16 +3,16 @@ title: Solução de problemas de ativação de suplementos contextuais do Outloo
 description: Se o seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 1420c1383730d6a334c181bc34b014da355d26db
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363965"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076683"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
-A ativação do suplemento contextual do Outlook baseia-se nas regras de ativação no manifesto do suplemento. Quando as condições para o item selecionado no momento atendem às regras de ativação do suplemento, o aplicativo ativa e exibe o botão do suplemento na interface do usuário do Outlook (painel de seleção de suplemento para suplementos de redação, barra de suplementos para suplementos de leitura). No entanto, se o suplemento não for ativado conforme o esperado, você deverá examinar as seguintes áreas para possíveis motivos.
+Outlook ativação de um complemento contextual se baseia nas regras de ativação no manifesto do complemento. Quando as condições para o item selecionado no momento atendem às regras de ativação do complemento, o aplicativo ativa e exibe o botão de complemento na interface do usuário do Outlook (painel de seleção de complementos para complementos de composição, barra de complementos para complementos de leitura). No entanto, se seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>A caixa de correio do usuário está em uma versão do Exchange Server que tenha pelo menos o Exchange 2013?
 
@@ -77,7 +77,7 @@ Mesmo se um item de email não for um dos tipos de acima, se ele não veio de um
 Se seu suplemento é um suplemento de redação e deve ser ativado quando o usuário cria uma mensagem ou solicitação de reunião, verifique se o item não está protegido por IRM. No entanto, há algumas exceções.
 
 1. Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-1. A partir do Outlook Build 13229,10000 no Windows, os suplementos podem agora ativar em itens protegidos pelo IRM.  Para obter mais informações sobre esse suporte em versão prévia, confira [ativação de suplemento em itens protegidos por IRM (gerenciamento de direitos de informação)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte na visualização, consulte Ativação de complemento em itens protegidos [pelo IRM (Gerenciamento](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)de Direitos de Informação).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 
@@ -90,7 +90,7 @@ Este cenário se aplica somente ao Outlook no Windows. Normalmente, quando você
 Por exemplo, para o usuário John, o cache pode estar em C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF.
 
 > [!IMPORTANT]
-> Para o Outlook 2013 no Windows, use 15,0 em vez de 16,0 para que o local seja:
+> Para Outlook 2013 no Windows, use 15.0 em vez de 16,0 para que o local seja:
 >
 > ```text
 > %LocalAppData%\Microsoft\Office\15.0\WEF
@@ -102,7 +102,7 @@ A Figura 1 mostra um resumo das etapas para verificar se o Outlook tem uma vers�
 
 **Figura 1. Fluxograma das etapas para verificar se o Outlook armazenou o manifesto em cache adequadamente**
 
-![Flow chart to check manifest](../images/troubleshoot-manifest-flow.png)
+![Flow gráfico para verificar manifesto.](../images/troubleshoot-manifest-flow.png)
 
 O procedimento a seguir descreve os detalhes.
 
@@ -183,7 +183,7 @@ Já que as expressões regulares nas regras de ativação fazem parte do arquivo
 
 Os clientes avançados do Outlook usam um mecanismo de expressões regulares diferente daquele usado pelo Outlook na Web e pelos dispositivos móveis. Clientes avançados do Outlook usam o mecanismo de expressões regulares C++ fornecido como parte da biblioteca de modelo padrão do Visual Studio. Esse mecanismo é compatível com as normas ECMAScript 5. O Outlook na Web e os dispositivos móveis usam a avaliação da expressão regular que faz parte do JavaScript, é fornecida pelo navegador e dá suporte a um subconjunto dos ECMAScript 5.
 
-Na maioria dos casos, esses clientes do Outlook localizam as mesmas correspondências para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se a Regex incluir uma classe de caracteres personalizada com base em classes de caracteres predefinidas, um cliente avançado do Outlook poderá retornar resultados diferentes do Outlook na Web e dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em aplicativos diferentes, use `(\d|\w)` .
+Embora, na maioria dos casos, Outlook clientes encontrem as mesmas combinações para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se o regex incluir uma classe de caractere personalizada com base em classes de caracteres predefinidas, um cliente Outlook cliente rico poderá retornar resultados diferentes de Outlook na Web e dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em diferentes aplicativos, use `(\d|\w)` em vez disso.
 
 Teste sua expressão regular minuciosamente. Se ela retornar resultados diferentes, reescreva a expressão regular para ficar compatível em ambos os mecanismos. Para verificar os resultados de avaliação em um cliente avançado do Outlook, escreva um programa C++ pequeno que aplica a expressão regular em uma amostra do texto que você está tentando corresponder. Sendo executado no Visual Studio, o programa de teste C++ usaria a biblioteca de modelo padrão, simulando o comportamento do cliente avançado do Outlook ao executar a mesma expressão regular. Para verificar os resultados de avaliação do Outlook na Web ou nos dispositivos móveis, use seu avaliador de expressão regular JavaScript favorito.
 
@@ -235,15 +235,15 @@ Se a regra de ativação **ItemHasRegularExpressionMatch** especificar **Subject
 
 Depois de verificar o valor da propriedade, você pode usar uma ferramenta de avaliação da expressão regular para testar se a expressão regular localiza uma correspondência a esse valor.
 
-## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>O Outlook aplica todas as expressões regulares à parte do corpo do item conforme você espera?
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>O Outlook aplica todas as expressões regulares à parte do corpo do item como você espera?
 
-Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item que uma regra de ativação depender tenha o valor esperado, o Outlook pode não ser capaz de avaliar todas as expressões regulares em todo o valor da propriedade item. Para fornecer desempenho razoável e controlar o uso excessivo de recursos por um suplemento de leitura, o Outlook observa os seguintes limites no processamento de expressões regulares em regras de ativação no tempo de execução:
+Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item da qual uma regra de ativação dependa tenha o valor esperado, Outlook pode não ser capaz de avaliar todas as expressões regulares em todo o valor da propriedade item. Para fornecer um desempenho razoável e controlar o uso excessivo de recursos por um complemento de leitura, o Outlook observa os seguintes limites sobre o processamento de expressões regulares em regras de ativação em tempo de execução:
 
-- O tamanho do corpo do item avaliado--há limites para a parte de um corpo de item em que o Outlook avalia uma expressão regular. Esses limites dependem do cliente do Outlook, do fator de forma e do formato do corpo do item. Confira os detalhes na Tabela 2 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- O tamanho do corpo do item avaliado -- Há limites para a parte de um corpo de item no qual Outlook avalia uma expressão regular. Esses limites dependem do cliente Outlook, fator de formulário e formato do corpo do item. Confira os detalhes na Tabela 2 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 - Número de correspondências de expressão regular: os clientes avançados do Outlook, o Outlook na Web e nos dispositivos móveis retornam, cada um, no máximo 50 correspondências de expressões regulares. Essas correspondências são exclusivas e correspondências duplicadas não contam para esse limite. Não suponha uma ordem nas correspondências retornadas e não suponha que a ordem em um cliente avançado do Outlook é a mesma no Outlook na Web e no OWA para Dispositivos. Se espera muitas correspondências para expressões regulares em suas regras de ativação e está faltando uma correspondência, é possível que você esteja excedendo esse limite.
 
-- Comprimento de uma correspondência de expressão regular – há limites para o comprimento de uma correspondência de expressão regular que o aplicativo do Outlook retornaria. O Outlook não inclui nenhuma correspondência acima do limite e não exibe nenhuma mensagem de aviso. Você pode executar sua expressão regular usando outras ferramentas de avaliação de regex ou um programa de teste C++ autônomo para verificar se há uma correspondência que excede esses limites. A Tabela 3 resume os limites. Para saber mais, confira a Tabela 3 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- Comprimento de uma combinação de expressão regular - Há limites para o comprimento de uma expressão regular corresponder a que o Outlook aplicativo retornaria. Outlook não inclui nenhuma combinação acima do limite e não exibe nenhuma mensagem de aviso. Você pode executar sua expressão regular usando outras ferramentas de avaliação de regex ou um programa de teste C++ autônomo para verificar se há uma correspondência que excede esses limites. A Tabela 3 resume os limites. Para saber mais, confira a Tabela 3 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
     **Tabela 3. Limites de comprimento para correspondência de uma expressão regular**
 

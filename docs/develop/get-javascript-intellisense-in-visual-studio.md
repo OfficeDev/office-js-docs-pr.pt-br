@@ -1,14 +1,14 @@
 ---
 title: Obter o JavaScript IntelliSense no Visual Studio 2019
-description: Saiba como usar o JSDoc para criar o IntelliSense para suas variáveis de JavaScript, objetos, parâmetros e valores de retorno.
+description: Saiba como usar o JSDoc para criar IntelliSense para suas variáveis javaScript, objetos, parâmetros e valores de retorno.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 495e43994d78b1e01374e348e6d21d41d9611212
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6135649ce80e496d5e195b0ddb0dcb64172d41f5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131805"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076052"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obter o JavaScript IntelliSense no Visual Studio 2019
 
@@ -49,7 +49,7 @@ A técnica básica é incluir antes da variável (ou do parâmetro e assim por d
 var subsetRange;
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para a variável ' subsetrange '](../images/intellisense-vs17-var.png)
+![Captura de tela mostrando trecho de IntelliSense para variável 'subsetRange'.](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>Parâmetro
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para o parâmetro ' parares ' (parâmetro ' Paragraphs ' no exemplo JavaScript)](../images/intellisense-vs17-param.png)
+![Captura de tela mostrando trecho de IntelliSense para parâmetro 'paras' (parâmetro 'parágrafos' no exemplo de JavaScript).](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para ' myFunc () ' valor de retorno](../images/intellisense-vs17-return.png)
+![Captura de tela mostrando o trecho de IntelliSense valor de retorno 'myFunc()'.](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>Tipos complexos
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando o IntelliSense para declaração de tipo complexo de ' var Minhavar; ' por exemplo](../images/intellisense-vs17-complex-type.png)
+![Captura de tela mostrando IntelliSense declaração de tipo complexo de 'var myVar;' por exemplo.](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>Confira também
 

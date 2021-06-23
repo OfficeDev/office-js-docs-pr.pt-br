@@ -3,12 +3,12 @@ title: Realizar sideload Office de complementos para testes de um compartilhamen
 description: Saiba como fazer sideload de um Office para teste de um compartilhamento de rede
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 79ab14ca34530c870d3be4cc962a7e3df358e9bc
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: ec3780146135a4a8a04c6518971605c65ddb0c6d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100275"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077145"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Realizar sideload Office de complementos para testes de um compartilhamento de rede
 
@@ -42,13 +42,13 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 3. Dentro da janela de diálogo **Propriedades** abra a guia **Compartilhamento** e escolha o botão **Compartilhar**.
 
-    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o botão Compartilhamento realçado](../images/sideload-windows-properties-dialog.png)
+    ![Caixa de diálogo Propriedades da Pasta com a guia Compartilhamento e botão Compartilhar realçada.](../images/sideload-windows-properties-dialog.png)
 
 4. Dentro a janela de diálogo **Acesso à rede** adicione você mesmo e quaisquer outros usuários e/ou grupos com quem você deseja compartilhar o suplemento. Você precisará de pelo menos da permissão **Leitura/Gravação** para a pasta. Quando terminar de escolher as pessoas para compartilhar, escolha o botão **Compartilhar**.
 
 5. Quando você vir a confirmação **Sua pasta foi compartilhada**, anote o caminho de rede completo que é exibido imediatamente após o nome da pasta. (Você precisará inserir esse valor como o **Url Catálogo** quando você [especificar a pasta compartilhada como um catálogo confiável](#specify-the-shared-folder-as-a-trusted-catalog), conforme descrito na próxima seção deste artigo.) Escolha o botão **Concluído** para fechar a janela de diálogo **Acesso à rede**.
 
-   ![Caixa de diálogo de acesso de rede com o caminho do compartilhamento realçado](../images/sideload-windows-network-access-dialog.png)
+   ![Caixa de diálogo de acesso à rede com o caminho de compartilhamento realçado.](../images/sideload-windows-network-access-dialog.png)
 
 6. Escolha o botão **Fechar** para fechar a caixa de diálogo **Propriedades**.
 
@@ -66,13 +66,13 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 5. Na caixa **Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
 
-    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
+    ![Caixa de diálogo Propriedades da Pasta com a guia Compartilhamento e o caminho de rede realçado.](../images/sideload-windows-properties-dialog-2.png)
 
 6. Depois de inserir o caminho de de rede completo da pasta na caixa **Url catálogo**, escolha o botão **Adicionar Catálogo**.
 
 7. Selecione a caixa de seleção **Mostrar no Menu** no novo item adicionado e, em seguida, escolha o botão **Ok** para fechar a janela de diálogo **Central de Confiabilidade**. 
 
-    ![Caixa de diálogo Central de confiabilidade com catálogo selecionado](../images/sideload-windows-trust-center-dialog.png)
+    ![Caixa de diálogo central de confiança com o catálogo selecionado.](../images/sideload-windows-trust-center-dialog.png)
 
 8. Escolha o **botão OK** para fechar a janela **de** diálogo Opções.
 
@@ -96,7 +96,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 4. Substitua o valor `Url` pelo caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. (Observe que quaisquer caracteres `\` na URL devem ser duplicados.) Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
 
-    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
+    ![Caixa de diálogo Propriedades da Pasta com a guia Compartilhamento e o caminho de rede realçado.](../images/sideload-windows-properties-dialog-2.png)
 
 5. Agora o arquivo deve ter a aparência a seguir. Salve-o.
 

@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779338"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076312"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -207,11 +207,11 @@ Há muitos atalhos de teclado que já estão em uso por Office. Evite registrar 
 
 No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez que tentar usar um atalho de teclado conflitante, observe que o nome da ação exibido nesta caixa de diálogo é a propriedade no objeto action no `name` `shortcuts.json` arquivo.
 
-![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho](../images/add-in-shortcut-conflict-modal.png)
+![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho.](../images/add-in-shortcut-conflict-modal.png)
 
 O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, poderá invocar o comando Redefinir Office preferências de atalho de **Complementos** da caixa de pesquisa Diga-me.  Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante:
 
-![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir Office preferências de atalho do add-in](../images/add-in-reset-shortcuts-action.png)
+![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir Office preferências de atalho do add-in.](../images/add-in-reset-shortcuts-action.png)
 
 Para a melhor experiência do usuário, recomendamos que você minimize os conflitos com Excel com essas boas práticas:
 
@@ -262,7 +262,7 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Próximos passos
 
 - Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).

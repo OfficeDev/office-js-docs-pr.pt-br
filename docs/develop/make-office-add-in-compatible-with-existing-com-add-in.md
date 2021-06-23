@@ -1,23 +1,23 @@
 ---
 title: Faça seu suplemento do Office ser compatível com um suplemento COM existente
-description: Habilita a compatibilidade entre o seu Add-in do Office e o seu complemento COM equivalente.
+description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: b5235255987cc6a644491bc548b92701b350a179
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e2ab1bb1eda548ff8e0923b8fbccfa9e007a6a0c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836848"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075996"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
-Se você tiver um add-in COM existente, poderá criar funcionalidade equivalente em seu Add-in do Office, permitindo assim que sua solução seja executado em outras plataformas, como o Office na Web ou mac. Em alguns casos, seu Add-in do Office pode não ser capaz de fornecer toda a funcionalidade disponível no complemento COM correspondente. Nessas situações, o seu complemento COM pode oferecer uma experiência de usuário melhor no Windows do que o correspondente do Office Add-in pode fornecer.
+Se você tiver um complemento COM existente, poderá criar funcionalidade equivalente em seu Office Add-in, permitindo que sua solução seja executado em outras plataformas, como Office na Web ou Mac. Em alguns casos, seu Office de usuário pode não ser capaz de fornecer toda a funcionalidade disponível no complemento COM correspondente. Nessas situações, o seu add-in COM pode fornecer uma melhor experiência do usuário Windows do que o Office que o Add-in pode fornecer.
 
-Você pode configurar seu Add-in do Office para que, quando o complemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows executa o add-in COM em vez do Office Add-in. O complemento COM é chamado de "equivalente" porque o Office fará a transição perfeita entre o complemento COM e o Complemento do Office de acordo com o qual está instalado o computador de um usuário.
+Você pode configurar seu Office Add-in para que, quando o complemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows executa o add-in COM em vez do Office Add-in. O add-in COM é chamado de "equivalente" porque o Office fará uma transição perfeita entre o complemento COM e o Office De acordo com o qual está instalado o computador de um usuário.
 
 > [!NOTE]
-> Esse recurso é suportado pelas seguintes plataformas, quando conectado a uma assinatura do Microsoft 365.
+> Esse recurso é suportado pelas plataformas a seguir, quando conectado a uma assinatura Microsoft 365 usuário.
 >
 > - Excel, Word e PowerPoint na Web
 > - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
@@ -29,9 +29,9 @@ Você pode configurar seu Add-in do Office para que, quando o complemento COM eq
 ### <a name="manifest"></a>Manifesto
 
 > [!IMPORTANT]
-> Aplica-se ao Excel, PowerPoint e Word. Suporte do Outlook em breve.
+> Aplica-se Excel, PowerPoint e Word. Outlook suporte em breve.
 
-Para habilitar a compatibilidade entre o seu add-in do Office e o seu complemento COM, identifique o complemento COM equivalente no [manifesto](add-in-manifests.md) do seu Add-in do Office. Em seguida, o Office no Windows usará o complemento COM em vez do Office Add-in, se ambos estão instalados.
+Para habilitar a compatibilidade entre o seu Office e o complemento COM, [](add-in-manifests.md) identifique o complemento COM equivalente no manifesto do seu Office Add-in. Em seguida, Office no Windows usará o add-in COM em vez do Office do Office, se ambos estão instalados.
 
 O exemplo a seguir mostra a parte do manifesto que especifica um complemento COM como um complemento equivalente. O valor do elemento identifica o complemento COM e o `ProgId` [elemento EquivalentAddins](../reference/manifest/equivalentaddins.md) deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento.
 
@@ -53,70 +53,70 @@ O exemplo a seguir mostra a parte do manifesto que especifica um complemento COM
 ### <a name="group-policy"></a>Política de grupo
 
 > [!IMPORTANT]
-> Aplica-se somente ao Outlook.
+> Aplica-se Outlook somente.
 
-Para declarar compatibilidade entre o seu **add-in** da Web do Outlook e o complemento COM/VSTO, identifique o complemento COM equivalente na política de grupo Desative os complementos da Web do Outlook cujo complemento COM ou VSTO equivalente é instalado configurando no computador do usuário. Em seguida, o Outlook no Windows usará o complemento COM em vez do complemento da Web, se ambos estão instalados.
+Para declarar compatibilidade entre o seu **add-in** da Web Outlook e o com/VSTO add-in, identifique o complemento COM equivalente na política de grupo Desative os complementos da Web do Outlook cuja COM equivalente ou um complemento VSTO está instalado configurando-se no computador do usuário. Em seguida Outlook no Windows usará o add-in COM em vez do complemento da Web, se ambos estão instalados.
 
 1. Baixe a ferramenta [Modelos Administrativos mais](https://www.microsoft.com/download/details.aspx?id=49030)recentes, preste atenção às Instruções de **Instalação da ferramenta.**
 1. Abra o Editor de Política de Grupo Local (**gpedit.msc**).
-1. Navegue **até Configuração do** Usuário Modelos  >     >  **Administrativos do Microsoft Outlook 2016**  >  **Diversos**.
-1. Selecione a **configuração Desativar os complementos da Web do Outlook cujos complementos COM ou VSTO equivalentes estão instalados**.
+1. Navegue **até Configuração do** Usuário Modelos  >     >  **Administrativos microsoft Outlook 2016**  >  **diversos**.
+1. Selecione a configuração Desativar Outlook da Web, cuja COM ou **VSTO add-in** equivalente está instalado .
 1. Abra o link para editar a configuração de política.
-1. Na caixa de diálogo **Os complementos da Web do Outlook para desativar**:
+1. Na caixa de **diálogo Outlook de web para desativar**:
     1. Definir **o nome** do valor como o encontrado no manifesto do complemento da `Id` Web. **Importante**: *Não adicione* chaves ao redor da `{}` entrada.
-    1. Definir **Valor** como `ProgId` o do complemento COM/VSTO equivalente.
+    1. **Desmarcar** Valor `ProgId` como o do com/VSTO equivalente.
     1. Selecione **OK** para colocar a atualização em vigor.
-    ![Captura de tela mostrando a caixa de diálogo "Os complementos da Web do Outlook para desativar"](../images/outlook-deactivate-gpo-dialog.png)
+    ![Captura de tela mostrando a caixa de diálogo "Outlook de web para desativar".](../images/outlook-deactivate-gpo-dialog.png)
 
 ## <a name="equivalent-behavior-for-users"></a>Comportamento equivalente para usuários
 
-Quando um [complemento COM](#specify-an-equivalent-com-add-in)equivalente é especificado, o Office no Windows não exibirá a interface de usuário do seu Complemento do Office (UI) se o complemento COM equivalente estiver instalado. O Office oculta apenas os botões de faixa de opções do Office Add-in e não impede a instalação. Portanto, seu Complemento do Office ainda aparecerá nos seguintes locais na interface do usuário:
+Quando um complemento [COM](#specify-an-equivalent-com-add-in)equivalente é especificado, o Office no Windows não exibirá Office interface de usuário do seu complemento (UI) se o complemento COM equivalente estiver instalado. Office oculta apenas os botões de faixa de opções do Office e não impede a instalação. Portanto, seu Office de usuário ainda aparecerá nos seguintes locais dentro da interface do usuário:
 
 - Em **Meus complementos**
-- Como entrada no gerenciador de faixa de opções (somente Excel, Word e PowerPoint)
+- Como entrada no gerenciador de faixa de opções (Excel, Word e PowerPoint somente)
 
 > [!NOTE]
-> A especificação de um complemento COM equivalente no manifesto não tem efeito em outras plataformas, como o Office na Web ou no Mac.
+> A especificação de um complemento COM equivalente no manifesto não tem efeito em outras plataformas, como Office na Web ou no Mac.
 
 Os cenários a seguir descrevem o que acontece dependendo de como o usuário adquire o Office Add-in.
 
-### <a name="appsource-acquisition-of-an-office-add-in"></a>Aquisição do AppSource de um Add-in do Office
+### <a name="appsource-acquisition-of-an-office-add-in"></a>Aquisição do AppSource de um Office Add-in
 
-Se um usuário adquirir o Office Add-in do AppSource e o complemento COM equivalente já estiver instalado, o Office:
+Se um usuário adquirir o Office do AppSource e o complemento COM equivalente já estiver instalado, Office:
 
-1. Instale o Office Add-in.
-2. Ocultar a interface do usuário do Complemento do Office na faixa de opções.
+1. Instale o Office de usuário.
+2. Ocultar a Office interface do usuário de complemento na faixa de opções.
 3. Exibe um chamado para o usuário que aponta para o botão de faixa de opções do complemento COM.
 
-### <a name="centralized-deployment-of-office-add-in"></a>Implantação centralizada do Office Add-in
+### <a name="centralized-deployment-of-office-add-in"></a>Implantação centralizada do Office Desemporto
 
-Se um administrador implantar o Add-in do Office em seu locatário usando a implantação centralizada e o complemento COM equivalente já estiver instalado, o usuário deverá reiniciar o Office antes de ver as alterações. Depois que o Office reiniciar, ele irá:
+Se um administrador implantar o Office Add-in em seu locatário usando a implantação centralizada e o complemento COM equivalente já estiver instalado, o usuário deverá reiniciar o Office antes de ver quaisquer alterações. Depois Office reiniciar, ele irá:
 
-1. Instale o Office Add-in.
-2. Ocultar a interface do usuário do Complemento do Office na faixa de opções.
+1. Instale o Office de usuário.
+2. Ocultar a Office interface do usuário de complemento na faixa de opções.
 3. Exibe um chamado para o usuário que aponta para o botão de faixa de opções do complemento COM.
 
-### <a name="document-shared-with-embedded-office-add-in"></a>Documento compartilhado com o Add-in incorporado do Office
+### <a name="document-shared-with-embedded-office-add-in"></a>Documento compartilhado com o Office Incorporado
 
-Se um usuário tiver o add-in COM instalado e, em seguida, receber um documento compartilhado com o Complemento do Office incorporado, quando ele abrir o documento, o Office:
+Se um usuário tiver o complemento COM instalado e, em seguida, receber um documento compartilhado com o Office Add-in incorporado, quando abrir o documento, Office irá:
 
 1. Solicitar que o usuário confie no Office Add-in.
-2. Se for confiável, o Office Add-in será instalado.
-3. Ocultar a interface do usuário do Complemento do Office na faixa de opções.
+2. Se for confiável, o Office de usuário será instalado.
+3. Ocultar a Office interface do usuário de complemento na faixa de opções.
 
 ## <a name="other-com-add-in-behavior"></a>Outro comportamento de complemento COM
 
 ### <a name="excel-powerpoint-word"></a>Excel, PowerPoint, Word
 
-Se um usuário desinstalar o complemento COM equivalente, o Office no Windows restaurará a interface do usuário do Office Add-in.
+Se um usuário desinstalar o add-in COM equivalente, Office em Windows restaurará a interface do usuário do Office Desinstalar.
 
-Depois de especificar um complemento COM equivalente para o seu Complemento do Office, o Office interrompe o processamento de atualizações para o seu Add-in do Office. Para adquirir as atualizações mais recentes do Office Add-in, o usuário deve primeiro desinstalar o complemento COM.
+Depois de especificar um add-in COM equivalente para seu Office de Office, o Office interrompe o processamento de atualizações para seu Office Add-in. Para adquirir as atualizações mais recentes para o Office, o usuário deve primeiro desinstalar o complemento COM.
 
 ### <a name="outlook"></a>Outlook
 
 O complemento COM/VSTO deve ser conectado quando o Outlook for iniciado para que o complemento da Web correspondente seja desabilitado.
 
-Se o complemento COM/VSTO for desconectado durante uma sessão subsequente do Outlook, o complemento da Web provavelmente permanecerá desabilitado até que o Outlook seja reiniciado.
+Se o complemento COM/VSTO for desconectado durante uma sessão de Outlook subsequente, o complemento da Web provavelmente permanecerá desabilitado até que Outlook seja reiniciado.
 
 ## <a name="see-also"></a>Confira também
 

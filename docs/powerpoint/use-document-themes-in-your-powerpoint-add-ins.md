@@ -1,14 +1,14 @@
 ---
 title: Usar temas de documentos em seus suplementos do PowerPoint
-description: Saiba como coordenar visualmente temas, como fontes e cores, para aplicar a apresentações, documentos, planilhas e emails.
+description: Saiba como coordenar visualmente temas como fontes e cores para aplicar a apresentações, documentos, planilhas e emails.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 337e3e235b49944e36dc6e9cdabaa3f036d8c7e1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611923"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076984"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -24,29 +24,29 @@ O OfficeThemes.css ajuda a criar suplementos coordenados com o PowerPoint de dua
 
 Todo tema de documento do Office define 12 cores. Dez dessas cores ficam disponíveis ao definir configurações de fonte, plano de fundo e outras configurações de cores em uma apresentação usando o seletor de cores.
 
-![Paleta de cores](../images/office15-app-color-palette.png)
+![Paleta de cores.](../images/office15-app-color-palette.png)
 
-Para exibir ou personalizar o conjunto completo de 12 cores de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista suspensa **mais** e, em seguida, selecione **cores**  >  **Personalizar cores** para exibir a caixa de diálogo **criar novas cores de tema** .
+Para exibir ou personalizar o conjunto completo de 12 cores de tema no PowerPoint,  no grupo **Variants** na guia **Design,** clique na lista listada Mais e selecione Cores Personalizar Cores para exibir a caixa de diálogo Criar Novas Cores de  >    Tema.
 
-![Criar caixas de diálogo de novas cores de tema](../images/office15-app-create-new-theme-colors.png)
+![Caixa de diálogo Criar novas cores de tema.](../images/office15-app-create-new-theme-colors.png)
 
 As quatro primeiras cores são para texto e planos de fundo. O texto criado com as cores claras sempre será legível sobre as cores escuras, e o texto criado com cores escuras sempre será legível sobre as cores claras. As seis cores seguintes são cores de ênfase que ficam sempre visíveis sobre as quatro cores de fundo possíveis. As duas últimas cores são para hiperlinks e hiperlinks visitados.
 
 ### <a name="document-theme-fonts"></a>Fontes de tema do documento
 
-Cada tema de documento do Office também define duas fontes: uma para títulos e outra para o corpo do texto. O PowerPoint usa essas fontes para construir os estilos de texto automáticos. Além disso, as galerias de **estilos rápidos** para texto e **WordArt** usam essas fontes de tema. Essas duas fontes ficam disponíveis como as duas primeiras seleções quando você usa o seletor de fonte.
+Cada tema de documento do Office também define duas fontes: uma para títulos e outra para o corpo do texto. O PowerPoint usa essas fontes para construir os estilos de texto automáticos. Além disso, **galerias de Estilos** Rápidos para texto e **WordArt** usam essas mesmas fontes de tema. Essas duas fontes ficam disponíveis como as duas primeiras seleções quando você usa o seletor de fonte.
 
-![O seletor de fonte](../images/office15-app-font-picker.png)
+![O selador de fontes.](../images/office15-app-font-picker.png)
 
-Para exibir ou personalizar fontes de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista suspensa **mais** e, em seguida, selecione **fontes**  >  **Personalizar** fontes para exibir a caixa de diálogo **criar novas fontes de tema** .
+Para exibir ou personalizar fontes de tema no PowerPoint, no grupo **Variants** na guia **Design,** clique na caixa de diálogo Mais listada - em seguida, selecione Fontes Personalizar Fontes para exibir a caixa de diálogo Criar  Novas Fontes de  >   Tema. 
 
-![Criar caixas de diálogo de novas fontes de tema](../images/office15-app-create-new-theme-fonts.png)
+![Caixa de diálogo Criar novas fontes de tema.](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Cores e fontes de tema da interface de usuário do Office
 
-O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, você usa a lista suspensa de temas de conta de **arquivo**  >  **Account**  >  do**Office** (de qualquer aplicativo do Office).
+O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, use a lista Office lista de usuários  >    >  **do Tema** (de qualquer Office aplicativo).
 
-![Menu suspenso de tema do Office](../images/office15-app-office-theme-picker.png)
+![Office lista de temas.](../images/office15-app-office-theme-picker.png)
 
 O OfficeThemes.css inclui classes que você pode usar em seus suplementos de painel de tarefas do PowerPoint, para que eles usem essas mesmas fontes e cores. Isso permite que você projete seus suplementos de painel de tarefa para corresponder à aparência dos painéis de tarefas internos.
 
@@ -61,7 +61,7 @@ Use as etapas a seguir para adicionar o arquivo OfficeThemes.css ao seu projeto 
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Para adicionar o OfficeThemes.css ao seu projeto do Visual Studio
 
 > [!NOTE]
-> As etapas deste procedimento se aplicam apenas para Visual Studio 2015. Se você estiver usando o Visual Studio 2019, o arquivo OfficeThemes. CSS será criado automaticamente para todos os novos projetos de suplemento do PowerPoint que você criar.
+> As etapas deste procedimento se aplicam apenas para Visual Studio 2015. Se você estiver usando Visual Studio 2019, o arquivo OfficeThemes.css será criado automaticamente para quaisquer novos projetos de PowerPoint de complemento que você criar.
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta **Conteúdo** no projeto _**nome_projeto**_**Web**, aponte para **Adicionar** e selecione a **Folha de Estilos**.
     
@@ -145,11 +145,11 @@ Para fazer isso no Visual Studio, execute estas etapas.
 
 1. Escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web **, em seguida, selecione **Próximo**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.
 
 3. Nomeie seu projeto e selecione **Criar**.
 
-3. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
+3. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.
 
 4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
@@ -180,13 +180,13 @@ Veja a seguir um exemplo simples de HTML em um suplemento de conteúdo que usa a
 </body>
 ```
 
-No tempo de execução, quando inserido em uma apresentação que usa o **tema do Office**padrão, o suplemento de conteúdo é renderizado dessa forma.
+No tempo de execução, quando inserido em uma apresentação que usa o tema padrão Office **,** o complemento de conteúdo é renderizado assim.
 
-![Conteúdo do aplicativo sendo executado com tema Office](../images/office15-app-content-app-office-theme.png)
+![Aplicativo de conteúdo em execução com Office tema.](../images/office15-app-content-app-office-theme.png)
 
 Se você alterar a apresentação a fim de usar outro tema ou personalizar o tema da apresentação, as fontes e cores especificadas com classes do OfficeThemes.css serão atualizadas de forma dinâmica a fim de corresponder com as fontes e cores do tema da apresentação. Com o mesmo exemplo de HTML usado acima, se a apresentação na qual o suplemento está inserido usar o tema **Faceta**, o processamento do suplemento ficará assim.
 
-![Conteúdo do aplicativo sendo executado com tema Faceta](../images/office15-app-content-app-facet-theme.png)
+![Aplicativo de conteúdo em execução com tema Facet.](../images/office15-app-content-app-facet-theme.png)
 
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>Como usar classes de tema de interface de usuário do OfficeThemes.css na página HTML de seu suplemento de painel de tarefas
@@ -217,13 +217,13 @@ Veja a seguir um exemplo simples de HTML em um suplemento de painel de tarefa qu
 
 Durante a execução no PowerPoint com **Arquivo**  >  **Conta**  >  **Tema do Office** definido como **Branco**, o suplemento de painel tarefa será renderizado da maneira a seguir.
 
-![Painel de tarefas com tema do Office em Branco](../images/office15-app-task-pane-theme-white.png)
+![Painel de tarefas com Office tema branco.](../images/office15-app-task-pane-theme-white.png)
 
 <br/>
 
 Se você alterar o **OfficeTheme** para **Cinza Escuro**, as fontes e cores especificadas com classes do OfficeThemes.css são atualizadas dinamicamente para renderizar da maneira a seguir.
 
-![Painel de tarefas com tema do Office em Cinza-escuro](../images/office15-app-task-pane-theme-dark-gray.png)
+![Painel de tarefas com Office tema Cinza Escuro.](../images/office15-app-task-pane-theme-dark-gray.png)
 
 <br/>
 
@@ -283,7 +283,7 @@ O arquivo OfficeThemes.css fornece classes que correspondem às duas fontes e 12
 
 A captura de tela a seguir mostra exemplos de todas as classes de cores do tema (exceto as cores dos dois hiperlinks) atribuídas ao texto do suplemento ao usar o tema padrão do Office.
 
-![Exemplo de cores de tema padrão do Office](../images/office15-app-default-office-theme-colors.png)
+![Exemplo Office de cores de tema padrão.](../images/office15-app-default-office-theme-colors.png)
 
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>Classes de tema para suplementos de painel de tarefas

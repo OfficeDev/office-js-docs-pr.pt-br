@@ -3,12 +3,12 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando Excel API JavaScript.
 ms.date: 06/07/2021
 localization_priority: Normal
-ms.openlocfilehash: a44a99e0ddc612342b292fd6e9d203799cde7b53
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853994"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075800"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 
 **Nova tabela**
 
-![Nova tabela no Excel](../images/excel-tables-create.png)
+![Nova tabela no Excel.](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>Adicionar linhas a uma tabela
 
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 
 **Tabela com novas linhas**
 
-![Tabela com novas linhas no Excel](../images/excel-tables-add-rows.png)
+![Tabela com novas linhas Excel.](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>Adicionar uma coluna a uma tabela
 
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 **Tabela com nova coluna**
 
-![Tabela com nova coluna no Excel](../images/excel-tables-add-column.png)
+![Tabela com nova coluna Excel.](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas&quot;></a>Adicionar uma coluna que contém fórmulas
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 **Tabela com nova coluna calculada**
 
-![Tabela com nova coluna calculada no Excel](../images/excel-tables-add-calculated-column.png)
+![Tabela com nova coluna calculada no Excel.](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="resize-a-table-online-only"></a>Resize uma tabela (somente online)
 
@@ -190,7 +190,7 @@ Excel.run(function (context) {
 
 **Tabela após resize** 
 
-![Tabela com várias linhas vazias Excel](../images/excel-tables-resize.png)
+![Tabela com várias linhas vazias Excel.](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>Atualizar o nome da coluna
 
@@ -219,7 +219,7 @@ Excel.run(function (context) {
 
 **Tabela com novo nome de coluna**
 
-![Tabela com novo nome de coluna no Excel](../images/excel-tables-update-column-name.png)
+![Tabela com novo nome de coluna no Excel.](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>Obter dados de uma tabela
 
@@ -265,7 +265,7 @@ Excel.run(function (context) {
 
 **Tabela e saída de dados**
 
-![Dados de tabela no Excel](../images/excel-tables-get-data.png)
+![Dados de tabela em Excel.](../images/excel-tables-get-data.png)
 
 ## <a name="detect-data-changes"></a>Detectar as alterações dos dados
 
@@ -313,7 +313,7 @@ Excel.run(function (context) {
 
 **Dados de tabela classificados por Valor (decrescente)**
 
-![Dados de tabelas classificação em Excel](../images/excel-tables-sort.png)
+![Dados de tabelas classificação em Excel.](../images/excel-tables-sort.png)
 
 Quando os dados são classificados em uma planilha, uma notificação de evento é acionada. Para saber mais sobre os eventos relacionados à classificação e como seu suplemento pode registrar manipuladores de eventos para responder a esses eventos, consulte [Manipular eventos de classificação](excel-add-ins-worksheets.md#handle-sorting-events).
 
@@ -347,7 +347,7 @@ Excel.run(function (context) {
 
 **Dados de tabela com filtros aplicados para Categoria e Valor**
 
-![Dados de tabela filtrados no Excel](../images/excel-tables-filters-apply.png)
+![Dados de tabela filtrados em Excel.](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>Limpar filtros de tabela
 
@@ -366,7 +366,7 @@ Excel.run(function (context) {
 
 **Dados de tabela sem filtros aplicados**
 
-![Dados de tabela não filtrados no Excel](../images/excel-tables-filters-clear.png)
+![Dados de tabela não filtrados em Excel.](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obter o intervalo visível de uma tabela filtrada
 
@@ -433,7 +433,7 @@ Excel.run(function (context) {
 
 **Tabela depois que a formatação é aplicada**
 
-![Tabela depois que a formatação é aplicada no Excel](../images/excel-tables-formatting-after.png)
+![Tabela após a formatação ser aplicada Excel.](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>Converter um intervalo em uma tabela
 
@@ -473,11 +473,11 @@ Excel.run(function (context) {
 
 **Dados no intervalo (antes que o intervalo seja convertido em uma tabela)**
 
-![Dados no intervalo no Excel](../images/excel-ranges.png)
+![Dados no intervalo em Excel.](../images/excel-ranges.png)
 
 **Dados da tabela (depois que o intervalo é convertido em uma tabela)**
 
-![Dados na tabela no Excel](../images/excel-tables-from-range.png)
+![Dados na tabela em Excel.](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>Importar dados JSON em uma tabela
 
@@ -524,7 +524,7 @@ Excel.run(function (context) {
 
 **Nova tabela**
 
-![Nova tabela de dados JSON importados Excel](../images/excel-tables-create-from-json.png)
+![Nova tabela de dados JSON importados Excel.](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>Confira também
 

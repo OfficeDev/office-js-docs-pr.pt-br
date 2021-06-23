@@ -1,18 +1,18 @@
 ---
 title: Diretrizes de design de padrões de identidade visual para suplementos do Office
-description: Saiba como marcar seu suplemento do Office enquanto permanece compatível com o design visual do Office.
+description: Saiba como fazer a marca do seu Office Add-in enquanto permanece compatível com o design visual do Office.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 9571b2771767a60f715ac7f3bc83a501907039d9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132085"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076368"
 ---
 # <a name="branding-patterns"></a>Padrões de identidade visual
 
-Esses padrões fornecem visibilidade e contexto da marca para os usuários do seu suplemento.
+Esses padrões fornecem visibilidade da marca e contexto aos usuários do seu complemento.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -30,10 +30,10 @@ Aplique os padrões e componentes a seguir, quando possível, para permitir que 
 
 A barra da marca é um espaço no rodapé para incluir o nome e o logotipo da marca. Também funciona como um link para o site da marca e um local de acesso opcional.
 
-![Barra de marcas exibida em um painel de tarefas do suplemento de um aplicativo da área de trabalho do Office](../images/add-in-brand-bar.png)
+![Barra de marcas exibida em um painel de tarefas de um Office de área de trabalho.](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>Tela inicial
 
 Use esta tela para exibir a sua identidade visual enquanto o suplemento estiver carregando ou na transição entre estados de interface do usuário.
 
-![Tela inicial da marca exibida em um painel de tarefas do suplemento de um aplicativo da área de trabalho do Office](../images/add-in-splash-screen.png)
+![Tela inicial da marca exibida em um painel de tarefas de um Office de área de trabalho.](../images/add-in-splash-screen.png)

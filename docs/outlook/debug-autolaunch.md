@@ -4,12 +4,12 @@ description: Saiba como depurar seu Outlook que implementa a ativação baseada 
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d7621a7407db3b8e773d1534beb6c881f7b48558
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555250"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077089"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Depurar seu Outlook de eventos (visualização)
 
@@ -52,7 +52,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
 1. Inicie Outlook desktop (ou reinicie Outlook se ele já estiver aberto).
 1. Componha uma nova mensagem ou compromisso. Você deve ver a caixa de diálogo a seguir. Não *interaja* com a caixa de diálogo ainda.
 
-    ![Captura de tela da caixa de diálogo de manipulador baseado em evento de depuração](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Captura de tela da caixa de diálogo de manipulador baseado em Evento de Depuração.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Configurar Visual Studio Code
 
@@ -81,15 +81,15 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
 ### <a name="other"></a>Outros
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Desktop).**
-1. Abra Visual Studio Code.
+1. Abra o Visual Studio Code.
 1. Vá para **Pasta**  >  **Aberta do Arquivo,** navegue até a pasta que você acabou de criar e escolha **Selecionar Pasta**.
 1. Na Barra de Atividades, selecione o item **Depurar** (Ctrl+Shift+D).
 
-    ![Captura de tela do ícone de depuração na Barra de Atividades](../images/vs-code-debug.png)
+    ![Captura de tela do ícone de depuração na Barra de Atividades.](../images/vs-code-debug.png)
 
 1. Selecione o **link criar um launch.jsno** arquivo.
 
-    ![Captura de tela do link para criar um arquivo launch.jsno Visual Studio Code](../images/vs-code-create-launch.json.png)
+    ![Captura de tela do link para criar um arquivo launch.jsno Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. Na lista **suspenso Selecionar Ambiente,** selecione **Borda: Iniciar** para criar um launch.jsno arquivo.
 1. Adicione o trecho a seguir à sua lista de configurações. Salve suas alterações.
@@ -121,7 +121,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
 1. Coloque pontos de interrupção bundle.js onde você deseja que o depurador pare.
 1. No menu **suspenso DEPURar,** selecione o nome **Depuração Direta** e, em seguida, selecione **Executar**.
 
-    ![Captura de tela da seleção de Depuração Direta de opções de configuração no menu suspenso Visual Studio Code Depuração](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Captura de tela da seleção Depuração Direta de opções de configuração no menu suspenso Visual Studio Code Depuração.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Depuração
 

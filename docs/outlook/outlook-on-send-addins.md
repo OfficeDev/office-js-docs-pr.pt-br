@@ -3,12 +3,12 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 9c56160fdfeb2df2e78ee8a9db8750841d043d87
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007801"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077033"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -56,7 +56,7 @@ A captura de tela a seguir mostra uma barra de informações que notifica que o 
 
 <br/>
 
-![Captura de tela mostrando uma mensagem de erro solicitando que o usuário insira uma linha de assunto ausente](../images/block-on-send-subject-cc-inforbar.png)
+![Captura de tela mostrando uma mensagem de erro solicitando que o usuário insira uma linha de assunto ausente.](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -66,7 +66,7 @@ A captura de tela a seguir mostra uma barra de informações que notifica que o 
 
 <br/>
 
-![Captura de tela mostrando uma mensagem de erro informando ao usuário que foram encontradas palavras bloqueadas](../images/block-on-send-body.png)
+![Captura de tela mostrando uma mensagem de erro dizendo ao usuário que palavras bloqueadas foram encontradas.](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>Limitações
 

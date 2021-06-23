@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 4d960d642c3efd2f6f9745587b6cb0ef42ce0a86
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836820"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075877"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -16,7 +16,7 @@ Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Ex
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-![Um gif de uma função personalizada que transmite o tempo de uma API](../images/custom-functions-web-api.gif)
+![GIF de uma função personalizada que transmite o tempo de uma API.](../images/custom-functions-web-api.gif)
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Funções que retornam os dados de fontes externas
 

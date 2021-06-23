@@ -1,20 +1,20 @@
 ---
 title: Trabalhar com conteúdo da página do OneNote
-description: Saiba como trabalhar com o conteúdo da página do OneNote usando a API JavaScript.
+description: Saiba como trabalhar com o OneNote de página usando a API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 319ec8a6a92bf6bf58fac9c3c2d22987bc027414
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720936"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076816"
 ---
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
 Na API JavaScript de suplementos do OneNote, o conteúdo da página é representado pelo seguinte modelo de objeto.
 
-  ![Diagrama do modelo de objeto da página do OneNote](../images/one-note-om-page.png)
+  ![OneNote diagrama de modelo de objeto de página.](../images/one-note-om-page.png)
 
 - Um objeto Page contém um conjunto de objetos PageContent.
 - Um objeto PageContent contém um tipo de conteúdo de Estrutura de Tópicos, Imagem ou Outro.
@@ -50,7 +50,7 @@ A API JavaScript do suplemento do OneNote dá suporte ao HTML a seguir para a cr
 > [!NOTE]
 > Importar o HTML para o OneNote consolida o espaço em branco. O conteúdo resultante é colado em uma estrutura de tópicos.
 
-O OneNote faz o melhor para traduzir o HTML no conteúdo da página enquanto garante a segurança para os usuários. Os padrões HTML e CSS não correspondem exatamente ao modelo de conteúdo do OneNote, portanto, haverá diferenças em aparências, particularmente com estilos de CSS. Recomendamos usar os objetos JavaScript se for necessário formatar uma formatação específica.
+OneNote o melhor para converter HTML em conteúdo de página ao mesmo tempo em que garante a segurança para os usuários. Os padrões HTML e CSS não são exatamente OneNote o modelo de conteúdo do OneNote, portanto, haverá diferenças nas aparências, especialmente com estilo CSS. Recomendamos usar os objetos JavaScript se for necessário formatação específica.
 
 ## <a name="accessing-page-contents"></a>Acessar o conteúdo da página
 

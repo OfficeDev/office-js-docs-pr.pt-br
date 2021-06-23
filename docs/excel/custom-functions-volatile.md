@@ -1,30 +1,30 @@
 ---
 ms.date: 01/14/2020
-description: Saiba como implementar funções personalizadas de streaming volátil e offline.
+description: Aprenda a implementar funções personalizadas de streaming voláteis e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: 0f530e9d67894ebbc13c8b8a13e6219571c96ff1
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071627"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075884"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
-Funções voláteis são funções nas quais o valor muda sempre que a célula é calculada. O valor pode ser alterado mesmo se nenhum argumento da função for alterado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
+Funções voláteis são funções nas quais o valor muda cada vez que a célula é calculada. O valor pode mudar mesmo que nenhum dos argumentos da função mude. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
-As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as [simulações do Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
+Funções personalizadas permitem que você crie suas próprias funções voláteis, que podem ser úteis ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, [as simulações de Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
-Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a autogeração, consulte [AutoGenerate metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+Se optar por gerar automaticamente seu arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a geração automática, consulte [Metadados JSON](custom-functions-json-autogeneration.md)de geração automática para funções personalizadas.
 
-Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.
+Segue-se um exemplo de uma função personalizada volátil, que simula a rolagem de um dado de seis lados.
 
-![Um gif mostrando uma função personalizada, retornando um valor aleatório para simular a rolagem de um e seis lados](../images/six-sided-die.gif)
+![GIF mostrando uma função personalizada retornando um valor aleatório para simular a rolagem de um dado de seis lados.](../images/six-sided-die.gif)
 
 ```JS
 /**
@@ -38,9 +38,9 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-* Saiba mais sobre [as opções de parâmetro de funções personalizadas](custom-functions-parameter-options.md).
+* Saiba mais [sobre as opções de parâmetro de funções personalizadas](custom-functions-parameter-options.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
+* [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

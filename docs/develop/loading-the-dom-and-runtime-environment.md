@@ -1,14 +1,14 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
-description: Carregue o ambiente de tempo de execução do DOM e do Office Add-ins.
+description: Carregue o dom e Office ambiente de tempo de execução de complementos.
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 5a215bf5a81dd291e72ed9e396c156d9ea7c6db0
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: e66e6d5e30f5305dce35157280210a371ee3896f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959163"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076010"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -18,21 +18,21 @@ Um suplemento deve garantir que o DOM e o ambiente de tempo de execução de Sup
 
 A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um suplemento de conteúdo ou de painel de tarefas no Excel, no PowerPoint, no Project ou no Word.
 
-![Fluxo de eventos ao iniciar um suplemento de conteúdo ou de painel de tarefas](../images/office15-app-sdk-loading-dom-agave-runtime.png)
+![Flow de eventos ao iniciar um conteúdo ou um complemento do painel de tarefas.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de tarefas é iniciado:
 
 1. O usuário abre um documento que já contém um suplemento ou insere um suplemento no documento.
 
-2. O aplicativo cliente do Office lê o manifesto XML do complemento do AppSource, um catálogo de aplicativos no SharePoint ou o catálogo de pastas compartilhadas de onde ele se origina.
+2. O Office de cliente lê o manifesto XML do add-in do AppSource, um catálogo de aplicativos no SharePoint ou o catálogo de pastas compartilhadas de onde ele se origina.
 
-3. O aplicativo cliente do Office abre a página HTML do complemento em um controle de navegador.
+3. O Office cliente abre a página HTML do complemento em um controle do navegador.
 
     As próximas duas etapas, as etapas 4 e 5, ocorrem de forma assíncrona e em paralelo. Por esse motivo, o código do suplemento deve garantir que o DOM e o ambiente do tempo de execução do suplemento tenham terminado de carregar antes de prosseguir.
 
 4. O controle do navegador carrega o corpo DOM e HTML e chama o manipulador de eventos para o `window.onload` evento.
 
-5. O aplicativo cliente do Office carrega o ambiente de tempo de execução, que baixa e armazena em cache os arquivos da biblioteca da API JavaScript do servidor cdn (rede de distribuição de conteúdo) e chama o manipulador de eventos do complemento para o evento [de inicialização](/javascript/api/office#office-initialize-reason-) do [objeto Office,](/javascript/api/office) se um manipulador tiver sido atribuído a ele. Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
+5. O aplicativo cliente Office carrega o ambiente de tempo de execução Office, que baixa e armazena em cache os arquivos da biblioteca da API JavaScript do servidor de rede de distribuição de conteúdo (CDN) e chama o manipulador de eventos do complemento para o evento [de inicialização](/javascript/api/office#office-initialize-reason-) do objeto [Office,](/javascript/api/office) se um manipulador tiver sido atribuído a ele. Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
 
 6. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
 
@@ -41,7 +41,7 @@ Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de ta
 
 A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um suplemento do Outlook em execução no desktop, tablet ou smartphone.
 
-![Fluxo de eventos ao inicializar um suplemento do Outlook](../images/outlook15-loading-dom-agave-runtime.png)
+![Flow de eventos ao iniciar Outlook de um complemento.](../images/outlook15-loading-dom-agave-runtime.png)
 
 Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
 

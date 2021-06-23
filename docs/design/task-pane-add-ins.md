@@ -3,12 +3,12 @@ title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d235d6c437ee124441389e68b54fc6ab8cde8dae
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: cd8d9386fa9f154d611926add12e21f545e36351
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330147"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076301"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
 
@@ -16,7 +16,7 @@ Painéis de tarefas são superfícies de interface que normalmente são exibidas
 
 *Figura 1. Layout típico do painel de tarefa*
 
-![Ilustração exibindo um layout típico do painel de tarefas com guias de seção na parte superior, logotipo da empresa e nome da empresa na parte inferior esquerda e um ícone de configurações na parte inferior direita](../images/overview-with-app-task-pane.png)
+![Ilustração exibindo um layout típico do painel de tarefas com guias de seção na parte superior, logotipo da empresa e nome da empresa na parte inferior esquerda e um ícone de configurações na parte inferior direita.](../images/overview-with-app-task-pane.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -33,7 +33,7 @@ As imagens a seguir mostram os vários tamanhos do painel de tarefas com Aplicat
 
 *Figura 2. Tamanhos de painel de tarefas da área de trabalho do Office 2016*
 
-![Diagrama que exibe os tamanhos do painel de tarefas da área de trabalho na resolução 1366x768](../images/office-2016-taskpane-sizes.png)
+![Diagrama que exibe os tamanhos do painel de tarefas da área de trabalho na resolução 1366x768.](../images/office-2016-taskpane-sizes.png)
 
 - Excel - 320 x 455 pixels
 - PowerPoint - 320 x 531 pixels
@@ -44,7 +44,7 @@ As imagens a seguir mostram os vários tamanhos do painel de tarefas com Aplicat
 
 *Figura 3. Office tamanhos do painel de tarefas*
 
-![Diagrama exibindo os tamanhos do painel de tarefas na resolução 1366x768](../images/office-365-taskpane-sizes.png)
+![Diagrama exibindo os tamanhos do painel de tarefas na resolução 1366x768.](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350 x 378 pixels
 - PowerPoint - 348 x 391 pixels
@@ -59,13 +59,13 @@ No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
 *Figura 4. Menu de personalidade no Windows*
 
-![Diagrama mostrando o menu de personalidade na Windows desktop](../images/personality-menu-win.png)
+![Diagrama mostrando o menu de personalidade na Windows desktop.](../images/personality-menu-win.png)
 
 No Mac, no menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço para 34 x 32 pixels, como mostrado.
 
 *Figura 5. Menu de personalidade no Mac*
 
-![Diagrama mostrando o menu de personalidade na área de trabalho do Mac](../images/personality-menu-mac.png)
+![Diagrama mostrando o menu de personalidade na área de trabalho do Mac.](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implementação
 
@@ -73,5 +73,5 @@ Para ver uma amostra que implementa um painel de tarefas, confira [Suplemento do
 
 ## <a name="see-also"></a>Confira também
 
-- [Fabric Core em Office de complementos](fabric-core.md)
+- [Núcleo da Malha em Suplementos do Office](fabric-core.md)
 - [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)

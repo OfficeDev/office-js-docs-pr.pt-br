@@ -3,12 +3,12 @@ title: Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 description: Depurar suplementos usando as ferramentas de desenvolvedor do Microsoft Edge no Windows 10
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 4888ef07f214611666b1c8d8de8dc5a467ca2db1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611229"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076529"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 
@@ -66,7 +66,7 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
    Por exemplo, selecione **home.html**. 
     
-   ![Tela do IEChooser, apontando para o suplemento bolhas](../images/choose-target-to-debug.png)
+   ![Tela IEChooser, apontando para o complemento bolhas.](../images/choose-target-to-debug.png)
 
 4. Na janela F12, selecione o arquivo que você deseja depurar.
     
@@ -76,13 +76,13 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
    Para definir o ponto de interrupção no **Home.js**, escolha a linha 144, que está na função  `textChanged`. Você verá um ponto vermelho à esquerda da linha e uma linha correspondente no painel Pilha de Chamadas e Pontos de Interrupção (canto inferior direito). Para ver outras maneiras de definir um ponto de interrupção, confira [Inspecionar executando JavaScript com o Depurador](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
-   ![Depurador com ponto de interrupção no arquivo home.js](../images/debugger-home-js-02.png)
+   ![Depurador com ponto de interrupção home.js arquivo.](../images/debugger-home-js-02.png)
 
 6. Execute o suplemento para acionar o ponto de interrupção.
     
    No Word, escolha a caixa de texto na parte superior da URL do painel **QR4Office** e tente digitar algum texto. No Depurador, no painel **Pilha de Chamadas e Pontos de Interrupção**, você verá que o ponto de interrupção está disparado e mostra várias informações. Talvez você precise atualizar o depurador para ver os resultados.
     
-   ![Depurador com resultados do ponto de interrupção disparado](../images/debugger-home-js-01.png)
+   ![Depurador com resultados do ponto de interrupção disparado.](../images/debugger-home-js-01.png)
 
 
 ## <a name="see-also"></a>Confira também

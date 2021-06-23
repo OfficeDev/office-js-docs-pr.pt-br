@@ -1,19 +1,19 @@
 ---
 title: Trabalhar com gráficos usando a API JavaScript do Excel
-description: Exemplos de código que demonstram tarefas de gráfico usando a API JavaScript do Excel.
+description: Exemplos de código que demonstram tarefas de gráfico usando Excel API JavaScript.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408583"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075891"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
 Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel.
-Para obter a lista completa de propriedades e métodos que o `Chart` e os `ChartCollection` objetos dão suporte, consulte [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) e [objeto de coleção Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).
+Para ver a lista completa de propriedades e métodos que os objetos e `Chart` `ChartCollection` suportam, consulte Objeto Chart [(API JavaScript para Excel)](/javascript/api/excel/excel.chart) e Objeto da coleção [Chart (API JavaScript](/javascript/api/excel/excel.chartcollection)para Excel) .
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 **Novo gráfico de linhas**
 
-![Novo gráfico de linhas no Excel](../images/excel-charts-create-line.png)
+![Novo gráfico de linha em Excel.](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma série de dados a um gráfico
@@ -59,11 +59,11 @@ Excel.run(function (context) {
 
 **Gráfico antes da adição da série de dados de 2016**
 
-![Gráfico no Excel antes da adição da série de dados de 2016](../images/excel-charts-data-series-before.png)
+![Gráfico em Excel antes da adoção da série de dados de 2016.](../images/excel-charts-data-series-before.png)
 
 **Gráfico após a adição da série de dados de 2016**
 
-![Gráfico no Excel após a adição da série de dados de 2016](../images/excel-charts-data-series-after.png)
+![Gráfico em Excel depois que a série de dados de 2016 foi adicionada.](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>Definir título do gráfico
 
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 **Gráfico após definição do título**
 
-![Gráfico com título no Excel](../images/excel-charts-title-set.png)
+![Gráfico com título em Excel.](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Definir propriedades de um eixo em um gráfico
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 
 **Gráfico após definição do título do eixo das categorias**
 
-![Gráfico com título do eixo no Excel](../images/excel-charts-axis-title-set.png)
+![Gráfico com título de eixo Excel.](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Definir unidade de exibição do eixo
 
@@ -124,11 +124,11 @@ Excel.run(function (context) {
 
 **Gráfico após a definição da unidade de exibição do eixo de valor**
 
-![Gráfico com unidade de exibição do eixo no Excel](../images/excel-charts-axis-display-unit-set.png)
+![Gráfico com unidade de exibição de eixo Excel.](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
-O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como `true` .
+O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais para o eixo do valor do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como `true` .
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +143,7 @@ Excel.run(function (context) {
 
 **Gráfico com linhas de grade ocultas**
 
-![Gráfico com linhas de grade ocultas no Excel](../images/excel-charts-gridlines-removed.png)
+![Gráfico com linhas de grade ocultas Excel.](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>Linhas de tendência do gráfico
 
@@ -165,11 +165,11 @@ Excel.run(function (context) {
 
 **Gráfico com linha de tendência de média móvel**
 
-![Gráfico com linha de tendência de média móvel no Excel](../images/excel-charts-create-trendline.png)
+![Gráfico com linha de tendência média móvel Excel.](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>Atualizar uma linha de tendência
 
-O exemplo de código a seguir define a tendência como tipo `Linear` para a primeira série no primeiro gráfico da planilha chamada **amostra**.
+O exemplo de código a seguir define a linha de tendência para digitar para a primeira série no `Linear` primeiro gráfico da planilha chamada **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 
 **Gráfico com linha de tendência linear**
 
-![Gráfico com linha de tendência linear no Excel](../images/excel-charts-trendline-linear.png)
+![Gráfico com linha de tendência linear Excel.](../images/excel-charts-trendline-linear.png)
 
 ## <a name="export-a-chart-as-an-image"></a>Exportar um gráfico como uma imagem
 
@@ -211,10 +211,10 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 Esses parâmetros determinam o tamanho da imagem. As imagens são sempre dimensionadas proporcionalmente. Os parâmetros de largura e altura definem limites superiores ou inferiores na imagem dimensionada. `ImageFittingMode` tem três valores com os seguintes comportamentos:
 
-- `Fill`: A altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.
-- `Fit`: A altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem).
-- `FitAndCenter`: A altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). A imagem resultante é centralizada proporcionalmente à outra dimensão.
+- `Fill`: a altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.
+- `Fit`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem).
+- `FitAndCenter`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). A imagem resultante é centralizada proporcionalmente à outra dimensão.
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)

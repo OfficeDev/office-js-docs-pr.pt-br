@@ -1,14 +1,14 @@
 ---
 title: Caixas de diálogo em Suplementos do Office
-description: Conheça as práticas recomendadas para o design visual das caixas de diálogo em suplementos do Office.
+description: Saiba as práticas recomendadas para o design visual de caixas de diálogo em Office de complementos.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ab8ca2e768c63a53b05ed2d9ef459050455231fb
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d674b747effa57b8a75b79f98f5ff78ccc8a92a4
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132050"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076333"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Caixas de diálogo em Suplementos do Office
 
@@ -16,7 +16,7 @@ Caixas de diálogo são superfícies que flutuam acima da janela do aplicativo d
 
 *Figura 1. Layout típico de uma caixa de diálogo*
 
-![Layout típico para uma caixa de diálogo exibida em um aplicativo do Office](../images/overview-with-app-dialog.png)
+![Layout típico de uma caixa de diálogo exibida em um Office aplicativo.](../images/overview-with-app-dialog.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

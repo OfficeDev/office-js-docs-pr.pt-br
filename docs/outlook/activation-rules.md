@@ -3,12 +3,12 @@ title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: cdcdfbf3961ad9f627ba00f7366f49c77bba435d
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: a5fc107c27feb5b0535727a42b4d56d21f7dcbc4
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214593"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076809"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -16,24 +16,24 @@ O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o
 
 A figura a seguir mostra suplementos do Outlook ativados na barra de suplementos da mensagem que está no painel de leitura.
 
-![Barra de aplicativos mostrando aplicativos de email de leitura ativados](../images/read-form-app-bar.png)
+![Barra de aplicativos mostrando aplicativos de email de leitura ativados.](../images/read-form-app-bar.png)
 
 
 ## <a name="specify-activation-rules-in-a-manifest"></a>Especificar regras de ativação em um manifesto
 
 
-Para que o Outlook ative um suplemento para condições específicas, especifique as regras de ativação no manifesto do suplemento usando um dos seguintes `Rule` elementos:
+Para Outlook ativar um complemento para condições específicas, especifique as regras de ativação no manifesto do complemento usando um dos seguintes `Rule` elementos:
 
 - [Elemento Rule (MailApp complexType)](../reference/manifest/rule.md) - especifica uma regra individual.
 - [Elemento Rule (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - combina várias regras usando operações lógicas.
     
 
  > [!NOTE]
- > O `Rule` elemento que você usa para especificar uma regra individual é do tipo complexo de [regra](../reference/manifest/rule.md) abstrata. Cada um dos tipos de regra a seguir estende esse `Rule` tipo complexo abstrato. Portanto, ao especificar uma regra individual em um manifesto, é preciso usar o atributo [xsi:type](https://www.w3.org/TR/xmlschema-1/) para definir um dos tipos de regra a seguir.
+ > O `Rule` elemento que você usa para especificar uma regra individual é do tipo complexo [Rule](../reference/manifest/rule.md) abstrato. Cada um dos seguintes tipos de regras estende esse tipo `Rule` complexo abstrato. Portanto, ao especificar uma regra individual em um manifesto, é preciso usar o atributo [xsi:type](https://www.w3.org/TR/xmlschema-1/) para definir um dos tipos de regra a seguir.
  > 
  > Por exemplo, a seguinte regra define uma regra [ItemIs](../reference/manifest/rule.md#itemis-rule): `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > O `FormType` atributo se aplica às regras de ativação no manifesto v 1.1, mas não está definido na `VersionOverrides` v 1.0. Portanto, não pode ser usado quando [itemis](../reference/manifest/rule.md#itemis-rule) é usado no `VersionOverrides` nó.
+ > O `FormType` atributo se aplica às regras de ativação no manifesto v1.1, mas não é definido em `VersionOverrides` v1.0. Portanto, ele não pode ser usado [quando ItemIs](../reference/manifest/rule.md#itemis-rule) é usado no `VersionOverrides` nó.
 
 A tabela a seguir lista os tipos de regra disponíveis. Veja mais informações após a tabela e nos artigos especificados em [Criar suplementos do Outlook para formulários de leitura](read-scenario.md).
 
@@ -51,7 +51,7 @@ A tabela a seguir lista os tipos de regra disponíveis. Veja mais informações 
 
 O tipo complexo **ItemIs** define uma regra que avalia **true** se o item atual coincidir com o tipo de item e, opcionalmente, a classe de mensagens do item, se estiver declarada na regra.
 
-Especifique um dos tipos de item a seguir no `ItemType` atributo de uma regra **itemis** . Você pode especificar mais de uma regra **ItemIs** em um manifesto. O tipo simples ItemType define os tipos de itens do Outlook que dão suporte aos suplementos do Outlook.
+Especifique um dos seguintes tipos de item `ItemType` no atributo de uma regra **ItemIs.** Você pode especificar mais de uma regra **ItemIs** em um manifesto. O tipo simples ItemType define os tipos de itens do Outlook que dão suporte aos suplementos do Outlook.
 
 <br/>
 
@@ -60,15 +60,15 @@ Especifique um dos tipos de item a seguir no `ItemType` atributo de uma regra **
 |**Compromisso**|Especifica um item em um calendário do Outlook. Isso inclui um item de reunião que foi respondido e que tem um organizador e participantes, ou um compromisso que não tem um organizador ou participantes e é simplesmente um item no calendário. Isso corresponde à classe de mensagens IPM.Appointment no Outlook.|
 |**Mensagem**|Especifica um dos seguintes itens recebidos normalmente na Caixa de Entrada: <ul><li><p>Uma mensagem de email. Isso corresponde à classe de mensagem IPM.Note no Outlook.</p></li><li><p>Uma solicitação de reunião, resposta ou cancelamento. Isso corresponde às seguintes classes de mensagem no Outlook:</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
-O `FormType` atributo é usado para especificar o modo (leitura ou composição) no qual o suplemento deve ser ativado.
+O atributo é usado para especificar o modo (leitura ou `FormType` redação) no qual o complemento deve ser ativado.
 
 
  > [!NOTE]
- > O atributo Itemis `FormType` é definido no esquema v 1.1 e posterior, mas não em `VersionOverrides` v 1.0. Não inclua o `FormType` atributo ao definir comandos de suplemento.
+ > O atributo ItemIs `FormType` é definido no esquema v1.1 e posterior, mas não em `VersionOverrides` v1.0. Não inclua o `FormType` atributo ao definir comandos de complemento.
 
 Depois que um suplemento é ativado, você pode usar a propriedade [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) para obter o item selecionado atualmente no Outlook e a propriedade [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) para obter o tipo do item atual.
 
-Opcionalmente, você pode usar o `ItemClass` atributo para especificar a classe de mensagem do item, e o `IncludeSubClasses` atributo para especificar se a regra deve ser **true** quando o item é uma subclasse da classe especificada.
+Opcionalmente, você pode usar o atributo para especificar a classe de mensagem do item e o atributo para especificar se a regra deve ser verdadeira quando o item for uma `ItemClass` subclasse da `IncludeSubClasses` classe especificada. 
 
 Para saber mais sobre classes de mensagens, confira [Tipos de item e classes de mensagens](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
@@ -100,9 +100,9 @@ O `ItemHasAttachment` tipo complexo define uma regra que verifica se o item sele
 
 ## <a name="itemhasknownentity-rule"></a>Regra ItemHasKnownEntity
 
-Antes de um item ser disponibilizado para um suplemento, o servidor examina-o para determinar se o assunto e o corpo contêm qualquer texto que provavelmente seja uma das entidades conhecidas. Se qualquer uma dessas entidades for encontrada, ela será colocada em uma coleção de entidades conhecidas que você acessa usando o `getEntities` método ou `getEntitiesByType` desse item.
+Antes de um item ser disponibilizado para um suplemento, o servidor o examina para determinar se o assunto e o corpo contêm texto que provavelmente é uma das entidades conhecidas. Se alguma dessas entidades for encontrada, ela será colocada em uma coleção de entidades conhecidas que você acessa usando o ou o método `getEntities` `getEntitiesByType` desse item.
 
-Você pode especificar uma regra usando `ItemHasKnownEntity` que mostre o suplemento quando uma entidade do tipo especificado estiver presente no item. Você pode especificar as seguintes entidades conhecidas no `EntityType` atributo de uma `ItemHasKnownEntity` regra:
+Você pode especificar uma regra usando que mostra o seu complemento quando uma entidade do `ItemHasKnownEntity` tipo especificado está presente no item. Você pode especificar as seguintes entidades conhecidas no `EntityType` atributo de uma `ItemHasKnownEntity` regra:
 
 - Endereço
 - Contato
@@ -112,9 +112,9 @@ Você pode especificar uma regra usando `ItemHasKnownEntity` que mostre o suplem
 - TaskSuggestion
 - URL
     
-Opcionalmente, você pode incluir uma expressão regular no `RegularExpression` atributo para que seu suplemento seja mostrado apenas quando uma entidade que corresponde à expressão regular no presente. Para obter correspondências com as expressões regulares especificadas nas `ItemHasKnownEntity` regras, você pode usar o `getRegExMatches` `getFilteredEntitiesByName` método ou para o item do Outlook selecionado no momento.
+Opcionalmente, você pode incluir uma expressão regular no atributo para que o seu complemento seja mostrado somente quando uma entidade que corresponde à `RegularExpression` expressão regular presente. Para obter combinações com expressões regulares especificadas em regras, você pode usar o método ou para o item Outlook `ItemHasKnownEntity` `getRegExMatches` selecionado no `getFilteredEntitiesByName` momento.
 
-O exemplo a seguir mostra uma coleção de `Rule` elementos que mostram o suplemento quando uma das entidades conhecidas especificadas está presente na mensagem.
+O exemplo a seguir mostra uma coleção de elementos que mostram o complemento quando uma das entidades conhecidas especificadas está `Rule` presente na mensagem.
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -124,7 +124,7 @@ O exemplo a seguir mostra uma coleção de `Rule` elementos que mostram o suplem
 </Rule>
 ```
 
-O exemplo a seguir mostra uma `ItemHasKnownEntity` regra com um `RegularExpression` atributo que ativa o suplemento quando uma URL que contém a palavra "contoso" está presente em uma mensagem.
+O exemplo a seguir mostra uma regra com um atributo que ativa o complemento quando uma URL que contém a palavra `ItemHasKnownEntity` `RegularExpression` "contoso" está presente em uma mensagem.
 
 
 ```xml
@@ -136,25 +136,25 @@ Para saber mais sobre entidades nas regras de ativação, confira [Corresponder 
 
 ## <a name="itemhasregularexpressionmatch-rule"></a>Regra ItemHasRegularExpressionMatch
 
-O `ItemHasRegularExpressionMatch` tipo complexo define uma regra que usa uma expressão regular para corresponder ao conteúdo da propriedade especificada de um item. Se o texto que corresponde à expressão regular for encontrado na propriedade especificada do item, o Outlook ativará a barra de suplementos e exibirá o suplemento. Você pode usar o `getRegExMatches` `getRegExMatchesByName` método ou do objeto que representa o item selecionado no momento para obter correspondências para a expressão regular especificada.
+O tipo complexo define uma regra que usa uma expressão regular para corresponder ao conteúdo da `ItemHasRegularExpressionMatch` propriedade especificada de um item. Se o texto que corresponde à expressão regular for encontrado na propriedade especificada do item, o Outlook ativa a barra de suplementos e exibe o suplemento. Você pode usar o ou o método do objeto que representa o item selecionado no momento para obter corresponde à `getRegExMatches` `getRegExMatchesByName` expressão regular especificada.
 
-O exemplo a seguir mostra um `ItemHasRegularExpressionMatch` que ativa o suplemento quando o corpo do item selecionado contém "Apple", "banana" ou "Coconut", ignorando maiúsculas e minúsculas.
+O exemplo a seguir mostra um que ativa o complemento quando o corpo do item selecionado contém `ItemHasRegularExpressionMatch` "apple", "banana" ou "coco", ignorando o caso.
 
 ```xml
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
-Para obter mais informações sobre como usar a `ItemHasRegularExpressionMatch` regra, confira [usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
+Para obter mais informações sobre como usar a `ItemHasRegularExpressionMatch` regra, consulte [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md).
 
 
 ## <a name="rulecollection-rule"></a>Regra RuleCollection
 
 
-O `RuleCollection` tipo complexo combina várias regras em uma única regra. Você pode especificar se as regras na coleção devem ser combinadas com um lógica ou lógica e usando o `Mode` atributo.
+O `RuleCollection` tipo complexo combina várias regras em uma única regra. Você pode especificar se as regras na coleção devem ser combinadas com um OR lógico ou um E lógico usando o `Mode` atributo.
 
 Quando um E lógico é especificado, um item deve corresponder a todas as regras especificadas na coleção para mostrar o suplemento. Quando um OU lógico é especificado, um item que corresponde a qualquer das regras especificadas na coleção mostra o suplemento.
 
-Você pode combinar `RuleCollection` regras para formar regras complexas. O exemplo a seguir ativa o suplemento quando o usuário está exibindo um compromisso ou item de mensagem, e o assunto ou corpo do item contém um endereço.
+Você pode combinar `RuleCollection` regras para formar regras complexas. O exemplo a seguir ativa o suplemento quando o usuário está exibindo um compromisso ou um item de mensagem e o assunto ou corpo do item contém um endereço.
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -182,7 +182,7 @@ O exemplo a seguir ativa o suplemento quando o usuário está redigindo uma mens
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites para regras e expressões regulares
 
 
-Para fornecer uma experiência satisfatória com os suplementos do Outlook, você deve cumprir as diretrizes de ativação e uso da API. A tabela a seguir mostra os limites gerais para expressões regulares e regras, mas há regras específicas para aplicativos diferentes. Para obter mais informações, consulte [limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) e [solução de problemas de ativação do suplemento do Outlook](troubleshoot-outlook-add-in-activation.md).
+Para oferecer uma experiência satisfatória com suplementos do Outlook, você deve seguir as diretrizes de ativação e de uso da API. A tabela a seguir mostra limites gerais para expressões e regras regulares, mas há regras específicas para diferentes aplicativos. Para saber mais, confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) e [Solucionar problemas de ativação de suplemento do Outlook](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 
@@ -191,7 +191,7 @@ Para fornecer uma experiência satisfatória com os suplementos do Outlook, voc�
 |Tamanho do manifesto|Não pode exceder 256 KB.|
 |Regras|Máximo de 15 regras.|
 |ItemHasKnownEntity|Um cliente avançado do Outlook aplicará a regra em relação ao primeiro megabyte do corpo, e não no restante do corpo.|
-|Expressões Regulares|Para as regras do ItemHasKnownEntity ou do ItemHasRegularExpressionMatch para todos os aplicativos do Outlook:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>Especifica declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.</li><li>Especifica expressões regulares cuja correspondência não exceda os limites da tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|Expressões Regulares|Para regras ItemHasKnownEntity ou ItemHasRegularExpressionMatch para todos os Outlook aplicativos:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>Especifica declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.</li><li>Especifica expressões regulares cuja correspondência não exceda os limites da tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## <a name="see-also"></a>Confira também
 

@@ -4,12 +4,12 @@ description: Saiba como configurar seu Outlook para ativação baseada em evento
 ms.topic: article
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853952"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076788"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -37,7 +37,7 @@ Atualmente, os seguintes eventos são suportados na Web e Windows.
 |`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Visualização|
 
 > [!IMPORTANT]
-> Os eventos ainda em visualização só estão disponíveis com uma assinatura Microsoft 365 no Outlook na Web e no Windows. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
+> Os eventos ainda em visualização estão disponíveis apenas com uma assinatura Microsoft 365 no Outlook na Web e no Windows. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
 
 ### <a name="how-to-preview"></a>Como visualizar
 
@@ -54,7 +54,7 @@ Para visualizar esses eventos:
     1. Crie a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` .
     1. Adicione uma entrada chamada `EnableBetaAPIsInJavaScript` e desmarcar o valor como `1` . A imagem a seguir mostra qual deve ser a aparência de registro.
 
-        ![Captura de tela do editor do Registro com um valor de chave do Registro EnableBetaAPIsInJavaScript](../images/outlook-beta-registry-key.png)
+        ![Captura de tela do editor do Registro com um valor de chave do Registro EnableBetaAPIsInJavaScript.](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
@@ -243,11 +243,11 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 
 1. No Outlook na Web, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem Outlook na Web com o assunto definido como redação](../images/outlook-web-autolaunch-1.png)
+    ![Captura de tela de uma janela de mensagem Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch-1.png)
 
 1. Em Outlook no Windows, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem em Outlook no Windows com o assunto definido como redação](../images/outlook-win-autolaunch.png)
+    ![Captura de tela de uma janela de mensagem Outlook no Windows com o assunto definido na composição.](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
     > Se você estiver executando o seu complemento no localhost e vir o erro "Lamentamos, não foi possível acessar *{your-add-in-name-here}*. Certifique-se de ter uma conexão de rede. Se o problema continuar, tente novamente mais tarde.", talvez seja necessário habilitar uma isenção de loopback.
@@ -275,9 +275,9 @@ O log de tempo de execução também está disponível para esse recurso no Wind
 
 ## <a name="deploy-to-users"></a>Implantar para usuários
 
-Você pode implantar os complementos baseados em eventos carregando o manifesto por meio do Microsoft 365 de administração. No portal de administração, expanda a **seção Configurações** no painel de navegação e selecione **Aplicativos integrados.** Na página **Aplicativos integrados,** escolha a ação Upload **aplicativos personalizados.**
+Você pode implantar os complementos baseados em eventos carregando o manifesto por meio do Centro de administração do Microsoft 365. No portal de administração, expanda a **seção Configurações** no painel de navegação e selecione **Aplicativos integrados.** Na página **Aplicativos integrados,** escolha a ação Upload **aplicativos personalizados.**
 
-![Captura de tela da página Aplicativos integrados no centro de administração Microsoft 365, incluindo a ação Upload aplicativos personalizados](../images/outlook-deploy-event-based-add-ins.png)
+![Captura de tela da página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Upload aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource e armazenamentos de inclientes: a capacidade de implantar os complementos baseados em eventos ou atualizar os complementos existentes para incluir o recurso de ativação baseada em evento deve estar disponível em breve.
 

@@ -1,14 +1,14 @@
 ---
-title: Publicar um suplemento usando o Visual Studio Code e o Azure
-description: Como publicar um suplemento usando o Visual Studio Code e o Azure Active Directory
+title: Publicar um complemento usando o Visual Studio Code e o Azure
+description: Como publicar um complemento usando Visual Studio Code e Azure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 3552e4eebacc84fc2b8e37782c97b4e03e96e508
-ms.sourcegitcommit: 7faa0932b953a4983a80af70f49d116c3236d81a
+ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "46845505"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076935"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Publicar um suplemento desenvolvido com o Código do Visual Studio
 
@@ -21,36 +21,36 @@ Este artigo descreve como publicar um Suplemento do Office criado com o gerador 
 
 Um Suplemento do Office é formado por um aplicativo Web e um arquivo de manifesto. O aplicativo Web define a interface do usuário e a funcionalidade do suplemento, enquanto o manifesto especifica o local do aplicativo Web e define as configurações e os recursos do suplemento.
 
-Enquanto estiver desenvolvendo, você poderá executar o suplemento no servidor Web local ( `localhost` ). Quando estiver pronto para publicá-lo para que outros usuários o acessem, você precisará implantar o aplicativo Web e atualizar o manifesto para especificar a URL do aplicativo implantado.
+Enquanto estiver desenvolvendo, você pode executar o complemento em seu servidor Web local ( `localhost` ). Quando estiver pronto para publicá-lo para outros usuários acessarem, você precisará implantar o aplicativo Web e atualizar o manifesto para especificar a URL do aplicativo implantado.
 
-Quando o suplemento estiver funcionando conforme desejado, você poderá publicá-lo diretamente pelo código do Visual Studio usando a extensão de armazenamento do Azure.
+Quando o seu add-in estiver funcionando conforme desejado, você poderá publicá-lo diretamente Visual Studio Code usando a extensão do Azure Armazenamento.
 
-## <a name="using-visual-studio-code-to-publish"></a>Usando o Visual Studio Code para publicar
+## <a name="using-visual-studio-code-to-publish"></a>Usando Visual Studio Code para publicar
 
 >[!NOTE]
-> Estas etapas só funcionam para projetos criados com o gerador Yeoman.
+> Essas etapas só funcionam para projetos criados com o gerador Yeoman.
 
-1. Abra o projeto na pasta raiz do Visual Studio Code (VS Code).
-2. No modo de exibição de extensões no VS Code, procure a extensão de armazenamento do Azure e instale-a.
-3. Depois de instalado, um ícone do Azure é adicionado à barra de atividade. Selecione-o para acessar a extensão. Se sua barra de atividades estiver oculta, você não poderá acessar a extensão. Mostrar a barra de atividades selecionando **exibir > aparência > Mostrar barra de atividades**.
-4. Na extensão, entre em sua conta do Azure selecionando **entrar no Azure**. Você também pode criar uma conta do Azure se ainda não tiver um selecionando **criar uma conta gratuita do Azure**. Siga as etapas fornecidas para configurar sua conta.
-5. Depois de entrar em sua conta do Azure, você verá suas contas de armazenamento do Azure exibidas na extensão. Se você ainda não tem uma conta de armazenamento, precisará criar uma usando a opção **criar nova conta de armazenamento** . Nomeie sua conta de armazenamento com um nome globalmente exclusivo, usando apenas ' a-z ' e ' 0-9 '. Observe que, por padrão, isso cria uma conta de armazenamento e um grupo de recursos com o mesmo nome. Ele coloca automaticamente a conta de armazenamento no oeste dos EUA. Isso pode ser ajustado online por meio [da sua conta do Azure](https://portal.azure.com/).
-6. Selecione e segure (clique com o botão direito do mouse) sua conta de armazenamento, escolha **configurar site estático**. Você será solicitado a inserir o nome do documento de índice e o nome do documento 404. Altere o nome do documento de índice de padrão `index.html` para **`taskpane.html`** . Você pode decidir também alterar o nome do documento 404, mas não é necessário.
-7. Selecione e segure (clique com o botão direito do mouse) seu armazenamento novamente, desta vez escolhendo **navegar no site estático**. Na janela do navegador que é aberta, copie a URL do site.
-8. No VS Code, abra o arquivo de manifesto do seu projeto ( `manifest.xml` ) e altere qualquer referência à URL do localhost (como `https://localhost:3000` ) para a URL que você copiou. Este ponto de extremidade é a URL estática do site para sua conta de armazenamento recém-criada. Salve as alterações no arquivo de manifesto.
-9. Abra um prompt de linha de comando e navegue até o diretório raiz do seu projeto de suplemento. Em seguida, execute o seguinte comando para preparar todos os arquivos para implantação de produção.
+1. Abra seu projeto de sua pasta raiz em Visual Studio Code (VS Code).
+2. Na exibição Extensões em VS Code, pesquise a extensão do Azure Armazenamento e instale-a.
+3. Depois de instalado, um ícone do Azure é adicionado à Barra de Atividades. Selecione-o para acessar a extensão. Se sua Barra de Atividades estiver oculta, você não poderá acessar a extensão. Mostrar a Barra de Atividades **selecionando Exibir > Aparência > Mostrar Barra de Atividades**.
+4. Quando estiver na extensão, entre em sua conta do Azure selecionando **Entrar no Azure**. Você também pode criar uma conta do Azure se ainda não tiver uma selecionando **Criar uma conta gratuita do Azure**. Siga as etapas fornecidas para configurar sua conta.
+5. Depois de entrar na sua conta do Azure, você verá suas contas de armazenamento do Azure aparecerem na extensão. Se você ainda não tiver uma conta de armazenamento, precisará criar uma usando a **opção Criar nova** conta de armazenamento. Nomeia sua conta de armazenamento como um nome global exclusivo, usando apenas 'a-z' e '0-9'. Observe que, por padrão, isso cria uma conta de armazenamento e um grupo de recursos com o mesmo nome. Ele coloca automaticamente a conta de armazenamento no Oeste dos EUA. Isso pode ser ajustado online por [meio de sua conta do Azure.](https://portal.azure.com/)
+6. Selecione e segure (clique com o botão direito do mouse) em sua conta de armazenamento, escolhendo **Configurar site estático.** Você será solicitado a inserir o nome do documento de índice e o nome do documento 404. Altere o nome do documento de índice do padrão `index.html` para **`taskpane.html`** . Você também pode optar por alterar o nome do documento 404, mas não é necessário.
+7. Selecione e segure (clique com o botão direito do mouse) no armazenamento novamente, desta vez escolhendo **Procurar site estático**. Na janela do navegador aberta, copie a URL do site.
+8. Em VS Code, abra o arquivo de manifesto do projeto ( ) e altere qualquer referência à URL do seu localhost (como ) para a `manifest.xml` `https://localhost:3000` URL que você copiou. Esse ponto de extremidade é a URL do site estático para sua conta de armazenamento recém-criada. Salve as alterações no arquivo de manifesto.
+9. Abra um prompt de linha de comando e navegue até o diretório raiz do seu projeto de complemento. Em seguida, execute o seguinte comando para preparar todos os arquivos para implantação de produção.
 
     ```command&nbsp;line
     npm run build
     ```
 
-    Quando a compilação for concluída, a pasta **dist**no diretório raiz do projeto de suplemento incluirá os arquivos que você implantará nas etapas subsequentes.
+    Quando a compilação for concluída, a pasta **dist** no diretório raiz do projeto de suplemento incluirá os arquivos que você implantará nas etapas subsequentes.
 
-10. Para implantar o, selecione o explorador de arquivos, selecione e segure (clique com o botão direito do mouse) sua pasta **dist** e escolha **implantar no site estático**. Quando solicitado, selecione a conta de armazenamento criada anteriormente.
+10. Para implantar, selecione o explorador de arquivos, selecione e segure (clique com o botão direito do mouse) em sua **pasta dist** e escolha **Implantar no Site Estático**. Quando solicitado, selecione a conta de armazenamento criada anteriormente.
 
-![Implantando em um site estático](../images/deploy-to-static-website.png)
+![Implantando em um site estático.](../images/deploy-to-static-website.png)
 
-11. Quando a implantação estiver concluída, será exibida uma mensagem de **navegar para o site** que você pode selecionar para abrir o ponto de extremidade principal do código do aplicativo implantado.
+11. Quando a implantação é concluída, uma **mensagem Procurar** para site é exibida que você pode selecionar para abrir o ponto de extremidade principal do código do aplicativo implantado.
 
 ## <a name="see-also"></a>Confira também
 

@@ -5,12 +5,12 @@ title: Visão geral do ciclo de vida de desenvolvimento
 description: Aprenda sobre o planejamento, desenvolvimento, teste e publicação de eventos do ciclo de vida.
 ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697187"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076669"
 ---
 # <a name="development-lifecycle-overview"></a>Visão geral do ciclo de vida de desenvolvimento
 
@@ -20,8 +20,8 @@ Para qualquer suplemento compilado, você precisa entender conceitos importantes
 
 |               |               |
 | ------------- | ------------- |
-| ![práticas recomendadas](../images/i_best-practices_small.svg) | **Planejar**<br>[Conheça as práticas recomendadas e os requisitos do sistema para os Suplementos do Office.](../concepts/add-in-development-best-practices.md) |
-| ![blocos de código](../images/i_code-blocks_small.svg) | **Desenvolver**<br>[Conheça as APIs e os padrões para o desenvolvimento de Suplementos do Office.](../develop/develop-overview.md) |
-| ![testes recomendados](../images/i_recommended-testing_small.svg) | **Testar e depurar**<br>[Aprenda a testar e depurar os Suplementos do Office.](../testing/test-debug-office-add-ins.md) |
-| ![implantar](../images/i_deploy_small.svg) | **Publicar**<br>[Aprenda a implantar e publicar Suplementos do Office.](../publish/publish.md) |
-| ![referência](../images/i_reference_small.svg) | **Referência**<br>[Veja a documentação de referência para as APIs JavaScript do Office, o manifesto de suplementos, listas de códigos de erro e muito mais.](../reference/javascript-api-for-office.md) |
+| :::image type="icon" source="../images/i_best-practices_small.svg"::: | **Planejar**<br>[Conheça as práticas recomendadas e os requisitos do sistema para os Suplementos do Office.](../concepts/add-in-development-best-practices.md) |
+| :::image type="icon" source="../images/i_code-blocks_small.svg"::: | **Desenvolver**<br>[Conheça as APIs e os padrões para o desenvolvimento de Suplementos do Office.](../develop/develop-overview.md) |
+| :::image type="icon" source="../images/i_recommended-testing_small.svg"::: | **Testar e depurar**<br>[Aprenda a testar e depurar os Suplementos do Office.](../testing/test-debug-office-add-ins.md) |
+| :::image type="icon" source="../images/i_deploy_small.svg"::: | **Publicar**<br>[Aprenda a implantar e publicar Suplementos do Office.](../publish/publish.md) |
+| :::image type="icon" source="../images/i_reference_small.svg"::: | **Referência**<br>[Veja a documentação de referência para as APIs JavaScript do Office, o manifesto de suplementos, listas de códigos de erro e muito mais.](../reference/javascript-api-for-office.md) |

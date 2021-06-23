@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 9f7ccd4cfaed5132debb7017caaf3b9da733850d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329993"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076354"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -16,7 +16,7 @@ Suplementos de conteúdo são superfícies que podem ser incorporadas diretament
 
 *Figura 1. Layout típico dos suplementos de conteúdo*
 
-![Layout típico para os complementos de conteúdo em um Office aplicativo](../images/overview-with-app-content.png)
+![Layout típico para os complementos de conteúdo em um Office aplicativo.](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -35,13 +35,13 @@ No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
 *Figura 2. Menu de personalidade no Windows*
 
-![Menu de personalidade de 12x32 pixels Windows área de trabalho](../images/personality-menu-win.png)
+![Menu de personalidade de 12x32 pixels Windows área de trabalho.](../images/personality-menu-win.png)
 
 No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço ocupado para 34 x 32 pixels, como mostrado.
 
 *Figura 3. Menu de personalidade no Mac*
 
-![Menu de personalidade de 34 x 32 pixels na área de trabalho do Mac](../images/personality-menu-mac.png)
+![Menu de personalidade de 34 x 32 pixels na área de trabalho mac.](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implementação
 
@@ -56,6 +56,6 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 ## <a name="see-also"></a>Confira também
 
 - [Disponibilidade de aplicativos e plataformas de cliente Office para Suplementos do Office](../overview/office-add-in-availability.md)
-- [Fabric Core em Office de complementos](fabric-core.md)
+- [Núcleo da Malha em Suplementos do Office](fabric-core.md)
 - [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
 - [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

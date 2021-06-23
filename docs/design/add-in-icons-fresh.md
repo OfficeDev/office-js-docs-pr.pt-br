@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo novo para Office de complementos
 description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330042"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076508"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
@@ -60,7 +60,7 @@ Para criar comandos que se alinhem à interface do usuário do Office, siga as d
 
 A imagem a seguir mostra o layout de elementos básicos e modificadores em um ícone do Office.
 
-![Diagrama mostrando um elemento base de ícone no centro com um modificador na parte inferior direita e um modificador de ação no canto superior esquerdo](../images/icon-layouts.png)
+![Diagrama mostrando um elemento de base de ícone no centro com um modificador na parte inferior direita e um modificador de ação na parte superior esquerda.](../images/icon-layouts.png)
 
 - Elementos básicos centrais no quadro do pixel com preenchimento todo vazio.
 - Coloque modificadores de ação na parte superior esquerda.
@@ -89,7 +89,7 @@ Todos os modificadores devem ter um recorte transparente de 1 px entre cada elem
 ## <a name="icon-colors"></a>Cores do ícone
 
 > [!NOTE]
-> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são renderizados com a interface do usuário fluente e a paleta de cores é diferente da paleta descrita no [Microsoft UI Fabric | Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
+> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são renderizados com Fluent interface do usuário e a paleta de cores é diferente da paleta descrita no [Microsoft UI Fabric | Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor:
 
@@ -99,26 +99,26 @@ Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na
 
 |Nome da cor|RGB|Hex|Cor|Categoria|
 |:---|:---|:---|:---|:---|
-|Texto Cinza (80)|80, 80, 80|#505050| ![Cor cinza 80 para texto](../images/color-text-gray-80.png) |Texto|
-|Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Cor cinza 95 para texto](../images/color-text-gray-95.png) |Texto|
-|Texto Cinza (105)|105, 105, 105|#696969| ![Cor cinza 105 para texto](../images/color-text-gray-105.png) |Texto|
-|Cinza Escuro 32|128, 128, 128|#808080| ![Cor cinza escuro para 32 px e maior](../images/color-dark-gray-32.png) |32 px e acima|
-|Cinza Médio 32|158, 158, 158|#9E9E9E| ![Cor cinza média para 32 px e maior](../images/color-medium-gray-32.png) |32 px e acima|
-|Cinza Claro TODO|179, 179, 179|#B3B3B3| ![Cor cinza claro para todos os tamanhos de imagem](../images/color-light-gray-all.png) |Todos os tamanhos|
-|Cinza Escuro 16|114, 114, 114|#727272| ![Cor cinza escuro para 16 px e menor](../images/color-dark-gray-16.png) |16 px e abaixo|
-|Cinza Médio 16|144, 144, 144|#909090| ![Cor cinza média para 16 px e menor](../images/color-medium-gray-16.png) |16 e abaixo|
-|Azul 32|77, 130, 184|#4d82B8| ![Cor azul para 32 px e maior](../images/color-blue-32.png) |32 px e acima|
-|Azul 16|74, 125, 177|#4A7DB1| ![Cor azul para 16 px e menor](../images/color-blue-16.png) |16 px e abaixo|
-|Amarelo TODO|234, 194, 130|#EAC282| ![Cor amarela para todos os tamanhos de imagem](../images/color-yellow-all.png) |Todos os tamanhos|
-|Laranja 32|231, 142, 70|#E78E46| ![Cor laranja para 32 px e maior](../images/color-orange-32.png) |32 px e acima|
-|Laranja 16|227, 142, 70|#E3751C| ![Cor laranja para 16 px e menor](../images/color-orange-16.png) |16 px e abaixo|
-|Rosa TODO|230, 132, 151|#E68497| ![Cor rosa para todos os tamanhos de imagem](../images/color-pink-all.png) |Todos os tamanhos|
-|Verde 32|118, 167, 151|#76A797| ![Cor verde para 32 px e maior](../images/color-green-32.png) |32 px e acima|
-|Verde 16|104, 164, 144|#68A490| ![Cor verde para 16 px e menor](../images/color-green-16.png) |16 px e abaixo|
-|Vermelho 32|216, 99, 68|#D86344| ![Cor vermelha para 32 px e maior](../images/color-red-32.png) |32 px e acima|
-|Vermelho 16|214, 85, 50|#D65532| ![Cor vermelha para 16 px e menor](../images/color-red-16.png) |16 px e abaixo|
-|Roxo 32|152, 104, 185|#9868B9| ![Cor roxa para 32 px e maior](../images/color-purple-32.png) |32 px e acima|
-|Roxo 16|137, 89, 171|#8959AB| ![Cor roxa para 16 px e menor](../images/color-purple-16.png) |16 px e abaixo|
+|Texto Cinza (80)|80, 80, 80|#505050| ![Cor cinza 80 para texto.](../images/color-text-gray-80.png) |Texto|
+|Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Cor cinza 95 para texto.](../images/color-text-gray-95.png) |Texto|
+|Texto Cinza (105)|105, 105, 105|#696969| ![Cor cinza 105 para texto.](../images/color-text-gray-105.png) |Texto|
+|Cinza Escuro 32|128, 128, 128|#808080| ![Cor cinza escuro para 32 px e maior.](../images/color-dark-gray-32.png) |32 px e acima|
+|Cinza Médio 32|158, 158, 158|#9E9E9E| ![Cor cinza média para 32 px e maior.](../images/color-medium-gray-32.png) |32 px e acima|
+|Cinza Claro TODO|179, 179, 179|#B3B3B3| ![Cor cinza claro para todos os tamanhos de imagem.](../images/color-light-gray-all.png) |Todos os tamanhos|
+|Cinza Escuro 16|114, 114, 114|#727272| ![Cor cinza escuro para 16 px e menor.](../images/color-dark-gray-16.png) |16 px e abaixo|
+|Cinza Médio 16|144, 144, 144|#909090| ![Cor cinza média para 16 px e menor.](../images/color-medium-gray-16.png) |16 e abaixo|
+|Azul 32|77, 130, 184|#4d82B8| ![Cor azul para 32 px e maior.](../images/color-blue-32.png) |32 px e acima|
+|Azul 16|74, 125, 177|#4A7DB1| ![Cor azul para 16 px e menor.](../images/color-blue-16.png) |16 px e abaixo|
+|Amarelo TODO|234, 194, 130|#EAC282| ![Cor amarela para todos os tamanhos de imagem.](../images/color-yellow-all.png) |Todos os tamanhos|
+|Laranja 32|231, 142, 70|#E78E46| ![Cor laranja para 32 px e maior.](../images/color-orange-32.png) |32 px e acima|
+|Laranja 16|227, 142, 70|#E3751C| ![Cor laranja para 16 px e menor.](../images/color-orange-16.png) |16 px e abaixo|
+|Rosa TODO|230, 132, 151|#E68497| ![Cor rosa para todos os tamanhos de imagem.](../images/color-pink-all.png) |Todos os tamanhos|
+|Verde 32|118, 167, 151|#76A797| ![Cor verde para 32 px e maior.](../images/color-green-32.png) |32 px e acima|
+|Verde 16|104, 164, 144|#68A490| ![Cor verde para 16 px e menor.](../images/color-green-16.png) |16 px e abaixo|
+|Vermelho 32|216, 99, 68|#D86344| ![Cor vermelha para 32 px e maior.](../images/color-red-32.png) |32 px e acima|
+|Vermelho 16|214, 85, 50|#D65532| ![Cor vermelha para 16 px e menor.](../images/color-red-16.png) |16 px e abaixo|
+|Roxo 32|152, 104, 185|#9868B9| ![Cor roxa para 32 px e maior.](../images/color-purple-32.png) |32 px e acima|
+|Roxo 16|137, 89, 171|#8959AB| ![Cor roxa para 16 px e menor.](../images/color-purple-16.png) |16 px e abaixo|
 
 ## <a name="icons-in-high-contrast-modes"></a>Ícones em modos de alto contraste
 

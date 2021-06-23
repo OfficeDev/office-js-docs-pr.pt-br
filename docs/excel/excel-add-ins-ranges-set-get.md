@@ -1,19 +1,19 @@
 ---
-title: Definir e obter o intervalo selecionado usando a API JavaScript do Excel
-description: Saiba como usar a API JavaScript do Excel para definir e obter intervalos usando a API JavaScript do Excel.
+title: Definir e obter o intervalo selecionado usando a EXCEL JavaScript
+description: Saiba como usar a EXCEL JavaScript para definir e obter intervalos usando a API JavaScript Excel JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 06b6219924f0667ecef57d608cb417a76ef8031d
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 0bd4a4f4bcf40e7899ee429cdc631a43ba176077
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652755"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075772"
 ---
-# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>Definir e obter intervalos usando a API JavaScript do Excel
+# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>Definir e obter intervalos usando a EXCEL JavaScript
 
-Este artigo fornece exemplos de código que definir e obter intervalos com a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que definir e obter intervalos com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -34,7 +34,7 @@ Excel.run(function (context) {
 
 ### <a name="selected-range-b2e6"></a>Intervalo selecionado B2:E6
 
-![Intervalo selecionado no Excel](../images/excel-ranges-set-selection.png)
+![Intervalo selecionado Excel.](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obter o intervalo selecionado
 
@@ -55,6 +55,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Definir e obter valores de intervalo, texto ou fórmulas usando a API JavaScript do Excel](excel-add-ins-ranges-set-get-values.md)
-- [Definir o formato de intervalo usando a API JavaScript do Excel](excel-add-ins-ranges-set-format.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Definir e obter valores de intervalo, texto ou fórmulas usando Excel API JavaScript](excel-add-ins-ranges-set-get-values.md)
+- [Definir o formato de intervalo usando a EXCEL JavaScript](excel-add-ins-ranges-set-format.md)

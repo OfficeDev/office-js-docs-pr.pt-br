@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
-description: Saiba como solucionar erros de usuário em Complementos do Office.
+description: Saiba como solucionar erros do usuário em Office de complementos.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7762c81744aa484ee5c958e6c647c4ea7893efc9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840087"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077201"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -26,7 +26,7 @@ A tabela a seguir lista as mensagens de erro comuns que os usuários podem receb
 |:-----|:-----|
 |Erro do aplicativo: catálogo não pôde ser alcançado|Verifique as configurações do firewall. "Catálogo" refere-se ao AppSource. Essa mensagem indica que o usuário não consegue acessar o AppSource.|
 |ERRO DO APLICATIVO: este aplicativo não pôde ser iniciado. Feche essa caixa de diálogo para ignorar o problema ou clique em "Reiniciar"para tentar novamente.|Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/kb/2986156/).|
-|Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas > **de Modo de Exibição de Compatibilidade.**|
+|Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas > **Modo de Exibição** de Compatibilidade Configurações .|
 |Não foi possível carregar o aplicativo porque não há suporte para sua versão do navegador. Clique aqui para obter uma lista de versões do navegador compatíveis.|Verifique se o navegador dá suporte a armazenamento local HTML5 ou redefina as configurações do Internet Explorer. Para saber mais sobre os navegadores compatíveis, confira [Requisitos para a execução de Suplementos do Office](../concepts/requirements-for-running-office-add-ins.md).|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>Ao instalar um suplemento, você verá “erro ao carregar suplemento” na barra de status
@@ -43,11 +43,11 @@ Você também pode enviar comentários: se estiver usando o Excel no Windows ou 
 Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
 
 
-- Vá para Ferramentas > **Opções da Internet**  >  **Avançadas.**
+- Vá para Ferramentas > **Opções da Internet**  >  **Avançadas**.
     
-- Em **Navegação, desmarque** **Desabilitar depuração de script (Internet Explorer)** e **Desabilitar depuração de script (Outros).**
+- Em **Navegação, desmarque** **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)**.
     
-Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, marque **Desabilitar depuração de script (Internet Explorer)** e **Desabilitar a depuração de scripts (Outros)** novamente.
+Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, verifique **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)** novamente.
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>O suplemento não é ativado no Office 2013
@@ -69,7 +69,7 @@ Quando o usuário usa um suplemento do Office, ele é solicitado a permitir a ex
 
 "As configurações de segurança do navegador nos impedem de criar uma caixa de diálogo. Tente outro navegador ou configure o navegador para que a 'URL' e o domínio mostrado na barra de endereço estejam na mesma zona de segurança".
 
-![Captura de tela da mensagem de erro da caixa de diálogo](../images/dialog-prevented.png)
+![Captura de tela da mensagem de erro da caixa de diálogo.](../images/dialog-prevented.png)
 
 |**Navegadores afetados**|**Plataformas afetadas**|
 |:--------------------|:---------------------|
@@ -95,4 +95,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>Confira também
 
-- [Solucionar erros de desenvolvimento com os Complementos do Office](troubleshoot-development-errors.md)
+- [Solucionar erros de desenvolvimento com Office de complementos](troubleshoot-development-errors.md)

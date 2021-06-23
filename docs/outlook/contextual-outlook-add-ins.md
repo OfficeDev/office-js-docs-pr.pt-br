@@ -3,12 +3,12 @@ title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c2cfbc1019048bb02186521c2cb81ed832934a8d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608954"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076774"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 
@@ -64,7 +64,7 @@ O usuário inicia o suplemento contextual por meio de texto, tanto uma entidade 
 
 **Exemplo de texto com a entidade realçada (um endereço)**
 
-![Mostra a entidade realçada em um email](../images/outlook-detected-entity-highlight.png)
+![Mostra a entidade realçada em um email.](../images/outlook-detected-entity-highlight.png)
     
 Quando há várias entidades ou suplementos contextuais em uma mensagem, existem algumas regras de interação do usuário:
 
@@ -78,7 +78,7 @@ Um suplemento contextual ativado aparece em um cartão, que é uma janela separa
 
 **Exemplo de um suplemento exibido em um cartão**
 
-![Mostra um aplicativo contextual em um cartão](../images/outlook-detected-entity-card.png)
+![Mostra um aplicativo contextual em um cartão.](../images/outlook-detected-entity-card.png)
 
 Para fechar o cartão e o suplemento, o usuário deve clicar em algum lugar fora do cartão.
 

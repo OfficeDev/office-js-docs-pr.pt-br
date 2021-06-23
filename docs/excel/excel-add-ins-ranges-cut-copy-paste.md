@@ -1,25 +1,25 @@
 ---
-title: Recorte, copie e colar intervalos usando a API JavaScript do Excel
-description: Saiba como cortar, copiar e colar intervalos usando a API JavaScript do Excel.
+title: Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
+description: Saiba como cortar, copiar e colar intervalos usando Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8cf92ef148c24613674930140cec762c9cd8c4a4
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652782"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075821"
 ---
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Recorte, copie e colar intervalos usando a API JavaScript do Excel
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
 
-Este artigo fornece exemplos de código que cortam, copiam e colaram intervalos usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que cortam, copiam e colaram intervalos usando Excel API JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-O [método Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) replica as ações **Copiar** e **Colar** da interface do usuário do Excel. O destino é `Range` o objeto `copyFrom` chamado. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+O [método Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) replica as ações **Copiar** e **Colar** da interface do usuário Excel usuário. O destino é `Range` o objeto `copyFrom` chamado. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
 
 O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
 
@@ -72,11 +72,11 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>Dados antes que o intervalo seja copiado e passado
 
-![Dados no Excel antes que o método de cópia do intervalo tenha sido executado](../images/excel-range-copyfrom-skipblanks-before.png)
+![Dados em Excel antes que o método de cópia do intervalo tenha sido executado.](../images/excel-range-copyfrom-skipblanks-before.png)
 
 ### <a name="data-after-range-is-copied-and-pasted"></a>Dados após o intervalo são copiados e copiados
 
-![Dados no Excel após o método de cópia do intervalo ter sido executado](../images/excel-range-copyfrom-skipblanks-after.png)
+![Dados em Excel depois que o método de cópia do intervalo tiver sido executado.](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## <a name="cut-and-paste-move-cells"></a>Cortar e colar células (mover)
 
@@ -98,6 +98,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Remover duplicatas usando a API JavaScript do Excel](excel-add-ins-ranges-remove-duplicates.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Remover duplicatas usando a EXCEL JavaScript](excel-add-ins-ranges-remove-duplicates.md)
 - [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)

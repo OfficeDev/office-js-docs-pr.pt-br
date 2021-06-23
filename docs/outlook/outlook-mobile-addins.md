@@ -1,33 +1,33 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
-description: Os complementos do Outlook Mobile têm suporte em todas as contas comerciais do Microsoft 365, em Outlook.com e o suporte estará em breve nas contas do Gmail.
+description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365, contas Outlook.com e o suporte está chegando em breve às contas do gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 586a473e1036e8480f395da49011f540d87e1b5f
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270704"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076732"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
 
-Os complementos do Outlook Mobile têm suporte em todas as contas comerciais do Microsoft 365, Outlook.com e o suporte estará chegando em breve às contas do Gmail.
+Outlook os complementos móveis são suportados em todas as contas Microsoft 365 de negócios, contas Outlook.com e o suporte está chegando em breve às contas do Gmail.
 
 **Um painel de tarefas de exemplo no Outlook no iOS**
 
-![Uma captura de tela do painel de tarefas no Outlook no iOS](../images/outlook-mobile-addin-taskpane.png)
+![Captura de tela de um painel de tarefas Outlook no iOS.](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Um painel de tarefas de exemplo no Outlook no Android**
 
-![Uma captura de tela do painel de tarefas no Outlook no Android](../images/outlook-mobile-addin-taskpane-android.png)
+![Captura de tela de um painel de tarefas em Outlook no Android.](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> Os complementos não funcionam na versão moderna do Outlook em um navegador móvel. Para saber mais, confira [o Outlook em seu navegador móvel que está sendo atualizado.](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
+> Os complementos não funcionam na versão moderna do Outlook em um navegador móvel. Para obter mais informações, [consulte Outlook no navegador móvel está sendo atualizado](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 
 ## <a name="whats-different-on-mobile"></a>Qual é a diferença no celular?
 
@@ -35,7 +35,7 @@ Os complementos do Outlook Mobile têm suporte em todas as contas comerciais do 
   - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
   - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Em geral, somente o modo De leitura de mensagem é suportado no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, o modo Organizador de Compromissos é suportado para os complementos integrados do provedor de reunião online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um complemento móvel do Outlook para um provedor](online-meeting.md) de reuniões online para saber mais sobre esse cenário.
+- Em geral, apenas o modo De Leitura de Mensagem é suportado no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, o modo Organizador de Compromissos é suportado para os complementos integrados do provedor de reuniões online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um Outlook](online-meeting.md) para um provedor de reunião online para saber mais sobre esse cenário.
 
 - A API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
 
@@ -55,13 +55,13 @@ Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
 **Uma interação de usuário de exemplo para criar um cartão do Trello com base em uma mensagem de email no iOS**
 
-![Um GIF animado mostrando a interação do usuário com um suplemento do Outlook Mobile no iOS](../images/outlook-mobile-addin-interaction.gif)
+![GIF animado mostrando a interação do usuário com um Outlook de celular no iOS.](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
 **Uma interação de usuário de exemplo para criar um cartão do Trello com base em uma mensagem de email no Android**
 
-![Um GIF animado mostrando a interação do usuário com um suplemento do Outlook Mobile no Android](../images/outlook-mobile-addin-interaction-android.gif)
+![GIF animado mostrando a interação do usuário com um Outlook de celular no Android.](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Teste seus suplementos no celular
 
@@ -69,7 +69,7 @@ Para testar um suplemento no Outlook Mobile, você pode carregar um suplemento p
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 
-A solução de problemas em dispositivos móveis pode ser difícil, pois talvez você não tenha as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS).](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)
+A solução de problemas em dispositivos móveis pode ser difícil, pois você pode não ter as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 ## <a name="next-steps"></a>Próximas etapas
 

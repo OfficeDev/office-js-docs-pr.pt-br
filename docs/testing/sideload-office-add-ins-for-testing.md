@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
-description: Teste seu Add-in do Office no Office na Web ao fazer sideload.
+description: Teste seu Office de Office na Web ao fazer sideload.
 ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 938f4de53dd110992dab547b5300d625017401f3
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: e830ccbb6a4e325d6d70c3612492009b5e3d1570
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024301"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077215"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -23,9 +23,9 @@ O sideload varia entre aplicativos host (por exemplo, Excel).
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Realizar sideload de um suplemento do Office no Office na Web
 
-Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e **Word.** Para outros aplicativos host, consulte as instruções de sideload manual na seção a seguir. Este projeto de exemplo pressupo que você está usando um projeto criado com o [gerador Yeoman para Os Complementos do Office](https://github.com/OfficeDev/generator-office).
+Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e **Word.** Para outros aplicativos host, consulte as instruções de sideload manual na seção a seguir. Este projeto de exemplo pressupo que você está usando um projeto criado com o gerador [Yeoman para Office Desempois](https://github.com/OfficeDev/generator-office).
 
-1. Abra [o Office na Web](https://office.live.com/). Usando a **opção Criar,** faça um documento no **Excel,** **OneNote,** **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
+1. Abra [Office na Web](https://office.live.com/). Usando a **opção Criar,** crie um documento em **Excel,** **OneNote,** **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
 
 2. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivopackage.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
 
@@ -50,19 +50,19 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
 
 4. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção Para **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
 
-5. Você verá uma segunda caixa de diálogo, perguntando se deseja registrar um manifesto do Office Add-in em seu computador. Você deve selecionar **Sim**.
+5. Você verá uma segunda caixa de diálogo, perguntando se deseja registrar um manifesto de Office de complemento do seu computador. Você deve selecionar **Sim**.
 
 6. Seu complemento está instalado. Se for um comando de complemento, ele deverá aparecer na faixa de opções ou no menu de contexto. Se for um complemento do painel de tarefas, o painel de tarefas deverá aparecer.
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Fazer sideload de um Add-in do Office no Office na Web manualmente
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Fazer sideload de Office de um Office na Web manualmente
 
-Esse método não usa a linha de comando e só pode ser realizado usando comandos dentro do aplicativo host (como o Excel).
+Esse método não usa a linha de comando e pode ser realizado usando comandos somente no aplicativo host (como Excel).
 
-1. Abra [o Office na Web](https://office.live.com/). Abra um documento no **Excel,** **no Word** ou **no PowerPoint.** Na guia **Inserir** na faixa de opções na seção **Add-ins,** escolha **Complementos do Office**.
+1. Abra [Office na Web](https://office.live.com/). Abra um documento em **Excel,** **Word** ou **PowerPoint**. Na guia **Inserir** na faixa de opções na seção **Add-ins,** escolha **Office Adicionar.**
 
-1. Na caixa **de diálogo Complementos** do Office, selecione a guia **MEUS ADD-INS,** escolha Gerenciar Meus **Complementos** e, em seguida, **Carregue Meu Add-in**.
+1. Na caixa **de diálogo Office de** Office, selecione a guia MEUS **ADD-INS,** escolha Gerenciar Meus **Complementos** e, em seguida, **Upload Meu Complemento**.
 
-    ![A caixa de diálogo Suplementos do Office com um menu suspenso "Gerenciar meus suplementos" no canto superior direito e abaixo o menu suspenso com a opção "Carregar meu suplemento"](../images/office-add-ins-my-account.png)
+    ![A caixa Office de Office com um drop-down na leitura superior direita "Gerenciar meus complementos" e um drop-down abaixo dele com a opção "Upload Meu Complemento".](../images/office-add-ins-my-account.png)
 
 1. **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
 
@@ -71,19 +71,19 @@ Esse método não usa a linha de comando e só pode ser realizado usando comando
 1. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
-> Para testar seu Complemento do Office com o Microsoft Edge com o WebView original (EdgeHTML), é necessária uma etapa de configuração adicional. Em um Prompt de Comando do Windows, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o WebView2 de Borda baseado em Chromium. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-## <a name="sideload-an-office-add-in"></a>Fazer sideload de um Add-in do Office
+## <a name="sideload-an-office-add-in"></a>Fazer sideload Office add-in
 
-1. Entre em sua conta do Microsoft 365.
+1. Entre na sua conta Microsoft 365 de usuário.
 
-2. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel,** **Word** ou **PowerPoint** e crie um novo documento.
+2. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
 
 3. As etapas 3 a 6 são as mesmas da seção anterior **Realize sideload para um suplemento do Office no Office na Web**. 
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Sideload de um suplemento usando o Visual Studio
 
-Se você estiver usando Visual Studio para desenvolver seu complemento, o processo de sideload será semelhante ao sideload manual da Web. A única diferença é que você deve atualizar o valor do elemento **SourceURL** no manifesto para incluir a URL completa em que o suplemento for implantado.
+Se você estiver usando Visual Studio para desenvolver seu complemento, o processo de sideload será semelhante ao sideload manual para a Web. A única diferença é que você deve atualizar o valor do elemento **SourceURL** no manifesto para incluir a URL completa em que o suplemento for implantado.
 
 > [!NOTE]
 > Embora você possa realizar o sideload de suplementos do Visual Studio para o Office na Web, não é possível depurá-los no Visual Studio. Para depurar você precisará usar as ferramentas de depuração do navegador. Para saber mais, confira [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md).
@@ -99,7 +99,7 @@ Se você estiver usando Visual Studio para desenvolver seu complemento, o proces
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento com sideload
 
-Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário desmarcar o cache do [Office](clear-cache.md) e, em seguida, fazer o recarrego do complemento usando o manifesto atualizado. Isso permitirá que o Office processe o suplemento conforme descrito no manifesto atualizado.
+Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário limpar o [cache do Office](clear-cache.md) e, em seguida, re-sideload do complemento usando o manifesto atualizado. Isso permitirá que o Office processe o suplemento conforme descrito no manifesto atualizado.
 
 ## <a name="see-also"></a>Confira também
 

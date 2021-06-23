@@ -4,12 +4,12 @@ description: Saiba como usar a API JavaScript Excel para recuperar precedentes e
 ms.date: 06/03/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78fa4fb070ede85d139425a9d59ba1224785a605
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783516"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075793"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 
@@ -25,7 +25,7 @@ Localize as células precedentes diretas de uma fórmula [com Range.getDirectPre
 
 A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear Precedentes** na interface Excel interface do usuário. Este botão desenha uma seta de células precedentes para a célula selecionada. A célula selecionada, **E3**, contém a fórmula "=C3 * D3", **portanto, C3** e **D3** são células precedentes. Ao contrário do Excel da interface do usuário, o `getDirectPrecedents` método não desenha setas.
 
-![Células precedentes de rastreamento de seta na interface do usuário Excel de seta](../images/excel-ranges-trace-precedents.png)
+![Seta rastreando células precedentes na interface Excel interface do usuário.](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > O `getDirectPrecedents` método não pode recuperar células precedentes entre as guias de trabalho.
@@ -64,7 +64,7 @@ Localize as células dependentes diretas de uma fórmula [com Range.getDirectDep
 
 A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear Dependentes** na interface Excel interface do usuário. Este botão desenha uma seta de células dependentes para a célula selecionada. A célula selecionada, **D3**, tem a **célula E3** como dependente. **O E3** contém a fórmula "=C3 * D3". Ao contrário do Excel da interface do usuário, o `getDirectDependents` método não desenha setas.
 
-![Células dependentes de rastreamento de seta na interface Excel interface do usuário](../images/excel-ranges-trace-dependents.png)
+![Células dependentes de rastreamento de seta na interface Excel interface do usuário.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > O `getDirectDependents` método não pode recuperar células dependentes entre as guias de trabalho.

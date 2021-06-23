@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
-description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Complementos do Office.
+description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma Office de complementos.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: da7b21bedacdc9ff12dfbce328b66a2e6ec75925
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178087"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076186"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -16,13 +16,13 @@ ms.locfileid: "51178087"
 
 Os suplementos do Office são protegidos por um ambiente de tempo de execução de suplemento, um modelo de permissões com várias camadas e administradores de desempenho. Essa estrutura protege a experiência do usuário das seguintes maneiras.
 
-- O acesso ao quadro da interface do usuário do aplicativo cliente do Office é gerenciado.
+- O acesso ao Office da interface do usuário do aplicativo cliente é gerenciado.
 
-- Somente o acesso indireto ao thread da interface do usuário do aplicativo cliente do Office é permitido.
+- Somente o acesso indireto ao thread de interface do usuário do Office cliente é permitido.
 
 - Interações modais não são permitidas - por exemplo, chamadas para JavaScript , e funções não são permitidas porque `alert` `confirm` são `prompt` modais.
 
-Além disso, a estrutura de tempo de execução oferece os seguintes benefícios para garantir que um Add-in do Office não possa danificar o ambiente do usuário.
+Além disso, a estrutura de tempo de execução oferece os seguintes benefícios para garantir que um Office de usuário não possa danificar o ambiente do usuário.
 
 - Isola o processo no qual o suplemento é executado.
 
@@ -32,7 +32,7 @@ Além disso, a estrutura de tempo de execução oferece os seguintes benefícios
 
 E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos.
 
-As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte à execução de complementos em clientes do Office em dispositivos baseados no Windows, em dispositivos Mac OS X e em navegadores da Web.
+As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte à execução de complementos em clientes Office em dispositivos baseados em Windows, em dispositivos Mac OS X e em navegadores da Web.
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
@@ -42,27 +42,27 @@ Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar
 
 *Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
 
-![Diagrama mostrando a infraestrutura rich-client](../images/dk2-agave-overview-02.png)
+![Diagrama mostrando a infraestrutura rich-client.](../images/dk2-agave-overview-02.png)
 
 Conforme mostrado na figura a seguir, em uma área de trabalho Mac OS X, a página da Web do complemento é hospedada dentro de um processo de host de tempo de execução do WebKit em área de segurança, o que ajuda a fornecer um nível semelhante de proteção de segurança e desempenho.
 
-*Figura 2. Ambiente de tempo de execução de complementos do Office em clientes Mac OS X*
+*Figura 2. Office Ambiente de tempo de execução de complementos em clientes Mac OS X*
 
-![Diagrama mostrando aplicativos para o ambiente de tempo de execução do Office no Mac OS X](../images/dk2-agave-overview-mac-02.png)
+![Diagrama mostrando aplicativos para Office de tempo de execução no Mac OS X.](../images/dk2-agave-overview-mac-02.png)
 
 O tempo de execução de Suplementos do Office gerencia a comunicação entre processos, a conversão de eventos e chamadas à API JavaScript em itens nativos, bem como o suporte de comunicação remota da interface do usuário para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicitação de reunião ou compromisso.
 
 ### <a name="web-clients"></a>Clientes Web
 
-Em clientes Da Web com suporte, os Complementos do Office são hospedados em um **iframe** que é executado usando o atributo **de área de risco** HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que dá suporte a complementos no Office em execução no navegador e os componentes relevantes (o cliente Web, **o iframe,** o tempo de execução dos Complementos do Office e a API JavaScript para Office) que são necessários para dar suporte a eles.
+Em clientes Web com suporte, Office os complementos são hospedados em um **iframe** que é executado usando o atributo **de área de área de risco** HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que oferece suporte a Office de Office em execução no navegador e os componentes relevantes (o cliente Web, **o iframe**, o tempo de execução de complementos do Office e a API JavaScript para Office) que são necessários para dar suporte a eles.
 
 *Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
 
-![Diagrama mostrando a infraestrutura do cliente Web](../images/dk2-agave-overview-03.png)
+![Diagrama mostrando a infraestrutura do cliente Web.](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>Integridade do suplemento no AppSource
 
-Você pode disponibilizar seus Complementos do Office para o público publicando-os no AppSource. O AppSource impõe as seguintes medidas para manter a integridade dos complementos.
+Você pode disponibilizar seus Office para o público publicando-os no AppSource. O AppSource impõe as seguintes medidas para manter a integridade dos complementos.
 
 - Requer que o servidor host de um Suplemento do Office sempre use o protocolo SSL para se comunicar.
 
@@ -72,11 +72,11 @@ Você pode disponibilizar seus Complementos do Office para o público publicando
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para os Complementos do Office, o  impacto da desabilitação da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os complementos ou a Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios [](../publish/centralized-deployment.md) e os complementos implantados pelo administrador de IT de uma organização por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis no Outlook na Web, independentemente do status da configuração.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para Office de Office, o impacto da desabilitação  da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os complementos ou o Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios [](../publish/centralized-deployment.md) e os complementos implantados pelo administrador de IT de uma organização por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis Outlook na Web, independentemente do status da configuração.
 
-Para saber mais sobre o comportamento específico do Outlook, consulte Privacidade, permissões e segurança para [os complementos do Outlook.](../outlook/privacy-and-security.md#optional-connected-experiences)
+Para saber mais sobre Outlook comportamento específico, consulte Privacidade, permissões e segurança para Outlook [de Outlook.](../outlook/privacy-and-security.md#optional-connected-experiences)
 
-Observe que, se um administrador de IT desabilitar o uso de experiências conectadas no [Office](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences), ele terá o mesmo efeito nos complementos que desativar apenas experiências conectadas opcionais.
+Observe que, se um administrador de IT desabilitar o uso de experiências conectadas no Office [,](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences)ele terá o mesmo efeito nos complementos que desativar apenas experiências conectadas opcionais.
 
 ## <a name="addressing-end-users-privacy-concerns"></a>Lidar com as preocupações de privacidade dos usuários finais
 
@@ -87,7 +87,7 @@ Esta seção descreve a proteção oferecida pela plataforma de Suplementos do O
 Os Suplementos do Office são criados usando tecnologias da Web que são executadas em um controle de navegador ou **iframe**. Por causa disso, o uso de suplementos é semelhante à navegação em sites da Web na Internet ou intranet. Os suplementos podem ser externos a uma organização (se você adquirir o suplemento do AppSource) ou internos (se você adquirir o suplemento de um catálogo de suplementos do Exchange Server, catálogo de aplicativos do SharePoint ou compartilhamento de arquivos na rede de uma organização). Os suplementos têm acesso limitado à rede, e a maioria dos suplementos pode ler ou gravar no documento ativo ou no item de email. A plataforma de suplemento aplica certas restrições antes de um usuário ou administrador instalar ou iniciar um suplemento. Mas, como acontece com qualquer modelo de extensibilidade, os usuários devem ser cautelosos antes de iniciar um complemento desconhecido.
 
 > [!NOTE]
-> Os usuários podem ver um prompt de segurança para confiar no domínio na primeira vez que um complemento é carregado. Isso acontecerá se o host de domínio do complemento estiver fora do domínio do Exchange local ou do Servidor do Office Online.
+> Os usuários podem ver um prompt de segurança para confiar no domínio na primeira vez que um complemento é carregado. Isso acontecerá se o host de domínio do complemento estiver fora do domínio de Exchange local ou Servidor do Office Online.
 
 A plataforma de complemento aborda as preocupações de privacidade dos usuários finais das seguintes maneiras.
 
@@ -95,13 +95,13 @@ A plataforma de complemento aborda as preocupações de privacidade dos usuário
 
 - Antes de instalar um suplemento do AppSource, o usuário pode exibir a política de privacidade e os requisitos desse suplemento. Além disso, os suplementos do Outlook que interagem com caixas de correio dos usuários expõem as permissões específicas das quais precisam. O usuário pode examinar os termos de uso, as permissões solicitadas e a política de privacidade antes de instalar um suplemento do Outlook.
 
-- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um complemento que o usuário não tenha usado antes, o aplicativo cliente do Office solicitará que o usuário conceda permissão para que o complemento seja executado no documento. Em um ambiente organizacional, o aplicativo cliente do Office também solicita ao usuário se o documento vem de uma fonte externa.
+- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um complemento que o usuário não tenha usado antes, o aplicativo cliente Office solicitará que o usuário conceda permissão para que o complemento seja executado no documento. Em um ambiente organizacional, o aplicativo Office cliente também solicita ao usuário se o documento vem de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os complementos de conteúdo e do painel de tarefas, os usuários  gerenciam o acesso a complementos e catálogos confiáveis da Central de Confiações no cliente do Office host (aberto a partir de Opções de Arquivo  >    >  **Configurações** do Centro de Confiação configurações de  >  **Catálogos** de  >  **Complementos** Confiáveis ). Para os complementos do Outlook, os usos podem gerenciar os complementos escolhendo o botão Gerenciar **Complementos:** no Outlook no Windows, escolha **Gerenciar**  >  **Arquivos Gerenciar Complementos**. No Outlook no Mac, escolha o **botão Gerenciar Complementos** na barra de complementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os complementos de conteúdo e do painel de tarefas, os usuários  gerenciam o acesso a complementos e catálogos confiáveis da Central de Confiações no cliente do host Office (aberto do Centro de Confiação do Centro de Confiações de Opções de Arquivo Configurações Catálogos de  >    >    >    >  **Complementos Confiáveis).** Para Outlook de Outlook, os usos podem gerenciar os complementos escolhendo o botão Gerenciar **Complementos:** no Outlook no Windows, escolha **Gerenciar** Arquivos Gerenciar  >  **Complementos**. Em Outlook no Mac, escolha o botão **Gerenciar Complementos** na barra de complementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma de complemento fornece segurança e desempenho para os usuários finais das seguintes maneiras.
 
-  - Um Add-in do Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de complemento separado do aplicativo cliente do Office. Esse design fornece isolamento de segurança e desempenho do aplicativo cliente.
+  - Um Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de um Office de complemento. Esse design fornece isolamento de segurança e desempenho do aplicativo cliente.
 
   - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
 
@@ -109,7 +109,7 @@ Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenh
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
 
-A seguir, lista algumas diretrizes específicas de proteção de PII para você como desenvolvedor de Complementos do Office.
+A seguir, lista algumas diretrizes específicas de proteção de PII para você como desenvolvedor de Office Desempregos.
 
 - O objeto [Settings](/javascript/api/office/office.settings) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
 
@@ -129,7 +129,7 @@ A plataforma de suplementos fornece um modelo de permissões que o suplemento us
 
 Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 
-Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, os complementos do Outlook que solicitam a **permissão ReadWriteMailbox** exigem o privilégio de administrador explícito para instalar.
+Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, Outlook que solicitam a permissão **ReadWriteMailbox** exigem o privilégio de administrador explícito para instalar.
 
 O exemplo a seguir mostra como um complemento do painel de tarefas especifica a **permissão ReadDocument** em seu manifesto. Para manter as permissões em destaque, outros elementos no manifesto não são exibidos.
 
@@ -148,7 +148,7 @@ O exemplo a seguir mostra como um complemento do painel de tarefas especifica a 
 
 Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
-Para obter mais informações sobre permissões para os complementos do Outlook, consulte os tópicos a seguir.
+Para obter mais informações sobre permissões para Outlook de Outlook, consulte os tópicos a seguir.
 
 - [Privacidade, permissões e segurança de suplementos do Outlook](../outlook/privacy-and-security.md)
 
@@ -156,7 +156,7 @@ Para obter mais informações sobre permissões para os complementos do Outlook,
 
 ### <a name="same-origin-policy"></a>Política de mesma origem
 
-Como os Complementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador. Por padrão, uma página da Web em um domínio não pode fazer chamadas de serviço Web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio diferente do local em que está hospedado.
+Como Office os complementos são páginas da Web executadas em um controle do navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador. Por padrão, uma página da Web em um domínio não pode fazer chamadas de serviço Web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio diferente do local em que está hospedado.
 
 Uma maneira de superar essa limitação é usar JSON/P -- fornecer um proxy para o serviço Web incluindo uma marca de **script** com um atributo **src** que aponta para algum script hospedado em outro domínio. Você pode criar as marcas **script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts serão executados onde estiverem inseridos e funcionarão como esperado.
 
@@ -202,7 +202,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como os Complementos do Office são renderizados em um iframe ao executar em um navegador com aplicativos cliente do Office, use as dicas a seguir para minimizar o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) , uma técnica usada por hackers para enganar os usuários a revelar informações confidenciais.
+Como os Office são renderizados em um iframe ao executar em um navegador com aplicativos cliente Office, use as dicas a seguir para minimizar o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) , uma técnica usada por hackers para enganar os usuários a revelar informações confidenciais.
 
 Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
 

@@ -3,16 +3,16 @@ title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 05/20/2021
 localization_priority: Normal
-ms.openlocfilehash: e53f3525e2db1db5c568a1e415bf30a379f58d72
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 963577f7e5286137a2735d4c067e4391588117b9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590460"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076781"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
-Você pode criar e executar um Outlook do mesmo modo no Outlook no Mac como nos outros clientes, incluindo o Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada cliente. As mesmas chamadas do add-in para a API JavaScript Office geralmente funcionam da mesma maneira, exceto para as áreas descritas na tabela a seguir.
+Você pode criar e executar um Outlook do mesmo modo no Outlook no Mac, como nos outros clientes, incluindo Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada cliente. As mesmas chamadas do add-in para a API JavaScript Office geralmente funcionam da mesma maneira, exceto para as áreas descritas na tabela a seguir.
 
 Para saber mais, confira [implantar e instalar suplementos do Outlook para teste](testing-and-tips.md).
 
@@ -43,8 +43,8 @@ Você pode determinar qual versão da interface do usuário você está, da segu
 
 **Interface do usuário atual**
 
-![Interface do usuário atual no Mac](../images/outlook-on-mac-classic.png)
+![Interface do usuário atual no Mac.](../images/outlook-on-mac-classic.png)
 
 **Nova interface do usuário (visualização)**
 
-![Nova interface do usuário em visualização no Mac](../images/outlook-on-mac-new.png)
+![Nova interface do usuário em visualização no Mac.](../images/outlook-on-mac-new.png)

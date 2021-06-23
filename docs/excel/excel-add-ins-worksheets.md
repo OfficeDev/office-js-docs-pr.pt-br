@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
 ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783509"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075548"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -376,7 +376,7 @@ Os eventos `onColumnSorted` e `onRowSorted` fornecem seus retornos de chamadas c
 
 As imagens a seguir mostram os intervalos retornados pela propriedade `address` para eventos de classificação. Primeiro, aqui estão os dados de exemplo antes da classificação:
 
-![Dados da tabela no Excel antes de serem classificados](../images/excel-sort-event-before.png)
+![Dados de tabela em Excel antes de serem classificação.](../images/excel-sort-event-before.png)
 
 Se uma classificação de cima para baixo for realizada no "**Q1**&quot; (os valores em &quot;**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`:
 
