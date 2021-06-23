@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9450408a1cdead8593cc901796c7156a4b415cd
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 2ed1678d347de5725752e22a00a1def6f8f7d66b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961220"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075982"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -23,7 +23,7 @@ Há duas maneiras de realizar a autentificação e autorização.
 
 O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplementos. Os detalhes estão mais pra frente neste artigo.
 
-![Uma imagem mostrando um fluxograma de decisão para habilitar a autenticação e a autorização nos Suplementos do Office](../images/authflowchart.png)
+![Uma imagem mostrando um fluxograma de decisão para habilitar a autenticação e a autorização nos Suplementos do Office.](../images/authflowchart.png)
 
 ## <a name="user-authentication-without-sso"></a>Autenticação de usuário sem SSO
 

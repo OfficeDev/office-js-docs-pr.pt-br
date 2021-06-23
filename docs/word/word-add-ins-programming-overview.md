@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2dba67cabaf11d6e10560ba3dbe5babde3ed0c92
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840003"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075541"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -24,7 +24,7 @@ A figura a seguir mostra um exemplo de um suplemento do Word que é executado em
 
 *Figura 1. Suplemento em execução em um painel de tarefas no Word*
 
-![Suplemento em execução em um painel de tarefas no Word](../images/word-add-in-show-host-client.png)
+![Suplemento em execução em um painel de tarefas no Word.](../images/word-add-in-show-host-client.png)
 
 O suplemento do Word (1) pode enviar solicitações para o documento do Word (2) e usar o JavaScript para acessar o objeto parágrafo e atualizar, excluir ou mover o parágrafo. Por exemplo, o código a seguir mostra como acrescentar uma nova sentença a esse parágrafo.
 
@@ -53,11 +53,11 @@ Redija seu suplemento uma vez e ele será executado em todas as versões do Word
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript para Word
 
-Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é a [API comuns](/javascript/api/office), que foi introduzido no Office 2013. Muitos dos objetos na API comuns podem ser usados em suplementos hospedados por dois ou mais clientes do Office.  Essa API usa retornos de chamadas de maneira ampla.
+Você pode usar dois conjuntos de APIs JavaScript para interagir com os objetos e metadados em um documento do Word. A primeira é a [API Comum](/javascript/api/office), que foi introduzida no Office 2013. Muitos dos objetos na API Comum podem ser usados em suplementos hospedados por dois ou mais clientes do Office. Essa API usa retornos de chamada extensivamente.
 
 O segundo é a [API JavaScript do Word](/javascript/api/word). Esse é um [modelo de API específico do aplicativo](../develop/application-specific-api-model.md)introduzido no Word 2016. É um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafo](/javascript/api/word/word.paragraph)s. A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
 
-Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre os clientes com suporte, confira a [Disponibilidade de aplicativos e plataformas do cliente do Office para suplementos do Office](../overview/office-add-in-availability.md).
+Atualmente, todos os clientes do Word dão suporte à API JavaScript do Office compartilhada e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte [Disponibilidade de plataforma e aplicativo cliente do Office para Suplementos do Office](../overview/office-add-in-availability.md).
 
 Recomendamos que você comece com a API JavaScript do Word porque o modelo de objeto é mais fácil de usar. Use a API JavaScript do Word se precisar:
 

@@ -3,12 +3,12 @@ title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
 ms.date: 04/07/2021
 localization_priority: Priority
-ms.openlocfilehash: 4df59aaffa01be97ecf2b6349cdc6f6aca91ef07
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1c8c5420593b31f403cf8f5fa28659fc130db402
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650832"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076991"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -45,7 +45,7 @@ A figura a seguir mostra os quatro níveis de permissões e descreve os recursos
 
 **Relacionando o modelo de quatro níveis de permissão com o usuário final, o desenvolvedor e o administrador**
 
-![Modelo de permissões de quatro camadas para o esquema de aplicativos de correio v1.1](../images/add-in-permission-tiers.png)
+![Modelo de permissões de 4 camadas para o esquema de aplicativos de email v1.1.](../images/add-in-permission-tiers.png)
 
 ## <a name="appsource-add-in-integrity"></a>AppSource: Integridade do suplemento
 
@@ -83,9 +83,9 @@ O modelo de segurança aborda questões de segurança, privacidade e desempenho 
   >
   > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
-- Antes de instalar um suplemento da AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode realizar em seus dados e deve confirmá-los explicitamente para prosseguir. Nenhum suplemento do Outlook é automaticamente enviado por push a um computador cliente sem validação manual pelo usuário ou administrador.
+- Antes de instalar um suplemento do AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode fazer em seus dados e devem confirmar explicitamente para continuar. Nenhum suplemento do Outlook é enviado automaticamente por push para um computador cliente sem validação manual pelo usuário ou administrador.
 
-- A concessão da permissão **restricted** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. A concessão da permissão **read item** permite que o suplemento do Outlook acesse informações de identificação pessoal, como remetente e nomes dos destinatários e endereços de email, apenas no item atual.
+- A concessão de permissão **restrita** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. Conceder a permissão de **item de leitura** permite que o suplemento do Outlook acesse informações de identificação pessoal, como nomes de remetentes e destinatários e endereços de email, somente no item atual.
 
 - Um usuário final pode instalar um suplemento do Outlook somente para si mesmo. Os suplementos do Outlook que afetam uma organização são instalados por um administrador.
 
@@ -130,7 +130,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
     <Permissions>ReadItem</Permissions>
   ```
 
-- Os desenvolvedores podem solicitar a permissão **restricted** se o suplemento do Outlook for ativado em um tipo específico de itens do Outlook (compromisso ou mensagem) ou em entidades específicas extraídas (endereço número de telefone, URL) presentes no assunto ou no corpo do item. Por exemplo, a regra a seguir ativa o suplemento do Outlook se uma ou mais dessas três entidades, número de telefone, endereços postais ou URL, aparece no assunto ou no corpo da mensagem atual.
+- Os desenvolvedores podem solicitar a permissão **restrita** se o suplemento do Outlook for ativado em um tipo específico de itens do Outlook (compromisso ou mensagem) ou em entidades específicas extraídas (endereço número de telefone, URL) presentes no assunto ou no corpo do item. Por exemplo, a regra a seguir ativa o suplemento do Outlook se uma ou mais dessas três entidades, número de telefone, endereços postais ou URL, aparece no assunto ou no corpo da mensagem atual.
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -144,7 +144,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
     </Rule>
   ```
 
-- Os desenvolvedores devem solicitar a permissão **read item** quando o suplemento do Outlook precisa ler as propriedades do item atual, que não sejam as entidades padrão extraídas, ou gravar propriedades personalizadas definidas pelo suplemento no item atual, mas não precisa ler ou gravar em outros itens ou criar e enviar uma mensagem na caixa de correio do usuário. Por exemplo, um desenvolvedor deve solicitar a permissão **read item** quando o suplemento do Outlook precisa procurar por uma entidade como sugestão de reunião, sugestão de tarefa, endereço de email ou nome de contato no assunto ou no corpo do item, ou usar uma expressão regular para ser ativado.
+- Os desenvolvedores devem solicitar a permissão de **item de leitura** quando o suplemento do Outlook precisar ler as propriedades do item atual, que não sejam as entidades padrão extraídas, ou gravar propriedades personalizadas definidas pelo suplemento no item atual, mas não precisar ler ou gravar em outros itens ou criar e enviar uma mensagem na caixa de correio do usuário. Por exemplo, um desenvolvedor deve solicitar a permissão de **item de leitura** quando o suplemento do Outlook precisa procurar por uma entidade como sugestão de reunião, sugestão de tarefa, endereço de email ou nome de contato no assunto ou no corpo do item, ou usar uma expressão regular para ser ativado.
 
 - Os desenvolvedores devem solicitar a permissão **read/write item** quando o suplemento do Outlook precisa gravar propriedades do item redigido, como nomes, endereços de email, corpo e assunto, ou precisa adicionar ou remover anexos do item.
 

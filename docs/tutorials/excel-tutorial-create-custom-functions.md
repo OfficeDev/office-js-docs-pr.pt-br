@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 50855deac928f9610ebc80aa52858259106a109c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789202"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076207"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -38,7 +38,7 @@ Neste tutorial, você vai:
     * **Escolha o tipo de script:** `JavaScript`
     * **Qual será o nome do suplemento?** `starcount`
 
-    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas](../images/starcountPrompt.png)
+    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.](../images/starcountPrompt.png)
     
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -81,7 +81,7 @@ Para usar o suplemento de funções personalizadas, abra uma nova pasta de traba
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
 
-   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado](../images/excel-cf-online-register-add-in-1.png)
+   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado.](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -149,15 +149,15 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada.](../images/select-insert.png)
 
 3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
-    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos](../images/list-starcount.png)
+    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado.](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -167,8 +167,8 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 ---
 
-<ol start="5">
-<li> Agora, vamos experimentar a nova função. Na célula <strong>B1</strong>, digite o texto <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Funções personalizadas do Excel")</strong> e pressione Enter. Você deve ver que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
+<ol start="5&quot;>
+<li> Agora, vamos experimentar a nova função. Na célula <strong>B1</strong>, digite o texto <strong>=CONTOSO.GETSTARCOUNT(&quot;OfficeDev&quot;, &quot;Funções personalizadas do Excel")</strong> e pressione Enter. Você deve ver que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Criar uma função personalizada assíncrona de streaming
@@ -217,14 +217,14 @@ function clock(invocation) {
 
 1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada.](../images/select-insert.png)
 
 3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
-    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos](../images/list-starcount.png)
+    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado.](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 

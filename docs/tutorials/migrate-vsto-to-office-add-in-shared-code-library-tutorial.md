@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 localization_priority: Priority
-ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: aaf228d1e3ce33797165b1380b43d26ceffa1d8c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238089"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076122"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -27,7 +27,7 @@ Este tutorial orientará você pelas etapas de identificação e compartilhament
 
 O diagrama a seguir mostra como a biblioteca de códigos compartilhada funciona para migração. O código comum é refatorado em uma nova biblioteca de códigos compartilhadas. O código pode permanecer escrito em seu idioma original, como o C# ou o VB. Isso significa que você pode continuar usando o código do suplemento VSTO existente, criando uma referência do projeto. Ao criar o Suplemento do Office, ele também usará a biblioteca de códigos compartilhados chamando-a através de APIs REST.
 
-![Diagrama de Suplemento VSTO e Suplemento do Office usando uma biblioteca de códigos compartilhados](../images/vsto-migration-shared-code-library.png)
+![Diagrama de Suplemento VSTO e Suplemento do Office usando uma biblioteca de código compartilhada.](../images/vsto-migration-shared-code-library.png)
 
 Habilidades e técnicas neste tutorial:
 
@@ -70,7 +70,7 @@ Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO p
 
 O suplemento é um painel de tarefas personalizado do Excel. Você pode selecionar qualquer célula com o texto e escolher o botão **Mostrar o Unicode**. Na seção **Resultado**, o suplemento exibirá uma lista de cada caractere no texto junto com seu número Unicode correspondente.
 
-![Captura de tela do suplemento VSTO do Analisador de células executado em Excel com o botão "Mostrar Unicode" e Seção de resultados vazia](../images/pnp-cell-analyzer-vsto-add-in.png)
+![Captura de tela do suplemento VSTO Analisador de Células executando no Excel com o botão "Mostrar unicode" e a seção Resultado vazia.](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>Análise de tipos de código no suplemento VSTO
 
@@ -88,7 +88,7 @@ O código VSTO interage com o documento por meio de objetos .NET, como `Microsof
 
 A lógica empresarial, algoritmos, funções auxiliares e um código semelhante geralmente formam o coração de um suplemento VSTO. Esse código funciona independentemente da interface de usuário e do código do documento para executar a análise, conectar-se a serviços de backend, executar cálculos e muito mais. Esse é o código que pode ser compartilhado para que você não precise escrevê-lo novamente em JavaScript.
 
-Vamos examinar o suplemento VSTO. No código a seguir, cada seção é identificada como um código de documento, IU ou de algoritmo.
+Vamos examinar o Suplemento VSTO. No código a seguir, cada seção é identificada como um código de DOCUMENTO, IU ou ALGORÍTIMO.
 
 ```csharp
 // *** UI CODE ***

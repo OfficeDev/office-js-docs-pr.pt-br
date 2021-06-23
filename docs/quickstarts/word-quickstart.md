@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132323"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076865"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -39,7 +39,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-word.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -83,13 +83,13 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
         Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. No Word, abra um novo documento, escolha a guia **Página inicial** e o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+3. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela exibindo o aplicativo Word com o botão Mostrar Painel de tarefas realçado](../images/word-quickstart-addin-2b.png)
+    ![Captura de tela exibindo o aplicativo Word com o botão Mostrar Painel de tarefas realçado.](../images/word-quickstart-addin-2b.png)
 
-4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no documento com a fonte azul.
+4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto “Olá, Mundo” no documento com a fonte azul.
 
-    ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado](../images/word-quickstart-addin-1c.png)
+    ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado.](../images/word-quickstart-addin-1c.png)
 
 ### <a name="next-steps"></a>Próximas etapas
 
@@ -275,7 +275,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Abra o arquivo de manifesto XML no projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -301,11 +301,11 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. (Caso esteja usando uma versão de compra avulsa do Office, em vez da versão do Microsoft 365, os botões personalizados não serão compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
-    ![Captura de tela do aplicativo Word com o botão Mostrar Painel de tarefas realçado](../images/word-quickstart-addin-0.png)
+    ![Captura de tela do aplicativo Word com o botão Mostrar Painel de tarefas realçado.](../images/word-quickstart-addin-0.png)
 
 3. No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
-    ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1b.png)
+    ![Captura de tela do aplicativo Word com o suplemento clichê carregado.](../images/word-quickstart-addin-1b.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

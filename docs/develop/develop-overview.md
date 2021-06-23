@@ -3,12 +3,12 @@ title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0d19ec8203e7141b6667713786d790eb0a12bba2
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237886"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076115"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -87,7 +87,7 @@ O Script Lab é um suplemento que permite explorar a API JavaScript para Office 
 
 O vídeo de um minuto a seguir mostra o Script Lab em ação.
 
-[![Vídeo curto mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
+[![Vídeo curto mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab.')](https://aka.ms/scriptlabvideo)
 
 Para saber mais sobre o Script Lab, confira [Explorar as APIs JavaScript para Office usando o Script Lab](../overview/explore-with-script-lab.md).
 
@@ -101,13 +101,13 @@ Um suplemento do Office pode estender a interface do usuário do Office usando c
 
 A imagem a seguir mostra um comando de suplemento na faixa de opções, um painel de tarefas à direita do documento e uma caixa de diálogo ou suplemento de conteúdo sobre o documento.
 
-![Diagrama mostrando comandos de suplemento na faixa de opções, um painel de tarefas e um suplemento de conteúdo/caixa de diálogo em um documento do Office](../images/add-in-ui-elements.png)
+![Diagrama mostrando comandos de suplemento na faixa de opções, um painel de tarefas e um suplemento de conteúdo/caixa de diálogo em um documento do Office.](../images/add-in-ui-elements.png)
 
 Para obter mais informações sobre como estender a Interface de Usuário do Office e projetar a Experiência de Usuário do suplemento, confira [Elementos da Interface do Usuário do Office para Suplementos do Office](../design/interface-elements.md).
 
 ## <a name="next-steps"></a>Próximos passos
 
-Este artigo descreveu as diferentes maneiras de criar suplementos do Office, apresentou as maneiras como um suplemento pode estender a Interface do Usuário do Office, descreveu os conjuntos de API e apresentou o Script Lab como uma ferramenta valiosa para explorar as APIs de JavaScript do Office e os suplementos de prototipagem em funcionalidade. Agora que você explorou essas informações introdutórias, considere continuar sua jornada de Suplementos do Office pelos seguintes caminhos.
+Este artigo descreveu as diferentes maneiras de criar suplementos do Office, apresentou as maneiras como um suplemento pode estender a IU do Office, descreveu os conjuntos de API e apresentou o Script Lab como uma ferramenta valiosa para explorar as APIs de JavaScript do Office e a funcionalidade de suplemento de criação de protótipo. Agora que você já explorou estas informações introdutórias, considere continuar sua jornada de suplementos do Office ao longo dos caminhos a seguir.
 
 ### <a name="create-an-office-add-in"></a>Criar um Suplemento do Office
 

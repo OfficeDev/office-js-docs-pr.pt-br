@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: fbec924eb6f8d1941be6882dc5e1a563bd011105
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 669eedd3439698a37bebe2a83b3c2a8381cdb4d6
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961248"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076228"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -36,7 +36,7 @@ Quando a caixa de diálogo não é um iframe (que é o padrão), ela pode abrir 
 
 O que vem a seguir é um fluxo de autenticação simples e típico. Os detalhes estão após o diagrama.
 
-![Diagrama mostrando a relação entre o painel de tarefas e os processos do navegador de caixa de diálogo](../images/taskpane-dialog-processes.gif)
+![Diagrama mostrando a relação entre o painel de tarefas e os processos do navegador de caixa de diálogo.](../images/taskpane-dialog-processes.gif)
 
 1. A primeira página que é aberta na caixa de diálogo é uma página local (ou outro recurso) que está hospedada no domínio do suplemento; ou seja, o mesmo domínio da janela do painel de tarefas. Essa página pode ter uma única interface de usuário que informa "Aguarde. Estamos redirecionando você para a página onde poderá entrar no *NOME-DO-PROVEDOR*." O código nessa página constrói a URL da página de entrada do provedor de identidade usando as informações que são transmitidas para a caixa de diálogo, conforme descrito em [Transmitir informações para a caixa de diálogo](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) ou é codificado em um arquivo de configuração do suplemento, como um arquivo web.config.
 2. A janela da caixa de diálogo redireciona então para a página de entrada. A URL inclui um parâmetro de consulta que informa o provedor de identidade para redirecionar a janela da caixa de diálogo a uma página específica após o usuário entrar. Nesse artigo, chamaremos essa página de **redirectPage.html**. *Essa deve ser uma página no mesmo domínio da janela do host*, para que os resultados da tentativa de entrada possam ser passados ao painel de tarefas com uma chamada de `messageParent`.

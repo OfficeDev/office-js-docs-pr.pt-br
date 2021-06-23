@@ -3,18 +3,18 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 05/22/2020
 localization_priority: Priority
-ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: db83a215a2f36d7250ad333f3fd1f7401a5cc1cc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043901"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077181"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
 Você pode remover um suplemento em que foi feito sideload no Windows, Mac ou iOS limpando o cache do Office em seu computador.
 
-Além disso, se você fizer alterações no manifesto do seu suplemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de suplemento), você deve limpar o cache do Office e, em seguida, fazer o sideload novamente usando o manifesto atualizado. Isso permitirá que o Office processe o suplemento conforme descrito no manifesto atualizado.
+Além disso, se você fizer alterações no manifesto do suplemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de suplemento), deverá limpar o cache do Office e, em seguida, fazer o sideload do suplemento novamente usando o manifesto atualizado. Isso permitirá que o Office renderize o suplemento conforme descrito pelo manifesto atualizado.
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
@@ -52,11 +52,11 @@ Além disso, para limpar o cache do Office no Windows 10 quando o suplemento est
 
 6. Na guia **Network** da nova janela, selecione o botão **Limpar cache**.
 
-    ![Captura de tela do Microsoft Edge DevTools com o botão Limpar cache realçado](../images/edge-devtools-clear-cache.png)
+    ![Captura de tela do Microsoft Edge DevTools com o botão Limpar cache realçado.](../images/edge-devtools-clear-cache.png)
 
 7. Se concluir essas etapas não produzir o resultado desejado, você também pode selecionar o botão **Sempre atualizar do servidor**.
 
-    ![Captura de tela do Microsoft Edge DevTools com o botão sempre atualizar do servidor realçado](../images/edge-devtools-refresh-from-server.png)
+    ![Captura de tela do Microsoft Edge DevTools com o botão sempre atualizar do servidor realçado.](../images/edge-devtools-refresh-from-server.png)
 
 ## <a name="clear-the-office-cache-on-mac"></a>Limpar o cache do Office no Mac
 

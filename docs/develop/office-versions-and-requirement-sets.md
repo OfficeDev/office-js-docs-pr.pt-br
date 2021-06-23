@@ -3,12 +3,12 @@ title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237662"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075989"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -23,7 +23,7 @@ Há várias versões do Office em várias plataformas, e nem todas dão suporte 
 
 Para identificar a versão do Office que você está usando, em um aplicativo do Office, selecione o menu **Arquivo** e escolha **Conta**. A versão do Office aparecerá na seção **Informações do Produto**. Por exemplo, a captura de tela a seguir indica o Office Versão 1802 (Build 9026.1000):
 
-![Verificar sua versão do Office](../images/office-version.png)
+![Verificar sua versão do Office.](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Disponibilidade dos conjuntos de requisitos do Office
 

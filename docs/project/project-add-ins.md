@@ -5,16 +5,16 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1925e83f3c740172a22da3f2f03bf589785b9b46
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7f0edd10495badd50da3fa8d4b8c9b4495df6252
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740823"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076949"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
-O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou posterior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos do painel de tarefas gerais desenvolvidos para o Word ou Excel. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibições e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos corporativos.
+O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou superior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos gerais do painel de tarefas desenvolvidos para Word ou Excel. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibição e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos empresariais.
 
 > [!NOTE]
 > O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
@@ -26,7 +26,7 @@ Para ver uma introdução sobre os suplementos do Office, confira [Visão geral 
 Os gerentes de projeto podem usar suplementos de painel de tarefas do Project para ajudá-los nas atividades de gerenciamento de projeto. Em vez de sair do Project e abrir outro aplicativo para procurar informações usadas com frequência, os gerentes de projeto podem acessar as informações diretamente no projeto. O conteúdo de um suplemento de painel de tarefas pode ser contextual, baseado na tarefa selecionada, no recurso, no modo de exibição ou em outros dados em uma célula de um gráfico de Gantt, no modo de exibição de uso da tarefa ou no modo de exibição de uso dos recursos.
 
 > [!NOTE]
-> Com o Project Professional 2013, você pode desenvolver suplementos do painel de tarefas que acessam o Project na Web, tanto nas instalações locais do Project Server 2013 quanto do SharePoint 2013, local ou online. O Project Standard 2013 não dá suporte a integração direta com os dados do Project Server ou com as listas de tarefas do SharePoint que estão sincronizadas com o Project Server.
+> Com o Project Professional 2013, você pode desenvolver suplementos do painel de tarefas que acessam o Project na Web, instalações locais do Project Server 2013 e do SharePoint 2013 local ou online. O Project Standard 2013 não dá suporte à integração direta com dados do Project Server ou listas de tarefas do SharePoint sincronizadas com o Project Server.
 
 Cenários de suplementos do Project incluem o seguinte:
 
@@ -172,13 +172,13 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
     *Figura 1. Usando a Central de Confiabilidade para adicionar catálogos de manifestos de suplemento*
 
-    ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
+    ![Usando a Central de Confiabilidade para adicionar manifestos de aplicativo.](../images/pj15-agave-overview-trust-centers.png)
 
 7. Na faixa de opções **Project**, escolha o menu suspenso **Suplementos do Office** e escolha **Ver Tudo**. Na caixa de diálogo **Inserir Suplemento**, escolha **PASTA COMPARTILHADA** (veja a Figura 2).
 
     *Figura 2. Iniciando um suplemento que está em um compartilhamento de arquivos*
 
-    ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
+    ![Iniciando um aplicativo do Office que está em um compartilhamento de arquivos.](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Selecione o suplemento Pesquisa do Bing e escolha **Inserir**.
 
@@ -186,7 +186,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
     *Figura 3. Usando o suplemento Pesquisa do Bing*
 
-    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.png)
+    ![Usando o aplicativo Pesquisa do Bing.](../images/pj15-agave-overview-bing-search.png)
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 

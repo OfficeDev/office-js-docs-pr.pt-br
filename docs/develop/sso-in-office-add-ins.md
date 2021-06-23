@@ -3,19 +3,19 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 104a64fa5a761e06711e9c5f850bba0267830809
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: e9f671b4177d123b83ffeaaea7e1f05a4d0df5b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237816"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075954"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
 
 Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. Você pode tirar proveito disso e usar o logon único (SSO) para autorizar usuário para suplemento, sem exigir que o usuário entre uma segunda vez.
 
-![Imagem mostrando o processo de logon de um suplemento](../images/sso-for-office-addins.png)
+![Imagem mostrando o processo de logon de um suplemento.](../images/sso-for-office-addins.png)
 
 ## <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
 
@@ -29,7 +29,7 @@ Você *não* deve confiar no SSO como único método do suplemento de autentica�
 
 O diagrama a seguir mostra como funciona o processo de SSO.
 
-![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
+![Diagrama que mostra o processo de SSO.](../images/sso-overview-diagram.png)
 
 1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
 2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.
@@ -42,7 +42,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 ## <a name="develop-an-sso-add-in"></a>Desenvolver um suplemento com SSO
 
-Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Para orientações detalhadas, confira:
+Esta seção descreve as tarefas envolvidas na criação de um Suplemento do Office que usa o SSO. Essas tarefas são descritas aqui de maneira independente de linguagem e estrutura. Para obter instruções passo a passo detalhadas, consulte:
 
 * [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 * [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
@@ -152,12 +152,12 @@ Se o complemento tiver alguma funcionalidade que não exija um usuário conectad
 
 ### <a name="add-server-side-code"></a>Adicionar código no lado do servidor
 
-Na maioria dos cenários, não haverá muitas razões para obter o token de acesso, se o suplemento não o passar no lado do servidor e o utilizar lá. Algumas tarefas de servidor que o suplemento pode fazer:
+Na maioria dos cenários, não haverá muitas razões para obter o token de acesso, se o suplemento não passá-lo para um lado do servidor e usá-lo lá. Algumas tarefas do lado do servidor que seu suplemento pode realizar:
 
 * Criar um ou mais métodos de Web API com informações sobre o usuário que são extraídas do token; Por exemplo, uma forma que procura preferências do usuário em seu banco de dados hospedado. (Confira **usando o token SSO, como uma identidade** abaixo.)Dependendo do seu idioma e da estrutura, podem estar disponíveis bibliotecas que simplificarão o código que você precisa escrever.
 * Obter dados do Microsoft Graph. O código do lado do servidor precisa fazer o seguinte:
 
-    * Iniciar o fluxo "on behalf of" com uma chamada para o ponto de extremidade v 2.0 do Azure AD que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). O token de acesso nesse contexto é chamado de bootstrap token.
+    * Inicie o fluxo "on behalf of" com uma chamada para o ponto de extremidade v2.0 do Azure Active Directory que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). Nesse contexto, o token de acesso é chamado de token de inicialização.
     * Obter os dados do Microsoft Graph usando o novo token.
     * Opcionalmente, valide o token de acesso antes de iniciar o fluxo (confira **Validar o token de acesso** abaixo).
     * Opcionalmente, após a conclusão do fluxo on-behalf-of, armazene em cache o novo token de acesso retornado do fluxo, de forma que ele seja reutilizado em outras chamadas para o Microsoft Graph até que ele expire.
@@ -180,7 +180,7 @@ Ao validar o token, lembre-se das seguintes diretrizes:
 
 #### <a name="using-the-sso-token-as-an-identity"></a>Usar o token SSO como uma identidade
 
-Se o suplemento precisar verificar a identidade do usuário, o token SSO contém informações que podem ser usadas para estabelecer a identidade. As seguintes declarações no token estão relacionadas à identidade.
+Se o suplemento precisar verificar a identidade do usuário, o token de SSO conterá informações que podem ser usadas para estabelecer a identidade. As declarações a seguir no token estão relacionadas à identidade.
 
 - `name` – O nome para exibição do usuário.
 - `preferred_username`O endereço de email do usuário.

@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131777"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076823"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -21,7 +21,7 @@ Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do 
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda às solicitações com as seguintes respostas:
+Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o seguinte comando e responda aos prompts com as seguintes respostas:
 
 ```command line
 yo office
@@ -31,7 +31,7 @@ yo office
 - Escolha um tipo de script: **JavaScript**
 - Qual será o nome do seu suplemento? **Meu suplemento do Office**
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-excel-project.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-excel-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

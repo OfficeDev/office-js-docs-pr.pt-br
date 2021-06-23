@@ -1,14 +1,14 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 02/09/2021
+ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: b53647c8a38051096ef59e7b784f8a00964aa73f
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234279"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077103"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -48,7 +48,7 @@ Os tokens de identidade do usuário do Exchange fornecem uma maneira de o suplem
 
 - Quando o suplemento for usado principalmente por usuários locais do Exchange.
 - Quando o suplemento precisar acessar um serviço que não seja da Microsoft que você controle.
-- Como uma autenticação de fallback (e autorização para o Microsoft Graph) quando o suplemento estiver sendo executado em uma versão do Office que não é compatível com o SSO.
+- Como uma autenticação de recurso quando o suplemento está sendo executado em uma versão do Office que não suporta SSO.
 
 Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) para obter tokens de identidade do usuário do Exchange. Para obter detalhes sobre o uso desses tokens, confira [Autenticar um usuário com um token de identidade para o Exchange](authenticate-a-user-with-an-identity-token.md).
 

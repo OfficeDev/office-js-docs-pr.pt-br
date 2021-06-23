@@ -4,12 +4,12 @@ description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 50833deb4d996f577db9d3e40db21f1799e7f2f7
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650896"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075863"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 
@@ -26,14 +26,14 @@ Um suplemento do Excel interage com objetos no Excel usando a API JavaScript do 
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API comum. Por exemplo:
+Embora você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos destinados ao Excel 2016 ou posterior, você também usará objetos na API Comum. Por exemplo:
 
 * [Contexto](/javascript/api/office/office.context): o objeto `Context` representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
 * [Documento](/javascript/api/office/office.document): o objeto `Document` fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Excel em que o suplemento está sendo executado.
 
 A imagem a seguir ilustra quando você pode usar a API JavaScript do Excel ou as APIs comuns.
 
-![Imagem das diferentes entre a API JS do Excel e as APIs comuns](../images/excel-js-api-common-api.png)
+![Diferenças entre a API JS do Excel e as APIs comuns.](../images/excel-js-api-common-api.png)
 
 ## <a name="excel-specific-object-model"></a>Modelo de objeto específico do Excel
 
@@ -109,7 +109,7 @@ As APIs JavaScript do Excel podem criar e manipular estruturas de dados e visual
 
 #### <a name="creating-a-table"></a>Criar uma tabela
 
-Criar tabelas usando intervalos de dados preenchidos. Controles de formatação e tabela (por exemplo, filtros) são aplicados automaticamente ao intervalo.
+Crie tabelas usando intervalos preenchidos com dados. A formatação e os controles de tabela (como filtros) são automaticamente aplicados ao intervalo.
 
 O exemplo a seguir cria uma tabela usando os intervalos do exemplo anterior.
 

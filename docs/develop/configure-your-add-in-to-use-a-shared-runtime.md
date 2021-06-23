@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 localization_priority: Priority
-ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 9874d0fef2dc4966f106d1d88e4e897469300c0b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961255"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076214"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -218,7 +218,7 @@ Configurar um tempo de execução compartilhado permite os seguintes cenários.
 
 Para o Office no Windows, o tempo de execução compartilhado requer uma instância do navegador Microsoft Internet Explorer 11, conforme explicado em [Navegadores usados ​​por suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, todos os botões que seu suplemento exibir na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo tempo de execução do JavaScript.
 
-![Diagrama de uma função personalizada, painel de tarefas e botões da faixa de opções, todos em execução em um tempo de execução do navegador IE compartilhado no Excel](../images/custom-functions-in-browser-runtime.png)
+![Diagrama de uma função personalizada, painel de tarefas e botões da faixa de opções, todos em execução em um tempo de execução do navegador IE compartilhado no Excel.](../images/custom-functions-in-browser-runtime.png)
 
 ### <a name="debugging"></a>Depuração
 

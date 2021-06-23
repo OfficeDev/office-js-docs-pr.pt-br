@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do OneNote simp
 ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: de0729a483057a61be3793e299995aa05d287441
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 761de3dc8f382a7b1b5a72704815f2d80af2566f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132288"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076900"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -29,7 +29,7 @@ Neste artigo, você verá o processo de criação de um suplemento do painel de 
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-onenote.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-onenote.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -114,11 +114,11 @@ try {
 
 7. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
-    ![Captura de tela apresentando o suplemento criado com base nesse passo a passo: exibir o painel de opções do painel de tarefas e o painel de tarefas no OneNote](../images/onenote-first-add-in-4.png)
+    ![Captura de tela apresentando o suplemento criado com base nesse passo a passo: exibir o painel de opções do painel de tarefas e o painel de tarefas no OneNote.](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
+Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote! A seguir, saiba mais sobre os principais conceitos da criação de suplementos do OneNote.
 
 > [!div class="nextstepaction"]
 > [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)

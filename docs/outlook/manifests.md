@@ -3,12 +3,12 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839821"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076767"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -390,7 +390,7 @@ O elemento **Permissions** contém as permissões necessárias para o suplemento
 
 **Modelo de permissões de quatro camadas para suplementos de email**
 
-![Modelo de permissões de quatro camadas para o esquema de aplicativos de correio v1.1](../images/add-in-permission-tiers.png)
+![Modelo de permissões de 4 camadas para o esquema de aplicativos de email v1.1.](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>
@@ -422,7 +422,7 @@ Para obter detalhes e exemplos das regras de ativação, confira [Regras de ativ
 
 ## <a name="next-steps-add-in-commands"></a>Próximas etapas: Comandos de suplemento
 
-Depois de definir um manifesto básico, defina os comandos de suplemento para seu suplemento. Os comandos de suplemento apresentam um botão na faixa de opções para que os usuários possam ativar o suplemento de uma maneira simples e intuitiva. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
+Após definir um manifesto básico, defina os comandos de suplemento para seu suplemento. Os comandos de suplemento apresentam um botão na faixa de opções para que os usuários possam ativar o suplemento de uma maneira simples e intuitiva. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
 
 Para obter um exemplo de suplemento que defina comandos de suplementos, confira [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 

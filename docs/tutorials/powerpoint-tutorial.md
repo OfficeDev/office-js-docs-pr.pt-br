@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do PowerPoint que inser
 ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 6742ecd8ab7d579f90186b4fa73adfccca45b467
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330035"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076473"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -40,7 +40,7 @@ Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usa
 
 5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
-     ![A captura de tela da janela do gerenciador de soluções do Microsoft Visual Studio mostrando HelloWorld e HelloWorldWeb, os 2 projetos na solução HelloWorld](../images/powerpoint-tutorial-solution-explorer.png)
+     ![A captura de tela da janela do gerenciador de soluções do Microsoft Visual Studio mostrando HelloWorld e HelloWorldWeb, os 2 projetos na solução HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -112,7 +112,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 1. Usando o Explorador de soluções, adicione uma nova pasta chamada **Controladores** ao projeto **HelloWorldWeb**.
 
-    ![A captura de tela da janela do Gerenciador de Soluções do Microsoft Visual Studio mostrando a pasta Controladores realçada no projeto HelloWorldWeb](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![A captura de tela da janela do Gerenciador de Soluções do Microsoft Visual Studio mostrando a pasta Controladores realçada no projeto HelloWorldWeb.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
 2. Clique com o botão direito do mouse na pasta **Controladores** e selecione **Adicionar > Novo item com scaffold...**.
 
@@ -223,19 +223,19 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![A captura de tela mostrando o botão Iniciar realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
+    ![A captura de tela mostrando o botão Iniciar realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
 
 2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar painel de tarefas realçado na faixa de opções página inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Captura de tela mostrando o botão Mostrar painel de tarefas realçado na faixa de opções página inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado](../images/powerpoint-tutorial-insert-image-button.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado.](../images/powerpoint-tutorial-insert-image-button.png)
 
 4. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela mostrando o botão Pare realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
+    ![Captura de tela mostrando o botão Pare realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="customize-user-interface-ui-elements"></a>Personalizar os elementos da IU (interface do usuário)
 
@@ -261,19 +261,19 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
 
 1. Usando o Visual Studio, teste o suplemento do PowerPoint ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela mostrando o botão Iniciar realçado no Visual Studio](../images/powerpoint-tutorial-start.png)
+    ![Captura de tela mostrando o botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
 2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página Inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página Inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Imagem realçado.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela exibindo o botão Pare realçado no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
+    ![Captura de tela exibindo o botão Pare realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="insert-text"></a>Inserir texto
 
@@ -313,23 +313,23 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
 
 1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela do Microsoft Visual Studio com o botão Iniciar realçado](../images/powerpoint-tutorial-start.png)
+    ![Captura de tela do Microsoft Visual Studio com o botão Iniciar realçado.](../images/powerpoint-tutorial-start.png)
 
 2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela realçando o botão Mostrar Painel de tarefas na faixa de opções da Página inicial no PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Captura de tela realçando o botão Mostrar Painel de tarefas na faixa de opções da Página inicial no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.
 
-    ![Captura de tela do PowerPoint com o slide atual realçado e suplemento com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![Captura de tela do PowerPoint com o slide atual realçado e suplemento com o botão Inserir Imagem realçado.](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Texto realçado](../images/powerpoint-tutorial-insert-text.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Texto realçado.](../images/powerpoint-tutorial-insert-text.png)
 
 5. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela do Microsoft Visual Studio com o botão Pare realçado](../images/powerpoint-tutorial-stop.png)
+    ![Captura de tela do Microsoft Visual Studio com o botão Pare realçado.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="get-slide-metadata"></a>Obter metadados do slide
 
@@ -372,19 +372,19 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
 
 1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela realçando o botão Iniciar no Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
+    ![Captura de tela realçando o botão Iniciar no Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
 
 2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela realçando o botão Mostrar painel de tarefas na faixa de opções da Página Inicial do PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Captura de tela realçando o botão Mostrar painel de tarefas na faixa de opções da Página Inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. No painel de tarefas, escolha o botão **Obter metadados do slide** para obter os metadados do slide selecionado. Os metadados do slide serão gravados na janela pop-up da caixa de diálogo na parte inferior do painel de tarefas. Nesse caso, a matriz `slides` dos metadados JSON contém um objeto que especifica `id`, `title` e `index` do slide selecionado. Se vários slides tivessem sido selecionados na recuperação de metadados do slide, a matriz `slides` dos metadados JSON conteria um objeto para cada slide selecionado.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Obter metadados do slide realçado](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Obter metadados do slide realçado.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
 4. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela realçando o botão Pare no Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
+    ![Captura de tela realçando o botão Pare no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="navigate-between-slides"></a>Navegar entre slides
 
@@ -472,33 +472,33 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela mostrando o botão Iniciar realçado na barra de ferramentas do Microsoft Visual Studio](../images/powerpoint-tutorial-start.png)
+    ![Captura de tela mostrando o botão Iniciar realçado na barra de ferramentas do Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
 
 2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página inicial no PowerPoint](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página inicial no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. Use o botão **Novo Slide** na faixa de opções da guia **Página Inicial** para adicionar dois novos slides ao documento.
 
 4. No painel de tarefas, escolha o botão **Ir para o primeiro Slide**. O primeiro slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Primeiro Slide realçado](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Primeiro Slide realçado.](../images/powerpoint-tutorial-go-to-first-slide.png)
 
 5. No painel de tarefas, escolha o botão **Ir para o próximo Slide**. O próximo slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Próximo Slide realçado](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Próximo Slide realçado.](../images/powerpoint-tutorial-go-to-next-slide.png)
 
 6. No painel de tarefas, escolha o botão **Ir Para o Slide Anterior**. O slide anterior no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Slide Anterior realçado](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Slide Anterior realçado.](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
 7. No painel de tarefas, escolha o botão **Ir Para o Último Slide**. O último slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Último Slide realçado](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Último Slide realçado.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
 8. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela mostrando o botão Pare realçado na barra de ferramentas do Microsoft Visual Studio](../images/powerpoint-tutorial-stop.png)
+    ![Captura de tela mostrando o botão Pare realçado na barra de ferramentas do Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

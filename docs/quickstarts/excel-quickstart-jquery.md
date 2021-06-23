@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
-ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
+ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "49916465"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076634"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -36,7 +36,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office](../images/yo-office-excel.png)
+![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office.](../images/yo-office-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -58,17 +58,17 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela do menu Página inicial do Excel, com o botão Mostrar Painel de tarefas realçado](../images/excel-quickstart-addin-3b.png)
+    ![Captura de tela do menu Página inicial do Excel, com o botão Mostrar Painel de tarefas realçado.](../images/excel-quickstart-addin-3b.png)
 
 4. Selecione um intervalo de células na planilha.
 
 5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
 
-    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto e o botão Executar realçado no painel de tarefas do suplemento](../images/excel-quickstart-addin-3c.png)
+    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto e o botão Executar realçado no painel de tarefas do suplemento.](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Excel](../tutorials/excel-tutorial.md).
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo o [tutorial do suplemento Excel](../tutorials/excel-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -202,13 +202,13 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado](../images/excel-quickstart-addin-2a.png)
+    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado.](../images/excel-quickstart-addin-2a.png)
 
 3. Selecione um intervalo de células na planilha.
 
 4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
 
-    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto](../images/excel-quickstart-addin-2c.png)
+    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto.](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

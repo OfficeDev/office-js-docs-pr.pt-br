@@ -3,12 +3,12 @@ title: Criar suplementos do Outlook para formulários de leitura
 description: Suplementos de leitura são suplementos do Outlook que são ativados no painel de leitura ou no inspetor de leitura do Outlook.
 ms.date: 03/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 495b4d947ec965481859c3262d3b67b93f57a5c0
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: f84c0d5252f2cf728397965d9414df2ee5070444
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51177996"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076690"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>Criar suplementos do Outlook para formulários de leitura
 
@@ -30,7 +30,7 @@ Em cada um desses cenários de leitura, o Outlook ativa suplementos quando suas 
 
 **Painel do suplemento mostrando o suplemento Bing Mapas funcionando, no caso de uma mensagem selecionada do Outlook que contém um endereço**
 
-![Bing Map mail app in Outlook](../images/outlook-detected-entity-card.png)
+![Aplicativo de email do Bing Map no Outlook.](../images/outlook-detected-entity-card.png)
 
 ## <a name="types-of-add-ins-available-in-read-mode"></a>Tipos de suplementos disponíveis no modo de leitura
 
