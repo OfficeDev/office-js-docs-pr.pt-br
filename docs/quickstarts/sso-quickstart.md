@@ -4,12 +4,12 @@ description: Use o gerador Yeoman para construir um Suplemento Office Node.js qu
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: c611d41e56b2a5d1320ee1f25ca732ac80077172
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 2baed2ef4aaca3539d1d41d1fb2ea985337fda25
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132225"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076557"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Use o gerador Yeoman para criar um Suplemento do Office que utilize o logon único.
 
@@ -46,7 +46,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 - **Qual será o nome do suplemento?** `My SSO Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-sso-excel.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-sso-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -105,20 +105,20 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 3. No aplicativo cliente do Office, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. A imagem a seguir mostra esse botão no Excel.
 
-    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
+    ![Botão do suplemento do Excel.](../images/excel-quickstart-addin-3b.png)
 
 4. Na parte inferior do painel de tarefas, escolha o botão **Obter Informações do Meu Perfil de Usuário** para iniciar o processo de SSO.
 
 5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Captura de tela mostrando a caixa de diálogo solicitar permissões com o botão Aceitar destacado](../images/sso-permissions-request.png)
+    ![Captura de tela mostrando o diálogo de permissão solicitada com o botão Aceitar destacado.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 6. O suplemento recupera as informações de perfil do usuário conectado e as grava no documento. A imagem a seguir mostra um exemplo de informações de perfil gravadas em uma planilha do Excel.
 
-    ![Captura de tela mostrando informações de perfil do usuário na planilha do Excel](../images/sso-user-profile-info-excel.png)
+    ![Captura de tela mostrando informações de perfil do usuário na planilha do Excel.](../images/sso-user-profile-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -137,22 +137,22 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 3. Escreva uma nova mensagem no Outlook.
 
-4. Na janela redigir mensagem, escolha o botão **Mostrar Painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
+4. Na janela redigir mensagem, escolha o botão **Exibir painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
 
-    ![Captura de tela mostrando o botão da faixa de opções do suplemento destacado na janela de composição de mensagem do Outlook](../images/outlook-sso-ribbon-button.png)
+    ![Captura de tela mostrando o botão da faixa de opções do suplemento destacado na janela de composição de mensagem do Outlook.](../images/outlook-sso-ribbon-button.png)
 
 5. Na parte inferior do painel de tarefas, escolha o botão **Obter Informações do Meu Perfil de Usuário** para iniciar o processo de SSO.
 
 6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Captura de tela da caixa de diálogo de permissões solicitadas com o botão Aceitar destacado](../images/sso-permissions-request.png)
+    ![Captura de tela da caixa de diálogo de permissões solicitadas com o botão Aceitar destacado.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
 
 7. O suplemento recupera as informações de perfil do usuário conectado e as grava no corpo da mensagem do e-mail.
 
-    ![Captura de tela mostrando informações de perfil de usuário na janela de composição de mensagem do Outlook](../images/sso-user-profile-info-outlook.png)
+    ![Captura de tela mostrando informações de perfil de usuário na janela de composição de mensagem do Outlook.](../images/sso-user-profile-info-outlook.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
