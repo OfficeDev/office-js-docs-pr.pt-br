@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: f169499e343d2fc7fac89f407b78717536add4fc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727938"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077236"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -40,7 +40,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office](../images/yo-office-excel.png)
+![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office.](../images/yo-office-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -201,11 +201,11 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado](../images/excel-quickstart-addin-3b.png)
+    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado.](../images/excel-quickstart-addin-3b.png)
 
 3. No painel de tarefas, escolha o botão **Criar tabela**.
 
-    ![Captura de tela do Excel, exibindo um painel de tarefas de suplemento com um botão Criar Tabela, e uma tabela na planilha preenchida com dados de Data, Comerciante, Categoria e Quantidade](../images/excel-tutorial-create-table-2.png)
+    ![Captura de tela do Excel, exibindo um painel de tarefas de suplemento com um botão Criar Tabela, e uma tabela na planilha preenchida com dados de Data, Comerciante, Categoria e Quantidade.](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table&quot;></a>Filtrar e classificar uma tabela
 
@@ -332,7 +332,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 4. Escolha os botões **Filtrar Tabela** e **Classificar Tabela**, em qualquer ordem.
 
-    ![Captura de tela do Excel, com os botões Filtrar Tabela e Classificar Tabela visíveis no painel de tarefas do suplemento](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Captura de tela do Excel, com os botões Filtrar Tabela e Classificar Tabela visíveis no painel de tarefas do suplemento.](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart&quot;></a>Criar um gráfico
 
@@ -427,7 +427,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 4. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
 
-    ![Captura de tela do Excel, com um botão Criar Gráfico visível no painel de tarefas do suplemento e um gráfico na planilha exibindo dados de despesas com alimentos e educação](../images/excel-tutorial-create-chart-2.png)
+    ![Captura de tela do Excel, com um botão Criar Gráfico visível no painel de tarefas do suplemento e um gráfico na planilha exibindo dados de despesas com alimentos e educação.](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header&quot;></a>Congelar um cabeçalho de tabela
 
@@ -497,7 +497,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
 6. Role a planilha para baixo o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior mesmo ao rolar até que as primeiras linhas fiquem fora da vista.
 
-    ![Captura de tela mostrando uma planilha do Excel com um cabeçalho de tabela congelado](../images/excel-tutorial-freeze-header-2.png)
+    ![Captura de tela mostrando uma planilha do Excel com um cabeçalho de tabela congelado.](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>Proteger uma planilha
 
@@ -1009,7 +1009,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 6. Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.
 
-    ![Captura de tela do Excel, com um botão Abrir Caixa de Diálogo visível no painel de tarefas do suplemento e uma caixa de diálogo exibida sobre a planilha](../images/excel-tutorial-dialog-open-2.png)
+    ![Captura de tela do Excel, com um botão Abrir Caixa de Diálogo visível no painel de tarefas do suplemento e uma caixa de diálogo exibida sobre a planilha.](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
