@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Ou
 ms.date: 05/17/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 967bc0590d6cf1f513352c4a5c22eeb5205c2cbe
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 49cfcfee075ba01f077162cef415ed58211b95f6
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591993"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077208"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -121,11 +121,11 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 >
 > **moderno**
 >
-> ![captura de tela parcial da barra de ferramentas moderna do Outlook](../../images/outlook-on-the-web-new-toolbar.png)
+> ![Captura de tela parcial da barra de ferramentas moderna do Outlook.](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **clássico**
 >
-> ![captura de tela parcial da barra de ferramentas clássica do Outlook](../../images/outlook-on-the-web-classic-toolbar.png)
+> ![Captura de tela parcial da barra de ferramentas clássica do Outlook.](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>Usando APIs de visualização
 

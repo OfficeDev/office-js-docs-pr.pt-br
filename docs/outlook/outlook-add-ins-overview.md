@@ -4,12 +4,12 @@ description: Os suplementos do Outlook são integrações criadas por terceiros 
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007808"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076753"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -33,13 +33,13 @@ Pontos de extensão são as formas usadas pelos suplementos para se integrar ao 
 
     **Suplemento com botões de comando na Faixa de Opções**
 
-    ![Comando de suplemento de forma sem interface do usuário](../images/uiless-command-shape.png)
+    ![Comando de suplemento de forma sem interface do usuário.](../images/uiless-command-shape.png)
 
 - Os suplementos podem desvincular correspondências de expressões regulares ou entidades detectadas em mensagens e compromissos. Para saber mais, confira [Suplementos contextuais do Outlook](contextual-outlook-add-ins.md).
 
     **Suplemento contextual para uma entidade realçada (um endereço)**
 
-    ![Mostra um aplicativo contextual em um cartão](../images/outlook-detected-entity-card.png)
+    ![Mostra um aplicativo contextual em um cartão.](../images/outlook-detected-entity-card.png)
 
 ## <a name="mailbox-items-available-to-add-ins"></a>Itens de caixa de correio disponíveis para suplementos
 

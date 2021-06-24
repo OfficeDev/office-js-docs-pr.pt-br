@@ -3,12 +3,12 @@ title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 598d6e055b72d517d4a6bcfb90e3968b466e3aa0
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1f4d8faf1ee691f515b47d712812e0ae7cabdf5c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294007"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076802"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -42,9 +42,9 @@ Um comando de suplemento é mostrado na faixa de opções como um botão. Quando
 
 À medida que a faixa de opções fica mais cheia, os comandos de suplementos serão exibidos no menu estouro. Geralmente, os comandos de um suplemento serão agrupados.
 
-![Botões de comando do suplemento na faixa de opções](../images/commands-normal.png)
+![Botões de comando do suplemento na faixa de opções.](../images/commands-normal.png)
 
-![Botões de comando do suplemento na faixa de opções e no menu estouro](../images/commands-collapsed.png)
+![Botões de comando do suplemento na faixa de opções e no menu excedente.](../images/commands-collapsed.png)
 
 Quando um comando do suplemento é adicionado a um suplemento, o nome do suplemento é removido da barra do aplicativo. Permanece apenas o botão de comando de suplemento na faixa de opções.
 
@@ -52,9 +52,9 @@ Quando um comando do suplemento é adicionado a um suplemento, o nome do supleme
 
 No Outlook na Web, o nome do suplemento é exibido em um menu estouro. Se o suplemento tiver vários comandos, você poderá expandir o menu do suplemento para ver o grupo de botões rotulados com o nome do suplemento.
 
-![Menu estouro em que os botões de comando do suplemento serão encontrados](../images/commands-overflow-menu-web.png)
+![Menu excedente em que os botões de comando do suplemento serão encontrados.](../images/commands-overflow-menu-web.png)
 
-![Menu estouro exibindo botões de comando do suplemento](../images/commands-overflow-menu-expand-web.png)
+![Menu excedente exibindo botões de comando do suplemento.](../images/commands-overflow-menu-expand-web.png)
 
 ## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quais formas da experiência do usuário existem para comandos de suplemento?
 
