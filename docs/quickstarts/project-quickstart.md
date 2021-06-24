@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: eed545d6ebf2b705d8d8963a76a0ac3bca2e13f4
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853987"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076571"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -31,7 +31,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-project.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -115,7 +115,7 @@ Office.context.document.getSelectedTaskAsync(
 
 6. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
 
-    ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado](../images/project-quickstart-addin-1.png)
+    ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado.](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
