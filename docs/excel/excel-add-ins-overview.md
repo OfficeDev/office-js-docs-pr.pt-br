@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 37ce824817f07949435fd21fa4545a5c787e7105
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740851"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075856"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -63,7 +63,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 
 **Comandos de suplemento**
 
-![Comandos de suplemento no Excel](../images/excel-add-in-commands-script-lab.png)
+![Comandos de suplemento no Excel.](../images/excel-add-in-commands-script-lab.png)
 
 Para saber mais sobre recursos de comando, plataformas suportadas e práticas recomendadas para o desenvolvimento de comandos de suplemento, confira [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md).
 
@@ -73,7 +73,7 @@ Os painéis de tarefas são superfícies de interface que normalmente são exibi
 
 **Painel de tarefas**
 
-![Suplemento do painel de tarefas no Excel](../images/excel-add-in-task-pane-insights.png)
+![Suplemento do painel de tarefas no Excel.](../images/excel-add-in-task-pane-insights.png)
 
 Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos Suplementos do Office](../design/task-pane-add-ins.md). Para ver uma amostra que implementa um painel de tarefas no Excel, confira [Suplemento do Excel JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
@@ -93,7 +93,7 @@ As caixas de diálogo são superfícies que flutuam acima da janela do aplicativ
 
 **Caixa de diálogo**
 
-![Caixa de diálogo do suplemento no Excel](../images/excel-add-in-dialog-choose-number.png)
+![Caixa de diálogo do suplemento no Excel.](../images/excel-add-in-dialog-choose-number.png)
 
 Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [Caixas de diálogo nos Suplementos do Office](../design/dialog-boxes.md) e [Usar a API da Caixa de Diálogo em Suplementos do Office](../develop/dialog-api-in-office-add-ins.md).
 
@@ -103,7 +103,7 @@ Os suplementos de conteúdo são superfícies que podem ser inseridas diretament
 
 **Suplemento de conteúdo**
 
-![Suplemento de conteúdo no Excel](../images/excel-add-in-content-map.png)
+![Suplemento de conteúdo no Excel.](../images/excel-add-in-content-map.png)
 
 Para saber mais sobre suplementos conteúdos, confira [Suplementos do Office de conteúdo](../design/content-add-ins.md). Para ver um exemplo que implementa um suplemento de conteúdo no Excel, confira [Suplemento de conteúdo do Excel Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) no GitHub.
 

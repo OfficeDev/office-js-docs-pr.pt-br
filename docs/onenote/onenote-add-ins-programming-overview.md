@@ -5,16 +5,16 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741117"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077110"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
-O OneNote introduz uma API do JavaScript para suplementos do OneNote na Web. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
+O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -28,7 +28,7 @@ Os suplementos consistem de dois componentes básicos:
 
 ### <a name="office-add-in--manifest--webpage"></a>Suplemento do Office = Manifesto + Página da Web
 
-![Um suplemento do Office consiste em um manifesto e uma página da Web](../images/onenote-add-in.png)
+![Um suplemento do Office consiste em um manifesto e uma página da Web.](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Usar a API JavaScript
 
@@ -131,7 +131,7 @@ Em geral, você usa a API Comum para fazer algo que não é compatível com a AP
 ## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote 
 O diagrama a seguir representa o que está disponível atualmente na API JavaScript do OneNote.
 
-  ![Diagrama do modelo de objeto do OneNote](../images/onenote-om.png)
+  ![Diagrama do modelo de objeto do OneNote.](../images/onenote-om.png)
 
 ## <a name="see-also"></a>Confira também
 
