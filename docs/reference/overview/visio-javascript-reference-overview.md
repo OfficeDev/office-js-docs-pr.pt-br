@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603789"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076438"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -19,7 +19,7 @@ Você pode usar as APIs do Visio JavaScript para incorporar diagramas do Visio e
 
 Um diagrama integrado do Visio é um diagrama armazenado em uma biblioteca de documentos do SharePoint e exibido em uma página do SharePoint. Para integrar um diagrama do Visio, exiba-o em um elemento `<iframe>` de HTML. Em seguida, você pode usar APIs JavaScript do Visio para trabalhar via programação com o diagrama integrado.
 
-![Diagrama do Visio em um iframe na página do SharePoint junto com a Web Part do editor de script](../images/visio-api-block-diagram.png)
+![Diagrama do Visio em um iframe na página do SharePoint junto com a Web Part do editor de script.](../images/visio-api-block-diagram.png)
 
 É possível usar as APIs JavaScript do Visio para:
 
@@ -30,12 +30,12 @@ Um diagrama integrado do Visio é um diagrama armazenado em uma biblioteca de do
 
 Este artigo descreve como usar as APIs JavaScript do Visio com o Visio na Web para desenvolver suas soluções para o SharePoint Online. Ele apresenta os principais conceitos que são fundamentais para o uso das APIs, como `EmbeddedSession`, `RequestContext` e dos objetos proxy do JavaScript, além dos métodos `sync()`, `Visio.run()`, and `load()`. Os exemplos de código mostram como aplicar esses conceitos.
 
-## <a name="embeddedsession"></a>EmbeddedSession
+## <a name="embeddedsession&quot;></a>EmbeddedSession
 
 O objeto EmbeddedSession inicia a comunicação entre o quadro do desenvolvedor e o quadro do Visio no navegador.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -49,7 +49,7 @@ O método run recebe a sessão e o objeto RequestContext e retorna uma promessa 
 
 ## <a name="requestcontext"></a>RequestContext
 
-O objeto RequestContext facilita as solicitações para o aplicativo do Visio. Como o quadro do desenvolvedor e o cliente Web do Visio são executados em dois iframes diferentes, o objeto RequestContext (contexto no próximo exemplo) é necessário para obter acesso ao Visio e aos objetos relacionados do quadro de desenvolvedor, como páginas e formas.
+O objeto RequestContext facilita as solicitações para o aplicativo Visio. Como o quadro do desenvolvedor e o cliente Web do Visio são executados em dois iframes diferentes, o objeto RequestContext (contexto no próximo exemplo) é necessário para obter acesso ao Visio e a objetos relacionados, como páginas e formas, do quadro do desenvolvedor.
 
 ```js
 function hideToolbars() {
@@ -199,7 +199,7 @@ function getSelectedShapeText() {
 
 Depois disso, você só precisa da URL de um diagrama do Visio com o qual deseja trabalhar. Basta carregar o diagrama do Visio no SharePoint Online e abri-lo no Visio na Web. A partir daí, abra a caixa de diálogo Inserir e use a URL de integração do exemplo acima.
 
-![Copiar a URL do arquivo do Visio da caixa de diálogo Inserir](../images/Visio-embed-url.png)
+![Copiar a URL do arquivo do Visio da caixa de diálogo Inserir.](../images/Visio-embed-url.png)
 
 Se você estiver usando o Visio na Web no modo de edição, abra a caixa de diálogo Inserir escolhendo **Arquivo** > **Compartilhar** > **Inserir**. Se você estiver usando o Visio na Web no modo de exibição, abra a caixa de diálogo Inserir escolhendo '...' e, em seguida, **Inserir**.
 

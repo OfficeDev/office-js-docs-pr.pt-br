@@ -4,12 +4,12 @@ description: Desenvolvendo funções personalizadas no guia de início rápido d
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 0b0e42149e771978026db3eb84594bd172d09459
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132351"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076627"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -36,7 +36,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     - **Escolha o tipo de script:** `JavaScript`
     - **Qual será o nome do suplemento?** `starcount`
 
-    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas](../images/starcountPrompt.png)
+    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.](../images/starcountPrompt.png)
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -75,11 +75,11 @@ npm run start:web
 
 Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
 
-1. No Excel, escolha a guia **Inserir** e selecione **Suplementos**.
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
 
-   ![Captura de tela da faixa de opções no Excel na Web com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado.](../images/excel-cf-online-register-add-in-1.png)
    
-2. Selecione **Gerenciar Meus suplementos** e selecione **Carregar Meus suplementos**.
+2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
 3. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 

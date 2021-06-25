@@ -3,16 +3,16 @@ title: Crie suplementos do Outlook para formulários de redação
 description: Saiba mais sobre os cenários e recursos dos suplementos do Outlook nos formulários de redação.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234251"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077096"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Criar suplementos do Outlook para formulários de redação
 
-A partir da versão 1.1 do esquema de manifestos de suplementos do Office e da versão 1.1 do Office.js, você pode criar suplementos de redação, que são suplementos do Outlook ativados nos formulários de redação. Ao contrário dos suplementos de leitura (suplementos do Outlook que são ativados no modo de leitura quando um usuário está exibindo uma mensagem ou um compromisso), os suplementos de redação estão disponíveis nos seguintes cenários de usuário:
+A partir da versão 1.1 do esquema de manifestos de suplementos do Office e da versão 1.1 do Office.js, você pode criar suplementos de composição, que são suplementos do Outlook ativados nos formulários de composição. Ao contrário dos suplementos de leitura (suplementos do Outlook que são ativados no modo de leitura quando um usuário está exibindo uma mensagem ou um compromisso), os suplementos de composição estão disponíveis nos seguintes cenários do usuário:
 
 - Redação de nova mensagem, solicitação de reunião ou compromisso em um formulário de redação.
 
@@ -30,13 +30,13 @@ A partir da versão 1.1 do esquema de manifestos de suplementos do Office e da v
 
 - Encaminhamento ou resposta a uma solicitação de reunião ou a um item de reunião.
 
-Em cada um desses cenários de redação, são mostrados os botões de comando do suplemento definidos por este. Para suplementos mais antigos que não implementam comandos de suplemento, os usuários podem escolher **Suplementos do Office** na faixa de opções para abrir o painel de seleção de suplementos, escolher e iniciar um suplemento de redação. A figura a seguir mostra comandos de suplemento em um formulário de redação.
+Em cada um desses cenários de composição, são mostrados os botões de comando do suplemento definidos por este. Para suplementos mais antigos que não implementam comandos de suplemento, os usuários podem escolher **Suplementos do Office** na faixa de opções para abrir o painel de seleção de suplementos, escolher e iniciar um suplemento de composição. A figura a seguir mostra comandos de suplemento em um formulário de composição.
 
 ![Mostra um fomulário de criação do Outlook com comandos de suplementos.](../images/compose-form-commands.png)
 
 A figura a seguir mostra o painel de seleção do suplemento composto por dois suplementos de redação que não implementam comandos de suplemento, ativado quando o usuário está compondo uma resposta embutida no Outlook.
 
-![Aplicativo de email Modelos ativado para item redigido](../images/templates-app-selection.png)
+![Aplicativo de email modelos ativado para item redigido.](../images/templates-app-selection.png)
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>Tipos de suplementos disponíveis no modo de redação
 

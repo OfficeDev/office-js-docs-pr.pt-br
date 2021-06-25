@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
-ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
+ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2021
-ms.locfileid: "52893656"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076599"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -48,7 +48,7 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** - `Outlook`
 
-    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yo-office-outlook-1.png)
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-outlook-1.png)
 
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -110,16 +110,16 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 1. Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela de uma janela de mensagem do Outlook com o botão da faixa de opções do suplemento realçado](../images/quick-start-button-1.png)
+    ![Captura de tela de uma janela de mensagem do Outlook com o botão da faixa de opções do suplemento realçado.](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > Se você receber a mensagem de erro "Não é possível abrir este suplemento do localhost" no painel de tarefas, siga as etapas descritas no [artigo de solução de problemas](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.
 
-    ![Captura de tela do painel de tarefas do suplemento com o link Executar realçado](../images/quick-start-task-pane-2.png)
+    ![Captura de tela do painel de tarefas do suplemento com o link Executar realçado.](../images/quick-start-task-pane-2.png)
 
-    ![Captura de tela do painel de tarefas do suplemento exibindo o assunto da mensagem](../images/quick-start-task-pane-3.png)
+    ![Captura de tela do painel de tarefas do suplemento exibindo o assunto da mensagem.](../images/quick-start-task-pane-3.png)
 
 ### <a name="next-steps"></a>Próximas etapas
 
@@ -276,15 +276,15 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 1. Dentro da mensagem, localize as reticências do menu de estouro que contém o botão do suplemento.
 
-    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com as reticências realçadas](../images/quick-start-button-owa-1.png)
+    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com as reticências realçadas.](../images/quick-start-button-owa-1.png)
 
-1. No menu estouro, localize o botão do suplemento.
+1. No menu excedente, localize o botão do suplemento.
 
-    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com o botão do suplemento realçado](../images/quick-start-button-owa-2.png)
+    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com o botão do suplemento realçado.](../images/quick-start-button-owa-2.png)
 
 1. Clique no botão para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do painel de tarefas do suplemento no Outlook na Web exibindo as propriedades da mensagem](../images/quick-start-task-pane-owa-1.png)
+    ![Uma captura de tela do painel de tarefas do suplemento no Outlook na Web exibindo as propriedades da mensagem.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > Se o painel de tarefas não carregar, tente verificar abrindo-o em um navegador no mesmo computador.

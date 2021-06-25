@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Outlook que insere G
 ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329923"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076129"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -110,7 +110,7 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
 
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** - `Outlook`
 
-    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando](../images/yeoman-prompts-2.png)
+    ![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yeoman-prompts-2.png)
 
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -169,7 +169,7 @@ Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para 
 
 1. No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**. Se tudo tiver sido configurado corretamente, o painel de tarefas será aberto e exibirá a página de boas-vindas do suplemento.
 
-    ![Captura de tela do botão "Mostrar Painel de Tarefas" e do git do painel de tarefas de gist adicionado pelo exemplo](../images/button-and-pane.png)
+    ![Captura de tela do botão "Mostrar Painel de Tarefas" e do Git do painel de tarefas de gist adicionado pelo exemplo.](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>Definir botões
 
@@ -289,11 +289,11 @@ Depois de reinstalar o suplemento, você pode verificar se ele foi instalado com
 
 - Se você estiver executando este suplemento no Outlook 2016 ou posterior no Windows, deverá ver dois novos botões na faixa de opções da janela de composição da mensagem: **Inserir gist** e **Inserir gist padrão**.
 
-    ![Captura de tela do menu flutuante da faixa de opções do Outlook no Windows com os botões do suplemento em destaque](../images/add-in-buttons-in-windows.png)
+    ![Captura de tela do menu excedente da faixa de opções do Outlook no Windows com os botões do suplemento em destaque.](../images/add-in-buttons-in-windows.png)
 
 - Se você estiver usando este suplemento no Outlook na Web, você verá um botão na parte inferior da janela de composição de mensagem. Selecione esse botão para ver as opções **Insert Gist** e **Insert Default Gist**.
 
-    ![Captura de tela do formulário de composição de mensagem no Outlook na Web com o botão suplemento e o menu pop-up em destaque](../images/add-in-buttons-in-owa.png)
+    ![Captura de tela do formulário de composição de mensagem no Outlook na Web com o botão suplemento e o menu pop-up em destaque.](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>Implementando uma experiência de primeira execução
 
@@ -944,11 +944,11 @@ Salvar todas as suas alterações e executar `npm start` do prompt de comando, s
 
 1. Na janela de mensagem de texto, selecione o botão **Inserir Gist Padrão**. Você verá uma caixa de diálogo na qual é possível configurar o suplemento, começando com o prompt para definir seu nome de usuário do GitHub.
 
-    ![Captura de tela do prompt de diálogo para configurar o suplemento](../images/addin-prompt-configure.png)
+    ![Captura de tela do prompt de diálogo para configurar o suplemento.](../images/addin-prompt-configure.png)
 
 1. Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists públicos. Selecione um gist para ser o padrão e selecione **Concluído**.
 
-    ![Captura de tela de caixa de diálogo de configurações do suplemento](../images/addin-settings.png)
+    ![Captura de tela de caixa de diálogo de configurações do suplemento.](../images/addin-settings.png)
 
 1. Clique no botão **Insert Default Gist** novamente. Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.
 
@@ -1307,7 +1307,7 @@ Salvar todas as suas alterações e executar `npm start` do prompt de comando, s
 
 1. No painel de tarefas, selecione a gist **Olá mundo Html** e selecione **Inserir** para inserir esse gist no corpo da mensagem.
 
-![Captura de tela do painel de tarefas do suplemento e o conteúdo gist selecionado exibido no corpo da mensagem](../images/addin-taskpane.png)
+![Captura de tela do painel de tarefas do suplemento e o conteúdo gist selecionado exibido no corpo da mensagem.](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
