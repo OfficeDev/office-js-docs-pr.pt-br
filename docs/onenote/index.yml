@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: d8466a48c3fd35532989ecb707f8f77b0b1a47bb
-  ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+  ms.openlocfilehash: f62e49fd1d6505da757ccc87469a5702863f0f45
+  ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 05/21/2021
-  ms.locfileid: "52592014"
+  ms.lasthandoff: 06/30/2021
+  ms.locfileid: "53205001"
 landingContent:
 - title: Sobre OneNote de complementos
   linkLists:
@@ -21,7 +21,9 @@ landingContent:
     links:
     - text: O que OneNote os complementos?
       url: onenote-add-ins-programming-overview.md
-    - text: OneNote Visão geral da API
+    - text: OneNote Visão geral da API JavaScript
+      url: ../reference/overview/onenote-add-ins-javascript-reference.md
+    - text: Visão geral Graph OneNote API REST da Microsoft
       url: /graph/integrate-with-onenote
   - linkListType: quickstart
     links:
