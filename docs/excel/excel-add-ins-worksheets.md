@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075548"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290730"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -318,11 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="detect-formula-changes-preview"></a>Detectar alterações de fórmula (visualização)
-
-> [!NOTE]
-> No `Worksheet.onFormulaChanged` momento, o evento só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-formula-changes"></a>Detectar alterações de fórmula
 
 Seu complemento pode acompanhar as alterações nas fórmulas em uma planilha. Isso é útil quando uma planilha está conectada a um banco de dados externo. Quando a fórmula é mudada na planilha, o evento nesse cenário dispara atualizações correspondentes no banco de dados externo.
 

@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando Excel API JavaScript.
-ms.date: 06/07/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075800"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290786"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -165,10 +165,7 @@ Excel.run(function (context) {
 
 ![Tabela com nova coluna calculada no Excel.](../images/excel-tables-add-calculated-column.png)
 
-## <a name="resize-a-table-online-only"></a>Resize uma tabela (somente online)
-
-> [!NOTE]
-> No `Table.resize` momento, o método só está disponível no ExcelApiOnline 1.1. Para saber mais, consulte Excel conjunto de [requisitos somente da API JavaScript online.](../reference/requirement-sets/excel-api-online-requirement-set.md)
+## <a name="resize-a-table"></a>Resize uma tabela
 
 Seu complemento pode ressarmar uma tabela sem adicionar dados à tabela ou alterar valores de célula. Para ressizer uma tabela, use o [método Table.resize.](/javascript/api/excel/excel.table#resize_newRange_) O exemplo de código a seguir mostra como reorganizar uma tabela. Este exemplo de código usa [a](#create-a-table) **Tabela de** Despesas da seção Criar uma tabela anteriormente neste artigo e define o novo intervalo da tabela como **A1:D20**.
 

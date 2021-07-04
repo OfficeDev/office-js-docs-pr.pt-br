@@ -1,15 +1,15 @@
 ---
 title: Definir e obter o intervalo selecionado usando a EXCEL JavaScript
 description: Saiba como usar a EXCEL JavaScript para definir e obter o intervalo selecionado usando Excel API JavaScript.
-ms.date: 06/22/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
-ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "53126717"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290779"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Definir e obter o intervalo selecionado usando a EXCEL JavaScript
 
@@ -52,10 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="select-the-edge-of-a-used-range-online-only"></a>Selecione a borda de um intervalo usado (somente online)
-
-> [!NOTE]
-> No momento, os métodos e estão disponíveis `Range.getRangeEdge` `Range.getExtendedRange` apenas no ExcelApiOnline 1.1. Para saber mais, consulte Excel conjunto de [requisitos somente da API JavaScript online.](../reference/requirement-sets/excel-api-online-requirement-set.md)
+## <a name="select-the-edge-of-a-used-range"></a>Selecione a borda de um intervalo usado
 
 Os [métodos Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) e [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) permitem que o seu complemento replique o comportamento dos atalhos de seleção do teclado, selecionando a borda do intervalo usado com base no intervalo selecionado no momento. Para saber mais sobre intervalos usados, consulte [Obter intervalo usado](excel-add-ins-ranges-get.md#get-used-range).
 

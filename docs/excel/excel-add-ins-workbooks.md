@@ -4,12 +4,12 @@ description: Saiba como executar tarefas comuns com as guias de trabalho ou recu
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853980"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290751"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -74,11 +74,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual (visualização)
-
-> [!NOTE]
-> No `Workbook.insertWorksheetsFromBase64` momento, o método só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
 
 O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o método para inserir cópias das planilhas da pasta de trabalho de destino em `insertWorksheetsFromBase64` si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada. 
 
@@ -343,11 +339,7 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="detect-workbook-activation-preview"></a>Detectar ativação da workbook (visualização)
-
-> [!NOTE]
-> No `Workbook.onActivated` momento, o evento só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-workbook-activation"></a>Detectar a ativação de uma agenda de trabalho
 
 O seu complemento pode detectar quando uma workbook é ativada. Uma workbook fica *inativa* quando o usuário alterna o foco para outra workbook, para outro aplicativo ou (em Excel na Web) para outra guia do navegador da Web. Uma workbook *é ativada quando* o usuário retorna o foco para a workbook. A ativação da workbook pode disparar funções de retorno de chamada no seu complemento, como atualizar dados da agenda de trabalho.
 

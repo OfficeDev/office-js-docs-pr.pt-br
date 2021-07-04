@@ -1,15 +1,15 @@
 ---
 title: Trabalhar com precedentes de fórmula e dependentes usando Excel API JavaScript
 description: Saiba como usar a API JavaScript Excel para recuperar precedentes e dependentes da fórmula.
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075793"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290772"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 
@@ -54,11 +54,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-the-direct-dependents-of-a-formula-preview"></a>Obter os dependentes diretos de uma fórmula (visualização)
-
-> [!NOTE]
-> No `Range.getDirectDependents` momento, o método só está disponível na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="get-the-direct-dependents-of-a-formula"></a>Obter os dependentes diretos de uma fórmula
 
 Localize as células dependentes diretas de uma fórmula [com Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__). Como `Range.getDirectPrecedents` , também retorna um `Range.getDirectDependents` `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os dependentes diretos na guia de trabalho. Ele tem um objeto `RangeAreas` separado para cada planilha que contém pelo menos uma fórmula dependente. Para obter mais informações sobre como trabalhar com o objeto, consulte `RangeAreas` Work with multiple [ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 

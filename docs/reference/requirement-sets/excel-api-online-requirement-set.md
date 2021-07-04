@@ -1,19 +1,19 @@
 ---
-title: Conjunto de requisitos somente da API JavaScript do Excel online
+title: Excel Conjunto de requisitos somente para API JavaScript online
 description: Detalhes sobre o conjunto de requisitos do ExcelApiOnline.
-ms.date: 04/02/2021
+ms.date: 07/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 282e11e415d51a6724715091d894df64ebaabfae
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: ef4831cf6a6f9be1a5413c89ae0f971bef51a9b1
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604677"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290800"
 ---
-# <a name="excel-javascript-api-online-only-requirement-set"></a>Conjunto de requisitos somente da API JavaScript do Excel online
+# <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Conjunto de requisitos somente para API JavaScript online
 
-O conjunto de requisitos é um conjunto de requisitos especial que inclui recursos que `ExcelApiOnline` estão disponíveis apenas para o Excel na Web. ApIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações comportamentais ou estruturais não documentados) para o Excel no aplicativo Web. `ExcelApiOnline` As APIs são consideradas APIs de "visualização" para outras plataformas (Windows, Mac, iOS) e podem não ser suportadas por nenhuma dessas plataformas.
+O conjunto de requisitos é um conjunto de requisitos especial que inclui recursos que estão disponíveis apenas `ExcelApiOnline` para Excel na Web. As APIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações comportamentais ou estruturais não documentados) para o aplicativo Excel na Web. `ExcelApiOnline`As APIs são consideradas APIs de "visualização" para outras plataformas (Windows, Mac, iOS) e podem não ser suportadas por nenhuma dessas plataformas.
 
 Quando as APIs no conjunto de requisitos são suportadas em todas as plataformas, elas serão adicionadas ao próximo conjunto de requisitos lançado `ExcelApiOnline` ( `ExcelApi 1.[NEXT]` ). Depois que esse novo requisito for público, essas APIs serão removidas de `ExcelApiOnline` . Pense nisso como um processo de promoção semelhante a uma API que está mudando da visualização para a versão.
 
@@ -21,7 +21,7 @@ Quando as APIs no conjunto de requisitos são suportadas em todas as plataformas
 > `ExcelApiOnline` é um superconjunto do conjunto de requisitos numerado mais recente.
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1` é a única versão das APIs somente online. Isso porque o Excel na Web sempre terá uma única versão disponível para os usuários que são a versão mais recente.
+> `ExcelApiOnline 1.1` é a única versão das APIs somente online. Isso porque Excel na Web sempre terá uma única versão disponível para os usuários que são a versão mais recente.
 
 A tabela a seguir fornece um resumo conciso das APIs, enquanto a tabela de lista [de API](#api-list) subsequente fornece uma lista detalhada das `ExcelApiOnline` APIs atuais.
 
@@ -31,7 +31,7 @@ A tabela a seguir fornece um resumo conciso das APIs, enquanto a tabela de lista
 
 ## <a name="recommended-usage"></a>Uso recomendado
 
-Como as APIs só têm suporte do Excel na Web, o seu complemento deve verificar se o conjunto de requisitos é suportado antes de `ExcelApiOnline` chamar essas APIs. Isso evita chamar uma API somente online em uma plataforma diferente.
+Como as APIs só têm suporte Excel na Web, o seu complemento deve verificar se o conjunto de requisitos é suportado antes de `ExcelApiOnline` chamar essas APIs. Isso evita chamar uma API somente online em uma plataforma diferente.
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -46,7 +46,7 @@ Depois que a API está em um conjunto de requisitos entre plataformas, você dev
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs JavaScript do Excel incluídas no conjunto `ExcelApiOnline` de requisitos. Para ver uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs e APIs lançadas anteriormente), consulte todas as `ExcelApiOnline` [APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-online&preserve-view=true).
+A tabela a seguir lista as Excel APIs JavaScript atualmente incluídas no conjunto `ExcelApiOnline` de requisitos. Para uma lista completa de todas as EXCEL JavaScript (incluindo APIs e APIs lançadas anteriormente), consulte todas as `ExcelApiOnline` [APIs JavaScript](/javascript/api/excel?view=excel-js-online&preserve-view=true)Excel JavaScript .
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -62,10 +62,6 @@ A tabela a seguir lista as APIs JavaScript do Excel incluídas no conjunto `Exce
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitem-key-)|Obtém uma exibição de planilha usando seu nome.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getitemat-index-)|Obtém uma exibição de planilha pelo índice na coleção.|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Range](/javascript/api/excel/excel.range)|[getExtendedRange(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getextendedrange-direction--activecell-)|Retorna um objeto range que inclui o intervalo atual e até a borda do intervalo, com base na direção fornecida.|
-||[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|Retorna um `RangeAreas` objeto que representa as áreas mescladas nesse intervalo.|
-||[getRangeEdge(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getrangeedge-direction--activecell-)|Retorna um objeto range que é a célula de borda da região de dados que corresponde à direção fornecida.|
-|[Table](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize-newrange-)|Resize a tabela para o novo intervalo.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Retorna uma coleção de exibições de planilha presentes na planilha.|
 
 ## <a name="see-also"></a>Confira também
