@@ -1,21 +1,23 @@
 ---
 title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
-ms.date: 02/26/2021
+ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: c0df1df4fdbda22768562892874e09bbeb760473
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 9f6642afcfae8efd54c4ade6165aa2a6823e3bd2
+ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505483"
+ms.lasthandoff: 07/07/2021
+ms.locfileid: "53315145"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
 O namespace [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
 
-> [!NOTE]
-> Você pode também acessar [APIs REST do Outlook por meio do Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph), mas há algumas diferenças essenciais. Para saber mais, confira [Comparar o Microsoft Graph e o Outlook](/outlook/rest/compare-graph).
+> [!IMPORTANT]
+> **As OUTLOOK REST são preteridas**
+>
+> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de novembro de [2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, compare os pontos de extremidade Graph e Outlook API REST da [Microsoft.](/outlook/rest/compare-graph)
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 
@@ -87,7 +89,7 @@ var restHost = Office.context.mailbox.restUrl;
 Depois que seu suplemento tiver o token de acesso, a ID do item e a URL da API REST, ele poderá passar essas informações para um serviço de back-end que chama a API REST ou pode chamá-la diretamente usando o AJAX. O exemplo a seguir chama a API REST do Email do Outlook para obter a mensagem atual.
 
 > [!IMPORTANT]
-> Para implantações locais do Exchange, as solicitações do lado do cliente usando a AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
+> Para implantações Exchange locais, as solicitações do lado do cliente usando AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
 
 ```js
 function getCurrentItem(accessToken) {
