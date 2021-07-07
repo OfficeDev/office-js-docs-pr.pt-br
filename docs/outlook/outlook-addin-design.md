@@ -1,14 +1,14 @@
 ---
 title: Design de suplementos do Outlook
 description: Diretrizes para ajudar a projetar e construir um suplemento atraente, que oferece o melhor do seu aplicativo diretamente para o Outlook – no Windows, na Web, no iOS, no Mac e no Android.
-ms.date: 06/24/2019
+ms.date: 07/05/2021
 localization_priority: Priority
-ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 35ff407fae14654b3b6aa3d543e30524d4a1a5d0
+ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077131"
+ms.lasthandoff: 07/07/2021
+ms.locfileid: "53315152"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Diretrizes de design de suplementos do Outlook
 
@@ -30,19 +30,19 @@ As seguintes diretrizes gerais o ajudarão a projetar e construir um suplemento 
 
    O suplemento deve ser projetado usando padrões nativos da plataforma na qual o Outlook estiver em execução. Para fazer isso, respeite e implemente as diretrizes de interação e visuais estabelecidas por cada plataforma. O Outlook tem suas próprias diretrizes e elas também é importante considerá-las. Um suplemento bem projetado será uma mistura apropriada de sua experiência, da plataforma e do Outlook.
 
-   Isso significa que o suplemento será visualmente diferente quando for executado no Outlook no iOS em comparação com o Outlook no Android. Recomendamos que você confira o [Framework7](https://framework7.io/) como uma opção para ajudá-lo com o estilo.
+   Isso significa que seu suplemento será visualmente diferente quando for executado no Outlook no iOS e no Android. Recomendamos que você confira a [IU do Fluent](https://developer.microsoft.com/fluentui#/) como uma opção para ajudá-lo com o estilo.
 
 3. **Torne-o agradável de usar e acerte nos detalhes**
 
    As pessoas gostam de usar produtos funcionais e visualmente atraentes. Você pode ajudar a garantir o sucesso de seu suplemento ao criar uma experiência na qual você considerou cuidadosamente cada interação e detalhe visual. As etapas necessárias para concluir uma tarefa devem ser claras e relevantes. O ideal é que nenhuma ação leve mais do que um ou dois cliques. 
    
-   Tente não tirar um usuário do contexto para concluir uma ação. Um usuário deve ter facilidade para entrar e sair de seu suplemento e voltar para o que estava fazendo antes. Um suplemento não deve ser um destino onde se gaste muito tempo; ele deve ser um aprimoramento de nossa funcionalidade principal. Se feito corretamente, seu suplemento nos ajudará a cumprir a meta de tornar as pessoas mais produtivas.
+   Tente não tirar um usuário do contexto para concluir uma ação. Um usuário deve ser capaz de entrar e sair facilmente do seu suplemento e voltar para o que estava fazendo antes. Um suplemento não deve ser um destino onde se gaste muito tempo&mdash;, ele deve ser um aprimoramento da nossa funcionalidade principal. Se feito corretamente, seu suplemento nos ajudará a cumprir a meta de tornar as pessoas mais produtivas.
 
 4. **Use sua marca de forma sensata**
 
    Valorizamos uma ótima identidade visual, e sabemos que é importante proporcionar aos usuários sua experiência única. Mas sentimos que a melhor maneira de garantir o sucesso de seu suplemento é construir uma experiência intuitiva que incorpora sutilmente elementos de sua marca versus a exibição de elementos de marca persistentes ou intrusivos que apenas distraem um usuário de se mover através de seu sistema sem restrições. 
     
-   Uma boa maneira de incorporar sua marca de forma significativa é utilizar as cores, os ícones e a voz de sua marca, presumindo que esses itens não entrem em conflito com os padrões da plataforma de sua preferência ou os requisitos de acessibilidade. Tente manter o foco no conteúdo e na conclusão de tarefas, não na marca. 
+   Uma boa maneira de incorporar sua marca de forma significativa é utilizar as cores, os ícones e a voz da sua marca&mdash;, presumindo que esses itens não entrem em conflito com os padrões da plataforma de sua preferência ou os requisitos de acessibilidade Tente manter o foco no conteúdo e na conclusão da tarefa, não na marca. 
     
    > [!NOTE]
    >  Os anúncios não devem ser mostrados em suplementos no iOS ou no Android.
