@@ -3,53 +3,53 @@ title: Elemento Resources no arquivo de manifesto
 description: O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604614"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348290"
 ---
-# <a name="resources-element"></a><span data-ttu-id="c1823-103">Elemento Resources</span><span class="sxs-lookup"><span data-stu-id="c1823-103">Resources element</span></span>
+# <a name="resources-element"></a><span data-ttu-id="f3546-103">Elemento Resources</span><span class="sxs-lookup"><span data-stu-id="f3546-103">Resources element</span></span>
 
-<span data-ttu-id="c1823-p101">Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **d** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva dentro do manifesto e pode ter no máximo 32 caracteres.</span><span class="sxs-lookup"><span data-stu-id="c1823-p101">Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.</span></span>
+<span data-ttu-id="f3546-p101">Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **d** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva dentro do manifesto e pode ter no máximo 32 caracteres.</span><span class="sxs-lookup"><span data-stu-id="f3546-p101">Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.</span></span>
 
-<span data-ttu-id="c1823-108">Cada recurso pode ter um ou mais elementos filhos **Override** para definir um recurso diferente para uma localidade específica.</span><span class="sxs-lookup"><span data-stu-id="c1823-108">Each resource can have one or more **Override** child elements to define a different resource for a specific locale.</span></span>
+<span data-ttu-id="f3546-108">Cada recurso pode ter um ou mais elementos filhos **Override** para definir um recurso diferente para uma localidade específica.</span><span class="sxs-lookup"><span data-stu-id="f3546-108">Each resource can have one or more **Override** child elements to define a different resource for a specific locale.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="c1823-109">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="c1823-109">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="f3546-109">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="f3546-109">Child elements</span></span>
 
-|  <span data-ttu-id="c1823-110">Elemento</span><span class="sxs-lookup"><span data-stu-id="c1823-110">Element</span></span> |  <span data-ttu-id="c1823-111">Tipo</span><span class="sxs-lookup"><span data-stu-id="c1823-111">Type</span></span>  |  <span data-ttu-id="c1823-112">Descrição</span><span class="sxs-lookup"><span data-stu-id="c1823-112">Description</span></span>  |
+|  <span data-ttu-id="f3546-110">Elemento</span><span class="sxs-lookup"><span data-stu-id="f3546-110">Element</span></span> |  <span data-ttu-id="f3546-111">Tipo</span><span class="sxs-lookup"><span data-stu-id="f3546-111">Type</span></span>  |  <span data-ttu-id="f3546-112">Descrição</span><span class="sxs-lookup"><span data-stu-id="f3546-112">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="c1823-113">Imagens</span><span class="sxs-lookup"><span data-stu-id="c1823-113">Images</span></span>](#images)            |  <span data-ttu-id="c1823-114">image</span><span class="sxs-lookup"><span data-stu-id="c1823-114">image</span></span>   |  <span data-ttu-id="c1823-115">Fornece a URL HTTPS de uma imagem para um ícone.</span><span class="sxs-lookup"><span data-stu-id="c1823-115">Provides the HTTPS URL to an image for an icon.</span></span> |
-|  <span data-ttu-id="c1823-116">**URLs**</span><span class="sxs-lookup"><span data-stu-id="c1823-116">**Urls**</span></span>                |  <span data-ttu-id="c1823-117">url</span><span class="sxs-lookup"><span data-stu-id="c1823-117">url</span></span>     |  <span data-ttu-id="c1823-p102">Fornece um local para a URL HTTPS. A URL pode ter 2.048 caracteres no máximo.</span><span class="sxs-lookup"><span data-stu-id="c1823-p102">Provides an HTTPS URL location. A URL can have a maximum of 2048 characters.</span></span> |
-|  <span data-ttu-id="c1823-120">**ShortStrings**</span><span class="sxs-lookup"><span data-stu-id="c1823-120">**ShortStrings**</span></span> |  <span data-ttu-id="c1823-121">cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="c1823-121">string</span></span>  |  <span data-ttu-id="c1823-p103">O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres.</span><span class="sxs-lookup"><span data-stu-id="c1823-p103">The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.</span></span>|
-|  <span data-ttu-id="c1823-124">**LongStrings**</span><span class="sxs-lookup"><span data-stu-id="c1823-124">**LongStrings**</span></span>  |  <span data-ttu-id="c1823-125">cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="c1823-125">string</span></span>  | <span data-ttu-id="c1823-p104">O texto para atributos **Description**. Cada **String** contém no máximo 250 caracteres.</span><span class="sxs-lookup"><span data-stu-id="c1823-p104">The text for **Description** attributes. Each **String** contains a maximum of 250 characters.</span></span>|
+|  [<span data-ttu-id="f3546-113">Imagens</span><span class="sxs-lookup"><span data-stu-id="f3546-113">Images</span></span>](#images)            |  <span data-ttu-id="f3546-114">image</span><span class="sxs-lookup"><span data-stu-id="f3546-114">image</span></span>   |  <span data-ttu-id="f3546-115">Fornece a URL HTTPS de uma imagem para um ícone.</span><span class="sxs-lookup"><span data-stu-id="f3546-115">Provides the HTTPS URL to an image for an icon.</span></span> |
+|  <span data-ttu-id="f3546-116">**URLs**</span><span class="sxs-lookup"><span data-stu-id="f3546-116">**Urls**</span></span>                |  <span data-ttu-id="f3546-117">url</span><span class="sxs-lookup"><span data-stu-id="f3546-117">url</span></span>     |  <span data-ttu-id="f3546-p102">Fornece um local para a URL HTTPS. A URL pode ter 2.048 caracteres no máximo.</span><span class="sxs-lookup"><span data-stu-id="f3546-p102">Provides an HTTPS URL location. A URL can have a maximum of 2048 characters.</span></span> |
+|  <span data-ttu-id="f3546-120">**ShortStrings**</span><span class="sxs-lookup"><span data-stu-id="f3546-120">**ShortStrings**</span></span> |  <span data-ttu-id="f3546-121">cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="f3546-121">string</span></span>  |  <span data-ttu-id="f3546-p103">O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres.</span><span class="sxs-lookup"><span data-stu-id="f3546-p103">The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.</span></span>|
+|  <span data-ttu-id="f3546-124">**LongStrings**</span><span class="sxs-lookup"><span data-stu-id="f3546-124">**LongStrings**</span></span>  |  <span data-ttu-id="f3546-125">cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="f3546-125">string</span></span>  | <span data-ttu-id="f3546-p104">O texto para atributos **Description**. Cada **String** contém no máximo 250 caracteres.</span><span class="sxs-lookup"><span data-stu-id="f3546-p104">The text for **Description** attributes. Each **String** contains a maximum of 250 characters.</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="c1823-128">Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.</span><span class="sxs-lookup"><span data-stu-id="c1823-128">You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.</span></span>
+> <span data-ttu-id="f3546-128">Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.</span><span class="sxs-lookup"><span data-stu-id="f3546-128">You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.</span></span>
 
-### <a name="images"></a><span data-ttu-id="c1823-129">Imagens</span><span class="sxs-lookup"><span data-stu-id="c1823-129">Images</span></span>
+### <a name="images"></a><span data-ttu-id="f3546-129">Imagens</span><span class="sxs-lookup"><span data-stu-id="f3546-129">Images</span></span>
 
-<span data-ttu-id="c1823-130">Cada ícone deve ter três **elementos Images,** um para cada um dos três tamanhos obrigatórios:</span><span class="sxs-lookup"><span data-stu-id="c1823-130">Each icon must have three **Images** elements, one for each of the three mandatory sizes:</span></span>
+<span data-ttu-id="f3546-130">Cada ícone deve ter três **elementos Images,** um para cada um dos três tamanhos obrigatórios:</span><span class="sxs-lookup"><span data-stu-id="f3546-130">Each icon must have three **Images** elements, one for each of the three mandatory sizes:</span></span>
 
-- <span data-ttu-id="c1823-131">16 x 16</span><span class="sxs-lookup"><span data-stu-id="c1823-131">16x16</span></span>
-- <span data-ttu-id="c1823-132">32x32</span><span class="sxs-lookup"><span data-stu-id="c1823-132">32x32</span></span>
-- <span data-ttu-id="c1823-133">80x80</span><span class="sxs-lookup"><span data-stu-id="c1823-133">80x80</span></span>
+- <span data-ttu-id="f3546-131">16 x 16</span><span class="sxs-lookup"><span data-stu-id="f3546-131">16x16</span></span>
+- <span data-ttu-id="f3546-132">32x32</span><span class="sxs-lookup"><span data-stu-id="f3546-132">32x32</span></span>
+- <span data-ttu-id="f3546-133">80x80</span><span class="sxs-lookup"><span data-stu-id="f3546-133">80x80</span></span>
 
-<span data-ttu-id="c1823-134">Os seguintes tamanhos adicionais também têm suporte, mas não são obrigatórios:</span><span class="sxs-lookup"><span data-stu-id="c1823-134">The following additional sizes are also supported, but not required:</span></span>
+<span data-ttu-id="f3546-134">Os seguintes tamanhos adicionais também são suportados, mas não são necessários.</span><span class="sxs-lookup"><span data-stu-id="f3546-134">The following additional sizes are also supported, but not required.</span></span>
 
-- <span data-ttu-id="c1823-135">20x20</span><span class="sxs-lookup"><span data-stu-id="c1823-135">20x20</span></span>
-- <span data-ttu-id="c1823-136">24x24</span><span class="sxs-lookup"><span data-stu-id="c1823-136">24x24</span></span>
-- <span data-ttu-id="c1823-137">40x40</span><span class="sxs-lookup"><span data-stu-id="c1823-137">40x40</span></span>
-- <span data-ttu-id="c1823-138">48x48</span><span class="sxs-lookup"><span data-stu-id="c1823-138">48x48</span></span>
-- <span data-ttu-id="c1823-139">64x64</span><span class="sxs-lookup"><span data-stu-id="c1823-139">64x64</span></span>
+- <span data-ttu-id="f3546-135">20x20</span><span class="sxs-lookup"><span data-stu-id="f3546-135">20x20</span></span>
+- <span data-ttu-id="f3546-136">24x24</span><span class="sxs-lookup"><span data-stu-id="f3546-136">24x24</span></span>
+- <span data-ttu-id="f3546-137">40x40</span><span class="sxs-lookup"><span data-stu-id="f3546-137">40x40</span></span>
+- <span data-ttu-id="f3546-138">48x48</span><span class="sxs-lookup"><span data-stu-id="f3546-138">48x48</span></span>
+- <span data-ttu-id="f3546-139">64x64</span><span class="sxs-lookup"><span data-stu-id="f3546-139">64x64</span></span>
 
 > [!IMPORTANT]
 >
-> - <span data-ttu-id="c1823-140">Se essa imagem for o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.</span><span class="sxs-lookup"><span data-stu-id="c1823-140">If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.</span></span>
-> - <span data-ttu-id="c1823-141">O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho.</span><span class="sxs-lookup"><span data-stu-id="c1823-141">Outlook requires the ability to cache image resources for performance purposes.</span></span> <span data-ttu-id="c1823-142">Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta.</span><span class="sxs-lookup"><span data-stu-id="c1823-142">For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header.</span></span> <span data-ttu-id="c1823-143">Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.</span><span class="sxs-lookup"><span data-stu-id="c1823-143">This will result in Outlook automatically substituting a generic or default image.</span></span>
+> - <span data-ttu-id="f3546-140">Se essa imagem for o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.</span><span class="sxs-lookup"><span data-stu-id="f3546-140">If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.</span></span>
+> - <span data-ttu-id="f3546-141">O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho.</span><span class="sxs-lookup"><span data-stu-id="f3546-141">Outlook requires the ability to cache image resources for performance purposes.</span></span> <span data-ttu-id="f3546-142">Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta.</span><span class="sxs-lookup"><span data-stu-id="f3546-142">For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header.</span></span> <span data-ttu-id="f3546-143">Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.</span><span class="sxs-lookup"><span data-stu-id="f3546-143">This will result in Outlook automatically substituting a generic or default image.</span></span>
 
-## <a name="resources-examples"></a><span data-ttu-id="c1823-144">Exemplos de recursos</span><span class="sxs-lookup"><span data-stu-id="c1823-144">Resources examples</span></span>
+## <a name="resources-examples"></a><span data-ttu-id="f3546-144">Exemplos de recursos</span><span class="sxs-lookup"><span data-stu-id="f3546-144">Resources examples</span></span>
 
 ```XML
 <Resources>
