@@ -1,21 +1,21 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
-description: Saiba como converter um projeto de complemento do Office no Visual Studio para usar o TypeScript.
+description: Saiba como converter um projeto de Office de Visual Studio para usar TypeScript.
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839961"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349977"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!IMPORTANT]
-> Este artigo descreve  as etapas mínimas necessárias para garantir que, quando você pressionar F5, o código será transpilado para JavaScript, que será então sideloadado automaticamente para o Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas com a palavra-chave em vez de e `var` `let` não são declaradas com um tipo especificado. Para aproveitar ao máximo a digitação forte do TypeScript, considere fazer outras alterações no código. 
+> Este artigo descreve  as etapas mínimas necessárias para garantir que, quando você pressionar F5, o código será transpilado para JavaScript, que será então sideload automaticamente para Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas com a palavra-chave em vez de `var` `let` e não são declaradas com um tipo especificado. Para aproveitar ao máximo a digitação forte de TypeScript, considere fazer outras alterações no código. 
 
 > [!NOTE]
 > Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
@@ -56,7 +56,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 4. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
 
-5. Com a **guia** Procurar selecionada, insira **jquery. TypeScript.DefinitelyTyped**. Instale esse pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições jQuery TypeScript sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado pelo Visual Studio, chamado **packages.config**.
+5. Com a **guia Procurar** selecionada, digite **jquery. TypeScript.DefinitelyTyped**. Instale esse pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições jQuery TypeScript sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado por Visual Studio, chamado **packages.config**.
 
     > [!NOTE]
     > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.
@@ -65,12 +65,12 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
     ```TypeScript
     Office.initialize = function (reason) {
-        // add the following line
+        // Add the following line.
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-7. Em **Home.ts**, localize a função `displaySelectedCells`, substitua a função inteira pelo código a seguir e, em seguida, salve o arquivo:
+7. Em **Home.ts**, encontre a função, substitua a função inteira pelo código a seguir `displaySelectedCells` e salve o arquivo.
 
     ```TypeScript
     function displaySelectedCells() {

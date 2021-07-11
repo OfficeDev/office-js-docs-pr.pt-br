@@ -3,12 +3,12 @@ title: Solucionar erros de desenvolvimento com Office de complementos
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 8f0ceaf13041fa27c4e9e279646e979f132913b3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961276"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349271"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Office de complementos
 
@@ -29,11 +29,12 @@ Exclua o conteúdo da `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` pasta e exclua
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>No iOS:
+
 Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>Alterações em arquivos estáticos, como JavaScript, HTML e CSS, não entram em vigor
 
-O navegador pode estar armazenando esses arquivos em cache. Para evitar isso, desative o cache do lado do cliente ao desenvolver. Os detalhes dependerão do tipo de servidor que você estiver usando. Na maioria dos casos, envolve adicionar determinados cabeçalhos às respostas HTTP. Sugerimos o seguinte conjunto:
+O navegador pode estar armazenando esses arquivos em cache. Para evitar isso, desative o cache do lado do cliente ao desenvolver. Os detalhes dependerão do tipo de servidor que você estiver usando. Na maioria dos casos, envolve adicionar determinados cabeçalhos às respostas HTTP. Sugerimos o conjunto a seguir.
 
 - Controle de cache: "privado, sem cache, sem armazenamento"
 - Pragma: "sem cache"

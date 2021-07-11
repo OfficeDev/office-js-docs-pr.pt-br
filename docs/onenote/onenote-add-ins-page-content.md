@@ -3,12 +3,12 @@ title: Trabalhar com conteúdo da página do OneNote
 description: Saiba como trabalhar com o OneNote de página usando a API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f506617bfdbc97e94f8fb16930dfc2a935385d5f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076816"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349046"
 ---
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
@@ -21,7 +21,7 @@ Na API JavaScript de suplementos do OneNote, o conteúdo da página é represent
 - Um objeto Outline contém um conjunto de objetos Paragraph.
 - Um objeto Paragraph contém um tipo de conteúdo RichText, Image, Table ou Other.
 
-Para criar uma página em branco do OneNote, use um dos seguintes métodos:
+Para criar uma página de OneNote vazia, use um dos seguintes métodos.
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
@@ -36,7 +36,7 @@ O conteúdo e a estrutura da página do OneNote são representados por HTML. Ape
 
 ## <a name="supported-html"></a>HTML com suporte
 
-A API JavaScript do suplemento do OneNote dá suporte ao HTML a seguir para a criação e a atualização do conteúdo da página:
+A OneNote api JavaScript de complemento oferece suporte ao SEGUINTE HTML para criar e atualizar conteúdo de página.
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

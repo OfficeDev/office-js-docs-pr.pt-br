@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d03ac2c01c03353f3e2d1b54ba20616d7b42d93f
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555203"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349228"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -35,7 +35,7 @@ Uma guia contextual é um controle de tabulação oculto na faixa Office que é 
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportamento de guias contextuais personalizadas
 
-A experiência do usuário para guias contextuais personalizadas segue o padrão de guias Office contextuais internas. Veja a seguir os princípios básicos para as guias contextuais personalizadas de posicionamento:
+A experiência do usuário para guias contextuais personalizadas segue o padrão de guias Office contextuais internas. A seguir estão os princípios básicos para as guias contextuais personalizadas de posicionamento.
 
 - Quando uma guia contextual personalizada é visível, ela aparece na extremidade direita da faixa de opções.
 - Se uma ou mais guias contextuais e uma ou mais guias contextuais personalizadas de complementos são visíveis ao mesmo tempo, as guias contextuais personalizadas estão sempre à direita de todas as guias contextuais.
@@ -45,7 +45,7 @@ A experiência do usuário para guias contextuais personalizadas segue o padrão
 
 ## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>Principais etapas para incluir uma guia contextual em um complemento
 
-Veja a seguir as principais etapas para incluir uma guia contextual personalizada em um complemento:
+A seguir estão as principais etapas para incluir uma guia contextual personalizada em um complemento.
 
 1. Configure o complemento para usar um tempo de execução compartilhado.
 1. Defina a guia e os grupos e controles que aparecem nele.
@@ -192,7 +192,7 @@ Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema
     }
     ```
  
-Veja a seguir o exemplo completo do blob JSON:
+A seguir está o exemplo completo do blob JSON.
 
 ```json
 `{
@@ -380,7 +380,7 @@ function myContextChanges() {
 
 ## <a name="localizing-the-json-blob"></a>Localizando o blob JSON
 
-O blob JSON que é passado não é localizado da mesma maneira que a marcação de manifesto para guias principais personalizadas é localizada (que é descrita em Localização de Controle do `requestCreateControls` [manifesto](../develop/localization.md#control-localization-from-the-manifest)). Em vez disso, a localização deve ocorrer em tempo de execução usando blobs JSON distintos para cada localidade. Sugerimos que você use uma instrução que testa a `switch` [propriedade Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Veja um exemplo a seguir:
+O blob JSON que é passado não é localizado da mesma maneira que a marcação de manifesto para guias principais personalizadas é localizada (que é descrita em Localização de Controle do `requestCreateControls` [manifesto](../develop/localization.md#control-localization-from-the-manifest)). Em vez disso, a localização deve ocorrer em tempo de execução usando blobs JSON distintos para cada localidade. Sugerimos que você use uma instrução que testa a `switch` [propriedade Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Apresentamos um exemplo a seguir.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -424,7 +424,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-Em seguida, seu código chama a função para obter o blob localizado que é passado para `requestCreateControls` , como no exemplo a seguir:
+Em seguida, seu código chama a função para obter o blob localizado que é passado para `requestCreateControls` , como no exemplo a seguir.
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();

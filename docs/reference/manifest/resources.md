@@ -3,12 +3,12 @@ title: Elemento Resources no arquivo de manifesto
 description: O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604614"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348290"
 ---
 # <a name="resources-element"></a>Elemento Resources
 
@@ -36,7 +36,7 @@ Cada ícone deve ter três **elementos Images,** um para cada um dos três taman
 - 32x32
 - 80x80
 
-Os seguintes tamanhos adicionais também têm suporte, mas não são obrigatórios:
+Os seguintes tamanhos adicionais também são suportados, mas não são necessários.
 
 - 20x20
 - 24x24

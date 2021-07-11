@@ -3,12 +3,12 @@ title: Extensão de depuração de suplementos do Microsoft Office para o Visual
 description: Use o Visual Studio Code de Microsoft Office Depurador de Complementos para depurar seu Office Add-in.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 264a5d43a8b4f0faf7d6216664d30d7c8b64cccc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077117"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349284"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 
@@ -31,60 +31,60 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
 
 1. Se você precisar criar um projeto de add-in, [use o gerador Yo Office para criar um](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Siga os prompts dentro da linha de comando para configurar seu projeto. Você pode escolher qualquer idioma ou tipo de projeto para atender às suas necessidades.
 
-> [!NOTE]
-> Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
+    > [!NOTE]
+    > Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
 
-2. Abra um prompt de comando como administrador.
+1. Abra um prompt de comando como administrador.
    ![Opções de prompt de comando, incluindo "executar como administrador" no Windows 10.](../images/run-as-administrator-vs-code.jpg)
 
-3. Navegue até o diretório do projeto.
+1. Navegue até o diretório do projeto.
 
-4. Execute o seguinte comando para abrir seu projeto Visual Studio Code como administrador.
+1. Execute o seguinte comando para abrir seu projeto Visual Studio Code como administrador.
 
-```command&nbsp;line
-code .
-```
+    ```command&nbsp;line
+    code .
+    ```
 
-Depois Visual Studio Code abrir, navegue manualmente até a pasta do projeto.
+  Depois Visual Studio Code abrir, navegue manualmente até a pasta do projeto.
 
-> [!TIP]
-> Para abrir Visual Studio Code como administrador, selecione  a opção executar como administrador ao abrir Visual Studio Code depois de procurá-lo no Windows.
+  > [!TIP]
+  > Para abrir Visual Studio Code como administrador, selecione  a opção executar como administrador ao abrir Visual Studio Code depois de procurá-lo no Windows.
 
-5. No VS Code, selecione **Ctrl+Shift+X** para abrir a barra Extensões. Procure a extensão "Microsoft Office Depurador de Complementos" e instale-a.
+1. No VS Code, selecione **Ctrl+Shift+X** para abrir a barra Extensões. Procure a extensão "Microsoft Office Depurador de Complementos" e instale-a.
 
-6. Na pasta .vscode do seu projeto, abra o arquivo **launch.json**. Adicione o seguinte código à `configurations` seção:
+1. Na pasta .vscode do seu projeto, abra o arquivo **launch.json**. Adicione o código a seguir à `configurations` seção.
 
-```JSON
-{
-  "type": "office-addin",
-  "request": "attach",
-  "name": "Attach to Office Add-ins",
-  "port": 9222,
-  "trace": "verbose",
-  "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
-  "webRoot": "${workspaceFolder}",
-  "timeout": 45000
-}
-```
+    ```JSON
+    {
+      "type": "office-addin",
+      "request": "attach",
+      "name": "Attach to Office Add-ins",
+      "port": 9222,
+      "trace": "verbose",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
+      "webRoot": "${workspaceFolder}",
+      "timeout": 45000
+    }
+    ```
 
-7. Na seção JSON que você acabou de copiar, encontre a seção "url". Nesta URL, você precisará substituir o texto HOST maiúscula pelo aplicativo que está hospedando seu Office Add-in. Por exemplo, se o Office de Office for para Excel, o valor da URL será " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32$16,01$en-US$ \$ \$ \$ 0".
+1. Na seção JSON que você acabou de copiar, encontre a seção "url". Nesta URL, você precisará substituir o texto HOST maiúscula pelo aplicativo que está hospedando seu Office Add-in. Por exemplo, se o Office de Office for para Excel, o valor da URL será " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32$16,01$en-US$ \$ \$ \$ 0".
 
-8. Abra o prompt de comando e verifique se você está na pasta raiz do seu projeto. Execute o comando `npm start` para iniciar o servidor de dev. Quando o seu complemento for carregado no cliente Office, abra o painel de tarefas.
+1. Abra o prompt de comando e verifique se você está na pasta raiz do seu projeto. Execute o comando `npm start` para iniciar o servidor de dev. Quando o seu complemento for carregado no cliente Office, abra o painel de tarefas.
 
-9. Retorne ao Visual Studio Code e escolha **Exibir > Depurar** ou insira **CTRL + SHIFT + D** para alternar para o exibição de depuração.
+1. Retorne ao Visual Studio Code e escolha **Exibir > Depurar** ou insira **CTRL + SHIFT + D** para alternar para o exibição de depuração.
 
-10. Nas opções Depurar, escolha **Anexar a Office Depuração.** Selecione **F5** ou escolha **Debug -> Iniciar Depuração** no menu para começar a depuração.
+1. Nas opções Depurar, escolha **Anexar a Office Depuração.** Selecione **F5** ou escolha **Debug -> Iniciar Depuração** no menu para começar a depuração.
 
-11. De definir um ponto de interrupção no arquivo do painel de tarefas do seu projeto. Você pode definir pontos de interrupção Visual Studio Code ao passar o mouse ao lado de uma linha de código e selecionando o círculo vermelho que aparece.
+1. De definir um ponto de interrupção no arquivo do painel de tarefas do seu projeto. Você pode definir pontos de interrupção Visual Studio Code ao passar o mouse ao lado de uma linha de código e selecionando o círculo vermelho que aparece.
 
-![O círculo vermelho aparece em uma linha de código Visual Studio Code.](../images/set-breakpoint.jpg)
+    ![O círculo vermelho aparece em uma linha de código Visual Studio Code.](../images/set-breakpoint.jpg)
 
-12. Execute o seu complemento. Você verá que os pontos de interrupção foram atingidos e você pode inspecionar variáveis locais.
+1. Execute o seu complemento. Você verá que os pontos de interrupção foram atingidos e você pode inspecionar variáveis locais.
 
 ## <a name="see-also"></a>Confira também
 
-* [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
+- [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
 
-* [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)](debug-desktop-using-edge-chromium.md)
+- [Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)](debug-desktop-using-edge-chromium.md)

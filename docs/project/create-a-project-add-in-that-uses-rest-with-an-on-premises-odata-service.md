@@ -3,12 +3,12 @@ title: Criar um suplemento de Project que usa REST com um serviço OData local d
 description: Saiba como criar um complemento de painel de tarefas para o Project Professional 2013 que compara os dados de custo e trabalho no projeto ativo com as médias de todos os projetos na instância atual do Project Web App.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 318ef4fe45fdfbca5d47cb5d3d28b43fea61059b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c03cd580f9f5d4da654022de811d4a060a99e52d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076662"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348808"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento do Project que usa REST com um serviço OData local do Project Server
 
@@ -18,7 +18,7 @@ O código deste artigo é baseado em um exemplo desenvolvido por Saurabh Sanghvi
 
 ## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Pré-requisitos para a criação de um suplemento de painel de tarefas que lê dados de relatório do Project Server
 
-Veja a seguir os pré-requisitos para a criação de um complemento do painel de tarefas Project que lê o serviço **ProjectData** de uma instância do Project Web App em uma instalação local do Project Server 2013:
+A seguir estão os pré-requisitos para a criação de um complemento do painel de tarefas Project que lê o serviço **ProjectData** de uma instância do Project Web App em uma instalação local do Project Server 2013.
 
 - Verifique se você instalou os service packs e as atualizações mais recentes do Windows em seu computador de desenvolvimento local. O sistema operacional pode ser Windows 7, Windows 8, Windows Server 2008 ou Windows Server 2012.
 
@@ -37,7 +37,7 @@ Veja a seguir os pré-requisitos para a criação de um complemento do painel de
 
 1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibição de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relatório do Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-2. Consulte o **serviço ProjectData** usando seu navegador com a seguinte URL: **http://ServerName /ProjectServerName /_api/ProjectData**. Por exemplo, se a instância do Project Web App for `http://MyServer/pwa`, o navegador mostrará os seguintes resultados:
+2. Consulte o **serviço ProjectData** usando seu navegador com a seguinte URL: **http://ServerName /ProjectServerName /_api/ProjectData**. Por exemplo, se a instância Project Web App for `http://MyServer/pwa` , o navegador mostrará os seguintes resultados.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ O Office Developer Tools para Visual Studio inclui um modelo de suplemento de pa
 
 1. Execute Visual Studio 2015 como administrador e selecione **Novo** Project na página Iniciar.
 
-2. Na caixa de diálogo Novo **Project,** expanda os nós **Templates,** **Visual C#** e **Office/SharePoint** e selecione ** Office Add-ins**. Selecione **.NET Framework 4.5.2** na lista drop-down da estrutura de destino na parte superior do painel central e selecione **Office Add-in** (consulte a próxima captura de tela).
+2. Na caixa de diálogo Novo **Project,** expanda os nós **Templates,** **Visual C#** e **Office/SharePoint** e selecione Office **Add-ins**. Selecione **.NET Framework 4.5.2** na lista drop-down da estrutura de destino na parte superior do painel central e selecione **Office Add-in** (consulte a próxima captura de tela).
 
 3. Para colocar os dois projetos Visual Studio no mesmo diretório, selecione **Criar diretório** para solução e navegue até o local desejado.
 
@@ -115,13 +115,13 @@ Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Offi
 
 4. Adicione um ícone para mostrar na lista Office lista de menus de **complementos** na guia **PROJECT** da faixa de opções. Você pode adicionar um arquivo de ícone na solução do Visual Studio ou usar uma URL para um ícone. 
 
-As etapas a seguir mostram como adicionar um arquivo de ícone à solução do Visual Studio:
+As etapas a seguir mostram como adicionar um arquivo de ícone à Visual Studio solução.
 
 1. No **Explorador de Soluções,** vá para a pasta chamada Images.
 
 2. Para ser exibido na lista Office lista de menus de menus de **complementos,** o ícone deve ter 32 x 32 pixels. Por exemplo, instale o SDK do Project 2013, escolha a pasta **Imagens** e adicione o seguinte arquivo do SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
-    Como alternativa, use seu próprio ícone de 32 x 32 ou copie a imagem a seguir para um arquivo chamado NewIcon.png e, em seguida, adicione esse arquivo à pasta `HelloProjectODataWeb\Images`:
+    Como alternativa, use seu próprio ícone 32 x 32; ou, copie a imagem a seguir para um arquivo chamado NewIcon.png e adicione esse arquivo à  `HelloProjectODataWeb\Images` pasta.
 
     ![Ícone do aplicativo HelloProjectOData.](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -180,7 +180,7 @@ O painel de tarefas mostra o nome de exibição do complemento na parte superior
 
     O **complemento HelloProjectOData** também usa o arquivo SurfaceErrors.js, que exibe erros em uma mensagem pop-up. Você pode copiar o  código da seção Programação Robusta do Create your first [task pane add-in for Project 2013](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)usando um editor de texto e, em seguida, adicionar um arquivo SurfaceErrors.js na pasta **Scripts\Office** do projeto **HelloProjectODataWeb.**
 
-    A seguir está o código HTML atualizado para o elemento **head,** com a linha adicional para o arquivo SurfaceErrors.js:
+    A seguir está o código HTML atualizado para o elemento **head,** com a linha adicional para o arquivo SurfaceErrors.js.
 
     ```HTML
     <!DOCTYPE html>
@@ -192,7 +192,7 @@ O painel de tarefas mostra o nome de exibição do complemento na parte superior
 
     <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-    <!-- Add your CSS styles to the following file -->
+    <!-- Add your CSS styles to the following file. -->
     <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
     <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -206,7 +206,7 @@ O painel de tarefas mostra o nome de exibição do complemento na parte superior
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
     <script src="../Scripts/Office/1.0/Office.js"></script>
 
-    <!-- Add your JavaScript to the following files -->
+    <!-- Add your JavaScript to the following files. -->
     <script src="../Scripts/HelloProjectOData.js"></script>
     <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -543,7 +543,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função é 
 
 ## <a name="testing-the-helloprojectodata-add-in"></a>Testar o aplicativo HelloProjectOData
 
-Para testar e depurar o complemento **HelloProjectOData** com o Visual Studio 2015, o Project Professional 2013 deve ser instalado no computador de desenvolvimento. Para habilitar cenários de teste diferentes, certifique-se de poder escolher se o Project abre no caso de arquivos no computador local ou se ele se conecta ao Project Web App. Por exemplo, siga estas etapas:
+Para testar e depurar o complemento **HelloProjectOData** com o Visual Studio 2015, o Project Professional 2013 deve ser instalado no computador de desenvolvimento. Para habilitar cenários de teste diferentes, certifique-se de poder escolher se o Project abre no caso de arquivos no computador local ou se ele se conecta ao Project Web App. Por exemplo, faça as etapas a seguir.
 
 1. Na guia **ARQUIVO** na faixa de opções, escolha a guia **Informações** no exibição Backstage e escolha **Gerenciar Contas**.
 
@@ -581,7 +581,7 @@ Os testes básicos devem incluir o seguinte:
 
 6. Examine a saída na caixa de texto. Ele deve mostrar o caminho do documento, a consulta REST, as informações de status e os resultados JSON das chamadas para **ajax** e **parseODataResult**. A saída ajuda a entender, criar e depurar código no `parseODataResult` método como `projCost += Number(res.d.results[i].ProjectCost);` .
 
-    Veja a seguir um exemplo de saída com quebras de linha e espaços adicionados ao texto para fins de esclarecimentos, para três projetos em uma instância do Project Web App:
+    A seguir está um exemplo da saída com quebras de linha e espaços adicionados ao texto para clareza, para três projetos em uma instância Project Web App.
 
     ```json
     Document path: <>\WinProj test1
@@ -670,7 +670,7 @@ O código a seguir está no arquivo `Pages\HelloProjectOData.html` do projeto **
 
         <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-        <!-- Add your CSS styles to the following file -->
+        <!-- Add your CSS styles to the following file. -->
         <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
         <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -684,7 +684,7 @@ O código a seguir está no arquivo `Pages\HelloProjectOData.html` do projeto **
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
         <script src="../Scripts/Office/1.0/Office.js"></script>
 
-        <!-- Add your JavaScript to the following files -->
+        <!-- Add your JavaScript to the following files. -->
         <script src="../Scripts/HelloProjectOData.js"></script>
         <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -1099,7 +1099,7 @@ O suplemento deveria conter mais verificações de erro, além de lógica para c
 
 Para outras consultas do serviço **ProjectData,** há limites para o comprimento da cadeia de caracteres de consulta, o que afeta o número de etapas que uma consulta pode seguir de uma coleção pai para um objeto em uma coleção filha. Por exemplo, uma consulta de duas etapas de **Projects** para **Tasks** para itens de tarefa funciona, mas uma consulta de três etapas, como **Projects** para **Tasks** para **Assignments** para itens de atribuição pode exceder o comprimento máximo de URL padrão. Para saber mais, confira [Consultar feeds OData para dados de relatório do Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-Se você modificar o complemento **HelloProjectOData** para uso em produção, faça as seguintes etapas:
+Se você modificar o complemento **HelloProjectOData** para uso em produção, faça as etapas a seguir.
 
 - No arquivo HelloProjectOData.html, para obter melhor desempenho, mude a referência ao office.js do projeto local para a referência da CDN:
 

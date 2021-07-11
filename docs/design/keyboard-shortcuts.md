@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076312"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349249"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -91,7 +91,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>Criar um mapeamento de ações para suas funções
 
 1. Em seu projeto, abra o arquivo JavaScript carregado pela sua página HTML no `<FunctionFile>` elemento.
-1. No arquivo JavaScript, use a API [Office.actions.associate](/javascript/api/office/office.actions#associate) para mapear cada ação especificada no arquivo JSON para uma função JavaScript. Adicione o JavaScript a seguir ao arquivo. Observe o seguinte sobre o código:
+1. No arquivo JavaScript, use a API [Office.actions.associate](/javascript/api/office/office.actions#associate) para mapear cada ação especificada no arquivo JSON para uma função JavaScript. Adicione o JavaScript a seguir ao arquivo. Observe o seguinte sobre o código.
 
     - O primeiro parâmetro é uma das ações do arquivo JSON.
     - O segundo parâmetro é a função que é executado quando um usuário pressiona a combinação de teclas mapeada para a ação no arquivo JSON.
@@ -117,7 +117,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-1. Adicione uma segunda chamada de função para mapear a ação para uma função que `Office.actions.associate` `HIDETASKPANE` chama [Office.addin.hide](/javascript/api/office/office.addin#hide--). Veja um exemplo a seguir:
+1. Adicione uma segunda chamada de função para mapear a ação para uma função que `Office.actions.associate` `HIDETASKPANE` chama [Office.addin.hide](/javascript/api/office/office.addin#hide--). Apresentamos um exemplo a seguir.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -137,14 +137,14 @@ Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de 
 
 ### <a name="construct-the-action-objects"></a>Construir os objetos de ação
 
-Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`actions` on:
+Use as diretrizes a seguir ao especificar os objetos na matriz do shortcuts.js`actions` on.
 
 - Os nomes das `id` propriedades e `name` são obrigatórios.
 - A `id` propriedade é usada para identificar exclusivamente a ação a ser invocada usando um atalho de teclado.
 - A `name` propriedade deve ser uma cadeia de caracteres amigável que descreve a ação. Deve ser uma combinação dos caracteres A - Z, a - z, 0 - 9 e as marcas de pontuação "-", "_" e "+".
 - A propriedade do `type` é opcional. Atualmente, apenas `ExecuteFunction` o tipo é suportado.
 
-Veja um exemplo a seguir:
+Apresentamos um exemplo a seguir.
 
 ```json
     "actions": [
@@ -165,7 +165,7 @@ O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](ht
 
 ### <a name="construct-the-shortcut-objects"></a>Construir os objetos de atalho
 
-Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`shortcuts` on:
+Use as diretrizes a seguir ao especificar os objetos na matriz do shortcuts.js`shortcuts` on.
 
 - Os nomes de `action` propriedade , e são `key` `default` obrigatórios.
 - O valor da propriedade é uma cadeia de caracteres e deve corresponder a uma das `action` `id` propriedades no objeto action.
@@ -177,7 +177,7 @@ Use as seguintes diretrizes ao especificar os objetos na matriz do shortcuts.js`
 - Quando dois caracteres são vinculados à mesma chave física em um teclado padrão, eles são sinônimos na propriedade; por exemplo, Alt+a e Alt+A são o mesmo atalho, assim como `default` Ctrl+- e Ctrl+ porque "-" e "_" são a mesma chave \_ física.
 - O caractere "+" indica que as teclas de cada lado são pressionadas simultaneamente.
 
-Veja um exemplo a seguir:
+Apresentamos um exemplo a seguir.
 
 ```json
     "shortcuts": [
@@ -262,7 +262,7 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).

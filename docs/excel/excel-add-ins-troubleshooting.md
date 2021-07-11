@@ -1,24 +1,24 @@
 ---
-title: Solução de problemas de complementos do Excel
-description: Saiba como solucionar erros de desenvolvimento em Complementos do Excel.
+title: Solução de Excel de solução de problemas
+description: Saiba como solucionar erros de desenvolvimento em Excel de complementos.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0efc8b4d25d9d748975146e187104972e4ad58a9
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: cb622a1805be7bec61168ab37a41709a57075788
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270725"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349438"
 ---
-# <a name="troubleshooting-excel-add-ins"></a>Solução de problemas de complementos do Excel
+# <a name="troubleshooting-excel-add-ins"></a>Solução de Excel de solução de problemas
 
-Este artigo discute a solução de problemas que são exclusivos do Excel. Use a ferramenta de comentários na parte inferior da página para sugerir outros problemas que podem ser adicionados ao artigo.
+Este artigo discute a solução de problemas que são exclusivos Excel. Use a ferramenta de comentários na parte inferior da página para sugerir outros problemas que podem ser adicionados ao artigo.
 
-## <a name="api-limitations-when-the-active-workbook-switches"></a>Limitações de API quando a agenda ativa é alternada
+## <a name="api-limitations-when-the-active-workbook-switches"></a>Limitações da API quando a agenda de trabalho ativa é alternada
 
-Os complementos do Excel se destinam a operar em uma única planilha de cada vez. Erros podem surgir quando uma área de trabalho separada da que está executando o complemento ganha foco. Isso só acontece quando métodos específicos estão sendo chamados quando o foco muda.
+Os complementos para Excel são destinados a operar em uma única workbook de cada vez. Erros podem surgir quando uma workbook separada da que está executando o complemento ganha o foco. Isso só acontece quando determinados métodos estão no processo de ser chamado quando o foco muda.
 
-As seguintes APIs são afetadas por essa opção de livro de trabalho:
+As APIs a seguir são afetadas por essa opção de lista de trabalho.
 
 |API JavaScript do Excel | Erro lançado |
 |--|--|
@@ -40,11 +40,11 @@ As seguintes APIs são afetadas por essa opção de livro de trabalho:
 | `WorksheetFreezePanes.unfreeze` | GeneralException |
 
 > [!NOTE]
-> Isso só se aplica a várias planilhas do Excel abertas no Windows ou Mac.
+> Isso só se aplica a várias Excel de trabalho abertas em Windows ou Mac.
 
 ## <a name="coauthoring"></a>Coautoria
 
-Confira [Coautor nos complementos do Excel](co-authoring-in-excel-add-ins.md) para padrões a usar com eventos em um ambiente de coautor. O artigo também discute possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+Consulte [Coautor no Excel para](co-authoring-in-excel-add-ins.md) padrões a ser usado com eventos em um ambiente de coautor. O artigo também aborda possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
 
 ## <a name="known-issues"></a>Problemas Conhecidos
 
@@ -82,21 +82,21 @@ function getBindingId(eventArgs) {
 }
 ```
 
-### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>Formato e `useStandardHeight` problemas da `useStandardWidth` célula
+### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>Formato de célula `useStandardHeight` e `useStandardWidth` problemas
 
-A [propriedade useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) `CellPropertiesFormat` não funciona corretamente no Excel na Web. Devido a um problema na interface do usuário do Excel na Web, definir a propriedade para calcular a altura de forma `useStandardHeight` `true` imprecisa nessa plataforma. Por exemplo, uma altura padrão **de 14 é** modificada para **14,25** no Excel na Web.
+A [propriedade useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) `CellPropertiesFormat` não funciona corretamente no Excel na Web. Devido a um problema na interface do usuário Excel na Web, definir a propriedade para calcular a altura `useStandardHeight` `true` imprecisamente nessa plataforma. Por exemplo, uma altura padrão **de 14** é modificada para **14,25** em Excel na Web.
 
-Em todas as plataformas, as propriedades [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) e [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) devem `CellPropertiesFormat` ser definidas apenas como `true` . A definição dessas propriedades `false` não tem efeito. 
+Em todas as plataformas, [as propriedades useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) e [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) devem ser definidas `CellPropertiesFormat` apenas como `true` . Definir essas propriedades como `false` não tem efeito. 
 
 ### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>Método `getImage` Range sem suporte no Excel para Mac
 
-O método [GetImage](/javascript/api/excel/excel.range#getImage__) de intervalo não tem suporte no Excel para Mac no momento. Consulte [o problema OfficeDev/office-js #235](https://github.com/OfficeDev/office-js/issues/235) para o status atual.
+O método [Range getImage](/javascript/api/excel/excel.range#getImage__) não tem suporte no Excel para Mac. Consulte [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) para o status atual.
 
 ### <a name="range-return-character-limit"></a>Limite de caracteres de retorno de intervalo
 
-Os [métodos Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) e [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) têm um limite de cadeia de caracteres de endereço de 8192 caracteres. Quando esse limite é excedido, a cadeia de caracteres do endereço é truncada para 8192 caracteres.
+Os [métodos Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) e [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) têm um limite de cadeia de caracteres de endereço de 8192 caracteres. Quando esse limite é excedido, a cadeia de caracteres de endereço é truncada para 8192 caracteres.
 
 ## <a name="see-also"></a>Confira também
 
-- [Solucionar erros de desenvolvimento com os Complementos do Office](../testing/troubleshoot-development-errors.md)
+- [Solucionar erros de desenvolvimento com Office de complementos](../testing/troubleshoot-development-errors.md)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)

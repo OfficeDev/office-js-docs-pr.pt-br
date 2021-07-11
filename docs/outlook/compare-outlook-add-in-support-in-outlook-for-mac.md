@@ -3,12 +3,12 @@ title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 07/01/2021
 localization_priority: Normal
-ms.openlocfilehash: c9cd1e8d438ba820e588a26c6a78ac6e70bc89c8
-ms.sourcegitcommit: d01d6db7050ac2dfc6d4135e1fd1974137f7a6f7
+ms.openlocfilehash: f6d7b7758e89978b5a2dc8fc98783babf250c3f6
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2021
-ms.locfileid: "53275578"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348990"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
@@ -27,7 +27,7 @@ Para obter informações sobre o novo suporte à interface do usuário, consulte
 | Propriedades personalizadas de um item | Se a rede falhar, um suplemento ainda poderá acessar as propriedades personalizadas armazenadas em cache. | Como Outlook no Mac não armazena propriedades personalizadas em cache, se a rede ficar para baixo, os complementos não poderão acessá-las. |
 | Detalhes de anexo | O tipo de conteúdo e os nomes de anexos em [um objeto AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dependem do tipo de cliente:<ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` não contém nenhuma extensão de nome de arquivo. Por exemplo, se o anexo é uma mensagem que tem o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` sempre inclui uma extensão de nome de arquivo. Anexos que são itens de email têm uma extensão .eml, e compromissos têm uma extensão .ics. Por exemplo, se um anexo é um email com o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity.eml"`.<p>**Observação**: se um arquivo for anexado programaticamente (por exemplo, por meio de um suplemento) sem uma extensão, `AttachmentDetails.name` não conterá essa extensão como parte do nome do arquivo.</p></li></ul> |
 | Cadeia de caracteres que representa o fuso horário nas propriedades `dateTimeCreated` e `dateTimeModified` |Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
-| Precisão do tempo de `dateTimeCreated` e `dateTimeModified` | Se um suplemento usar o código a seguir, a precisão será de até um milissegundo:<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| A precisão é de até um segundo. |
+| Precisão do tempo de `dateTimeCreated` e `dateTimeModified` | Se um suplemento usa o código a seguir, a precisão é de até millisecond.<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| A precisão é apenas de até um segundo. |
 
 ## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Suporte ao complemento no Outlook nova interface do usuário do Mac (visualização)
 

@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b3600e56db138a45e1601eaf5073126e04b65c5
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961234"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349956"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -129,7 +129,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Abra a pasta `\Begin` no projeto clonado no editor de códigos.
 
-1. Abra o arquivo `.ENV` e use os valores que você copiou anteriormente. Defina o **CLIENT_ID** para a identificação do seu **ID de aplicativo (cliente)** e defina **CLIENT_SECRET** para o seu segredo de cliente. Os valores **não** devem estar entre aspas. Quando terminar, o arquivo deverá ser semelhante ao seguinte: 
+1. Abra o arquivo `.ENV` e use os valores que você copiou anteriormente. Defina o **CLIENT_ID** para a identificação do seu **ID de aplicativo (cliente)** e defina **CLIENT_SECRET** para o seu segredo de cliente. Os valores **não** devem estar entre aspas. Quando terminar, o arquivo deverá ser semelhante ao seguinte:
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -139,7 +139,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Abra o arquivo `\public\javascripts\fallbackAuthDialog.js`. Na declaração `msalConfig` substitua o espaço reservado "{application_GUID here}", pela ID do Aplicativo que você copiou ao registrar seu suplemento. O valor deve estar entre aspas.
 
-1. Abra o arquivo de manifesto de suplemento "manifest\ manifest_local.xml" e role até a parte inferior do arquivo. Logo acima da marca de fim `</VersionOverrides>`, você encontrará a marcação a seguir:
+1. Abra o arquivo de manifesto de suplemento "manifest\ manifest_local.xml" e role até a parte inferior do arquivo. Logo acima `</VersionOverrides>` da marca final, você encontrará a marcação a seguir.
 
     ```xml
     <WebApplicationInfo>
@@ -166,7 +166,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Como o nome sugere, o ssoAuthES6.js usa a sintaxe JavaScript ES6, pois usar `async` e `await` mostra melhor a simplicidade fundamental da API de SSO. Quando o servidor localhost for iniciado, esse arquivo será transformado em uma sintaxe ES5 para que o exemplo seja executado no Internet Explorer 11. 
 
-1. Adicione o seguinte código abaixo do método Office. onReady:
+1. Adicione o seguinte código abaixo do método Office.onReady.
 
     ```javascript
     async function getGraphData() {
@@ -235,7 +235,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO 5` pelo seguinte
+1. Substitua `TODO 5` pelo seguinte:
 
     - Os erros da chamada `getAccessToken` terão uma propriedade `code` com um número de erro, normalmente no intervalo 13xxx. Você criará o método `handleClientSideErrors` em uma etapa posterior.
     - O método `showMessage` exibe o texto no painel de tarefas.
@@ -330,7 +330,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Em raras ocasiões, o token de bootstrap no cache do Office fica não vencido quando o Office o valida, mas vence no momento em que ele atinge o Azure AD para o Exchange. O Azure AD responderá com o erro **AADSTS500133**. Nesse caso, o suplemento deve simplesmente ligar recursivamente o `getGraphData`. Como o token de inicialização em cache já expirou, o Office receberá um novo token do Azure AD. Portanto, substitua `TODO 8` pelo seguinte. 
+1. Em raras ocasiões, o token de bootstrap no cache do Office fica não vencido quando o Office o valida, mas vence no momento em que ele atinge o Azure AD para o Exchange. O Azure AD responderá com o erro **AADSTS500133**. Nesse caso, o suplemento deve simplesmente ligar recursivamente o `getGraphData`. Como o token de inicialização em cache já expirou, o Office receberá um novo token do Azure AD. Portanto, `TODO 8` substitua pelo seguinte:
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -362,7 +362,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO 9` pelo seguinte. 
+1. Substitua `TODO 9` pelo seguinte:
 
     ```javascript
     else {

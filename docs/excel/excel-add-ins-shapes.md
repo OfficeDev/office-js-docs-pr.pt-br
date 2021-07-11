@@ -3,12 +3,12 @@ title: Trabalhar com formas usando a EXCEL JavaScript
 description: Saiba como Excel define formas como qualquer objeto que se sente na camada de desenho de Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 936def11a5d597b68cc59a58b041c4f30ff46a38
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075758"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349445"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Trabalhar com formas usando a EXCEL JavaScript
 
@@ -21,9 +21,9 @@ A imagem a seguir mostra formas que formam um termômetro.
 
 As formas são criadas por meio e armazenadas na coleção de formas de uma planilha ( `Worksheet.shapes` ). `ShapeCollection` tem vários `.add*` métodos para essa finalidade. Todas as formas têm nomes e IDs gerados para elas quando são adicionadas à coleção. Estas são as `name` propriedades `id` e, respectivamente. `name` pode ser definido pelo seu complemento para recuperação fácil com o `ShapeCollection.getItem(name)` método.
 
-Os seguintes tipos de formas são adicionados usando o método associado:
+Os seguintes tipos de formas são adicionados usando o método associado.
 
-| Forma | Add Method | Assinatura |
+| Shape | Add Method | Assinatura |
 |-------|------------|-----------|
 | Forma Geométrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
 | Imagem (JPEG ou PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |

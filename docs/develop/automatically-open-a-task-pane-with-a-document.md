@@ -3,12 +3,12 @@ title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
 ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639953"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350019"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -34,7 +34,7 @@ O recurso autoopen é atualmente <!-- in **developer preview** and it is only --
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Aplique as seguintes práticas recomendadas ao usar o recurso autoopen:
+Aplique as seguintes práticas recomendadas ao usar o recurso autoopen.
 
 - Use o recurso autoopen quando ele auxiliar a eficiência dos usuários do seu suplemento, como
   - Quando o documento precisa do suplemento para funcionar corretamente. Por exemplo, uma planilha que inclui valores de ações que são atualizados periodicamente por um suplemento. O suplemento deverá abrir automaticamente quando a planilha for aberta para manter os valores atualizados.
@@ -118,7 +118,7 @@ A parte `webextension` também inclui uma referência para a loja ou o catálogo
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|A ID do ativo do suplemento no AppSource (confira a observação)|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (confira a observação)|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
-|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Microsoft 365 de administração.|A versão no manifesto do suplemento.
+|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
 > [!NOTE]
@@ -147,7 +147,7 @@ Uma maneira fácil de gravar o XML é [](#tag-the-document-on-the-client-side) p
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 
-Você pode implantar uma versão de teste do seu add-in que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Microsoft 365 de administração. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
+Você pode implantar uma versão de teste do seu add-in que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

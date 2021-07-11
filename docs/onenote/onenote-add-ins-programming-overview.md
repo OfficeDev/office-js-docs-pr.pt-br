@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077110"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348598"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -22,7 +22,7 @@ O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Voc
 
 Os suplementos consistem de dois componentes básicos:
 
-- Um **aplicativo Web** consiste em uma página da Web e em JavaScript, CSS ou outros arquivos necessários. Estes arquivos podem ser hospedados em qualquer servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure. No OneNote online, o aplicativo Web exibe um controle de navegação ou iframe.
+- Um **aplicativo Web** consiste em uma página da Web e qualquer JavaScript, CSS ou outros arquivos necessários. Esses arquivos são hospedados em um servidor Web ou serviço de hospedagem da Web, como Microsoft Azure. No OneNote na Web, o aplicativo Web é exibido em um controle de navegador ou iframe.
 
 - Um **manifesto XML** que especifica a URL da página da Web do suplemento e os requisitos de acesso, as configurações e os recursos para o suplemento. Este arquivo é armazenado no cliente. Os suplementos do OneNote usam o mesmo formato de [manifesto](../develop/add-in-manifests.md) como outros suplementos do Office.
 
@@ -115,7 +115,7 @@ function getSelectionFromPage() {
 }
 ```
 
-Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
+Os suplementos do OneNote dão suporte apenas às APIs comuns a seguir.
 
 | API | Observações |
 |:------|:------|
@@ -128,7 +128,7 @@ Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
-## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote 
+## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote
 O diagrama a seguir representa o que está disponível atualmente na API JavaScript do OneNote.
 
   ![Diagrama do modelo de objeto do OneNote.](../images/onenote-om.png)

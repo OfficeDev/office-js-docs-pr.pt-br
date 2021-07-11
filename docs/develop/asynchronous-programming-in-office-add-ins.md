@@ -3,12 +3,12 @@ title: Programação assíncrona em Suplementos do Office
 description: Saiba como a biblioteca Office JavaScript usa programação assíncrona em Office de complementos.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 42cf2d8e1b0d5185866a55152517683031da3b3d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ee7bac02cbf1e03754dde53a0d64a94231fdc266
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076263"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350068"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -347,7 +347,7 @@ Em ambos os exemplos de parâmetro opcional, o parâmetro _callback_ é especifi
 
 Os métodos API comum (e Outlook API) não [retornam Promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Portanto, você não pode usar [a espera](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) para pausar a execução até que a operação assíncrona seja concluída. Se precisar de `await` comportamento, você pode envolver a chamada de método em um Promise criado explicitamente. 
 
-O padrão básico é criar um método *assíncrono* que retorna um objeto Promise imediatamente e  resolve esse objeto Promise quando o método interno é concluído ou rejeita o objeto se o método falhar. A seguir, um exemplo simples
+O padrão básico é criar um método *assíncrono* que retorna um objeto Promise imediatamente e  resolve esse objeto Promise quando o método interno é concluído ou rejeita o objeto se o método falhar. Apresentamos um exemplo simples a seguir.
 
 ```javascript
 function getDocumentFilePath() {

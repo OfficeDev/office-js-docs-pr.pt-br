@@ -1,14 +1,14 @@
 ---
 title: Solução de problemas de ativação de suplementos contextuais do Outlook
-description: Se o seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
+description: Possíveis motivos para o seu complemento não ser ativado como você espera.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076683"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348864"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
@@ -18,7 +18,7 @@ Outlook ativação de um complemento contextual se baseia nas regras de ativaç�
 
 Primeiro, verifique se a conta de email do usuário que sendo testada está uma versão do Exchange Server que tenha pelo menos o Exchange 2013. Se você estiver usando recursos específicos lançados após o Exchange 2013, verifique se que a conta do usuário está na versão adequada do Exchange.
 
-Você pode verificar a versão do Exchange 2013 usando uma das seguintes abordagens:
+Você pode verificar a versão do Exchange 2013 usando uma das seguintes abordagens.
 
 - Verifique com o administrador do Exchange Server.
 
@@ -26,7 +26,7 @@ Você pode verificar a versão do Exchange 2013 usando uma das seguintes abordag
 
 - Como alternativa, você pode usar a propriedade [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) para verificar a versão. No Outlook na Web e nos dispositivos móveis, essa propriedade retorna a versão do Exchange Server.
 
-- Se você puder testar o suplemento no Outlook, use a seguinte técnica simples de depuração que utiliza o modelo de objeto do Outlook e o Editor do Visual Basic:
+- Se você puder testar o Outlook do Outlook, poderá usar a seguinte técnica de depuração simples que usa o modelo de objeto Outlook e o editor Visual Basic.
 
     1. Primeiro, verifique se as macros estão habilitadas para o Outlook. Escolha **Arquivo**, **Opções**, **Central de Confiabilidade**, **Configurações da Central de Confiabilidade**, **Configurações de Macro**. Verifique se a opção **Notificações para todas as macros** está selecionada na Central de Confiabilidade. Você deve escolher também **Habilitar Macros**, durante a inicialização do Outlook.
 
@@ -58,7 +58,7 @@ Qualquer um dos clientes avançados do Outlook pode desativar um suplemento por 
 > [!NOTE]
 > Somente os clientes avançados do Outlook monitoram o uso do recurso, mas desabilitar um suplemento em um cliente avançado do Outlook também desabilita o suplemento no Outlook na Web e nos dispositivos móveis.
 
-Use uma das seguintes abordagens para verificar se um suplemento está desabilitado:
+Use uma das seguintes abordagens para verificar se um complemento está desabilitado.
 
 - No Outlook na Web, entre diretamente na conta de email, escolha o ícone Configurações e **Gerenciar Suplementos** para ir para o Centro de Administração do Exchange, onde você pode verificar se o suplemento está habilitado.
 
@@ -81,7 +81,7 @@ Se seu suplemento é um suplemento de redação e deve ser ativado quando o usu�
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 
-Este cenário se aplica somente ao Outlook no Windows. Normalmente, quando você instala um suplemento do Outlook para uma caixa de correio, o Exchange Server copia o manifesto do suplemento do local indicado para a caixa de correio no Exchange Server. Toda vez que o Outlook inicia, ele lê todos os manifestos instalados para essa caixa de correio em um cache temporário no seguinte local:
+Esse cenário se aplica apenas Outlook em Windows. Normalmente, quando você instala um suplemento do Outlook para uma caixa de correio, o Exchange Server copia manifesto do suplemento do local indicado para a caixa de correio nesse Exchange Server. Sempre que Outlook, ele lê todos os manifestos instalados para essa caixa de correio em um cache temporário no local a seguir.
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -110,20 +110,20 @@ O procedimento a seguir descreve os detalhes.
 
 1. Reinicie o Outlook e teste se ele agora ativa o suplemento.
 
-1. Se o Outlook não ativar o suplemento, verifique se tem uma cópia corretamente armazenada em cache do manifesto para o suplemento. Procure no seguinte caminho:
+1. Se o Outlook não ativar o suplemento, verifique se tem uma cópia corretamente armazenada em cache do manifesto para o suplemento. Procure no caminho a seguir.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    Você pode encontrar o manifesto na pasta a seguir:
+    Você pode encontrar o manifesto na subpasta a seguir.
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > Este é um exemplo de caminho para um manifesto instalado para uma caixa de correio para o usuário Donato:
+    > A seguir está um exemplo de um caminho para um manifesto instalado para uma caixa de correio para o usuário John.
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -139,7 +139,7 @@ O procedimento a seguir descreve os detalhes.
 
     1. Procure um evento razoavelmente recente com ID de Evento igual a 63, que representa o Outlook baixando um manifesto de um Exchange Server.
 
-    1. Se o Outlook ler um manifesto com êxito, o log de eventos deve ter a seguinte descrição:
+    1. Se Outlook ler um manifesto com êxito, o evento registrado deverá ter a seguinte descrição.
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -147,7 +147,7 @@ O procedimento a seguir descreve os detalhes.
 
         Ignore o restante desta seção e considere outros motivos possíveis após esta seção.
 
-1. Se você não vir um evento bem-sucedido, feche o Outlook e exclua todos os manifestos no caminho abaixo:
+1. Se você não vir um evento bem-sucedido, feche Outlook e exclua todos os manifestos no caminho a seguir.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -189,7 +189,7 @@ Teste sua expressão regular minuciosamente. Se ela retornar resultados diferent
 
 ## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>Se você usa uma regra ItemIs, ItemHasAttachment ou ItemHasRegularExpressionMatch, já verificou a propriedade do item relacionado?
 
-Se você usa uma regra de ativação **ItemHasRegularExpressionMatch**, verifique se o valor do atributo **PropertyName** é o que você espera do item selecionado. A seguir apresentamos algumas dicas para depurar as propriedades correspondentes:
+Se você usa uma regra de ativação **ItemHasRegularExpressionMatch**, verifique se o valor do atributo **PropertyName** é o que você espera do item selecionado. Veja a seguir algumas dicas para depurar as propriedades correspondentes.
 
 - Se o item selecionado for uma mensagem e especificar **BodyAsHTML** no atributo **PropertyName**, abra a mensagem e escolha **Exibir Código-fonte** para verificar o corpo da mensagem na representação HTML desse item.
 
@@ -237,7 +237,7 @@ Depois de verificar o valor da propriedade, você pode usar uma ferramenta de av
 
 ## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>O Outlook aplica todas as expressões regulares à parte do corpo do item como você espera?
 
-Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item da qual uma regra de ativação dependa tenha o valor esperado, Outlook pode não ser capaz de avaliar todas as expressões regulares em todo o valor da propriedade item. Para fornecer um desempenho razoável e controlar o uso excessivo de recursos por um complemento de leitura, o Outlook observa os seguintes limites sobre o processamento de expressões regulares em regras de ativação em tempo de execução:
+Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item da qual uma regra de ativação dependa tenha o valor esperado, Outlook pode não ser capaz de avaliar todas as expressões regulares em todo o valor da propriedade item. Para fornecer um desempenho razoável e controlar o uso excessivo de recursos por um complemento de leitura, Outlook observa os seguintes limites sobre o processamento de expressões regulares em regras de ativação em tempo de execução.
 
 - O tamanho do corpo do item avaliado -- Há limites para a parte de um corpo de item no qual Outlook avalia uma expressão regular. Esses limites dependem do cliente Outlook, fator de formulário e formato do corpo do item. Confira os detalhes na Tabela 2 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 

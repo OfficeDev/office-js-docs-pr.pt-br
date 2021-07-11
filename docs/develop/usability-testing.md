@@ -1,24 +1,24 @@
 ---
 title: Teste de usabilidade de Suplementos do Office
-description: Saiba como testar seu design de suplemento com usuários reais.
+description: Saiba como testar o design do seu complemento com usuários reais.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: db9b3f235e8e795e58466a0a6ff992ac8eba2bd5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5de29a15a9e382b990985765eaad801b1b54f364
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609356"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349690"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
 Um excelente design de suplemento considera os comportamentos do usuário. Como seus próprios conceitos prévios influenciam suas decisões de design, é importante testar designs com usuários reais para garantir que seus suplementos funcionem bem para seus clientes. 
 
-É possível executar testes de usabilidade de maneiras diferentes. Para muitos desenvolvedores de suplementos, estudos de usabilidade remota não moderada são os que economizam mais tempo e dinheiro. Vários serviços de testes populares facilitam isso. Veja alguns exemplos: 
+Você pode executar testes de usabilidade de maneiras diferentes. Para muitos desenvolvedores de complementos, os estudos de usabilidade remotos e nãomoderados são os que têm mais tempo e custo benefício. Vários serviços de teste populares facilitam isso; a seguir estão alguns exemplos.
 
- - [UserTesting.com](https://www.UserTesting.com)
- - [Optimalworkshop.com](https://www.Optimalworkshop.com)
- - [Userzoom.com](https://www.Userzoom.com)
+- [UserTesting.com](https://www.UserTesting.com)
+- [Optimalworkshop.com](https://www.Optimalworkshop.com)
+- [Userzoom.com](https://www.Userzoom.com)
 
 Esses serviços de teste o ajudam a simplificar a criação do plano de teste e remover a necessidade de buscar participantes ou moderar os testes. 
 
@@ -35,30 +35,30 @@ Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remot
  
 As perguntas da pesquisa definem os objetivos de sua pesquisa e guiam seu plano de teste. Suas perguntas o ajudarão a identificar os participantes para recrutar e as tarefas que eles executarão. Certifique-se de que suas perguntas de pesquisa sejam o mais específicas possível. Você também pode procurar responder perguntas mais amplas.
  
-A seguir, alguns exemplos de perguntas de pesquisa:
+A seguir estão alguns exemplos de perguntas de pesquisa.
   
 **Específicas**
 
- - Os usuários percebem o link "avaliação gratuita" na página inicial?
- - Quando os usuários inserem conteúdo do suplemento em seu documento eles entendem onde é inserido no documento?
+- Os usuários percebem o link "avaliação gratuita" na página inicial?
+- Quando os usuários inserem conteúdo do suplemento em seu documento eles entendem onde é inserido no documento?
 
 **Amplas**
 
- - Quais são os pontos mais problemáticos para usuário em nosso suplemento?
- - Os usuários entendem o significado dos ícones na barra de comandos, antes de clicar neles?
- - Os usuários localizam o menu configurações com facilidade?
+- Quais são os pontos mais problemáticos para usuário em nosso suplemento?
+- Os usuários entendem o significado dos ícones na barra de comandos, antes de clicar neles?
+- Os usuários localizam o menu configurações com facilidade?
 
-É importante obter dados de toda a jornada do usuário – da descoberta do suplemento à instalação e utilização dele. Considere perguntas de pesquisa que abordem os seguintes aspectos da experiência do usuário no suplemento:
+É importante obter dados de toda a jornada do usuário – da descoberta do suplemento à instalação e utilização dele. Considere perguntas de pesquisa que abordam os seguintes aspectos da experiência do usuário do complemento.
 
- - Localização do suplemento na Loja
- - Escolha da instalação do suplemento
- - Experiência de primeira execução
- - Comandos da faixa de opções
- - Interface do Usuário do Suplemento
- - Como o suplemento interage com o espaço do documento do aplicativo do Office
- - O nível de controle que o usuário tem nos fluxos de inserção de conteúdo
+- Localização do suplemento na Loja
+- Escolha da instalação do suplemento
+- Experiência de primeira execução
+- Comandos da faixa de opções
+- Interface do Usuário do Suplemento
+- Como o suplemento interage com o espaço do documento do aplicativo do Office
+- O nível de controle que o usuário tem nos fluxos de inserção de conteúdo
 
-Saiba mais em [Coleta de respostas concretas versus dados subjetivos](https://help.usertesting.com/hc/en-us/articles/115003378572-Writing-effective-questions).
+Saiba mais em [Coleta de respostas concretas versus dados subjetivos](https://help.usertesting.com/hc/articles/115003378572-Writing-effective-questions).
 
 ## <a name="3-identify-participants-to-target"></a>3. Identifique os participantes que serão o alvo
 
@@ -88,7 +88,7 @@ Se estiver planejando testar uma compilação em funcionamento do suplemento, as
  a. Sim [*Deve selecionar*]  
  b. Não [*Rejeitar*]  
 
-Saiba mais em [Práticas recomendadas do verificador de perguntas](https://help.usertesting.com/hc/en-us/articles/115003370731-Screener-question-best-practices).
+Saiba mais em [Práticas recomendadas do verificador de perguntas](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices).
 
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. Crie tarefas e perguntas para os participantes
 
@@ -100,7 +100,7 @@ O principal desafio no teste não moderado é garantir que seus participantes en
 
 Não pense que o usuário estará na tela que deve estar em um determinado momento durante o teste. Considere informar a tela em que eles precisam estar para iniciar a próxima tarefa.
 
-Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc/en-us/articles/115003371651-Writing-great-tasks).
+Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Crie um protótipo para corresponder às tarefas e perguntas
  
@@ -108,7 +108,7 @@ Você pode testar o suplemento em funcionamento ou testar um protótipo. Observe
 
 Em média, são necessários cerca de cinco minutos para orientar os usuários sobre como instalar um suplemento. A seguir, um exemplo de etapas de instalação claras e concisas. Ajuste as etapas com base nas condições específicas do teste.
 
-**Instale o suplemento (insira o nome do suplemento aqui) para o PowerPoint usando as seguintes instruções:**
+**Instale o complemento (insira o nome do seu complemento aqui) para PowerPoint, usando as instruções a seguir.**
 
 1. Abra o Microsoft PowerPoint.
 1. Selecione **Apresentação em Branco.**
@@ -140,6 +140,6 @@ Em geral, tome cuidado com como você usa seus dados para tirar conclusões. Nã
 
 ## <a name="see-also"></a>Confira também
 
- - [Como conduzir testes de usabilidade](https://whatpixel.com/howto-conduct-usability-testing/)  
- - [Práticas recomendadas para UserTesting](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
- - [Minimizar desvio](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+- [Como conduzir testes de usabilidade](https://whatpixel.com/howto-conduct-usability-testing/)
+- [Práticas recomendadas para UserTesting](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
+- [Minimizar desvio](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)

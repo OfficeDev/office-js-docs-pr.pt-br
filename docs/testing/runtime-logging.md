@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6fcd1dd077dd6b3204d154e35e4c968ba9585a54
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076410"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348640"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -84,14 +84,14 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    De acordo com um dos seguintes valores para habilitar o log de tempo de execução `<bundle id>` para o aplicativo correspondente:
+    De definida como um dos seguintes valores para habilitar o log de tempo `<bundle id>` de execução para o aplicativo correspondente.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-O exemplo a seguir habilita o log de tempo de execução do Word e, em seguida, abre o arquivo de log:
+O exemplo a seguir habilita o log de tempo de execução para o Word e abre o arquivo de log.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -107,7 +107,7 @@ Para desativar o log de tempo de execução, use o comando `defaults delete`:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-O exemplo a seguir desabilitará o log de tempo de execução do Word:
+O exemplo a seguir desativará o log de tempo de execução do Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile

@@ -3,12 +3,12 @@ title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com Visual Studio.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5d7495709f729fb06a87ad5ca443b1712f6c3e49
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741103"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349928"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
@@ -43,9 +43,9 @@ Os métodos para testar, depurar e solucionar problemas de Suplementos do Office
 
 ## <a name="publish-the-add-in"></a>Publique o suplemento
 
-Um Suplemento do Office é formado por um aplicativo Web e um arquivo de manifesto. O aplicativo Web define a interface do usuário e a funcionalidade do suplemento, enquanto o manifesto especifica o local do aplicativo Web e define as configurações e os recursos do suplemento.
+Um Suplemento do Office consiste em um aplicativo Web e um arquivo de manifesto. O aplicativo Web define a interface do usuário e a funcionalidade do suplemento, enquanto o manifesto especifica o local do aplicativo Web e define as configurações e os recursos do suplemento.
 
-Enquanto você estiver desenvolvendo seu suplemento no Visual Studio, seu suplemento será executado no seu servidor Web local (`localhost`). Quando o suplemento estiver funcionando como desejado e você estiver pronto para publicá-lo para que outros usuários acessem-no, será necessário concluir as seguintes etapas:
+Enquanto você estiver desenvolvendo seu suplemento no Visual Studio, seu suplemento será executado no seu servidor Web local (`localhost`). Quando o suplemento estiver funcionando conforme desejado e você estiver pronto para publicá-lo para que outros usuários acessem, você precisará concluir as etapas a seguir.
 
 1. Implantar o aplicativo Web em um servidor Web ou serviço de hospedagem na Web (por exemplo, Microsoft Azure).
 2. Atualize o manifesto para especificar a URL do aplicativo implantado. 

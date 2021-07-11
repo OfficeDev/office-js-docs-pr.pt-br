@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076522"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349935"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -98,7 +98,7 @@ Iniciar o projeto escolhendo **Depurar** > **Iniciar Depuração** na barra do m
 > [!NOTE]
 > Quando você inicia um projeto de um suplemento do Outlook, você será solicitado a inserir as credenciais de logon. Se você for solicitado a entrar repetidamente ou se receber um erro não autorizado, a Auth Básica poderá ser desabilitada para contas em seu locatário Microsoft 365 locatário. Nesse caso, tente usar uma conta da Microsoft. Você também pode precisar definir a propriedade "Usar autenticação multifator" como Verdadeiro na caixa de diálogo de propriedades do projeto de suplemento do Outlook na Web.
 
-Quando o Visual Studio compila o projeto ele executa as seguintes tarefas:
+Quando Visual Studio cria o projeto, ele executa as seguintes tarefas.
 
 1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório `_ProjectName_\bin\Debug\OfficeAppManifests`. O Office aplicativo que hospeda o seu add-in consome essa cópia quando você Visual Studio e depura o complemento.
 

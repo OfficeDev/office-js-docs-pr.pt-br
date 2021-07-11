@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 06/08/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076788"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349011"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -254,7 +254,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     >
     > 1. Close Outlook.
     > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.
-    > 1. Execute o seguinte comando.
+    > 1. Execute o seguinte comando:
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -294,7 +294,7 @@ O usuário pode alternar ou navegar para longe do item de email atual onde o com
 
 As importações não são suportadas no arquivo JavaScript em que você implementa o tratamento para a ativação baseada em eventos no cliente Windows cliente.
 
-Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de complementos baseados em eventos. Veja a seguir as APIs bloqueadas:
+Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de complementos baseados em eventos. A seguir estão as APIs bloqueadas.
 
 - Em `OfficeRuntime.auth` :
   - `getAccessToken`(Windows somente)
@@ -316,4 +316,6 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 - [Manifestos de suplementos do Outlook](manifests.md)
 - [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
-- Exemplo pnP: [use Outlook ativação baseada](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature) em evento para definir a assinatura
+- Exemplos pnP:
+  - [Use Outlook ativação baseada em evento para definir a assinatura](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [Use Outlook ativação baseada em evento para marcar destinatários externos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

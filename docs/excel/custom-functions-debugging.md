@@ -3,12 +3,12 @@ ms.date: 04/12/2021
 description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: a692f376cb5c874fa4d510d3459469d803e643f7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e0e2b7bf49836a9b88de9ceaa21a66a454e6f05a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075933"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349641"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -31,7 +31,7 @@ No Mac:
 > [!NOTE]
 > Para simplificar, este artigo mostra a depuração no contexto de uso Visual Studio Code para editar, executar tarefas e, em alguns casos, usar o modo de exibição de depuração. Se você estiver usando uma ferramenta de linha de comando ou editor diferente, consulte [as](#commands-for-building-and-running-your-add-in) instruções de linha de comando no final deste artigo.
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>Requisitos
 
 Esse processo de depuração funciona **apenas** para funções personalizadas sem interface do usuário, que não usam um painel de tarefas ou outros elementos da interface do usuário. Uma função personalizada sem interface do usuário pode ser criada seguindo as etapas no tutorial Criar funções [personalizadas](../tutorials/excel-tutorial-create-custom-functions.md) no Excel e, em seguida, remover todos os elementos do painel de tarefas e da interface do usuário instalados pelo gerador [Yeoman para Office Add-ins](https://www.npmjs.com/package/generator-office).
 
@@ -141,16 +141,16 @@ Se você não estiver usando VS Code, poderá usar a linha de comando (como bash
 1. Na linha de comando, `npm run watch` execute para observar e reconstruir quando ocorrerem alterações de código.
 2. Abra uma segunda janela de linha de comando (a primeira será bloqueada durante a execução do relógio).
 
-3. Se você quiser iniciar o seu complemento na versão da área de trabalho Excel, execute o seguinte comando
-    
+3. Se você quiser iniciar o seu complemento na versão da área de trabalho Excel, execute o seguinte comando.
+
     `npm run start:desktop`
-    
-    Ou se você preferir iniciar o seu Excel na Web executar o comando a seguir
-    
+
+    Ou se você preferir iniciar o seu Excel na Web, execute o seguinte comando.
+
     `npm run start:web`
-    
+
     Para Excel na Web você também precisa fazer sideload do seu complemento. Siga as etapas em [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Em seguida, continue até a próxima seção para iniciar a depuração.
-    
+
 4. Abra ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores F12 abrirá as ferramentas de desenvolvedor.
 5. Em ferramentas de desenvolvedor, abra seu arquivo de script de código-fonte (**functions.js** **ou functions.ts**). Seu código de funções personalizadas pode estar localizado perto do final do arquivo.
 6. No código-fonte da função personalizada, aplique um ponto de interrupção selecionando uma linha de código.

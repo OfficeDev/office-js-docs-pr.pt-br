@@ -3,16 +3,16 @@ ms.date: 03/15/2021
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075877"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349593"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
-Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é através do recebimento de dados de outros locais diferente da pasta de trabalho, como a Web ou um servidor (por meio de WebSockets). É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
+Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é através do recebimento de dados de outros locais diferente da pasta de trabalho, como a Web ou um servidor (por meio de WebSockets). É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -104,7 +104,7 @@ Para declarar uma função de streaming, você pode usar:
 - A `@streaming` marca.
 - O `CustomFunctions.StreamingInvocation` parâmetro invocation.
 
-O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código.
 
 - O Excel exibe cada valor novo automaticamente usando o método `setResult`.
 - O segundo parâmetro de entrada, invocação, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
@@ -133,7 +133,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="canceling-a-function"></a>Cancelar uma função
 
-O Excel cancela a execução de uma função nas seguintes situações:
+Excel cancela a execução de uma função nas seguintes situações.
 
 - Quando o usuário edita ou exclui uma célula que faz referência à função.
 - Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.

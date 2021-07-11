@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Normal
-ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53204994"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349648"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Enviando em lote chamadas de função personalizada para um serviço remoto
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>Modifique `_makeRemoteRequest` para sua própria solução
 
-A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você quiser usar esse código para um serviço remoto real, faça as seguintes alterações:
+A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você deseja usar esse código para um serviço remoto real, faça as seguintes alterações.
 
 - Decida como serializar as operações em lote pela rede. Por exemplo, você pode querer colocar a matriz em um corpo JSON.
 - Em vez de chamar `_fetchFromRemoteService`, você precisa fazer a chamada de rede real para o serviço remoto passando o lote de operações.
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifique `_fetchFromRemoteService` para o seu serviço remoto ao vivo
 
-Para modificar a função `_fetchFromRemoteService` para que esta possa ser executada em seu serviço remoto ao vivo, faça as seguintes alterações:
+Para modificar a `_fetchFromRemoteService` função a ser executado em seu serviço remoto ao vivo, faça as seguintes alterações.
 
 - Dependendo da plataforma do servidor (Node.js ou outros), mapeie a chamada de rede do cliente para essa função.
 - Remova a função `pause` que simula a latência da rede como parte da simulação.

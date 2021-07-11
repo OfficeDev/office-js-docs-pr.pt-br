@@ -4,12 +4,12 @@ description: Saiba mais sobre como personalizar o complemento habilitado para SS
 ms.date: 02/01/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: af83571a5ed48b3e1261ea4ccebbe25f61e75d66
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076851"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348332"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -168,9 +168,9 @@ Conclua as etapas a seguir para o seu complemento, para alterar a URL do Microso
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>Alterações necessárias para um Excel (JavaScript)
 
-Se o seu add-in for um Excel que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
+Se o seu add-in for um Excel que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**.
 
-1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
+1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela função a seguir.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +185,7 @@ Se o seu add-in for um Excel que foi criado com JavaScript, faça as seguintes a
     }
     ```
 
-2. Encontre a `filterUserProfileInfo` função e substitua-a pela seguinte função:
+2. Encontre a `filterUserProfileInfo` função e substitua-a pela função a seguir.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +198,7 @@ Se o seu add-in for um Excel que foi criado com JavaScript, faça as seguintes a
     }
     ```
 
-3. Encontre a `writeDataToExcel` função e substitua-a pela seguinte função:
+3. Encontre a `writeDataToExcel` função e substitua-a pela função a seguir.
 
     ```javascript
     function writeDataToExcel(result) {
@@ -235,7 +235,7 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>Alterações necessárias para um Excel de Excel (TypeScript)
 
-Se o seu add-in for um Excel que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts,** encontre a função e substitua-a pela `writeDataToOfficeDocument` seguinte função:
+Se o seu add-in for um Excel que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts**, encontre a função e substitua-a pela função a `writeDataToOfficeDocument` seguir.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -271,9 +271,9 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Alterações necessárias para um Outlook de Outlook (JavaScript)
 
-Se o seu add-in for um Outlook que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
+Se o seu add-in for um Outlook que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**.
 
-1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
+1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela função a seguir.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +288,7 @@ Se o seu add-in for um Outlook que foi criado com JavaScript, faça as seguintes
     }
     ```
 
-2. Encontre a `filterUserProfileInfo` função e substitua-a pela seguinte função:
+2. Encontre a `filterUserProfileInfo` função e substitua-a pela função a seguir.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +301,7 @@ Se o seu add-in for um Outlook que foi criado com JavaScript, faça as seguintes
     }
     ```
 
-3. Encontre a `writeDataToOutlook` função e substitua-a pela seguinte função:
+3. Encontre a `writeDataToOutlook` função e substitua-a pela função a seguir.
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -333,7 +333,7 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Alterações necessárias para um Outlook (TypeScript)
 
-Se o seu add-in for um Outlook que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts,** encontre a função e substitua-a pela `writeDataToOfficeDocument` seguinte função:
+Se o seu add-in for um Outlook que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts**, encontre a função e substitua-a pela função a `writeDataToOfficeDocument` seguir.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -364,9 +364,9 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>Alterações necessárias para um PowerPoint (JavaScript)
 
-Se o seu add-in for um PowerPoint que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
+Se o seu add-in for um PowerPoint que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**.
 
-1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
+1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela função a seguir.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +381,7 @@ Se o seu add-in for um PowerPoint que foi criado com JavaScript, faça as seguin
     }
     ```
 
-2. Encontre a `filterUserProfileInfo` função e substitua-a pela seguinte função:
+2. Encontre a `filterUserProfileInfo` função e substitua-a pela função a seguir.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +394,7 @@ Se o seu add-in for um PowerPoint que foi criado com JavaScript, faça as seguin
     }
     ```
 
-3. Encontre a `writeDataToPowerPoint` função e substitua-a pela seguinte função:
+3. Encontre a `writeDataToPowerPoint` função e substitua-a pela função a seguir.
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -432,7 +432,7 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>Alterações necessárias para um PowerPoint de PowerPoint (TypeScript)
 
-Se o seu add-in for um PowerPoint que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts,** encontre a função e substitua-a pela `writeDataToOfficeDocument` seguinte função:
+Se o seu add-in for um PowerPoint que foi criado com TypeScript, abra **./src/taskpane/taskpane.ts**, encontre a função e substitua-a pela função a `writeDataToOfficeDocument` seguir.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -467,9 +467,9 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Alterações necessárias para um complemento do Word (JavaScript)
 
-Se o seu complemento for um complemento do Word criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
+Se o seu complemento for um complemento do Word criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**.
 
-1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
+1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela função a seguir.
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +484,7 @@ Se o seu complemento for um complemento do Word criado com JavaScript, faça as 
     }
     ```
 
-2. Encontre a `filterUserProfileInfo` função e substitua-a pela seguinte função:
+2. Encontre a `filterUserProfileInfo` função e substitua-a pela função a seguir.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +497,7 @@ Se o seu complemento for um complemento do Word criado com JavaScript, faça as 
     }
     ```
 
-3. Encontre a `writeDataToWord` função e substitua-a pela seguinte função:
+3. Encontre a `writeDataToWord` função e substitua-a pela função a seguir.
 
     ```javascript
     function writeDataToWord(result) {
@@ -533,7 +533,7 @@ Depois de fazer essas alterações, vá para a seção [Experimentar](#try-it-ou
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Alterações necessárias para um complemento do Word (TypeScript)
 
-Se o seu complemento for um complemento do Word criado com TypeScript, abra **./src/taskpane/taskpane.ts,** encontre a função e substitua-a pela `writeDataToOfficeDocument` seguinte função:
+Se o seu complemento for um complemento do Word criado com TypeScript, abra **./src/taskpane/taskpane.ts**, encontre a função e substitua-a pela função a `writeDataToOfficeDocument` seguir.
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -592,7 +592,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Captura de tela mostrando a caixa de diálogo permissões solicitadas com o botão Aceitar realçada.](../images/sso-permissions-request.png)
+    ![Captura de tela mostrando o diálogo de permissão solicitada com o botão Aceitar destacado.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.
@@ -620,13 +620,13 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 4. Na janela redigir mensagem, escolha o botão **Exibir painel de tarefas** na faixa de opções para abrir o painel de tarefas de suplemento.
 
-    ![Captura de tela mostrando o botão faixa de opções de complemento realçada Outlook janela de mensagem de composição.](../images/outlook-sso-ribbon-button.png)
+    ![Captura de tela mostrando o botão da faixa de opções do suplemento destacado na janela de composição de mensagem do Outlook.](../images/outlook-sso-ribbon-button.png)
 
 5. Na parte inferior do painel de tarefas, escolha o botão **Ler meu** OneDrive for Business para iniciar o processo de SSO.
 
 6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
-    ![Captura de tela da caixa de diálogo de permissões solicitadas com o botão Aceitar realçada.](../images/sso-permissions-request.png)
+    ![Captura de tela da caixa de diálogo de permissões solicitadas com o botão Aceitar destacado.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Após um usuário aceitar a solicitação de permissões, elas não serão solicitadas novamente no futuro.

@@ -3,23 +3,23 @@ title: Elemento FunctionFile no arquivo de manifesto
 description: Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 44bfd514025b8a23f4f6acdf3fec004485ca4c5a
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: f31a1bc7a561305a89f5388102a4985aaa31fe37
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771390"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348297"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
-Especifica o arquivo de código-fonte para as operações que um suplemento expõe de uma das seguintes maneiras:
+Especifica o arquivo de código-fonte para operações que um complemento expõe de uma das seguintes maneiras.
 
-* Comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
+* Comandos de complemento que executam uma função JavaScript em vez de exibir a interface do usuário.
 * Atalhos de teclado que executam uma função JavaScript.
 
-O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O `resid` atributo do `FunctionFile` elemento não pode ter mais de 32 caracteres e é definido como o valor do `id` atributo de um `Url` elemento no `Resources` elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas por botões de comando de suplemento sem interface do usuário, conforme definido pelo [elemento Control](control.md).
+O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O atributo do elemento não pode ter mais de 32 caracteres e é definido como o valor do atributo de um elemento no elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções `resid` `FunctionFile` `id` `Url` `Resources` JavaScript usadas [](control.md)por botões de comando de complemento sem interface do usuário, conforme definido pelo elemento Control .
 
-Veja a seguir um exemplo do `FunctionFile` elemento.
+A seguir, um exemplo do `FunctionFile` elemento.
 
 ```XML
 <DesktopFormFactor>
@@ -33,9 +33,9 @@ Veja a seguir um exemplo do `FunctionFile` elemento.
 </DesktopFormFactor>
 ```
 
-O JavaScript no arquivo HTML indicado pelo `FunctionFile` elemento deve chamar `Office.initialize` e definir funções nomeadas que usam um único parâmetro: `event` . As funções devem usar a API `item.notificationMessages` para indicar o progresso, sucesso ou falha ao usuário. Também deverá chamar `event.completed` quando terminar a execução. O nome das funções são usados no `FunctionName` elemento para botões sem interface do usuário.
+O JavaScript no arquivo HTML indicado pelo elemento deve chamar e definir funções nomeadas que têm `FunctionFile` `Office.initialize` um único parâmetro: `event` . As funções devem usar a API `item.notificationMessages` para indicar o progresso, sucesso ou falha ao usuário. Também deverá chamar `event.completed` quando terminar a execução. O nome das funções é usado no `FunctionName` elemento para botões sem interface do usuário.
 
-Veja a seguir um exemplo de um arquivo HTML que define uma `trackMessage` função.
+A seguir, um exemplo de um arquivo HTML que define uma `trackMessage` função.
 
 ```js
 Office.initialize = function () {
@@ -50,7 +50,7 @@ function trackMessage (event) {
 }
 ```
 
-O código a seguir mostra como implementar a função usada pelo `FunctionName` .
+O código a seguir mostra como implementar a função usada por `FunctionName` .
 
 ```js
 // The initialize function must be run each time a new page is loaded.
@@ -81,4 +81,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> A chamada para `event.completed` sinaliza que você tratou com êxito o evento. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros eventos permanecem na fila. Quando sua função chama `event.completed` , a próxima chamada em fila para essa função é executada. Você deve chamar `event.completed` ; caso contrário, sua função não será executada.
+> A chamada para `event.completed` sinais de que você lidou com êxito com o evento. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros eventos permanecem na fila. Quando sua função chama , a próxima chamada `event.completed` em fila para essa função é executado. Você deve `event.completed` chamar; caso contrário, sua função não será executado.

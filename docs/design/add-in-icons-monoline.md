@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monolinha para Office de complementos
 description: Diretrizes para usar ícones de estilo monoline em Office de complementos.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b576cdf8d1816fa052bfdc30fac0950baf95700d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076494"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349340"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monolinha para Office de complementos
 
@@ -158,7 +158,7 @@ A paleta de cores foi projetada para simplicidade e acessibilidade. Ele contém 
 
 #### <a name="how-to-use-color"></a>Como usar cor
 
-Na paleta de cores Monoline, todas as cores têm variações Autônomas, Contornos e Preenchimento. Geralmente, os elementos são construídos com um preenchimento e uma borda. As cores são aplicadas em um dos seguintes padrões:
+Na paleta de cores Monoline, todas as cores têm variações Autônomas, Contornos e Preenchimento. Geralmente, os elementos são construídos com um preenchimento e uma borda. As cores são aplicadas em um dos padrões a seguir.
 
 - A cor autônoma sozinha para objetos que não têm preenchimento.
 - A borda usa a cor Outline e o preenchimento usa a cor Preenchimento.

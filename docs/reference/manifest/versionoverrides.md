@@ -3,12 +3,12 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para Office arquivos XML (manifesto de complementos).
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555147"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348654"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -78,7 +78,7 @@ Um manifesto pode implementar várias versões do elemento `VersionOverrides` qu
 
 Para implementar várias versões, o elemento `VersionOverrides` da versão mais recente deve ser um filho do elemento `VersionOverrides` da versão anterior. O elemento filho `VersionOverrides` não herda os valores do elemento pai.
 
-Para implementar o esquema do VersionOverrides v1.0 e do v1.1, o manifesto seria semelhante ao exemplo a seguir.
+Para implementar o esquema VersionOverrides v1.0 e v1.1, o manifesto seria semelhante ao exemplo a seguir.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

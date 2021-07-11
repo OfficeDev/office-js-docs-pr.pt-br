@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
 ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: e830ccbb6a4e325d6d70c3612492009b5e3d1570
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e7a5efb7bf49c96f4b31f4f811e4c2fd4720694a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077215"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348633"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -27,7 +27,7 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
 
 1. Abra [Office na Web](https://office.live.com/). Usando a **opção Criar,** crie um documento em **Excel,** **OneNote,** **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
 
-2. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivopackage.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
+1. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivopackage.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
 
     ```json
       "config": {
@@ -37,22 +37,22 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
     ```
 
     > [!TIP]
-    > Se você estiver criando um complemento que não está usando nosso gerador Yeoman, poderá adicionar parâmetros de consulta à URL do documento, acrescentando o seguinte à URL existente:
-
-    - A porta do servidor de dev, como `&wdaddindevserverport=3000` .
-    - O nome do arquivo de manifesto, como `&wdaddinmanifestfile=manifest1.xml` .
-    - O GUID do manifesto, como `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` .
-
+    > Se você estiver criando um complemento que não está usando nosso gerador Yeoman, poderá adicionar parâmetros de consulta à URL do documento, acrescentando o seguinte à URL existente.
+    >
+    > - A porta do servidor de dev, como `&wdaddindevserverport=3000` .
+    > - O nome do arquivo de manifesto, como `&wdaddinmanifestfile=manifest1.xml` .
+    > - O GUID do manifesto, como `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` .
+    >
     > Se você estiver usando o gerador Yeoman, adicionar essas informações não será necessário, pois a ferramenta Yeoman acrescenta essas informações automaticamente.
     > Observe que, em ambos os casos, no entanto, você só pode carregar manifestos de localhost.
 
-3. Na linha de comando que começa no diretório raiz do seu projeto, execute o seguinte comando: `npm run start:web` .
+1. Na linha de comando que começa no diretório raiz do seu projeto, execute o seguinte comando: `npm run start:web` .
 
-4. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção Para **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
+1. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção Para **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
 
-5. Você verá uma segunda caixa de diálogo, perguntando se deseja registrar um manifesto de Office de complemento do seu computador. Você deve selecionar **Sim**.
+1. Você verá uma segunda caixa de diálogo, perguntando se deseja registrar um manifesto de Office de complemento do seu computador. Você deve selecionar **Sim**.
 
-6. Seu complemento está instalado. Se for um comando de complemento, ele deverá aparecer na faixa de opções ou no menu de contexto. Se for um complemento do painel de tarefas, o painel de tarefas deverá aparecer.
+1. Seu complemento está instalado. Se for um comando de complemento, ele deverá aparecer na faixa de opções ou no menu de contexto. Se for um complemento do painel de tarefas, o painel de tarefas deverá aparecer.
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Fazer sideload de Office de um Office na Web manualmente
 
@@ -77,9 +77,9 @@ Esse método não usa a linha de comando e pode ser realizado usando comandos so
 
 1. Entre na sua conta Microsoft 365 de usuário.
 
-2. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
+1. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
 
-3. As etapas 3 a 6 são as mesmas da seção anterior **Realize sideload para um suplemento do Office no Office na Web**. 
+1. As etapas 3 a 6 são as mesmas da seção anterior **Realize sideload para um suplemento do Office no Office na Web**. 
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Sideload de um suplemento usando o Visual Studio
 
@@ -89,13 +89,13 @@ Se você estiver usando Visual Studio para desenvolver seu complemento, o proces
 > Embora você possa realizar o sideload de suplementos do Visual Studio para o Office na Web, não é possível depurá-los no Visual Studio. Para depurar você precisará usar as ferramentas de depuração do navegador. Para saber mais, confira [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md).
 
 1. No Visual Studio, abra a janela **Propriedades** escolhendo **Modo de exibição** > **Janela de propriedades**.
-2. No **Gerenciador de Soluções**, selecione o projeto Web. Isso exibirá as propriedades para o projeto na janela **Propriedades**.
-3. Na janela Propriedades, copie a **URL de SSL**.
-4. No projeto de suplemento, abra o arquivo XML do manifesto. Certifique-se de que você está editando o XML do código-fonte. Para alguns tipos de projeto o Visual Studio abrirá o modo de exibição de visualização do XML que não funcionará para a próxima etapa.
-5. Pesquisar e substituir todas as instâncias de **~remoteAppUrl/** pela URL de SSL que você copiou. Você verá várias substituições dependendo do tipo de projeto e as novas URLs serão muito similares a `https://localhost:44300/Home.html`.
-6. Salve o arquivo XML.
-7. Clique com botão direito do mouse no projeto Web e escolha **Depurar** > **Iniciar nova instância**. Isso executará o projeto Web sem iniciar o Office.
-8. No Office na Web, realize o sideload do suplemento usando as etapas descritas anteriormente em [Sideload de um suplemento do Office no Office na Web](#sideload-an-office-add-in-in-office-on-the-web).
+1. No **Gerenciador de Soluções**, selecione o projeto Web. Isso exibirá as propriedades para o projeto na janela **Propriedades**.
+1. Na janela Propriedades, copie a **URL de SSL**.
+1. No projeto de suplemento, abra o arquivo XML do manifesto. Certifique-se de que você está editando o XML do código-fonte. Para alguns tipos de projeto o Visual Studio abrirá o modo de exibição de visualização do XML que não funcionará para a próxima etapa.
+1. Pesquisar e substituir todas as instâncias de **~remoteAppUrl/** pela URL de SSL que você copiou. Você verá várias substituições dependendo do tipo de projeto e as novas URLs serão muito similares a `https://localhost:44300/Home.html`.
+1. Salve o arquivo XML.
+1. Clique com botão direito do mouse no projeto Web e escolha **Depurar** > **Iniciar nova instância**. Isso executará o projeto Web sem iniciar o Office.
+1. No Office na Web, realize o sideload do suplemento usando as etapas descritas anteriormente em [Sideload de um suplemento do Office no Office na Web](#sideload-an-office-add-in-in-office-on-the-web).
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento com sideload
 

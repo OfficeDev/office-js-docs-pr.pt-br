@@ -3,12 +3,12 @@ title: Faça seu suplemento do Office ser compatível com um suplemento COM exis
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e2ab1bb1eda548ff8e0923b8fbccfa9e007a6a0c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075996"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349802"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -70,7 +70,7 @@ Para declarar compatibilidade entre o seu **add-in** da Web Outlook e o com/VSTO
 
 ## <a name="equivalent-behavior-for-users"></a>Comportamento equivalente para usuários
 
-Quando um complemento [COM](#specify-an-equivalent-com-add-in)equivalente é especificado, o Office no Windows não exibirá Office interface de usuário do seu complemento (UI) se o complemento COM equivalente estiver instalado. Office oculta apenas os botões de faixa de opções do Office e não impede a instalação. Portanto, seu Office de usuário ainda aparecerá nos seguintes locais dentro da interface do usuário:
+Quando um complemento [COM](#specify-an-equivalent-com-add-in)equivalente é especificado, o Office no Windows não exibirá Office interface de usuário do seu complemento (UI) se o complemento COM equivalente estiver instalado. Office oculta apenas os botões de faixa de opções do Office e não impede a instalação. Portanto, seu Office de usuário ainda aparecerá nos seguintes locais dentro da interface do usuário.
 
 - Em **Meus complementos**
 - Como entrada no gerenciador de faixa de opções (Excel, Word e PowerPoint somente)

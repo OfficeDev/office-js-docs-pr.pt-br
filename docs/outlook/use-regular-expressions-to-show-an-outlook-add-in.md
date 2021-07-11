@@ -3,16 +3,16 @@ title: Usar regras de ativação de expressões regulares para mostrar um suplem
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292472"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348850"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
-Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que o Outlook não ativa os complementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
 Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
 
@@ -44,7 +44,7 @@ Uma regra `ItemHasRegularExpressionMatch` é útil para controlar a ativação d
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Práticas recomendadas para usar expressões regulares em regras
 
-Ao usar expressões regulares, preste bastante atenção ao seguinte:
+Preste atenção especial ao seguinte ao usar expressões regulares.
 
 - Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do corpo de um item, a expressão regular deverá filtrar mais o corpo e não tentar retornar todo o corpo do item. O uso de uma expressão regular como `.*` para tentar obter todo o corpo de um item nem sempre retorna os resultados esperados.
 - O corpo de texto sem formatação retornado em um navegador pode ser sutilmente diferente do retornado em outro. Se você usa uma regra `ItemHasRegularExpressionMatch` com `BodyAsPlaintext` como atributo `PropertyName`, teste sua expressão regular em todos os navegadores compatíveis com o suplemento.
@@ -53,7 +53,7 @@ Ao usar expressões regulares, preste bastante atenção ao seguinte:
 
 - O corpo HTML de um item é um pouco diferente entre um cliente avançado do Outlook e o Outlook na Web ou Outlook Mobile. Defina as expressões regulares com cuidado.
 
-- Dependendo do cliente do Outlook, tipo de dispositivo ou propriedade ao qual uma expressão regular está sendo aplicada, há outras práticas recomendadas e limites para cada um dos clientes que você deve estar ciente ao criar expressões regulares como regras de ativação. Confira [limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para obter detalhes.
+- Dependendo do cliente Outlook, tipo de dispositivo ou propriedade em que uma expressão regular está sendo aplicada, há outras práticas recomendadas e limites para cada um dos clientes que você deve estar ciente ao projetar expressões regulares como regras de ativação. Confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para saber mais.
 
 ### <a name="examples"></a>Exemplos
 
@@ -124,7 +124,7 @@ A regra `ItemHasKnownEntity` a seguir ativa o suplemento sempre que há uma URL 
 
 ## <a name="using-regular-expression-results-in-code"></a>Usar resultados de expressões regulares no código
 
-Você pode obter correspondências para uma expressão regular usando os seguintes métodos no item atual:
+Você pode obter corresponde a uma expressão regular usando os métodos a seguir no item atual.
 
 - [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) retorna correspondências no item atual para todas as expressões regulares especificadas nas regras `ItemHasRegularExpressionMatch` e `ItemHasKnownEntity` do suplemento.
 

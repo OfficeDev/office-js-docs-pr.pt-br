@@ -1,57 +1,57 @@
 ---
 ms.date: 09/25/2020
-description: Entenda as funções personalizadas do Excel que não usam um painel de tarefas e seu tempo de execução JavaScript específico.
-title: Tempo de execução para funções personalizadas do Excel sem interface do usuário
+description: Entenda Excel funções personalizadas que não usam um painel de tarefas e seu tempo de execução JavaScript específico.
+title: Tempo de execução para funções personalizadas sem Excel de interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 94254dfb5a0d03b7c9fec392b2377aff91b58af4
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: aa2cf2632ddf9eb1ad1eb202b031ee2ca686af01
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279513"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349620"
 ---
-# <a name="runtime-for-ui-less-excel-custom-functions"></a>Tempo de execução para funções personalizadas do Excel sem interface do usuário
+# <a name="runtime-for-ui-less-excel-custom-functions"></a>Tempo de execução para funções personalizadas sem Excel de interface do usuário
 
-As funções personalizadas que não usam um painel de tarefas (funções personalizadas sem interface do usuário) usam um tempo de execução do JavaScript projetado para otimizar o desempenho dos cálculos.
+Funções personalizadas que não usam um painel de tarefas (funções personalizadas sem interface do usuário) usam um tempo de execução JavaScript projetado para otimizar o desempenho dos cálculos.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-Este tempo de execução JavaScript fornece acesso a APIs no `OfficeRuntime` namespace que podem ser usadas por funções personalizadas sem interface do usuário e o painel de tarefas para armazenar dados.
+Esse tempo de execução javaScript fornece acesso a APIs no namespace que podem ser usadas por funções personalizadas sem interface do usuário e o painel de tarefas para `OfficeRuntime` armazenar dados.
 
 ## <a name="requesting-external-data"></a>Como solicitar dados externos
 
-Dentro de uma função personalizada sem interface do usuário, você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando [XMLHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que emite solicitações HTTP para interagir com os servidores.
+Em uma função personalizada sem interface do usuário, você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)uma API Web padrão que emite solicitações HTTP para interagir com servidores.
 
-Esteja ciente de que as funções sem interface do usuário devem usar medidas de segurança adicionais ao fazer XMLHttpRequests, exigindo a [mesma política de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/)simples.
+Esteja ciente de que funções sem interface do usuário devem usar medidas de [](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) segurança adicionais ao criar XmlHttpRequests, exigindo a Política de Mesma Origem e [o CORS simples.](https://www.w3.org/TR/cors/)
 
-Uma implementação CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho no CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded` , `text/plain` ou `multipart/form-data` .
+Uma implementação de CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar `Content-Type` um header em CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded` seja , ou `text/plain` `multipart/form-data` .
 
 ## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Dentro de uma função personalizada sem interface do usuário, você pode armazenar e acessar dados usando o `OfficeRuntime.storage` objeto. `Storage` é um sistema de armazenamento de valor chave persistente, não criptografado que fornece uma alternativa para o [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado por funções personalizadas sem interface do usuário. `Storage` o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
+Em uma função personalizada sem interface do usuário, você pode armazenar e acessar dados usando o `OfficeRuntime.storage` objeto. `Storage` é um sistema de armazenamento persistente, não criptografado e de valor-chave que fornece uma alternativa ao [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), que não pode ser usado por funções personalizadas sem interface do usuário. `Storage` oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um complemento.
 
-`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, os tokens para autenticação de usuário podem ser armazenados em `storage` porque podem ser acessados por uma função personalizada sem interface e elementos de interface do usuário de suplemento, como um painel de tarefas. Da mesma forma, se dois suplementos compartilham o mesmo domínio (por exemplo, `www.contoso.com/addin1` `www.contoso.com/addin2` ), eles também podem compartilhar informações de frente e para trás `storage` . Observe que os suplementos que possuem subdomínios diferentes terão instâncias diferentes `storage` (por exemplo, `subdomain.contoso.com/addin1` , `differentsubdomain.contoso.com/addin2` ).
+`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, os tokens para autenticação do usuário podem ser armazenados porque podem ser acessados por uma função personalizada sem interface do usuário e elementos de interface do usuário de complemento, como um `storage` painel de tarefas. Da mesma forma, se dois complementos compartilharem o mesmo domínio (por exemplo, , ), eles também poderão compartilhar informações de ida e `www.contoso.com/addin1` `www.contoso.com/addin2` `storage` volta. Observe que os complementos com subdomas diferentes terão instâncias diferentes `storage` (por exemplo, `subdomain.contoso.com/addin1` , `differentsubdomain.contoso.com/addin2` ).
 
 Como `storage` pode ser um local compartilhado, é importante notar que é possível substituir os pares chave-valor.
 
-Os métodos a seguir estão disponíveis no objeto `storage`:
+Os métodos a seguir estão disponíveis no `storage` objeto.
 
- - `getItem`
- - `getItems`
- - `setItem`
- - `setItems`
- - `removeItem`
- - `removeItems`
- - `getKeys`
+- `getItem`
+- `getItems`
+- `setItem`
+- `setItems`
+- `removeItem`
+- `removeItems`
+- `getKeys`
 
 > [!NOTE]
 > Não há nenhum método para limpar todas as informações (como `clear` ). Em vez disso, use `removeItems` para remover várias entradas de uma só vez.
 
-### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime. Storage
+### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime.storage
 
-O exemplo de código a seguir chama a `OfficeRuntime.storage.setItem` função para definir uma chave e um valor para `storage` .
+O exemplo de código a seguir chama `OfficeRuntime.storage.setItem` a função para definir uma chave e um valor em `storage` .
 
 ```js
 function StoreValue(key, value) {
@@ -66,10 +66,10 @@ function StoreValue(key, value) {
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Se o suplemento usar apenas funções personalizadas sem interface do usuário, observe que não é possível acessar o modelo de objeto de documento (DOM) com funções personalizadas sem interface do usuário ou usar bibliotecas como jQuery que dependem do DOM.
+Se o seu complemento usa apenas funções personalizadas sem interface do usuário, observe que você não pode acessar o Dom (Modelo de Objeto de Documento) com funções personalizadas sem interface do usuário ou usar bibliotecas como jQuery que dependem do DOM.
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba como [depurar funções personalizadas sem interface do usuário](custom-functions-debugging.md).
+Saiba como [depurar funções personalizadas sem interface do usuário.](custom-functions-debugging.md)
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Diretrizes de cor para Suplementos do Office
 description: Saiba como usar cores na interface do usuário de um Office Add-in.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 04d93010cfd4c3359e2c87ef224487b00a218318
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330063"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349193"
 ---
 # <a name="color"></a>Cor
 
@@ -21,10 +21,11 @@ A cor é geralmente usada para enfatizar a marca e reforçar a hierarquia visual
 Os aplicativos do Office permitem que os clientes personalizem as interfaces aplicando um tema de interface do usuário do Office. Os clientes podem escolher entre quatro temas de interface do usuário para variar o estilo de telas de fundo e botões no Word, no PowerPoint, no Excel e em outros aplicativos do Office. Para fazer com que os seus complementos se sintam como uma parte natural da Office e respondam à personalização, use nossas APIs de Temas. Por exemplo, as cores de tela de fundo do painel de tarefas alternam para um cinza escuro em alguns temas. Nossas APIs de temas permitem que faça o mesmo e ajuste o texto de primeiro plano para garantir a [acessibilidade](../design/accessibility-guidelines.md).
 
 > [!NOTE]
+>
 > - Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](/javascript/api/office/office.context) para combinar o tema dos aplicativos do Office. Esta API está disponível atualmente no Office 2016 ou posterior.
 > - Para suplementos de conteúdo do PowerPoint, confira [Usar os temas do Office em seus suplementos do PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
-Aplique as seguintes diretrizes gerais para as cores:
+Aplique as seguintes diretrizes gerais para cor.
 
 - Use as cores com moderação para comunicar a hierarquia e reforçar a marca.
 - O uso exagerado de uma cor de realce única aplicada aos elementos interativos e não interativos pode causar confusão. Por exemplo, evite usar a mesma cor para itens selecionados e não selecionados em um menu de navegação.

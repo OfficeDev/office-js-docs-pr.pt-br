@@ -3,12 +3,12 @@ title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779331"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348409"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 
@@ -23,7 +23,7 @@ As APIs para adicionar slides são usadas principalmente em cenários em que as 
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
-Adicione slides com o [método SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) A seguir, um exemplo simples no qual um slide que usa o slide mestre padrão da apresentação e o primeiro layout desse mestre é adicionado. O método sempre adiciona novos slides ao final da apresentação. Veja um exemplo a seguir:
+Adicione slides com o [método SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) A seguir, um exemplo simples no qual um slide que usa o slide mestre padrão da apresentação e o primeiro layout desse mestre é adicionado. O método sempre adiciona novos slides ao final da apresentação. Apresentamos um exemplo a seguir.
 
 ```javascript
 async function addSlide() {
@@ -37,7 +37,7 @@ async function addSlide() {
 
 ### <a name="selecting-which-slide-master-and-layout-to-use"></a>Selecionando qual slide mestre e layout usar
 
-Use o [parâmetro AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) para controlar qual slide mestre é usado para o novo slide e qual layout dentro do mestre é usado. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código:
+Use o [parâmetro AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) para controlar qual slide mestre é usado para o novo slide e qual layout dentro do mestre é usado. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código.
 
 - Você pode incluir as duas propriedades do `AddSlideOptions` objeto.
 - Se ambas as propriedades são usadas, o layout especificado deve pertencer ao mestre especificado ou um erro é lançado.
@@ -93,7 +93,7 @@ Se o seu add-in puder ser usado em cenários em que o novo slide deve usar *a* m
     }
     ```
 
-2. Chame sua nova função dentro [do PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) da função principal que adiciona o slide. Veja um exemplo a seguir:
+2. Chame sua nova função dentro [do PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) da função principal que adiciona o slide. Apresentamos um exemplo a seguir.
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -120,7 +120,7 @@ Se o seu add-in puder ser usado em cenários em que o novo slide deve usar *a* m
 
 ## <a name="delete-slides"></a>Excluir slides
 
-Exclua um slide recebendo uma referência ao [objeto Slide](/javascript/api/powerpoint/powerpoint.slide) que representa o slide e chame o `Slide.delete` método. Veja a seguir um exemplo no qual o 4º slide é excluído:
+Exclua um slide recebendo uma referência ao [objeto Slide](/javascript/api/powerpoint/powerpoint.slide) que representa o slide e chame o `Slide.delete` método. A seguir, um exemplo no qual o 4º slide é excluído.
 
 ```javascript
 async function deleteSlide() {

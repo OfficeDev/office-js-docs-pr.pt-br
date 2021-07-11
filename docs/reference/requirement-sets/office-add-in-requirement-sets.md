@@ -4,19 +4,19 @@ description: Saiba mais sobre os conjuntos de requisitos Office API comum.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253344"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350201"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Procurando os conjuntos *de requisitos* de API específicos do aplicativo? Confira os seguintes conjuntos de requisitos de API:
+> Procurando os conjuntos *de requisitos* de API específicos do aplicativo? Consulte os seguintes conjuntos de requisitos de API.
 >
 > - [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
 > - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)

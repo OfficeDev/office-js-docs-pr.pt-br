@@ -3,12 +3,12 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076767"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348934"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -250,7 +250,7 @@ Este artigo abordará os requisitos de um manifesto da versão 1.1. Mesmo que se
 
 ## <a name="root-element"></a>Elemento root
 
-O elemento raiz do manifesto de suplementos do Outlook é **OfficeApp**. Esse elemento também declara o namespace padrão, a versão do esquema e o tipo de suplemento. Coloque todos os outros elementos no manifesto dentro de suas marcas de abertura e fechamento. Veja a seguir um exemplo do elemento Root:
+O elemento raiz do manifesto do suplemento do Outlook é **OfficeApp**. Esse elemento também declara o namespace padrão, a versão do esquema e o tipo de suplemento. Coloque todos os outros elementos no manifesto dentro de suas marcas de abertura e fechamento. A seguir está um exemplo do elemento raiz.
 
 
 ```XML
@@ -282,7 +282,7 @@ Para uma discussão sobre este elemento, consulte [Criar comandos de suplementos
 
 ## <a name="localization"></a>Localização
 
-Alguns aspectos do suplemento precisam ser localizados para localidades diferentes, como nome, descrição e a URL que é carregada. Esses elementos podem ser localizados facilmente especificando o valor padrão e, em seguida, a localidade substitui no elemento **Resources** dentro do elemento **VersionOverrides**. Veja a seguir como substituir uma imagem, uma URL e uma cadeia de caracteres:
+Alguns aspectos do suplemento precisam ser localizados para localidades diferentes, como o nome, a descrição e a URL carregada. Esses elementos podem ser localizados facilmente especificando o valor padrão e, em seguida, substituições de localidade no elemento **resources** dentro do elemento **VersionOverrides**. O exemplo a seguir mostra como substituir uma imagem, uma URL e uma cadeia de caracteres.
 
 
 ```XML
@@ -314,7 +314,7 @@ A referência de esquema contém informações completas sobre quais elementos p
 
 ## <a name="hosts"></a>Hosts
 
-Os suplementos do Outlook especificam o elemento **Hosts** da seguinte maneira.
+Os suplementos do Outlook especificam o **hosts** como o seguinte:
 
 ```XML
 <OfficeApp>
@@ -360,7 +360,7 @@ Para saber mais, confira a Referência de esquema para manifestos de Suplementos
 
 O domínio da página inicial do suplemento que você especifica no elemento **SourceLocation** é o domínio padrão do suplemento. Sem usar os elementos **AppDomains** e **AppDomain**, se o suplemento tentar navegar para outro domínio, o navegador abrirá uma nova janela fora do painel do suplemento. Para permitir que o suplemento navegue para outro domínio dentro do painel do suplemento, adicione um elemento **AppDomains** e inclua cada domínio adicional em seu próprio subelemento **AppDomain** no manifesto do suplemento.
 
-O exemplo a seguir especifica um domínio `https://www.contoso2.com` como um segundo domínio ao qual o suplemento pode navegar dentro do painel do suplemento:
+O exemplo a seguir especifica um domínio  `https://www.contoso2.com` como um segundo domínio para o qual o suplemento pode navegar dentro do painel do suplemento.
 
 ```XML
 <OfficeApp>

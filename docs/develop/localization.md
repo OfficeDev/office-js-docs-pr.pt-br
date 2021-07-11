@@ -3,12 +3,12 @@ title: Localização para Suplementos do Office
 description: Use Office API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo Office, ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b49d64f2c9391539ac2d5929ebff2a4ecc08b630
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076003"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349823"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -307,7 +307,7 @@ Para localizar o nome de exibição e a descrição do suplemento:
 
 1. No **Explorador de** Soluções, **expanda WorldReadyAddIn,** **WorldReadyAddInManifest** e escolha **WorldReadyAddIn.xml**.
 
-2. No arquivo WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] pelo seguinte bloco de código:
+2. Em WorldReadyAddInManifest.xml, substitua os [elementos DisplayName] e [Description] pelo seguinte bloco de código.
 
     > [!NOTE]
     > Você pode substituir as cadeias de caracteres do idioma espanhol localizado usadas neste exemplo dos elementos [DisplayName] e [Description] pelas cadeias de caracteres localizados para qualquer outro idioma.

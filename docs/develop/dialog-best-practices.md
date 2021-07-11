@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 3424e9802484f1f2626257cb3e7eb105596d8638
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 99129636cf722f98cef36c272f2e00e8a9321ccf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076059"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349907"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -41,7 +41,7 @@ Para saber as práticas recomendadas no design da caixa de diálogo, consulte [C
 
 ### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Tratamento de bloqueadores de pop-up com o Office na Web
 
-Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Office na Web tem um recurso que permite que as caixas de diálogo do seu complemento sejam uma exceção para o bloqueador pop-up do navegador. Quando seu código chama `displayDialogAsync` o método, Office na Web abrirá um prompt semelhante ao seguinte.
+Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Office na Web tem um recurso que permite que as caixas de diálogo do seu complemento sejam uma exceção para o bloqueador pop-up do navegador. Quando seu código chamar o `displayDialogAsync` método, Office na Web abrirá um prompt semelhante ao seguinte:
 
 ![Captura de tela mostrando o prompt com uma breve descrição e botões Permitir e Ignorar que um complemento pode gerar para evitar bloqueadores pop-up no navegador.](../images/dialog-prompt-before-open.png)
 

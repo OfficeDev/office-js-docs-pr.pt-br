@@ -1,32 +1,32 @@
 ---
 title: Adicionar e remover os anexos em um suplemento do Outlook
-description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou itens do Outlook anexados ao item que o usuário está compondo.
+description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou Outlook itens anexados ao item que o usuário está compondo.
 ms.date: 02/24/2021
 localization_priority: Normal
-ms.openlocfilehash: da426813e865f5607ec3e2c65252e8a406d889e2
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505497"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348584"
 ---
-# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
+# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de redação em Outlook
 
-A API JavaScript do Office fornece várias APIs que você pode usar para gerenciar anexos de um item quando o usuário está compondo.
+A Office api JavaScript oferece várias APIs que você pode usar para gerenciar anexos de um item quando o usuário está compondo.
 
-## <a name="attach-a-file-or-outlook-item"></a>Anexar um arquivo ou item do Outlook
+## <a name="attach-a-file-or-outlook-item"></a>Anexar um arquivo ou Outlook item
 
-Você pode anexar um arquivo ou item do Outlook a um formulário de composição usando o método apropriado para o tipo de anexo.
+Você pode anexar um arquivo ou Outlook item a um formulário de composição usando o método apropriado para o tipo de anexo.
 
 - [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um arquivo
 - [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um arquivo usando sua cadeia de caracteres base64
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): Anexar um item do Outlook
+- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): anexar um Outlook item
 
 Esses são métodos assíncronos, o que significa que a execução pode continuar sem aguardar a conclusão da ação. Dependendo do local original e do tamanho do anexo que está sendo adicionado, a chamada assíncrona pode demorar um pouco para ser concluída.
 
 Se houver tarefas que dependam da conclusão da ação, você deverá executá-las em um método de retorno de chamada. Esse método de retorno de chamada é opcional e é invocado quando o carregamento do anexo é concluído. O método de retorno de chamada usa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) como um parâmetro de saída que fornece qualquer status, erro e valor retornado da adição do anexo. Se o retorno de chamada requer parâmetros adicionais, você pode especificá-los no parâmetro opcional `options.asyncContext`. `options.asyncContext` pode ser de qualquer tipo que seu método de retorno de chamada espere.
 
-Por exemplo, você pode definir `options.asyncContext` como um objeto JSON que contém um ou mais pares chave-valor. Você pode encontrar mais exemplos sobre como passar parâmetros opcionais para métodos assíncronos na plataforma de suplementos do Office em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o parâmetro `asyncContext` para passar dois argumentos para um método de retorno de chamada:
+Por exemplo, você pode definir `options.asyncContext` como um objeto JSON que contém um ou mais pares de valores-chave. Você pode encontrar mais exemplos sobre a passagem de parâmetros opcionais para métodos assíncronos na plataforma de Office Add-ins na programação [assíncrona em Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o `asyncContext` parâmetro para passar 2 argumentos para um método de retorno de chamada.
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -79,9 +79,9 @@ function write(message){
 }
 ```
 
-### <a name="attach-an-outlook-item"></a>Anexar um item do Outlook
+### <a name="attach-an-outlook-item"></a>Anexar um Outlook de Outlook
 
-Você pode anexar um item do Outlook (por exemplo, email, calendário ou item de contato) a uma mensagem ou compromisso em um formulário de redação especificando a ID dos Serviços Web do Exchange (EWS) do item e usando o `addItemAttachmentAsync` método. Você pode obter a ID do EWS de um email, calendário, contato ou item de tarefa na caixa de correio do usuário usando o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) e acessando a operação EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). A propriedade [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) também fornece a ID dos EWS de um item existente em um formulário de leitura.
+Você pode anexar um item de Outlook (por exemplo, email, calendário ou item de contato) a uma mensagem ou compromisso em um formulário de redação especificando a ID do Exchange Web Services (EWS) do item e usando o `addItemAttachmentAsync` método. Você pode obter a ID do EWS de um email, calendário, contato ou item de tarefa na caixa de correio do usuário usando o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) e acessando a operação EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). A propriedade [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) também fornece a ID dos EWS de um item existente em um formulário de leitura.
 
 A função JavaScript a seguir, , estende o primeiro exemplo acima e adiciona um item como um anexo ao email ou compromisso `addItemAttachment` que está sendo composto. A função utiliza como argumento a ID dos EWS do item que será anexado. Se a anexação for bem-sucedida, ela obtém a ID do anexo para processamento posterior, incluindo a remoção desse anexo na mesma sessão.
 
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> Você pode usar um complemento de composição para anexar uma instância de um compromisso recorrente no Outlook na Web ou em dispositivos móveis. No entanto, em um cliente de área de trabalho do Outlook com suporte, tentar anexar uma instância resultaria em anexar a série recorrente (o compromisso pai).
+> Você pode usar um complemento de composição para anexar uma instância de um compromisso recorrente em Outlook na Web ou em dispositivos móveis. No entanto, em um cliente Outlook desktop de suporte, tentar anexar uma instância resultaria em anexar a série recorrente (o compromisso pai).
 
 ## <a name="get-attachments"></a>Obter anexos
 

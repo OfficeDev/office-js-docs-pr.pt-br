@@ -3,12 +3,12 @@ title: Autenticar um usuário com um token de identidade em um suplemento.
 description: Saiba como usar o token de identidade fornecido por um suplemento do Outlook para implementar o SSO com o seu serviço.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 839c3db2658ac4f16b965ee399df391ddcfd0385
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961269"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348535"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Autenticar um usuário com um token de identidade para o Exchange
 
@@ -26,7 +26,7 @@ A primeira etapa é que o seu suplemento obtenha o token de identidade do usuár
 O back-end DEVE validar o token antes de aceitá-lo. Esta é uma etapa importante para garantir que o token foi emitido pelo servidor do Exchange do usuário.
  Para obter informações sobre a validação de tokens de identidade do usuário do Exchange, confira [Validar um token de identidade do Exchange](validate-an-identity-token.md).
 
-Após validada e decodificada, a carga do token terá uma aparência semelhante à seguinte.
+Depois de validada e decodificada, a carga do token se parece com o seguinte:
 
 ```json
 { 

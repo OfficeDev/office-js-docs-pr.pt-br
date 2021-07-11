@@ -2,9 +2,9 @@ Você pode criar um suplemento do Office para oferecer o envio ou a publicação
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Pré-requisitos para a criação de um suplemento para o PowerPoint ou Word
 
-Este artigo pressupõe que você esteja usando um editor de texto para criar o suplemento de painel de tarefas do PowerPoint ou Word. Para criar o suplemento de painel de tarefas, você deve criar os seguintes arquivos:
+Este artigo pressupõe que você esteja usando um editor de texto para criar o suplemento de painel de tarefas do PowerPoint ou Word. Para criar o complemento do painel de tarefas, você deve criar os seguintes arquivos.
 
-- Em uma pasta de rede compartilhada ou em um servidor Web, você precisará dos seguintes arquivos:
+- Em uma pasta de rede compartilhada ou em um servidor Web, você precisa dos seguintes arquivos.
 
   - Um arquivo HTML (GetDoc_App.html) que contém a interface do usuário mais links para os arquivos JavaScript (incluindo arquivos office.js e arquivos de .js específicos do aplicativo) e arquivos CSS (Folha de Estilos em Cascata).
 

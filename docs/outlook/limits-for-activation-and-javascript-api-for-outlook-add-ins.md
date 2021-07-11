@@ -3,12 +3,12 @@ title: Limites para ativação e uso da API em suplementos do Outlook
 description: Você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites.
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: eacdc0232202fd74fdd46a835bed6af5a760e7b1
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 60fab066dadf5c71ab37e907dd749d38f9bb4dde
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007773"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348948"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites para ativação e API JavaScript para suplementos do Outlook
 
@@ -31,7 +31,7 @@ Siga estas diretrizes ao criar regras de ativação para suplementos do Outlook:
 
 - Se você usar uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no corpo do item selecionado, assuma que um cliente avançado do Outlook aplicará a regra somente ao primeiro MB do corpo e não ao restante do corpo acima desse limite. Seu suplemento não seria ativado se só houvessem correspondências após o primeiro MB do corpo. Se você acha que esse é um cenário provável, recrie suas condições para ativação.
 
-- Se você usar expressões regulares em ou `ItemHasKnownEntity` [regras ItemHasRegularExpressionMatch,](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) esteja ciente dos seguintes limites e diretrizes que geralmente se aplicam a qualquer aplicativo Outlook e aqueles descritos nas tabelas 1, 2 e 3 que diferem dependendo do aplicativo:
+- Se você usar expressões regulares em ou `ItemHasKnownEntity` [regras ItemHasRegularExpressionMatch,](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) esteja ciente dos seguintes limites e diretrizes que geralmente se aplicam a qualquer aplicativo Outlook e aqueles descritos nas tabelas 1, 2 e 3 que diferem dependendo do aplicativo.
   - Especifique no máximo cinco expressões regulares em regras de ativação em um suplemento. Se você exceder esse limite, não poderá instalar um suplemento.
   - Especifique expressões regulares para que os resultados antecipados sejam retornados pela chamada de método `getRegExMatches` nas primeiras 50 combinações.
   - Pode especificar declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.

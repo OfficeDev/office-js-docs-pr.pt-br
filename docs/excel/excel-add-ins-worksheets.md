@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: a8a7da6ce01f8c0cc82c8ab9c764b032027f585c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290730"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349410"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -374,11 +374,11 @@ As imagens a seguir mostram os intervalos retornados pela propriedade `address` 
 
 ![Dados de tabela em Excel antes de serem classificação.](../images/excel-sort-event-before.png)
 
-Se uma classificação de cima para baixo for realizada no "**Q1**&quot; (os valores em &quot;**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`:
+Se uma classificação de cima para baixo for executada em "**Q1**&quot; (os valores em &quot;**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address` .
 
 ![Dados da tabela no Excel após uma classificação de cima para baixo. As linhas que foram movidas são realçadas.](../images/excel-sort-event-after-row.png)
 
-Se uma classificação da esquerda para a direita for executada em "**Quinces**&quot; (os valores em &quot;**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address`:
+Se uma classificação da esquerda para a direita for executada em "**Quinces**&quot; (os valores em &quot;**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address` .
 
 ![Dados da tabela no Excel após uma classificação da esquerda para a direita. As colunas que foram movidas são realçadas.](../images/excel-sort-event-after-column.png)
 
@@ -435,7 +435,7 @@ Excel.run(function (context) {
 
 ## <a name="filter-data"></a>Filtrar dados
 
-Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply`, que possui os seguintes parâmetros:
+Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply` , que tem os seguintes parâmetros.
 
 - `range`: O intervalo para o qual o filtro é aplicado, especificado como um `Range` objeto ou uma cadeia de caracteres.
 - `columnIndex`: O índice da coluna com base em zero contra os quais o critério de filtro é avaliado.

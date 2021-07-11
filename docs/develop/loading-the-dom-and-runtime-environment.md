@@ -3,12 +3,12 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: Carregue o dom e Office ambiente de tempo de execução de complementos.
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: e66e6d5e30f5305dce35157280210a371ee3896f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0cfdcf3750d9c0a3dd21667729da59dbfedf61c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076010"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349837"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -20,7 +20,7 @@ A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um 
 
 ![Flow de eventos ao iniciar um conteúdo ou um complemento do painel de tarefas.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de tarefas é iniciado:
+Os eventos a seguir ocorrem quando um conteúdo ou um complemento do painel de tarefas é iniciado.
 
 1. O usuário abre um documento que já contém um suplemento ou insere um suplemento no documento.
 
@@ -43,7 +43,7 @@ A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um 
 
 ![Flow de eventos ao iniciar Outlook de um complemento.](../images/outlook15-loading-dom-agave-runtime.png)
 
-Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
+Os eventos a seguir ocorrem quando um Outlook de usuário é iniciado.
 
 1. Quando é iniciado, o Outlook lê os manifestos XML para suplementos do Outlook que foram instalados na conta de email do usuário.
 

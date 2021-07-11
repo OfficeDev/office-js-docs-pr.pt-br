@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do PowerPoint que inser
 ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 6742ecd8ab7d579f90186b4fa73adfccca45b467
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 76d40a83155a7a26822b43dc1340e3f9ebda63da
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076473"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349403"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -502,7 +502,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides. Para saber mais sobre a criação de suplementos do PowerPoint, continue no seguinte artigo:
+Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides. Para saber mais sobre como criar suplementos do PowerPoint, prossiga para o artigo a seguir.
 
 > [!div class="nextstepaction"]
 > [Visão geral dos Suplementos do SharePoint](../powerpoint/powerpoint-add-ins.md)

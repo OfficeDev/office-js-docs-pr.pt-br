@@ -3,12 +3,12 @@ title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
 ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: 922148130aa5384050813155819d2db4c75fe284
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1f34a6335949a4cbd2a0f58cdefa12426414770e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076136"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349179"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -99,7 +99,7 @@ Para depurar um comando de Suplemento, você deve executá-lo no Office na Web. 
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplementos:
+Aplique as práticas recomendadas a seguir ao desenvolver comandos de suplemento.
 
 - Use os comandos para representar uma ação específica com um resultado claro e específico para os usuários. Não combine várias ações em um único botão.
 - Forneça ações granulares que tornam a realização de tarefas comuns no seu suplemento mais eficiente. Minimize o número de etapas necessárias para concluir uma tarefa.

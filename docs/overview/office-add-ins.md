@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076655"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348857"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -30,7 +30,7 @@ Os suplementos de COM ou VSTO são soluções de integração anteriores do Offi
 
 ![Os motivos para usar os Suplementos do Office: multiplataforma, implantação centralizada, acesso fácil por meio do AppSource e baseado em tecnologias Web padrão.](../images/why.png)
 
-Os suplementos do Office fornecem as seguintes vantagens em relação aos suplementos criados usando o VBA, COM ou VSTO:
+Os Suplementos do Office oferecem as seguintes vantagens em relação aos suplementos criados usando VBA, COM ou VSTO.
 
 - Suporte à plataforma cruzada. Os suplementos do Office podem ser executados no Office na Web, Windows, Mac e iPad.
 
@@ -64,19 +64,19 @@ O Suplemento do Office mais básico consiste em uma página HTML estática que �
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Estender os clientes do Office e interagir com eles
 
-Os suplementos do Office podem fazer o seguinte em um aplicativo cliente do Office:
+Os Suplementos do Office podem fazer o seguinte em um aplicativo cliente do Office.
 
--  Estender a funcionalidade (qualquer aplicativo do Office)
+- Estender a funcionalidade (qualquer aplicativo do Office)
 
--  Criar novos objetos (Excel ou PowerPoint)
+- Criar novos objetos (Excel ou PowerPoint)
  
 ### <a name="extend-office-functionality"></a>Estender a funcionalidade do Office
 
 Você pode adicionar novas funcionalidades a aplicativos do Office por meio do seguinte:  
 
--  Botões de faixa de opções e comandos de menu personalizados (coletivamente chamados "comandos de suplemento")
+- Botões de faixa de opções e comandos de menu personalizados (coletivamente chamados "comandos de suplemento")
 
--  Painéis de tarefas inseríveis
+- Painéis de tarefas inseríveis
 
 Painéis personalizados de interface do usuário e de tarefa são especificados no manifesto do suplemento.  
 
@@ -98,7 +98,7 @@ Você pode usar painéis de tarefas, além dos comandos de suplemento, para perm
 
 ### <a name="extend-outlook-functionality"></a>Estender a funcionalidade do Outlook
 
-Os suplementos do Outlook podem estender a faixa de opções do aplicativo do Office e também serem exibidos contextualmente ao lado de um item do Outlook quando você o exibe ou redige. Eles podem funcionar com uma mensagem de email, uma solicitação de reunião, uma resposta de reunião, um cancelamento de reunião ou um compromisso quando um usuário estiver visualizando um item recebido, respondendo ou criando um novo item. 
+Os suplementos do Outlook podem estender a faixa de opções do aplicativo do Office e também serem exibidos contextualmente ao lado de um item do Outlook quando você o exibe ou redige. Eles podem funcionar com uma mensagem de email, uma solicitação de reunião, uma resposta de reunião, um cancelamento de reunião ou um compromisso quando um usuário estiver visualizando um item recebido, respondendo ou criando um novo item.
 
 Os suplementos do Outlook podem acessar informações contextuais do item, como o endereço ou a ID de rastreamento, e usar esses dados para acessar informações adicionais no servidor e de serviços Web para criar experiências de usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação no aplicativo cliente do Outlook para fornecer uma experiência perfeita na área de trabalho, na Web e em dispositivos móveis e tablet.
 

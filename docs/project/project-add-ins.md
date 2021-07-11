@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f0edd10495badd50da3fa8d4b8c9b4495df6252
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076949"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348374"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -54,7 +54,7 @@ A biblioteca JavaScript para suplementos do Project inclui extensões do alias d
 
 Para criar um suplemento, você pode usar um editor de texto simples para criar uma página da Web HTML e arquivos JavaScript relacionados, arquivos CSS e consultas REST. Além de uma página HTML ou um aplicativo Web, um suplemento requer um arquivo de manifesto XML de configuração. O Project pode usar um arquivo de manifesto que inclui um atributo **type** especificado como **TaskPaneExtension**. O arquivo de manifesto pode ser usado por vários aplicativos clientes do Office 2013, ou você pode criar um arquivo de manifesto que seja específico para o Project 2013. Para saber mais, confira a seção _Noções básicas sobre desenvolvimento_ em [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md).
 
-Quando você instala o download do SDK do Project 2013, o subdiretório `\Samples\Apps\` inclui os seguintes suplementos de exemplo:
+Quando você instala o download do SDK do Project 2013, o subdiretório de  `\Samples\Apps\` inclui os suplementos de exemplo a seguir.
 
 - **Pesquisa do Bing:** O arquivo de manifesto BingSearch.xml aponta para a página de pesquisa do Bing para dispositivos móveis. Como o aplicativo Web Bing já existe na Internet, o suplemento Pesquisa do Bing não usa outros arquivos de código-fonte ou o modelo de objeto de suplemento para o Project.
 
@@ -98,7 +98,7 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
     </OfficeApp>
     ```
 
-- Abaixo estão os elementos obrigatórios no manifesto do suplemento:
+- A seguir estão os elementos necessários no manifesto do suplemento.
   - No elemento **OfficeApp**, o atributo `xsi:type="TaskPaneApp"` especifica que o suplemento é um tipo de painel de tarefas.
   - O elemento **Id** é um UUID e precisa ser exclusivo.
   - O elemento **Version** é a versão do suplemento. O elemento **ProviderName** é o nome da empresa ou do desenvolvedor que fornece o suplemento. O elemento **DefaultLocale** especifica a localidade padrão para as cadeias de caracteres no manifesto.
@@ -190,7 +190,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 
-É possível distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou o AppSource. Para saber mais, confira [Publicar seu suplemento do Office](../publish/publish.md).
+Você pode distribuir suplementos por meio de um compartilhamento de arquivos, por um catálogo de aplicativos em uma biblioteca do SharePoint ou pelo AppSource. Para mais informações, consulte [Publicar o Suplemento do Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Corresponder cadeias de caracteres como entidades conhecidas em um suplem
 description: Usando a Office JavaScript, você pode obter cadeias de caracteres que corresponderem a entidades conhecidas específicas para processamento posterior.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 14faef13050572e8fb85cb8bae7226664bc65a7f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077075"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348493"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas
 
@@ -54,7 +54,7 @@ A figura a seguir descreve como o Exchange Server e o Outlook dão suporte a ent
 
 Para extrair entidades no seu código JavaScript ou fazer com que seu suplemento seja ativado com base na existência de determinadas entidades conhecidas, verifique se você solicitou as permissões apropriadas no manifesto do suplemento.
 
-A especificação da permissão restrita padrão permite que o seu add-in extraia `Address` a entidade , ou `MeetingSuggestion` `TaskSuggestion` . Para extrair as outras entidades, especifique as permissões de leitura de item, leitura/gravação de item ou leitura/gravação de caixa de correio. Para fazer isso no manifesto, use o elemento [Permissions](../reference/manifest/permissions.md) e especifique a permissão apropriada &mdash; **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox** &mdash; como no exemplo abaixo:
+A especificação da permissão restrita padrão permite que o seu add-in extraia `Address` a entidade , ou `MeetingSuggestion` `TaskSuggestion` . Para extrair as outras entidades, especifique as permissões de leitura de item, leitura/gravação de item ou leitura/gravação de caixa de correio. Para fazer isso no manifesto, use o elemento [Permissions](../reference/manifest/permissions.md) e especifique a permissão apropriada &mdash; **Restricted**, **ReadItem,** **ReadWriteItem** ou **ReadWriteMailbox,** como no &mdash; exemplo a seguir.
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -132,7 +132,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>Dicas para usar entidades conhecidas
 
-Existem alguns fatos e limites de que você deve estar ciente ao usar entidades conhecidas no seu suplemento. O seguinte se aplica desde que o seu complemento seja ativado quando o usuário estiver lendo um item que contém corresponde a entidades conhecidas, independentemente de você usar uma `ItemHasKnownEntity` regra:
+Existem alguns fatos e limites de que você deve estar ciente ao usar entidades conhecidas no seu suplemento. O seguinte se aplica desde que o seu complemento seja ativado quando o usuário estiver lendo um item que contém corresponde a entidades conhecidas, independentemente de você usar uma `ItemHasKnownEntity` regra.
 
 
 - Você somente pode extrair cadeias de caracteres que sejam entidades conhecidas se elas estiverem em inglês.
@@ -147,7 +147,7 @@ Existem alguns fatos e limites de que você deve estar ciente ao usar entidades 
     
 - Você não pode extrair entidades de itens na pasta Itens Enviados.
     
-Além disso, o seguinte se aplica se você usa uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule), e pode afetar os cenários em que você poderia assumir que seu suplemento seria ativado:
+Além disso, o seguinte se aplica se você usar uma [regra ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) e pode afetar os cenários em que você espera que seu complemento seja ativado.
 
 - Ao usar a regra, Outlook as cadeias de caracteres de entidade corresponder somente em inglês, independentemente da localidade padrão `ItemHasKnownEntity` especificada no manifesto.
     

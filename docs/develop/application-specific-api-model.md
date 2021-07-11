@@ -3,12 +3,12 @@ title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
-ms.translationtype: HT
+ms.openlocfilehash: 5cf1d088dfa883e5df9eaba25e395857cfce9f5c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408597"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350061"
 ---
 # <a name="using-the-application-specific-api-model"></a>Usando o modelo de API específica do aplicativo
 
@@ -169,7 +169,7 @@ Esteja ciente de que algumas das propriedades em um objeto podem ter o mesmo nom
 Se você chamar o método `load()` em um objeto (ou coleção) sem especificar nenhum parâmetro, todas as propriedades escalares do objeto ou dos objetos da coleção serão carregadas. Carregar dados não necessários desacelerá o seu suplemento. Sempre especifique explicitamente quais propriedades devem ser carregadas.
 
 > [!IMPORTANT]
-> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As seguintes propriedades são excluídas dessas operações de carregamento:
+> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As propriedades a seguir são excluídas dessas operações de carga.
 >
 > * `Excel.Range.numberFormatCategories`
 

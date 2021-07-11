@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma Office de complementos.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076186"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349151"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -160,7 +160,7 @@ Como Office os complementos são páginas da Web executadas em um controle do na
 
 Uma maneira de superar essa limitação é usar JSON/P -- fornecer um proxy para o serviço Web incluindo uma marca de **script** com um atributo **src** que aponta para algum script hospedado em outro domínio. Você pode criar as marcas **script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts serão executados onde estiverem inseridos e funcionarão como esperado.
 
-A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook. 
+A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -194,7 +194,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 

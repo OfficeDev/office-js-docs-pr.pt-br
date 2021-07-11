@@ -1,21 +1,21 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
-description: Otimizar o desempenho do suplemento do Excel usando a API JavaScript.
+description: Otimize Excel desempenho do complemento usando a API JavaScript.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 42ab5f28717f0f7dcd06461840de692a5daf60ce
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408611"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349382"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
 Existem várias maneiras de executar tarefas comuns com a API JavaScript do Excel. Você encontrará diferenças significativas de desempenho entre várias abordagens. Este artigo fornece orientações e amostras de código para mostrar como realizar tarefas comuns com eficiência usando as API JavaScript do Excel.
 
 > [!IMPORTANT]
-> Muitos problemas de desempenho podem ser tratados através do uso recomendado de `load` `sync` chamadas e. Consulte a seção "aprimoramentos de desempenho com as APIs específicas do aplicativo" de [limites de recurso e otimização de desempenho para suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) para conselhos sobre como trabalhar com APIs específicas do aplicativo de uma maneira eficiente.
+> Muitos problemas de desempenho podem ser resolvidos por meio do uso recomendado `load` de `sync` chamadas. Consulte a seção "Melhorias de desempenho com as APIs específicas do aplicativo" de Limites de recursos e otimização de desempenho para os Office [de complementos](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) para saber como trabalhar com as APIs específicas do aplicativo de maneira eficiente.
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspender temporariamente os processos do Excel
 
@@ -25,7 +25,7 @@ O Excel tem várias tarefas em segundo plano reagindo à entrada de usuários e 
 
 Se você estiver tentando executar uma operação em um grande número de células (por exemplo, definindo o valor do objeto de um grande intervalo) e não se importar em suspender o cálculo no Excel temporariamente enquanto a operação for concluída, é recomendável que você suspenda o cálculo até o próximo `context.sync()` ser chamado.
 
-Ver a documentação de referência [objeto de aplicativo](/javascript/api/excel/excel.application) para saber mais sobre como usar a API`suspendApiCalculationUntilNextSync()`para suspender e reativar cálculos de maneira muito fácil. O código a seguir demonstra como suspender temporariamente um cálculo:
+Ver a documentação de referência [objeto de aplicativo](/javascript/api/excel/excel.application) para saber mais sobre como usar a API`suspendApiCalculationUntilNextSync()`para suspender e reativar cálculos de maneira muito fácil. O código a seguir demonstra como suspender o cálculo temporariamente.
 
 ```js
 Excel.run(async function(ctx) {
@@ -66,14 +66,14 @@ Excel.run(async function(ctx) {
 })
 ```
 
-Observe que somente os cálculos de fórmula são suspensos. Todas as referências alteradas ainda serão recriadas. Por exemplo, renomear uma planilha ainda atualiza quaisquer referências em fórmulas para essa planilha.
+Observe que apenas os cálculos de fórmula estão suspensos. Quaisquer referências alteradas ainda são reconstruídas. Por exemplo, renomear uma planilha ainda atualiza quaisquer referências em fórmulas para essa planilha.
 
 ### <a name="suspend-screen-updating"></a>Suspender a atualização da tela
 
 O Excel exibe as alterações que seu suplemento faz aproximadamente conforme elas acontecem no código. Para conjuntos de dados grandes e interativos, talvez não seja necessário não esse andamento na tela em tempo real. `Application.suspendScreenUpdatingUntilNextSync()` pausa atualizações visuais no Excel até as chamadas do suplemento `context.sync()`, ou até o`Excel.run` terminar (chamadas implícitas `context.sync`). Lembre-se, o Excel não mostrará os sinais de atividade até a próxima sincronização. Seu suplemento deve fornecer orientação aos usuários para prepará-los para esse atraso ou fornecer uma barra de status para demonstrar atividade.
 
 > [!NOTE]
-> Não chame `suspendScreenUpdatingUntilNextSync` repetidamente (como em um loop). As chamadas repetidas farão com que a janela do Excel fique de piscar.
+> Não chame repetidamente `suspendScreenUpdatingUntilNextSync` (como em um loop). Chamadas repetidas fará com que a janela Excel trema.
 
 ### <a name="enable-and-disable-events"></a>Habilitar e desabilitar eventos
 
@@ -111,6 +111,6 @@ Excel.run(async (ctx) => {
 
 ## <a name="see-also"></a>Confira também
 
-* [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+* [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 * [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)
 * [Objeto de funções de planilha (API JavaScript para Excel)](/javascript/api/excel/excel.functions)

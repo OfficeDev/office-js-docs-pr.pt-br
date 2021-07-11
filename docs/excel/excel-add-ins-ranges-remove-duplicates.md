@@ -4,12 +4,12 @@ description: Saiba como usar a EXCEL JavaScript para remover duplicatas.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075765"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349480"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>Remover duplicatas usando a EXCEL JavaScript
 
@@ -21,7 +21,7 @@ O [método Range.removeDuplicates](/javascript/api/excel/excel.range#removedupli
 
 `removeDuplicates` leva um `number[]` representando os índices da coluna que são verificados para duplicatas. Essa matriz é baseada em zero e relativa ao intervalo, não à planilha. O método também recebe um parâmetro booleano que especifica se a primeira linha é um header. Quando **verdadeiro**, a primeira linha será ignorada ao considerar duplicatas. O método retorna um objeto que especifica o número de linhas removidas e `removeDuplicates` o número de linhas `RemoveDuplicatesResult` exclusivas restantes.
 
-Ao usar o método de `removeDuplicates` um intervalo, lembre-se do seguinte:
+Ao usar o método de `removeDuplicates` um intervalo, lembre-se do seguinte.
 
 - `removeDuplicates` considera valores de célula, não resultados de função. Se as duas funções diferentes forem avaliadas como o mesmo resultado, os valores de célula não são considerados duplicatas.
 - Células vazias não serão ignoradas por `removeDuplicates`. O valor de uma célula vazia é tratado como qualquer outro valor. Isso significa que as linhas vazias contidas no intervalo serão incluídas em `RemoveDuplicatesResult`.

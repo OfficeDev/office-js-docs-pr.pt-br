@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 37ce824817f07949435fd21fa4545a5c787e7105
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 18484c9f6745399b0fdf50da466004e80beca44e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075856"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349501"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -22,34 +22,34 @@ Um suplemento do Excel permite que você estenda a funcionalidade do aplicativo 
 - Adicionar funções personalizadas
 - Fornecer interação mais rica usando janela de caixa de diálogo
 
-A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Office.js que permitem criar e executar suplementos do Excel. Usando a plataforma Suplementos do Office para criar o suplemento do Excel, você receberá os seguintes benefícios:
+A plataforma de Suplementos do Office fornece a estrutura e as APIs JavaScript do Office.js que permitem criar e executar suplementos do Excel. Ao usar a plataforma de Suplementos do Office para criar seu suplemento do Excel, você obterá os seguintes benefícios.
 
-* **Suporte a multiplataformas**: os suplementos do Excel são executados no Office na Web, no Windows, no Mac e no iPad.
-* **Implantação centralizada**: os administradores podem implantar rápida e facilmente suplementos do Excel para usuários em toda uma organização.
-* **Uso da tecnologia da Web padrão**: Crie um suplemento do Excel usando tecnologias da Web conhecidas, como HTML, CSS e JavaScript.
-* **Distribuição pelo AppSource**: Compartilhe o suplemento do Excel com uma ampla audiência publicando-o na [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
+- **Suporte a multiplataformas**: os suplementos do Excel são executados no Office na Web, no Windows, no Mac e no iPad.
+- **Implantação centralizada**: os administradores podem implantar rápida e facilmente suplementos do Excel para usuários em toda uma organização.
+- **Uso da tecnologia da Web padrão**: Crie um suplemento do Excel usando tecnologias da Web conhecidas, como HTML, CSS e JavaScript.
+- **Distribuição pelo AppSource**: Compartilhe o suplemento do Excel com uma ampla audiência publicando-o na [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
 > Os suplementos do Excel são diferentes dos suplementos de COM e VSTO, que são anteriores às soluções de integração do Office que são executadas apenas no Office no Windows. Diferentemente dos suplementos de COM, os suplementos do Excel não exigem a instalação de código no dispositivo de um usuário, nem no Excel.
 
 ## <a name="components-of-an-excel-add-in"></a>Componentes de um suplemento do Excel
 
-Um suplemento do Excel inclui dois componentes básicos: um aplicativo Web e um arquivo de configuração, chamado de arquivo de manifesto. 
+Um suplemento do Excel inclui dois componentes básicos: um aplicativo Web e um arquivo de configuração, chamado de arquivo de manifesto.
 
-O aplicativo Web usa a [API JavaScript do Office](../reference/javascript-api-for-office.md) para interagir com objetos no Excel, e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
+O aplicativo Web usa a [API JavaScript do Office](../reference/javascript-api-for-office.md) para interagir com objetos no Excel, e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar qualquer uma das tarefas a seguir.
 
-* Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
-* Executar autorização de usuário em um serviço online usando o fluxo padrão OAuth 2.0.
-* Emitir solicitações de API ao Microsoft Graph ou qualquer outra API.
+- Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
+- Executar autorização de usuário em um serviço online usando o fluxo padrão OAuth 2.0.
+- Emitir solicitações de API ao Microsoft Graph ou qualquer outra API.
 
 O aplicativo Web pode ser hospedado em qualquer servidor Web, além de poder ser criado usando estruturas do lado do cliente (como Angular, React, jQuery) ou tecnologias do lado do servidor (como ASP.NET, Node.js, PHP).
 
 O [manifesto](../develop/add-in-manifests.md) é um arquivo de configuração XML que define como o suplemento integra-se aos clientes do Office, especificando configurações e recursos, como:
 
-* A URL do aplicativo Web do suplemento.
-* O nome de exibição, a descrição, a ID, a versão e a localidade padrão do suplemento.
-* Como o suplemento integra-se ao Excel, incluindo qualquer interface de usuário personalizada que o suplemento cria (botões da faixa de opções, menus de contexto, etc.).
-* Permissões exigidas pelo suplemento, como leitura e gravação no documento.
+- A URL do aplicativo Web do suplemento.
+- O nome de exibição, a descrição, a ID, a versão e a localidade padrão do suplemento.
+- Como o suplemento integra-se ao Excel, incluindo qualquer interface de usuário personalizada que o suplemento cria (botões da faixa de opções, menus de contexto, etc.).
+- Permissões exigidas pelo suplemento, como leitura e gravação no documento.
 
 Para permitir que os usuários finais instalem e usem um suplemento do Excel, você deve publicar o respectivo manifesto no AppSource ou em um catálogo de suplementos. Para obter detalhes sobre como publicar no AppSource, confira [Disponibilizar suas soluções no AppSource e no Office](/office/dev/store/submit-to-appsource-via-partner-center).
 
@@ -59,7 +59,7 @@ Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel
 
 ### <a name="add-in-commands"></a>Comandos de suplemento
 
-Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Excel e iniciam ações no suplemento. É possível adicionar um botão à faixa de opções ou um item a um menu de contexto do Excel. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas.  
+Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Excel e iniciam ações no suplemento. É possível adicionar um botão à faixa de opções ou um item a um menu de contexto do Excel. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas. 
 
 **Comandos de suplemento**
 
@@ -69,7 +69,7 @@ Para saber mais sobre recursos de comando, plataformas suportadas e práticas re
 
 ### <a name="task-panes"></a>Painéis de tarefas
 
-Os painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Excel. Os painéis de tarefas dão aos usuários acesso a controles de interface que executam códigos para modificar o documento do Excel ou exibir dados de uma fonte de dados. 
+Os painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Excel. Os painéis de tarefas dão aos usuários acesso a controles de interface que executam códigos para modificar o documento do Excel ou exibir dados de uma fonte de dados.
 
 **Painel de tarefas**
 
@@ -79,11 +79,11 @@ Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos S
 
 ### <a name="custom-functions"></a>Funções personalizadas
 
-Funções personalizadas permitem que desenvolvedores adicionem novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`. 
+Funções personalizadas permitem que desenvolvedores adicionem novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`.
 
 **Função personalizada**
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+![Imagem animada mostrando um usuário final inserindo MYFUNCTION. Função personalizada SPHEREVOLUME em uma célula de uma planilha do Excel.](../images/SphereVolumeNew.gif)
 
 Para obter mais informações sobre funções personalizadas, consulte[Criar funções personalizadas no Excel](custom-functions-overview.md).
 
@@ -111,9 +111,9 @@ Para saber mais sobre suplementos conteúdos, confira [Suplementos do Office de 
 
 Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript do Office](../reference/javascript-api-for-office.md), que inclui dois modelos de objetos JavaScript:
 
-* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+- **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
 
-* **APIs Comuns**: Introduzida com o Office 2013, a API Comum permite que você acesse recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisa ser executado no Excel 2013.
+- **APIs Comuns**: Introduzida com o Office 2013, a API Comum permite que você acesse recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisa ser executado no Excel 2013.
 
 ## <a name="next-steps"></a>Próximas etapas
 

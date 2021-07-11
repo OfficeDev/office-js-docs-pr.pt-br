@@ -3,12 +3,12 @@ title: Elemento Host no arquivo de manifesto
 description: Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 45d4ed42946038699be235ff3912c071a92ff226
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292283"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348325"
 ---
 # <a name="host-element"></a>Elemento Host
 
@@ -25,11 +25,11 @@ Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de h
 
 | Atributo     | Tipo   | Obrigatório | Descrição                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo cliente do Office. |
+| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo Office cliente. |
 
 ### <a name="name"></a>Name
 
-Especifica o tipo de Host destinado por esse suplemento. O valor deve ser um dos seguintes.
+Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma das seguintes opções:
 
 - `Document` (Word)
 - `Database` (Access)
@@ -59,19 +59,19 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Sim  | Descreve o aplicativo do Office onde essas configurações se aplicam.|
+|  [xsi:type](#xsitype)  |  Sim  | Descreve o aplicativo Office em que essas configurações se aplicam.|
 
 ### <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Sim   |  Define as configurações do fator forma da área de trabalho. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só é suportado no Outlook no iOS e no Android. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só tem suporte em Outlook iOS e Android. |
 |  [AllFormFactors](allformfactors.md)    |  Não   |  Define as configurações de todos os fatores forma. Usado somente pelas funções personalizadas no Excel. |
 
 ### <a name="xsitype"></a>xsi:type
 
-Controla qual aplicativo do Office (Word, Excel, PowerPoint, Outlook, OneNote) onde as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
+Controla qual Office aplicativo (Word, Excel, PowerPoint, Outlook, OneNote) onde as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
 
 - `Document` (Word)
 - `MailHost` (Outlook)

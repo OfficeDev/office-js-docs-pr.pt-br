@@ -3,16 +3,16 @@ title: Associar a regiões em um documento ou em uma planilha
 description: Saiba como usar a associação para garantir o acesso consistente a uma região ou elemento específico de um documento ou planilha por meio de um identificador.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f57124a22bcc859b4fba1795faa64140cab947d9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c9a658653c562de446f3b8e5f1ea192ddfcf3b21
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076466"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349998"
 ---
-# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
+# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associe a regiões em um documento ou planilha
 
-O acesso a dados baseado em associação permite que os suplementos de conteúdo e de painéis de tarefas acessem determinada região de um documento ou planilha por meio de um identificador. Primeiro, o suplemento precisa estabelecer a associação. Para isso, ele chama um dos métodos que associa uma parte do documento a um identificador exclusivo: [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Depois que a associação é estabelecida, o suplemento pode usar o identificador fornecido para acessar os dados contidos na região associada do documento ou da planilha. A criação de associações proporciona o seguinte valor para o seu suplemento:
+O acesso a dados baseados em associação permite que os complementos do painel de tarefas e conteúdo acessem consistentemente uma determinada região de um documento ou planilha por meio de um identificador. Primeiro, o suplemento precisa estabelecer a associação chamando um dos métodos que vinculam uma parte do documento a um identificador exclusivo: [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Depois que a associação é estabelecida, o suplemento pode usar o identificador fornecido para acessar os dados contidos na região vinculada do documento ou da planilha. A criação de vinculações fornece o seguinte valor ao seu complemento.
 
 - Permite o acesso a estruturas comuns de dados em aplicativos compatíveis do Office, como: tabelas, intervalos ou texto (uma execução contígua de caracteres).
 - Habilita operações de leitura/gravação sem exigir que o usuário realize uma seleção.

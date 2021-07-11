@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 669eedd3439698a37bebe2a83b3c2a8381cdb4d6
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 85576c50c69332e16c0636586461392021b2e2a4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076228"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350047"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -17,7 +17,7 @@ Várias autoridades de identidade, também chamadas de Serviços de Token Seguro
 > [!NOTE]
 > Esse artigo presume que você esteja familiarizado com o [Uso da API da Caixa de Diálogo do Office nos suplementos do Office.](dialog-api-in-office-add-ins.md).
 
-A caixa de diálogo que é aberta com essa API tem as seguintes características:
+A caixa de diálogo aberta com essa API tem as seguintes características.
 
 - [Não é restrita](https://en.wikipedia.org/wiki/Dialog_box).
 - É uma instância do navegador completamente separada do painel de tarefas, ou seja:

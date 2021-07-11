@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 878bdeaa6752e37f8d3c67f32b42e2a5a7b962cb
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076101"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349914"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -40,7 +40,7 @@ As APIs JavaScript para Office incluem um objeto[Dialog](/javascript/api/office/
 
 Para abrir uma caixa de diálogo, seu código, geralmente uma página no painel de tarefas chama o método [displayDialogAsync](/javascript/api/office/office.ui) e transmite a ele a URL do recurso que você deseja abrir. A página em que esse método é chamado é conhecida como "página host". Por exemplo, se você chamar esse método no script index.html em um painel de tarefas, index.html será a página do host da caixa de diálogo que o método abre.
 
-O recurso aberto na página de diálogo geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. O código a seguir é um exemplo simples:
+O recurso aberto na página de diálogo geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. O código a seguir é um exemplo simples.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -70,7 +70,7 @@ Defina os dois valores como 100% para ter uma verdadeira experiência de tela in
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Aproveite uma opção de desempenho no Office na Web
 
-A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para o`displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office Online, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Este é um exemplo:
+A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para o`displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office Online, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Apresentamos um exemplo a seguir.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -88,7 +88,7 @@ A caixa de diálogo não pode se comunicar com a página host no painel de taref
 - A página atual na caixa de diálogo esteja no mesmo domínio da página host.
 - A Office da API JavaScript é carregada na página. (Como qualquer página que usa a biblioteca de API JavaScript Office, o script da página deve atribuir um método à propriedade, embora possa `Office.initialize` ser um método vazio. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).)
 
-O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Veja um exemplo a seguir:
+O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Apresentamos um exemplo a seguir.
 
 ```js
 if (loginSuccess) {
@@ -109,7 +109,7 @@ if (loginSuccess) {
 }
 ```
 
-A página host deve ser configurada para receber a mensagem. Você pode fazer isso adicionando um parâmetro de retorno de chamada à chamada original de `displayDialogAsync`. O retorno de chamada atribui um manipulador ao evento `DialogMessageReceived`. Apresentamos um exemplo a seguir:
+A página host deve ser configurada para receber a mensagem. Você pode fazer isso adicionando um parâmetro de retorno de chamada à chamada original de `displayDialogAsync`. O retorno de chamada atribui um manipulador ao evento `DialogMessageReceived`. Apresentamos um exemplo a seguir.
 
 ```js
 var dialog;
@@ -127,7 +127,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - O `processMessage` é a função que manipula o evento. Você pode dar a ele o nome que desejar.
 > - A variável `dialog` é declarada em um escopo mais amplo do que o retorno de chamada porque ela também é referenciada em `processMessage`.
 
-Veja a seguir um exemplo simples de um manipulador para o evento `DialogMessageReceived`:
+Veja a seguir um exemplo simples de um manipulador para o evento `DialogMessageReceived`.
 
 ```js
 function processMessage(arg) {
@@ -155,7 +155,7 @@ function processMessage(arg) {
 
 Para ver um suplemento de exemplo que usa essas técnicas, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-Se o suplemento precisa abrir uma página diferente do painel de tarefas depois de receber a mensagem, é possível usar o método `window.location.replace` (ou `window.location.href`) como a última linha do manipulador. Apresentamos um exemplo a seguir:
+Se o suplemento precisa abrir uma página diferente do painel de tarefas depois de receber a mensagem, é possível usar o método `window.location.replace` (ou `window.location.href`) como a última linha do manipulador. Apresentamos um exemplo a seguir.
 
 ```js
 function processMessage(arg) {
@@ -170,7 +170,7 @@ Para ver um exemplo de um suplemento que faz isso, consulte [Inserir gráficos d
 
 ### <a name="conditional-messaging"></a>Mensagens condicionais
 
-Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que um usuário entre em um provedor de identidade, como a conta da Microsoft ou o Google, ela envia o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
+Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que um usuário entre em um provedor de identidade, como a conta da Microsoft ou o Google, ela envia o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro para a página host, como no exemplo a seguir.
 
 ```js
 if (loginSuccess) {
@@ -216,7 +216,7 @@ Seu complemento pode enviar mensagens da página [host](dialog-api-in-office-add
 
 ### <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` na página host
 
-Quando você chama a API Office caixa de diálogo para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o [método displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Veja um exemplo a seguir:
+Quando você chama a API Office caixa de diálogo para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o [método displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Apresentamos um exemplo a seguir.
 
 ```javascript
 var dialog;
@@ -302,7 +302,7 @@ Como você pode fazer várias chamadas da página host, mas você tem apenas um 
 
 ## <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 
-Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer isso, o manipulador de eventos de clique do botão deve usar `messageParent` para informar a página host em que o botão foi clicado. Apresentamos um exemplo a seguir:
+Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer isso, o manipulador de eventos de clique do botão deve usar `messageParent` para informar a página host em que o botão foi clicado. Apresentamos um exemplo a seguir.
 
 ```js
 function closeButtonClick() {

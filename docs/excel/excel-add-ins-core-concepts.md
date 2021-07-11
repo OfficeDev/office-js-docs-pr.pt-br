@@ -4,12 +4,12 @@ description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075863"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349557"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 
@@ -97,7 +97,7 @@ Excel.run(function (context) {
 });
 ```
 
-Esse exemplo cria os seguintes dados na planilha atual:
+Este exemplo cria os dados a seguir na planilha atual.
 
 ![Um registro de vendas mostrando as linhas de valores, uma coluna de fórmulas e cabeçalhos formatados.](../images/excel-overview-range-sample.png)
 
@@ -121,7 +121,7 @@ Excel.run(function (context) {
 });
 ```
 
-Usar esse código de exemplo na planilha com os dados anteriores cria a tabela a seguir:
+O uso desse código de exemplo na planilha com os dados anteriores cria a tabela a seguir.
 
 ![Uma tabela criada a partir do registro de vendas anterior.](../images/excel-overview-table-sample.png)
 
@@ -142,7 +142,7 @@ Excel.run(function (context) {
 });
 ```
 
-Executar esse exemplo na planilha com a tabela anterior cria o seguinte gráfico:
+Executar este exemplo na planilha com a tabela anterior cria o gráfico a seguir.
 
 ![Um gráfico de colunas mostrando as quantidades de três itens do registro de vendas anterior.](../images/excel-overview-chart-sample.png)
 

@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 402534b55c1ff186dc5123407fc470c42ee2b253
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076823"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350222"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -21,7 +21,7 @@ Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do 
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o seguinte comando e responda aos prompts com as seguintes respostas:
+Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts com as respostas a seguir.
 
 ```command line
 yo office

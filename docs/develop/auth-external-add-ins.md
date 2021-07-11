@@ -3,28 +3,28 @@ title: Autorizar serviços externos no seu suplemento do Office
 description: Obter autorização para outras fontes de dados além da Microsoft como Google, Facebook, LinkedIn, SalesForce e GitHub, usando o OAuth 2.0, o código de autorização e os fluxos implícitos.
 ms.date: 08/07/2019
 localization_priority: Normal
-ms.openlocfilehash: fd180e11106e7e1e2f20f539746535c4310ad81e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e58aba29563a3bcf173a4f76d7e3788b79f09049
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093739"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350054"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
-Serviços online populares, incluindo o Microsoft 365, Google, Facebook, LinkedIn, SalesForce e GitHub, permitem que os desenvolvedores forneçam acesso aos usuários a suas contas em outros aplicativos. Isso dá a você a capacidade de incluir esses serviços no suplemento do Office.
+Serviços online populares, incluindo Microsoft 365, Google, Facebook, LinkedIn, SalesForce e GitHub, permitem que os desenvolvedores dêem aos usuários acesso às suas contas em outros aplicativos. Isso dá a você a capacidade de incluir esses serviços no seu Suplemento do Office.
 
 > [!NOTE]
-> O restante deste artigo é sobre o acesso a serviços que não são da Microsoft. Para obter informações sobre como acessar o Microsoft Graph (incluindo o Microsoft 365), confira [acessar o Microsoft Graph com SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) e [acesso ao Microsoft Graph sem SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+> O restante deste artigo é sobre o acesso a serviços que não são da Microsoft. Para obter informações sobre como acessar o Microsoft Graph (incluindo Microsoft 365), consulte [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and Access to Microsoft Graph without [SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
 
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
 Uma ideia fundamental do OAuth é que um aplicativo pode ser uma [entidade de segurança](/windows/security/identity-protection/access-control/security-principals) por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
 
-Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados:
+Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados.
 
 - **Fluxo Implícito**: a comunicação entre o suplemento e o serviço online é implementada com um JavaScript no lado do cliente. Esse fluxo costuma ser usado em aplicativos página única (SPAs).
-- **Fluxo de Código de Autorização**: A comunicação é *de servidor para servidor* entre o aplicativo Web do seu suplemento e o serviço online. Portanto, a implementação é feita com código no lado do servidor.
+- **Fluxo de Código de Autorização**: a comunicação é *de servidor para servidor* entre o aplicativo Web do seu suplemento e o serviço online. Portanto, a implementação é feita com código no lado do servidor.
 
 A finalidade de um fluxo OAuth é garantir a identidade e autorização do aplicativo. No fluxo de Código de Autorização, você recebe um *segredo do cliente* que precisa permanecer oculto. Um aplicativo que não tem nenhum back-end do lado do servidor, como é o caso de um SPA, não tem como proteger o segredo; por isso recomendamos usar o fluxo Implícito em SPAs.
 

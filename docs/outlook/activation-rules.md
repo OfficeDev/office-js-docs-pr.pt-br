@@ -3,12 +3,12 @@ title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a5fc107c27feb5b0535727a42b4d56d21f7dcbc4
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076809"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349018"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -22,16 +22,17 @@ A figura a seguir mostra suplementos do Outlook ativados na barra de suplementos
 ## <a name="specify-activation-rules-in-a-manifest"></a>Especificar regras de ativação em um manifesto
 
 
-Para Outlook ativar um complemento para condições específicas, especifique as regras de ativação no manifesto do complemento usando um dos seguintes `Rule` elementos:
+Para Outlook ativar um complemento para condições específicas, especifique regras de ativação no manifesto do complemento usando um dos seguintes `Rule` elementos.
 
 - [Elemento Rule (MailApp complexType)](../reference/manifest/rule.md) - especifica uma regra individual.
 - [Elemento Rule (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - combina várias regras usando operações lógicas.
-    
+
 
  > [!NOTE]
  > O `Rule` elemento que você usa para especificar uma regra individual é do tipo complexo [Rule](../reference/manifest/rule.md) abstrato. Cada um dos seguintes tipos de regras estende esse tipo `Rule` complexo abstrato. Portanto, ao especificar uma regra individual em um manifesto, é preciso usar o atributo [xsi:type](https://www.w3.org/TR/xmlschema-1/) para definir um dos tipos de regra a seguir.
  > 
- > Por exemplo, a seguinte regra define uma regra [ItemIs](../reference/manifest/rule.md#itemis-rule): `<Rule xsi:type="ItemIs" ItemType="Message" />`
+ > Por exemplo, a regra a seguir define uma [regra ItemIs.](../reference/manifest/rule.md#itemis-rule)
+ > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
  > O `FormType` atributo se aplica às regras de ativação no manifesto v1.1, mas não é definido em `VersionOverrides` v1.0. Portanto, ele não pode ser usado [quando ItemIs](../reference/manifest/rule.md#itemis-rule) é usado no `VersionOverrides` nó.
 
@@ -57,8 +58,8 @@ Especifique um dos seguintes tipos de item `ItemType` no atributo de uma regra *
 
 |**Valor**|**Descrição**|
 |:-----|:-----|
-|**Compromisso**|Especifica um item em um calendário do Outlook. Isso inclui um item de reunião que foi respondido e que tem um organizador e participantes, ou um compromisso que não tem um organizador ou participantes e é simplesmente um item no calendário. Isso corresponde à classe de mensagens IPM.Appointment no Outlook.|
-|**Mensagem**|Especifica um dos seguintes itens recebidos normalmente na Caixa de Entrada: <ul><li><p>Uma mensagem de email. Isso corresponde à classe de mensagem IPM.Note no Outlook.</p></li><li><p>Uma solicitação de reunião, resposta ou cancelamento. Isso corresponde às seguintes classes de mensagem no Outlook:</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Compromisso**|Especifica um item em um Outlook calendário. Isso inclui um item de reunião que foi respondido e tem um organizador e participantes, ou um compromisso que não tem um organizador ou participante e é simplesmente um item no calendário. Isso corresponde ao IPM. Classe de mensagem de compromisso Outlook.|
+|**Mensagem**|Especifica um dos seguintes itens recebidos normalmente na Caixa de Entrada. <ul><li><p>Uma mensagem de email. Isso corresponde à classe de mensagem IPM.Note no Outlook.</p></li><li><p>Uma solicitação de reunião, resposta ou cancelamento. Isso corresponde às seguintes classes de mensagem no Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 O atributo é usado para especificar o modo (leitura ou `FormType` redação) no qual o complemento deve ser ativado.
 
@@ -72,7 +73,7 @@ Opcionalmente, você pode usar o atributo para especificar a classe de mensagem 
 
 Para saber mais sobre classes de mensagens, confira [Tipos de item e classes de mensagens](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
-O exemplo a seguir é uma regra **ItemIs** que permite que os usuários vejam o suplemento na barra de suplementos do Outlook quando o usuário está lendo uma mensagem:
+O exemplo a seguir é uma **regra ItemIs** que permite que os usuários vejam o complemento na barra de Outlook de complementos quando o usuário estiver lendo uma mensagem.
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -102,7 +103,7 @@ O `ItemHasAttachment` tipo complexo define uma regra que verifica se o item sele
 
 Antes de um item ser disponibilizado para um suplemento, o servidor o examina para determinar se o assunto e o corpo contêm texto que provavelmente é uma das entidades conhecidas. Se alguma dessas entidades for encontrada, ela será colocada em uma coleção de entidades conhecidas que você acessa usando o ou o método `getEntities` `getEntitiesByType` desse item.
 
-Você pode especificar uma regra usando que mostra o seu complemento quando uma entidade do `ItemHasKnownEntity` tipo especificado está presente no item. Você pode especificar as seguintes entidades conhecidas no `EntityType` atributo de uma `ItemHasKnownEntity` regra:
+Você pode especificar uma regra usando que mostra o seu complemento quando uma entidade do `ItemHasKnownEntity` tipo especificado está presente no item. Você pode especificar as seguintes entidades conhecidas no `EntityType` atributo de uma `ItemHasKnownEntity` regra.
 
 - Endereço
 - Contato
@@ -111,7 +112,7 @@ Você pode especificar uma regra usando que mostra o seu complemento quando uma 
 - PhoneNumber
 - TaskSuggestion
 - URL
-    
+
 Opcionalmente, você pode incluir uma expressão regular no atributo para que o seu complemento seja mostrado somente quando uma entidade que corresponde à `RegularExpression` expressão regular presente. Para obter combinações com expressões regulares especificadas em regras, você pode usar o método ou para o item Outlook `ItemHasKnownEntity` `getRegExMatches` selecionado no `getFilteredEntitiesByName` momento.
 
 O exemplo a seguir mostra uma coleção de elementos que mostram o complemento quando uma das entidades conhecidas especificadas está `Rule` presente na mensagem.

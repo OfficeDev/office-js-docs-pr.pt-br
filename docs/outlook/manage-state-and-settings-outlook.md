@@ -3,12 +3,12 @@ title: Gerenciar estado e configurações para um Outlook de dados
 description: Saiba como persistir o estado e as configurações do Outlook de um complemento.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 8f43c7f105dc68c879f175beabcabb49715a75aa
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592007"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348500"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de dados
 
@@ -84,7 +84,7 @@ Um suplemento do Outlook que usa essas funções recupera as propriedades person
 var property = _customProps.get("propertyName");
 ```
 
-Este exemplo inclui as seguintes funções:
+Este exemplo inclui as seguintes funções.
 
 |**Nome da função**|**Descrição**|
 |:-----|:-----|

@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 35e4dcef6d99d5bd3ca204b08a017679684ec2ba
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076452"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349970"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -128,7 +128,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Se você não tiver escolhido "Somente contas neste diretório organizacional" para **TIPOS DE CONTA COM SUPORTE** ao registrar o suplemento, salve e feche o Web.config. Caso contrário, salve, mas deixe-o aberto.
 
-1. Ainda no **Explorador** de Soluções, escolha o projeto **Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da marca de fim `</VersionOverrides>`, você encontrará a marcação a seguir:
+1. Ainda no **Explorador** de Soluções, escolha o projeto **Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da `</VersionOverrides>` marca final, você encontrará a marcação a seguir.
 
     ```xml
     <WebApplicationInfo>
@@ -168,7 +168,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
     * O código implementa o sistema de autorização de fallback que o suplemento usará em situações em que o SSO não é compatível ou gera um erro.
 
-1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
+1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código.
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `retryGetAccessToken` é usada para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
     * A função `getGraphData` é definida com a palavra-chave ES6 `async`. Usar a sintaxe ES6 facilita o uso da API de SSO em Suplementos do Office. Esse é o único arquivo na solução que usará a sintaxe sem suporte do Internet Explorer. Colocamos "ES6" no nome do arquivo como um lembrete. A solução usa o transcompilador de tsc para transcompilar esse arquivo em ES5, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface do usuário. (Veja o arquivo tsconfig.json na raiz do projeto.)

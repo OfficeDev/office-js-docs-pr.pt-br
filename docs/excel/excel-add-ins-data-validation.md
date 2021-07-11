@@ -1,18 +1,18 @@
 ---
 title: Adicionar validação de dados para intervalos do Excel
-description: Saiba como as APIs JavaScript do Excel permitem que o suplemento adicione validação de dados automáticas a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho.
+description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ce792e36f9ad24eb4b26e2034c59063d65940be4
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e1f5729e6e85ff8af92968c2ad65c19e655106e2
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408548"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349522"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
-A biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione a validação de dados automáticos a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia de validação de dados, confira os seguintes artigos sobre como os usuários adicionam a validação de dados na interface do usuário do Excel:
+A biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione a validação de dados automáticos a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia da validação de dados, consulte os artigos a seguir sobre como os usuários adicionam validação de dados por meio da interface do usuário Excel usuário.
 
 - [Aplicar validação de dados às células](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
 - [Validação de dados](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
@@ -43,7 +43,7 @@ As três primeiras propriedades `DataValidationRule` (ou seja, tipos de regra de
 - `decimal` &#8212;Requer um número decimal, além de outra validação especificada pelo objeto `BasicDataValidation`.
 - `textLength` &#8212;Aplicam-se os detalhes de validação do objeto `BasicDataValidation` ao *comprimento* de valor da célula.
 
-Aqui está um exemplo de como criar uma regra de validação. Observe o seguinte sobre este código:
+Aqui está um exemplo de como criar uma regra de validação. Observe o seguinte sobre este código.
 
 - O `operator` é o operador binário "GreaterThan". Sempre que você usa um operador binário, o valor que o usuário tenta inserir na célula é o operando à esquerda e o valor especificado em `formula1` é o operando à direita. Então esta regra diz que apenas números inteiros que são maiores do que 0 são válidos. 
 - O `formula1` é um número embutido. Se não souber no momento da codificação qual é o valor, você também poderá usar uma fórmula do Excel (como uma cadeia de caracteres) para o valor. Por exemplo, "= A3" e "SOMA(A4,B5) =" também seriam valores `formula1`.
@@ -66,7 +66,7 @@ Excel.run(function (context) {
 
 Confira [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation) para uma lista de outros operadores binários. 
 
-Também há dois operadores ternários: "Between" e "NotBetween". Para usá-los, você deve especificar a propriedade `formula2` opcional. Os valores`formula1` e `formula2` são os operandos delimitadores. O valor que o usuário tenta inserir na célula é o terceiro operando (calculado). Este é um exemplo de como usar o operador "Between":
+Também há dois operadores ternários: "Between" e "NotBetween". Para usá-los, você deve especificar a propriedade `formula2` opcional. Os valores`formula1` e `formula2` são os operandos delimitadores. O valor que o usuário tenta inserir na célula é o terceiro operando (calculado). A seguir, um exemplo de uso do operador "Between".
 
 ```js
 Excel.run(function (context) {
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 
 ### <a name="list-validation-rule-type"></a>Tipos de regra de validação de lista
 
-Use a propriedade `list` do objeto `DataValidationRule` para especificar valores que são válidos apenas em uma lista finita. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código:
+Use a propriedade `list` do objeto `DataValidationRule` para especificar valores que são válidos apenas em uma lista finita. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código.
 
 - Ele pressupõe que se trata de uma planilha chamada "Nomes" e que os valores no intervalo "A1: A3" são nomes.
 - A propriedade `source` especifica a lista de valores válidos. O argumento de cadeia de caracteres se refere a um intervalo que contém os nomes. Você também pode atribuir uma lista delimitada por vírgula; por exemplo: "Lara, Pedro, Marina". 
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-validation-rule-type"></a>Tipo de regra de validação personalizada
 
-Use a propriedade `custom` no objeto `DataValidationRule` para especificar uma fórmula de validação personalizada. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código:
+Use a propriedade `custom` no objeto `DataValidationRule` para especificar uma fórmula de validação personalizada. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código.
 
 - Ele pressupõe que há uma tabela de duas colunas com as colunas **Nome do Atleta** e **Comentários** nas colunas A e B da planilha.
 - Para reduzir o nível de detalhamento na coluna **Comentários**, ela torna os dados que incluem o nome do atleta inválidos.
@@ -160,10 +160,10 @@ Excel.run(function (context) {
 
 ## <a name="create-validation-error-alerts"></a>Criar alertas de erro de validação
 
-Você pode criar um alerta de erro personalizado que aparece quando um usuário tenta inserir dados inválidos em uma célula. Apresentamos um exemplo simples a seguir. Observe o seguinte sobre este código:
+Você pode criar um alerta de erro personalizado que aparece quando um usuário tenta inserir dados inválidos em uma célula. Apresentamos um exemplo simples a seguir. Observe o seguinte sobre este código.
 
 - A propriedade `style` determina se o usuário recebe um alerta informativo, um aviso e um alerta "parar". Apenas `Stop` realmente impede que o usuário adicione dados inválidos. O pop-up para `Warning` e `Information` tem opções para permitir que o usuário insira dados inválidos assim mesmo.
-- As propriedades `showAlert` padrão para `true`. Isso significa que o Excel exibirá um alerta genérico (do tipo `Stop` ), a menos que você crie um alerta personalizado que `showAlert` define `false` ou define uma mensagem, título e estilo personalizados. O código define uma mensagem personalizada e o título.
+- As propriedades `showAlert` padrão para `true`. Isso significa Excel um alerta genérico (de tipo), a menos que você crie um alerta personalizado que define ou define uma mensagem, título e `Stop` `showAlert` estilo `false` personalizados. O código define uma mensagem personalizada e o título.
 
 ```js
 Excel.run(function (context) {
@@ -187,7 +187,7 @@ Para saber mais, confira [DataValidationErrorAlert](/javascript/api/excel/excel.
 
 ## <a name="create-validation-prompts"></a>Criar solicitações de validação
 
-Você pode criar um prompt instrutivo que é exibido quando um usuário passa o mouse sobre ele ou seleciona uma célula à qual os dados de validação foram aplicados. Este é um exemplo:
+Você pode criar um prompt instrutivo que é exibido quando um usuário passa o mouse sobre ele ou seleciona uma célula à qual os dados de validação foram aplicados. Apresentamos um exemplo a seguir.
 
 ```js
 Excel.run(function (context) {
@@ -223,6 +223,6 @@ Não é necessário que o intervalo que você desmarcar seja o mesmo intervalo d
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Objeto Application (JavaScript API para Excel)](/javascript/api/excel/excel.datavalidation)
 - [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range)

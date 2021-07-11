@@ -3,12 +3,12 @@ title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f7ef3fa3d6389629e28b428b9bdbe3b128896b1f
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094488"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350179"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
@@ -18,12 +18,12 @@ Você pode criar e depurar suplementos em um computador que não esteja executan
 
 Para começar:
 
-- Obtenha uma conta de desenvolvedor do Microsoft 365 se você ainda não tiver um ou tiver acesso a um site do SharePoint.
+- Obter uma Microsoft 365 de desenvolvedor se você ainda não tiver uma ou tiver acesso a um SharePoint site.
 
   > [!NOTE]
-  > Para obter uma assinatura de desenvolvedor do Microsoft 365, disponível em 90 dias, ingresse no [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program). Consulte a [documentação do programa para desenvolvedores do microsoft 365](/office/developer-program/office-365-developer-program) para obter instruções passo a passo sobre como participar do programa de desenvolvedor do Microsoft 365 e configurar sua assinatura.
+  > Para obter uma assinatura de desenvolvedor renovável de 90 dias Microsoft 365, participe do nosso [programa Microsoft 365 desenvolvedor.](https://developer.microsoft.com/office/dev-program) Consulte a [documentação Microsoft 365](/office/developer-program/office-365-developer-program) do programa de desenvolvedor para obter instruções passo a passo sobre como ingressar no programa Microsoft 365 desenvolvedor e configurar sua assinatura.
 
-- Configurar um catálogo de aplicativos no SharePoint Online. Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, você pode configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, confira [publicar suplementos de conteúdo e painel de tarefas em um catálogo de aplicativos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configurar um catálogo de aplicativos no SharePoint Online. Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para Office de complementos. Se você tiver seu próprio site SharePoint, poderá configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, [consulte Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Depurar seu suplemento do Excel ou Word na Web
@@ -43,15 +43,15 @@ Para depurar seu suplemento usando o Office na Web:
 
 3. Carregue o manifesto para a biblioteca de suplementos do Office no catálogo de aplicativos no SharePoint.
 
-4. Inicie o Excel ou Word na Web do inicializador de aplicativos no Microsoft 365 e abra um novo documento.
+4. Iniciar Excel ou Word na Web do launcher de aplicativos no Microsoft 365 e abra um novo documento.
 
-5. Na guia Inserir, escolha **meus** suplementos ou **suplementos do Office** para inserir seu suplemento e testá-lo no aplicativo.
+5. Na guia Inserir, escolha **Meus Complementos** ou **Office-ins** para inserir seu complemento e testá-lo no aplicativo.
 
 6. Use seu depurador de navegador favorito para depurar o suplemento.
 
 ## <a name="potential-issues"></a>Possíveis problemas
 
-A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
+A seguir estão alguns problemas que você pode encontrar ao depurar.
 
 - Alguns erros de JavaScript que você vê podem vir do Office na Web.
 

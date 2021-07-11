@@ -3,12 +3,12 @@ title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ac543719011339b3f22a6fb77f01c0e9ed6d930
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075534"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348619"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -19,7 +19,7 @@ Talvez você queira validar o arquivo de manifesto do seu suplemento para garant
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Validar o manifesto com o gerador Yeoman para Suplementos do Office
 
-Se você usou o [gerador de Yeoman para suplementos](https://www.npmjs.com/package/generator-office) do Office para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto do seu projeto. Execute o seguinte comando no diretório raiz do seu projeto:
+Se você usou o [gerador de Yeoman para suplementos](https://www.npmjs.com/package/generator-office) do Office para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto do seu projeto. Execute o seguinte comando no diretório raiz do seu projeto.
 
 ```command&nbsp;line
 npm run validate
@@ -36,20 +36,20 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 
 1. Instale o [Node.js](https://nodejs.org/download/).
 
-2. Abra um prompt de comando e instale o validador com o seguinte comando.
+1. Abra um prompt de comando e instale o validador com o seguinte comando.
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. Execute o seguinte comando *no diretório raiz do seu projeto*.
+1. Execute o seguinte comando *no diretório raiz do seu projeto*.
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > Se esse comando não estiver disponível ou não estiver funcionando, execute o seguinte comando para forçar o uso da versão mais recente da ferramenta office-addin-manifest (substituindo pelo nome do arquivo `MANIFEST_FILE` de manifesto):
+    > Se esse comando não estiver disponível ou não estiver funcionando, execute o seguinte comando para forçar o uso da versão mais recente da ferramenta office-addin-manifest (substituindo pelo nome do arquivo `MANIFEST_FILE` de manifesto).
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -63,8 +63,8 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 
 1. Instale o [tar](https://www.gnu.org/software/tar/) e o [libxml](http://xmlsoft.org/FAQ.html), caso ainda não tenha o feito.
 
-2. Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
-    
+1. Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
+
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```

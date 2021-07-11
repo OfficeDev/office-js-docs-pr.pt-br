@@ -3,12 +3,12 @@ title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075989"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349781"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -21,7 +21,7 @@ Há várias versões do Office em várias plataformas, e nem todas dão suporte 
 
 ## <a name="how-to-check-your-office-version"></a>Como verificar sua versão do Office
 
-Para identificar a versão do Office que você está usando, em um aplicativo do Office, selecione o menu **Arquivo** e escolha **Conta**. A versão do Office aparecerá na seção **Informações do Produto**. Por exemplo, a captura de tela a seguir indica o Office Versão 1802 (Build 9026.1000):
+Para identificar a versão do Office que você está usando, em um aplicativo do Office, selecione o menu **Arquivo** e escolha **Conta**. A versão do Office aparecerá na seção **informações sobre** produto. Por exemplo, a captura de tela a seguir indica a versão 1802 do Office (build 9026.1000).
 
 ![Verificar sua versão do Office.](../images/office-version.png)
 
@@ -33,7 +33,7 @@ Alguns aplicativos do Office possuem seus próprios conjuntos de requisitos de A
 
 Além disso, outras funcionalidades como comandos de suplemento (extensibilidade da faixa de opções) e a capacidade de iniciar caixas de diálogo (API de Diálogo) foram adicionadas a API comum. Os comandos de suplemento e os conjuntos de requisitos de API de Diálogo são exemplos de conjuntos de API que os diversos aplicativos do Office compartilham em comum.
 
-Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a versão do aplicativo do Office na qual ele está em execução. Para saber exatamente quais conjuntos de requisitos estão disponíveis para uma versão específica do aplicativo do Office, confira os seguintes artigos sobre conjunto de requisitos específicos ao aplicativo:
+Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a versão do aplicativo do Office em que o suplemento está em execução. Para saber exatamente quais conjuntos de requisitos estão disponíveis para uma versão específica do aplicativo do Office, consulte os seguintes artigos do conjunto de requisitos específicos do aplicativo.
 
 - [Conjuntos de requisitos de API JavaScript para Excel](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Conjuntos de requisitos de API JavaScript para Word](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -41,7 +41,7 @@ Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a v
 - [Conjuntos de requisitos da API JavaScript do PowerPoint](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Noções básicas sobre os conjuntos de requisitos da API do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md) (Caixa de Correio)
 
-Alguns conjuntos de requisito contêm APIs que podem ser usadas por qualquer aplicativo do Office. Para saber mais sobre esses conjuntos de requisitos, confira estes artigos:
+Alguns conjuntos de requisitos contêm APIs que podem ser usadas por qualquer aplicativo do Office. Para obter informações sobre esses conjuntos de requisitos, consulte os artigos a seguir.
 
 - [Conjuntos de requisitos comuns do Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Conjuntos de requisitos dos comandos de suplemento](../reference/requirement-sets/add-in-commands-requirement-sets.md)

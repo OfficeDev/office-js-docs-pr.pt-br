@@ -1,14 +1,14 @@
 ---
 title: Elemento Action no arquivo de manifesto
 description: Esse elemento especifica a ação a ser executar quando o usuário seleciona um botão ou um controle de menu.
-ms.date: 02/12/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505406"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348696"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -26,8 +26,8 @@ Especifica a ação a ser executar quando o usuário seleciona um [controle Butt
 |:-----|:-----|
 |  [FunctionName](#functionname) |    Especifica o nome da função a executar. |
 |  [SourceLocation](#sourcelocation) |    Especifica o local do arquivo de origem para essa ação. |
-|  [TaskpaneId](#taskpaneid) | Especifica a ID do contêiner do painel de tarefas.|
-|  [Title](#title) | Especifica o título personalizado do painel de tarefas.|
+|  [TaskpaneId](#taskpaneid) | Especifica a ID do contêiner do painel de tarefas. Não há suporte em Outlook de complementos.|
+|  [Title](#title) | Especifica o título personalizado do painel de tarefas. Não há suporte em Outlook de complementos.|
 |  [SupportsPinning](#supportspinning) | Especifica se um painel de tarefas tem suporte para fixação, que mantém o painel de tarefas aberto quando o usuário altera a seleção.|
 
 ## <a name="xsitype"></a>xsi:type
@@ -106,6 +106,9 @@ O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Par
 
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
 
+> [!NOTE]
+> Esse elemento filho não é suportado em Outlook de complementos.
+
 O exemplo a seguir mostra uma ação que usa o **elemento Title.** Observe que você não atribui o **Título** a uma cadeia de caracteres diretamente. Em vez disso, você atribui a ele uma ID de recurso (resid), que é definida na seção **Recursos** do manifesto e não pode ter mais de 32 caracteres.
 
 ```xml
@@ -134,7 +137,7 @@ O exemplo a seguir mostra uma ação que usa o **elemento Title.** Observe que v
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Embora o elemento tenha sido introduzido no conjunto de requisitos `SupportsPinning` [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele atualmente só tem suporte para assinantes do Microsoft 365 usando o seguinte.
+> Embora o elemento tenha sido introduzido no conjunto de requisitos `SupportsPinning` [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele é atualmente suportado apenas para assinantes Microsoft 365 usando o seguinte:
 >
 > - Outlook 2016 ou posterior no Windows (build 7628.1000 ou posterior)
 > - Outlook 2016 ou posterior no Mac (build 16.13.503 ou posterior)

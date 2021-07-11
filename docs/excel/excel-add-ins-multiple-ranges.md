@@ -1,14 +1,14 @@
 ---
 title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
-description: Saiba como a biblioteca JavaScript do Excel permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
+description: Saiba como a Excel javaScript permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650888"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349494"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
@@ -75,7 +75,7 @@ Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-o
 
 ### <a name="rangearea-specific-properties-and-methods"></a>Métodos e propriedades específicos do RangeArea
 
-O tipo `RangeAreas` tem alguns métodos e propriedades que não estão no objeto `Range`. Esta é a seleção deles:
+O tipo `RangeAreas` tem alguns métodos e propriedades que não estão no objeto `Range`. A seguir, uma seleção deles.
 
 - `areas`: O objeto `RangeCollection` que contém todos os intervalos representados pelo objeto `RangeAreas`. O objeto `RangeCollection` também é novidade e é semelhante a outros objetos do conjunto do Excel. É uma propriedade `items` que é uma matriz de objetos `Range` que representam os intervalos.
 - `areaCount`: O número total de intervalos em `RangeAreas`.
@@ -128,7 +128,7 @@ Ao chamar as `getSpecialCells` ou `getSpecialCellsOrNullObject` método em um `R
 
 ## <a name="read-properties-of-rangeareas"></a>Ler propriedades de RangeAreas
 
-A leitura de valores de propriedade `RangeAreas` requer cuidados, porque uma determinada propriedade pode ter valores diferentes para intervalos diferentes dentro de`RangeAreas`. A regra geral é que, se um valor consistente *puder* ser retornado, ele será retornado. Por exemplo, no código a seguir, O código RGB para pink (`#FFC0CB`) e `true` será registrado no console porque ambos os intervalos no objeto `RangeAreas` têm um preenchimento rosa e ambos são colunas inteiras.
+A leitura de valores de propriedade `RangeAreas` requer cuidados, porque uma determinada propriedade pode ter valores diferentes para intervalos diferentes dentro de`RangeAreas`. A regra geral é que, se um valor consistente *puder* ser retornado, ele será retornado. Por exemplo, no código a seguir, o código RGB para rosa ( ) e será registrado no console porque ambos os intervalos no objeto têm um preenchimento rosa e ambos são `#FFC0CB` `true` `RangeAreas` colunas inteiras.
 
 ```js
 Excel.run(function (context) {
@@ -180,4 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Ler ou gravar em um intervalo grande usando a API JavaScript do Excel](excel-add-ins-ranges-large.md)
+- [Ler ou gravar em um intervalo grande usando a EXCEL JavaScript](excel-add-ins-ranges-large.md)

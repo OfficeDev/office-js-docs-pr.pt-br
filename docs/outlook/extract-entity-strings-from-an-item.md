@@ -3,12 +3,12 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 987ba7626acb95bd5090e2f2350f71ecc8701e59
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608940"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348969"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
@@ -205,7 +205,7 @@ As seções restantes descrevem como essa amostra (arquivo default_entities.js) 
 
 ## <a name="extracting-entities-upon-initialization"></a>Extrair entidades na inicialização
 
-Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável global `_MyEntities` uma matriz de instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
+Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável global uma matriz de `_MyEntities` instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -258,7 +258,7 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>Extrair informações de contato
 
 
-Quando o usuário clica no botão **Obter Informações de Contato**, o manipulador de eventos `myGetContacts` obtém uma matriz de contatos em conjunto com suas informações da propriedade [contacts](/javascript/api/outlook/office.entities#contacts) do objeto `_MyEntities`, caso algum seja extraído. Cada contato extraído é armazenado como o objeto [Contact](/javascript/api/outlook/office.contact) na matriz. `myGetContacts` obtém mais dados sobre cada contato. Observe que o contexto determina se o Outlook pode extrair um contato de um item&mdash; uma assinatura no final de uma mensagem de email ou ao menos algumas das informações seguintes teriam que existir perto do contato:
+Quando o usuário clica no botão **Obter** Informações de Contato, o manipulador de eventos obtém uma matriz de contatos juntamente com suas informações da propriedade contacts do objeto, se algum tiver sido `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` extraído. Cada contato extraído é armazenado como o objeto [Contact](/javascript/api/outlook/office.contact) na matriz. `myGetContacts` obtém mais dados sobre cada contato. Observe que o contexto determina se Outlook pode extrair um contato de um item uma assinatura no final de uma mensagem de email ou pelo menos algumas das informações a seguir teriam que existir nas proximidades do &mdash; contato.
 
 
 - A cadeia de caracteres que representa o nome do contato da propriedade [Contact.personName](/javascript/api/outlook/office.contact#personname).
@@ -373,7 +373,7 @@ Quando o usuário clica no botão **Obter Sugestões de Reunião**, o manipulado
 
 
  > [!NOTE]
- > Somente as mensagens, mas não os compromissos, dão suporte ao `MeetingSuggestion` tipo de entidade.
+ > Somente mensagens, mas não compromissos, suportam o `MeetingSuggestion` tipo de entidade.
 
 Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) na matriz. `myGetMeetingSuggestions` obtém dados adicionais sobre cada sugestão de reunião:
 

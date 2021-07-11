@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo novo para Office de complementos
 description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076508"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349312"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
@@ -34,7 +34,7 @@ Siga estas diretrizes ao criar seus ícones:
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Recomendações e requisitos de tamanho de ícone
 
-Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos diferentes serão renderizados, dependendo do modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos com suporte. Estes são os tamanhos compatíveis (três são obrigatórios):
+Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos diferentes serão renderizados, dependendo do modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos com suporte. A seguir estão os tamanhos suportados : três são necessários.
 
 - 16 px (obrigatório)
 - 20 px
@@ -91,7 +91,7 @@ Todos os modificadores devem ter um recorte transparente de 1 px entre cada elem
 > [!NOTE]
 > Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são renderizados com Fluent interface do usuário e a paleta de cores é diferente da paleta descrita no [Microsoft UI Fabric | Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
 
-Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor:
+Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes ao uso da cor.
 
 - Use cor para transmitir significado, não como enfeite. Ela deve destacar ou enfatizar uma ação, status ou um elemento que diferencie explicitamente a marca.
 - Se possível, use somente uma cor além do cinza. Limite as cores adicionais a no máximo duas.
@@ -122,7 +122,7 @@ Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na
 
 ## <a name="icons-in-high-contrast-modes"></a>Ícones em modos de alto contraste
 
-Os ícones do Office foram projetados para renderizar bem em modos de alto contraste. Elementos de primeiro plano são bem diferenciados dos planos de fundo para maximizar a legibilidade e habilitar a recoloração. Nos modos de alto contraste, o Office recolore qualquer pixel do seu ícone com um valor vermelho, verde ou azul menor que 190 para totalmente preto. Todos os outros pixels ficam na cor branca. Em outras palavras, cada canal RGB é avaliado onde, os valores de 0 a 189 ficam pretos e os valores de 190 a 255 ficam brancos. Outros temas de alto contraste fazem a recoloração usando o mesmo limite de valor de 190, mas com regras diferentes. Por exemplo, o tema de branco de alto contraste recolore todos pixels maiores que 190 para opaco, mas todos os outros pixels para transparente. Aplique as seguintes diretrizes para maximizar a legibilidade em configurações de alto contraste:
+Os ícones do Office foram projetados para renderizar bem em modos de alto contraste. Elementos de primeiro plano são bem diferenciados dos planos de fundo para maximizar a legibilidade e habilitar a recoloração. Nos modos de alto contraste, o Office recolore qualquer pixel do seu ícone com um valor vermelho, verde ou azul menor que 190 para totalmente preto. Todos os outros pixels ficam na cor branca. Em outras palavras, cada canal RGB é avaliado onde, os valores de 0 a 189 ficam pretos e os valores de 190 a 255 ficam brancos. Outros temas de alto contraste fazem a recoloração usando o mesmo limite de valor de 190, mas com regras diferentes. Por exemplo, o tema de branco de alto contraste recolore todos pixels maiores que 190 para opaco, mas todos os outros pixels para transparente. Aplique as diretrizes a seguir para maximizar a legibilidade em configurações de alto contraste.
 
 - Vise diferenciar elementos de primeiro plano e de plano de fundo ao longo do limite de valor de 190.
 - Siga os estilos visuais dos ícones do Office.

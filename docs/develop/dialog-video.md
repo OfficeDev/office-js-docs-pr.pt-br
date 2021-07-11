@@ -3,12 +3,12 @@ title: Use a caixa de diálogo do Office para reproduzir um vídeo
 description: Saiba como abrir e reproduzir um vídeo na caixa Office caixa de diálogo
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: bc69827164f2e5a2fed03239566ff814db0397b9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2519b2f105503a0479eee07d885a1543f5455343
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076066"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349879"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Use a caixa Office caixa de diálogo para mostrar um vídeo
 
@@ -19,7 +19,7 @@ Este artigo explica como reproduzir um vídeo em uma caixa de Office caixa de di
 
 Para reproduzir um vídeo em uma caixa de diálogo com a API de Office de diálogo, siga estas etapas:
 
-1. Crie uma página contendo um iframe e nenhum outro conteúdo. A página deve estar no mesmo domínio que a página host. Para um lembrete do que é uma página host, consulte Abrir uma caixa [de diálogo de uma página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). No atributo `src` do iframe, aponte para a URL de um vídeo online. O protocolo da URL do vídeo deve ser HTTPS. Neste artigo, chamaremos essa página de "video.dialogbox.html". Veja a seguir um exemplo da marcação:
+1. Crie uma página contendo um iframe e nenhum outro conteúdo. A página deve estar no mesmo domínio que a página host. Para um lembrete do que é uma página host, consulte Abrir uma caixa [de diálogo de uma página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). No atributo `src` do iframe, aponte para a URL de um vídeo online. O protocolo da URL do vídeo deve ser HTTPS. Neste artigo, chamaremos essa página de "video.dialogbox.html". Veja a seguir um exemplo da marcação.
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"

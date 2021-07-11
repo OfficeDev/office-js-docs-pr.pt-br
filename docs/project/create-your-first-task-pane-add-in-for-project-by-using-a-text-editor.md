@@ -3,12 +3,12 @@ title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Proj
 description: Crie um complemento do painel de tarefas para o Project Standard 2013, Project Professional 2013 ou versões posteriores usando o gerador Yeoman para Office Desempois.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d7a627cceff18d908ab9905efc6c5c08c0cee7c1
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076963"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348416"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -69,7 +69,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
 ## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procedimento 2. Para criar os arquivos de origem para o suplemento Teste de modelo de objeto do Project
 
-1. Crie um arquivo HTML com um nome especificado pelo `SourceLocation` elemento no JSOM_SimpleOMCalls.xml manifesto. 
+1. Crie um arquivo HTML com um nome especificado pelo `SourceLocation` elemento no JSOM_SimpleOMCalls.xml manifesto.
 
    Por exemplo, crie o arquivo JSOMCall.html no diretório `C:\Project\AppSource`. Embora você possa usar um editor de texto simples para criar os arquivos de origem, é mais fácil usar uma ferramenta como Visual Studio Code, que funciona com tipos de documento específicos (como HTML e JavaScript) e tem outros auxílios de edição. Se você ainda não tiver feito o exemplo da Pesquisa do Bing descrito em [Suplementos de painel de tarefas para Project](../project/project-add-ins.md), o Procedimento 3 mostra como criar o `\\ServerName\AppSource` compartilhamento de arquivos que o manifesto especifica.
 
@@ -105,7 +105,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    A etapa 2 adiciona o arquivo JSOM_Sample.js para funções específicas que o suplemento de amostra de Teste de modelo de objeto do Project utiliza. Nas etapas posteriores, você adicionará outros elementos HTML para botões que acionam funções de JavaScript.
 
-2. Crie um arquivo JavaScript denominado JSOM_Sample.js na mesma pasta do arquivo de JSOMCall.html. 
+1. Crie um arquivo JavaScript denominado JSOM_Sample.js na mesma pasta do arquivo de JSOMCall.html.
 
    O código a seguir obtém as informações de contexto e documentação do aplicativo usando funções no arquivo Office.js. O `text` objeto é a ID do controle no arquivo `textarea` HTML.
 
@@ -174,7 +174,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    Para obter informações sobre as funções no arquivo Office.debug.js, [consulte Office API JavaScript](../reference/javascript-api-for-office.md). Por exemplo, a `getDocumentUrl` função obtém a URL ou o caminho do arquivo do projeto aberto.
 
-3. Adicione funções JavaScript que chamam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
+1. Adicione funções JavaScript que chamam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
 
    - Por exemplo, `getSelectedDataAsync` é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](/javascript/api/office/office.asyncresult).
 
@@ -549,7 +549,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-4. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro _operation._ A operação pode ser `addHandlerAsync` ou `removeHandlerAsync` .
+1. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro _operation._ A operação pode ser `addHandlerAsync` ou `removeHandlerAsync` .
 
    As funções , e podem adicionar ou remover um manipulador de eventos, conforme `manageTaskEventHandler` `manageResourceEventHandler` especificado pelo parâmetro `manageViewEventHandler` _docMethod._
 
@@ -625,7 +625,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-5. Para o corpo do documento HTML, adicione botões que chamam funções JavaScript para teste. Por exemplo, no elemento da API JSOM comum, adicione um botão `div` de entrada que chama a função `getSelectedDataAsync` geral.
+1. Para o corpo do documento HTML, adicione botões que chamam funções JavaScript para teste. Por exemplo, no elemento da API JSOM comum, adicione um botão `div` de entrada que chama a função `getSelectedDataAsync` geral.
 
     ```HTML
     <body>
@@ -640,7 +640,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
         <!--  more code . . .  -->
     ```
 
-6. Adicione uma seção com botões para funções de tarefa `div` específicas do projeto e para o `TaskSelectionChanged` evento.
+1. Adicione uma seção com botões para funções de tarefa `div` específicas do projeto e para o `TaskSelectionChanged` evento.
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -656,7 +656,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     </div>
     ```
 
-7. Adicionar seções com botões para os métodos e eventos de recursos, exibir métodos e eventos, propriedades `div` do projeto e propriedades de contexto
+1. Adicionar seções com botões para os métodos e eventos de recursos, exibir métodos e eventos, propriedades `div` do projeto e propriedades de contexto
 
     ```HTML
     <div id="ResourceMethods">
@@ -688,7 +688,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     </div>
     ```
 
-8. Para formatar os elementos do botão, adicione um elemento `style` CSS. Por exemplo, adicione o seguinte como filho do `head` elemento.
+1. Para formatar os elementos do botão, adicione um elemento `style` CSS. Por exemplo, adicione o seguinte como filho do `head` elemento.
 
     ```HTML
     <style type="text/css">
@@ -709,49 +709,49 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
 
 ## <a name="procedure-3-to-install-and-use-the-project-om-test-add-in"></a>Procedimento 3. Para instalar e usar o suplemento Teste de modelo de objeto do Project
 
-1. Crie um compartilhamento de arquivos para o diretório que contém o manifesto JSOM_SimpleOMCalls.xml. Você pode criar o compartilhamento de arquivos no computador local ou em um computador remoto que esteja acessível na rede. Por exemplo, se o manifesto estiver no diretório `C:\Project\AppManifests` no computador local, execute o seguinte comando:
+1. Crie um compartilhamento de arquivos para o diretório que contém o manifesto JSOM_SimpleOMCalls.xml. Você pode criar o compartilhamento de arquivos no computador local ou em um computador remoto que esteja acessível na rede. Por exemplo, se o manifesto estiver no diretório no  `C:\Project\AppManifests` computador local, execute o seguinte comando.
 
     `Net share AppManifests=C:\Project\AppManifests`
 
-2. Crie um compartilhamento de arquivos para o diretório que contenha os arquivos HTML e JavaScript para o suplemento Teste de modelo de objeto do Project. Verifique se o caminho de compartilhamento do arquivo corresponde ao caminho especificado no manifesto JSOM_SimpleOMCalls.xml. Por exemplo, se os arquivos estão no diretório `C:\Project\AppSource` no computador local, execute o seguinte comando:
+1. Crie um compartilhamento de arquivos para o diretório que contenha os arquivos HTML e JavaScript para o suplemento Teste de modelo de objeto do Project. Verifique se o caminho de compartilhamento do arquivo corresponde ao caminho especificado no manifesto JSOM_SimpleOMCalls.xml. Por exemplo, se os arquivos estão no diretório no  `C:\Project\AppSource` computador local, execute o seguinte comando.
 
     `net share AppSource=C:\Project\AppSource`
 
-3. Em Project, abra **Project** caixa de diálogo Opções, escolha Central de Confiação **e** escolha Central de Confia **Configurações**.
+1. Em Project, abra **Project** caixa de diálogo Opções, escolha Central de Confiação **e** escolha Central de Confia **Configurações**.
 
    O procedimento para registrar um suplemento também está descrito em [Suplementos do painel de tarefas para o Project](../project/project-add-ins.md), com informações adicionais.
 
-4. Na caixa de diálogo **Central de Confiabilidade**, no painel esquerdo, escolha **Catálogos de Suplementos Confiáveis**.
+1. Na caixa de diálogo **Central de Confiabilidade**, no painel esquerdo, escolha **Catálogos de Suplementos Confiáveis**.
 
-5. Se você já adicionou o `\\ServerName\AppManifests` caminho para o Bing de Pesquisa, ignore esta etapa. Caso contrário, no painel Catálogos de **Complementos** Confiáveis, adicione o caminho na caixa de texto Url do Catálogo, escolha Adicionar catálogo , habilita o compartilhamento de rede como uma fonte padrão (consulte a Figura `\\ServerName\AppManifests`  1) e escolha **OK**. 
+1. Se você já adicionou o `\\ServerName\AppManifests` caminho para o Bing de Pesquisa, ignore esta etapa. Caso contrário, no painel Catálogos de **Complementos** Confiáveis, adicione o caminho na caixa de texto Url do Catálogo, escolha Adicionar catálogo , habilita o compartilhamento de rede como uma fonte padrão (consulte a Figura `\\ServerName\AppManifests`  1) e escolha **OK**. 
 
    *Figura 1. Adicionar um compartilhamento de arquivos de rede para manifestos de suplementos*
 
    ![Adicionando um compartilhamento de arquivos de rede para manifestos de aplicativo.](../images/pj15-create-simple-agave-manage-catalogs.png)
 
-6. Depois de adicionar novos suplementos ou alterar o código-fonte, reinicie o Project. Na faixa de opções **PROJECT,** escolha o menu suspenso de Office de **complementos** e escolha **Ver Tudo**. Na caixa de diálogo Inserir **Add-in,** escolha **PASTA COMPARTILHADA** (consulte a Figura 2), selecione Project **OM Test** e, em seguida, escolha **Inserir**. O suplemento Teste de modelo de objeto do Project inicia em um painel de tarefas.
+1. Depois de adicionar novos suplementos ou alterar o código-fonte, reinicie o Project. Na faixa de opções **PROJECT,** escolha o menu suspenso de Office de **complementos** e escolha **Ver Tudo**. Na caixa de diálogo Inserir **Add-in,** escolha **PASTA COMPARTILHADA** (consulte a Figura 2), selecione Project **OM Test** e, em seguida, escolha **Inserir**. O suplemento Teste de modelo de objeto do Project inicia em um painel de tarefas.
 
    *Figura 2. Iniciando o suplemento do Teste de Modelo de Objeto do Project contido em um compartilhamento de arquivo*
 
    ![Inserir um aplicativo.](../images/pj15-create-simple-agave-start-agave-app.png)
 
-7. No Project, crie e salve um projeto simples que tenha pelo menos duas tarefas. Por exemplo, crie tarefas chamadas T1 e T2 e um marco chamado M1, e defina as durações das tarefas e os predecessores de maneira semelhante à Figura 3. Escolha a **guia PROJECT** na faixa de opções, selecione a linha inteira para a tarefa T2 e escolha o botão **getSelectedDataAsync** no painel de tarefas. A Figura 3 mostra os dados que estão selecionados na caixa de texto do suplemento **Teste de modelo de objeto do Project**.
+1. No Project, crie e salve um projeto simples que tenha pelo menos duas tarefas. Por exemplo, crie tarefas chamadas T1 e T2 e um marco chamado M1, e defina as durações das tarefas e os predecessores de maneira semelhante à Figura 3. Escolha a **guia PROJECT** na faixa de opções, selecione a linha inteira para a tarefa T2 e escolha o botão **getSelectedDataAsync** no painel de tarefas. A Figura 3 mostra os dados que estão selecionados na caixa de texto do suplemento **Teste de modelo de objeto do Project**.
 
    *Figura 3. Usando o suplemento do Teste de Modelo de Objeto do Project*
 
    ![Usando o Project OM Test.](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. Selecione a célula na coluna **Duração** da primeira tarefa e escolha o botão **getSelectedDataAsync** no Project de Teste **de OM.** A `getSelectedDataAsync` função define o valor da caixa de texto para mostrar `2 days` . 
+1. Selecione a célula na coluna **Duração** da primeira tarefa e escolha o botão **getSelectedDataAsync** no Project de Teste **de OM.** A `getSelectedDataAsync` função define o valor da caixa de texto para mostrar `2 days` . 
 
-9. Selecione as três **células Duration** para todas as três tarefas. A função retorna valores de texto separados por ponto-e-vírgula para células selecionadas em linhas `getSelectedDataAsync` diferentes, por exemplo, `2 days;4 days;0 days` .
+1. Selecione as três **células Duration** para todas as três tarefas. A função retorna valores de texto separados por ponto-e-vírgula para células selecionadas em linhas `getSelectedDataAsync` diferentes, por exemplo, `2 days;4 days;0 days` .
 
    A função retorna valores de texto `getSelectedDataAsync` separados por vírgulas para células selecionadas em uma linha. Por exemplo, na Figura 3, a linha inteira da tarefa T2 está selecionada. Quando você escolhe `getSelectedDataAsync` , a caixa de texto mostra o seguinte:  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
    A **coluna Indicadores** e **a coluna Nomes** de Recursos estão vazias, portanto, a matriz de texto mostra valores vazios para essas colunas. O valor `<NA>` é para a célula **Adicionar Nova Coluna**.
 
-10. Selecione qualquer célula na linha para a tarefa T2 ou a linha inteira para a tarefa T2 e escolha **getSelectedTaskAsync**. A caixa de texto mostra o valor de tarefa do GUID, por exemplo, `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project armazena esse valor na variável global `taskGuid` do Project de teste de **OM.**
+1. Selecione qualquer célula na linha para a tarefa T2 ou a linha inteira para a tarefa T2 e escolha **getSelectedTaskAsync**. A caixa de texto mostra o valor de tarefa do GUID, por exemplo, `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project armazena esse valor na variável global `taskGuid` do Project de teste de **OM.**
 
-11. Selecione `getTaskAsync` . Se a `taskGuid` variável contiver o GUID da tarefa T2, a caixa de texto exibirá as informações da tarefa. O valor **ResourceNames** fica vazio.
+1. Selecione `getTaskAsync` . Se a `taskGuid` variável contiver o GUID da tarefa T2, a caixa de texto exibirá as informações da tarefa. O valor **ResourceNames** fica vazio.
 
     Crie dois recursos locais R1 eR2, atribua-os à tarefa T2 em 50% cada e escolha **getTaskAsync** novamente. Os resultados na caixa de texto incluem as informações do recurso. Se a tarefa estiver em uma lista de tarefas do SharePoint sincronizada, os resultados também incluirão a ID da tarefa do SharePoint.
 
@@ -760,7 +760,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Id da WSS: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. Selecione o **botão Obter Campos de** Tarefa. A função chama a função várias vezes para o `getTaskFields` `getTaskfieldAsync` nome da tarefa, índice, data de início, duração, prioridade e anotações de tarefa.
+1. Selecione o **botão Obter Campos de** Tarefa. A função chama a função várias vezes para o `getTaskFields` `getTaskfieldAsync` nome da tarefa, índice, data de início, duração, prioridade e anotações de tarefa.
 
     - Nome: `T2`
     - ID: `2`
@@ -769,7 +769,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Prioridade: `500`
     - Observações: essa é uma anotação de tarefa T2. É apenas uma anotação de teste. Se fosse uma anotação de verdade, teria algumas informações reais.
 
-13. Selecione o botão **getWSSUrlAsync**. Se o projeto é um dos tipos a seguir, os resultados mostram a URL e o nome da lista de tarefas.
+1. Selecione o botão **getWSSUrlAsync**. Se o projeto é um dos tipos a seguir, os resultados mostram a URL e o nome da lista de tarefas.
 
     - Uma lista de tarefas do SharePoint importada no Project Server.
     - Uma lista de tarefas do SharePoint importada no Project Professional, depois salva novamente no SharePoint (sem usar o Project Server).
@@ -782,9 +782,9 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - URL do SharePoint: `http://ServerName`
     - Nome da lista: `Test task list`
 
-14. Selecione o **botão Adicionar** na seção **Evento TaskSelectionChanged,** que chama a função para registrar um evento alterado de seleção de tarefas e retorna `manageTaskEventHandler` na caixa de `In onComplete function for addHandlerAsync Status: succeeded` texto. Selecione uma tarefa diferente; a caixa de texto mostra , que é a saída da função de retorno de `In task selection changed event handler` chamada para o evento de seleção de tarefas alterado. Escolha o **botão Remover** para não fazer o registro do manipulador de eventos.
+1. Selecione o **botão Adicionar** na seção **Evento TaskSelectionChanged,** que chama a função para registrar um evento alterado de seleção de tarefas e retorna `manageTaskEventHandler` na caixa de `In onComplete function for addHandlerAsync Status: succeeded` texto. Selecione uma tarefa diferente; a caixa de texto mostra , que é a saída da função de retorno de `In task selection changed event handler` chamada para o evento de seleção de tarefas alterado. Escolha o **botão Remover** para não fazer o registro do manipulador de eventos.
 
-15. Para usar os métodos de recurso, primeiro selecione um modo de exibição como **Folha** de **Recursos,** Uso de Recursos ou Formulário de Recurso **e** selecione um recurso nesse modo de exibição. Escolha **getSelectedResourceAsync** para inicializar a variável **resourceGuid** e, em seguida, escolha **Obter** Campos de Recurso para chamar várias vezes para as propriedades `getResourceFieldAsync` do recurso. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção do recurso.
+1. Para usar os métodos de recurso, primeiro selecione um modo de exibição como **Folha** de **Recursos,** Uso de Recursos ou Formulário de Recurso **e** selecione um recurso nesse modo de exibição. Escolha **getSelectedResourceAsync** para inicializar a variável **resourceGuid** e, em seguida, escolha **Obter** Campos de Recurso para chamar várias vezes para as propriedades `getResourceFieldAsync` do recurso. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção do recurso.
 
     - Nome do recurso: `R1`
     - Custo: `$800.00`
@@ -793,12 +793,12 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Trabalho real: `0h`
     - Unidades: `100%`
 
-16. Selecione **getSelectedViewAsync** para mostrar o tipo e o nome do exibição ativo. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção de exibição. Por exemplo, se **o Formulário de Recurso** for o exibição ativo, a função `getSelectedViewAsync` mostrará o seguinte na caixa de texto:
+1. Selecione **getSelectedViewAsync** para mostrar o tipo e o nome do exibição ativo. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção de exibição. Por exemplo, se **o Formulário de** Recurso for o exibição ativo, a função `getSelectedViewAsync` mostrará o seguinte na caixa de texto.
 
     - Tipo de exibição: `6`
     - Nome: `Resource Form`
 
-17. Selecione **Obter Project Campos** para chamar a função várias vezes para diferentes propriedades do projeto `getProjectFieldAsync` ativo. Se o projeto for aberto Project Web App, a função poderá obter a URL da instância Project `getProjectFieldAsync` Web App.
+1. Selecione **Obter Project Campos** para chamar a função várias vezes para diferentes propriedades do projeto `getProjectFieldAsync` ativo. Se o projeto for aberto Project Web App, a função poderá obter a URL da instância Project `getProjectFieldAsync` Web App.
 
     - GUID do projeto: `9845922E-DAB4-E111-8AF3-00155D3BA208`
     - Início: `Tue 6/12/12`
@@ -808,14 +808,14 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Posição do símbolo: `0`
     - URL do Project Web App: `http://servername/pwa`
   
-18. Selecione o **botão Obter valores** de contexto obter propriedades do documento e do aplicativo no qual o complemento está sendo executado, recebendo propriedades do objetoOffice.Context.doc **ument** e do `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
+1. Selecione o **botão Obter valores** de contexto obter propriedades do documento e do aplicativo no qual o complemento está sendo executado, recebendo propriedades do objetoOffice.Context.doc **ument** e do `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
 
     - URL do documento: `<>\Project1`
     - Modo do documento: `readWrite`
     - Idioma do aplicativo: `en-US`
     - Idioma de exibição: `en-US`
 
-19. Você pode atualizar o suplemento após editar o código-fonte fechando e reiniciando o Project. Na faixa **Project,** a lista de Office listada de Complementos mantém a lista de **complementos** usados recentemente.
+1. Você pode atualizar o suplemento após editar o código-fonte fechando e reiniciando o Project. Na faixa **Project,** a lista de Office listada de Complementos mantém a lista de **complementos** usados recentemente.
 
 ## <a name="example"></a>Exemplo
 

@@ -4,12 +4,12 @@ description: Saiba como executar tarefas comuns com as guias de trabalho ou recu
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290751"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349424"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -314,7 +314,7 @@ Excel.run(async (context) => {
 
 ### <a name="set-calculation-mode"></a>Configurar o modo de cálculo
 
-Por padrão, o Excel recalcula os resultados das fórmulas sempre que uma célula referenciada é alterada. O desempenho de seu suplemento pode se beneficiar do ajuste desse comportamento de cálculo. O objeto Application tem uma propriedade `calculationMode` do tipo `CalculationMode`. Esta propriedade pode ser configurada com os seguintes valores:
+Por padrão, o Excel recalcula os resultados das fórmulas sempre que uma célula referenciada é alterada. O desempenho de seu suplemento pode se beneficiar do ajuste desse comportamento de cálculo. O objeto Application tem uma propriedade `calculationMode` do tipo `CalculationMode`. Ele pode ser definido para os seguintes valores.
 
 - `automatic`: O comportamento de recálculo padrão em que o Excel calcula novos resultados das fórmulas sempre que o dado relevante é alterado.
 - `automaticExceptTables`: Igual a `automatic`, exceto que as alterações feitas nos valores em tabelas serão ignoradas.
@@ -322,7 +322,7 @@ Por padrão, o Excel recalcula os resultados das fórmulas sempre que uma célul
 
 ### <a name="set-calculation-type"></a>Configurar o tipo de cálculo
 
-O objeto [Application](/javascript/api/excel/excel.application) fornece um método para forçar um recálculo imediato. `Application.calculate(calculationType)` inicia o recálculo manual baseado no `calculationType` especificado. Os seguintes valores podem ser especificados:
+O objeto [Application](/javascript/api/excel/excel.application) fornece um método para forçar um recálculo imediato. `Application.calculate(calculationType)` inicia o recálculo manual baseado no `calculationType` especificado. Os valores a seguir podem ser especificados.
 
 - `full`: Recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
 - `fullRebuild`: Verifique as fórmulas dependentes e depois recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
@@ -377,7 +377,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
 
-`Workbook.save` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional `saveBehavior` que pode ter um dos seguintes valores:
+`Workbook.save` salva a pasta de trabalho para armazenamento persistente. O `save` método tem um único parâmetro opcional que pode ser um dos seguintes `saveBehavior` valores.
 
 - `Excel.SaveBehavior.save` (padrão): o arquivo será salvo sem solicitar que o usuário especifique o nome do arquivo e local de salvamento. Se o arquivo não tiver sido salvo anteriormente, ele será salvo no local padrão. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local.
 - `Excel.SaveBehavior.prompt`: se o arquivo ainda não foi salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local de salvamento. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local sem que o usuário seja solicitado.
@@ -391,7 +391,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
 
-`Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional `closeBehavior` que pode ter um dos seguintes valores:
+`Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O `close` método tem um único parâmetro opcional que pode ser um dos seguintes `closeBehavior` valores.
 
 - `Excel.CloseBehavior.save` (padrão): o arquivo será salvo antes de fechar. Se o arquivo não tiver sido salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local para salvá-lo.
 - `Excel.CloseBehavior.skipSave`: o arquivo é fechado imediatamente, sem ser salvo. Quaisquer alterações não salvas serão perdidas.

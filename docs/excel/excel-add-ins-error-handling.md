@@ -1,21 +1,21 @@
 ---
-title: Tratamento de erros com a API JavaScript do Excel
-description: Saiba mais sobre a lógica de tratamento de erros da API JavaScript do Excel para levar em conta os erros de tempo de execução.
+title: Tratamento de erros com a EXCEL JavaScript
+description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
 ms.date: 01/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 00aa1ae1c8ed39b21146d86090df912a8804c8b3
-ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
+ms.openlocfilehash: 42ef52b5d20a2c2d1284f57c7b4026ff2c71ebdd
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "49908903"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349508"
 ---
-# <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a API JavaScript do Excel
+# <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
 Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
 
 > [!NOTE]
-> Para obter mais informações sobre o método e a natureza assíncrona da API JavaScript do Excel, confira o modelo de objeto JavaScript do Excel nos `sync()` [Complementos do Office.](excel-add-ins-core-concepts.md)
+> Para obter mais informações sobre o método e a natureza assíncrona da API JavaScript Excel, consulte Excel modelo de objeto `sync()` [JavaScript em Office Add-ins](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -36,7 +36,7 @@ Excel.run(function (context) {
 
 ## <a name="api-errors"></a>Erros de API
 
-Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API retorna um objeto de erro que contém as seguintes propriedades:
+Quando uma solicitação Excel API JavaScript falha ao executar com êxito, a API retorna um objeto de erro que contém as seguintes propriedades.
 
 - **code**:  A propriedade `code` de uma mensagem de erro contém uma cadeia de caracteres que faz parte da lista `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes`. Por exemplo, o código de erro "InvalidReference" indica que a referência não é válida para a operação especificada. Os códigos de erro não são localizados.
 
@@ -45,7 +45,7 @@ Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API 
 - **debugInfo**: Quando presente, a propriedade `debugInfo` da mensagem de erro fornece informações adicionais que você pode usar para compreender a causa raiz do erro.
 
 > [!NOTE]
-> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do complemento ou em qualquer lugar no aplicativo do Office.
+> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do complemento ou em qualquer lugar no Office aplicativo.
 
 ## <a name="error-messages"></a>Mensagens de erro
 
@@ -56,12 +56,12 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`AccessDenied` |Você não pode realizar a operação solicitada.|
 |`ActivityLimitReached`|O limite de atividades foi alcançado.|
 |`ApiNotAvailable`|A API solicitada não está disponível.|
-|`ApiNotFound`|Não foi possível encontrar a API que você está tentando usar. Ele pode estar disponível em uma versão mais recente do Excel. Confira o [artigo sobre conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md) para saber mais.|
+|`ApiNotFound`|A API que você está tentando usar não foi encontrada. Ele pode estar disponível em uma versão mais recente do Excel. Consulte o [Excel de requisitos da API JavaScript para](../reference/requirement-sets/excel-api-requirement-sets.md) obter mais informações.|
 |`BadPassword`|A senha fornecida está incorreta.|
 |`Conflict`|A solicitação não pôde ser processada devido a um conflito.|
-|`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está ausente.|
+|`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está faltando.|
 |`GeneralException`|Ocorreu um erro interno ao processar a solicitação.|
-|`InactiveWorkbook`|A operação falhou porque várias workbooks estão abertas e a área de trabalho chamada por essa API perdeu o foco.|
+|`InactiveWorkbook`|A operação falhou porque várias guias de trabalho estão abertas e a workbook que está sendo chamada por essa API perdeu o foco.|
 |`InsertDeleteConflict`|A tentativa de operação de exclusão ou inserção resultou em um conflito.|
 |`InvalidArgument` |O argumento é inválido, está ausente ou tem um formato incorreto.|
 |`InvalidBinding`  |Esta associação de objetos não é mais válida devido às atualizações anteriores.|
@@ -71,19 +71,19 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`InvalidSelection`|A seleção atual é inválida para esta operação.|
 |`ItemAlreadyExists`|O recurso que está sendo criado já existe.|
 |`ItemNotFound` |O recurso solicitado não existe.|
-|`NonBlankCellOffSheet`|O Microsoft Excel não pode inserir novas células porque tiraria as células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.|
+|`NonBlankCellOffSheet`|Microsoft Excel não pode inserir novas células porque empurraria células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, algumas formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.|
 |`NotImplemented`|O recurso solicitado não foi implementado.|
-|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Confira o [artigo Limites de recursos e otimização](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) de desempenho para Os Complementos do Office para obter mais informações.|
+|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|
 |`RequestAborted`|A solicitação foi anulada durante o tempo de execução.|
-|`RequestPayloadSizeLimitExceeded`|O tamanho da carga da solicitação excedeu o limite. Confira o [artigo Limites de recursos e otimização](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) de desempenho para Os Complementos do Office para obter mais informações. <br><br>Esse erro só ocorre no Excel na Web.|
-|`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Confira o [artigo Limites de recursos e otimização](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) de desempenho para Os Complementos do Office para obter mais informações.  <br><br>Esse erro só ocorre no Excel na Web.|
+|`RequestPayloadSizeLimitExceeded`|O tamanho da carga de solicitação excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações. <br><br>Esse erro só ocorre em Excel na Web.|
+|`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.  <br><br>Esse erro só ocorre em Excel na Web.|
 |`ServiceNotAvailable`|O serviço não está disponível.|
 |`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.|
 |`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|
-|`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma planilha de Macro ou Gráfico.|
+|`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma planilha Macro ou Gráfico.|
 
 > [!NOTE]
-> A tabela anterior lista mensagens de erro que você pode encontrar ao usar a API JavaScript do Excel. Se você estiver trabalhando com a API comum em vez da API JavaScript do Excel específica do aplicativo, confira códigos de erro da API comum do [Office](../reference/javascript-api-for-office-error-codes.md) para saber mais sobre mensagens de erro relevantes.
+> A tabela anterior lista mensagens de erro que você pode encontrar ao usar a API JavaScript Excel javascript. Se você estiver trabalhando com a API Comum em vez da Excel API JavaScript específica do aplicativo, consulte Office códigos de erro comuns da [API](../reference/javascript-api-for-office-error-codes.md) para saber mais sobre mensagens de erro relevantes.
 
 ## <a name="see-also"></a>Confira também
 

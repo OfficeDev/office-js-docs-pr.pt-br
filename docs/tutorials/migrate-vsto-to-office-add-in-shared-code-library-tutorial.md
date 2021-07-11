@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 localization_priority: Priority
-ms.openlocfilehash: aaf228d1e3ce33797165b1380b43d26ceffa1d8c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ed921a114ef204058a8c95e1d26bfb2bdbe51fd5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076122"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350229"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -40,7 +40,7 @@ Habilidades e técnicas neste tutorial:
 Para configurar seu ambiente de desenvolvimento:
 
 1. Instalar o [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
-2. Instalar as seguintes cargas de trabalho:
+1. Instale as cargas de trabalho a seguir.
     - ASP.NET e desenvolvimento na Web
     - Desenvolvimento de várias plataformas do .NET Core.
     - Desenvolvimento do Office/SharePoint
@@ -140,43 +140,43 @@ foreach (char c in cellValue)
 Os suplementos do VSTO são criados no Visual Studio como projetos .NET, portanto, reutilizaremos o .NET o máximo possível para simplificar. Nossa próxima técnica é criar uma biblioteca de classe e um código compartilhado de refatoração nessa biblioteca de classe.
 
 1. Caso ainda não o tenha feito, inicie o Visual Studio 2019 e abra a solução **\start\Cell-Analyzer.sln**.
-2. Clique com botão direito do mouse da solução no **Gerenciador de Soluções** e escolha **Adicionar > Novo Projeto**.
-3. Na caixa de diálogo **Adicionar um novo projeto**, escolha **Biblioteca de Classe (.NET Framework)** e escolha **Próximo**.
+1. Clique com botão direito do mouse da solução no **Gerenciador de Soluções** e escolha **Adicionar > Novo Projeto**.
+1. Na caixa de diálogo **Adicionar um novo projeto**, escolha **Biblioteca de Classe (.NET Framework)** e escolha **Próximo**.
     > [!NOTE]
     > Não use a biblioteca de classe central do .NET porque ela não funcionará com seu projeto do VSTO.
-4. Na caixa de diálogo **Configure seu novo Project**, defina os seguintes campos.
+1. Na caixa de diálogo **Configure seu novo Project**, defina os seguintes campos.
     - Defina o **Nome do projeto** como **CellAnalyzerSharedLibrary**.
     - Deixe o **Local** com o valor padrão.
     - Defina a **estrutura** como **4.7.2**.
-5. Escolha **Criar**.
-6. Depois de criar o projeto, renomeie o arquivo **Class1.cs** para **CellOperations.cs**. Será exibida uma solicitação para renomear a classe. Renomeie o nome da classe para que ele corresponda ao nome do arquivo.
-7. Adicione o seguinte código à classe `CellOperations` para criar um método chamado `GetUnicodeFromText`.
+1. Escolha **Criar**.
+1. Depois de criar o projeto, renomeie o arquivo **Class1.cs** para **CellOperations.cs**. Será exibida uma solicitação para renomear a classe. Renomeie o nome da classe para que ele corresponda ao nome do arquivo.
+1. Adicione o seguinte código à classe `CellOperations` para criar um método chamado `GetUnicodeFromText`.
 
-```csharp
-public class CellOperations
-{
-    static public string GetUnicodeFromText(string value)
+    ```csharp
+    public class CellOperations
     {
-        string result = "";
-        foreach (char c in value)
+        static public string GetUnicodeFromText(string value)
         {
-            int unicode = c;
-
-            result += $"{c}: {unicode}\r\n";
+            string result = "";
+            foreach (char c in value)
+            {
+                int unicode = c;
+    
+                result += $"{c}: {unicode}\r\n";
+            }
+            return result;
         }
-        return result;
     }
-}
-```
+    ```
 
 ### <a name="use-the-shared-class-library-in-the-vsto-add-in"></a>Use a biblioteca de classe compartilhada no suplemento VSTO
 
 Agora, você precisa atualizar o suplemento VSTO para usar a biblioteca de classe. É importante que o Suplemento VSTO e o Suplemento do Office usem a mesma biblioteca de classes compartilhadas para que correções de bugs ou recursos futuros sejam feitos em um único local.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse em **Cell-Analyzer** e escolha **Adicionar referência**.
-2. Selecione **CellAnalyzerSharedLibrary** e escolha **OK**.
-3. No **Gerenciador de soluções** expanda o arquivo **Cell-Analyzer**, clique com o botão direito do mouse no arquivo **CellAnalyzerPane.cs** e escolha **Exibir Código**.
-4. No método `btnUnicode_Click`, exclua as linhas de código a seguir.
+1. Selecione **CellAnalyzerSharedLibrary** e escolha **OK**.
+1. No **Gerenciador de soluções** expanda o arquivo **Cell-Analyzer**, clique com o botão direito do mouse no arquivo **CellAnalyzerPane.cs** e escolha **Exibir Código**.
+1. No método `btnUnicode_Click`, exclua as linhas de código a seguir.
 
     ```csharp
     //Convert to Unicode listing
@@ -188,34 +188,34 @@ Agora, você precisa atualizar o suplemento VSTO para usar a biblioteca de class
     }
     ```
 
-5. Atualize a linha de código sob o comentário `//Output the result` para ler da seguinte maneira:
+1. Atualize a linha de código sob o comentário `//Output the result` para ler da seguinte maneira:
 
     ```csharp
     //Output the result
     txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cellValue);
     ```
 
-6. No menu **Depurar**, selecione **Iniciar Depuração**. O painel de tarefas personalizado deve funcionar conforme o esperado. Digite um texto em uma célula e, em seguida, teste para convertê-lo em uma lista Unicode com o suplemento.
+1. No menu **Depurar**, selecione **Iniciar Depuração**. O painel de tarefas personalizado deve funcionar conforme o esperado. Digite um texto em uma célula e, em seguida, teste para convertê-lo em uma lista Unicode com o suplemento.
 
 ## <a name="create-a-rest-api-wrapper"></a>Criar um invólucro da API REST
 
 O suplemento VSTO pode usar a biblioteca de classes compartilhadas diretamente, uma vez que ambos são projetos .NET. No entanto, o Suplemento do Office não poderá usar o .NET, uma vez que ele usa o JavaScript. Em seguida, você precisará criar um invólucro da API REST. Isso permite que o Suplemento do Office chame uma API REST, que passa a chamada para a biblioteca de classes compartilhadas.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no **Cell-Analyzer** e escolha **Adicionar > Novo Projeto**.
-2. Em **Adicionar uma nova caixa de diálogo do projeto**, escolha **Aplicativo Web ASP.NET Core** e escolha **Próximo**.
-3. Na caixa de diálogo **Configure seu novo projeto**, defina os seguintes campos:
+1. Em **Adicionar uma nova caixa de diálogo do projeto**, escolha **Aplicativo Web ASP.NET Core** e escolha **Próximo**.
+1. Na caixa de diálogo **Configure seu novo Project**, defina os seguintes campos.
     - Defina o **nome do projeto** para **CellAnalyzerRESTAPI**.
     - No campo **Local**, deixe o valor padrão.
-4. Escolha **Criar**.
-5. Na caixa de diálogo **criar um novo aplicativo Web ASP.NET Core**, selecione **ASP.NET Core 3.1** da versão e selecione **API** na lista de projetos.
-6. Deixe todos os outros campos em valores padrão e escolha o botão **Criar**.
-7. Depois de criar o projeto, expanda o projeto **CellAnalyzerRESTAPI** no **Gerenciador de soluções**.
-8. Clique com o botão direito do mouse em **Dependências** e escolha **Adicionar Referência**.
-9. Selecione **CellAnalyzerSharedLibrary** e escolha **OK**.
-10. Clique com o botão direito do mouse na pasta **Controladores** e escolha **Adicionar > Controlador**.
-11. Na caixa de diálogo **Adicionar Novo Item de Scaffolded**, escolha **controlador da API-vazio** e **Adicionar**.
-12. Na caixa de diálogo **Adicionar controlador de API vazio**, nomeie o controlador **AnalyzeUnicodeController** e selecione **Adicionar**.
-13. Abra o arquivo **AnalyzeUnicodeController.cs** e adicione o código a seguir como um método para a classe `AnalyzeUnicodeController`.
+1. Escolha **Criar**.
+1. Na caixa de diálogo **criar um novo aplicativo Web ASP.NET Core**, selecione **ASP.NET Core 3.1** da versão e selecione **API** na lista de projetos.
+1. Deixe todos os outros campos em valores padrão e escolha o botão **Criar**.
+1. Depois de criar o projeto, expanda o projeto **CellAnalyzerRESTAPI** no **Gerenciador de soluções**.
+1. Clique com o botão direito do mouse em **Dependências** e escolha **Adicionar Referência**.
+1. Selecione **CellAnalyzerSharedLibrary** e escolha **OK**.
+1. Clique com o botão direito do mouse na pasta **Controladores** e escolha **Adicionar > Controlador**.
+1. Na caixa de diálogo **Adicionar Novo Item de Scaffolded**, escolha **controlador da API-vazio** e **Adicionar**.
+1. Na caixa de diálogo **Adicionar controlador de API vazio**, nomeie o controlador **AnalyzeUnicodeController** e selecione **Adicionar**.
+1. Abra o arquivo **AnalyzeUnicodeController.cs** e adicione o código a seguir como um método para a classe `AnalyzeUnicodeController`.
 
     ```csharp
     [HttpGet]
@@ -229,9 +229,9 @@ O suplemento VSTO pode usar a biblioteca de classes compartilhadas diretamente, 
     }
     ```
 
-14. Clique com o botão direito do mouse no projeto **CellAnalyzerRESTAPI** e escolha **Definir como inicialização do projeto**.
-15. No menu **Depurar**, selecione **Iniciar Depuração**.
-16. Um navegador será iniciado. Insira a seguinte URL para testar se a API REST está funcionando: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. Você pode reutilizar o número da porta na URL no navegador que o Visual Studio iniciou. Você deverá ver uma cadeia de caracteres retornada com valores Unicode para cada caractere.
+1. Clique com o botão direito do mouse no projeto **CellAnalyzerRESTAPI** e escolha **Definir como inicialização do projeto**.
+1. No menu **Depurar**, selecione **Iniciar Depuração**.
+1. Um navegador será iniciado. Insira a seguinte URL para testar se a API REST está funcionando: `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. Você pode reutilizar o número da porta na URL no navegador que o Visual Studio iniciou. Você deverá ver uma cadeia de caracteres retornada com valores Unicode para cada caractere.
 
 ## <a name="create-the-office-add-in"></a>Criar o Suplemento do Office
 
@@ -240,21 +240,21 @@ Ao criar o Suplemento do Office, ele faz uma chamada para a API REST. Mas, prime
 ### <a name="save-the-ssl-port-number"></a>Salve o número da porta SSL
 
 1. Caso ainda não o tenha feito, inicie o Visual Studio 2019 e abra a solução **\start\Cell-Analyzer.sln**.
-2. No projeto **CellAnalyzerRESTAPI**, expanda **Propriedades** e abra o arquivo **launchSettings. JSON**.
-3. Localize a linha de código com o valor **sslPort**, copie o número da porta e salve-o em algum lugar.
+1. No projeto **CellAnalyzerRESTAPI**, expanda **Propriedades** e abra o arquivo **launchSettings. JSON**.
+1. Localize a linha de código com o valor **sslPort**, copie o número da porta e salve-o em algum lugar.
 
 ### <a name="add-the-office-add-in-project"></a>Adicione o projeto do Suplemento do Office
 
 Para simplificar, mantenha todo o código em uma solução. Adicione o projeto do Suplemento do Office à solução existente do Visual Studio. No entanto, se você estiver familiarizado com o [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office) e do Código do Visual Studio, também poderá executar `yo office` para criar o projeto. As etapas são muito semelhantes.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse na solução **Cell-Analyzer** e escolha **Adicionar > Novo projeto**.
-2. Na **caixa de diálogo Adicionar um novo projeto**, clique em **Suplemento do Web Add-in** e escolha **Próximo**.
-3. Na caixa de diálogo **Configure seu novo projeto**, defina os seguintes campos:
+1. Na **caixa de diálogo Adicionar um novo projeto**, clique em **Suplemento do Web Add-in** e escolha **Próximo**.
+1. Na caixa de diálogo **Configure seu novo Project**, defina os seguintes campos.
     - Defina o **nome do projeto** como **CellAnalyzerOfficeAddin**.
     - Deixe o **Local** com o valor padrão.
     - Defina a **estrutura** como **4.7.2** ou superior.
-4. Escolha **Criar**.
-5. Na caixa de diálogo **Escolha o tipo de suplemento**, selecione **Adicionar novas funcionalidades ao Excel** e escolha **Concluir**.
+1. Escolha **Criar**.
+1. Na caixa de diálogo **Escolha o tipo de suplemento**, selecione **Adicionar novas funcionalidades ao Excel** e escolha **Concluir**.
 
 Dois projetos serão criados:
 
@@ -264,7 +264,7 @@ Dois projetos serão criados:
 ### <a name="add-ui-and-functionality-to-the-office-add-in"></a>Adicionar interface de usuário e funcionalidade ao Suplemento do Office
 
 1. No **Gerenciador de soluções**, expanda o projeto **CellAnalyzerOfficeAddinWeb**.
-2. Abra o arquivo **Home.HTML** e substitua o conteúdo de `<body>` pela seguinte HTML.
+1. Abra o arquivo **Home.HTML** e substitua o conteúdo de `<body>` pela seguinte HTML.
 
     ```html
     <button id="btnShowUnicode" onclick="showUnicode()">Show Unicode</button>
@@ -272,7 +272,7 @@ Dois projetos serão criados:
     <div id="txtResult"></div>
     ```
 
-3. Abra o arquivo **Home.js** e substitua todo o conteúdo pelo seguinte código.
+1. Abra o arquivo **Home.js** e substitua todo o conteúdo pelo seguinte código.
 
     ```js
     (function () {
@@ -306,7 +306,7 @@ Dois projetos serão criados:
     }
     ```
 
-4. No código anterior, digite o número **sslPort** que você salvou anteriormente pelo arquivo **. JSON**.
+1. No código anterior, digite o número **sslPort** que você salvou anteriormente pelo arquivo **. JSON**.
 
 No código anterior, a cadeia de caracteres retornada será processada para substituir alimentações de linha de retorno de carro por marcas `<br>` HTML. Algumas vezes, você pode encontrar situações em que um valor de retorno que funcione perfeitamente para o .NET precisará ser ajustado no Suplemento do Office para trabalhar conforme o esperado no Suplemento VSTO . Nesse caso, a API REST e a biblioteca de classes compartilhadas só se preocupam em retornar a cadeia de caracteres. O método `showUnicode()` é responsável pela formatação de valores retornados corretamente para a apresentação.
 
@@ -315,10 +315,10 @@ No código anterior, a cadeia de caracteres retornada será processada para subs
 A biblioteca do Office. js exige o CORS nas chamadas de saída, como a realizada na chamada `ajax` para o servidor de API REST. Use as etapas a seguir para permitir chamadas do Suplemento do Office para a API REST.
 
 1. No **Gerenciador de soluções**, selecione o projeto **CellAnalyzerOfficeAddinWeb**.
-2. No menu **Exibir**, escolha **Janela Propriedades** (se a janela ainda não estiver sendo exibida).
-3. Na janela Propriedades, copie o valor da URL **SSL** e salve-a em outro local. Esta é a URL necessária para permitir o CORS.
-4. No projeto **CellAnalyzerRESTAPI**, abra o arquivo **Startup.cs**.
-5. Na parte superior do método, adicione o seguinte código `ConfigureServices`. Substitua a URL SSL que você copiou anteriormente para a chamada `builder.WithOrigins`.
+1. No menu **Exibir**, escolha **Janela Propriedades** (se a janela ainda não estiver sendo exibida).
+1. Na janela Propriedades, copie o valor da URL **SSL** e salve-a em outro local. Esta é a URL necessária para permitir o CORS.
+1. No projeto **CellAnalyzerRESTAPI**, abra o arquivo **Startup.cs**.
+1. Na parte superior do método, adicione o seguinte código `ConfigureServices`. Substitua a URL SSL que você copiou anteriormente para a chamada `builder.WithOrigins`.
 
     ```csharp
     services.AddCors(options =>
@@ -336,19 +336,19 @@ A biblioteca do Office. js exige o CORS nas chamadas de saída, como a realizada
     > [!NOTE]
     > Mantenha o final `/` da URL ao usá-lo no método `builder.WithOrigins`. Por exemplo, ele deve parecer semelhante a `https://localhost:44000`. Caso contrário, você receberá um erro CORS em tempo de execução.
 
-6. Adicione o campo a seguir à classe `Startup`:
+1. Adicione o campo a seguir à `Startup` classe.
 
     ```csharp
     readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
     ```
 
-7. Adicione o seguinte código ao método `configure` logo antes da linha de código para `app.UseEndpoints`.
+1. Adicione o seguinte código ao método `configure` logo antes da linha de código para `app.UseEndpoints`.
 
     ```csharp
     app.UseCors(MyAllowSpecificOrigins);
     ```
 
-Quando terminar, sua classe `Startup` deve ser semelhante ao seguinte código (sua URL de localhost pode ser diferente):
+Quando terminar, `Startup` classe de deve ser semelhante ao código a seguir (a URL do localhost pode ser diferente).
 
 ```csharp
 public class Startup
@@ -407,15 +407,15 @@ public class Startup
 ### <a name="run-the-add-in"></a>Execute o suplemento
 
 1. No **Explorador de Soluções**, clique com o botão direito do mouse no nó superior **Solução 'Cell-Analyzer'** e escolha **Definir Projetos de Inicialização**.
-2. Na caixa de diálogo **Páginas de propriedades da solução 'Cell-Analyzer'**, selecione **Vários projetos de inicialização**.
-3. Defina a propriedade **Action** como **Iniciar** para cada um dos seguintes projetos.
+1. Na caixa de diálogo **Páginas de propriedades da solução 'Cell-Analyzer'**, selecione **Vários projetos de inicialização**.
+1. Defina a propriedade **Action** como **Iniciar** para cada um dos seguintes projetos.
 
     - CellAnalyzerRESTAPI
     - CellAnalyzerOfficeAddin
     - CellAnalyzerOfficeAddinWeb
 
-4. Escolha **OK**.
-5. No menu **Depurar**, selecione **Iniciar Depuração**.
+1. Escolha **OK**.
+1. No menu **Depurar**, selecione **Iniciar Depuração**.
 
 O Excel será executado e fará o carregamento lateral do Suplemento do Office. Você pode testar se o serviço de API REST do localhost está funcionando corretamente, inserindo um valor de texto em uma célula e escolhendo o botão **Mostrar Unicode** no Suplemento do Office. Ele deve chamar a API REST e exibir os valores Unicode para os caracteres de texto.
 
@@ -424,11 +424,11 @@ O Excel será executado e fará o carregamento lateral do Suplemento do Office. 
 Eventualmente, você deseja publicar o projeto da API REST na nuvem. Nas etapas a seguir, você verá como publicar o projeto **CellAnalyzerRESTAPI** em um serviço de aplicativo do Microsoft Azure. Confira os[pré-requisitos](#prerequisites) para saber mais sobre como obter uma conta do Azure.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no projeto **CellAnalyzerRESTAPI** e escolha **Publicar**.
-2. Na caixa de diálogo **Escolha um destino de publicação**, selecione **Criar Novo** e escolha **Criar Perfil**.
-3. Na caixa de diálogo **Serviço de Aplicativo**, selecione a conta correta, caso ainda não esteja selecionada.
-4. Os campos para a caixa de diálogo **Serviço de Aplicativo** serão definidos como padrões para a sua conta. Geralmente, os padrões funcionam corretamente, mas você pode alterá-los caso prefira configurações diferentes.
-5. Na caixa de diálogo **Serviço de Aplicativo**, escolha **Criar**.
-6. O novo perfil será exibido em uma página de **Publicação**. Escolha **Publicar** para criar e implantar o código no serviço de aplicativo.
+1. Na caixa de diálogo **Escolha um destino de publicação**, selecione **Criar Novo** e escolha **Criar Perfil**.
+1. Na caixa de diálogo **Serviço de Aplicativo**, selecione a conta correta, caso ainda não esteja selecionada.
+1. Os campos para a caixa de diálogo **Serviço de Aplicativo** serão definidos como padrões para a sua conta. Geralmente, os padrões funcionam corretamente, mas você pode alterá-los caso prefira configurações diferentes.
+1. Na caixa de diálogo **Serviço de Aplicativo**, escolha **Criar**.
+1. O novo perfil será exibido em uma página de **Publicação**. Escolha **Publicar** para criar e implantar o código no serviço de aplicativo.
 
 Agora você pode testar o serviço. Abra um navegador e insira uma URL que vai diretamente para o novo serviço. Por exemplo, use `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` onde *myappservice* é o nome exclusivo que você criou para o novo serviço de aplicativo.
 
@@ -445,7 +445,7 @@ A etapa final é atualizar o código no Suplemento do Office para usar o Serviç
 
 1. No **Explorador de Soluções**, clique com o botão direito do mouse no nó superior **Solução 'Cell-Analyzer'** e escolha **Definir Projetos de Inicialização**.
 1. Na caixa de diálogo **Páginas de propriedades da solução 'Cell-Analyzer'**, selecione **Vários projetos de inicialização**.
-1. Habilite a ação **Iniciar** para cada um dos seguintes projetos:
+1. Habilite **iniciar** para cada um dos projetos a seguir.
     - CellAnalyzerOfficeAddinWeb
     - CellAnalyzerOfficeAddin
 1. Escolha **OK**.

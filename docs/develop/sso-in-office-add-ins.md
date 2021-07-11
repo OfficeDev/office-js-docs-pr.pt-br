@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9f671b4177d123b83ffeaaea7e1f05a4d0df5b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075954"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349732"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
@@ -44,20 +44,20 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 Esta seção descreve as tarefas envolvidas na criação de um Suplemento do Office que usa o SSO. Essas tarefas são descritas aqui de maneira independente de linguagem e estrutura. Para obter instruções passo a passo detalhadas, consulte:
 
-* [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
-* [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
+- [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
+- [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
 
 > [!NOTE]
 > Você pode usar o gerador Yeoman para criar um Suplemento do Office com Node.js habilitado para SSO. O gerador Yeoman simplifica o processo de criação de um suplemento habilitado para SSO, automatizando as etapas necessárias para configurar o SSO no Azure e gerando o código necessário para um suplemento usar o SSO. Para obter mais informações, confira [Início rápido de logon único (SSO)](../quickstarts/sso-quickstart.md).
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
-Registre o suplemento no portal de registro para o ponto de extremidade do Azure v 2.0. Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
+Registre o suplemento no portal de registro do ponto de extremidade do Azure v2.0. Esse é um processo de 5 a 10 minutos que inclui as tarefas a seguir.
 
-* Obter um ID de cliente e o segredo para o suplemento.
-* Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). As permissões "perfil" e "openid" são sempre necessárias.
-* Conceder a confiança do aplicativo cliente do Office para o suplemento.
-* Autorizar previamente o aplicativo cliente do Office para o suplemento com a permissão padrão *access_as_user*.
+- Obter um ID de cliente e o segredo para o suplemento.
+- Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). As permissões "perfil" e "openid" são sempre necessárias.
+- Conceder a confiança do aplicativo cliente do Office para o suplemento.
+- Autorizar previamente o aplicativo cliente do Office para o suplemento com a permissão padrão *access_as_user*.
 
 Para mais detalhes sobre esse processo, confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
@@ -65,15 +65,15 @@ Para mais detalhes sobre esse processo, confira [Registrar um Suplemento do Offi
 
 Adicione novas marcações ao manifesto do suplemento:
 
-* **WebApplicationInfo** – o pai dos seguintes elementos.
-* **ID** - O ID do cliente do suplemento Este é um ID do aplicativo que você obtém como parte do registro do suplemento. Confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
-* **Resource** – A URL do suplemento. Esse é o mesmo URI (incluindo o protocolo `api:`) que você usou ao registrar o suplemento no AAD. Parte do domínio deste URI deve corresponder ao domínio, incluindo quaisquer subdomínios, usados nos URLs na seção `<Resources>` do manifesto do suplemento e o URI deve terminar com o ID do cliente no `<Id>`.
-* **Scopes** – O pai de uma ou mais elementos **Scope**.
-* **Scope** – Especifica uma permissão que seu suplemento precisa para o AAD. As permissões `profile` e `openID` são sempre necessárias e podem ser as únicas permissões necessárias, se o suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisa de elementos **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
+- **WebApplicationInfo** – o pai dos seguintes elementos.
+- **ID** - O ID do cliente do suplemento Este é um ID do aplicativo que você obtém como parte do registro do suplemento. Confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- **Resource** – A URL do suplemento. Esse é o mesmo URI (incluindo o protocolo `api:`) que você usou ao registrar o suplemento no AAD. Parte do domínio deste URI deve corresponder ao domínio, incluindo quaisquer subdomínios, usados nos URLs na seção `<Resources>` do manifesto do suplemento e o URI deve terminar com o ID do cliente no `<Id>`.
+- **Scopes** – O pai de uma ou mais elementos **Scope**.
+- **Scope** – Especifica uma permissão que seu suplemento precisa para o AAD. As permissões `profile` e `openID` são sempre necessárias e podem ser as únicas permissões necessárias, se o suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisa de elementos **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
 Para aplicativos do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
-Veja a seguir um exemplo da marcação:
+Veja a seguir um exemplo da marcação.
 
 ```xml
 <WebApplicationInfo>
@@ -87,6 +87,7 @@ Veja a seguir um exemplo da marcação:
     </Scopes>
 </WebApplicationInfo>
 ```
+
 > [!NOTE]
 > O não cumprimento dos requisitos de formato no manifesto para SSO fará com que seu suplemento seja rejeitado do AppSource até que atenda ao formato exigido.
 
@@ -94,9 +95,9 @@ Veja a seguir um exemplo da marcação:
 
 Adicione o JavaScript ao suplemento para:
 
-* Chamar [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
+- Chamar [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
 
-* Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
+- Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
 
 Aqui está um exemplo simples de uma chamada para `getAccessToken`.
 
@@ -154,13 +155,13 @@ Se o complemento tiver alguma funcionalidade que não exija um usuário conectad
 
 Na maioria dos cenários, não haverá muitas razões para obter o token de acesso, se o suplemento não passá-lo para um lado do servidor e usá-lo lá. Algumas tarefas do lado do servidor que seu suplemento pode realizar:
 
-* Criar um ou mais métodos de Web API com informações sobre o usuário que são extraídas do token; Por exemplo, uma forma que procura preferências do usuário em seu banco de dados hospedado. (Confira **usando o token SSO, como uma identidade** abaixo.)Dependendo do seu idioma e da estrutura, podem estar disponíveis bibliotecas que simplificarão o código que você precisa escrever.
-* Obter dados do Microsoft Graph. O código do lado do servidor precisa fazer o seguinte:
+- Criar um ou mais métodos de Web API com informações sobre o usuário que são extraídas do token; Por exemplo, uma forma que procura preferências do usuário em seu banco de dados hospedado. (Confira **usando o token SSO, como uma identidade** abaixo.)Dependendo do seu idioma e da estrutura, podem estar disponíveis bibliotecas que simplificarão o código que você precisa escrever.
+- Obter dados do Microsoft Graph. O código do lado do servidor precisa fazer o seguinte:
 
-    * Inicie o fluxo "on behalf of" com uma chamada para o ponto de extremidade v2.0 do Azure Active Directory que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). Nesse contexto, o token de acesso é chamado de token de inicialização.
-    * Obter os dados do Microsoft Graph usando o novo token.
-    * Opcionalmente, valide o token de acesso antes de iniciar o fluxo (confira **Validar o token de acesso** abaixo).
-    * Opcionalmente, após a conclusão do fluxo on-behalf-of, armazene em cache o novo token de acesso retornado do fluxo, de forma que ele seja reutilizado em outras chamadas para o Microsoft Graph até que ele expire.
+  - Inicie o fluxo "on behalf of" com uma chamada para o ponto de extremidade v2.0 do Azure Active Directory que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). Nesse contexto, o token de acesso é chamado de token de inicialização.
+  - Obter os dados do Microsoft Graph usando o novo token.
+  - Opcionalmente, valide o token de acesso antes de iniciar o fluxo (confira **Validar o token de acesso** abaixo).
+  - Opcionalmente, após a conclusão do fluxo on-behalf-of, armazene em cache o novo token de acesso retornado do fluxo, de forma que ele seja reutilizado em outras chamadas para o Microsoft Graph até que ele expire.
 
  Para saber mais sobre como obter acesso autorizado aos dados do usuário Microsoft Graph, confira [Autorizar o Microsoft Graph nos suplementos do Office](authorize-to-microsoft-graph.md).
 
@@ -172,7 +173,7 @@ Após a API da Web receber o token de acesso, ela deve validá-lo antes que ele 
 - Verificar se o token foi emitido pela autoridade desejada
 - Verificar se o token está direcionado para a API Web
 
-Ao validar o token, lembre-se das seguintes diretrizes:
+Tenha em mente as diretrizes a seguir ao validar o token.
 
 - Os tokens SSO válidos serão emitidos pela autoridade do Azure, `https://login.microsoftonline.com`. A declaração `iss` no token deve começar com esse valor.
 - O parâmetro `aud` do token será configurado como a ID de aplicativo do registro do suplemento.
