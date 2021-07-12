@@ -3,16 +3,16 @@ title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 97841f7c8112b42cee2927f238b31fe985b2e101
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093858"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348871"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
-Como parte do processo de desenvolvimento de um suplemento do Outlook, você provavelmente já se pegou fazendo a iteração da implantação e da instalação do suplemento para teste, que envolve as seguintes etapas:
+Como parte do processo de desenvolvimento de um suplemento do Outlook, você provavelmente se verá implantando e instalando iterativamente o suplemento para teste, o que envolve as etapas a seguir.
 
 1. Criação de um arquivo de manifesto que descreve o suplemento.
 1. Implantação dos arquivos da interface do usuário em um servidor Web.
@@ -44,7 +44,7 @@ O administrador do Exchange pode executar o cmdlet do PowerShell a seguir para a
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
 ```
 
-Se necessário, o administrador pode executar o cmdlet a seguir para atribuir permissões necessárias semelhantes a vários usuários:
+Se necessário, o administrador poderá executar o seguinte cmdlet para atribuir a vários usuários as permissões semelhantes necessárias.
 
 ```powershell
 $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}
@@ -64,7 +64,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 A URL totalmente qualificada é o local do arquivo de manifesto do suplemento que você preparou para seu suplemento.
 
-Você pode usar os seguintes cmdlets do PowerShell adicionais para gerenciar os suplementos de uma caixa de correio:
+Você pode usar os seguintes cmdlets adicionais do PowerShell para gerenciar os suplementos de uma caixa de correio.
 
 - `Get-App` – Lista os suplementos que estão habilitados para uma caixa de correio.
 - `Set-App` – Habilita ou desabilita um suplemento em uma caixa de correio.
@@ -89,9 +89,9 @@ A decisão de quais versões de cliente do Outlook testar depende dos seus requi
 
 Os usuários de contas do Microsoft 365 e de consumidor veem a versão moderna da interface do usuário ao acessar o Outlook na Web e não veem mais a versão clássica que foi substituída. No entanto, os servidores locais do Exchange continuam oferecendo suporte ao Outlook na Web clássico. Portanto, durante o processo de validação, seu envio poderá receber um aviso de que o suplemento não é compatível com o Outlook na Web clássico. Nesse caso, considere testar o suplemento em um ambiente do Exchange local. Esse aviso não bloqueará seu envio ao AppSource, mas seus clientes poderão ter uma experiência abaixo do ideal, caso usem o Outlook na Web em um ambiente do Exchange local.
 
-Para atenuar isso, é recomendável que se faça o teste do suplemento no Outlook na Web conectado ao seu próprio ambiente Exchange local. Para saber mais, confira as orientações sobre como [Estabelecer um ambiente de teste do Exchange 2016 ou do Exchange 2019](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019#establish-an-exchange-2016-or-exchange-2019-test-environment) e como gerenciar o [Outlook na Web no Exchange Server](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019).
+Para atenuar isso, é recomendável que se faça o teste do suplemento no Outlook na Web conectado ao seu próprio ambiente Exchange local. Para saber mais, confira as orientações sobre como [Estabelecer um ambiente de teste do Exchange 2016 ou do Exchange 2019](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019&preserve-view=true#establish-an-exchange-2016-or-exchange-2019-test-environment) e como gerenciar o [Outlook na Web no Exchange Server](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019&preserve-view=true).
 
-Como alternativa, você pode optar por pagar e usar um serviço que hospeda e gerencia servidores locais do Exchange. Algumas das opções são:
+Como alternativa, você pode optar por pagar e usar um serviço que hospeda e gerencia servidores Exchange locais. Algumas opções são:
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
