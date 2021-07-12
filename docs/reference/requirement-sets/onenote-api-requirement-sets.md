@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do On
 ms.date: 08/24/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: c8cadacac640cbe710c9894a65ee780267066afc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ecdb26edca54758540688ba03b1d9c1eec14e739
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293524"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350187"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
@@ -19,7 +19,7 @@ A tabela a seguir lista os conjuntos de requisitos do OneNote, ou seja, os aplic
 
 |  Conjunto de requisitos  |  Office na Web |
 |:-----|:-----|
-| [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | Setembro de 2016 |  
+| [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1&preserve-view=true)  | Setembro de 2016 |  
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
@@ -27,7 +27,7 @@ A OneNote JavaScript API 1.1 é a primeira versão da API. Para obter mais detal
 
 ## <a name="runtime-requirement-support-check"></a>Verificação do suporte a requisitos de tempo de execução
 
-Durante o tempo de execução, os suplementos podem verificar se um determinado aplicativo do Office oferece suporte a um conjunto de requisitos de API, realizando a seguinte verificação.
+Durante o tempo de execução, os suplementos podem verificar se um determinado aplicativo do Office oferece suporte a um conjunto de requisitos de API, realizando a seguinte verificação:
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1')) {
@@ -40,7 +40,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>Verificação de suporte a requisitos com base em manifesto
 
-Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos ou membros de API cruciais que o seu suplemento precisa usar. Se o aplicativo do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no elemento `Requirements`, o suplemento não será executado nesse aplicativo ou plataforma e não será exibido em Meus Suplementos.
+Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos ou membros de API cruciais que o seu suplemento precisa usar. Se o aplicativo do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no. elemento`Requirements`, o suplemento não será executado no aplicativo ou na plataforma e não será exibido em Meus Suplementos.
 
 O exemplo de código a seguir mostra um suplemento que é carregado em todos os aplicativos do cliente Office que oferecem suporte ao conjunto de requisitos OneNoteApi, versão 1.1.
 
