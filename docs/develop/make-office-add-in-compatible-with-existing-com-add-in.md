@@ -1,14 +1,14 @@
 ---
 title: Faça seu suplemento do Office ser compatível com um suplemento COM existente
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
-ms.date: 03/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349802"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418682"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -17,12 +17,9 @@ Se você tiver um complemento COM existente, poderá criar funcionalidade equiva
 Você pode configurar seu Office Add-in para que, quando o complemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows executa o add-in COM em vez do Office Add-in. O add-in COM é chamado de "equivalente" porque o Office fará uma transição perfeita entre o complemento COM e o Office De acordo com o qual está instalado o computador de um usuário.
 
 > [!NOTE]
-> Esse recurso é suportado pelas plataformas a seguir, quando conectado a uma assinatura Microsoft 365 usuário.
+> Esse recurso é suportado pela plataforma e aplicativos a seguir, quando conectado a uma assinatura Microsoft 365. Os complementos COM não podem ser instalados em qualquer outra plataforma, portanto, nessas plataformas, o elemento de manifesto discutido posteriormente neste artigo, , é `EquivalentAddins` ignorado.
 >
-> - Excel, Word e PowerPoint na Web
 > - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
-> - Excel, Word e PowerPoint no Mac (versão 13.329 ou posterior)
-> - Outlook no Windows (versão 2102 ou posterior)
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Especificar um complemento COM equivalente
 

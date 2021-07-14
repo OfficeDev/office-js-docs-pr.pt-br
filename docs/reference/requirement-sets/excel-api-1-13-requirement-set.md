@@ -1,15 +1,15 @@
 ---
 title: Excel Conjunto de requisitos da API JavaScript 1.13
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.13.
-ms.date: 07/02/2021
+ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bfd9c23beda64565b44f16845e046fa1a2358d41
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 422cc8da19ac901de68cdfa59d7ab9670858de6f
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290807"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418696"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>Novidades na API JavaScript 1.13 Excel JavaScript
 
@@ -17,10 +17,10 @@ O ExcelApi 1.13 adicionou um método para inserir planilhas em uma pasta de trab
 
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
-| Fórmula de eventos alterados | Acompanhe as alterações nas fórmulas, incluindo a origem e o tipo de evento que causou uma alteração. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| Dependentes da fórmula | Localize as células dependentes diretas de uma fórmula. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
-| Inserir planilhas | Insira planilhas de outra pasta de trabalho na pasta de trabalho atual como uma cadeia de caracteres codificada com Base64. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
-| PivotLayout de tabela dinâmica | Uma expansão da classe PivotLayout, incluindo novo suporte para alt text e gerenciamento de células vazias. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| [Fórmula de eventos alterados](../../excel/excel-add-ins-worksheets.md#detect-formula-changes) | Acompanhe as alterações nas fórmulas, incluindo a origem e o tipo de evento que causou uma alteração. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
+| [Dependentes da fórmula](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-direct-dependents-of-a-formula) | Localize as células dependentes diretas de uma fórmula. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
+| [Inserir planilhas](../../excel//excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one) | Insira planilhas de outra pasta de trabalho na pasta de trabalho atual como uma cadeia de caracteres codificada com Base64. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
+| [PivotLayout de tabela dinâmica](../../excel/excel-add-ins-pivottables.md#other-pivotlayout-functions) | Uma expansão da classe PivotLayout, incluindo novo suporte para alt text e gerenciamento de células vazias. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
 
 ## <a name="api-list"></a>Lista de API
 
