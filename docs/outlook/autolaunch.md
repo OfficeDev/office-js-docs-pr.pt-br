@@ -4,12 +4,12 @@ description: Saiba como configurar seu Outlook para ativação baseada em evento
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418703"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455527"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -326,6 +326,7 @@ O suporte completo ao CORS está chegando em breve.
 
 - [Manifestos de suplementos do Outlook](manifests.md)
 - [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
+- [Opções de listagem do AppSource para seu Outlook de evento](autolaunch-store-options.md)
 - Exemplos pnP:
   - [Use Outlook ativação baseada em evento para definir a assinatura](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
   - [Use Outlook ativação baseada em evento para marcar destinatários externos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

@@ -2,14 +2,14 @@
 title: Criar um Outlook de dispositivo móvel para um provedor de reunião online
 description: Discute como configurar um Outlook de celular para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 7f65ef7a1b87a989063b6cb23e6e608e6b3bbefc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f0f9b69c2b8b515df3829ca3ba0714393df79fd1
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077061"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455499"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um Outlook de dispositivo móvel para um provedor de reunião online
 
@@ -207,7 +207,7 @@ Nesta seção, saiba como seu script de complemento pode atualizar a reunião de
 
 ## <a name="testing-and-validation"></a>Teste e validação
 
-Siga as diretrizes usuais para [testar e validar seu complemento](testing-and-tips.md). Depois [de fazer sideload](sideload-outlook-add-ins-for-testing.md) em Outlook na Web, Windows ou Mac, reinicie Outlook em seu dispositivo móvel Android. (O Android é o único cliente com suporte por enquanto.) Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída por sua própria.
+Siga as diretrizes usuais para [testar e validar seu complemento](testing-and-tips.md). Depois [de fazer sideload](sideload-outlook-add-ins-for-testing.md) em Outlook na Web, Windows ou Mac, reinicie Outlook em seu dispositivo móvel Android ou iOS. Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída por sua própria.
 
 ### <a name="create-meeting-ui"></a>Criar interface do usuário de reunião
 
@@ -261,6 +261,7 @@ Várias restrições se aplicam.
 - Somente os complementos instalados pelo administrador aparecerão na tela de redação da reunião, substituindo a opção padrão Teams ou Skype de reunião. Os complementos instalados pelo usuário não serão ativados.
 - O ícone do add-in deve estar em escala de cinza usando código hexaxa ou seu equivalente `#919191` em [outros formatos de cor.](https://convertingcolors.com/hex-color-919191.html)
 - Somente um comando sem interface do usuário é suportado no modo Organizador de Compromissos (redação).
+- O complemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o add-in abriu para autenticação, etc. é excluído do período de tempo de tempo.
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,18 +1,18 @@
 ---
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
-ms.date: 05/12/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
+ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349228"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53456226"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
-Uma guia contextual é um controle de tabulação oculto na faixa Office que é exibido na linha de tabulação quando um evento especificado ocorre no documento Office. Por exemplo, a **guia Design** de Tabela que aparece na faixa Excel quando uma tabela é selecionada. Você pode incluir guias contextuais personalizadas no seu Office e especificar quando elas estão visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
+Uma guia contextual é um controle de tabulação oculto na faixa Office que é exibido na linha de tabulação quando um evento especificado ocorre no documento Office. Por exemplo, a **guia Design** de Tabela que aparece na faixa Excel quando uma tabela é selecionada. Você inclui guias contextuais personalizadas no seu Office e especifica quando elas estão visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
 
 > [!NOTE]
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
@@ -323,7 +323,7 @@ const showDataTab = async () => {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Visibilidade da guia de alternância e o status habilitado de um botão ao mesmo tempo
 
-O método também é usado para alternar o status habilitado ou desabilitado de um botão personalizado em uma guia contextual personalizada `requestUpdate` ou em uma guia principal personalizada. Para obter detalhes sobre isso, consulte [Enable and Disable Add-in Commands](disable-add-in-commands.md). Pode haver cenários nos quais você deseja alterar a visibilidade de uma guia e o status habilitado de um botão ao mesmo tempo. Você pode fazer isso com uma única chamada de `requestUpdate` . A seguir está um exemplo no qual um botão em uma guia principal é habilitado ao mesmo tempo em que uma guia contextual é visível.
+O método também é usado para alternar o status habilitado ou desabilitado de um botão personalizado em uma guia contextual personalizada `requestUpdate` ou em uma guia principal personalizada. Para obter detalhes sobre isso, consulte [Enable and Disable Add-in Commands](disable-add-in-commands.md). Pode haver cenários nos quais você deseja alterar a visibilidade de uma guia e o status habilitado de um botão ao mesmo tempo. Você faz isso com uma única chamada de `requestUpdate` . A seguir está um exemplo no qual um botão em uma guia principal é habilitado ao mesmo tempo em que uma guia contextual é visível.
 
 ```javascript
 function myContextChanges() {
@@ -378,7 +378,99 @@ function myContextChanges() {
 }
 ```
 
-## <a name="localizing-the-json-blob"></a>Localizando o blob JSON
+## <a name="open-a-task-pane-from-contextual-tabs"></a>Abra um painel de tarefas de guias contextuais
+
+Para abrir o painel de tarefas de um botão em uma guia contextual personalizada, crie uma ação no JSON com `type` um `ShowTaskpane` de . Em seguida, defina um botão `actionId` com a propriedade definida como a da `id` ação. Isso abre o painel de tarefas padrão especificado pelo `<Runtime>` elemento em seu manifesto.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+Para abrir qualquer painel de tarefas que não seja o painel de tarefas padrão, especifique uma propriedade na `sourceLocation` definição da ação. No exemplo a seguir, um segundo painel de tarefas é aberto a partir de um botão diferente.
+
+> [!IMPORTANT]
+>
+> - Quando um é especificado para a ação, o painel de tarefas não usa o tempo de execução `sourceLocation` compartilhado.  Ele é executado em um novo tempo de execução JavaScript.
+> - Não mais do que um painel de tarefas pode usar o tempo de execução compartilhado, portanto, mais de uma ação de tipo `ShowTaskpane` pode omitir a `sourceLocation` propriedade.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    },
+    {
+      "id": "openTablesTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Tables",
+      "supportPinning": false
+      "sourceLocation": "https://MyDomain.com/myPage.html"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            },
+            {
+                "type": "Button",
+                "id": "CtxBt113",
+                "actionId": "openTablesTaskpane",
+                "enabled": false,
+                "label": "Open Tables Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+## <a name="localize-the-json-text"></a>Localize o texto JSON
 
 O blob JSON que é passado não é localizado da mesma maneira que a marcação de manifesto para guias principais personalizadas é localizada (que é descrita em Localização de Controle do `requestCreateControls` [manifesto](../develop/localization.md#control-localization-from-the-manifest)). Em vez disso, a localização deve ocorrer em tempo de execução usando blobs JSON distintos para cada localidade. Sugerimos que você use uma instrução que testa a `switch` [propriedade Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Apresentamos um exemplo a seguir.
 
