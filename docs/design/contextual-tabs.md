@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
-ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
+ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53456226"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535988"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -18,6 +18,8 @@ Uma guia contextual é um controle de tabulação oculto na faixa Office que é 
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
 >
 > - [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > No momento, as guias contextuais personalizadas só têm suporte no Excel e somente nessas plataformas e builds:

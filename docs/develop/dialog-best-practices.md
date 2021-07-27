@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
-ms.date: 02/09/2021
+ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 99129636cf722f98cef36c272f2e00e8a9321ccf
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349907"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535980"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -27,7 +27,7 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 - Somente duas Office APIs podem ser chamadas na caixa de diálogo:
   - A [função messageParent.](/javascript/api/office/office.ui#messageparent-message-)
   - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
-- A [função messageParent](/javascript/api/office/office.ui#messageparent-message-) só pode ser chamada de uma página no mesmo domínio que o próprio complemento.
+- A [função messageParent](/javascript/api/office/office.ui#messageparent-message-) geralmente deve ser chamada de uma página no mesmo domínio que o próprio complemento, mas isso não é obrigatório. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -41,9 +41,9 @@ Para saber as práticas recomendadas no design da caixa de diálogo, consulte [C
 
 ### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Tratamento de bloqueadores de pop-up com o Office na Web
 
-Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Office na Web tem um recurso que permite que as caixas de diálogo do seu complemento sejam uma exceção para o bloqueador pop-up do navegador. Quando seu código chamar o `displayDialogAsync` método, Office na Web abrirá um prompt semelhante ao seguinte:
+Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Office na Web tem um recurso que permite que as caixas de diálogo do seu complemento sejam uma exceção para o bloqueador pop-up do navegador. Quando seu código chama `displayDialogAsync` o método, Office na Web abrirá um prompt semelhante ao seguinte.
 
-![Captura de tela mostrando o prompt com uma breve descrição e botões Permitir e Ignorar que um complemento pode gerar para evitar bloqueadores pop-up no navegador.](../images/dialog-prompt-before-open.png)
+![Captura de tela mostrando o prompt com uma breve descrição e botões Permitir e Ignorar que um complemento pode gerar para evitar bloqueadores pop-up no navegador](../images/dialog-prompt-before-open.png)
 
 Se o usuário escolher **Permitir**, a caixa Office caixa de diálogo será aberta. Se o usuário escolher **Ignorar**, o prompt será fechado e Office caixa de diálogo não abrirá. Em vez disso, `displayDialogAsync` o método retorna o erro 12009. Seu código deve capturar esse erro e fornecer uma experiência alternativa que não exija uma caixa de diálogo ou exibir uma mensagem para o usuário avisando que o complemento exige que eles permitam a caixa de diálogo. (Para obter mais sobre 12009, consulte [Erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 

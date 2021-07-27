@@ -1,14 +1,14 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 04/30/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 2a2816990a7f21a4238a9f8332537bf904fa4cb2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d11b5c188da971f18969ff0abe9787021fad6bf1
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349221"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536008"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -20,6 +20,8 @@ Você também pode especificar se o comando está habilitado ou desabilitado qua
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
 >
 > - [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 ## <a name="office-application-and-platform-support-only"></a>Office suporte somente a aplicativos e plataformas
 

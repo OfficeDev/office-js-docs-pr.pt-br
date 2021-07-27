@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos Office API comum.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350201"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536043"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
@@ -77,6 +77,14 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [Conjuntos de requisitos da API da Caixa de Diálogo](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### <a name="dialogorigin"></a>DialogOrigin
+
+|**Aplicativos do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Consulte [Conjuntos de requisitos de origem da caixa de diálogo](dialog-origin-requirement-sets.md). | Suporte entre domínios para:<br>UI.messageParent<br>Interface do usuário. Dialog.messageChild |
 
 ---
 

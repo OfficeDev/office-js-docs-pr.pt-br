@@ -335,6 +335,8 @@ items:
                 href: reference/requirement-sets/add-in-commands-requirement-sets.md
               - name: Conjuntos de requisitos da API de Caixa de diálogo
                 href: reference/requirement-sets/dialog-api-requirement-sets.md
+              - name: Conjuntos de requisitos de origem da caixa de diálogo
+                href: reference/requirement-sets/dialog-origin-requirement-sets.md
               - name: Conjuntos de requisitos da API de Identidade
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: Conjuntos de requisitos de Coerção de Imagens

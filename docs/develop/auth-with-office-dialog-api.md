@@ -1,14 +1,14 @@
 ---
 title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 85576c50c69332e16c0636586461392021b2e2a4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350047"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536050"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -25,9 +25,9 @@ A caixa de diálogo aberta com essa API tem as seguintes características.
   - Não há nenhum ambiente de execução compartilhado com o painel de tarefas.
   - Não compartilha o mesmo armazenamento de sessão (a propriedade [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) como o painel de tarefas.
 - A primeira página aberta na caixa de diálogo deve estar hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta, se houver.
-- A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageparent-message-), porém esse método só pode ser chamado a partir de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta.
+- A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageparent-message-). (Recomendamos que esse método seja chamado somente de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo protocolo, subdomínios e porta. Caso contrário, haverá complicações em como você chama o método e processa a mensagem. Para obter mais informações, [mensagens entre domínios para o runtime do host](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
-Quando a caixa de diálogo não é um iframe (que é o padrão), ela pode abrir a página de logon de um provedor de identidade. Como é mostrado a seguir, as características da caixa de diálogo têm implicações sobre como você usa as bibliotecas de autenticação ou autorização, como a MSAL e o Passport.
+Quando a caixa de diálogo não é um iframe (que não é por padrão), ela pode abrir a página de logon de um provedor de identidade. Como é mostrado a seguir, as características da caixa de diálogo têm implicações sobre como você usa as bibliotecas de autenticação ou autorização, como a MSAL e o Passport.
 
 > [!NOTE]
 > Há uma maneira de configurar a caixa de diálogo para abrir em um iframe flutuante: basta passar a opção `displayInIframe: true` na chamada do `displayDialogAsync`. *Não* faça isso quando estiver usando a API da Caixa de Diálogo do Office para logon.
@@ -39,7 +39,7 @@ O que vem a seguir é um fluxo de autenticação simples e típico. Os detalhes 
 ![Diagrama mostrando a relação entre o painel de tarefas e os processos do navegador de caixa de diálogo.](../images/taskpane-dialog-processes.gif)
 
 1. A primeira página que é aberta na caixa de diálogo é uma página local (ou outro recurso) que está hospedada no domínio do suplemento; ou seja, o mesmo domínio da janela do painel de tarefas. Essa página pode ter uma única interface de usuário que informa "Aguarde. Estamos redirecionando você para a página onde poderá entrar no *NOME-DO-PROVEDOR*." O código nessa página constrói a URL da página de entrada do provedor de identidade usando as informações que são transmitidas para a caixa de diálogo, conforme descrito em [Transmitir informações para a caixa de diálogo](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) ou é codificado em um arquivo de configuração do suplemento, como um arquivo web.config.
-2. A janela da caixa de diálogo redireciona então para a página de entrada. A URL inclui um parâmetro de consulta que informa o provedor de identidade para redirecionar a janela da caixa de diálogo a uma página específica após o usuário entrar. Nesse artigo, chamaremos essa página de **redirectPage.html**. *Essa deve ser uma página no mesmo domínio da janela do host*, para que os resultados da tentativa de entrada possam ser passados ao painel de tarefas com uma chamada de `messageParent`.
+2. A janela da caixa de diálogo redireciona então para a página de entrada. A URL inclui um parâmetro de consulta que informa o provedor de identidade para redirecionar a janela da caixa de diálogo a uma página específica após o usuário entrar. Nesse artigo, chamaremos essa página de **redirectPage.html**. *Recomendamos que esta seja uma página no mesmo domínio que a janela do host*. Nesta página, os resultados da tentativa de entrada podem ser passados para o painel de tarefas com uma chamada de `messageParent`.
 3. O serviço do provedor de identidade processa a solicitação GET recebida da janela da caixa de diálogo. Se o usuário já estiver conectado, ele imediatamente redirecionará a janela para **redirectPage.html** e incluirá os dados do usuário como um parâmetro de consulta. Se o usuário ainda não tiver entrado, a página de entrada do provedor aparecerá na janela para que o usuário possa entrar. Para a maioria dos provedores, se o usuário não consegue entrar com êxito, o provedor mostra uma página de erro na janela da caixa de diálogo e não redireciona para **redirectPage.html**. O usuário precisa fechar a janela selecionando o **X** no canto. Se o usuário entrar com êxito, a janela de diálogo será redirecionada para **redirectPage.html** e os dados do usuário serão incluídos como um parâmetro de consulta.
 4. Quando a página **redirectPage.html** é aberta, ela chama a `messageParent` para relatar o êxito ou a falha na página do painel de tarefas e opcionalmente também pode informar os dados do usuário ou os dados de erro. Outras mensagens possíveis incluem passar um token de acesso ou informar ao painel de tarefas que o token está no armazenamento.
 5. O evento `DialogMessageReceived` é acionado na página do painel de tarefas, seu manipulador fecha a janela da caixa de diálogo e assim a mensagem pode ser processada.
