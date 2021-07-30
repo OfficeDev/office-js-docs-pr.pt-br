@@ -3,12 +3,12 @@ title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348871"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661128"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -94,7 +94,7 @@ Para atenuar isso, é recomendável que se faça o teste do suplemento no Outloo
 Como alternativa, você pode optar por pagar e usar um serviço que hospeda e gerencia servidores Exchange locais. Algumas opções são:
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
-- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+- [Hostway](https://hostway.com/microsoft-exchange/)
 
 Além disso, se você não deseja que seus suplementos estejam disponíveis para usuários conectados ao Exchange local, é possível definir o [conjunto de requisitos](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) no manifesto de suplemento como 1.6 ou superior. Esses suplementos não serão testados nem validados na interface do usuário do Outlook na Web clássico.
 

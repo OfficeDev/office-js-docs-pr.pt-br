@@ -1,14 +1,14 @@
 ---
 title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
-ms.date: 04/10/2020
+ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: f653f43228c7667bc6848d4f0a6d2e9fd1768964
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349004"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661240"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -84,7 +84,7 @@ Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, 
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 
-Atualmente, os suplementos do Outlook Mobile dão suporte à ativação apenas durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os complementos integrados do provedor de reunião online podem ser ativados no modo Organizador de Compromissos. Consulte [o artigo Criar um Outlook](online-meeting.md) para um provedor de reunião online para saber mais sobre essa exceção.
+Atualmente, os complementos no Outlook Mobile só suportam a ativação ao ler mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os complementos integrados do provedor de reunião online podem ser ativados no modo Organizador de Compromissos. Para saber mais sobre essa exceção (incluindo APIs disponíveis), consulte [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
 
 ### <a name="unsupported-apis"></a>APIs sem suporte
 

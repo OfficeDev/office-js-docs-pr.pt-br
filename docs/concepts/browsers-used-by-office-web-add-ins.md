@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 06/18/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536022"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661121"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -49,7 +49,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele não usará Microsoft Edge com o `<Runtimes>` WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4 O</sup> controle WebView2 inbeddable deve ser instalado além da instalação do Microsoft Edge para que Office possa in-lo. Para instalá-lo, [consulte Microsoft Edge WebView2 / Incorporar conteúdo da Web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4 O</sup> controle WebView2 inbeddable deve ser instalado para que Office possa in-lo, e ele não é instalado automaticamente com o Edge. Ele é instalado com Microsoft 365, versão 2101 ou posterior. Se você tiver uma versão anterior do Microsoft 365, use as instruções para instalar o controle em [Microsoft Edge WebView2 / Incorporar conteúdo da Web... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, então para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você tem duas opções:
