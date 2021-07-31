@@ -1,15 +1,15 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 07/14/2021
+ms.date: 07/16/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0d9dd51627cd797351e4e43957375b7a493b2b57
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: b49a3aedc88064ec4eeb7e305192319f933abc1a
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455485"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661282"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -69,6 +69,8 @@ Os suplementos do Outlook são ativados quando o usuário está redigindo ou len
 - Criado através de [MAPI simples](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5). O MAPI simples é usado quando um usuário do Office cria ou envia um email de um aplicativo do Office no Windows com o Outlook fechado. Por exemplo, um usuário pode criar um email do Outlook enquanto trabalha no Word, o que dispara uma janela de composição do Outlook sem iniciar o aplicativo Outlook completo. No entanto, se o Outlook já estiver em execução quando o usuário criar o email a partir do Word, esse não será um cenário MAPI simples para que os suplementos do Outlook funcionem no formulário de composição, desde que outros requisitos de ativação sejam atendidos.
 
 Em geral, o Outlook pode ativar suplementos no formato de leitura para itens na pasta Itens Enviados, com exceção dos suplementos que são ativados baseados em cadeias de correspondências de entidades conhecidas. Para saber mais sobre os motivos por trás disso, confira "Suporte para entidades conhecidas" em [Corresponder cadeias em um item do Outlook como entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md).
+
+Atualmente, há considerações adicionais ao projetar e implementar suplementos para clientes móveis. Para saber mais, consulte [Adicionar suporte móvel a um suplemento do Outlook](add-mobile-support.md#compose-mode-and-appointments).
 
 ## <a name="supported-clients"></a>Clientes com suporte
 
