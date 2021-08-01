@@ -3,12 +3,12 @@ title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 description: Saiba como a Excel javaScript permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349494"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671151"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
@@ -79,7 +79,7 @@ O tipo `RangeAreas` tem alguns métodos e propriedades que não estão no objeto
 
 - `areas`: O objeto `RangeCollection` que contém todos os intervalos representados pelo objeto `RangeAreas`. O objeto `RangeCollection` também é novidade e é semelhante a outros objetos do conjunto do Excel. É uma propriedade `items` que é uma matriz de objetos `Range` que representam os intervalos.
 - `areaCount`: O número total de intervalos em `RangeAreas`.
-- `getOffsetRangeAreas`: Funciona como [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-), exceto pelo fato de que o `RangeAreas` é retornado e contém os intervalos que são todos os deslocamentos de um dos intervalos do `RangeAreas` original.
+- `getOffsetRangeAreas`: Funciona como [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), exceto pelo fato de que o `RangeAreas` é retornado e contém os intervalos que são todos os deslocamentos de um dos intervalos do `RangeAreas` original.
 
 ## <a name="create-rangeareas"></a>Criar RangeAreas
 

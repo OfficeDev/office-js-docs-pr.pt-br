@@ -1,48 +1,48 @@
 ---
-title: Obter e definir cabeçalhos de Internet
-description: Como obter e definir cabeçalhos da Internet em uma mensagem em um suplemento do Outlook.
+title: Obter e definir os headers da Internet
+description: Como obter e definir os headers da Internet em uma mensagem em um Outlook de um complemento.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609080"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671321"
 ---
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir cabeçalhos de Internet em uma mensagem em um suplemento do Outlook
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir os headers da Internet em uma mensagem em um Outlook de um Outlook de dados
 
-## <a name="background"></a>Segundo plano
+## <a name="background"></a>Histórico
 
-Um requisito comum no desenvolvimento de suplementos do Outlook é armazenar propriedades personalizadas associadas a um suplemento em diferentes níveis. No momento, as propriedades personalizadas são armazenadas no nível do item ou da caixa de correio.
+Um requisito comum no Outlook desenvolvimento de complementos é armazenar propriedades personalizadas associadas a um complemento em diferentes níveis. Atualmente, as propriedades personalizadas são armazenadas no nível do item ou da caixa de correio.
 
-- Item Level – para propriedades que se aplicam a um item específico, use o objeto [CustomProperties](/javascript/api/outlook/office.customproperties) . Por exemplo, armazene um código de cliente associado à pessoa que enviou o email.
-- Nível de caixa de correio – para propriedades que se aplicam a todos os itens de email da caixa de correio do usuário, use o objeto [RoamingSettings](/javascript/api/outlook/office.roamingsettings) . Por exemplo, armazene a preferência de um usuário para mostrar a temperatura em uma determinada escala.
+- Nível do item - Para propriedades que se aplicam a um item específico, use o [objeto CustomProperties.](/javascript/api/outlook/office.customproperties) Por exemplo, armazene um código de cliente associado à pessoa que enviou o email.
+- Nível da caixa de correio - Para propriedades que se aplicam a todos os itens de email na caixa de correio do usuário, use o [objeto RoamingSettings.](/javascript/api/outlook/office.roamingsettings) Por exemplo, armazene a preferência de um usuário para mostrar a temperatura em uma escala específica.
 
-Os dois tipos de propriedades não são preservados depois que o item deixa o servidor do Exchange para que os destinatários de email não possam obter nenhuma propriedade definida no item. Portanto, os desenvolvedores não podem acessar essas configurações ou outras propriedades de MIME para permitir melhores cenários de leitura.
+Ambos os tipos de propriedades não são preservados depois que o item deixa o servidor Exchange para que os destinatários de email não possam obter nenhuma propriedade definida no item. Portanto, os desenvolvedores não podem acessar essas configurações ou outras propriedades MIME para habilitar cenários de leitura melhores.
 
-Embora haja uma maneira de definir os cabeçalhos da Internet por meio de solicitações EWS, em alguns cenários, a solicitação do EWS não funcionará. Por exemplo, no modo de redação na área de trabalho do Outlook, a ID do item não é sincronizada no  `saveAsync`   modo em cache.
+Embora haja uma maneira de definir os headers da Internet por meio de solicitações EWS, em alguns cenários fazer uma solicitação EWS não funcionará. Por exemplo, no modo Redação Outlook área de trabalho, a id do item não é sincronizada  `saveAsync`   no modo em cache.
 
 > [!TIP]
-> Confira [obter e definir metadados de suplemento para um suplemento do Outlook](metadata-for-an-outlook-add-in.md) para saber mais sobre como usar essas opções.
+> Consulte [Obter e definir metadados](metadata-for-an-outlook-add-in.md) do Outlook de um Outlook para saber mais sobre como usar essas opções.
 
-## <a name="purpose-of-the-internet-headers-api"></a>Propósito da API de cabeçalhos de Internet
+## <a name="purpose-of-the-internet-headers-api"></a>Finalidade da API de headers da Internet
 
-Introduzido no [conjunto de requisitos 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de cabeçalhos da Internet permitem que os desenvolvedores:
+Introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de headers da Internet permitem que os desenvolvedores:
 
-- Informações de carimbo em um email que persiste depois de deixar o Exchange entre todos os clientes.
-- Leia as informações em um email que persistiram depois que o email deixou o Exchange entre todos os clientes em cenários de leitura de email.
-- Acessar o cabeçalho MIME inteiro do email.
+- Carimbo de informações em um email que persiste depois que ele Exchange em todos os clientes.
+- Leia informações sobre um email que persistia depois que o email saiu Exchange todos os clientes em cenários de leitura de email.
+- Acesse todo o header MIME do email.
 
-![Diagrama de cabeçalhos de Internet. Text: o usuário 1 envia email. O suplemento gerencia cabeçalhos de Internet personalizados enquanto o usuário está redigindo email. O usuário 2 recebe o email. O suplemento Obtém cabeçalhos de Internet de emails recebidos e, em seguida, analisa e usa cabeçalhos personalizados.](../images/outlook-internet-headers.png)
+![Diagrama de headers da Internet. Texto: o usuário 1 envia emails. O add-in gerencia os headers personalizados da Internet enquanto o usuário está compondo emails. O usuário 2 recebe o email. O complemento obtém os headers da Internet de emails recebidos e, em seguida, analisados e usa os headers personalizados.](../images/outlook-internet-headers.png)
 
-## <a name="set-internet-headers-while-composing-a-message"></a>Definir cabeçalhos de Internet ao redigir uma mensagem
+## <a name="set-internet-headers-while-composing-a-message"></a>Definir os headers da Internet ao compor uma mensagem
 
-Tente usar a propriedade [Item. internetheaders:](/javascript/api/outlook/office.messagecompose#internetheaders) para gerenciar os cabeçalhos de Internet personalizados que você coloca na mensagem atual no modo de composição.
+Tente usar a [propriedade item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) para gerenciar os headers personalizados da Internet que você coloca na mensagem atual no modo Redação.
 
-### <a name="set-get-and-remove-custom-headers-example"></a>Exemplo dos cabeçalhos set, Get e remove customes
+### <a name="set-get-and-remove-custom-headers-example"></a>Definir, obter e remover exemplo de headers personalizados
 
-O exemplo a seguir mostra como definir, obter e remover cabeçalhos personalizados.
+O exemplo a seguir mostra como definir, obter e remover os headers personalizados.
 
 ```js
 // Set custom internet headers.
@@ -105,13 +105,13 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 */
 ```
 
-## <a name="get-internet-headers-while-reading-a-message"></a>Obter cabeçalhos de Internet ao ler uma mensagem
+## <a name="get-internet-headers-while-reading-a-message"></a>Obter os headers da Internet durante a leitura de uma mensagem
 
-Tente chamar [Item. getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-) para obter cabeçalhos da Internet na mensagem atual no modo de leitura.
+Tente chamar [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) para obter os headers da Internet na mensagem atual no modo de leitura.
 
-### <a name="get-sender-preferences-from-current-mime-headers-example"></a>Exemplo de obter as preferências de remetente dos cabeçalhos MIME atuais
+### <a name="get-sender-preferences-from-current-mime-headers-example"></a>Obter preferências de remetente do exemplo de headers MIME atuais
 
-Com base no exemplo da seção anterior, o código a seguir mostra como obter as preferências do remetente dos cabeçalhos MIME do email atual.
+Com base no exemplo da seção anterior, o código a seguir mostra como obter as preferências do remetente a partir dos headers MIME do email atual.
 
 ```js
 Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
@@ -132,17 +132,17 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> Este exemplo funciona para casos simples. Para obter recuperação de informações mais complexas (por exemplo, cabeçalhos de várias instâncias ou valores dobrados conforme descrito na [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca de análise de MIME apropriada.
+> Este exemplo funciona para casos simples. Para recuperação de informações mais complexas (por exemplo, headers de várias instâncias ou valores dobrados conforme descrito em [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca mime-parsing apropriada.
 
 ## <a name="recommended-practices"></a>Práticas recomendadas
 
-No momento, os cabeçalhos da Internet são um recurso finito da caixa de correio de um usuário. Quando a cota estiver esgotada, você não poderá criar mais cabeçalhos de Internet nessa caixa de correio, o que pode resultar em um comportamento inesperado dos clientes que dependem disso para funcionar.
+Atualmente, os headers da Internet são um recurso finito na caixa de correio de um usuário. Quando a cota estiver esgotada, você não poderá criar mais nenhum headers da Internet nessa caixa de correio, o que pode resultar em comportamento inesperado de clientes que dependem disso para funcionar.
 
-Aplique as seguintes diretrizes ao criar cabeçalhos de Internet no suplemento.
+Aplique as seguintes diretrizes ao criar os headers da Internet no seu complemento.
 
-- Crie o número mínimo de cabeçalhos necessários.
-- Cabeçalhos de nome para que você possa reutilizar e atualizar seus valores posteriormente. Como tal, evite nomes de cabeçalhos de forma variável (por exemplo, com base na entrada do usuário, carimbo de data/hora, etc.).
+- Crie o número mínimo de headers necessário.
+- Nomeia os headers para que você possa reutilizar e atualizar seus valores posteriormente. Dessa forma, evite nomear os headers de forma variável (por exemplo, com base na entrada do usuário, no timestamp, etc.).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Obter e definir metadados de suplemento para um suplemento do Outlook](metadata-for-an-outlook-add-in.md)

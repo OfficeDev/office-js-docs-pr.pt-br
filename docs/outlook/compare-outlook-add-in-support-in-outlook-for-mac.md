@@ -3,12 +3,12 @@ title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 07/01/2021
 localization_priority: Normal
-ms.openlocfilehash: f6d7b7758e89978b5a2dc8fc98783babf250c3f6
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 76ef712b95682538a962b4b8305e6fc0d060a75a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348990"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671335"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
@@ -22,8 +22,8 @@ Para obter informações sobre o novo suporte à interface do usuário, consulte
 |:-----|:-----|:-----|
 | Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**OBSERVAÇÃO**: Outlook no Mac, apenas a com build 16.35.308 ou posterior oferece suporte para salvar uma reunião. Caso contrário, `saveAsync` o método falhará quando chamado de uma reunião no modo de redação. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
 | Instâncias de uma série de compromissos recorrentes | <ul><li>Pode obter a ID do item e outras propriedades de um compromisso mestre ou a instância de compromisso de uma série recorrente.</li><li>Pode usar [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para exibir uma instância ou o mestre de uma série recorrente.</li></ul> | <ul><li>Pode obter a ID do item e outras propriedades do compromisso mestre, mas não de uma instância de uma série recorrente.</li><li>Pode exibir o compromisso mestre de uma série recorrente. Sem a ID do item, não pode exibir uma instância de uma série recorrente.</li></ul> |
-| Tipo de destinatário do participante de um compromisso | Pode usar [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) para identificar o tipo de destinatário de um participante. | `EmailAddressDetails.recipientType` retorna `undefined` para participantes do compromisso. |
-| Cadeia de caracteres de versão do aplicativo cliente | O formato da cadeia de caracteres de versão retornada [por diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) depende do tipo real de cliente. Por exemplo:<ul><li>Outlook no Windows:`15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão `Diagnostics.hostVersion` retornada por Outlook no Mac:`15.0 (140325)` |
+| Tipo de destinatário do participante de um compromisso | Pode usar [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipientType) para identificar o tipo de destinatário de um participante. | `EmailAddressDetails.recipientType` retorna `undefined` para participantes do compromisso. |
+| Cadeia de caracteres de versão do aplicativo cliente | O formato da cadeia de caracteres de versão retornada [por diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) depende do tipo real de cliente. Por exemplo:<ul><li>Outlook no Windows:`15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão `Diagnostics.hostVersion` retornada por Outlook no Mac:`15.0 (140325)` |
 | Propriedades personalizadas de um item | Se a rede falhar, um suplemento ainda poderá acessar as propriedades personalizadas armazenadas em cache. | Como Outlook no Mac não armazena propriedades personalizadas em cache, se a rede ficar para baixo, os complementos não poderão acessá-las. |
 | Detalhes de anexo | O tipo de conteúdo e os nomes de anexos em [um objeto AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dependem do tipo de cliente:<ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` não contém nenhuma extensão de nome de arquivo. Por exemplo, se o anexo é uma mensagem que tem o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` sempre inclui uma extensão de nome de arquivo. Anexos que são itens de email têm uma extensão .eml, e compromissos têm uma extensão .ics. Por exemplo, se um anexo é um email com o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity.eml"`.<p>**Observação**: se um arquivo for anexado programaticamente (por exemplo, por meio de um suplemento) sem uma extensão, `AttachmentDetails.name` não conterá essa extensão como parte do nome do arquivo.</p></li></ul> |
 | Cadeia de caracteres que representa o fuso horário nas propriedades `dateTimeCreated` e `dateTimeModified` |Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |

@@ -4,12 +4,12 @@ description: Saiba como executar tarefas comuns com as guias de trabalho ou recu
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b80ef801955b5d4dd229794a24ff1f97a1f38d4e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349424"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671116"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -52,7 +52,7 @@ Excel.createWorkbook();
 
 O método `createWorkbook` também cria uma cópia de uma pasta de trabalho existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .xlsx como parâmetro opcional. A pasta de trabalho resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo. xlsx válido.
 
-Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de caracteres codificada com base64 usando o [corte de arquivo](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
+Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de caracteres codificada com base64 usando o [corte de arquivo](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 

@@ -3,12 +3,12 @@ title: Obter e definir metadados em um suplemento do Outlook
 description: Gerencie dados personalizados no suplemento do Outlook usando configurações de roaming ou propriedades personalizadas.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: c438aa538d47b31aa60f47a1f871822e9c73a9c9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ceed27cc5c0d479ac67a0497e78e971498365e6f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348906"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671769"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obter e definir metadados de suplemento para um suplemento do Outlook
 
@@ -44,7 +44,7 @@ Abaixo temos um exemplo da estrutura, supondo que existam três configurações 
 
 ### <a name="loading-roaming-settings"></a>Carregar configurações de roaming
 
-Um suplemento de email normalmente carrega configurações de roaming no manipulador de eventos [Office.initialize](/javascript/api/office#office-initialize-reason-). O exemplo de código JavaScript a seguir mostra como carregar configurações de roaming existentes e obter os valores de 2 configurações, **customerName** e **customerBalance**.
+Um suplemento de email normalmente carrega configurações de roaming no manipulador de eventos [Office.initialize](/javascript/api/office#Office_initialize_reason_). O exemplo de código JavaScript a seguir mostra como carregar configurações de roaming existentes e obter os valores de 2 configurações, **customerName** e **customerBalance**.
 
 
 ```js
@@ -67,7 +67,7 @@ Office.initialize = function () {
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>Criar ou atribuir uma configuração de roaming
 
-Continuando com o exemplo anterior, a função JavaScript a seguir, `setAddInSetting`, mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) para definir uma configuração denominada `cookie` com a data de hoje e manter os dados usando o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) para salvar todas as configurações de roaming de volta no servidor.
+Continuando com o exemplo anterior, a função JavaScript a seguir, `setAddInSetting`, mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) para definir uma configuração denominada `cookie` com a data de hoje e manter os dados usando o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveAsync_callback_) para salvar todas as configurações de roaming de volta no servidor.
 
 O método cria a configuração se a configuração ainda não existir e atribui a `set` configuração ao valor especificado. O `saveAsync` método salva as configurações de roaming de forma assíncrona. Este exemplo de código passa um método de retorno de chamada, , para Quando a chamada assíncrona terminar, é chamado usando um `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` parâmetro, _asyncResult_. Esse parâmetro é um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que contém o resultado e detalhes sobre a chamada assíncrona. Você pode usar o parâmetro opcional _userContext_ para passar as informações de estado de chamada assíncrona à função de retorno de chamada.
 
@@ -92,7 +92,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>Remover uma configuração móvel
 
-Estendendo também os exemplos anteriores, a função JavaScript a seguir, `removeAddInSetting`, mostra como usar o método [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove-name-) para remover a definição `cookie` e salvar todas as configurações de roaming de volta no Exchange Server.
+Estendendo também os exemplos anteriores, a função JavaScript a seguir, `removeAddInSetting`, mostra como usar o método [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove_name_) para remover a definição `cookie` e salvar todas as configurações de roaming de volta no Exchange Server.
 
 
 ```js
@@ -112,13 +112,13 @@ function removeAddInSetting()
 
 Você pode especificar dados específicos de um item na caixa de correio do usuário usando o objeto [CustomProperties](/javascript/api/outlook/office.CustomProperties). Por exemplo, seu suplemento de e-mail poderia categorizar determinadas mensagens e anotar a categoria usando uma propriedade personalizada `messageCategory`. Ou, se seu suplemento de e-mail cria compromissos de sugestões de reunião em uma mensagem, você pode usar uma propriedade personalizada para controlar cada um desses compromissos. Isso garante que se o usuário abrir a mensagem novamente, o suplemento de e-mail não se oferecerá para criar o compromisso uma segunda vez.
 
-Semelhante às configurações de roaming, as mudanças nas propriedades personalizadas são armazenadas em cópias na memória das propriedades para a sessão atual do Outlook. Para garantir que essas propriedades personalizadas estarão disponíveis na próxima sessão, use[CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-).
+Semelhante às configurações de roaming, as mudanças nas propriedades personalizadas são armazenadas em cópias na memória das propriedades para a sessão atual do Outlook. Para garantir que essas propriedades personalizadas estarão disponíveis na próxima sessão, use[CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_).
 
 Essas propriedades personalizadas específicas do item e específicas do complemento só podem ser acessadas usando o `CustomProperties` objeto. Essas propriedades são diferentes das [UserProperties](/office/vba/api/Outlook.UserProperties) personalizadas baseadas em MAPI no modelo de objeto Outlook e propriedades estendidas no Exchange Web Services (EWS). Você não pode acessar `CustomProperties` diretamente usando o modelo de objeto Outlook, EWS ou REST. Para saber como acessar usando EWS ou REST, consulte a seção Obter propriedades `CustomProperties` [personalizadas usando EWS ou REST](#get-custom-properties-using-ews-or-rest).
 
 ### <a name="using-custom-properties"></a>Usar propriedades personalizadas
 
-Antes de poder usar propriedades personalizadas, você precisa carregá-las chamando o método [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Após ter criado o conjunto de propriedades, você poderá usar os métodos [set](/javascript/api/outlook/office.CustomProperties#set-name--value-) e [get](/javascript/api/outlook/office.CustomProperties) para adicionar e recuperar propriedades personalizadas. Você deve usar o [saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-) método para salvar as alterações feitas no conjunto de propriedades.
+Antes de poder usar propriedades personalizadas, você precisa carregá-las chamando o método [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Após ter criado o conjunto de propriedades, você poderá usar os métodos [set](/javascript/api/outlook/office.customproperties#set_name__value_) e [get](/javascript/api/outlook/office.customproperties) para adicionar e recuperar propriedades personalizadas. Você deve usar o [saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) método para salvar as alterações feitas no conjunto de propriedades.
 
 
  > [!NOTE]
@@ -133,7 +133,7 @@ O exemplo a seguir mostra um conjunto de métodos simplificado para um suplement
 Este exemplo inclui os métodos a seguir.
 
 
-- [Office.initialize](/javascript/api/office#office-initialize-reason-): inicializa o suplemento e carrega o conjunto de propriedades personalizadas do Exchange Server.
+- [Office.initialize](/javascript/api/office#Office_initialize_reason_): inicializa o suplemento e carrega o conjunto de propriedades personalizadas do Exchange Server.
 
 - **customPropsCallback**: obtém o recipiente de propriedades personalizadas que é retornado do servidor e o salva para uso posterior.
 

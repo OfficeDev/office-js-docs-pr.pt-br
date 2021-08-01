@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - conjunto de requisitos 1.1
 description: Outlook Conjunto de requisitos da API de Caixa de Correio versão 1.1 do modelo de objeto Item.
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 88d85c502cc44da8eae1282d1dede544fb3d6603
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 55429dacf556e42a1f5bb38551d3ef7346d1ba7a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661163"
+ms.locfileid: "53671741"
 ---
 # <a name="item-mailbox-requirement-set-11"></a>item (Conjunto de requisitos de caixa de correio 1.1)
 
@@ -25,7 +25,7 @@ ms.locfileid: "53661163"
 |[Modo do Outlook aplicável](../../../outlook/outlook-add-ins-overview.md#extension-points)|Organizador de Compromissos, Participante do Compromisso,<br>Redação de mensagens ou leitura de mensagem|
 
 > [!IMPORTANT]
-> Android e iOS: há limitações sobre quando os complementos são ativados e quais APIs estão disponíveis. Para saber mais, consulte [Add mobile support to an Outlook add-in](../../../outlook/add-mobile-support.md#compose-mode-and-appointments).
+> Android e iOS: há limitações sobre quando os complementos são ativados e quais APIs estão disponíveis. Para saber mais, consulte [Adicionar suporte móvel a um suplemento do Outlook](../../../outlook/add-mobile-support.md#compose-mode-and-appointments).
 
 ## <a name="properties"></a>Propriedades
 
@@ -40,35 +40,35 @@ ms.locfileid: "53661163"
 | | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#body) | [Body](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | cc | ReadItem | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#cc) | [Destinatários](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#cc) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| conversationId | ReadItem | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#conversationid) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#conversationid) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| dateTimeCreated | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#datetimecreated) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#datetimecreated) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| dateTimeModified | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#datetimemodified) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#datetimemodified) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| conversationId | ReadItem | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#conversationId) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#conversationId) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| dateTimeCreated | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#dateTimeCreated) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#dateTimeCreated) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| dateTimeModified | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#dateTimeModified) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#dateTimeModified) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | end | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#end) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#end) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#end)<br>(Solicitação de Reunião) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | from | ReadItem | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#from) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| internetMessageId | ReadItem | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#internetmessageid) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemClass | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemclass) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemclass) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemId | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemid) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemid) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemType | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemtype) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| internetMessageId | ReadItem | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#internetMessageId) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemClass | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemClass) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemClass) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemId | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemId) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemId) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemType | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | localização | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#location) | [Localização](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#location) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#location)<br>(Solicitação de Reunião) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| normalizedSubject | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#normalizedsubject) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#normalizedsubject) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| optionalAttendees | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#optionalattendees) | [Destinatários](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#optionalattendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| normalizedSubject | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#normalizedSubject) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#normalizedSubject) | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| optionalAttendees | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#optionalAttendees) | [Destinatários](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#optionalAttendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | organizer | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#organizer) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| requiredAttendees | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#requiredattendees) | [Destinatários](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#requiredattendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| requiredAttendees | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#requiredAttendees) | [Destinatários](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#requiredAttendees) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | remetente | ReadItem | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | iniciar | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#start) | Data | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -84,30 +84,30 @@ ms.locfileid: "53661163"
 
 | Método | Minimum<br>nível de permissão | Detalhes por modo | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| addFileAttachmentAsync(uri, attachmentName, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| addFileAttachmentAsync(uri, attachmentName, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#addFileAttachmentAsync_uri__attachmentName__options__callback_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#addfileattachmentasync-uri--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| addItemAttachmentAsync(itemId, attachmentName, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#additemattachmentasync-itemid--attachmentname--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| displayReplyAllForm(formData) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#displayreplyallform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#displayreplyallform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| displayReplyForm(formData) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#displayreplyform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#displayreplyform-formdata-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getEntities() | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getentities--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getEntitiesByType(entityType) | Restricted | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getentitiesbytype-entitytype-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getFilteredEntitiesByName(name) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getfilteredentitiesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getRegExMatches() | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getregexmatches--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getregexmatches--) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| getRegExMatchesByName(name) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getregexmatchesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getregexmatchesbyname-name-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| loadCustomPropertiesAsync(callback, [userContext]) | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| removeAttachmentAsync(attachmentId, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#removeattachmentasync-attachmentid--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-|  |  | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#removeattachmentasync-attachmentid--options--callback-) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| addItemAttachmentAsync(itemId, attachmentName, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#addItemAttachmentAsync_itemId__attachmentName__options__callback_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#addItemAttachmentAsync_itemId__attachmentName__options__callback_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| displayReplyAllForm(formData) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#displayReplyAllForm_formData_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#displayReplyAllForm_formData_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| displayReplyForm(formData) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#displayReplyForm_formData_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#displayReplyForm_formData_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getEntities() | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getEntities__) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getEntities__) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getEntitiesByType(entityType) | Restricted | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getEntitiesByType_entityType_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getEntitiesByType_entityType_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getFilteredEntitiesByName(name) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getFilteredEntitiesByName_name_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getFilteredEntitiesByName_name_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getRegExMatches() | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getRegExMatches__) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getRegExMatches__) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| getRegExMatchesByName(name) | ReadItem | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#getRegExMatchesByName_name_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#getRegExMatchesByName_name_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| loadCustomPropertiesAsync(callback, [userContext]) | ReadItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Participante do Compromisso](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.1&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Mensagem lida](/javascript/api/outlook/office.messageread?view=outlook-js-1.1&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| removeAttachmentAsync(attachmentId, [options], [callback]) | ReadWriteItem | [Organizador de Compromissos](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.1&preserve-view=true#removeAttachmentAsync_attachmentId__options__callback_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+|  |  | [Composição da mensagem](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.1&preserve-view=true#removeAttachmentAsync_attachmentId__options__callback_) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="example"></a>Exemplo
 

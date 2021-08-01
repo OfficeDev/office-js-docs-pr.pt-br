@@ -3,12 +3,12 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar Office de complementos.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330077"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671307"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -76,7 +76,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#touchenabled) para detectar se o aplicativo Office que o seu complemento executa está habilitado para toque.
+- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#touchEnabled) para detectar se o aplicativo Office que o seu complemento executa está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
@@ -90,7 +90,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 - Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Se você estiver usando a [interface do usuário do Fluent React](../design/using-office-ui-fabric-react.md) seus elementos de design, muitos desses elementos são integrados ao sistema de design.
+> Se você estiver usando Fluent interface do usuário [React](../design/using-office-ui-fabric-react.md) seus elementos de design, muitos desses elementos são integrados ao sistema de design.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento

@@ -4,12 +4,12 @@ description: Detalhes sobre as próximas Excel APIs JavaScript.
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4bceda6229270332ed7624b693913e47a065a066
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661275"
+ms.locfileid: "53671713"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -35,167 +35,167 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. P
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteshiftdirection)|Representa a direção (como para cima ou para a esquerda) que as células restantes serão deslocadas quando uma célula ou células são excluídas.|
-||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertshiftdirection)|Representa a direção (como para baixo ou para a direita) que as células existentes mudarão quando uma nova célula ou células são inseridas.|
-|[Gráfico](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getdatatable--)|Obtém a tabela de dados no gráfico.|
-||[getDataTableOrNullObject()](/javascript/api/excel/excel.chart#getdatatableornullobject--)|Obtém a tabela de dados no gráfico.|
+|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|Representa a direção (como para cima ou para a esquerda) que as células restantes serão deslocadas quando uma célula ou células são excluídas.|
+||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|Representa a direção (como para baixo ou para a direita) que as células existentes mudarão quando uma nova célula ou células são inseridas.|
+|[Gráfico](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|Obtém a tabela de dados no gráfico.|
+||[getDataTableOrNullObject()](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|Obtém a tabela de dados no gráfico.|
 |[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|Representa o formato de uma tabela de dados do gráfico, que inclui o formato de preenchimento, fonte e borda.|
-||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showhorizontalborder)|Especifica se será exibida a borda horizontal da tabela de dados.|
-||[showLegendKey](/javascript/api/excel/excel.chartdatatable#showlegendkey)|Especifica se a chave de legenda da tabela de dados deve ser apresentada.|
-||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showoutlineborder)|Especifica se será exibida a borda de contorno da tabela de dados.|
-||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showverticalborder)|Especifica se será exibida a borda vertical da tabela de dados.|
+||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showHorizontalBorder)|Especifica se será exibida a borda horizontal da tabela de dados.|
+||[showLegendKey](/javascript/api/excel/excel.chartdatatable#showLegendKey)|Especifica se a chave de legenda da tabela de dados deve ser apresentada.|
+||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showOutlineBorder)|Especifica se será exibida a borda de contorno da tabela de dados.|
+||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showVerticalBorder)|Especifica se será exibida a borda vertical da tabela de dados.|
 ||[visible](/javascript/api/excel/excel.chartdatatable#visible)|Especifica se é preciso mostrar a tabela de dados do gráfico.|
 |[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|Representa o formato de borda da tabela de dados do gráfico, que inclui cor, estilo de linha e peso.|
 ||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo.|
 ||[font](/javascript/api/excel/excel.chartdatatableformat#font)|Representa os atributos de fonte (como nome da fonte, tamanho da fonte e cor) do objeto atual.|
-|[Comentário](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
-||[getTask()](/javascript/api/excel/excel.comment#gettask--)|Obtém a tarefa associada a este comentário.|
-||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Obtém a tarefa associada a este comentário.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getitemornullobject-commentid-)|Obtém um comentário da coleção com base em seu ID.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assigntask-assignee-)|Atribui a tarefa anexada ao comentário ao usuário determinado como o único destinatário.|
-||[getTask()](/javascript/api/excel/excel.commentreply#gettask--)|Obtém a tarefa associada ao thread desta resposta de comentário.|
-||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|Obtém a tarefa associada ao thread desta resposta de comentário.|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitemornullobject-commentreplyid-)|Retorna uma resposta de comentário identificada pela respectiva ID.|
-|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getitemornullobject-id-)|Retorna um formato condicional identificado por sua ID.|
-|[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentcomplete)|Especifica a porcentagem de conclusão da tarefa.|
+|[Comentário](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assignTask_assignee_)|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
+||[getTask()](/javascript/api/excel/excel.comment#getTask__)|Obtém a tarefa associada a este comentário.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#getTaskOrNullObject__)|Obtém a tarefa associada a este comentário.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getItemOrNullObject_commentId_)|Obtém um comentário da coleção com base em seu ID.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assignTask_assignee_)|Atribui a tarefa anexada ao comentário ao usuário determinado como o único destinatário.|
+||[getTask()](/javascript/api/excel/excel.commentreply#getTask__)|Obtém a tarefa associada ao thread desta resposta de comentário.|
+||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|Obtém a tarefa associada ao thread desta resposta de comentário.|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|Retorna uma resposta de comentário identificada pela respectiva ID.|
+|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|Retorna um formato condicional identificado por sua ID.|
+|[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|Especifica a porcentagem de conclusão da tarefa.|
 ||[priority](/javascript/api/excel/excel.documenttask#priority)|Especifica a prioridade da tarefa.|
 ||[assignees](/javascript/api/excel/excel.documenttask#assignees)|Retorna uma coleção de atribuídos da tarefa.|
 ||[changes](/javascript/api/excel/excel.documenttask#changes)|Obtém os registros de alteração da tarefa.|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|Obtém o comentário associado à tarefa.|
-||[completedBy](/javascript/api/excel/excel.documenttask#completedby)|Obtém o usuário mais recente para ter concluído a tarefa.|
-||[completedDateTime](/javascript/api/excel/excel.documenttask#completeddatetime)|Obtém a data e a hora em que a tarefa foi concluída.|
-||[createdBy](/javascript/api/excel/excel.documenttask#createdby)|Obtém o usuário que criou a tarefa.|
-||[createdDateTime](/javascript/api/excel/excel.documenttask#createddatetime)|Obtém a data e a hora em que a tarefa foi criada.|
+||[completedBy](/javascript/api/excel/excel.documenttask#completedBy)|Obtém o usuário mais recente para ter concluído a tarefa.|
+||[completedDateTime](/javascript/api/excel/excel.documenttask#completedDateTime)|Obtém a data e a hora em que a tarefa foi concluída.|
+||[createdBy](/javascript/api/excel/excel.documenttask#createdBy)|Obtém o usuário que criou a tarefa.|
+||[createdDateTime](/javascript/api/excel/excel.documenttask#createdDateTime)|Obtém a data e a hora em que a tarefa foi criada.|
 ||[id](/javascript/api/excel/excel.documenttask#id)|Obtém a ID da tarefa.|
-||[setStartAndDueDateTime(startDateTime: Date, dueDateTime: Date)](/javascript/api/excel/excel.documenttask#setstartandduedatetime-startdatetime--duedatetime-)|Altera o início e as datas de vencimento da tarefa.|
-||[startAndDueDateTime](/javascript/api/excel/excel.documenttask#startandduedatetime)|Obtém ou define a data e a hora em que a tarefa deve começar e deve ser final.|
+||[setStartAndDueDateTime(startDateTime: Date, dueDateTime: Date)](/javascript/api/excel/excel.documenttask#setStartAndDueDateTime_startDateTime__dueDateTime_)|Altera o início e as datas de vencimento da tarefa.|
+||[startAndDueDateTime](/javascript/api/excel/excel.documenttask#startAndDueDateTime)|Obtém ou define a data e a hora em que a tarefa deve começar e deve ser final.|
 ||[title](/javascript/api/excel/excel.documenttask#title)|Especifica o título da tarefa.|
 |[DocumentTaskChange](/javascript/api/excel/excel.documenttaskchange)|[assignee](/javascript/api/excel/excel.documenttaskchange#assignee)|Representa o usuário atribuído à tarefa para um tipo de registro de alteração ou o usuário não atribuído da tarefa para um tipo `assign` `unassign` de registro de alteração.|
-||[changedBy](/javascript/api/excel/excel.documenttaskchange#changedby)|Representa o usuário que criou ou alterou a tarefa.|
-||[commentId](/javascript/api/excel/excel.documenttaskchange#commentid)|Representa a ID do `Comment` ou ao qual a alteração da tarefa está `CommentReply` ancorada.|
-||[createdDateTime](/javascript/api/excel/excel.documenttaskchange#createddatetime)|Representa a data e a hora de criação do registro de alteração de tarefa.|
-||[dueDateTime](/javascript/api/excel/excel.documenttaskchange#duedatetime)|Representa a data e a hora de vencimento da tarefa, no fuso horário UTC.|
+||[changedBy](/javascript/api/excel/excel.documenttaskchange#changedBy)|Representa o usuário que criou ou alterou a tarefa.|
+||[commentId](/javascript/api/excel/excel.documenttaskchange#commentId)|Representa a ID do `Comment` ou ao qual a alteração da tarefa está `CommentReply` ancorada.|
+||[createdDateTime](/javascript/api/excel/excel.documenttaskchange#createdDateTime)|Representa a data e a hora de criação do registro de alteração de tarefa.|
+||[dueDateTime](/javascript/api/excel/excel.documenttaskchange#dueDateTime)|Representa a data e a hora de vencimento da tarefa, no fuso horário UTC.|
 ||[id](/javascript/api/excel/excel.documenttaskchange#id)|ID do registro de alteração de tarefa.|
-||[percentComplete](/javascript/api/excel/excel.documenttaskchange#percentcomplete)|Representa a porcentagem de conclusão da tarefa.|
+||[percentComplete](/javascript/api/excel/excel.documenttaskchange#percentComplete)|Representa a porcentagem de conclusão da tarefa.|
 ||[priority](/javascript/api/excel/excel.documenttaskchange#priority)|Representa a prioridade da tarefa.|
-||[startDateTime](/javascript/api/excel/excel.documenttaskchange#startdatetime)|Representa a data e a hora de início da tarefa, no fuso horário UTC.|
+||[startDateTime](/javascript/api/excel/excel.documenttaskchange#startDateTime)|Representa a data e a hora de início da tarefa, no fuso horário UTC.|
 ||[title](/javascript/api/excel/excel.documenttaskchange#title)|Representa o título da tarefa.|
 ||[type](/javascript/api/excel/excel.documenttaskchange#type)|Representa o tipo de ação do registro de alteração de tarefa.|
-||[undoHistoryId](/javascript/api/excel/excel.documenttaskchange#undohistoryid)|Representa a `DocumentTaskChange.id` propriedade que foi desfeita para o tipo `undo` de registro de alteração.|
-|[DocumentTaskChangeCollection](/javascript/api/excel/excel.documenttaskchangecollection)|[getCount()](/javascript/api/excel/excel.documenttaskchangecollection#getcount--)|Obtém o número de registros de alteração na coleção da tarefa.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.documenttaskchangecollection#getitemat-index-)|Obtém um registro de alteração de tarefa usando seu índice na coleção.|
+||[undoHistoryId](/javascript/api/excel/excel.documenttaskchange#undoHistoryId)|Representa a `DocumentTaskChange.id` propriedade que foi desfeita para o tipo `undo` de registro de alteração.|
+|[DocumentTaskChangeCollection](/javascript/api/excel/excel.documenttaskchangecollection)|[getCount()](/javascript/api/excel/excel.documenttaskchangecollection#getCount__)|Obtém o número de registros de alteração na coleção da tarefa.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.documenttaskchangecollection#getItemAt_index_)|Obtém um registro de alteração de tarefa usando seu índice na coleção.|
 ||[items](/javascript/api/excel/excel.documenttaskchangecollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[DocumentTaskCollection](/javascript/api/excel/excel.documenttaskcollection)|[getCount()](/javascript/api/excel/excel.documenttaskcollection#getcount--)|Obtém o número de tarefas na coleção.|
-||[getItem(key: string)](/javascript/api/excel/excel.documenttaskcollection#getitem-key-)|Obtém uma tarefa usando sua ID.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.documenttaskcollection#getitemat-index-)|Obtém uma tarefa pelo índice na coleção.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.documenttaskcollection#getitemornullobject-key-)|Obtém uma tarefa usando sua ID.|
+|[DocumentTaskCollection](/javascript/api/excel/excel.documenttaskcollection)|[getCount()](/javascript/api/excel/excel.documenttaskcollection#getCount__)|Obtém o número de tarefas na coleção.|
+||[getItem(key: string)](/javascript/api/excel/excel.documenttaskcollection#getItem_key_)|Obtém uma tarefa usando sua ID.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.documenttaskcollection#getItemAt_index_)|Obtém uma tarefa pelo índice na coleção.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.documenttaskcollection#getItemOrNullObject_key_)|Obtém uma tarefa usando sua ID.|
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#duedatetime)|Obtém a data e a hora de vencimento da tarefa.|
-||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startdatetime)|Obtém a data e a hora em que a tarefa deve começar.|
-|[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getitemornullobject-key-)|Obtém uma forma usando seu nome ou ID.|
-|[Identidade](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayname)|Representa o nome para exibição do usuário.|
+|[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#dueDateTime)|Obtém a data e a hora de vencimento da tarefa.|
+||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startDateTime)|Obtém a data e a hora em que a tarefa deve começar.|
+|[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getItemOrNullObject_key_)|Obtém uma forma usando seu nome ou ID.|
+|[Identidade](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|Representa o nome para exibição do usuário.|
 ||[email](/javascript/api/excel/excel.identity#email)|Representa o endereço de email do usuário.|
 ||[id](/javascript/api/excel/excel.identity#id)|Representa a ID exclusiva do usuário.|
-|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[add(assignee: Identity)](/javascript/api/excel/excel.identitycollection#add-assignee-)|Adiciona uma identidade de usuário à coleção.|
-||[clear()](/javascript/api/excel/excel.identitycollection#clear--)|Remove todas as identidades de usuário da coleção.|
-||[getCount()](/javascript/api/excel/excel.identitycollection#getcount--)|Obtém o número de itens na coleção.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getitemat-index-)|Obtém uma identidade de usuário de documento usando seu índice na coleção.|
+|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[add(assignee: Identity)](/javascript/api/excel/excel.identitycollection#add_assignee_)|Adiciona uma identidade de usuário à coleção.|
+||[clear()](/javascript/api/excel/excel.identitycollection#clear__)|Remove todas as identidades de usuário da coleção.|
+||[getCount()](/javascript/api/excel/excel.identitycollection#getCount__)|Obtém o número de itens na coleção.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getItemAt_index_)|Obtém uma identidade de usuário de documento usando seu índice na coleção.|
 ||[items](/javascript/api/excel/excel.identitycollection#items)|Obtém os itens filhos carregados nesta coleção.|
-||[remove(assignee: Identity)](/javascript/api/excel/excel.identitycollection#remove-assignee-)|Remove uma identidade de usuário da coleção.|
-|[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|Representa o nome para exibição do usuário.|
+||[remove(assignee: Identity)](/javascript/api/excel/excel.identitycollection#remove_assignee_)|Remove uma identidade de usuário da coleção.|
+|[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayName)|Representa o nome para exibição do usuário.|
 ||[email](/javascript/api/excel/excel.identityentity#email)|Representa o endereço de email do usuário.|
 ||[id](/javascript/api/excel/excel.identityentity#id)|Representa a ID exclusiva do usuário.|
-|[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|O nome do provedor de dados do tipo de dados vinculado.|
-||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|A data e a hora do fuso horário local desde que a lista de trabalho foi aberta quando o tipo de dados vinculado foi atualizado pela última vez.|
+|[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataProvider)|O nome do provedor de dados do tipo de dados vinculado.|
+||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastRefreshed)|A data e a hora do fuso horário local desde que a lista de trabalho foi aberta quando o tipo de dados vinculado foi atualizado pela última vez.|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|O nome do tipo de dados vinculado.|
-||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicrefreshinterval)|A frequência, em segundos, na qual o tipo de dados vinculado é atualizado se `refreshMode` estiver definido como "Periódico".|
-||[refreshMode](/javascript/api/excel/excel.linkeddatatype#refreshmode)|O mecanismo pelo qual os dados do tipo de dados vinculados são recuperados.|
-||[serviceId](/javascript/api/excel/excel.linkeddatatype#serviceid)|A ID exclusiva do tipo de dados vinculado.|
-||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedrefreshmodes)|Retorna uma matriz com todos os modos de atualização suportados pelo tipo de dados vinculado.|
-||[requestRefresh()](/javascript/api/excel/excel.linkeddatatype#requestrefresh--)|Faz uma solicitação para atualizar o tipo de dados vinculado.|
-||[requestSetRefreshMode(refreshMode: Excel. LinkedDataTypeRefreshMode)](/javascript/api/excel/excel.linkeddatatype#requestsetrefreshmode-refreshmode-)|Faz uma solicitação para alterar o modo de atualização para esse tipo de dados vinculado.|
-|[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[serviceId](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceid)|A ID exclusiva do novo tipo de dados vinculado.|
+||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicRefreshInterval)|A frequência, em segundos, na qual o tipo de dados vinculado é atualizado se `refreshMode` estiver definido como "Periódico".|
+||[refreshMode](/javascript/api/excel/excel.linkeddatatype#refreshMode)|O mecanismo pelo qual os dados do tipo de dados vinculados são recuperados.|
+||[serviceId](/javascript/api/excel/excel.linkeddatatype#serviceId)|A ID exclusiva do tipo de dados vinculado.|
+||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedRefreshModes)|Retorna uma matriz com todos os modos de atualização suportados pelo tipo de dados vinculado.|
+||[requestRefresh()](/javascript/api/excel/excel.linkeddatatype#requestRefresh__)|Faz uma solicitação para atualizar o tipo de dados vinculado.|
+||[requestSetRefreshMode(refreshMode: Excel. LinkedDataTypeRefreshMode)](/javascript/api/excel/excel.linkeddatatype#requestSetRefreshMode_refreshMode_)|Faz uma solicitação para alterar o modo de atualização para esse tipo de dados vinculado.|
+|[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[serviceId](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceId)|A ID exclusiva do novo tipo de dados vinculado.|
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|Obtém a origem do evento.|
 ||[tipo](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|Obtém o tipo do evento.|
-|[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getcount--)|Obtém o número de tipos de dados vinculados na coleção.|
-||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getitem-key-)|Obtém um tipo de dados vinculado por ID de serviço.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getitemat-index-)|Obtém um tipo de dados vinculado pelo índice na coleção.|
-||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getitemornullobject-key-)|Obtém um tipo de dados vinculado por ID.|
+|[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|Obtém o número de tipos de dados vinculados na coleção.|
+||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|Obtém um tipo de dados vinculado por ID de serviço.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|Obtém um tipo de dados vinculado pelo índice na coleção.|
+||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|Obtém um tipo de dados vinculado por ID.|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|Obtém os itens filhos carregados nesta coleção.|
-||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestrefreshall--)|Faz uma solicitação para atualizar todos os tipos de dados vinculados na coleção.|
-|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks()](/javascript/api/excel/excel.linkedworkbook#breaklinks--)|Faz uma solicitação para quebrar os links apontando para a lista de trabalho vinculada.|
+||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|Faz uma solicitação para atualizar todos os tipos de dados vinculados na coleção.|
+|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks()](/javascript/api/excel/excel.linkedworkbook#breakLinks__)|Faz uma solicitação para quebrar os links apontando para a lista de trabalho vinculada.|
 ||[id](/javascript/api/excel/excel.linkedworkbook#id)|A URL original apontando para a lista de trabalho vinculada.|
-||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh--)|Faz uma solicitação para atualizar os dados recuperados da lista de trabalho vinculada.|
-|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks()](/javascript/api/excel/excel.linkedworkbookcollection#breakalllinks--)|Quebra todos os links para as guias de trabalho vinculadas.|
-||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitem-key-)|Obtém informações sobre uma lista de trabalho vinculada por sua URL.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitemornullobject-key-)|Obtém informações sobre uma lista de trabalho vinculada por sua URL.|
+||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh__)|Faz uma solicitação para atualizar os dados recuperados da lista de trabalho vinculada.|
+|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks()](/javascript/api/excel/excel.linkedworkbookcollection#breakAllLinks__)|Quebra todos os links para as guias de trabalho vinculadas.|
+||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItem_key_)|Obtém informações sobre uma lista de trabalho vinculada por sua URL.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItemOrNullObject_key_)|Obtém informações sobre uma lista de trabalho vinculada por sua URL.|
 ||[items](/javascript/api/excel/excel.linkedworkbookcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-||[refreshAll()](/javascript/api/excel/excel.linkedworkbookcollection#refreshall--)|Faz uma solicitação para atualizar todos os links da workbook.|
-||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbooklinksrefreshmode)|Representa o modo de atualização dos links da agenda de trabalho.|
-|[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitemornullobject-key-)|Obtém uma exibição de planilha usando seu nome.|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Obtém uma célula exclusiva na tabela dinâmica com base em uma hierarquia de dados, bem como os itens de linha e coluna de suas respectivas hierarquias.|
-||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|O estilo aplicado à Tabela Dinâmica.|
-||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|Define o estilo aplicado à Tabela Dinâmica.|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getfirstornullobject--)|Obtém a primeira Tabela Dinâmica da coleção.|
+||[refreshAll()](/javascript/api/excel/excel.linkedworkbookcollection#refreshAll__)|Faz uma solicitação para atualizar todos os links da workbook.|
+||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbookLinksRefreshMode)|Representa o modo de atualização dos links da agenda de trabalho.|
+|[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|Obtém uma exibição de planilha usando seu nome.|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|Obtém uma célula exclusiva na tabela dinâmica com base em uma hierarquia de dados, bem como os itens de linha e coluna de suas respectivas hierarquias.|
+||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|O estilo aplicado à Tabela Dinâmica.|
+||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setStyle_style_)|Define o estilo aplicado à Tabela Dinâmica.|
+|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|Obtém a primeira Tabela Dinâmica da coleção.|
 |[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|Obtém a mensagem de erro de consulta de quando a consulta foi atualizada pela última vez.|
-||[loadedTo](/javascript/api/excel/excel.query#loadedto)|Obtém o tipo de objeto de consulta "carregado para".|
-||[loadedToDataModel](/javascript/api/excel/excel.query#loadedtodatamodel)|Especifica se a consulta foi carregada para o Modelo de Dados.|
+||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|Obtém o tipo de objeto de consulta "carregado para".|
+||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|Especifica se a consulta foi carregada para o Modelo de Dados.|
 ||[name](/javascript/api/excel/excel.query#name)|Obtém o nome da consulta.|
-||[refreshDate](/javascript/api/excel/excel.query#refreshdate)|Obtém a data e a hora em que a consulta foi atualizada pela última vez.|
-||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsloadedcount)|Obtém o número de linhas que foram carregadas quando a consulta foi atualizada pela última vez.|
-|[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getcount--)|Obtém o número de consultas na guia de trabalho.|
-||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getitem-key-)|Obtém uma consulta da coleção com base em seu nome.|
+||[refreshDate](/javascript/api/excel/excel.query#refreshDate)|Obtém a data e a hora em que a consulta foi atualizada pela última vez.|
+||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsLoadedCount)|Obtém o número de linhas que foram carregadas quando a consulta foi atualizada pela última vez.|
+|[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getCount__)|Obtém o número de consultas na guia de trabalho.|
+||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getItem_key_)|Obtém uma consulta da coleção com base em seu nome.|
 ||[items](/javascript/api/excel/excel.querycollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getdependents--)|Retorna um objeto que representa o intervalo que contém todos os dependentes de uma célula na mesma planilha ou `WorkbookRangeAreas` em várias planilhas.|
-||[getPrecedents()](/javascript/api/excel/excel.range#getprecedents--)|Retorna um objeto que representa o intervalo que contém todos os precedentes de uma célula na mesma planilha ou `WorkbookRangeAreas` em várias planilhas.|
-|[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|O modo de atualização do tipo de dados vinculado.|
-||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceid)|A ID exclusiva do objeto cujo modo de atualização foi alterado.|
+|[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|Retorna um objeto que representa o intervalo que contém todos os dependentes de uma célula na mesma planilha ou `WorkbookRangeAreas` em várias planilhas.|
+||[getPrecedents()](/javascript/api/excel/excel.range#getPrecedents__)|Retorna um objeto que representa o intervalo que contém todos os precedentes de uma célula na mesma planilha ou `WorkbookRangeAreas` em várias planilhas.|
+|[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshMode)|O modo de atualização do tipo de dados vinculado.|
+||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceId)|A ID exclusiva do objeto cujo modo de atualização foi alterado.|
 ||[source](/javascript/api/excel/excel.refreshmodechangedeventargs#source)|Obtém a origem do evento.|
 ||[tipo](/javascript/api/excel/excel.refreshmodechangedeventargs#type)|Obtém o tipo do evento.|
 |[RefreshRequestCompletedEventArgs](/javascript/api/excel/excel.refreshrequestcompletedeventargs)|[atualizado](/javascript/api/excel/excel.refreshrequestcompletedeventargs#refreshed)|Indica se a solicitação de atualização foi bem-sucedida.|
-||[serviceId](/javascript/api/excel/excel.refreshrequestcompletedeventargs#serviceid)|A ID exclusiva do objeto cuja solicitação de atualização foi concluída.|
+||[serviceId](/javascript/api/excel/excel.refreshrequestcompletedeventargs#serviceId)|A ID exclusiva do objeto cuja solicitação de atualização foi concluída.|
 ||[source](/javascript/api/excel/excel.refreshrequestcompletedeventargs#source)|Obtém a origem do evento.|
 ||[tipo](/javascript/api/excel/excel.refreshrequestcompletedeventargs#type)|Obtém o tipo do evento.|
 ||[avisos](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|Uma matriz que contém quaisquer avisos gerados a partir da solicitação de atualização.|
-|[Formato](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayname)|Obtém o nome de exibição da forma.|
-|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|Cria um gráfico vetorial escalável (SVG) de uma cadeia de caracteres XML e a adiciona à planilha.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getitemornullobject-key-)|Obtém uma forma usando seu nome ou ID.|
-|[Segmentação de dados](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|Representa o nome da segmentação de dados usada na fórmula.|
-||[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|O estilo aplicado à slicer.|
-||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setstyle-style-)|Define o estilo aplicado à slicer.|
-|[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getitemornullobject-name-)|Obtém um estilo por nome.|
-|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Altera a tabela para usar o estilo de tabela padrão.|
-||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Ocorre quando um filtro é aplicado em uma tabela específica.|
-||[tableStyle](/javascript/api/excel/excel.table#tablestyle)|O estilo aplicado à tabela.|
-||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setstyle-style-)|Define o estilo aplicado à tabela.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|Ocorre quando um filtro é aplicado em qualquer tabela em uma pasta de trabalho ou em uma planilha.|
-|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Obtém a ID da tabela na qual o filtro é aplicado.|
+|[Formato](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|Obtém o nome de exibição da forma.|
+|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addSvg_xml_)|Cria um gráfico vetorial escalável (SVG) de uma cadeia de caracteres XML e a adiciona à planilha.|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getItemOrNullObject_key_)|Obtém uma forma usando seu nome ou ID.|
+|[Segmentação de dados](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|Representa o nome da segmentação de dados usada na fórmula.|
+||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|O estilo aplicado à slicer.|
+||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setStyle_style_)|Define o estilo aplicado à slicer.|
+|[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getItemOrNullObject_name_)|Obtém um estilo por nome.|
+|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|Altera a tabela para usar o estilo de tabela padrão.|
+||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|Ocorre quando um filtro é aplicado em uma tabela específica.|
+||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|O estilo aplicado à tabela.|
+||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setStyle_style_)|Define o estilo aplicado à tabela.|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onFiltered)|Ocorre quando um filtro é aplicado em qualquer tabela em uma pasta de trabalho ou em uma planilha.|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|Obtém a ID da tabela na qual o filtro é aplicado.|
 ||[tipo](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtém o tipo do evento.|
-||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtém a ID da planilha que contém a tabela.|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleterows-rows-)|Exclua várias linhas de uma tabela.|
-||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleterowsat-index--count-)|Exclua um número especificado de linhas de uma tabela, começando em um determinado índice.|
-|[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|Obtém uma tabela pelo nome ou ID.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da lista de trabalho.|
-||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedworkbooks)|Retorna uma coleção de guias de trabalho vinculadas.|
+||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|Obtém a ID da planilha que contém a tabela.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|Exclua várias linhas de uma tabela.|
+||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|Exclua um número especificado de linhas de uma tabela, começando em um determinado índice.|
+|[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getItemOrNullObject_key_)|Obtém uma tabela pelo nome ou ID.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da lista de trabalho.|
+||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|Retorna uma coleção de guias de trabalho vinculadas.|
 ||[consultas](/javascript/api/excel/excel.workbook#queries)|Retorna uma coleção de consultas do Power Query que fazem parte da workbook.|
 ||[tasks](/javascript/api/excel/excel.workbook#tasks)|Retorna uma coleção de tarefas que estão presentes na workbook.|
-||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da Tabela Dinâmica é mostrado no nível da lista de trabalho.|
-||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando um filtro é aplicado em uma planilha específica.|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onprotectionchanged)|Ocorre quando o estado de proteção da planilha é alterado.|
-||[tabId](/javascript/api/excel/excel.worksheet#tabid)|Retorna um valor que representa essa planilha que pode ser lido por Open Office XML.|
+||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|Especifica se o painel de lista de campos da Tabela Dinâmica é mostrado no nível da lista de trabalho.|
+||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|Ocorre quando um filtro é aplicado em uma planilha específica.|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|Ocorre quando o estado de proteção da planilha é alterado.|
+||[tabId](/javascript/api/excel/excel.worksheet#tabId)|Retorna um valor que representa essa planilha que pode ser lido por Open Office XML.|
 ||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Retorna uma coleção de tarefas presentes na planilha.|
-|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changedirectionstate)|Representa uma alteração na direção em que as células de uma planilha serão deslocadas quando uma célula ou células são excluídas ou inseridas.|
-||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|Representa a origem do gatilho do evento.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
-||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onprotectionchanged)|Ocorre quando o estado de proteção da planilha é alterado.|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|Representa uma alteração na direção em que as células de uma planilha serão deslocadas quando uma célula ou células são excluídas ou inseridas.|
+||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|Representa a origem do gatilho do evento.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
+||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onFiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onProtectionChanged)|Ocorre quando o estado de proteção da planilha é alterado.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[tipo](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Obtém o tipo do evento.|
-||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Obtém a ID da planilha na qual o filtro é aplicado.|
-|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isprotected)|Obtém o status de proteção atual da planilha.|
+||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetId)|Obtém a ID da planilha na qual o filtro é aplicado.|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isProtected)|Obtém o status de proteção atual da planilha.|
 ||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|A origem do evento.|
 ||[tipo](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|Obtém o tipo do evento.|
-||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetid)|Obtém a ID da planilha na qual o status da proteção é alterado.|
+||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetId)|Obtém a ID da planilha na qual o status da proteção é alterado.|
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535988"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671531"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -60,7 +60,7 @@ A adição de guias contextuais personalizadas exige que o seu add-in use o temp
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Definir os grupos e controles que aparecem na guia
 
-Ao contrário das guias principais personalizadas, definidas com XML no manifesto, as guias contextuais personalizadas são definidas no tempo de execução com um blob JSON. Seu código analisará o blob em um objeto JavaScript e passará o objeto para o método [Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-) As guias contextuais personalizadas só estão presentes em documentos nos quais o seu complemento está sendo executado no momento. Isso é diferente das guias principais personalizadas que são adicionadas à faixa de opções do aplicativo Office quando o complemento é instalado e permanecem presentes quando outro documento é aberto. Além disso, `requestCreateControls` o método pode ser executado apenas uma vez em uma sessão do seu complemento. Se for chamado novamente, será lançado um erro.
+Ao contrário das guias principais personalizadas, definidas com XML no manifesto, as guias contextuais personalizadas são definidas no tempo de execução com um blob JSON. Seu código analisará o blob em um objeto JavaScript e passará o objeto para o método [Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) As guias contextuais personalizadas só estão presentes em documentos nos quais o seu complemento está sendo executado no momento. Isso é diferente das guias principais personalizadas que são adicionadas à faixa de opções do aplicativo Office quando o complemento é instalado e permanecem presentes quando outro documento é aberto. Além disso, `requestCreateControls` o método pode ser executado apenas uma vez em uma sessão do seu complemento. Se for chamado novamente, será lançado um erro.
 
 > [!NOTE]
 > A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no XML do manifesto.
@@ -295,7 +295,7 @@ Office.onReady(async () => {
 
 Em seguida, defina os manipuladores. Veja a seguir um exemplo simples de um , mas consulte Manipulando o `showDataTab` [erro HostRestartNeeded](#handle-the-hostrestartneeded-error) posteriormente neste artigo para obter uma versão mais robusta da função. Sobre este código, observe:
 
-- O Office controla quando atualiza o estado da faixa de opções. O [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) enfileia uma solicitação para atualizar. O método resolverá o objeto assim que tiver enraizado a solicitação, não quando a faixa `Promise` de opções realmente for atualizada.
+- O Office controla quando atualiza o estado da faixa de opções. O [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) enfileia uma solicitação para atualizar. O método resolverá o objeto assim que tiver enraizado a solicitação, não quando a faixa `Promise` de opções realmente for atualizada.
 - O parâmetro para o método é um objeto `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifica a guia por sua ID exatamente como especificado no *JSON* e (2) especifica a visibilidade da guia.
 - Se você tiver mais de uma guia contextual personalizada que deve estar visível no mesmo contexto, basta adicionar objetos de tabulação adicionais à `tabs` matriz.
 

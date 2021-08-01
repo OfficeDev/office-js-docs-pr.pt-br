@@ -1,23 +1,23 @@
 ---
-title: Encontre células especiais em um intervalo usando a API JavaScript do Excel
-description: Saiba como usar a API JavaScript do Excel para encontrar células especiais, como células com fórmulas, erros ou números.
+title: Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
+description: Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6504873bcd8ab50bd4c03fe4f54b71d0bd920c5b
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652758"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671123"
 ---
-# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript do Excel
+# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
 
-Este artigo fornece exemplos de código que encontram células especiais em um intervalo usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que encontram células especiais em um intervalo usando a API JavaScript Excel javascript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="find-ranges-with-special-cells"></a>Encontrar intervalos com células especiais
 
-Os [métodos Range.getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) e [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) encontram intervalos com base nas características de suas células e nos tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
+Os [métodos Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_) e [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_) encontram intervalos com base nas características de suas células e nos tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -121,9 +121,9 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Encontre uma cadeia de caracteres usando a API JavaScript do Excel](excel-add-ins-ranges-string-match.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Encontre uma cadeia de caracteres usando a EXCEL JavaScript](excel-add-ins-ranges-string-match.md)
 - [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)

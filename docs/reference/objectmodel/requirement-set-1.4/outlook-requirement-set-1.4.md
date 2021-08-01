@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 description: Recursos e APIs que foram introduzidos para os Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.4.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 19d77784926ac09d5620eb36242701da59b39f09
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: b00413ef4c7f862a125c4a5a1d2190d4d60e87bf
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591013"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671251"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 
@@ -23,9 +23,9 @@ O conjunto de requisitos 1.4 inclui todos os recursos do conjunto [de requisitos
 
 ### <a name="change-log"></a>Log de alterações
 
-- Adicionado [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): exibe uma caixa de diálogo em um Office aplicativo.
-- Foi adicionado o [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): fornece uma mensagem da caixa de diálogo à sua página pai/de abertura.
-- Foi adicionado o objeto [Dialog](/javascript/api/office/office.dialog): o objeto retornado quando o método [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) é chamado.
+- Adicionado [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_): exibe uma caixa de diálogo em um Office aplicativo.
+- Foi adicionado o [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_): fornece uma mensagem da caixa de diálogo à sua página pai/de abertura.
+- Foi adicionado o objeto [Dialog](/javascript/api/office/office.dialog): o objeto retornado quando o método [`displayDialogAsync`](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) é chamado.
 
 ## <a name="see-also"></a>Confira também
 

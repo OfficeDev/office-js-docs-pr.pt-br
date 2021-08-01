@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um complemento do painel de tarefas do dicionário
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2d79a40511d28cdf5d11c33435703009b1793dc2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077222"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671657"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -531,9 +531,9 @@ Os principais membros da API Office JavaScript (Office.js) que são chamados a p
 
 - O [evento initialize](/javascript/api/office) do objeto, que é gerado quando o contexto do add-in é inicializado, e fornece acesso a uma instância de objeto Document que representa o documento com o qual o `Office` complemento está interagindo. [](/javascript/api/office/office.document)
     
-- O [método addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do objeto, que é chamado na função para adicionar um manipulador de eventos para o `Document` evento `initialize` [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações de seleção do usuário.
+- O [método addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) do objeto, que é chamado na função para adicionar um manipulador de eventos para o `Document` evento `initialize` [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações de seleção do usuário.
     
-- O [método getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do objeto, que é chamado na função quando o manipulador de eventos é gerado para obter a palavra ou frase que o usuário selecionou, coagi-lo para texto sem texto e, em seguida, executar a função de retorno de chamada `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` assíncrona.
+- O [método getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) do objeto, que é chamado na função quando o manipulador de eventos é gerado para obter a palavra ou frase que o usuário selecionou, coagi-lo para texto sem texto e, em seguida, executar a função de retorno de chamada `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` assíncrona.
     
 - Quando a função de retorno de chamada  `selectTextCallback` assíncrona passada como o argumento _de_ retorno de chamada do método é executada, ela obtém o valor do texto selecionado quando o retorno de `getSelectedDataAsync` chamada retorna. Ele obtém esse valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto `AsyncResult` retornado.
     

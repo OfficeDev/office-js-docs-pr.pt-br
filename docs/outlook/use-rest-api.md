@@ -3,12 +3,12 @@ title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 9f6642afcfae8efd54c4ade6165aa2a6823e3bd2
-ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2021
-ms.locfileid: "53315145"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671671"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
@@ -54,7 +54,7 @@ Para recuperar o item atual pela REST, o suplemento precisará da ID do item, fo
 - Em outros clientes do Outlook, o valor retornado por `Office.context.mailbox.item.itemId` é uma ID formatada para EWS e deve ser convertida usando o método [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 - Também é necessário converter a ID do anexo em uma ID com formato REST para usá-la. As IDs devem ser convertidas porque as IDs EWS podem conter valores não seguros para URL que causarão problemas ao REST.
 
-O suplemento pode determinar em qual cliente do Outlook ele será carregado verificando a propriedade [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostname).
+O suplemento pode determinar em qual cliente do Outlook ele será carregado verificando a propriedade [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName).
 
 ### <a name="example"></a>Exemplo
 

@@ -3,16 +3,16 @@ title: Obter ou definir o assunto em um suplemento do Outlook
 description: Saiba como obter ou definir o assunto de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dda0ad519bdb2c3fc49b71f27e6f1d8a2aefcac
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 048aa079adf3fda5d5f4a85bfcadd3b671ce865a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609137"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671797"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obter ou definir o assunto ao compor um compromisso ou uma mensagem no Outlook
 
-A API JavaScript do Office fornece métodos assíncronos ([Subject. getasync](/javascript/api/outlook/office.Subject#getasync-options--callback-) e [Subject. setasync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)) para obter e definir o assunto de um compromisso ou uma mensagem que o usuário está redigindo. Esses métodos assíncronos estão disponíveis somente para os suplementos de composição. Para usar esses métodos, verifique se você configurou o manifesto do suplemento apropriadamente para que o Outlook ative o suplemento nos formulários de composição.
+A API javaScript Office fornece métodos assíncronos ([subject.getAsync](/javascript/api/outlook/office.Subject#getAsync_options__callback_) e [subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)) para obter e definir o assunto de um compromisso ou mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar o complemento em formulários de redação.
 
 A propriedade **subject** está disponível para acesso de leitura nos formulários de leitura e de redação de compromissos e de mensagens. Em um formulário de leitura, é possível acessar a propriedade diretamente do objeto pai, como em:
 
@@ -28,7 +28,7 @@ item.subject.getAsync
 
 A propriedade **subject** está disponível para acesso de gravação somente nos formulários de redação, e não nos de leitura.
 
-Assim como a maioria dos métodos assíncronos na API JavaScript do Office, **getasync** e **setasync** aceita parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira "Passar parâmetros opcionais para métodos assíncronos" em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira "Passar parâmetros opcionais para métodos assíncronos" em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-the-subject"></a>Obter o assunto

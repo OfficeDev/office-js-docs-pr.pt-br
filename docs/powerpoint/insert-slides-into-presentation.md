@@ -3,12 +3,12 @@ title: Inserir slides em uma apresentação PowerPoint apresentação
 description: Saiba como inserir slides de uma apresentação em outra.
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: 9b106e8940e7b0f19678e0467d8e900ffecd9438
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348780"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671762"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Inserir slides em uma apresentação PowerPoint apresentação
 
@@ -75,7 +75,7 @@ Há muitas maneiras de converter um arquivo em base64. Qual linguagem de program
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>Inserir slides com insertSlidesFromBase64
 
-O seu complemento insere slides de outra apresentação PowerPoint na apresentação atual com o [método Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) A seguir, um exemplo simples no qual todos os slides da apresentação de origem são inseridos no início da apresentação atual e os slides inseridos mantêm a formatação do arquivo de origem. Observe que `chosenFileBase64` é uma variável global que contém uma versão codificada com base64 de um arquivo PowerPoint apresentação.
+O seu complemento insere slides de outra apresentação PowerPoint na apresentação atual com o [método Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) A seguir, um exemplo simples no qual todos os slides da apresentação de origem são inseridos no início da apresentação atual e os slides inseridos mantêm a formatação do arquivo de origem. Observe que `chosenFileBase64` é uma variável global que contém uma versão codificada com base64 de um arquivo PowerPoint apresentação.
 
 ```javascript
 async function insertAllSlides() {

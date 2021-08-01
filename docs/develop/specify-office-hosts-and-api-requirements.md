@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075961"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671179"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -135,7 +135,7 @@ O exemplo de código a seguir mostra um complemento que é carregado em todos os
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>Usar verificações no tempo de execução em seu código JavaScript
 
-Talvez você queira fornecer funcionalidade adicional no seu add-in se determinados conjuntos de requisitos são suportados pelo Office aplicativo. Por exemplo, você pode usar a nova API JavaScript do Word em seu suplemento existente se o suplemento for executado no Word 2016.  Para fazer isso, use o método [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) com o nome do conjunto de requisitos. `isSetSupported`determina, no tempo de execução, se o aplicativo Office executando o complemento oferece suporte ao conjunto de requisitos. Se o conjunto de requisitos for suportado, retornará true e executa o código adicional que usa os membros `isSetSupported` da API desse conjunto de requisitos.  Se o Office aplicativo não dá suporte ao conjunto de requisitos, retorna false e o `isSetSupported` código adicional não será executado.  O código a seguir mostra a sintaxe a ser usada com `isSetSupported`.
+Talvez você queira fornecer funcionalidade adicional no seu add-in se determinados conjuntos de requisitos são suportados pelo Office aplicativo. Por exemplo, você pode usar a nova API JavaScript do Word em seu suplemento existente se o suplemento for executado no Word 2016.  Para fazer isso, use o método [isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) com o nome do conjunto de requisitos. `isSetSupported`determina, no tempo de execução, se o aplicativo Office executando o complemento oferece suporte ao conjunto de requisitos. Se o conjunto de requisitos for suportado, retornará true e executa o código adicional que usa os membros `isSetSupported` da API desse conjunto de requisitos.  Se o Office aplicativo não dá suporte ao conjunto de requisitos, retorna false e o `isSetSupported` código adicional não será executado.  O código a seguir mostra a sintaxe a ser usada com `isSetSupported`.
 
 ```js
 if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))

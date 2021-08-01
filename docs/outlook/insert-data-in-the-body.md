@@ -3,18 +3,18 @@ title: Inserir dados no corpo de um suplemento do Outlook
 description: Saiba como inserir dados no corpo de um compromisso ou mensagem em um suplemento do Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e875619520ee309dec97b2db60ed49c29b2a463
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293867"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671783"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Inserir dados no corpo ao compor um compromisso ou uma mensagem no Outlook
 
-Você pode usar os métodos assíncronos ([Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-), [Body.getTypeAsync](/javascript/api/outlook/office.Body#gettypeasync-options--callback-), [Body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-), [Body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-) e [Body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)) para obter o tipo de corpo e inserir dados no corpo de um item de compromisso ou de uma mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis somente para suplementos de composição. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento nos formulários de composição, conforme descrito em [Criar suplementos do Outlook para formulários de composição](compose-scenario.md).
+Você pode usar os métodos assíncronos ([Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_), [Body.getTypeAsync](/javascript/api/outlook/office.body#getTypeAsync_options__callback_), [Body.prependAsync](/javascript/api/outlook/office.body#prependAsync_data__options__callback_), [Body.setAsync](/javascript/api/outlook/office.body#setAsync_data__options__callback_) e [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#setSelectedDataAsync_data__options__callback_)) para obter o tipo de corpo e inserir dados no corpo de um item de compromisso ou de uma mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis somente para suplementos de composição. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento nos formulários de composição, conforme descrito em [Criar suplementos do Outlook para formulários de composição](compose-scenario.md).
 
-No Outlook, um usuário pode criar uma mensagem em texto, HTML ou Rich Text Format (RTF) e pode criar um compromisso no formato HTML. Antes de inserir, você deve sempre verificar primeiro o formato de item suportado chamando **getTypeAsync**, já que talvez seja necessário executar etapas adicionais. O valor que **getTypeAsync** retorna depende do formato de item original, bem como o suporte do sistema operacional do dispositivo e do aplicativo a ser editado no formato HTML (1). Em seguida, defina o parâmetro  _coercionType_ de **prependAsync** ou **setSelectedDataAsync** de acordo (2) para inserir os dados, conforme mostrado na tabela a seguir. Se você não especificar um argumento, **prependAsync** e **setSelectedDataAsync** assumem que os dados inseridos estão no formato de texto.
+No Outlook, um usuário pode criar uma mensagem em texto, HTML ou RTF (Rich Text Format) e pode criar um compromisso no formato HTML. Antes de inserir, você sempre deve verificar primeiro o formato de item suportado chamando **getTypeAsync,** pois talvez seja necessário tomar etapas adicionais. O valor **que getTypeAsync** retorna depende do formato de item original, bem como do suporte do sistema operacional do dispositivo e do aplicativo à edição no formato HTML (1). Em seguida, defina _coercionType_ parâmetro da **prependAsync** ou **setSelectedDataAsync** adequadamente (2) para inserir os dados, conforme mostrado na tabela a seguir. Se você não especifica um argumento, **prependAsync** e **setSelectedDataAsync** pressupõem que os dados a inserir estão no formato de texto.
 
 <br/>
 
@@ -25,11 +25,11 @@ No Outlook, um usuário pode criar uma mensagem em texto, HTML ou Rich Text Form
 |Texto|HTML|Texto/HTML|
 |HTML|HTML |HTML|
 
-1.  Em tablets e smartphones, **getTypeAsync** retorna **Office. MailboxEnums. BodyType. Text** se o sistema operacional ou o aplicativo não oferecer suporte à edição de um item, que foi originalmente criado no HTML, no formato HTML.
+1.  Em tablets e smartphones, **getTypeAsync** retorna **Office. MailboxEnums.BodyType.Text** se o sistema operacional ou aplicativo não dá suporte à edição de um item, que foi originalmente criado em HTML, no formato HTML.
 
-2.  Se os dados a serem inseridos forem HTML e **getTypeAsync** retornar um tipo de texto para esse item, reorganize seus dados como texto e insira-o com **Office. MailboxEnums. BodyType. Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType_, receberá um erro.
+2.  Se seus dados a inserir são HTML e **getTypeAsync** retorna um tipo de texto para esse item, reorganize seus dados como texto e insira-os **com Office. MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType_, você receberá um erro.
 
-Além de  _coercionType_, assim como a maioria dos métodos assíncronos na API JavaScript do Office, o **getTypeAsync**, o **prependAsync** e o **setSelectedDataAsync** usam outros parâmetros de entrada opcionais. Para obter mais informações sobre como especificar esses parâmetros de entrada opcionais, consulte [passando parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) em [programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Além de _coercionType_, como na maioria dos métodos assíncronos na API JavaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** levam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>Inserir dados na posição atual do cursor

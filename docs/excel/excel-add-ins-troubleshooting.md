@@ -3,12 +3,12 @@ title: Solução de Excel de solução de problemas
 description: Saiba como solucionar erros de desenvolvimento em Excel de complementos.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cb622a1805be7bec61168ab37a41709a57075788
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349438"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671461"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>Solução de Excel de solução de problemas
 
@@ -44,7 +44,7 @@ As APIs a seguir são afetadas por essa opção de lista de trabalho.
 
 ## <a name="coauthoring"></a>Coautoria
 
-Consulte [Coautor no Excel para](co-authoring-in-excel-add-ins.md) padrões a ser usado com eventos em um ambiente de coautor. O artigo também aborda possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+Consulte [Coautor no Excel para](co-authoring-in-excel-add-ins.md) padrões a ser usado com eventos em um ambiente de coautor. O artigo também aborda possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) .
 
 ## <a name="known-issues"></a>Problemas Conhecidos
 
@@ -96,7 +96,7 @@ O método [Range getImage](/javascript/api/excel/excel.range#getImage__) não te
 
 Os [métodos Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) e [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) têm um limite de cadeia de caracteres de endereço de 8192 caracteres. Quando esse limite é excedido, a cadeia de caracteres de endereço é truncada para 8192 caracteres.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Solucionar erros de desenvolvimento com Office de complementos](../testing/troubleshoot-development-errors.md)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)

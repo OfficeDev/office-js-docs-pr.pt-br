@@ -3,40 +3,40 @@ title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 79cf5ebe029d2b95b1501b6f9066a2c8f9013ef3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609180"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671832"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
-A API JavaScript do Office fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está redigindo. No momento, há duas propriedades que fornecem o local de um compromisso:
+A Office API JavaScript fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está compondo. Atualmente, há duas propriedades que fornecem o local de um compromisso:
 
-- [Item. Location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API básica que permite obter e definir o local.
-- [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API avançada que permite obter e definir o local e inclui a especificação do tipo de [local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location` .
+- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API básica que permite obter e definir o local.
+- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API aprimorada que permite obter e definir o local e inclui a especificação do tipo [de local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location` .
 
-A tabela a seguir lista as APIs de local e os modos (ou seja, redigir ou ler) onde estão disponíveis.
+A tabela a seguir lista as APIs de local e os modos (ou seja, Redação ou Leitura) onde eles estão disponíveis.
 
 | API | Modos de compromisso aplicáveis |
 |---|---|
-| [item. Location](/javascript/api/outlook/office.appointmentread#location) | Participante/leitura |
-| [item. Location. getasync](/javascript/api/outlook/office.location#getasync-options--callback-) | Organizador/compor |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setasync-location--options--callback-) | Organizador/compor |
-| [item. enhancedLocation. getasync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-) | Organizador/compor,<br>Participante/leitura |
-| [item. enhancedLocation. addasync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-) | Organizador/compor |
-| [item. enhancedLocation. removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-) | Organizador/compor |
+| [item.location](/javascript/api/outlook/office.appointmentread#location) | Participante/Leitura |
+| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organizer/Compose |
+| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organizer/Compose |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | Organizer/Compose,<br>Participante/Leitura |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
 
-Para usar os métodos que estão disponíveis somente para suplementos de composição, configure o manifesto do suplemento para ativar o suplemento no modo organizador/compor. Confira [criar suplementos do Outlook para formulários de redação](compose-scenario.md) para obter mais detalhes.
+Para usar os métodos disponíveis apenas para compor os complementos, configure o manifesto do add-in para ativar o add-in no modo Organizador/Redação. Consulte [Criar Outlook para obter formulários de composição](compose-scenario.md) para obter mais detalhes.
 
 ## <a name="use-the-enhancedlocation-api"></a>Usar a `enhancedLocation` API
 
-Você pode usar a `enhancedLocation` API para obter e definir o local de um compromisso. O campo local oferece suporte a vários locais e, para cada local, você pode definir o nome de exibição, o tipo e o endereço de email da sala de conferência (se aplicável). Consulte [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) para tipos de local com suporte.
+Você pode usar a `enhancedLocation` API para obter e definir o local de um compromisso. O campo de localização dá suporte a vários locais e, para cada local, você pode definir o nome de exibição, o tipo e o endereço de email da sala de conferência (se aplicável). Consulte [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) para tipos de local com suporte.
 
 ### <a name="add-location"></a>Adicionar local
 
-O exemplo a seguir mostra como adicionar um local chamando [addasync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-) em [Mailbox. Item. enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation).
+O exemplo a seguir mostra como adicionar um local chamando [addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) em [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
 
 ```js
 var item;
@@ -58,9 +58,9 @@ Office.initialize = function () {
 }
 ```
 
-### <a name="get-location"></a>Obter local
+### <a name="get-location"></a>Obter localização
 
-O exemplo a seguir mostra como obter o local chamando [getasync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-) em [Mailbox. Item. enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedlocation).
+O exemplo a seguir mostra como obter o local chamando [getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) em [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedLocation).
 
 ```js
 var item;
@@ -88,7 +88,7 @@ function callbackFunction(asyncResult) {
 
 ### <a name="remove-location"></a>Remover local
 
-O exemplo a seguir mostra como remover o local chamando [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-) na [Mailbox. Item. enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation).
+O exemplo a seguir mostra como remover o local chamando [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) em [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
 
 ```js
 var item;
@@ -119,7 +119,7 @@ Você pode usar a `location` API para obter e definir o local de um compromisso.
 
 Esta seção mostra um exemplo de código que obtém o local do compromisso que o usuário está compondo e o exibe.
 
-Para usar `item.location.getAsync`, forneça um método de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional `asyncContext`. Você pode obter status, resultados e qualquer erro usando o parâmetro de saída `asyncResult` do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Para usar `item.location.getAsync`, forneça um método de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional `asyncContext`. Você pode obter status, resultados e qualquer erro usando o parâmetro de `asyncResult` saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
 
 ```js
 var item;
@@ -158,10 +158,10 @@ function write(message){
 
 Esta seção mostra um exemplo de código que define a localização do compromisso que o usuário está redigindo.
 
-Para usar `item.location.setAsync`, especifique uma cadeia de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer um método de retorno de chamada e os argumentos para o método de retorno de chamada no parâmetro `asyncContext`. Você deve verificar o status, o resultado e qualquer mensagem de erro no `asyncResult` parâmetro de saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, `setAsync` inserirá a cadeia de caracteres de local especificada como texto sem formatação, substituindo o local existente pelo item.
+Para usar `item.location.setAsync`, especifique uma cadeia de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer um método de retorno de chamada e os argumentos para o método de retorno de chamada no parâmetro `asyncContext`. Você deve verificar o status, o resultado e qualquer mensagem de erro no parâmetro `asyncResult` de saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, `setAsync` inserirá a cadeia de caracteres de local especificada como texto sem formatação, substituindo o local existente pelo item.
 
 > [!NOTE]
-> Você pode definir vários locais usando um ponto-e-vírgula como separador (por exemplo, ' sala de conferência A; Sala de conferência B ').
+> Você pode definir vários locais usando um ponto e vírgula como separador (por exemplo, "Sala de conferência A; Sala de conferência B').
 
 ```js
 var item;
@@ -199,7 +199,7 @@ function write(message){
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
-- [Criar seu primeiro suplemento do Outlook](../quickstarts/outlook-quickstart.md)
+- [Criar seu primeiro Outlook de usuário](../quickstarts/outlook-quickstart.md)
 - [Programação assíncrona nos Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)

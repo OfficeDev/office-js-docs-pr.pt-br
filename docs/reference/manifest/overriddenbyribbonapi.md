@@ -3,26 +3,26 @@ title: Elemento OverriddenByRibbonApi no arquivo de manifesto
 description: Saiba como especificar que uma guia, grupo, controle ou item de menu personalizado não deve aparecer quando também faz parte de uma guia contextual personalizada.
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 62aa484057221f9cd7f41af9c8b9210cdb5b3376
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 06d7ae47c7d9de9d48fe9c59493258efc1fa9cae
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173994"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671748"
 ---
 # <a name="overriddenbyribbonapi-element"></a>Elemento OverriddenByRibbonApi
 
-Especifica se um [CustomTab](customtab.md) [,](group.md)grupo [,](control.md#button-control) controle de botão, controle de [menu](control.md#menu-dropdown-button-controls) ou item de menu será ocultado em combinações de aplicativo e plataforma que suportam a API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-)) que instala guias contextuais personalizadas na faixa de opções.
+Especifica se um [item CustomTab](customtab.md), [Group](group.md) [,](control.md#button-control) Button, Menu ou [menu](control.md#menu-dropdown-button-controls) será oculto em combinações de aplicativos e plataformas que suportam a API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)) que instala guias contextuais personalizadas na faixa de opções.
 
-Se for omitido, o padrão é `false` . Se for usado, ele deverá ser o *primeiro* elemento filho de seu elemento pai.
+Se for omitido, o padrão será `false` . Se for usado, ele deve ser o *primeiro* elemento filho de seu elemento pai.
 
 > [!NOTE]
-> Para ter uma compreensão completa desse elemento, leia Implementar uma experiência de interface do usuário alternativa quando guias [contextuais personalizadas não são suportadas.](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)
+> Para uma compreensão completa desse elemento, leia Implementar uma experiência de interface do usuário alternativa quando as guias [contextuais personalizadas não são suportadas](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
-O objetivo desse elemento é criar uma experiência de fallback em um add-in que implemente guias contextuais personalizadas quando o complemento é executado em um aplicativo ou plataforma que não dá suporte a guias contextuais personalizadas. A estratégia essencial é duplicar alguns ou todos os grupos e controles da guia contextual personalizada em uma ou mais guias principais personalizadas (ou *seja,* guias personalizadas não textuais). Em seguida, para garantir que esses grupos e  controles apareçam quando guias contextuais personalizadas não são suportadas, mas não aparecem quando guias contextuais *personalizadas* são suportadas, você adiciona como o primeiro elemento filho dos elementos `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` **CustomTab**, **Group**, **Control** ou **menu Item.** O efeito de fazer isso é o seguinte:
+O objetivo deste elemento é criar uma experiência de fallback em um add-in que implemente guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas. A estratégia essencial é duplicar alguns ou todos os grupos e controles de sua guia contextual personalizada em uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais).* Em seguida, para garantir que esses grupos e  controles apareçam quando as guias contextuais personalizadas não são suportadas, mas não aparecem quando as guias contextuais *personalizadas* são suportadas, você adiciona como o primeiro elemento filho dos elementos `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` **CustomTab,** **Group,** **Control** ou Item do **menu.** O efeito de fazer isso é o seguinte:
 
 - Se o complemento for executado em um aplicativo e plataforma que suportam guias contextuais personalizadas, as guias, grupos e controles duplicados não aparecerão na faixa de opções. Em vez disso, a guia contextual personalizada será instalada quando o complemento chamar o `requestCreateControls` método.
-- Se o complemento for executado em  um aplicativo ou plataforma que não dá suporte a guias contextuais personalizadas, as guias, os grupos e os controles duplicados aparecerão na faixa de opções.
+- Se o complemento for executado em  um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas, as guias, grupos e controles duplicados aparecerão na faixa de opções.
 
 ## <a name="examples"></a>Exemplos
 

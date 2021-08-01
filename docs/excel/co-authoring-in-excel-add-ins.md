@@ -3,12 +3,12 @@ title: Coautoria em suplementos do Excel
 description: Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.
 ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d6500248c13f0cef85736b4ffbad0dc655afecd7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349683"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671482"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
@@ -50,11 +50,11 @@ Por exemplo, em cenários de validação de dados, é comum exibir a interface d
 
 ## <a name="avoiding-table-row-coauthoring-conflicts"></a>Evitando conflitos de coautor da linha de tabela
 
-É um problema conhecido que as chamadas para a [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários `TableRowCollection.add` atualizem).
+É um problema conhecido que as chamadas para a [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários `TableRowCollection.add` atualizem).
 
-1. Use [`Range.values`](/javascript/api/excel/excel.range#values) em vez de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) . Definir os `Range` valores diretamente abaixo da tabela expande automaticamente a tabela. Caso contrário, adicionar linhas de tabela por meio das APIs resulta em conflitos `Table` de mesclagem para usuários de coauth.
+1. Use [`Range.values`](/javascript/api/excel/excel.range#values) em vez de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) . Definir os `Range` valores diretamente abaixo da tabela expande automaticamente a tabela. Caso contrário, adicionar linhas de tabela por meio das APIs resulta em conflitos `Table` de mesclagem para usuários de coauth.
 1. Não deve haver regras [de validação de](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) dados aplicadas a células abaixo da tabela, a menos que a validação de dados seja aplicada a toda a coluna.
-1. Se houver dados sob a tabela, o complemento precisará lidar com isso antes de definir o valor do intervalo. Usar [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) para inserir uma linha vazia moverá os dados e dará espaço para a tabela de expansão. Caso contrário, você corre o risco de sobrescrever células abaixo da tabela.
+1. Se houver dados sob a tabela, o complemento precisará lidar com isso antes de definir o valor do intervalo. Usar [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) para inserir uma linha vazia moverá os dados e dará espaço para a tabela de expansão. Caso contrário, você corre o risco de sobrescrever células abaixo da tabela.
 1. Não é possível adicionar uma linha vazia a uma tabela com `Range.values` . A tabela só se expande automaticamente se os dados estão presentes nas células diretamente abaixo da tabela. Use dados temporários ou colunas ocultas como solução alternativa para adicionar uma linha de tabela vazia.
 
 ## <a name="see-also"></a>Confira também

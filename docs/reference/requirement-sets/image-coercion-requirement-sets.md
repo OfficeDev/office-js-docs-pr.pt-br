@@ -4,12 +4,12 @@ description: Suporte para conjuntos de requisitos de Coerção de Imagem com Off
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 29614718378fd51013360a2a922e11f89bca14b8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350215"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671615"
 ---
 # <a name="image-coercion-requirement-sets"></a>Conjuntos de requisitos de Coerção de Imagens
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 permite a conversão em uma imagem ( ) ao escrever `Office.CoercionType.Image` dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) método. Os aplicativos a seguir são suportados.
+ImageCoercion 1.1 permite a conversão em uma imagem ( ) ao escrever `Office.CoercionType.Image` dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) método. Os aplicativos a seguir são suportados.
 
 - Excel 2013 e posterior em Windows
 - Excel 2016 e posterior no Mac
@@ -34,7 +34,7 @@ ImageCoercion 1.1 permite a conversão em uma imagem ( ) ao escrever `Office.Coe
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1.2 permite a conversão para o formato SVG ( ) ao escrever `Office.CoercionType.XmlSvg` dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) método. Os aplicativos a seguir são suportados.
+ImageCoercion 1.2 permite a conversão para o formato SVG ( ) ao escrever `Office.CoercionType.XmlSvg` dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) método. Os aplicativos a seguir são suportados.
 
 - Excel no Windows (conectado a uma assinatura de Microsoft 365)
 - Excel no Mac (conectado a uma assinatura de Microsoft 365)

@@ -3,12 +3,12 @@ title: Trabalhar com formas usando a EXCEL JavaScript
 description: Saiba como Excel define formas como qualquer objeto que se sente na camada de desenho de Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349445"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671468"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Trabalhar com formas usando a EXCEL JavaScript
 
@@ -25,11 +25,11 @@ Os seguintes tipos de formas são adicionados usando o método associado.
 
 | Shape | Add Method | Assinatura |
 |-------|------------|-----------|
-| Forma Geométrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| Imagem (JPEG ou PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| Line | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
-| Caixa de Texto | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
+| Forma Geométrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addGeometricShape_geometricShapeType_) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| Imagem (JPEG ou PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addImage_base64ImageString_) | `addImage(base64ImageString: string): Excel.Shape` |
+| Line | [addLine](/javascript/api/excel/excel.shapecollection#addLine_startLeft__startTop__endLeft__endTop__connectorType_) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addSvg_xml_) | `addSvg(xml: string): Excel.Shape` |
+| Caixa de Texto | [addTextBox](/javascript/api/excel/excel.shapecollection#addTextBox_text_) | `addTextBox(text?: string): Excel.Shape` |
 
 ### <a name="geometric-shapes"></a>Formas geométricas
 
@@ -214,7 +214,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>Exportar formas como imagens
 
-Qualquer `Shape` objeto pode ser convertido em uma imagem. [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) retorna cadeia de caracteres codificada com base64. O formato da imagem é especificado como um número [PictureFormat](/javascript/api/excel/excel.pictureformat) passado para `getAsImage` .
+Qualquer `Shape` objeto pode ser convertido em uma imagem. [Shape.getAsImage](/javascript/api/excel/excel.shape#getAsImage_format_) retorna cadeia de caracteres codificada com base64. O formato da imagem é especificado como um número [PictureFormat](/javascript/api/excel/excel.pictureformat) passado para `getAsImage` .
 
 ```js
 Excel.run(function (context) {

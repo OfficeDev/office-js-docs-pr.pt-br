@@ -3,17 +3,17 @@ title: Obter ou modificar destinatários em um suplemento do Outlook
 description: Saiba como obter, definir ou adicionar destinatários de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: b679a61d1e326f0aed4018970d2dd77fc9cd4c25
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 23e523c773b90fc02ed68151ea3c0cc6641b94ee
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348514"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670248"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obter, configurar ou adicionar destinatários ao compor um compromisso ou uma mensagem no Outlook
 
 
-A API JavaScript Office fornece métodos assíncronos ([Recipients.getAsync](/javascript/api/outlook/office.Recipients#getasync-options--callback-), [Recipients.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)ou [Recipients.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)) para obter, definir ou adicionar destinatários respectivamente em um formulário de composição de um compromisso ou mensagem. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar os formulários de redação do complemento, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
+A API JavaScript Office fornece métodos assíncronos ([Recipients.getAsync](/javascript/api/outlook/office.recipients#getAsync_options__callback_), [Recipients.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)ou [Recipients.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)) para obter, definir ou adicionar destinatários respectivamente em um formulário de composição de um compromisso ou mensagem. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar os formulários de redação do complemento, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
 
 Algumas das propriedades que representam destinatários em um compromisso ou uma mensagem estão disponíveis para acesso de leitura em formulários de redação e de leitura. Essas propriedades incluem [optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) para compromissos, e [cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) para mensagens.
 

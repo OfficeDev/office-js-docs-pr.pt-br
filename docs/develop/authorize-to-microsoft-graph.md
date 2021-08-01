@@ -3,12 +3,12 @@ title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um Office add-in podem usar o SSO (login único) para buscar dados do Microsoft Graph.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 054f58cf4b89d6c11cf6e7beb831eafc4a075bad
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076480"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671370"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
@@ -30,7 +30,7 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 
 ![Diagrama mostrando o processo de SSO.](../images/sso-access-to-microsoft-graph.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
 2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 4. O Office cliente solicita o token de acesso **bootstrap** do ponto de extremidade do Azure AD v2.0 para o usuário atual.
@@ -42,7 +42,7 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 10. O Azure AD retorna o token de acesso de inicialização para o Microsoft Graph (e um token de atualização, se o suplemento solicitar a permissão *offline_access*) para ele próprio.
 11. O código do lado do servidor armazena em cache o token de acesso ao Microsoft Graph.
 12. O código do lado do servidor faz solicitações ao Microsoft Graph e inclui o token de acesso ao Microsoft Graph.
-13. O microsoft Graph retorna dados para o add-in, que pode passá-los para a interface do usuário do complemento.
+13. O Microsoft Graph retorna os dados para o suplemento, que pode transmiti-los à interface do usuário do suplemento.
 14. Quando o token de acesso ao Microsoft Graph expira, o código do lado do servidor pode usar o token de atualização para obter um novo token de acesso ao Microsoft Graph.
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Desenvolver um suplemento SSO que acessa o Microsoft Graph

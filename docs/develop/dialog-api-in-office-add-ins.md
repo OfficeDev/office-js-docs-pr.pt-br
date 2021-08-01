@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: a8f3b6425dceaccbb50a56bfb7e05aafe061967d
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 46fa02281c9e13241496c617cad9738a71102370
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535973"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671349"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -89,7 +89,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 > - Para esclarecer, nesta seção, chamamos a mensagem de destino [da](../reference/manifest/functionfile.md)página host *,* mas estritamente falando, as mensagens estão indo para o tempo de execução *JavaScript* no painel de tarefas (ou o tempo de execução que está hospedando um arquivo de função ). A distinção só é significativa no caso de mensagens entre domínios. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).
 > - A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que Office biblioteca da API JavaScript seja carregada na página. (Como qualquer página que usa a Office api JavaScript, o script da página deve atribuir um método à propriedade `Office.initialize` ou chamada `Office.onReady` . Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).)
 
-O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Apresentamos um exemplo a seguir.
+O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Apresentamos um exemplo a seguir.
 
 ```js
 if (loginSuccess) {
@@ -250,11 +250,11 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 
 ## <a name="pass-information-to-the-dialog-box"></a>Transmitir informações para a caixa diálogo
 
-Seu complemento pode enviar mensagens da página [host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando [Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
+Seu complemento pode enviar mensagens da página [host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando [Dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_).
 
 ### <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` na página host
 
-Quando você chama a API Office caixa de diálogo para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o [método displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Apresentamos um exemplo a seguir.
+Quando você chama a API Office caixa de diálogo para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o [método displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__callback_) porque o objeto será referenciado por outros métodos. Apresentamos um exemplo a seguir.
 
 ```javascript
 var dialog;
@@ -273,7 +273,7 @@ function processMessage(arg) {
 }
 ```
 
-Este `Dialog` objeto tem um método [messageChild](/javascript/api/office/office.dialog#messagechild-message-) que envia qualquer cadeia de caracteres, incluindo dados stringified, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. Seu código deve manipular esse evento, conforme mostrado na próxima seção.
+Este `Dialog` objeto tem um método [messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) que envia qualquer cadeia de caracteres, incluindo dados stringified, para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. Seu código deve manipular esse evento, conforme mostrado na próxima seção.
 
 Considere um cenário no qual a interface do usuário da caixa de diálogo está relacionada à planilha ativa no momento e a posição dessa planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia Excel de planilha para a caixa de diálogo. Nesse caso, a planilha atual é chamada de "Minha Planilha" e é a segunda planilha na pasta de trabalho. Os dados são encapsulados em um objeto e stringified para que possam ser passados para `messageChild` .
 
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Manipular DialogParentMessageReceived na caixa de diálogo
 
-No JavaScript da caixa de diálogo, registre um manipulador para o evento com o método `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Isso normalmente é feito nos métodos [Office.onReady ou Office.initialize,](initialize-add-in.md)conforme mostrado no seguinte. (Um exemplo mais robusto está abaixo.)
+No JavaScript da caixa de diálogo, registre um manipulador para o evento com o método `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) Isso normalmente é feito nos métodos [Office.onReady ou Office.initialize,](initialize-add-in.md)conforme mostrado no seguinte. (Um exemplo mais robusto está abaixo.)
 
 ```javascript
 Office.onReady()

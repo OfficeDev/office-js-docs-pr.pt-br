@@ -3,12 +3,12 @@ title: Dicas para lidar com valores de data em Suplementos do Outlook
 description: A Office JavaScript usa o objeto Data javascript para a maior parte do armazenamento e recuperação de datas e horas.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0ad4aac4653c5f1b303573ea75a43f6e715ef20e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8d244c7a4f7009a634fc2354e62cee0ad175cffd
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348458"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671818"
 ---
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>Dicas para lidar com valores de data em suplementos do Outlook
 
@@ -59,7 +59,7 @@ A seguir estão as propriedades e os métodos na API JavaScript Office que supor
 
 |Membro da API|Representação de fuso horário|Exemplo em um cliente avançado do Outlook|Exemplo em Outlook na Web ou dispositivos móveis|
 |--------------|----------------------------|-------------------------------------|-------------------|
-|[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true#timezone)|Em um cliente avançado do Outlook, essa propriedade retorna o fuso horário do computador cliente. Em Outlook na Web e dispositivos móveis, essa propriedade retorna o fuso horário do EAC. |EST|PST|
+|[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true#timeZone)|Em um cliente avançado do Outlook, essa propriedade retorna o fuso horário do computador cliente. Em Outlook na Web e dispositivos móveis, essa propriedade retorna o fuso horário do EAC. |EST|PST|
 |[Office.context.mailbox.item.dateTimeCreated](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Cada uma dessas propriedades retorna um objeto `Date` JavaScript. Esse valor é UTC-correct, conforme mostrado no exemplo a seguir - tem o mesmo valor em um cliente Outlook cliente, Outlook na Web `Date` `myUTCDate` e dispositivos móveis.<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>No entanto, chamar retorna um valor de data no fuso horário do computador cliente, que é consistente com o fuso horário usado para exibir valores de data e hora na interface do cliente rica do Outlook, mas pode ser diferente do fuso horário do EAC que Outlook na Web e dispositivos móveis usam em sua interface do `myDate.getDate` usuário.|Se o item é criado às 9h UTC:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` é retornado às 4h EST.<br/><br/>Se o item for modificado às 11h UTC:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` é retornado às 6h EST.|Se a hora de criação do item for às 9h UTC:<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` é retornado às 4h EST.<br/><br/>Se o item for modificado às 11h UTC:<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` é retornado às 6h EST.<br/><br/>Observe que se você quer exibir a hora de criação ou de alteração na interface do usuário, convém primeiro converter a hora em PST para ficar consistente com o resto da interface do usuário.|
 |[Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)|Cada um dos parâmetros  _Start_ e _End_ requer um objeto `Date` JavaScript. Os argumentos devem ser corretos utc independentemente do fuso horário usado na interface do usuário de um cliente Outlook cliente rico, ou Outlook na Web ou dispositivos móveis.|Se as horas de início e de término para o formulário de compromisso são 9h UTC e 11h UTC, você deve fazer com que os argumentos `start` e `end` estejam corretos em relação à UTC, o que significa que :<br/><br/><ul><li>`start.getUTCHours` é retornado às 9h UTC</li><li>`end.getUTCHours` é retornado às 11h UTC</li></ul>|Se as horas de início e de término para o formulário de compromisso são 9h UTC e 11h UTC, você deve fazer com que os argumentos `start` e `end` estejam corretos em relação à UTC, o que significa que :<br/><br/><ul><li>`start.getUTCHours` é retornado às 9h UTC</li><li>`end.getUTCHours` é retornado às 11h UTC</li></ul>|
 

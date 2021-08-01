@@ -4,12 +4,12 @@ description: Saiba como usar a EXCEL JavaScript para remover duplicatas.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 03ef1c15f214fcbd6a81d0b4f557e9816175d3b7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349480"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671130"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>Remover duplicatas usando a EXCEL JavaScript
 
@@ -17,7 +17,7 @@ Este artigo fornece um exemplo de código que remove entradas duplicadas em um i
 
 ## <a name="remove-rows-with-duplicate-entries"></a>Remover linhas com entradas duplicadas
 
-O [método Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) remove linhas com entradas duplicadas nas colunas especificadas. O método passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
+O [método Range.removeDuplicates](/javascript/api/excel/excel.range#removeDuplicates_columns__includesHeader_) remove linhas com entradas duplicadas nas colunas especificadas. O método passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
 
 `removeDuplicates` leva um `number[]` representando os índices da coluna que são verificados para duplicatas. Essa matriz é baseada em zero e relativa ao intervalo, não à planilha. O método também recebe um parâmetro booleano que especifica se a primeira linha é um header. Quando **verdadeiro**, a primeira linha será ignorada ao considerar duplicatas. O método retorna um objeto que especifica o número de linhas removidas e `removeDuplicates` o número de linhas `RemoveDuplicatesResult` exclusivas restantes.
 
@@ -51,7 +51,7 @@ Excel.run(function (context) {
 
 ![Dados em Excel após a executar o método remove duplicates do intervalo.](../images/excel-ranges-remove-duplicates-after.png)
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

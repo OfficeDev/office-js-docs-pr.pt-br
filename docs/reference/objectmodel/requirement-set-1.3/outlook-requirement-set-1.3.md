@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 description: Recursos e APIs que foram introduzidos para Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.3.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 85924d181ee494a8caa5e18a5bcf53c3f116ee3e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591034"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671895"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
@@ -29,8 +29,8 @@ O conjunto de requisitos 1.3 inclui todos os recursos do conjunto [de requisitos
 
 ### <a name="change-log"></a>Log de alterações
 
-- Foi adicionado o [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getasync-coerciontype--options--callback-): Retorna o corpo atual em um formato especificado.
-- Foi adicionado o [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setasync-data--options--callback-): Substitui todo o corpo com o texto especificado.
+- Foi adicionado o [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_): Retorna o corpo atual em um formato especificado.
+- Foi adicionado o [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_): Substitui todo o corpo com o texto especificado.
 - Foi adicionado o objeto [Event](/javascript/api/office/office.addincommands.event): Passado como um parâmetro para funções de comando sem interface de usuário em um suplemento do Outlook. Usado para sinalizar a conclusão do processamento.
 - Foi adicionado o [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods): Fecha o item atual que está sendo composto.
 - Foi adicionado o [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods): Salva um item de forma assíncrona.

@@ -3,12 +3,12 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: Carregue o dom e Office ambiente de tempo de execução de complementos.
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0cfdcf3750d9c0a3dd21667729da59dbfedf61c8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 76322de3d830747a825b0934993f8801daf8a9ae
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349837"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671524"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -32,7 +32,7 @@ Os eventos a seguir ocorrem quando um conteúdo ou um complemento do painel de t
 
 4. O controle do navegador carrega o corpo DOM e HTML e chama o manipulador de eventos para o `window.onload` evento.
 
-5. O aplicativo cliente Office carrega o ambiente de tempo de execução Office, que baixa e armazena em cache os arquivos da biblioteca da API JavaScript do servidor de rede de distribuição de conteúdo (CDN) e chama o manipulador de eventos do complemento para o evento [de inicialização](/javascript/api/office#office-initialize-reason-) do objeto [Office,](/javascript/api/office) se um manipulador tiver sido atribuído a ele. Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
+5. O aplicativo cliente Office carrega o ambiente de tempo de execução Office, que baixa e armazena em cache os arquivos da biblioteca da API JavaScript do servidor de rede de distribuição de conteúdo (CDN) e chama o manipulador de eventos do complemento para o evento [de inicialização](/javascript/api/office#Office_initialize_reason_) do objeto [Office,](/javascript/api/office) se um manipulador tiver sido atribuído a ele. Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
 
 6. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
 
@@ -55,11 +55,11 @@ Os eventos a seguir ocorrem quando um Outlook de usuário é iniciado.
 
 5. O controle do navegador carrega o corpo DOM e HTML e chama o manipulador de eventos para o `onload` evento.
 
-6. O Outlook carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos para o evento [initialize](/javascript/api/office#office-initialize-reason-) do objeto do suplemento do [Office](/javascript/api/office). Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
+6. O Outlook carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos para o evento [initialize](/javascript/api/office#Office_initialize_reason_) do objeto do suplemento do [Office](/javascript/api/office). Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para obter mais informações sobre a distinção `Office.initialize` entre e , consulte `Office.onReady` [Initialize your add-in](initialize-add-in.md).
 
 7. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)

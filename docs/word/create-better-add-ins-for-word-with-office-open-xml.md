@@ -3,12 +3,12 @@ title: Criar suplementos melhores para o Word com o Office Open XML
 description: Visão geral de como melhorar seu complemento do Word com Office Open XML.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a045b64489a344df3429aa83381e5291d6b650f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0a86ba28cb6a85bc56ad2065a3b93b97e96742ba
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350152"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671867"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -103,7 +103,7 @@ Office oferece uma ampla matriz de layouts de diagrama SmartArt (e você pode us
 
 ![Um gráfico no Word.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
+Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
 
 
 > [!NOTE]
@@ -118,7 +118,7 @@ Neste tópico, usaremos alguns cenários comuns que obtivemos da comunidade de d
 ## <a name="exploring-the-office-open-xml-document-package"></a>Explorar o pacote de documento do Office Open XML
 
 
-Ao usar [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) para recuperar o Office Open XML para uma seleção de conteúdo (ou ao salvar o documento no formato de Documento XML do Word), o que você obtém não é apenas a marcação que descreve o conteúdo selecionado, é um documento inteiro com várias opções e configurações das quais você certamente não necessita. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
+Ao usar [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para recuperar o Office Open XML para uma seleção de conteúdo (ou ao salvar o documento no formato de Documento XML do Word), o que você obtém não é apenas a marcação que descreve o conteúdo selecionado, é um documento inteiro com várias opções e configurações das quais você certamente não necessita. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
 
 Até mesmo um pacote de documento simples do Word inclui partes para propriedades de documentos, estilos, tema (configurações de formatação), configurações da Web, fontes e muito mais, além de partes para o conteúdo real.
 
@@ -219,7 +219,7 @@ Editamos o exemplo do Office Open XML mostrado aqui, conforme descrito na seçã
 
 Após salvar o Office Open XML anterior como um arquivo XML que pode ser acessado por meio de sua solução, você poderá usar a função a seguir para definir o conteúdo de texto formatado no documento usando a coerção do Office Open XML. 
 
-Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) no fim da função. `setSelectedDataASync` requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
+Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) no fim da função. `setSelectedDataASync` requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
 
 
 > [!NOTE]
@@ -553,7 +553,7 @@ function addAndBindControl() {
 O código mostrado aqui segue as etapas a seguir.
 
 
-- Tenta associar ao controle de conteúdo nomeado, usando [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-).
+- Tenta associar ao controle de conteúdo nomeado, usando [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_).
 
   Execute esta etapa primeiro se houver uma possibilidade para seu suplemento em que o controle nomeado pode já existir no documento quando o código for executado. Por exemplo, faça isto se o suplemento foi inserido em e salvo com um modelo projetado para funcionar com o suplemento, em que o controle foi colocado anteriormente. Você também precisa fazer isto caso necessite associar a um controle que foi colocado anteriormente pelo suplemento.
 

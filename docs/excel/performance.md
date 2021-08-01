@@ -3,12 +3,12 @@ title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimize Excel desempenho do complemento usando a API JavaScript.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0379eecddf54877d863ec057a8193347fa3091f8
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349382"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671580"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -107,9 +107,9 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> Você pode converter convenientemente um objeto de tabela em um objeto de intervalo usando o método[Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--).
+> Você pode converter convenientemente um objeto de tabela em um objeto de intervalo usando o método[Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 * [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 * [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)

@@ -4,12 +4,12 @@ description: Saiba como usar a API JavaScript Excel para recuperar precedentes e
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: f114cc274358216cffaa55015e09afa38fa4e959
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290772"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671475"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 
@@ -21,7 +21,7 @@ Este artigo fornece exemplos de código que recuperam precedentes diretos e depe
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>Obter os precedentes diretos de uma fórmula
 
-Localize as células precedentes diretas de uma fórmula [com Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--). `Range.getDirectPrecedents` retorna um `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os precedentes diretos na guia de trabalho. Ele tem um objeto `RangeAreas` separado para cada planilha que contém pelo menos um precedente de fórmula. Para obter mais informações sobre como trabalhar com o objeto, consulte `RangeAreas` Work with multiple [ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Localize as células precedentes diretas de uma fórmula [com Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` retorna um `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os precedentes diretos na guia de trabalho. Ele tem um objeto `RangeAreas` separado para cada planilha que contém pelo menos um precedente de fórmula. Para obter mais informações sobre como trabalhar com o objeto, consulte `RangeAreas` Work with multiple [ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear Precedentes** na interface Excel interface do usuário. Este botão desenha uma seta de células precedentes para a célula selecionada. A célula selecionada, **E3**, contém a fórmula "=C3 * D3", **portanto, C3** e **D3** são células precedentes. Ao contrário do Excel da interface do usuário, o `getDirectPrecedents` método não desenha setas.
 
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

@@ -3,12 +3,12 @@ title: Solução de problemas de ativação de suplementos contextuais do Outloo
 description: Possíveis motivos para o seu complemento não ser ativado como você espera.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348864"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671678"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
@@ -24,7 +24,7 @@ Você pode verificar a versão do Exchange 2013 usando uma das seguintes abordag
 
 - Se você estiver testando o suplemento no Outlook na Web ou em dispositivos móveis em um depurador de script (por exemplo, o Depurador JScript que acompanha o Internet Explorer), procure o atributo **src** da marca **script** que especifica o local do qual os scripts são carregados. O caminho deve conter uma subcadeia de caracteres **owa/15.0.516.x/owa2/...**, em que **15.0.516.x** representa a versão do Exchange Server, como **15.0.516.2**.
 
-- Como alternativa, você pode usar a propriedade [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) para verificar a versão. No Outlook na Web e nos dispositivos móveis, essa propriedade retorna a versão do Exchange Server.
+- Como alternativa, você pode usar a propriedade [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) para verificar a versão. No Outlook na Web e nos dispositivos móveis, essa propriedade retorna a versão do Exchange Server.
 
 - Se você puder testar o Outlook do Outlook, poderá usar a seguinte técnica de depuração simples que usa o modelo de objeto Outlook e o editor Visual Basic.
 

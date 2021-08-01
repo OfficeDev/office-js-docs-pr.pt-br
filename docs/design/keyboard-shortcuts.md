@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349249"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671398"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -103,7 +103,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     ```
 
 1. Para continuar o exemplo, use `'SHOWTASKPANE'` como o primeiro parâmetro.
-1. Para o corpo da função, use o [método Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
+1. Para o corpo da função, use o [método Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-1. Adicione uma segunda chamada de função para mapear a ação para uma função que `Office.actions.associate` `HIDETASKPANE` chama [Office.addin.hide](/javascript/api/office/office.addin#hide--). Apresentamos um exemplo a seguir.
+1. Adicione uma segunda chamada de função para mapear a ação para uma função que `Office.actions.associate` `HIDETASKPANE` chama [Office.addin.hide](/javascript/api/office/office.addin#hide__). Apresentamos um exemplo a seguir.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -262,7 +262,7 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Próximos passos
 
 - Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).

@@ -3,12 +3,12 @@ title: Limites de recurso e otimização de desempenho para Suplementos do Offic
 description: Saiba mais sobre os limites de recursos da plataforma de Office de complemento, incluindo CPU e memória.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: d19e171bb9dc84335631ed66d153541141ce3377
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349116"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671272"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -126,7 +126,7 @@ As dicas de desempenho em Usar o modelo de [API](../develop/application-specific
 O `untrack()` método libera o objeto da memória. Esse método é implementado em muitos objetos proxy de API específicos do aplicativo. Chamar depois que o seu complemento for feito com o objeto deve gerar um benefício de desempenho perceptível ao usar um grande número de objetos `untrack()` proxy.
 
 > [!NOTE]
-> `Range.untrack()` é um atalho para [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Qualquer objeto de proxy pode ser não-rastreado, removendo-o da lista de objetos rastreados no contexto.
+> `Range.untrack()` é um atalho para [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). Qualquer objeto de proxy pode ser não-rastreado, removendo-o da lista de objetos rastreados no contexto.
 
 O exemplo Excel código a seguir preenche um intervalo selecionado com dados, uma célula por vez. Depois que o valor é adicionado à célula, o intervalo que representa a célula é não-rastreado. Execute esse código em um intervalo selecionado de 20.000 de 10.000 células, primeiro, com a linha `cell.untrack()` e, em seguida, sem ela. Você deve observar que o código é executado mais rapidamente com a linha `cell.untrack()` do que sem ela. Você também poderá observar um tempo de resposta mais rápido posteriormente, porque a etapa de limpeza leva menos tempo.
 

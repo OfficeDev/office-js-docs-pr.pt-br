@@ -3,12 +3,12 @@ title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e1f5729e6e85ff8af92968c2ad65c19e655106e2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349522"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671158"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
@@ -210,7 +210,7 @@ Para saber mais, confira [DataValidationPrompt](/javascript/api/excel/excel.data
 
 ## <a name="remove-data-validation-from-a-range"></a>Remover validação de dados de um intervalo
 
-Para remover a validação de dados de um intervalo, acione o método [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--).
+Para remover a validação de dados de um intervalo, acione o método [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__).
 
 ```js
 myrange.dataValidation.clear()

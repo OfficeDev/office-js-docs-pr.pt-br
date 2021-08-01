@@ -4,12 +4,12 @@ description: Discute como configurar um Outlook de celular para um provedor de s
 ms.topic: article
 ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: f0f9b69c2b8b515df3829ca3ba0714393df79fd1
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: 34574809e2b874217113e42043b3bde7ef0dd8ba
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455499"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671314"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um Outlook de dispositivo móvel para um provedor de reunião online
 
@@ -241,12 +241,12 @@ Se você quiser registrar o modelo de reunião online para seu serviço, você p
 As APIs a seguir estão disponíveis para esse recurso.
 
 - APIs organizadores de compromissos
-  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getasync-coerciontype--options--callback-), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setasync-data--options--callback-))
+  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getAsync_coercionType__options__callback_), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setAsync_data__options__callback_))
   - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#end) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location) ([Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalattendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredattendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) ([Hora](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) ([Assunto](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
   - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
@@ -263,7 +263,7 @@ Várias restrições se aplicam.
 - Somente um comando sem interface do usuário é suportado no modo Organizador de Compromissos (redação).
 - O complemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o add-in abriu para autenticação, etc. é excluído do período de tempo de tempo.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Suplementos do Outlook Mobile](outlook-mobile-addins.md)
 - [Adicionar suporte para comandos de suplementos para Outlook Mobile](add-mobile-support.md)

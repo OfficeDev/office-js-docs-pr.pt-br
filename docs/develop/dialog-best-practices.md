@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535980"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671214"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -25,9 +25,9 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 - A URL passada para o [método displayDialogAsync](/javascript/api/office/office.ui) deve estar exatamente no mesmo domínio que o próprio complemento. Não pode ser um subdomínio. Mas a página passada para ela pode redirecionar para uma página em outro domínio.
 - Uma janela host, que pode ser um painel [](../reference/manifest/functionfile.md) de tarefas ou o arquivo de função sem interface do usuário de um comando de complemento, pode ter apenas uma caixa de diálogo aberta por vez.
 - Somente duas Office APIs podem ser chamadas na caixa de diálogo:
-  - A [função messageParent.](/javascript/api/office/office.ui#messageparent-message-)
+  - A [função messageParent.](/javascript/api/office/office.ui#messageParent_message__messageOptions_)
   - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
-- A [função messageParent](/javascript/api/office/office.ui#messageparent-message-) geralmente deve ser chamada de uma página no mesmo domínio que o próprio complemento, mas isso não é obrigatório. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- A [função messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) geralmente deve ser chamada de uma página no mesmo domínio que o próprio complemento, mas isso não é obrigatório. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

@@ -3,12 +3,12 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 80047f4c8056bafa62d467f1e69dd334d168486a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348472"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671825"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,7 +25,7 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar, incluindo a Atualização Cumulativa mínima necessária quando aplicável. Não há suporte para combinações excluídas.
 
-| Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
+| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
@@ -71,7 +71,7 @@ A captura de tela a seguir mostra uma barra de informações que notifica que o 
 
 Atualmente, o recurso Ao enviar tem as seguintes limitações.
 
-- **Recurso Append-on-send** &ndash; Se você chamar [corpo. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) no manipulador ao enviar, um erro é retornado.
+- **Recurso Append-on-send** &ndash; Se você chamar [corpo. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) no manipulador ao enviar, um erro é retornado.
 - **AppSource** &ndash; Você não pode publicar suplementos do Outlook que usem o recurso Ao enviar no [AppSource](https://appsource.microsoft.com), pois eles falharão na validação do AppSource. Os suplementos que usam o recurso Ao enviar devem ser implantados pelos administradores.
 - **Manifesto** &ndash; Somente um evento `ItemSend` tem suporte por suplemento. Se você tiver dois ou mais eventos `ItemSend` em um manifesto, haverá falha na validação.
 - **Desempenho**&ndash; Várias idas e voltas ao servidor Web que hospeda o suplemento podem afetar o desempenho do suplemento. Considere os efeitos sobre o desempenho quando você cria suplemento que exigem várias mensagens ou operações baseadas em reuniões.
@@ -387,10 +387,10 @@ Enquanto os complementos ao enviar estão processamento de um item, o usuário p
 
 No manipulador ao enviar:
 
-1. Chame [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) para abrir uma caixa de diálogo para que os cliques do mouse e os teclas sejam desabilitados.
+1. Chame [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) para abrir uma caixa de diálogo para que os cliques do mouse e os teclas sejam desabilitados.
 
     > [!IMPORTANT]
-    > Para obter esse comportamento em Outlook na Web, você deve definir a [propriedade displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) como no `true` parâmetro da `options` `displayDialogAsync` chamada.
+    > Para obter esse comportamento em Outlook na Web, você deve definir a [propriedade displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) como no `true` parâmetro da `options` `displayDialogAsync` chamada.
 
 1. Implemente o processamento do item.
 1. Feche a caixa de diálogo. Além disso, manipular o que acontece se o usuário fechar a caixa de diálogo.
@@ -487,7 +487,7 @@ function validateBody(event) {
 A função `validateBody` obtém o corpo atual no formato especificado (HTML) e passa o objeto de evento `ItemSend` que o código deseja para acessar o método de retorno. Além do método `getAsync`, o objeto `Body` também fornece um método `setAsync` que você pode usar para substituir o corpo pelo texto especificado.
 
 > [!NOTE]
-> Para saber mais, confira [Objeto do Evento](/javascript/api/office/office.addincommands.event) e [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-).
+> Para saber mais, confira [Objeto do Evento](/javascript/api/office/office.addincommands.event) e [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_).
   
 
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>Objeto `NotificationMessages` e método `event.completed`

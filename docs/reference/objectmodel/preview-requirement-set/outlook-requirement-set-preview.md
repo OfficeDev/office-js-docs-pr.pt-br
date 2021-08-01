@@ -3,12 +3,12 @@ title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007759"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671909"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -108,7 +108,7 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 ### <a name="office-theme"></a>Tema do Office
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 Capacidade adicional para obter o tema do Office.
 
@@ -148,7 +148,7 @@ Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no
 
 ### <a name="shared-mailboxes"></a>Caixas de correio compartilhadas
 
-O suporte a recursos para pastas compartilhadas (ou seja, acesso de representante) foi lançado no conjunto [de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). No entanto, o suporte para caixas de correio compartilhadas agora está disponível na visualização. Para saber mais, consulte [Enable shared folders and shared mailbox scenarios](../../../outlook/delegate-access.md).
+O suporte a recursos para pastas compartilhadas (ou seja, acesso de representante) foi lançado no conjunto [de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). No entanto, o suporte para caixas de correio compartilhadas agora está disponível na visualização. Para saber mais, consultar [Habilitar pastas compartilhadas e cenários de caixas de correio compartilhada](../../../outlook/delegate-access.md).
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
 

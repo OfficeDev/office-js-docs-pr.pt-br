@@ -4,12 +4,12 @@ description: Saiba como cortar, copiar e colar intervalos usando Excel API JavaS
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a61ac967f267dfe3820e6972939d336e16ddd8b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075821"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671172"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
 
@@ -19,7 +19,7 @@ Este artigo fornece exemplos de código que cortam, copiam e colaram intervalos 
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-O [método Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) replica as ações **Copiar** e **Colar** da interface do usuário Excel usuário. O destino é `Range` o objeto `copyFrom` chamado. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+O [método Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_) replica as ações **Copiar** e **Colar** da interface do usuário Excel usuário. O destino é `Range` o objeto `copyFrom` chamado. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
 
 O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>Cortar e colar células (mover)
 
-O [método Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) move células para um novo local na workbook. Esse comportamento de movimento de célula funciona [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) da mesma forma que quando as células são movidas arrastando a borda do intervalo ou ao tomar as ações **Cortar** **e Colar.** Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como o `destinationRange` parâmetro.
+O [método Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) move células para um novo local na workbook. Esse comportamento de movimento de célula funciona [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) da mesma forma que quando as células são movidas arrastando a borda do intervalo ou ao tomar as ações **Cortar** **e Colar.** Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como o `destinationRange` parâmetro.
 
 O exemplo de código a seguir move um intervalo com o `Range.moveTo` método. Observe que, se o intervalo de destino for menor que a fonte, ele será expandido para abranger o conteúdo de origem.
 
@@ -95,7 +95,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

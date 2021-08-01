@@ -3,12 +3,12 @@ title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661240"
+ms.locfileid: "53671846"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -80,7 +80,7 @@ Por padrão, os usuários podem usar o gesto de “pinçar/zoom” para aplicar 
 
 ### <a name="close-task-panes"></a>Fechar painéis de tarefas
 
-Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, exigem que o usuário os feche para retornar à mensagem. Considere o uso do método [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) para fechar o painel de tarefas quando seu cenário estiver concluído.
+Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, exigem que o usuário os feche para retornar à mensagem. Considere o uso do método [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) para fechar o painel de tarefas quando seu cenário estiver concluído.
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 
@@ -107,6 +107,6 @@ As APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suport
 - [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 - [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 [Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

@@ -3,19 +3,19 @@ title: Obter e definir uma recorrência em um suplemento do Outlook
 description: Este tópico mostra como usar a API JavaScript do Office para obter e definir várias propriedades de recorrência de um item em um suplemento do Outlook.
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 47f805dff855cec4e6a6cfd2792a86179fac48f9
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803741"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670311"
 ---
 # <a name="get-and-set-recurrence"></a>Obter e definir uma recorrência
 
-Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar a API JavaScript do Office para gerenciar os padrões de recorrência de uma série de compromissos no seu suplemento.
+Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar Office API JavaScript para gerenciar os padrões de recorrência de uma série de compromissos no seu complemento.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1,7. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.7. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="available-recurrence-patterns"></a>Padrões de recorrência disponíveis
 
@@ -42,12 +42,12 @@ Como você acessa o padrão de recorrência e o que pode fazer com ele depende d
 
 |Estado do compromisso|A recorrência é editável?|A recorrência é visível?|
 |---|---|---|
-|Organizador de compromisso – redigir a série|Sim ([`setAsync`][setAsync link])|Sim ([`getAsync`][getAsync link])|
-|Organizador de compromisso – redigir a instância|Não (`setAsync` retorna um erro)|Sim ([`getAsync`][getAsync link])|
-|Participante de compromisso – ler a série|Não (`setAsync` não está disponível)|Sim ([`item.recurrence`][item.recurrence link])|
-|Participante de compromisso – ler a instância|Não (`setAsync` não está disponível)|Sim ([`item.recurrence`][item.recurrence link])|
-|Solicitação de reunião – ler a série|Não (`setAsync` não está disponível)|Sim ([`item.recurrence`][item.recurrence link])|
-|Solicitação de reunião – ler a instância|Não (`setAsync` não está disponível)|Sim ([`item.recurrence`][item.recurrence link])|
+|Organizador de compromisso – redigir a série|Sim ( [`setAsync`][setAsync link] )|Sim ( [`getAsync`][getAsync link] )|
+|Organizador de compromisso – redigir a instância|Não (`setAsync` retorna um erro)|Sim ( [`getAsync`][getAsync link] )|
+|Participante de compromisso – ler a série|Não (`setAsync` não está disponível)|Sim ( [`item.recurrence`][item.recurrence link] )|
+|Participante de compromisso – ler a instância|Não (`setAsync` não está disponível)|Sim ( [`item.recurrence`][item.recurrence link] )|
+|Solicitação de reunião – ler a série|Não (`setAsync` não está disponível)|Sim ( [`item.recurrence`][item.recurrence link] )|
+|Solicitação de reunião – ler a instância|Não (`setAsync` não está disponível)|Sim ( [`item.recurrence`][item.recurrence link] )|
 
 ## <a name="set-recurrence-as-the-organizer"></a>Definir recorrência como o organizador
 
@@ -78,7 +78,7 @@ function callback(asyncResult)
 
 ## <a name="change-recurrence-as-the-organizer"></a>Alterar a recorrência como organizador
 
-No exemplo a seguir, no modo de redação, o organizador de compromisso Obtém o objeto de recorrência de uma série de compromissos de acordo com a série ou uma instância dessa série e define uma nova duração de recorrência.
+No exemplo a seguir, no modo de redação, o organizador do compromisso obtém o objeto de recorrência de uma série de compromissos dada a série ou uma instância dessa série e define uma nova duração de recorrência.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -200,16 +200,16 @@ var recurrenceType = recurrence.recurrenceType;
 
 [Evento RecurrenceChanged](/javascript/api/office/office.eventtype)
 
-[getAsync link]: /javascript/api/outlook/office.recurrence#getasync-options--callback-
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setasync-recurrencepattern--options--callback-
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayofmonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayofweek
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
 [days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstdayofweek
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
 [interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
 [month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weeknumber
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
 
 [SeriesTime link]: /javascript/api/outlook/office.seriestime

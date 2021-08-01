@@ -3,12 +3,12 @@ title: Persistir o estado e as configurações do suplemento
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: a5a54a07abfeefda39d24e635773bfd808b59c25
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349767"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671517"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -65,11 +65,11 @@ Para persistir as configurações de estado ou personalizadas de um suplemento d
 
 O objeto é carregado automaticamente como parte do objeto Document e está disponível quando o painel de tarefas ou o complemento de conteúdo `Settings` é ativado. [](/javascript/api/office/office.document) Depois que `Document` o objeto é instaurou, você pode acessar o objeto com a `Settings` propriedade [settings](/javascript/api/office/office.document#settings) do `Document` objeto. Durante o tempo de vida da sessão, você pode apenas usar os métodos , e para ler, gravar ou remover as configurações persistentes e o estado do complemento da cópia na memória do pacote de `Settings.get` `Settings.set` `Settings.remove` propriedades.
 
-Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-).
+Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_).
 
 ### <a name="creating-or-updating-a-setting-value"></a>Criar ou atualizar um valor de configuração
 
-O exemplo de código a seguir mostra como usar o método [Settings.set](/javascript/api/office/office.settings#set-name--value-) para criar uma configuração chamada `'themeColor'` com um valor `'green'`. O primeiro parâmetro do método set é _name_ (Id) da configuração a ser definida ou criada, que diferencia maiúsculas de minúsculas. O segundo parâmetro é o _value_ da configuração.
+O exemplo de código a seguir mostra como usar o método [Settings.set](/javascript/api/office/office.settings#set_name__value_) para criar uma configuração chamada `'themeColor'` com um valor `'green'`. O primeiro parâmetro do método set é _name_ (Id) da configuração a ser definida ou criada, que diferencia maiúsculas de minúsculas. O segundo parâmetro é o _value_ da configuração.
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -79,7 +79,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>Obter o valor de uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings.get](/javascript/api/office/office.settings#get-name-) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do `get` método é o nome sensível a _caso_ da configuração.
+O exemplo a seguir mostra como usar o método [Settings.get](/javascript/api/office/office.settings#get_name_) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do `get` método é o nome sensível a _caso_ da configuração.
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -94,7 +94,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>Remover uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings.remove](/javascript/api/office/office.settings#remove-name-) para remover uma configuração com o nome "themeColor". O único parâmetro do `remove` método é o nome sensível a _caso_ da configuração.
+O exemplo a seguir mostra como usar o método [Settings.remove](/javascript/api/office/office.settings#remove_name_) para remover uma configuração com o nome "themeColor". O único parâmetro do `remove` método é o nome sensível a _caso_ da configuração.
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -104,7 +104,7 @@ Nada acontecerá se a configuração não existir. Use o `Settings.saveAsync` m�
 
 ### <a name="saving-your-settings"></a>Salvar suas configurações
 
-Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) para armazená-lo no documento. O único parâmetro do método é retorno de chamada , que é uma função de retorno de `saveAsync` chamada com um único parâmetro. 
+Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) para armazená-lo no documento. O único parâmetro do método é retorno de chamada , que é uma função de retorno de `saveAsync` chamada com um único parâmetro. 
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-Para recuperar uma parte do XML personalizado, use o método [getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-), mas a ID é um GUID gerado quando parte de XML é criada, portanto, não é possível saber ao codificar qual é a ID. Por esse motivo, ao criar uma parte de XML, é uma prática recomendada armazenar imediatamente a ID da parte de XML como uma configuração e usar uma chave fácil de lembrar. O método a seguir mostra como fazer isso. (Mas consulte seções anteriores deste artigo para obter detalhes e práticas recomendadas ao trabalhar com configurações personalizadas.)
+Para recuperar uma parte do XML personalizado, use o método [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_), mas a ID é um GUID gerado quando parte de XML é criada, portanto, não é possível saber ao codificar qual é a ID. Por esse motivo, ao criar uma parte de XML, é uma prática recomendada armazenar imediatamente a ID da parte de XML como uma configuração e usar uma chave fácil de lembrar. O método a seguir mostra como fazer isso. (Mas consulte seções anteriores deste artigo para obter detalhes e práticas recomendadas ao trabalhar com configurações personalizadas.)
 
  ```js
 function createCustomXmlPartAndStoreId() {
@@ -180,7 +180,7 @@ function getReviewers() {
 
 Para obter informações sobre como salvar configurações em um Outlook de Outlook, consulte Manage state and [settings for an Outlook add-in](../outlook/manage-state-and-settings-outlook.md).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Conferir também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)

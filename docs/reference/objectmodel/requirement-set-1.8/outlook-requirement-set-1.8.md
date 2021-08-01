@@ -3,12 +3,12 @@ title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
 description: Conjunto de requisitos 1.8 para Outlook api de complemento.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 31ea7af1bc2ac33df5f3d25828df3f783aae0569
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590957"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670262"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
@@ -48,7 +48,7 @@ O conjunto de requisitos 1.8 inclui todos os recursos do conjunto [de requisitos
 - Adicionado [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém a ID de um compromisso ou item de mensagem salvo.
 - Adicionado [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém um objeto que representa as sharedProperties de um compromisso ou item de mensagem.
 - Adicionado [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa os cabeçalhos da Internet personalizados em um item de mensagem. Somente modo de redação.
-- Modificado [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-): adiciona um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
+- Modificado [Event.completed](/javascript/api/office/office.addincommands.event#completed_options_): adiciona um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 - Adicionado [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true): adiciona uma nova enumeração que especifica a formatação que se aplica ao conteúdo de um anexo.
 - Adicionado [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true): adiciona uma nova enumeração que especifica se um anexo foi adicionado ou removido de um item.
 - Adicionado [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true): adiciona uma nova enumeração que especifica as cores disponíveis para serem associadas às categorias.
