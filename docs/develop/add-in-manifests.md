@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839996"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671391"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -115,15 +115,15 @@ Use apenas o elemento [AppDomains](../reference/manifest/appdomains.md) para esp
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office Online, o seu painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo do Office.
+Ao executar no Office na Web, o painel de tarefas pode ser navegado por qualquer URL. Entretanto, em plataformas de área de trabalho, se o suplemento tentar ir para uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL será aberta em uma nova janela do navegador fora do painel de suplementos do aplicativo do Office.
 
 Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](../reference/manifest/appdomains.md) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
 > Há duas exceções para esse comportamento:
 >
-> - Isso se aplica somente ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe pode ser direcionado para qualquer URL independentemente se ele está listado na **AppDomains**, até mesmo no Office para desktop.
-> - Quando uma caixa de diálogo é aberta coma API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-), a URL que é passada para o método deve estar no mesmo domínio do suplemento, mas a caixa de diálogo pode ser direcionada para qualquer URL, independentemente de estar listada no **AppDomains**, mesmo no Office para área de trabalho.
+> - Ele se aplica apenas ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado no **AppDomains**, mesmo no Office da área de trabalho.
+> - Quando uma caixa de diálogo é aberta coma API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_), a URL que é passada para o método deve estar no mesmo domínio do suplemento, mas a caixa de diálogo pode ser direcionada para qualquer URL, independentemente de estar listada no **AppDomains**, mesmo no Office para área de trabalho.
 
 O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](../reference/manifest/appdomain.md), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no `www.northwindtraders.com`domínio, essa página abre no painel do suplemento, mesmo na área de trabalho do Office.
 
