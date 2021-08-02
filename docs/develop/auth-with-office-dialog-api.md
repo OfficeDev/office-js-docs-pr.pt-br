@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536050"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671377"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -25,7 +25,7 @@ A caixa de diálogo aberta com essa API tem as seguintes características.
   - Não há nenhum ambiente de execução compartilhado com o painel de tarefas.
   - Não compartilha o mesmo armazenamento de sessão (a propriedade [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) como o painel de tarefas.
 - A primeira página aberta na caixa de diálogo deve estar hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta, se houver.
-- A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageparent-message-). (Recomendamos que esse método seja chamado somente de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo protocolo, subdomínios e porta. Caso contrário, haverá complicações em como você chama o método e processa a mensagem. Para obter mais informações, [mensagens entre domínios para o runtime do host](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
+- A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_). (Recomendamos que esse método seja chamado somente de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo protocolo, subdomínios e porta. Caso contrário, haverá complicações em como você chama o método e processa a mensagem. Para obter mais informações, [mensagens entre domínios para o runtime do host](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
 Quando a caixa de diálogo não é um iframe (que não é por padrão), ela pode abrir a página de logon de um provedor de identidade. Como é mostrado a seguir, as características da caixa de diálogo têm implicações sobre como você usa as bibliotecas de autenticação ou autorização, como a MSAL e o Passport.
 

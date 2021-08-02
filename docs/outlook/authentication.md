@@ -3,12 +3,12 @@ title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bbf8654654691fb7c62898d0d4521b3a11e15112
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077103"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671454"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -50,7 +50,7 @@ Os tokens de identidade do usuário do Exchange fornecem uma maneira de o suplem
 - Quando o suplemento precisar acessar um serviço que não seja da Microsoft que você controle.
 - Como uma autenticação de recurso quando o suplemento está sendo executado em uma versão do Office que não suporta SSO.
 
-Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) para obter tokens de identidade do usuário do Exchange. Para obter detalhes sobre o uso desses tokens, confira [Autenticar um usuário com um token de identidade para o Exchange](authenticate-a-user-with-an-identity-token.md).
+Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) para obter tokens de identidade do usuário do Exchange. Para obter detalhes sobre o uso desses tokens, confira [Autenticar um usuário com um token de identidade para o Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Tokens de acesso obtidos por meio de fluxos do OAuth2
 
@@ -58,7 +58,7 @@ Os suplementos também podem acessar serviços de terceiros que oferecem suporte
 
 - Precisar acessar um serviço de terceiros fora do seu controle
 
-Com esse método, o suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) para inicializar o fluxo do OAuth2 ou usando a [biblioteca office-js-helpers](https://github.com/OfficeDev/office-js-helpers) para o fluxo do OAuth2 Implícito.
+Com esse método, o suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) para inicializar o fluxo do OAuth2 ou usando a [biblioteca office-js-helpers](https://github.com/OfficeDev/office-js-helpers) para o fluxo do OAuth2 Implícito.
 
 ## <a name="callback-tokens"></a>Tokens de retorno de chamada
 

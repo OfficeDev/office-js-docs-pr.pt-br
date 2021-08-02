@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349732"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671496"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
@@ -31,7 +31,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 ![Diagrama que mostra o processo de SSO.](../images/sso-overview-diagram.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
 2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 4. O aplicativo cliente do Office solicita o **token do suplemento** do ponto de extremidade v2.0 do Azure AD para o usuário atual. 
@@ -95,7 +95,7 @@ Veja a seguir um exemplo da marcação.
 
 Adicione o JavaScript ao suplemento para:
 
-- Chamar [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
+- Chamar [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
 
 - Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
 
