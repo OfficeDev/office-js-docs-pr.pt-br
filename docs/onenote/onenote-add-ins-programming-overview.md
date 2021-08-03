@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348598"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671587"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -39,7 +39,7 @@ Os suplementos usam o contexto de tempo de execução do aplicativo do Office pa
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>Acessar uma API específica do aplicativo por meio do objeto *Aplicativo*.
 
-Use o objeto `Application` para acessar objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com APIs específicas do aplicativo, você executa operações em lotes em objetos proxy. O fluxo básico será semelhante a:
+Use o objeto `Application` para acessar os objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com as APIs específicas do aplicativo, você executa operações em lote nos objetos proxy. O fluxo básico é semelhante a este:
 
 1. Obtenha a instância do aplicativo do contexto.
 
@@ -96,7 +96,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
-Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
+Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) e [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_).
 
 Por exemplo:  
 
@@ -119,10 +119,10 @@ Os suplementos do OneNote dão suporte apenas às APIs comuns a seguir.
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
-| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#get-name-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
+| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#get_name_) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set_name__value_) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).

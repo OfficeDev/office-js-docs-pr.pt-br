@@ -5,16 +5,16 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740837"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671699"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
-Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
+Você pode usar suplementos do PowerPoint para criar soluções envolventes para as apresentações dos seus usuários em várias plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de suplementos do PowerPoint:
 
 - Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
 
@@ -22,7 +22,7 @@ Você pode usar suplementos do PowerPoint na criação de soluções envolventes
 
 ## <a name="powerpoint-add-in-scenarios"></a>Cenários de suplemento do PowerPoint
 
-Os exemplos de código no artigo mostram algumas tarefas básicas para desenvolver suplementos para o PowerPoint. Além disso, observe o seguinte:
+Os exemplos de código neste artigo demonstram algumas tarefas básicas para desenvolver suplementos para o PowerPoint. Observe o seguinte:
 
 - Para exibir as informações, esses exemplos dependem da função `app.showNotification`, incluída em modelos de projeto de Suplementos do Office do Visual Studio. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, será necessário substituir a função `showNotification` por seu próprio código.
 
@@ -39,9 +39,9 @@ Se você estiver criando um suplemento de conteúdo, será necessário obter o m
 
 No seguinte exemplo de código:
 
-- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
+- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
 
-- A função `registerActiveViewChanged` chama o método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) para registrar um manipulador para o evento [Document.ActiveViewChanged](/javascript/api/office/office.document).
+- A função `registerActiveViewChanged` chama o método [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) para registrar um manipulador para o evento [Document.ActiveViewChanged](/javascript/api/office/office.document).
 
 
 ```js
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegue até um determinado slide na apresentação
 
-No exemplo de código a seguir, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz denominada `slides`. A matriz `slides` contém índices, ids e títulos do intervalo selecionado slides (ou do slide atual, se vários slides não forem selecionados). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
+No exemplo de código a seguir, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz denominada `slides`. A matriz `slides` contém índices, ids e títulos do intervalo selecionado slides (ou do slide atual, se vários slides não forem selecionados). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
 
 ```js
 function getSelectedRange() {
@@ -109,7 +109,7 @@ function getSelectedRange() {
 }
 ```
 
-No seguinte exemplo de código, o método `goToFirstSlide` função chamadas a [Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) para navegar até o primeiro slide identificado pela `getSelectedRange` função mostrada anteriormente.
+No seguinte exemplo de código, o método `goToFirstSlide` função chamadas a [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) para navegar até o primeiro slide identificado pela `getSelectedRange` função mostrada anteriormente.
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +148,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obtenha a URL da apresentação
 
-No seguinte exemplo de código, o método `getFileUrl` função chamadas a [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) para obter a URL do arquivo da apresentação.
+No seguinte exemplo de código, o método `getFileUrl` função chamadas a [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) para obter a URL do arquivo da apresentação.
 
 ```js
 function getFileUrl() {
