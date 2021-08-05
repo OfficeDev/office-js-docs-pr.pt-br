@@ -3,12 +3,12 @@ title: Inserir dados no corpo de um suplemento do Outlook
 description: Saiba como inserir dados no corpo de um compromisso ou mensagem em um suplemento do Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671783"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773129"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Inserir dados no corpo ao compor um compromisso ou uma mensagem no Outlook
 
@@ -29,7 +29,7 @@ No Outlook, um usuário pode criar uma mensagem em texto, HTML ou RTF (Rich Text
 
 2.  Se seus dados a inserir são HTML e **getTypeAsync** retorna um tipo de texto para esse item, reorganize seus dados como texto e insira-os **com Office. MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType_, você receberá um erro.
 
-Além de _coercionType_, como na maioria dos métodos assíncronos na API JavaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** levam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Além de _coercionType_, como na maioria dos métodos assíncronos na API JavaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** levam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>Inserir dados na posição atual do cursor

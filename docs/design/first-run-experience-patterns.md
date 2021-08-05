@@ -1,14 +1,14 @@
 ---
 title: Padrões de tela de apresentação para suplemento dos Office
 description: Saiba as práticas recomendadas para projetar experiências de primeira Office de complementos.
-ms.date: 06/26/2018
+ms.date: 07/08/2018
 localization_priority: Normal
-ms.openlocfilehash: d020a281aca10805ba8fd1176403f3788f6d716c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076340"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774004"
 ---
 # <a name="first-run-experience-patterns"></a>Padrões de tela de apresentação
 
@@ -16,7 +16,7 @@ Uma tela de apresentação (FRE) é a introdução de um usuário para o supleme
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Siga estas práticas recomendadas ao criar sua tela de apresentação:
+Siga estas práticas recomendadas ao criar sua experiência de primeira etapa.
 
 |Fazer|Não fazer|
 |:------|:------|

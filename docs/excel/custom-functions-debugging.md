@@ -1,30 +1,32 @@
 ---
-ms.date: 04/12/2021
-description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
+description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e0e2b7bf49836a9b88de9ceaa21a66a454e6f05a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349641"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773682"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
-Este artigo discute a depuração *apenas* para funções personalizadas que não usam um painel de tarefas ou outros elementos de interface do usuário (funções personalizadas sem interface do usuário). 
+Este artigo discute a depuração *apenas* para funções personalizadas que não usam um painel de tarefas ou outros elementos de interface do usuário (funções personalizadas sem interface do usuário).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 No Windows:
+
 - [Excel Depurador Visual Studio Code (VS Code)](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel na Web e VS Code depurador](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
 - [Excel na Web e ferramentas do navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Linha de comando](#use-the-command-line-tools-to-debug)
 
 No Mac:
+
 - [Excel na Web e ferramentas do navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Linha de comando](#use-the-command-line-tools-to-debug)
 
@@ -47,14 +49,14 @@ Você pode usar VS Code para depurar funções personalizadas sem interface do u
 ### <a name="run-your-add-in-from-vs-code"></a>Execute o seu complemento do VS Code
 
 1. Abra sua pasta de projeto raiz de funções personalizadas [VS Code](https://code.visualstudio.com/).
-2. Escolha **Terminal > Executar Tarefa** e digite ou selecione **Assistir**. Isso monitorará e reconstruirá todas as alterações de arquivo.
-3. Escolha **Terminal > Executar Tarefa** e digite ou selecione **Dev Server**.
+1. Escolha **Terminal > Executar Tarefa** e digite ou selecione **Assistir**. Isso monitorará e reconstruirá todas as alterações de arquivo.
+1. Escolha **Terminal > Executar Tarefa** e digite ou selecione **Dev Server**.
 
 ### <a name="start-the-vs-code-debugger"></a>Iniciar o VS Code depurador
 
-4. Escolha **Exibir > Executar ou** insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
-5. No menu suspenso Executar, escolha Excel **Desktop (Funções Personalizadas)**.
-6. Selecione **F5** (ou selecione **Executar -> Iniciar Depuração** no menu) para começar a depuração. Uma nova Excel de trabalho será aberta com seu complemento já sideload e pronto para uso.
+1. Escolha **Exibir > Executar ou** insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
+1. No menu suspenso Executar, escolha Excel **Desktop (Funções Personalizadas)**.
+1. Selecione **F5** (ou selecione **Executar -> Iniciar Depuração** no menu) para começar a depuração. Uma nova Excel de trabalho será aberta com seu complemento já sideload e pronto para uso.
 
 ### <a name="start-debugging"></a>Iniciar a depuração
 
@@ -76,26 +78,26 @@ Você pode usar VS Code para depurar funções personalizadas sem interface do u
 
 ### <a name="start-the-vs-code-debugger"></a>Iniciar o VS Code depurador
 
-4. Escolha **Exibir > Executar ou** insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
-5. Nas opções Depurar, escolha **Office Online (Edge Chromium)**.
-6. Abra Excel no navegador Microsoft Edge e crie uma nova workbook.
-7. Escolha **Compartilhar** na faixa de opções e copie o link para a URL dessa nova workbook.
-8. Selecione **F5** (ou **selecione Executar > Iniciar Depuração** no menu) para começar a depuração. Um prompt será exibido, que solicita a URL do documento.
-9. Colar na URL da pasta de trabalho e pressione Enter.
+1. Escolha **Exibir > Executar ou** insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
+1. Nas opções Depurar, escolha **Office Online (Edge Chromium)**.
+1. Abra Excel no navegador Microsoft Edge e crie uma nova workbook.
+1. Escolha **Compartilhar** na faixa de opções e copie o link para a URL dessa nova workbook.
+1. Selecione **F5** (ou **selecione Executar > Iniciar Depuração** no menu) para começar a depuração. Um prompt será exibido, que solicita a URL do documento.
+1. Colar na URL da pasta de trabalho e pressione Enter.
 
 ### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
 1. Selecione a **guia** Inserir na faixa de opções e, na seção **Complementos,** escolha Office **Adicionar.**
 2. Na caixa **de diálogo Office de** Office, selecione a guia MEUS **ADD-INS,** escolha Gerenciar Meus **Complementos** e, em seguida, **Upload Meu Complemento**.
-    
+  
     ![A caixa Office de Office com um drop-down na leitura superior direita "Gerenciar meus complementos" e um drop-down abaixo dele com a opção "Upload Meu Complemento".](../images/office-add-ins-my-account.png)
 
 3. **Navegue** até o arquivo de manifesto do complemento e selecione **Upload**.
-    
+  
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
-
 ### <a name="set-breakpoints"></a>Definir pontos de interrupção
+
 1. Em VS Code, abra seu arquivo de script de código-fonte (**functions.js** **ou functions.ts**).
 2. [Definir um ponto de interrupção](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) no código-fonte da função personalizada.
 3. Na Excel de trabalho, insira uma fórmula que usa sua função personalizada.
@@ -116,11 +118,11 @@ Você pode usar as ferramentas de desenvolvedor do navegador para depurar funç�
 2. Abra uma nova Excel de trabalho.
 3. Abra a **guia** Inserir na faixa de opções e, na seção **Add-ins,** escolha Office **Adicionar.**
 4. Na caixa **de diálogo Office de** Office, selecione a guia MEUS **ADD-INS,** escolha Gerenciar Meus **Complementos** e, em seguida, **Upload Meu Complemento**.
-    
+  
     ![A caixa Office de Office com um drop-down na leitura superior direita "Gerenciar meus complementos" e um drop-down abaixo dele com a opção "Upload Meu Complemento".](../images/office-add-ins-my-account.png)
 
 5. **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
-    
+  
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
 > [!NOTE]
@@ -142,15 +144,15 @@ Se você não estiver usando VS Code, poderá usar a linha de comando (como bash
 2. Abra uma segunda janela de linha de comando (a primeira será bloqueada durante a execução do relógio).
 
 3. Se você quiser iniciar o seu complemento na versão da área de trabalho Excel, execute o seguinte comando.
-
+  
     `npm run start:desktop`
-
-    Ou se você preferir iniciar o seu Excel na Web, execute o seguinte comando.
-
+  
+    Ou se você preferir iniciar o seu Excel na Web executar o seguinte comando.
+  
     `npm run start:web`
-
+  
     Para Excel na Web você também precisa fazer sideload do seu complemento. Siga as etapas em [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Em seguida, continue até a próxima seção para iniciar a depuração.
-
+  
 4. Abra ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores F12 abrirá as ferramentas de desenvolvedor.
 5. Em ferramentas de desenvolvedor, abra seu arquivo de script de código-fonte (**functions.js** **ou functions.ts**). Seu código de funções personalizadas pode estar localizado perto do final do arquivo.
 6. No código-fonte da função personalizada, aplique um ponto de interrupção selecionando uma linha de código.
@@ -159,18 +161,21 @@ Se você precisar alterar o código, poderá fazer edições no Visual Studio e 
 
 ### <a name="commands-for-building-and-running-your-add-in"></a>Comandos para criar e executar o seu complemento
 
-Há várias tarefas de com build disponíveis:
+Há várias tarefas de com build disponíveis.
+
 - `npm run watch`: cria para desenvolvimento e recria automaticamente quando um arquivo de origem é salvo
 - `npm run build-dev`: builds para desenvolvimento uma vez
 - `npm run build`: builds para produção
 - `npm run dev-server`: executa o servidor Web usado para desenvolvimento
 
 Você pode usar as seguintes tarefas para iniciar a depuração na área de trabalho ou online.
+
 - `npm run start:desktop`: Inicia Excel na área de trabalho e faz o sideload do seu complemento.
 - `npm run start:web`: Inicia Excel na Web e descarrega o seu complemento.
 - `npm run stop`: Interrompe Excel e depuração.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba mais sobre as práticas de autenticação para funções [personalizadas sem interface do usuário.](custom-functions-authentication.md)
 
 ## <a name="see-also"></a>Confira também

@@ -1,14 +1,14 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa executar Office Desajustes.
-ms.date: 03/18/2020
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2aa5b2ffadffb86052ea55e06b1c0c49742543e6
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: f432eab8404b210bbe2bc2734f81873e80bc6397
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349130"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773227"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -29,7 +29,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para os complementos de conteúdo e painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo de manifesto XML do complemento ou você precisa implantar o complemento usando a Implantação [Centralizada](../publish/centralized-deployment.md).
+Para os complementos de conteúdo e do painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo de manifesto XML do complemento ou você precisa implantar o complemento usando Aplicativos [Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps). [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
 
 Para testar e executar um Outlook de Outlook, a conta de email Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível por meio do Microsoft 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 

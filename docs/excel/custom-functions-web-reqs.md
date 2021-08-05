@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349593"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773353"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -51,8 +51,8 @@ function webRequest() {
 }
 ```
 
->[!NOTE]
->Usar `Fetch` evita retornos de chamada aninhados e pode ser preferível do XHR em alguns casos.
+> [!NOTE]
+> Usar `Fetch` evita retornos de chamada aninhados e pode ser preferível do XHR em alguns casos.
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
@@ -131,7 +131,7 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-## <a name="canceling-a-function"></a>Cancelar uma função
+## <a name="cancel-a-function"></a>Cancelar uma função
 
 Excel cancela a execução de uma função nas seguintes situações.
 
@@ -143,7 +143,7 @@ Você também pode considerar a definição de um valor de streaming padrão par
 
 Observe que há também uma categoria de funções chamada de funções canceláveis, que _não_ estão relacionadas a funções de streaming. Somente funções personalizadas assíncronas que retornam um valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
 
-### <a name="using-an-invocation-parameter"></a>Usando um parâmetro de invocação
+### <a name="use-an-invocation-parameter"></a>Usar um parâmetro de invocação
 
 O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O parâmetro fornece contexto sobre a célula (como seu endereço e conteúdo) e permite que `invocation` você use `setResult` e `onCanceled` métodos. Esses métodos definem o que uma função faz quando a função transmite (`setResult`) ou é cancelada (`onCanceled`).
 

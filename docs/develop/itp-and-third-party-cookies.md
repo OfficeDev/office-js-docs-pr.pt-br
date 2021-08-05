@@ -1,20 +1,20 @@
 ---
 title: Desenvolva seu Office de usuário para trabalhar com a ITP ao usar cookies de terceiros
 description: Como trabalhar com a ITP e Office de complementos ao usar cookies de terceiros
-ms.date: 03/12/2021
+ms.date: 07/8/2021
 localization_priority: Normal
-ms.openlocfilehash: dbc23e4ead0abc94ffa173ffc22919342c4fca6d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349858"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773472"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Desenvolva seu Office de usuário para trabalhar com a ITP ao usar cookies de terceiros
 
 Se o seu Office de usuário exigir cookies de terceiros, esses cookies serão bloqueados se a PREVENÇÃO de Controle Inteligente (ITP) for usada pelo tempo de execução do navegador que carregou o seu complemento. Você pode estar usando cookies de terceiros para autenticar usuários ou para outros cenários, como armazenar configurações.
 
-Se o Office e o site devem depender de cookies de terceiros, use as etapas a seguir para trabalhar com ITP:
+Se o Office e o site devem depender de cookies de terceiros, use as etapas a seguir para trabalhar com ITP.
 
 1. Configurar a [Autorização OAuth 2.0](https://tools.ietf.org/html/rfc6749)para que o domínio de autenticação (no seu caso, o terceiro que espera cookies) encaminhe um token de autorização para seu   site. Use o token para estabelecer uma sessão de logon de primeira parte com um cookie Secure e [HttpOnly](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)definido pelo servidor.
 2. Use a [Armazenamento de acesso](https://webkit.org/blog/8124/introducing-storage-access-api/)para que o terceiro possa solicitar permissão para obter acesso aos cookies de primeira   parte. As versões atuais do Office no Mac e Office na Web ambas suportam essa API.

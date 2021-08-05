@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: Saiba mais sobre os limites de recursos da plataforma de Office de complemento, incluindo CPU e memória.
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 27c5acf98bb43d53b165ad268b3800373888d335
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671272"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773213"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -71,9 +71,9 @@ Se qualquer conteúdo ou um complemento do painel de tarefas exceder os limites 
 - Reiniciar o suplemento.
 - Cancelar outros alertas sobre a ultrapassagem desse limite. O ideal é que o usuário exclua o suplemento do documento. Continuar a usar o suplemento poderia causar ainda mais problemas de desempenho e estabilidade.  
 
-## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>Verificar problemas de uso de recursos no Log de Telemetria
+## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>Verificar problemas de uso de recursos no Log de Telemetria
 
-O Office fornece um Log de Telemetria que mantém um registro de determinados eventos (carregar, abrir, fechar e erros) de soluções do Office em execução no computador local, incluindo problemas de uso de recursos em um Suplemento do Office. Se tiver o Log de Telemetria configurado, é possível usar o Excel para abri-lo no seguinte local padrão na unidade local:
+O Office fornece um Log de Telemetria que mantém um registro de determinados eventos (carregar, abrir, fechar e erros) de soluções do Office em execução no computador local, incluindo problemas de uso de recursos em um Suplemento do Office. Se você tiver o Log de Telemetria definido, poderá usar o Excel para abrir o Log de Telemetria no local padrão a seguir em sua unidade local.
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 

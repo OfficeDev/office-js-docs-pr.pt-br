@@ -1,14 +1,14 @@
 ---
 title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348409"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774046"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 
@@ -17,7 +17,7 @@ Um PowerPoint pode adicionar slides à apresentação e, opcionalmente, especifi
 > [!IMPORTANT]
 > As APIs para adicionar slides estão na [visualização](../reference/requirement-sets/powerpoint-preview-apis.md) e não estão disponíveis para os complementos de produção. A API para *excluir* slides foi lançada.
 
-As APIs para adicionar slides são usadas principalmente em cenários em que as IDs dos slides mestres e layouts da apresentação são conhecidas no momento da codificação ou podem ser encontradas em uma fonte de dados em tempo de execução. Nesse cenário, você ou o cliente devem criar e manter uma fonte de dados que correlaciona o critério de seleção (como nomes ou imagens de slides mestres e layouts) com as IDs dos slides mestres e layouts. As APIs também podem ser usadas em cenários em que o usuário pode inserir slides que usam o slide mestre padrão e o layout padrão do mestre e em cenários em que o usuário pode selecionar um slide existente e criar um novo com o mesmo slide mestre e layout (mas não o mesmo conteúdo). Confira [Selecionar o slide mestre e o layout a ser usado](#selecting-which-slide-master-and-layout-to-use) para obter mais informações sobre isso.
+As APIs para adicionar slides são usadas principalmente em cenários em que as IDs dos slides mestres e layouts da apresentação são conhecidas no momento da codificação ou podem ser encontradas em uma fonte de dados em tempo de execução. Nesse cenário, você ou o cliente devem criar e manter uma fonte de dados que correlaciona o critério de seleção (como nomes ou imagens de slides mestres e layouts) com as IDs dos slides mestres e layouts. As APIs também podem ser usadas em cenários em que o usuário pode inserir slides que usam o slide mestre padrão e o layout padrão do mestre e em cenários em que o usuário pode selecionar um slide existente e criar um novo com o mesmo slide mestre e layout (mas não o mesmo conteúdo). Confira [Selecionar o slide mestre e o layout a ser usado](#select-which-slide-master-and-layout-to-use) para obter mais informações sobre isso.
 
 ## <a name="add-a-slide-with-slidecollectionadd-preview"></a>Adicionar um slide com SlideCollection.add (visualização)
 
@@ -35,9 +35,9 @@ async function addSlide() {
 }
 ```
 
-### <a name="selecting-which-slide-master-and-layout-to-use"></a>Selecionando qual slide mestre e layout usar
+### <a name="select-which-slide-master-and-layout-to-use"></a>Selecione qual slide mestre e layout usar
 
-Use o [parâmetro AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) para controlar qual slide mestre é usado para o novo slide e qual layout dentro do mestre é usado. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código.
+Use o [parâmetro AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) para controlar qual slide mestre é usado para o novo slide e qual layout dentro do mestre é usado. Apresentamos um exemplo a seguir. Sobre este código, observe:
 
 - Você pode incluir as duas propriedades do `AddSlideOptions` objeto.
 - Se ambas as propriedades são usadas, o layout especificado deve pertencer ao mestre especificado ou um erro é lançado.
@@ -67,7 +67,7 @@ Portanto, o parâmetro é usado principalmente em cenários nos quais o compleme
 
 Se o seu add-in puder ser usado em cenários em que o novo slide deve usar *a* mesma combinação de slide mestre e layout que é usado por um slide existente, seu complemento pode (1) solicitar que o usuário selecione um slide e (2) leia as IDs do slide mestre e layout. As etapas a seguir mostram como ler as IDs e adicionar um slide com um mestre e layout correspondentes.
 
-1. Crie um método para obter o índice do slide selecionado. Apresentamos um exemplo a seguir. Observação sobre o código:
+1. Crie um método para obter o índice do slide selecionado. Apresentamos um exemplo a seguir. Sobre este código, observe:
 
     - Ele usa o [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).

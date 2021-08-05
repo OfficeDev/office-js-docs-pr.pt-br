@@ -1,26 +1,24 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros do usuário em Office de complementos.
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: dc186e942d129d4a7ae1ce2a326d0e5a0e1629e1
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348626"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774305"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
-Às vezes, seus usuários podem encontrar problemas com suplementos do Office desenvolvidos por você. Por exemplo, um suplemento falha ao carregar ou está inacessível. Use as informações neste artigo para ajudar a resolver problemas comuns que os usuários têm com o seu suplemento do Office. 
+Às vezes, seus usuários podem encontrar problemas com suplementos do Office desenvolvidos por você. Por exemplo, um suplemento falha ao carregar ou está inacessível. Use as informações neste artigo para ajudar a resolver problemas comuns que os usuários têm com o seu suplemento do Office.
 
 Também é possível usar o [Fiddler](https://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erros comuns e etapas de solução de problemas
 
 A tabela a seguir lista as mensagens de erro comuns que os usuários podem receber e as etapas que os usuários podem seguir para resolver os erros.
-
-
 
 |**Mensagem de erro**|**Resolução**|
 |:-----|:-----|
@@ -40,20 +38,16 @@ Você também pode enviar comentários: se estiver usando o Excel no Windows ou 
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>O suplemento do Outlook não funciona corretamente
 
-Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
-
+Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer.
 
 - Vá para Ferramentas > **Opções da Internet**  >  **Avançadas**.
-
 - Em **Navegação, desmarque** **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)**.
 
 Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, verifique **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)** novamente.
 
-
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>O suplemento não é ativado no Office 2013
 
 Se o complemento não for ativado quando o usuário executar as etapas a seguir.
-
 
 1. Entrar com a conta da Microsoft no Office 2013.
 

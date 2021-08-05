@@ -1,14 +1,14 @@
 ---
 title: Coautoria em suplementos do Excel
 description: Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.
-ms.date: 07/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6923b003417e78432975fa78fb5423b055bd02bf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671482"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774158"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
@@ -48,7 +48,7 @@ Conforme descrito anteriormente, em alguns cenários, acionar eventos para todos
 
 Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que estavam trabalhando na guia de trabalho, levando a uma experiência de usuário `BindingDataChanged` ruim. Evite a exibição da interface do usuário ao usar eventos no suplemento.
 
-## <a name="avoiding-table-row-coauthoring-conflicts"></a>Evitando conflitos de coautor da linha de tabela
+## <a name="avoid-table-row-coauthoring-conflicts"></a>Evitar conflitos de coautor da linha de tabela
 
 É um problema conhecido que as chamadas para a [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários `TableRowCollection.add` atualizem).
 

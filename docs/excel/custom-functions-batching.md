@@ -1,16 +1,16 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Normal
-ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa02a88646ca373a463aefaa51076c35c3df08cf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349648"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774172"
 ---
-# <a name="batching-custom-function-calls-for-a-remote-service"></a>Enviando em lote chamadas de função personalizada para um serviço remoto
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>Chamadas de função personalizada em lotes para um serviço remoto
 
 Se as suas funções personalizadas chamarem um serviço remoto, você poderá usar um padrão de envio em lotes para reduzir o número de chamadas de rede para o serviço remoto. Para reduzir a idas e voltas na rede, você reúne todas as chamadas em uma única chamada para o serviço da Web. Isso é ideal quando a planilha é recalculada.
 
@@ -216,6 +216,7 @@ Para modificar a `_fetchFromRemoteService` função a ser executado em seu servi
 - Coloque o código no serviço remoto.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba mais sobre [os vários parâmetros](custom-functions-parameter-options.md) que você pode usar nas suas funções personalizadas. Ou, reveja as noções básicas sobre como fazer [uma chamada na Web através de um função personalizada](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Confira também

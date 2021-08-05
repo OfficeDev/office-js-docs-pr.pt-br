@@ -1,14 +1,14 @@
 ---
 title: Evite usar o método context.sync em loops
 description: Saiba como usar o loop dividido e os padrões de objetos correlacionados para evitar chamar context.sync em um loop.
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 64cfd5cd350746ba07e1a98986a4bd7811431475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349137"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773248"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Evite usar o método context.sync em loops
 
@@ -42,7 +42,7 @@ Para alguns cenários de programação em Office Add-ins que usam um dos modelos
 No caso mais simples, você só está escrevendo para membros de um objeto de coleção, não lendo suas propriedades. Por exemplo, o código a seguir realça em amarelo todas as instâncias de "o" em um documento do Word.
 
 > [!NOTE]
-> Geralmente, é uma boa prática colocar ter uma final pouco antes do caractere "}" de fechamento do método de aplicativo `context.sync` `run` (como `Excel.run` , , `Word.run` etc.). Isso acontece porque o método faz uma chamada oculta como a última coisa que ele faz se, e somente se, há comandos em fila que ainda não `run` `context.sync` foram sincronizados. O fato de essa chamada estar oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o `context.sync` explícito . No entanto, considerando que este artigo se trata de minimizar chamadas de , na verdade, é mais confuso adicionar um `context.sync` final totalmente `context.sync` desnecessário. Portanto, neste artigo, o deixamos de fora quando não há comandos não sincronizados no final do `run` .
+> Geralmente, é uma boa prática colocar um final pouco antes do caractere "}" de fechamento do método de aplicativo `context.sync` `run` (como `Excel.run` , , `Word.run` etc.). Isso acontece porque o método faz uma chamada oculta como a última coisa que ele faz se, e somente se, há comandos em fila que ainda não `run` `context.sync` foram sincronizados. O fato de essa chamada estar oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o `context.sync` explícito . No entanto, considerando que este artigo se trata de minimizar chamadas de , na verdade, é mais confuso adicionar um `context.sync` final totalmente `context.sync` desnecessário. Portanto, neste artigo, o deixamos de fora quando não há comandos não sincronizados no final do `run` .
 
 ```javascript
 Word.run(async function (context) {
@@ -75,13 +75,13 @@ Word.run(async function (context) {
 O código anterior levou 1 segundo completo para ser concluído em um documento com 200 instâncias de "o" no Word no Windows. Mas quando a linha dentro do loop é comentada para fora e a mesma linha logo após o loop ser descomentado, a operação levou apenas um décimo de `await context.sync();` segundo. No Word na Web (com Edge como navegador), levou 3 segundos completos com a sincronização dentro do loop e apenas 6/10ths de um segundo com a sincronização após o loop, cerca de cinco vezes mais rápido. Em um documento com 2.000 instâncias de "the", ele levou (em Word na Web) 80 segundos com a sincronização dentro do loop e apenas 4 segundos com a sincronização após o loop, cerca de 20 vezes mais rápido.
 
 > [!NOTE]
-> Vale a pena perguntar se a versão de sincronização dentro do loop seria executada mais rapidamente se as sincronizações fosse executadas simultaneamente, o que poderia ser feito simplesmente removendo a palavra-chave da frente do `await` `context.sync()` . Isso faria com que o tempo de execução iniciasse a sincronização e iniciasse imediatamente a próxima iteração do loop sem aguardar a conclusão da sincronização. No entanto, essa solução não é tão boa quanto mover completamente o `context.sync` loop por esses motivos:
+> Vale a pena perguntar se a versão de sincronização dentro do loop seria executada mais rapidamente se as sincronizações fosse executadas simultaneamente, o que poderia ser feito simplesmente removendo a palavra-chave da frente do `await` `context.sync()` . Isso faria com que o tempo de execução iniciasse a sincronização e iniciasse imediatamente a próxima iteração do loop sem aguardar a conclusão da sincronização. No entanto, essa solução não é tão boa quanto mover completamente o `context.sync` loop por esses motivos.
 >
 > - Assim como os comandos em um trabalho em lotes de sincronização são enfilados, os trabalhos em lotes em si são enfilados no Office, mas o Office dá suporte a não mais de 50 trabalhos em lotes na fila. Mais erros disparam. Portanto, se houver mais de 50 iterações em um loop, há uma chance de que o tamanho da fila seja excedido. Quanto maior o número de iterações, maior será a chance de isso acontecer. 
 > - "Simultaneamente" não significa simultaneamente. Ainda levaria mais tempo para executar várias operações de sincronização do que executar uma.
 > - Operações simultâneas não são garantidas na mesma ordem em que iniciaram. No exemplo anterior, não importa qual ordem a palavra "the" é realçada, mas há cenários em que é importante que os itens da coleção sejam processados em ordem.
 
-## <a name="reading-values-from-the-document-with-the-split-loop-pattern"></a>Lendo valores do documento com o padrão de loop dividido
+## <a name="read-values-from-the-document-with-the-split-loop-pattern"></a>Ler valores do documento com o padrão de loop dividido
 
 Evitar s dentro de um loop se torna mais desafiador quando o código deve ler uma propriedade dos itens da coleção à `context.sync` medida que processa cada um.  Suponha que seu código precise iterar todos os controles de conteúdo em um documento do Word e registrar o texto do primeiro parágrafo associado a cada controle. Seus instintos de programação podem levar você a fazer um loop sobre os controles, carregar a propriedade de cada parágrafo (primeiro), chamar para preencher o objeto de parágrafo proxy com o texto do documento e, em `text` `context.sync` seguida, registrá-lo. Apresentamos um exemplo a seguir.
 
@@ -132,9 +132,9 @@ O exemplo anterior sugere o procedimento a seguir para transformar um loop que c
 3. Após o primeiro loop, chame `context.sync` para preencher os objetos proxy com quaisquer propriedades carregadas.
 4. Siga o `context.sync` com um segundo loop para iterar sobre a matriz criada no primeiro loop e ler as propriedades carregadas.
 
-## <a name="processing-objects-in-the-document-with-the-correlated-objects-pattern"></a>Processar objetos no documento com o padrão de objetos correlacionados
+## <a name="process-objects-in-the-document-with-the-correlated-objects-pattern"></a>Processar objetos no documento com o padrão de objetos correlacionados
 
-Vamos considerar um cenário mais complexo em que o processamento dos itens na coleção exige dados que não estão nos itens em si. O cenário visualiza um complemento do Word que opera em documentos criados a partir de um modelo com algum texto clichê. Espalhados no texto estão uma ou mais instâncias das seguintes cadeias de caracteres de espaço reservado: "{Coordenador}", "{Deputy}" e "{Manager}". O complemento substitui cada espaço reservado pelo nome de uma pessoa. A interface do usuário do complemento não é importante para este artigo. Por exemplo, ele poderia ter um painel de tarefas com três caixas de texto, cada uma rotulada com um dos espaço reservados. O usuário insra um nome em cada caixa de texto e pressiona um **botão Substituir.** O manipulador do botão cria uma matriz que mapeia os nomes para os espaço reservados e substitui cada espaço reservado pelo nome atribuído. 
+Vamos considerar um cenário mais complexo em que o processamento dos itens na coleção exige dados que não estão nos itens em si. O cenário visualiza um complemento do Word que opera em documentos criados a partir de um modelo com algum texto clichê. Espalhados no texto estão uma ou mais instâncias das seguintes cadeias de caracteres de espaço reservado: "{Coordenador}", "{Deputy}" e "{Manager}". O complemento substitui cada espaço reservado pelo nome de uma pessoa. A interface do usuário do complemento não é importante para este artigo. Por exemplo, ele poderia ter um painel de tarefas com três caixas de texto, cada uma rotulada com um dos espaço reservados. O usuário insra um nome em cada caixa de texto e pressiona um **botão Substituir.** O manipulador do botão cria uma matriz que mapeia os nomes para os espaço reservados e substitui cada espaço reservado pelo nome atribuído.
 
 Você não precisa realmente produzir um complemento com essa interface do usuário para experimentar o código. Você pode usar a ferramenta [Script Lab para](../overview/explore-with-script-lab.md) protótipo do código importante. Use a instrução de atribuição a seguir para criar a matriz de mapeamento.
 
@@ -202,13 +202,13 @@ Word.run(async (context) => {
 });
 ```
 
-Observe que o código usa o padrão de loop dividido:
+Observe que o código usa o padrão de loop dividido.
 
 - O loop externo do exemplo anterior foi dividido em dois. (O segundo loop tem um loop interno, que é esperado porque o código está iterando sobre um conjunto de trabalhos (ou espaço reservados) e dentro desse conjunto ele está iterando sobre os intervalos correspondentes.)
 - Há um após `context.sync` cada loop principal, mas `context.sync` não dentro de qualquer loop.
 - O segundo loop principal itera através de uma matriz criada no primeiro loop.
 
-Mas a matriz criada no  primeiro loop não contém apenas um objeto Office como o primeiro loop fez na seção Ler valores do documento com o padrão de [loop dividido.](#reading-values-from-the-document-with-the-split-loop-pattern) Isso acontece porque algumas das informações necessárias para processar os objetos Intervalo do Word não estão nos objetos Range em si, mas vêm da `jobMapping` matriz.
+Mas a matriz criada no  primeiro loop não contém apenas um objeto Office como o primeiro loop fez na seção Ler valores do documento com o padrão de [loop dividido.](#read-values-from-the-document-with-the-split-loop-pattern) Isso acontece porque algumas das informações necessárias para processar os objetos Intervalo do Word não estão nos objetos Range em si, mas vêm da `jobMapping` matriz.
 
 Portanto, os objetos na matriz criada no primeiro loop são objetos personalizados que têm duas propriedades. O primeiro é uma matriz de Intervalos do Word que combinam com um título de trabalho específico (ou seja, uma cadeia de caracteres de espaço reservado) e a segunda é uma cadeia de caracteres que fornece o nome da pessoa atribuída ao trabalho. Isso torna o loop final fácil de gravar e fácil de ler porque todas as informações necessárias para processar um determinado intervalo estão contidas no mesmo objeto personalizado que contém o intervalo. O nome que deve substituir _**correlacionadoObject**.rangesMatchingJob.items[j]_ é a outra propriedade do mesmo objeto: _**correlatedObject**.personAssignedToJob_.
 

@@ -1,15 +1,15 @@
 ---
 title: Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
 description: Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.
-ms.date: 04/02/2021
+ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671123"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773626"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
 
@@ -121,7 +121,7 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

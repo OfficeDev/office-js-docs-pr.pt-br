@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
-ms.date: 04/14/2021
+ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a5efb7bf49c96f4b31f4f811e4c2fd4720694a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348633"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773647"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -99,7 +99,7 @@ Se você estiver usando Visual Studio para desenvolver seu complemento, o proces
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento com sideload
 
-Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário limpar o [cache do Office](clear-cache.md) e, em seguida, re-sideload do complemento usando o manifesto atualizado. Isso permitirá que o Office processe o suplemento conforme descrito no manifesto atualizado.
+Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário limpar o cache do navegador e, em seguida, re-sideload do complemento usando o manifesto atualizado. Isso permitirá Office na Web renderizar o complemento conforme descrito pelo manifesto atualizado.
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma Office de complementos.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349151"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773269"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -72,7 +72,7 @@ Você pode disponibilizar seus Office para o público publicando-os no AppSource
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para Office de Office, o impacto da desabilitação  da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os complementos ou o Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios [](../publish/centralized-deployment.md) e os complementos implantados pelo administrador de IT de uma organização por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis Outlook na Web, independentemente do status da configuração.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para Office de Office, o impacto da desabilitação  da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os complementos ou o Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios [](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) e os complementos implantados pelo administrador de IT de uma organização por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis Outlook na Web, independentemente do status da configuração.
 
 Para saber mais sobre Outlook comportamento específico, consulte Privacidade, permissões e segurança para Outlook [de Outlook.](../outlook/privacy-and-security.md#optional-connected-experiences)
 

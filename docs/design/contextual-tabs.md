@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5f8b2a6810a7457d3f9c44f236c42e5d24efa040
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671531"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774018"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -22,7 +22,7 @@ Uma guia contextual é um controle de tabulação oculto na faixa Office que é 
 [!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
-> No momento, as guias contextuais personalizadas só têm suporte no Excel e somente nessas plataformas e builds:
+> Atualmente, as guias contextuais personalizadas só têm suporte Excel e somente nessas plataformas e builds.
 >
 > - Excel no Windows (somente Microsoft 365 assinatura): Versão 2102 (Build 13801.20294) ou posterior.
 > - Excel Online
@@ -66,7 +66,6 @@ Ao contrário das guias principais personalizadas, definidas com XML no manifest
 > A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no XML do manifesto.
 
 Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON estádynamic-ribbon.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
-
 
 1. Comece criando uma cadeia de caracteres JSON com duas propriedades de matriz nomeadas `actions` e `tabs` . A `actions` matriz é uma especificação de todas as funções que podem ser executadas por controles na guia contextual. A matriz define uma ou mais guias `tabs` contextuais, *até um máximo de 20*.
 
@@ -163,12 +162,12 @@ Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema
 
     - Todas as propriedades, exceto `enabled` , são necessárias.
     - `type` especifica o tipo de controle. Os valores podem ser "Button", "Menu" ou "MobileButton".
-    - `id` pode ter até 125 caracteres. 
+    - `id` pode ter até 125 caracteres.
     - `actionId` deve ser a ID de uma ação definida na `actions` matriz. (Consulte a etapa 1 desta seção.)
     - `label` é uma cadeia de caracteres amigável para servir como o rótulo do botão.
     - `superTip` representa uma forma rica de dica de ferramenta. As propriedades `title` e `description` são necessárias.
     - `icon` especifica os ícones do botão. Os comentários anteriores sobre o ícone de grupo também se aplicam aqui.
-    - `enabled` (opcional) especifica se o botão está habilitado quando a guia contextual aparece é iniciada. O padrão se não estiver presente é `true` . 
+    - `enabled` (opcional) especifica se o botão está habilitado quando a guia contextual aparece é iniciada. O padrão se não estiver presente é `true` .
 
     ```json
     {
@@ -193,7 +192,7 @@ Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema
         ]
     }
     ```
- 
+
 A seguir está o exemplo completo do blob JSON.
 
 ```json
@@ -532,7 +531,7 @@ Algumas combinações de plataforma, Office aplicativo e Office build não supor
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>Usar guias ou controles nãocontextuais
 
-Há um elemento de manifesto, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas. 
+Há um elemento de manifesto, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas.
 
 A estratégia mais simples para usar esse elemento é que você define no manifesto uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais)* que duplicam as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` como o primeiro elemento filho do [CustomTab](../reference/manifest/customtab.md). O efeito de fazer isso é o seguinte:
 

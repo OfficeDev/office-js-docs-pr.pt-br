@@ -1,14 +1,14 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349956"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773864"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -40,10 +40,11 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Clone ou baixe o repositório em [SSO com Suplemento NodeJS do Office](https://github.com/officedev/office-add-in-nodejs-sso).
 
     > [!NOTE]
-    > Há três versões do exemplo:  
+    > Há três versões do exemplo:
+    >
     > * A **pasta Begin** é um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
     > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, basta seguir as instruções deste artigo, mas substitua "Begin" por "Completed" e ignore as seções **Codificar** o lado do cliente e **Codificar** o lado do servidor.
-    > * A versão **SSOAutoSetup** é um exemplo concluído que automatiza a maioria das etapas para registrar o suplemento com o Azure AD e configurá-lo. Use esta versão se desejar ver um suplemento de trabalho com SSO rapidamente. Basta seguir as etapas no README da pasta. É recomendável que, em algum momento, você siga as etapas de configuração e registro manuais deste artigo para entender melhor a relação entre o Azure AD e um suplemento. 
+    > * A versão **SSOAutoSetup** é um exemplo concluído que automatiza a maioria das etapas para registrar o suplemento com o Azure AD e configurá-lo. Use esta versão se desejar ver um suplemento de trabalho com SSO rapidamente. Basta seguir as etapas no README da pasta. É recomendável que, em algum momento, você siga as etapas de configuração e registro manuais deste artigo para entender melhor a relação entre o Azure AD e um suplemento.
 
 1. Abra um prompt de comando na **pasta** Iniciar.
 
@@ -61,7 +62,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
     * Defina **Nome** para `Office-Add-in-NodeJS-SSO`.
     * Defina **Tipos de conta com suporte** para **Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**.
-    * De definir o tipo de aplicativo como **Web** e, em seguida, definir **URI de redirecionamento** como ` https://localhost:44355/dialog.html` .
+    * De definir o tipo de aplicativo como **Web** e, em seguida, definir **URI de redirecionamento** como `https://localhost:44355/dialog.html` .
     * Escolha **Registrar**.
 
 1. Na página **Office-Add-in-NodeJS-SSO**, copie e salve os valores para a **ID do aplicativo (cliente)** e a **ID do diretório (locatário)**. Use ambos os valores nos procedimentos posteriores.
@@ -105,7 +106,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     - `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
-    Para cada ID, siga estas etapas:
+    Para cada ID, tome estas etapas.
 
     a. Selecione o botão **Adicionar um aplicativo cliente** e, no painel que se abre, defina o ID do cliente para o respectivo GUID e marque a caixa `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -154,8 +155,8 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua o espaço reservado "{$application_GUID here$}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "$" não faz parte da ID, portanto não o inclua. Essa é a mesma ID que você usou para o CLIENT_ID e Audiência no . Arquivo ENV.
 
-    > [!NOTE]
-    > O valor **Recurso** é o **URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
+   > [!NOTE]
+   > O valor **Recurso** é o **URI da ID de aplicativo** que você definiu quando registrou o suplemento. A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
 ## <a name="code-the-client-side"></a>Codificar o lado do cliente
 
@@ -163,8 +164,8 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. No editor de códigos, abra o arquivo `public\javascripts\ssoAuthES6.js`. Ele já tem um código que garante que o Promises seja suportado, mesmo no Internet Explorer 11, e uma chamada`Office.onReady` para atribuir um manipulador para o botão somente suplemento.
 
-    > [!NOTE]
-    > Como o nome sugere, o ssoAuthES6.js usa a sintaxe JavaScript ES6, pois usar `async` e `await` mostra melhor a simplicidade fundamental da API de SSO. Quando o servidor localhost for iniciado, esse arquivo será transformado em uma sintaxe ES5 para que o exemplo seja executado no Internet Explorer 11. 
+   > [!NOTE]
+   > Como o nome sugere, o ssoAuthES6.js usa a sintaxe JavaScript ES6, pois usar `async` e `await` mostra melhor a simplicidade fundamental da API de SSO. Quando o servidor localhost for iniciado, esse arquivo será transformado em uma sintaxe ES5 para que o exemplo seja executado no Internet Explorer 11.
 
 1. Adicione o seguinte código abaixo do método Office.onReady.
 
@@ -193,7 +194,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO 1` pelo código a seguir. Sobre este código, observe:
+1. Substitua `TODO 1` pelo código a seguir. Sobre esse código, observe o seguinte:
 
     - `OfficeRuntime.auth.getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD. Um token de bootstrap é semelhante a um token de ID, mas tem uma propriedade `scp` (Scope) com o valor `access-as-user`. Esse tipo de token pode ser trocado por um aplicativo Web para um token de acesso ao Microsoft Graph.
     - Definir a opção como true significa que, se nenhum usuário estiver atualmente Office, Office abrirá um prompt de entrada `allowSignInPrompt` pop-up.
@@ -332,6 +333,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Em raras ocasiões, o token de bootstrap no cache do Office fica não vencido quando o Office o valida, mas vence no momento em que ele atinge o Azure AD para o Exchange. O Azure AD responderá com o erro **AADSTS500133**. Nesse caso, o suplemento deve simplesmente ligar recursivamente o `getGraphData`. Como o token de inicialização em cache já expirou, o Office receberá um novo token do Azure AD. Portanto, `TODO 8` substitua pelo seguinte:
 
+
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
     {
@@ -348,7 +350,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Altere a estrutura `if` no método `handleAADErrors` para que ela:
 
     - Incremente o contador antes de chamar `getGraphData`.
-    - Teste para garantir que `getGraphData` ainda não tenha sido chamado pela segunda vez. 
+    - Teste para garantir que `getGraphData` ainda não tenha sido chamado pela segunda vez.
 
     Portanto, a versão final da estrutura `if` deve ter a seguinte aparência:
 
@@ -398,7 +400,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO 10` pelo seguinte. Sobre este código, observe: 
+1. Substitua `TODO 10` pelo seguinte. Sobre este código, observe:
 
     - Esse objeto é o parâmetro para o método `$.ajax`.
     - O `/getuserdata` é uma rota expressa no servidor do suplemento criado em uma etapa posterior. Ele chamará um ponto de extremidade do Microsoft Graph e incluiremos o token de acesso em sua chamada. 
@@ -414,7 +416,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO11` pelo seguinte. Sobre este código, observe:
 
-    - `writeFileNamesToOfficeDocument` inserirá os dados do gráfico no documento do Office. Ela é definida no arquivo `public\javascripts\document.js`. 
+    - `writeFileNamesToOfficeDocument` inserirá os dados do gráfico no documento do Office. Ela é definida no arquivo `public\javascripts\document.js`.
     - Se `writeFileNamesToOfficeDocument` retornar um erro, ele começará com "não é possível adicionar nomes de arquivo ao documento".
 
     ```javascript
@@ -460,11 +462,11 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     } 
     ```
 
-1. Substitua `TODO 13` pelo código a seguir. Sobre este código, observe: 
+1. Substitua `TODO 13` pelo código a seguir. Sobre esse código, observe o seguinte:
 
-    - Este é o início de um bloco `else` longo, mas o `}` de fechamento não está no final, já que você adicionará mais código a ele. 
+    - Este é o início de um bloco `else` longo, mas o `}` de fechamento não está no final, já que você adicionará mais código a ele.
     - A cadeia de caracteres `authorization` é um "transportador" seguido pelo token bootstrap, portanto, a primeira linha do bloco `else` está atribuindo o token para `jwt`. ("JWT" significa "JSON Web Token".)
-    - Os dois valores `process.env.*` são as constantes que você atribuiu ao configurar o suplemento. 
+    - Os dois valores `process.env.*` são as constantes que você atribuiu ao configurar o suplemento.
     - O parâmetro de formulário `requested_token_use` está definido como ' on_behalf_of '. Isso informa ao Azure AD que o suplemento está solicitando um token de acesso ao Microsoft Graph usando o fluxo On-Behalf-Of. O Azure responderá validando que o token de bootstrap, que é atribuído ao parâmetro de formulário `assertion`, tem uma propriedade `scp` que está definida como `access-as-user`.
     - O parâmetro de formulário `scope` está definido como "Files.Read.All', que é o único escopo do Microsoft Graph necessário para o suplemento.
 
@@ -481,7 +483,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         };
     ```
 
-1. Substitua `TODO 14` pelo código a seguir, que completa o bloco `else`. Sobre este código, observe:
+1. Substitua `TODO 14` pelo código a seguir, que completa o bloco `else`. Sobre esse código, observe o seguinte:
 
     - A constante `tenant` é definida como "comum" porque você configurou o suplemento como multilocatário ao registrá-lo no Azure AD, especificamente quando você define **Tipos de conta com suporte** para **Contas em qualquer diretório corporativo e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**. Se você tivesse optado por dar suporte apenas a contas no mesmo Microsoft 365 locatário em que o complemento está registrado, nesse código seria definido como GUID do `tenant` locatário. 
     - Se a solicitação POST não for recebida, a resposta do Azure AD será convertida para JSON e enviada para o cliente. Esse objeto JSON tem uma propriedade `access_token` à qual o Azure AD atribuiu o token de acesso ao Microsoft Graph.
@@ -565,9 +567,9 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Certifique-se de ter alguns arquivos no seu OneDrive para que você possa verificar os resultados.
 
-1. Abra um aviso de comando na raiz da pasta `\Begin`. 
+1. Abra um aviso de comando na raiz da pasta `\Begin`.
 
-1. Execute o comando `npm start`. 
+1. Execute o comando `npm start`.
 
 1. Você deve fazer o sideload do suplemento em um aplicativo do Office (Excel, Word ou PowerPoint) para testá-lo. As instruções dependem da plataforma. Há links para instruções no [Fazer sideload de suplemento para teste](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 

@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de ícone de estilo novo para Office de complementos
 description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0c50adcea8091ae2f6fbc941d4b5359babd7274c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349312"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773234"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
@@ -20,7 +20,7 @@ Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos n�
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Siga estas diretrizes ao criar seus ícones:
+Siga estas diretrizes ao criar seus ícones.
 
 |Fazer|Não fazer|
 |:---|:---|

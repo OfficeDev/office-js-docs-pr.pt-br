@@ -1,14 +1,14 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um Office add-in podem usar o SSO (login único) para buscar dados do Microsoft Graph.
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671370"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773920"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
@@ -67,7 +67,7 @@ Para obter exemplos detalhados passo a passo de cenários, confira:
 
 ## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Distribuição de complementos habilitados para SSO no Microsoft AppSource
 
-Quando um administrador do Microsoft 365 adquire um complemento do [AppSource](https://appsource.microsoft.com), o [](../publish/centralized-deployment.md) administrador pode redistribuí-lo por meio de implantação centralizada e conceder o consentimento do administrador ao add-in para acessar os escopos do Microsoft Graph. No entanto, também é possível que o usuário final adquira o complemento diretamente do AppSource, nesse caso, o usuário deve conceder consentimento ao complemento. Isso pode criar um possível problema de desempenho para o qual fornecemos uma solução.
+Quando um administrador do Microsoft 365 adquire um complemento do [AppSource,](https://appsource.microsoft.com)o administrador [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) pode redistribui-lo por meio de Aplicativos Integrados e conceder consentimento ao administrador para que o add-in acesse escopos do Microsoft Graph. No entanto, também é possível que o usuário final adquira o complemento diretamente do AppSource, nesse caso, o usuário deve conceder consentimento ao complemento. Isso pode criar um possível problema de desempenho para o qual fornecemos uma solução.
 
 Se seu código passar a opção na chamada de , como , Office pode solicitar consentimento ao usuário se o Azure AD relata para Office esse consentimento ainda não foi concedido ao `allowConsentPrompt` `getAccessToken` `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` add-in. No entanto, por motivos de segurança, Office pode solicitar que o usuário consenta com o escopo do Azure `profile` AD. *Office não pode solicitar o consentimento para nenhum escopo Graph Microsoft,* nem mesmo `User.Read` . Isso significa que, se o usuário conceder consentimento no prompt, Office retornará um token bootstrap. No entanto, a tentativa de trocar o token bootstrap por um token de acesso à Microsoft Graph falhará com o erro AADSTS65001, o que significa que o consentimento (para escopos do Microsoft Graph) não foi concedido.
 

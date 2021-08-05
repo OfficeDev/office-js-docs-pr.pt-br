@@ -1,14 +1,14 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: Saiba como converter um projeto de Office de Visual Studio para usar TypeScript.
-ms.date: 09/01/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349977"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773878"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
@@ -30,7 +30,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 - TypeScript SDK versão 2.3 ou posterior (para o Visual Studio 2019)
 
     > [!TIP]
-    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components). 
+    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes **do SDK TypeScript** estiver selecionado, selecione a versão mais recente disponível do SDK e escolha **Modificar** para instalar esse [componente individual.](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)
 
 - Excel 2016 ou posterior
 
@@ -61,7 +61,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
     > [!NOTE]
     > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.
 
-6. Em **Home.ts**, localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente depois para fazer polyfill do `window.Promise` global, como mostrado aqui:
+6. Em **Home.ts,** encontre a linha e adicione uma linha imediatamente após ela para `Office.initialize = function (reason) {` polifilar o global , conforme mostrado `window.Promise` aqui.
 
     ```TypeScript
     Office.initialize = function (reason) {

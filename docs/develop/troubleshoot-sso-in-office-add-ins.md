@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
-ms.date: 02/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 3d6f78802c51035664f7d12aa787c89aa62057d9
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: daddd5e1565fa870755b2368aba031b5768987a4
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590929"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773738"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
@@ -28,6 +28,7 @@ Recomendamos fortemente que você use uma ferramenta que possa interceptar e exi
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>Causas e tratamento dos erros do getAccessToken
 
 Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
+
 - [HomeES6.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
 - [ssoAuthES6.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
@@ -81,8 +82,8 @@ O Office aplicativo não conseguiu obter um token de acesso ao serviço Web do c
 
 - Se ocorrer este erro durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permissões de `profile` (e a permissão de `openid`, se estiver usando o MSAL.NET). Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - Na produção, há várias coisas que podem causar esse erro. Algumas delas são:
-    - O usuário tem uma identidade de conta da Microsoft.
-    - Algumas situações que causaria um dos outros erros do 13xxx com uma conta Microsoft 365 Education ou de trabalho causarão um 13007 quando um MSA for usado.
+  - O usuário tem uma identidade de conta da Microsoft.
+  - Algumas situações que causaria um dos outros erros do 13xxx com uma conta Microsoft 365 Education ou de trabalho causarão um 13007 quando um MSA for usado.
 
   Em todos esses casos, o código deve retornar a um sistema alternativo de autenticação de usuário.
 
@@ -96,7 +97,7 @@ O usuário está executando o suplemento no Office, no Microsoft Edge ou no Inte
 
 ### <a name="13012"></a>13012
 
-Há várias causas possíveis:
+Há várias causas possíveis.
 
 - O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Consulte também [Conjuntos de requisitos da API de identidade](../reference/requirement-sets/identity-api-requirement-sets.md).
 - A opção `forMSGraphAccess` foi passada na chamada ao `getAccessToken` e o usuário obteve o suplemento no AppSource. Nesse cenário, o administrador do locatário não deu o consentimento ao suplemento para os escopos (permissões) do Microsoft Graph necessários. Uma nova chamada ao `getAccessToken` com o `allowConsentPrompt`, não resolverá o problema porque o Office poderá solicitar ao usuário o consentimento apenas para o escopo AAD do `profile`.
@@ -118,6 +119,7 @@ Em um suplemento de produção, o suplemento deverá responder a esse erro recor
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
 
 Para exemplos do tratamento de erro descritos nesta seção, confira:
+
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
 - [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 
@@ -125,7 +127,7 @@ Para exemplos do tratamento de erro descritos nesta seção, confira:
 
 Em determinadas configurações de identidade no AAD e no Microsoft 365, é possível que alguns recursos acessíveis com o Microsoft Graph exigirem a autenticação multifator (MFA), mesmo quando a Microsoft 365 do usuário não o faz. Quando o AAD recebe uma solicitação de um token para o recurso protegido por MFA, através do fluxo Em Nome De, ele retorna ao serviço Web do seu suplemento uma mensagem JSON que contém uma propriedade `claims`. A propriedade de reivindicações tem informações sobre quais outros fatores de autenticação são necessários.
 
-O código deve testar essa propriedade de `claims`. Dependendo da arquitetura do seu suplemento, você poderá testá-lo no lado do cliente ou testá-lo no lado do servidor e retransmiti-lo ao cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. Se você retransmiti-lo do lado do servidor, a mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. 
+O código deve testar essa propriedade de `claims`. Dependendo da arquitetura do seu suplemento, você poderá testá-lo no lado do cliente ou testá-lo no lado do servidor e retransmiti-lo ao cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. Se você retransmiti-lo do lado do servidor, a mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta.
 
 Independentemente da arquitetura, se o valor de declarações tiver sido enviado do AAD, seu código deverá ser chamado e passar a `getAccessToken` `authChallenge: CLAIMS-STRING-HERE` opção no `options` parâmetro. Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
 

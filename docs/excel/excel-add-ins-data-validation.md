@@ -3,12 +3,12 @@ title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2579473800a20ba864b42b8a18b8023dff826c5e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671158"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774151"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
@@ -45,7 +45,7 @@ As três primeiras propriedades `DataValidationRule` (ou seja, tipos de regra de
 
 Aqui está um exemplo de como criar uma regra de validação. Observe o seguinte sobre este código.
 
-- O `operator` é o operador binário "GreaterThan". Sempre que você usa um operador binário, o valor que o usuário tenta inserir na célula é o operando à esquerda e o valor especificado em `formula1` é o operando à direita. Então esta regra diz que apenas números inteiros que são maiores do que 0 são válidos. 
+- O `operator` é o operador binário "GreaterThan". Sempre que você usa um operador binário, o valor que o usuário tenta inserir na célula é o operando à esquerda e o valor especificado em `formula1` é o operando à direita. Então esta regra diz que apenas números inteiros que são maiores do que 0 são válidos.
 - O `formula1` é um número embutido. Se não souber no momento da codificação qual é o valor, você também poderá usar uma fórmula do Excel (como uma cadeia de caracteres) para o valor. Por exemplo, "= A3" e "SOMA(A4,B5) =" também seriam valores `formula1`.
 
 ```js
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 Use a propriedade `list` do objeto `DataValidationRule` para especificar valores que são válidos apenas em uma lista finita. Apresentamos um exemplo a seguir. Observe o seguinte sobre este código.
 
 - Ele pressupõe que se trata de uma planilha chamada "Nomes" e que os valores no intervalo "A1: A3" são nomes.
-- A propriedade `source` especifica a lista de valores válidos. O argumento de cadeia de caracteres se refere a um intervalo que contém os nomes. Você também pode atribuir uma lista delimitada por vírgula; por exemplo: "Lara, Pedro, Marina". 
+- A propriedade `source` especifica a lista de valores válidos. O argumento de cadeia de caracteres se refere a um intervalo que contém os nomes. Você também pode atribuir uma lista delimitada por vírgula; por exemplo: "Lara, Pedro, Marina".
 - A propriedade `inCellDropDown` especifica se um controle de lista suspensa será exibido na célula quando o usuário a selecionar. Se definido como `true`, em seguida, a lista suspensa é exibida com a lista de valores do `source`.
 
 ```js

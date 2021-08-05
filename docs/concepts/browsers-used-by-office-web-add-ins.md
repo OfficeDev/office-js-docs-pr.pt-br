@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: e27cc608f1180c3e89a29480b11d777d744fdd55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661121"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773325"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -52,7 +52,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 <sup>4 O</sup> controle WebView2 inbeddable deve ser instalado para que Office possa in-lo, e ele não é instalado automaticamente com o Edge. Ele é instalado com Microsoft 365, versão 2101 ou posterior. Se você tiver uma versão anterior do Microsoft 365, use as instruções para instalar o controle em [Microsoft Edge WebView2 / Incorporar conteúdo da Web... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
-> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, então para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você tem duas opções:
+> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você terá duas opções.
 >
 > - Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou javaScript posterior ou em TypeScript e compile seu código para JavaScript do ES5 usando um compilador como [o babel](https://babeljs.io/) ou [o tsc](https://www.typescriptlang.org/index.html).
 > - Escreva em ECMAScript 2015 ou posterior JavaScript, mas também carregue uma biblioteca de [polifilamento,](https://en.wikipedia.org/wiki/Polyfill_(programming)) como [core-js,](https://github.com/zloirock/core-js) que permite ao IE executar seu código.

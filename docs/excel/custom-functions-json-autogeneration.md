@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178045"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774165"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -20,7 +20,7 @@ Adicione a marcação `@customfunction` nos comentários de código de uma funç
 
 Os tipos de parâmetros da função podem ser fornecidos usando a marcação [@param](#param) em JavaScript ou do [Tipo de função](https://www.typescriptlang.org/docs/handbook/functions.html) em TypeScript. Para saber mais, confira a marcação [@param](#param) e as seções [Tipos](#types).
 
-### <a name="adding-a-description-to-a-function"></a>Adicionando uma descrição a uma função
+### <a name="add-a-description-to-a-function"></a>Adicionar uma descrição a uma função
 
 A descrição é exibida para o usuário como texto de ajuda quando eles precisam de ajuda para entender o que a função personalizada executa. A descrição não requer nenhuma tag específica. Basta digitar uma breve descrição de texto no comentário JSDoc. Em geral, a descrição é colocada no início da seção de comentários do JSDoc, mas funcionará independentemente de onde seja colocada.
 
@@ -36,10 +36,9 @@ No exemplo a seguir, a frase "Calcula o volume de uma esfera." é a descrição 
  */
 ```
 
-
 ## <a name="jsdoc-tags"></a>Marcações JSDoc
 
-As seguintes marcas JSDoc são suportadas em funções personalizadas do Excel.
+As seguintes marcas JSDoc são suportadas em Excel funções personalizadas.
 
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) nome de identificação
@@ -69,7 +68,7 @@ Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 Sintaxe: @customfunction _id_ _nome_
 
-Essa marca indica que a função JavaScript/TypeScript é uma função personalizada do Excel. É necessário criar metadados para a função personalizada.
+Essa marca indica que a função JavaScript/TypeScript é uma função Excel personalizada. É necessário criar metadados para a função personalizada.
 
 O exemplo a seguir mostra um exemplo dessa marca.
 
@@ -120,7 +119,7 @@ No exemplo a seguir, Inc é a `id`da função e `increment` é o `name`.
 
 ### <a name="description"></a>descrição
 
-Uma descrição aparece para os usuários no Excel enquanto eles ingressam na função e especifica o que a função faz. Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função.
+Uma descrição aparece para os usuários Excel quando eles estão inserindo a função e especifica o que a função faz. Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função.
 
 No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `ADD`.
 
@@ -161,9 +160,7 @@ Sintaxe de JavaScript: @param {type} nome _descrição_
 * `name` especifica o parâmetro ao @param se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
-Para denotar um parâmetro de função personalizado como opcional:
-
-* Coloque colchetes ao redor do nome do parâmetro. Por exemplo: `@param {string} [text] Optional text`.
+Para indicar um parâmetro de função personalizado como opcional, coloque colchetes ao redor do nome do parâmetro. Por exemplo, `@param {string} [text] Optional text`.
 
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.

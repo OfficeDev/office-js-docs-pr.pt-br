@@ -1,14 +1,14 @@
 ---
 title: Use a caixa de diálogo do Office para reproduzir um vídeo
 description: Saiba como abrir e reproduzir um vídeo na caixa Office caixa de diálogo
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2519b2f105503a0479eee07d885a1543f5455343
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349879"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773479"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Use a caixa Office caixa de diálogo para mostrar um vídeo
 
@@ -17,7 +17,7 @@ Este artigo explica como reproduzir um vídeo em uma caixa de Office caixa de di
 > [!NOTE]
 > Este artigo presume que você esteja familiarizado com as noções básicas de uso da caixa de diálogo Office conforme descrito em Usar Office API de diálogo Office em seus Office [Add-ins](dialog-api-in-office-add-ins.md).
 
-Para reproduzir um vídeo em uma caixa de diálogo com a API de Office de diálogo, siga estas etapas:
+Para reproduzir um vídeo em uma caixa de diálogo com a API de Office de diálogo, siga estas etapas.
 
 1. Crie uma página contendo um iframe e nenhum outro conteúdo. A página deve estar no mesmo domínio que a página host. Para um lembrete do que é uma página host, consulte Abrir uma caixa [de diálogo de uma página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page). No atributo `src` do iframe, aponte para a URL de um vídeo online. O protocolo da URL do vídeo deve ser HTTPS. Neste artigo, chamaremos essa página de "video.dialogbox.html". Veja a seguir um exemplo da marcação.
 

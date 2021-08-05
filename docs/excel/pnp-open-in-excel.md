@@ -3,12 +3,12 @@ title: Abra Excel página da Web e insiro seu Office Dep.
 description: Abra Excel página da Web e insiro seu Office Add-in.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 18f40b0030f4132a413a879e8b3419af49984b45
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349375"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773136"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Abra Excel página da Web e insiro seu Office Dep.
 
@@ -115,6 +115,7 @@ Recomendamos carregar novos documentos para OneDrive se seu cliente usa OneDrive
 ### <a name="upload-a-file-to-onedrive"></a>Upload um arquivo para OneDrive
 
 1. Abra a **solução graph-tutorial.sln** no Visual Studio 2019 e abra o arquivo **PrivateSettings.config.**
+
 1. Adicione um novo escopo **Files.ReadWrite** à chave   **ida:AppScopes** para que ela se pareça com o código a seguir.
 
     ```xml

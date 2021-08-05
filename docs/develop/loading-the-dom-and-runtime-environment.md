@@ -1,14 +1,14 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
 description: Carregue o dom e Office ambiente de tempo de execução de complementos.
-ms.date: 04/20/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 76322de3d830747a825b0934993f8801daf8a9ae
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 26ff15eb009fbec2554fa74db3109c4fa4abd712
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671524"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774277"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -36,7 +36,6 @@ Os eventos a seguir ocorrem quando um conteúdo ou um complemento do painel de t
 
 6. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
 
-
 ## <a name="startup-of-an-outlook-add-in"></a>Inicialização de um suplemento do Outlook
 
 A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um suplemento do Outlook em execução no desktop, tablet ou smartphone.
@@ -59,7 +58,7 @@ Os eventos a seguir ocorrem quando um Outlook de usuário é iniciado.
 
 7. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)

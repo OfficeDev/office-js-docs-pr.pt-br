@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monolinha para Office de complementos
 description: Diretrizes para usar ícones de estilo monoline em Office de complementos.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349340"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773276"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monolinha para Office de complementos
 
@@ -27,7 +27,7 @@ As diretrizes a seguir são para desenvolvedores de terceiros que querem criar �
 - Inspirado no estilo Windows ícone.
 - Acessível a todos os usuários.
 
-#### <a name="conveying-meaning"></a>Transmitindo significado
+#### <a name="convey-meaning"></a>Transmitir significado
 
 - Use elementos descritivos, como uma página, para representar um documento ou um envelope para representar o email.
 - Use o mesmo elemento para representar o mesmo conceito, ou seja, o email é sempre representado por um envelope, não por um carimbo.
@@ -132,7 +132,7 @@ Os ícones a seguir não têm preenchimento. (O ícone de engrenagem está inclu
 
 ##### <a name="best-practices-for-fills"></a>Práticas recomendadas para preenchimentos
 
-###### <a name="dos"></a>Dos:
+###### <a name="dos"></a>O que fazer
 
 - Preencha qualquer elemento que tenha um limite definido e que tenha um preenchimento naturalmente.
 - Use uma forma separada para criar o preenchimento em segundo plano.
@@ -140,7 +140,7 @@ Os ícones a seguir não têm preenchimento. (O ícone de engrenagem está inclu
 - Mantenha a separação de pixels entre elementos sobrepostos.
 - Preencha entre vários objetos.
 
-###### <a name="donts"></a>Não:
+###### <a name="donts"></a>O que não fazer
 
 - Não preencha objetos que não seriam preenchidos naturalmente; por exemplo, um clipe de papel.
 - Não preencha colchetes.
@@ -170,7 +170,7 @@ A seguir estão exemplos de uso de cor.
 
 A situação mais comum será ter um elemento que use Dark Gray Standalone with Background Fill.
 
-Ao usar um Preenchimento colorido, ele sempre deve estar com sua cor Delineada correspondente. Por exemplo, Preenchimento Azul só deve ser usado com o Contorno Azul. Mas há duas exceções para esta regra geral:
+Ao usar um Preenchimento colorido, ele sempre deve estar com sua cor Delineada correspondente. Por exemplo, Preenchimento Azul só deve ser usado com o Contorno Azul. Mas há duas exceções para essa regra geral.
 
 - O Preenchimento de Plano de Fundo pode ser usado com qualquer cor Autônoma.
 - O Preenchimento Cinza Claro pode ser usado com duas cores de outline diferentes: Cinza Escuro ou Cinza Médio.

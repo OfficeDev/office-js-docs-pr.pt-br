@@ -1,18 +1,18 @@
 ---
 title: Teste de usabilidade de Suplementos do Office
 description: Saiba como testar o design do seu complemento com usuários reais.
-ms.date: 03/19/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5de29a15a9e382b990985765eaad801b1b54f364
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f797033343fd20d814cba1fd67ad8eb21b246b3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349690"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773339"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
-Um excelente design de suplemento considera os comportamentos do usuário. Como seus próprios conceitos prévios influenciam suas decisões de design, é importante testar designs com usuários reais para garantir que seus suplementos funcionem bem para seus clientes. 
+Um excelente design de suplemento considera os comportamentos do usuário. Como seus próprios conceitos prévios influenciam suas decisões de design, é importante testar designs com usuários reais para garantir que seus suplementos funcionem bem para seus clientes.
 
 Você pode executar testes de usabilidade de maneiras diferentes. Para muitos desenvolvedores de complementos, os estudos de usabilidade remotos e nãomoderados são os que têm mais tempo e custo benefício. Vários serviços de teste populares facilitam isso; a seguir estão alguns exemplos.
 
@@ -20,23 +20,23 @@ Você pode executar testes de usabilidade de maneiras diferentes. Para muitos de
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
 - [Userzoom.com](https://www.Userzoom.com)
 
-Esses serviços de teste o ajudam a simplificar a criação do plano de teste e remover a necessidade de buscar participantes ou moderar os testes. 
+Esses serviços de teste o ajudam a simplificar a criação do plano de teste e remover a necessidade de buscar participantes ou moderar os testes.
 
 Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
 
 > [!NOTE]
 > Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-appsource-via-partner-center) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](../overview/office-add-in-availability.md).
 
-## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscreva-se em um serviço de teste
+## <a name="1-sign-up-for-a-testing-service"></a>1. Inscreva-se em um serviço de teste
 
 Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remoto não moderado](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
 ## <a name="2-develop-your-research-questions"></a>2. Desenvolva as perguntas da sua pesquisa
- 
+
 As perguntas da pesquisa definem os objetivos de sua pesquisa e guiam seu plano de teste. Suas perguntas o ajudarão a identificar os participantes para recrutar e as tarefas que eles executarão. Certifique-se de que suas perguntas de pesquisa sejam o mais específicas possível. Você também pode procurar responder perguntas mais amplas.
- 
+
 A seguir estão alguns exemplos de perguntas de pesquisa.
-  
+
 **Específicas**
 
 - Os usuários percebem o link "avaliação gratuita" na página inicial?
@@ -103,7 +103,7 @@ Não pense que o usuário estará na tela que deve estar em um determinado momen
 Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Crie um protótipo para corresponder às tarefas e perguntas
- 
+
 Você pode testar o suplemento em funcionamento ou testar um protótipo. Observe que se você desejar testar o suplemento em funcionamento, será necessário buscar participantes que tenham a versão mais recente do Office, que estejam dispostos a instalar o suplemento e a criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Depois será preciso garantir que o suplemento foi instalado com êxito.
 
 Em média, são necessários cerca de cinco minutos para orientar os usuários sobre como instalar um suplemento. A seguir, um exemplo de etapas de instalação claras e concisas. Ajuste as etapas com base nas condições específicas do teste.
@@ -131,15 +131,14 @@ Depois que você solicitar o teste, receberá notificações por email quando os
 
 ## <a name="9-analyze-results"></a>9. Analise os resultados
 
-Essa é a parte em que você tenta fazer com que os dados coletados façam sentido. Ao assistir os vídeos de teste, anote os problemas e os êxitos do usuário. Evite tentar interpretar o significado dos dados até que tenha exibido todos os resultados. 
+Essa é a parte em que você tenta fazer com que os dados coletados façam sentido. Ao assistir os vídeos de teste, anote os problemas e os êxitos do usuário. Evite tentar interpretar o significado dos dados até que tenha exibido todos os resultados.
 
 Um único participante com um problema de usabilidade não é suficiente para gerar uma alteração no design. Dois ou mais participantes que encontram o mesmo problema sugere que outros usuários no geral também encontrarão esse problema.
 
 Em geral, tome cuidado com como você usa seus dados para tirar conclusões. Não caia na armadilha de tentar fazer com que os dados se ajustem a uma determinada narrativa. Seja honesto sobre o que os dados realmente comprovam, refutam ou apenas falham em oferecer informações. Mantenha a mente aberta. O comportamento do usuário com frequência desafia as expectativas do designer.
 
-
 ## <a name="see-also"></a>Confira também
 
-- [Como conduzir testes de usabilidade](https://whatpixel.com/howto-conduct-usability-testing/)
-- [Práticas recomendadas para UserTesting](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
-- [Minimizar desvio](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
+- [Como conduzir testes de usabilidade](https://whatpixel.com/howto-conduct-usability-testing/)  
+- [Práticas recomendadas para UserTesting](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [Minimizar desvio](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

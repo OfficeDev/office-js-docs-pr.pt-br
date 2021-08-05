@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
-ms.date: 06/15/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349970"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773885"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -35,7 +35,7 @@ Este artigo orienta você sobre o processo de habilitação de SSO (login único
 Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://github.com/officedev/office-add-in-aspnet-sso).
 
 > [!NOTE]
-> Há duas versões do exemplo:
+> Há duas versões do exemplo.
 >
 > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
 > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Complete" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
@@ -90,7 +90,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
     * `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
-    Para cada ID, siga estas etapas:
+    Para cada ID, tome estas etapas.
 
     a. Selecione o botão **Adicionar um aplicativo cliente** e, no painel que se abre, defina o ID do cliente para o respectivo GUID e marque a caixa `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -121,7 +121,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. No **Explorador de** Soluções, selecione (não clique com o botão direito do mouse) no projeto **Office-Add-in-ASPNET-SSO-WebAPI.** O painel **Propriedades** é exibido. Verifique se **SSL Habilitado** é **Verdadeiro**. Verifique se a **URL do SSL** é `http://localhost:44355/`.
 
-1. Em "Web.config", use os valores copiados anteriormente. Defina **ida:ClientID** e **ida:Audience** para sua **ID do aplicativo (cliente)** e defina **ida:Password** para a senha de cliente. Além disso, de definir **ida:Domain** como `http://localhost:44355` (sem barra de encaminhamento "/" no final). 
+1. Em "Web.config", use os valores copiados anteriormente. Defina **ida:ClientID** e **ida:Audience** para sua **ID do aplicativo (cliente)** e defina **ida:Password** para a senha de cliente. Além disso, de definir **ida:Domain** como `http://localhost:44355` (sem barra de encaminhamento "/" no final).
 
     > [!NOTE]
     > A ID de aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
@@ -150,7 +150,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 ### <a name="setup-for-single-tenant"></a>Configuração para locatário único
 
-Se você escolher "Somente contas neste diretório organizacional" para **TIPOS DE CONTA COM SUPORTE** ao registrar o suplemento, você execute estas etapas adicionais de configuração:
+Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS DE CONTA COM SUPORTE quando registrou o complemento, você precisará seguir estas etapas de configuração adicionais.
 
 1. Volte para o Portal do Azure e abra a lâmina **Visão geral** do registro do suplemento. Copie a **ID de diretório (locatário)**.
 
@@ -160,7 +160,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
 ## <a name="code-the-client-side"></a>Codificar o lado do cliente
 
-1. Abra o arquivo HomeES6.js na pasta **Scripts**. Ele já apresenta alguns códigos:
+1. Abra o arquivo HomeES6.js na pasta **Scripts**. Ele já tem algum código nele.
 
     * Um polyfill que atribui o objeto Office.Promise ao objeto de janela global, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface de usuário. (Para obter mais detalhes, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).)
     * Uma atribuição ao método `Office.initialize` que, por sua vez, atribui um manipulador ao evento clicar do botão `getGraphAccessTokenButton`.
@@ -168,7 +168,8 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
     * O código implementa o sistema de autorização de fallback que o suplemento usará em situações em que o SSO não é compatível ou gera um erro.
 
-1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código.
+1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Sobre este código, observe:
+
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `retryGetAccessToken` é usada para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
     * A função `getGraphData` é definida com a palavra-chave ES6 `async`. Usar a sintaxe ES6 facilita o uso da API de SSO em Suplementos do Office. Esse é o único arquivo na solução que usará a sintaxe sem suporte do Internet Explorer. Colocamos "ES6" no nome do arquivo como um lembrete. A solução usa o transcompilador de tsc para transcompilar esse arquivo em ES5, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface do usuário. (Veja o arquivo tsconfig.json na raiz do projeto.)
@@ -423,7 +424,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     }
     ```
 
-1. Substitua o `TODO 1` pelo seguinte. Observação sobre o código:
+1. Substitua o `TODO 1` pelo seguinte. Sobre este código, observe:
 
     * O código instrui o OWIN a garantir que o público especificado no token bootstrap que vem do aplicativo Office deve corresponder ao valor especificado no web.config.
     * As contas da Microsoft têm um GUID de emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
@@ -439,7 +440,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     };
     ```
 
-1. Substitua `TODO 2` pelo seguinte. Observação sobre este código:
+1. Substitua `TODO 2` pelo seguinte. Sobre este código, observe:
 
     * O método `UseOAuthBearerAuthentication` é chamado em vez do `UseWindowsAzureActiveDirectoryBearerAuthentication` que é mais comum, porque este último não é compatível com o ponto de extremidade V2 do Azure AD.
     * A URL passada para o método é onde o middleware OWIN obtém instruções para obter a chave que precisa para verificar a assinatura no token bootstrap recebido do aplicativo Office. O segmento de Autoridade da URL vem do Web.config. Ele é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
@@ -526,7 +527,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. Substitua `TODO 3` pelo código a seguir. Observação sobre este código:
+1. Substitua `TODO 3` pelo código a seguir. Sobre este código, observe:
 
     * O método `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` procurará primeiro no cache da MSAL, que está na memória, para fazer a correspondência com o token de acesso. Somente se não houver um, ele iniciará o fluxo "on behalf of" com o ponto de extremidade V2 do Azure AD.
     * Quaisquer exceções que não forem do tipo `MsalServiceException` são intencionalmente não detectadas, e, portanto, se propagarão para o cliente como mensagens `500 Server Error`.

@@ -1,14 +1,14 @@
 ---
 title: Associar a regiões em um documento ou em uma planilha
 description: Saiba como usar a associação para garantir o acesso consistente a uma região ou elemento específico de um documento ou planilha por meio de um identificador.
-ms.date: 06/20/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671363"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773899"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associe a regiões em um documento ou planilha
 
@@ -24,7 +24,7 @@ O objeto [Bindings] expõe um método [getAllAsync], que dá acesso ao conjunto 
 
 ## <a name="binding-types"></a>Tipos de associação
 
-Há três [tipos diferentes de Office.][ BindingType] especificado com o parâmetro _bindingType_ ao criar uma associação com os métodos [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync:]
+Há três [tipos diferentes de Office.][ BindingType] que você especifica com o parâmetro _bindingType_ ao criar uma associação com os métodos [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync.]
 
 1. **[Text Binding][TextBinding]**: associa a uma região do documento que pode ser representada como texto.
 
@@ -243,7 +243,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > Se a promessa de método retornar com êxito um objeto Binding, esse objeto exporá apenas os quatro métodos a seguir `select` do objeto: [getDataAsync], [setDataAsync,] [addHandlerAsync]e [removeHandlerAsync]. [] Se a promessa não puder retornar um objeto Binding, o retorno de chamada poderá ser usado para acessar um `onError` objeto .error [asyncResult]para obter mais informações. Se você precisar chamar um membro do objeto Binding diferente dos quatro métodos expostos pela promessa de objeto [Binding] retornada pelo método, use o método `select` [getByIdAsync] usando a propriedade [Document.bindings] e Bindings.[ Método getByIdAsync] para recuperar o [objeto Binding.]
 
@@ -285,7 +284,7 @@ function write(message){
 }
 ```
 
-`myBinding` é uma variável que contém uma associação de texto existente no documento. Como alternativa, é possível usar [Office.select] para acessar a associação pela ID, e iniciar sua chamada para o método [getDataAsync], assim: 
+`myBinding` é uma variável que contém uma associação de texto existente no documento. Como alternativa, é possível usar [Office.select] para acessar a associação pela ID, e iniciar sua chamada para o método [getDataAsync], assim:
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync
@@ -352,7 +351,7 @@ function removeEventHandlerFromBinding() {
 > [!IMPORTANT]
 > Se o parâmetro _manipulador_ opcional for omitido quando o [método removeHandlerAsync] for chamado, todos os manipuladores de eventos para o especificado `eventType` serão removidos.
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Programação assíncrona nos Suplementos do Office](asynchronous-programming-in-office-add-ins.md)

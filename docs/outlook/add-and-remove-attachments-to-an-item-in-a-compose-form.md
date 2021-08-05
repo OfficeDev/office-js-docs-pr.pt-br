@@ -1,14 +1,14 @@
 ---
 title: Adicionar e remover os anexos em um suplemento do Outlook
 description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou Outlook itens anexados ao item que o usuário está compondo.
-ms.date: 02/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348584"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774452"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de redação em Outlook
 
@@ -26,7 +26,7 @@ Esses são métodos assíncronos, o que significa que a execução pode continua
 
 Se houver tarefas que dependam da conclusão da ação, você deverá executá-las em um método de retorno de chamada. Esse método de retorno de chamada é opcional e é invocado quando o carregamento do anexo é concluído. O método de retorno de chamada usa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) como um parâmetro de saída que fornece qualquer status, erro e valor retornado da adição do anexo. Se o retorno de chamada requer parâmetros adicionais, você pode especificá-los no parâmetro opcional `options.asyncContext`. `options.asyncContext` pode ser de qualquer tipo que seu método de retorno de chamada espere.
 
-Por exemplo, você pode definir `options.asyncContext` como um objeto JSON que contém um ou mais pares de valores-chave. Você pode encontrar mais exemplos sobre a passagem de parâmetros opcionais para métodos assíncronos na plataforma de Office Add-ins na programação [assíncrona em Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o `asyncContext` parâmetro para passar 2 argumentos para um método de retorno de chamada.
+Por exemplo, você pode definir `options.asyncContext` como um objeto JSON que contém um ou mais pares de valores-chave. Você pode encontrar mais exemplos sobre a passagem de parâmetros opcionais para métodos assíncronos na plataforma de Office Add-ins na programação [assíncrona em Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o `asyncContext` parâmetro para passar 2 argumentos para um método de retorno de chamada.
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};

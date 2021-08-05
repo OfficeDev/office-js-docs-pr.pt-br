@@ -85,9 +85,9 @@ conceptualContent:
         - url: publish/publish.md
           itemType: deploy
           text: Explorar opções de implantação
-        - url: publish/centralized-deployment.md
+        - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: Saiba mais sobre Implantação Centralizada
+          text: Testar e implantar Microsoft 365 Apps por parceiros no portal aplicativos integrados
     - title: Publicar
       links:
         - url: /office/dev/store

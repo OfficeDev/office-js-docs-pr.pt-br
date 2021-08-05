@@ -1,14 +1,14 @@
 ---
 title: Faça seu suplemento do Office ser compatível com um suplemento COM existente
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
-ms.date: 07/08/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 616da7b722a8e7645d801aec211d9579a880f93e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418682"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774263"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -20,13 +20,17 @@ Você pode configurar seu Office Add-in para que, quando o complemento COM equiv
 > Esse recurso é suportado pela plataforma e aplicativos a seguir, quando conectado a uma assinatura Microsoft 365. Os complementos COM não podem ser instalados em qualquer outra plataforma, portanto, nessas plataformas, o elemento de manifesto discutido posteriormente neste artigo, , é `EquivalentAddins` ignorado.
 >
 > - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
+> - Outlook no Windows (versão 2102 ou posterior) em uma versão de servidor Exchange com suporte
+>   - Exchange Online
+>   - Exchange Atualização Cumulativa 10 ou posterior de 2019 ([KB5003612](https://support.microsoft.com/topic/cumulative-update-10-for-exchange-server-2019-kb5003612-b1434cad-3fbc-4dc3-844d-82568e8d4344))
+>   - Exchange Atualização Cumulativa 21 ou posterior de 2016 ([KB5003611](https://support.microsoft.com/topic/cumulative-update-21-for-exchange-server-2016-kb5003611-b7ba1656-abba-4a0b-9be9-dac45095d969))
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Especificar um complemento COM equivalente
 
 ### <a name="manifest"></a>Manifesto
 
 > [!IMPORTANT]
-> Aplica-se Excel, PowerPoint e Word. Outlook suporte em breve.
+> Aplica-se Excel, Outlook, PowerPoint e Word.
 
 Para habilitar a compatibilidade entre o seu Office e o complemento COM, [](add-in-manifests.md) identifique o complemento COM equivalente no manifesto do seu Office Add-in. Em seguida, Office no Windows usará o add-in COM em vez do Office do Office, se ambos estão instalados.
 
@@ -45,7 +49,7 @@ O exemplo a seguir mostra a parte do manifesto que especifica um complemento COM
 ```
 
 > [!TIP]
-> Para obter informações sobre o complemento COM e a compatibilidade de UDF XLL, consulte Tornar suas funções personalizadas compatíveis com funções definidas pelo usuário [XLL.](../excel/make-custom-functions-compatible-with-xll-udf.md)
+> Para obter informações sobre o complemento COM e a compatibilidade de UDF XLL, consulte Tornar suas funções personalizadas compatíveis com funções definidas pelo usuário [XLL.](../excel/make-custom-functions-compatible-with-xll-udf.md) Não aplicável para Outlook.
 
 ### <a name="group-policy"></a>Política de grupo
 

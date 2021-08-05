@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349935"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773815"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -31,7 +31,7 @@ Antes de iniciar Office depuração, revise as propriedades de cada projeto para
 
 ### <a name="add-in-project-properties"></a>Propriedades do projeto de suplemento
 
-Abrir a janela **Propriedades** para o projeto de suplemento revisar as propriedades do projeto:
+Abra a **janela Propriedades** do projeto do complemento para revisar as propriedades do projeto.
 
 1. No **Explorador de soluções** Escolha o projeto do suplemento (*não* o projeto do aplicativo Web).
 
@@ -57,7 +57,7 @@ A tabela a seguir descreve as propriedades do projeto.
 
 ### <a name="web-application-project-properties"></a>Propriedades do projeto de aplicativo Web
 
-Abrir a janela **Propriedades** para o projeto de aplicativo Web para revisar as propriedades do projeto:
+Abra a **janela Propriedades** do projeto do aplicativo Web para revisar as propriedades do projeto.
 
 1. No **Explorador de Soluções,** escolha o projeto do aplicativo Web.
 

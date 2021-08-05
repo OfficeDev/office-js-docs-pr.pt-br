@@ -1,14 +1,14 @@
 ---
 title: Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 description: Use a Office JavaScript para criar um painel de tarefas no Office 2013.
-ms.date: 02/27/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fc22e1f438285d47c397d64a4dd28718fb5c8035
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 356880c0f4bb4377f2d5997217f26f51dd95f845
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671165"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773360"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -32,14 +32,12 @@ Você pode usar a [api Office JavaScript](../reference/javascript-api-for-office
 
     - O objeto [Settings](/javascript/api/office/office.settings) para salvar dados personalizados, como preferências do usuário e o estado do suplemento.
 
-
 > [!IMPORTANT]
 > Alguns membros da API não têm suporte em todos os aplicativos do Office que podem hospedar suplementos de conteúdo e de painel de tarefas. Para determinar quais membros têm suporte, confira o seguinte:
 
 Para um resumo do Office da API JavaScript em aplicativos Office cliente, consulte [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
-
-## <a name="reading-and-writing-to-an-active-selection"></a>Ler e gravar em uma seleção ativa
+## <a name="read-and-write-to-an-active-selection-in-a-document-spreadsheet-or-presentation"></a>Ler e gravar em uma seleção ativa em um documento, planilha ou apresentação
 
 Você pode ler ou gravar na seleção atual do usuário em um documento, planilha ou apresentação. Dependendo do aplicativo Office do seu add-in, você pode especificar o tipo de estrutura de dados a ser lida ou escrita como um parâmetro nos métodos [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) e [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) do objeto [Document.](/javascript/api/office/office.document) Por exemplo, você pode especificar qualquer tipo de dados (texto, HTML, dados tabulares ou Open XML do Office) para o Word, texto e dados tabulares para o Excel e texto para o PowerPoint e o Project. Você também pode criar manipuladores de eventos para detectar alterações na seleção do usuário. O exemplo a seguir obtém dados da seleção como texto usando o `getSelectedDataAsync` método.
 
@@ -64,16 +62,13 @@ function write(message){
 
 Para saber mais e obter exemplos, consulte [Ler e gravar dados na seleção ativa em um documento ou planilha](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
-
-## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Associar a uma região em um documento ou planilha
+## <a name="bind-to-a-region-in-a-document-or-spreadsheet"></a>Vincular a uma região em um documento ou planilha
 
 Você pode usar os métodos e para ler ou gravar na seleção atual do usuário em `getSelectedDataAsync` `setSelectedDataAsync` um documento, planilha ou apresentação.  No entanto, para acessar a mesma região em um documento entre sessões de execução do suplemento sem exigir que o usuário faça uma seleção, primeiro você deve se associar a essa região. Você também pode se inscrever para eventos de dados e alteração de seleção para a região associada.
 
 Você pode adicionar uma associação usando os métodos [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_), [addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_) ou [addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_) para o objeto [Bindings](/javascript/api/office/office.bindings). Esses métodos retornam um identificador que você pode usar para acessar dados na associação ou para assinar seus eventos de alteração de dados ou alteração de seleção.
 
 A seguir, um exemplo que adiciona uma associação ao texto selecionado no momento em um documento, usando o `Bindings.addFromSelectionAsync` método.
-
-
 
 ```js
 Office.context.document.bindings.addFromSelectionAsync(
@@ -94,8 +89,7 @@ function write(message){
 
 Para saber mais e obter exemplos, consulte [Associar a regiões em um documento ou planilha](bind-to-regions-in-a-document-or-spreadsheet.md).
 
-
-## <a name="getting-entire-documents"></a>Obter documentos inteiros
+## <a name="get-entire-documents"></a>Obter documentos inteiros
 
 Se o suplemento de painel de tarefas for executado no PowerPoint ou no Word, você poderá usar os métodos [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_), [File.getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) e [File.closeAsync](/javascript/api/office/office.file#closeAsync_callback_) para obter um documento ou apresentação inteira.
 
@@ -103,8 +97,7 @@ Ao `Document.getFileAsync` chamar, você obterá uma cópia do documento em um [
 
 Para saber mais, veja como [obter todo o documento por meio de um suplemento para PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
-
-## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Ler e gravar partes XML personalizadas de um documento do Word
+## <a name="read-and-write-custom-xml-parts-of-a-word-document"></a>Ler e gravar partes XML personalizadas de um documento do Word
 
 Usando o formato de arquivo Open Office XML e controles de conteúdo, você pode adicionar partes XML personalizadas a um documento do Word e associar elementos nas partes XML a controles de conteúdo no documento. Quando você abre o documento, o Word lê e popula automaticamente os controles de conteúdo associados com dados das partes XML personalizadas. Os usuários também podem gravar dados nos controles de conteúdo. Quando o usuário salvar o documento, os dados nos controles serão salvos nas partes XML associadas. Suplementos de painel de tarefas do Word podem usar a propriedade [Document.customXmlParts](/javascript/api/office/office.document#customXmlParts) e os objetos [CustomXmlParts](/javascript/api/office/office.customxmlparts), [CustomXmlPart](/javascript/api/office/office.customxmlpart) e [CustomXmlNode](/javascript/api/office/office.customxmlnode) para ler e gravar dados dinamicamente no documento.
 
@@ -116,16 +109,11 @@ Para adicionar uma nova parte XML personalizada a um documento, use a propriedad
 
 Para saber mais sobre como trabalhar com partes XML personalizadas em um suplemento de painel de tarefas, consulte [Criar suplementos melhores para o Word com o Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
-
 ## <a name="persisting-add-in-settings"></a>Persistir configurações de suplemento
-
 
 Muitas vezes, você precisa salvar dados personalizados no suplemento, como preferências do usuário ou o estado do suplemento, e acessar esses dados na próxima vez que o suplemento for aberto. Você pode usar técnicas de programação comuns para salvar os dados, como cookies do navegador ou armazenamento na Web em HTML 5. Como alternativa, se o suplemento for executado no Excel, no PowerPoint ou no Word, você poderá usar os métodos do objeto [Settings](/javascript/api/office/office.settings). Os dados criados com o objeto são armazenados na planilha, apresentação ou documento em que o complemento foi `Settings` inserido e salvo. Esses dados estão disponíveis apenas para o suplemento que os criou.
 
 Para evitar idas e voltas para o servidor onde o documento está armazenado, os dados criados com o objeto são gerenciados na `Settings` memória em tempo de executar. Dados de configurações salvos anteriormente são carregados na memória quando o suplemento é inicializado, e alterações nesses dados só são salvas de volta para o documento quando você chama o método [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_). Internamente, os dados são armazenados em um objeto JSON serializado como pares de nome/valor. Você usa os métodos [get](/javascript/api/office/office.settings#get_name_), [set](/javascript/api/office/office.settings#set_name__value_) e [remove](/javascript/api/office/office.settings#remove_name_) para o objeto **Settings**, para ler, gravar e excluir itens da cópia dos dados na memória. A linha de código a seguir mostra como criar uma configuração denominada `themeColor` e definir seu valor como 'verde'.
-
-
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -135,18 +123,15 @@ Como os dados de configurações criados ou excluídos com os métodos e estão 
 
 Para obter mais detalhes sobre como trabalhar com dados personalizados usando os métodos do objeto, consulte `Settings` [Persisting add-in state and settings](persisting-add-in-state-and-settings.md).
 
-
-## <a name="reading-properties-of-a-project-document"></a>Ler propriedades de um documento do Project
+## <a name="read-properties-of-a-project-document"></a>Ler propriedades de um documento de projeto
 
 Se o suplemento de painel de tarefas for executado no Project, o suplemento poderá ler dados de alguns dos campos de projeto, recursos e campos de tarefa do projeto ativo. Para fazer isso, use os métodos e eventos do [objeto ProjectDocument,](/javascript/api/office/office.document) que estende o objeto para fornecer funcionalidades Project `Document` específicas.
 
 Para obter exemplos de leitura de dados do Project, consulte [Criar seu primeiro suplemento de painel de tarefas do Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
-
 ## <a name="permissions-model-and-governance"></a>Modelo de permissões e governança
 
 Seu add-in usa o elemento em seu manifesto para solicitar permissão para acessar o nível de funcionalidade que ele exige da API `Permissions` Office JavaScript. Por exemplo, se o seu complemento exigir acesso de leitura/gravação ao documento, seu manifesto deverá especificar como o valor `ReadWriteDocument` de texto em seu `Permissions` elemento. Uma vez existem permissões para proteger a privacidade e a segurança do usuário, como prática recomendada, você deve solicitar o nível mínimo de permissões necessárias para seus recursos. O exemplo a seguir mostra como solicitar a permissão **ReadDocument** no manifesto de um painel de tarefas.
-
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -162,8 +147,7 @@ Seu add-in usa o elemento em seu manifesto para solicitar permissão para acessa
 
 Para obter mais informações, consulte [Solicitando permissões para uso da API em complementos](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
-
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para os manifestos dos Suplementos do Office](../develop/add-in-manifests.md)

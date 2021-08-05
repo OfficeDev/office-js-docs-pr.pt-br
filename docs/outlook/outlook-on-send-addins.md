@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 06/16/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671825"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774361"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -42,9 +42,9 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 
 Você pode usar o recurso Ao enviar para criar um suplemento do Outlook que integre o evento síncrono `ItemSend`. Este evento detecta que o usuário está pressionando o botão **Enviar** (ou o botão **Enviar Atualização** para reuniões existentes) e pode ser usado para impedir que um item seja enviado se houver falha na validação. Por exemplo, quando um usuário dispara um evento de envio de mensagem, um suplemento do Outlook que usa o recurso Ao enviar pode:
 
-- Ler e validar o conteúdo da mensagem de email
-- Verificar se a mensagem inclui uma linha de assunto
-- Definir um destinatário predeterminado
+- Leia e valide o conteúdo da mensagem de email.
+- Verifique se a mensagem inclui uma linha de assunto.
+- Definir um destinatário predeterminado.
 
 A validação é feita no lado do cliente Outlook quando o evento de envio é acionado e o complemento tem até 5 minutos antes do tempo final. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicita que o usuário tome medidas.
 
@@ -53,17 +53,9 @@ A validação é feita no lado do cliente Outlook quando o evento de envio é ac
 
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente adicione um assunto.
 
-<br/>
-
 ![Captura de tela mostrando uma mensagem de erro solicitando que o usuário insira uma linha de assunto ausente.](../images/block-on-send-subject-cc-inforbar.png)
 
-<br/>
-
-<br/>
-
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente de que foram encontradas palavras bloqueadas.
-
-<br/>
 
 ![Captura de tela mostrando uma mensagem de erro dizendo ao usuário que palavras bloqueadas foram encontradas.](../images/block-on-send-body.png)
 
@@ -71,7 +63,7 @@ A captura de tela a seguir mostra uma barra de informações que notifica que o 
 
 Atualmente, o recurso Ao enviar tem as seguintes limitações.
 
-- **Recurso Append-on-send** &ndash; Se você chamar [corpo. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) no manipulador ao enviar, um erro é retornado.
+- **Recurso Append-on-send** Se você chamar &ndash; [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) no manipulador ao enviar, um erro será retornado.
 - **AppSource** &ndash; Você não pode publicar suplementos do Outlook que usem o recurso Ao enviar no [AppSource](https://appsource.microsoft.com), pois eles falharão na validação do AppSource. Os suplementos que usam o recurso Ao enviar devem ser implantados pelos administradores.
 - **Manifesto** &ndash; Somente um evento `ItemSend` tem suporte por suplemento. Se você tiver dois ou mais eventos `ItemSend` em um manifesto, haverá falha na validação.
 - **Desempenho**&ndash; Várias idas e voltas ao servidor Web que hospeda o suplemento podem afetar o desempenho do suplemento. Considere os efeitos sobre o desempenho quando você cria suplemento que exigem várias mensagens ou operações baseadas em reuniões.
@@ -81,9 +73,11 @@ Além disso, não é recomendável que você chame o manipulador de eventos ao e
 
 ### <a name="mailbox-typemode-limitations"></a>Limitações de tipo/modo de caixa de correio
 
-A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além de situações em que os complementos não são ativados conforme o que é notado nos itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de complementos do Outlook, a funcionalidade não tem suporte no momento para o modo offline.
+A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além de situações em que os complementos não são ativados conforme o que é notado nos itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de complementos do Outlook, a funcionalidade não é suportada no momento para o modo offline em que esse modo está disponível.
 
-Outlook permitirá o envio se o recurso ao enviar estiver habilitado para cenários de caixa de correio sem suporte. No entanto, em casos em que os Outlook não são ativados, o complemento ao enviar não será executado e a mensagem será enviada.
+Nos casos em que Outlook os Outlook não são ativados, o complemento ao enviar não será executado e a mensagem será enviada.
+
+No entanto, se o recurso ao enviar estiver habilitado e disponível, mas o cenário de caixa de correio não tiver suporte, Outlook não permitirá o envio.
 
 ## <a name="multiple-on-send-add-ins"></a>Vários suplementos Ao enviar
 
@@ -284,13 +278,16 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-Os suplementos para Outlook no Windows que usam o recurso Ao enviar devem ser executados para qualquer usuário que os tenha instalado. No entanto, se os usuários precisarem executar o suplemento para atender aos padrões de conformidade, a política de grupo **Desabilitar o envio quando as extensões da Web não puderem ser carregadas** deve estar definida como **Habilitada** em cada máquina aplicável.
+Os suplementos para Outlook no Windows que usam o recurso Ao enviar devem ser executados para qualquer usuário que os tenha instalado. No entanto, se os usuários são obrigados a executar o complemento para atender aos padrões de conformidade, a política de grupo Bloquear o envio quando os complementos da Web não puderem ser **carregados** devem ser definidos como **Habilitados** em cada máquina aplicável.
 
 Para definir políticas de caixa de correio, os administradores podem baixar a ferramenta Modelos [Administrativos](https://www.microsoft.com/download/details.aspx?id=49030) e acessar os modelos administrativos mais recentes executando o Editor de Política de Grupo Local, **gpedit.msc**.
 
+> [!NOTE]
+> Em versões mais antigas da ferramenta Modelos Administrativos, o nome da política era **Disable send when web extensions can't load**. Substitua nesse nome em etapas posteriores, se necessário.
+
 #### <a name="what-the-policy-does"></a>O que a política faz
 
-Por motivos de conformidade, os administrador podem precisar garantir que os usuários não possam enviar itens de mensagem de reunião até que o último suplemento Ao enviar esteja disponível para execução. Os administradores devem habilitar a política de grupo **Desabilitar o envio quando as extensões da Web não puderem ser carregadas** para que todos os suplementos sejam atualizados a partir do Exchange e estejam disponíveis para verificar se cada item de mensagem ou de reunião atende às regras e normas esperadas ao enviar.
+Por motivos de conformidade, os administrador podem precisar garantir que os usuários não possam enviar itens de mensagem de reunião até que o último suplemento Ao enviar esteja disponível para execução. Os administradores devem habilitar a política de grupo Bloquear o envio quando os complementos da Web não puderem ser carregados para que todos os complementos sejam atualizados do Exchange e disponíveis para verificar se cada mensagem ou item de reunião atende às regras e **regulamentos** esperados no envio.
 
 |Status da política|Resultado|
 |---|---|
@@ -299,14 +296,14 @@ Por motivos de conformidade, os administrador podem precisar garantir que os usu
 
 #### <a name="manage-the-on-send-policy"></a>Gerenciar a política Ao enviar
 
-Por padrão, a política Ao enviar está desabilitada. Os administradores podem habilitar a política Ao enviar ao certificar-se de que a configuração de política de grupo do usuário **Desabilitar o envio quando as extensões da Web não puderem ser carregadas** esteja definida como **Habilitada**. Para desabilitar a política para um usuário, o administrador deve defini-la como **Desabilitada**. Para gerenciar essa configuração de política, você pode fazer o seguinte:
+Por padrão, a política Ao enviar está desabilitada. Os administradores podem habilitar a política ao enviar garantindo que a configuração da política de grupo do usuário Bloqueie o envio quando os complementos da Web não puderem ser **carregados** está definido como **Habilitado**. Para desabilitar a política para um usuário, o administrador deve defini-la como **Desabilitada**. Para gerenciar essa configuração de política, você pode fazer o seguinte:
 
 1. Baixe a [ferramenta de Modelos Administrativos](https://www.microsoft.com/download/details.aspx?id=49030) mais recente.
 1. Abra o Editor de Política de Grupo Local (**gpedit.msc**).
-1. Navegue até **Configuração do Usuário > Modelos Administrativos > Microsoft Outlook 2016 > Segurança > Central de Confiabilidade**.
-1. Marque a configuração **Desabilitar o envio quando as extensões da Web não puderem ser carregadas**.
+1. Navegue **até Configuração do** Usuário Modelos  >     >  **Administrativos Microsoft Outlook 2016**  >  **Centro** de  >  **Confiação de Segurança**.
+1. Selecione a **configuração Bloquear envio quando os complementos da Web não puderem carregar.**
 1. Abra o link para configuração Editar política.
-1. Na caixa de diálogo **Desabilitar o envio quando as extensões da Web não puderem ser carregadas**, selecione **Habilitado** ou **Desabilitado** conforme apropriado e selecione **OK** ou **Aplique** para colocar a atualização em vigor.
+1. Na janela Bloquear envio quando os **complementos** da Web  não  puderem carregar, selecione Habilitado ou Desabilitado conforme apropriado e selecione **OK** ou **Aplicar** para colocar a atualização em vigor.
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -338,7 +335,7 @@ Veja a seguir os cenários com suporte e sem suporte para suplementos que usam o
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>A caixa de correio do usuário tem o recurso de suplemento Ao enviar habilitado, mas nenhum suplemento está instalado
 
-Neste cenário, o usuário poderá enviar itens de mensagem e de reunião sem nenhum suplemento em execução.
+Nesse cenário, o usuário poderá enviar itens de mensagem e reunião sem a execução de nenhum complemento.
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-and-add-ins-that-supports-on-send-are-installed-and-enabled"></a>A caixa de correio do usuário tem o recurso de suplemento Ao enviar habilitado, e os suplementos compatíveis com Ao enviar estão instalados e habilitados
 
@@ -447,8 +444,6 @@ Para o arquivo de manifesto `Contoso Subject and CC Checker.xml`, o exemplo a se
 </Hosts>
 ```
 
-<br/>
-
 A API Ao enviar requer `VersionOverrides v1_1`. Veja a seguir como adicionar o nó `VersionOverrides` em seu manifesto.
 
 ```xml
@@ -462,6 +457,7 @@ A API Ao enviar requer `VersionOverrides v1_1`. Veja a seguir como adicionar o n
 
 > [!NOTE]
 > Para obter mais informações, confira o seguinte:
+>
 > - [Manifestos de suplementos do Outlook](manifests.md)
 > - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
 

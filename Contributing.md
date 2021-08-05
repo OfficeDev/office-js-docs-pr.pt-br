@@ -73,7 +73,7 @@ Normalmente, as solicitações de pull são revisadas dentro de 10 dias úteis.
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Em seguida, crie uma referência para o repositório raiz inserindo esses comandos:
+    Em seguida, crie uma referência ao repositório raiz inserindo esses comandos.
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git

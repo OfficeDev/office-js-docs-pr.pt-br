@@ -1,16 +1,16 @@
 ---
 title: Diretrizes de cor para Suplementos do Office
 description: Saiba como usar cores na interface do usuário de um Office Add-in.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349193"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773220"
 ---
-# <a name="color"></a>Cor
+# <a name="color-guidelines-for-office-add-ins"></a>Diretrizes de cor para Suplementos do Office
 
 A cor é geralmente usada para enfatizar a marca e reforçar a hierarquia visual. Ela ajuda a identificar uma interface, além de orientar os clientes em uma experiência. No Office, a cor é usada para os mesmos objetivos, mas é aplicada intencionalmente e de forma mínima. Ela nunca sobrecarrega o conteúdo do cliente. Mesmo quando cada aplicativo do Office é identificado com sua própria cor dominante, ela é usada com moderação.
 

@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: Obter algumas práticas recomendadas para visualizar dados em um Office Desem.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: aebd0ea8731d099615141e203cc03b2972128c9a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076347"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773633"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
@@ -24,7 +24,7 @@ As visualizações de dados compartilham uma estrutura geral e elementos visuais
 
 ### <a name="chart-titles"></a>Títulos de gráfico
 
-Siga estas diretrizes para títulos de gráfico:
+Siga estas diretrizes para títulos de gráfico.
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
@@ -69,7 +69,6 @@ Adicione legendas, se for necessário:
 - Apresentar mudanças de escala ou valor
 
 Confira se suas legendas aprimoram a tinta dos dados e não competem com ela. Coloque as legendas:
-
 
 - Recue à esquerda acima da área de plotagem por padrão, se todos os itens de legenda se ajustarem acima do gráfico.
 - No lado superior direito da área de plotagem, se todos os itens de legenda não couberem acima do gráfico e use uma barra de rolagem, se necessário.

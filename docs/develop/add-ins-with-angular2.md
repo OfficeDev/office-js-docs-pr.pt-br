@@ -1,14 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
 description: Use Angular para criar um Office como um aplicativo de página única.
-ms.date: 05/03/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350082"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773500"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -76,7 +76,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Usando a API de diálogo do Office com Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>Use a OFFICE de diálogo com Angular
 
 A API da caixa de diálogo Suplemento do Office permite que o suplemento abra uma página em uma caixa de diálogo não modal que pode trocar informações com a página principal, normalmente em um painel de tarefas.
 
@@ -102,19 +102,19 @@ export class MyComponent {
 }
 ```
 
-## <a name="using-observable"></a>Usando o Observable
+## <a name="use-observable"></a>Usar Observável
 
 O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](https://rxjs-dev.firebaseapp.com/) oficial.
 
 Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`.
 
-### <a name="pushing-instead-of-pulling"></a>Obter em vez de enviar
+### <a name="push-instead-of-pull"></a>Push em vez de puxar
 
 Seu código "obtém" objetos `Promise` atribuindo-os a variáveis, mas objetos `Observable` "enviam" seus valores para objetos que se *inscrevem* no `Observable`. Os assinantes são objetos `Observer`. O benefício da arquitetura push é que novos membros podem ser adicionados à matriz `Observable` ao longo do tempo. Quando um novo membro é adicionado, todos os objetos `Observer` que assinam o `Observable` recebem uma notificação.
 
 O `Observer` é configurado para processar cada novo objeto (chamado o "próximo" objeto) com uma função. (Ele também é configurado para responder a um erro e a uma notificação de conclusão. Consulte a próxima seção para obter um exemplo.) Por esse motivo, os objetos `Observable` podem ser usados em uma maior variedade de cenários do que os objetos `Promise`. Por exemplo, além de retornarem um `Observable` de uma chamada AJAX, a maneira como você pode retornar um `Promise`, um `Observable` pode ser retornado de um manipulador de eventos, como o manipulador de eventos "modificado" de uma caixa de texto. Cada vez que um usuário insere texto na caixa, todos os objetos `Observer` inscritos reagem imediatamente usando o texto mais recente e/ou o estado atual do aplicativo como entrada.
 
-### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>Aguardando a conclusão de todas as chamadas assíncronas
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Aguarde até que todas as chamadas assíncronas tenham sido concluídas
 
 Quando quiser garantir que um retorno de chamada só seja executado quando todos os membros de um conjunto de objetos `Promise` forem resolvidos, use o método `Promise.all()`.
 

@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671214"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773759"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -35,13 +35,13 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 
 Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, consulte o [exemplo Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) de complemento.
 
-### <a name="designing-a-dialog-box-ui"></a>Criar uma interface do usuário da caixa de diálogo
+### <a name="design-a-dialog-box-ui"></a>Criar uma interface do usuário da caixa de diálogo
 
 Para saber as práticas recomendadas no design da caixa de diálogo, consulte [Caixas de diálogo Office Adicionar.](../design/dialog-boxes.md)
 
-### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Tratamento de bloqueadores de pop-up com o Office na Web
+### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>Manipular bloqueadores pop-up com Office na Web
 
-Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Office na Web tem um recurso que permite que as caixas de diálogo do seu complemento sejam uma exceção para o bloqueador pop-up do navegador. Quando seu código chama `displayDialogAsync` o método, Office na Web abrirá um prompt semelhante ao seguinte.
+Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Se isso acontecer, Office na Web abrirá um prompt semelhante ao seguinte.
 
 ![Captura de tela mostrando o prompt com uma breve descrição e botões Permitir e Ignorar que um complemento pode gerar para evitar bloqueadores pop-up no navegador](../images/dialog-prompt-before-open.png)
 
@@ -53,7 +53,7 @@ Se, por qualquer motivo, você quiser desativar esse recurso, seu código dever�
 
 Office adiciona automaticamente um parâmetro de consulta `_host_info` chamado à URL que é passada para `displayDialogAsync` . Ele é anexado após os parâmetros de consulta personalizados, se algum. Ele não é anexado a urLs subsequentes às que a caixa de diálogo navega. A Microsoft pode alterar o conteúdo desse valor ou removê-lo completamente, portanto, seu código não deve lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo (ou seja, a [propriedade Window.sessionStorage).](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) Novamente, *seu código não deve ler nem gravar nesse valor*.
 
-### <a name="opening-another-dialog-immediately-after-closing-one"></a>Abrir outra caixa de diálogo imediatamente após o fechamento de um
+### <a name="open-another-dialog-immediately-after-closing-one"></a>Abra outra caixa de diálogo imediatamente após o fechamento de um
 
 Você não pode ter mais de uma caixa de diálogo aberta de uma determinada página host, portanto, seu código deve chamar [Dialog.close](/javascript/api/office/office.dialog#close__) em uma caixa de diálogo aberta antes de chamar para `displayDialogAsync` abrir outra caixa de diálogo. O `close` método é assíncrono. Por esse motivo, se você chamar imediatamente após uma chamada de , a primeira caixa de diálogo pode não ter sido completamente fechada quando Office `displayDialogAsync` `close` tenta abrir a segunda. Se isso acontecer, Office retornará um erro [12007:](dialog-handle-errors-events.md#12007) "A operação falhou porque esse complemento já tem uma caixa de diálogo ativa".
 
@@ -119,7 +119,7 @@ function openFirstDialog() {
 Se o seu add-in usa o roteamento do lado do cliente, como os aplicativos de página única (SPAs) normalmente fazem, você tem a opção de passar a URL de uma rota para o método [displayDialogAsync](/javascript/api/office/office.ui) em vez da URL de uma página HTML separada. *Recomendamos não fazer isso pelos motivos abaixo.*
 
 > [!NOTE]
-> Este artigo não é relevante para o *roteamento do lado* do servidor, como em um aplicativo Web baseado em Express.
+> Este artigo não é relevante para o *roteamento do* lado do servidor, como em um aplicativo Web baseado em Express.
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problemas com SPAs e a API de Office de diálogo
 

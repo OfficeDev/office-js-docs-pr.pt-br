@@ -1,20 +1,18 @@
 ---
 title: Diretrizes de voz para Suplementos do Office
-description: Conheça as práticas recomendadas para escrever a ajuda do usuário e outras cadeias de caracteres para suplementos do Office.
-ms.date: 03/19/2019
+description: Saiba as práticas recomendadas ao escrever a ajuda do usuário e outras cadeias de caracteres para Office Desempois.
+ms.date: 07/08/2019
 localization_priority: Normal
-ms.openlocfilehash: a70bdf62c76f4b935f7a378b70f1584a6823106a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5bfc671d2462ef2c0b9eaba967744094b512965a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608450"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774053"
 ---
 # <a name="voice-guidelines"></a>Diretrizes de voz
 
-Ao desenvolver seus Suplementos do Office, considere o tom que você utiliza nos elementos e no texto da interface do usuário. Procure manter o tom da interface de usuário do Office, que é coloquial, envolvente e acessível aos usuários. 
-
-Para alinhar seu texto aos princípios do tom do Office:
+Ao desenvolver seus Suplementos do Office, considere o tom que você utiliza nos elementos e no texto da interface do usuário. Procure manter o tom da interface de usuário do Office, que é coloquial, envolvente e acessível aos usuários.
 
 - **Use um estilo natural.** Escreva da maneira como você fala. Evite jargões e frases ou palavras muito técnicas. Use termos que sejam familiares aos usuários.
 - **Use uma linguagem simples e direta.** Use palavras e frases curtas, e a voz ativa no seu texto.

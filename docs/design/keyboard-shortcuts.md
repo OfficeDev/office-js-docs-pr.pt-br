@@ -1,14 +1,14 @@
 ---
 title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fa675e9ddc607feabbea0f79456e0775666b8d96
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671398"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773528"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -19,7 +19,7 @@ Atalhos de teclado, também conhecidos como combinações de teclas, permitem qu
 > [!NOTE]
 > Para começar com uma versão de trabalho de um add-in com atalhos de teclado já habilitados, clone e execute o exemplo Excel [Atalhos de Teclado.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Quando você estiver pronto para adicionar atalhos de teclado ao seu próprio complemento, continue com este artigo.
 
-Há três etapas para adicionar atalhos de teclado a um complemento:
+Há três etapas para adicionar atalhos de teclado a um complemento.
 
 1. [Configure o manifesto do complemento](#configure-the-manifest).
 1. [Crie ou edite o arquivo JSON de atalhos](#create-or-edit-the-shortcuts-json-file) para definir ações e atalhos de teclado.
@@ -48,8 +48,7 @@ Imediatamente *abaixo* (não dentro) `<VersionOverrides>` do elemento no manifes
 
 Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo corresponde ao local especificado para o `Url` atributo do [elemento ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Este arquivo descreverá seus atalhos de teclado e as ações que eles invocarão.
 
-1. Dentro do arquivo JSON, há duas matrizes. A matriz de ações conterá objetos que definem as ações a serem invocadas e a matriz de atalhos conterá objetos que mapeiam combinações de teclas em ações. Veja um exemplo:
-
+1. Dentro do arquivo JSON, há duas matrizes. A matriz de ações conterá objetos que definem as ações a serem invocadas e a matriz de atalhos conterá objetos que mapeiam combinações de teclas em ações. Veja um exemplo.
     ```json
     {
         "actions": [
@@ -170,7 +169,7 @@ Use as diretrizes a seguir ao especificar os objetos na matriz do shortcuts.js`s
 - Os nomes de `action` propriedade , e são `key` `default` obrigatórios.
 - O valor da propriedade é uma cadeia de caracteres e deve corresponder a uma das `action` `id` propriedades no objeto action.
 - A propriedade pode ser qualquer combinação dos caracteres A - Z, a -z, 0 - 9 e as marcas de pontuação `default` "-", "_" e "+". (Por convenção, letras de maiúsculas e baixos não são usadas nessas propriedades.)
-- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (Alt, Ctrl, Shift) e apenas uma outra chave. 
+- A propriedade deve conter o nome de pelo menos uma chave `default` modificadora (Alt, Ctrl, Shift) e apenas uma outra chave.
 - Shift não pode ser usado como a única chave modificadora. Combine Shift com Alt ou Ctrl.
 - Para Macs, também há suporte para a chave do modificador de comando.
 - Para Macs, Alt é mapeado para a tecla Option. Para Windows, Command é mapeado para a tecla Ctrl.
@@ -209,11 +208,11 @@ No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez q
 
 ![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho.](../images/add-in-shortcut-conflict-modal.png)
 
-O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, poderá invocar o comando Redefinir Office preferências de atalho de **Complementos** da caixa de pesquisa Diga-me.  Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante:
+O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, poderá invocar o comando Redefinir Office preferências de atalho de **Complementos** da caixa de pesquisa Diga-me.  Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante.
 
 ![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir Office preferências de atalho do add-in.](../images/add-in-reset-shortcuts-action.png)
 
-Para a melhor experiência do usuário, recomendamos que você minimize os conflitos com Excel com essas boas práticas:
+Para a melhor experiência do usuário, recomendamos que você minimize os conflitos com Excel com essas boas práticas.
 
 - Use apenas atalhos de teclado com o seguinte padrão: **Ctrl+Shift+Alt+* x***, onde *x* é alguma outra chave.
 - Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)Excel teclado e evite usar qualquer um deles no seu complemento.

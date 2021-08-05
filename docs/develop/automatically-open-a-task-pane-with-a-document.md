@@ -1,21 +1,20 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
-ms.date: 05/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350019"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773906"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de Office de Office para estender a interface do usuário Office por meio da adição de botões à faixa de Aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
 Alguns cenários exigem que um painel de tarefas seja exibido automaticamente ao abrir um documento, sem a interação explícita do usuário. Você pode usar o recurso autoopen do painel de tarefas, apresentado no conjunto de requisitos AddInCommands 1.1, para abrir automaticamente um painel de tarefas quando necessário.
-
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
@@ -30,7 +29,6 @@ O recurso autoopen é atualmente <!-- in **developer preview** and it is only --
 |**Produtos**|**Plataformas**|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office no Windows Desktop. Versão 16.0.8121.1000+</li><li>Office no Mac. Build 15.34.17051500+</li><li>Office na Web</li></ul>|
-
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -48,9 +46,7 @@ Aplique as seguintes práticas recomendadas ao usar o recurso autoopen.
 
 - Não use esse recurso para fixar vários painéis de tarefas. Você só pode definir um painel do suplemento para abrir automaticamente com um documento.  
 
-## <a name="implementation"></a>Implementação
-
-Para implementar o recurso autoopen:
+## <a name="implement-the-autoopen-feature"></a>Implementar o recurso autoopen
 
 - Especifique o painel de tarefas a ser aberto automaticamente.
 - Marque o documento para abrir o painel de tarefas automaticamente.
@@ -75,7 +71,6 @@ O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTas
 
 Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. Escolha a alternativa que funciona melhor para o seu cenário.  
 
-
 #### <a name="tag-the-document-on-the-client-side"></a>Marcar o documento no lado do cliente
 
 Use o método [settings.set](/javascript/api/office/office.settings) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
@@ -91,7 +86,7 @@ Use esse método se você precisar marcar o documento como parte da interação 
 
 Você pode usar o Open XML para criar ou modificar um documento e adicionar a marcação XML do Open Office apropriada para acionar o recurso autoopen. Veja um exemplo de como fazer isso em [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
 
-Adicione duas partes do Open XML ao documento:
+Adicione duas partes Open XML ao documento.
 
 - Uma parte `webextension`
 - Uma parte `taskpane`

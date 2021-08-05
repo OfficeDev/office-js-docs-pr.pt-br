@@ -1,14 +1,14 @@
 ---
 title: Interface do usuário Fluent React em Suplementos do Office
 description: Saiba como usar Fluent interface do usuário React em Office de complementos.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a71c1a0de64d99a9e52c4ca2a7a948b9c33eb9ed
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076298"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773535"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar Fluent interface do usuário React em Office de usuário
 
@@ -36,9 +36,9 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
 
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Nó de suporte.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -133,7 +133,7 @@ Esse código faz o seguinte:
 
 ## <a name="add-the-react-component-to-your-add-in"></a>Adicionar o componente do React ao suplemento
 
-Adicionar o `ButtonPrimaryExample` componente ao suplemento abrindo **src\components\App.tsx** e seguir as seguintes etapas:
+Adicione o componente ao seu complemento abrindo `ButtonPrimaryExample` **src\components\App.tsx** e concluindo as etapas a seguir.
 
 1. Adicione a seguinte declaração de importação para a referência `ButtonPrimaryExample` do **Button.tsx**.
 

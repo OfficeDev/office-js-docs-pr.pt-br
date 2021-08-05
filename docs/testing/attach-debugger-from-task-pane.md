@@ -1,14 +1,14 @@
 ---
 title: Anexar um depurador do painel de tarefas
 description: Saiba como anexar um depurador no painel de tarefas
-ms.date: 06/17/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f5a63e9912e2a7d8ac400fc9abba116abfedbbeb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077194"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774312"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
@@ -17,19 +17,19 @@ No Office 2016 no Windows, Build 77xx.xxxx ou posterior, é possível anexar o d
 Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito do painel de tarefas para ativar o menu **Personalidade** (conforme mostrado no círculo vermelho na imagem a seguir).
 
 > [!NOTE]
-> - Atualmente, a única ferramenta de depurador é o [Visual Studio 2015](https://www.visualstudio.com/downloads/) com a [Atualização 3](/previous-versions/mt752379(v=vs.140)) ou posterior. Se você não tiver uma Visual Studio instalada, selecionar a opção **Anexar Depurador** não resultará em nenhuma ação.
+> - Atualmente, a única ferramenta de depurador com suporte é [Visual Studio 2015](https://www.visualstudio.com/downloads/) com [a Atualização 3](/previous-versions/mt752379(v=vs.140)) ou posterior. Se você não tiver uma Visual Studio instalada, selecionar a opção **Anexar Depurador** não resultará em nenhuma ação.
 > - Só é possível depurar o JavaScript do lado do cliente com a ferramenta **Anexar Depurador**. Para depurar o código do lado do servidor, como com um servidor Node.js, há várias opções. Confira informações sobre como depurar com o Visual Studio Code em [Depuração do Node.js no VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Se você não estiver usando o Visual Studio Code, pesquise por "depurar Node.js" ou "depurar {nome do servidor}".
 
 ![Captura de tela do menu Anexar Depurador.](../images/attach-debugger.png)
 
-Selecione **Anexar Depurador**. Isso inicia a caixa de diálogo **Depurador Just-In-Time do Visual Studio**, conforme mostrado na imagem a seguir. 
+Selecione **Anexar Depurador**. Isso inicia a caixa de diálogo **Depurador Just-In-Time do Visual Studio**, conforme mostrado na imagem a seguir.
 
 ![Captura de tela Visual Studio caixa de diálogo Depurador JIT.](../images/visual-studio-debugger.png)
 
 No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluções**.   Você pode definir pontos de interrupção na linha de código que deseja depurar no Visual Studio.
 
 > [!NOTE]
-> Se você não vir o menu Personalidade, é possível depurar o suplemento com o Visual Studio. Certifique-se de que o suplemento do painel tarefas esteja aberto no Office e, em seguida, siga estas etapas:
+> Se você não vir o menu Personalidade, é possível depurar o suplemento com o Visual Studio. Verifique se o seu add-in do painel de tarefas está aberto Office e siga estas etapas.
 >
 > 1. No Visual Studio, escolha **DEPURAR** > **Anexar ao Processo**.
 > 2. Em **Processos disponíveis**, selecione *qualquer um* dos `Iexplore.exe` processos disponíveis *ou* todos os `MicrosoftEdge*.exe` processos disponíveis, dependendo [ se seu suplemento usa Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), e depois clique no botão **Anexar**.

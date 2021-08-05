@@ -1,14 +1,14 @@
 ---
 title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um complemento enquanto ele é executado continuamente.
-ms.date: 12/28/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7df6301073531661ba87ddaaef711a131cf90fac
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b2f0efa95f4ce71fc73d9834cfc165cfdd85dc8f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671510"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773752"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
@@ -77,7 +77,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-A função retorna outra função que *desregula* o manipulador. Veja um exemplo simples, mas não robusto:
+A função retorna outra função que *desregula* o manipulador. Aqui está um exemplo simples, mas não robusto.
 
 ```javascript
 var removeVisibilityModeHandler =
@@ -113,7 +113,7 @@ await removeVisibilityModeHandler();
 // subsequent code here
 ```
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Execute o código em seu Suplemento do Office quando o documento for aberto](run-code-on-document-open.md)

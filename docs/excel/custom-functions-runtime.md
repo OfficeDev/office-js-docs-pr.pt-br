@@ -1,14 +1,14 @@
 ---
-ms.date: 09/25/2020
+ms.date: 07/08/2021
 description: Entenda Excel funções personalizadas que não usam um painel de tarefas e seu tempo de execução JavaScript específico.
 title: Tempo de execução para funções personalizadas sem Excel de interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: aa2cf2632ddf9eb1ad1eb202b031ee2ca686af01
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349620"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774179"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Tempo de execução para funções personalizadas sem Excel de interface do usuário
 
@@ -20,7 +20,7 @@ Funções personalizadas que não usam um painel de tarefas (funções personali
 
 Esse tempo de execução javaScript fornece acesso a APIs no namespace que podem ser usadas por funções personalizadas sem interface do usuário e o painel de tarefas para `OfficeRuntime` armazenar dados.
 
-## <a name="requesting-external-data"></a>Como solicitar dados externos
+## <a name="request-external-data"></a>Solicitar dados externos
 
 Em uma função personalizada sem interface do usuário, você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)uma API Web padrão que emite solicitações HTTP para interagir com servidores.
 
@@ -28,7 +28,7 @@ Esteja ciente de que funções sem interface do usuário devem usar medidas de [
 
 Uma implementação de CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar `Content-Type` um header em CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded` seja , ou `text/plain` `multipart/form-data` .
 
-## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
+## <a name="store-and-access-data"></a>Armazenar e acessar dados
 
 Em uma função personalizada sem interface do usuário, você pode armazenar e acessar dados usando o `OfficeRuntime.storage` objeto. `Storage` é um sistema de armazenamento persistente, não criptografado e de valor-chave que fornece uma alternativa ao [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), que não pode ser usado por funções personalizadas sem interface do usuário. `Storage` oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um complemento.
 
@@ -69,6 +69,7 @@ function StoreValue(key, value) {
 Se o seu complemento usa apenas funções personalizadas sem interface do usuário, observe que você não pode acessar o Dom (Modelo de Objeto de Documento) com funções personalizadas sem interface do usuário ou usar bibliotecas como jQuery que dependem do DOM.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba como [depurar funções personalizadas sem interface do usuário.](custom-functions-debugging.md)
 
 ## <a name="see-also"></a>Confira também

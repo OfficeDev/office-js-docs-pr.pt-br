@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44d1ab5e650aedd416ed255b8c84d9d8c2551e65
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329951"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773892"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -18,7 +18,7 @@ Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** em seu man
 - Adicionar botões ou uma lista suspensa de botões à faixa de opções.
 - Adicionar itens de menu individuais — cada um contendo submenus opcionais — aos menus de contexto específicos (atalho).
 - Executar ações quando seu comando de suplemento é escolhido. É possível:
-  - Mostrar um ou mais suplementos de painel de tarefa com os quais os usuários podem interagir. Dentro do seu complemento do painel de tarefas, você pode exibir HTML que usa a interface do usuário fluente para criar uma interface do usuário personalizada.
+  - Mostrar um ou mais suplementos de painel de tarefa com os quais os usuários podem interagir. Dentro do seu complemento do painel de tarefas, você pode exibir HTML que usa Fluent interface do usuário para criar uma interface do usuário personalizada.
 
      *ou*
 
@@ -203,7 +203,7 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etapa 6: adicionar elementos do ExtensionPoint
 
-O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir os elementos **ExtensionPoint** com estes valores de **xsi:type**:
+O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir **elementos ExtensionPoint** com esses **valores xsi:type.**
 
 - **PrimaryCommandSurface**, que se refere à faixa de opções no Office.
 
