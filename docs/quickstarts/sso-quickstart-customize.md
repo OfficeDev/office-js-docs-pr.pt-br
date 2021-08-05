@@ -1,15 +1,15 @@
 ---
 title: Personalizar o suplemento habilitado para SSO do Node.js.
 description: Saiba mais sobre como personalizar o complemento habilitado para SSO que você criou com o gerador Yeoman.
-ms.date: 02/01/2021
+ms.date: 08/04/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348332"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774417"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 

@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 04/07/2021
+ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: 1c8c5420593b31f403cf8f5fa28659fc130db402
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: cd0c793bb8a2cfbc4cef17e0cf717c35cb68794c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076991"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773115"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -61,7 +61,7 @@ A [AppSource](https://appsource.microsoft.com) hospeda suplementos que podem ser
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto da desabilitação da configuração das **experiências conectadas opcionais** depende do cliente, mas geralmente significa que os suplementos instalados pelo usuário e o acesso à Office Store não são permitidos. Os suplementos implantados pelo administrador de TI de uma organização por meio da [Implantação Centralizada](../publish/centralized-deployment.md) ainda estarão disponíveis.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto da desabilitação da configuração das **experiências conectadas opcionais** depende do cliente, mas geralmente significa que os suplementos instalados pelo usuário e o acesso à Office Store não são permitidos. Os suplementos implantados pelo administrador de TI de uma organização por meio da [Implantação Centralizada](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) ainda estarão disponíveis.
 
 - Windows\*, Mac: o botão **Obter Suplementos** não é exibido para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
 - Android, iOS: a caixa de diálogo **Obter suplementos** mostra somente suplementos implantados pelo administrador.

@@ -1,29 +1,29 @@
 ---
 title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
-ms.date: 08/20/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf0deef6cf9ea7d4e29d8ab7c3c5a7e79f70d9ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293979"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774403"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de logon único em um suplemento do Outlook
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de login único em um Outlook de usuário
 
 O SSO (logon único) oferece uma maneira simples para que o suplemento autentique usuários (e, opcionalmente, obtenha tokens de acesso para fazer uma chamada à [API do Microsoft Graph](/graph/overview)).
 
-Usando este método, o suplemento pode obter um token de acesso com escopo para a API de back-end do servidor. O suplemento usa isso como um token de portador no cabeçalho `Authorization` para autenticar um retorno de chamada para sua API. Opcionalmente, você também pode ter o código no lado do servidor:
+Usando este método, o suplemento pode obter um token de acesso com escopo para a API de back-end do servidor. O suplemento usa isso como um token de portador no cabeçalho `Authorization` para autenticar um retorno de chamada para sua API. Opcionalmente, você também pode ter seu código do lado do servidor.
 
 - concluir o fluxo Em Nome De para obter um token de acesso com escopo para a API do Microsoft Graph
 - Usar as informações de identidade no token para estabelecer a identidade do usuário e autenticar seus serviços de back-end
 
 Para obter uma visão geral do SSO em suplementos do Office, confira [Habilitar o logon único para suplementos do Office](../develop/sso-in-office-add-ins.md) e [Autorizar acesso ao Microsoft Graph em suplementos do Office](../develop/authorize-to-microsoft-graph.md).
 
-## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar a autenticação moderna em seu Microsoft 365 locação
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar a autenticação moderna em sua Microsoft 365 de Microsoft 365 de usuário
 
-Para usar o SSO com um suplemento do Outlook, você deve habilitar a autenticação moderna para o Microsoft 365 locação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Para usar o SSO com um Outlook, você deve habilitar a Autenticação Moderna para o Microsoft 365 de autenticação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Registrar seu suplemento
 
@@ -31,7 +31,7 @@ Para usar o SSO, o suplemento do Outlook precisará ter uma API Web no lado do s
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Fornecer consentimento quando estiver realizando o sideload de um suplemento
 
-Ao desenvolver um suplemento, você terá que fornecer consentimento com antecedência. Para obter mais informações, consulte [conceder ao administrador consentimento para o suplemento](../develop/grant-admin-consent-to-an-add-in.md).
+Quando você estiver desenvolvendo um complemento, você terá que fornecer consentimento antecipadamente. Para obter mais informações, consulte [Conceder consentimento ao administrador para o complemento](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## <a name="update-the-add-in-manifest"></a>Atualizar o manifesto do suplemento
 
@@ -50,6 +50,6 @@ Na maioria dos cenários, não haverá muitas razões para obter o token de aces
 
 ## <a name="see-also"></a>Confira também
 
-- Para obter um exemplo de suplemento do Outlook que usa o token SSO para acessar a API do Microsoft Graph, confira [SSO do suplemento do Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+- Para ver um Outlook de exemplo que usa o token SSO para acessar a API do Microsoft Graph, consulte [Outlook SSO de complemento.](https://github.com/OfficeDev/Outlook-Add-in-SSO)
 - [Referência da API do SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Conjunto de requisitos IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
