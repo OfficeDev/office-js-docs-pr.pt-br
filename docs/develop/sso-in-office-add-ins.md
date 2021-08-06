@@ -1,19 +1,18 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f24cfb2bb9fa90f566a2730d7a289371084a2abc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671496"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773745"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
-
-Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. Você pode tirar proveito disso e usar o logon único (SSO) para autorizar usuário para suplemento, sem exigir que o usuário entre uma segunda vez.
+Os usuários entrarão no Office (plataformas online, móveis e de área de trabalho) usando a conta Microsoft pessoal ou a conta Microsoft 365 Education ou corporativa. Você pode aproveitar isso e usar o SSO (logon único) para autorizar o usuário para seu suplemento sem exigir que o usuário entre uma segunda vez.
 
 ![Imagem mostrando o processo de logon de um suplemento.](../images/sso-for-office-addins.png)
 
@@ -22,8 +21,6 @@ Os usuários entram no Office (plataformas online, de dispositivos móveis e de 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para mais informações sobre como fazer isso com um Suplemento do Office, consulte [Autorizar serviços externos no Suplemento do Office](auth-external-add-ins.md). Para *Outlook*, há um sistema de fallback recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](../outlook/implement-sso-in-outlook-add-in.md). Para exemplos que usam o Azure Active Directory como o sistema de fallback, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
-
 
 ## <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
@@ -63,7 +60,7 @@ Para mais detalhes sobre esse processo, confira [Registrar um Suplemento do Offi
 
 ### <a name="configure-the-add-in"></a>Configurar o suplemento
 
-Adicione novas marcações ao manifesto do suplemento:
+Adicione novas marcações ao manifesto do suplemento.
 
 - **WebApplicationInfo** – o pai dos seguintes elementos.
 - **ID** - O ID do cliente do suplemento Este é um ID do aplicativo que você obtém como parte do registro do suplemento. Confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
@@ -103,7 +100,6 @@ Aqui está um exemplo simples de uma chamada para `getAccessToken`.
 
 > [!NOTE]
 > Este exemplo lida explicitamente com apenas um tipo de erro. Para exemplos de tratamento de erro mais elaborados, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
 
 ```js
 async function getGraphData() {

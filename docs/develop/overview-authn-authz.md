@@ -1,14 +1,14 @@
 ---
 title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6759d35e9460c4e72bad8cca187b0b429c140487
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8c1330b4739929f0c7d4a2b3fda16ea38ad76fd7
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671193"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774193"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -41,7 +41,7 @@ Para autenticar o usuário usando o SSO, seu código em um arquivo de função o
 
 Após o seu código ter extraído a declaração desejada no token, ele usará esse valor para pesquisar o usuário em uma tabela de usuário ou banco de dados de usuário que você mantém. Use o banco de dados para armazenar informações relativas ao usuário, como as preferências do usuário ou o estado da conta do usuário. Uma vez que você está usando o SSO, os usuários não entram separadamente no seu suplemento, assim você não precisa armazenar uma senha para o usuário.
 
-Antes de começar a implementar a autenticação do usuário com o SSO, certifique-se de que você está totalmente familiarizado com o artigo [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md). Observe também estes exemplos:
+Antes de começar a implementar a autenticação do usuário com o SSO, certifique-se de que você está totalmente familiarizado com o artigo [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md). Observe também os exemplos a seguir.
 
 - [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 - [SSO do ASP.NET do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
@@ -54,17 +54,17 @@ Para usar o SSO para acessar o Microsoft Graph, o suplemento em um arquivo de fu
 
 Após o código obter o token, ele o usará o fluxo **On Behalf Of** para obter um segundo token: um token de acesso ao Microsoft Graph.
 
-Antes de começar a implementar o SSO do Office, certifique-se de que você está totalmente familiarizado com esses dois artigos:
+Antes de começar a implementar o SSO do Office, certifique-se de que você está totalmente familiarizado com esses dois artigos.
 
 - [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md)
 - [Autorizar o Microsoft Graph com SSO](authorize-to-microsoft-graph.md)
 
-Você também deve ler pelo menos um dos artigos descritos aqui. Mesmo que você não execute as etapas, elas contêm informações valiosas sobre a implementação do SSO do Office e o fluxo **On Behalf Of**. 
+Você também deve ler pelo menos um dos artigos descritos aqui. Mesmo que você não execute as etapas, elas contêm informações valiosas sobre a implementação do SSO do Office e o fluxo **On Behalf Of**.
 
 - [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
 - [Crie um Suplemento do Office com Node.js que use logon único](create-sso-office-add-ins-nodejs.md)
 
-Observe também estes exemplos:
+Observe também os exemplos a seguir.
 
 - [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [SSO do ASP.NET do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)

@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 06/07/2021
+ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 43ad1218324e0399a93fe120450ceb75dd0bac43
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076571"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773073"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -96,7 +96,13 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-2. Inicie o servidor Web local.
+1. Instale as dependências do seu projeto.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Inicie o servidor Web local.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
@@ -107,13 +113,13 @@ Office.context.document.getSelectedTaskAsync(
     npm run dev-server
     ```
 
-3. Em Project, crie um plano de projeto simples.
+1. Em Project, crie um plano de projeto simples.
 
-4. Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+1. Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-5. Selecione uma única tarefa dentro do projeto.
+1. Selecione uma única tarefa dentro do projeto.
 
-6. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
+1. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
 
     ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado.](../images/project-quickstart-addin-1.png)
 

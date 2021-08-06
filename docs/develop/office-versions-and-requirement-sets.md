@@ -1,20 +1,21 @@
 ---
 title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ec3d99fc89b8b6ced25dfc00bd02e0238f75e0af
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349781"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773465"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
-Há várias versões do Office em várias plataformas, e nem todas dão suporte a cada API na API JavaScript para Office (Office.js). Nem sempre você terá controle sobre a versão do Office que os usuários instalaram.  Para lidar com essa situação, fornecemos um sistema chamado conjuntos de requisitos para ajudar você a determinar se um aplicativo do Office dá suporte aos recursos necessários em seu Suplemento do Office. 
+Há várias versões do Office em várias plataformas, e nem todas dão suporte a cada API na API JavaScript para Office (Office.js). Nem sempre você terá controle sobre a versão do Office que os usuários instalaram.  Para lidar com essa situação, fornecemos um sistema chamado conjuntos de requisitos para ajudar você a determinar se um aplicativo do Office dá suporte aos recursos necessários em seu Suplemento do Office.
 
 > [!NOTE]
+>
 > - O Office pode ser executado em várias plataformas, incluindo o Windows, navegadores, Mac e iPad.
 > - Entre os exemplos dos aplicativos do Office estão os produtos do Office: Excel, Word, PowerPoint, Outlook, OneNote e assim por diante.  
 > - Um conjunto de requisito é um grupo nomeado de membros da API, por exemplo, `ExcelApi 1.5`, `WordApi 1.3` etc.  
@@ -31,7 +32,7 @@ Os Suplementos do Office podem usar conjuntos de requisitos de API para determin
 
 Alguns aplicativos do Office possuem seus próprios conjuntos de requisitos de API. Por exemplo, o primeiro conjunto de requisitos para a API do Excel foi `ExcelApi 1.1`, e o primeiro conjunto de requisitos para a API do Word foi `WordApi 1.1`. Desde então, vários conjuntos de requisitos novos de ExcelApi e WordApi foram adicionados para fornecer mais funcionalidades de API.
 
-Além disso, outras funcionalidades como comandos de suplemento (extensibilidade da faixa de opções) e a capacidade de iniciar caixas de diálogo (API de Diálogo) foram adicionadas a API comum. Os comandos de suplemento e os conjuntos de requisitos de API de Diálogo são exemplos de conjuntos de API que os diversos aplicativos do Office compartilham em comum.
+Além disso, outras funcionalidades como comandos de suplemento (extensibilidade da faixa de opções) e a capacidade de iniciar caixas de diálogo (API de Caixa de Diálogo) foram adicionadas a API comum. Os comandos de suplemento e os conjuntos de requisitos de API de Caixa de Diálogo são exemplos de conjuntos de API que os diversos hosts do Office compartilham em comum.
 
 Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a versão do aplicativo do Office em que o suplemento está em execução. Para saber exatamente quais conjuntos de requisitos estão disponíveis para uma versão específica do aplicativo do Office, consulte os seguintes artigos do conjunto de requisitos específicos do aplicativo.
 
@@ -49,7 +50,6 @@ Alguns conjuntos de requisitos contêm APIs que podem ser usadas por qualquer ap
 - [Conjuntos de requisitos da API de Identidade](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 O número da versão de um conjunto de requisitos, como "1.1" no `ExcelApi 1.1`, tem relação com o aplicativo do Office. O número da versão de um certo conjunto de requisitos (por exemplo, `ExcelApi 1.1`), não corresponde ao número da versão do Office.js ou aos conjuntos de requisitos para outros aplicativos do Office (por exemplo, Word, Outlook etc.).  Lançamos os conjuntos de requisitos para diferentes aplicativos do Office em ritmos e períodos diferentes. Por exemplo, `ExcelApi 1.5` foi lançado antes do conjunto de requisitos `WordApi 1.3`.
-
 
 A biblioteca da API JavaScript do Office (Office.js) inclui todos os conjuntos de requisitos disponíveis no momento. Embora exista algo como conjuntos de requisitos `ExcelApi 1.3` e `WordApi 1.3`, há nenhum conjunto de requisitos `Office.js 1.3`. A versão mais recente do Office.js é mantida como um único ponto de extremidade do Office fornecida por meio da CDN (rede de distribuição de conteúdo). Para obter mais detalhes sobre a CDN do Office.js, incluindo como a versão e a compatibilidade com versões anteriores são tratadas, consulte [Noções básicas sobre a API JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md).
 

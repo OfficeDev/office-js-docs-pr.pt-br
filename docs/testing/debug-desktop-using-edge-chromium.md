@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 01/29/2021
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6a62718147fbb5d2e8a6819066425737d853cbf0
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 3a79c9f02aba91d29b3af15a5a3c9113079bc197
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350173"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773640"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
 
@@ -25,8 +25,9 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
 
 1. Crie um projeto usando o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office). Para isso, você pode usar um dos nossos guias de início rápido, como o [Início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md).
 
-    > [!TIP]
-    > Se você não estiver usando um suplemento baseado em um gerador Yeoman, será necessário ajustar uma chave de registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando: `office-add-in-debugging start <your manifest path>`.
+> [!TIP]
+> Se você não estiver usando um suplemento baseado em um gerador Yeoman, será necessário ajustar uma chave de registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando.
+ `office-add-in-debugging start <your manifest path>`
 
 1. Abra o projeto no VS Code. No VS Code, selecione **Ctrl+Shift+X** para abrir a barra Extensões. Procure a extensão "Depurador do Microsoft Edge" e instale-a.
 
@@ -50,13 +51,13 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
 
 1. No aplicativo host, como o Excel, o seu suplemento está agora pronto para uso. Selecione **Mostrar Painel de Tarefas** ou execute qualquer outro comando de suplemento. Uma caixa de diálogo aparecerá, lendo:
 
-    > WebView Stop On Load.
-    > Para depurar o modo de exibição da Web, anexe o VS Code à instância de modo de exibição da Web usando o Depurador da Microsoft para extensão do Edge, e clique em OK para continuar. Para impedir que essa caixa de diálogo seja exibida no futuro, clique em Cancelar."
+   > WebView Stop On Load.
+   > Para depurar o modo de exibição da Web, anexe o VS Code à instância de modo de exibição da Web usando o Depurador da Microsoft para extensão do Edge, e clique em OK para continuar. Para impedir que essa caixa de diálogo seja exibida no futuro, clique em Cancelar.
 
-    Clique em **OK**.
+   Clique em **OK**.
 
-    > [!NOTE]
-    > Se você selecionar **Cancelar**, a caixa de diálogo não será mostrada novamente enquanto esta instância do suplemento estiver em execução. No entanto, se você reiniciar o suplemento, você verá a caixa de diálogo novamente.
+   > [!NOTE]
+   > Se você selecionar **Cancelar**, a caixa de diálogo não será mostrada novamente enquanto esta instância do suplemento estiver em execução. No entanto, se você reiniciar o suplemento, você verá a caixa de diálogo novamente.
 
 1. Agora você pode definir pontos de interrupção no código e depuração do projeto.
 

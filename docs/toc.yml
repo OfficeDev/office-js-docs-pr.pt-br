@@ -320,8 +320,6 @@ items:
             href: /office/dev/store/submit-to-the-office-store
           - name: Políticas de validação do AppSource
             href: /legal/marketplace/certification-policies
-          - name: Publicar suplementos via Implantação Centralizada
-            href: publish/centralized-deployment.md
           - name: Publicar suplementos em um catálogo de aplicativos do SharePoint
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
       - name: Referência

@@ -1,14 +1,14 @@
 ---
 title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
-ms.date: 05/20/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661128"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773087"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -64,7 +64,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 A URL totalmente qualificada é o local do arquivo de manifesto do suplemento que você preparou para seu suplemento.
 
-Você pode usar os seguintes cmdlets adicionais do PowerShell para gerenciar os suplementos de uma caixa de correio.
+Você pode usar os seguintes cmdlets adicionais do Windows PowerShell para gerenciar os suplementos de uma caixa de correio.
 
 - `Get-App` – Lista os suplementos que estão habilitados para uma caixa de correio.
 - `Set-App` – Habilita ou desabilita um suplemento em uma caixa de correio.
@@ -74,9 +74,9 @@ Você pode usar os seguintes cmdlets adicionais do PowerShell para gerenciar os 
 
 A decisão de quais versões de cliente do Outlook testar depende dos seus requisitos de desenvolvimento.
 
-- Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto testar as versões para o navegador padrão da sua empresa também é importante.
+- Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto, testar as versões para o navegador padrão da sua empresa também é importante.
 
-- Se você estiver desenvolvendo um suplemento no [AppSource](https://appsource.microsoft.com), teste as versões exigidas conforme especificado nas [Políticas de certificação do mercado comercial 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
+- Se você estiver desenvolvendo um suplemento para listar no [AppSource](https://appsource.microsoft.com), deverá testar as versões necessárias conforme especificado nas [Políticas de certificação do Commercial Marketplace 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
   - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
   - A versão mais recente do Outlook no Mac.
   - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).

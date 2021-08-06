@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 06/02/2020
+ms.date: 07/30/2021
 localization_priority: Priority
-ms.openlocfilehash: 8a3de7ae6f507ac21dce89d13417e87d5c89a428
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 3e57ef4944becfaaa40c6fe2b08764ff67800e12
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839681"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774025"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -16,11 +16,11 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideload](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, no iPad, no Mac ou em um navegador. (Não se destina a suplementos de produção.)|
+|[Sideload](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Como parte de seu processo de desenvolvimento, para testar seu suplemento em execução no Windows, iPad, Mac ou em um navegador. (Não para suplementos de produção.)|
 |[Compartilhamento de rede](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Como parte do processo de desenvolvimento, teste seu suplemento no Windows após publicá-lo em um servidor que não seja o host local. (Não se destina a suplementos de produção ou para testes no iPad, no Mac ou na Web).|
-|[Implantação Centralizada](centralized-deployment.md)|Em uma implantação na nuvem, distribua seu suplemento aos usuários da sua organização usando o Centro de administração do Microsoft 365.|
-|[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Usado para distribuir o suplemento publicamente aos usuários.|
+|[Centro de administração Microsoft 365](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|Em uma implantação de nuvem, para distribuir seu suplemento para usuários em sua organização usando o Centro de administração do Microsoft 365. Isso é feito por meio de [Aplicativos Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [Implantação Centralizada](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
+|[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
@@ -31,20 +31,20 @@ As opções de implantação que estão disponíveis dependem do aplicativo do O
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Opções de implantação de suplementos para Word, Excel e PowerPoint
 
-| Ponto de extensão | Sideloading | Compartilhamento de rede | Centro de administração do Microsoft 365 |AppSource   | Catálogo do SharePoint\* |
-|:----------------|:-----------:|:-------------:|:-----------------------:|:----------:|:--------------------:|
-| Conteúdo         | X           | X             | X                       | X          | X                    |
-| Painel de tarefas       | X           | X             | X                       | X          | X                    |
-| Comando         | X           | X             | X                       | X          |                      |
+| Ponto de extensão | Sideloading | Compartilhamento de rede | AppSource | Centro de administração Microsoft 365 | Catálogo do SharePoint\* |
+|:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
+| Conteúdo         | X           | X             | X         | X                          | X                    |
+| Painel de tarefas       | X           | X             | X         | X                          | X                    |
+| Comando         | X           | X             | X         | X                          |                      |
 
 &#42; Os catálogos do SharePoint não são compatíveis com o Office para Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Opções de implantação para suplementos do Outlook
 
-| Ponto de extensão | Sideloading | Servidor Exchange | AppSource    |
-|:----------------|:-----------:|:---------------:|:------------:|
-| Aplicativo de email        | X           | X               | X            |
-| Comando         | X           | X               | X            |
+| Ponto de extensão | Sideloading | AppSource | Servidor Exchange |
+|:----------------|:-----------:|:---------:|:---------------:|
+| Aplicativo de email        | X           | X         | X               |
+| Comando         | X           | X         | X               |
 
 ## <a name="production-deployment-methods"></a>Métodos de implantação de produção
 
@@ -52,11 +52,16 @@ As seções a seguir fornecem informações adicionais sobre os métodos de impl
 
 Saiba mais sobre como os usuários finais podem adquirir, inserir e executar suplementos em [Começar a usar seu Suplemento do Office](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
 
-### <a name="centralized-deployment-via-the-microsoft-365-admin-center"></a>Implantação Centralizada por meio do Centro de administração do Microsoft 365
+### <a name="integrated-apps-via-the-microsoft-365-admin-center"></a>Aplicativos integrados por meio do Centro de administração do Microsoft 365
 
-No Centro de administração do Microsoft 365, é mais fácil para o administrador implantar Suplementos do Office para usuários e grupos da organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
+No Centro de administração do Microsoft 365, é mais fácil para o administrador implantar Suplementos do Office para usuários e grupos da organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar aplicativos integrados para implantar suplementos internos, bem como suplementos fornecidos por ISVs. Aplicativos integrados também mostra suplementos de administradores e outros aplicativos agrupados pelo mesmo ISV, dando-lhes exposição para toda a experiência em toda a plataforma Microsoft 365.
 
-Para mais informações, confira [Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365](centralized-deployment.md).
+Ao vincular seus suplementos do Office, aplicativos Teams, aplicativos SPFx e [outros aplicativos](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps), você cria uma única oferta de software como serviço (SaaS) para seus clientes. Para obter informações gerais sobre esse processo, consulte [Como planejar uma oferta SaaS para o mercado comercial](/azure/marketplace/plan-saas-offer). Para obter detalhes sobre como criar aplicativos integrados, confira [Configurar integração de aplicativos do Microsoft 365](/azure/marketplace/create-new-saas-offer#configure-microsoft-365-app-integration).
+
+Para obter mais informações sobre o processo de implantação de aplicativos integrados, confira [Testar e implantar Microsoft 365 Apps por parceiros no portal de aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+
+> [!IMPORTANT]
+> Os clientes em nuvens soberanas ou governamentais não têm acesso a Aplicativos Integrados. Em vez disso, eles usarão a Implantação Centralizada. A Implantação Centralizada é um método de implantação semelhante, mas não expõe os suplementos e aplicativos conectados ao administrador. Para obter mais informações, confira [Determinar se a Implantação Centralizada de suplementos funciona para sua organização](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 ### <a name="sharepoint-app-catalog-deployment"></a>Implantação do catálogo de aplicativos do SharePoint
 
@@ -85,5 +90,6 @@ Para atribuir suplementos a locatários, use o Centro de administração do Exch
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
 - [Criar listagens eficazes do AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)
+- [O que é o mercado comercial da Microsoft?](/azure/marketplace/overview)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center

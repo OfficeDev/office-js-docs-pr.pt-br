@@ -1,20 +1,23 @@
 ---
 title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
-ms.date: 05/22/2020
+ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 3ead54f3479fdc912f916705fe84645f16392784
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8ae2408b2dbf36a0e5ebbdd863b8ddb49717a144
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350194"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773066"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
 Você pode remover um suplemento em que foi feito sideload no Windows, Mac ou iOS limpando o cache do Office em seu computador.
 
 Além disso, se você fizer alterações no manifesto do suplemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de suplemento), deverá limpar o cache do Office e, em seguida, fazer o sideload do suplemento novamente usando o manifesto atualizado. Isso permitirá que o Office renderize o suplemento conforme descrito pelo manifesto atualizado.
+
+> [!NOTE]
+> Para remover um suplemento com sideload do Excel, OneNote, PowerPoint ou Word na Web, consulte [Sideload de Suplementos do Office no Office na Web para teste: remover um suplemento de sideload](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 

@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: Saiba como criar um suplemento do painel de tarefas do OneNote simples usando a API JS do Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 761de3dc8f382a7b1b5a72704815f2d80af2566f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 5ccd3b3fdb1853b151f0acbcc57dfdf2dd608dea
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076900"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774431"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -78,7 +78,13 @@ try {
     cd "My Office Add-in"
     ```
 
-2. Inicie o servidor Web local e realize o sideload no seu suplemento.
+1. Instale as dependências do seu projeto.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Inicie o servidor Web local e realize o sideload no seu suplemento.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
@@ -96,9 +102,9 @@ try {
     npm run start:web
     ```
 
-3. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações e crie uma nova página.
+1. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações e crie uma nova página.
 
-4. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
+1. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
 
     - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
@@ -106,13 +112,13 @@ try {
 
     A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
 
-    <img alt="Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+    ![A caixa de diálogo Suplementos do Office mostrando a guia MEUS SUPLEMENTOS.](../images/onenote-office-add-ins-dialog.png)
 
-5. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**.
+1. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**.
 
-6. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
+1. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
 
-7. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
+1. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
     ![Captura de tela apresentando o suplemento criado com base nesse passo a passo: exibir o painel de opções do painel de tarefas e o painel de tarefas no OneNote.](../images/onenote-first-add-in-4.png)
 

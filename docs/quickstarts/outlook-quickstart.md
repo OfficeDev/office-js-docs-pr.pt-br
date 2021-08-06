@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 06/10/2021
+ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c435fe78255513fb50001e99cfeb476959aafb28
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076599"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774424"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -27,7 +27,7 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
 - [Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
 
-- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
+- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de Suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando.
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -58,6 +58,12 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
     ```command&nbsp;line
     cd "My Office Add-in"
+    ```
+
+1. Instale as dependências do seu projeto.
+
+     ```command&nbsp;line
+    npm install
     ```
 
 ### <a name="explore-the-project"></a>Explore o projeto

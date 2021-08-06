@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 56e8a31f8d33756ca1668e2fa1468d10d1ad4821
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: fbc03603cd3b3d546fbb83526d4654b35a124393
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418710"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773654"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -26,11 +26,11 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou na web
+* Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou Excel na web
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
- Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
+ Para começar, você criará o projeto de código para criar o suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -95,7 +95,7 @@ Para usar o suplemento de funções personalizadas, abra uma nova pasta de traba
 
 O projeto de funções personalizadas criado contém algumas funções personalizadas predefinidas configuradas no arquivo **src/functions/functions.js**. O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace. Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.
 
-Em seguida, você experimentará a `ADD` função personalizada, concluindo as etapas a seguir.
+Experimentar a função personalizada `ADD` preenchendo as seguintes etapas no Excel.
 
 1. No Excel, vá para qualquer célula e digite `=CONTOSO`. Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.
 
@@ -154,7 +154,6 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 1. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
     ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.](../images/list-starcount.png)
 
-
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado.](../images/excel-cf-online-register-add-in-1.png)
@@ -165,11 +164,9 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
----
+5. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto **=CONTOSO. GETSTARCOUNT("OfficeDev&quot;, &quot;Excel-Custom-Functions")** e pressione Enter. Você deve ver que o resultado na célula **B1** é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).
 
-<ol start="5&quot;>
-<li> Agora, vamos experimentar a nova função. Na célula <strong>B1</strong>, digite o texto <strong>=CONTOSO.GETSTARCOUNT(&quot;OfficeDev&quot;, &quot;Funções personalizadas do Excel")</strong> e pressione Enter. Você deve ver que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
-</ol>
+---
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Criar uma função personalizada assíncrona de streaming
 

@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e236ba45bdb41e70dcd99ced88d761ff381d91cc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076865"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774410"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -57,7 +57,13 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
     cd "My Office Add-in"
     ```
 
-2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
+1. Instale as dependências do seu projeto.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
@@ -83,11 +89,11 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
         Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Captura de tela exibindo o aplicativo Word com o botão Mostrar Painel de tarefas realçado.](../images/word-quickstart-addin-2b.png)
 
-4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto “Olá, Mundo” no documento com a fonte azul.
+1. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto “Olá, Mundo” no documento com a fonte azul.
 
     ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado.](../images/word-quickstart-addin-1c.png)
 
@@ -321,5 +327,5 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 - [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
 - 
-  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Referências da API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md)

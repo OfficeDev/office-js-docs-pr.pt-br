@@ -1,14 +1,14 @@
 ---
 title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
-ms.date: 10/14/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b2fa3e630fbcfb013f4458f7b8f9f564d0fed3f1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076115"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773794"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -17,7 +17,7 @@ ms.locfileid: "53076115"
 
 Todos os Suplementos do Office são criados com base na plataforma de Suplementos do Office. Para qualquer suplemento que você criar, você precisará entender conceitos importantes como disponibilidade de aplicativo e plataforma, padrões de programação da API do Office JavaScript, como especificar as configurações e recursos de um suplemento no arquivo de manifesto, como projetar a Interface do Usuário, experiência e muito mais. Conceitos básicos de desenvolvimento como esses são abordados aqui na seção **Ciclo de vida de desenvolvimento** > **Desenvolver** da documentação. Análise as informações contidas aqui antes de explorar a documentação específica do aplicativo que corresponde ao suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
 
-## <a name="creating-an-office-add-in"></a>Criar um Suplemento do Office
+## <a name="create-an-office-add-in"></a>Criar um Suplemento do Office
 
 Você pode criar um suplemento do Office usando o Gerador Yeoman para suplementos do Office ou Visual Studio.
 
@@ -41,9 +41,9 @@ O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Ou
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
-## <a name="understanding-the-two-parts-of-an-office-add-in"></a>Noções básicas sobre as duas partes de um Suplemento do Office
+## <a name="understand-the-two-parts-of-an-office-add-in"></a>Entender as duas partes de um Suplemento do Office
 
-Um suplemento do Office consiste em duas partes:
+Um suplemento do Office consiste em duas partes.
 
 - O manifesto do suplemento (um arquivo XML) que defina as configurações e recursos do suplemento.
 
@@ -51,7 +51,7 @@ Um suplemento do Office consiste em duas partes:
 
 O aplicativo Web usa a API JavaScript para Office para interagir com o conteúdo do documento do Office no qual o suplemento está sendo executado. Seu suplemento também pode fazer outras coisas que os aplicativos Web normalmente fazem, como chamar serviços Web externos, facilitar a autenticação do usuário e mais.
 
-### <a name="defining-an-add-ins-settings-and-capabilities"></a>Definir as configurações e os recursos do suplemento
+### <a name="define-an-add-ins-settings-and-capabilities"></a>Definir as configurações e os recursos do suplemento
 
 Um manifesto do suplemento do Office (um arquivo XML) define as configurações e os recursos do suplemento. Você vai configurar o manifesto para especificar itens como:
 
@@ -65,11 +65,11 @@ Um manifesto do suplemento do Office (um arquivo XML) define as configurações 
 
 Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](add-in-manifests.md).
 
-### <a name="interacting-with-content-in-an-office-document"></a>Interagir com o conteúdo em um documento do Office
+### <a name="interact-with-content-in-an-office-document"></a>Interagir com o conteúdo em um documento do Office
 
-Um suplemento do Office pode usar as APIs JavaScript para Office para interagir com o conteúdo no documento do Office no qual o documento está sendo executado.
+Um suplemento do Office pode usar as APIs JavaScript para Office para interagir com o conteúdo no documento do Office no qual o suplemento está sendo executado.
 
-#### <a name="accessing-the-office-javascript-api-library"></a>Acessando a biblioteca da API JavaScript do Office
+#### <a name="access-the-office-javascript-api-library"></a>Acessar a biblioteca de API JavaScript do Office
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
@@ -81,7 +81,7 @@ Um suplemento do Office pode usar as APIs JavaScript para Office para interagir 
 
 [!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
-#### <a name="exploring-apis-with-script-lab"></a>Explorar APIs com o Script Lab
+#### <a name="explore-apis-with-script-lab"></a>Explorar as APIs com o Script Lab
 
 O Script Lab é um suplemento que permite explorar a API JavaScript para Office e executar trechos de código enquanto você trabalha em um programa do Office, como o Excel ou o Word. Ele está disponível gratuitamente através do [AppSource](https://appsource.microsoft.com/product/office/WA104380862) e é uma ferramenta útil para incluir no seu kit de ferramentas de desenvolvimento ao prototipar e verificar a funcionalidade desejada no suplemento. No Script Lab, você pode acessar uma biblioteca de exemplos internos para experimentar APIs rapidamente ou até mesmo usar uma amostra como o ponto de partida para o seu próprio código.
 
@@ -91,7 +91,7 @@ O vídeo de um minuto a seguir mostra o Script Lab em ação.
 
 Para saber mais sobre o Script Lab, confira [Explorar as APIs JavaScript para Office usando o Script Lab](../overview/explore-with-script-lab.md).
 
-## <a name="extending-the-office-ui"></a>Estendendo a interface do usuário do Office
+## <a name="extend-the-office-ui"></a>Estender a interface do usuário do Office
 
 Um suplemento do Office pode estender a interface do usuário do Office usando comandos de suplementos e contêineres HTML como painéis de tarefas, suplementos de conteúdo ou caixas de diálogo.
 

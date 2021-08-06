@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
-ms.date: 03/18/2020
+ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671391"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773514"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -18,7 +18,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 
 * Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
-* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento][] na faixa de opções do Aplicativo do Office.
+* Especifique as imagens usadas para identidade visual do suplemento e iconografia usadas para [comandos de suplemento][] na faixa de opções do Aplicativo do Office.
 
 * Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
 
@@ -38,7 +38,6 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 
 > [!NOTE]
 > Também há uma ordem obrigatória na qual os elementos devem aparecer dentro de seu elemento-pai. Confira mais informações em [Como encontrar a ordem adequada de elementos de manifesto](manifest-element-ordering.md).
-
 
 ### <a name="required-elements-by-office-add-in-type"></a>Elementos obrigatórios de acordo com o tipo de Suplemento do Office
 
@@ -101,7 +100,7 @@ _\*\* SupportUrl só é necessário para suplementos distribuídos pelo AppSourc
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
-Todas as imagem URIs, como as usadas para os [comandos do suplemento][], devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
+Todas as URIs de imagem, como aquelas usadas para [comandos de suplemento][], devem dar suporte ao cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
 Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](../reference/manifest/sourcelocation.md), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -120,12 +119,12 @@ Ao executar no Office na Web, o painel de tarefas pode ser navegado por qualquer
 Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](../reference/manifest/appdomains.md) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
-> Há duas exceções para esse comportamento:
+> Há duas exceções para esse comportamento.
 >
 > - Ele se aplica apenas ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado no **AppDomains**, mesmo no Office da área de trabalho.
 > - Quando uma caixa de diálogo é aberta coma API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_), a URL que é passada para o método deve estar no mesmo domínio do suplemento, mas a caixa de diálogo pode ser direcionada para qualquer URL, independentemente de estar listada no **AppDomains**, mesmo no Office para área de trabalho.
 
-O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](../reference/manifest/appdomain.md), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no `www.northwindtraders.com`domínio, essa página abre no painel do suplemento, mesmo na área de trabalho do Office.
+O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com` conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](../reference/manifest/appdomain.md) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio `www.northwindtraders.com`, essa página será aberta no painel de suplementos, mesmo na área de trabalho do Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -496,7 +495,7 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 ## <a name="see-also"></a>Confira também
 
 * [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
-* [Criar comandos de suplementos em seu manifesto][comandos de suplementos]
+* [Criar comandos de suplemento em seu manifesto] [create-addin-commands.md]
 * [Especificar requisitos da API e de aplicativos do Office](specify-office-hosts-and-api-requirements.md)
 * [Localização para suplementos do Office](localization.md)
 * [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
@@ -504,5 +503,3 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 * [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md)
-
-[Comandos de suplemento]: create-addin-commands.md

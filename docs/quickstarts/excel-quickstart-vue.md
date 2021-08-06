@@ -1,17 +1,17 @@
 ---
-title: Criar um suplemento do painel de tarefas do Excel usando o Vue
+title: Usar o Vue para criar um suplemento do painel de tarefas do Excel
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o Vue.
-ms.date: 06/16/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec216e84e9aa4bc7eabec4b20c7a2dd271ca1718
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1686f9d9537718eb5ba56fa9ea7f0b4ccb7d65ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076613"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774438"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
+# <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Usar o Vue para criar um suplemento do painel de tarefas do Excel
 
 Neste artigo, você passará pelo processo de criar um suplemento do painel de tarefas do Excel usando o Vue e a API JavaScript do Excel.
 
@@ -20,7 +20,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do painel de t
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Instale a [CLI do Vue](https://cli.vuejs.org/) globalmente.
+- Instale a [CLI do Vue](https://cli.vuejs.org/) globalmente. No terminal, execute o seguinte comando.
 
   ```command&nbsp;line
   npm install -g @vue/cli
@@ -28,13 +28,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do painel de t
 
 ## <a name="generate-a-new-vue-app"></a>Gerar um novo aplicativo Vue
 
-Use a CLI do Vue para gerar um novo aplicativo Vue. No terminal, execute o comando a seguir.
+Use a CLI do Vue para gerar um novo aplicativo Vue.
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-Em seguida, selecionar o `Default` predefinido para "Vue 3" (você pode escolher usar "Vue 2", se preferir).
+Em seguida, selecione a predefinição `Default` para " Vue 3" (se preferir, escolha " Vue 2").
 
 ## <a name="generate-the-manifest-file"></a>Gerar o arquivo de manifesto.
 
@@ -46,7 +46,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     cd my-add-in
     ```
 
-2. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento executando o seguinte comando:
+1. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento.
 
     ```command&nbsp;line
     yo office
@@ -55,7 +55,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     > [!NOTE]
     > Ao executar o comando `yo office`, você receberá informações sobre as políticas de coleta de dados de Yeoman e as ferramentas da CLI do suplemento do Office. Use as informações fornecidas para responder às solicitações como achar melhor. Se você escolher **Sair** em resposta à segunda solicitação, será necessário executar o comando `yo office` novamente quando estiver pronto para criar seu projeto de suplemento.
 
-    Quando solicitado, forneça as seguintes informações para criar seu projeto de suplemento:
+    Quando solicitado, forneça as informações a seguir para criar seu projeto de suplemento.
 
     - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
     - **Qual será o nome do suplemento?** `My Office Add-in`
@@ -63,7 +63,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
     ![Captura de tela da interface de linha de comando do gerador do Suplemento do Yeoman Office, com o tipo de projeto definido como apenas manifesto.](../images/yo-office-manifest-only-vue.png)
 
-Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo um arquivo `manifest.xml`. Você usará o manifesto para sideload e testará seu suplemento no final do início rápido.
+Após a conclusão, o assistente cria uma pasta **Meu suplemento do Office** contendo um arquivo **manifest.xml**. Você usará o manifesto para realizar o sideload e testar o suplemento.
 
 > [!TIP]
 > Você pode ignorar as orientações da *próximas etapas* fornecidas pelo gerador Yeoman após a criação do projeto de suplemento. As instruções passo a passo deste artigo fornecem todas as orientações necessárias para concluir este tutorial.
@@ -72,7 +72,7 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. Para habilitar o HTTPS no seu aplicativo, crie um arquivo `vue.config.js` na pasta raiz do projeto Vue com o seguinte conteúdo:
+1. Habilite HTTPS para seu aplicativo. Na pasta raiz do projeto Vue, crie um arquivo **vue.config.js** com o conteúdo a seguir.
 
     ```js
     var fs = require("fs");
@@ -90,21 +90,34 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
     }
     ```
 
-2. No terminal, execute o seguinte comando para instalar os certificados do suplemento.
+1. Instale os certificados do suplemento.
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
    ```
 
+## <a name="explore-the-project"></a>Explore o projeto
+
+O projeto de suplemento que você criou com o gerador Yeoman contém um código de exemplo para um suplemento básico do painel de tarefas. Se você quiser examinar os principais componentes do seu projeto de suplemento, abra o projeto no seu editor de código e revise os arquivos listados abaixo. Quando estiver pronto para experimentar o suplemento, prossiga para a próxima seção.
+
+- O arquivo **manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento. Para saber mais sobre o arquivo **manifest.xml** arquivo, consulte [manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+- O arquivo **./src/App.vue** contém a marcação HTML para o painel de tarefas, o CSS aplicado ao conteúdo no painel de tarefas e o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Excel.
+
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
-1. Abra o arquivo `public/index.html` e adicione a seguinte marca `<script>`, imediatamente antes da marca `</head>`:
+1. Abra o arquivo **./public/index.html** e adicione o seguinte marca `<script>` antes da marca `</head>`.
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. Abra `src/main.js` e substitua os conteúdos pelo código a seguir:
+1. Abra **manifest.xml** e localize as marcas `<bt:Urls>` dentro da marca `<Resources>`. Localize a marca `<bt:Url>` com a ID`Taskpane.Url` e atualize seu atributo `DefaultValue`. O novo `DefaultValue` é `https://localhost:3000/index.html`. Toda a marca atualizada deve corresponder à linha a seguir.
+
+   ```html
+   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+   ```
+
+1. Abra **./src/main.js** e substitua os conteúdos pelo código a seguir.
 
    ```js
    import { createApp } from 'vue'
@@ -115,7 +128,7 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
    });
    ```
 
-3. Abra`src/App.vue` e substitua os conteúdos de arquivo pelo código a seguir:
+1. Abra **./src/App.vue** e substitua os conteúdos de arquivo pelo código a seguir.
 
    ```html
    <template>
@@ -184,31 +197,37 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
    </style>
    ```
 
-## <a name="start-the-dev-server"></a>Iniciar o servidor de desenvolvimento
+## <a name="start-the-dev-server"></a>Inicie o servidor de desenvolvimento
 
-1. No terminal, execute o comando a seguir para iniciar o servidor de desenvolvimento.
+1. Instale as dependências.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Inicie o servidor de desenvolvimento.
 
    ```command&nbsp;line
    npm run serve
    ```
 
-2. Em um navegador da web, acesse `https://localhost:3000` (observe o `https`).. Se a página no `https://localhost:3000` estiver em branco e sem erros de certificado, significa que ela está funcionando. O Aplicativo Vue é montado após a inicialização do Office, portanto, ele só mostra itens dentro de um ambiente do Excel.
+1. Em um navegador da web, acesse `https://localhost:3000` (observe o `https`). Se a página no `https://localhost:3000` estiver em branco e sem erros de certificado, significa que ela está funcionando. O Aplicativo Vue é montado após a inicialização do Office, portanto, ele só mostra itens dentro de um ambiente do Excel.
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
+1. Execute o suplemento e o sideload do suplemento no Excel. Siga as instruções para a plataforma que você usará:
 
    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Navegador Web:[Realizar Sideload de Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. Abra o painel de tarefas do suplemento no Excel. Na faixa de opções da guia **Página Inicial**, escolha o botão **Mostrar Painel de Tarefas**.
 
    ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado.](../images/excel-quickstart-addin-2a.png)
 
-3. Selecione um intervalo de células na planilha.
+1. Selecione um intervalo de células na planilha.
 
-4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
+1. Defina a cor do intervalo selecionado como verde. No painel de tarefas do suplemento, escolha o botão **Definir cor**.
 
    ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto.](../images/excel-quickstart-addin-2c.png)
 
@@ -221,8 +240,8 @@ Parabéns, você criou com sucesso um suplemento de painel de tarefas Excel usan
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Desenvolver Suplementos do Office](../develop/develop-overview.md)
-* [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
+- [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

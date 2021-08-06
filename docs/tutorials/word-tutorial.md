@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: be76f277ad735665abc886a080f33fa196424f8a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9ba9c378500ca90288ed5cd88a684e976615e710
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076515"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774067"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -53,25 +53,25 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
 1. Abra o projeto em seu editor de código.
 
-2. Abra o arquivo **./src/taskpane/taskpane.html**. Ele contém a marcação HTML para o painel de tarefas.
+1. Abra o arquivo **./src/taskpane/taskpane.html**. Ele contém a marcação HTML para o painel de tarefas.
 
-3. Localize o elemento `<main>` e exclua todas as linhas que aparecem após a marca de abertura `<main>` e antes da marca de fechamento `</main>`.
+1. Localize o elemento `<main>` e exclua todas as linhas que aparecem após a marca de abertura `<main>` e antes da marca de fechamento `</main>`.
 
-4. Adicione a seguinte marcação imediatamente após a marca de abertura `<main>`:
+1. Adicione a seguinte marcação imediatamente após a marca de abertura `<main>`.
 
     ```html
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. Abra o arquivo **./src/taskpane/taskpane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.
+1. Abra o arquivo **./src/taskpane/taskpane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.
 
-6. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
+1. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
 
     - Localize e exclua a linha `document.getElementById("run").onclick = run;`.
 
     - Localize e exclua toda a função `run()`.
 
-7. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Word) {` e adicione o seguinte código imediatamente após ela. Observação:
+1. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Word) {` e adicione o seguinte código imediatamente após ela. Observação:
 
     - A primeira parte desse código determina se a versão do Word do usuário dá suporte a uma versão do Word.js que inclui todas as APIs usadas em todos os estágios deste tutorial. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chamaria APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento compatíveis com sua versão do Word.
     - A segunda parte desse código adiciona um manipulador de eventos para o botão `insert-paragraph`.
@@ -86,7 +86,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-8. Adicione a seguinte função ao final do arquivo. Observação:
+1. Adicione a seguinte função ao final do arquivo. Observação:
 
    - A lógica de negócios de Word.js será adicionada à função que passar por `Word.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.
 
@@ -111,7 +111,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
     }
     ```
 
-9. Na função `insertParagraph()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `insertParagraph()`, substitua `TODO1` com o seguinte código. Observação:
 
    - O primeiro parâmetro para o método `insertParagraph` é o texto para o novo parágrafo.
 
@@ -123,7 +123,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
                             "Start");
     ```
 
-10. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -153,15 +153,15 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
         Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento.
+1. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento.
 
     ![Captura de tela exibindo o botão Mostrar Painel de tarefas realçado no Word.](../images/word-quickstart-addin-2b.png)
 
-3. No painel de tarefas, escolha o botão **Inserir Parágrafo**.
+1. No painel de tarefas, escolha o botão **Inserir Parágrafo**.
 
-4. Faça uma alteração no parágrafo.
+1. Faça uma alteração no parágrafo.
 
-5. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
+1. Escolha novamente o botão **Inserir Parágrafo**. Observe que o novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.
 
     ![Captura de tela mostrando o botão Inserir Parágrafo no suplemento.](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -173,21 +173,21 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-paragraph` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-paragraph` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;apply-style&quot;>Apply Style</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-paragraph` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-paragraph` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById(&quot;apply-style").onclick = applyStyle;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function applyStyle() {
@@ -206,7 +206,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     }
     ```
 
-6. Na função `applyStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.
+1. Na função `applyStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
@@ -217,21 +217,21 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `apply-style` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `apply-style` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-style` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-style` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function applyCustomStyle() {
@@ -250,34 +250,34 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     }
     ```
 
-6. Na função `applyCustomStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).
+1. Na função `applyCustomStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ```
 
-7. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="change-the-font-of-text"></a>Alterar a fonte do texto
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `apply-custom-style` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `apply-custom-style` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-custom-style` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-custom-style` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function changeFont() {
@@ -296,7 +296,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     }
     ```
 
-6. Na função `changeFont()`, substitua `TODO1` pelo código a seguir. O código recebe uma referência para o segundo parágrafo usando o método `ParagraphCollection.getFirst` encadeado para o método `Paragraph.getNext`.
+1. Na função `changeFont()`, substitua `TODO1` pelo código a seguir. O código recebe uma referência para o segundo parágrafo usando o método `ParagraphCollection.getFirst` encadeado para o método `Paragraph.getNext`.
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
@@ -307,23 +307,23 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
         });
     ```
 
-7. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
+1. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-3. Verifique se há pelo menos três parágrafos no documento. É possível escolher o botão **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*
+1. Verifique se há pelo menos três parágrafos no documento. É possível escolher o botão **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*
 
-4. No Word, crie um [estilo personalizado](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "MyCustomStyle". Pode ter a formatação que você quiser.
+1. No Word, crie um [estilo personalizado](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "MyCustomStyle". Pode ter a formatação que você quiser.
 
-5. Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.
+1. Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.
 
-6. Escolha o botão **Aplicar Estilo Personalizado**. O último parágrafo receberá seu estilo personalizado. (Se parecer que nada acontece, talvez o último parágrafo esteja em branco. Se estiver, adicione um texto a ele).
+1. Escolha o botão **Aplicar Estilo Personalizado**. O último parágrafo receberá seu estilo personalizado. (Se parecer que nada acontece, talvez o último parágrafo esteja em branco. Se estiver, adicione um texto a ele).
 
-7. Escolha o botão **Alterar Fonte**. A fonte do segundo parágrafo muda para 18 pt, negrito, Courier New.
+1. Escolha o botão **Alterar Fonte**. A fonte do segundo parágrafo muda para 18 pt, negrito, Courier New.
 
     ![Captura de tela mostrando os resultados da aplicação de estilos e fontes definidas para os botões de suplemento Aplicar Estilo, Aplicar Estilo Personalizado e Alterar a fonte.](../images/word-tutorial-apply-styles-and-font-2.png)
 
@@ -335,21 +335,21 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `change-font` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `change-font` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;insert-text-into-range&quot;>Insert Abbreviation</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `change-font` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `change-font` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById(&quot;insert-text-into-range").onclick = insertTextIntoRange;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function insertTextIntoRange() {
@@ -374,7 +374,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     }
     ```
 
-6. Na função `insertTextIntoRange()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `insertTextIntoRange()`, substitua `TODO1` com o seguinte código. Observação:
 
    - o método serve para inserir a abreviação ["(C2R)"] no final do Intervalo cujo texto é "Clique para Executar". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
@@ -392,7 +392,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     originalRange.insertText(" (C2R)", "End");
     ```
 
-7. Vamos deixar `TODO2` de lado até a próxima seção. Na função `insertTextIntoRange()`, substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.
+1. Vamos deixar `TODO2` de lado até a próxima seção. Na função `insertTextIntoRange()`, substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -400,13 +400,13 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas
 
-Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `originalRange.text` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `originalRange` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o texto real do intervalo no documento, portanto, sua propriedade `text` não pode ter um valor real. Primeiro, é necessário buscar o valor de texto do intervalo no documento e usá-lo para definir o valor de `originalRange.text`. Somente então será possível chamar `originalRange.text` sem causar uma exceção. Esse processo de busca tem três etapas:
+Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `originalRange.text` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `originalRange` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o texto real do intervalo no documento, portanto, sua propriedade `text` não pode ter um valor real. Primeiro, é necessário buscar o valor de texto do intervalo no documento e usá-lo para definir o valor de `originalRange.text`. Somente então será possível chamar `originalRange.text` sem causar uma exceção. Esse processo de busca tem três etapas.
 
    1. Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.
 
-   2. Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.
+   1. Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.
 
-   3. Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.
+   1. Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.
 
 Essas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.
 
@@ -423,11 +423,11 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         //        been queued.
     ```
 
-2. Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial.
+1. Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial.
 
-3. Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`.
+1. Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`.
 
-4. Substitua `TODO5` pelo código a seguir. Observação:
+1. Substitua `TODO5` pelo código a seguir. Observação:
 
    - Passar o método `sync` para uma função `then` garante que ele não seja executado até que a lógica `insertParagraph` tenha sido enfileirada.
 
@@ -467,21 +467,21 @@ function insertTextIntoRange() {
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-text-into-range` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-text-into-range` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-into-range` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-into-range` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function insertTextBeforeRange() {
@@ -503,7 +503,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. Na função `insertTextBeforeRange()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `insertTextBeforeRange()`, substitua `TODO1` com o seguinte código. Observação:
 
    - O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Microsoft 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
@@ -517,7 +517,7 @@ function insertTextIntoRange() {
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
-7. Na função `insertTextBeforeRange()`, substitua `TODO2` pelo código a seguir.
+1. Na função `insertTextBeforeRange()`, substitua `TODO2` pelo código a seguir.
 
      ```js
     originalRange.load("text");
@@ -531,13 +531,13 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.
+1. Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
     ```
 
-9. Substitua `TODO4` pelo código a seguir:
+1. Substitua `TODO4` pelo código a seguir.
 
     ```js
     .then(context.sync);
@@ -547,21 +547,21 @@ function insertTextIntoRange() {
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-text-outside-range` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-text-outside-range` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-outside-range` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-outside-range` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function replaceText() {
@@ -580,7 +580,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. Na função `replaceText()`, substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+1. Na função `replaceText()`, substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
     ```js
     var doc = context.document;
@@ -588,27 +588,27 @@ function insertTextIntoRange() {
     originalRange.insertText("many", "Replace");
     ```
 
-7. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
+1. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-3. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo no início do documento.
+1. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo no início do documento.
 
-4. No documento, selecione a frase "Clique para Executar". *Tenha cuidado para não incluir o espaço anterior ou a vírgula seguinte na seleção.*
+1. No documento, selecione a frase "Clique para Executar". *Tenha cuidado para não incluir o espaço anterior ou a vírgula seguinte na seleção.*
 
-5. Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.
+1. Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.
 
-6. No documento, selecione a frase "Microsoft 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
+1. No documento, selecione a frase "Microsoft 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
-7. Escolha o botão **Adicionar Informações de Versão**. O "Office 2019" está inserido entre o "Office 2016" e o "Microsoft 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.
+1. Escolha o botão **Adicionar Informações de Versão**. O "Office 2019" está inserido entre o "Office 2016" e o "Microsoft 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.
 
-8. No documento, selecione a palavra "vários". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
+1. No documento, selecione a palavra "vários". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
-9. Escolha o botão **Alterar Termo de Quantidade**. Observe que "muitos" substitui o texto selecionado.
+1. Escolha o botão **Alterar Termo de Quantidade**. Observe que "muitos" substitui o texto selecionado.
 
     ![Captura de tela mostrando os resultados da escolha dos botões de suplemento Inserir Abreviatura, Adicionar Informações da Versão e Alterar Quantidade de Termo.](../images/word-tutorial-text-replace-2.png)
 
@@ -622,7 +622,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Na raiz do projeto, crie um novo arquivo chamado **base64Image.js**.
 
-2. Abra o arquivo **base64Image.js** e adicione o seguinte código para especificar a cadeia de caracteres codificada em base64 que representa uma imagem.
+1. Abra o arquivo **base64Image.js** e adicione o seguinte código para especificar a cadeia de caracteres codificada em base64 que representa uma imagem.
 
     ```js
     export const base64Image =
@@ -633,27 +633,27 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `replace-text` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `replace-text` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;insert-image&quot;>Insert Image</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Localize a chamada do método `Office.onReady`, próximo à parte superior e adicione o seguinte código imediatamente antes dessa linha. Esse código importa a variável que você definida anteriormente no arquivo **./base64Image.js**.
+1. Localize a chamada do método `Office.onReady`, próximo à parte superior e adicione o seguinte código imediatamente antes dessa linha. Esse código importa a variável que você definida anteriormente no arquivo **./base64Image.js**.
 
     ```js
     import { base64Image } from &quot;../../base64Image&quot;;
     ```
 
-5. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `replace-text` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `replace-text` e adicione o seguinte código após essa linha.
 
     ```js
     document.getElementById(&quot;insert-image").onclick = insertImage;
     ```
 
-6. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function insertImage() {
@@ -672,7 +672,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     }
     ```
 
-7. Na função `insertImage()`, substitua `TODO1` pelo código a seguir. Esta linha insere a imagem codificada em base 64 no final do documento. (O objeto `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*`. Confira a seção insertHTML a seguir para conferir um exemplo).
+1. Na função `insertImage()`, substitua `TODO1` pelo código a seguir. Esta linha insere a imagem codificada em base 64 no final do documento. (O objeto `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*`. Confira a seção insertHTML a seguir para conferir um exemplo).
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -682,21 +682,21 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-image` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-image` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-image` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-image` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function insertHTML() {
@@ -715,9 +715,9 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     }
     ```
 
-6. Na função `insertHTML()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `insertHTML()`, substitua `TODO1` com o seguinte código. Observação:
 
-   - A primeira linha adiciona um parágrafo em branco ao final do documento. 
+   - A primeira linha adiciona um parágrafo em branco ao final do documento.
 
    - A segunda linha insere uma cadeia de caracteres de HTML no final do parágrafo; especificamente dois parágrafos, um formatado com a fonte Verdana, e o outro com estilo padrão de documento do Word. (Conforme mostrado anteriormente no método `insertImage`, o objeto `context.document.body` também tem os métodos `insert*`).
 
@@ -730,21 +730,21 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-html` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-html` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-html` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-html` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function insertTable() {
@@ -766,13 +766,13 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     }
     ```
 
-6. Na função `insertTable()`, substitua `TODO1` pelo código a seguir. Essa linha usa o método `ParagraphCollection.getFirst` para obter uma referência do primeiro parágrafo e, depois, usa o método `Paragraph.getNext` para obter uma referência para o segundo parágrafo.
+1. Na função `insertTable()`, substitua `TODO1` pelo código a seguir. Essa linha usa o método `ParagraphCollection.getFirst` para obter uma referência do primeiro parágrafo e, depois, usa o método `Paragraph.getNext` para obter uma referência para o segundo parágrafo.
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-7. Na função `insertTable()`, substitua `TODO2` pelo código a seguir. Observação:
+1. Na função `insertTable()`, substitua `TODO2` com o seguinte código. Observação:
 
    - Os dois primeiros parâmetros do método `insertTable` especificam o número de linhas e colunas.
 
@@ -791,21 +791,21 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     secondParagraph.insertTable(3, 3, "After", tableData);
     ```
 
-8. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
+1. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-3. No painel de tarefas, escolha o botão **Inserir Parágrafo** pelo menos três vezes para garantir que haja alguns parágrafos no documento.
+1. No painel de tarefas, escolha o botão **Inserir Parágrafo** pelo menos três vezes para garantir que haja alguns parágrafos no documento.
 
-4. Escolha o botão **Inserir Imagem**. Uma imagem é inserida no final do documento.
+1. Escolha o botão **Inserir Imagem**. Uma imagem é inserida no final do documento.
 
-5. Escolha o botão **Inserir HTML**. Dois parágrafos são inseridos no final do documento, e o primeiro tem a fonte Verdana.
+1. Escolha o botão **Inserir HTML**. Dois parágrafos são inseridos no final do documento, e o primeiro tem a fonte Verdana.
 
-6. Escolha o botão **Inserir Tabela**. Uma tabela é inserida após o segundo parágrafo.
+1. Escolha o botão **Inserir Tabela**. Uma tabela é inserida após o segundo parágrafo.
 
     ![Captura de tela mostrando os resultados de escolha dos botões de suplemento Inserir Imagem, Inserir HTML e Inserir Tabela.](../images/word-tutorial-insert-image-html-table-2.png)
 
@@ -822,21 +822,21 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `insert-table` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `insert-table` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-table` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-table` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function createContentControl() {
@@ -855,7 +855,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
     }
     ```
 
-6. Na função `createContentControl()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `createContentControl()`, substitua `TODO1` com o seguinte código. Observação:
 
    - O código tem como objetivo dispor a frase "Microsoft 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
@@ -880,21 +880,21 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
-2. Localize o elemento `<button>` para o botão `create-content-control` e adicione a seguinte marcação após essa linha:
+1. Localize o elemento `<button>` do botão `create-content-control` e adicione a seguinte marcação logo após essa linha.
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
     ```
 
-3. Abra o arquivo **./src/taskpane/taskpane.js**.
+1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-4. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-content-control` e adicione o seguinte código após ela:
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-content-control` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
     ```
 
-5. Adicione a seguinte função ao final do arquivo:
+1. Adicione a seguinte função ao final do arquivo.
 
     ```js
     function replaceContentInControl() {
@@ -914,7 +914,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
     }
     ```
 
-6. Na função `replaceContentInControl()`, substitua `TODO1` pelo código a seguir. Observação:
+1. Na função `replaceContentInControl()`, substitua `TODO1` com o seguinte código. Observação:
 
     - O método `ContentControlCollection.getByTag` retorna um `ContentControlCollection` de todos os controles de conteúdo da marca especificada. Usamos `getFirst` para obter uma referência do controle desejado.
 
@@ -923,25 +923,25 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 
-7. Verifique se você salvou todas as alterações feitas no projeto.
+1. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
+1. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-3. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo com "Microsoft 365" no início do documento.
+1. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo com "Microsoft 365" no início do documento.
 
-4. No documento, selecione o texto "Microsoft 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
+1. No documento, selecione o texto "Microsoft 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
 
-5. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
+1. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
 
     ![Captura de tela mostrando os resultados da escolha dos botões de suplemento Criar Controle de Conteúdo e Renomear Serviço.](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você criou um suplemento do painel de tarefas do Word que insere e substitui texto, imagens e outro conteúdo em um documento do Word. Para saber mais sobre o desenvolvimento de suplementos do Word, continue no seguinte artigo:
+Neste tutorial, você criou um suplemento do painel de tarefas do Word que insere e substitui texto, imagens e outro conteúdo em um documento do Word. Para saber mais sobre o desenvolvimento de suplementos do Word, continue no artigo a seguir.
 
 > [!div class="nextstepaction"]
 > [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)

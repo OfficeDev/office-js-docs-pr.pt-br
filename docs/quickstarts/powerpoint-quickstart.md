@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 03cba67307fa12dca111d3fcecb6a4a0173f77f1
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f68dcf96231f18c43d5f1a28fcc536f0f39521a5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076921"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773703"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -66,6 +66,12 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
     > ```command&nbsp;line
     > npm run dev-server
     > ```
+
+    - Instale as dependências do suplemento no diretório raiz do projeto.
+
+        ```command&nbsp;line
+        npm install
+        ```
 
     - Para testar seu suplemento no PowerPoint, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o PowerPoint com o suplemento carregado.
 

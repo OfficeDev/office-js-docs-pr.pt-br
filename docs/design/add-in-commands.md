@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 01/29/2021
+ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: 1f34a6335949a4cbd2a0f58cdefa12426414770e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4ee2e53a1d2a74a2663a372aeb080c5f32da1bde
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349179"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773206"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -17,7 +17,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Aplicativo do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
+> Os catálogos do Microsoft Office SharePoint Online não são compatíveis com os comandos de suplemento. Você pode implantar comandos de suplemento por meio de [Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou do [AppSource](/office/dev/store/submit-to-appsource-via-partner-center)ou usar o [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar o comando de suplemento para teste.
 
 > [!IMPORTANT]
 > Os comandos de suplemento também são compatíveis com o Outlook. Para saber mais, confira [Comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -93,7 +93,7 @@ Os comandos de suplemento são atualmente suportados nas plataformas a seguir, e
 > [!NOTE]
 > Para saber mais sobre o suporte do Outlook, confira [comandos de suplemento do Outlook](../outlook/add-in-commands-for-outlook.md).
 
-## <a name="debugging"></a>Depuração
+## <a name="debug"></a>Depurar
 
 Para depurar um comando de Suplemento, você deve executá-lo no Office na Web. Para obter detalhes, confira [Depurar suplementos no Office na Web](../testing/debug-add-ins-in-office-online.md).
 

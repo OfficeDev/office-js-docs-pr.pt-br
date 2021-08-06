@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 1/19/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6f1ce6d14d1a9840011294028db3c7db5faa2e83
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076634"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774445"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -176,7 +176,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. No **Gerenciador de Soluções**, vá para o projeto de suplemento **ExcelWebAddIn1** e abra o diretório **ExcelWebAddIn1Manifest**. Este diretório contém seu arquivo de manifesto, **ExcelWebAddIn1.xml**. O arquivo de manifesto XML define as configurações e recursos do suplemento. Consulte a seção anterior [Explorar a solução Visual Studio](#explore-the-visual-studio-solution) para obter mais informações sobre os dois projetos criados por sua solução Visual Studio. 
+1. No **Gerenciador de Soluções**, vá para o projeto de suplemento **ExcelWebAddIn1** e abra o diretório **ExcelWebAddIn1Manifest**. Este diretório contém seu arquivo de manifesto, **ExcelWebAddIn1.xml**. O arquivo de manifesto XML define as configurações e recursos do suplemento. Consulte a seção anterior [Explorar a solução Visual Studio](#explore-the-visual-studio-solution) para obter mais informações sobre os dois projetos criados por sua solução Visual Studio.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -220,8 +220,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Desenvolver Suplementos do Office](../develop/develop-overview.md)
-* [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](../excel/excel-add-ins-core-concepts.md)
+- [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
