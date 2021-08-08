@@ -3,12 +3,12 @@ title: Diretrizes de estilo de visualização de dados para Suplementos do Offic
 description: Obter algumas práticas recomendadas para visualizar dados em um Office Desem.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2d4fef7d5bcc6bf4220842d7010b6203d26ebd8e74b971acf5d73381220f2721
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773633"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082084"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 

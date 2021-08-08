@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monolinha para Office de complementos
 description: Diretrizes para usar ícones de estilo monoline em Office de complementos.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 15077c9dd798b2cb633d7ce200a8cefc4e9605d312ebab48fe2ce814b7479c11
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773276"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082396"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monolinha para Office de complementos
 

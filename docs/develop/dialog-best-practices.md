@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ace62bb3e023381f6cebc34c2226d33b6f84287beaf4ec7b5d5e77ddeabc3c9e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773759"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080801"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -27,7 +27,7 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 - Somente duas Office APIs podem ser chamadas na caixa de diálogo:
   - A [função messageParent.](/javascript/api/office/office.ui#messageParent_message__messageOptions_)
   - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
-- A [função messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) geralmente deve ser chamada de uma página no mesmo domínio que o próprio complemento, mas isso não é obrigatório. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- A [função messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) geralmente deve ser chamada de uma página no mesmo domínio que o próprio complemento, mas isso não é obrigatório. Para obter mais informações, [mensagens entre domínios para o runtime do host](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

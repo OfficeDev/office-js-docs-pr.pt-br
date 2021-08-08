@@ -1,6 +1,6 @@
 Um Suplemento do Office consiste em um aplicativo Web e um arquivo de manifesto. O aplicativo Web define a interface do usuário e a funcionalidade do suplemento, enquanto o manifesto especifica o local do aplicativo Web e define as configurações e os recursos do suplemento. 
 
-Enquanto estiver desenvolvendo o suplemento, você poderá executá-lo em seu servidor Web local (`localhost`), mas quando estiver pronto para publicá-lo para que outros usuários acessem o, será necessário implantar o aplicativo Web em um servidor Web ou serviço de hospedagem na Web (por exemplo, Microsoft Azure) e atualizar o manifesto para especificar a URL do aplicativo implantado. 
+Enquanto estiver desenvolvendo o suplemento, você poderá executá-lo em seu servidor Web local (`localhost`), mas quando estiver pronto para publicá-lo para que outros usuários acessem o, será necessário implantar o aplicativo Web em um servidor Web ou serviço de hospedagem na Web (por exemplo, Microsoft Azure) e atualizar o manifesto para especificar a URL do aplicativo implantado.
 
 Quando o suplemento estiver funcionando conforme desejado e você estiver pronto para publicá-lo para que outros usuários acessem, conclua as etapas a seguir.
 

@@ -3,12 +3,12 @@ title: Exigências especiais de suplementos no iPad
 description: Saiba alguns requisitos para criar um Office que é executado em um iPad.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 04ee1a4bea8b9f27189bf67368f883cd3b91ab3e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f494cfbb85b6e59b9f26a2b00917e07f44623f1d094656ca104fb85d0faeb2af
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671356"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080956"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Exigências especiais de suplementos no iPad
 

@@ -1,14 +1,14 @@
 ---
 title: Padrões de navegação para Suplementos do Office
-description: Saiba mais sobre as práticas recomendadas para usar barras de comandos, barras de guias e botões voltar para projetar a navegação de um suplemento do Office.
+description: Saiba as práticas recomendadas para usar barras de comando, barras de tabulação e botões de fundo, para projetar a navegação de um Office Add-in.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 3bb350ede78bef684899f26e4818eba440677541
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 42f217d240f1c66c69ad94d59f501a73e6d9a85d1dc24e94b5bb5307a808a6eb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132029"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081734"
 ---
 # <a name="navigation-patterns"></a>Padrões de navegação
 
@@ -23,18 +23,18 @@ Os principais recursos de um suplemento são acessados por meio de tipos de coma
 
 ## <a name="command-bar"></a>Barra de comandos
 
-O CommandBar é uma superfície dentro do painel de tarefas que abriga comandos que operam no conteúdo da janela, painel ou região pai que residem acima. Recursos opcionais incluem um ponto de acesso de menu vertical suspenso, pesquisa e comandos laterais.
+CommandBar é uma superfície no painel de tarefas que abriga comandos que operam no conteúdo da janela, do painel ou da região pai que reside acima. Recursos opcionais incluem um ponto de acesso de menu vertical suspenso, pesquisa e comandos laterais.
 
-![Ilustração mostrando uma barra de comandos dentro de um painel de tarefas de aplicativo da área de trabalho do Office. Este exemplo mostra uma barra de comandos imediatamente abaixo do nome do suplemento que inclui um menu e uma pesquisa.](../images/add-in-command-bar.png)
+![Ilustração mostrando uma barra de comandos dentro Office painel de tarefas do aplicativo da área de trabalho. Este exemplo mostra uma barra de comandos imediatamente abaixo do nome do complemento que inclui um menu de hambúrguer e uma pesquisa.](../images/add-in-command-bar.png)
 
 ## <a name="tab-bar"></a>Barra de guias
 
-A barra de guias mostra a navegação usando botões com texto empilhado verticalmente e ícones. Use a barra de guias para fornecer a navegação usando guias com títulos curtos e descritivos.
+A barra de guias mostra a navegação usando botões com texto e ícones empilhados verticalmente. Use a barra de guias para fornecer a navegação usando guias com títulos curtos e descritivos.
 
-![Ilustração mostrando uma barra de guias dentro de um painel de tarefas de aplicativo da área de trabalho do Office. Este exemplo mostra uma barra de guias imediatamente abaixo do nome do suplemento com as guias "Home", "Settings", "Favorites" e "Account".](../images/add-in-tab-bar.png)
+![Ilustração mostrando uma barra de guias em um Office de tarefas do aplicativo de área de trabalho. Este exemplo mostra uma barra de guias imediatamente abaixo do nome do add-in com as guias "Home", "Configurações", "Favorites" e "Account".](../images/add-in-tab-bar.png)
 
 ## <a name="back-button"></a>Botão Voltar
 
-O botão voltar permite que os usuários se recuperem de uma ação de navegação de busca detalhada. Esse padrão ajuda a garantir que os usuários sigam uma série de etapas ordenadas.
+O botão voltar permite que os usuários se recuperem de uma ação de navegação de detalhamento. Esse padrão ajuda a garantir que os usuários sigam uma série de etapas ordenadas.
 
-![Ilustração mostrando um botão voltar dentro de um painel de tarefas de aplicativo da área de trabalho do Office. Este exemplo mostra um botão voltar imediatamente abaixo do nome do suplemento, no canto superior esquerdo.](../images/add-in-back-button.png)
+![Ilustração mostrando um botão voltar em um painel Office de tarefas do aplicativo da área de trabalho. Este exemplo mostra um botão voltar imediatamente abaixo do nome do complemento, na parte superior esquerda.](../images/add-in-back-button.png)

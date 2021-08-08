@@ -3,12 +3,12 @@ title: Persistir o estado e as configurações do suplemento
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5b2a7d59340a0126fe270334c560ba5fbf1f1739ef6f119a2cef754a06321699
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671517"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080276"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -180,7 +180,7 @@ function getReviewers() {
 
 Para obter informações sobre como salvar configurações em um Outlook de Outlook, consulte Manage state and [settings for an Outlook add-in](../outlook/manage-state-and-settings-outlook.md).
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)

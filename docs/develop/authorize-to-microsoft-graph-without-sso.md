@@ -3,12 +3,12 @@ title: Autorizar o Microsoft Graph sem SSO
 description: Saiba como autorizar o Microsoft Graph sem SSO
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c16af84bf63ead9acb81cf92be0a14ab92a6def3
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 86143a7563d60aecabc7e1e5a3b3943b1e6473c2922e726e81bcf28221efa1b8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773927"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081242"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>Autorizar o Microsoft Graph sem SSO
 

@@ -3,12 +3,12 @@ title: Núcleo da Malha em Suplementos do Office
 description: Obter uma visão geral de como usar o Fabric Core e os componentes da interface do usuário do Fabric em Office de complementos.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2e7c1fa2bff177deecb113c7d3afc346f277e5480a588152911118d1b36bc05f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773605"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081862"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Núcleo da Malha em Suplementos do Office
 

@@ -3,12 +3,12 @@ title: Maneiras alternativas de passar mensagens para uma caixa de diálogo de s
 description: Saiba soluções alternativas a ser usadas quando o método messageChild não é suportado.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d664178a804b206e02634326cc27699fc6ceb0f7
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1dd603a144aa14a1456b15a67ffd2563028dfc333561e853f518dde1af06f899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773381"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080288"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Maneiras alternativas de passar mensagens para uma caixa de diálogo de sua página host
 

@@ -3,12 +3,12 @@ title: Padrões de tela de apresentação para suplemento dos Office
 description: Saiba as práticas recomendadas para projetar experiências de primeira Office de complementos.
 ms.date: 07/08/2018
 localization_priority: Normal
-ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e631611c11a36265bc997f12b8875056575f048ec3fecb6bfe9929abe4db1938
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774004"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081850"
 ---
 # <a name="first-run-experience-patterns"></a>Padrões de tela de apresentação
 

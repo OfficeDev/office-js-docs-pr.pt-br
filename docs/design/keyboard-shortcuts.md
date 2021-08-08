@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fa675e9ddc607feabbea0f79456e0775666b8d96
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0e622820dbf1c582188d038fc532236154b7ec7389a8e14b0ce0e982a6f67a8a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773528"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081746"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -261,7 +261,7 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) de teclado.
 - Obter uma visão geral de como trabalhar com substituições estendidas em [Trabalho com substituições estendidas do manifesto](../develop/extended-overrides.md).

@@ -3,12 +3,12 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: daddd5e1565fa870755b2368aba031b5768987a4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773738"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079954"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 

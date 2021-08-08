@@ -3,12 +3,12 @@ title: Manipulando erros e eventos na caixa de diálogo do Office
 description: Saiba como interceptar e manipular erros ao abrir e usar Office caixa de diálogo.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 50b439f9d3d20af97d78ea51db66a96c219b32d64140531ee1d51e1149feaffc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774298"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080788"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>Manipular erros e eventos na caixa de Office de diálogo
 

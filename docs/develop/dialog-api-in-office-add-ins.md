@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: cf806434fa5357fec554639f161fa0780b884e9a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 6108051b9fd229804bb8c6a3ac25bb036ab072f03bc649139338361d0cc2ba89
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773773"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080872"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -85,7 +85,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 
 > [!NOTE]
 >
-> - Para esclarecer, nesta seção, chamamos a mensagem de destino [da](../reference/manifest/functionfile.md)página host *,* mas estritamente falando, as mensagens estão indo para o tempo de execução *JavaScript* no painel de tarefas (ou o tempo de execução que está hospedando um arquivo de função ). A distinção só é significativa no caso de mensagens entre domínios. Para obter mais informações, consulte [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).
+> - Para esclarecer, nesta seção, chamamos a mensagem de destino [da](../reference/manifest/functionfile.md)página host *,* mas estritamente falando, as mensagens estão indo para o tempo de execução *JavaScript* no painel de tarefas (ou o tempo de execução que está hospedando um arquivo de função ). A distinção só é significativa no caso de mensagens entre domínios. Para obter mais informações, [mensagens entre domínios para o runtime do host](#cross-domain-messaging-to-the-host-runtime).
 > - A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que Office biblioteca da API JavaScript seja carregada na página. (Como qualquer página que use a biblioteca Office API JavaScript, o script da página deve inicializar o add-in. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).)
 
 O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Apresentamos um exemplo a seguir.

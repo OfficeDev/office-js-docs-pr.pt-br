@@ -3,12 +3,12 @@ title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Javascript do Internet Explorer 11 e do ES5 no seu complemento.
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 3677b12d265cb70d2c048e91fc32ff5f9619908b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 02ee813774a13e1c85c1d66c8c90a33666979944643a8eca9544ca04cfae3363
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075905"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079966"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 

@@ -3,12 +3,12 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: Carregue o dom e Office ambiente de tempo de execução de complementos.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 26ff15eb009fbec2554fa74db3109c4fa4abd712
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 5d04d4dcfefdc234543dafe646826756b7ef631103793613c6396ff8c40d61d2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774277"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080550"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 

@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8d8d4d8536cd118bd139c19541f9a9808e6eec442b1a828fa241222e282e8b8b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671179"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080093"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 

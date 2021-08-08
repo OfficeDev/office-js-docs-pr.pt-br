@@ -3,12 +3,12 @@ title: Idioma de design de suplemento do Office
 description: Saiba como tornar seu Office de complemento visualmente compatível com Office.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4374eaad1e660728a347d19a012d345b642755af
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 45ef812c83b094d548b120493717f6af6e9fb2f36bf0d9c2144b6b1517e658e9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330056"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082648"
 ---
 # <a name="office-add-in-design-language"></a>Idioma de design de suplemento do Office
 
@@ -22,7 +22,7 @@ A linguagem de design do Office é um sistema visual claro e simples que garante
 - Definições de animação
 - Componentes comuns
 
-[A interface do usuário fluente](../design/add-in-design.md) é a estrutura front-end oficial para a criação com o Office de design. Usar a interface do usuário fluente é opcional, mas é a maneira mais rápida de garantir que seus complementos se sintam como uma extensão natural de Office. Aproveite a interface do usuário fluente para projetar e criar os complementos que complementam Office.
+[Fluent interface do usuário](../design/add-in-design.md) é a estrutura front-end oficial para a criação com a linguagem Office design. Usar Fluent interface do usuário é opcional, mas é a maneira mais rápida de garantir que seus complementos se sintam como uma extensão natural do Office. Aproveite a Fluent da interface do usuário para projetar e criar os complementos que complementam Office.
 
 Vários suplementos do Office estão associados a uma marca pré-existente. Você pode manter uma marca forte e sua linguagem visual ou de componente no suplemento. Procure oportunidades para manter sua própria linguagem visual durante a integração ao Office. Considere maneiras de substituir cores, tipografia, ícones ou outros elementos estilísticos pelos elementos de sua própria marca do Office. Considere maneiras de seguir layouts comuns de suplemento ou padrões de design da experiência do usuário durante a inserção de controles e componentes que são familiares para seus clientes.
 

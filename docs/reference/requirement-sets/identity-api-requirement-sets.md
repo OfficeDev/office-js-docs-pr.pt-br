@@ -4,16 +4,16 @@ description: Informações do conjunto de requisitos da API de identidade para O
 ms.date: 01/26/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 40f9154b06b0e373ac367b0dcc24cbfc05be4856
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b4ca583126eb70351fd7b9162cc6ee77a686e8b269219ba298a91f498f6a4b0a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671426"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079085"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de identidade, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 

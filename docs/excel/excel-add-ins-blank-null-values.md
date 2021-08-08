@@ -1,16 +1,16 @@
 ---
-title: Valores em branco e nulos em suplementos do Excel
-description: Saiba como trabalhar com um valor nulo em branco nos métodos e propriedades do modelo de objeto do Excel.
+title: Valores em branco e nulo nos suplementos do Excel
+description: Saiba como trabalhar com valores nulos em branco Excel métodos e propriedades do modelo de objeto.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 3f38569f7342bb88c52ce424db426bfa7939be5e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 94603209a6f8d12d184583cd513108aadde956de049fe76d3bf02e04dbf609d3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409376"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079370"
 ---
-# <a name="blank-and-null-values-in-excel-add-ins"></a>Valores em branco e nulos em suplementos do Excel
+# <a name="blank-and-null-values-in-excel-add-ins"></a>Valores em branco e nulo nos suplementos do Excel
 
 `null` e as cadeias de caracteres esvaziadas têm implicações especiais nas APIs JavaScript do Excel. Elas são usadas para representar células vazias, sem formatação ou valores padrão. Essa seção detalha o uso da `null` e de uma cadeia de caracteres vazia ao obter e definir as propriedades.
 

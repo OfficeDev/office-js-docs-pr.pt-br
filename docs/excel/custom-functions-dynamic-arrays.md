@@ -1,26 +1,26 @@
 ---
 ms.date: 05/11/2020
-description: Retornar vários resultados de sua função personalizada em um suplemento do Office Excel.
+description: Retornar vários resultados de sua função personalizada em um Office Excel de usuário.
 title: Retornar vários resultados de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ae808a7bc77d7dad2f7764d6b0065fa2aa91cd7eab27bd7c8697a3d87731153
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609647"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079680"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Retornar vários resultados de sua função personalizada
 
-Você pode retornar vários resultados de sua função personalizada que serão retornadas às células vizinhas. Esse comportamento é chamado de despejo. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas no Excel, consulte [matrizes dinâmicas e comportamento de matriz despejada](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+Você pode retornar vários resultados de sua função personalizada que serão retornados para células vizinhas. Esse comportamento é chamado de vazamento. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas Excel, consulte [Matrizes dinâmicas e comportamento de matriz descarada](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
 
-A imagem a seguir mostra como a `SORT` função é despejada para baixo nas células vizinhas. Sua função personalizada também pode retornar vários resultados como este.
+A imagem a seguir mostra como `SORT` a função é derramada para baixo em células vizinhas. Sua função personalizada também pode retornar vários resultados como este.
 
-![Captura de tela da função "SORT" exibindo vários resultados em várias células.](../images/dynamic-array-spill.png)
+![Captura de tela da função 'SORT' exibindo vários resultados para baixo em várias células.](../images/dynamic-array-spill.png)
 
-Para criar uma função personalizada que seja uma fórmula de matriz dinâmica, ela deve retornar uma matriz bidimensional de valores. Se os resultados forem despejados em células vizinhas que já possuem valores, a fórmula exibirá um `#SPILL!` erro.
+Para criar uma função personalizada que seja uma fórmula de matriz dinâmica, ela deve retornar uma matriz bidimensional de valores. Se os resultados vazarem em células vizinhas que já têm valores, a fórmula exibirá um `#SPILL!` erro.
 
-O exemplo a seguir mostra como retornar uma matriz dinâmica que derrama.
+O exemplo a seguir mostra como retornar uma matriz dinâmica que se espalha.
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-O exemplo a seguir mostra como retornar uma matriz dinâmica que despeja à direita. 
+O exemplo a seguir mostra como retornar uma matriz dinâmica que se espalha à direita. 
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-O exemplo a seguir mostra como retornar uma matriz dinâmica que é despejada para baixo e para a direita.
+O exemplo a seguir mostra como retornar uma matriz dinâmica que derrama para baixo e para a direita.
 
 ```javascript
 /**
@@ -65,5 +65,5 @@ function spillRectangle() {
 
 ## <a name="see-also"></a>Confira também
 
-- [Matrizes dinâmicas e comportamento de matriz derramada](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
-- [Opções para funções personalizadas do Excel](custom-functions-parameter-options.md)
+- [Matrizes dinâmicas e comportamento de matriz descarrável](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [Opções para Excel funções personalizadas](custom-functions-parameter-options.md)

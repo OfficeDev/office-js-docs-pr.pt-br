@@ -3,12 +3,12 @@ title: Suporte da API JavaScript para Office para suplementos de conteúdo e de 
 description: Use a Office JavaScript para criar um painel de tarefas no Office 2013.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 356880c0f4bb4377f2d5997217f26f51dd95f845
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 644bc1f0759d381de412cb276a1535d2251abb0a6a0be78b45d9cc0a245758c7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773360"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079990"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 

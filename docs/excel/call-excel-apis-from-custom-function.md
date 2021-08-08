@@ -1,30 +1,30 @@
 ---
-title: Chamar APIs JavaScript do Excel de uma função personalizada
-description: Saiba quais APIs JavaScript do Excel você pode chamar de sua função personalizada.
+title: Chamar Excel APIs JavaScript de uma função personalizada
+description: Saiba quais Excel APIs JavaScript que você pode chamar de sua função personalizada.
 ms.date: 03/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 4be1b1ee8ea4ae8b2f5d1d27195be18f7aa841da
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: d44f88dc11136bd0302453054cefe93c82b22136e2084baecac006834100a077
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613903"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079844"
 ---
-# <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar APIs JavaScript do Excel de uma função personalizada
+# <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar Excel APIs JavaScript de uma função personalizada
 
-Chame APIs JavaScript do Excel de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos. Chamar APIs JavaScript do Excel por meio de uma função personalizada pode ser útil quando:
+Chame Excel APIs JavaScript de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos. Chamar Excel APIs JavaScript por meio de uma função personalizada pode ser útil quando:
 
-- Uma função personalizada precisa obter informações do Excel antes do cálculo. Essas informações podem incluir propriedades de documento, formatos de intervalo, partes XML personalizadas, um nome da planilha ou outras informações específicas do Excel.
+- Uma função personalizada precisa obter informações de Excel antes do cálculo. Essas informações podem incluir propriedades de documento, formatos de intervalo, partes XML personalizadas, um nome da Excel de trabalho ou outras informações específicas.
 - Uma função personalizada definirá o formato de número da célula para os valores de retorno após o cálculo.
 
 > [!IMPORTANT]
-> Para chamar APIs JavaScript do Excel de sua função personalizada, você precisará usar um tempo de execução JavaScript compartilhado. Consulte [Configure seu Suplemento do Office para usar em um tempo de execução do JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
+> Para chamar Excel APIs JavaScript de sua função personalizada, você precisará usar um tempo de execução JavaScript compartilhado. Consulte [Configure seu Suplemento do Office para usar em um tempo de execução do JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
 
 ## <a name="code-sample"></a>Exemplo de código
 
-Para chamar APIs JavaScript do Excel de uma função personalizada, primeiro você precisa de um contexto. Use o [objeto Excel.RequestContext](/javascript/api/excel/excel.requestcontext) para obter um contexto. Em seguida, use o contexto para chamar as APIs de que você precisa na guia de trabalho.
+Para chamar Excel APIs JavaScript de uma função personalizada, primeiro você precisa de um contexto. Use o [Excel. Objeto RequestContext](/javascript/api/excel/excel.requestcontext) para obter um contexto. Em seguida, use o contexto para chamar as APIs de que você precisa na guia de trabalho.
 
-O exemplo de código a seguir mostra como usar para obter um `Excel.RequestContext` valor de uma célula na lista de trabalho. Neste exemplo, o parâmetro é passado para o `address` método [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) da API JavaScript do Excel e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função personalizada inserida na interface do usuário do Excel deve seguir o padrão , onde é o endereço da célula da qual `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` recuperar o valor.
+O exemplo de código a seguir mostra como usar para obter um `Excel.RequestContext` valor de uma célula na lista de trabalho. Neste exemplo, o parâmetro é passado para o Excel `address` JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função personalizada inserida na interface do usuário Excel deve seguir o padrão , onde é o endereço da célula da qual `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` recuperar o valor.
 
 ```JavaScript
 /**
@@ -46,9 +46,9 @@ async function getRangeValue(address) {
 }
 ```
 
-## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitações de chamar APIs JavaScript do Excel por meio de uma função personalizada
+## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitações de chamar Excel APIs JavaScript por meio de uma função personalizada
 
-Não chame APIs JavaScript do Excel de uma função personalizada que altere o ambiente do Excel. Isso significa que suas funções personalizadas não devem fazer nada do seguinte:
+Não chame Excel APIs JavaScript de uma função personalizada que altere o ambiente de Excel. Isso significa que suas funções personalizadas não devem fazer nada do seguinte:
 
 - Inserir, excluir ou formatar células na planilha.
 - Altere o valor de outra célula.
@@ -57,9 +57,9 @@ Não chame APIs JavaScript do Excel de uma função personalizada que altere o a
 - Adicione nomes a uma lista de trabalho.
 - Definir propriedades ou executar a maioria dos métodos.
 
-Alterar o Excel pode resultar em desempenho ruim, tempo de insufinições e loops infinitos. Os cálculos de função personalizada não devem ser executados enquanto um recálculo do Excel está ocorrendo, pois resultará em resultados imprevisíveis.
+Alterar Excel pode resultar em um desempenho ruim, tempos de tempo e loops infinitos. Os cálculos de função personalizados não devem ser executados enquanto um recálculo Excel está ocorrendo, pois resultará em resultados imprevisíveis.
 
-Em vez disso, faça alterações no Excel a partir do contexto de um botão de faixa de opções ou do painel de tarefas.
+Em vez disso, faça alterações Excel do contexto de um botão de faixa de opções ou painel de tarefas.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -67,5 +67,5 @@ Em vez disso, faça alterações no Excel a partir do contexto de um botão de f
 
 ## <a name="see-also"></a>Confira também
 
-- [Compartilhar dados e eventos entre funções personalizadas do Excel e tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Compartilhar dados e eventos entre Excel funções personalizadas e tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

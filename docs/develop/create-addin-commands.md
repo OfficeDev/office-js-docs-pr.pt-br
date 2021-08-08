@@ -3,12 +3,12 @@ title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: af5a87ed087c3c8df474feb445cd006bdebba493d12d1e90c787dab6437e808a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773892"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081146"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 

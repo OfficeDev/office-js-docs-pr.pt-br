@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 8c1330b4739929f0c7d4a2b3fda16ea38ad76fd7
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 76c0b42221b988be09feeb94d9d8ee70f85ef7852470505fb67587bdb90113d1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774193"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080343"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
