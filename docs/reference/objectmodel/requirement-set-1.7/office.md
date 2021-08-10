@@ -3,12 +3,12 @@ title: Office namespace - conjunto de requisitos 1.7
 description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.7.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 19c80c0c8c4aaf31c42aad16b3f474e92b7cdaec
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 2e94351b2265aa6cd0e05a3c54c30a3ede0511e8464c659fd53bb9a0b2692122
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590971"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092181"
 ---
 # <a name="office-mailbox-requirement-set-17"></a>Office (conjunto de requisitos de caixa de correio 1.7)
 
@@ -31,10 +31,10 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 
@@ -54,7 +54,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| Cadeia de caracteres|A chamada foi bem-sucedida.|
+|`Succeeded`| String|A chamada foi bem-sucedida.|
 |`Failed`| String|Falha na chamada.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -81,7 +81,7 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
+|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -108,10 +108,10 @@ Especifica o evento associado a um manipulador de eventos.
 
 | Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| Cadeia de caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`ItemChanged`| Cadeia de caracteres | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
-|`RecipientsChanged`| Cadeia de caracteres | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
-|`RecurrenceChanged`| Cadeia de caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
+|`AppointmentTimeChanged`| Cadeia de Caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`ItemChanged`| Cadeia de Caracteres | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
+|`RecipientsChanged`| Cadeia de Caracteres | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
+|`RecurrenceChanged`| Cadeia de Caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -137,7 +137,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos

@@ -1,18 +1,18 @@
 ---
 title: Elemento Method no arquivo de manifesto
-description: O elemento Method especifica um método individual da API JavaScript do Office que seus suplementos do Office exigem para ativar.
+description: O elemento Method especifica um método individual da API javaScript Office que os seus Office Desempresos exigem para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 811cd84e1ad2aade8b7042eefa822eee6b2ab200a8fa1b71c9fe5fc34874ec66
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641322"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089723"
 ---
 # <a name="method-element"></a>Elemento Method
 
-Especifica um método individual da API JavaScript do Office que seu suplemento do Office exige para ativar.
+Especifica um método individual da API javaScript Office que seu Office Descrição requer para ativar.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas
 
@@ -34,7 +34,7 @@ Especifica um método individual da API JavaScript do Office que seu suplemento 
 
 ## <a name="remarks"></a>Comentários
 
-Os `Methods` `Method` elementos e não são suportados por suplementos de email. Para obter mais informações sobre conjuntos de requisitos, confira [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os `Methods` elementos e não são `Method` suportados por complementos de email. Para obter mais informações sobre conjuntos de requisitos, [consulte Office versões e conjuntos de requisitos.](../../develop/office-versions-and-requirement-sets.md)
 
 > [!IMPORTANT]
 > Como não há forma de especificar o requisito de versão mínimo de métodos individuais, para verificar se um método está disponível no tempo de execução, você também deve usar uma instrução **if** ao chamar esse método no script do suplemento. Para obter mais informações sobre como fazer isso, consulte [Understanding the Office JavaScript API](../../develop/understanding-the-javascript-api-for-office.md).

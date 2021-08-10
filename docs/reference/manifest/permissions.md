@@ -1,14 +1,14 @@
 ---
 title: Elemento Permissions no arquivo de manifesto
-description: O elemento Permissions especifica o nível de acesso da API para o suplemento do Office.
+description: O elemento Permissions especifica o nível de acesso à API para seu Office Add-in.
 ms.date: 06/26/2020
 localization_priority: Normal
-ms.openlocfilehash: bc4cc2713d5a781c3407385470acd762910d17fd
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 2f2ccb4f6ec691b19cadea76a06520a9bad7a0b6c0e51699f2c8db67a3030de0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006455"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089007"
 ---
 # <a name="permissions-element"></a>Elemento Permissions
 
@@ -36,4 +36,4 @@ Para suplementos de email:
 
 ## <a name="remarks"></a>Comentários
 
-Para obter mais detalhes, consulte [solicitando permissões para uso da API em suplementos de conteúdo e de painel de tarefas](../../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) e [noções básicas sobre permissões de suplementos do Outlook](../../outlook/understanding-outlook-add-in-permissions.md).
+Para obter mais detalhes, consulte Solicitando permissões para uso da API em conteúdo e [complementos](../../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) do painel de tarefas e [Noções básicas Outlook](../../outlook/understanding-outlook-add-in-permissions.md)permissões de Outlook de complemento.

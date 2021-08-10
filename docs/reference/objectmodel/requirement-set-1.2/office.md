@@ -3,12 +3,12 @@ title: Namespace do Office – conjunto de requisitos 1.2
 description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.2.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 4cd15d77d1c5d9b95152f038f3421c5838bfb84f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 0f27ffda734f6acc817fbf398403693338524cd0225841b4404fb65b97b23935
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590404"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092663"
 ---
 # <a name="office-mailbox-requirement-set-12"></a>Office (conjunto de requisitos de caixa de correio 1.2)
 
@@ -31,9 +31,9 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 
@@ -53,7 +53,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| Cadeia de caracteres|A chamada foi bem-sucedida.|
+|`Succeeded`| String|A chamada foi bem-sucedida.|
 |`Failed`| String|Falha na chamada.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -80,7 +80,7 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
+|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -107,7 +107,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos

@@ -1,14 +1,14 @@
 ---
 title: Elemento IconUrl no arquivo de manifesto
-description: O elemento IconUrl especifica a URL da imagem que representa seu Complemento do Office no UX de inserção e no Office Store.
+description: O elemento IconUrl especifica a URL da imagem que representa seu Office Add-in no UX de inserção e Office Store.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 68a449b40f6084d26140d59fec61967e163196df
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: c2dac7835dcdd856fb3e713f00b5bd0a3c87189cf36fda3186e51da2c95e1ab9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604635"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089806"
 ---
 # <a name="iconurl-element"></a>Elemento IconUrl
 
@@ -34,8 +34,8 @@ Especifica a URL da imagem que é usada para representar o seu Suplemento do Off
 
 ## <a name="remarks"></a>Comentários
 
-Para um complemento de email, o ícone é exibido na interface do usuário Gerenciar arquivos (Outlook) ou Configurações Gerenciar interface do usuário de  >     >  **complementos** (Outlook na Web). Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**. Para todos os tipos de add-in, o ícone também é usado no [AppSource](https://appsource.microsoft.com), se você publicar seu complemento no AppSource.
+Para um complemento de email, o ícone é exibido na interface do usuário gerenciar arquivos (Outlook) ou Configurações Gerenciar interface do usuário de  >     >  **complementos** (Outlook na Web). Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**. Para todos os tipos de add-in, o ícone também é usado no [AppSource](https://appsource.microsoft.com), se você publicar seu complemento no AppSource.
 
-A imagem deve estar em um dos seguintes formatos: GIF, JPG, PNG, EXIF, BMP ou TIFF. Para aplicativos de conteúdo e de painel de tarefas, a imagem especificada deve ter 32 x 32 pixels. Para aplicativos de email, a resolução de imagem deve ser de 64 x 64 pixels. Você também deve especificar um ícone para uso com aplicativos cliente do Office em execução em telas DPI altas usando o [elemento HighResolutionIconUrl.](highresolutioniconurl.md) Para saber mais, confira a seção _Criar uma identidade visual consistente para seu aplicativo_ em [Criar listagens eficazes no AppSource e no Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
+A imagem deve estar em um dos seguintes formatos: GIF, JPG, PNG, EXIF, BMP ou TIFF. Para aplicativos de conteúdo e de painel de tarefas, a imagem especificada deve ter 32 x 32 pixels. Para aplicativos de email, a resolução de imagem deve ser de 64 x 64 pixels. Você também deve especificar um ícone para uso com Office aplicativos cliente em execução em telas DPI altas usando o [elemento HighResolutionIconUrl.](highresolutioniconurl.md) Para saber mais, confira a seção _Criar uma identidade visual consistente para seu aplicativo_ em [Criar listagens eficazes no AppSource e no Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
 
 Não há suporte para alterar o valor do elemento no tempo de `IconUrl` execução.

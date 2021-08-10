@@ -1,14 +1,14 @@
 ---
 title: Elemento Metadata no arquivo de manifesto
-description: O elemento de metadados define as configurações de metadados que uma função personalizada usa no Excel.
+description: O elemento Metadados define as configurações de metadados que uma função personalizada usa no Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 01be124b5526ce8328e0a20b8ff7d21ba6da96bc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d6b7af8988265baf8fbdea51e1414646f88868ede76ed7194c47db1eb874608d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611761"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092484"
 ---
 # <a name="metadata-element"></a>Elemento Metadata
 

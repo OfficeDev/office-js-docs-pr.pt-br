@@ -3,12 +3,12 @@ title: Elemento FunctionFile no arquivo de manifesto
 description: Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: f31a1bc7a561305a89f5388102a4985aaa31fe37
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 66277ab148690b37fbdcd60cf49b10a0fc1b9422c187c6bc213b0cd91a999dfd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348297"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092319"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 

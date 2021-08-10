@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.1.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7bc378c200d8aa7c200158d7fe50fdbd71b8251a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: db8754e793d86fbc1c85bae85a1ce1f925504c649b1694659896ba567dc4e478
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671440"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093816"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Excel Conjunto de requisitos da API JavaScript 1.1
 
@@ -219,7 +219,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[Count](/javascript/api/excel/excel.tablerowcollection#count)|Retorna o número de linhas na tabela.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getSelectedRange__)|Obtém o intervalo único selecionado no momento da guia de trabalho.|
-||[application](/javascript/api/excel/excel.workbook#application)|Representa a Excel de aplicativo que contém essa workbook.|
+||[aplicativo](/javascript/api/excel/excel.workbook#application)|Representa a Excel de aplicativo que contém essa workbook.|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho.|
 ||[names](/javascript/api/excel/excel.workbook#names)|Representa uma coleção de itens nomeados com escopo de lista de trabalho (intervalos e constantes nomeados).|
 ||[tables](/javascript/api/excel/excel.workbook#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho.|

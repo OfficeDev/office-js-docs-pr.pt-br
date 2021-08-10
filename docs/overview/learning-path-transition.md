@@ -4,12 +4,12 @@ description: Um roteiro recomendado para desenvolvedores experientes de suplemen
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 653f90d610dbad7d1b00df777109d3d02bffc0598454c38b5945fa56542beb61
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238012"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089387"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guia do desenvolvedor do suplemento VSTO
 

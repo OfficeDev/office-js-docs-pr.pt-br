@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.6.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 74fd184c4d65f30643266ba4799406cfe6f6e8e1e275af09eb6102e4bda986fa
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671207"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088976"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Quais são as novidades na API JavaScript do Excel 1.6
 
@@ -62,7 +62,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|Exclui esse formato condicional.|
 ||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|Retorna o intervalo ao qual a formatação condicional é aplicada.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|Retorna o intervalo ao qual o formato conditonal é aplicado.|
-||[priority](/javascript/api/excel/excel.conditionalformat#priority)|A prioridade (ou índice) na coleção de formato condicional em que esse formato condicional existe no momento.|
+||[prioridade](/javascript/api/excel/excel.conditionalformat#priority)|A prioridade (ou índice) na coleção de formato condicional em que esse formato condicional existe no momento.|
 ||[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|Retorna as propriedades de formato condicional do valor da célula se o formato condicional atual for um `CellValue` tipo.|
 ||[cellValueOrNullObject](/javascript/api/excel/excel.conditionalformat#cellValueOrNullObject)|Retorna as propriedades de formato condicional do valor da célula se o formato condicional atual for um `CellValue` tipo.|
 ||[colorScale](/javascript/api/excel/excel.conditionalformat#colorScale)|Retorna as propriedades de formato condicional da escala de cores se o formato condicional atual for um `ColorScale` tipo.|

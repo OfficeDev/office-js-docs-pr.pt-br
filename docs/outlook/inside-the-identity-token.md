@@ -3,12 +3,12 @@ title: Dentro do token de identidade do Exchange em um suplemento do Outlook
 description: Saiba mais sobre o conteúdo de um token de identidade do usuário do Exchange gerado a partir de um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: dee8416660386c25a55caa42b6e5ee8685ee8852
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c46765f7e7c27309c33428132f022b35d36acf0ce30089775ecd4ae23960ca17
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609087"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090666"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Dentro do token de identidade do Exchange
 

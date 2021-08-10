@@ -4,12 +4,12 @@ description: Os suplementos do Outlook são integrações criadas por terceiros 
 ms.date: 07/16/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b49a3aedc88064ec4eeb7e305192319f933abc1a
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 66945f445c89aefc0bf903c4febbc9f51d1f521b90e29144460df9e325826790
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661282"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091423"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 

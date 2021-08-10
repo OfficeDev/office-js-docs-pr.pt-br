@@ -8,36 +8,36 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 90b40568affbf7895bda15fb73345676be118f6f0830805dcedcbf3decccae83
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435309"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57088926"
 landingContent:
-- title: Sobre os complementos do Excel
+- title: Sobre Excel de complementos
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são os complementos do Excel?
+    - text: O que Excel os complementos?
       url: excel-add-ins-overview.md
   - linkListType: quickstart
     links:
     - text: Criar o seu primeiro suplemento do Excel
       url: ../quickstarts/excel-quickstart-jquery.md
-    - text: Explorar APIs com Script Lab
+    - text: Explorar as APIs com o Script Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Usar a API JavaScript do Excel para interagir com objetos e conteúdo de planilha
+    - text: Usar a Excel JavaScript para interagir com objetos e conteúdo de workbook
       url: ../reference/overview/excel-add-ins-reference-overview.md
-    - text: Adicionar funções personalizadas ao Excel
+    - text: Adicionar funções personalizadas a Excel
       url: custom-functions-overview.md
-    - text: Testar e depurar um complemento do Excel
+    - text: Testar e depurar um Excel de dados
       url: ../testing/test-debug-office-add-ins.md
-    - text: Implantar e publicar um complemento do Excel
+    - text: Implantar e publicar um Excel de usuário
       url: ../publish/publish.md
-- title: Principais conceitos de Complementos do Office
+- title: Principais Office conceitos de complementos
   linkLists:
   - linkListType: overview
     links:

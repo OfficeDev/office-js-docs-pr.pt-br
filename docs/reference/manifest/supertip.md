@@ -1,14 +1,14 @@
 ---
 title: Elemento Supertip no arquivo de manifesto
-description: O elemento Superdica define uma dica de ferramenta rica (título e descrição).
+description: O elemento Supertip define uma dica de ferramenta rica (título e descrição).
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e8b3850d99f6791726b1b2f0545c5fb4b52c554
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 79120cc72aa4804eaaa2330d9298f6521a13552d325d9134814581402ace8210
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771295"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093255"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -19,18 +19,18 @@ Define uma dica de ferramenta avançada (título e descrição). É usada pelos 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 | [Title](#title) | Sim | O texto da superdica. |
-| [Descrição](#description) | Sim | A descrição da superdica.<br>**Observação**: (Outlook) só há suporte para clientes Windows e Mac. |
+| [Descrição](#description) | Sim | A descrição da superdica.<br>**Observação**: (Outlook) Somente clientes Windows e Mac são suportados. |
 
 ### <a name="title"></a>Título
 
-Obrigatório. O texto da superdica. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
+Obrigatório. O texto da superdica. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)
 
 ### <a name="description"></a>Descrição
 
-Obrigatório. A descrição da superdica. O atributo **Resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **LongStrings** no elemento [Resources](resources.md) .
+Obrigatório. A descrição da superdica. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no **elemento LongStrings** no [elemento Resources.](resources.md)
 
 > [!NOTE]
-> Para o Outlook, apenas clientes Windows e Mac dão suporte ao elemento **Description** .
+> Para Outlook, somente os clientes Windows e Mac suportam o **elemento Description.**
 
 ## <a name="example"></a>Exemplo
 

@@ -3,12 +3,12 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290709"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092343"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
@@ -61,7 +61,7 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Read|1 (000001)|Pode ler itens.|
+|Ler|1 (000001)|Pode ler itens.|
 |Gravar|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir apenas os itens criados.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|

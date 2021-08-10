@@ -1,20 +1,20 @@
 ---
-title: Elemento Enabled no arquivo de manifesto
-description: Saiba como especificar se um comando de suplemento está desabilitado quando o suplemento é iniciado.
+title: Elemento habilitado no arquivo de manifesto
+description: Saiba como especificar que um Comando de Complemento está desabilitado quando o complemento é lançado.
 ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: be18767638af6f2be6352cea46739f6a01b7dd45
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 54d28839a274ff41bab0b1e2cdd2d169e76c5815095950dec67ce2564eade601
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771386"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093900"
 ---
 # <a name="enabled-element"></a>Elemento Enabled
 
-Especifica se um controle de [botão](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls) está habilitado quando o suplemento é iniciado. O elemento **Enabled** é um elemento filho do [controle](control.md). Se for omitido, o padrão será `true` .
+Especifica se um controle [Button](control.md#button-control) ou [Menu](control.md#menu-dropdown-button-controls) está habilitado quando o complemento é lançado. O **elemento Enabled** é um elemento filho de [Control](control.md). Se for omitido, o padrão será `true` .
 
-Este elemento só é válido no Excel; ou seja, quando o `Name` atributo do elemento [host](host.md) é "Workbook".
+Esse elemento só é válido em Excel; ou seja, quando `Name` o atributo do elemento [Host](host.md) for "Workbook".
 
 O controle pai também pode ser habilitado e desabilitado programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
 

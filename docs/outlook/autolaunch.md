@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 07/08/2021
+ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: 904c7ce907b9fc31c898cbeaf89203e369e3155855ff86c7cb8af1cf6d956d64
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455527"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090978"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -262,7 +262,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     >
     > 1. Reinicie o Outlook.
 
-## <a name="debug"></a>Depuração
+## <a name="debug"></a>Depurar
 
 À medida que você faz alterações no tratamento de eventos de início no seu complemento, você deve estar ciente de que:
 
@@ -279,10 +279,10 @@ Você pode implantar os complementos baseados em eventos carregando o manifesto 
 
 ![Captura de tela da página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Upload aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource e armazenamentos de inclientes: a capacidade de implantar os complementos baseados em eventos ou atualizar os complementos existentes para incluir o recurso de ativação baseada em evento deve estar disponível em breve.
+AppSource e no Office Store: a capacidade de implantar os complementos baseados em eventos ou atualizar os complementos existentes para incluir o recurso de ativação baseada em eventos deve estar disponível em breve.
 
 > [!IMPORTANT]
-> Os complementos baseados em eventos são restritos apenas a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter os complementos baseados em eventos do AppSource ou dos armazenamentos de inclientes.
+> Os complementos baseados em eventos são restritos apenas a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter os complementos baseados em eventos no AppSource ou no Office Store.
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações de ativação baseada em evento
 

@@ -3,12 +3,12 @@ title: Elemento Dictionary no arquivo de manifesto
 description: Define as configurações para um suplemento de painel de tarefas que implementa o suporte de dicionário adicional.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 89f9327fa640c4248e733a602c44be76d87bd841
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: f22c30d7a04e9e51e99d86932b783ad0228ac19ab6bc5d09a0043a5f1046131e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641477"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089332"
 ---
 # <a name="dictionary-element"></a>Elemento Dictionary
 

@@ -4,12 +4,12 @@ description: Saiba como depurar seu Outlook que implementa a ativação baseada 
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077089"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090810"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Depurar seu Outlook de eventos (visualização)
 
@@ -23,7 +23,7 @@ Neste artigo, abordamos os principais estágios para habilitar a depuração.
 - [Marcar o complemento para depuração](#mark-your-add-in-for-debugging)
 - [Configurar Visual Studio Code](#configure-visual-studio-code)
 - [Anexar Visual Studio Code](#attach-visual-studio-code)
-- [Depuração](#debug)
+- [Depurar](#debug)
 
 Você tem várias opções para criar seu projeto de complemento. Dependendo da opção que você está usando, as etapas podem variar. Nesse caso, se você usou o gerador Yeoman para os complementos do Office para criar seu projeto de complemento (por exemplo, fazendo o passo a passo de ativação baseada em eventos [),](autolaunch.md)siga as etapas **yo office,** caso contrário, siga as **outras** etapas. Visual Studio Code deve ser pelo menos a versão 1.56.1.
 
@@ -78,7 +78,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
     }
     ```
 
-### <a name="other"></a>Outros
+### <a name="other"></a>Outro
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Desktop).**
 1. Abra o Visual Studio Code.
@@ -123,7 +123,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
 
     ![Captura de tela da seleção Depuração Direta de opções de configuração no menu suspenso Visual Studio Code Depuração.](../images/outlook-win-autolaunch-debug-vsc.png)
 
-## <a name="debug"></a>Depuração
+## <a name="debug"></a>Depurar
 
 1. Depois de confirmar se o depurador está anexado, retorne ao Outlook e, na caixa de diálogo Manipulador baseado em Evento de **Depuração,** escolha **OK** .
 

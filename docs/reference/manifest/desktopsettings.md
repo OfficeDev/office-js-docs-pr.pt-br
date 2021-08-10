@@ -3,19 +3,19 @@ title: Elemento DesktopSettings no arquivo de manifesto
 description: Especifica o local de origem e as configurações de controle aplicadas quando seu suplemento de email é usado em um computador desktop.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d8f35a29e14337a849f81b0becb60f761116cb48fa420119228255bb1179bb35
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612273"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089846"
 ---
 # <a name="desktopsettings-element"></a>Elemento DesktopSettings
 
 Especifica o local de origem e as configurações de controle aplicadas quando seu suplemento de email é usado em um computador desktop.
 
 > [!IMPORTANT]
-> O `DesktopSettings` elemento só está disponível no Outlook clássico na Web (geralmente conectado a versões anteriores do Exchange Server local) e no outlook 2013 no Windows.
+> O elemento está disponível apenas no Outlook na Web clássico (geralmente conectado a versões mais antigas do servidor Exchange local) e Outlook `DesktopSettings` 2013 no Windows.
 
 **Tipo de suplemento:** Email
 

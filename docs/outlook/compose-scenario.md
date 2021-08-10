@@ -3,12 +3,12 @@ title: Crie suplementos do Outlook para formulários de redação
 description: Saiba mais sobre os cenários e recursos dos suplementos do Outlook nos formulários de redação.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ea85194eb74e0eb57addecddab32fe157cf2a88ef05604dfe1b1992678973996
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348528"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090861"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Criar suplementos do Outlook para formulários de redação
 
@@ -19,8 +19,7 @@ A partir da versão 1.1 do esquema para manifestos de Suplementos do Office e v1
 - Exibição ou edição de compromisso existente, ou item de reunião no qual o usuário seja o organizador.
 
    > [!NOTE]
-   > Se o usuário estiver na versão RTM do Outlook 2013 e do Exchange 2013 e estiver exibindo um item de reunião organizado pelo usuário, ele poderá encontrar suplementos de leitura disponíveis.
- Desde a versão do Office 2013 SP1, há uma alteração que, no mesmo cenário, somente suplementos redigidos podem ativar e estar disponíveis.
+   > Se o usuário estiver na versão RTM do Outlook 2013 e do Exchange 2013 e estiver exibindo um item de reunião organizado pelo usuário, o usuário poderá encontrar suplementos de leitura disponíveis. A partir da versão do Office 2013 SP1, há uma alteração de modo que, no mesmo cenário, somente suplementos de composição podem ser ativados e estar disponíveis.
 
 - Redação de uma mensagem de resposta embutida ou resposta a uma mensagem em um formulário de redação separado.
 

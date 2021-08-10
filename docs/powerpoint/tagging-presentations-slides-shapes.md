@@ -1,16 +1,16 @@
 ---
-title: Usar marcas personalizadas em apresentações, slides e formas no PowerPoint
+title: Use marcas personalizadas em apresentações, slides e formas em PowerPoint
 description: Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.
 ms.date: 04/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
-ms.sourcegitcommit: 58d394fa49308ecf93cd53f7d3fb6e316ff56209
+ms.openlocfilehash: 9ae86906a2ac69cb79adac34fa4e923a9bc218a7dc8a7e5bdefd63300b589da5
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51876854"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093651"
 ---
-# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Usar marcas personalizadas para apresentações, slides e formas no PowerPoint
+# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Use marcas personalizadas para apresentações, slides e formas em PowerPoint
 
 Um complemento pode anexar metadados personalizados, na forma de pares de valores-chave, chamados "marcas", a apresentações, slides específicos e formas específicas em um slide.
 
@@ -32,7 +32,7 @@ Para adicionar uma marca a um objeto, chame o [método TagCollection.add](/javas
 
 - O primeiro parâmetro do `add` método é a chave no par de valores-chave. 
 - O segundo parâmetro é o valor.
-- A chave está em letras maiúsculas. Isso não é estritamente obrigatório para o método; no entanto, a chave é sempre armazenada pelo PowerPoint como maiúsculas, e alguns métodos relacionados a marca exigem que a chave seja expressa em maiúsculas, portanto, recomendamos como prática de melhor prática que você sempre use maiúsculas em seu código para uma chave `add` de marca. 
+- A chave está em letras maiúsculas. Isso não é estritamente obrigatório para o método; no entanto, a chave é sempre armazenada pelo PowerPoint como maiúsculas, e alguns métodos relacionados a marca exigem que a chave seja expressa em maiúsculas, portanto, recomendamos como prática prática melhor que você sempre use maiúsculas em seu código para uma chave `add` de marca. 
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -88,7 +88,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
     - Ele usa o [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` retorna uma matriz porque vários slides podem ser selecionados. Nesse cenário, o usuário selecionou apenas um, portanto, o código obtém o primeiro slide (0th), que é o único selecionado.
-    - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel miniaturas da interface do usuário do `index` PowerPoint.
+    - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel PowerPoint `index` miniaturas da interface do usuário.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -138,7 +138,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>Definir metadados personalizados na apresentação
 
-Os complementos também podem aplicar marcas à apresentação como um todo. Isso permite que você use marcas para metadados no nível de documento semelhantes à forma como a [classe CustomProperty](/javascript/api/word/word.customproperty)é usada no Word. Mas, ao contrário da classe `CustomProperty` Word, o valor de uma marca do PowerPoint só pode ser do tipo `string` .
+Os complementos também podem aplicar marcas à apresentação como um todo. Isso permite que você use marcas para metadados no nível de documento semelhantes à forma como a [classe CustomProperty](/javascript/api/word/word.customproperty)é usada no Word. Mas, ao contrário da classe `CustomProperty` Word, o valor de uma marca PowerPoint só pode ser do tipo `string` .
 
 O código a seguir é um exemplo de adição de uma marca a uma apresentação. 
 

@@ -3,19 +3,19 @@ title: Elemento Event no arquivo de manifesto
 description: Define um manipulador de eventos em um suplemento.
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8e94c10bed214dd976b3048e11328f10f99325
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 486236f2c2dc19f835e06bad027b4fca33809fb257ba6f6d455add66ab5b5ce0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611544"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093291"
 ---
 # <a name="event-element"></a>Elemento Event
 
 Define um manipulador de eventos em um suplemento.
 
 > [!NOTE]
-> Para obter informações sobre o suporte e uso, consulte [recurso ao enviar para suplementos do Outlook](../../outlook/outlook-on-send-addins.md).
+> Para obter informações sobre suporte e uso, consulte Recurso Ao enviar [para Outlook de complementos](../../outlook/outlook-on-send-addins.md).
 
 ## <a name="attributes"></a>Atributos
 

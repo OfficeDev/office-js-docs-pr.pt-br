@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671419"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088945"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Novidades na API JavaScript 1.8 Excel JavaScript
 
@@ -129,7 +129,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[varyByCategories](/javascript/api/excel/excel.chartseries#varyByCategories)|True se Excel atribuir uma cor ou padrão diferente a cada marcador de dados.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardPeriod)|Representa o número de períodos que a linha de tendência se estende para trás.|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardPeriod)|Representa o número de períodos que a linha de tendência se estende para frente.|
-||[rótulo](/javascript/api/excel/excel.charttrendline#label)|Representa o rótulo de linha de tendência um gráfico.|
+||[label](/javascript/api/excel/excel.charttrendline#label)|Representa o rótulo de linha de tendência um gráfico.|
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showEquation)|Verdadeiro se a equação da linha de tendência for exibida no gráfico.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showRSquared)|True se o valor r-quadrado da linha de tendência for exibido no gráfico.|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[autoText](/javascript/api/excel/excel.charttrendlinelabel#autoText)|Especifica se o rótulo da linha de tendência gera automaticamente o texto apropriado com base no contexto.|
@@ -179,7 +179,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[custom](/javascript/api/excel/excel.datavalidationrule#custom)|Critérios de validação de dados personalizados.|
 ||[data](/javascript/api/excel/excel.datavalidationrule#date)|Critérios de validação de dados de data.|
 ||[decimal](/javascript/api/excel/excel.datavalidationrule#decimal)|Critérios de validação de dados decimais.|
-||[list](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
+||[lista](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textLength)|Critérios de validação de dados de comprimento de texto.|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|Critérios de validação de dados de tempo.|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholeNumber)|Critérios de validação de dados de número inteiro.|
@@ -254,7 +254,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getItemOrNullObject_name_)|Obtém um RowColumnPivotHierarchy por nome.|
 ||[items](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[remove(rowColumnPivotHierarchy: Excel. RowColumnPivotHierarchy)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove_rowColumnPivotHierarchy_)|Remove o PivotHierarchy do eixo atual.|
-|[Runtime](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableEvents)|Alterne eventos JavaScript no painel de tarefas ou no complemento de conteúdo atual.|
+|[Tempo de execução](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableEvents)|Alterne eventos JavaScript no painel de tarefas ou no complemento de conteúdo atual.|
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#baseField)|O PivotField para basear `ShowAs` o cálculo, se aplicável de acordo com o `ShowAsCalculation` tipo, senão `null` .|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseItem)|O item no qual basear `ShowAs` o cálculo, se aplicável de acordo com `ShowAsCalculation` o tipo, mais `null` .|
 ||[calculation](/javascript/api/excel/excel.showasrule#calculation)|O `ShowAs` cálculo a ser usado para o PivotField.|

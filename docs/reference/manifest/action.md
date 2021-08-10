@@ -3,12 +3,12 @@ title: Elemento Action no arquivo de manifesto
 description: Esse elemento especifica a ação a ser executar quando o usuário seleciona um botão ou um controle de menu.
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fe4b0b0cbc4e9c455225cb4ad3d80e081589eeaedcd5efc18f1df31624515a1a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348696"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089858"
 ---
 # <a name="action-element"></a>Elemento Action
 

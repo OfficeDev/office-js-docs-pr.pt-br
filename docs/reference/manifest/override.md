@@ -3,12 +3,12 @@ title: Elemento Override no arquivo de manifesto
 description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: d6f91d32a604a939118e42de882976239006c5235ea65a55d713712ebca4ee70
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590901"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093639"
 ---
 # <a name="override-element"></a>Elemento Override
 

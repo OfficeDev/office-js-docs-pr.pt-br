@@ -1,26 +1,26 @@
 ---
 title: Elemento Authorizations no arquivo de manifesto
-description: Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.
+description: Especifica os recursos externos que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 675585f99fc6261a2145219d553f02b9f9abded3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 068e6753e2e8e947e5e6e3c0885e7cd006165660862a37346eea114abb81a9b8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608751"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092496"
 ---
 # <a name="authorizations-element"></a>Elemento Authorizations
 
-Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.
+Especifica os recursos externos que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.
 
-**Autorizações** é um elemento filho do elemento [WebApplicationInfo](webapplicationinfo.md) no manifesto.
+**Autorizações** é um elemento filho do [elemento WebApplicationInfo](webapplicationinfo.md) no manifesto.
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Autorização](authorization.md)                |  Sim     |   Identifica um recurso externo para o qual o aplicativo Web do suplemento precisa de autorização e os escopos (permissões) necessários. |
+|  [Autorização](authorization.md)                |  Sim     |   Identifica um recurso externo de que o aplicativo Web do complemento precisa de autorização e os escopos (permissões) necessários. |
 
 ## <a name="example"></a>Exemplo
 

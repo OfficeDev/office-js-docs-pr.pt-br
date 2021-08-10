@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApiOnline.
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 26d735903bf3981cdb65719a44ed0b37ac9c70f185f8fe99df1e5c3669e19d80
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671874"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093231"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Conjunto de requisitos somente para API JavaScript online
 

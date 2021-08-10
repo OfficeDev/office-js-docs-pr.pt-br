@@ -1,18 +1,18 @@
 ---
 title: Elemento Methods no arquivo de manifesto
-description: O elemento Methods especifica a lista de métodos da API JavaScript do Office que o suplemento do Office exige para ativar.
+description: O elemento Methods especifica a lista de Office da API JavaScript que o seu Office Add-in requer para ser ativado.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b270122240314b792ee492336417a4d133bdcc84
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 12f562bb3d4ab182226af82a4961ee4cc36f20c1a4381fc12a4bea3028699c79
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609017"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089711"
 ---
 # <a name="methods-element"></a>Elemento Methods
 
-Especifica a lista de métodos da API JavaScript do Office que o suplemento do Office exige para ativar.
+Especifica a lista de Office da API JavaScript que seu Office Desemplice exige para ativar.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas
 
@@ -34,4 +34,4 @@ Especifica a lista de métodos da API JavaScript do Office que o suplemento do O
 
 ## <a name="remarks"></a>Comentários
 
-Os **métodos** e elementos de **método** não têm suporte em suplementos de email. Para obter mais informações sobre conjuntos de requisitos, confira [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os **elementos Métodos** e **Métodos** não são suportados em complementos de email. Para obter mais informações sobre conjuntos de requisitos, [consulte Office versões e conjuntos de requisitos.](../../develop/office-versions-and-requirement-sets.md)

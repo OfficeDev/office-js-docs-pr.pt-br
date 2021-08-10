@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 4943eeb020e99f9a87d77996c59ea838e84ec6eecf705cb483930dc948d4e8c1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671860"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092157"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
@@ -175,7 +175,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do W
 ||[styleBuiltIn](/javascript/api/word/word.range#styleBuiltIn)|Obtém ou define o nome do estilo interno para o intervalo.|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[getFirst()](/javascript/api/word/word.rangecollection#getFirst__)|Obtém o primeiro intervalo nesta coleção.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.rangecollection#getFirstOrNullObject__)|Obtém o primeiro intervalo nesta coleção.|
-|[RequestContext](/javascript/api/word/word.requestcontext)|[application](/javascript/api/word/word.requestcontext#application)|[Conjunto de api: WordApi 1.3] *|
+|[RequestContext](/javascript/api/word/word.requestcontext)|[aplicativo](/javascript/api/word/word.requestcontext#application)|[Conjunto de api: WordApi 1.3] *|
 |[Section](/javascript/api/word/word.section)|[getNext()](/javascript/api/word/word.section#getNext__)|Obtém a próxima seção.|
 ||[getNextOrNullObject()](/javascript/api/word/word.section#getNextOrNullObject__)|Obtém a próxima seção.|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[getFirst()](/javascript/api/word/word.sectioncollection#getFirst__)|Obtém a primeira seção nesta coleção.|
