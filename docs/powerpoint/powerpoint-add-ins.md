@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 47bc41f9ffed538440d635a49a83ecd7ab11df6cd12ec5eee04bc7b524ed72cf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671699"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094735"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -18,13 +18,13 @@ Você pode usar suplementos do PowerPoint para criar soluções envolventes para
 
 - Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
 
-- Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, consulte o suplemento [Pexels Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997), que você pode usar para adicionar fotos profissionais à sua apresentação.
+- Usar **suplementos do painel de tarefas** para inserir informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, veja o [Pexels – Fotos de Estoque Gratuitas](https://appsource.microsoft.com/product/office/wa104379997) suplemento, que você pode usar para adicionar fotos profissionais à sua apresentação.
 
 ## <a name="powerpoint-add-in-scenarios"></a>Cenários de suplemento do PowerPoint
 
 Os exemplos de código neste artigo demonstram algumas tarefas básicas para desenvolver suplementos para o PowerPoint. Observe o seguinte:
 
-- Para exibir as informações, esses exemplos dependem da função `app.showNotification`, incluída em modelos de projeto de Suplementos do Office do Visual Studio. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, será necessário substituir a função `showNotification` por seu próprio código.
+- Para exibir informações, estes exemplos usar a função `app.showNotification` que está incluída nos modelos de projeto do Visual Studio Suplementos do Office. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, você precisará substituir a função `showNotification` pelo seu próprio código.
 
 - Vários desses exemplos também usam um objeto `Globals` que é declarado fora do âmbito destas funções como:   `var Globals = {activeViewHandler:0, firstSlideId:0};`
 
@@ -35,7 +35,7 @@ Os exemplos de código neste artigo demonstram algumas tarefas básicas para des
 Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o `ActiveViewChanged` evento, como parte do seu `Office.Initialize` manipulador.
 
 > [!NOTE]
-> No PowerPoint Online na Web, o evento [Document.ActiveViewChanged](/javascript/api/office/office.document) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
+> Em PowerPoint na web, o evento [Document.ActiveViewChanged](/javascript/api/office/office.document) nunca disparará, pois o modo Apresentação de Slides é tratado como uma nova sessão. Neste caso, o suplemento deve ir buscar a exibição ativa no carregamento, como mostra o seguinte exemplo de código.
 
 No seguinte exemplo de código:
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegue até um determinado slide na apresentação
 
-No exemplo de código a seguir, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz denominada `slides`. A matriz `slides` contém índices, ids e títulos do intervalo selecionado slides (ou do slide atual, se vários slides não forem selecionados). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
+No seguinte exemplo de código, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamado `slides`. A matriz `slides` contém os ids, títulos e índices de um intervalo selecionado de slides (ou do slide atual, se não forem selecionados vários slides). Ele também salva o id do primeiro slide no intervalo selecionado para uma variável global.
 
 ```js
 function getSelectedRange() {

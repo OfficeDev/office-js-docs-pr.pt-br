@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Ou
 ms.date: 05/17/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 49cfcfee075ba01f077162cef415ed58211b95f6
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1fd7ca7ffe9ea102296e836189a3af6edc568cc5bce21207e9d138bee4478219
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077208"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098695"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 

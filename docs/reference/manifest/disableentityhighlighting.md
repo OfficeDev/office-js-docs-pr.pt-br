@@ -3,12 +3,12 @@ title: Elemento DisableEntityHighlighting no arquivo de manifesto
 description: Especifica se a entidade de realce deve estar desativada para o suplemento de email.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a2364bb0ec1d369be7a2f07f1a115bab92dacc48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4cf11da3496485ae3a37b5757129d65fb280d06ffdd2564a4694ca911a6d7166
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611572"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097438"
 ---
 # <a name="disableentityhighlighting-element"></a>Elemento DisableEntityHighlighting
 

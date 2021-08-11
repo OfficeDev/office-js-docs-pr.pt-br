@@ -3,16 +3,16 @@ title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 02/21/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e38747f484eabac26e2e9e846e562ec54510326
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: d063045acfad3dee16c676733ddb5494761b66270345d701d36e7e8a6db16c6a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505490"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095389"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
-Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs JavaScript do Office expostas por meio do [objeto Mailbox.](#mailbox-object)
+Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs javaScript Office expostas por meio do [objeto Mailbox.](#mailbox-object)
 
 ## <a name="officejs-library"></a>Biblioteca Office.js
 
@@ -26,7 +26,7 @@ Referência CDN em um `<script>` marca na `<head>` marca da página da web (arqu
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]
-> Ao desenvolver um complemento para qualquer aplicativo cliente do Office, consulte a API JavaScript do Office de dentro `<head>` da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
+> Ao desenvolver um add-in para qualquer aplicativo cliente Office, consulte a API JavaScript Office de dentro `<head>` da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
@@ -64,7 +64,7 @@ Seu suplemento requer as permissões apropriadas para usar as APIs de que precis
 | **Leitura/gravação** | Além do que é permitido em **Leitura do item**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
 | **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Os Complementos do Office.](../concepts/privacy-and-security.md)
+Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte Privacidade e [segurança para Office Desadições](../concepts/privacy-and-security.md).
 
 ## <a name="mailbox-object"></a>Objeto Mailbox
 

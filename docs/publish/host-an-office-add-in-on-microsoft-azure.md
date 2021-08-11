@@ -3,16 +3,16 @@ title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 53466965281caa050f9264ea9460b6c7faa6c5b94be3596f4fdc45e622f71ba2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292381"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096838"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
-O suplemento do Office mais simples é composto por um arquivo de manifesto XML e uma página HTML. O arquivo de manifesto XML descreve as características do suplemento, como o nome, quais clientes da área de trabalho do Office podem ser executados e a URL da página HTML do suplemento. A página HTML está contida em um aplicativo Web com o qual os usuários interagem ao instalar e executar seu suplemento em um aplicativo cliente do Office. Você pode hospedar o aplicativo Web de um suplemento do Office em qualquer plataforma de hospedagem na Web, incluindo o Azure.
+Os Suplementos do Office mais simples contêm um arquivo de manifesto XML e uma página HTML. O arquivo de manifesto XML descreve as características do add-in, como seu nome Office, quais clientes de área de trabalho ele pode executar e a URL da página HTML do complemento. A página HTML está contida em um aplicativo Web com o qual os usuários interagem quando instalam e executam seu suplemento dentro de um aplicativo cliente do Office. Você pode hospedar o aplicativo Web de um suplemento do Office em qualquer plataforma de hospedagem Web, incluindo o Azure.
 
 Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e [realizar sideload do suplemento](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para teste em um aplicativo cliente do Office.
 
@@ -113,7 +113,7 @@ Para criar o aplicativo Web usando o portal do Azure, realize as etapas a seguir
 
 4. Escolha **Suplemento da Web do Word** como o tipo de projeto e, em seguida, escolha **Avançar** para aceitar as configurações padrão.
 
-O Visual Studio cria um suplemento básico do Word que você pode publicar como está, sem fazer alterações no projeto da Web. Para criar um suplemento para um aplicativo do Office diferente, como o Excel, repita as etapas e escolha um tipo de projeto com o aplicativo do Office desejado.
+O Visual Studio cria um suplemento básico do Word que você pode publicar como está, sem fazer alterações no projeto da Web. Para fazer um complemento para um aplicativo Office, como Excel, repita as etapas e escolha um tipo de projeto com seu aplicativo Office desejado.
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>Etapa 5: publicar seu aplicativo Web do suplemento do Office no Azure
 

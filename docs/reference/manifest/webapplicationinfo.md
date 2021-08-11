@@ -1,24 +1,24 @@
 ---
 title: Elemento WebApplicationInfo no arquivo de manifesto
-description: Documentação de referência do elemento WebApplicationInfo para arquivos de manifesto de Complementos do Office (XML).
+description: Documentação de referência do elemento WebApplicationInfo para Office arquivos XML (manifesto de complementos).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 7b14b62fa8b3dd87c650dbeaaeedb8d29c3995a77e0be8c8582da422cb480e67
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234160"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097878"
 ---
 # <a name="webapplicationinfo-element"></a>Elemento WebApplicationInfo
 
 Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém informações sobre o suplemento como:
 
-- Um recurso do OAuth  2.0 para o qual o aplicativo cliente do Office pode precisar de permissões.
+- Um recurso OAuth 2.0  para o qual o Office cliente pode precisar de permissões.
 - Um *cliente* do OAuth 2.0 que pode exigir permissões para o Microsoft Graph.
 
 > [!NOTE]
-> Atualmente, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais sobre os programas para os quais a API de logon único tem suporte no momento, consulte [Conjuntos de requisitos da IdentityAPI](../requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> No momento, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais sobre os programas para os quais a API de logon único tem suporte no momento, consulte [Conjuntos de requisitos da IdentityAPI](../requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 **WebApplicationInfo** é um elemento filho do elemento [VersionOverrides](versionoverrides.md) no manifesto.  
 
@@ -29,8 +29,8 @@ Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém inf
 |  **Id**    |  Sim   |  A **Id do Aplicativo** do serviço associado do suplemento conforme registrado no ponto de extremidade do Azure Active Directory (Azure AD) v 2.0.|
 |  **MsaId**    |  Não   |  A ID do cliente do aplicativo Web do seu complemento para MSA conforme registrado no msm.live.com.|
 |  **Recurso**  |  Sim   |  Especifica o **URI da ID do Aplicativo** do suplemento, conforme registrado no ponto de extremidade do Azure Active Directory v 2.0.|
-|  [Escopos](scopes.md)                |  Sim  |  Especifica as permissões que o add-in precisa para um recurso, como o Microsoft Graph.  |
-|  [Autorizações](authorizations.md)  |  Não   | Especifica os recursos externos para os que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.|
+|  [Escopos](scopes.md)                |  Sim  |  Especifica as permissões que o complemento precisa para um recurso, como o Microsoft Graph.  |
+|  [Autorizações](authorizations.md)  |  Não   | Especifica os recursos externos que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.|
 
 ## <a name="webapplicationinfo-example"></a>Exemplo de WebApplicationInfo
 

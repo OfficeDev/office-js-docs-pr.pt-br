@@ -3,12 +3,12 @@ title: Elemento DefaultSettings no arquivo de manifesto
 description: Especifica a localização de origem padrão e outras configurações padrão para o suplemento de conteúdo ou de painel de tarefas.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a9711fb44390bcbda8979b8018eed1318c5579bc
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 11e398d86a702f4e45a5cea7b63e0380ce65d1749d0660789e96477744d73079
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641463"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095891"
 ---
 # <a name="defaultsettings-element"></a>Elemento DefaultSettings
 
@@ -38,4 +38,4 @@ Especifica a localização de origem padrão e outras configurações padrão pa
 
 ## <a name="remarks"></a>Comentários
 
-O local de origem e outras configurações no elemento **DefaultSettings** só se aplicam a suplementos de conteúdo e de painel de tarefas. Para suplementos de email, você especifica os locais padrão para arquivos de origem e outras configurações padrão no elemento [FormSettings](formsettings.md) .
+O local de origem e outras configurações no **elemento DefaultSettings** aplicam-se somente a complementos de conteúdo e painel de tarefas. Para os complementos de email, especifique os locais padrão para arquivos de origem e outras configurações padrão no [elemento FormSettings.](formsettings.md)

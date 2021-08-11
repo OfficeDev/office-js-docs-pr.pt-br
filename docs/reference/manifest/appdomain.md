@@ -1,21 +1,21 @@
 ---
 title: Elemento AppDomain no arquivo de manifesto
-description: Especifica domínios adicionais que são usados pelo seu suplemento e que deve ser confiável para o Office.
+description: Especifica domínios adicionais que são usados pelo seu complemento e devem ser confiáveis por Office.
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: be983418a09be8f808e6cde0b84bff7f99c25923e57baced85b915709668564c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778645"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098308"
 ---
 # <a name="appdomain-element"></a>Elemento AppDomain
 
-Especifica um domínio adicional no qual o Office deve confiar, além do especificado no [elemento SourceLocation](sourcelocation.md). A especificação de um domínio tem estes efeitos:
+Especifica um domínio adicional que Office deve confiar, além do especificado no [elemento SourceLocation](sourcelocation.md). A especificação de um domínio tem esses efeitos:
 
-- Ele permite que páginas, rotas ou outros recursos no domínio sejam abertos diretamente no painel de tarefas raiz do suplemento em plataformas do Office. (Especificar um domínio em um **AppDomain** não é necessário para o Office na Web ou para abrir um recurso em um iframe, nem é necessário para abrir um recurso em uma caixa de diálogo aberta com a [API da caixa de diálogo](../../develop/dialog-api-in-office-add-ins.md).)
-- Ele permite que as páginas no domínio façam chamadas de API Office.js de IFrames no suplemento.
+- Ele permite que páginas, rotas ou outros recursos no domínio sejam abertos diretamente no painel de tarefas raiz do add-in em plataformas Office desktop. (Especificar um domínio em um **AppDomain** não é necessário para Office na Web ou para abrir um recurso em um IFrame, nem é necessário para abrir um recurso em uma caixa de diálogo aberta com a [API](../../develop/dialog-api-in-office-add-ins.md)de Diálogo .)
+- Ele permite que as páginas no domínio façam chamadas Office.js API de IFrames dentro do complemento.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 
@@ -28,10 +28,10 @@ Especifica um domínio adicional no qual o Office deve confiar, além do especif
 > [!IMPORTANT]
 > 1. O valor do elemento **AppDomain** deve incluir o protocolo (ex., `<AppDomain>https://myappdomain.com</AppDomain>`).
 > 2. Se houver uma porta explícita para o domínio, inclua-a (por exemplo, `<AppDomain>https://myappdomain.com:9999</AppDomain>` ).
-> 3. Se um subdomínio precisar ser confiável, inclua-o (por exemplo, `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>` ). O subdomínio `mysubdomain.mydomain.com` e os `mydomain.com` domínios são diferentes. Se ambos precisam ser confiáveis, então ambos precisam estar em elementos **AppDomain** separados.
-> 4. A listagem do mesmo domínio que o especificado no [elemento SourceLocation](sourcelocation.md) não tem efeito e pode ser enganosa. Em particular, quando você está desenvolvendo `localhost` , não é necessário criar um elemento **AppDomain** para `localhost` .
-> 5. Não inclua nenhum segmento de uma URL além do domínio. Por exemplo, não inclua a URL completa de uma página.
-> 6. *Não* Coloque uma barra de fechamento, "/", no valor.
+> 3. Se um subdomínio precisar ser confiável, inclua-o (por exemplo, `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>` ). O subdomínio `mysubdomain.mydomain.com` e `mydomain.com` são domínios diferentes. Se ambos precisam ser confiáveis, ambos precisam estar em elementos **AppDomain** separados.
+> 4. Listar o mesmo domínio especificado no [elemento SourceLocation](sourcelocation.md) não tem efeito e pode ser enganoso. Em particular, quando você está desenvolvendo em , você não precisa criar um `localhost` **elemento AppDomain** para `localhost` .
+> 5. Não inclua segmentos de uma URL além do domínio. Por exemplo, não inclua a URL completa de uma página.
+> 6. Não *coloque* uma barra de fechamento , "/", no valor.
 
 ## <a name="contained-in"></a>Contido em
 

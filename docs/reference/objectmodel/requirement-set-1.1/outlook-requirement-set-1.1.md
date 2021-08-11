@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.1
-description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,1.
+description: Recursos e APIs que foram introduzidos para os Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.1.
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: f93b6d582043641903b362121c6e5eaf89c2ad1c
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 20105efd3d7e7e978f7c184c029d6482c0db8bd947166e91d9e9f5714e775d99
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431371"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098719"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 
-O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook. API JavaScript do Outlook 1,1 (caixa de correio 1,1) é a primeira versão da API.
+O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário. Outlook A API JavaScript 1.1 (Caixa de Correio 1.1) é a primeira versão da API.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
 
 ## <a name="whats-new-in-11"></a>Novidades na versão 1.1?
 
-O conjunto de requisitos 1,1 inclui todos os [conjuntos de requisitos de API comuns](../../requirement-sets/office-add-in-requirement-sets.md) com suporte no Outlook. Ele adicionou a capacidade de os suplementos para acessarem o corpo de mensagens e os compromissos e a capacidade de modificar o item atual.
+O conjunto de requisitos 1.1 inclui todos os conjuntos de requisitos [da API](../../requirement-sets/office-add-in-requirement-sets.md) comum com suporte em Outlook. Ele adicionou a capacidade de os suplementos para acessarem o corpo de mensagens e os compromissos e a capacidade de modificar o item atual.
 
 ### <a name="change-log"></a>Log de alterações
 
@@ -32,7 +32,7 @@ O conjunto de requisitos 1,1 inclui todos os [conjuntos de requisitos de API com
 - Foi adicionado o [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods): Adiciona um item do Exchange, como uma mensagem, como anexo na mensagem ou no compromisso.
 - Foi adicionado o [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods): Remove um anexo de uma mensagem ou de um compromisso.
 - Foi adicionado o [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties): Obtém um objeto que fornece métodos para manipular o corpo de um item.
-- Foi adicionada a linha [Office. Context. Mailbox. Item. Bcc](office.context.mailbox.item.md#properties) de uma mensagem.
+- Adicionada [Office.context.mailbox.item.bcc](office.context.mailbox.item.md#properties) linha de uma mensagem.
 - Adicionado o [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1&preserve-view=true): especifica o tipo de destinatário para um compromisso.
 
 ## <a name="see-also"></a>Confira também

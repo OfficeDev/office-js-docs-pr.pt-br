@@ -4,12 +4,12 @@ description: Informações do conjunto de requisitos do Suplemento do Office par
 ms.date: 05/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: 4ba1970f57bb08210878bc3e363598b37eea2265b773f7e533c48939edb6d9e3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266086"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095889"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -75,7 +75,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](../manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o aplicativo do Office não for compatível com os conjuntos de requisitos ou métodos de API especificados no `Requirements` elemento do manifesto, o suplemento não será executado nesse aplicativo ou plataforma, e não será exibido na lista de suplementos mostrados no **Meus suplementos**. Se o seu suplemento exige um conjunto específico de requisitos para funcionalidade total, mas pode fornecer um valor mesmo para os usuários nas plataformas que não têm suporte para o conjunto de requisitos, recomendamos verificar o suporte a requisitos no tempo de execução conforme descrito acima, em vez de definir o suporte ao conjunto de requisitos no manifesto.
+Você pode usar o elemento [Requisitos](../manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou métodos API que seu suplemento requer para ser ativado. Se a aplicativo ou plataforma do Office não suportar os conjuntos de requisitos ou métodos API especificados no `Requirements`elemento do manifesto, o suplemento não será executado naquela aplicativo ou plataforma, e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. Se seu suplemento requer um conjunto específico de requisitos para funcionalidade total, mas pode fornecer valor mesmo para usuários em plataformas que não suportam o conjunto de requisitos, recomendamos que você verifique o suporte aos requisitos em runtime como descrito acima, em vez de definir o suporte ao conjunto de requisitos no manifesto.
 
 O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos cliente do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
 

@@ -3,12 +3,12 @@ title: Elemento DefaultLocale no arquivo de manifesto
 description: Especifica o nome da cultura padrão da localidade usada por cadeias de caracteres em seu suplemento.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 72b07cb04f9ce2e7678c80c3ca2730300448a98a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72952c78c4748805917042bdebc47289a135772928480ec7e3b988b4ff68f0e1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612294"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095901"
 ---
 # <a name="defaultlocale-element"></a>Elemento DefaultLocale
 

@@ -3,12 +3,12 @@ title: Modelo de objeto de JavaScript do Word em Suplementos do Office
 description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 43ca88e7899e2ff11748dc91d5c8a5059d8bb559
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: faa461807f2317e6270d92153b065b32766129f7038aad3bad7332a2fadd94e7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077229"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098028"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 
@@ -27,7 +27,7 @@ Um suplemento do Word interage com objetos no Excel usando a API JavaScript do O
 
 Embora você provavelmente use a API JavaScript do Word para desenvolver a maioria das funcionalidades em suplementos destinados ao Word, você também usará objetos na API Comum. Por exemplo:
 
-* [Context](/javascript/api/office/office.context): O `Context`objeto representa o ambiente de tempo de execução do suplemento e fornece acesso a objetos principais da API. Ele consiste em configuração do documento, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se um conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
+* [Contexto](/javascript/api/office/office.context): o objeto `Context` representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
 * [Documento](/javascript/api/office/office.document): o `Document` objeto fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Word em que o suplemento está sendo executado.
 
 ![Diferenças entre a API JS do Word e as APIs comuns.](../images/word-js-api-common-api.png)

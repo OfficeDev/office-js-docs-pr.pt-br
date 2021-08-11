@@ -3,12 +3,12 @@ title: Elemento Control no arquivo de manifesto
 description: Define a função JavaScript que executa e aciona ou inicia um painel de tarefas.
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 3ad26165e77305c69791aac9b128c5dfadf7f9beb97f85ae24a000876146c2cc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173980"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095949"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -31,8 +31,8 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)        |
-|  **ToolTip**    |Não|A dica de ferramenta do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)        |
+|  **Dica de Ferramenta**    |Não|A dica de ferramenta do botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
@@ -41,7 +41,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 
 ### <a name="executefunction-button-example"></a>Exemplo do botão ExecuteFunction
 
-No exemplo a seguir, o botão é desabilitado quando o complemento é lançado. Ela pode ser habilitada programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
+No exemplo a seguir, o botão é desabilitado quando o complemento é lançado. Ele pode ser habilitado programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -151,8 +151,8 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)      |
-|  **ToolTip**    |Não|A dica de ferramenta do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)      |
+|  **Dica de Ferramenta**    |Não|A dica de ferramenta do botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos do [Controle de botão](#button-control).|
@@ -253,7 +253,7 @@ O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O **atributo resid** pode ter no máximo 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources.](resources.md)        |
+|  **Label**     | Sim |  O texto do botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)        |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
 

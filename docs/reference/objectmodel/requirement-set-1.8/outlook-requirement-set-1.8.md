@@ -3,12 +3,12 @@ title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
 description: Conjunto de requisitos 1.8 para Outlook api de complemento.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 31ea7af1bc2ac33df5f3d25828df3f783aae0569
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f55789618e2737ce6e14c23be72924a4527a468c786e6fc5ac58116aa2477027
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53670262"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097156"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 

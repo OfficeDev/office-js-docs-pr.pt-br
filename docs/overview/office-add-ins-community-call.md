@@ -1,20 +1,22 @@
 ---
 title: Microsoft Office Chamada da comunidade de complementos
-description: O agendamento e recursos de chamada da comunidade de Microsoft Office de complementos mensais
-ms.date: 05/20/2021
+description: Os recursos e Microsoft Office de chamada da comunidade de complementos mensalmente.
+ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: f98e53211143bf377e72e4a477cbe72cd1864af5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 401bf2f174ee4d383417b7a465c316b3f1727036b229a1b13cafb750825a74a8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348402"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095146"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
 A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 PDT. Você pode baixar o convite do calendário em [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
 Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir para acompanhar a discussão!
+
+- [Office Chamada da comunidade de complementos – 9 de junho de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
 - [Office Chamada da comunidade de complementos – 12 de maio de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office Chamada da comunidade de complementos – 14 de abril de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [Office Chamada da comunidade de complementos – 10 de março de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)

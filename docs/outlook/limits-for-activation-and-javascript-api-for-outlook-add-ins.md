@@ -3,12 +3,12 @@ title: Limites para ativação e uso da API em suplementos do Outlook
 description: Você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites.
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: b1d948add382f19083f099ed7a01b4f954555b6f
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fcc28a5183195cade1314aaa6ed4d0890a892e8f8a3bf71935bdd8c01b968ab6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671776"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097522"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites para ativação e API JavaScript para suplementos do Outlook
 
