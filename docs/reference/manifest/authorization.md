@@ -1,27 +1,27 @@
 ---
 title: Elemento Authorization no arquivo de manifesto
-description: Especifica um recurso externo para o qual o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.
+description: Especifica um recurso externo que o aplicativo Web do complemento precisa de autorização para e as permissões necessárias.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294259"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087706"
 ---
 # <a name="authorization-element"></a>Elemento Authorization
 
-Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.
+Especifica os recursos externos que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.
 
-**Authorization** é um elemento filho do elemento [Authorizations](authorizations.md) no manifesto.
+**A** autorização é um elemento filho [do elemento Authorizations](authorizations.md) no manifesto.
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Recurso**  |  Sim   |  Especifica a URL do recurso externo.|
-|  [Escopos](scopes.md)                |  Sim  |  Especifica as permissões que o suplemento precisa para o recurso.  |
+|  [Escopos](scopes.md)                |  Sim  |  Especifica as permissões que o complemento precisa para o recurso.  |
 
 ## <a name="example"></a>Exemplo
 

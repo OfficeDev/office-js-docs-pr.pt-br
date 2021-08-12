@@ -4,12 +4,12 @@ description: Saiba como lidar com o vazamento de matrizes dinâmicas e intervalo
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: af94900ecea0091729de5a22b01ba83490519cfa
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b44f00e58eb9688b8526d56064bb6d6902729635075fe80d64e47ebedb13a8f6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671144"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084074"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>Manipular matrizes dinâmicas e vazamento usando a api javascript Excel javascript
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 Encontre a célula responsável pelo vazamento em uma determinada célula usando o [método Range.getSpillParent.](/javascript/api/excel/excel.range#getSpillParent__) Observe que `getSpillParent` só funciona quando o objeto range é uma única célula. Chamar em um intervalo com várias células resultará em um erro sendo lançado (ou um intervalo `getSpillParent` nulo sendo retornado para `Range.getSpillParentOrNullObject` ).
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

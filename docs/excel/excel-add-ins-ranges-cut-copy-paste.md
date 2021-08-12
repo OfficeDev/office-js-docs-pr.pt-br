@@ -4,12 +4,12 @@ description: Saiba como cortar, copiar e colar intervalos usando Excel API JavaS
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a61ac967f267dfe3820e6972939d336e16ddd8b1
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671172"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084098"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
 
@@ -95,7 +95,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="see-also"></a>Conferir também
+## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)

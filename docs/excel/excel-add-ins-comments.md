@@ -1,32 +1,32 @@
 ---
-title: Trabalhar com comentários usando a API JavaScript do Excel
-description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
+title: Trabalhar com comentários usando a EXCEL JavaScript
+description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e threads de comentários.
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 5e292dab77b080906d77b1517a8de715bc0d2122f29e3de73b04f5b9d9276c85
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626418"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084316"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a EXCEL JavaScript
 
-Este artigo descreve como adicionar, ler, modificar e remover comentários em uma pasta de trabalho com a API JavaScript do Excel. Você pode saber mais sobre o recurso comentário do artigo [inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) .
+Este artigo descreve como adicionar, ler, modificar e remover comentários em uma manual de trabalho com a API JavaScript Excel JavaScript. Você pode saber mais sobre o recurso de comentário no [artigo Inserir comentários e anotações Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) artigo.
 
-Na API JavaScript do Excel, um comentário inclui o único comentário inicial e a discussão encadeada conectada. Ele está vinculado a uma célula individual. Qualquer pessoa que exiba a pasta de trabalho com permissões suficientes pode responder a um comentário. Um objeto [comment](/javascript/api/excel/excel.comment) armazena as respostas como objetos [CommentReply](/javascript/api/excel/excel.commentreply) . Você deve considerar um comentário para ser um thread e que um thread deve ter uma entrada especial como o ponto de partida.
+Na api Excel JavaScript, um comentário inclui o único comentário inicial e a discussão encadeada conectada. Ela está vinculada a uma célula individual. Qualquer pessoa que exibir a workbook com permissões suficientes pode responder a um comentário. Um [objeto Comment](/javascript/api/excel/excel.comment) armazena essas respostas como objetos [CommentReply.](/javascript/api/excel/excel.commentreply) Você deve considerar um comentário como um thread e que um thread deve ter uma entrada especial como ponto de partida.
 
-![Um comentário do Excel, rotulado "comentário" com duas respostas, rotuladas "comentário. respostas [0]" e "comentário. respostas [1].](../images/excel-comments.png)
+![Um Excel comentário, rotulado como "Comentário" com duas respostas, rotulado "Comment.replies[0]" e "Comment.replies[1].](../images/excel-comments.png)
 
-Os comentários em uma pasta de trabalho são rastreados pela `Workbook.comments` propriedade. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment). Os comentários também podem ser acessados no nível da [planilha](/javascript/api/excel/excel.worksheet) . Os exemplos neste artigo trabalham com comentários no nível da pasta de trabalho, mas eles podem ser facilmente modificados para usar a `Worksheet.comments` propriedade.
+Os comentários em uma workbook são acompanhados pela `Workbook.comments` propriedade. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment). Os comentários também são acessíveis no [nível da Planilha.](/javascript/api/excel/excel.worksheet) Os exemplos neste artigo funcionam com comentários no nível da workbook, mas podem ser facilmente modificados para usar a `Worksheet.comments` propriedade.
 
 ## <a name="add-comments"></a>Adicionar comentários
 
-Use o `CommentCollection.add` método para adicionar comentários a uma pasta de trabalho. Este método utiliza até três parâmetros:
+Use o `CommentCollection.add` método para adicionar comentários a uma workbook. Este método tem até três parâmetros:
 
-- `cellAddress`: A célula onde o comentário é adicionado. Pode ser um objeto String ou [Range](/javascript/api/excel/excel.range) . O intervalo deve ser uma única célula.
-- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem formatação. Use um objeto [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menção](#mentions).
-- `contentType`: Um enum [ContentType](/javascript/api/excel/excel.contenttype) especificando o tipo de conteúdo. O valor padrão é `ContentType.plain`.
+- `cellAddress`: a célula onde o comentário é adicionado. Pode ser uma cadeia de caracteres ou [um objeto Range.](/javascript/api/excel/excel.range) O intervalo deve ser uma única célula.
+- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem texto. Use um [objeto CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menções](#mentions).
+- `contentType`: Um [número de ContentType](/javascript/api/excel/excel.contenttype) que especifica o tipo de conteúdo. O valor padrão é `ContentType.plain`.
 
 O exemplo a seguir adiciona um comentário à célula **A2**.
 
@@ -42,11 +42,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> Os comentários adicionados por um suplemento são atribuídos ao usuário atual desse suplemento.
+> Comentários adicionados por um complemento são atribuídos ao usuário atual desse complemento.
 
-### <a name="add-comment-replies"></a>Adicionar respostas de comentário
+### <a name="add-comment-replies"></a>Adicionar respostas de comentários
 
-Um `Comment` objeto é um thread de comentário que contém zero ou mais respostas. os objetos `Comment` têm uma propriedade `replies`, que é [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) que contém objetos [CommentReply](/javascript/api/excel/excel.commentreply). Para adicionar uma resposta a um comentário, use o método `CommentReplyCollection.add`, passando o texto da resposta. As respostas são exibidas na ordem em que são adicionadas. Eles também são atribuídos ao usuário atual do suplemento.
+Um `Comment` objeto é um thread de comentário que contém zero ou mais respostas. os objetos `Comment` têm uma propriedade `replies`, que é [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) que contém objetos [CommentReply](/javascript/api/excel/excel.commentreply). Para adicionar uma resposta a um comentário, use o método `CommentReplyCollection.add`, passando o texto da resposta. As respostas são exibidas na ordem em que são adicionadas. Eles também são atribuídos ao usuário atual do complemento.
 
 O exemplo a seguir adiciona uma resposta ao primeiro comentário da pasta de trabalho.
 
@@ -72,9 +72,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="edit-comment-replies"></a>Editar respostas de comentário
+### <a name="edit-comment-replies"></a>Editar respostas de comentários
 
-Para editar uma resposta de comentário, defina sua `CommentReply.content` propriedade.
+Para editar uma resposta de comentário, de definir sua `CommentReply.content` propriedade.
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>Excluir comentários
 
-Para excluir um comentário, use o `Comment.delete` método. A exclusão de um comentário também exclui as respostas associadas a esse comentário.
+Para excluir um comentário, use o `Comment.delete` método. Excluir um comentário também exclui as respostas associadas a esse comentário.
 
 ```js
 Excel.run(function (context) {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="delete-comment-replies"></a>Excluir respostas de comentário
+### <a name="delete-comment-replies"></a>Excluir respostas de comentários
 
 Para excluir uma resposta de comentário, use o `CommentReply.delete` método.
 
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ## <a name="resolve-comment-threads"></a>Resolver threads de comentário
 
-Um thread de comentário tem um valor booliano configurável, `resolved` para indicar se ele foi resolvido. Um valor de `true` significa que o thread de comentários é resolvido. Um valor de `false` significa que o thread de comentários é novo ou reaberto.
+Um thread de comentário tem um valor boolano `resolved` configurável, , para indicar se ele foi resolvido. Um valor de `true` significa que o thread de comentário é resolvido. Um valor significa `false` que o thread de comentário é novo ou reaberto.
 
 ```js
 Excel.run(function (context) {
@@ -123,9 +123,9 @@ Excel.run(function (context) {
 });
 ```
 
-Respostas de comentário têm uma `resolved` propriedade ReadOnly. Seu valor é sempre igual ao do restante do thread.
+As respostas de comentários têm uma propriedade `resolved` readonly. Seu valor é sempre igual ao do restante do thread.
 
-## <a name="comment-metadata"></a>Metadados de comentários
+## <a name="comment-metadata"></a>Metadados de comentário
 
 Cada comentário contém metadados sobre a criação, como o autor e a data de criação. Os comentários criados por seu suplemento são considerados criados pelo usuário atual.
 
@@ -146,9 +146,9 @@ Excel.run(function (context) {
 
 ### <a name="comment-reply-metadata"></a>Metadados de resposta de comentário
 
-Respostas de comentários armazenam os mesmos tipos de metadados que o comentário inicial.
+Respostas de comentário armazenam os mesmos tipos de metadados que o comentário inicial.
 
-O exemplo a seguir mostra como exibir o email do autor, o nome do autor e a data de criação da resposta de comentário mais recente em **a2**.
+O exemplo a seguir mostra como exibir o email do autor, o nome do autor e a data de criação da resposta de comentário mais recente em **A2**.
 
 ```js
 Excel.run(function (context) {
@@ -171,12 +171,12 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>Menções
 
-As [mencionas](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do comentário. O suplemento pode criar essas menção em seu nome.
+[As menções](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do seu comentário. Seu complemento pode criar essas menções em seu nome.
 
-Comentários com menção precisam ser criados com objetos [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Call `CommentCollection.add` com um `CommentRichContent` contendo um ou mais mencionas e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir o menção no texto. O formato de um menção é: `<at id="{replyIndex}">{mentionName}</at>` .
+Comentários com menções precisam ser criados com [objetos CommentRichContent.](/javascript/api/excel/excel.commentrichcontent) Chame `CommentCollection.add` com uma ou mais `CommentRichContent` menções e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir a menção no texto. O formato de uma menção é: `<at id="{replyIndex}">{mentionName}</at>` .
 
 > [!NOTE]
-> Atualmente, apenas o nome exato de menção pode ser usado como o texto do link de menção. O suporte para versões reduzidas de um nome será adicionado posteriormente.
+> Atualmente, apenas o nome exato da menção pode ser usado como o texto do link de menção. O suporte para versões reduzidas de um nome será adicionado posteriormente.
 
 O exemplo a seguir mostra um comentário com uma única menção.
 
@@ -202,18 +202,18 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="comment-events"></a>Eventos de comentários
+## <a name="comment-events"></a>Eventos de comentário
 
-O suplemento pode ouvir adições, alterações e exclusões de comentários. [Eventos de comentários](/javascript/api/excel/excel.commentcollection#event-details) ocorrem no `CommentCollection` objeto. Para ouvir eventos de comentários, registre o `onAdded` , `onChanged` ou o `onDeleted` manipulador de eventos comment. Quando um evento Comment é detectado, use este manipulador de eventos para recuperar dados sobre o Comentário adicionado, alterado ou excluído. O `onChanged` evento também trata de adições de comentários, alterações e exclusões. 
+Seu complemento pode escutar adições, alterações e exclusões de comentários. [Eventos de comentário](/javascript/api/excel/excel.commentcollection#event-details) ocorrem no `CommentCollection` objeto. Para ouvir eventos de comentário, registre `onAdded` o manipulador de eventos , ou `onChanged` `onDeleted` comentário. Quando um evento de comentário é detectado, use esse manipulador de eventos para recuperar dados sobre o comentário adicionado, alterado ou excluído. O `onChanged` evento também lida com adições, alterações e exclusões de resposta de comentários. 
 
-Cada evento de comentário é acionado apenas uma vez quando várias adições, alterações ou exclusões são realizadas ao mesmo tempo. Todos os objetos [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)e [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) contêm matrizes de IDs de comentários para mapear as ações de evento de volta para as coleções de comentários.
+Cada evento de comentário dispara apenas uma vez quando várias adições, alterações ou exclusões são executadas ao mesmo tempo. Todos os [objetos CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)e [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) contêm matrizes de IDs de comentário para mapear as ações de evento de volta para as coleções de comentários.
 
-Confira o artigo [trabalhar com eventos usando o Excel JavaScript API](excel-add-ins-events.md) para obter mais informações sobre como registrar manipuladores de eventos, manipular eventos e remover manipuladores de eventos. 
+Consulte o artigo Trabalhar com Eventos usando o Excel [api JavaScript](excel-add-ins-events.md) para obter informações adicionais sobre como registrar manipuladores de eventos, manipular eventos e remover manipuladores de eventos. 
 
 ### <a name="comment-addition-events"></a>Eventos de adição de comentários 
-O `onAdded` evento é disparado quando um ou mais comentários novos são adicionados à coleção comment. Esse evento *não* é disparado quando as respostas são adicionadas a um thread de comentários (consulte comentários sobre eventos de [alteração](#comment-change-events) para saber mais sobre eventos de resposta de comentários).
+O `onAdded` evento é acionado quando um ou mais novos comentários são adicionados à coleção de comentários. Esse evento não *é* acionado quando as respostas são adicionadas a um thread de comentários (consulte [Eventos](#comment-change-events) de alteração de comentários para saber mais sobre eventos de resposta de comentários).
 
-O exemplo a seguir mostra como registrar o `onAdded` manipulador de eventos e, em seguida, usar o `CommentAddedEventArgs` objeto para recuperar a `commentDetails` matriz do Comentário adicionado.
+O exemplo a seguir mostra como registrar o manipulador de eventos e, em seguida, usar o objeto para recuperar a `onAdded` `CommentAddedEventArgs` matriz do comentário `commentDetails` adicionado.
 
 > [!NOTE]
 > Este exemplo só funciona quando um único comentário é adicionado. 
@@ -246,17 +246,17 @@ function commentAdded() {
 }
 ```
 
-### <a name="comment-change-events"></a>Eventos de alteração de comentário 
-O `onChanged` evento Comment é disparado nos cenários a seguir.
+### <a name="comment-change-events"></a>Eventos de alteração de comentários 
+O `onChanged` evento comment é acionado nos seguintes cenários.
 
 - O conteúdo de um comentário é atualizado.
-- Um thread de comentários é resolvido.
-- Um thread de comentários é reaberto.
-- Uma resposta é adicionada a um thread de comentários.
-- Uma resposta é atualizada em um thread de comentários.
-- Uma resposta é excluída em um thread de comentários.
+- Um thread de comentário é resolvido.
+- Um thread de comentário é reaberto.
+- Uma resposta é adicionada a um thread de comentário.
+- Uma resposta é atualizada em um thread de comentário.
+- Uma resposta é excluída em um thread de comentário.
 
-O exemplo a seguir mostra como registrar o `onChanged` manipulador de eventos e, em seguida, usar o `CommentChangedEventArgs` objeto para recuperar a `commentDetails` matriz do comentário alterado.
+O exemplo a seguir mostra como registrar o manipulador de eventos e, em seguida, usar o objeto para recuperar a `onChanged` `CommentChangedEventArgs` matriz do comentário `commentDetails` alterado.
 
 > [!NOTE]
 > Este exemplo só funciona quando um único comentário é alterado. 
@@ -290,9 +290,9 @@ function commentChanged() {
 ```
 
 ### <a name="comment-deletion-events"></a>Eventos de exclusão de comentários
-O `onDeleted` evento é disparado quando um comentário é excluído da coleção comment. Após a exclusão de um comentário, seus metadados não estão mais disponíveis. O objeto [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) fornece IDs de comentários, caso o suplemento esteja gerenciando Comentários individuais.
+O `onDeleted` evento é acionado quando um comentário é excluído da coleção de comentários. Depois que um comentário for excluído, seus metadados não estarão mais disponíveis. O [objeto CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) fornece IDs de comentário, caso seu add-in gere comentários individuais.
 
-O exemplo a seguir mostra como registrar o `onDeleted` manipulador de eventos e, em seguida, usar o `CommentDeletedEventArgs` objeto para recuperar a `commentDetails` matriz do comentário excluído.
+O exemplo a seguir mostra como registrar o manipulador de eventos e, em seguida, usar o objeto para recuperar a `onDeleted` `CommentDeletedEventArgs` matriz do comentário `commentDetails` excluído.
 
 > [!NOTE]
 > Este exemplo só funciona quando um único comentário é excluído. 
@@ -318,7 +318,7 @@ function commentDeleted() {
 
 ## <a name="see-also"></a>Confira também
 
-- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
+- [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com pastas de trabalho usando a API JavaScript do Excel](excel-add-ins-workbooks.md)
 - [Trabalhar com eventos usando a API JavaScript do Excel](excel-add-ins-events.md)
 - [Inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

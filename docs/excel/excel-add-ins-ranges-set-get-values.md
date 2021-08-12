@@ -4,12 +4,12 @@ description: Saiba como usar a EXCEL JavaScript para definir e obter valores de 
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fccf4325fb3e2473e10719efb6d5336cb87d8abcedfaa6a4f80f8e07eb2b05b6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075744"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085385"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Definir e obter valores de intervalo, texto ou fórmulas usando Excel API JavaScript
 

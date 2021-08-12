@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d191b2d7ac6135600bd6875ef7fbbced55caec8b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: b641a2492024f09aa7e24fb377f7866bfbf91eba4c6ee13522cfc1b3965dff5b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774032"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086586"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 

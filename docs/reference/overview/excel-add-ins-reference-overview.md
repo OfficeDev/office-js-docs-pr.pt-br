@@ -4,22 +4,22 @@ description: Saiba mais sobre as APIs JavaScript do Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 80340b4990b56b2ba4d51f2a028480af3e267828
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1177cd4837e5cbebfc6cef533932486612d273c2a489fcd8f26b37b90726ce56
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650804"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085029"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
 Um suplemento do Excel interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
 
-* **API de JavaScript do Excel para**: estas são as [APIs específicas do aplicativo](../../develop/application-specific-api-model.md) para o Excel. Introduzida com o Office 2016, a [API de JavaScript do Excel](/javascript/api/excel) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
+* **API JavaScript do Excel:** São as [APIs específicas do aplicativo](../../develop/application-specific-api-model.md) para Excel. Introduzida com o Office 2016, a [API JavaScript do Excel](/javascript/api/excel) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-Esta seção da documentação concentra-se na API JavaScript do Excel, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Excel na Web ou para o Excel 2016 ou posterior. Para obter mais informações do API comum, consulte [Modelo do objeto do JavaScript API comum](../../develop/office-javascript-api-object-model.md).
+Esta seção da documentação se concentra na API JavaScript do Excel, que você usará para desenvolver a maioria das funcionalidades em suplementos destinados ao Excel na Web ou Excel 2016 ou posterior. Para obter informações sobre a API Comum, consulte [Modelo de objeto comum de API JavaScript](../../develop/office-javascript-api-object-model.md).
 
 ## <a name="learn-object-model-concepts"></a>Aprender os conceitos do modelo de objeto
 

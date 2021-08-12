@@ -3,12 +3,12 @@ title: Elemento FileName no arquivo de manifesto
 description: Especifica o nome do arquivo da XLL equivalente para funções personalizadas no seu complemento da Web.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: b4909767a51355f21cd180d35f693ffce86224ec
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 7a16a26b63ccc4c1d7ffd9704a51d92f97253e2d468b992d3b2231bb92b40279
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836841"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087892"
 ---
 # <a name="filename-element"></a>Elemento FileName
 

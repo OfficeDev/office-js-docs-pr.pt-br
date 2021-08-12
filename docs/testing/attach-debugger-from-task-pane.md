@@ -3,12 +3,12 @@ title: Anexar um depurador do painel de tarefas
 description: Saiba como anexar um depurador no painel de tarefas
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 3efe02f2683990a8f4d802bff5040ba9e007c5c91574bba274f4c26b9a5b8683
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774312"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086670"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
@@ -45,4 +45,4 @@ Veja mais informações sobre depuração no Visual Studio, em:
 
 - [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)
-- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
+- [Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)

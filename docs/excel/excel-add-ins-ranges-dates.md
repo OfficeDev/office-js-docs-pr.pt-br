@@ -1,19 +1,19 @@
 ---
-title: Trabalhar com datas usando a API JavaScript do Excel
-description: Use o Moment-MSDate plug-in com a API JavaScript do Excel para trabalhar com datas.
+title: Trabalhar com datas usando a EXCEL JavaScript
+description: Use o Moment-MSDate plug-in com a API javaScript Excel para trabalhar com datas.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d3f59e5daad042541bd933fb4e644d40f27a6e5e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652772"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084726"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Trabalhar com datas usando a API JavaScript do Excel e o Moment-MSDate plug-in
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Trabalhar com datas usando Excel API JavaScript e o Moment-MSDate plug-in
 
-Este artigo fornece exemplos de código que mostram como trabalhar com datas usando a API JavaScript do Excel e o [plug-in Moment-MSDate.](https://www.npmjs.com/package/moment-msdate) Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte a [classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que mostram como trabalhar com datas usando a API JavaScript Excel e o [plug-in Moment-MSDate.](https://www.npmjs.com/package/moment-msdate) Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte o [Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -68,6 +68,6 @@ Seu complemento precisa formatar os intervalos para exibir as datas em um formul
 
 ## <a name="see-also"></a>Confira também
 
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)

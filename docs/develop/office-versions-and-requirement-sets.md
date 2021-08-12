@@ -3,12 +3,12 @@ title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: ec3d99fc89b8b6ced25dfc00bd02e0238f75e0af
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e598026d7a34bfa71e943a760bfd2a051b320af90182e2b6204be7e74c77d8be
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773465"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080331"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -51,7 +51,7 @@ Alguns conjuntos de requisitos contêm APIs que podem ser usadas por qualquer ap
 
 O número da versão de um conjunto de requisitos, como "1.1" no `ExcelApi 1.1`, tem relação com o aplicativo do Office. O número da versão de um certo conjunto de requisitos (por exemplo, `ExcelApi 1.1`), não corresponde ao número da versão do Office.js ou aos conjuntos de requisitos para outros aplicativos do Office (por exemplo, Word, Outlook etc.).  Lançamos os conjuntos de requisitos para diferentes aplicativos do Office em ritmos e períodos diferentes. Por exemplo, `ExcelApi 1.5` foi lançado antes do conjunto de requisitos `WordApi 1.3`.
 
-A biblioteca da API JavaScript do Office (Office.js) inclui todos os conjuntos de requisitos disponíveis no momento. Embora exista algo como conjuntos de requisitos `ExcelApi 1.3` e `WordApi 1.3`, há nenhum conjunto de requisitos `Office.js 1.3`. A versão mais recente do Office.js é mantida como um único ponto de extremidade do Office fornecida por meio da CDN (rede de distribuição de conteúdo). Para obter mais detalhes sobre a CDN do Office.js, incluindo como a versão e a compatibilidade com versões anteriores são tratadas, consulte [Noções básicas sobre a API JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md).
+A biblioteca Office JavaScript API (Office.js) inclui todos os conjuntos de requisitos que estão disponíveis atualmente. Embora exista um conjunto de requisitos `ExcelApi 1.3` e `WordApi 1.3`, não existe um conjunto de `Office.js 1.3` requisitos. O último lançamento do Office.js é mantido como um único ponto de extremidade do Office entregue através da rede de entrega de conteúdo (CDN). Para mais detalhes sobre o CDN do Office.js, incluindo como a compatibilidade de versões anteriores são tratados, veja [Entendendo a API de JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md).
 
 ## <a name="specify-office-applications-and-requirement-sets"></a>Especificar aplicativos do Office e conjuntos de requisitos
 

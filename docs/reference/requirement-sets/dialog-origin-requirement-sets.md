@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos de Origem da Caixa de D
 ms.date: 07/22/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 24513823eb60435359d5d7307a11a192fece2015
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 20cd797cfcc0c8b673f8531fbe71769196d0d274ea58a9b76171c1427c125aba
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774319"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086622"
 ---
 # <a name="dialog-origin-requirement-sets"></a>Conjuntos de requisitos de origem da caixa de diálogo
 

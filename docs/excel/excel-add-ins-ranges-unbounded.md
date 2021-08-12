@@ -1,19 +1,19 @@
 ---
-title: Ler ou gravar em um intervalo não-rebote usando a API JavaScript do Excel
-description: Saiba como usar a API JavaScript do Excel para ler ou gravar em um intervalo não-rebote.
+title: Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel JavaScript
+description: Saiba como usar a EXCEL JavaScript para ler ou gravar em um intervalo não-rebote.
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: e9df563c9bac688e0806f5280139da8faa5b94870d4d32a852c919cd7fd03ad0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652756"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087646"
 ---
-# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Ler ou gravar em um intervalo não-rebote usando a API JavaScript do Excel
+# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel JavaScript
 
-Este artigo descreve como ler e gravar em um intervalo não-rebote com a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo descreve como ler e gravar em um intervalo não-rebote com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 Um endereço de intervalo não rebotado é um endereço de intervalo que especifica colunas inteiras ou linhas inteiras. Por exemplo:
 
@@ -37,6 +37,6 @@ range.values = 'Due Date';
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Ler ou gravar em um intervalo grande usando a API JavaScript do Excel](excel-add-ins-ranges-large.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Ler ou gravar em um intervalo grande usando a EXCEL JavaScript](excel-add-ins-ranges-large.md)
 - [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)

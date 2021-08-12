@@ -1,19 +1,19 @@
 ---
-title: Obter um intervalo usando a API JavaScript do Excel
-description: Saiba como recuperar um intervalo usando a API JavaScript do Excel.
+title: Obter um intervalo usando a EXCEL JavaScript
+description: Saiba como recuperar um intervalo usando a EXCEL JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6aa9bb00bc9d24aeee5f1fef9e8d1531525e9d1f
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d48d69a45e964db2d5797e2f0927f776795bcca0365f0ccef245fcd3682a3a72
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652770"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084714"
 ---
-# <a name="get-a-range-using-the-excel-javascript-api"></a>Obter um intervalo usando a API JavaScript do Excel
+# <a name="get-a-range-using-the-excel-javascript-api"></a>Obter um intervalo usando a EXCEL JavaScript
 
-Este artigo fornece exemplos que mostram diferentes maneiras de obter um intervalo dentro de uma planilha usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos que mostram diferentes maneiras de obter um intervalo dentro de uma planilha usando a api javascript Excel javascript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -88,5 +88,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Inserir um intervalo usando a API JavaScript do Excel](excel-add-ins-ranges-insert.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Inserir um intervalo usando a EXCEL JavaScript](excel-add-ins-ranges-insert.md)

@@ -1,19 +1,19 @@
 ---
-title: Encontre uma cadeia de caracteres usando a API JavaScript do Excel
-description: Saiba como encontrar uma cadeia de caracteres em um intervalo usando a API JavaScript do Excel.
+title: Encontre uma cadeia de caracteres usando a EXCEL JavaScript
+description: Saiba como encontrar uma cadeia de caracteres em um intervalo usando Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: efd2671781a8ce8d3e8aeda88f87abb3ad5058a35878f28f47f50305cff1b038
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652757"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087393"
 ---
-# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Encontre uma cadeia de caracteres em um intervalo usando a API JavaScript do Excel
+# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Encontre uma cadeia de caracteres dentro de um intervalo usando a EXCEL JavaScript
 
-Este artigo fornece um exemplo de código que localiza uma cadeia de caracteres dentro de um intervalo usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte [Classe Excel.Range](/javascript/api/excel/excel.range).
+Este artigo fornece um exemplo de código que localiza uma cadeia de caracteres dentro de um intervalo usando Excel API JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -47,5 +47,5 @@ Quando o método `find` é chamado em um intervalo que representa uma única cé
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-- [Trabalhar com células usando a API JavaScript do Excel](excel-add-ins-cells.md)
-- [Encontre células especiais em um intervalo usando a API JavaScript do Excel](excel-add-ins-ranges-special-cells.md)
+- [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
+- [Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript](excel-add-ins-ranges-special-cells.md)
