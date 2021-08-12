@@ -11,12 +11,6 @@ Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sidelo
 > npm run dev-server
 > ```
 
-- Instale as dependências do suplemento no diretório raiz do projeto.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 - Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.
 
     ```command&nbsp;line

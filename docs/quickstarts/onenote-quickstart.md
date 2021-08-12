@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do OneNote simp
 ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: d82ce959b7d9d1494c2f183c4e60ec633064a0dd33bcb40bc1ac5474dca923b0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a431b48eed7cedee75b7ef4121cec43d1777f5ecad06536752c1abedc92af725
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097264"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845652"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -76,12 +76,6 @@ try {
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. Instale as dependências do seu projeto.
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. Inicie o servidor Web local e realize o sideload no seu suplemento.

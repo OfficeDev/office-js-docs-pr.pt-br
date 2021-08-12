@@ -1,7 +1,7 @@
 > [!TIP]
-> Se você estiver testando seu suplemento em vários ambientes (por exemplo, em desenvolvimento, preparação, demonstração, etc.), recomendamos que você mantenha um arquivo de manifesto XML diferente para cada ambiente. Em cada arquivo de manifesto, você pode:
-> - Especifique as URLs que correspondem ao ambiente.
-> - Personalizar os valores de metadados como `DisplayName` e os rótulos dentro `Resources` para indicar o ambiente, para que os usuários finais possam identificar o ambiente correspondente do suplemento do suplementos foi feito. 
-> - Personalizar as funções personalizadas `namespace` para indicar o ambiente, se seu suplemento define funções personalizadas.
+> Se você estiver testando seu suplemento em vários ambientes (por exemplo, em desenvolvimento, preparo, demonstração, etc.), recomendamos que você mantenha um arquivo de manifesto XML diferente para cada ambiente. Em cada arquivo de manifesto, você pode:
+> - Especificar as URLs que correspondem ao ambiente.
+> - Personalize valores de metadados como `DisplayName` e rótulos em `Resources` para indicar o ambiente, assim os usuários finais poderão identificar o ambiente correspondente de um suplemento por sideloaded. 
+> - Personalize o `namespace` de funções personalizadas para indicar o ambiente, se o suplemento definir funções personalizadas.
 > 
-> Seguindo este guia, você simplificará o processo de teste e evitará problemas que poderiam ocorrer quando um suplemento estiver simultaneamente suplementos foi feito para vários ambientes.
+> Seguindo essas diretrizes, você simplificará o processo de teste e evitará problemas que, de outra forma, ocorreriam quando um suplemento fosse carregado simultaneamente em vários ambientes.

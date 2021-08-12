@@ -4,12 +4,12 @@ description: Desenvolvendo funções personalizadas no guia de início rápido d
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4c185453a644765cd9081f1c7df49afac1657854694764eb1144dd19b8ad7667
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6c463c494bf3175309226d72d0ca95417a3889b392a4f43035cd5d50263d8fbf
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095158"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845603"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -46,20 +46,11 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     cd starcount
     ```
 
-1. Instale as dependências.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Compile o projeto.
 
     ```command&nbsp;line
     npm run build
     ```
-
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
 1. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora seja opcional. Ainda é possível executar as funções personalizadas sem abrir o painel de tarefas do suplemento.
 
@@ -71,6 +62,9 @@ Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comand
 npm run start:desktop
 ```
 
+> [!NOTE]
+> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run start`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando.
@@ -78,6 +72,9 @@ Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor
 ```command&nbsp;line
 npm run start:web
 ```
+
+> [!NOTE]
+> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run start`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
 Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
 

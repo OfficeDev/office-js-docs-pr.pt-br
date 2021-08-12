@@ -4,12 +4,12 @@ description: Aprenda a criar um suplemento do painel de tarefas simples do Excel
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: de074b9673db6a1637733b42d8984dc5d2aacb60f8b38de535fe5e9f323e2c0f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8cdcbc0ca30a3d68fff3ac102845fd747d160102e5cb1ceff40dea8cf819a60b
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092735"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845610"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Usar o Vue para criar um suplemento do painel de tarefas do Excel
 
@@ -198,12 +198,6 @@ O projeto de suplemento que você criou com o gerador Yeoman contém um código 
    ```
 
 ## <a name="start-the-dev-server"></a>Inicie o servidor de desenvolvimento
-
-1. Instale as dependências.
-
-     ```command&nbsp;line
-    npm install
-    ```
 
 1. Inicie o servidor de desenvolvimento.
 

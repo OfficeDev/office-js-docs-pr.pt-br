@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773514"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845596"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -18,7 +18,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 
 * Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
-* Especifique as imagens usadas para identidade visual do suplemento e iconografia usadas para [comandos de suplemento][] na faixa de opções do Aplicativo do Office.
+* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento](create-addin-commands.md) na faixa de opções do Aplicativo do Office.
 
 * Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
 
@@ -100,7 +100,7 @@ _\*\* SupportUrl só é necessário para suplementos distribuídos pelo AppSourc
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
-Todas as URIs de imagem, como aquelas usadas para [comandos de suplemento][], devem dar suporte ao cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
+Todas as imagem URIs, como as usadas para os [comandos do suplemento](create-addin-commands.md), devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
 Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](../reference/manifest/sourcelocation.md), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 

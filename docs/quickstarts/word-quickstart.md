@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5d3cd3b68249ba7545645725926615214651f6c04defd43120629fdcb9fe8b27
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 60a18c8939e07c1de7aa21e1f3f904529a444fa6d00e3a9a626144d0c0242cf8
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096826"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845645"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -55,12 +55,6 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. Instale as dependências do seu projeto.
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
