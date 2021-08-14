@@ -1,16 +1,16 @@
 ---
 description: Criar uma função personalizada no Excel para o Suplemento do Office.
 title: Criar funções personalizadas no Excel
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774200"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232402"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -74,7 +74,7 @@ O arquivo de manifesto XML para um suplemento que define funções personalizada
 
 - Define o namespace para suas funções personalizadas. Um namespace se precede às suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do suplemento.
 - Usa os elementos `<ExtensionPoint>` e `<Resources>` que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
-- Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas. Observe que usar um tempo de execução compartilhado significa que seu suplemento usará o Internet Explorer 11, não o Microsoft Edge.
+- Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas.
 
 Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
@@ -84,7 +84,7 @@ Para ver um manifesto funcional completo de um suplemento de amostra, consulte [
 
 ## <a name="coauthoring"></a>Coautoria
 
-O Excel na Web e no Windows conectado a uma assinatura do Microsoft 365 permite que você seja coautor no Excel. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
+O Excel na Web e no Windows conectado a uma assinatura do Microsoft 365 permite que o usuário final seja coautor no Excel. Se a pasta de trabalho de um usuário final usar uma função personalizada, o colega de coautoria desse usuário final será solicitado a carregar o suplemento de funções personalizadas correspondente. Depois que ambos carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

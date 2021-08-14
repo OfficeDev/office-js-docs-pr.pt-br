@@ -1,14 +1,14 @@
 ---
 title: Design de suplementos do Outlook
 description: Diretrizes para ajudar a projetar e construir um suplemento atraente, que oferece o melhor do seu aplicativo diretamente para o Outlook – no Windows, na Web, no iOS, no Mac e no Android.
-ms.date: 07/05/2021
+ms.date: 08/12/2021
 localization_priority: Priority
-ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090219"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232383"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Diretrizes de design de suplementos do Outlook
 
@@ -30,7 +30,7 @@ As seguintes diretrizes gerais o ajudarão a projetar e construir um suplemento 
 
    O suplemento deve ser projetado usando padrões nativos da plataforma na qual o Outlook estiver em execução. Para fazer isso, respeite e implemente as diretrizes de interação e visuais estabelecidas por cada plataforma. O Outlook tem suas próprias diretrizes e elas também é importante considerá-las. Um suplemento bem projetado será uma mistura apropriada de sua experiência, da plataforma e do Outlook.
 
-   Isso significa que seu suplemento será visualmente diferente quando for executado no Outlook no iOS e no Android. Recomendamos que você confira a [IU do Fluent](https://developer.microsoft.com/fluentui#/) como uma opção para ajudá-lo com o estilo.
+   Isso significa que o suplemento terá que ser visualmente diferente quando ele for executado no Outlook no iOS em comparação com o Android. 
 
 3. **Torne-o agradável de usar e acerte nos detalhes**
 
