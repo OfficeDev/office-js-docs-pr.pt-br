@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 4459b403641a8d0502aa5e31ba4537f134656cf831b7d98c7eccf7ed59b32525
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: f72e84a71fd853f8a8f0c00d1b226b3b08548e1c
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845659"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232349"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 

@@ -4,12 +4,12 @@ description: Saiba mais sobre as opções de listagem do AppSource disponíveis 
 ms.topic: article
 ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: cbc4f43340b5dba4c10c5cf9362c3c6104289ea6ba32a46fb7df758494e27b64
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d48e441d41b9d1fcd5508cb1beb3a90acd1550f
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098358"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232394"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Opções de listagem do AppSource para seu Outlook de evento
 

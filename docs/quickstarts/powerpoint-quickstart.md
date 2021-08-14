@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do PowerPoint simples usando a API J
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e7d4f77cf8e680d8846f8847c74df85e64f8ac85d1b3c4e92b4888361429f013
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: 8025e5a36ea13c7b1eca94778ce33608a84ccc7e
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845667"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232275"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -37,7 +37,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `PowerPoint`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-powerpoint.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

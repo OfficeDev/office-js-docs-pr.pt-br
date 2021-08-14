@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 60a18c8939e07c1de7aa21e1f3f904529a444fa6d00e3a9a626144d0c0242cf8
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: db71a0103f9bcb793d6f3d68f1b2f293c92a0983
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845645"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232407"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -39,7 +39,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

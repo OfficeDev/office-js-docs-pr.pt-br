@@ -4,12 +4,12 @@ description: Saiba como configurar seu Outlook para ativação baseada em evento
 ms.topic: article
 ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 904c7ce907b9fc31c898cbeaf89203e369e3155855ff86c7cb8af1cf6d956d64
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c914acdc695901a14eefa2d7619bfd3dc919f66
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090978"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232235"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -28,13 +28,13 @@ Atualmente, os seguintes eventos são suportados na Web e Windows.
 |---|---|---|
 |`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|1.10|
 |`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|1.10|
-|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.|Visualização|
-|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.|Visualização|
-|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.|Visualização|
-|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.|Visualização|
-|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.|Visualização|
-|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|Visualização|
-|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Visualização|
+|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.|Preview|
+|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.|Preview|
+|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.|Preview|
+|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.|Preview|
+|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.|Preview|
+|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, `OnAppointmentTimeChanged` o evento também será acionado.|Preview|
+|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.|Preview|
 
 > [!IMPORTANT]
 > Os eventos ainda em visualização estão disponíveis apenas com uma assinatura Microsoft 365 no Outlook na Web e no Windows. Para obter mais detalhes, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.

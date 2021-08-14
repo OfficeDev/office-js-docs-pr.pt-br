@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: e135a4df75d1da02fd542d004b939c750099528cd9f5a32f932f1295958cc8f0
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: 79a5dc33593eebbe8a0276638248bb78b9745524
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845631"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232342"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -31,7 +31,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-project.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

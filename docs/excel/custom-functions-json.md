@@ -1,14 +1,14 @@
 ---
-ms.date: 12/22/2020
-description: Defina os metadados JSON para funções personalizadas no Excel e associe sua ID de função e propriedades de nome.
 title: Criar metadados JSON manualmente para funções personalizadas Excel
+description: Defina os metadados JSON para funções personalizadas no Excel e associe sua ID de função e propriedades de nome.
+ms.date: 08/06/2021
 localization_priority: Normal
-ms.openlocfilehash: c03238d46e8d861307ba0db3d03dafea81aeca51
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349627"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232216"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar metadados JSON manualmente para funções personalizadas
 
@@ -56,6 +56,7 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 
 ```json
 {
+  "allowErrorForDataTypeAny": true,
   "functions": [
     {
       "id": "ADD",
@@ -137,6 +138,13 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 > Um arquivo JSON de exemplo completo está disponível no [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub histórico de confirmação do repositório. Como o projeto foi ajustado para gerar automaticamente o JSON, um exemplo completo de JSON manuscrito só está disponível em versões anteriores do projeto.
 
 ## <a name="metadata-reference"></a>Referência de metadados
+
+### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
+
+A `allowErrorForDataTypeAny` propriedade é um tipo de dados booleano. Definir o valor para `true` permitir que uma função personalizada processe erros como valores de entrada. Todos os parâmetros com o tipo ou podem aceitar erros como valores `any` de entrada quando definido como `any[][]` `allowErrorForDataTypeAny` `true` . O valor `allowErrorForDataTypeAny` padrão é `false` .
+
+> [!NOTE]
+> Ao contrário das outras propriedades de metadados JSON, é uma propriedade de `allowErrorForDataTypeAny` nível superior e não contém sub-propriedades. Consulte o exemplo de código de [metadados JSON](#json-metadata-example) anterior para ver um exemplo de como formatar essa propriedade.
 
 ### <a name="functions"></a>functions
 
