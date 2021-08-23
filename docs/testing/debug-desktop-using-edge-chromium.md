@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 07/08/2021
+ms.date: 08/18/2021
 localization_priority: Priority
-ms.openlocfilehash: 0fc2cee39553521fef490ab33e08c2b11c8ec9c37d4787e408647f72c30df3b7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bbb475071660415f19b9a9fe5aaee0a6d735e20c
+ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090654"
+ms.lasthandoff: 08/19/2021
+ms.locfileid: "58407936"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
 
@@ -19,37 +19,22 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
 - [Visual Studio Code](https://code.visualstudio.com/) (deve ser executado como administrador)
 - [Node.js (versão 10+)](https://nodejs.org/)
 - Windows 10
-- [Microsoft Edge Chromium disponível para Usuários do Windows Insider](https://www.microsoftedgeinsider.com/)
+- Uma combinação de plataforma e aplicativo do Office que oferece suporte ao Microsoft Edge com WebView2 (baseado em Chromium), conforme explicado em [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Se a sua versão do Microsoft 365 for anterior a 2101, você precisará instalar o WebView2. Use as instruções para instalá-lo em [Microsoft Edge WebView2 / Embedar conteúdo da web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## <a name="install-and-use-the-debugger"></a>Instalar e usar o depurador
 
 1. Crie um projeto usando o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office). Para isso, você pode usar um dos nossos guias de início rápido, como o [Início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md).
 
-> [!TIP]
-> Se você não estiver usando um suplemento baseado em um gerador Yeoman, será necessário ajustar uma chave de registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando.
- `office-add-in-debugging start <your manifest path>`
+    > [!TIP]
+    > Se você não estiver usando um suplemento baseado no gerador do Yeoman, pode ser solicitado que você ajuste uma chave do registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando:  `office-add-in-debugging start <your manifest path>`
 
-1. Abra o projeto no VS Code. No VS Code, selecione **Ctrl+Shift+X** para abrir a barra Extensões. Procure a extensão "Depurador do Microsoft Edge" e instale-a.
+1. Abra o projeto no VS Code. Dentro do código VS, selecione **Ctrl+Shift+X** para abrir a Barra de extensões. Procure a extensão "Depurador do Microsoft Edge" e instale-a.
 
-1. Na pasta **.vscode** do seu projeto, abra o arquivo **launch.json**. Adicione o código a seguir à seção de configurações.
+1. Em seguida, escolha  **Visualizar > Executar** ou digite **Ctrl+Shift+D** para alternar para a modo de depuração.
 
-      ```JSON
-        {
-          "name": "Debug Office Add-in (Edge Chromium)",
-          "type": "edge",
-          "request": "attach",
-          "useWebView": "advanced",
-          "port": 9229,
-          "timeout": 600000,
-          "webRoot": "${workspaceRoot}",
-        },
-      ```
+1. Nas opções **EXECUTAR E DEBUGAR**, escolha a opção Edge Chromium para seu aplicativo host, como **Excel Desktop (Edge Chromium)**. Selecione **F5** ou escolha **Executar > Iniciar Depuração** no menu para começar a depuração. Esta ação inicia automaticamente um servidor local em uma janela de Nó para hospedar seu suplemento e depois abre automaticamente o aplicativo host, como o Excel ou Word. Isso pode levar vários segundos.
 
-1. Em seguida, escolha  **Exibir > Depurar** ou digite **Ctrl+Shift+D** para alternar para o modo de depuração.
-
-1. Nas opções de Depuração, escolha a opção Edge Chromium para seu aplicativo host, como **Excel Desktop (Edge Chromium)**. Selecione **F5** ou escolha **Depurar > Iniciar Depuração** no menu para começar a depuração.
-
-1. No aplicativo host, como o Excel, o seu suplemento está agora pronto para uso. Selecione **Mostrar Painel de Tarefas** ou execute qualquer outro comando de suplemento. Uma caixa de diálogo aparecerá, lendo:
+1. No aplicativo host, seu suplemento agora está pronto para uso. Selecione **Mostrar Painel de Tarefas** ou execute qualquer outro comando de suplemento. Uma caixa de diálogo aparecerá, lendo:
 
    > WebView Stop On Load.
    > Para depurar o modo de exibição da Web, anexe o VS Code à instância de modo de exibição da Web usando o Depurador da Microsoft para extensão do Edge, e clique em OK para continuar. Para impedir que essa caixa de diálogo seja exibida no futuro, clique em Cancelar.
@@ -60,6 +45,14 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
    > Se você selecionar **Cancelar**, a caixa de diálogo não será mostrada novamente enquanto esta instância do suplemento estiver em execução. No entanto, se você reiniciar o suplemento, você verá a caixa de diálogo novamente.
 
 1. Agora você pode definir pontos de interrupção no código e depuração do projeto.
+
+   > [!NOTE]
+   > Pontos de interrupção em chamadas de `Office.initialize` ou `Office.onReady` são ignorados. Para obter detalhes sobre esses métodos, consulte [Inicialize seu Suplemento do Office](../develop/initialize-add-in.md).
+
+> [!IMPORTANT]
+> A melhor maneira de interromper uma sessão de depuração é selecionar **Shift+F5** ou escolher **Executar > Interromper Depuração** no menu. Esta ação deve fechar a janela do servidor de Nó e tentar fechar o aplicativo host, mas haverá um aviso no aplicativo host perguntando se você deseja salvar o documento ou não. Faça uma escolha apropriada e deixe o aplicativo host fechar. Evite fechar manualmente a janela de Nó ou o aplicativo host. Fazer isso pode causar bugs, especialmente quando você interrompe e inicia sessões de depuração repetidamente.
+>
+> Se a depuração parar de funcionar; por exemplo, se os pontos de interrupção estão sendo ignorados; interrompa a depuração. Em seguida, se necessário, feche todas as janelas do aplicativo host e a janela de Nó. Finalmente, feche o Visual Studio Code e abra-o novamente.
 
 ## <a name="see-also"></a>Confira também
 

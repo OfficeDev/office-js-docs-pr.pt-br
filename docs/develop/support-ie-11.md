@@ -1,14 +1,14 @@
 ---
 title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Javascript do Internet Explorer 11 e do ES5 no seu complemento.
-ms.date: 06/18/2021
+ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 02ee813774a13e1c85c1d66c8c90a33666979944643a8eca9544ca04cfae3363
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: dea458cbabb71e23432db8cb6eb3dfcddc6e1bac
+ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079966"
+ms.lasthandoff: 08/18/2021
+ms.locfileid: "58382939"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 
@@ -18,7 +18,7 @@ ms.locfileid: "57079966"
 > A Microsoft está encerrando o suporte para o Internet Explorer, mas isso não afeta significativamente Office Desempios. Algumas combinações de plataformas e versões Office, incluindo todas as versões de compra única por meio do Office 2019, continuarão a usar o controle webview que vem com o Internet Explorer 11 para hospedar os complementos, conforme explicado em Navegadores usados por Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, o suporte a essas combinações e, portanto, para o Internet Explorer, ainda é necessário para os complementos enviados ao [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Duas coisas *estão mudando:*
 >
 > - O AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
-> - A [Script Lab de usuário](../overview/explore-with-script-lab.md) para de funcionar no Internet Explorer em algum momento de 2021.
+> - A [Script Lab não](../overview/explore-with-script-lab.md) dá mais suporte ao Internet Explorer.
 
 Office Os complementos são aplicativos Web que são exibidos dentro de IFrames ao executar em Office na Web. Office Os complementos são exibidos usando controles de navegador incorporados ao executar Office em Windows ou Office no Mac. Os controles de navegador incorporados são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.
 
