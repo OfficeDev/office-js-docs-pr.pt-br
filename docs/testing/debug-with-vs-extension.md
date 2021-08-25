@@ -1,14 +1,14 @@
 ---
 title: Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 description: Use o Visual Studio Code de Microsoft Office Depurador de Complementos para depurar seu Office Add-in.
-ms.date: 02/01/2021
+ms.date: 08/18/2021
 localization_priority: Normal
-ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ba831cfabdefbf3829bb702bf21a70ddb499b972
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088462"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505667"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 
@@ -29,7 +29,7 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
 
 ## <a name="install-and-use-the-debugger"></a>Instalar e usar o depurador
 
-1. Se você precisar criar um projeto de add-in, [use o gerador Yo Office para criar um](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Siga os prompts dentro da linha de comando para configurar seu projeto. Você pode escolher qualquer idioma ou tipo de projeto para atender às suas necessidades.
+1. Se você precisar criar um projeto de add-in, [use o gerador Yo Office para criar um](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Siga os prompts dentro da linha de comando para configurar seu projeto. Você pode escolher qualquer idioma ou tipo de projeto para atender às suas necessidades. Este tutorial usa um Excel de painel de tarefas.
 
     > [!NOTE]
     > Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
@@ -50,7 +50,7 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
   > [!TIP]
   > Para abrir Visual Studio Code como administrador, selecione  a opção executar como administrador ao abrir Visual Studio Code depois de procurá-lo no Windows.
 
-1. No VS Code, selecione **Ctrl+Shift+X** para abrir a barra Extensões. Procure a extensão "Microsoft Office Depurador de Complementos" e instale-a.
+1. Dentro do código VS, selecione **Ctrl+Shift+X** para abrir a Barra de extensões. Procure a extensão "Microsoft Office Depurador de Complementos" e instale-a.
 
 1. Na pasta .vscode do seu projeto, abra o arquivo **launch.json**. Adicione o código a seguir à `configurations` seção.
 
@@ -67,13 +67,13 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
     }
     ```
 
-1. Na seção JSON que você acabou de copiar, encontre a seção "url". Nesta URL, você precisará substituir o texto HOST maiúscula pelo aplicativo que está hospedando seu Office Add-in. Por exemplo, se o Office de Office for para Excel, o valor da URL será " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32$16,01$en-US$ \$ \$ \$ 0".
+1. Na seção JSON que você acabou de copiar, encontre a `"url"` propriedade. Nesta URL, você precisa substituir o texto **HOST** maiúscula pelo aplicativo que está hospedando seu Office Add-in. Por exemplo, se o Office do seu Excel for para Excel, o valor da URL seria `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` .
 
-1. Abra o prompt de comando e verifique se você está na pasta raiz do seu projeto. Execute o comando `npm start` para iniciar o servidor de dev. Quando o seu complemento for carregado no cliente Office, abra o painel de tarefas.
+1. Abra o prompt de comando e verifique se você está na pasta raiz do seu projeto. Execute o comando `npm start` para iniciar o servidor de dev. Quando o seu complemento for carregado no aplicativo Office, abra o painel de tarefas.
 
-1. Retorne ao Visual Studio Code e escolha **Exibir > Depurar** ou insira **CTRL + SHIFT + D** para alternar para o exibição de depuração.
+1. Volte para Visual Studio Code e escolha **Exibir > Depurar** ou insira **Ctrl+Shift+D** para alternar para o exibição de depuração.
 
-1. Nas opções Depurar, escolha **Anexar a Office Depuração.** Selecione **F5** ou escolha **Debug -> Iniciar Depuração** no menu para começar a depuração.
+1. Nas opções Depurar, escolha **Anexar a Office Depuração.** Selecione **F5** ou **escolha Executar > Iniciar Depuração** no menu para começar a depuração.
 
 1. De definir um ponto de interrupção no arquivo do painel de tarefas do seu projeto. Você pode definir pontos de interrupção Visual Studio Code ao passar o mouse ao lado de uma linha de código e selecionando o círculo vermelho que aparece.
 

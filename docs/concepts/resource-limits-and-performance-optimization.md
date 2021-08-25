@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: Saiba mais sobre os limites de recursos da plataforma de Office de complemento, incluindo CPU e memória.
-ms.date: 07/08/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 43902dcf3a7703a763e1268d5b5695c48c59e0fcacf3ae7d2740b54e31e3057e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082763"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505660"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -62,7 +62,7 @@ Se você estiver criando um Excel, esteja ciente das seguintes limitações de t
 
 Se você espera que a entrada do usuário exceda esses limites, verifique os dados antes de chamar `context.sync()` . Divida a operação em partes menores conforme necessário. Certifique-se de chamar cada sub-operação para evitar que essas operações `context.sync()` sejam reunidas em lote novamente.
 
-Essas limitações geralmente são excedida por intervalos grandes. Seu complemento pode ser capaz de usar [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar estrategicamente células dentro de um intervalo maior. Consulte [Trabalhar com vários intervalos simultaneamente em Excel de complementos](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
+Essas limitações geralmente são excedida por intervalos grandes. Seu complemento pode ser capaz de usar [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar estrategicamente células dentro de um intervalo maior. Para obter mais informações sobre como trabalhar `RangeAreas` com , consulte Work with multiple [ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). Para obter informações adicionais sobre como otimizar o tamanho da carga Excel, consulte Práticas recomendadas de limite de tamanho [de carga.](../excel/performance.md#payload-size-limit-best-practices)
 
 ### <a name="task-pane-and-content-add-ins"></a>Suplementos do painel de tarefas e de conteúdo
 
@@ -92,7 +92,7 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 |8 |Manifesto de suplemento não baixado|Crítico|O Office aplicativo não pôde carregar o arquivo de manifesto do Office do SharePoint, catálogo corporativo ou AppSource.|
 |9 |Não foi possível analisar a marcação do suplemento|Crítico|O Office o aplicativo carregou o manifesto de Office de complemento, mas não conseguiu ler a marcação HTML do aplicativo.|
 |10 |O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
-|15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O Outlook de dados listado na  coluna Arquivo foi desabilitado por Outlook porque ele temporizou repetidamente ao tentar corresponder a uma expressão regular.|
+|15 |Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O Outlook de dados listado na  coluna Arquivo foi desabilitado por Outlook porque ele temporizou repetidamente ao tentar corresponder a uma expressão regular.|
 |18 |Suplemento fechado com êxito||O Office aplicativo foi capaz de fechar o Office Add-in com êxito.|
 |19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para obter mais detalhes, consulte o log **Microsoft Office Alertas** usando o visualizador de eventos Windows no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para obter mais detalhes, consulte o log **Microsoft Office Alertas** usando o visualizador de eventos Windows no computador que encontrou o erro.|
