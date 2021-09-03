@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 localization_priority: Priority
-ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: f2c47f7c666c173480851b780311002eb4dbeac0
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661136"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863538"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -54,16 +54,20 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
     <DefaultSettings>
     ```
 
-1. Localize a `<VersionOverrides>`seção e adicione a seguinte`<Runtimes>` seção apenas dentro da `<Host ...>`marca. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na ` <bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+1. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na ` <bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+
+    > [!IMPORTANT]
+    > A seção `<Runtimes>` deve ser inserida após o elemento `<Host>` na ordem exata mostrada no XML a seguir.
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
+       </Host>
    ```
 
 1. Se você gerou um Suplemento do Excel com funções personalizadas, localize o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
