@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 27129feb603af52d53aa87e16227a946480c7bdf47954fc9db7398b42a795416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087023"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868747"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -498,7 +498,7 @@ O método `protect` tem dois parâmetros opcionais:
 - `options`: Um objeto [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) definindo restrições de edição de específicas.
 - `password`: Uma cadeia de caracteres que representa a senha necessária para um usuário ignorar a proteção e editar a planilha.
 
-O artigo [Proteger uma planilha](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.
+O artigo [Proteger uma planilha](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.
 
 ## <a name="page-layout-and-print-settings"></a>Configurações de impressão e layout da página
 

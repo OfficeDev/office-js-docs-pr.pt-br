@@ -3,16 +3,16 @@ title: Coautoria em suplementos do Excel
 description: Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f9df90a83e25095da1334a9d3e8d70338a991bebd160fc58e1bb53fa2bb5a13e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f57fccea8b4f7315661d3b7ba596c74dc7427bf8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079790"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868425"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
-Com a [coautoria](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
+Com a [coautoria](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
 
 > [!IMPORTANT]
 > Em Excel para Microsoft 365, você notará o AutoSave no canto superior esquerdo. Quando o Salvamento Automático estiver ativado, os coautores verão as respectivas alterações em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usuários podem desativar o Salvamento Automático pelo botão no canto superior esquerdo da janela do Excel.
@@ -53,7 +53,7 @@ Por exemplo, em cenários de validação de dados, é comum exibir a interface d
 É um problema conhecido que as chamadas para a [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários `TableRowCollection.add` atualizem).
 
 1. Use [`Range.values`](/javascript/api/excel/excel.range#values) em vez de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) . Definir os `Range` valores diretamente abaixo da tabela expande automaticamente a tabela. Caso contrário, adicionar linhas de tabela por meio das APIs resulta em conflitos `Table` de mesclagem para usuários de coauth.
-1. Não deve haver regras [de validação de](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) dados aplicadas a células abaixo da tabela, a menos que a validação de dados seja aplicada a toda a coluna.
+1. Não deve haver regras [de validação de](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) dados aplicadas a células abaixo da tabela, a menos que a validação de dados seja aplicada a toda a coluna.
 1. Se houver dados sob a tabela, o complemento precisará lidar com isso antes de definir o valor do intervalo. Usar [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) para inserir uma linha vazia moverá os dados e dará espaço para a tabela de expansão. Caso contrário, você corre o risco de sobrescrever células abaixo da tabela.
 1. Não é possível adicionar uma linha vazia a uma tabela com `Range.values` . A tabela só se expande automaticamente se os dados estão presentes nas células diretamente abaixo da tabela. Use dados temporários ou colunas ocultas como solução alternativa para adicionar uma linha de tabela vazia.
 

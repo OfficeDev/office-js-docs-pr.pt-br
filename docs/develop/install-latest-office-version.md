@@ -3,12 +3,12 @@ title: Instale a última versão do Office
 description: Informações sobre como desativar essa opção para obter as versões mais recentes do Office.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c18e91c93d8125c30bd52ffa7ee602c555e53accea108fb6b0645eb03610caf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f5e1bf7afe89efd6f523a74b04d7b6a99f0195bf
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080574"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868432"
 ---
 # <a name="install-the-latest-version-of-office"></a>Instale a última versão do Office
 
@@ -17,7 +17,7 @@ Novos recursos de desenvolvedor, inclusive os que ainda estão na visualização
 ## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>Opte por obter as versões mais recentes do Office
 
 - Se você for um Microsoft 365 Family, pessoal ou assinante da Universidade, consulte Ser um Office [Insider](https://insider.office.com).
-- Se você for um cliente Microsoft 365 Apps para Pequenos e Médios negócios, consulte [Install the First Release build for Microsoft 365 Apps para Pequenos e Médios negócios customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
+- Se você for um cliente Microsoft 365 Apps para Pequenos e Médios negócios, consulte [Install the First Release build for Microsoft 365 Apps para Pequenos e Médios negócios customers](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - Se você estiver executando o Office em um Mac:
   - Abra um aplicativo do Office.
   - Selecione **Verificar Atualizações** no menu Ajuda.

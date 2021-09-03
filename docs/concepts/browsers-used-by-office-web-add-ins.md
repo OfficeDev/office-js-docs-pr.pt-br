@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 08/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ffd408e497cdb845497479f5f4cbed2cedcc39e
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: bda86e8bb7aacf72fbe26e86b7f062f362adbdd3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232196"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868390"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -30,7 +30,7 @@ Qual navegador é usado depende do:
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
 |SISTEMA OPERACIONAL|Versão do Office|WebView2 de borda (Chromium baseado em dados) instalado?|Navegador|
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|:-----|:-----|:-----|:-----|
 |qualquer|Office na Web|Não aplicável|O navegador no qual o Office está aberto.|
 |Mac|qualquer|Não aplicável|Safari|
 |iOS|qualquer|Não aplicável|Safari|
@@ -43,7 +43,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Não |Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>2</sup> com WebView2 (Chromium baseado em Chromium) |
 
-<sup>1</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão Office cliente e [o canal](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) de atualização para obter mais detalhes.
+<sup>1</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão Office cliente e [o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) de atualização para obter mais detalhes.
 
 <sup>2</sup> Quando Microsoft Edge está sendo usado, o Windows 10 Narrador (às vezes chamado de "leitor de tela") lê a marca na página que é aberta no `<title>` painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 

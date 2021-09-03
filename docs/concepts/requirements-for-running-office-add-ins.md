@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa executar Office Desajustes.
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1cc591db443c1fb0e2ca934cd05f52ad41ed61cf977ef4053af70d536867a6db
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082983"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868397"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -44,7 +44,7 @@ O software a seguir é necessário para o desenvolvimento de um Office Add-in pa
   - A versão de 32 ou de 64 bits do Office 2013 ou uma versão posterior, em execução no Windows 7 ou em uma versão posterior.
   - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013 ou uma versão posterior do cliente do Office, se você estiver testando ou executando um Suplemento do Office especificamente para um desses clientes de área de trabalho do Office. É possível instalar clientes de área de trabalho do Office localmente ou por meio do recurso Clique para Executar no computador cliente.
 
-  Se você tiver uma assinatura Microsoft 365 e não tiver acesso ao cliente Office, poderá baixar e instalar a versão mais [recente do Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  Se você tiver uma assinatura Microsoft 365 e não tiver acesso ao cliente Office, poderá baixar e instalar a versão mais [recente do Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md) para obter mais detalhes.
 
@@ -81,7 +81,7 @@ Especificamente para o Outlook em execução em um navegador em smartphones e ta
 |Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|No Microsoft 365, Exchange Online ou local no Exchange Server 2013 ou posterior|Safari|
 
 > [!NOTE]
-> Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone foram [preteridos](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) e não são mais necessários ou estão disponíveis para testar os suplementos do Outlook.
+> Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone foram [preteridos](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) e não são mais necessários ou estão disponíveis para testar os suplementos do Outlook.
 
 
 ## <a name="see-also"></a>Confira também

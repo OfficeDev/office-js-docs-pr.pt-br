@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1400bd4f91522ec50afa90b932cc5aeaedb4342bace4c007d10c8293257f8e11
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 65eb220eedfe74b905bee4312c366166836a075a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098220"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868761"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -39,7 +39,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -317,7 +317,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Verifique se há pelo menos três parágrafos no documento. É possível escolher o botão **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*
 
-1. No Word, crie um [estilo personalizado](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "MyCustomStyle". Pode ter a formatação que você quiser.
+1. No Word, crie um [estilo personalizado](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "MyCustomStyle". Pode ter a formatação que você quiser.
 
 1. Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.
 
@@ -816,7 +816,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 > [!NOTE]
 > Há vários tipos de controles de conteúdo que podem ser adicionados a um documento do Word por meio da interface do usuário. Porém, no momento, só há suporte para controles de conteúdo de Rich Text no Word.js.
 >
-> Antes de começar esta etapa do tutorial, recomendamos a criação e manipulação dos controles de conteúdo de Rich Text por meio da interface do usuário do Word, para se familiarizar com os controles e suas propriedades. Para saber mais detalhes, confira [Criar formulários para preenchimento ou impressão no Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> Antes de começar esta etapa do tutorial, recomendamos a criação e manipulação dos controles de conteúdo de Rich Text por meio da interface do usuário do Word, para se familiarizar com os controles e suas propriedades. Para saber mais detalhes, confira [Criar formulários para preenchimento ou impressão no Word](https://support.microsoft.com/office/040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### <a name="create-a-content-control"></a>Criar um controle de conteúdo
 

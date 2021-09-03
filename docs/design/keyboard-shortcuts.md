@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e622820dbf1c582188d038fc532236154b7ec7389a8e14b0ce0e982a6f67a8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081746"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868404"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -215,7 +215,7 @@ O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fa
 Para a melhor experiência do usuário, recomendamos que você minimize os conflitos com Excel com essas boas práticas.
 
 - Use apenas atalhos de teclado com o seguinte padrão: **Ctrl+Shift+Alt+* x***, onde *x* é alguma outra chave.
-- Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)Excel teclado e evite usar qualquer um deles no seu complemento.
+- Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)Excel teclado e evite usar qualquer um deles no seu complemento.
 - Quando o foco do teclado estiver dentro da interface do usuário do complemento, **Ctrl+Spacebar** e **Ctrl+Shift+F10** não funcionarão, pois são atalhos de acessibilidade essenciais.
 - Em um computador Windows ou Mac, se o comando "Redefinir preferências de atalho de complementos do Office" não estiver disponível no menu de pesquisa, o usuário poderá adicionar manualmente o comando à faixa de opções personalização da faixa de opções por meio do menu de contexto.
 

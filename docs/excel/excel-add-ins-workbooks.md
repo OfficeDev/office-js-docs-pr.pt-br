@@ -4,12 +4,12 @@ description: Saiba como executar tarefas comuns com as guias de trabalho ou recu
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086166"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868719"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -140,11 +140,11 @@ O método `protect` aceita um parâmetro opcional de cadeia de caracteres. Esta 
 A proteção também ser definida no nível da planilha para prevenir a edição de dados indesejada. Para saber mais, confira a seção **Proteção de dados** do artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md#data-protection).
 
 > [!NOTE]
-> Para saber mais sobre a proteção de pastas de trabalho no Excel, confira o artigo [Proteger uma pasta de trabalho](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
+> Para saber mais sobre a proteção de pastas de trabalho no Excel, confira o artigo [Proteger uma pasta de trabalho](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517).
 
 ## <a name="access-document-properties"></a>Acessar propriedades do documentos
 
-Objetos Workbook têm acesso aos metadados dos arquivos do Office, que são conhecidos como [propriedades de documentos](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). A propriedade `properties` do objeto Workbook é um objeto [DocumentProperties](/javascript/api/excel/excel.documentproperties) que contém esses valores de metadados. O exemplo a seguir mostra como definir a `author` propriedade.
+Objetos Workbook têm acesso aos metadados dos arquivos do Office, que são conhecidos como [propriedades de documentos](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). A propriedade `properties` do objeto Workbook é um objeto [DocumentProperties](/javascript/api/excel/excel.documentproperties) que contém esses valores de metadados. O exemplo a seguir mostra como definir a `author` propriedade.
 
 ```js
 Excel.run(function (context) {
@@ -234,7 +234,7 @@ Uma workbook tem configurações de idioma e cultura que afetam a forma como det
 
 `Application.cultureInfo`define as configurações de cultura do sistema como um [objeto CultureInfo.](/javascript/api/excel/excel.cultureinfo) Isso contém configurações como o separador decimal numérico ou o formato de data.
 
-Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)interface do usuário . As configurações do sistema são preservadas no `CultureInfo` objeto. Quaisquer alterações locais são mantidas como [propriedades de](/javascript/api/excel/excel.application)nível de aplicativo, como `Application.decimalSeparator` .
+Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário Excel](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)interface do usuário . As configurações do sistema são preservadas no `CultureInfo` objeto. Quaisquer alterações locais são mantidas como [propriedades de](/javascript/api/excel/excel.application)nível de aplicativo, como `Application.decimalSeparator` .
 
 O exemplo a seguir altera o caractere separador decimal de uma cadeia numérica de um ',' para o caractere usado pelas configurações do sistema.
 
@@ -329,7 +329,7 @@ O objeto [Application](/javascript/api/excel/excel.application) fornece um méto
 - `recalculate`: Recalcule as fórmulas que foram alteradas (ou marcadas por programação para recálculo) desde o último cálculo, e as fórmulas dependentes nelas, em todas as pastas de trabalho ativas.
 
 > [!NOTE]
-> Para saber mais sobre o recálculo, confira o artigo [Alterar o recálculo, a iteração ou a precisão de fórmulas](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
+> Para saber mais sobre o recálculo, confira o artigo [Alterar o recálculo, a iteração ou a precisão de fórmulas](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 
 ### <a name="temporarily-suspend-calculations"></a>Suspender os cálculos temporariamente
 

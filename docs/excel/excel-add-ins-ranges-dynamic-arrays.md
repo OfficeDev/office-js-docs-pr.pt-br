@@ -4,12 +4,12 @@ description: Saiba como lidar com o vazamento de matrizes dinâmicas e intervalo
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b44f00e58eb9688b8526d56064bb6d6902729635075fe80d64e47ebedb13a8f6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084074"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868684"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>Manipular matrizes dinâmicas e vazamento usando a api javascript Excel javascript
 
@@ -17,7 +17,7 @@ Este artigo fornece um exemplo de código que lida com matrizes dinâmicas e vaz
 
 ## <a name="dynamic-arrays"></a>Matrizes dinâmicas
 
-Algumas Excel retornam [matrizes dinâmicas.](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531) Eles preenchem os valores de várias células fora da célula original da fórmula. Esse estouro de valor é chamado de "vazamento". Seu complemento pode encontrar o intervalo usado para um vazamento com o [método Range.getSpillingToRange.](/javascript/api/excel/excel.range#getSpillingToRange__) Há também uma [versão *OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
+Algumas Excel retornam [matrizes dinâmicas.](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) Eles preenchem os valores de várias células fora da célula original da fórmula. Esse estouro de valor é chamado de "vazamento". Seu complemento pode encontrar o intervalo usado para um vazamento com o [método Range.getSpillingToRange.](/javascript/api/excel/excel.range#getSpillingToRange__) Há também uma [versão *OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
 
 O exemplo a seguir mostra uma fórmula básica que copia o conteúdo de um intervalo em uma célula, que se espalha em células vizinhas. Em seguida, o complemento registra o intervalo que contém o vazamento.
 

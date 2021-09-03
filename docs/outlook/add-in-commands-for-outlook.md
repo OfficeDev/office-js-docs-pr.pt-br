@@ -3,12 +3,12 @@ title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b99f793565163042821cc5c5bf3c7364858cd6fac37637359d90aec28ae3e1fc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8fc8f5c30f5a56ffe9c792f2347b915cf2f04051
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097541"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868740"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -19,10 +19,10 @@ Os comandos de suplemento do Outlook oferecem maneiras de iniciar ações espec�
 >
 > O suporte para comandos de suplementos no Outlook 2013 requer três atualizações:
 > - [Atualização de segurança de 8 de março de 2016 para o Outlook](https://support.microsoft.com/kb/3114829)
-> - [Atualização de segurança de 8 de março de 2016 para o Office (KB3114816)](https://support.microsoft.com/help/3114816/march-8,-2016,-update-for-office-2013-kb3114816)
-> - [Atualização de segurança de 8 de março de 2016 para o Office (KB3114828)](https://support.microsoft.com/help/3114828/march-8,-2016,-update-for-office-2013-kb3114828)
+> - [Atualização de segurança de 8 de março de 2016 para o Office (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
+> - [Atualização de segurança de 8 de março de 2016 para o Office (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
 >
-> O suporte para comandos de suplementos no Exchange 2016 requer a [Atualização Cumulativa 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016).
+> O suporte para comandos de suplementos no Exchange 2016 requer a [Atualização Cumulativa 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
 Os comandos de suplementos estão disponíveis apenas para suplementos que não usam [regras ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) para limitar os tipos de itens em que são ativados. No entanto, os [suplementos contextuais](contextual-outlook-add-ins.md) podem apresentar comandos diferentes, dependendo do item selecionado no momento ser uma mensagem ou um compromisso, e podem optar por serem exibidos em cenários de leitura ou redação. É uma [prática recomendada](../concepts/add-in-development-best-practices.md) usar comandos de suplementos.
 

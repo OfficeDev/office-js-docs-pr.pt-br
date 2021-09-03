@@ -4,12 +4,12 @@ description: Use o Moment-MSDate plug-in com a API javaScript Excel para trabalh
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084726"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868663"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Trabalhar com datas usando Excel API JavaScript e o Moment-MSDate plug-in
 
@@ -19,7 +19,7 @@ Este artigo fornece exemplos de código que mostram como trabalhar com datas usa
 
 ## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>Usar o Moment-MSDate plug-in para trabalhar com datas
 
-A [biblioteca Moment do JavaScript](https://momentjs.com/) fornece uma maneira conveniente de usar datas e carimbos de data e hora. O [plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate) converte o formato de momentos em um formato mais apropriado para o Excel. Este é o mesmo formato que a [função NOW](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) retorna.
+A [biblioteca Moment do JavaScript](https://momentjs.com/) fornece uma maneira conveniente de usar datas e carimbos de data e hora. O [plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate) converte o formato de momentos em um formato mais apropriado para o Excel. Este é o mesmo formato que a [função NOW](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46) retorna.
 
 O código a seguir mostra como definir o intervalo em **B4** como um timestamp de um momento.
 

@@ -3,12 +3,12 @@ title: Teste do Internet Explorer 11
 description: Teste seu Office no Internet Explorer 11.
 ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 098479942f2e2b5ed7b7cc219e5bbd591b88112a
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382953"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868621"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Testar seu Office de usuário no Internet Explorer 11
 
@@ -55,7 +55,7 @@ Estas instruções pressuem que você tenha criado um projeto de gerador Yo Offi
     ```
 
 > [!TIP]
-> Não é necessário usar esse comando, mas deve ajudar a depurar a maioria dos problemas relacionados ao tempo de execução do Internet Explorer 11. Para uma robustez completa, você deve testar o uso de computadores com várias combinações de Windows 7, 8.1 e 10 e várias versões de Office. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Não é necessário usar esse comando, mas deve ajudar a depurar a maioria dos problemas relacionados ao tempo de execução do Internet Explorer 11. Para uma robustez completa, você deve testar o uso de computadores com várias combinações de Windows 7, 8.1 e 10 e várias versões de Office. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Opções de comando
 

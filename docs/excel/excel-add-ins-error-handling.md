@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
-ms.date: 08/26/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 8dde0a57ea79e87eed0f506ca7995b3ce1a1f964
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614612"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868628"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
@@ -60,7 +60,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`BadPassword`|A senha fornecida está incorreta.|
 |`Conflict`|A solicitação não pôde ser processada devido a um conflito.|
 |`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está faltando.|
-|`FilteredRangeConflict`|- Uma tabela não pode ser inserida em um intervalo filtrado. <br>- Não há suporte para a exclusão de um intervalo filtrado.|
+|`FilteredRangeConflict`|A operação tentada causa um conflito com um intervalo filtrado.|
 |`GeneralException`|Ocorreu um erro interno ao processar a solicitação.|
 |`InactiveWorkbook`|A operação falhou porque várias guias de trabalho estão abertas e a workbook que está sendo chamada por essa API perdeu o foco.|
 |`InsertDeleteConflict`|A tentativa de operação de exclusão ou inserção resultou em um conflito.|
@@ -77,15 +77,15 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`MergedRangeConflict`|Não é possível concluir a operação. Uma tabela não pode se sobrepor a outra tabela, um relatório de tabela dinâmica, resultados de consulta, células mescladas ou um mapa XML.|
 |`NonBlankCellOffSheet`|Microsoft Excel não pode inserir novas células porque empurraria células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, algumas formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.|
 |`NotImplemented`|O recurso solicitado não foi implementado.|
-|`PivotTableRangeConflict`|- Uma tabela não pode ser inserida adjacente a uma tabela dinâmica. <br>- Não é possível inserir ou excluir uma célula em uma tabela dinâmica. <br>- Não é possível alterar uma célula em uma tabela dinâmica.|
+|`PivotTableRangeConflict`|A operação tentada causa um conflito com um intervalo de tabela dinâmica.|
 |`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|
-|`RefreshWorkbookLinksBlocked`|A chamada da API não é suportada porque o usuário não concedeu permissão para atualizar links de uma agenda de trabalho externa.|
+|`RefreshWorkbookLinksBlocked`|A operação falhou porque o usuário não concedeu permissão para atualizar os links da agenda de trabalho externa.|
 |`RequestAborted`|A solicitação foi anulada durante o tempo de execução.|
 |`RequestPayloadSizeLimitExceeded`|O tamanho da carga de solicitação excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações. <br><br>Esse erro só ocorre em Excel na Web.|
 |`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.  <br><br>Esse erro só ocorre em Excel na Web.|
 |`ServiceNotAvailable`|O serviço não está disponível.|
 |`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.|
-|`UnsupportedFeature`|A chamada da API não é permitida porque tem recursos sem suporte.|
+|`UnsupportedFeature`|A operação falhou porque a planilha de origem contém um ou mais recursos sem suporte.|
 |`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|
 |`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma planilha Macro ou Gráfico.|
 

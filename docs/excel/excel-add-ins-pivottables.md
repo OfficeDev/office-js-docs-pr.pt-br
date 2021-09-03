@@ -3,19 +3,19 @@ title: Trabalhar com tabelas dinâmicas usando a Excel JavaScript
 description: Use a Excel JavaScript para criar tabelas dinâmicas e interagir com seus componentes.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7be7fe8a4f7dcb2509943f7fd03fbb8739312e87874583bbe97b8139ab83c6b5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084242"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868635"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a Excel JavaScript
 
 Tabelas dinâmicas simplificam conjuntos de dados maiores. Eles permitem a manipulação rápida de dados agrupados. A Excel API JavaScript permite que seu complemento crie Tabelas Dinâmicas e interaja com seus componentes. Este artigo descreve como as Tabelas Dinâmicas são representadas pela API JavaScript Office e fornece exemplos de código para cenários principais.
 
 Se você não estiver familiarizado com a funcionalidade das Tabelas Dinâmicas, considere explorá-las como um usuário final.
-Consulte [Criar uma Tabela Dinâmica para analisar dados de planilha](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para uma boa cartilha nessas ferramentas.
+Consulte [Criar uma Tabela Dinâmica para analisar dados de planilha](https://support.microsoft.com/office/ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=PivotTables) para uma boa cartilha nessas ferramentas.
 
 > [!IMPORTANT]
 > As Tabelas Dinâmicas criadas com o OLAP não são suportadas no momento. Também não há suporte para o Power Pivot.
@@ -242,7 +242,7 @@ Excel.run(function (context) {
 
 Por padrão, tabelas dinâmicas ajustam tamanhos de linha e coluna conforme necessário. Isso é feito quando a Tabela Dinâmica é atualizada. `PivotLayout.autoFormat` especifica esse comportamento. Qualquer alteração de tamanho de linha ou coluna feita pelo seu complemento persiste quando `autoFormat` é `false` . Além disso, as configurações padrão de uma tabela dinâmica mantêm qualquer formatação personalizada na Tabela Dinâmica (como preenchimentos e alterações de fonte). Definir `PivotLayout.preserveFormatting` para aplicar o formato padrão quando `false` atualizado.
 
-Um também controla as configurações de header e de linha total, como as células de dados vazias são `PivotLayout` exibidas e as opções de texto [alt.](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) A [referência PivotLayout](/javascript/api/excel/excel.pivotlayout) fornece uma lista completa desses recursos.
+Um também controla as configurações de header e de linha total, como as células de dados vazias são `PivotLayout` exibidas e as opções de texto [alt.](https://support.microsoft.com/topic/44989b2a-903c-4d9a-b742-6a75b451c669) A [referência PivotLayout](/javascript/api/excel/excel.pivotlayout) fornece uma lista completa desses recursos.
 
 O exemplo de código a seguir faz com que as células de dados vazias exibem a cadeia de caracteres , formate o intervalo do corpo para um alinhamento horizontal consistente e garante que as alterações de formatação permaneçam mesmo após a atualização da Tabela `"--"` Dinâmica.
 
@@ -283,7 +283,7 @@ O método principal para filtrar dados de tabela dinâmica é com PivotFilters. 
 
 [PivotFilters](/javascript/api/excel/excel.pivotfilters) filtram dados com base [](#hierarchies) nas quatro categorias de hierarquia de uma tabela dinâmica (filtros, colunas, linhas e valores). Há quatro tipos de PivotFilters, permitindo filtragem baseada em data de calendário, análise de cadeia de caracteres, comparação de números e filtragem com base em uma entrada personalizada.
 
-[As slicers](/javascript/api/excel/excel.slicer) podem ser aplicadas a tabelas dinâmicas e Excel regulares. Quando aplicada a uma Tabela Dinâmica, as slicers funcionam como um [PivotManualFilter](#pivotmanualfilter) e permitem a filtragem com base em uma entrada personalizada. Ao contrário dos PivotFilters, as slicers têm um [Excel de interface do usuário](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). Com a `Slicer` classe, você cria esse componente de interface do usuário, gerencia a filtragem e controla sua aparência visual.
+[As slicers](/javascript/api/excel/excel.slicer) podem ser aplicadas a tabelas dinâmicas e Excel regulares. Quando aplicada a uma Tabela Dinâmica, as slicers funcionam como um [PivotManualFilter](#pivotmanualfilter) e permitem a filtragem com base em uma entrada personalizada. Ao contrário dos PivotFilters, as slicers têm um [Excel de interface do usuário](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d). Com a `Slicer` classe, você cria esse componente de interface do usuário, gerencia a filtragem e controla sua aparência visual.
 
 ### <a name="filter-with-pivotfilters"></a>Filtrar com PivotFilters
 
@@ -412,7 +412,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>Filtrar com slicers
 
-[As slicers](/javascript/api/excel/excel.slicer) permitem que os dados sejam filtrados de uma tabela Excel dinâmica. Uma slicer usa valores de uma coluna especificada ou PivotField para filtrar linhas correspondentes. Esses valores são armazenados [como objetos SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer` . Seu complemento pode ajustar esses filtros, assim como os usuários ( por meio[da interface do usuário Excel interface do usuário](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). A slicer fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
+[As slicers](/javascript/api/excel/excel.slicer) permitem que os dados sejam filtrados de uma tabela Excel dinâmica. Uma slicer usa valores de uma coluna especificada ou PivotField para filtrar linhas correspondentes. Esses valores são armazenados [como objetos SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer` . Seu complemento pode ajustar esses filtros, assim como os usuários ( por meio[da interface do usuário Excel interface do usuário](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d)). A slicer fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
 
 ![Uma filtragem de dados de uma slicer em uma tabela dinâmica.](../images/excel-slicer.png)
 

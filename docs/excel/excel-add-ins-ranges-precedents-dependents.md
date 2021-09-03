@@ -4,16 +4,16 @@ description: Saiba como usar a API JavaScript Excel para recuperar precedentes e
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: daf0aab9bc3cd1f1821074a6e00a7d839eaa95978bf01cef2682096d36ee2ec0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084654"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868705"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 
-Excel fórmulas geralmente se referem a outras células. Essas referências entre células são conhecidas como "precedentes" e "dependentes". Um precedente é uma célula que fornece dados a uma fórmula. Um dependente é uma célula que contém uma fórmula que se refere a outras células. Para saber mais sobre os Excel relacionados às relações entre células, consulte Exibir as relações entre [fórmulas e células.](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507)
+Excel fórmulas geralmente se referem a outras células. Essas referências entre células são conhecidas como "precedentes" e "dependentes". Um precedente é uma célula que fornece dados a uma fórmula. Um dependente é uma célula que contém uma fórmula que se refere a outras células. Para saber mais sobre os Excel relacionados às relações entre células, consulte Exibir as relações entre [fórmulas e células.](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507)
 
 Uma célula pode ter uma célula precedente, e essa célula precedente pode ter suas próprias células precedentes. Um "precedente direto" é o primeiro grupo de células anterior nesta sequência, semelhante ao conceito de pais em uma relação pai-filho. Um "dependente direto" é o primeiro grupo dependente de células em uma sequência, semelhante a filhos em uma relação pai-filho. Células que se referem a outras células em uma workbook, mas cuja relação não é uma relação pai-filho, não são dependentes diretos ou precedentes diretos.
 

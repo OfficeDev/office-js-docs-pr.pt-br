@@ -4,12 +4,12 @@ description: Saiba como agrupar linhas ou colunas de um intervalo para criar um 
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e5ba5e5d539d4391b65a792d05ae2f0d2ff49fc63725bc3681cb9015873bb45
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 41a5bad5013378257287602d5131f1ac07130cf7
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084050"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868411"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Intervalos de grupo para um contorno usando a EXCEL JavaScript
 
@@ -17,7 +17,7 @@ Este artigo fornece um exemplo de código que mostra como agrupar intervalos par
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>Linhas de grupo ou colunas de um intervalo para um contorno
 
-Linhas ou colunas de um intervalo podem ser agrupadas para criar um [contorno](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Esses grupos podem ser recolhidos e expandidos para ocultar e mostrar as células correspondentes. Isso facilita a análise rápida dos dados de linha superior. Use [Range.group](/javascript/api/excel/excel.range#group_groupOption_) para fazer esses grupos de contornos.
+Linhas ou colunas de um intervalo podem ser agrupadas para criar um [contorno](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff). Esses grupos podem ser recolhidos e expandidos para ocultar e mostrar as células correspondentes. Isso facilita a análise rápida dos dados de linha superior. Use [Range.group](/javascript/api/excel/excel.range#group_groupOption_) para fazer esses grupos de contornos.
 
 Um contorno pode ter uma hierarquia, onde grupos menores são aninhados em grupos maiores. Isso permite que o contorno seja exibido em diferentes níveis. Alterar o nível de contorno visível pode ser feito programaticamente por meio do [método Worksheet.showOutlineLevels.](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) Observe que Excel suporta apenas oito níveis de grupos de contornos.
 

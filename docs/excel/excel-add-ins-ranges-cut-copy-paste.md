@@ -4,12 +4,12 @@ description: Saiba como cortar, copiar e colar intervalos usando Excel API JavaS
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084098"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868677"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>Cortar e colar células (mover)
 
-O [método Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) move células para um novo local na workbook. Esse comportamento de movimento de célula funciona [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) da mesma forma que quando as células são movidas arrastando a borda do intervalo ou ao tomar as ações **Cortar** **e Colar.** Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como o `destinationRange` parâmetro.
+O [método Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) move células para um novo local na workbook. Esse comportamento de movimento de célula funciona [](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e) da mesma forma que quando as células são movidas arrastando a borda do intervalo ou ao tomar as ações **Cortar** **e Colar.** Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como o `destinationRange` parâmetro.
 
 O exemplo de código a seguir move um intervalo com o `Range.moveTo` método. Observe que, se o intervalo de destino for menor que a fonte, ele será expandido para abranger o conteúdo de origem.
 

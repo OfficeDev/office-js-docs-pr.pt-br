@@ -3,16 +3,16 @@ title: Usar temas de documentos em seus suplementos do PowerPoint
 description: Saiba como coordenar visualmente temas como fontes e cores para aplicar a apresentações, documentos, planilhas e emails.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4493517fbaf5307ae0c9e0195944397c2ab766f8154f26095f764e1499d1f218
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096088"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868698"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
-Um [tema do Office](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que é possível aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções. O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas é possível escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
+Um [tema do Office](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que é possível aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções. O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas é possível escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
 
 Usando o OfficeThemes.css, projete os complementos coordenados com PowerPoint de duas maneiras.
 

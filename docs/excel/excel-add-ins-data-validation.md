@@ -3,20 +3,20 @@ title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1d05db463da8586e39e6a8e172529d9da46a8cec11ca36f5231cb9c3f1c49033
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084290"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868642"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
 A biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione a validação de dados automáticos a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia da validação de dados, consulte os artigos a seguir sobre como os usuários adicionam validação de dados por meio da interface do usuário Excel usuário.
 
-- [Aplicar validação de dados às células](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [Validação de dados](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Exemplos e descrição de validação de dados no Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Aplicar validação de dados às células](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
+- [Validação de dados](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Exemplos e descrição de validação de dados no Excel](https://support.microsoft.com/help/211485)
 
 ## <a name="programmatic-control-of-data-validation"></a>Controle de programação de validação de dados
 

@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: 8d702d7820e8a85499c5a64355310844b456abbc
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232402"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863545"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -18,7 +18,7 @@ Funções personalizadas permitem que desenvolvedores adicionem novas funções 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-A imagem animada a seguir mostra a sua pasta de trabalho solicitando uma função que você criou com o JavaScript ou o Typescript. Neste exemplo, a função personalizada `=MYFUNCTION.SPHEREVOLUME` calcula o volume de uma esfera.
+A imagem animada a seguir mostra sua pasta de trabalho chamando uma função que você criou com JavaScript ou TypeScript. Neste exemplo, a função personalizada `=MYFUNCTION.SPHEREVOLUME` calcula o volume de uma esfera.
 
 ![Imagem animada mostrando um usuário final inserindo MYFUNCTION. Função personalizada SPHEREVOLUME em uma célula de uma planilha do Excel.](../images/SphereVolumeNew.gif)
 

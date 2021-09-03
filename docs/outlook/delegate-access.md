@@ -3,12 +3,12 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092343"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868691"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
@@ -25,13 +25,13 @@ As seções a seguir descrevem configurações com suporte para caixas de correi
 
 #### <a name="shared-folders"></a>Pastas compartilhadas
 
-O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa ao seu perfil" do artigo Gerenciar itens de calendário e email de [outra pessoa.](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5)
+O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926). O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa ao seu perfil" do artigo Gerenciar itens de calendário e email de [outra pessoa.](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)
 
 #### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
 
 Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
 
-Um recurso Exchange Server conhecido como "automapping" está ativado por [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) padrão, o que significa que, posteriormente, a caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook do usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador tiver desabilitado a automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
+Um recurso Exchange Server conhecido como "automapping" está ativado por [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) padrão, o que significa que, posteriormente, a caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook do usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador tiver desabilitado a automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 > [!WARNING]
 > Não **entre** na caixa de correio compartilhada com uma senha. As APIs de recurso não funcionarão nesse caso.
@@ -40,13 +40,13 @@ Um recurso Exchange Server conhecido como "automapping" está ativado por [](/mi
 
 #### <a name="shared-folders"></a>Pastas compartilhadas
 
-O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) atualizando as permissões de pasta de caixa de correio. O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa à sua lista de pastas Outlook Web App" do artigo Acessar a caixa de correio [de outra pessoa](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081).
+O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) atualizando as permissões de pasta de caixa de correio. O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa à sua lista de pastas Outlook Web App" do artigo Acessar a caixa de correio [de outra pessoa](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
 
 #### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
 
 Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
 
-Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook na Web](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207).
+Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook na Web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
 > [!WARNING]
 > NÃO **use** outras opções como "Abrir outra caixa de correio". As APIs de recurso podem não funcionar corretamente.
@@ -223,8 +223,8 @@ Se um administrador ocultou um usuário ou endereço de caixa de correio compart
 
 ## <a name="see-also"></a>Confira também
 
-- [Permitir que outra pessoa gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
-- [Compartilhamento de calendário em Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [Permitir que outra pessoa gerencie seu email e calendário](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [Compartilhamento de calendário em Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [Adicionar uma caixa de correio compartilhada Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [Como solicitar elementos de manifesto](../develop/manifest-element-ordering.md)
 - [Máscara (computação)](https://en.wikipedia.org/wiki/Mask_(computing))

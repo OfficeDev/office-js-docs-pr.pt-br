@@ -3,16 +3,16 @@ title: Trabalhar com comentários usando a EXCEL JavaScript
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e threads de comentários.
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e292dab77b080906d77b1517a8de715bc0d2122f29e3de73b04f5b9d9276c85
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084316"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868649"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a EXCEL JavaScript
 
-Este artigo descreve como adicionar, ler, modificar e remover comentários em uma manual de trabalho com a API JavaScript Excel JavaScript. Você pode saber mais sobre o recurso de comentário no [artigo Inserir comentários e anotações Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) artigo.
+Este artigo descreve como adicionar, ler, modificar e remover comentários em uma manual de trabalho com a API JavaScript Excel JavaScript. Você pode saber mais sobre o recurso de comentário no [artigo Inserir comentários e anotações Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) artigo.
 
 Na api Excel JavaScript, um comentário inclui o único comentário inicial e a discussão encadeada conectada. Ela está vinculada a uma célula individual. Qualquer pessoa que exibir a workbook com permissões suficientes pode responder a um comentário. Um [objeto Comment](/javascript/api/excel/excel.comment) armazena essas respostas como objetos [CommentReply.](/javascript/api/excel/excel.commentreply) Você deve considerar um comentário como um thread e que um thread deve ter uma entrada especial como ponto de partida.
 
@@ -171,7 +171,7 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>Menções
 
-[As menções](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do seu comentário. Seu complemento pode criar essas menções em seu nome.
+[As menções](https://support.microsoft.com/office/644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do seu comentário. Seu complemento pode criar essas menções em seu nome.
 
 Comentários com menções precisam ser criados com [objetos CommentRichContent.](/javascript/api/excel/excel.commentrichcontent) Chame `CommentCollection.add` com uma ou mais `CommentRichContent` menções e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir a menção no texto. O formato de uma menção é: `<at id="{replyIndex}">{mentionName}</at>` .
 
@@ -321,4 +321,4 @@ function commentDeleted() {
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com pastas de trabalho usando a API JavaScript do Excel](excel-add-ins-workbooks.md)
 - [Trabalhar com eventos usando a API JavaScript do Excel](excel-add-ins-events.md)
-- [Inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [Inserir comentários e anotações no Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

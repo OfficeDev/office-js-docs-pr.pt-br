@@ -1,14 +1,14 @@
 ---
 ms.date: 03/30/2021
-description: Solucionar problemas comuns com funções personalizadas do Excel.
+description: Solucionar problemas comuns com Excel funções personalizadas.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506137"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868614"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -45,7 +45,7 @@ Se você vir o erro "Não podemos abrir esse complemento do localhost", você pr
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
-Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 
@@ -80,7 +80,7 @@ Para obter mais informações sobre esse processo, consulte [Associando nomes de
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Problemas conhecidos são rastreados e relatados no repositório do GitHub de Funções [Personalizadas do Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
+Problemas conhecidos são rastreados e relatados [no Excel Funções Personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

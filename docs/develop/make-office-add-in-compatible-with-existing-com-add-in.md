@@ -3,12 +3,12 @@ title: Faça seu suplemento do Office ser compatível com um suplemento COM exis
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
 ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 498f1715462edb7f9c79be7738337dc7433fe403a2e0aa76eae81b4516af9caa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bb842c60beb329571ce3dc7f055cc1d9d606209b
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080466"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868439"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -22,8 +22,8 @@ Você pode configurar seu Office Add-in para que, quando o complemento COM equiv
 > - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
 > - Outlook no Windows (versão 2102 ou posterior) em uma versão de servidor Exchange com suporte
 >   - Exchange Online
->   - Exchange Atualização Cumulativa 10 ou posterior de 2019 ([KB5003612](https://support.microsoft.com/topic/cumulative-update-10-for-exchange-server-2019-kb5003612-b1434cad-3fbc-4dc3-844d-82568e8d4344))
->   - Exchange Atualização Cumulativa 21 ou posterior de 2016 ([KB5003611](https://support.microsoft.com/topic/cumulative-update-21-for-exchange-server-2016-kb5003611-b7ba1656-abba-4a0b-9be9-dac45095d969))
+>   - Exchange Atualização Cumulativa 10 ou posterior de 2019 ([KB5003612](https://support.microsoft.com/topic/b1434cad-3fbc-4dc3-844d-82568e8d4344))
+>   - Exchange Atualização Cumulativa 21 ou posterior de 2016 ([KB5003611](https://support.microsoft.com/topic/b7ba1656-abba-4a0b-9be9-dac45095d969))
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Especificar um complemento COM equivalente
 

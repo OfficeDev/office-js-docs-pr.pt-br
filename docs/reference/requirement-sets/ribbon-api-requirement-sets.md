@@ -4,16 +4,16 @@ description: Especifica quais plataformas Office e builds suportam as APIs dinâ
 ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 18b081da28991eb15875c6999ddfe06ccea13eade8dd8a4e1f2a4cc09ac5e922
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084918"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868733"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 O conjunto de APIs da Faixa de Opções oferece suporte ao controle programático de quando comandos personalizados de complemento (ou seja, botões de faixa de opções personalizados e itens de menu) estão habilitados e desabilitados.
 
@@ -41,9 +41,9 @@ A versão 1.1 do conjunto de requisitos RibbonApi é suportada no Canal do Consu
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
-- [Números de versão e com build de versões de canal de atualização para Microsoft 365 clientes](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Onde você pode encontrar a versão e o número de com build de um aplicativo Microsoft 365 cliente](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Números de versão e com build de versões de canal de atualização para Microsoft 365 clientes](/officeupdates/update-history-microsoft365-apps-by-date)
+- [Qual versão do Office estou usando?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [Onde você pode encontrar a versão e o número de com build de um aplicativo Microsoft 365 cliente](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office

@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma Office de complementos.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: c3cde56ce1bedc76afb967a449b3d29ce61e1fecd8fe7b2774a7c69278a61688
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1972fa8de2c6a6f42a003efe99be7694290ee06c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083234"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868418"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -38,7 +38,7 @@ As seções a seguir descrevem brevemente como a arquitetura de tempo de execuç
 
 Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel no Windows e Outlook no Windows e no Mac, há suporte aos suplementos do Office por meio da integração de um componente no processo, o tempo de execução de suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da web do suplemento em si é hospedada fora do processo. Como mostrado na figura 1, em um dispositivo Windows para área de trabalho ou tablet, [a página da Web do suplemento é hospedada em um controle do Internet Explorer ou Microsoft Edge](browsers-used-by-office-web-add-ins.md) que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
 
-Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) ao tentar iniciar um suplemento.
+Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](/office/troubleshoot/office-suite-issues/apps-for-office-not-start) ao tentar iniciar um suplemento.
 
 *Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
 
@@ -273,5 +273,5 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 - [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Política de Mesma Origem Parte 1: Sem Inspecionar](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
-- [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [Modo Protegido do IE](/office/troubleshoot/office-suite-issues/apps-for-office-not-start)
 - [Controles de privacidade para Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)

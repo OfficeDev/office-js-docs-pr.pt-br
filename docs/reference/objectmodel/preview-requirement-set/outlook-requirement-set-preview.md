@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 06/15/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 58f27010372bef495ece16e3c9fb5cf4a8a7e78b1c3e7880485367ec6f954f63
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed37bdc872c045a071ee6217efa98eff5b5eea97
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091387"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868670"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -71,6 +71,26 @@ Adicionada uma nova propriedade que representa a sensibilidade de um compromisso
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
 Adicionado um novo número `AppointmentSensitivityType` que representa as opções de sensibilidade disponíveis em um compromisso.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
+
+<br>
+
+---
+
+---
+
+### <a name="delay-delivery-time"></a>Atrasar o tempo de entrega
+
+#### <a name="officecontextmailboxitemdelaydeliverytime"></a>[Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#properties)
+
+Adicionada uma nova propriedade que retorna um objeto que permite gerenciar a data e a hora de entrega de uma mensagem no modo Redação.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
+
+#### <a name="officedelaydeliverytime"></a>[Office. DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+
+Adicionado um novo objeto que permite gerenciar a data e a hora de entrega de uma mensagem no modo Redação.
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
 
