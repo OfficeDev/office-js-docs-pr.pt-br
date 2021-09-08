@@ -3,12 +3,12 @@ title: Elemento Scopes no arquivo de manifesto
 description: O elemento Scopes contém permissões que o add-in precisa para se conectar a um recurso externo.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 05582ae05c13fae8e2272de3fe6111c5ff639f938a817fd0b50ad22e4234d033
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: be68033e86de736703d9d1593ad361918d5a147d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087251"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936526"
 ---
 # <a name="scopes-element"></a>Elemento Scopes
 

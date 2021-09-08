@@ -4,11 +4,11 @@ description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook,
 ms.date: 07/13/2021
 localization_priority: Priority
 ms.openlocfilehash: ed54f6c513da9ada85afcbdbdb30798acb7048f4
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232243"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936176"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 

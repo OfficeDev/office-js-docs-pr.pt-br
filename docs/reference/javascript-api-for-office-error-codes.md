@@ -3,12 +3,12 @@ title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Office Comum.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 58ebd7a2c447ee288ec3ed709db043a9df22249def8056cc6792ac90fe351e5c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e6371476c3e40f1619f4fb703c8b684b38667682
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085072"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936528"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 

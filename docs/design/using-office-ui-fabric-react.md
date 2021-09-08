@@ -3,12 +3,12 @@ title: Interface do usuário Fluent React em Suplementos do Office
 description: Saiba como usar Fluent interface do usuário React em Office de complementos.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1137fd2465af6c09a42a14babe8ca2898e864c743cfd73e0263ad39ff085bf3f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081561"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936652"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar Fluent interface do usuário React em Office de usuário
 
@@ -36,7 +36,7 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

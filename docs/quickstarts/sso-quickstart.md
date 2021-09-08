@@ -4,12 +4,12 @@ description: Use o gerador Yeoman para construir um Suplemento Office Node.js qu
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: c4264c644e064787819705c8cd63bed6243b6eddfde24e21730b8938846a89b7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eb75c0b4f2a27612a2e361caaaefefa047a68a44
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097498"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937394"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Use o gerador Yeoman para criar um Suplemento do Office que utilize o logon único.
 
@@ -46,7 +46,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 - **Qual será o nome do suplemento?** `My SSO Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-sso-excel.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-sso-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 

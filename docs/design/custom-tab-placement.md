@@ -3,12 +3,12 @@ title: Posicione uma guia personalizada sobre a faixa de opções
 description: Saiba como controlar onde uma guia personalizada aparece na faixa Office faixa de opções e se ela tem foco por padrão.
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: 98b90ad6a8a89cf739dfdc0fff8068235a75e34d7304032c87011476620a483a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6718a69191d1d84d96512c01b2544094ce276ab6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082110"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936701"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Posicione uma guia personalizada sobre a faixa de opções
 

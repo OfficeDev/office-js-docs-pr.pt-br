@@ -3,12 +3,12 @@ title: Solução de problemas de ativação de suplementos contextuais do Outloo
 description: Possíveis motivos para o seu complemento não ser ativado como você espera.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 08369db7d4f77b9fa23d8df332bd59d7ddbbce959c5630eeb0fb0b6e833d2045
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094711"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938068"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 

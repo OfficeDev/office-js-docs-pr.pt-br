@@ -3,12 +3,12 @@ title: Elemento OfficeApp no arquivo de manifesto
 description: O elemento OfficeApp é o elemento raiz de um Office de complemento.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 39ab9285720f7a9a7b5eede1cd5883e2d42602f9be86b7fe756713e0b98e9218
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c5786343173d0e130df4b786f28a8689d573b6ca
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089038"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937906"
 ---
 # <a name="officeapp-element"></a>Elemento OfficeApp
 

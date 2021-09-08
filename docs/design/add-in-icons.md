@@ -3,12 +3,12 @@ title: Diretrizes de ícone para suplementos do Office
 description: Obter uma visão geral de como projetar ícones e os estilos de design Fresh e Monoline para comandos de complemento.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 3f1c2d4cbe748d2ac214f0dd0c10a988435eeb4c34bbfe9c7b157b911cd4eb09
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3073472332a31688676fba796dccd9920a49581d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082349"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937247"
 ---
 # <a name="icons"></a>Ícones
 

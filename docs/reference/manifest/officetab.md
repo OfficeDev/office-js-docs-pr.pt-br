@@ -3,12 +3,12 @@ title: Elemento OfficeTab no arquivo de manifesto
 description: O elemento OfficeTab define a guia faixa de opções onde o comando do seu complemento é exibido.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 2a223aaa212eacef07ca2b211bfa7c8168f961c0e41427ae25fc86adb7d36100
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087417"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937837"
 ---
 # <a name="officetab-element"></a>Elemento OfficeTab
 

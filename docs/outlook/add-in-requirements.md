@@ -3,12 +3,12 @@ title: Requisitos de suplementos do Outlook
 description: Há diversos requisitos para os servidores e clientes para que os Suplementos do Outlook possam carregar e funcionar de maneira apropriada.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 22dcdd335dc521707131583190efc52ecdbf27269dcdf8872c7b71d58b9ab69f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6062073d44a412d67961f806677cd60701bbdb9b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086368"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936255"
 ---
 # <a name="outlook-add-in-requirements"></a>Requisitos de suplementos do Outlook
 

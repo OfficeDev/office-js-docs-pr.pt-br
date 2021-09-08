@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3dbb6ade3089fa20dc7f5a13a5a87654cda8cafa4c4391386513b33169aa8a15
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098251"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936538"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -71,7 +71,7 @@ Esse método não usa a linha de comando e pode ser realizado usando comandos so
 1. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
-> Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="sideload-an-office-add-in"></a>Fazer sideload Office add-in
 

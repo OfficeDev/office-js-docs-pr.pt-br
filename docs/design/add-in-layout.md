@@ -3,12 +3,12 @@ title: Diretrizes de layout para Suplementos do Office
 description: Obter diretrizes sobre como layout de um painel de tarefas ou caixa de diálogo em um Office Add-in.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6adecff7194c95b1bd0b1f9018070b9165e2d4e414ecd0b615dec5ef6d6895da
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 14c788613fe3ac11436c32c5b7457f379b4a72fe
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082316"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936293"
 ---
 # <a name="layout"></a>Layout
 

@@ -3,12 +3,12 @@ title: Obter e definir categorias
 description: Como gerenciar categorias na caixa de correio e no item
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: deec0f911f1a9a82c356dc29e2429329806184fbca3a25e6985219a0e87244fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086356"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937687"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 

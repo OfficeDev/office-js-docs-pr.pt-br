@@ -4,12 +4,12 @@ description: Detalhes sobre as próximas POWERPOINT APIs JavaScript.
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 5569a732dce2db1da5b6fb29169c87e65222afb50b55c7b1930a7c20e138c5c9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092615"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938099"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint APIs de visualização do JavaScript
 
@@ -22,7 +22,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
 | Gerenciamento de slides | Adiciona suporte para adicionar slides, bem como gerenciar layouts de slides e mestres de slides. | [Slide](/javascript/api/powerpoint/powerpoint.slide)<br>[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)<br>[SlideMaster](/javascript/api/powerpoint/powerpoint.slidemaster)|
-| Formas | Adiciona suporte para obter referências às formas em um slide. | [Formato](/javascript/api/powerpoint/powerpoint.shape) |
+| Formas | Adiciona suporte para obter referências às formas em um slide. | [Shape](/javascript/api/powerpoint/powerpoint.shape) |
 
 ## <a name="api-list"></a>Lista de API
 
@@ -34,7 +34,7 @@ A tabela a seguir lista as PowerPoint APIs JavaScript atualmente em visualizaç�
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#slideMasterId)|Especifica a ID de um Slide Master a ser usado para o novo slide.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#slideMasters)|Retorna a coleção `SlideMaster` de objetos que estão na apresentação.|
 ||[categorias](/javascript/api/powerpoint/powerpoint.presentation#tags)|Retorna uma coleção de marcas anexadas à apresentação.|
-|[Formato](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|Exclui a forma da coleção de formas.|
+|[Shape](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|Exclui a forma da coleção de formas.|
 ||[id](/javascript/api/powerpoint/powerpoint.shape#id)|Obtém a ID exclusiva da forma.|
 ||[categorias](/javascript/api/powerpoint/powerpoint.shape#tags)|Retorna uma coleção de marcas na forma.|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#getCount__)|Obtém o número de formas na coleção.|

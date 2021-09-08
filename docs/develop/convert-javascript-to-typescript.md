@@ -3,12 +3,12 @@ title: Converter um projeto de Suplemento do Office no Visual Studio para TypeSc
 description: Saiba como converter um projeto de Office de Visual Studio para usar TypeScript.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5733bd950ce2a6cb1d667828db4966be979baadb388c6c195a9f5878e0f58d98
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081170"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937458"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 

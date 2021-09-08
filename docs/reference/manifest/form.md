@@ -3,12 +3,12 @@ title: Elemento Form no arquivo de manifesto
 description: Configurações UX para os formulários que seu suplemento de email usará durante a execução em um determinado dispositivo (área de trabalho, tablet ou telefone).
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f2a7265752cfcdd1030e4bcef36381692aeae1e8e1bb9d20f393c495f6beb48f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c9cd1d9104fc51edc84149ef677c4308dfb1a9f5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086706"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937135"
 ---
 # <a name="form-element"></a>Elemento Form
 

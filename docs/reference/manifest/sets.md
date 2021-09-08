@@ -3,12 +3,12 @@ title: Elemento Sets no arquivo de manifesto
 description: O elemento Sets especifica o conjunto mínimo de Office API JavaScript que seu Office Desempio exige para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a0a7edf6543cc74ac69ee6dc430c0a7497b6911ed43d66ea1082c0d477255948
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bd8f8311bb06a8e9e98fc408aece6395ab5643b1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095014"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936548"
 ---
 # <a name="sets-element"></a>Elemento Sets
 

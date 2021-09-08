@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f2a4b4b7ae44596bef101aeeba51ee6dffa8ba5e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079954"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937985"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
@@ -28,9 +28,8 @@ Recomendamos fortemente que você use uma ferramenta que possa interceptar e exi
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>Causas e tratamento dos erros do getAccessToken
 
 Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
-
-- [HomeES6.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+- [HomeES6.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -108,7 +107,7 @@ No desenvolvimento, o suplemento é sideloaded no Outlook e a opção `forMSGrap
 
 ### <a name="13013"></a>13013
 
-O foi chamado muitas vezes em um curto período de `getAccessToken` tempo, Office a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há cenários ao se lembrar do método. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja chamado repetidamente. Se o mesmo caminho de código "repetir" estiver sendo executado novamente, o código deverá voltar para um sistema alternativo de autenticação do usuário. Para um exemplo de código, consulte como a `retryGetAccessToken` variável é usada em [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+O foi chamado muitas vezes em um curto período de `getAccessToken` tempo, Office a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há cenários ao se lembrar do método. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja chamado repetidamente. Se o mesmo caminho de código "repetir" estiver sendo executado novamente, o código deverá voltar para um sistema alternativo de autenticação do usuário. Para um exemplo de código, consulte como a `retryGetAccessToken` variável é usada em [HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -119,9 +118,8 @@ Em um suplemento de produção, o suplemento deverá responder a esse erro recor
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
 
 Para exemplos do tratamento de erro descritos nesta seção, confira:
-
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>Erros no acesso condicional/autenticação multifatorial
 

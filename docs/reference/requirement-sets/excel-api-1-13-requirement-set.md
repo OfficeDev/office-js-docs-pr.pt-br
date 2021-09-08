@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.13.
 ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 61ae65fc0692cdf05741e299e95460eb3167dc6ca3b759a49d655c3a8f1bc425
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092627"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937871"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>Novidades na API JavaScript 1.13 Excel JavaScript
 
@@ -46,10 +46,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#getMergedAreasOrNullObject__)|Retorna um objeto RangeAreas que representa as áreas mescladas nesse intervalo.|
 ||[getRangeEdge(direction: Excel. KeyboardDirection, activeCell?: Cadeia de \| caracteres de intervalo)](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)|Retorna um objeto range que é a célula de borda da região de dados que corresponde à direção fornecida.|
 |[Table](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize_newRange_)|Resize a tabela para o novo intervalo.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel. InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_)|Insere as planilhas especificadas de uma pasta de trabalho de origem na pasta de trabalho atual.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel. InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_)|Insere as planilhas especificadas de uma pasta de trabalho de origem na pasta de trabalho atual.|
 ||[onActivated](/javascript/api/excel/excel.workbook#onActivated)|Ocorre quando a guia de trabalho é ativada.|
 |[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[tipo](/javascript/api/excel/excel.workbookactivatedeventargs#type)|Obtém o tipo do evento.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|Ocorre quando uma ou mais fórmulas são alteradas nesta planilha.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|Ocorre quando uma ou mais fórmulas são alteradas nesta planilha.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged)|Ocorre quando uma ou mais fórmulas são alteradas em qualquer planilha dessa coleção.|
 |[WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs)|[formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)|Obtém uma matriz `FormulaChangedEventDetail` de objetos, que contém os detalhes sobre todas as fórmulas alteradas.|
 ||[source](/javascript/api/excel/excel.worksheetformulachangedeventargs#source)|A origem do evento.|

@@ -1,16 +1,21 @@
 ---
 title: Solucionar erros de desenvolvimento com Office de complementos
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
-ms.date: 06/11/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: a750f8db6e58406403d8bd0ef89e60128c2e08523375b4b2fbe6a904bfbae2d4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093219"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937476"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Office de complementos
+
+Aqui está uma lista de problemas comuns que podem ser encontrados durante o desenvolvimento de um Office Add-in.
+
+> [!TIP]
+> Limpar o Office geralmente corrige problemas relacionados ao código desleleo. Isso garante que o manifesto mais recente seja carregado, usando os nomes de arquivo atuais, o texto do menu e outros elementos de comando. Para saber mais, consulte [Clear the Office cache](clear-cache.md).
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Não é possível carregar o suplemento no painel de tarefas ou outros problemas relacionados ao manifesto do suplemento
 
@@ -18,19 +23,7 @@ Confira [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md) 
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Alterações nos comandos de suplemento, incluindo botões da faixa de opções e itens de menu, não entram em vigor
 
-Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão da faixa de opções ou texto de comandos de suplemento, não parecerem entrar em vigor, experimente limpar o cache do Office no computador. 
-
-#### <a name="for-windows"></a>Para Windows:
-
-Exclua o conteúdo da `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` pasta e exclua o conteúdo da pasta , se `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` existir.
-
-#### <a name="for-mac"></a>Para Mac:
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>No iOS:
-
-Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
+Limpar o cache ajuda a garantir que a versão mais recente do manifesto do seu complemento está sendo usada. Para limpar o cache Office, siga as instruções em [Limpar o Office cache](clear-cache.md). Se você estiver usando Office na Web, limpe o cache do navegador por meio da interface do usuário do navegador.
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>Alterações em arquivos estáticos, como JavaScript, HTML e CSS, não entram em vigor
 
@@ -40,7 +33,7 @@ O navegador pode estar armazenando esses arquivos em cache. Para evitar isso, de
 - Pragma: "sem cache"
 - Expira: "-1"
 
-Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 Se o seu suplemento estiver hospedado no Servidor de Informações da Internet (IIS), você também poderá adicionar o seguinte ao web.config.
 
@@ -72,7 +65,7 @@ A seguir estão algumas das causas desse erro. Se você descobrir causas adicion
 
 - Se você estiver usando Visual Studio, pode haver um problema com o sideload. Feche todas as instâncias do host Office e Visual Studio. Reinicie Visual Studio e tente pressionar F5 novamente.
 - O manifesto do add-in foi removido de seu local de implantação, como Implantação Centralizada, um catálogo SharePoint ou um compartilhamento de rede.
-- O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o complemento do host Office e substitua o manifesto original pelo manifesto alterado. Muitos precisam limpar o cache Office para remover todos os rastreamentos do original. Consulte a seção [Alterações nos comandos de complemento, incluindo](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) botões de faixa de opções e itens de menu, não entrarão em vigor anteriormente neste artigo.
+- O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o complemento do host Office e substitua o manifesto original pelo manifesto alterado. Muitos precisam limpar o cache Office para remover todos os rastreamentos do original. Consulte o [artigo Limpar o Office de cache](clear-cache.md) para obter instruções sobre como limpar o cache do seu sistema operacional.
 - O manifesto do add-in tem um que não é definido em qualquer lugar na seção Recursos do manifesto, ou há uma incompatibilidade na ortografia do entre onde ele é usado e onde ele é definido na `resid` [](../reference/manifest/resources.md) `resid` `<Resources>` seção.
 - Há um `resid` atributo em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo e o atributo do recurso correspondente na seção não podem ter mais de `id` `<Resources>` 32 caracteres.
 - O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento.](../reference/requirement-sets/add-in-commands-requirement-sets.md)
@@ -119,3 +112,4 @@ Você pode repetir o processo anterior para quaisquer esquemas adicionais que es
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Solucionar erros de usuários com Suplementos do Office](testing-and-troubleshooting.md)
+- [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

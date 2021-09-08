@@ -1,14 +1,14 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
-ms.date: 08/27/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.openlocfilehash: 8b45aa0da3a92dd8387c316213698a5e040f05f5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863531"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938134"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -441,11 +441,11 @@ Todos os exemplos a seguir usam `displayDialogAsync` . Alguns têm servidores ba
 
 - [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Office Exemplo de monetização SAAS de complemento](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook SSO de complemento](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook SSO de complemento](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook Visualizador de Token de Complemento](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook Mensagem acionável do add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook Compartilhamento de complemento para OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)

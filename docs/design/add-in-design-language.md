@@ -3,12 +3,12 @@ title: Idioma de design de suplemento do Office
 description: Saiba como tornar seu Office de complemento visualmente compatível com Office.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 45ef812c83b094d548b120493717f6af6e9fb2f36bf0d9c2144b6b1517e658e9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4374eaad1e660728a347d19a012d345b642755af
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082648"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938081"
 ---
 # <a name="office-add-in-design-language"></a>Idioma de design de suplemento do Office
 

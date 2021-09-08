@@ -4,11 +4,11 @@ description: Use a Excel JavaScript para criar tabelas dinâmicas e interagir co
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868635"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937149"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a Excel JavaScript
 

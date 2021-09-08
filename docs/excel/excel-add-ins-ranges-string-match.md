@@ -4,12 +4,12 @@ description: Saiba como encontrar uma cadeia de caracteres em um intervalo usand
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: efd2671781a8ce8d3e8aeda88f87abb3ad5058a35878f28f47f50305cff1b038
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087393"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938171"
 ---
 # <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Encontre uma cadeia de caracteres dentro de um intervalo usando a EXCEL JavaScript
 

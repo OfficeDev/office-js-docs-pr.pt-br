@@ -3,12 +3,12 @@ title: Obter e definir os headers da Internet
 description: Como obter e definir os headers da Internet em uma mensagem em um Outlook de um complemento.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 39e328f26ca849a95cf359b31480db5a1ca1830c80f4c414e34bb07657fe9b75
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089477"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937892"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir os headers da Internet em uma mensagem em um Outlook de um Outlook de dados
 

@@ -1,14 +1,14 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ba3c0ab64ce82d68aab677baa48cdb34cce6f7e6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773864"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937942"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -37,7 +37,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
-1. Clone ou baixe o repositório em [SSO com Suplemento NodeJS do Office](https://github.com/officedev/office-add-in-nodejs-sso).
+1. Clone ou baixe o repositório em [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
     > Há três versões do exemplo:
@@ -188,7 +188,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         catch(exception) {
 
             // TODO 5: Respond to exceptions thrown by the
-            //         OfficeRuntime.auth.getAccessToken call.
+            //         Office.auth.getAccessToken call.
 
         }
     }
@@ -196,13 +196,13 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO 1` pelo código a seguir. Sobre esse código, observe o seguinte:
 
-    - `OfficeRuntime.auth.getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD. Um token de bootstrap é semelhante a um token de ID, mas tem uma propriedade `scp` (Scope) com o valor `access-as-user`. Esse tipo de token pode ser trocado por um aplicativo Web para um token de acesso ao Microsoft Graph.
+    - `Office.auth.getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD. Um token de bootstrap é semelhante a um token de ID, mas tem uma propriedade `scp` (Scope) com o valor `access-as-user`. Esse tipo de token pode ser trocado por um aplicativo Web para um token de acesso ao Microsoft Graph.
     - Definir a opção como true significa que, se nenhum usuário estiver atualmente Office, Office abrirá um prompt de entrada `allowSignInPrompt` pop-up.
     - Definir a opção como true significa que, se o usuário não consentiu em permitir que o complemento acesse o perfil AAD do usuário, Office abrirá um prompt de `allowConsentPrompt` consentimento. (O prompt só permite que o usuário consenta com o perfil AAD do usuário, não para escopos Graph Microsoft.)
-    - Definir a opção como verdadeiros sinais Office que o complemento pretende usar o token bootstrap para obter um token de acesso para o Microsoft Graph, em vez de apenas `forMSGraphAccess` usá-lo como um token de ID. Se o administrador locatário não tiver concedido consentimento para o acesso do suplemento ao Microsoft Graph, `OfficeRuntime.auth.getAccessToken` retornará o erro **13012**. O suplemento pode responder voltando para um sistema alternativo de autorização. Isso é necessário porque o Office pode solicitar apenas consentimento para o perfil do Azure AD do usuário, não para escopos do Microsoft Graph. O sistema de autorização de fallback exige  que o usuário entre novamente e o usuário pode ser solicitado a consentir com os escopos Graph Microsoft. Portanto, a opção `forMSGraphAccess` garante que o suplemento não fará uma troca de tokens que falhará devido à falta de consentimento. Uma vez que você concedeu consentimento de administrador em uma etapa anterior, esse cenário não acontecerá para esse suplemento. No entanto, a opção é incluída aqui para ilustrar uma prática recomendada.
+    - Definir a opção como verdadeiros sinais Office que o complemento pretende usar o token bootstrap para obter um token de acesso para o Microsoft Graph, em vez de apenas `forMSGraphAccess` usá-lo como um token de ID. Se o administrador locatário não tiver concedido consentimento para o acesso do suplemento ao Microsoft Graph, `Office.auth.getAccessToken` retornará o erro **13012**. O suplemento pode responder voltando para um sistema alternativo de autorização. Isso é necessário porque o Office pode solicitar apenas consentimento para o perfil do Azure AD do usuário, não para escopos do Microsoft Graph. O sistema de autorização de fallback exige  que o usuário entre novamente e o usuário pode ser solicitado a consentir com os escopos Graph Microsoft. Portanto, a opção `forMSGraphAccess` garante que o suplemento não fará uma troca de tokens que falhará devido à falta de consentimento. Uma vez que você concedeu consentimento de administrador em uma etapa anterior, esse cenário não acontecerá para esse suplemento. No entanto, a opção é incluída aqui para ilustrar uma prática recomendada.
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. Substitua `TODO 2` pelo código a seguir. Você criará o método `getGraphToken` em uma etapa posterior.
@@ -213,11 +213,11 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO 3` pelo seguinte. Sobre este código, observe: 
 
-    - Se o Microsoft 365 locatário tiver sido configurado para exigir autenticação multifator, o incluirá uma propriedade com informações sobre `exchangeResponse` `claims` os fatores adicionais necessários. Nesse caso, `OfficeRuntime.auth.getAccessToken` deve ser chamado novamente com a opção `authChallenge` definida como o valor da propriedade de declarações. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
+    - Se o Microsoft 365 locatário tiver sido configurado para exigir autenticação multifator, o incluirá uma propriedade com informações sobre `exchangeResponse` `claims` os fatores adicionais necessários. Nesse caso, `Office.auth.getAccessToken` deve ser chamado novamente com a opção `authChallenge` definida como o valor da propriedade de declarações. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
 
     ```javascript
     if (exchangeResponse.claims) {
-        let mfaBootstrapToken = await OfficeRuntime.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
+        let mfaBootstrapToken = await Office.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
         exchangeResponse = await getGraphToken(mfaBootstrapToken);
     }
     ```
@@ -290,7 +290,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again.");  
         break;
     case 13002:
-        // OfficeRuntime.auth.getAccessToken was called with the allowConsentPrompt 
+        // Office.auth.getAccessToken was called with the allowConsentPrompt 
         // option set to true. But, the user aborted the consent prompt. 
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
@@ -299,7 +299,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
-        // The OfficeRuntime.auth.getAccessToken method has already been called and 
+        // The Office.auth.getAccessToken method has already been called and 
         // that call has not completed yet. Only seen in Office on the web.
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
@@ -496,7 +496,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         try {
             const tokenResponse = await fetch(`${stsDomain}/${tenant}/${tokenURLSegment}`, {
                 method: 'POST',
-                body: form(formParams),
+                body: formurlencoded(formParams),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'

@@ -4,12 +4,12 @@ description: Visão geral da API JavaScript do Project.
 ms.date: 07/05/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 8b5fd35a7feafc76192091835a252531b89515f9fecbeeaf5d94c00242362c81
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 15dbe8cde9510f052f929a99f4073f5fa8bf8a12
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098070"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936297"
 ---
 # <a name="javascript-api-for-project"></a>JavaScript API para Project
 

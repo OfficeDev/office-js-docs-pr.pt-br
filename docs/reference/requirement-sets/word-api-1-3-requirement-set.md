@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 4943eeb020e99f9a87d77996c59ea838e84ec6eecf705cb483930dc948d4e8c1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092157"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936494"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 

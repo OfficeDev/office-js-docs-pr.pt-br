@@ -4,11 +4,11 @@ description: Outlook Versão do conjunto de requisitos de visualização da API 
 ms.date: 08/27/2021
 localization_priority: Normal
 ms.openlocfilehash: 60b634ff3ddeeacbcd875086e5041eb8207ef958
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868656"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936925"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>item (Conjunto de requisitos de visualização de caixa de correio)
 

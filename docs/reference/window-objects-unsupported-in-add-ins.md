@@ -3,12 +3,12 @@ title: Objetos window que não têm suporte em Office Desindados
 description: Este artigo especifica alguns dos objetos do tempo de execução da janela que não funcionam em Office de complementos.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 654e8e311069a616e2d8859a4f63b19d299609982fa68449b5529df489816cbf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d2560748841bd1e2a7708b25a8e51133563d1534
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097378"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937695"
 ---
 # <a name="window-objects-that-are-unsupported-in-office-add-ins"></a>Objetos window que não têm suporte em Office Desindados
 

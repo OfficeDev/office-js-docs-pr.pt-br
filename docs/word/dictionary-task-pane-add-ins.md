@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um complemento do painel de tarefas do dicionário
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2473edc8e9de78ffdb03faf472c2c01eafbaa7425a62e505904f51f970893b56
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094115"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937117"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 

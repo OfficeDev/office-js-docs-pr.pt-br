@@ -4,12 +4,12 @@ description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7f5097e6556766556e35509b8fdd6c201b17c201f28aab950ff6493dcbf6056a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085292"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936869"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 

@@ -4,11 +4,11 @@ description: Reúna as funções personalizadas em lotes para reduzir as chamada
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Normal
 ms.openlocfilehash: fa02a88646ca373a463aefaa51076c35c3df08cf
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774172"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936958"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>Chamadas de função personalizada em lotes para um serviço remoto
 

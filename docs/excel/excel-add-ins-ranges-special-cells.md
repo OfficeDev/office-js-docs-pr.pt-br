@@ -4,12 +4,12 @@ description: Saiba como usar a EXCEL JavaScript para encontrar células especiai
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 650cfba187771063fe3636fef2ed447d27c11d3e9099ec909bff38921409d8c5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085208"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937284"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
 

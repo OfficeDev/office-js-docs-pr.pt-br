@@ -5,11 +5,11 @@ ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868733"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937844"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 

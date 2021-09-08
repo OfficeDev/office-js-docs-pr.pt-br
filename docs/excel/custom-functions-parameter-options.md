@@ -1,14 +1,14 @@
 ---
 ms.date: 03/08/2021
-description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
-title: Opções para funções personalizadas do Excel
+description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos Excel, parâmetros opcionais, contexto de invocação e muito mais.
+title: Opções para Excel funções personalizadas
 localization_priority: Normal
 ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613924"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936175"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetro de funções personalizadas
 
@@ -18,7 +18,7 @@ Funções personalizadas são configuráveis com muitas opções de parâmetros 
 
 ## <a name="optional-parameters"></a>Parâmetros opcionais
 
-Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função add pode, opcionalmente, adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` no Excel.
+Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função add pode, opcionalmente, adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` na Excel.
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -61,7 +61,7 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> Quando nenhum valor é especificado para um parâmetro opcional, o Excel atribui a ele o valor `null` . Isso significa que os parâmetros inicializados por padrão no TypeScript não funcionarão conforme o esperado. Não use a sintaxe `function add(first:number, second:number, third=0):number` porque ela não será inicializada como `third` 0. Em vez disso, use a sintaxe TypeScript conforme mostrado no exemplo anterior.
+> Quando nenhum valor é especificado para um parâmetro opcional, Excel atribui a ele o valor `null` . Isso significa que os parâmetros inicializados por padrão no TypeScript não funcionarão conforme o esperado. Não use a sintaxe `function add(first:number, second:number, third=0):number` porque ela não será inicializada como `third` 0. Em vez disso, use a sintaxe TypeScript conforme mostrado no exemplo anterior.
 
 Quando você definir uma função que contém um ou mais parâmetros opcionais, especifique o que acontece quando os parâmetros opcionais são nulos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro for nulo, o valor padrão será definido como `98052` . Se o `dayOfWeek` parâmetro for nulo, ele será definido como quarta-feira.
 
@@ -117,7 +117,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ## <a name="range-parameters"></a>Parâmetros de intervalo
 
-Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. O Excel passará um intervalo de dados de células como uma matriz bidimensional.
+Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. Excel passará um intervalo de dados de células como uma matriz bidimensional.
 
 Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o parâmetro , e a sintaxe JSDOC define a propriedade do parâmetro como nos `values` `number[][]` metadados `dimensionality` `matrix` JSON para essa função. 
 
@@ -146,7 +146,7 @@ function secondHighest(values) {
 
 ## <a name="repeating-parameters"></a>Parâmetros repetidos
 
-Um parâmetro repetido permite que um usuário insira uma série de argumentos opcionais em uma função. Quando a função é chamada, os valores são fornecidos em uma matriz para o parâmetro. Se o nome do parâmetro terminar com um número, o número de cada argumento aumentará incrementalmente, como `ADD(number1, [number2], [number3],…)` . Isso corresponde à convenção usada para funções do Excel integrados.
+Um parâmetro repetido permite que um usuário insira uma série de argumentos opcionais em uma função. Quando a função é chamada, os valores são fornecidos em uma matriz para o parâmetro. Se o nome do parâmetro terminar com um número, o número de cada argumento aumentará incrementalmente, como `ADD(number1, [number2], [number3],…)` . Isso corresponde à convenção usada para funções de Excel de usuário.
 
 A função a seguir soma o total de números, endereços de célula, bem como intervalos, se inseridos.
 
@@ -172,7 +172,7 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-Esta função mostra `=CONTOSO.ADD([operands], [operands]...)` na planilha excel.
+Esta função mostra `=CONTOSO.ADD([operands], [operands]...)` na Excel de trabalho.
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>Parâmetro de intervalo único
 
-Um parâmetro de intervalo único não é tecnicamente um parâmetro repetidor, mas é incluído aqui porque a declaração é muito semelhante a parâmetros repetidos. Ele aparecerá para o usuário como ADD(A2:B3) onde um único intervalo é passado do Excel. O exemplo a seguir mostra como declarar um único parâmetro de intervalo.
+Um parâmetro de intervalo único não é tecnicamente um parâmetro repetidor, mas é incluído aqui porque a declaração é muito semelhante a parâmetros repetidos. Ele aparecerá para o usuário como ADD(A2:B3) onde um único intervalo é passado de Excel. O exemplo a seguir mostra como declarar um único parâmetro de intervalo.
 
 ```JS
 /**
@@ -232,7 +232,7 @@ Para JSON de autoria manual, verifique se o parâmetro está especificado como n
 Todas as funções personalizadas são automaticamente passadas como o último parâmetro de entrada, mesmo que não `invocation` seja declarada explicitamente. Esse `invocation` parâmetro corresponde ao objeto [Invocation.](/javascript/api/custom-functions-runtime/customfunctions.invocation) O objeto pode ser usado para recuperar contexto adicional, como o endereço da célula que `Invocation` invocou sua função personalizada. Para acessar o `Invocation` objeto, você deve `invocation` declarar como o último parâmetro em sua função personalizada. 
 
 > [!NOTE]
-> O `invocation` parâmetro não aparece como um argumento de função personalizado para usuários no Excel.
+> O `invocation` parâmetro não aparece como um argumento de função personalizada para usuários no Excel.
 
 O exemplo a seguir mostra como usar o parâmetro para retornar o endereço da célula que `invocation` invocou sua função personalizada. Este exemplo usa a [propriedade address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) do `Invocation` objeto. Para acessar o `Invocation` objeto, primeiro declare `CustomFunctions.Invocation` como um parâmetro em seu JSDoc. Em seguida, `@requiresAddress` declare em seu JSDoc para acessar a `address` propriedade do `Invocation` objeto. Por fim, dentro da função, recupere e retorne a `address` propriedade. 
 
@@ -251,9 +251,9 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-No Excel, uma função personalizada chamando a propriedade do objeto retornará o endereço absoluto após o formato na célula que `address` `Invocation` `SheetName!RelativeCellAddress` invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Prices** na célula F6, o valor de endereço do parâmetro retornado será `Prices!F6` . 
+Em Excel, uma função personalizada chamando a propriedade do objeto retornará o endereço absoluto após o formato na célula que `address` `Invocation` `SheetName!RelativeCellAddress` invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Prices** na célula F6, o valor de endereço do parâmetro retornado será `Prices!F6` . 
 
-O `invocation` parâmetro também pode ser usado para enviar informações ao Excel. Confira [Fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function) para saber mais.
+O `invocation` parâmetro também pode ser usado para enviar informações para Excel. Confira [Fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function) para saber mais.
 
 ## <a name="detect-the-address-of-a-parameter"></a>Detectar o endereço de um parâmetro
 

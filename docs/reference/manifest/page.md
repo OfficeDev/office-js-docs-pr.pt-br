@@ -3,12 +3,12 @@ title: Elemento Page no arquivo de manifesto
 description: O elemento Page define configurações de página HTML que uma função personalizada usa no Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 0d10ed04b73dfd786d50150dd8d01629f826cde17cb5ed1a7633d7319b5d6490
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: aa8a2807cbf2549ded680a22b17f24513ea76b9a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090159"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937639"
 ---
 # <a name="page-element"></a>Elemento Page
 

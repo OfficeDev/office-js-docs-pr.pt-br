@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0067d0164c5bb126963f3ec1786f8428d3ea18a6503002af483e5495e916d688
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: fbc03603cd3b3d546fbb83526d4654b35a124393
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087179"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936529"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -164,7 +164,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
-5. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto **=CONTOSO. GETSTARCOUNT("OfficeDev&quot;, &quot;Excel-Custom-Functions")** e pressione Enter. Você deve ver que o resultado na célula **B1** é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).
+5. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto **=CONTOSO. GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** e pressione Enter. Você deve ver que o resultado na célula **B1** é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 

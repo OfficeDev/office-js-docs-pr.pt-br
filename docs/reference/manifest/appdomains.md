@@ -3,12 +3,12 @@ title: Elemento AppDomains no arquivo de manifesto
 description: Lista todos os domínios além do domínio especificado no elemento que seu Office Add-in usará e deve ser confiável por `SourceLocation` Office.
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 55401d62e88cc1f2d67d13de0997a40db7a3f6b0c2f8997aa1b976962c8c797f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 751e4ad2ffa5fd50739a855fad48964473b154f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096527"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937911"
 ---
 # <a name="appdomains-element"></a>Elemento AppDomains
 

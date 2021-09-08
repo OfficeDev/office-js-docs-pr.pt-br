@@ -4,12 +4,12 @@ description: Saiba como depurar seu Outlook que implementa a ativação baseada 
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090810"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937795"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Depurar seu Outlook de eventos (visualização)
 
@@ -78,7 +78,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
     }
     ```
 
-### <a name="other"></a>Outro
+### <a name="other"></a>Outros
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Desktop).**
 1. Abra o Visual Studio Code.

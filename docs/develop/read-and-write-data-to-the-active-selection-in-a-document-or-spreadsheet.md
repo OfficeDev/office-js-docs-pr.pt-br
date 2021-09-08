@@ -3,12 +3,12 @@ title: Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 description: Saiba como ler e gravar dados na seleção ativa em um documento do Word ou Excel planilha.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 19cd1edad3835403355e07cdfcd4a43cb2aa9c9b7746823e2fd31aea319b9bf2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bf4d1256a41d4150d81cd33f876a14791e93e483
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080264"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938169"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 

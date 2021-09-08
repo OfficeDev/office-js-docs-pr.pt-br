@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Outlook que insere G
 ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 2d00bbde50e95839dd83fc9a2a5f9de68e7e1814142d209ca042c063ac11c2e5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088438"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936785"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 

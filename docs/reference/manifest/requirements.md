@@ -3,12 +3,12 @@ title: Elemento Requirements no arquivo de manifesto
 description: O elemento Requirements especifica o conjunto de requisitos mínimo e os métodos que seu Office de complemento precisa para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3020037b48e3f759acf6a7e2758bb8c1fd2dd36429e0b21613e22fca33cacc1a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098100"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937328"
 ---
 # <a name="requirements-element"></a>Elemento Requirements
 

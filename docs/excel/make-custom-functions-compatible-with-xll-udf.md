@@ -4,11 +4,11 @@ description: Habilitar a compatibilidade Excel funções definidas pelo usuário
 ms.date: 08/24/2021
 localization_priority: Normal
 ms.openlocfilehash: 5611a8d7c22867146c0f0904d62bd113fe8d29d2
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614585"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938000"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -56,7 +56,7 @@ A tabela a seguir compara os recursos entre funções definidas pelo usuário XL
 
 |         |Função definida pelo usuário XLL |Funções personalizadas compatíveis com XLL |Excel Função personalizada do add-in da API JavaScript |
 |---------|---------|---------|---------|
-| **Plataformas com suporte** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
+| **Plataformas compatíveis** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | **Formatos de arquivo com suporte** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Preenchimento automático de fórmula** | Não | Sim | Sim |
 | **Streaming** | Possível por meio de retorno de chamada xlfRTD e XLL. | Sim | Sim |

@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 685e482c3c714f6831ea827e4a65b2ac057bddec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773885"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936515"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -32,7 +32,7 @@ Este artigo orienta você sobre o processo de habilitação de SSO (login único
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
-Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://github.com/officedev/office-add-in-aspnet-sso).
+Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > Há duas versões do exemplo.
@@ -185,7 +185,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
 1. Abaixo da função `getGraphData`, adicione a função a seguir. Observe que você criará a função `handleClientSideErrors` em uma etapa posterior.
 
     ```javascript
-    async function getDataWithToken() {
+    async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
@@ -204,20 +204,19 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
     }
     ```
 
-1. Substitua `TODO 1` pelo seguinte. Sobre este código, observe:
+1. Substitua `TODO 1` pelo código a seguir para obter o token de acesso do Office host. O **parâmetro** options contém as seguintes configurações passadas da função **getGraphData()** anterior.
 
-    * `getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD e retornar ao suplemento.
-    * `allowSignInPrompt` indica ao Office para solicitar que o usuário entre caso ele ainda não esteja conectado ao Office.
-    * `allowConsentPrompt`informa Office solicitar que o usuário consenta em permitir que o complemento acesse o perfil AAD do usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite* que o usuário consenta com quaisquer escopos Graph Microsoft.)
-    * `forMSGraphAccess` instrui o Office que o suplemento pretende trocar o token de bootstrap por um token de acesso ao Micrsoft Graph, em vez de apenas usar o token de bootstrap como um token de ID. A configuração dessa opção dá ao Office a oportunidade de cancelar o processo de obtenção do token de bootstrap (e retornar o código de erro 13012) se o administrador de locatários do usuário não tiver concedido consentimento para o suplemento. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback. Se o não for usado e o administrador não tiver concedido consentimento, o token bootstrap será retornado, mas a tentativa de trocar com o fluxo on-behalf-of resultaria em `forMSGraphAccess` um erro. Portanto, a opção `forMSGraphAccess` permite ao suplemento ramificar para o sistema de fallback rapidamente.
-    * Você criará a função `getData` em uma etapa posterior.
-    * O parâmetro `/api/values` é a URL de um controlador do lado do servidor que fará a troca de tokens e usará o token de acesso recebido para fazer a chamada para o Microsoft Graph.
+    * `allowSignInPrompt` é definido como true. Isso Office solicitar que o usuário entre se o usuário ainda não estiver Office.
+    * `allowConsentPrompt` é definido como true. Isso Office solicitar que o usuário consenta em permitir que o usuário acesse o perfil Microsoft Azure Active Directory usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite* que o usuário consenta com quaisquer escopos Graph Microsoft.)
+    * `forMSGraphAccess` é definido como true. Isso informa Office retornar um erro (código 13012) se o usuário ou administrador não tiver concedido consentimento para Graph escopos para o complemento. Para acessar a Microsoft Graph o complemento deve trocar o token de acesso por um novo token de acesso por meio do fluxo em nome do usuário. A configuração como true ajuda a evitar o cenário em que `forMSGraphAccess` **getAccessToken()** é bem-sucedido, mas, em seguida, o fluxo em nome do fluxo falha mais tarde para o Microsoft Graph. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback.
+
+    Observe também o seguinte código:
+
+    * Você criará a função `getData` em uma última etapa.
+    * O parâmetro é a URL de um controlador do lado do servidor que usará o fluxo em nome do fluxo para trocar o token por um novo token de acesso para chamar `/api/values` a Microsoft Graph.
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
-        allowSignInPrompt: true,
-        allowConsentPrompt: true,
-        forMSGraphAccess: true });
+    let bootstrapToken = await Office.auth.getAccessToken(options);
 
     getData("/api/values", bootstrapToken);
     ```

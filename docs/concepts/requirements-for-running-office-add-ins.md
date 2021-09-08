@@ -4,11 +4,11 @@ description: Saiba mais sobre os requisitos de cliente e servidor que um usuári
 ms.date: 07/27/2021
 localization_priority: Normal
 ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868397"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937046"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 

@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 8d8d4d8536cd118bd139c19541f9a9808e6eec442b1a828fa241222e282e8b8b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080093"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936715"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -88,7 +88,7 @@ O `Hosts` elemento pode conter um ou mais `Host` elementos. O `Host` elemento es
 | Notebook      | OneNote Online                             | Painel de tarefas, Conteúdo     |
 | Presentation  | PowerPoint na Web, Windows, Mac, iPad      | Painel de tarefas, Conteúdo     |
 | Project       | Project no Windows                             | Painel de tarefas              |
-| Workbook      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
+| Pasta de Trabalho      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
 
 > [!NOTE]
 > O `Name` atributo especifica o Office cliente que pode executar o seu add-in. Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Você não pode especificar qual plataforma pode ser usada para executar seu suplemento. Por exemplo, se você especificar , Outlook na Web e Windows pode ser usado `Mailbox` para executar o seu complemento.

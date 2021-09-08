@@ -4,11 +4,11 @@ description: Saiba mais sobre os limites de recursos da plataforma de Office de 
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505660"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938132"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
