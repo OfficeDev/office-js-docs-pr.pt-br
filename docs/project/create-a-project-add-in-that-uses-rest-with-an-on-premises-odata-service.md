@@ -3,12 +3,12 @@ title: Criar um suplemento de Project que usa REST com um serviço OData local d
 description: Saiba como criar um complemento de painel de tarefas para o Project Professional 2013 que compara os dados de custo e trabalho no projeto ativo com as médias de todos os projetos na instância atual do Project Web App.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a9a6d8699720f63107c3f4ad0114fbb75cd7771c1e730dda71ee5c1df1b8730d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088048"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938815"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento do Project que usa REST com um serviço OData local do Project Server
 
@@ -105,11 +105,11 @@ O manifesto do **projeto HelloProjectOData** é o arquivo HelloProjectOData.xml.
 
 Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md#see-also).
 
-### <a name="procedure-3-modify-the-add-in-manifest&quot;></a>Procedimento 3. Modificar o manifesto do complemento
+### <a name="procedure-3-modify-the-add-in-manifest"></a>Procedimento 3. Modificar o manifesto do complemento
 
 1. No Visual Studio, abra o arquivo HelloProjectOData.xml.
 
-2. O nome de exibição padrão é o nome do projeto do Visual Studio (&quot;HelloProjectOData"). Por exemplo, altere o valor padrão do **elemento DisplayName** para "Hello ProjectData".
+2. O nome de exibição padrão é o nome do projeto do Visual Studio ("HelloProjectOData"). Por exemplo, altere o valor padrão do **elemento DisplayName** para "Hello ProjectData".
 
 3. A descrição padrão também é "HelloProjectOData". Por exemplo, altere o valor padrão do elemento Description para "Testar consultas REST do serviço ProjectData".
 

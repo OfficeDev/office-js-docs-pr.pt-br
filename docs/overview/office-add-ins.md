@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 38f48c76482d2f3096aef0145598d510049a27bea6a349864f7c30c500f154b9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087515"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938772"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -123,7 +123,7 @@ Para obter uma introdução mais detalhada sobre o desenvolvimento de Suplemento
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

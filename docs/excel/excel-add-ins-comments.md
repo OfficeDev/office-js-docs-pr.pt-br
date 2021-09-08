@@ -4,11 +4,11 @@ description: Informações sobre como usar as APIs para adicionar, remover e edi
 ms.date: 10/09/2020
 localization_priority: Normal
 ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868649"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938315"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a EXCEL JavaScript
 

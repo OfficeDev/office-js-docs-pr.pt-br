@@ -3,12 +3,12 @@ title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 60a3dab3794dc3c379ae3e6ddf47324a72726e0388839e884ec272c868bdec35
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093303"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938493"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 

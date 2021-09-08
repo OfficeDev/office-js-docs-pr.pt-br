@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: Visão geral da API Outlook de complementos (conjunto de requisitos 1.7)
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 0c9a008718b6ef4af0ad7ab1fb7fa059bf16e127e33b306d7a4a4d2a3ba8de8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089661"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939044"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 

@@ -1,14 +1,14 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 06/22/2021
+ms.date: 09/03/2021
 localization_priority: Priority
-ms.openlocfilehash: f088c91026aa27117073539e0104378514dd93490effc65fac6ecaf0746b42c9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1f579d5f0a71cf4c078b3db5412adfe39d7e1287
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084468"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939319"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -40,7 +40,7 @@ Para obter uma visão geral mais detalhada, confira a [visão geral completa do 
 
 Para obter detalhes sobre como usar o token SSO em um suplemento do Outlook, confira [Autenticar o usuário com um token de logon único em um suplemento do Outlook](authenticate-a-user-with-an-sso-token.md).
 
-Para obter um exemplo de suplemento que usa o token de SSO, confira [Suplemento de SSO do Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+Para obter um exemplo de suplemento que usa o token de SSO, confira [Suplemento de SSO do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
 
 ## <a name="exchange-user-identity-token"></a>Token de identidade do usuário do Exchange
 

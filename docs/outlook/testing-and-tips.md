@@ -3,12 +3,12 @@ title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 7a8c6a22d053f58b38e6dbb432c2ad151c0fee94f3a512eea0611e28ab3595f6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086238"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938473"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 

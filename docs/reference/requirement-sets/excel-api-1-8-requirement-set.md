@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088945"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938333"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Novidades na API JavaScript 1.8 Excel JavaScript
 
@@ -40,7 +40,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Especifica o operador à direita quando a propriedade operator é definida como um operador binário como GreaterThan (o operand à esquerda é o valor que o usuário tenta inserir na célula).|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|Com os operadores ternários Between e NotBetween, especifica o operand superior ligado.|
 ||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|O operador a ser usado para validar os dados.|
-|[Gráfico](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|Especifica uma constante de enumeração de nível de rótulo de categoria de gráfico, referindo-se ao nível dos rótulos de categoria de origem.|
+|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|Especifica uma constante de enumeração de nível de rótulo de categoria de gráfico, referindo-se ao nível dos rótulos de categoria de origem.|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayBlanksAs)|Especifica a maneira como as células em branco são plotadas em um gráfico.|
 ||[plotBy](/javascript/api/excel/excel.chart#plotBy)|Especifica a forma como as colunas ou linhas são usadas como série de dados no gráfico.|
 ||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotVisibleOnly)|Verdadeiro se apenas as células visíveis forem plotadas.|
@@ -101,7 +101,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[tipo](/javascript/api/excel/excel.chartdeletedeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.chartdeletedeventargs#worksheetId)|Obtém a ID da planilha na qual o gráfico é excluído.|
 |[ChartLegendEntry](/javascript/api/excel/excel.chartlegendentry)|[height](/javascript/api/excel/excel.chartlegendentry#height)|Especifica a altura da entrada da legenda na legenda do gráfico.|
-||[index](/javascript/api/excel/excel.chartlegendentry#index)|Especifica o índice da entrada da legenda na legenda do gráfico.|
+||[índice](/javascript/api/excel/excel.chartlegendentry#index)|Especifica o índice da entrada da legenda na legenda do gráfico.|
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Especifica o valor esquerdo de uma entrada de legenda de gráfico.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Especifica a parte superior de uma entrada de legenda de gráfico.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Representa a largura da entrada da legenda no gráfico Legend.|
@@ -179,7 +179,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[custom](/javascript/api/excel/excel.datavalidationrule#custom)|Critérios de validação de dados personalizados.|
 ||[data](/javascript/api/excel/excel.datavalidationrule#date)|Critérios de validação de dados de data.|
 ||[decimal](/javascript/api/excel/excel.datavalidationrule#decimal)|Critérios de validação de dados decimais.|
-||[lista](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
+||[list](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textLength)|Critérios de validação de dados de comprimento de texto.|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|Critérios de validação de dados de tempo.|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholeNumber)|Critérios de validação de dados de número inteiro.|
@@ -258,7 +258,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#baseField)|O PivotField para basear `ShowAs` o cálculo, se aplicável de acordo com o `ShowAsCalculation` tipo, senão `null` .|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseItem)|O item no qual basear `ShowAs` o cálculo, se aplicável de acordo com `ShowAsCalculation` o tipo, mais `null` .|
 ||[calculation](/javascript/api/excel/excel.showasrule#calculation)|O `ShowAs` cálculo a ser usado para o PivotField.|
-|[Estilo](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoIndent)|Especifica se o texto é recuado automaticamente quando o alinhamento de texto em uma célula é definido como distribuição igual.|
+|[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoIndent)|Especifica se o texto é recuado automaticamente quando o alinhamento de texto em uma célula é definido como distribuição igual.|
 ||[textOrientation](/javascript/api/excel/excel.style#textOrientation)|A orientação de texto para o estilo.|
 |[Subtotals](/javascript/api/excel/excel.subtotals)|[automatic](/javascript/api/excel/excel.subtotals#automatic)|Se `Automatic` estiver definido como , todos os outros valores serão `true` ignorados ao definir o `Subtotals` .|
 ||[average](/javascript/api/excel/excel.subtotals#average)||
@@ -275,9 +275,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyId)|Retorna uma ID numérica.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRange_ctx_)|Obtém o intervalo que representa a área alterada de uma tabela em uma planilha específica.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRangeOrNullObject_ctx_)|Obtém o intervalo que representa a área alterada de uma tabela em uma planilha específica.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|Retorna `true` se a workbook estiver aberta no modo somente leitura.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|Retorna `true` se a workbook estiver aberta no modo somente leitura.|
 |[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
-|[Planilha](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Ocorre quando a planilha é calculada.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Ocorre quando a planilha é calculada.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showGridlines)|Especifica se as linhas de grade estão visíveis para o usuário.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showHeadings)|Especifica se os títulos estão visíveis para o usuário.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[tipo](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Obtém o tipo do evento.|

@@ -4,11 +4,11 @@ description: Saiba como dar suporte ao Javascript do Internet Explorer 11 e do E
 ms.date: 08/13/2021
 localization_priority: Normal
 ms.openlocfilehash: dea458cbabb71e23432db8cb6eb3dfcddc6e1bac
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382939"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938763"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 

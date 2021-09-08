@@ -3,12 +3,12 @@ title: Outlook conjunto de requisitos de API de complemento 1.10
 description: Conjunto de requisitos 1.10 para Outlook api de complemento.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fe870792a730404c4e90bf3eb1c3377b0f40c6f4b01a26a86deca56049868f16
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095518"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939028"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conjunto de requisitos de API de complemento 1.10
 

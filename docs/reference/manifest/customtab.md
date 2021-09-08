@@ -1,14 +1,14 @@
 ---
 title: Elemento CustomTab no arquivo de manifesto
 description: Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.
-ms.date: 08/13/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3656f68a722e5e0c224f18f80a0e0214fce47cfb
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382960"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939080"
 ---
 # <a name="customtab-element"></a>Elemento CustomTab
 
@@ -30,9 +30,8 @@ O **atributo id** deve ser exclusivo no manifesto.
 |  [Label](#label-tab)      | Sim |  O rótulo para CustomTab ou Group.  |
 |  [InsertAfter](#insertafter)      | Não |  Especifica que a guia personalizada deve ser imediatamente após uma guia Office de Office especificada. **Importante**: disponível somente no PowerPoint. |
 |  [InsertBefore](#insertbefore)      | Não |  Especifica que a guia personalizada deve ser imediatamente antes de uma guia de Office de Office. **Importante**: disponível somente no PowerPoint. |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Não |  Especifica se a guia personalizada deve aparecer em combinações de aplicativos e plataformas que suportam guias contextuais personalizadas. **Importante**: não disponível no Outlook. |
 
-### <a name="group"></a>Group
+### <a name="group"></a>Grupo
 
 Opcional, mas se não estiver presente, deve haver pelo menos um **elemento OfficeGroup.** Confira [Elemento Group](group.md) A ordem de **Group** e **OfficeGroup** no manifesto deve ser a ordem que você deseja que eles apareçam na guia personalizada. Eles podem ser intermendados se houver vários elementos, mas todos devem estar acima do **elemento Label.**
 
@@ -60,25 +59,3 @@ Opcional. Especifica que a guia personalizada deve ser imediatamente antes de um
 
 > [!IMPORTANT]
 > O `InsertBefore` elemento só está disponível em PowerPoint.
-
-### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
-
-Opcional (booleano). Especifica se o **CustomTab** ficará oculto em combinações de aplicativos e plataformas que suportam uma API que instala uma guia contextual personalizada na faixa de opções no tempo de execução. O valor padrão, se não estiver presente, é `false` . Se usado, **OverriddenByRibbonApi** deve ser o *primeiro* filho de **CustomTab**. Para obter mais informações, [consulte OverriddenByRibbonApi](overriddenbyribbonapi.md).
-
-> [!IMPORTANT]
-> O `OverriddenByRibbonApi` elemento não está disponível no Outlook.
-
-## <a name="customtab-example"></a>Exemplo de CustomTab
-
-```xml
-<ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-    <Group id="ContosoCustomTab.grp1">
-    </Group>
-    <OfficeGroup id="Paragraph" />
-    <Label resid="customTabLabel1"/>
-    <InsertAfter>TabReview</InsertAfter>
-  </CustomTab>
-</ExtensionPoint>
-```

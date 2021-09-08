@@ -5,11 +5,11 @@ ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868677"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938728"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Intervalos de corte, cópia e colar usando a API JavaScript Excel JavaScript
 

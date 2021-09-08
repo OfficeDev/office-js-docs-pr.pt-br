@@ -4,11 +4,11 @@ description: Saiba como chamar funções de Excel de planilha, como e usando Exc
 ms.date: 12/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 5cf1478e7f76c0602b9c8f0d19031abfa8369888
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868726"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939175"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 

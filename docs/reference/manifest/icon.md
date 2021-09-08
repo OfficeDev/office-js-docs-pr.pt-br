@@ -3,12 +3,12 @@ title: Elemento Icon no arquivo de manifesto
 description: Define elementos de Imagem para controles de Botão ou de Menu.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d153ca4ef162b8790b48a37a911ccd6b11c2632160bd02e09a34b2ea4f14daf6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093016"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938290"
 ---
 # <a name="icon-element"></a>Elemento Icon
 

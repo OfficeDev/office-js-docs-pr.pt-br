@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: ace62bb3e023381f6cebc34c2226d33b6f84287beaf4ec7b5d5e77ddeabc3c9e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080801"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939131"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 

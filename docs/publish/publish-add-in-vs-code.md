@@ -3,12 +3,12 @@ title: Publicar um complemento usando o Visual Studio Code e o Azure
 description: Como publicar um complemento usando Visual Studio Code e Azure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e8c81a57b49254103366c28092f30235cc525e12d9a446897d862af4fc189325
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097204"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939135"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Publicar um suplemento desenvolvido com o Código do Visual Studio
 

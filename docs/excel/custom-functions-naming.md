@@ -4,11 +4,11 @@ description: Saiba os requisitos para nomes de Excel funções personalizadas e 
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773346"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938553"
 ---
 # <a name="custom-functions-naming-guidelines"></a>Diretrizes de nomenclatura de funções personalizadas
 

@@ -3,12 +3,12 @@ title: Corresponder cadeias de caracteres como entidades conhecidas em um suplem
 description: Usando a Office JavaScript, você pode obter cadeias de caracteres que corresponderem a entidades conhecidas específicas para processamento posterior.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: bc95b53b0b94574f2db3543d9c8b1b3f6eecae0b87f82922a4ad245b8ad84575
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097902"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939260"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas
 

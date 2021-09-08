@@ -3,12 +3,12 @@ title: Desenvolva seu Office de usuário para trabalhar com a ITP ao usar cookie
 description: Como trabalhar com a ITP e Office de complementos ao usar cookies de terceiros
 ms.date: 07/8/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a638f699e7b596bba30dcd12ec57d6da209a4a6a89ad987ef3fcbb8532e5f8c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080514"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939343"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Desenvolva seu Office de usuário para trabalhar com a ITP ao usar cookies de terceiros
 

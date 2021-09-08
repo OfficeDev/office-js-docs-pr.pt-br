@@ -5,11 +5,11 @@ ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868705"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939330"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 

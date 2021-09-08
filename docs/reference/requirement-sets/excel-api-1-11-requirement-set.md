@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 67fb212813608ecb4e72ba5d63952f0228875211d0bf66978b7201fff58c5076
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1e347e0bb7b394676eccf422665c545b110b589d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092651"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938727"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Novidades na EXCEL JavaScript 1.11
 
@@ -18,7 +18,7 @@ O ExcelApi 1.11 aprimorou o suporte para comentários e controles no nível da p
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
 | Menções [de comentário](../../excel/excel-add-ins-comments.md#mentions) |Marca e notifica outros usuários da área de trabalho por meio de comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
-| Resolução de [comentários](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolver threads de comentário e obter o status da resolução. | [Comentário](/javascript/api/excel/excel.comment) |
+| Resolução de [comentários](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolver threads de comentário e obter o status da resolução. | [Comment](/javascript/api/excel/excel.comment) |
 | [Configurações de cultura](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Obtém configurações do sistema cultural para a caixa de trabalho, como formatação de número. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [Aplicativo NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [](/javascript/api/excel/excel.application) |
 | [Cortar e colar (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Replica a funcionalidade de recortar e colar no Excel para um Range. | [Range](/javascript/api/excel/excel.range) |
 | [Salvar](../../excel/excel-add-ins-workbooks.md#save-the-workbook) e [Fechar](../../excel/excel-add-ins-workbooks.md#close-the-workbook) a pasta de trabalho | Salve e feche a pasta de trabalho. | [Workbook](/javascript/api/excel/excel.workbook) |
@@ -34,7 +34,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[decimalSeparator](/javascript/api/excel/excel.application#decimalSeparator)|Obtém a cadeia de caracteres usada como separador decimal para valores numéricos.|
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|Obtém a cadeia de caracteres usada para separar grupos de dígitos à esquerda do decimal para valores numéricos.|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|Especifica se os separadores do sistema de Excel estão habilitados.|
-|[Comentário](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas nos comentários.|
+|[Comment](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas nos comentários.|
 ||[richContent](/javascript/api/excel/excel.comment#richContent)|Obtém o conteúdo rich comment (por exemplo, menções nos comentários).|
 ||[resolvido](/javascript/api/excel/excel.comment#resolved)|O status do thread de comentário.|
 ||[updateMentions(contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|Atualiza o conteúdo do comentário com uma cadeia de caracteres especialmente formatada e uma lista de menções.|
@@ -55,9 +55,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[numberGroupSeparator](/javascript/api/excel/excel.numberformatinfo#numberGroupSeparator)|Obtém a cadeia de caracteres usada para separar grupos de dígitos à esquerda do decimal para valores numéricos.|
 |[Range](/javascript/api/excel/excel.range)|[moveTo(destinationRange: Cadeia de \| caracteres de intervalo)](/javascript/api/excel/excel.range#moveTo_destinationRange_)|Move valores de célula, formatação e fórmulas do intervalo atual para o intervalo de destino, substituindo as informações antigas nessas células.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent(amount: number)](/javascript/api/excel/excel.rangeformat#adjustIndent_amount_)|Ajusta o recuo da formatação do intervalo.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close_closeBehavior_)|Fechar a pasta de trabalho atual.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close_closeBehavior_)|Fechar a pasta de trabalho atual.|
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save_saveBehavior_)|Salvar a pasta de trabalho atual.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)|Ocorre quando o estado oculto de uma ou mais linhas foi alterado em uma planilha específica.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)|Ocorre quando o estado oculto de uma ou mais linhas foi alterado em uma planilha específica.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[address](/javascript/api/excel/excel.worksheetcalculatedeventargs#address)|O endereço do intervalo que concluiu o cálculo.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onRowHiddenChanged)|Ocorre quando o estado oculto de uma ou mais linhas foi alterado em uma planilha específica.|
 |[WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs)|[address](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#address)|Obtém o endereço do intervalo que representa a área alterada de uma planilha específica.|

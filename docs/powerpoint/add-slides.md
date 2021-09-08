@@ -3,12 +3,12 @@ title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c49496a6c2cfc2b591fc5ff9e003df455e33f4c9b1f18ee8b7049b16f12fd81d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090207"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938978"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 

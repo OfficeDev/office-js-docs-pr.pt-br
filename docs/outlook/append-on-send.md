@@ -4,12 +4,12 @@ description: Saiba como implementar o recurso append-on-send em seu Outlook de c
 ms.topic: article
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: c590c26f9c7f092702efe91dd4debea911af38fc165a0806435f10ed1192180f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095566"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938860"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar o append-on-send no seu Outlook de usuário
 

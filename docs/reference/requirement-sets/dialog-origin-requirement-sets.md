@@ -4,16 +4,16 @@ description: Saiba mais sobre os conjuntos de requisitos de Origem da Caixa de D
 ms.date: 07/22/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 20cd797cfcc0c8b673f8531fbe71769196d0d274ea58a9b76171c1427c125aba
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 24513823eb60435359d5d7307a11a192fece2015
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086622"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938900"
 ---
 # <a name="dialog-origin-requirement-sets"></a>Conjuntos de requisitos de origem da caixa de diálogo
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos de Origem da Caixa de Diálogo, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 

@@ -4,11 +4,11 @@ description: Saiba como depurar Suplementos do Office que usam o WebView2 do Mic
 ms.date: 08/18/2021
 localization_priority: Priority
 ms.openlocfilehash: bbb475071660415f19b9a9fe5aaee0a6d735e20c
-ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "58407936"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938348"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
 

@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.2.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3a58c6b612306b315165e9f70808359aa7d73505667cc598110e7349d1934e96
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6d4a7b6aef56fb8d572e685df40c99c0c655e6db
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084944"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938740"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Quais são as novidades na API JavaScript do Excel 1.2
 
@@ -29,7 +29,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowCount)|Obtém o número de linhas selecionadas.|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startColumn)|Obtém o índice da primeira coluna da seleção (com base em zero).|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startRow)|Obtém o índice da primeira linha da seleção (com base em zero).|
-|[Gráfico](/javascript/api/excel/excel.chart)|[getImage(width?: number, height?: number, fittingMode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getImage_width__height__fittingMode_)|Processa o gráfico como uma imagem codificada em base64, dimensionando o gráfico para se ajustar às dimensões especificadas.|
+|[Chart](/javascript/api/excel/excel.chart)|[getImage(width?: number, height?: number, fittingMode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getImage_width__height__fittingMode_)|Processa o gráfico como uma imagem codificada em base64, dimensionando o gráfico para se ajustar às dimensões especificadas.|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|A planilha que contém o gráfico atual.|
 |[Filter](/javascript/api/excel/excel.filter)|[apply(criteria: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply_criteria_)|Aplica os critérios de filtro determinados à coluna fornecida.|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applyBottomItemsFilter_count_)|Aplica um filtro "Item Inferior" à coluna para obter o número de elementos fornecido.|
@@ -469,7 +469,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[yieldDisc(settlement: number \| string \| boolean \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult , vencimento: cadeia de caracteres de número <any> \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , pr: cadeia de caracteres de número \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , resgate: cadeia de caracteres de número \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , basis?: number \| string \| boolean \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> )](/javascript/api/excel/excel.functions#yieldDisc_settlement__maturity__pr__redemption__basis_)|Retorna o rendimento anual de um título descontado.|
 ||[yieldMat(settlement: number \| string \| boolean \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult , vencimento: cadeia de caracteres de número <any> \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , issue: number \| string \| boolean \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , taxa: cadeia de caracteres de número \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , pr: cadeia de caracteres de número \| \| \| booleano Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , basis?: number \| string \| boolean \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> )](/javascript/api/excel/excel.functions#yieldMat_settlement__maturity__issue__rate__pr__basis_)|Retorna o rendimento anual de um título que paga juros no vencimento.|
 ||[z_Test(matriz: número \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , x: número \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> , sigma?: número \| Excel. Intervalo \| Excel. RangeReference \| Excel. FunctionResult <any> )](/javascript/api/excel/excel.functions#z_Test_array__x__sigma_)|Retorna o valor P de cauda única de um teste z.|
-|[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|Especifica o índice do ícone no conjunto determinado.|
+|[Icon](/javascript/api/excel/excel.icon)|[índice](/javascript/api/excel/excel.icon#index)|Especifica o índice do ícone no conjunto determinado.|
 |[IconCollections](/javascript/api/excel/excel.iconcollections)|[fiveArrows](/javascript/api/excel/excel.iconcollections#fiveArrows)||
 ||[fiveArrowsGray](/javascript/api/excel/excel.iconcollections#fiveArrowsGray)||
 ||[fiveBoxes](/javascript/api/excel/excel.iconcollections#fiveBoxes)|[Conjunto de api: ExcelApi 1.2]|
@@ -559,9 +559,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[ThreeTrianglesSet](/javascript/api/excel/excel.threetrianglesset)|[greenUpTriangle](/javascript/api/excel/excel.threetrianglesset#greenUpTriangle)||
 ||[redDownTriangle](/javascript/api/excel/excel.threetrianglesset#redDownTriangle)||
 ||[yellowDash](/javascript/api/excel/excel.threetrianglesset#yellowDash)||
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[funções](/javascript/api/excel/excel.workbook#functions)|Representa uma coleção de funções de planilha que podem ser usadas para computação.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[funções](/javascript/api/excel/excel.workbook#functions)|Representa uma coleção de funções de planilha que podem ser usadas para computação.|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onSelectionChanged)|Ocorre quando a seleção no documento é alterada.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRange_valuesOnly_)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRange_valuesOnly_)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas.|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Retorna o objeto de proteção de planilha para uma planilha.|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect(options?: Excel. WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|Protege uma planilha.|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|Especifica as opções de proteção para a planilha.|

@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.10.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 34c21ad0e90593352ae4042c2be148e607c63164aac1845357e9f96371104f6f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087204"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938311"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Novidades na API JavaScript 1.10 Excel JavaScript
 
@@ -142,7 +142,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getItemOrNullObject_name_)|Obtém `TimelineStyle` um pelo nome.|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setDefault_newDefaultStyle_)|Define o estilo de linha do tempo padrão para uso no escopo do objeto pai.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Obtém a segmentação de dados ativa no momento na pasta de trabalho.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Obtém a segmentação de dados ativa no momento na pasta de trabalho.|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getActiveSlicerOrNullObject__)|Obtém a segmentação de dados ativa no momento na pasta de trabalho.|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|Representa uma coleção de comentários associados à workbook.|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivotTableStyles)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho.|

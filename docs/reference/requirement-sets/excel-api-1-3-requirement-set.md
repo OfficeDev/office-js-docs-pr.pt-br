@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.3.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d237455baa73aef8e70a6e4901cba6ee8b2b8f3475f6e915b93c437747478408
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d3606b74e8a1099cd58631cc047a783f27a09a19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095365"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938534"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
@@ -39,7 +39,7 @@ A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.3. Pa
 ||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Representa o código de formato de número do Excel para determinada célula.|
 ||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Representa os endereços de célula do `RangeView` .|
 ||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|O número de colunas visíveis.|
-||[index](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice do `RangeView` .|
+||[índice](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice do `RangeView` .|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|O número de linhas visíveis.|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|Representa uma coleção de exibições de tabelas associadas ao intervalo.|
 ||[text](/javascript/api/excel/excel.rangeview#text)|Valores de texto do intervalo especificado.|
@@ -52,8 +52,8 @@ A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.3. Pa
 ||[showBandedColumns](/javascript/api/excel/excel.table#showBandedColumns)|Especifica se as colunas mostram formatação em faixa na qual as colunas ímpares são realçadas de forma diferente de outras, para facilitar a leitura da tabela.|
 ||[showBandedRows](/javascript/api/excel/excel.table#showBandedRows)|Especifica se as linhas mostram formatação em faixa na qual linhas ímpares são realçadas de forma diferente de outras, para facilitar a leitura da tabela.|
 ||[showFilterButton](/javascript/api/excel/excel.table#showFilterButton)|Especifica se os botões de filtro estão visíveis na parte superior de cada header de coluna.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivotTables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivotTables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivotTables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivotTables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha.|
 
 ## <a name="see-also"></a>Confira também
 

@@ -4,12 +4,12 @@ description: Detalhes sobre as APIs JavaScript do Word futuras
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 1a3871ca4445e595620112bb5176fe2b7ab39015228a1602c119c06730cc90ab
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097842"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938921"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização javascript do Word
 

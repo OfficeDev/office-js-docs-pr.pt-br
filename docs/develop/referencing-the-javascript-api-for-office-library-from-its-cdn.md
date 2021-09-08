@@ -3,12 +3,12 @@ title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca Office da API JavaScript e as definições de tipo no seu complemento.
 ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 5348e1acab35e01dc6c467d20a65721fb98722d47c729edeb65a2efe4a8c45f8
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 04f97412c07cb39f5b2f753c3ce14e56e87c3de5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080252"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938223"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 

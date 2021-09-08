@@ -3,12 +3,12 @@ title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: Teste seu Office de iPad e Mac ao fazer sideload.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: b5de4fcf11fd05f945be99206a43879fa6205bd7b5074f1aa542528adc7a5772
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b3d7d7fa3ee69e849c112c888b66fa9deed23d88
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089637"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938710"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 

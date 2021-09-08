@@ -3,12 +3,12 @@ title: Defina seu ambiente de desenvolvimento
 description: Configurar seu ambiente de desenvolvedor para criar Office Desempresos.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: b396ad9774959e36ef34c8ca158eda26162c3b13794aa65a4eab0859c317c167
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087429"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938760"
 ---
 # <a name="set-up-your-development-environment"></a>Defina seu ambiente de desenvolvimento
 

@@ -3,12 +3,12 @@ title: Office.context.mailbox - conjunto de requisitos 1.4
 description: Outlook Conjunto de requisitos da API de Caixa de Correio versão 1.4 do modelo de objeto mailbox.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 765fe61c8107c11c8a713dce332d3221b319ff4275e157678b6b4a47e4261122
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e70de7c7b95a4e0a3d2abd4e10db9273e0b444e6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094627"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939002"
 ---
 # <a name="mailbox-requirement-set-14"></a>mailbox (conjunto de requisitos 1.4)
 
@@ -28,8 +28,8 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 | Propriedade | Minimum<br>nível de permissão | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|---|:---:|
-| [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#diagnostics) | ReadItem | Escrever<br>Ler | [Diagnóstico](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#diagnostics) | ReadItem | Escrever<br>Ler | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | Escrever<br>Ler | [Item](/javascript/api/outlook/office.item?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#userProfile) | ReadItem | Escrever<br>Ler | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 

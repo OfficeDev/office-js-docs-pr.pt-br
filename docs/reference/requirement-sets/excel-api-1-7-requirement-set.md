@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.7.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1012efa0143710a6646c5288ef8c4adfd49a6006e62eb850f25d6d12e9028c51
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088957"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938542"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
@@ -69,7 +69,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[Gráfico](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|Especifica o tipo do gráfico.|
+|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|Especifica o tipo do gráfico.|
 ||[id](/javascript/api/excel/excel.chart#id)|Id exclusiva do gráfico.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showAllFieldButtons)|Especifica se todos os botões de campo serão exibidos em um Gráfico Dinâmico.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[border](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato de borda da área do gráfico, que inclui cor, estilo de linha e peso.|
@@ -214,7 +214,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[documentReference](/javascript/api/excel/excel.rangehyperlink#documentReference)|Representa o destino de referência do documento para o hiperlink.|
 ||[screenTip](/javascript/api/excel/excel.rangehyperlink#screenTip)|Representa a cadeia exibida ao passar o mouse sobre o hiperlink.|
 ||[textToDisplay](/javascript/api/excel/excel.rangehyperlink#textToDisplay)|Representa a cadeia de caracteres exibida na parte superior esquerda da maioria das células no intervalo.|
-|[Estilo](/javascript/api/excel/excel.style)|[delete()](/javascript/api/excel/excel.style#delete__)|Exclui este estilo.|
+|[Style](/javascript/api/excel/excel.style)|[delete()](/javascript/api/excel/excel.style#delete__)|Exclui este estilo.|
 ||[formulaHidden](/javascript/api/excel/excel.style#formulaHidden)|Especifica se a fórmula ficará oculta quando a planilha estiver protegida.|
 ||[horizontalAlignment](/javascript/api/excel/excel.style#horizontalAlignment)|Representa o alinhamento horizontal para o estilo.|
 ||[includeAlignment](/javascript/api/excel/excel.style#includeAlignment)|Especifica se o estilo inclui o recuo automático, o alinhamento horizontal, o alinhamento vertical, o texto de quebra, o nível de recuo e as propriedades de orientação de texto.|
@@ -253,7 +253,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableId)|Obtém a ID da tabela na qual a seleção foi alterada.|
 ||[tipo](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|Obtém o tipo do evento.|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetId)|Obtém a ID da planilha na qual a seleção foi alterada.|
-|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Obtém a célula ativa no momento da pasta de trabalho.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Obtém a célula ativa no momento da pasta de trabalho.|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|Representa todas as conexões de dados na workbook.|
 ||[name](/javascript/api/excel/excel.workbook#name)|Obtém o nome da pasta de trabalho.|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Obtém as propriedades da pasta de trabalho.|
@@ -262,7 +262,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect(password?: string)](/javascript/api/excel/excel.workbookprotection#protect_password_)|Protege uma pasta de trabalho.|
 ||[protegido](/javascript/api/excel/excel.workbookprotection#protected)|Especifica se a workbook está protegida.|
 ||[unprotect(password?: string)](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|Desprotege uma pasta de trabalho.|
-|[Planilha](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Planilha)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|Copia uma planilha e a coloca na posição especificada.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Planilha)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|Copia uma planilha e a coloca na posição especificada.|
 ||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|Obtém o objeto começando em um índice de linha específico e índice de coluna e abrangendo um determinado número de `Range` linhas e colunas.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezePanes)|Obtém um objeto que pode ser usado para manipular painéis congelados na planilha.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onActivated)|Ocorre quando a planilha é ativada.|

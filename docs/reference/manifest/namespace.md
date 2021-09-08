@@ -3,12 +3,12 @@ title: Elemento Namespace no arquivo de manifesto
 description: O elemento Namespace define o namespace que uma função personalizada usa em Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 3f20e744839d5791797642a9019f546922efd710367d5f23446241eebad0e48f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 342f5ebcafa861838956f1033f8597cf05e60215
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089673"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939379"
 ---
 # <a name="namespace-element"></a>Elemento Namespace
 

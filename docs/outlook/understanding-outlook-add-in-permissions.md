@@ -3,12 +3,12 @@ title: Noções básicas sobre permissões de suplemento do Outlook
 description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 6330856ed417db669e3077b190485700bad226990e6b13c015ea0f9511e6dd5a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8bb2995896624f4ef9db610d466000b35fa1d29c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092508"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938475"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 

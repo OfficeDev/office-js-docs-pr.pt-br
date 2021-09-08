@@ -4,12 +4,12 @@ description: Crie um suplemento do Excel que cria, preenche, filtra e classifica
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2fd962f3729805805601af4379e83086059314151e880143443d65fbd8e80416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085637"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938368"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 

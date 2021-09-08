@@ -3,12 +3,12 @@ title: Diretrizes de tipografia para suplementos do Office
 description: Saiba quais tipos e tamanhos de fonte usar em Office Add-ins.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cc17a25ed33fc34dd7a44622baacc620304402931de87eeadee903db5f135b0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082304"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939147"
 ---
 # <a name="typography"></a>Tipografia
 
@@ -24,6 +24,6 @@ Segoe é o tipo de fonte padrão para o Office. Use-a no suplemento para alinhar
 |Destaque|.ms-font-xxl |28 px | Segoe Light |<ul><li>Essa classe é maior do que todos os outros elementos tipográficos no Office. Use-a com moderação para não prejudicar o ajuste na hierarquia visual.</li><li>Evite o uso de cadeias de caracteres longas em espaços restritos.</li><li>Deixe bastante espaço em branco ao redor do texto ao usar esta classe.</li><li>Comumente usada para mensagens da tela de apresentação, elementos Hero ou outras chamadas à ação.</li></ul> |
 |Título|.ms-font-xl |21 px |Segoe Light | <ul><li>Essa classe corresponde ao título do painel de tarefas dos aplicativos do Office.</li><li>Use-a com moderação para evitar uma hierarquia tipográfica monótona.</li><li>Comumente usado como o elemento de nível superior, como títulos de conteúdo, página ou caixa de diálogo.</li></ul> |
 |Subtítulo|.ms-font-l |17 px |Segoe Semilight | <ul><li>Essa classe é a primeira abaixo de títulos.</li><li>Comumente usada como um subtítulo, um elemento de navegação ou um cabeçalho de grupo.</li><ul> |
-|Body|.ms-font-m |14 px |Segoe Regular |<ul><li>Muito usada como corpo de texto dentro de suplementos.</li><ul>|
+|Corpo|.ms-font-m |14 px |Segoe Regular |<ul><li>Muito usada como corpo de texto dentro de suplementos.</li><ul>|
 |Legenda|.ms-font-xs |11 px | Segoe Regular |<ul><li>Muito usada em texto secundário ou terciário, como carimbos de data/hora, linhas, títulos ou rótulos de campo.</li><ul>|
 |Annotation|.ms-font-mi |10 px |Segoe Semibold |<ul><li>A menor etapa no painel de tipos deve ser usada raramente. Está disponível para situações em que a legibilidade não é necessária.</li><ul>|

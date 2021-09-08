@@ -3,12 +3,12 @@ title: Dicas para lidar com valores de data em Suplementos do Outlook
 description: A Office JavaScript usa o objeto Data javascript para a maior parte do armazenamento e recuperação de datas e horas.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 46be9e7e3c952d08addcf8ef761a259f8c0d1d84c1bc3b0bb61cbb40c07ce35b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d244c7a4f7009a634fc2354e62cee0ad175cffd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093315"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938984"
 ---
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>Dicas para lidar com valores de data em suplementos do Outlook
 

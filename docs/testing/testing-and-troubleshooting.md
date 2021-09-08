@@ -3,12 +3,12 @@ title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros do usuário em Office de complementos.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 492e0a4f941f438f852ec1925de6d175cabaa0c2ed3605abfa74e6e0e2855181
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094127"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938642"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 

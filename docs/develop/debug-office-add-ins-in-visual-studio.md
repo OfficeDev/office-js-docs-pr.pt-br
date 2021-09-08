@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5164829d3d66ee05d1fa21bf4a4ccfdc00b719ed0a5b6ce247044f9c2760fb45
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080999"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938489"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 

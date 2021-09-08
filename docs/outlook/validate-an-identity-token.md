@@ -3,12 +3,12 @@ title: Validar um token de identidade de suplementos do Outlook
 description: O suplemento do Outlook pode enviar um token de identidade do usuário do Exchange, mas, antes de você confiar na solicitação, deve validar o token para garantir que tenha sido enviado pelo servidor Exchange solicitado.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: d70b03478cea6eb6f517d44f91d73677ba1ab3f4d702840cb05b5cc628dfa62f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092331"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939318"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Validar um token de identidade do Exchange
 

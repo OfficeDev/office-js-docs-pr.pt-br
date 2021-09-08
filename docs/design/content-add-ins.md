@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d0f4bd42a3048c6bd17c92d976f0e62c2cd5d1200c9609d808b3ab73f3aa803a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9f7ccd4cfaed5132debb7017caaf3b9da733850d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082165"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938776"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 

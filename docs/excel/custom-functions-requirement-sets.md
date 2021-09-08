@@ -4,12 +4,12 @@ description: Detalhes sobre os conjuntos de requisitos de Funções Personalizad
 ms.date: 09/14/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5fbb280176b6c222bedb7cefe14c3caa92148032b59cc1d6c0942dde1f52a3aa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0860dd2d1b55376a85eadf04898d288d83b0205d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079466"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938511"
 ---
 # <a name="custom-functions-requirement-sets"></a>Conjuntos de requisitos de Funções Personalizadas
 

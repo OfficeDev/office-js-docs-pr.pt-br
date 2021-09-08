@@ -1,14 +1,14 @@
 ---
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
-ms.date: 07/15/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 8bb724c30d3bd3729b6f4e4879157f3cbebf3ff90ad1cc9d50194f91ea0cc481
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3efcc29ea78d7dd528734e2c67a14cd65e3c0875
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082153"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938204"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -533,36 +533,12 @@ Algumas combinações de plataforma, Office aplicativo e Office build não supor
 
 Há um elemento de manifesto, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas.
 
-A estratégia mais simples para usar esse elemento é que você define no manifesto uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais)* que duplicam as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` como o primeiro elemento filho do [CustomTab](../reference/manifest/customtab.md). O efeito de fazer isso é o seguinte:
+A estratégia mais simples para usar esse elemento é que você define no manifesto uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais)* que duplicam as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona como o primeiro elemento filho dos elementos de grupo, controle e menu duplicados nas `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` guias principais [](../reference/manifest/group.md) [](../reference/manifest/control.md) `<Item>` personalizadas. O efeito de fazer isso é o seguinte:
 
-- Se o complemento for executado em um aplicativo e plataforma que suportam guias contextuais personalizadas, a guia principal personalizada não aparecerá na faixa de opções. Em vez disso, a guia contextual personalizada será criada quando o complemento chamar o `requestCreateControls` método.
-- Se o complemento for executado em  um aplicativo ou plataforma que não oferece suporte, a guia principal personalizada `requestCreateControls` aparecerá na faixa de opções.
+- Se o complemento for executado em um aplicativo e plataforma que suportam guias contextuais personalizadas, os grupos e controles principais personalizados não aparecerão na faixa de opções. Em vez disso, a guia contextual personalizada será criada quando o complemento chamar o `requestCreateControls` método.
+- Se o complemento for executado em  um aplicativo ou plataforma que não oferece suporte, os elementos aparecerão nas `requestCreateControls` guias principais personalizadas.
 
-A seguir, um exemplo dessa estratégia simples.
-
-```xml
-<OfficeApp ...>
-  ...
-  <VersionOverrides ...>
-    ...
-    <Hosts>
-      <Host ...>
-        ...
-        <DesktopFormFactor>
-          <ExtensionPoint ...>
-            <CustomTab ...>
-              <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-              ...
-              <Group ...>
-                ...
-                <Control ... id="MyButton">
-                  ...
-                  <Action ...>
-...
-</OfficeApp>
-```
-
-Essa estratégia simples usa uma guia principal personalizada que espelha uma guia contextual personalizada com seus grupos e controles filho, mas você pode usar uma estratégia mais complexa. O elemento também pode ser adicionado como (o primeiro) elemento filho aos elementos Group e Control (tipo de botão e tipo de menu ) e `<OverriddenByRibbonApi>` elementos de [](../reference/manifest/control.md) [](../reference/manifest/group.md) [](../reference/manifest/control.md#button-control) [](../reference/manifest/control.md#menu-dropdown-button-controls) `<Item>` menu. Esse fato permite distribuir os grupos e controles que, de outra forma, apareceriam na guia contextual entre vários grupos, botões e menus em várias guias principais personalizadas. Apresentamos um exemplo a seguir. Observe que "MyButton" aparecerá na guia principal personalizada somente quando as guias contextuais personalizadas não são suportadas. Mas o grupo pai e a guia principal personalizada aparecerão independentemente de as guias contextuais personalizadas são suportadas.
+Apresentamos um exemplo a seguir. Observe que "MyButton" aparecerá na guia principal personalizada somente quando as guias contextuais personalizadas não são suportadas. Mas o grupo pai e a guia principal personalizada aparecerão independentemente de as guias contextuais personalizadas são suportadas.
 
 ```xml
 <OfficeApp ...>
@@ -588,10 +564,10 @@ Essa estratégia simples usa uma guia principal personalizada que espelha uma gu
 
 Para obter mais exemplos, consulte [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-Quando uma guia pai, grupo ou menu é marcado com , ela não fica visível e toda a marcação filha é ignorada, quando as guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se qualquer um desses elementos filho tem o `<OverriddenByRibbonApi>` elemento ou qual é seu valor. A implicação disso é que, se um item de menu, controle ou grupo deve estar visível em todos os contextos, então não só não deve ser marcado com , mas seu menu ancestral, grupo e guia também não deve ser marcado `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` *dessa forma*.
+Quando um grupo pai ou menu é marcado com , ele não fica visível e toda a marcação filha é ignorada quando as guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se qualquer um desses elementos filho tem o `<OverriddenByRibbonApi>` elemento ou qual é seu valor. A implicação disso é que, se um item de menu ou controle deve estar visível em todos os contextos, então não só não deve ser marcado com , mas seu menu e grupo ancestral também não devem ser marcados `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` *dessa forma*.
 
 > [!IMPORTANT]
-> Não marque todos *os* elementos filho de uma guia, grupo ou menu com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Isso não faz sentido se o elemento pai for marcado com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` por motivos dados no parágrafo anterior. Além disso, se você deixar de fora o no pai (ou defini-lo como ), o pai aparecerá independentemente de as guias contextuais personalizadas serem suportadas, mas elas estarão vazias quando elas são `<OverriddenByRibbonApi>` `false` suportadas. Portanto, se todos os elementos filho não aparecerem quando as guias contextuais personalizadas são suportadas, marque o pai e somente o pai, com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
+> Não marque todos *os* elementos filho de um grupo ou menu com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Isso não faz sentido se o elemento pai for marcado com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` por motivos dados no parágrafo anterior. Além disso, se você deixar de fora o no pai (ou defini-lo como ), o pai aparecerá independentemente de as guias contextuais personalizadas serem suportadas, mas elas estarão vazias quando elas são `<OverriddenByRibbonApi>` `false` suportadas. Portanto, se todos os elementos filho não aparecerem quando as guias contextuais personalizadas são suportadas, marque o pai e somente o pai, com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>Usar APIs que mostram ou ocultam um painel de tarefas em contextos especificados
 
