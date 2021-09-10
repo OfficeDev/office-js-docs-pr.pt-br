@@ -3,25 +3,25 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 93f6a851ffc0813cc3a6bc6acedddfb000accc36fc50c9cc11fba37faacc0e58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c08cb1c83657c685b069dc13b3bf1a7e6b7de09
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083627"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937100"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
-Você pode remover um suplemento em que foi feito sideload no Windows, Mac ou iOS limpando o cache do Office em seu computador.
+Para remover um suplemento que você tenha carregado anteriormente de lado no Windows, Mac ou iOS, você precisa limpar o cache do Office em seu computador.
 
-Além disso, se você fizer alterações no manifesto do suplemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de suplemento), deverá limpar o cache do Office e, em seguida, fazer o sideload do suplemento novamente usando o manifesto atualizado. Isso permitirá que o Office renderize o suplemento conforme descrito pelo manifesto atualizado.
+Além disso, se você fizer alterações no manifesto do seu suplemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos do suplemento), você deve limpar o cache do Office e depois recarregar novamente o suplemento usando um manifesto atualizado. Isso permite que o Office apresente o suplemento como é descrito pelo manifesto atualizado.
 
 > [!NOTE]
 > Para remover um suplemento com sideload do Excel, OneNote, PowerPoint ou Word na Web, consulte [Sideload de Suplementos do Office no Office na Web para teste: remover um suplemento de sideload](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
-Para remover todos os suplementos carregados do Excel, Word e PowerPoint, exclua o conteúdo da pasta:
+Para remover todos os suplementos carregados no Excel, Word e PowerPoint, exclua os conteúdos da pasta.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -53,11 +53,11 @@ Além disso, para limpar o cache do Office no Windows 10 quando o suplemento est
 
 5. Selecione o nome do suplemento para anexar o depurador ao seu suplemento. Uma nova janela do Microsoft Edge DevTools será aberta quando o depurador for anexado ao seu suplemento.
 
-6. Na guia **Network** da nova janela, selecione o botão **Limpar cache**.
+6. Na guia **Rede** da nova janela, selecionar **Limpar cache**.
 
     ![Captura de tela do Microsoft Edge DevTools com o botão Limpar cache realçado.](../images/edge-devtools-clear-cache.png)
 
-7. Se concluir essas etapas não produzir o resultado desejado, você também pode selecionar o botão **Sempre atualizar do servidor**.
+7. Se concluir estas etapas não produzir o resultado desejado, tente selecionar **Sempre atualizar a partir do servidor**.
 
     ![Captura de tela do Microsoft Edge DevTools com o botão sempre atualizar do servidor realçado.](../images/edge-devtools-refresh-from-server.png)
 
@@ -67,10 +67,11 @@ Além disso, para limpar o cache do Office no Windows 10 quando o suplemento est
 
 ## <a name="clear-the-office-cache-on-ios"></a>Limpar o cache do Office no iOS
 
-Para limpar o cache do Office no iOS, chame `window.location.reload(true)` a partir do JavaScript no suplemento para forçar um recarregamento. Uma outra alternativa é reinstalar o Office.
+Para limpar o cache do Office no iOS, chame `window.location.reload(true)` a partir do JavaScript no suplemento para forçar um recarregamento. Alternativamente, reinstalar o Office.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
+- [Solucionar erros de desenvolvimento com Suplementos do Office](troubleshoot-development-errors.md)
 - [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
