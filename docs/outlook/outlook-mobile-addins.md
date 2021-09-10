@@ -1,20 +1,20 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
-description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365, contas Outlook.com e o suporte está chegando em breve às contas do gmail.
-ms.date: 05/27/2020
+description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com.
+ms.date: 09/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.openlocfilehash: acde42dd9ada88d60a811edf53ca0247f98e5519
+ms.sourcegitcommit: 02ffcff39bf1726893651dcd9ef609b0492851d7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936621"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "58971004"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
 
-Outlook os complementos móveis são suportados em todas as contas Microsoft 365 de negócios, contas Outlook.com e o suporte está chegando em breve às contas do Gmail.
+Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com. No entanto, o suporte não está disponível atualmente em contas do Gmail.
 
 **Um painel de tarefas de exemplo no Outlook no iOS**
 
