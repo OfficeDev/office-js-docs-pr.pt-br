@@ -2,13 +2,13 @@
 title: Elementos da interface do usuário do Office para suplementos do Office
 description: Obter uma visão geral dos diferentes tipos de elementos da interface do usuário em um Office Add-in.
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9a3855c5b0f30ba795d1fd5d6becd1e8632927e3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939333"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148785"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Elementos da interface do usuário do Office para suplementos do Office
 

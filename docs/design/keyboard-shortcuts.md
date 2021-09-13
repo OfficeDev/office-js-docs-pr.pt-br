@@ -2,13 +2,13 @@
 title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938236"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148784"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -80,7 +80,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     }
     ```
 
-    Para obter mais informações sobre os objetos JSON, consulte [Construct the action objects](#construct-the-action-objects) and Construct the shortcut [objects](#construct-the-shortcut-objects). O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+    Para obter mais informações sobre os objetos JSON, consulte [Construct the action objects](#construct-the-action-objects) and Construct the shortcut [objects](#construct-the-shortcut-objects). O esquema completo dos atalhos JSON está em [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
     > [!NOTE]
     > Você pode usar "CONTROL" no lugar de "Ctrl" ao longo deste artigo.
@@ -136,7 +136,7 @@ Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de 
 
 ### <a name="construct-the-action-objects"></a>Construir os objetos de ação
 
-Use as diretrizes a seguir ao especificar os objetos na matriz do shortcuts.js`actions` on.
+Use as diretrizes a seguir ao especificar os objetos na `actions` matriz do shortcuts.json.
 
 - Os nomes das `id` propriedades e `name` são obrigatórios.
 - A `id` propriedade é usada para identificar exclusivamente a ação a ser invocada usando um atalho de teclado.
@@ -160,11 +160,11 @@ Apresentamos um exemplo a seguir.
     ]
 ```
 
-O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+O esquema completo dos atalhos JSON está em [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 ### <a name="construct-the-shortcut-objects"></a>Construir os objetos de atalho
 
-Use as diretrizes a seguir ao especificar os objetos na matriz do shortcuts.js`shortcuts` on.
+Use as diretrizes a seguir ao especificar os objetos na `shortcuts` matriz do shortcuts.json.
 
 - Os nomes de `action` propriedade , e são `key` `default` obrigatórios.
 - O valor da propriedade é uma cadeia de caracteres e deve corresponder a uma das `action` `id` propriedades no objeto action.
@@ -195,7 +195,7 @@ Apresentamos um exemplo a seguir.
     ]
 ```
 
-O esquema completo para os atalhos JSON estáextended-manifest.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+O esquema completo dos atalhos JSON está em [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
 > As Dicas de Chave, também conhecidas como atalhos de chave sequencial, como o atalho Excel para escolher uma cor de preenchimento **Alt+H, H**, não são suportadas em Office Add-ins.

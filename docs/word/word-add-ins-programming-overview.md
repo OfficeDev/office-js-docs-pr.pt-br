@@ -4,13 +4,13 @@ description: Aprenda o básico dos Suplementos do Word.
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 1f55977cba42c1c16a8533958f60b6da0e9a3650
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938809"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148910"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 

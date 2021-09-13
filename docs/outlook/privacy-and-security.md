@@ -2,13 +2,13 @@
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
 ms.date: 07/27/2021
-localization_priority: Priority
-ms.openlocfilehash: cd0c793bb8a2cfbc4cef17e0cf717c35cb68794c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 594c5715336533931d68acaffc5b8688cf1a40a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937208"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148980"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 

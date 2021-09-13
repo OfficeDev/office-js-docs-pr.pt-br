@@ -2,13 +2,13 @@
 title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com Visual Studio.
 ms.date: 07/08/2021
-localization_priority: Priority
-ms.openlocfilehash: bc837c0fe399cc6669cb0efcf2531e438f922dfe
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 169e0d553ba5fbaee506cd3745b95b4dde5ddbaa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936923"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148610"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
@@ -54,7 +54,7 @@ Enquanto você estiver desenvolvendo seu suplemento no Visual Studio, seu suplem
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publicar Suplementos do Office](../publish/publish.md)

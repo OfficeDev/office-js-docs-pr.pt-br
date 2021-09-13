@@ -2,13 +2,13 @@
 title: Criar metadados JSON manualmente para funções personalizadas Excel
 description: Defina os metadados JSON para funções personalizadas no Excel e associe sua ID de função e propriedades de nome.
 ms.date: 08/06/2021
-localization_priority: Normal
-ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8f88506cd26edf130ac5d9e06351d4fb0d711806
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938318"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148939"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar metadados JSON manualmente para funções personalizadas
 

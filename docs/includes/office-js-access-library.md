@@ -1,9 +1,9 @@
-A biblioteca da API JavaScript do Office pode ser acessada por meio da CDN (rede de entrega de conteúdo) do Office JS em: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Para usar as APIs JavaScript para Office em qualquer uma das páginas da Web do seu suplemento, você deve fazer referência à CDN em uma tag `<script>` na tag `<head>` da página.
+A biblioteca da API JavaScript do Office pode ser acessada por meio da CDN (rede de entrega de conteúdo) do Office JS em: `https://appsforoffice.microsoft.com/lib/1/hosted/office.js`. Para usar as APIs JavaScript para Office em qualquer uma das páginas da Web do seu suplemento, você deve fazer referência à CDN em uma tag `<script>` na tag `<head>` da página.
 
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 

@@ -2,13 +2,13 @@
 title: Diretrizes de voz para Suplementos do Office
 description: Saiba as práticas recomendadas ao escrever a ajuda do usuário e outras cadeias de caracteres para Office Desempois.
 ms.date: 07/08/2019
-localization_priority: Normal
-ms.openlocfilehash: 5bfc671d2462ef2c0b9eaba967744094b512965a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2fb96b70c1a5319c4dcefd99bc982c6db50d8812
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937878"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148647"
 ---
 # <a name="voice-guidelines"></a>Diretrizes de voz
 

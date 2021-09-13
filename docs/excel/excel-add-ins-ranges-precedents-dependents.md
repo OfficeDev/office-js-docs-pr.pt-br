@@ -3,13 +3,13 @@ title: Trabalhar com precedentes de fórmula e dependentes usando Excel API Java
 description: Saiba como usar a API JavaScript Excel para recuperar precedentes e dependentes da fórmula.
 ms.date: 07/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4f7339a2d838e93faf6045651e3cb39a244b4aa7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939330"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148900"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 

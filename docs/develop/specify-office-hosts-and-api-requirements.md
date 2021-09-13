@@ -2,13 +2,13 @@
 title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
 ms.date: 05/04/2021
-localization_priority: Normal
-ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 701d52a7923f93533553807b0c169801c6ae86a7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936715"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148728"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -84,7 +84,7 @@ O `Hosts` elemento pode conter um ou mais `Host` elementos. O `Host` elemento es
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Banco de dados      | Aplicativos Web do Access                                | Painel de tarefas              |
 | Document      | Word na Web, Windows, Mac, iPad            | Painel de tarefas              |
-| Mailbox       | Outlook na Web, Windows, Mac, Android, iOS | Email                   |
+| Mailbox       | Outlook na Web, Windows, Mac, Android, iOS | Correio                   |
 | Notebook      | OneNote Online                             | Painel de tarefas, Conteúdo     |
 | Presentation  | PowerPoint na Web, Windows, Mac, iPad      | Painel de tarefas, Conteúdo     |
 | Project       | Project no Windows                             | Painel de tarefas              |

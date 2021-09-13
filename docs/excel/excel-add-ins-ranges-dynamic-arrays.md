@@ -3,13 +3,13 @@ title: Manipular matrizes dinâmicas e vazamento de intervalo usando a API JavaS
 description: Saiba como lidar com o vazamento de matrizes dinâmicas e intervalos com Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4601cd6a901243cadab0e7c5ead6061e28806377
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936622"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149011"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>Manipular matrizes dinâmicas e vazamento usando a api javascript Excel javascript
 

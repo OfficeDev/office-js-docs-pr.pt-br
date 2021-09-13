@@ -2,13 +2,13 @@
 title: Evite usar o método context.sync em loops
 description: Saiba como usar o loop dividido e os padrões de objetos correlacionados para evitar chamar context.sync em um loop.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a8e726eccb88e7df47d4a881bc9bb724c265bed
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936508"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148668"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Evite usar o método context.sync em loops
 

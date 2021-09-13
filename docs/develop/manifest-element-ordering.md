@@ -2,13 +2,13 @@
 title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 39d3e82162b1ed39390cff30b269417ef61d46f2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7e62da1c7236aa21fe2fd4fe451d6eec25118c9b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938419"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148750"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 

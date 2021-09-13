@@ -2,13 +2,13 @@
 title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
 ms.date: 08/27/2021
-localization_priority: Normal
-ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: bf69831f097f28dcb26c4451582dc805dc81cfd2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937786"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149017"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 

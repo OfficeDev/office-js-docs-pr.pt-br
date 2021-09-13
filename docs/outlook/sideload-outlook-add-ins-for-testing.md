@@ -2,13 +2,13 @@
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
 ms.date: 05/13/2021
-localization_priority: Normal
-ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938148"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148978"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 

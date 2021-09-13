@@ -2,13 +2,13 @@
 title: Valores em branco e nulo nos suplementos do Excel
 description: Saiba como trabalhar com valores nulos em branco Excel métodos e propriedades do modelo de objeto.
 ms.date: 09/03/2020
-localization_priority: Normal
-ms.openlocfilehash: 3f38569f7342bb88c52ce424db426bfa7939be5e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ca231e367219eb381ab33d159f8afc0ed3e1594a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937680"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148995"
 ---
 # <a name="blank-and-null-values-in-excel-add-ins"></a>Valores em branco e nulo nos suplementos do Excel
 

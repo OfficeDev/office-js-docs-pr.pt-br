@@ -2,13 +2,13 @@
 ms.date: 05/17/2020
 description: Autenticar usuários usando funções personalizadas Excel que não usam o painel de tarefas.
 title: Autenticação para funções personalizadas sem interface do usuário
-localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937360"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148708"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>Autenticação para funções personalizadas sem interface do usuário
 

@@ -3,13 +3,13 @@ title: Trabalhe com células usando Excel API JavaScript.
 description: Aprenda a Excel da API JavaScript de uma célula e saiba como trabalhar com células.
 ms.date: 04/16/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: ad8ca985b6bbdcf19920c36c371e690f61639f16
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 74603727c5944583f55e77c75589f31ffbdffb21
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937756"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148994"
 ---
 # <a name="work-with-cells-using-the-excel-javascript-api"></a>Trabalhar com células usando a EXCEL JavaScript
 

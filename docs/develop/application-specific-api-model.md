@@ -2,13 +2,13 @@
 title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 568494dc0b92f1a4f9c6556b169293e68ae0bce9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d7eaa51f6ac9255772e7dcd154e82dc28f39e848
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937256"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148644"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 

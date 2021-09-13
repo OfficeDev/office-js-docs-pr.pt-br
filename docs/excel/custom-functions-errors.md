@@ -2,13 +2,13 @@
 title: Manipular e retornar erros de sua função personalizada
 description: 'Manipular e retornar erros como #NULL! de sua função personalizada.'
 ms.date: 08/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b72ed2baea49b4b6d5f00e63e323d12a7e57d021
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 011868f35c656869ae75c7ffab195db18f690f4f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936260"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148941"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 

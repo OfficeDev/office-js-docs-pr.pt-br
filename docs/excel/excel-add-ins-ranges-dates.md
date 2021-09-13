@@ -3,13 +3,13 @@ title: Trabalhar com datas usando a EXCEL JavaScript
 description: Use o Moment-MSDate plug-in com a API javaScript Excel para trabalhar com datas.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e09badf3bf6f848f96fc9e5864f383f781ef63f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938961"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148693"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Trabalhar com datas usando Excel API JavaScript e o Moment-MSDate plug-in
 

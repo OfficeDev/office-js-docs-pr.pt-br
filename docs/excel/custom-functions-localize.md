@@ -2,13 +2,13 @@
 ms.date: 11/06/2020
 description: Localize suas Excel funções personalizadas.
 title: Localize funções personalizadas
-localization_priority: Normal
-ms.openlocfilehash: b393cbb76e4993eb77df8ddbe60247c8af74c580
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 596ab23f578f7bb0d12d009d06871e946302300c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938301"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148938"
 ---
 # <a name="localize-custom-functions"></a>Localize funções personalizadas
 
@@ -21,7 +21,7 @@ Você pode localizar seu complemento e seus nomes de função personalizados. Pa
 
 ## <a name="localize-function-names"></a>Nomes de função de localização
 
-Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, crie `name` e propriedades no idioma de `description` destino. O arquivo padrão para inglês é **chamadofunctions.jsem**. Use a localidade no nome do arquivo para cada arquivo JSON adicional, comofunctions-de.js **para** ajudar a identificá-los.
+Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, crie `name` e propriedades no idioma de `description` destino. O arquivo padrão para inglês é **chamado functions.json**. Use a localidade no nome do arquivo para cada arquivo JSON adicional, como **functions-de.json** para ajudar a identificá-los.
 
 The `name` and appear in Excel and are `description` localized. No entanto, `id` a de cada função não está localizada. A propriedade é como Excel identifica sua função como exclusiva e não deve `id` ser alterada depois de definida.
 
@@ -81,7 +81,7 @@ Compare o JSON anterior com o JSON a seguir para inglês.
 
 ## <a name="localize-your-add-in"></a>Localize seu add-in
 
-Depois de criar um arquivo JSON para cada idioma, atualize seu arquivo de manifesto XML com um valor de substituição para cada localidade que especifica a URL de cada arquivo de metadados JSON. O XML de manifesto a seguir mostra uma `en-us` localidade padrão com uma URL de arquivo JSON de substituição para `de-de` (Alemanha). O **functions-de.json** contém os nomes e ids de funções alemãs localizadas.
+Depois de criar um arquivo JSON para cada idioma, atualize seu arquivo de manifesto XML com um valor de substituição para cada localidade que especifica a URL de cada arquivo de metadados JSON. O XML de manifesto a seguir mostra uma `en-us` localidade padrão com uma URL de arquivo JSON de substituição para `de-de` (Alemanha). O **arquivo functions-de.json** contém os nomes e as ids de funções alemãs localizadas.
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>

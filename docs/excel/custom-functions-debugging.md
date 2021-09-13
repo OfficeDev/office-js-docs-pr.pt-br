@@ -2,13 +2,13 @@
 title: Depuração de funções personalizadas sem interface do usuário
 description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 112374758aab8f7fb493cb8bbe1c214765edd5a5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938513"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148706"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 

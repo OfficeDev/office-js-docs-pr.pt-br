@@ -1,2 +1,2 @@
 > [!NOTE]
-> Este artigo exige que o seu Add-in do Office seja configurado para usar um tempo de execução compartilhado. Para saber mais, confira [Configurar o seu Add-in do Office para usar um tempo de execução compartilhado.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+> Este artigo exige que seu Office de usuário seja configurado para usar um tempo de execução compartilhado. Para obter mais informações, [consulte Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).

@@ -2,13 +2,13 @@
 title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83f7f21621b6ddffa3cb7e51134a3b4cd1cc2aaa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937377"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149018"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 

@@ -2,13 +2,13 @@
 title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938978"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148971"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 
@@ -69,7 +69,7 @@ Se o seu add-in puder ser usado em cenários em que o novo slide deve usar *a* m
 
 1. Crie um método para obter o índice do slide selecionado. Apresentamos um exemplo a seguir. Sobre este código, observe:
 
-    - Ele usa o [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
+    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` retorna uma matriz porque vários slides podem ser selecionados. Nesse cenário, o usuário selecionou apenas um, portanto, o código obtém o primeiro slide (0th), que é o único selecionado.
     - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no `index` painel de miniaturas.

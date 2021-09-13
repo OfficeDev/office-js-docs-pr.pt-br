@@ -2,13 +2,13 @@
 title: Desenvolver suplementos do Office para o Angular
 description: Use Angular para criar um Office como um aplicativo de página única.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937675"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148646"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
 
-Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de algumas APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado `window.history` Windows clientes da área de trabalho. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as APIs adicionando o código a seguir à página `window.history` **index.html do** seu complemento.
+Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de algumas APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado `window.history` Windows clientes da área de trabalho. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as APIs adicionando o código a seguir à página deindex.html`window.history` do seu complemento. 
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

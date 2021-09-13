@@ -2,13 +2,13 @@
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 3efcc29ea78d7dd528734e2c67a14cd65e3c0875
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e4487594af231558cc72c875da716645ac1ace7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938204"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148797"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -65,7 +65,7 @@ Ao contrário das guias principais personalizadas, definidas com XML no manifest
 > [!NOTE]
 > A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no XML do manifesto.
 
-Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON estádynamic-ribbon.schema.js[ em](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
+Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON está [em dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
 1. Comece criando uma cadeia de caracteres JSON com duas propriedades de matriz nomeadas `actions` e `tabs` . A `actions` matriz é uma especificação de todas as funções que podem ser executadas por controles na guia contextual. A matriz define uma ou mais guias `tabs` contextuais, *até um máximo de 20*.
 

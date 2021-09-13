@@ -2,13 +2,13 @@
 title: Persistir o estado e as configurações do suplemento
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
 ms.date: 03/23/2021
-localization_priority: Normal
-ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938788"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148745"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 

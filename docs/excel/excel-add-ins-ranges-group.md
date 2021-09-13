@@ -3,13 +3,13 @@ title: Intervalos de grupo usando a EXCEL JavaScript
 description: Saiba como agrupar linhas ou colunas de um intervalo para criar um contorno usando Excel API JavaScript.
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 41a5bad5013378257287602d5131f1ac07130cf7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9ec3f9e23f5099c703fbbf53fdc6fbb800acba6d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938518"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148692"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Intervalos de grupo para um contorno usando a EXCEL JavaScript
 

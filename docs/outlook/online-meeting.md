@@ -3,13 +3,13 @@ title: Criar um Outlook de dispositivo móvel para um provedor de reunião onlin
 description: Discute como configurar um Outlook de celular para um provedor de serviços de reunião online.
 ms.topic: article
 ms.date: 07/09/2021
-localization_priority: Normal
-ms.openlocfilehash: 34574809e2b874217113e42043b3bde7ef0dd8ba
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 339763294e2e3609a1a503cd59d74eb4af4fefb3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936380"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148587"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um Outlook de dispositivo móvel para um provedor de reunião online
 

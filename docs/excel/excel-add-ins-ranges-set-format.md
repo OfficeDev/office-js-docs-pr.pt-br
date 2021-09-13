@@ -3,13 +3,13 @@ title: Definir o formato de um intervalo usando a EXCEL JavaScript
 description: Saiba como usar a EXCEL JavaScript para definir o formato de um intervalo.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: a09d3b4d79584e186c0be37d4a30954c4d4d0086
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1a380a64c76709e423be2d5c529a6e35cd44a5d1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936868"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148895"
 ---
 # <a name="set-range-format-using-the-excel-javascript-api"></a>Definir o formato de intervalo usando a EXCEL JavaScript
 

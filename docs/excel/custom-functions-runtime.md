@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: Entenda Excel funções personalizadas que não usam um painel de tarefas e seu tempo de execução JavaScript específico.
 title: Tempo de execução para funções personalizadas sem Excel de interface do usuário
-localization_priority: Normal
-ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938709"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148605"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Tempo de execução para funções personalizadas sem Excel de interface do usuário
 

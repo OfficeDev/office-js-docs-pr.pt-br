@@ -2,13 +2,13 @@
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
 ms.date: 08/02/2021
-localization_priority: Normal
-ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936538"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148917"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -27,7 +27,7 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
 
 1. Abra [Office na Web](https://office.live.com/). Usando a **opção Criar,** crie um documento em **Excel,** **OneNote,** **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
 
-1. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivopackage.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
+1. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivo package.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
 
     ```json
       "config": {

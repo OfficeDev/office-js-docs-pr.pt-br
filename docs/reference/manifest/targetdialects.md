@@ -2,13 +2,13 @@
 title: Elemento TargetDialects no arquivo de manifesto
 description: O elemento TargetDialects define os idiomas regionais suportados por este dicionário.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 6b9bd160d7639c40f10abd4a56f6b4b3f2bb332a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: dfcefb8b6c0ad13c20cd20137b27a5b4120e1ba7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936745"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148919"
 ---
 # <a name="targetdialects-element"></a>Elemento TargetDialects
 

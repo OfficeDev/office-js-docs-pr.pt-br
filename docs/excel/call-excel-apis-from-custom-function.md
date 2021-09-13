@@ -2,13 +2,13 @@
 title: Chamar Excel APIs JavaScript de uma função personalizada
 description: Saiba quais Excel APIs JavaScript que você pode chamar de sua função personalizada.
 ms.date: 08/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937652"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148709"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar Excel APIs JavaScript de uma função personalizada
 

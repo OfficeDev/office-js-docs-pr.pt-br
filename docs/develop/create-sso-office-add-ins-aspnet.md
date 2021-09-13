@@ -2,13 +2,13 @@
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 685e482c3c714f6831ea827e4a65b2ac057bddec
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 99471b78100c2627186ceb8f1c93afce5a19d396
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936515"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148613"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 

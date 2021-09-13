@@ -2,13 +2,13 @@
 title: Faça seu suplemento do Office ser compatível com um suplemento COM existente
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
 ms.date: 08/03/2021
-localization_priority: Normal
-ms.openlocfilehash: bb842c60beb329571ce3dc7f055cc1d9d606209b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e84bce51e0233f7186b22e6571ec3968ea8d8ed5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938201"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148752"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 

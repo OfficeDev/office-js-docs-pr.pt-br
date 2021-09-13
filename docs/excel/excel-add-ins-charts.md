@@ -2,13 +2,13 @@
 title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: Exemplos de código que demonstram tarefas de gráfico usando Excel API JavaScript.
 ms.date: 07/17/2019
-localization_priority: Normal
-ms.openlocfilehash: a7199aae31e917b0609a47cc69b5e52279d43b24
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b3cb04ff3bd8b1b0c050741a7238b1e9d6bd498f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936731"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148996"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 

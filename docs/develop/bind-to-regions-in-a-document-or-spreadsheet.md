@@ -2,13 +2,13 @@
 title: Associar a regiões em um documento ou em uma planilha
 description: Saiba como usar a associação para garantir o acesso consistente a uma região ou elemento específico de um documento ou planilha por meio de um identificador.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4da5dabe75f41e0ab7add6ee33aa82144a53b3e7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936322"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148627"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associe a regiões em um documento ou planilha
 

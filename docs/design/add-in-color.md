@@ -2,13 +2,13 @@
 title: Diretrizes de cor para Suplementos do Office
 description: Saiba como usar cores na interface do usuário de um Office Add-in.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fa24acc442a959e449357f436d3a0ed685b3d808
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939145"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148656"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Diretrizes de cor para Suplementos do Office
 

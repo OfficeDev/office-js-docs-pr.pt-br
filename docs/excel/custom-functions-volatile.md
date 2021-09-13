@@ -2,13 +2,13 @@
 ms.date: 01/14/2020
 description: Aprenda a implementar funções personalizadas de streaming voláteis e offline.
 title: Valores voláteis nas funções
-localization_priority: Normal
-ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937160"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149019"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 

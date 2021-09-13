@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
-localization_priority: Normal
-ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c5047fb48fe30ba5fdeb69cef46b3a2178ca2343
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936466"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148940"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 

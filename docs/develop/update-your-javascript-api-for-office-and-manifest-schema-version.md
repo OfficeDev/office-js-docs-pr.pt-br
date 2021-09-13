@@ -2,13 +2,13 @@
 title: Atualizar para a biblioteca Office api JavaScript mais recente e o esquema de manifesto do manifesto do complemento versão 1.1
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 10/11/2019
-localization_priority: Normal
-ms.openlocfilehash: b0536b4b55accd99e002e26c467572330ba72ae2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2c5672f1b650c7ae6950f8669d831b5db4ac9fcf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937212"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148713"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Atualizar para a biblioteca Office api JavaScript mais recente e o esquema de manifesto do manifesto do complemento versão 1.1
 

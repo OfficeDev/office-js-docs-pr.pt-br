@@ -3,13 +3,13 @@ title: Limpar ou excluir intervalos usando a EXCEL JavaScript
 description: Saiba como limpar ou excluir intervalos usando a EXCEL JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: a1bd99db3aa9af3903552d9cefc6ec6d21701136
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ced04c207bef26c25818d3f4f6f6ed14452e4da6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937288"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148704"
 ---
 # <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>Limpar ou excluir intervalos usando a EXCEL JavaScript
 

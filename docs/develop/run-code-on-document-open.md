@@ -2,13 +2,13 @@
 title: Execute o código em seu Suplemento do Office quando o documento for aberto
 description: Saiba como executar código em seu Office de complemento quando o documento for aberto.
 ms.date: 12/28/2020
-localization_priority: Normal
-ms.openlocfilehash: 1655c053a4fa6f92aae95f2155991fa4f7f7a5a7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ce550284a10a9410978402f087c2caf231a5917f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938886"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148730"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Execute o código em seu Suplemento do Office quando o documento for aberto
 

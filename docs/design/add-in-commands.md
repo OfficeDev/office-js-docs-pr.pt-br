@@ -2,13 +2,13 @@
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
 ms.date: 07/27/2021
-localization_priority: Priority
-ms.openlocfilehash: 4ee2e53a1d2a74a2663a372aeb080c5f32da1bde
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 0ad18ca62014ac8b3f4c3710680cd5d97b476215
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937049"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148654"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 

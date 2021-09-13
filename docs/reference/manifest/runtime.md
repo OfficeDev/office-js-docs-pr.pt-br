@@ -2,13 +2,13 @@
 title: Tempo de execução no arquivo de manifesto
 description: O elemento Runtime configura seu complemento para usar um tempo de execução JavaScript compartilhado para seus vários componentes, por exemplo, faixa de opções, painel de tarefas, funções personalizadas.
 ms.date: 05/19/2021
-localization_priority: Normal
-ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938457"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148571"
 ---
 # <a name="runtime-element"></a>Elemento Runtime
 

@@ -2,13 +2,13 @@
 title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 09/03/2021
-localization_priority: Priority
-ms.openlocfilehash: b424d30148f216c1c9bb4290e5bb9f9b12bb073a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b871258d2a179f39a53b6f062de73ddd14a70a17
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937060"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148726"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 

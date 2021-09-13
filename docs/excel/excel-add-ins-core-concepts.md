@@ -3,13 +3,13 @@ title: Modelo de objeto JavaScript do Excel em suplementos do Office
 description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel e como usá-los para criar suplementos para o Excel.
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936869"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148591"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 

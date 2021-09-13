@@ -2,13 +2,13 @@
 title: Elemento CustomTab no arquivo de manifesto
 description: Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f8cdcd2c1a1e567f36d9d146ed4806b13d400dfe
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939080"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149069"
 ---
 # <a name="customtab-element"></a>Elemento CustomTab
 
