@@ -2,13 +2,13 @@
 title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 02/21/2021
-localization_priority: Normal
-ms.openlocfilehash: 0e38747f484eabac26e2e9e846e562ec54510326
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a7346882a11b81321c65730390dc213d76879773
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938266"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151893"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 

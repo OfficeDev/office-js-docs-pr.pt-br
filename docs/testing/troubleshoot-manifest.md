@@ -2,13 +2,13 @@
 title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
 ms.date: 09/18/2020
-localization_priority: Normal
-ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 60151522906fc45c8d0d501c8263acd818612897
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936535"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151714"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 

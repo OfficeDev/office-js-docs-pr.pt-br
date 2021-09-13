@@ -2,13 +2,13 @@
 title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0237b880610bffef675e011d7c02f70cef4346d5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938220"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151894"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 

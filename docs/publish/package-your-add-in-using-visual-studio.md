@@ -2,13 +2,13 @@
 title: Publicar seu suplemento usando o Visual Studio
 description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
 ms.date: 12/02/2019
-localization_priority: Normal
-ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 58923ff2c37edc474aefbb18fdb8ccf4fed3f079
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937879"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152043"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Publicar seu suplemento usando o Visual Studio
 

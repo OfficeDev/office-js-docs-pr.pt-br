@@ -2,13 +2,13 @@
 title: Elemento AllowSnapshot no arquivo de manifesto
 description: Especifica se o instantâneo de uma imagem do suplemento de conteúdo é salvo com o documento host.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: ea910e1ad747e304dbc6ab4fbdcf44a9610dab19
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 723817557020f4ec3dbe5b3135877fe49bf67acb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937249"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151678"
 ---
 # <a name="allowsnapshot-element"></a>Elemento AllowSnapshot
 

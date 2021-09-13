@@ -2,13 +2,13 @@
 title: Solução de Excel de solução de problemas
 description: Saiba como solucionar erros de desenvolvimento em Excel de complementos.
 ms.date: 02/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939273"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151772"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>Solução de Excel de solução de problemas
 
@@ -96,7 +96,7 @@ O método [Range getImage](/javascript/api/excel/excel.range#getImage__) não te
 
 Os [métodos Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) e [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) têm um limite de cadeia de caracteres de endereço de 8192 caracteres. Quando esse limite é excedido, a cadeia de caracteres de endereço é truncada para 8192 caracteres.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
-- [Solucionar erros de desenvolvimento com Office de complementos](../testing/troubleshoot-development-errors.md)
+- [Solucionar erros de desenvolvimento com Suplementos do Office](../testing/troubleshoot-development-errors.md)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)

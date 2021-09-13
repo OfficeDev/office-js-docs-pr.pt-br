@@ -2,13 +2,13 @@
 title: Elemento Group no arquivo de manifesto
 description: Define um grupo de controles de interface do usuário em uma guia.
 ms.date: 06/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 89ed16f7996ab06bd21e1ebaa71c959b11af2029
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 09260ab52910235ab63149769cc989ffbda03ffb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936487"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152109"
 ---
 # <a name="group-element"></a>Elemento Group
 

@@ -2,13 +2,13 @@
 title: Elemento Script no arquivo de manifesto
 description: O elemento Script define as configurações de script que uma função personalizada usa no Excel.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 791f49f15673a029b982e40946f8cc90f02ba887
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6c3c1946bbb45b2fd41e4f39b46f9429b17343e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939382"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152005"
 ---
 # <a name="script-element"></a>Elemento Script
 

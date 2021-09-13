@@ -2,13 +2,13 @@
 title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
 ms.date: 04/09/2020
-localization_priority: Normal
-ms.openlocfilehash: 7898f836e431ad4446952a0f34a24d3771e51d01
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83ed12c2bb8c61ba25db93c321406a1d43de4594
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937628"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151873"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 

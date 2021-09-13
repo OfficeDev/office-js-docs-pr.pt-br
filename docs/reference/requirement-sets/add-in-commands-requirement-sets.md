@@ -3,13 +3,13 @@ title: Conjuntos de requisitos dos comandos de suplemento
 description: Visão geral Office conjuntos de requisitos de comandos de complemento.
 ms.date: 11/01/2020
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937960"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151966"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 

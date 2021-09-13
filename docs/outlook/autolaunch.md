@@ -3,13 +3,13 @@ title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
 ms.date: 08/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b94bcdace82153c8a5d2e9fa79ba49fff1e52bb8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938623"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151878"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 

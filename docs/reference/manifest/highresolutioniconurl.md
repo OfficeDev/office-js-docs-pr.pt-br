@@ -2,13 +2,13 @@
 title: Elemento HighResolutionIconUrl no arquivo de manifesto
 description: Especifica a URL da imagem que é usada para representar o seu Suplemento do Office na experiência de usuário de inserção e na Office Store em telas de DPI alto.
 ms.date: 03/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 42a7ebf0e02eb365962b574821d5a7004a8b867f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83a86b4a27f2cdfea54b657f70400601207464d3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937698"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152108"
 ---
 # <a name="highresolutioniconurl-element"></a>Elemento HighResolutionIconUrl
 

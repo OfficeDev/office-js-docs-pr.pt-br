@@ -2,13 +2,13 @@
 title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 description: Crie um complemento do painel de tarefas para o Project Standard 2013, Project Professional 2013 ou versões posteriores usando o gerador Yeoman para Office Desempois.
 ms.date: 07/10/2020
-localization_priority: Normal
-ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a38599c1820b325eb89035c0d438ebf48b889ca
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938390"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152049"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -808,7 +808,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Posição do símbolo: `0`
     - URL do Project Web App: `http://servername/pwa`
   
-1. Selecione o **botão Obter valores** de contexto obter propriedades do documento e do aplicativo no qual o complemento está sendo executado, recebendo propriedades do objetoOffice.Context.doc **ument** e do `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
+1. Selecione o **botão Obter Valores** de Contexto obter propriedades do documento e do aplicativo no qual o add-in está sendo executado, recebendo propriedades do **Office. Objeto Context.document** e o `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
 
     - URL do documento: `<>\Project1`
     - Modo do documento: `readWrite`

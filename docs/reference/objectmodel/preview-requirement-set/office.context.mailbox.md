@@ -2,13 +2,13 @@
 title: Office.context.mailbox - conjunto de requisitos de visualização
 description: Outlook Versão do conjunto de requisitos de visualização da API de Caixa de Correio do modelo de objeto mailbox.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 2765a782b33e6ffd3ef4d99b1ec70195498e6962
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ac7b051f700b219df1a9de7cb4e47b1b334af050
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938682"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151988"
 ---
 # <a name="mailbox-preview-requirement-set"></a>mailbox (conjunto de requisitos de visualização)
 
@@ -29,10 +29,10 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 | Propriedade | Minimum<br>nível de permissão | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|---|:---:|
 | [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#diagnostics) | ReadItem | Escrever<br>Ler | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | Escrever<br>Ler | [Item](/javascript/api/outlook/office.item?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#masterCategories) | ReadWriteMailbox | Escrever<br>Ler | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-preview&preserve-view=true) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#restUrl) | ReadItem | Escrever<br>Ler | Cadeia de caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#restUrl) | ReadItem | Escrever<br>Ler | Cadeia de Caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#userProfile) | ReadItem | Escrever<br>Ler | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Métodos

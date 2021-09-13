@@ -1,16 +1,16 @@
 ---
-title: Solucionar erros de desenvolvimento com Office de complementos
+title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9a2b36a0c8a89dd5f4087794e1901e72baca6244
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937476"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151715"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Office de complementos
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
 Aqui está uma lista de problemas comuns que podem ser encontrados durante o desenvolvimento de um Office Add-in.
 

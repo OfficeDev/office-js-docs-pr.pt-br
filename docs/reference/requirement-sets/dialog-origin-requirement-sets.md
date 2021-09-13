@@ -3,13 +3,13 @@ title: Conjuntos de requisitos de origem da caixa de diálogo
 description: Saiba mais sobre os conjuntos de requisitos de Origem da Caixa de Diálogo.
 ms.date: 07/22/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 24513823eb60435359d5d7307a11a192fece2015
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: db97b19c0a23fa7dbd1b93e03ccd7a7b76317d7a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938900"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151962"
 ---
 # <a name="dialog-origin-requirement-sets"></a>Conjuntos de requisitos de origem da caixa de diálogo
 

@@ -2,13 +2,13 @@
 title: Obter e definir dados de item em um formulário de redação no Outlook
 description: Obtenha ou defina várias propriedades de um item em um suplemento do Outlook em um cenário de redação, incluindo seus destinatários, o assunto, o corpo e o local e a hora do compromisso.
 ms.date: 12/10/2019
-localization_priority: Normal
-ms.openlocfilehash: f888e0f5a9d1d3c3ab64a174064f3b2984111229
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 03ab6672f8d1dc2bd6dae6fe064da43ee66d9f72
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936345"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151863"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Obter e definir dados de item em um formulário de redação no Outlook
 

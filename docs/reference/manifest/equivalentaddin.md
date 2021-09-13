@@ -2,13 +2,13 @@
 title: Elemento EquivalentAddin no arquivo de manifesto
 description: Especifica a compatibilidade com vertida para um complemento COM ou XLL equivalente.
 ms.date: 03/09/2021
-localization_priority: Normal
-ms.openlocfilehash: 412a3ce7bd12d886b7b88b5b84938e28295aba5d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e0842a0a5663d6221e854881aef28004ad2a8705
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939289"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151813"
 ---
 # <a name="equivalentaddin-element"></a>Elemento EquivalentAddin
 

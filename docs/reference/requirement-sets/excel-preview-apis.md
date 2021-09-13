@@ -3,13 +3,13 @@ title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as próximas Excel APIs JavaScript.
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8bb7139aadc35dcfe1ac3c977d9c98525b1d0b9f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936673"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152165"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -45,7 +45,7 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. P
 ||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showOutlineBorder)|Especifica se será exibida a borda de contorno da tabela de dados.|
 ||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showVerticalBorder)|Especifica se será exibida a borda vertical da tabela de dados.|
 ||[visible](/javascript/api/excel/excel.chartdatatable#visible)|Especifica se é preciso mostrar a tabela de dados do gráfico.|
-|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|Representa o formato de borda da tabela de dados do gráfico, que inclui cor, estilo de linha e peso.|
+|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[borda](/javascript/api/excel/excel.chartdatatableformat#border)|Representa o formato de borda da tabela de dados do gráfico, que inclui cor, estilo de linha e peso.|
 ||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo.|
 ||[font](/javascript/api/excel/excel.chartdatatableformat#font)|Representa os atributos de fonte (como nome da fonte, tamanho da fonte e cor) do objeto atual.|
 |[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assignTask_assignee_)|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
@@ -178,13 +178,13 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. P
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|Retorna uma coleção de tipos de dados vinculados que fazem parte da lista de trabalho.|
 ||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|Retorna uma coleção de guias de trabalho vinculadas.|
 ||[consultas](/javascript/api/excel/excel.workbook#queries)|Retorna uma coleção de consultas do Power Query que fazem parte da workbook.|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|Retorna uma coleção de tarefas que estão presentes na workbook.|
+||[tarefas](/javascript/api/excel/excel.workbook#tasks)|Retorna uma coleção de tarefas que estão presentes na workbook.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|Especifica se o painel de lista de campos da Tabela Dinâmica é mostrado no nível da lista de trabalho.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|Ocorre quando um filtro é aplicado em uma planilha específica.|
 ||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|Ocorre quando o estado de proteção da planilha é alterado.|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabId)|Retorna um valor que representa essa planilha que pode ser lido por Open Office XML.|
-||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Retorna uma coleção de tarefas presentes na planilha.|
+||[tarefas](/javascript/api/excel/excel.worksheet#tasks)|Retorna uma coleção de tarefas presentes na planilha.|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|Representa uma alteração na direção em que as células de uma planilha serão deslocadas quando uma célula ou células são excluídas ou inseridas.|
 ||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|Representa a origem do gatilho do evento.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|

@@ -2,13 +2,13 @@
 title: Elemento DisplayName no arquivo de manifesto
 description: Especifica o nome do Suplemento do Office como uma cadeia de caracteres de até 125 caracteres.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 194af15d3ac68d87859304021b61cd975c9989b3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 6455672d2db54ba909e830aa3b3cc79fa11a1307
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936181"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151816"
 ---
 # <a name="displayname-element"></a>Elemento DisplayName
 

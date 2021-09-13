@@ -2,13 +2,13 @@
 title: Elemento Type no arquivo de manifesto
 description: O elemento Type especifica se o complemento equivalente é um complemento COM ou um XLL.
 ms.date: 03/09/2021
-localization_priority: Normal
-ms.openlocfilehash: 5af3359c232e91b097311bfc06fc9b1c932b0703
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 65860ff7aa3e241c227f96c8a8e7c71d7799a04c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937452"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151989"
 ---
 # <a name="type-element"></a>Elemento Type
 

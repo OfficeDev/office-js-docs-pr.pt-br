@@ -2,13 +2,13 @@
 title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 08/02/2021
-localization_priority: Priority
-ms.openlocfilehash: 2c08cb1c83657c685b069dc13b3bf1a7e6b7de09
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 2a0c4f5b904e8f63a3a361f1339e87785bf40eea
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937100"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152057"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 

@@ -3,13 +3,13 @@ title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
 ms.date: 04/08/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 25efc55c44242398bce684a9b56795d734d2a158
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937206"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152064"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 

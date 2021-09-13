@@ -2,13 +2,13 @@
 title: Usar temas de documentos em seus suplementos do PowerPoint
 description: Saiba como coordenar visualmente temas como fontes e cores para aplicar a apresentações, documentos, planilhas e emails.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 49a61844351114f396c35cba5cf8b24539483a4d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936992"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152052"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -149,7 +149,7 @@ Para fazer isso no Visual Studio, execute estas etapas.
 
 4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
-5. Nas páginas HTML que implementam a interface do usuário do seu complemento, como Home.html no modelo padrão, adicione a marca a seguir dentro da marca que faz referência ao arquivo `<link>` `<head>` OfficeThemes.css.
+5. Nas páginas HTML que implementam a interface do usuário do seu add-in, como Home.html no modelo padrão, adicione a marca a seguir dentro da marca que faz referência ao arquivo `<link>` `<head>` OfficeThemes.css.
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

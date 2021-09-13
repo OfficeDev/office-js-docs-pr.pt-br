@@ -2,13 +2,13 @@
 title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
-localization_priority: Normal
-ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 02a6360d43b91cde773d767d9a9838c015d9ecd7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939095"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151855"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 

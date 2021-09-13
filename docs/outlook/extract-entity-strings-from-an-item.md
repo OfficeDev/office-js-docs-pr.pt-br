@@ -2,13 +2,13 @@
 title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
-localization_priority: Normal
-ms.openlocfilehash: d266795e3794cfa293d073dafc1ca714644faa5b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937504"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151864"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 

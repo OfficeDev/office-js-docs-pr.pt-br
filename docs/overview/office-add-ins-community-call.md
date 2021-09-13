@@ -2,13 +2,13 @@
 title: Microsoft Office Chamada da comunidade de complementos
 description: Os recursos e Microsoft Office de chamada da comunidade de complementos mensalmente.
 ms.date: 09/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 4f08a4fba697a75140575866301ad5ddd06e5af7
-ms.sourcegitcommit: d563c473ebf82135baa733579f397aba35c2f917
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "58959421"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152096"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
@@ -32,7 +32,7 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Office Chamada da comunidade de complementos - 8 de julho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Office Chamada da comunidade de complementos - 10 de junho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Convite de calendário de chamada da comunidade mensal recorrente](https://aka.ms/officeaddinscommunitycall)
 - [Todas as Microsoft 365 da comunidade de desenvolvedores](https://aka.ms/M365DevCalls)

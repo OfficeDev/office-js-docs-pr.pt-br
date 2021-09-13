@@ -3,13 +3,13 @@ title: PowerPoint APIs de visualização do JavaScript
 description: Detalhes sobre as próximas POWERPOINT APIs JavaScript.
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d9cb28c56a84829d87ba30e494aa46b927e0bc64
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938099"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152146"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint APIs de visualização do JavaScript
 

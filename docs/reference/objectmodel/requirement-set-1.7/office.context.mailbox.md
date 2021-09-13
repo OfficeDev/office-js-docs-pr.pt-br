@@ -2,13 +2,13 @@
 title: Office.context.mailbox - conjunto de requisitos 1.7
 description: Outlook Conjunto de requisitos da API de Caixa de Correio versão 1.7 do modelo de objeto mailbox.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: fe8dea1efdeb22f2fa1b14d88d4f33bdc9fdc4de
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3f4b12031611ff5c69d8d4c00474dc77a95f9f0d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936427"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151775"
 ---
 # <a name="mailbox-requirement-set-17"></a>mailbox (conjunto de requisitos 1.7)
 
@@ -29,9 +29,9 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 | Propriedade | Minimum<br>nível de permissão | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|---|:---:|
 | [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#diagnostics) | ReadItem | Escrever<br>Ler | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#ewsUrl) | ReadItem | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restricted | Escrever<br>Ler | [Item](/javascript/api/outlook/office.item?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#restUrl) | ReadItem | Escrever<br>Ler | Cadeia de caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#restUrl) | ReadItem | Escrever<br>Ler | Cadeia de Caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#userProfile) | ReadItem | Escrever<br>Ler | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Métodos

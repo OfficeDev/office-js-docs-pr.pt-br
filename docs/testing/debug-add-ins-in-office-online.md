@@ -2,13 +2,13 @@
 title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 255826f8925ea35d25cf228e80de6774c9917cea
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938423"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151795"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 

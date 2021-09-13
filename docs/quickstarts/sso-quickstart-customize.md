@@ -3,13 +3,13 @@ title: Personalizar o suplemento habilitado para SSO do Node.js.
 description: Saiba mais sobre como personalizar o complemento habilitado para SSO que você criou com o gerador Yeoman.
 ms.date: 08/04/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8b66da764902fba1a0296c349f898a94ef9f9b33
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936972"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152032"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -129,7 +129,7 @@ Conclua as etapas a seguir para o seu complemento, para alterar a URL do Microso
     </section>
     ```
 
-5. Em **./src/taskpane/taskpane.html**, encontre e substitua ambas as ocorrências da cadeia de caracteres `Get My User Profile Information` pela cadeia de caracteres `Read my OneDrive for Business` .
+5. Em **./src/taskpane/taskpane.html,** encontre e substitua ambas as ocorrências da cadeia de caracteres `Get My User Profile Information` pela cadeia de caracteres `Read my OneDrive for Business` .
 
     ```html
     <li class="ms-ListItem">

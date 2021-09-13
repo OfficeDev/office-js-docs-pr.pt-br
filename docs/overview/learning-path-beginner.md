@@ -3,13 +3,13 @@ title: Guia para iniciantes em suplementos do Office
 description: Um caminho recomendado para iniciantes, através dos recursos de aprendizado dos Suplementos do Office.
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: beafa972129133955ddebef9ebaaeae6dda101b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937445"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151768"
 ---
 # <a name="beginners-guide"></a>Guia do iniciante
 

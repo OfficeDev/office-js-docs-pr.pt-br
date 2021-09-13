@@ -2,13 +2,13 @@
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 09/03/2021
-localization_priority: Priority
-ms.openlocfilehash: 1f579d5f0a71cf4c078b3db5412adfe39d7e1287
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: c51f40cda48fbb343cfae78b258902e5030f49da
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939319"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151885"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 

@@ -2,13 +2,13 @@
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
 description: Habilitar a compatibilidade Excel funções definidas pelo usuário XLL que tenham funcionalidade equivalente às suas funções personalizadas
 ms.date: 08/24/2021
-localization_priority: Normal
-ms.openlocfilehash: 5611a8d7c22867146c0f0904d62bd113fe8d29d2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 806f920fb6c9a25907fc475cfd29b844ef00f9a8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938000"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151794"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 

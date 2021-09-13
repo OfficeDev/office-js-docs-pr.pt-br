@@ -3,13 +3,13 @@ title: Depurar seu Outlook de eventos (visualização)
 description: Saiba como depurar seu Outlook que implementa a ativação baseada em eventos.
 ms.topic: article
 ms.date: 05/14/2021
-localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ebf469ec15948ae2daf693bc7fda692367d70bec
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937795"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151872"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Depurar seu Outlook de eventos (visualização)
 
@@ -64,7 +64,7 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
     code .
     ```
 
-1. Em Visual Studio Code, abra o arquivo **./.vscode/launch.jse** adicione o seguinte trecho à sua lista de configurações. Salve suas alterações.
+1. Em Visual Studio Code, abra o arquivo **./.vscode/launch.json** e adicione o seguinte trecho à sua lista de configurações. Salve suas alterações.
 
     ```json
     {
@@ -87,11 +87,11 @@ Para visualizar esse recurso para Outlook no Windows, o build mínimo necessári
 
     ![Captura de tela do ícone de depuração na Barra de Atividades.](../images/vs-code-debug.png)
 
-1. Selecione o **link criar um launch.jsno** arquivo.
+1. Selecione o link criar um link de arquivo **launch.json.**
 
-    ![Captura de tela do link para criar um arquivo launch.jsno Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![Captura de tela do link para criar um arquivo launch.json Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
-1. Na lista **suspenso Selecionar Ambiente,** selecione **Borda: Iniciar** para criar um launch.jsno arquivo.
+1. Na lista **suspenso Selecionar Ambiente,** selecione **Borda: Iniciar** para criar um arquivo launch.json.
 1. Adicione o trecho a seguir à sua lista de configurações. Salve suas alterações.
 
     ```json

@@ -2,13 +2,13 @@
 title: Office.context - conjunto de requisitos 1.3
 description: Office. Membros do objeto context disponível para Outlook os complementos usando o conjunto de requisitos da API de Caixa de Correio 1.3.
 ms.date: 12/02/2020
-localization_priority: Normal
-ms.openlocfilehash: c5c7f6eaa46bfa5067572878b03e47511310f894
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cc90cb9d718df9325448f4e9cab0dfbef1f66fe9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937812"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151977"
 ---
 # <a name="context-mailbox-requirement-set-13"></a>context (Conjunto de requisitos de caixa de correio 1.3)
 
@@ -27,9 +27,9 @@ Office.context fornece interfaces compartilhadas que são usadas por complemento
 
 | Propriedade | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Escrever<br>Ler | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | Escrever<br>Ler | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [requirements](#requirements-requirementsetsupport) | Escrever<br>Ler | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Ler | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

@@ -2,13 +2,13 @@
 title: Office namespace - conjunto de requisitos 1.9
 description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.9.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 203b901c619e19a8e5b9255e36274e2f6e1d1658
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c06fa7bd604db0272939ae40590d9500a3a71eb1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939252"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151773"
 ---
 # <a name="office-mailbox-requirement-set-19"></a>Office (conjunto de requisitos de caixa de correio 1.9)
 
@@ -31,10 +31,10 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 
@@ -108,12 +108,12 @@ Especifica o evento associado a um manipulador de eventos.
 
 | Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| String | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`AttachmentsChanged`| Cadeia de caracteres | Um anexo foi adicionado ou removido do item. | 1,8 |
-|`EnhancedLocationsChanged`| String | O local do compromisso selecionado foi alterado. | 1,8 |
-|`ItemChanged`| Cadeia de caracteres | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
-|`RecipientsChanged`| String | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
-|`RecurrenceChanged`| String | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
+|`AppointmentTimeChanged`| Cadeia de Caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`AttachmentsChanged`| Cadeia de Caracteres | Um anexo foi adicionado ou removido do item. | 1,8 |
+|`EnhancedLocationsChanged`| Cadeia de Caracteres | O local do compromisso selecionado foi alterado. | 1,8 |
+|`ItemChanged`| Cadeia de Caracteres | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
+|`RecipientsChanged`| Cadeia de Caracteres | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
+|`RecurrenceChanged`| Cadeia de Caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ##### <a name="requirements"></a>Requisitos
 

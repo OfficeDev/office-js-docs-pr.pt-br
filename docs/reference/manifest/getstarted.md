@@ -2,13 +2,13 @@
 title: Elemento GetStarted no arquivo de manifesto
 description: Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 355b72d4130f3a220e6a1257af51e371665d3cc3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938462"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152111"
 ---
 # <a name="getstarted-element"></a>Elemento GetStarted
 

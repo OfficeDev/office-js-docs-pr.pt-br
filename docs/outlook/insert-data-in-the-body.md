@@ -2,13 +2,13 @@
 title: Inserir dados no corpo de um suplemento do Outlook
 description: Saiba como inserir dados no corpo de um compromisso ou mensagem em um suplemento do Outlook.
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 377c278464038a2b04d8b0ca49de92530e3724d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937216"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151847"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Inserir dados no corpo ao compor um compromisso ou uma mensagem no Outlook
 
@@ -27,7 +27,7 @@ No Outlook, um usuário pode criar uma mensagem em texto, HTML ou RTF (Rich Text
 
 1.  Em tablets e smartphones, **getTypeAsync** retorna **Office. MailboxEnums.BodyType.Text** se o sistema operacional ou aplicativo não dá suporte à edição de um item, que foi originalmente criado em HTML, no formato HTML.
 
-2.  Se seus dados a inserir são HTML e **getTypeAsync** retorna um tipo de texto para esse item, reorganize seus dados como texto e insira-os **com Office. MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType_, você receberá um erro.
+2.  Se seus dados a inserir são HTML e **getTypeAsync** retorna um tipo de texto para esse item, reorganize seus dados como texto e insira-os **com Office. MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType,_ receberá um erro.
 
 Além de _coercionType_, como na maioria dos métodos assíncronos na API JavaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** levam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 

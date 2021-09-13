@@ -3,13 +3,13 @@ title: Definir e obter o intervalo selecionado usando a EXCEL JavaScript
 description: Saiba como usar a EXCEL JavaScript para definir e obter o intervalo selecionado usando Excel API JavaScript.
 ms.date: 07/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6a61e200482d48691c38845598987a1719b457f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937980"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151738"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Definir e obter o intervalo selecionado usando a EXCEL JavaScript
 

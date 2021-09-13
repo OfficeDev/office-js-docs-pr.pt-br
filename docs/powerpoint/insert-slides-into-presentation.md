@@ -2,13 +2,13 @@
 title: Inserir slides em uma apresentação PowerPoint apresentação
 description: Saiba como inserir slides de uma apresentação em outra.
 ms.date: 03/07/2021
-localization_priority: Normal
-ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c7dde2d2d6b1b886816bbf12122319984f4c7138
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936806"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151692"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Inserir slides em uma apresentação PowerPoint apresentação
 

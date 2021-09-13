@@ -3,13 +3,13 @@ title: Criar um suplemento do painel de tarefas do Excel usando o React
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API JS do Office e o React.
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 74a28f3914ddbc54188d3b8baa33fc1faa7a30fe
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b97bd4cdf2190f23a99b9fba314906f4cac35aad
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939197"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152012"
 ---
 # <a name="use-react-to-build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel usando o React
 

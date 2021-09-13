@@ -2,13 +2,13 @@
 title: Use marcas personalizadas em apresentações, slides e formas em PowerPoint
 description: Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.
 ms.date: 04/08/2021
-localization_priority: Normal
-ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: db9d31424ac4e08e6eaccca824ca5881d2ef617e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937891"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152053"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Use marcas personalizadas para apresentações, slides e formas em PowerPoint
 
@@ -85,7 +85,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 
 2. O código a seguir cria um método para obter o índice do slide selecionado. Sobre este código, observe:
 
-    - Ele usa o [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
+    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` retorna uma matriz porque vários slides podem ser selecionados. Nesse cenário, o usuário selecionou apenas um, portanto, o código obtém o primeiro slide (0th), que é o único selecionado.
     - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel PowerPoint `index` miniaturas da interface do usuário.

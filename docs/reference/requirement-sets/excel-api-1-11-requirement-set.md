@@ -3,13 +3,13 @@ title: Excel Conjunto de requisitos da API JavaScript 1.11
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 1e347e0bb7b394676eccf422665c545b110b589d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938727"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151831"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Novidades na EXCEL JavaScript 1.11
 

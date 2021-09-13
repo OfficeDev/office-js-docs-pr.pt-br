@@ -2,13 +2,13 @@
 title: Elemento Tokens no arquivo de manifesto
 description: Especifica tokens ou curingas que podem ser usados com modelos de URL no manifesto.
 ms.date: 11/06/2020
-localization_priority: Normal
-ms.openlocfilehash: 8680b985068c44e93f601a2b24e2f28899eb483d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3e52543bdb53709ea005f63a3a990650905d70cd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938639"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152077"
 ---
 # <a name="tokens-element"></a>Elemento Tokens
 
@@ -28,7 +28,7 @@ Define tokens que podem ser usados em URLs de modelo. Para obter mais informaç�
 
 ## <a name="must-contain"></a>Deve conter
 
-|Elemento|Conteúdo|Email|TaskPane|
+|Elemento|Conteúdo|Correio|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Token](token.md)|||x|
 

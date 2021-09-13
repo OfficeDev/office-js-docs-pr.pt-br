@@ -3,13 +3,13 @@ title: Criar um suplemento do painel de tarefas do Excel usando o Angular
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o lado a lado.
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 433c78a00604b29b93c3a774b5f21416075f5ff1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f7c4ff77833d4eabc854718c9156a4da0c6e7cc3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937039"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152015"
 ---
 # <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 

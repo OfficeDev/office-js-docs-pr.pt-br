@@ -3,13 +3,13 @@ title: Tutorial de suplemento do Excel
 description: Crie um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
 ms.date: 07/08/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938368"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148951"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 

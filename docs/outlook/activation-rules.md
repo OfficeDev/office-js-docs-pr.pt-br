@@ -2,13 +2,13 @@
 title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
 ms.date: 09/22/2020
-localization_priority: Normal
-ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e0cac8a2f0153d85e5b6d2600f1dbc7f4c03c398
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937466"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151902"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 

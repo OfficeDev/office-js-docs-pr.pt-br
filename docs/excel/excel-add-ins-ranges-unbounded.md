@@ -3,13 +3,13 @@ title: Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel J
 description: Saiba como usar a EXCEL JavaScript para ler ou gravar em um intervalo não-rebote.
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a7b2a564377d0dab73d4f3ad6d3aacf2219ddeae
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936446"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151735"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel JavaScript
 

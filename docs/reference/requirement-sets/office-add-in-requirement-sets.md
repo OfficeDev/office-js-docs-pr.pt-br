@@ -3,13 +3,13 @@ title: Conjuntos de requisitos da API Comum do Office
 description: Saiba mais sobre os conjuntos de requisitos Office API comum.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d31b119db15689a8ba4c5f5cf070f26aa916a6d3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937966"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151923"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 

@@ -2,13 +2,13 @@
 title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938950"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152045"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 

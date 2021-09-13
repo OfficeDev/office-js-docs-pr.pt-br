@@ -2,13 +2,13 @@
 title: Elemento Set no arquivo de manifesto
 description: O elemento Set especifica um conjunto Office de requisitos da API JavaScript que seu Office de complemento requer para ativar.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 608830e1ebc0d2e2d4c170b48bba00b3a19e87af
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 93524d64fd915d6f42f4e4a0cd0ab6cc3335f4ce
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936619"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152002"
 ---
 # <a name="set-element"></a>Elemento Set
 

@@ -2,13 +2,13 @@
 title: Elemento Methods no arquivo de manifesto
 description: O elemento Methods especifica a lista de Office da API JavaScript que o seu Office Add-in requer para ser ativado.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: b270122240314b792ee492336417a4d133bdcc84
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 6a36e1e05634b0ebc4ca4fce6fb22c042cd8f6fb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938654"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152142"
 ---
 # <a name="methods-element"></a>Elemento Methods
 

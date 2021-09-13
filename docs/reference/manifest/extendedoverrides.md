@@ -2,13 +2,13 @@
 title: Elemento ExtendedOverrides no arquivo de manifesto
 description: Especifica as URLs para uma extensão formatada por JSON do manifesto.
 ms.date: 02/23/2021
-localization_priority: Normal
-ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 062d62284d786e81f230b1d094c46a73208a6c2c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936251"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151808"
 ---
 # <a name="extendedoverrides-element"></a>Elemento ExtendedOverrides
 
@@ -28,7 +28,7 @@ Especifica as URLs completas para arquivos formatados com JSON que estendem o ma
 
 ## <a name="can-contain"></a>Pode conter
 
-|Elemento|Conteúdo|Email|TaskPane|
+|Elemento|Conteúdo|Correio|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Tokens](tokens.md)|||x|
 

@@ -2,13 +2,13 @@
 title: Office namespace - conjunto de requisitos 1.3
 description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.3.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: f4aecf016e259141fd8adb2683864d4c36bdaf4b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e10e18748352bd81ae749ef20d487aaebd6a2809
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937610"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151975"
 ---
 # <a name="office-mailbox-requirement-set-13"></a>Office (conjunto de requisitos de caixa de correio 1.3)
 
@@ -31,9 +31,9 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 

@@ -3,13 +3,13 @@ title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
 ms.date: 07/07/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: fbc03603cd3b3d546fbb83526d4654b35a124393
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f975adeec36490482c2fb54d2455bc15f8f17c78
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936529"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151713"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 

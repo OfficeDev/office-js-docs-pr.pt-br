@@ -2,13 +2,13 @@
 title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 07/01/2021
-localization_priority: Normal
-ms.openlocfilehash: 76ef712b95682538a962b4b8305e6fc0d060a75a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9cb9d80d1eff89919b3c33a68b42eb61eca27af3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938481"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151875"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 

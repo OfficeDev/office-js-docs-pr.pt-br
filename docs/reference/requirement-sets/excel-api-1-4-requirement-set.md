@@ -3,13 +3,13 @@ title: Excel Conjunto de requisitos da API JavaScript 1.4
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.4.
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: be71d1e0c063bd3902bf57ba8f2024ae5a78ff1d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 297f0d2a9c892800a5f26ecd29be0c7587bc52fc
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937490"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151798"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Quais são as novidades na API JavaScript do Excel 1.4
 

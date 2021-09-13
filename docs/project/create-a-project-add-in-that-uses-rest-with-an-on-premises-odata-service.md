@@ -2,13 +2,13 @@
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: Saiba como criar um complemento de painel de tarefas para o Project Professional 2013 que compara os dados de custo e trabalho no projeto ativo com as médias de todos os projetos na instância atual do Project Web App.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ad9eb10f057b0fcb0328dc0b4e87919681a20b09
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938815"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152050"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento do Project que usa REST com um serviço OData local do Project Server
 
@@ -171,7 +171,7 @@ O painel de tarefas mostra o nome de exibição do complemento na parte superior
 
 ### <a name="procedure-4-create-the-html-content"></a>Procedimento 4. Criar o conteúdo HTML
 
-1. No elemento **head** do arquivo Home.html, adicione quaisquer elementos de **link** adicionais para arquivos CSS que seu complemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
+1. No elemento **head** do arquivo Home.html, adicione quaisquer elementos **de link** adicionais para arquivos CSS que seu complemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
 
 2. Adicione quaisquer elementos **de script adicionais** para bibliotecas JavaScript que seu complemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[version]_.js, office.js e MicrosoftAjax.js na pasta **Scripts.**
 
@@ -284,7 +284,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função é 
 
 ### <a name="procedure-5-create-the-javascript-code"></a>Procedimento 5. Criar o código JavaScript
 
-1. Exclua todo o código no arquivo HelloProjectOData.js padrão e adicione as variáveis globais `**` eOffice.inifunção tialize'. Nomes variáveis que são todas as maiúsculas implicam que são constantes; eles são usados posteriormente com **a variável _pwa** para criar a consulta REST neste exemplo.
+1. Exclua todo o código no arquivo HelloProjectOData.js padrão e adicione as `**` variáveis globais e a função Office.initialize'. Nomes variáveis que são todas as maiúsculas implicam que são constantes; eles são usados posteriormente com **a variável _pwa** para criar a consulta REST neste exemplo.
 
     ```js
     var PROJDATA = "/_api/ProjectData";

@@ -2,13 +2,13 @@
 title: Elemento Override no arquivo de manifesto
 description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
 ms.date: 05/19/2021
-localization_priority: Normal
-ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: bf0f4d8877ba2228d5bfc2053f53b2a8e1ab7b29
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936902"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152136"
 ---
 # <a name="override-element"></a>Elemento Override
 
@@ -143,7 +143,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ### <a name="must-contain"></a>Deve conter
 
-|Elemento|Conteúdo|Email|TaskPane|
+|Elemento|Conteúdo|Correio|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Requisitos](requirements.md)|||x|
 

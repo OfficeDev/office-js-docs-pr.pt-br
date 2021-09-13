@@ -3,13 +3,13 @@ title: Excel Conjunto de requisitos da API JavaScript 1.8
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e97dd98d024b27aa58ca6f0c76fdee17b657c7c9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938333"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152166"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Novidades na API JavaScript 1.8 Excel JavaScript
 
@@ -68,7 +68,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textOrientation)|Especifica o ângulo para o qual o texto é orientado para o rótulo de escala do eixo do gráfico.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|Especifica a formatação de preenchimento do gráfico.|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula(formula: string)](/javascript/api/excel/excel.chartaxistitle#setFormula_formula_)|Um valor de cadeia de caracteres que representa a fórmula do título do eixo do gráfico usando a notação no estilo A1.|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[border](/javascript/api/excel/excel.chartaxistitleformat#border)|Especifica o formato de borda do título do eixo do gráfico, que inclui cor, estilo de linha e peso.|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[borda](/javascript/api/excel/excel.chartaxistitleformat#border)|Especifica o formato de borda do título do eixo do gráfico, que inclui cor, estilo de linha e peso.|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|Especifica a formatação de preenchimento do título do eixo do gráfico.|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear__)|Limpa a formatação da borda de um elemento do gráfico.|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[onActivated](/javascript/api/excel/excel.chartcollection#onActivated)|Ocorre quando um gráfico é ativado.|
@@ -87,7 +87,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textOrientation)|Representa o ângulo para o qual o texto é orientado para o rótulo de dados do gráfico.|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|Representa a distância, em pontos, da borda superior do rótulo de dados do gráfico até a borda superior da área do gráfico.|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalAlignment)|Representa o alinhamento vertical do rótulo de dados do gráfico.|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[border](/javascript/api/excel/excel.chartdatalabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[borda](/javascript/api/excel/excel.chartdatalabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[autoText](/javascript/api/excel/excel.chartdatalabels#autoText)|Especifica se os rótulos de dados geram automaticamente o texto apropriado com base no contexto.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalAlignment)|Especifica o alinhamento horizontal para o rótulo de dados do gráfico.|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabels#numberFormat)|Especifica o código de formato para rótulos de dados.|
@@ -105,7 +105,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Especifica o valor esquerdo de uma entrada de legenda de gráfico.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Especifica a parte superior de uma entrada de legenda de gráfico.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Representa a largura da entrada da legenda no gráfico Legend.|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[border](/javascript/api/excel/excel.chartlegendformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[borda](/javascript/api/excel/excel.chartlegendformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
 |[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|Especifica o valor de altura de uma área de plotagem.|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideHeight)|Especifica o valor de altura interna de uma área de plotagem.|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideLeft)|Especifica o valor interno esquerdo de uma área de plotagem.|
@@ -116,7 +116,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[format](/javascript/api/excel/excel.chartplotarea#format)|Especifica a formatação de uma área de plotagem de gráfico.|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|Especifica o valor superior de uma área de plotagem.|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|Especifica o valor de largura de uma área de plotagem.|
-|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[border](/javascript/api/excel/excel.chartplotareaformat#border)|Especifica os atributos de borda de uma área de plotagem de gráfico.|
+|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[borda](/javascript/api/excel/excel.chartplotareaformat#border)|Especifica os atributos de borda de uma área de plotagem de gráfico.|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|Especifica o formato de preenchimento de um objeto, que inclui informações de formatação em segundo plano.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisGroup)|Especifica o grupo da série especificada.|
 ||[explosion](/javascript/api/excel/excel.chartseries#explosion)|Especifica o valor de explosão para uma fatia de gráfico de pizza ou gráfico de rosca.|
@@ -144,7 +144,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textOrientation)|Representa o ângulo para o qual o texto é orientado para o rótulo de linha de tendência do gráfico.|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|Representa a distância, em pontos, da borda superior do rótulo de linha de tendência do gráfico até a parte superior da área do gráfico.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalAlignment)|Representa o alinhamento vertical do rótulo de linha de tendência do gráfico.|
-|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[border](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Especifica o formato de borda, que inclui cor, estilo de linha e peso.|
+|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[borda](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Especifica o formato de borda, que inclui cor, estilo de linha e peso.|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|Especifica o formato de preenchimento do rótulo de linha de tendência do gráfico atual.|
 ||[font](/javascript/api/excel/excel.charttrendlinelabelformat#font)|Especifica os atributos de fonte (como nome da fonte, tamanho da fonte e cor) para um rótulo de linha de tendência de gráfico.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|Uma fórmula de validação de dados personalizados.|
