@@ -1,20 +1,20 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
-ms.date: 07/08/2021
+ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4858cc3bee0eb679b4345fe74af39a1db3833ae0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
+ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148628"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "59326762"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de Office de Office para estender a interface do usuário Office por meio da adição de botões à faixa de Aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
-Alguns cenários exigem que um painel de tarefas seja exibido automaticamente ao abrir um documento, sem a interação explícita do usuário. Você pode usar o recurso autoopen do painel de tarefas, apresentado no conjunto de requisitos AddInCommands 1.1, para abrir automaticamente um painel de tarefas quando necessário.
+Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no conjunto de [requisitos AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
@@ -24,9 +24,9 @@ Com o recurso autoopen, você pode explicitamente definir, ou permitir que o usu
 
 ## <a name="support-and-availability"></a>Suporte e disponibilidade
 
-O recurso autoopen é atualmente <!-- in **developer preview** and it is only --> suportado pelos seguintes produtos e plataformas.
+No momento, o recurso autoopen tem suporte nos seguintes produtos e plataformas.
 
-|**Produtos**|**Plataformas**|
+|Produtos|Plataformas|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office no Windows Desktop. Versão 16.0.8121.1000+</li><li>Office no Mac. Build 15.34.17051500+</li><li>Office na Web</li></ul>|
 
@@ -109,11 +109,12 @@ A parte `webextension` inclui um conjunto de propriedades e uma propriedade cham
 
 A parte `webextension` também inclui uma referência para a loja ou o catálogo com atributos para `id`, `storeType`, `store` e `version`. Dos valores `storeType`, somente quatro são relevantes para o recurso autoopen. Os valores dos outros três atributos dependem do valor de `storeType`, conforme mostrado na tabela a seguir.
 
-| **valor `storeType`** | **valor `id`**    |**valor `store`** | **valor `version`**|
+|valor `storeType`|`id` value|`store` value|valor `version`|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|A ID do ativo do suplemento no AppSource (confira a observação)|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (confira a observação)|
+|OMEX (AppSource)|A ID do ativo AppSource do complemento (consulte Observação).|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo AppSource (consulte Observação).|
+|WOPICatalog (hosts [WOPI](/microsoft-365/cloud-storage-partner-program/online/) de terceiros)| A ID do ativo AppSource do complemento (consulte Observação). | "wopicatalog". Use esse valor para os complementos publicados na Fonte de Aplicativos e instalados em hosts WOPI de terceiros. Para obter mais informações, [consulte Integrando com Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
-|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.
+|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.|
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
 > [!NOTE]
@@ -158,5 +159,5 @@ Você pode testar o exemplo anterior usando sua assinatura Microsoft 365 para ex
 
 ## <a name="see-also"></a>Confira também
 
-Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Ins join the Microsoft 365 developer program](/office/developer-program/office-365-developer-program).
+- Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Participe do programa Microsoft 365 desenvolvedor.](/office/developer-program/office-365-developer-program)
