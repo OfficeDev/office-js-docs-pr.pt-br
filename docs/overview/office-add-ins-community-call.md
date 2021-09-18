@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office Chamada da comunidade de complementos
 description: Os recursos e Microsoft Office de chamada da comunidade de complementos mensalmente.
-ms.date: 09/08/2021
+ms.date: 09/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152096"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443535"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
@@ -32,10 +32,11 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Office Chamada da comunidade de complementos - 8 de julho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Office Chamada da comunidade de complementos - 10 de junho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Convite de calendário de chamada da comunidade mensal recorrente](https://aka.ms/officeaddinscommunitycall)
-- [Todas as Microsoft 365 da comunidade de desenvolvedores](https://aka.ms/M365DevCalls)
 - [Community perguntas e solicitações de tópicos de chamada](https://aka.ms/officeaddinsform)
-- [Microsoft 365 Canal do YouTube do desenvolvedor](https://aka.ms/OfficeDevYouTube)
-- [Padrões e Práticas do Microsoft 365](https://aka.ms/M365PnP)
+- [Microsoft 365 canal do YouTube do desenvolvedor](https://aka.ms/m365devyoutube)
+- [Microsoft 365 canal da comunidade do YouTube](https://aka.ms/m365pnp/videos )
+- [Microsoft 365 PnP no Tech Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365 Blog da comunidade técnica PnP](https://aka.ms/m365pnp/community/blog)

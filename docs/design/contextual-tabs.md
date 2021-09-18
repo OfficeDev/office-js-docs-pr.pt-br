@@ -1,14 +1,14 @@
 ---
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
-ms.date: 09/02/2021
+ms.date: 09/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e4487594af231558cc72c875da716645ac1ace7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4d02d0c2201d4963be147c519a58c40cf3d5341c
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148797"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443549"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -595,3 +595,10 @@ function showDataTab() {
     }
 }
 ```
+
+## <a name="resources"></a>Recursos
+
+- [Exemplo de código: criar guias contextuais personalizadas na faixa de opções](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+- Community demonstração de amostra de guias contextuais
+
+> [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]

@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 619fd59a01d91127c0aa4e10af65edf5cbb400cf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0cf4971d46ee80a64fe5ecd70778a333efef960b
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148936"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443514"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -97,7 +97,7 @@ Outra maneira fácil de experimentar as funções personalizadas é usar o [Scri
 ## <a name="see-also"></a>Confira também
 
 * [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Conjuntos de requisitos de funções personalizadas](custom-functions-requirement-sets.md)
+* [Conjuntos de requisitos de funções personalizadas](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [Diretrizes de nomenclatura de funções personalizadas](custom-functions-naming.md)
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

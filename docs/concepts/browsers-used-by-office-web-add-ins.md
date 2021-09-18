@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 08/09/2021
+ms.date: 09/10/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1cdcf0cfc9edcd182ca0c47e1dd200262da5bf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 77cf0b6888100eee6fa6d90f221dc680a9991a7e
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148669"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443521"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -35,17 +35,18 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Mac|qualquer|Não aplicável|Safari|
 |iOS|qualquer|Não aplicável|Safari|
 |Android|qualquer|Não aplicável|Chrome|
-|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Não importa|Internet Explorer 11|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 to Office 2019|Não importa|Internet Explorer 11|
+|Windows 10 | non-subscription Office 2021 or later|Sim|Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado em Chromium)|
 |Windows 7 | Microsoft 365| Não importa | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Não| Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Não importa|Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _E_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Não importa|Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Não |Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>2</sup> com WebView2 (Chromium baseado em Chromium) |
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>2</sup>| Não importa|Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _E_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>2</sup>| Não importa|Microsoft Edge<sup>1, 3</sup> com WebView original (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>2</sup>| Não |Microsoft Edge<sup>1, 3</sup> com WebView original (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>2</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado em Chromium) |
 
-<sup>1</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão Office cliente e [o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) de atualização para obter mais detalhes.
+<sup>1</sup> Quando o Microsoft Edge está sendo usado, o narrador Windows 10 (às vezes chamado de "leitor de tela") lê a marca na página que é aberta no `<title>` painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
-<sup>2</sup> Quando Microsoft Edge está sendo usado, o Windows 10 Narrador (às vezes chamado de "leitor de tela") lê a marca na página que é aberta no `<title>` painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
+<sup>2</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão Office cliente e [o](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) canal de atualização para obter mais detalhes.
 
 <sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele não usará Microsoft Edge com o `<Runtimes>` WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
