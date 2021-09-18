@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443542"
+ms.locfileid: "59445716"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 
