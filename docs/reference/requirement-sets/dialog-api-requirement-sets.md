@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da Dialog API
 description: Saiba mais sobre os conjuntos de requisitos da API de Caixa de Diálogo.
-ms.date: 07/19/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdef827cf47903b0b7e2872110a5a6801735bf4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2c7c39c1bbe8d13a003710024a79af4f7699c2c7
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151965"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445730"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da API de Caixa de diálogo
 
@@ -17,10 +17,10 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Caixa de Diálogo, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou versão do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 ou posterior no Windows\*<br>(compra avulsa)   | Office no Windows<br>(assinatura) |  Office no iPad<br>(assinatura)  |  Office no Mac<br>(assinatura)  | Office na Web  |  Servidor do Office Online  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.2  | N/D | N/D | Consulte suporte<br>seção abaixo | 2.37 ou posterior | 16.37 ou posterior | Junho de 2020 | N/A |
-| DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior | Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
+| Conjunto de requisitos | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 no Windows\*<br>(compra avulsa) | Office 2021 ou posterior no Windows\*<br>(compra avulsa) | Office no Windows<br>(assinatura) | Office no iPad<br>(assinatura) |  Office no Mac<br>(assinatura) | Office na Web | Servidor do Office Online |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| DialogApi 1.2  | N/D | N/D | N/D | Consulte suporte<br>seção abaixo | 2.37 ou posterior | 16.37 ou posterior | Junho de 2020 | N/A |
+| DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior | Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
 
 >\*Os usuários da compra única Office podem não ter aceito todos os patches e atualizações. Em caso afirmativo, a DLL que Office usa para relatar sua versão na interface do usuário pode ser maior do que as versões listadas aqui, mesmo que as DLLs atualizadas necessárias para dar suporte a DialogApi não tenham sido instaladas no computador do usuário. Para garantir que o patch necessário seja instalado, o usuário deve ir para a lista de atualizações do Office ( lista [Office 2013](/officeupdates/msp-files-office-2013) ou [lista Office 2016](/officeupdates/msp-files-office-2016)), pesquisar **osfclient-x-none** e instalar o patch listado.
 
@@ -49,7 +49,7 @@ Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos 
 
 O Dialog API 1.1 é a primeira versão da API. O conjunto de requisitos 1.2 adiciona suporte para o envio de dados da página pai à caixa de diálogo com o [método Office.dialog.messageChild.](/javascript/api/office/office.dialog#messageChild_message_) Para obter detalhes sobre essas APIs, consulte o [tópico de referência da API](/javascript/api/office/office.ui) de Diálogo.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Usar a API de diálogo do Office em suplementos do Office](../../develop/dialog-api-in-office-add-ins.md)
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)

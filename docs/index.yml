@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 05/10/2021
+  ms.date: 09/09/2021
 highlightedContent:
   items:
     - itemType: overview
@@ -25,18 +25,18 @@ highlightedContent:
     - itemType: learn
       title: 'Microsoft Learn: Estender Office clientes com Office Desempois'
       url: /learn/paths/m365-office-add-in-associate
-    - itemType: whats-new
-      title: Microsoft 365 Blog do Desenvolvedor
-      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
+    - itemType: sample
+      title: Exemplos de Office de Office de dados
+      url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
       title: Office Guia iniciante de complementos
       url: overview/learning-path-beginner.md
     - itemType: reference
       title: Documentação de Referência da API JavaScript do Office
       url: /javascript/api/overview
-    - itemType: sample
-      title: 'GitHub: Padrões e práticas para Office Desempois'
-      url: 'https://github.com/OfficeDev/PnP-OfficeAddins'
+    - itemType: whats-new
+      title: Microsoft 365 Blog do Desenvolvedor
+      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
 conceptualContent:
   title: Sua jornada de desenvolvedor
   summary: ''

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos comuns da API
 description: Especifica quais plataformas Office e builds suportam as APIs dinâmicas da faixa de opções.
-ms.date: 05/12/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152065"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445709"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
@@ -19,12 +19,12 @@ O conjunto de APIs da Faixa de Opções oferece suporte ao controle programátic
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API da Faixa de Opções, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/D | N/D | Consulte suporte<br>seção abaixo | N/A | 16.38 | Novembro de 2020 | N/A|
-| RibbonApi 1.2  | N/D | N/D | 2102 (build 13801.20294) | N/A | em breve | Maio de 2021 | N/A|
+|  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| RibbonApi 1.2  | 2102 (build 13801.20294) | 2102 (build 13801.20294) | N/D | Sem suporte | Maio de 2021 | N/A|
+| RibbonApi 1.1  | 2102 (build 13801.20294) | Consulte suporte<br>seção abaixo | N/A | 16.38 | Novembro de 2020 | N/A|
 
-> **&#42;** A API da Faixa de Opções é suportada somente Excel e requer uma assinatura Microsoft 365 de opções.
+> **&#42;** A API da Faixa de Opções é suportada somente Excel.
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>Suporte para a versão 1.1 no Office no Windows (assinatura)
 

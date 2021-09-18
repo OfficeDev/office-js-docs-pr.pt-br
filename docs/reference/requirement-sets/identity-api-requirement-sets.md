@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API de Identidade
 description: Informações do conjunto de requisitos da API de identidade para Office de complementos.
-ms.date: 01/26/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a18ed8e7f78c5c83aeb2177a45c4fb46ba4a46
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e3af8767666d3015894c0b7bcdecd758b1a1547c
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151716"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445814"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -17,9 +17,9 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de identidade, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | N/A | 2008 (build 13127.20000) ou posterior | Em breve | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
+|  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
+|:-----|:-----|:-----|:-----|:-----|:-----|
+| IdentityAPI 1.3  | 2008 (build 13127.20000) ou posterior | 2008 (build 13127.20000) ou posterior | Sem suporte | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
 
 \*Atualmente, o conjunto de requisitos é suportado Office na Web apenas para documentos que são abertos Microsoft Office SharePoint Online e OneDrive.
 

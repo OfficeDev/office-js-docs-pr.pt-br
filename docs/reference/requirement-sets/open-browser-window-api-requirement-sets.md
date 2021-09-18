@@ -1,15 +1,15 @@
 ---
 title: Abrir conjuntos de requisitos de janela do navegador
 description: Especifica quais Office e builds suportam a API openBrowserWindow.
-ms.date: 04/09/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc1931afb9b20411ab7d37354fd173012389fd0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151827"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445821"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Conjuntos de requisitos da API da Janela do Navegador Aberto
 
@@ -19,9 +19,9 @@ O conjunto de API OpenBrowserWindow permite que os complementos abram um navegad
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API OpenBrowserWindow, os aplicativos host Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows ou posterior<br>(compra avulsa) | Office no Windows<br>(Conectado à assinatura do Microsoft 365) |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| OpenBrowserWindowApi 1.1  | N/A | Versão 1810 (build 16.0.11001.20074) ou posterior | 16.0.0.0 ou posterior | 16.0.0.0 ou posterior | N/D | N/D|
+|  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(Conectado à assinatura do Microsoft 365) |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| OpenBrowserWindowApi 1.1  | Versão 1810 (build 16.0.11001.20074) ou posterior | Versão 1810 (build 16.0.11001.20074) ou posterior | 16.0.0.0 ou posterior | 16.0.0.0 ou posterior | N/D | N/D|
 
 > [!NOTE]
 > O conjunto de requisitos OpenBrowserWindowApi só está disponível da seguinte maneira:

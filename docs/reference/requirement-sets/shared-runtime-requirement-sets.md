@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
-ms.date: 04/08/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 25efc55c44242398bce684a9b56795d734d2a158
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152064"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445807"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 
@@ -19,9 +19,9 @@ Partes de um Office que executem código JavaScript, como painéis de tarefas, a
 
 A tabela a seguir lista o conjunto de requisitos SharedRuntime 1.1, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-|  Conjunto de requisitos  |  Office 2013 (ou posterior) no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365)   |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  | Servidor do Office Online |
+| Conjunto de requisitos | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) | Office no iPad<br>(conectado a uma assinatura do Microsoft 365) | Office no Mac<br>(conectado a uma assinatura do Microsoft 365) | Office na Web | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | N/A | Versão 2002 (build 12527.20092) ou posterior | N/A | 16.35 ou posterior | Fevereiro de 2020 | N/A |
+| SharedRuntime 1.1  | Versão 2002 (build 12527.20092) ou posterior | Versão 2002 (build 12527.20092) ou posterior | N/A | 16.35 ou posterior | Fevereiro de 2020 | N/A |
 
 > [!IMPORTANT]
 > O conjunto de requisitos de tempo de execução do JavaScript compartilhado só está disponível nas seguintes plataformas.

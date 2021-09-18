@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de Coerção de Imagens
 description: Suporte para conjuntos de requisitos de Coerção de Imagem com Office de Excel, PowerPoint e Word.
-ms.date: 02/19/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0f0b80c0af8213eaa9e3695373ddc037c2e60cc3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148572"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445799"
 ---
 # <a name="image-coercion-requirement-sets"></a>Conjuntos de requisitos de Coerção de Imagens
 
@@ -36,13 +36,13 @@ ImageCoercion 1.1 permite a conversão em uma imagem ( ) ao escrever `Office.Coe
 
 ImageCoercion 1.2 permite a conversão para o formato SVG ( ) ao escrever `Office.CoercionType.XmlSvg` dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) método. Os aplicativos a seguir são suportados.
 
-- Excel no Windows (conectado a uma assinatura de Microsoft 365)
-- Excel no Mac (conectado a uma assinatura de Microsoft 365)
-- PowerPoint no Windows (conectado a uma assinatura Microsoft 365 assinatura)
-- PowerPoint no Mac (conectado a uma assinatura de Microsoft 365)
+- Excel 2021 e posterior em Windows
+- Excel 2021 e posterior no Mac
+- PowerPoint 2021 e posterior em Windows
+- PowerPoint 2021 e posterior no Mac
 - PowerPoint Online
-- Word no Windows (conectado a uma assinatura Microsoft 365 de assinatura)
-- Word no Mac (conectado a Microsoft 365 assinatura)
+- Word 2021 e posterior no Windows
+- Word 2021 e posterior no Mac
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
