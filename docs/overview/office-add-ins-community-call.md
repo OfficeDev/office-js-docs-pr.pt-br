@@ -7,8 +7,8 @@ ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445723"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448743"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
@@ -32,7 +32,7 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Office Chamada da comunidade de complementos - 8 de julho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Office Chamada da comunidade de complementos - 10 de junho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
 - [Convite de calendário de chamada da comunidade mensal recorrente](https://aka.ms/officeaddinscommunitycall)
 - [Community perguntas e solicitações de tópicos de chamada](https://aka.ms/officeaddinsform)

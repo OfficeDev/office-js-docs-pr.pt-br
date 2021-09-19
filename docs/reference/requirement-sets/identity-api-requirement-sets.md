@@ -8,8 +8,8 @@ ms.openlocfilehash: e3af8767666d3015894c0b7bcdecd758b1a1547c
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445814"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448751"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -19,7 +19,7 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 |  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | 2008 (build 13127.20000) ou posterior | 2008 (build 13127.20000) ou posterior | Sem suporte | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
+| IdentityAPI 1.3  | 2008 (build 13127.20000) ou posterior | 2008 (build 13127.20000) ou posterior | Incompatível | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
 
 \*Atualmente, o conjunto de requisitos é suportado Office na Web apenas para documentos que são abertos Microsoft Office SharePoint Online e OneDrive.
 
