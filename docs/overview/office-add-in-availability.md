@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448758"
+ms.locfileid: "59450811"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 

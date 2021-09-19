@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448716"
+ms.locfileid: "59450783"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 

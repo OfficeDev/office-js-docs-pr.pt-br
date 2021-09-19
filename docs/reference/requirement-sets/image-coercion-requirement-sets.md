@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448709"
+ms.locfileid: "59450790"
 ---
 # <a name="image-coercion-requirement-sets"></a>Conjuntos de requisitos de Coerção de Imagens
 
