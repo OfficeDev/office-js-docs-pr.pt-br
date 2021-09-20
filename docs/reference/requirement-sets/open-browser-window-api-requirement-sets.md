@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448730"
+ms.locfileid: "59451947"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Conjuntos de requisitos da API da Janela do Navegador Aberto
 
