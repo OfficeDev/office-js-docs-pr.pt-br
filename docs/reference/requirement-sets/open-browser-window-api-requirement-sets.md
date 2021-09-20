@@ -8,8 +8,8 @@ ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59451947"
+ms.lasthandoff: 09/20/2021
+ms.locfileid: "59453113"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Conjuntos de requisitos da API da Janela do Navegador Aberto
 
