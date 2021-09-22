@@ -1,18 +1,18 @@
 ---
 title: Elemento GetStarted no arquivo de manifesto
 description: Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote.
-ms.date: 10/09/2018
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 355b72d4130f3a220e6a1257af51e371665d3cc3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152111"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474340"
 ---
 # <a name="getstarted-element"></a>Elemento GetStarted
 
-Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote. O elemento **GetStarted** é um elemento filho de [DesktopFormFactor](desktopformfactor.md).
+Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote. O elemento **GetStarted** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). Se o **elemento GetStarted** for omitido, o explicativo usará os valores dos elementos [DisplayName](displayname.md) e [Description.](description.md)
 
 ## <a name="child-elements"></a>Elementos filho
 

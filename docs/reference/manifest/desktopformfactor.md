@@ -1,14 +1,14 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: Especifica as configurações de um suplemento para o fator forma da área de trabalho.
-ms.date: 06/15/2021
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f89dff5626867258c8df93d5f047e3d08103e71b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f15840a7b6716cd8acabe9e061effa566d48930
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149057"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474326"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
@@ -22,7 +22,7 @@ Cada definição desktopFormFactor contém o **elemento FunctionFile** e um ou m
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
-| [GetStarted](getstarted.md)           | Não       | Define o texto explicante que aparece ao instalar o complemento no Word, Excel ou PowerPoint. |
+| [GetStarted](getstarted.md)           | Não       | Define o texto explicante que aparece ao instalar o complemento no Word, Excel ou PowerPoint. Se omitido, o callout usará os valores dos elementos [DisplayName](displayname.md) e [Description.](description.md) |
 | [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o Outlook está disponível em cenários de caixa de correio compartilhada (agora em visualização) e pastas compartilhadas (ou seja, acesso de representante). Definir como *false* por padrão. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
