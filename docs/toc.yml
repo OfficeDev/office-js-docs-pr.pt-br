@@ -535,9 +535,6 @@ items:
             href: reference/javascript-api-for-office-error-codes.md
           - name: Objetos de janela não suportados
             href: reference/window-objects-unsupported-in-add-ins.md
-      - name: Recursos
-        href: resources/resources-links-help.md
-        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
   - name: Excel
     items:
       - name: Documentação de suplementos do Excel
@@ -1281,14 +1278,19 @@ items:
       - name: Abrir no Excel
         href: excel/pnp-open-in-excel.md
         displayName: Excel
+  - name: Recursos
+    items:
+      - name: Recursos externos
+        href: resources/resources-links-help.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
       - name: Chamada à comunidade de Suplementos do Office
         href: overview/office-add-ins-community-call.md
-  - name: Recursos de transição VSTO e COM
-    items:
-      - name: Guia do desenvolvedor do suplemento VSTO
-        href: overview/learning-path-transition.md
-      - name: Compartilhar o código de Suplemento VSTO com o Suplemento do Office
-        href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-      - name: Faça seu suplemento do Office ser compatível com um suplemento COM existente
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
+      - name: Recursos de transição VSTO e COM
+        items:
+          - name: Guia do desenvolvedor do suplemento VSTO
+            href: overview/learning-path-transition.md
+          - name: Compartilhar o código de Suplemento VSTO com o Suplemento do Office
+            href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+          - name: Faça seu suplemento do Office ser compatível com um suplemento COM existente
+            href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+            displayName: manifest
