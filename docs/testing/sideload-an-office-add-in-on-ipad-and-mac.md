@@ -1,18 +1,21 @@
 ---
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: Teste seu Office de iPad e Mac ao fazer sideload.
-ms.date: 09/02/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 04609f8cceee20403c25ec91a8ca75adf82b51c4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38c2d39cf5dc997492899a41e430413e2ae388b4
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152163"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990716"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
 Para ver como seu suplemento será executado no Office no iOS, você pode realizar o sideload do manifesto do seu suplemento em um iPad usando o iTunes ou realizar o sideload do manifesto do suplemento diretamente no Office no Mac. Esta ação não permite definir pontos de interrupção e depurar o código do seu suplemento enquanto ele estiver em execução, mas é possível ver como ele se comporta e verificar se a interface do usuário é utilizável e está sendo processada adequadamente.
+
+> [!NOTE]
+> Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 ## <a name="prerequisites-for-office-on-ios"></a>Pré-requisitos do Office no iOS
 
@@ -79,9 +82,6 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>Realizar sideload de um suplemento no Office no Mac
 
-> [!NOTE]
-> Para realizar o sideload de um suplemento do Outlook no Mac, confira [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md).
-
 1. Abra **Terminal** e vá para uma das seguintes pastas onde você salvará o arquivo de manifesto do seu complemento. Se a pasta `wef` não existir em seu computador, crie-a.
 
     - Para o Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
@@ -109,6 +109,7 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 Você pode remover um complemento com sideload anteriormente limpando o cache Office em seu computador. Detalhes sobre como limpar o cache de cada plataforma e aplicativo podem ser encontrados no artigo [Limpar o Office cache](clear-cache.md).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Ver também
 
-- [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Depurar suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)

@@ -1,14 +1,14 @@
 ---
 title: Faça seu suplemento do Office ser compatível com um suplemento COM existente
 description: Habilita a compatibilidade entre seu Office e o seu complemento COM equivalente.
-ms.date: 08/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e84bce51e0233f7186b22e6571ec3968ea8d8ed5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f401e2ea15fde54401e329262dd783887f025af
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148752"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990570"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -16,14 +16,7 @@ Se você tiver um complemento COM existente, poderá criar funcionalidade equiva
 
 Você pode configurar seu Office Add-in para que, quando o complemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows executa o add-in COM em vez do Office Add-in. O add-in COM é chamado de "equivalente" porque o Office fará uma transição perfeita entre o complemento COM e o Office De acordo com o qual está instalado o computador de um usuário.
 
-> [!NOTE]
-> Esse recurso é suportado pela plataforma e aplicativos a seguir, quando conectado a uma assinatura Microsoft 365. Os complementos COM não podem ser instalados em qualquer outra plataforma, portanto, nessas plataformas, o elemento de manifesto discutido posteriormente neste artigo, , é `EquivalentAddins` ignorado.
->
-> - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
-> - Outlook no Windows (versão 2102 ou posterior) em uma versão de servidor Exchange com suporte
->   - Exchange Online
->   - Exchange Atualização Cumulativa 10 ou posterior de 2019 ([KB5003612](https://support.microsoft.com/topic/b1434cad-3fbc-4dc3-844d-82568e8d4344))
->   - Exchange Atualização Cumulativa 21 ou posterior de 2016 ([KB5003611](https://support.microsoft.com/topic/b7ba1656-abba-4a0b-9be9-dac45095d969))
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Especificar um complemento COM equivalente
 
@@ -119,6 +112,6 @@ O complemento COM/VSTO deve ser conectado quando o Outlook for iniciado para que
 
 Se o complemento COM/VSTO for desconectado durante uma sessão de Outlook subsequente, o complemento da Web provavelmente permanecerá desabilitado até que Outlook seja reiniciado.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Ver também
 
 - [Tornar suas funções personalizadas compatíveis com funções definidas pelo usuário XLL](../excel/make-custom-functions-compatible-with-xll-udf.md)

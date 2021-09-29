@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
-ms.date: 09/03/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9740b62a0587b2453edbef17d0be51114d0c51f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148724"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990653"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
@@ -92,7 +92,7 @@ O usuário desencadeou uma operação que chama o `getAccessToken` antes de uma 
 
 ### <a name="13010"></a>13010
 
-O usuário está executando o suplemento no Office, no Microsoft Edge ou no Internet Explorer. O domínio Microsoft 365 usuário e o domínio estão em zonas de segurança diferentes `login.microsoftonline.com` nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
+O usuário está executando o Office no Microsoft Edge. O domínio Microsoft 365 usuário e o domínio estão em zonas de segurança diferentes `login.microsoftonline.com` nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
 ### <a name="13012"></a>13012
 

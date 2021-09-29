@@ -1,18 +1,20 @@
 ---
 title: Elemento SourceLocation para funções personalizadas no arquivo de manifesto
 description: Define a localização de um recurso necessário para os elementos de Página ou Script usados por funções personalizadas no Excel.
-ms.date: 08/07/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d5607fbb02c1925137e1a143b7715c7c87c6fa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f2d881f31f4e46e7f5bb8ab30d78abd0e9b7200
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149071"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990681"
 ---
 # <a name="sourcelocation-element-custom-functions"></a>Elemento SourceLocation (funções personalizadas)
 
 Define a localização de um recurso necessário para os elementos de Página ou Script usados por funções personalizadas no Excel.
+
+**Tipo de complemento:** Função personalizada
 
 ## <a name="attributes"></a>Atributos
 

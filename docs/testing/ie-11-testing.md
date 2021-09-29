@@ -1,14 +1,14 @@
 ---
 title: Teste do Internet Explorer 11
 description: Teste seu Office no Internet Explorer 11.
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f5add8e61dc686e413cfb83b248185d40b2a624f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149034"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990772"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Testar seu Office de usuário no Internet Explorer 11
 
@@ -17,7 +17,7 @@ ms.locfileid: "59149034"
 >
 > A Microsoft está encerrando o suporte para o Internet Explorer, mas isso não afeta significativamente Office Desempios. Algumas combinações de plataformas e versões Office, incluindo todas as versões de compra única por meio do Office 2019, continuarão a usar o controle webview que vem com o Internet Explorer 11 para hospedar os complementos, conforme explicado em Navegadores usados por Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, o suporte a essas combinações e, portanto, para o Internet Explorer, ainda é necessário para os complementos enviados ao [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Duas coisas *estão mudando:*
 >
-> - O AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
+> - Office na Web abre mais no Internet Explorer. Consequentemente, o AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
 > - A [Script Lab não](../overview/explore-with-script-lab.md) dá mais suporte ao Internet Explorer.
 
 Se você planeja comercializar seu complemento por meio do AppSource ou planeja dar suporte a versões mais antigas do Windows e Office, o seu complemento deve funcionar no controle de navegador in-loca que se baseia no Internet Explorer 11 (IE11). Você pode usar uma linha de comando para alternar de tempos de execução mais modernos usados pelos complementos para o tempo de execução do Internet Explorer 11 para esse teste. Para obter informações sobre quais versões do Windows e Office usam o controle de exibição da Web do Internet Explorer 11, consulte Navegadores usados por [Office Dep.](../concepts/browsers-used-by-office-web-add-ins.md)
@@ -33,7 +33,7 @@ Se você planeja comercializar seu complemento por meio do AppSource ou planeja 
 > Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
 > [!NOTE]
-> Para testar seu complemento no navegador do Internet Explorer 11, abra o Office na Web no Internet Explorer e coloque o [sideload do add-in](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+> Office na Web não pode ser aberto no Internet Explorer 11, portanto, você não pode (e não precisa) testar seu complemento no Office na Web com o Internet Explorer.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

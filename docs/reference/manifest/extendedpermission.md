@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtendedPermission no arquivo de manifesto
 description: Define uma permissão estendida que o complemento precisa para acessar a API ou recurso associado.
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3655ff43088e4506c8bf4125a4a9fae1ef721b4e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 127ad4ea1df0d069a12f642e8fafdfcad006d715
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151758"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990779"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` elemento
 
@@ -16,6 +16,8 @@ Define uma permissão estendida que o complemento precisa para acessar a API ou 
 
 > [!IMPORTANT]
 > O suporte a esse elemento foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+
+**Tipo de suplemento:** Email
 
 ## <a name="available-extended-permissions"></a>Permissões estendidas disponíveis
 

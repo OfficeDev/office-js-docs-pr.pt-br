@@ -1,14 +1,14 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa executar Office Desajustes.
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148666"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990555"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -66,7 +66,7 @@ Estas são as versões mínimas do cliente do Office para Mac que suporta suplem
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>Requisitos de cliente: Suporte do navegador para clientes da Web do Office Online e SharePoint
 
-Qualquer navegador compatível com ECMAScript 5.1, HTML5 e CSS3, como o Internet Explorer 11, Microsoft Edge em sua versão mais recente, Chrome, Firefox ou Safari (Mac OS).
+Qualquer navegador, exceto o Internet Explorer, que oferece suporte a ECMAScript 5.1, HTML5 e CSS3, como Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphones e tablets sem Windows

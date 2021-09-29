@@ -1,14 +1,14 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com.
-ms.date: 09/08/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148573"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990814"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
@@ -65,7 +65,7 @@ Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Teste seus suplementos no celular
 
-Para testar um suplemento no Outlook Mobile, você pode carregar um suplemento para uma conta do O365 ou do Outlook.com. No Outlook na Web, acesse a engrenagem de configurações e escolha **Gerenciar Integrações** ou **Gerenciar Suplementos**. Perto da parte superior, clique onde diz: **Clique aqui para adicionar um suplemento personalizado** e carregue seu manifesto. Verifique se seu manifesto está formatado corretamente para conter `MobileFormFactor` ou ele não será carregado.
+Para testar um complemento no Outlook Mobile, primeiro coloque um [sideload](sideload-outlook-add-ins-for-testing.md) de um complemento em uma conta O365 ou Outlook.com na Web, Windows ou Mac. Certifique-se de que o manifesto está formatado corretamente para conter ou ele não será carregado no `MobileFormFactor` cliente Outlook no celular.
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 

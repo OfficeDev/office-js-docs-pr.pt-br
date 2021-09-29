@@ -1,18 +1,21 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 05/13/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148978"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990702"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
 Você pode usar sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
+
+> [!IMPORTANT]
+> Se o seu Outlook add-in for compatível com dispositivos móveis, o sideload do manifesto usando as instruções neste artigo para seu cliente Outlook na Web, Windows ou Mac, siga as diretrizes na seção Testando seus **complementos** no celular do artigo [Add-ins for Outlook Mobile.](outlook-mobile-addins.md#testing-your-add-ins-on-mobile)
 
 ## <a name="sideload-automatically"></a>Sideload automaticamente
 
@@ -128,3 +131,7 @@ Em todas as versões do Outlook, a chave para remover um complemento sideload é
 Para navegar até a caixa de diálogo Meus **Complementos** para seu cliente Outlook, use as últimas etapas listadas para [sideload manual](#sideload-manually) nas seções anteriores deste artigo.
 
 Para remover um complemento sideload do Outlook, use as etapas descritas anteriormente neste artigo para encontrar o add-in na seção **Complementos personalizados** da caixa de diálogo que lista seus complementos instalados. Escolha a reellipse ( ) para o complemento e `...` escolha **Remover** para remover esse complemento específico. Feche a caixa de diálogo.
+
+## <a name="see-also"></a>Ver também
+
+- [Suplementos do Outlook Mobile](outlook-mobile-addins.md)

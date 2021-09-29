@@ -1,14 +1,14 @@
 ---
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
 description: Habilitar a compatibilidade Excel funções definidas pelo usuário XLL que tenham funcionalidade equivalente às suas funções personalizadas
-ms.date: 08/24/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f920fb6c9a25907fc475cfd29b844ef00f9a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 82d1120e68a69bee74a6fe1911bbd8d3ccb3fb00
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151794"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990709"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -17,8 +17,7 @@ ms.locfileid: "59151794"
 
 Se você tiver os Excel XLL existentes, poderá criar complementos de função personalizada equivalentes usando Excel API JavaScript do Excel para estender seus recursos de solução para outras plataformas, como Excel na Web ou em um Mac. No entanto, Excel de API JavaScript não têm todas as funcionalidades disponíveis em complementos XLL. Dependendo da funcionalidade que sua solução usa, o complemento XLL pode oferecer uma experiência melhor do que o Excel de API JavaScript do Excel no Windows.
 
-> [!IMPORTANT]
-> O complemento COM e a compatibilidade da função definida pelo usuário XLL (UDF) são compatíveis com o Excel no Windows (versão 1904 ou posterior). O add-in COM e a compatibilidade de função definida pelo usuário XLL (UDF) não são compatíveis com Excel na Web ou no Mac.
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar XLL equivalente no manifesto
 
@@ -56,7 +55,7 @@ A tabela a seguir compara os recursos entre funções definidas pelo usuário XL
 
 |         |Função definida pelo usuário XLL |Funções personalizadas compatíveis com XLL |Excel Função personalizada do add-in da API JavaScript |
 |---------|---------|---------|---------|
-| **Plataformas compatíveis** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
+| **Plataformas com suporte** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | **Formatos de arquivo com suporte** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Preenchimento automático de fórmula** | Não | Sim | Sim |
 | **Streaming** | Possível por meio de retorno de chamada xlfRTD e XLL. | Sim | Sim |
@@ -64,9 +63,9 @@ A tabela a seguir compara os recursos entre funções definidas pelo usuário XL
 | **Funções voláteis** | Sim | Sim | Sim |
 | **Suporte a recálculo com vários threads** | Sim | Sim | Sim |
 | **Comportamento de cálculo** | Sem interface do usuário. Excel pode ser não responsivo durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| **Conjuntos de requisitos** | N/A | CustomFunctions 1.1 e posterior | CustomFunctions 1.1 e posterior |
+| **Conjuntos de requisitos** | N/D | CustomFunctions 1.1 e posterior | CustomFunctions 1.1 e posterior |
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Ver também
 
 - [Torne o seu suplemento do Office compatível com um suplemento COM existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

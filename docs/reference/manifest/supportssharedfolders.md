@@ -3,12 +3,12 @@ title: Elemento SupportsSharedFolders no arquivo de manifesto
 description: O elemento SupportsSharedFolders define se o Outlook está disponível em pastas compartilhadas e cenários de caixa de correio compartilhadas.
 ms.date: 06/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a7cbe1c6549c8a93a6ecceab9e4bdaba07001f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fed9d98fb993e8568e9ff27b3a3bd44d64efa279
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151993"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990506"
 ---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 
@@ -16,6 +16,8 @@ Define se o Outlook está disponível em cenários de caixa de correio compartil
 
 > [!IMPORTANT]
 > O suporte a esse elemento foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+
+**Tipo de suplemento:** Email
 
 A seguir, um exemplo do **elemento SupportsSharedFolders.**
 

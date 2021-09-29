@@ -1,14 +1,14 @@
 ---
 title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Javascript do Internet Explorer 11 e do ES5 no seu complemento.
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 963d5139a37393e9b09b0df40f1d76190b6526c7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3edab25361b8ababf8a004f25e8012ca23a085ab
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148725"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990520"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 
@@ -17,7 +17,7 @@ ms.locfileid: "59148725"
 >
 > A Microsoft está encerrando o suporte para o Internet Explorer, mas isso não afeta significativamente Office Desempios. Algumas combinações de plataformas e versões Office, incluindo todas as versões de compra única por meio do Office 2019, continuarão a usar o controle webview que vem com o Internet Explorer 11 para hospedar os complementos, conforme explicado em Navegadores usados por Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, o suporte a essas combinações e, portanto, para o Internet Explorer, ainda é necessário para os complementos enviados ao [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Duas coisas *estão mudando:*
 >
-> - O AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
+> - Office na Web abre mais no Internet Explorer. Consequentemente, o AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
 > - A [Script Lab não](../overview/explore-with-script-lab.md) dá mais suporte ao Internet Explorer.
 
 Office Os complementos são aplicativos Web que são exibidos dentro de IFrames ao executar em Office na Web. Office Os complementos são exibidos usando controles de navegador incorporados ao executar Office em Windows ou Office no Mac. Os controles de navegador incorporados são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.

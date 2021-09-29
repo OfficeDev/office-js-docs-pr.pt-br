@@ -1,20 +1,22 @@
 ---
 title: Elemento EquivalentAddin no arquivo de manifesto
 description: Especifica a compatibilidade com vertida para um complemento COM ou XLL equivalente.
-ms.date: 03/09/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e0842a0a5663d6221e854881aef28004ad2a8705
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f77a70681c8a12674d9e22022276e511552861ad
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151813"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990688"
 ---
 # <a name="equivalentaddin-element"></a>Elemento EquivalentAddin
 
 Especifica a compatibilidade com vertida para um complemento COM ou XLL equivalente.
 
-**Tipo de complemento:** Painel de tarefas, função Personalizada
+[!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
+
+**Tipo de complemento:** Painel de tarefas, Email, Função Personalizada
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,7 +32,7 @@ Especifica a compatibilidade com vertida para um complemento COM ou XLL equivale
 
 ## <a name="must-contain"></a>Deve conter
 
-[Tipo](type.md)
+[Type](type.md)
 
 ## <a name="can-contain"></a>Pode conter
 

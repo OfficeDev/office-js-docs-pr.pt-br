@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros do usuário em Office de complementos.
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152144"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990541"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -67,9 +67,9 @@ Quando o usuário usa um suplemento do Office, ele é solicitado a permitir a ex
 
 |**Navegadores afetados**|**Plataformas afetadas**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office na Web|
+|Microsoft Edge|Office na Web|
 
-Para resolver o problema, os administradores ou usuários finais podem adicionar o domínio do suplemento à lista de sites confiáveis no Internet Explorer. Use o mesmo procedimento se estiver trabalhando com o navegador Internet Explorer ou Microsoft Edge.
+Para resolver o problema, os usuários finais ou administradores podem adicionar o domínio do add-in à lista de sites confiáveis no Microsoft Edge navegador.
 
 > [!IMPORTANT]
 > Caso não confie no suplemento, não adicione a respectiva URL à lista de sites confiáveis.

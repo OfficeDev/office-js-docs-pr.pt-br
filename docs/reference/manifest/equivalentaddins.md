@@ -1,20 +1,22 @@
 ---
 title: Elemento EquivalentAddins no arquivo de manifesto
 description: Especifica a compatibilidade com compatibilidade com um complemento COM equivalente, XLL ou ambos.
-ms.date: 03/09/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 99a1bad6149bdc1b14e658a0bae19742a11a12b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d32f67f49d334a75433aec2d079b45a44a04121a
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151812"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990807"
 ---
 # <a name="equivalentaddins-element"></a>Elemento EquivalentAddins
 
 Especifica a compatibilidade com compatibilidade com um complemento COM equivalente, XLL ou ambos.
 
-**Tipo de complemento:** Painel de tarefas, função Personalizada
+[!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
+
+**Tipo de complemento:** Painel de tarefas, Email, Função Personalizada
 
 ## <a name="syntax"></a>Sintaxe
 

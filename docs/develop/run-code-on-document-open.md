@@ -1,14 +1,14 @@
 ---
 title: Execute o código em seu Suplemento do Office quando o documento for aberto
 description: Saiba como executar código em seu Office de complemento quando o documento for aberto.
-ms.date: 12/28/2020
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce550284a10a9410978402f087c2caf231a5917f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148730"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990548"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Execute o código em seu Suplemento do Office quando o documento for aberto
 
@@ -29,23 +29,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > O `setStartupBehavior` método é assíncrono.
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurar o seu add-in para nenhum comportamento de carga ao abrir o documento
-
-O código a seguir configura o seu complemento para não ser aberto quando o documento é aberto. Em vez disso, ele começará quando o usuário o envolver de alguma forma, como escolher um botão de faixa de opções ou abrir o painel de tarefas.
-
-```JavaScript
-Office.addin.setStartupBehavior(Office.StartupBehavior.none);
-```
-
-## <a name="get-the-current-load-behavior"></a>Obter o comportamento de carga atual
-
-Para determinar qual é o comportamento atual de inicialização, execute a seguinte função, que retorna um `Office.StartupBehavior` objeto.
-
-```JavaScript
-let behavior = await Office.addin.getStartupBehavior();
-```
-
-## <a name="how-to-run-code-when-the-document-opens"></a>Como executar código quando o documento é aberto
+## <a name="place-startup-code-in-officeinitialize"></a>Colocar código de inicialização em Office.initialize
 
 Quando o seu add-in estiver configurado para carregar no documento aberto, ele será executado imediatamente. O `Office.initialize` manipulador de eventos será chamado. Coloque seu código de inicialização no `Office.initialize` manipulador `Office.onReady` de eventos ou.
 
@@ -103,7 +87,23 @@ async function onChange(event) {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurar o seu add-in para nenhum comportamento de carga ao abrir o documento
+
+O código a seguir configura o seu complemento para não ser aberto quando o documento é aberto. Em vez disso, ele começará quando o usuário o envolver de alguma forma, como escolher um botão de faixa de opções ou abrir o painel de tarefas.
+
+```JavaScript
+Office.addin.setStartupBehavior(Office.StartupBehavior.none);
+```
+
+## <a name="get-the-current-load-behavior"></a>Obter o comportamento de carga atual
+
+Para determinar qual é o comportamento atual de inicialização, execute a seguinte função, que retorna um `Office.StartupBehavior` objeto.
+
+```JavaScript
+let behavior = await Office.addin.getStartupBehavior();
+```
+
+## <a name="see-also"></a>Ver também
 
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Compartilhar dados e eventos entre Excel funções personalizadas e tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
