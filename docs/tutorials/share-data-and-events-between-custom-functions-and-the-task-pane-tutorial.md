@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas'
 description: Aprenda como compartilhar dados e eventos no Excel entre as funções personalizadas e o painel de tarefas.
-ms.date: 08/04/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 0d42329d08de9db35d15d122321d771f6017b937
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152022"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990527"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -52,7 +52,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
    ```
 
 > [!NOTE]
-> Se seu suplemento inclui o elemento `Runtimes` no manifesto, ele utiliza o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
+> Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](../reference/manifest/runtimes.md) e [navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 4. No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **ContosoAddin.Url**.
 
