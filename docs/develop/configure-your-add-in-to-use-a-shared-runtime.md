@@ -1,15 +1,15 @@
 ---
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 title: Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990562"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138460"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -40,7 +40,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
 
 1. Inicie o Visual Studio Code e abra o projeto de suplemento do Excel ou PowerPoint que você gerou.
 1. Abra o arquivo **manifest.xml**.
-1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](../reference/requirement-sets/shared-runtime-requirement-sets.md) em vez do tempo de execução da função personalizada. O XML deve aparecer da seguinte maneira.
+1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](../reference/requirement-sets/shared-runtime-requirement-sets.md) em vez do tempo de execução de função personalizada. O XML deve aparecer da seguinte maneira.
 
     ```xml
     <Hosts>
@@ -188,7 +188,7 @@ Cada vez que você selecionar o botão suplementos, ele mudará o texto do botã
 
 ## <a name="runtime-lifetime"></a>Duração do tempo de execução
 
-Ao adicionar o elemento `Runtime`, você também especifica uma vida útil com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar os recursos, como iniciar o suplemento quando o documento for aberto, continuar executando o código após o fechamento do painel de tarefas ou usar o CORS e o DOM nas funções personalizadas.
+Ao adicionar o elemento `Runtime`, você também especifica um tempo de vida com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar as vantagens dos recursos, como iniciar seu suplemento quando o documento for aberto, continuar a executar o código depois que o painel de tarefas for fechado ou usar CORS e DOM de funções personalizadas.
 
 > [!NOTE]
 > O valor padrão de tempo de vida é `short`, mas recomendamos usar o `long` em suplementos do Excel. Se você definir o tempo de execução como `short` neste exemplo, o suplemento do Excel será iniciado quando um dos botões da faixa de opções for pressionado, mas poderá ser encerrado depois que o manipulador da faixa de opções for concluído. Da mesma forma, o suplemento será iniciado quando o painel de tarefas for aberto, mas pode ser encerrado quando o painel de tarefas for fechado.
@@ -226,7 +226,7 @@ Para Office no Windows, o tempo de execução compartilhado usa Microsoft Edge c
 
 ### <a name="debugging"></a>Depuração
 
-Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, consulte [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, confira [Suplementos de depuração usando ferramentas de desenvolvedor no Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md).
 
 ### <a name="multiple-task-panes"></a>Vários painéis de tarefas
 
@@ -234,7 +234,7 @@ Não projete seu suplemento para usar vários painéis de tarefas se você plane
 
 ## <a name="give-us-feedback"></a>Envie-nos seus comentários
 
-Adoraríamos ouvir seus comentários sobre esse recurso. Se você encontrar algum bug ou problema, ou tiver solicitações sobre esse recurso, informe-nos criando um problema do GitHub no [repositório office-js](https://github.com/OfficeDev/office-js).
+Adoraríamos ouvir seus comentários sobre esse recurso. Se você encontrar algum bug, problema ou tiver solicitações sobre esse recurso, informe-nos criando um problema do GitHub no [repositório office-js](https://github.com/OfficeDev/office-js).
 
 ## <a name="see-also"></a>Confira também
 

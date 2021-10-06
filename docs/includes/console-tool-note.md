@@ -1,2 +1,2 @@
 > [!NOTE]
-> Para ver o `console.log` output, você precisará de um conjunto separado de ferramentas para desenvolvedores para um console de JavaScript. Visite [depurar suplementos usando as ferramentas de desenvolvedor do Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md) para saber mais sobre as ferramentas F12 e o Microsoft Edge DevTools.
+> Para ver o `console.log` output, você precisará de um conjunto separado de ferramentas para desenvolvedores para um console de JavaScript. Visite [depurar suplementos usando as ferramentas de desenvolvedor do Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md) para saber mais sobre as ferramentas F12 e o Microsoft Edge DevTools.

@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 575ab4006187d6986f6ed79fc20e87e5b22725cb
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 0e3d03303bea1b26f9cf982b59e58865fb683f5d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474354"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138510"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -33,7 +33,7 @@ Se a pasta a seguir existir, exclua seu conteúdo também.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-Para remover um suplemento sideload do Outlook, use as etapas descritas em [Suplementos Sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **Suplementos Personalizados** da caixa de diálogo que lista seus suplementos instalados. Escolha as reticências (`...`) para o suplemento e, em seguida, escolha **Remover** para remover esse suplemento específico. Se a remoção do suplemento não funcionar, exclua o conteúdo da pasta `Wef` conforme observado anteriormente para Excel, Word e PowerPoint.
+Para remover um suplemento sideload do Outlook, use as etapas descritas em [Suplementos de sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **Suplementos personalizados** da caixa de diálogo caixa que lista seus suplementos instalados. Escolha as reticências (`...`) para o suplemento e escolha **Remover** para remover esse suplemento específico. Se a remoção do suplemento não funcionar, exclua o conteúdo da pasta `Wef` conforme observado anteriormente para Excel, Word e PowerPoint.
 
 Além disso, para limpar o cache do Office no Windows 10 quando o suplemento estiver sendo executado no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
 
@@ -41,7 +41,7 @@ Além disso, para limpar o cache do Office no Windows 10 quando o suplemento est
 > Se você deseja apenas que o suplemento sideloaded reflita as alterações recentes em seus arquivos de origem HTML ou JavaScript, não deve ser necessário limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **Ctrl+F5** para recarregar o suplemento.
 
 > [!NOTE]
-> Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface de usuário, por exemplo, um que use o recurso [em envio](../outlook/outlook-on-send-addins.md), você precisará adicionar um painel de tarefas ao seu suplemento que use o mesmo domínio para [SourceLocation](../reference/manifest/sourcelocation.md), antes de poder usar as etapas a seguir para limpar o cache.
+> Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface do usuário - por exemplo, um que usa o recurso [ao enviar](../outlook/outlook-on-send-addins.md) - você precisará adicionar um painel de tarefas ao seu suplemento que usa o mesmo domínio para [SourceLocation](../reference/manifest/sourcelocation.md), antes de usar as etapas a seguir para limpar o cache.
 
 1. Instalar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 
@@ -67,12 +67,12 @@ Além disso, para limpar o cache do Office no Windows 10 quando o suplemento est
 
 ## <a name="clear-the-office-cache-on-ios"></a>Limpar o cache do Office no iOS
 
-Para limpar o cache do Office no iOS, chame `window.location.reload(true)` a partir do JavaScript no suplemento para forçar um recarregamento. Alternativamente, reinstalar o Office.
+Para limpar o cache do Office no iOS, chame `window.location.reload(true)` do JavaScript no suplemento para forçar uma recarga. Como alternativa, reinstale o Office.
 
 ## <a name="see-also"></a>Veja também
 
 - [Solucionar erros de desenvolvimento com Suplementos do Office](troubleshoot-development-errors.md)
-- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
