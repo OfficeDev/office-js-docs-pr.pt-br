@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450783"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138496"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 
@@ -21,10 +21,10 @@ A tabela a seguir lista o conjunto de requisitos SharedRuntime 1.1, os aplicativ
 
 | Conjunto de requisitos | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) | Office no iPad<br>(conectado a uma assinatura do Microsoft 365) | Office no Mac<br>(conectado a uma assinatura do Microsoft 365) | Office na Web | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Versão 2002 (build 12527.20092) ou posterior | Versão 2002 (build 12527.20092) ou posterior | N/A | 16.35 ou posterior | Fevereiro de 2020 | N/A |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou posterior | Versão 2002 (build 12527.20092) ou posterior | N/D | 16.35 ou posterior | Fevereiro de 2020 | N/D |
 
 > [!IMPORTANT]
-> O conjunto de requisitos de tempo de execução do JavaScript compartilhado só está disponível nas seguintes plataformas.
+> O conjunto de requisitos de tempo de execução do JavaScript compartilhado está disponível apenas nas plataformas e aplicativos Office a seguir.
 >
 > - Excel na web, Windows e Mac.
 > - PowerPoint no Windows (build 13218.10000 ou posterior). O tempo de execução de JavaScript compartilhado para PowerPoint está atualmente em pré-visualização e sujeito a alterações. Não é compatível para uso em ambientes de produção. Para obter o build mais recente, você precisa [Ingressar no Office Insider](https://insider.office.com/join). Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).

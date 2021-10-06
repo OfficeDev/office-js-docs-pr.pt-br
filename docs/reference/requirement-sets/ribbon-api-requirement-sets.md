@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos comuns da API
 description: Especifica quais plataformas Office e builds suportam as APIs dinâmicas da faixa de opções.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445709"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138706"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
@@ -21,8 +21,8 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 |  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | 2102 (build 13801.20294) | 2102 (build 13801.20294) | N/D | Sem suporte | Maio de 2021 | N/A|
-| RibbonApi 1.1  | 2102 (build 13801.20294) | Consulte suporte<br>seção abaixo | N/A | 16.38 | Novembro de 2020 | N/A|
+| RibbonApi 1.2  | Build 16.0.14326.20454 ou posterior | 2102 (build 13801.20294) | N/D | Sem suporte | Maio de 2021 | N/D|
+| RibbonApi 1.1  | Build 16.0.14326.20454 ou posterior | Consulte suporte<br>seção abaixo | N/D | 16.38 | Novembro de 2020 | N/D|
 
 > **&#42;** A API da Faixa de Opções é suportada somente Excel.
 

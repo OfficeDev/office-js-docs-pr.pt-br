@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização javascript do Word
-description: Detalhes sobre as APIs JavaScript do Word futuras
+description: Detalhes sobre as FUTURAS APIs JavaScript do Word.
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0aedc0dac2c4af62bf1e21b1c46690a27cbcfc95
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151824"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138770"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização javascript do Word
 
@@ -65,7 +65,7 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização.
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Obtém as partes XML personalizadas no documento.|
 ||[configurações](/javascript/api/word/word.documentcreated#settings)|Obtém as configurações do complemento no documento.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Obtém o formato da imagem em linha.|
-|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Obtém a fonte do marcador, número ou imagem no nível especificado na lista.|
+|[Lista](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Obtém a fonte do marcador, número ou imagem no nível especificado na lista.|
 ||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Obtém a representação de cadeia de caracteres codificada base64 da imagem no nível especificado na lista.|
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Redefine a fonte do marcador, número ou imagem no nível especificado na lista.|
 ||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|Define a imagem no nível especificado na lista.|

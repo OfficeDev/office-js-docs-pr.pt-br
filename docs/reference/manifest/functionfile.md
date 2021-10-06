@@ -1,14 +1,14 @@
 ---
 title: Elemento FunctionFile no arquivo de manifesto
 description: Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário.
-ms.date: 11/06/2020
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 443fde5cc5456508556962254ecceb6bd717e8a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8d65e8d8ba94dd63dc82c0519260157b1d22a62
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152113"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138755"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
@@ -17,7 +17,22 @@ Especifica o arquivo de código-fonte para operações que um complemento expõe
 * Comandos de complemento que executam uma função JavaScript em vez de exibir a interface do usuário.
 * Atalhos de teclado que executam uma função JavaScript.
 
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
 O `FunctionFile` elemento é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O atributo do elemento não pode ter mais de 32 caracteres e é definido como o valor do atributo de um elemento no elemento que contém a URL para um arquivo HTML que contém ou carrega todas as funções `resid` `FunctionFile` `id` `Url` `Resources` JavaScript usadas [](control.md)por botões de comando de complemento sem interface do usuário, conforme definido pelo elemento Control .
+
+> [!NOTE]
+> Quando o add-in é configurado para usar um tempo de execução [compartilhado,](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)as funções no arquivo de código são executados no mesmo tempo de execução javascript (e compartilham um namespace global comum) que o JavaScript no painel de tarefas do complemento (se for o caso).
+>
+> O elemento e o arquivo de código associado também têm uma função especial para executar com atalhos de teclado `FunctionFile` [personalizados,](../../design/keyboard-shortcuts.md)que exigem um tempo de execução compartilhado.
 
 A seguir, um exemplo do `FunctionFile` elemento.
 

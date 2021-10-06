@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf76b90405f5a4853f5a53411b28d429b1eb4b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 333096d1ea63696e854b35c103da5d5670a940f3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152115"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138666"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -141,4 +141,4 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Limpar o cache do Office](clear-cache.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
-- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows.md)

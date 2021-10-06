@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 08/27/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3715741981f3d287adc85f3545d81fe9a7565bb2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a9d94956bc4adaa0910cdb54e6be406a84f594f3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148955"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138587"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -170,7 +170,7 @@ Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no
 
 O suporte a recursos para pastas compartilhadas (ou seja, acesso de representante) foi lançado no conjunto [de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). No entanto, o suporte para caixas de correio compartilhadas agora está disponível na visualização. Para saber mais, consultar [Habilitar pastas compartilhadas e cenários de caixas de correio compartilhada](../../../outlook/delegate-access.md).
 
-**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365), Outlook na Web (moderno), Outlook no Mac
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,20 +1,20 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
-ms.date: 07/08/2020
+ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: e948f3023613780af48bdad655230db03b740821
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148651"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138489"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
 O arquivo de manifesto XML de um Suplemento do Office descreve como seu suplemento deve ser ativado quando um usuário final o instala e usa com os aplicativos e documentos do Office.
 
-Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do Office faça o seguinte:
+Um arquivo de manifesto XML permite que um Suplemento do Office faça o seguinte:
 
 * Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
@@ -146,6 +146,57 @@ O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal 
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## <a name="version-overrides-in-the-manifest"></a>Substituições de versão no manifesto
+
+O elemento opcional [VersionOverrides](../reference/manifest/versionoverrides.md) merece uma menção especial. Ele contém marcação infantil que habilita a recursos de suplemento adicionais. Alguns deles são:
+
+ - Personalizando a faixa de opções do Office e os menus.
+ - Personalizando como o Office funcionará com o runtime do navegador incorporado no qual os suplementos serão executados.
+ - Configurando como o suplemento interage com o Azure Active Directory e o Microsoft Graph para o Logon único.
+
+Alguns elementos descendentes de `VersionOverrides` têm valores que substituem os valores do elemento pai `OfficeApp`. Por exemplo, o elemento `Hosts` em `VersionOverrides` substitui o elemento `Hosts` em `OfficeApp`.
+
+O elemento `VersionOverrides` tem seu próprio esquema, na verdade quatro deles, dependendo do tipo de ação e dos recursos que utiliza. Os esquemas são:
+
+- [Painel de tarefas 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
+- [Conteúdo 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
+- [Email 1.0](/openspecs/office_file_formats/ms-owemxml/578d8214-2657-4e6a-8485-25899e772fac)
+- [Email 1.1](/openspecs/office_file_formats/ms-owemxml/8e722c85-eb78-438c-94a4-edac7e9c533a)
+
+Quando um elemento `VersionOverrides` é utilizado, então o elemento `OfficeApp` deve ter um atributo `xmlns` que identifica o esquema apropriado. Os possíveis valores do atributo são os seguintes:
+
+- `http://schemas.microsoft.com/office/taskpaneappversionoverrides`
+- `http://schemas.microsoft.com/office/contentappversionoverrides`
+- `http://schemas.microsoft.com/office/mailappversionoverrides`
+
+O elemento `VersionOverrides` em si também deve ter um atributo `xmlns` especificando o esquema. Os possíveis valores são os três acima e os seguintes:
+
+- `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`
+
+O elemento `VersionOverrides` também deve ter um atributo `xsi:type` que especifica a versão do esquema. Os valores possíveis são os seguintes:
+
+- `VersionOverridesV1_0`
+- `VersionOverridesV1_1`
+
+A seguir estão alguns exemplos de `VersionOverrides`utilizados, respectivamente, em um suplemento do painel de tarefas e em um suplemento de email. Observe que quando um email `VersionOverrides` com a versão 1.1 é usado, ele deve ser o último filho de um pai `VersionOverrides` do tipo 1.0. Os valores dos elementos filho no interior de `VersionOverrides` substituem os valores dos elementos do mesmo nome no elemento pai `VersionOverrides` e do elemento avô `OfficeApp`.
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <!-- child elements omitted -->
+</VersionOverrides>
+```
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <!-- other child elements omitted -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <!-- child elements omitted -->
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+Para obter um exemplo de um manifesto que inclui um elemento `VersionOverrides`, consulte [Exemplos e esquemas do arquivo XML de manifesto v1.1](#manifest-v11-xml-file-examples-and-schemas).
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Especificar domínios a partir dos quais as chamadas da API do Office.js são feitas
 

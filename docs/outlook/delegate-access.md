@@ -1,21 +1,32 @@
 ---
 title: Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
-ms.date: 07/02/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 346d05db7bdfec6b3ea95d487780c7a146130b59
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151871"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138734"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
 Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de representante) e cenários de caixa de correio compartilhada (agora em visualização [)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)no seu Outlook add-in, incluindo quais permissões a API JavaScript Office suporta.
 
+## <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
+
+A tabela a seguir mostra combinações de cliente-servidor com suporte para esse recurso, incluindo a Atualização Cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
+
+| Cliente | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
+|---|:---:|:---:|:---:|:---:|
+|Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Não|Não|Não|
+|Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
+|Navegador da Web:<br>interface do usuário Outlook moderna|Sim|Não aplicável|Não aplicável|Não aplicável|
+|Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Não|Não|Não|
+
 > [!IMPORTANT]
-> O suporte a esse recurso foi introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (para obter detalhes, consulte [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 ## <a name="supported-setups"></a>Configurações com suporte
 
@@ -51,6 +62,26 @@ Depois de receber acesso, um usuário de caixa de correio compartilhada deve seg
 > [!WARNING]
 > NÃO **use** outras opções como "Abrir outra caixa de correio". As APIs de recurso podem não funcionar corretamente.
 
+### <a name="mac"></a>[Mac](#tab/unix)
+
+#### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
+
+Email e calendário são compartilhados com um representante ou usuário de caixa de correio compartilhado. Os complementos estão disponíveis para o representante ou usuário nos modos de leitura e redação de mensagens e compromissos.
+
+#### <a name="shared-folders"></a>Pastas compartilhadas
+
+Se a **pasta Caixa de** Entrada for compartilhada com um representante, os complementos estarão disponíveis para o representante no modo de leitura de mensagens.
+
+Se a **pasta Rascunhos** também for compartilhada com o representante, os complementos estarão disponíveis no modo de redação.
+
+#### <a name="local-shared-calendar-new-model"></a>Calendário compartilhado local (novo modelo)
+
+Se o proprietário do calendário compartilhou explicitamente seu calendário com um representante (a caixa de correio inteira pode não ser compartilhada), os complementos estarão disponíveis para o representante nos modos de leitura e redação do compromisso.
+
+#### <a name="remote-shared-calendar-previous-model"></a>Calendário compartilhado remoto (modelo anterior)
+
+Se o proprietário do calendário concedeu amplo acesso ao calendário (por exemplo, o tornou editável para um DL específico ou para toda a organização), os usuários poderão ter permissão indireta ou implícita e os complementos estarão disponíveis para esses usuários nos modos de leitura e redação de compromissos.
+
 ---
 
 Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte a seção Itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de Outlook de complementos.
@@ -61,8 +92,8 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Ler|1 (000001)|Pode ler itens.|
-|Gravar|2 (000010)|Pode criar itens.|
+|Leitura|1 (000001)|Pode ler itens.|
+|Gravação|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir apenas os itens criados.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
 |EditOwn|16 (010000)|Pode editar apenas os itens criados.|

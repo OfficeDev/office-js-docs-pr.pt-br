@@ -1,16 +1,16 @@
 ---
-title: Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
+title: Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 description: Use o Visual Studio Code de Microsoft Office Depurador de Complementos para depurar seu Office Add-in.
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 256c7855f4757f49c23b4c633323cf2124bb6516
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149035"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138636"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 
 A extensão de depurador de Microsoft Office do Visual Studio Code permite depurar seu Office Add-in no Microsoft Edge com o tempo de execução do WebView (EdgeHTML) original. Para obter instruções sobre a depuração em Microsoft Edge WebView2 (Chromium baseado em Chromium), [consulte este artigo](./debug-desktop-using-edge-chromium.md)
 
@@ -22,7 +22,7 @@ Esse modo de depuração é dinâmico, permitindo definir pontos de interrupçã
 
 - [Visual Studio Code](https://code.visualstudio.com/) (deve ser executado como administrador)
 - [Node.js (versão 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 Estas instruções pressuem que você tenha experiência usando a linha de comando, entenda JavaScript básico e tenha criado um projeto de Office de Office antes de usar o gerador Yo Office. Se você ainda não fez isso antes, considere visitar um de nossos tutoriais, como este Excel Office [tutorial de complemento.](../tutorials/excel-tutorial.md)
@@ -35,7 +35,7 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
     > Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
 
 1. Abra um prompt de comando como administrador.
-   ![Opções de prompt de comando, incluindo "executar como administrador" no Windows 10.](../images/run-as-administrator-vs-code.jpg)
+   ![Opções de prompt de comando, incluindo "executar como administrador" Windows 10 e 11.](../images/run-as-administrator-vs-code.jpg)
 
 1. Navegue até o diretório do projeto.
 
@@ -85,6 +85,6 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
 
 - [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
 
-- [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Depurar os complementos usando ferramentas de desenvolvedor no Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)](debug-desktop-using-edge-chromium.md)

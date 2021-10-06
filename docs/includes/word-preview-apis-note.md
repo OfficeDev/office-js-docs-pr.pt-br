@@ -1,5 +1,7 @@
 > [!IMPORTANT]
-> Observe que as SEGUINTES APIs de visualização do Word estão disponíveis apenas nas seguintes plataformas.
-> - Word no Windows
+> Observe que as seguintes APIs de visualização do Word podem estar disponíveis nas seguintes plataformas.
 >
-> No momento, as APIs de visualização do Word não são suportadas no Mac, iOS ou na Web.
+> - Word no Windows
+> - Word no Mac
+>
+> No momento, as APIs de visualização do Word não são suportadas iPad. No entanto, as APIs de recurso de indicador também estão disponíveis Word na Web.

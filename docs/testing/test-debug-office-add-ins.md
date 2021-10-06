@@ -3,12 +3,12 @@ title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: fd7bcaf5fdc6ded1a2d6991a4ab5207e515fad16
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 1a47c9e5b4d45dc2a20f7fd5dd04a384eea5cba3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990786"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138594"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
@@ -44,7 +44,7 @@ O procedimento para depurar um Suplemento do Office também varia de acordo com 
 
 - [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)
 
-- [Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 

@@ -268,7 +268,7 @@ items:
               - name: Anexar um depurador do painel de tarefas
                 href: testing/attach-debugger-from-task-pane.md
               - name: Depurar usando as ferramentas de desenvolvedor
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
               - name: Depurar usando o WebView2 do Edge Chromium
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'

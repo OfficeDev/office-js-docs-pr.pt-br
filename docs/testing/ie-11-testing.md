@@ -1,14 +1,14 @@
 ---
 title: Teste do Internet Explorer 11
 description: Teste seu Office no Internet Explorer 11.
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 40a380d902de211f2dfcbe2e474553dfa1b02fcb
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990772"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138622"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Testar seu Office de usuário no Internet Explorer 11
 
@@ -55,7 +55,7 @@ Estas instruções pressuem que você tenha criado um projeto de gerador Yo Offi
     ```
 
 > [!TIP]
-> Não é necessário usar esse comando, mas deve ajudar a depurar a maioria dos problemas relacionados ao tempo de execução do Internet Explorer 11. Para uma robustez completa, você deve testar o uso de computadores com várias combinações de Windows 7, 8.1 e 10 e várias versões de Office. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Não é necessário usar esse comando, mas deve ajudar a depurar a maioria dos problemas relacionados ao tempo de execução do Internet Explorer 11. Para uma robustez completa, você deve testar o uso de computadores com várias combinações de Windows 7, 8.1, 10 e 11 e várias versões de Office. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Opções de comando
 
@@ -69,5 +69,5 @@ O comando também pode ter vários tempos de `office-addin-dev-settings webview`
 
 * [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
 * [Realizar sideload de suplementos do Office para teste](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [Depurar os complementos usando ferramentas de desenvolvedor no Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)

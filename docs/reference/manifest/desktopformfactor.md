@@ -1,20 +1,30 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: Especifica as configurações de um suplemento para o fator forma da área de trabalho.
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f15840a7b6716cd8acabe9e061effa566d48930
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 52c9a029e3f43e9b7d5416455eb99ef3de4dae7a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474326"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138727"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
 Especifica as configurações de um suplemento para o fator forma da área de trabalho. O fator de formulário da área de trabalho inclui Office na Web, Windows e Mac. Ele contém todas as informações de complemento para o fator de formulário da área de trabalho, exceto para o **nó Recursos.**
 
 Cada definição desktopFormFactor contém o **elemento FunctionFile** e um ou mais **elementos ExtensionPoint.** Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## <a name="child-elements"></a>Elementos filho
 

@@ -1,18 +1,28 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
-ms.date: 05/11/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c68df7bdaf1bf6aa93002e3120321f80d69724ab
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 17e39cf85ef19516d4b2a04ba6b96cf97b32336b
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148893"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138762"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
  Define onde um suplemento expõe a funcionalidade na interface de usuário do Office. O elemento **ExtensionPoint** é um elemento filho de [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md).
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## <a name="attributes"></a>Atributos
 
@@ -34,7 +44,7 @@ ms.locfileid: "59148893"
 Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valores de atributo **PrimaryCommandSurface** e **ContextMenu** e os elementos filho que devem ser usados com cada um.
 
 > [!IMPORTANT]
-> Forneça uma ID exclusiva para os elementos que contêm um atributo ID. É recomendável usar o nome de sua empresa com a ID. Por exemplo, use o formato a seguir. <CustomTab id="mycompanyname.mygroupname">
+> Para os elementos que contêm um atributo ID, forneça uma ID exclusiva. Recomendamos usar o nome da sua empresa com a ID. Por exemplo, use o seguinte formato: `<CustomTab id="mycompanyname.mygroupname">`
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">

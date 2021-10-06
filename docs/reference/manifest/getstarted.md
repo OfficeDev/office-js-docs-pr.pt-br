@@ -1,18 +1,30 @@
 ---
 title: Elemento GetStarted no arquivo de manifesto
 description: Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote.
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 1630b50824cda18ca92ef6b34b0105acf9a4ca9c
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474340"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138747"
 ---
 # <a name="getstarted-element"></a>Elemento GetStarted
 
 Fornece informações usadas pelo texto explicante que aparece quando o complemento é instalado no Word, Excel, PowerPoint e OneNote. O elemento **GetStarted** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). Se o **elemento GetStarted** for omitido, o explicativo usará os valores dos elementos [DisplayName](displayname.md) e [Description.](description.md)
+
+**Tipo de suplemento:** Painel de tarefas
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- Painel de tarefas 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos:**
+
+- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="child-elements"></a>Elementos filho
 

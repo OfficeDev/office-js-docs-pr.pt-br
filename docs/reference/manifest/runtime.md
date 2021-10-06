@@ -1,20 +1,31 @@
 ---
 title: Tempo de execução no arquivo de manifesto
 description: O elemento Runtime configura seu complemento para usar um tempo de execução JavaScript compartilhado para seus vários componentes, por exemplo, faixa de opções, painel de tarefas, funções personalizadas.
-ms.date: 05/19/2021
+ms.date: 09/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: acdff8f7ffb1e9392c1671eadc36a79348ece5fa
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148571"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138440"
 ---
 # <a name="runtime-element"></a>Elemento Runtime
 
 Configura seu complemento para usar um tempo de execução javaScript compartilhado para que vários componentes sejam executados no mesmo tempo de execução. Filho do [`<Runtimes>`](runtimes.md) elemento.
 
 **Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+ - Painel de tarefas 1.0
+ - Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos:**
+
+- [SharedRuntime 1.1](../requirement-sets/shared-runtime-requirement-sets.md) (Somente quando usado em um complemento do painel de tarefas.)
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
