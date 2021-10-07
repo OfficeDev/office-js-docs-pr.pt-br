@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 90c58352ef49a365cd80dd7699d23f40c800bbd6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148564"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138643"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
 
@@ -18,7 +18,7 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
 
 - [Visual Studio Code](https://code.visualstudio.com/) (deve ser executado como administrador)
 - [Node.js (versão 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - Uma combinação de plataforma e aplicativo do Office que oferece suporte ao Microsoft Edge com WebView2 (baseado em Chromium), conforme explicado em [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Se a sua versão do Microsoft 365 for anterior a 2101, você precisará instalar o WebView2. Use as instruções para instalá-lo em [Microsoft Edge WebView2 / Embedar conteúdo da web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## <a name="install-and-use-the-debugger"></a>Instalar e usar o depurador
