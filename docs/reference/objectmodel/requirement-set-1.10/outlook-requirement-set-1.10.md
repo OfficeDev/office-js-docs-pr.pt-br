@@ -3,12 +3,12 @@ title: Outlook conjunto de requisitos de API de complemento 1.10
 description: Conjunto de requisitos 1.10 para Outlook api de complemento.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b54d327d37acd7b2c7fcff100cc7dbe7a39187c0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a94e829b1656d7c3a33ff51918834c7ea6913967
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152106"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237494"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conjunto de requisitos de API de complemento 1.10
 
@@ -30,11 +30,11 @@ O conjunto de requisitos 1.10 inclui todos os recursos do conjunto [de requisito
 - Adicionado [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): adiciona uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo Redação.
 - Adicionado [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): adiciona uma nova função que obtém o tipo de composição de uma mensagem no modo Redação.
 - Adicionado [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): adiciona uma nova função que verifica se a assinatura do cliente está habilitada no item no modo Redação.
-- Adicionado [Office. MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype): adiciona um novo número. Ele representa o tipo de ação personalizada em uma mensagem de notificação.
+- Adicionado [Office. MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true): adiciona um novo número. Ele representa o tipo de ação personalizada em uma mensagem de notificação.
 - Adicionado [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): adiciona um novo número disponível no modo Redação.
-- Adicionado [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype): adiciona um novo tipo ao `ItemNotificationMessageType` número. Ele representa uma mensagem de notificação com uma ação personalizada.
-- Adicionado [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction): adiciona um novo objeto para que você possa definir uma ação personalizada para sua `InsightMessage` notificação.
-- Adicionado [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): adiciona uma nova propriedade que permite adicionar uma `InsightMessage` notificação com uma ação personalizada.
+- Adicionado [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): adiciona um novo tipo ao `ItemNotificationMessageType` número. Ele representa uma mensagem de notificação com uma ação personalizada.
+- Adicionado [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): adiciona um novo objeto para que você possa definir uma ação personalizada para sua `InsightMessage` notificação.
+- Adicionado [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): adiciona uma nova propriedade que permite adicionar uma `InsightMessage` notificação com uma ação personalizada.
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: Visão geral da API Outlook de complementos (conjunto de requisitos 1.7)
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f9e20391113cddb78750e5933d2dd4ad11ba2a3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 51cd018d5e4438daf76b53e00195671b63afd50f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151970"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237340"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
@@ -43,7 +43,7 @@ O conjunto de requisitos 1.7 inclui todos os recursos do conjunto de requisitos 
 - Adicionado o [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o fuso horário aplicado à recorrência.
 - Adicionado o [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o tipo de recorrência.
 - Adicionado o [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica a semana do mês.
-- Modificado [Office.EventType](/javascript/api/office/office.eventtype): Adiciona suporte para eventos `RecurrenceChanged`, `RecipientsChanged`, e `AppointmentTimeChanged`.
+- Modificado [Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.7&preserve-view=true): Adiciona suporte para eventos `RecurrenceChanged`, `RecipientsChanged`, e `AppointmentTimeChanged`.
 
 ## <a name="see-also"></a>Confira também
 

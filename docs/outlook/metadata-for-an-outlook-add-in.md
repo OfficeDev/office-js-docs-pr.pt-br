@@ -3,12 +3,12 @@ title: Obter e definir metadados em um suplemento do Outlook
 description: Gerencie dados personalizados no suplemento do Outlook usando configurações de roaming ou propriedades personalizadas.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcff058fe05229d13a378fcba9c1b165e84fdd51
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ac7915a7e9c0c34806052ff42e12acff60dcf2f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148586"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237738"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obter e definir metadados de suplemento para um suplemento do Outlook
 
@@ -21,7 +21,7 @@ Ambos dão acesso a dados personalizados que só podem ser acessados por seu sup
 
 ## <a name="custom-data-per-mailbox-roaming-settings"></a>Dados personalizados por caixa de correio: configurações de roaming
 
-Você pode especificar dados específicos para uma caixa de correio do Exchange de um usuário usando o objeto [RoamingSettings](/javascript/api/outlook/office.RoamingSettings). Exemplos desses dados incluem os dados pessoais e as preferências do usuário. O suplemento de email pode acessar as configurações de roaming quando faz roaming em qualquer dispositivo no qual deva ser executado (área de trabalho, tablet ou smartphone).
+Você pode especificar dados específicos para uma caixa de correio do Exchange de um usuário usando o objeto [RoamingSettings](/javascript/api/outlook/office.roamingsettings). Exemplos desses dados incluem os dados pessoais e as preferências do usuário. O suplemento de email pode acessar as configurações de roaming quando faz roaming em qualquer dispositivo no qual deva ser executado (área de trabalho, tablet ou smartphone).
 
 As mudanças nesses dados são armazenadas em uma cópia na memória dessas configurações para a sessão atual do Outlook. Você deve salvar explicitamente todas as configurações de roaming após a atualização para que elas fiquem disponíveis na próxima vez em que o usuário abrir o suplemento, no mesmo ou em qualquer outro dispositivo com suporte.
 

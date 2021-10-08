@@ -1,14 +1,14 @@
 ---
 title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
-ms.date: 07/01/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb9d80d1eff89919b3c33a68b42eb61eca27af3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 53f8620c62ad01af85d4e8405fc72920ea641387
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151875"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237361"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
@@ -31,9 +31,9 @@ Para obter informações sobre o novo suporte à interface do usuário, consulte
 
 ## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Suporte ao complemento no Outlook nova interface do usuário do Mac (visualização)
 
-Outlook os complementos agora são suportados na nova interface do usuário do Mac (visualização), até o conjunto de requisitos 1.8. No entanto, os seguintes conjuntos de requisitos e recursos **ainda não** são suportados.
+Outlook os complementos agora são suportados na nova interface do usuário do Mac (visualização), até o conjunto de requisitos 1.9. No entanto, os seguintes conjuntos de requisitos e recursos **ainda não** são suportados.
 
-- Os requisitos de API definem 1,9 e 1,10
+- Conjunto de requisitos de API 1.10
 
 Recomendamos que você visualize Outlook na nova interface do usuário do Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentar, consulte Outlook para Mac - Notas de versão para [builds do Insider Fast.](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)
 
