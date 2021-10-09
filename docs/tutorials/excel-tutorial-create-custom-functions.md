@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 07/07/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f975adeec36490482c2fb54d2455bc15f8f17c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151713"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250452"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -26,11 +26,11 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou Excel na web
+* Excel no Windows (versão 1904 ou posterior) ou Excel na Web.
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
- Para começar, você criará o projeto de código para criar o suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
+ Para começar, crie do código do projeto para criar o seu suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 

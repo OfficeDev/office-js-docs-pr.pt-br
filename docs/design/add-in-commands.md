@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0ad18ca62014ac8b3f4c3710680cd5d97b476215
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148654"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250431"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -17,7 +17,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Aplicativo do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Os catálogos do Microsoft Office SharePoint Online não são compatíveis com os comandos de suplemento. Você pode implantar comandos de suplemento por meio de [Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou do [AppSource](/office/dev/store/submit-to-appsource-via-partner-center)ou usar o [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar o comando de suplemento para teste.
+> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pelos[Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
 
 > [!IMPORTANT]
 > Os comandos de suplemento também são compatíveis com o Outlook. Para saber mais, confira [Comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -85,9 +85,9 @@ Você pode especificar que uma guia só seja visível na faixa de opções em de
 Os comandos de suplemento são atualmente suportados nas plataformas a seguir, exceto para limitações especificadas nas subseções de [Recursos de comandos](#command-capabilities) anteriores.
 
 - Office no Windows (Build 16.0.6769 ou superior, conectado a uma assinatura do Microsoft 365)
-- Office 2019 no Windows
+- Office 2019 ou posterior no Windows
 - Office no Mac (build 15.33 ou superior, conectado a uma assinatura do Microsoft 365)
-- Office 2019 no Mac
+- Office 2019 ou posterior no Mac
 - Office na Web
 
 > [!NOTE]

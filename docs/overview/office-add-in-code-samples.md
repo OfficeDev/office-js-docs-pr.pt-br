@@ -1,14 +1,14 @@
 ---
 title: Amostras de código de suplemento do Office
 description: Uma lista de exemplos de código de suplementos do Office para ajudá-lo a aprender e criar seus próprios suplementos.
-ms.date: 09/09/2021
+ms.date: 10/07/2021
 localization_priority: high
-ms.openlocfilehash: fb595273fa890c6eb16dbfe03fe102a2a3ee6a9a
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443796"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250480"
 ---
 # <a name="office-add-in-code-samples"></a>Amostras de código de suplemento do Office
 
@@ -26,6 +26,7 @@ Esses exemplos de código são escritos para ajudá-lo a aprender como usar vár
 | Name                | Descrição         |
 |:--------------------|:--------------------|
 | [Abrir no Teams](/samples/officedev/pnp-officeaddins/office-excel-add-in-open-in-teams/) | Crie uma nova planilha do Excel no Microsoft Teams contendo os dados que você definir.|
+| [Inserir um arquivo Excel externo e preenchê-lo com dados JSON](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | Insira um modelo existente de um arquivo externo do Excel na pasta de trabalho do Excel aberta no momento. Em seguida, preencha o modelo com dados de um serviço Web JSON. |
 | [Crie guias contextuais personalizadas na faixa de opções](/samples/officedev/pnp-officeaddins/office-add-in-contextual-tabs/) | Crie uma guia contextual personalizada na faixa de opções na interface do usuário do Office. O exemplo cria uma tabela e, quando o usuário move o foco dentro da tabela, a guia personalizada é exibida. Quando o usuário sai da tabela, a guia personalizada fica oculta. |
 | [Use os atalhos do teclado para ações do suplemento do Office](/samples/officedev/pnp-officeaddins/office-add-in-keyboard-shortcuts) | Configure um projeto de suplemento básico do Excel que utiliza atalhos de teclado. |
 | [Exemplo de função personalizada usando web worker](/samples/officedev/pnp-officeaddins/excel-custom-function-web-worker-pattern/) | Use web workers em funções personalizadas para evitar o bloqueio da interface do usuário do suplemento do Office. |
@@ -47,8 +48,8 @@ Esses exemplos de código são escritos para ajudá-lo a aprender como usar vár
 | [Obtenha dados do OneDrive usando Microsoft Graph e msal.js em um suplemento do Office](/samples/officedev/pnp-officeaddins/office-add-in-auth-graph-react/) | Crie um suplemento do Office, como um aplicativo de página única (SPA) sem back-end, que se conecta ao Microsoft Graph e acesse pastas de trabalho armazenadas no OneDrive for Business para atualizar uma planilha.  |
 | [Autenticação do suplemento do Office para o Microsoft Graph](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | Aprenda a criar um suplemento do Microsoft Office que se conecte ao Microsoft Graph e acesse pastas de trabalho armazenadas no OneDrive for Business para atualizar uma planilha. |
 | [Autenticação do suplemento do Outlook para Microsoft Graph](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/). | Crie um suplemento do Outlook que se conecte ao Microsoft Graph e acesse pastas de trabalho armazenadas no OneDrive for Business para redigir uma nova mensagem de email. |
-| [Suplemento do Office de Logon único (SSO) com ASP.NET](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Use a API `getAccessToken` em Office.js para dar ao suplemento acesso aos dados do Microsoft Graph. Este exemplo é criado no ASP.NET. |
-| [Suplemento Office dee Logon único (SSO) com Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use a API `getAccessToken` em Office.js para dar ao suplemento acesso aos dados do Microsoft Graph. Este exemplo é construído em Node.js.|
+| [Suplemento do Office de Logon único (SSO) com ASP.NET](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado com base no ASP.NET. |
+| [Suplemento Office dee Logon único (SSO) com Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado no Node.js.|
 
 ## <a name="additional-samples"></a>Amostras adicionais
 
@@ -60,7 +61,7 @@ Esses exemplos de código são escritos para ajudá-lo a aprender como usar vár
 
 ## <a name="next-steps"></a>Próximos passos
 
-Ingresse no Programa Para Desenvolvedores do Microsoft 365. Obtenha uma área restrita, ferramentas e outros recursos gratuitos de que você precisa para criar soluções para a plataforma Microsoft 365.
+Participe do Programa do Desenvolvedor do Microsoft 365. Obtenha uma área restrita, ferramentas e outros recursos gratuitos que você precisa para criar soluções para a plataforma Microsoft 365.
 
 - [A área restrita de desenvolvedor grátis](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) Obtenha uma assinatura de desenvolvedor Microsoft 365 E5 gratuita e renovável por 90 dias.
 - [Amostra de pacotes de dados](https://developer.microsoft.com/microsoft-365/dev-program#Sample) Configure automaticamente sua área restrita instalando dados de usuário e conteúdo para ajudá-lo a construir suas soluções.

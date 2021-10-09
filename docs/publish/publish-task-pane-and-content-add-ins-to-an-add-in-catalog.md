@@ -1,14 +1,14 @@
 ---
 title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 786fbd24790a1b8205fc3b0e8a15ce591cf66ca4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 80a790ada4425b13880b9eeedfbd002dc818b927
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152034"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250508"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -94,4 +94,4 @@ Para aplicativos do Office na área de trabalho, você pode encontrar suplemento
 1. Na caixa de diálogo Suplementos do Office, escolha a guia **MINHA ORGANIZAÇÃO**. Os Suplementos do Office estão listados.
 1. Escolha um suplemento do Office e, em seguida, escolha **Adicionar**.
 
-Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos arquivos de Modelo Administrativo [(ADMX/ADML) para Microsoft 365 Apps, Office 2019 e Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e são encontradas em Configuração do **Usuário\Políticas\Modelos Administrativos\Microsoft Office 2016\Segurança Configurações\Central de Confiação\Catálogos Confiáveis.**
+Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos arquivos de Modelo Administrativo [(ADMX/ADML) para Microsoft 365 Apps, Office LTSC 2021, Office 2019 e Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e são encontradas em Configuração do **Usuário\Políticas\Modelos Administrativos\Microsoft Office 2016\Segurança Configurações\Central de Confiações\Catálogos Confiáveis.**

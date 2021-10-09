@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de Funções Personalizadas
 description: Detalhes sobre os conjuntos de requisitos de Funções Personalizadas para Excel API JavaScript.
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: b9141042173799a96657db1bb7e2c603d6c358cc
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 6938da8e810dbd91dce9a3cc538bc14ad9974eda
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138454"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250522"
 ---
 # <a name="custom-functions-requirement-sets"></a>Conjuntos de requisitos de Funções Personalizadas
 
@@ -20,9 +20,6 @@ As [Funções Personalizadas](../../excel/custom-functions-overview.md) usam con
 | CustomFunctionsRuntime 1.3 | 16.0.14326.20454 ou posterior | 16.0.13127.20296 ou posterior | Incompatível | 16.40.20081000 ou posterior | Julho de 2020 |
 | CustomFunctionsRuntime 1.2 | 16.0.14326.20454 ou posterior | 16.0.12527.20194 ou posterior | Incompatível | 16.34.20020900 ou posterior | Janeiro de 2020 |
 | CustomFunctionsRuntime 1.1 | 16.0.14326.20454 ou posterior | 16.0.12527.20092 ou posterior | Sem suporte | 16.34 ou posterior | Maio de 2019 |
-
-> [!NOTE]
-> Excel funções personalizadas não são suportadas no Office 2019 ou anterior (compra única).
 
 ## <a name="customfunctionsruntime-11-12-and-13"></a>CustomFunctionsRuntime 1.1, 1.2 e 1.3
 

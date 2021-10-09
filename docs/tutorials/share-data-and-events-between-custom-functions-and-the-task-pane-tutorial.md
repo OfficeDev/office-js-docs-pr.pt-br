@@ -1,103 +1,158 @@
 ---
 title: 'Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas'
 description: Aprenda como compartilhar dados e eventos no Excel entre as funções personalizadas e o painel de tarefas.
-ms.date: 09/23/2021
+ms.date: 10/07/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990527"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250438"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
-Você pode configurar o suplemento do Excel para usar um tempo de execução compartilhado. Isso permite compartilhar dados globais ou enviar eventos entre o painel de tarefas e as funções personalizadas.
-
-Para a maioria dos cenários de funções personalizadas, recomendamos usar um tempo de execução compartilhada, a menos que você tenha uma razão específica para usar uma função personalizada fora do painel de tarefa (sem IU).
-
-Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do Office para criar adicionais no projetos de. Considere concluir o [Tutorial de funções personalizadas do Excel](excel-tutorial-create-custom-functions.md), se ainda não o fez.
+Compartilhe dados globais e envie eventos entre o painel de tarefas e funções personalizadas do suplemento do Excel com um runtime compartilhado. Para a maioria dos cenários de funções personalizadas, recomendamos usar um tempo de execução compartilhada, a menos que você tenha uma razão específica para usar uma função personalizada fora do painel de tarefa (sem IU). Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do Office para criar adicionais no projetos de. Considere concluir o [Tutorial de funções personalizadas do Excel](excel-tutorial-create-custom-functions.md), se ainda não o fez.
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts com as respostas a seguir.
+Use o [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) para criar o projeto de suplemento do Excel.
 
-```command line
-yo office
-```
+- Para gerar um suplemento do Excel com funções personalizadas, execute o comando.
+    
+    ```command&nbsp;line
+    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
+    ```
 
-- Escolha um tipo de projeto: **Projeto de suplemento de funções personalizadas do Excel**
-- Escolha um tipo de script: **JavaScript**
-- Qual será o nome do seu suplemento? **Meu suplemento do Office**
-
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-excel-project.png)
-
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+O gerador cria o projeto e instala componentes do Node com suporte.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-1. Inicie o código do Visual Studio e abra o projeto **Meu suplemento do Office**.
-2. Abra o arquivo **manifest.xml**.
-3. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. O tempo de vida precisa ser **longo** para que as funções personalizadas ainda possam funcionar, mesmo quando o painel de tarefas estiver fechado.
+Siga estas etapas para configurar o projeto de suplemento para usar um runtime compartilhado.
 
-   ```xml
-   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-     <Hosts>
-       <Host xsi:type="Workbook">
-         <Runtimes>
-           <Runtime resid="ContosoAddin.Url" lifetime="long" />
-         </Runtimes>
-       <AllFormFactors>
-   ```
+1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
+1. Abra o arquivo **manifest.xml**.
+1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md).
 
-> [!NOTE]
-> Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](../reference/manifest/runtimes.md) e [navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+    ```xml
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    ```
 
-4. No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **ContosoAddin.Url**.
+    Após a atualização, o XML do manifesto deverá aparecer na ordem a seguir.
+
+    ```xml
+    <Hosts>
+      <Host Name="..."/>
+    </Hosts>
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    <DefaultSettings>
+    ```
+
+1. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na `<bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+    
+    ```xml
+    <Runtimes>
+      <Runtime resid="Taskpane.Url" lifetime="long" />
+    </Runtimes>
+    ```
+    
+    > [!IMPORTANT]
+    > A seção `<Runtimes>` deve ser inserida após o elemento `<Host xsi:type="...">` na ordem exata mostrada no XML a seguir.
+
+    ```xml
+    <VersionOverrides ...>
+      <Hosts>
+        <Host xsi:type="...">
+          <Runtimes>
+            <Runtime resid="Taskpane.Url" lifetime="long" />
+          </Runtimes>
+        ...
+        </Host>
+    ```
+    
+    > [!NOTE]
+    > Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](../reference/manifest/runtimes.md) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+
+1. Encontre o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="ContosoAddin.Url"/>
+     <SourceLocation resid="Taskpane.Url"/>
    </Page>
    ...
    ```
 
-5. Na seção `<DesktopFormFactor>`, altere o **FunctionFile** de **Commands.Url** para usar **ContosoAddin.Url**.
+1. Localize a marca`<FunctionFile ...>` e altere o `resid` de **Commands.Url** para **Taskpane.Url**.
 
-   ```xml
-   <DesktopFormFactor>
-   <GetStarted>
-   ...
-   </GetStarted>
-   <FunctionFile resid="ContosoAddin.Url"/>
-   ```
+    ```xml
+    </GetStarted>
+    ...
+    <FunctionFile resid="Taskpane.Url"/>
+    ...
+    ```
 
-6. Na seção `<Action>`, altere o local de origem de **Taskpane.Url** para **ContosoAddin.Url**.
+1. Salve o arquivo **manifest.xml**.
 
-   ```xml
-   <Action xsi:type="ShowTaskpane">
-   <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="ContosoAddin.Url"/>
-   </Action>
-   ```
+## <a name="configure-the-webpackconfigjs-file"></a>Configurar o arquivo webpack.config.js
 
-7. Adicione um novo **ID de URL** para **ContosoAddin.Url** que aponte para **taskpane.html**.
+O **webpack.config.js** construirá vários carregadores de tempo de execução. É necessário modificá-lo para carregar apenas o tempo de execução JavaScript compartilhado por meio do arquivo **taskpane.html**.
 
-   ```xml
-   <bt:Urls>
-   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-   ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-   ...
-   ```
+1. Abra o arquivo **webpack.config.js**.
+1. Vá para seção `plugins:`.
+1. Remova o seguinte plugin `functions.html`, se ele existir.
+    
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "functions.html",
+        template: "./src/functions/functions.html",
+        chunks: ["polyfill", "functions"]
+      })
+    ```
 
-8. Salve suas alterações e recompile o projeto.
+1. Remova o seguinte plugin `commands.html`, se ele existir.
 
-   ```command line
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      })
+    ```
+
+1. Se você removeu os plugins`functions`ou `commands`, adicione-os como `chunks`. O JavaScript a seguir mostra a entrada atualizada se você removeu os plugins `functions` e `commands`.
+    
+    ```javascript
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ["polyfill", "taskpane", "commands", "functions"]
+      })
+    ```
+    
+1. Salvar suas alterações e reconstrua o projeto.
+
+   ```command&nbsp;line
    npm run build
+   ```
+    
+    > [!NOTE]
+    > Você também pode remover os arquivos **functions.html** e **commands.html**. O **taskpane.htm** l carregará o código **functions.js** e **commands.js** no tempo de execução JavaScript compartilhado por meio das atualizações do webpack que você acabou de fazer.
+    
+1. Salve suas alterações e execute o projeto. Verifique se ele é carregado e executado sem erros.
+    
+   ```command&nbsp;line
+   npm run start
    ```
 
 ## <a name="share-state-between-custom-function-and-task-pane-code"></a>Compartilhar o estado entre as funções personalizadas e o código do painel de tarefas
@@ -183,7 +238,7 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
    </div>
    ```
 
-4. Antes do elemento `</body>` fechamento, adicionar o script a seguir. Esse código manipulará os eventos de clique do botão quando o usuário desejar armazenar ou obter os dados globais.
+4. Antes do elemento `</body>`, adicione o script a seguir. Esse código manipulará os eventos de clique do botão quando o usuário quiser armazenar ou obter dados globais.
 
    ```js
    <script>
@@ -217,3 +272,7 @@ Após a inicialização do Excel, você pode usar os botões do painel de tarefa
 
 > [!NOTE]
 > A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. É possível chamar algumas APIs do Office a partir de funções personalizadas. [Consulte chamada de APIs do Microsoft Excel a partir de uma função personalizada](../excel/call-excel-apis-from-custom-function.md) para mais detalhes.
+
+## <a name="see-also"></a>Confira também
+
+- [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

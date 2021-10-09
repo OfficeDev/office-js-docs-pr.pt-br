@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Word.
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: dba512af0228b8ee7bb9e7ff54654c779e4b3ca5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152145"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250529"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
@@ -34,7 +34,7 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 > [!NOTE]
 > Versões sem assinatura dos conjuntos de requisitos de suporte do Office como a seguir:
 >
-> - O Office 2019 é compatível com o WordApi 1.3 e versões anteriores.
+> - O Office 2019 e o Office 2021 dão suporte ao WordApi 1.3 e anteriores.
 > - O Office 2016 é compatível somente com o conjunto de requisitos do WordApi 1.1.
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Excel.
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c2082ff33de42e58753231008e46d01afff757dd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151717"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250536"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -28,6 +28,7 @@ Os suplementos de Excel são executados em várias versões do Office, incluindo
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](excel-preview-apis.md)  | Use a versão mais recente do Office para experimentar APIs de visualização (pode ser necessário ingressar no [Programa Office Insider](https://insider.office.com)). |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | Não disponível | N/D | Não disponível | Mais recente (confira a [página conjunto de requisitos](excel-api-online-requirement-set.md)) |
+| [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | Versão 2102 (Compilação 13801.20738) ou posterior | 16.50 ou posterior | 16.50 ou posterior | Junho de 2021 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Versão 2008 (Build 13127.20408) ou posterior | 16.40 ou posterior | 16.40 ou posterior | Setembro de 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Versão 2002 (Build 12527.20470) ou posterior | 16.35 ou posterior | 16.33 ou posterior | Maio de 2020 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Versão 1907 (Build 11929.20306) ou posterior | 16.0 ou posterior | 16.30 ou posterior | Outubro de 2019 |
@@ -44,6 +45,7 @@ Os suplementos de Excel são executados em várias versões do Office, incluindo
 > [!NOTE]
 > Versões sem assinatura dos conjuntos de requisitos de suporte do Office como a seguir:
 >
+> - O Office 2021 é compatível com o ExcelApi 1.13 e versões anteriores.
 > - O Office 2019 é compatível com o ExcelApi 1.8 e versões anteriores.
 > - O Office 2016 é compatível somente com o conjunto de requisitos do ExcelApi 1.1.
 

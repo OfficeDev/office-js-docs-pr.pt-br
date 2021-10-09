@@ -1,15 +1,15 @@
 ---
-ms.date: 08/04/2021
+ms.date: 10/08/2021
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f503948b8f468234221ee8713ea4654a7cc76c07
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152017"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250494"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -20,11 +20,8 @@ Com as funções personalizadas, os desenvolvedores agora podem adicionar novas 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou Excel na web
+- Excel no Windows (versão 1904 ou posterior) ou Excel na Web.
 - O Office no Mac (conectado a uma assinatura do Microsoft 365) é compatível com as funções personalizadas do Excel) e uma atualização desse tutorial está a caminho.
-
->[!NOTE]
->As funções personalizadas do Excel não são compatíveis com o Office 2019 (compra única).
 
 ## <a name="build-your-first-custom-functions-project"></a>Crie seu primeiro projeto com funções personalizadas
 
@@ -96,7 +93,7 @@ O projeto de funções personalizadas criado usando o gerador Yeoman contém alg
 
 Em sua pasta de trabalho do Excel experimente a função personalizada `ADD` preenchendo as seguintes etapas.
 
-1. Selecione uma célula e digite `=CONTOSO` Observe que o menu de preenchimento automático mostra a lista de todas as funções no namespace `CONTOSO`.
+1. Selecione uma célula e um tipo `=CONTOSO`. Observe que o menu de preenchimento automático mostra a lista de todas as funções no namespace `CONTOSO`.
 
 1. Executar a função `CONTOSO.ADD`, usando os números `10` e `200` como parâmetros de entrada, digitando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.
 
