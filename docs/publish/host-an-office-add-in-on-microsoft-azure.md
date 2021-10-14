@@ -3,12 +3,12 @@ title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: af2079c4e6df38e64347ec0a67d441298758c41e
+ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152045"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "60356370"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
@@ -131,7 +131,7 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
 4. O Visual Studio publica o projeto da Web de seu Suplemento do Office no seu aplicativo Web do Azure. Quando o Visual Studio terminar de publicar o projeto da Web, o navegador abrirá e mostrará uma página da Web com o texto "Seu aplicativo de Serviço de Aplicativo foi criado." Esta é a página padrão atual do aplicativo Web.
 
-5. Copie a URL raiz (por exemplo:https://YourDomain.azurewebsites.net); você precisará dela ao editar o arquivo de manifesto do suplemento, mais tarde neste artigo.
+5. Copie a URL raiz (por exemplo: ); você precisará dela quando editar o arquivo de manifesto do complemento `https://YourDomain.azurewebsites.net` posteriormente neste artigo.
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Etapa 6: Editar e implantar o arquivo de manifesto XML do suplemento
 
@@ -139,7 +139,7 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
 2. Expanda o projeto do Suplemento do Office (por exemplo, WordWebAddIn), clique com o botão direito do mouse na pasta do manifesto e escolha **Abrir**. O arquivo do manifesto XML do suplemento é aberto.
 
-3. No arquivo de manifesto XML, localize e substitua todas as instâncias de "~remoteAppUrl" pela URL raiz do aplicativo Web do suplemento no Azure. Esta é a URL que você copiou anteriormente depois que publicou o aplicativo Web do suplemento no Azure (por exemplo: https://YourDomain.azurewebsites.net). 
+3. No arquivo do manifesto XML, localize e substitua todas as instâncias de "~remoteAppUrl" pela URL raiz do aplicativo web do suplemento no Azure. Esta é a URL que você copiou anteriormente depois de publicar o aplicativo Web do complemento para o Azure (por exemplo: `https://YourDomain.azurewebsites.net` ).
 
 4. Escolha **Arquivo** e **Salvar tudo**. Em seguida, copie o arquivo do manifesto XML (por exemplo, WordWebAddIn.xml).
 
