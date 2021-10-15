@@ -4,4 +4,4 @@
 > - Word no Windows
 > - Word no Mac
 >
-> No momento, as APIs de visualização do Word não são suportadas iPad. No entanto, as APIs de recurso de indicador também estão disponíveis em Word na Web e APIs relacionadas a comentários, notas de fim e notas de rodapé estão disponíveis no Word na Web.
+> No momento, as APIs de visualização do Word não são suportadas iPad. No entanto, as APIs de recurso de indicador também estão disponíveis Word na Web. Para APIs disponíveis apenas em Word na Web, consulte a [lista api somente web](#web-only-api-list).

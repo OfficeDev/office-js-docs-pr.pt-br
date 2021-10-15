@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.2.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a32bf523a355e58967518c9646c15fab6f6daf3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7ab12c56f1ef5693e0357f924f95ffb1c085449e
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151832"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367345"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Quais são as novidades na API JavaScript do Excel 1.2
 
@@ -43,7 +43,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[applyTopPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applyTopPercentFilter_percent_)|Aplica um filtro "Percentual Superior" à coluna para obter a porcentagem de elementos fornecida.|
 ||[applyValuesFilter(values: Array<\| string FilterDatetime>)](/javascript/api/excel/excel.filter#applyValuesFilter_values_)|Aplica um filtro "Valores" à coluna para obter os valores fornecidos.|
 ||[clear()](/javascript/api/excel/excel.filter#clear__)|Limpa o filtro na coluna fornecida.|
-||[criteria](/javascript/api/excel/excel.filter#criteria)|O filtro aplicado no momento à coluna fornecida.|
+||[critério](/javascript/api/excel/excel.filter#criteria)|O filtro aplicado no momento à coluna fornecida.|
 |[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[color](/javascript/api/excel/excel.filtercriteria#color)|A cadeia HTML de cor usada para filtrar células.|
 ||[criterion1](/javascript/api/excel/excel.filtercriteria#criterion1)|O primeiro critério usado para filtrar os dados.|
 ||[criterion2](/javascript/api/excel/excel.filtercriteria#criterion2)|O segundo critério usado para filtrar os dados.|
@@ -498,10 +498,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[getRowsAbove(count?: number)](/javascript/api/excel/excel.range#getRowsAbove_count_)|Obtém um determinado número de linhas acima do objeto `Range` atual.|
 ||[getRowsBelow(count?: number)](/javascript/api/excel/excel.range#getRowsBelow_count_)|Obtém um determinado número de linhas abaixo do objeto `Range` atual.|
 ||[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.range#getUsedRange_valuesOnly_)|Retorna o intervalo usado do objeto de intervalo determinado.|
-||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|Mescla as células do intervalo em uma região da planilha.|
 ||[hidden](/javascript/api/excel/excel.range#hidden)|Representa se todas as células no intervalo atual estão ocultas.|
-||[sort](/javascript/api/excel/excel.range#sort)|Representa a classificação de intervalo do intervalo atual.|
+||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|Mescla as células do intervalo em uma região da planilha.|
 ||[rowHidden](/javascript/api/excel/excel.range#rowHidden)|Representa se todas as linhas no intervalo atual estão ocultas.|
+||[sort](/javascript/api/excel/excel.range#sort)|Representa a classificação de intervalo do intervalo atual.|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge__)|Desfaz a mesclagem das células do intervalo em células separadas.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitColumns__)|Altera a largura das colunas do intervalo atual para obter o melhor ajuste, com base nos dados atuais nas colunas.|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitRows__)|Altera a altura das linhas do intervalo atual para obter o melhor ajuste, com base nos dados atuais nas colunas.|
@@ -519,9 +519,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[sortOn](/javascript/api/excel/excel.sortfield#sortOn)|Especifica o tipo de classificação dessa condição.|
 |[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearFilters__)|Limpa todos os filtros aplicados no momento na tabela.|
 ||[convertToRange()](/javascript/api/excel/excel.table#convertToRange__)|Converte a tabela em um intervalo de células normal.|
+||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|Aplica novamente todos os filtros à tabela.|
 ||[sort](/javascript/api/excel/excel.table#sort)|Representa a classificação da tabela.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|A planilha que contém a tabela atual.|
-||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|Aplica novamente todos os filtros à tabela.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|Recupera o filtro aplicado à coluna.|
 |[TableSort](/javascript/api/excel/excel.tablesort)|[apply(fields: Excel. SortField[], matchCase?: boolean, method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply_fields__matchCase__method_)|Executam uma operação de classificação.|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear__)|Limpa a classificação que está na tabela.|
@@ -563,8 +563,8 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onSelectionChanged)|Ocorre quando a seleção no documento é alterada.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRange_valuesOnly_)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas.|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Retorna o objeto de proteção de planilha para uma planilha.|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect(options?: Excel. WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|Protege uma planilha.|
-||[options](/javascript/api/excel/excel.worksheetprotection#options)|Especifica as opções de proteção para a planilha.|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[options](/javascript/api/excel/excel.worksheetprotection#options)|Especifica as opções de proteção para a planilha.|
+||[protect(options?: Excel. WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|Protege uma planilha.|
 ||[protegido](/javascript/api/excel/excel.worksheetprotection#protected)|Especifica se a planilha está protegida.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowAutoFilter)|Representa a opção de proteção de planilha que permite o uso do recurso AutoFilter.|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowDeleteColumns)|Representa a opção de proteção de planilha que permite a exclusão de colunas.|

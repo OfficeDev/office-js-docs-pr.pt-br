@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.3.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a0a3551662997984a5c999b62c651d81e243f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7c39a341f635e3355014f75e32c1501124f99d9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148676"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367457"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
@@ -26,20 +26,20 @@ A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.3. Pa
 ||[addFromNamedItem(name: string, bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|Adiciona uma nova associação com base em um item nomeado na pasta de trabalho.|
 ||[addFromSelection(bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|Adiciona uma nova associação com base na seleção atual.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|Nome da Tabela Dinâmica.|
-||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|A planilha que contém a Tabela Dinâmica atual.|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|Atualiza a Tabela Dinâmica.|
+||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|A planilha que contém a Tabela Dinâmica atual.|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|Obtém uma Tabela Dinâmica por nome.|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[refreshAll()](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|Atualiza todas as tabelas dinâmicas da coleção.|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView()](/javascript/api/excel/excel.range#getVisibleView__)|Representa as linhas visíveis do intervalo atual.|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[fórmulas](/javascript/api/excel/excel.rangeview#formulas)|Representa a fórmula em notação A1.|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Representa os endereços de célula do `RangeView` .|
+||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|O número de colunas visíveis.|
+||[fórmulas](/javascript/api/excel/excel.rangeview#formulas)|Representa a fórmula em notação A1.|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|Representa a fórmula em notação no estilo L1C1.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getRange__)|Obtém o intervalo pai associado ao `RangeView` atual .|
-||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Representa o código de formato de número do Excel para determinada célula.|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Representa os endereços de célula do `RangeView` .|
-||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|O número de colunas visíveis.|
 ||[índice](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice do `RangeView` .|
+||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Representa o código de formato de número do Excel para determinada célula.|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|O número de linhas visíveis.|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|Representa uma coleção de exibições de tabelas associadas ao intervalo.|
 ||[text](/javascript/api/excel/excel.rangeview#text)|Valores de texto do intervalo especificado.|

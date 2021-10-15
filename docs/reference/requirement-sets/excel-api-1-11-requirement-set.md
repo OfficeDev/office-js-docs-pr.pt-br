@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f340a7f69cfbbb0c87e937e7d9d1043929a94c9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151831"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367443"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Novidades na EXCEL JavaScript 1.11
 
@@ -18,7 +18,7 @@ O ExcelApi 1.11 aprimorou o suporte para comentários e controles no nível da p
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
 | Menções [de comentário](../../excel/excel-add-ins-comments.md#mentions) |Marca e notifica outros usuários da área de trabalho por meio de comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
-| Resolução de [comentários](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolver threads de comentário e obter o status da resolução. | [Comment](/javascript/api/excel/excel.comment) |
+| Resolução de [comentários](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolver threads de comentário e obter o status da resolução. | [Comentário](/javascript/api/excel/excel.comment) |
 | [Configurações de cultura](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Obtém configurações do sistema cultural para a caixa de trabalho, como formatação de número. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [Aplicativo NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [](/javascript/api/excel/excel.application) |
 | [Cortar e colar (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Replica a funcionalidade de recortar e colar no Excel para um Range. | [Range](/javascript/api/excel/excel.range) |
 | [Salvar](../../excel/excel-add-ins-workbooks.md#save-the-workbook) e [Fechar](../../excel/excel-add-ins-workbooks.md#close-the-workbook) a pasta de trabalho | Salve e feche a pasta de trabalho. | [Workbook](/javascript/api/excel/excel.workbook) |
@@ -35,8 +35,8 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|Obtém a cadeia de caracteres usada para separar grupos de dígitos à esquerda do decimal para valores numéricos.|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|Especifica se os separadores do sistema de Excel estão habilitados.|
 |[Comment](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas nos comentários.|
-||[richContent](/javascript/api/excel/excel.comment#richContent)|Obtém o conteúdo rich comment (por exemplo, menções nos comentários).|
 ||[resolvido](/javascript/api/excel/excel.comment#resolved)|O status do thread de comentário.|
+||[richContent](/javascript/api/excel/excel.comment#richContent)|Obtém o conteúdo rich comment (por exemplo, menções nos comentários).|
 ||[updateMentions(contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|Atualiza o conteúdo do comentário com uma cadeia de caracteres especialmente formatada e uma lista de menções.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Cadeia de caracteres de intervalo, conteúdo: cadeia de caracteres \| CommentRichContent, \| contentType?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|Cria um novo comentário com o conteúdo fornecido na célula especificada.|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|O endereço de email da entidade mencionada em um comentário.|

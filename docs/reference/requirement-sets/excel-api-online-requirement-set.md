@@ -1,15 +1,15 @@
 ---
 title: Excel Conjunto de requisitos somente para API JavaScript online
 description: Detalhes sobre o conjunto de requisitos do ExcelApiOnline.
-ms.date: 09/16/2021
+ms.date: 10/13/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b8d326e1a756a873fc19b3d78f795ebf04e5f4e
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474333"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367324"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Conjunto de requisitos somente para API JavaScript online
 
@@ -73,8 +73,30 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente incluídas no conjun
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|Obtém uma exibição de planilha usando seu nome.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|Obtém uma exibição de planilha pelo índice na coleção.|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|Exclua várias linhas de uma tabela.|
+||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|Exclua um número especificado de linhas de uma tabela, começando em um determinado índice.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|Retorna uma coleção de guias de trabalho vinculadas.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|Retorna uma coleção de exibições de planilha presentes na planilha.|
+||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|Ocorre quando o nome da planilha é alterado.|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|Ocorre quando a visibilidade da planilha é alterada.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|Ocorre quando uma planilha é movida por um usuário dentro de uma pasta de trabalho.|
+||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|Ocorre quando o nome da planilha é alterado na coleção de planilhas.|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|Ocorre quando a visibilidade da planilha é alterada na coleção de planilhas.|
+|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|Obtém a nova posição da planilha, após a movimentação.|
+||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|Obtém a posição anterior da planilha, antes da movimentação.|
+||[source](/javascript/api/excel/excel.worksheetmovedeventargs#source)|A origem do evento.|
+||[tipo](/javascript/api/excel/excel.worksheetmovedeventargs#type)|Obtém o tipo do evento.|
+||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|Obtém a ID da planilha que foi movida.|
+|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|Obtém o novo nome da planilha, após a alteração do nome.|
+||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|Obtém o nome anterior da planilha, antes de o nome ser alterado.|
+||[source](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|A origem do evento.|
+||[tipo](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|Obtém o tipo do evento.|
+||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|Obtém a ID da planilha com o novo nome.|
+|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[source](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|A origem do evento.|
+||[tipo](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|Obtém o tipo do evento.|
+||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|Obtém a nova configuração de visibilidade da planilha, após a alteração de visibilidade.|
+||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|Obtém a configuração de visibilidade anterior da planilha, antes da alteração de visibilidade.|
+||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|Obtém a ID da planilha cuja visibilidade foi alterada.|
 
 ## <a name="see-also"></a>Confira também
 

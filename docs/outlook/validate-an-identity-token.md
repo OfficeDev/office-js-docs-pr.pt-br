@@ -1,14 +1,14 @@
 ---
 title: Validar um token de identidade de suplementos do Outlook
 description: O suplemento do Outlook pode enviar um token de identidade do usuário do Exchange, mas, antes de você confiar na solicitação, deve validar o token para garantir que tenha sido enviado pelo servidor Exchange solicitado.
-ms.date: 07/07/2020
+ms.date: 10/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11cae1d773ea17b5e1dc06dcc57097d474162d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c22c174e6783a53e856e11e4338d0168cb974a20
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148688"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367478"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Validar um token de identidade do Exchange
 
@@ -47,7 +47,15 @@ Para validar o conteúdo do token, verifique o seguinte:
 
 ### <a name="verify-the-domain"></a>Verificar o domínio
 
-Ao implementar a lógica de verificação descrita anteriormente nesta seção, você também deve exigir que o domínio da declaração corresponde ao domínio `amurl` descoberta automática do usuário. Para fazer isso, você precisará usar ou implementar a Descoberta Automática. Para saber mais, você pode começar com [a Descoberta Automática para Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+Ao implementar a lógica de verificação descrita na seção anterior, você também deve exigir que o domínio da declaração corresponde ao domínio `amurl` descoberta automática do usuário. Para fazer isso, você precisará usar ou implementar [a Descoberta Automática para](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)Exchange .
+
+- Para Exchange Online, confirme se o domínio é conhecido ( , ou pertence a uma nuvem geográfica específica ou especial `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1) ( Office 365[URLs](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)e intervalos de endereços IP ).
+
+- Se o serviço de complemento tiver uma configuração preexistência com o locatário do usuário, você poderá estabelecer se `amurl` isso é confiável.
+
+- Para uma [implantação Exchange](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)híbrida, use a Descoberta Automática baseada em OAuth para verificar o domínio esperado para o usuário. No entanto, embora o usuário precise se autenticar como parte do fluxo de Descoberta Automática, o seu complemento nunca deve coletar as credenciais do usuário e fazer autenticação básica.
+
+Se o seu add-in não puder verificar o uso de qualquer uma dessas opções, você pode optar por ter o seu complemento desligado normalmente com uma notificação apropriada para o usuário se a autenticação for necessária para o fluxo de trabalho do `amurl` complemento.
 
 ## <a name="validate-the-identity-token-signature"></a>Validar a assinatura do token de identidade
 
@@ -102,7 +110,7 @@ Quando você tiver a chave pública correta, verifique a assinatura. Os dados as
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calcular a ID exclusiva para uma conta do Exchange
 
-Você pode criar um identificador exclusivo para uma conta Exchange concatenando a URL do documento de metadados de autenticação com o identificador Exchange da conta. Com esse identificador exclusivo em mãos, é possível usá-lo para criar um sistema de logon único (SSO) para o serviço da Web de suplementos do Outlook. Para obter detalhes sobre como usar o identificador exclusivo para SSO, confira [Autenticar um usuário com um token de identidade do Exchange](authenticate-a-user-with-an-identity-token.md).
+Crie um identificador exclusivo para uma conta Exchange, concatenando a URL do documento de metadados de autenticação com o identificador Exchange da conta. Quando você tiver esse identificador exclusivo, use-o para criar um sistema de SSO (login único) para seu serviço Web de Outlook de complemento. Para obter detalhes sobre como usar o identificador exclusivo para SSO, confira [Autenticar um usuário com um token de identidade do Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="use-a-library-to-validate-the-token"></a>Usar uma biblioteca para validar o token
 

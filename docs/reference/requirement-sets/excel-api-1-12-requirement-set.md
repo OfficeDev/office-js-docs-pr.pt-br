@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.12.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: f2780e188eeebc70d754d7c2ea26cde1b1974702
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 99447cb7a92f0431a04c10a767af91df3a56ee80
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151751"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367310"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Novidades na EXCEL JavaScript 1.12
 
@@ -106,10 +106,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getCount__)|Obtém o número `RangeAreas` de objetos nesta coleção.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getItemAt_index_)|Retorna o `RangeAreas` objeto com base na posição na coleção.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Retorna o objeto com base na ID da `RangeAreas` planilha ou no nome da coleção.|
-||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Retorna o objeto com base no nome `RangeAreas` da planilha ou na ID da coleção.|
-||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Retorna uma matriz de endereços no estilo A1.|
+|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Retorna uma matriz de endereços no estilo A1.|
 ||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|Retorna o `RangeAreasCollection` objeto.|
+||[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Retorna o objeto com base na ID da `RangeAreas` planilha ou no nome da coleção.|
+||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Retorna o objeto com base no nome `RangeAreas` da planilha ou na ID da coleção.|
 ||[ranges](/javascript/api/excel/excel.workbookrangeareas#ranges)|Retorna intervalos que compõem esse objeto em um `RangeCollection` objeto.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|Obtém uma coleção de propriedades personalizadas no nível da planilha.|
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|Exclui a propriedade personalizada.|
