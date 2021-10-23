@@ -1,14 +1,14 @@
 ---
 title: Obter ou modificar destinatários em um suplemento do Outlook
 description: Saiba como obter, definir ou adicionar destinatários de uma mensagem ou compromisso em um suplemento do Outlook.
-ms.date: 12/10/2019
+ms.date: 10/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4ad1af913362965fd4e3bfe95918a6a9b10989
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c85a49ea3c409b64e0bd62f3eae3aa79dd614568
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151851"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537454"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obter, configurar ou adicionar destinatários ao compor um compromisso ou uma mensagem no Outlook
 
@@ -54,8 +54,9 @@ Para usar, forneça um método de retorno de chamada para verificar o status, os
 
 Observe que, como o método é assíncrono, se houver ações subsequentes que dependam de obter com êxito os destinatários, você deve organizar seu código para iniciar essas ações somente no método de retorno de chamada correspondente quando a chamada assíncrona tiver sido concluída com `getAsync` êxito.
 
-
-
+> [!IMPORTANT]
+> No Outlook na Web, se um usuário criou uma nova mensagem ativando o link de endereço de email de um contato a partir de seu cartão de contato ou perfil, a chamada do seu complemento no momento não retornará um valor na propriedade do objeto `Recipients.getAsync` `displayName` `EmailAddressDetails` associado.
+> Para obter mais detalhes, consulte o [problema GitHub relacionado.](https://github.com/OfficeDev/office-js-docs-pr/issues/2962)
 
 ```js
 var item;

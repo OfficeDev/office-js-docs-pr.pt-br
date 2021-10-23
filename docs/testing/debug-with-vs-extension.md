@@ -1,16 +1,16 @@
 ---
-title: Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
+title: Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 description: Use o Visual Studio Code de Microsoft Office Depurador de Complementos para depurar seu Office Add-in.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 56dee52f71bfb460abbadafb0cdfd82f8f7cb548
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138636"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537636"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 
 A extensão de depurador de Microsoft Office do Visual Studio Code permite depurar seu Office Add-in no Microsoft Edge com o tempo de execução do WebView (EdgeHTML) original. Para obter instruções sobre a depuração em Microsoft Edge WebView2 (Chromium baseado em Chromium), [consulte este artigo](./debug-desktop-using-edge-chromium.md)
 
@@ -84,7 +84,6 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
 ## <a name="see-also"></a>Confira também
 
 - [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
-
-- [Depurar os complementos usando ferramentas de desenvolvedor no Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
-
+- [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar os complementos usando ferramentas de desenvolvedor para o Legado de Borda](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)](debug-desktop-using-edge-chromium.md)

@@ -1,15 +1,15 @@
 ---
 title: Excel Conjunto de requisitos somente para API JavaScript online
 description: Detalhes sobre o conjunto de requisitos do ExcelApiOnline.
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367324"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537587"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Conjunto de requisitos somente para API JavaScript online
 
@@ -29,6 +29,7 @@ A tabela a seguir fornece um resumo conciso das APIs, enquanto a tabela de lista
 |:--- |:--- |:--- |
 | Guias de trabalho vinculadas | Gerencie links entre as guias de trabalho, incluindo o suporte para atualizar e quebrar links de livros de trabalho. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Exibições de planilha nomeadas | Fornece controle programático de exibições de planilha por usuário. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview), [NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
+| Eventos de movimentação de planilha | Detectar quando as planilhas são movidas dentro de uma coleção, a posição da planilha e a origem da alteração. | [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection), [WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs) |
 
 ## <a name="recommended-usage"></a>Uso recomendado
 

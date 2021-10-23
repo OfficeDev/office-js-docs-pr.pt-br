@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.4.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 297f0d2a9c892800a5f26ecd29be0c7587bc52fc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8a38d45a73560cade580cf5f2f9a0892790b38d
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151798"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537475"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Quais são as novidades na API JavaScript do Excel 1.4
 
@@ -76,7 +76,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[Configuração](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|Exclui a configuração.|
 ||[key](/javascript/api/excel/excel.setting#key)|A chave que representa a ID da configuração.|
 ||[value](/javascript/api/excel/excel.setting#value)|Representa o valor armazenado para esta configuração.|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date Array \| <any> \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Define na pasta de trabalho ou adiciona a ela a configuração especificada.|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date Array \| \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Define na pasta de trabalho ou adiciona a ela a configuração especificada.|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getCount__)|Obtém o número de configurações na coleção.|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getItem_key_)|Obtém uma entrada de configuração por meio da chave.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getItemOrNullObject_key_)|Obtém uma entrada de configuração por meio da chave.|

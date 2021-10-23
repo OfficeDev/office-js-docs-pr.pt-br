@@ -3,12 +3,12 @@ title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
 ms.date: 09/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b84461a8062ac0ca0300f869fcf4dba0019a6a9b
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: e9af96db7fbbeaf21274d4c5980afe0f4e9be3c5
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138608"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537608"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -75,4 +75,5 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 - [Limpar o cache do Office](clear-cache.md)
 - [Depurar seu suplemento com o log de tempo de execução](runtime-logging.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
-- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar os complementos usando ferramentas de desenvolvedor para o Legado de Borda](debug-add-ins-using-devtools-edge-legacy.md)

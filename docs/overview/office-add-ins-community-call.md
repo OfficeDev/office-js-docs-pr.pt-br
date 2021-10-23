@@ -1,24 +1,22 @@
 ---
 title: Microsoft Office Chamada da comunidade de complementos
 description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d0f0d697c5c66145536acb8db88ffe66acf278
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 3ce768bd6b03f3103efae0e9b679a6221e3e7927
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250396"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537595"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
 A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 PDT. Você pode baixar o convite do calendário em [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
-## <a name="agenda-for-october-13th-call"></a>Agenda para a chamada de 13 de outubro
+## <a name="agenda-for-november-10th-call"></a>Agenda para a chamada de 10 de novembro
 
-- Atualizações da API do Word
-- Atualizações de API para Outlook no Mac
-- Demonstração de exemplo de código: Hello world
+- Planejamos postar a agenda aqui sexta-feira, 5 de novembro.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 
@@ -31,15 +29,7 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Office Chamada da comunidade de complementos – 12 de maio de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office Chamada da comunidade de complementos – 14 de abril de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [Office Chamada da comunidade de complementos – 10 de março de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Office Chamada da comunidade de complementos – 10 de fevereiro de 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
-- [Office Chamada da comunidade de complementos – 13 de janeiro de 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-january-13-2021%e2%80%af/)
-- [Office Chamada da comunidade de complementos – 9 de dezembro de 2020](https://developer.microsoft.com/microsoft-365/blogs/office-add-ins-community-call-december-9-2020/)
-- [Office Chamada da comunidade de complementos - 11 de novembro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
-- [Office Chamada da comunidade de complementos - 14 de outubro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
-- [Office Chamada da comunidade de complementos - 9 de setembro de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Office Chamada da comunidade de complementos - 12 de agosto de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
-- [Office Chamada da comunidade de complementos - 8 de julho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
-- [Office Chamada da comunidade de complementos - 10 de junho de 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
+- [Chamadas de Office da comunidade de complementos – 10 de junho de 2020 - 10 de fevereiro de 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Confira também
 

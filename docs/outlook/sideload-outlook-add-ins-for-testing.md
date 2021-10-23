@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 09/22/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 43007ece67d85f584a682b7503f1b59e0d19ad5b
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990702"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537503"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
@@ -19,9 +19,9 @@ Você pode usar sideload para instalar um suplemento do Outlook para teste sem p
 
 ## <a name="sideload-automatically"></a>Sideload automaticamente
 
-Se você criou seu Outlook de usuário usando o gerador Yeoman para Office de [complementos,](https://github.com/OfficeDev/generator-office)o sideload será melhor feito através da linha de comando. Isso aproveitará nossas ferramentas e sideload em todos os dispositivos com suporte em um comando.
+Se você criou seu Outlook do Outlook usando o gerador [Yeoman](https://github.com/OfficeDev/generator-office)para os Office, o sideload será melhor feito através da linha de comando no Windows. Isso aproveitará nossas ferramentas e sideload em todos os dispositivos com suporte em um comando.
 
-1. Usando a linha de comando, navegue até o diretório raiz do seu projeto de complemento gerado pelo Yeoman. Execute o comando `npm start`.
+1. No Windows, abra um prompt de comando e navegue até o diretório raiz do seu projeto de complemento gerado pelo Yeoman. Execute o comando `npm start`.
 
 1. Seu Outlook de usuário será automaticamente sideload para Outlook no computador da área de trabalho. Você verá uma caixa de diálogo aparecer, informando que há uma tentativa de sideload do add-in, listando o nome e o local do arquivo de manifesto. Selecione **OK**, que registrará o manifesto.
 
@@ -89,7 +89,7 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 
 ### <a name="outlook-on-the-desktop"></a>Outlook na área de trabalho
 
-#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou posterior
+### <a name="outlook-2016-or-later"></a>Outlook 2016 ou posterior
 
 1. Abra Outlook 2016 ou posterior no Windows ou Mac.
 
@@ -116,7 +116,7 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 
 1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
-#### <a name="outlook-2013"></a>Outlook 2013
+### <a name="outlook-2013"></a>Outlook 2013
 
 1. Abra Outlook 2013 no Windows.
 
@@ -132,6 +132,6 @@ Para navegar até a caixa de diálogo Meus **Complementos** para seu cliente Out
 
 Para remover um complemento sideload do Outlook, use as etapas descritas anteriormente neste artigo para encontrar o add-in na seção **Complementos personalizados** da caixa de diálogo que lista seus complementos instalados. Escolha a reellipse ( ) para o complemento e `...` escolha **Remover** para remover esse complemento específico. Feche a caixa de diálogo.
 
-## <a name="see-also"></a>Ver também
+## <a name="see-also"></a>Confira também
 
 - [Suplementos do Outlook Mobile](outlook-mobile-addins.md)
