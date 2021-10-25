@@ -267,8 +267,10 @@ items:
                 href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
               - name: Anexar um depurador do painel de tarefas
                 href: testing/attach-debugger-from-task-pane.md
-              - name: Depurar usando as ferramentas de desenvolvedor
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
+              - name: Depurar usando as ferramentas de desenvolvedor para o Internet Explorer
+                href: testing/debug-add-ins-using-f12-tools-ie.md
+              - name: Depurar usando ferramentas de desenvolvedor para legado do Edge
+                href: testing/debug-add-ins-using-devtools-edge-legacy.md
               - name: Depurar usando o WebView2 do Edge Chromium
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
@@ -576,6 +578,8 @@ items:
               - name: Conjunto de requisitos do ExcelApi somente online
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: Conjunto de requisitos ExcelApi 1.14
+                href: reference/requirement-sets/excel-api-1-14-requirement-set.md
               - name: Conjunto de requisitos do ExcelApi 1.13
                 href: reference/requirement-sets/excel-api-1-13-requirement-set.md
                 displayName: Excel

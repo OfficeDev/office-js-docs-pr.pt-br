@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Excel.
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250536"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537580"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -45,7 +45,7 @@ Os suplementos de Excel são executados em várias versões do Office, incluindo
 > [!NOTE]
 > Versões sem assinatura dos conjuntos de requisitos de suporte do Office como a seguir:
 >
-> - O Office 2021 é compatível com o ExcelApi 1.13 e versões anteriores.
+> - O Office 2021 oferece suporte a ExcelApi 1.14 e anteriores.
 > - O Office 2019 é compatível com o ExcelApi 1.8 e versões anteriores.
 > - O Office 2016 é compatível somente com o conjunto de requisitos do ExcelApi 1.1.
 

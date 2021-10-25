@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1c80247346c6303c552558894357db71669a9376
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138460"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537461"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -224,9 +224,9 @@ Para Office no Windows, o tempo de execução compartilhado usa Microsoft Edge c
 
 ![Diagrama de uma função personalizada, painel de tarefas e botões da faixa de opções em execução em um tempo de execução de navegador compartilhado no Excel.](../images/custom-functions-in-browser-runtime.png)
 
-### <a name="debugging"></a>Depuração
+### <a name="debug"></a>Depurar
 
-Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, confira [Suplementos de depuração usando ferramentas de desenvolvedor no Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md).
+Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, consulte [Depurar suplementos usando ferramentas de desenvolvedor para Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) ou [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).
 
 ### <a name="multiple-task-panes"></a>Vários painéis de tarefas
 

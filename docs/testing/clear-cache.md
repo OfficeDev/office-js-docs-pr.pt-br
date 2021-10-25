@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0e3d03303bea1b26f9cf982b59e58865fb683f5d
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138510"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537643"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -72,7 +72,8 @@ Para limpar o cache do Office no iOS, chame `window.location.reload(true)` do Ja
 ## <a name="see-also"></a>Veja também
 
 - [Solucionar erros de desenvolvimento com Suplementos do Office](troubleshoot-development-errors.md)
-- [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
