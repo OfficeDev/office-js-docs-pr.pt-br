@@ -1,0 +1,4 @@
+> [!NOTE]
+> A integração de funções personalizadas com tipos de dados está atualmente em versão prévia pública e é compatível apenas com o Office no Windows. Os recursos de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use oa recursos de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
+>
+> Para experimentar a integração de funções personalizadas com tipos de dados no Office no Windows, você deve ter um número de build do Excel maior ou igual a 16.0.14623.20002. Para usar esse recurso, você precisa ingressar no [ Programa Office Insider](https://insider.office.com/) e, em seguida, escolher o nível Insider do **Canal beta**. Para saber mais, confira [ingressar no Programa Office Insider](https://insider.office.com/join/windows).
