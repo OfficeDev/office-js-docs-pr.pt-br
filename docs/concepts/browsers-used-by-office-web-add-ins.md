@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 10/08/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4998b84da9bdddac258e0531f6ce431ea374627b
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: e2660b51b0c25b15df5d957733631391401121ca
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250424"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681136"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -50,7 +50,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>3</sup> Se o seu complemento incluir o elemento no manifesto, ele não usará Microsoft Edge com o `<Runtimes>` WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
-<sup>4</sup> Em Windows versões anteriores Windows 11, o controle WebView2 deve ser instalado para que Office possa in-lo. Ele é instalado com Microsoft 365, versão 2101 ou posterior, mas não instalado automaticamente com o Edge. Se você tiver uma versão anterior do Microsoft 365, use as instruções para instalar o controle em [Microsoft Edge WebView2 / Incorporar conteúdo da Web... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> Em Windows versões anteriores Windows 11, o controle WebView2 deve ser instalado para que Office possa in-lo. Ele é instalado com Microsoft 365, versão 2101 ou posterior, e com compra única Office 2021 ou posterior; mas não é instalado automaticamente com Microsoft Edge. Se você tiver uma versão anterior do Microsoft 365 ou de compra única Office, use as instruções para instalar o controle em [Microsoft Edge WebView2 / Incorporar conteúdo da Web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). No Microsoft 365 builds antes de 16.0.14326.xxxxx, você também deve criar a chave do **Registro** HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2e definir seu valor como `dword:00000001` .
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do seu complemento tiver plataformas que usam o Internet Explorer 11, para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você terá duas opções.
@@ -60,7 +60,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 >
 > Para obter mais informações sobre essas opções, consulte [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
+> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização. Para saber mais, consulte [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Solução de Microsoft Edge problemas
 

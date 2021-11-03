@@ -1,14 +1,14 @@
 ---
 title: Elemento Icon no arquivo de manifesto
 description: Define elementos de Imagem para controles de Botão ou de Menu.
-ms.date: 03/30/2021
+ms.date: 10/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f47f35f18995b3d9e0af1115668b43a506e830d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151731"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681723"
 ---
 # <a name="icon-element"></a>Elemento Icon
 
@@ -43,7 +43,7 @@ Uma imagem para o botão. O **atributo resid** não pode ter mais de 32 caracter
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Requisitos adicionais para fatores forma móveis
 
-Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer no mínimo tamanhos de pixel 25, 32 e 48. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`.
+Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer no mínimo tamanhos de pixel 25, 32 e 48. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`. Esse atributo especifica a `UIScreen.scale` propriedade para dispositivos iOS. Para obter mais informações, consulte [scale](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale).
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

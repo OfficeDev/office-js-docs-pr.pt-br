@@ -1,14 +1,14 @@
 ---
 title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
-ms.date: 09/18/2020
+ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9af96db7fbbeaf21274d4c5980afe0f4e9be3c5
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 30e7b93430b8ddffc5ebc2cc8f2ae2bab5c0850f
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537608"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681525"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -52,7 +52,7 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
     > Se esse comando não estiver disponível ou não estiver funcionando, execute o seguinte comando para forçar o uso da versão mais recente da ferramenta office-addin-manifest (substituindo pelo nome do arquivo `MANIFEST_FILE` de manifesto).
     >
     > ```command&nbsp;line
-    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
@@ -75,5 +75,5 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 - [Limpar o cache do Office](clear-cache.md)
 - [Depurar seu suplemento com o log de tempo de execução](runtime-logging.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Legado de Borda](debug-add-ins-using-devtools-edge-legacy.md)
+- [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)

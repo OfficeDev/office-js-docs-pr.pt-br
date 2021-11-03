@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e377725bc61b33d8b67729cf041a12255e3dba5
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 2d1efa2b2dca5a88a56fb5f54a84b790e08745ec
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237186"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681645"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
@@ -24,7 +24,7 @@ O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos,
 >
 > Para outros recursos, você pode solicitar acesso aos bits de visualização para Outlook na Web usando sua conta Microsoft 365 concluindo e enviando [esse formulário](https://aka.ms/OWAPreview). "Solicitar acesso de visualização" é notado nesses recursos.
 
-O conjunto de requisitos de visualização inclui todos os recursos do [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
+O conjunto de requisitos de visualização inclui todos os recursos do conjunto [de requisitos 1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md).
 
 ## <a name="features-in-preview"></a>Recursos no modo de visualização
 
@@ -104,7 +104,7 @@ Adicionado um novo objeto que permite gerenciar a data e a hora de entrega de um
 
 Esse recurso foi lançado no [conjunto de requisitos 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). No entanto, eventos adicionais agora estão disponíveis na visualização. Para saber mais, consulte [Eventos com suporte.](../../../outlook/autolaunch.md#supported-events)
 
-**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
 
 <br>
 
@@ -139,26 +139,6 @@ Capacidade adicional para obter o tema do Office.
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365)
-
-<br>
-
----
-
----
-
-### <a name="session-data"></a>Os dados da sessão
-
-#### <a name="officesessiondata"></a>[Office. SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
-
-Adicionado um novo objeto que representa os dados de sessão de um item.
-
-**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
-
-#### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
-
-Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no modo Redação.
-
-**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno)
 
 <br>
 

@@ -1,14 +1,14 @@
 ---
 title: Abra Excel página da Web e insiro seu Office Dep.
 description: Abra Excel página da Web e insiro seu Office Add-in.
-ms.date: 02/09/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac644de03c1f3a4c382dbe151c3224afffdbc81
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8d22291c5e4e781535105c22e137097b255cd1d2
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148592"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681539"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Abra Excel página da Web e insiro seu Office Dep.
 
@@ -194,8 +194,6 @@ Normalmente, quando o cliente abre um documento Excel de seu site, ele espera qu
 ### <a name="working-with-the-ooxml-sdk"></a>Trabalhando com o SDK OOXML
 
 O SDK OOXML é baseado em .NET. Se o aplicativo Web não for o .NET, você precisará procurar uma maneira alternativa de trabalhar com o OOXML.
-
-Há uma versão JavaScript do SDK OOXML disponível no [Open XML SDK para JavaScript](https://archive.codeplex.com/?p=openxmlsdkjs).
 
 Você pode colocar o código OOXML em uma função do Azure para separar o código .NET do restante do seu aplicativo Web. Em seguida, chame a função Azure (para gerar o documento Excel) do aplicativo Web. Para obter mais informações sobre as funções do Azure, consulte [Uma introdução às funções do Azure](/azure/azure-functions/functions-overview).
 

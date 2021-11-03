@@ -1,14 +1,14 @@
 ---
 title: Elemento WebApplicationInfo no arquivo de manifesto
 description: Documentação de referência do elemento WebApplicationInfo para Office arquivos XML (manifesto de complementos).
-ms.date: 07/30/2020
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152030"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681546"
 ---
 # <a name="webapplicationinfo-element"></a>Elemento WebApplicationInfo
 
@@ -27,10 +27,8 @@ Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém inf
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Id**    |  Sim   |  A **Id do Aplicativo** do serviço associado do suplemento conforme registrado no ponto de extremidade do Azure Active Directory (Azure AD) v 2.0.|
-|  **MsaId**    |  Não   |  A ID do cliente do aplicativo Web do seu complemento para MSA conforme registrado no msm.live.com.|
 |  **Recurso**  |  Sim   |  Especifica o **URI da ID do Aplicativo** do suplemento, conforme registrado no ponto de extremidade do Azure Active Directory v 2.0.|
 |  [Escopos](scopes.md)                |  Sim  |  Especifica as permissões que o complemento precisa para um recurso, como o Microsoft Graph.  |
-|  [Autorizações](authorizations.md)  |  Não   | Especifica os recursos externos que o aplicativo Web do complemento precisa de autorização e as permissões necessárias.|
 
 ## <a name="webapplicationinfo-example"></a>Exemplo de WebApplicationInfo
 
@@ -41,21 +39,13 @@ Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém inf
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
         <Scope>profile</Scope>
       </Scopes>
-      <Authorizations>
-        <Authorization>
-          <Resource>https://api.contoso.com</Resource>
-            <Scopes>
-              <Scope>profile</Scope>
-          </Scopes>
-        </Authorization>
-      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

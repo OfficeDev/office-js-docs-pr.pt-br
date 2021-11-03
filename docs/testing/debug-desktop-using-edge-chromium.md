@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138643"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681263"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
 
@@ -25,8 +25,12 @@ Os Suplementos do Office em execução no Windows podem usar o Depurador para a 
 
 1. Crie um projeto usando o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office). Para isso, você pode usar um dos nossos guias de início rápido, como o [Início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md).
 
-    > [!TIP]
-    > Se você não estiver usando um suplemento baseado no gerador do Yeoman, pode ser solicitado que você ajuste uma chave do registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando:  `office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > Se você não estiver usando um suplemento baseado no gerador do Yeoman, pode ser solicitado que você ajuste uma chave do registro. Enquanto estiver na pasta raiz do seu projeto, execute o seguinte na linha de comando.
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. Abra o projeto no VS Code. Dentro do código VS, selecione **Ctrl+Shift+X** para abrir a Barra de extensões. Procure a extensão "Depurador do Microsoft Edge" e instale-a.
 
