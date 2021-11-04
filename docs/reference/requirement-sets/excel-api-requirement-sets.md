@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Excel.
-ms.date: 10/18/2021
+ms.date: 11/02/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8770f91531b74442561d93d76daf57492d4c13f5
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537580"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60683788"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -28,6 +28,7 @@ Os suplementos de Excel são executados em várias versões do Office, incluindo
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](excel-preview-apis.md)  | Use a versão mais recente do Office para experimentar APIs de visualização (pode ser necessário ingressar no [Programa Office Insider](https://insider.office.com)). |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | Não disponível | N/D | Não disponível | Mais recente (confira a [página conjunto de requisitos](excel-api-online-requirement-set.md)) |
+| [ExcelApi 1.14](excel-api-1-14-requirement-set.md) | Versão 2108 (Build 14326.20508) ou posterior | 16,53 ou posterior | 16,52 ou posterior | Outubro de 2021 |
 | [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | Versão 2102 (Compilação 13801.20738) ou posterior | 16.50 ou posterior | 16.50 ou posterior | Junho de 2021 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Versão 2008 (Build 13127.20408) ou posterior | 16.40 ou posterior | 16.40 ou posterior | Setembro de 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Versão 2002 (Build 12527.20470) ou posterior | 16.35 ou posterior | 16.33 ou posterior | Maio de 2020 |
