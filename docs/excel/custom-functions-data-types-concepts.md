@@ -1,16 +1,16 @@
 ---
 title: Conceitos principais de funções e tipos de dados personalizados
 description: Saiba os principais conceitos para usar Excel de dados com suas funções personalizadas.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
-ms.openlocfilehash: 65cc8e04006c999237d44f1c4698a6e82e5f459d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 3b7e735f78ca7b6dcdffa3bd5e8ba9c9d3093766
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681734"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749403"
 ---
 # <a name="custom-functions-and-data-types-core-concepts-preview"></a>Conceitos principais de funções e tipos de dados personalizados (visualização)
 
@@ -18,14 +18,14 @@ ms.locfileid: "60681734"
 
 Os tipos de dados aprimoram Excel API JavaScript expandindo o suporte para tipos de dados além dos quatro originais (cadeia de caracteres, número, booleano e erro). Os tipos de dados incluem suporte para valores de número formatados, imagens da Web, valores de entidade e matrizes dentro dos valores da entidade. Funções personalizadas aceitam tipos de dados como valores de entrada e saída, expandindo o poder de cálculo de funções personalizadas.
 
-Para saber mais sobre como usar tipos de dados com um Excel de Excel, consulte [Excel conceitos principais](/excel-data-types-concepts.md)de tipos de dados.
+Para saber mais sobre como usar tipos de dados com um Excel de Excel, consulte [Excel conceitos principais](excel-data-types-concepts.md)de tipos de dados.
 
 ## <a name="how-custom-functions-handle-data-types"></a>Como as funções personalizadas lidam com tipos de dados
 
 Funções personalizadas podem reconhecer tipos de dados e aceitá-los como valores de parâmetro. Uma função personalizada pode criar um novo tipo de dados para um valor de retorno. As funções personalizadas usam o mesmo esquema JSON para tipos de dados que Excel API JavaScript do Excel, e esse esquema JSON é mantido conforme as funções personalizadas calculam e avaliam.
 
 > [!NOTE]
-> Funções personalizadas não suportam a funcionalidade completa dos objetos de erro aprimorados oferecidos por tipos de dados. Uma função personalizada pode aceitar um objeto de erro de tipos de dados, mas não será mantida durante o cálculo. No momento, as funções personalizadas só suportam os erros incluídos no [objeto CustomFunctions.Error.](/custom-functions-errors.md)
+> Funções personalizadas não suportam a funcionalidade completa dos objetos de erro aprimorados oferecidos por tipos de dados. Uma função personalizada pode aceitar um objeto de erro de tipos de dados, mas não será mantida durante o cálculo. No momento, as funções personalizadas só suportam os erros incluídos no [objeto CustomFunctions.Error.](custom-functions-errors.md)
 
 ## <a name="enable-data-types-for-custom-functions"></a>Habilitar tipos de dados para funções personalizadas
 
@@ -95,7 +95,7 @@ function getEntityAttribute(value, attribute) {
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral de funções personalizadas e tipos de dados](/custom-functions-data-types-overview.md)
-* [Visão geral dos tipos de dados em Excel de complementos](/excel-data-types-overview.md)
-* [Excel principais conceitos de tipos de dados](/excel-data-types-concepts.md)
+* [Visão geral de tipos de dados e funções personalizadas](custom-functions-data-types-overview.md)
+* [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
+* [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
 * [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

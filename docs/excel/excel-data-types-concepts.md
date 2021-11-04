@@ -1,17 +1,17 @@
 ---
 title: Conceitos básicos dos tipos de dados da API JavaScript do Excel
 description: Conheça os principais conceitos para usar os tipos de dados do Excel no Suplemento do Office.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cb5a1e13ced03116d10c7d7a09f822485b41ff6a
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681741"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749382"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
@@ -109,6 +109,6 @@ Cada um dos objetos de erro pode acessar uma enumeração por meio da propriedad
 
 ## <a name="see-also"></a>Confira também
 
-- [Visão geral dos tipos de dados em suplementos do Excel](/excel-data-types-overview.md)
+- [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
 - [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Visão geral de tipos de dados e funções personalizadas](/custom-functions-data-types-overview.md)
+- [Visão geral de tipos de dados e funções personalizadas](custom-functions-data-types-overview.md)

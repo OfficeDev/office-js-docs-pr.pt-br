@@ -1,14 +1,14 @@
 ---
 title: Criar metadados JSON manualmente para funções personalizadas Excel
 description: Defina os metadados JSON para funções personalizadas no Excel e associe sua ID de função e propriedades de nome.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 517fd8f8eb0338f32b58f0b61f1810b3c7ac26a4
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 28be374a88890d20294311599b06b16942edd9b7
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681228"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749396"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar metadados JSON manualmente para funções personalizadas
 
@@ -143,11 +143,11 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (visualização)
 
 > [!NOTE]
-> No momento, a propriedade está disponível na visualização pública e é compatível apenas com Office `allowCustomDataForDataTypeAny` no Windows. Os recursos de visualização estão sujeitos a alterações e não são destinados ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use recursos de visualização em um ambiente de produção ou em documentos críticos para os negócios.
+> No momento, a propriedade está disponível na visualização pública e é compatível apenas com Office `allowCustomDataForDataTypeAny` no Windows. Os recursos de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use oa recursos de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
 >
-> Para experimentar essa propriedade Office em Windows, você deve ter um número de com build Excel maior ou igual a 16.0.14623.20002. Para usar esse recurso, você precisa ingressar no programa [Office Insider](https://insider.office.com/) e, em seguida, escolher o nível Insider do **Canal Beta.** Para saber mais, consulte [Join the Office Insider Program](https://insider.office.com/join/windows).
+> Para experimentar essa propriedade Office em Windows, você deve ter um número de com build Excel maior ou igual a 16.0.14623.20002. Para usar esse recurso, você precisa ingressar no [ Programa Office Insider](https://insider.office.com/) e, em seguida, escolher o nível Insider do **Canal beta**. Para saber mais, confira [ingressar no Programa Office Insider](https://insider.office.com/join/windows).
 
-A `allowCustomDataForDataTypeAny` propriedade é um tipo de dados booleano. Definir esse valor para `true` permitir que uma função personalizada aceite tipos de dados como parâmetros e retorne valores. Para saber mais, confira [Conceitos básicos de funções e tipos de dados personalizados.](/custom-functions-data-types-concepts.md)
+A `allowCustomDataForDataTypeAny` propriedade é um tipo de dados booleano. Definir esse valor para `true` permitir que uma função personalizada aceite tipos de dados como parâmetros e retorne valores. Para saber mais, confira [Conceitos básicos de funções e tipos de dados personalizados.](custom-functions-data-types-concepts.md)
 
 Ao contrário da maioria das outras propriedades de metadados JSON, é uma propriedade de nível superior `allowCustomDataForDataTypeAny` e não contém sub-propriedades. Consulte o exemplo de código de [metadados JSON](#json-metadata-example) anterior para ver um exemplo de como formatar essa propriedade.
 
