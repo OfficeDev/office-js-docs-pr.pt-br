@@ -1,14 +1,14 @@
 ---
 title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
-ms.date: 07/08/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537615"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793580"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -23,6 +23,8 @@ Você pode usar o log de tempo de execução para depurar o manifesto do seu sup
 ## <a name="use-runtime-logging-from-the-command-line"></a>Use o log de tempo de execução na linha de comandos
 
 Habilitar o log de tempo de execução na linha de comando é a maneira mais rápida de usar essa ferramenta de log. Esse usa npx, que é fornecido por padrão como parte do npm@5.2.0+. Se você possui uma versão anterior do [npm](https://www.npmjs.com/), tente as instruções do [Log de tempo de execução no Windows](#runtime-logging-on-windows) ou do [Log de tempo de execução no Mac](#runtime-logging-on-mac), ou [instale o npx](https://www.npmjs.com/package/npx).
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - Para habilitar o log de tempo de execução:
 
@@ -141,5 +143,5 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Limpar o cache do Office](clear-cache.md)
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Legado de Borda](debug-add-ins-using-devtools-edge-legacy.md)
+- [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)

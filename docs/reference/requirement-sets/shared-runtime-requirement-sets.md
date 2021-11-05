@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
-ms.date: 10/05/2021
+ms.date: 11/03/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: a5f7d3c9394de047b358d7f190c5adae5b5199b1
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138496"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793600"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 
@@ -21,15 +21,24 @@ A tabela a seguir lista o conjunto de requisitos SharedRuntime 1.1, os aplicativ
 
 | Conjunto de requisitos | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) | Office no iPad<br>(conectado a uma assinatura do Microsoft 365) | Office no Mac<br>(conectado a uma assinatura do Microsoft 365) | Office na Web | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Build 16.0.14326.20454 ou posterior | Versão 2002 (build 12527.20092) ou posterior | N/D | 16.35 ou posterior | Fevereiro de 2020 | N/D |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou posterior | Versão 2002 (build 12527.20092) ou posterior | Não disponível | 16.35 ou posterior | Fevereiro de 2020 | Não disponível |
 
 > [!IMPORTANT]
-> O conjunto de requisitos de tempo de execução do JavaScript compartilhado está disponível apenas nas plataformas e aplicativos Office a seguir.
->
-> - Excel na web, Windows e Mac.
-> - PowerPoint no Windows (build 13218.10000 ou posterior). O tempo de execução de JavaScript compartilhado para PowerPoint está atualmente em pré-visualização e sujeito a alterações. Não é compatível para uso em ambientes de produção. Para obter o build mais recente, você precisa [Ingressar no Office Insider](https://insider.office.com/join). Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
->
-> No momento, o tempo de execução de JavaScript compartilhado não é compatível com iPad ou em versões de compra avulsa do Office 2019 ou anterior.
+> No momento, o tempo de execução de JavaScript compartilhado não é compatível com iPad ou em versões de compra avulsa do Office 2019 ou anterior. Para obter detalhes adicionais de suporte, consulte as seções a seguir.
+
+## <a name="support-for-version-11-on-excel"></a>Suporte para a versão 1.1 no Excel
+
+O conjunto de requisitos SharedRuntime 1.1 é lançado para Excel na Web, Windows e Mac.
+
+## <a name="preview-support-for-version-11-on-word-and-powerpoint"></a>Visualizar suporte para a versão 1.1 no Word e PowerPoint
+
+A tabela a seguir lista builds de aplicativo adicionais que suportam uma visualização do tempo de execução javaScript compartilhado. A versão de visualização do tempo de execução compartilhado está sujeita a alterações. Não é compatível para uso em ambientes de produção. Para obter o build mais recente, você precisa [Ingressar no Office Insider](https://insider.office.com/join). Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
+
+|Aplicativo do Office |Compilar |
+|-------------------|------|
+|PowerPoint no Windows |Build 16.0.13218.10000 ou posterior |
+|Word no Windows |Build 16.0.13218.10000 ou posterior |
+|Word no Mac |Build 16.46.207.0 ou posterior |
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 

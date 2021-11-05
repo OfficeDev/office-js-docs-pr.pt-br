@@ -1,16 +1,16 @@
 ---
 title: Visão geral de tipos de dados e funções personalizadas
 description: Use os tipos de dados do Excel com suas funções personalizadas e Suplementos do Office.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ddf881cc2f92f430c8d68d346cc5f494be51c19f
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 91d2fb21aae57ed7a5777136f3c4540925f339c8
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681733"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793572"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Usar tipos de dados com funções personalizadas no Excel (visualização)
 
@@ -20,11 +20,11 @@ Os tipos de dados expandem a API JavaScript do Excel para dar suporte a tipos de
 
 Esses tipos de dados ampliam o poder das funções personalizadas, pois as funções personalizadas aceitam tipos de dados como valores de entrada e saída. Você pode gerar tipos de dados por meio de funções personalizadas ou levar os tipos de dados existentes como argumentos de função nos cálculos. Depois que o esquema JSON de um tipo de dados for definido, esse esquema será mantido em todos os cálculos de função personalizada.
 
-Para saber mais sobre como usar tipos de dados com um suplemento do Excel, confira [Visão geral de tipos de dados nos suplementos do Excel](/excel-data-types-overview.md). Para saber mais sobre como integrar tipos de dados personalizados com suas funções personalizadas, confira [Conceitos principais de funções e tipos de dados personalizados](/custom-functions-data-types-concepts.md).
+Para saber mais sobre como usar tipos de dados com um suplemento do Excel, confira [Visão geral de tipos de dados nos suplementos do Excel](excel-data-types-overview.md). Para saber mais sobre como integrar tipos de dados personalizados com suas funções personalizadas, confira [Conceitos principais de funções e tipos de dados personalizados](custom-functions-data-types-concepts.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral dos tipos de dados em suplementos do Excel](/excel-data-types-overview.md)
-* [Conceitos básicos dos tipos de dados do Excel](/excel-data-types-concepts.md)
-* [Conceitos principais de funções e tipos de dados personalizados](/custom-functions-data-types-concepts.md)
+* [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
+* [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
+* [Conceitos principais de funções e tipos de dados personalizados](custom-functions-data-types-concepts.md)
 * [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

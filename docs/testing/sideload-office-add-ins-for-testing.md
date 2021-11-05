@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
-ms.date: 08/02/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a2067bc4de24c3e9cfecdf957af4b57856d8ee7b
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148917"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793607"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -73,6 +73,8 @@ Esse método não usa a linha de comando e pode ser realizado usando comandos so
 > [!NOTE]
 > Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
+
 ## <a name="sideload-an-office-add-in"></a>Fazer sideload Office add-in
 
 1. Entre na sua conta Microsoft 365 de usuário.
@@ -101,7 +103,7 @@ Se você estiver usando Visual Studio para desenvolver seu complemento, o proces
 
 Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário limpar o cache do navegador e, em seguida, re-sideload do complemento usando o manifesto atualizado. Isso permitirá Office na Web renderizar o complemento conforme descrito pelo manifesto atualizado.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)
