@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office Chamada da comunidade de complementos
 description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
-ms.date: 11/04/2021
+ms.date: 11/07/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793593"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809067"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
 
@@ -16,7 +16,7 @@ A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde 
 
 ## <a name="agenda-for-november-10th-call"></a>Agenda para a chamada de 10 de novembro
 
-- Community apresentação por CodeTwo. Integração da ativação baseada em evento com Outlook assinaturas.
+- [CodeTwo](https://www.codetwo.com/email-signatures/): assinaturas Outlook automáticas com base em destinatários de email e muito mais.
 - Demonstração da nova biblioteca Office-Addin-Mock para a unidade que testa seu código ao trabalhar com Office APIs JS.
 - Microsoft 365 caixa de correio instantânea.
 
@@ -34,7 +34,7 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [10 de março de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
 - [Chamadas de Office da comunidade de complementos – 10 de junho de 2020 - 10 de fevereiro de 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
 - [Convite de calendário de chamada da comunidade mensal recorrente](https://aka.ms/officeaddinscommunitycall)
 - [Community perguntas e solicitações de tópicos de chamada](https://aka.ms/officeaddinsform)

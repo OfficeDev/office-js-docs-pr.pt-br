@@ -1,14 +1,14 @@
 ---
 title: Outlook conjunto de requisitos de API de complemento 1.10
 description: Conjunto de requisitos 1.10 para Outlook api de complemento.
-ms.date: 11/01/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 57814ab7da8faec3cc60f943ef13db12de01dc17
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 76cdf267a707a7f7d3481fcf6e50265fca061ff0
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681094"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809053"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conjunto de requisitos de API de complemento 1.10
 
@@ -22,6 +22,7 @@ O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos,
 O conjunto de requisitos 1.10 inclui todos os recursos do conjunto [de requisitos 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md). Ele adicionou os seguintes recursos.
 
 - Adicionadas novas APIs para [ativação baseada em eventos](../../../outlook/autolaunch.md) e recursos de assinatura de email.
+- Adicionado suporte para o [objeto OfficeRuntime.Armazenamento](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true) com o recurso de ativação baseada em evento.
 - Adicionada a capacidade de incluir uma ação personalizada em uma mensagem de notificação.
 
 ### <a name="change-log"></a>Log de mudanças
@@ -38,6 +39,7 @@ O conjunto de requisitos 1.10 inclui todos os recursos do conjunto [de requisito
 - Adicionado [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): adiciona um novo tipo ao `ItemNotificationMessageType` número. Ele representa uma mensagem de notificação com uma ação personalizada.
 - Adicionado [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): adiciona um novo objeto para que você possa definir uma ação personalizada para sua `InsightMessage` notificação.
 - Adicionado [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): adiciona uma nova propriedade que permite adicionar uma `InsightMessage` notificação com uma ação personalizada.
+- Modificado [OfficeRuntime.Armazenamento](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true): adiciona Outlook suporte, mas somente com o recurso de ativação baseada em evento.
 
 ## <a name="see-also"></a>Confira também
 

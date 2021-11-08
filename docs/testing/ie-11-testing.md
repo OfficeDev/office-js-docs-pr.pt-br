@@ -1,14 +1,14 @@
 ---
 title: Teste do Internet Explorer 11
 description: Teste seu Office no Internet Explorer 11.
-ms.date: 10/08/2021
+ms.date: 11/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e64ce43b4b105b54ed5fcf3fa260ef7f81a04520
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8932545aa692073babeddb6ab22a213466a7c2ba
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537629"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60809032"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Testar seu Office de usuário no Internet Explorer 11
 
@@ -30,44 +30,33 @@ Se você planeja comercializar seu complemento por meio do AppSource ou planeja 
 >
 > Para obter mais informações sobre essas opções, consulte [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
+> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização. Para saber mais, consulte [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 > [!NOTE]
 > Office na Web não pode ser aberto no Internet Explorer 11, portanto, você não pode (e não precisa) testar seu complemento no Office na Web com o Internet Explorer.
 
-## <a name="prerequisites"></a>Pré-requisitos
-
-- [Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
-
-Estas instruções pressuem que você tenha criado um projeto de gerador Yo Office antes. Se você não tiver feito isso antes, considere ler um início rápido, como este para Excel [de Excel.](../quickstarts/excel-quickstart-jquery.md)
-
-## <a name="switching-to-the-internet-explorer-11-webview"></a>Alternando para o webview do Internet Explorer 11
-
-1. Crie um projeto yo Office gerador. Não importa o tipo de projeto selecionado, essa ferramenta funcionará com todos os tipos de projeto.
-
-    > [!NOTE]
-    > Se você tiver um projeto existente e quiser adicionar essa ferramenta sem criar um novo projeto, pule esta etapa e vá para a próxima etapa. 
-
-1. Na pasta raiz do seu projeto, execute o seguinte na linha de comando. Este exemplo supõe que o arquivo de manifesto do seu projeto está na raiz. Se não estiver, especifique o caminho relativo para o arquivo de manifesto. Você deve ver uma mensagem na linha de comando que o tipo de exibição da Web agora está definido como IE.
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings webview manifest.xml ie
-    ```
+## <a name="switch-to-the-internet-explorer-11-webview"></a>Alternar para o Webview do Internet Explorer 11
 
 > [!TIP]
-> Não é necessário usar esse comando, mas deve ajudar a depurar a maioria dos problemas relacionados ao tempo de execução do Internet Explorer 11. Para uma robustez completa, você deve testar o uso de computadores com várias combinações de Windows 7, 8.1, 10 e 11 e várias versões de Office. Para obter mais informações, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="command-options"></a>Opções de comando
+Há duas maneiras de alternar o Webview do Internet Explorer. Você pode executar um comando simples em um prompt de comando ou instalar uma versão do Office que usa o Internet Explorer por padrão. Recomendamos o primeiro método. Mas você deve usar o segundo nos cenários a seguir.
 
-O comando também pode ter vários tempos de `office-addin-dev-settings webview` execução como argumentos:
+- Seu projeto foi desenvolvido com Visual Studio e IIS. Não é baseado em node.js.
+- Você deseja ser absolutamente robusto em seus testes.
+- Se, por qualquer motivo, a ferramenta de linha de comando não funcionar.
 
-- ie
-- edge
-- Padrão.
+### <a name="switch-via-the-command-line"></a>Alternar pela linha de comando
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### <a name="install-a-version-of-office-that-uses-internet-explorer"></a>Instalar uma versão do Office que usa o Internet Explorer
+
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 ## <a name="see-also"></a>Confira também
 
 * [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
 * [Realizar sideload de suplementos do Office para teste](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+* [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 * [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)
