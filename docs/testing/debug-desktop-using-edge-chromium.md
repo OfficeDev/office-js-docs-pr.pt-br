@@ -1,18 +1,21 @@
 ---
-title: Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)
+title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 11/01/2021
+ms.date: 11/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681263"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889983"
 ---
-# <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Depurar suplementos no Windows usando o WebView2 do Edge Chromium
+# <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
-Os Suplementos do Office em execução no Windows podem usar o Depurador para a extensão do Microsoft Edge no VS Code para depurar em relação ao tempo de execução do WebView2 do Edge Chromium.
+Os suplementos do Office em execução no Windows podem usar a extensão Debugger for Microsoft Edge no Visual Studio Code para depurar no tempo de execução Edge Chromium WebView2. 
+
+> [!TIP]
+> Se você não pode, ou não deseja, depurar usando ferramentas incorporadas ao Visual Studio Code; ou você está encontrando um problema que ocorre apenas quando o suplemento é executado fora do Visual Studio Code, você pode depurar o tempo de execução do Edge Chromium WebView2 usando as ferramentas de desenvolvedor do Edge (baseado em Chromium), conforme descrito em [Depurar suplementos usando ferramentas de desenvolvedor para Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
