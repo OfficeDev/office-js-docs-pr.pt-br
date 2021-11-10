@@ -1,14 +1,14 @@
 ---
 title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
-ms.date: 10/08/2021
+ms.date: 11/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a790ada4425b13880b9eeedfbd002dc818b927
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: b545d81c8e728a5d6c9129bfa166e23a76ce2b04
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250508"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889990"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -43,7 +43,7 @@ Conclua as etapas em uma das seções a seguir para publicar um Office Add-in em
 1. Vá para a [página Sites ativos do novo centro de administração do SharePoint](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) e entre com uma conta que tenha [permissões de administrador](/sharepoint/sharepoint-admin-role) da sua organização.
 
     > [!NOTE]
-    > Se você tiver Microsoft 365 [Alemanha,](https://go.microsoft.com/fwlink/p/?linkid=848041)entre no Centro de administração do Microsoft 365 , navegue até o centro de administração SharePoint e abra a página Mais recursos. <br>Se você tiver Microsoft 365 operado pela 21Vianet (China), entre no [Centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627), navegue até o centro de administração do SharePoint e abra a página Mais recursos.
+    > Se você tiver Microsoft 365 operado pela 21Vianet (China), entre no [Centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627), navegue até o centro de administração do SharePoint e abra a página Mais recursos.
 
 1. Abra o site do catálogo de aplicativos selecionando sua URL na coluna URL.
 
