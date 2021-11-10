@@ -271,7 +271,9 @@ items:
                 href: testing/debug-add-ins-using-f12-tools-ie.md
               - name: Depurar usando ferramentas de desenvolvedor para legado do Edge
                 href: testing/debug-add-ins-using-devtools-edge-legacy.md
-              - name: Depurar usando o WebView2 do Edge Chromium
+              - name: Depurar usando ferramentas de desenvolvedor para o Edge Chromium WebView2
+                href: testing/debug-add-ins-using-devtools-edge-chromium.md
+              - name: Depurar usando Visual Studio Code e Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
               - name: Testar com o Internet Explorer 11
