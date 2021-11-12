@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
+ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138489"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "60923563"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -546,7 +546,7 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 ## <a name="see-also"></a>Confira também
 
 * [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
-* [Criar comandos de suplemento em seu manifesto] [create-addin-commands.md]
+* [Criar comandos de suplementos em seu manifesto](create-addin-commands.md)
 * [Especificar requisitos da API e de aplicativos do Office](specify-office-hosts-and-api-requirements.md)
 * [Localização para suplementos do Office](localization.md)
 * [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
