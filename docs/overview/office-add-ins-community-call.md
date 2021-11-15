@@ -1,24 +1,22 @@
 ---
-title: Microsoft Office Chamada da comunidade de complementos
+title: Microsoft Office da comunidade de complementos
 description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
-ms.date: 11/07/2021
+ms.date: 11/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
-ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
+ms.openlocfilehash: dd96efb632b065e15d80a73f6bc54a4424e24d49
+ms.sourcegitcommit: 4cd94f6b365ea7813f19d4a06e6de2a1308b5aee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "60809067"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "60963434"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Chamada da comunidade de complementos
+# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de complementos
 
 A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 PDT. Você pode baixar o convite do calendário em [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
-## <a name="agenda-for-november-10th-call"></a>Agenda para a chamada de 10 de novembro
+## <a name="agenda-for-december-8th-call"></a>Agenda para a chamada de 8 de dezembro
 
-- [CodeTwo](https://www.codetwo.com/email-signatures/): assinaturas Outlook automáticas com base em destinatários de email e muito mais.
-- Demonstração da nova biblioteca Office-Addin-Mock para a unidade que testa seu código ao trabalhar com Office APIs JS.
-- Microsoft 365 caixa de correio instantânea.
+A agenda de dezembro será postada cerca de uma semana antes da chamada.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 
@@ -41,4 +39,4 @@ Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir p
 - [Microsoft 365 canal do YouTube do desenvolvedor](https://aka.ms/m365devyoutube)
 - [Microsoft 365 canal da comunidade do YouTube](https://aka.ms/m365pnp/videos )
 - [Microsoft 365 PnP no Tech Community](https://aka.ms/m365pnp/community)
-- [Microsoft 365 Blog da comunidade técnica PnP](https://aka.ms/m365pnp/community/blog)
+- [Microsoft 365 blog da comunidade técnica PnP](https://aka.ms/m365pnp/community/blog)
