@@ -1136,6 +1136,8 @@ items:
                 href: outlook/authentication.md
               - name: Autenticar com o token SSO
                 href: outlook/authenticate-a-user-with-an-sso-token.md
+              - name: SSO na ativação baseada em evento
+                href: outlook/use-sso-in-event-based-activation.md
               - name: Autenticar com um token de identidade
                 href: outlook/authenticate-a-user-with-an-identity-token.md
               - name: Validar um token de identidade
