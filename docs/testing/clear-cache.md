@@ -1,14 +1,14 @@
 ---
 title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
-ms.date: 08/02/2021
+ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537643"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066664"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -21,7 +21,25 @@ Além disso, se você fizer alterações no manifesto do seu suplemento (por exe
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
-Para remover todos os suplementos carregados no Excel, Word e PowerPoint, exclua os conteúdos da pasta.
+Há três maneiras de limpar o cache do Office em um computador Windows: automaticamente, manualmente e usando as ferramentas de desenvolvedor do Microsoft Edge. Os métodos são descritos nas subseções a seguir.
+
+### <a name="automatically"></a>Automaticamente
+
+Este método é recomendado para computadores de desenvolvimento de suplementos. Se o Office na versão Windows for 2108 ou posterior, as etapas a seguir configurarão o cache do Office para ser limpo automaticamente sempre que o Office for reaberto.
+
+> [!NOTE]
+> O método automático não é suportado para Outlook.
+
+1. Na faixa de opções de qualquer host do Office, exceto o Outlook, navegue até **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Complementos Confiáveis**.
+1. Marque a caixa de seleção **Da próxima vez que o Office iniciar, limpe o cache de todos os suplementos da Web iniciados anteriormente**.
+
+### <a name="manually"></a>Manualmente
+
+O método manual para Excel, Word e PowerPoint é diferente do Outlook.
+
+#### <a name="manually-clear-the-cache-in-excel-word-and-powerpoint"></a>Limpar manualmente o cache no Excel, Word e PowerPoint
+
+Para remover todos os suplementos com sideload de Excel, Word e PowerPoint, exclua o conteúdo da pasta a seguir.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -33,9 +51,13 @@ Se a pasta a seguir existir, exclua seu conteúdo também.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
+#### <a name="manually-clear-the-cache-in-outlook"></a>Limpar manualmente o cache no Outlook
+
 Para remover um suplemento sideload do Outlook, use as etapas descritas em [Suplementos de sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **Suplementos personalizados** da caixa de diálogo caixa que lista seus suplementos instalados. Escolha as reticências (`...`) para o suplemento e escolha **Remover** para remover esse suplemento específico. Se a remoção do suplemento não funcionar, exclua o conteúdo da pasta `Wef` conforme observado anteriormente para Excel, Word e PowerPoint.
 
-Além disso, para limpar o cache do Office no Windows 10 quando o suplemento estiver sendo executado no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
+### <a name="using-the-microsoft-edge-developer-tools"></a>Usando as ferramentas de desenvolvedor do Microsoft Edge
+
+Para limpar o cache do Office no Windows 10 quando o suplemento estiver em execução no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
 
 > [!TIP]
 > Se você deseja apenas que o suplemento sideloaded reflita as alterações recentes em seus arquivos de origem HTML ou JavaScript, não deve ser necessário limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **Ctrl+F5** para recarregar o suplemento.
