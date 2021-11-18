@@ -8,8 +8,8 @@ ms.openlocfilehash: 4875018d2c457fe26eaed0d86f549d44f7932d52
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064663"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066720"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 

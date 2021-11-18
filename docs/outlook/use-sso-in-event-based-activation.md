@@ -7,8 +7,8 @@ ms.openlocfilehash: 66d1edb8b7b0092ee107b73af24d5420caee8677
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064699"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066650"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Habilitar o SSO (login único) em Outlook que usam a ativação baseada em evento
 
