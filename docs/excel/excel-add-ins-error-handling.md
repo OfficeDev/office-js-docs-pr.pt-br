@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
-ms.date: 09/20/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 24daaa8dcd5256be997c8742016a9ec80b3294df
-ms.sourcegitcommit: 43f20d0933d0159dd390da052187b315222b185f
+ms.openlocfilehash: 5dcc6991e762f8d3defca50df406952ee7f1385b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2021
-ms.locfileid: "59502728"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064677"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
@@ -60,6 +60,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`BadPassword`|A senha fornecida está incorreta.| |
 |`Conflict`|A solicitação não pôde ser processada devido a um conflito.| |
 |`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está faltando.| |
+|`EmptyChartSeries`|A tentativa de operação falhou porque a série de gráficos está vazia.| |
 |`FilteredRangeConflict`|A operação tentada causa um conflito com um intervalo filtrado.| |
 |`FormulaLengthExceedsLimit`|O bytecode da fórmula aplicada excede o limite máximo de comprimento. Para Office em máquinas de 32 bits, o limite de comprimento do bytecode é de 16384 caracteres. Em máquinas de 64 bits, o limite de comprimento do bytecode é de 32768 caracteres.| Esse erro ocorre no Excel na Web e na área de trabalho.|
 |`GeneralException`|Ocorreu um erro interno ao processar a solicitação.| |

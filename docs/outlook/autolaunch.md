@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1311359dcf164e77aa259a324827e176ccc1fab2
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 4875018d2c457fe26eaed0d86f549d44f7932d52
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681593"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064663"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -258,7 +258,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     >
     > 1. Close Outlook.
     > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.
-    > 1. Execute o seguinte comando.
+    > 1. Execute o seguinte comando:
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -300,11 +300,11 @@ As importações não são suportadas no arquivo JavaScript em que você impleme
 
 Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de complementos baseados em eventos. A seguir estão as APIs bloqueadas.
 
-- Em `OfficeRuntime.auth` :
-  - `getAccessToken`(Windows somente)
 - Em `Office.context.auth` :
   - `getAccessToken`
   - `getAccessTokenAsync`
+    > [!NOTE]
+    > `OfficeRuntime.auth` tem suporte. Para obter mais informações, consulte [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Em `Office.context.mailbox` :
   - `displayAppointmentForm`
   - `displayMessageForm`

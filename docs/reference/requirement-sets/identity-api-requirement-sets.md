@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API de Identidade
 description: Informações do conjunto de requisitos da API de identidade para Office de complementos.
-ms.date: 10/05/2021
+ms.date: 11/16/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 743e92b22aa3e5026991bc08524f35607a58a4d3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: d953e3ca2d135b96ab8b3219d9fe0f52fbda9d99
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138573"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064656"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -19,12 +19,16 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 |  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | Build 16.0.14326.20454 ou posterior | 2008 (build 13127.20000) ou posterior | Incompatível | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
+| IdentityAPI 1.3  | Build 16.0.14326.20454 ou posterior | Versão 2008 (build 13127.20000) ou posterior | Incompatível | 16.40 ou posterior | Microsoft Office SharePoint Online e OneDrive\* |
 
 \*Atualmente, o conjunto de requisitos é suportado Office na Web apenas para documentos que são abertos Microsoft Office SharePoint Online e OneDrive.
 
+## <a name="outlook-and-identity-api-requirement-sets"></a>Outlook e conjuntos de requisitos da API de Identidade
+
+Para exigir o conjunto de API de identidade 1.3 em seu código de Outlook de complemento, verifique se ele tem suporte chamando `isSetSupported('IdentityAPI', '1.3')` . Não há suporte para Outlook manifesto do Outlook do complemento. Você também pode determinar se a API tem suporte, verificando se ela não é `undefined`. Para mais detalhes, confira [Usar APIs de conjuntos de requisitos posteriores](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+
 > [!NOTE]
-> Outlook: para exigir o conjunto de API de identidade 1.3 no código do seu complemento, verifique se ele tem suporte chamando `isSetSupported('IdentityAPI', '1.3')` . Não há suporte para Outlook manifesto do Outlook do complemento. Você também pode determinar se a API tem suporte, verificando se ela não é `undefined`. Para mais detalhes, confira [Usar APIs de conjuntos de requisitos posteriores](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+> Em um Outlook usando a ativação baseada em eventos, a [interface OfficeRuntime.Auth](/javascript/api/office-runtime/officeruntime.auth) é suportada no Office no Windows versão 2108 (build 14326.20258) ou posterior. O [Office. A interface Auth](/javascript/api/office/office.auth) é suportada na versão 2109 (build 14425.10000) ou posterior. Para obter mais detalhes de acordo com sua versão, consulte a página histórico de atualizações do [Office 2021](/officeupdates/update-history-office-2021) ou [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) e como encontrar sua versão do cliente Office e o canal de [atualização](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 
@@ -36,10 +40,6 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
 Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
-
-## <a name="identityapi-preview"></a>IdentityAPI Preview
-
-Para obter detalhes sobre essa API, consulte a versão que usa Promessas em [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) ou a versão que usa retornos de chamada em [getAccessTokenAsync](/javascript/api/office/office.auth#getAccessTokenAsync_options__callback_).
 
 ## <a name="see-also"></a>Confira também
 

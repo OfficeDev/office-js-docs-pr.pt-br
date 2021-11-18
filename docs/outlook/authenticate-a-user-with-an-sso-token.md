@@ -1,14 +1,14 @@
 ---
 title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
-ms.date: 09/03/2021
+ms.date: 11/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eddbcc1db05ca618506ce4810bf2bb795e59f7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7e2667e7f465749f708bf35cf00b0806306a618a
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151888"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064691"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de login único em um Outlook de usuário
 
@@ -48,8 +48,13 @@ Na maioria dos cenários, não haverá muitas razões para obter o token de aces
 > [!IMPORTANT]
 > Ao usar o token SSO como uma identidade em um suplemento do *Outlook*, é recomendável [usar também o token de identidade do Exchange](authenticate-a-user-with-an-identity-token.md) como uma identidade alternativa. Os usuários do suplemento podem usar vários clientes, mas alguns podem não ser compatíveis com o fornecimento de tokens SSO. Usando o token de identidade do Exchange como uma alternativa, é possível evitar solicitações múltiplas de credenciais a esses usuários. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](implement-sso-in-outlook-add-in.md).
 
+## <a name="sso-for-event-based-activation"></a>SSO para ativação baseada em evento
+
+Há etapas adicionais a serem tomadas se o seu complemento usar a ativação baseada em eventos. Para obter mais informações, consulte [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+
 ## <a name="see-also"></a>Confira também
 
 - Para ver um Outlook de exemplo que usa o token SSO para acessar a API do Microsoft Graph, consulte [Outlook SSO de complemento.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Referência da API do SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Conjunto de requisitos IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [Habilitar o SSO (login único) em Outlook que usam a ativação baseada em evento](use-sso-in-event-based-activation.md)
