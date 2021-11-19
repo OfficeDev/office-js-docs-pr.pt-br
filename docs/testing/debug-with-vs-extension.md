@@ -3,12 +3,12 @@ title: Extensão de Depurador de Suplementos do Microsoft Office para o Visual S
 description: Use o Visual Studio Code de Microsoft Office Depurador de Complementos para depurar seu Office Add-in.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dee52f71bfb460abbadafb0cdfd82f8f7cb548
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: edc780108cb304b6bfa15ba3d7850f394b863875
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537636"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081397"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 
@@ -16,7 +16,7 @@ A extensão de depurador de Microsoft Office do Visual Studio Code permite depur
 
 Esse modo de depuração é dinâmico, permitindo definir pontos de interrupção enquanto o código está em execução. Você pode ver alterações em seu código imediatamente enquanto o depurador está anexado, tudo sem perder sua sessão de depuração. As alterações de código também persistem, para que você possa ver os resultados de várias alterações no código. A imagem a seguir mostra essa extensão em ação.
 
-![Office Extensão de depurador de add-in depurando uma seção de Excel de complementos.](../images/vs-debugger-extension-for-office-addins.jpg)
+![Office Extensão de Depurador de Complementos depurando uma seção de Excel de complementos.](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -84,6 +84,6 @@ Estas instruções pressuem que você tenha experiência usando a linha de coman
 ## <a name="see-also"></a>Confira também
 
 - [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor para o Legado de Borda](debug-add-ins-using-devtools-edge-legacy.md)
-- [Depurar suplementos no Windows usando o WebView2 do Microsoft Edge (baseado em Chromium)](debug-desktop-using-edge-chromium.md)
+- [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Depurar os complementos usando ferramentas de desenvolvedor no Microsoft Edge (Chromium baseados em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)

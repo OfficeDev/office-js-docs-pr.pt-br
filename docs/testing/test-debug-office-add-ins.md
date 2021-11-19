@@ -3,12 +3,12 @@ title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77f1fcf47689d9a31611e48d6235f5c8893dcfe7
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: db0edec5c7b7c741425a9d27d7580a52d2839546
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537545"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081411"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
@@ -45,6 +45,7 @@ O procedimento para depurar um Suplemento do Office também varia de acordo com 
 - [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 - [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)
 - [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
