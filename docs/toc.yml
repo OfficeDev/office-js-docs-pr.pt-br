@@ -307,6 +307,8 @@ items:
             href: testing/testing-and-troubleshooting.md
           - name: Solucionar problemas de desenvolvimento
             href: testing/troubleshoot-development-errors.md
+          - name: Teste de unidades
+            href: testing/unit-testing.md
           - name: Testes de usabilidade
             href: develop/usability-testing.md
           - name: Validar o manifesto de suplemento do Office

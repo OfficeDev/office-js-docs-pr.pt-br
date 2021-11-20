@@ -1,14 +1,14 @@
 ---
 title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
-ms.date: 09/24/2021
+ms.date: 11/14/2021
 ms.localizationpriority: high
-ms.openlocfilehash: db0edec5c7b7c741425a9d27d7580a52d2839546
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 3eaf86d7cc2702e0501522debad2e64ac24c323c
+ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081411"
+ms.locfileid: "61124391"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
@@ -37,6 +37,10 @@ Você pode usar o sideload para instalar um Suplemento do Office para teste sem 
 - [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)
+
+## <a name="unit-testing"></a>Teste de unidades
+
+Para obter informações sobre como adicionar testes de unidade ao seu projeto de suplemento, consulte [Teste de unidade em Suplementos do Office](unit-testing.md).
 
 ## <a name="debug-an-office-add-in"></a>Depurar um suplemento do Office
 
