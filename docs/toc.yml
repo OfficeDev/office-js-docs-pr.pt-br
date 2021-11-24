@@ -348,6 +348,8 @@ items:
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: Conjuntos de requisitos de Coerção de Imagens
                 href: reference/requirement-sets/image-coercion-requirement-sets.md
+              - name: Conjuntos de requisitos de Atalhos de teclado
+                href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
               - name: Conjuntos de requisitos da API comum do Office
                 href: reference/requirement-sets/office-add-in-requirement-sets.md
               - name: Abrir conjuntos de requisitos de janela do navegador
