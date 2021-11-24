@@ -1,18 +1,18 @@
 ---
 title: Interface do usuário Fluent React em Suplementos do Office
 description: Saiba como usar Fluent interface do usuário React em Office de complementos.
-ms.date: 07/08/2021
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148650"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153460"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar Fluent interface do usuário React em Office de usuário
 
-Fluent A interface do usuário React é a estrutura de front-end javaScript de código aberto oficial projetada para criar experiências que se encaixem perfeitamente em uma ampla variedade de produtos Microsoft, incluindo Office. Ele fornece componentes robustos, atualizados e acessíveis baseados no React que são altamente personalizáveis usando o CSS-in-JS.
+Fluent interface do usuário React é a estrutura de front-end javaScript de código aberto oficial projetada para criar experiências que se encaixem perfeitamente em uma ampla variedade de produtos Microsoft, incluindo Office. Ele fornece componentes robustos, atualizados e acessíveis baseados no React que são altamente personalizáveis usando o CSS-in-JS.
 
 > [!NOTE]
 > Este artigo descreve o uso de Fluent interface do usuário React no contexto de Office Desem. Mas também é usado em uma ampla variedade de Microsoft 365 aplicativos e extensões. Para obter mais informações, [consulte Fluent interface do usuário React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) o repo de código aberto Fluent [UI Web](https://github.com/microsoft/fluentui).
@@ -36,7 +36,7 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -90,8 +90,8 @@ Neste ponto, você criou um suplemento muito básico do painel de tarefas usando
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/components/Button';
+import { Label } from '@fluentui/react/lib/components/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
@@ -141,11 +141,9 @@ Adicione o componente ao seu complemento abrindo `ButtonPrimaryExample` **src\co
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. Remova as duas instruções de importação a seguir.
+2. Remova a instrução de importação a seguir.
 
     ```typescript
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-    ...
     import Progress from './Progress';
     ```
 

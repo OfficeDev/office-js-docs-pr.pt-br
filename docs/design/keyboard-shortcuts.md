@@ -1,14 +1,14 @@
 ---
 title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
-ms.date: 07/08/2021
-ms.localizationpriority: medium
-ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.date: 11/22/2021
+localization_priority: Normal
+ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148784"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153489"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -102,7 +102,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     ```
 
 1. Para continuar o exemplo, use `'SHOWTASKPANE'` como o primeiro parâmetro.
-1. Para o corpo da função, use o [método Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
+1. Para o corpo da função, use o método [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -202,9 +202,9 @@ O esquema completo dos atalhos JSON está em [extended-manifest.schema.json](htt
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Evitar combinações de teclas em uso por outros complementos
 
-Há muitos atalhos de teclado que já estão em uso por Office. Evite registrar atalhos de teclado para o seu complemento que já estão em uso, no entanto, pode haver algumas instâncias em que é necessário substituir atalhos de teclado existentes ou lidar com conflitos entre vários complementos que registraram o mesmo atalho de teclado.
+Há muitos atalhos de teclado que já estão em uso por Office. Evite registrar atalhos de teclado para o seu add-in que já estão em uso, no entanto, pode haver algumas instâncias em que é necessário substituir atalhos de teclado existentes ou lidar com conflitos entre vários complementos que registraram o mesmo atalho de teclado.
 
-No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez que tentar usar um atalho de teclado conflitante, observe que o nome da ação exibido nesta caixa de diálogo é a propriedade no objeto action no `name` `shortcuts.json` arquivo.
+No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez que tentar usar um atalho de teclado conflitante. Observe que o texto da opção de complemento exibida nesta caixa de diálogo vem da propriedade no objeto `name` action no `shortcuts.json` arquivo.
 
 ![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -260,6 +260,67 @@ Ao usar atalhos de teclado personalizados na Web, alguns atalhos de teclado usad
 - Ctrl+Shift+T
 - Ctrl+W
 - Ctrl+PgUp/PgDn
+
+## <a name="enable-custom-keyboard-shortcuts-for-specific-users-preview"></a>Habilitar atalhos de teclado personalizados para usuários específicos (visualização)
+
+O seu complemento pode permitir que os usuários reatribuam as ações do add-in para combinações de teclado alternativos.
+
+> [!IMPORTANT]
+> Os recursos descritos nesta seção estão atualmente em visualização e sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Para experimentar os recursos de visualização, você precisará ingressar [no programa Office Insider.](https://insider.office.com/join)
+> Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
+
+> [!NOTE]
+> As APIs descritas nesta seção exigem o conjunto de [requisitos KeyboardShortcuts 1.1.](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md)
+
+Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) para atribuir combinações de teclado personalizadas de um usuário às ações de seus complementos. O método assume um parâmetro de tipo , onde os s são um subconjunto das IDs de ação que são definidas no manifesto estendido JSON do `{[actionId:string]: string}` `actionId` complemento. Os valores são as combinações de teclas preferidas do usuário. Se o usuário estiver conectado Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário. Se o usuário não estiver conectado, as personalizações durarão apenas para a sessão atual do complemento.
+
+```javascript
+const userCustomShortcuts = {
+    SHOWTASKPANE:"CTRL+SHIFT+1", 
+    HIDETASKPANE:"CTRL+SHIFT+2"
+};
+Office.actions.replaceShortcuts(userCustomShortcuts)
+    .then(function () {
+        console.log("Successfully registered.");
+    })
+    .catch(function (ex) {
+        if (ex.code == "InvalidOperation") {
+            console.log("ActionId does not exist or shortcut combination is invalid.");
+        }
+    });
+```
+
+Para descobrir quais atalhos já estão em uso para o usuário, chame o método [Office.actions.getShortcuts.](/javascript/api/office/office.actions#getShortcuts) Este método retorna um objeto do tipo `[actionId:string]:string|null}` , onde estão os `actionId` s:
+
+- Todas as IDs de ação definidas no manifesto estendido JSON do complemento.
+- Todos os atalhos personalizados registrados para o usuário nas configurações de roaming do usuário. Os valores são as principais combinações atualmente atribuídas às ações. 
+
+Apresentamos um exemplo a seguir.
+
+```javascript
+Office.actions.getShortcuts()
+    .then(function (userShortcuts) {
+       for (const action in userShortcuts) {
+           let shortcut = userShortcuts[action];
+           console.log(action + ": " + shortcut);
+       }
+    });
+
+```
+
+Conforme descrito em [Evitar combinações de teclas](#avoid-key-combinations-in-use-by-other-add-ins)em uso por outros complementos, é uma boa prática evitar conflitos em atalhos. Para descobrir se uma ou mais combinações de teclas já estão em uso passá-las como uma matriz de cadeias de caracteres para o método [Office.actions.areShortcutsInUse.](/javascript/api/office/office.actions#areShortcutsInUse) O método retorna um relatório contendo combinações de chaves que já estão em uso na forma de uma matriz de objetos do tipo `{shortcut: string, inUse: boolean}` . A `shortcut` propriedade é uma combinação de teclas, como "CTRL+SHIFT+1". Se a combinação já estiver registrada em outra ação, `inUse` a propriedade será definida como `true` . Por exemplo, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. O seguinte trecho de código é um exemplo:
+
+```javascript
+const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then(function (inUseArray) {
+        const availableShortcuts = inUseArray.filter(function (shortcut) { return !shortcut.inUse; });
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter(function (shortcut) { return shortcut.inUse; });
+        console.log(usedShortcuts);
+    });
+
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 

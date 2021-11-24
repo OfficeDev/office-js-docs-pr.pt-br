@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
 description: Saiba mais sobre os conjuntos de requisitos Office API comum.
-ms.date: 11/08/2021
+ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60890004"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153467"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
@@ -128,7 +128,15 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ---
 
-### <a name="mailbox"></a>Caixa de correio
+### <a name="keyboardshortcuts"></a>KeyboardShortcuts
+
+|**Aplicativos do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Consulte [Conjuntos de requisitos de Atalhos de Teclado](keyboard-shortcuts-requirement-sets.md). | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
+
+---
+
+### <a name="mailbox"></a>Mailbox
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
