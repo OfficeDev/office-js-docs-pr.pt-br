@@ -1,21 +1,24 @@
 ---
 title: Conjuntos de requisitos comuns da API
 description: Especifica quais plataformas Office e builds suportam as APIs dinâmicas da faixa de opções.
-ms.date: 10/05/2021
+ms.date: 11/29/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1801d95da8dd0b2b707e1237498db71ca81474b5
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138706"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242044"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-O conjunto de APIs da Faixa de Opções oferece suporte ao controle programático de quando comandos personalizados de complemento (ou seja, botões de faixa de opções personalizados e itens de menu) estão habilitados e desabilitados.
+O conjunto de APIs da Faixa de Opções dá suporte ao controle programático de quando os comandos de complemento personalizados (ou seja, botões de faixa de opções personalizados e itens de menu) são habilitados e desabilitados e quando as guias contextuais aparecem na faixa de opções.
+
+> [!NOTE]
+> Os conjuntos de requisitos RibbonApi são suportados somente em complementos do painel de tarefas.
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API da Faixa de Opções, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 

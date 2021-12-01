@@ -1,56 +1,73 @@
 ---
 title: Trabalhar com precedentes de fórmula e dependentes usando Excel API JavaScript
 description: Saiba como usar a API JavaScript Excel para recuperar precedentes e dependentes da fórmula.
-ms.date: 07/02/2021
+ms.date: 11/30/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7339a2d838e93faf6045651e3cb39a244b4aa7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 60da910879fc48f1564d43cf3f87c2a5bf930fbe
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148900"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242058"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obter precedentes de fórmula e dependentes usando a API JavaScript Excel javascript
 
 Excel fórmulas geralmente se referem a outras células. Essas referências entre células são conhecidas como "precedentes" e "dependentes". Um precedente é uma célula que fornece dados a uma fórmula. Um dependente é uma célula que contém uma fórmula que se refere a outras células. Para saber mais sobre os Excel relacionados às relações entre células, consulte Exibir as relações entre [fórmulas e células.](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507)
 
-Uma célula pode ter uma célula precedente, e essa célula precedente pode ter suas próprias células precedentes. Um "precedente direto" é o primeiro grupo de células anterior nesta sequência, semelhante ao conceito de pais em uma relação pai-filho. Um "dependente direto" é o primeiro grupo dependente de células em uma sequência, semelhante a filhos em uma relação pai-filho. Células que se referem a outras células em uma workbook, mas cuja relação não é uma relação pai-filho, não são dependentes diretos ou precedentes diretos.
+Uma célula precedente pode ter suas próprias células precedentes. Cada célula precedente nessa cadeia de precedentes ainda é um precedente da célula original. A mesma relação existe para dependentes. Qualquer célula afetada por outra célula é dependente dessa célula. Um "precedente direto" é o primeiro grupo de células anterior nesta sequência, semelhante ao conceito de pais em uma relação pai-filho. Um "dependente direto" é o primeiro grupo dependente de células em uma sequência, semelhante a filhos em uma relação pai-filho.
 
-Este artigo fornece exemplos de código que recuperam precedentes diretos e dependentes diretos de fórmulas usando Excel API JavaScript. Para ver a lista completa de propriedades e métodos que o objeto oferece suporte, consulte `Range` [Range Object (API JavaScript para Excel)](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que recuperam precedentes e dependentes de fórmulas usando Excel API JavaScript. Para ver a lista completa de propriedades e métodos que o objeto oferece suporte, consulte `Range` [Range Object (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
-## <a name="get-the-direct-precedents-of-a-formula"></a>Obter os precedentes diretos de uma fórmula
+## <a name="get-the-precedents-of-a-formula"></a>Obter os precedentes de uma fórmula
 
-Localize as células precedentes diretas de uma fórmula [com Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` retorna um `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os precedentes diretos na guia de trabalho. Ele tem um objeto `RangeAreas` separado para cada planilha que contém pelo menos um precedente de fórmula. Para obter mais informações sobre como trabalhar com o objeto, consulte `RangeAreas` Work with multiple [ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Localize as células precedentes de uma fórmula [com Range.getPrecedents](/javascript/api/excel/excel.range#getPrecedents__). `Range.getPrecedents` retorna um `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os precedentes na workbook. Ele tem um objeto `RangeAreas` separado para cada planilha que contém pelo menos um precedente de fórmula. Para saber mais sobre o `RangeAreas` objeto, consulte [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear Precedentes** na interface Excel interface do usuário. Este botão desenha uma seta de células precedentes para a célula selecionada. A célula selecionada, **E3**, contém a fórmula "=C3 * D3", **portanto, C3** e **D3** são células precedentes. Ao contrário do Excel da interface do usuário, o `getDirectPrecedents` método não desenha setas.
+Para localizar apenas as células precedentes diretas de uma fórmula, use [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` funciona como `Range.getPrecedents` e retorna um objeto que contém os `WorkbookRangeAreas` endereços de precedentes diretos.
+
+A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear Precedentes** na interface Excel interface do usuário. Este botão desenha uma seta de células precedentes para a célula selecionada. A célula selecionada, **E3**, contém a fórmula "=C3 * D3", **portanto, C3** e **D3** são células precedentes. Diferentemente do Excel da interface do usuário, os métodos `getPrecedents` e `getDirectPrecedents` não desenham setas.
 
 ![Seta rastreando células precedentes na interface Excel interface do usuário.](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
-> O `getDirectPrecedents` método não pode recuperar células precedentes entre as guias de trabalho.
+> Os `getPrecedents` métodos e não `getDirectPrecedents` recuperam células precedentes entre as guias de trabalho.
 
-O exemplo de código a seguir obtém os precedentes diretos para o intervalo ativo e, em seguida, altera a cor de plano de fundo dessas células precedentes para amarelo.
+O exemplo de código a seguir mostra como trabalhar com `Range.getPrecedents` os `Range.getDirectPrecedents` métodos e. O exemplo obtém os precedentes do intervalo ativo e altera a cor de plano de fundo dessas células precedentes. A cor do plano de fundo das células precedentes diretas é definida como amarelo e a cor de plano de fundo das outras células precedentes é definida como laranja.
 
 ```js
+// This code sample shows how to find and highlight the precedents 
+// and direct precedents of the currently selected cell.
 Excel.run(function (context) {
-    // Precedents are cells that provide data to the selected formula.
-    var range = context.workbook.getActiveCell();
-    var directPrecedents = range.getDirectPrecedents();
-    range.load("address");
-    directPrecedents.areas.load("address");
-    
-    return context.sync()
-        .then(function () {
-            console.log(`Direct precedent cells of ${range.address}:`);
+  var range = context.workbook.getActiveCell();
+  // Precedents are all cells that provide data to the selected formula.
+  var precedents = range.getPrecedents();
+  // Direct precedents are the parent cells, or the first preceding group of cells that provide data to the selected formula.    
+  var directPrecedents = range.getDirectPrecedents();
 
-            // Use the direct precedents API to loop through precedents of the active cell.
-            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
-              // Highlight and print out the address of each precedent cell.
-              directPrecedents.areas.items[i].format.fill.color = "Yellow";
-              console.log(`  ${directPrecedents.areas.items[i].address}`);
-            }
-        });
+  range.load("address");
+  precedents.areas.load("address");
+  directPrecedents.areas.load("address");
+  
+  return context.sync()
+    .then(function () {
+      console.log(`All precedent cells of ${range.address}:`);
+      
+      // Use the precedents API to loop through all precedents of the active cell.
+      for (var i = 0; i < precedents.areas.items.length; i++) {
+        // Highlight and print out the address of all precedent cells.
+        precedents.areas.items[i].format.fill.color = "Orange";
+        console.log(`  ${precedents.areas.items[i].address}`);
+      }
+
+      console.log(`Direct precedent cells of ${range.address}:`);
+
+      // Use the direct precedents API to loop through direct precedents of the active cell.
+      for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+        // Highlight and print out the address of each direct precedent cell.
+        directPrecedents.areas.items[i].format.fill.color = "Yellow";
+        console.log(`  ${directPrecedents.areas.items[i].address}`);
+      }
+    });
 }).catch(errorHandlerFunction);
 ```
 
@@ -63,11 +80,12 @@ A captura de tela a seguir mostra o resultado da seleção do botão **Rastrear 
 ![Células dependentes de rastreamento de seta na interface Excel interface do usuário.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
-> O `getDirectDependents` método não pode recuperar células dependentes entre as guias de trabalho.
+> O `getDirectDependents` método não recupera células dependentes entre as guias de trabalho.
 
 O exemplo de código a seguir obtém os dependentes diretos do intervalo ativo e, em seguida, altera a cor de plano de fundo dessas células dependentes para amarelo.
 
 ```js
+// This code sample shows how to find and highlight the dependents of the currently selected cell.
 Excel.run(function (context) {
     // Direct dependents are cells that contain formulas that refer to other cells.
     var range = context.workbook.getActiveCell();
