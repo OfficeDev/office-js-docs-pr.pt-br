@@ -1,15 +1,15 @@
 ---
-title: Excel Conjunto de requisitos da API JavaScript 1.14
+title: Excel conjunto de requisitos da API JavaScript 1.14
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.14.
-ms.date: 10/29/2021
+ms.date: 12/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdf22d35125607237b724c88da2083ae78a9940
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 97c221bb8530d32fbfe42ae82519c942c6499928
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681504"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61284996"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>Novidades na API JavaScript 1.14 Excel JavaScript
 
@@ -17,8 +17,8 @@ O ExcelApi 1.14 adicionou objetos para controlar o recurso de tabela de dados de
 
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
-| Tabelas de dados de gráfico | Controlar a aparência, a formatação e a visibilidade das tabelas de dados nos gráficos. | [Chart,](/javascript/api/excel/excel.chart) [ChartDataTable,](/javascript/api/excel/excel.chartdatatable) [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
-| Precedentes de fórmula | Retorne todas as células precedentes de uma fórmula. | [Range](/javascript/api/excel/excel.range) |
+| [Tabelas de dados de gráfico](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | Controlar a aparência, a formatação e a visibilidade das tabelas de dados nos gráficos. | [Chart,](/javascript/api/excel/excel.chart) [ChartDataTable,](/javascript/api/excel/excel.chartdatatable) [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| [Precedentes de fórmula](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | Retorne todas as células precedentes de uma fórmula. | [Range](/javascript/api/excel/excel.range) |
 | Consultas | Recupere atributos de Consulta do Power, como nome, data de atualização e contagem de consultas. | [Consulta](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
 | Eventos de proteção de planilha | Acompanhe as alterações no estado de proteção de uma planilha e na origem dessas alterações. | [WorksheetProtectionChangedEventArgs,](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [Planilha,](/javascript/api/excel/excel.worksheet) [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 

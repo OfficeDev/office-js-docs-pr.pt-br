@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153489"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61285003"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -272,7 +272,9 @@ O seu complemento pode permitir que os usuários reatribuam as ações do add-in
 > [!NOTE]
 > As APIs descritas nesta seção exigem o conjunto de [requisitos KeyboardShortcuts 1.1.](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md)
 
-Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) para atribuir combinações de teclado personalizadas de um usuário às ações de seus complementos. O método assume um parâmetro de tipo , onde os s são um subconjunto das IDs de ação que são definidas no manifesto estendido JSON do `{[actionId:string]: string}` `actionId` complemento. Os valores são as combinações de teclas preferidas do usuário. Se o usuário estiver conectado Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário. Se o usuário não estiver conectado, as personalizações durarão apenas para a sessão atual do complemento.
+Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) para atribuir combinações de teclado personalizadas de um usuário às ações de seus complementos. O método assume um parâmetro de tipo , onde os s são um subconjunto das IDs de ação que devem ser definidas no manifesto estendido JSON do `{[actionId:string]: string|null}` `actionId` complemento. Os valores são as combinações de teclas preferidas do usuário. O valor também pode ser , que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no manifesto estendido JSON do `null` `actionId` complemento.
+
+Se o usuário estiver conectado Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário por plataforma. No momento, a personalização de atalhos não é suportada para usuários anônimos.
 
 ```javascript
 const userCustomShortcuts = {
@@ -290,10 +292,11 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-Para descobrir quais atalhos já estão em uso para o usuário, chame o método [Office.actions.getShortcuts.](/javascript/api/office/office.actions#getShortcuts) Este método retorna um objeto do tipo `[actionId:string]:string|null}` , onde estão os `actionId` s:
+Para descobrir quais atalhos já estão em uso para o usuário, chame o método [Office.actions.getShortcuts.](/javascript/api/office/office.actions#getShortcuts) Este método retorna um objeto do tipo , onde os valores representam a combinação de teclado atual que o usuário deve usar para invocar `[actionId:string]:string|null}` a ação especificada. Os valores podem vir de três fontes diferentes:
 
-- Todas as IDs de ação definidas no manifesto estendido JSON do complemento.
-- Todos os atalhos personalizados registrados para o usuário nas configurações de roaming do usuário. Os valores são as principais combinações atualmente atribuídas às ações. 
+- Se houve um conflito com o atalho e o usuário optou por usar uma ação diferente (nativa ou outro complemento) para essa combinação de teclado, o valor retornado será já que o atalho foi substituído e não há nenhuma combinação de teclado que o usuário possa usar no momento para invocar essa ação de `null` add-in.
+- Se o atalho tiver sido personalizado usando o método [Office.actions.replaceShortcuts,](/javascript/api/office/office.actions#replaceShortcuts) o valor retornado será a combinação de teclado personalizada.
+- Se o atalho não tiver sido substituído ou personalizado, ele retornará o valor do manifesto estendido JSON do complemento.
 
 Apresentamos um exemplo a seguir.
 
