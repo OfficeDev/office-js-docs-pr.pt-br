@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
-ms.date: 07/02/2021
+ms.date: 12/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bd443c6ec6921247aa8adb98932599594aa55f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3ab27032c8d80d8cd01c3a0239ba23e6bbd7e14f
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148935"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331061"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -374,11 +374,11 @@ As imagens a seguir mostram os intervalos retornados pela propriedade `address` 
 
 ![Dados de tabela em Excel antes de serem classificação.](../images/excel-sort-event-before.png)
 
-Se uma classificação de cima para baixo for executada em "**Q1**&quot; (os valores em &quot;**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address` .
+Se uma classificação de cima para baixo for executada em "**Q1**" (os valores em "**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address` .
 
 ![Dados da tabela no Excel após uma classificação de cima para baixo. As linhas que foram movidas são realçadas.](../images/excel-sort-event-after-row.png)
 
-Se uma classificação da esquerda para a direita for executada em "**Quinces**&quot; (os valores em &quot;**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address` .
+Se uma classificação da esquerda para a direita for executada em "**Quinces**" (os valores em "**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address` .
 
 ![Dados da tabela no Excel após uma classificação da esquerda para a direita. As colunas que foram movidas são realçadas.](../images/excel-sort-event-after-column.png)
 
@@ -499,6 +499,41 @@ O método `protect` tem dois parâmetros opcionais:
 - `password`: Uma cadeia de caracteres que representa a senha necessária para um usuário ignorar a proteção e editar a planilha.
 
 O artigo [Proteger uma planilha](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.
+
+### <a name="detect-changes-to-the-worksheet-protection-state"></a>Detectar alterações no estado de proteção da planilha
+
+O estado de proteção de uma planilha pode ser alterado por um complemento ou pela interface do usuário Excel usuário. Para detectar alterações no estado de proteção, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) evento de uma planilha. Os manipuladores de eventos `onProtectionChanged` para o evento recebem um objeto quando o evento é a [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) incêndio.
+
+O exemplo de código a seguir mostra como registrar o manipulador de eventos e usar o objeto para `onProtectionChanged` recuperar as propriedades , e do `WorksheetProtectionChangedEventArgs` `isProtected` `worksheetId` `source` evento.
+
+```js
+// This method registers an event handler for the onProtectionChanged event of a worksheet.
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the onProtectionChanged event handler.
+    sheet.onProtectionChanged.add(checkProtection);
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+// This method is an event handler that returns the protection state of a worksheet 
+// and information about the changed worksheet.
+function checkProtection(event) {
+    Excel.run(function (context) {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
+        var protectionStatus = event.isProtected;
+        var worksheetId = event.worksheetId;
+        var source = event.source;
+
+        // Print the event properties to the console.
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
+    });
+}
+```
 
 ## <a name="page-layout-and-print-settings"></a>Configurações de impressão e layout da página
 
