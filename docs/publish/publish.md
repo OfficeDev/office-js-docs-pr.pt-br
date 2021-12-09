@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 07/30/2021
+ms.date: 12/07/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 52612a9f3ab1844098dd7ae5b7a674c8db9e33b4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152033"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331075"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -81,7 +81,7 @@ Requisitos de implantação de suplemento do Outlook:
 - Microsoft 365, Exchange Online ou Exchange Server 2013 ou posterior
 - Outlook 2013 ou posterior
 
-Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento do AppSource. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/install-or-remove-outlook-add-ins) no TechNet.
+Para atribuir os complementos aos locatários, use o centro de administração do Exchange para carregar um manifesto diretamente, seja de um arquivo ou de uma URL, ou adicione um complemento do AppSource. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para obter detalhes, consulte [Suplementos do Outlook no Exchange Server](/exchange/add-ins-for-outlook-2013-help).
 
 ## <a name="see-also"></a>Confira também
 
