@@ -1,15 +1,15 @@
 ---
 title: Excel conjunto de requisitos da API JavaScript 1.14
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.14.
-ms.date: 12/02/2021
+ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c221bb8530d32fbfe42ae82519c942c6499928
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: 49e1f820f453304215e5ff5f392aae9f3ff1733d
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61284996"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406624"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>Novidades na API JavaScript 1.14 Excel JavaScript
 
@@ -20,7 +20,7 @@ O ExcelApi 1.14 adicionou objetos para controlar o recurso de tabela de dados de
 | [Tabelas de dados de gráfico](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | Controlar a aparência, a formatação e a visibilidade das tabelas de dados nos gráficos. | [Chart,](/javascript/api/excel/excel.chart) [ChartDataTable,](/javascript/api/excel/excel.chartdatatable) [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
 | [Precedentes de fórmula](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | Retorne todas as células precedentes de uma fórmula. | [Range](/javascript/api/excel/excel.range) |
 | Consultas | Recupere atributos de Consulta do Power, como nome, data de atualização e contagem de consultas. | [Consulta](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
-| Eventos de proteção de planilha | Acompanhe as alterações no estado de proteção de uma planilha e na origem dessas alterações. | [WorksheetProtectionChangedEventArgs,](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [Planilha,](/javascript/api/excel/excel.worksheet) [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
+| [Eventos de proteção de planilha](../../excel/excel-add-ins-worksheets.md#detect-changes-to-the-worksheet-protection-state) | Acompanhe as alterações no estado de proteção de uma planilha e na origem dessas alterações. | [WorksheetProtectionChangedEventArgs,](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [Planilha,](/javascript/api/excel/excel.worksheet) [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
 ## <a name="api-list"></a>Lista de API
 

@@ -1,14 +1,14 @@
 ---
 title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
-ms.date: 09/22/2020
+ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e0cac8a2f0153d85e5b6d2600f1dbc7f4c03c398
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 836e66a6e7eb49cb745861fe47946cfdbd18ea77
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151902"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406659"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -59,7 +59,7 @@ Especifique um dos seguintes tipos de item `ItemType` no atributo de uma regra *
 |**Valor**|**Descrição**|
 |:-----|:-----|
 |**Compromisso**|Especifica um item em um Outlook calendário. Isso inclui um item de reunião que foi respondido e tem um organizador e participantes, ou um compromisso que não tem um organizador ou participante e é simplesmente um item no calendário. Isso corresponde ao IPM. Classe de mensagem de compromisso Outlook.|
-|**Message**|Especifica um dos seguintes itens recebidos normalmente na Caixa de Entrada. <ul><li><p>Uma mensagem de email. Isso corresponde à classe de mensagem IPM.Note no Outlook.</p></li><li><p>Uma solicitação de reunião, resposta ou cancelamento. Isso corresponde às seguintes classes de mensagem no Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Mensagem**|Especifica um dos seguintes itens recebidos normalmente na Caixa de Entrada. <ul><li><p>Uma mensagem de email. Isso corresponde à classe de mensagem IPM.Note no Outlook.</p></li><li><p>Uma solicitação de reunião, resposta ou cancelamento. Isso corresponde às seguintes classes de mensagem no Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 O atributo é usado para especificar o modo (leitura ou `FormType` redação) no qual o complemento deve ser ativado.
 
@@ -192,7 +192,7 @@ Para oferecer uma experiência satisfatória com suplementos do Outlook, você d
 |Tamanho do manifesto|Não pode exceder 256 KB.|
 |Regras|Máximo de 15 regras.|
 |ItemHasKnownEntity|Um cliente avançado do Outlook aplicará a regra em relação ao primeiro megabyte do corpo, e não no restante do corpo.|
-|Expressões Regulares|Para regras ItemHasKnownEntity ou ItemHasRegularExpressionMatch para todos os Outlook aplicativos:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>Especifica declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.</li><li>Especifica expressões regulares cuja correspondência não exceda os limites da tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|Expressões Regulares|Para regras ItemHasKnownEntity ou ItemHasRegularExpressionMatch para todos os Outlook aplicativos:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>**Importante**: o texto é realçado com base em cadeias de caracteres que resultam da correspondência da expressão regular. No entanto, as ocorrências realçadas podem não corresponder exatamente ao que deve resultar de afirmações de expressão regular real, como olhar para frente negativo, olhar para trás `(?!text)` `(?<=text)` e look-behind `(?<!text)` negativo. Por exemplo, se você usar a expressão regular em `under(?!score)` "Like under, under, under score, and underscore", a cadeia de caracteres "under" será realçada para todas as ocorrências, em vez de apenas as duas primeiras.</li><li>Especifique expressões regulares cuja combinação não exceda os limites na tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## <a name="see-also"></a>Confira também
 
