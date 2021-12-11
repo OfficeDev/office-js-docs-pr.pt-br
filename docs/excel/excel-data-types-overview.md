@@ -1,25 +1,29 @@
 ---
 title: Visão geral dos tipos de dados em suplementos do Excel
 description: Os tipos de dados na API JavaScript do Excel permitem que os desenvolvedores de Suplementos do Office trabalhem com valores numéricos formatados, imagens da Web, valores de entidade, matrizes dentro de valores de entidade e erros aprimorados como tipos de dados.
-ms.date: 11/03/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ff0d5a055c74eeff096d45ddb6c417615775431
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749389"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406666"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Visão geral dos tipos de dados em suplementos do Excel (versão prévia)
 
 > [!NOTE]
-> No momento, as APIs de tipos de dados só estão disponíveis na visualização pública. As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
-
-> [!IMPORTANT]
-> Algumas das APIs de tipos de dados, como `Range.valuesAsJSON` estão em desenvolvimento ativo e ainda não estão disponíveis na visualização pública. Este artigo destina-se a uma introdução conceitual. Os conceitos descritos neste artigo que ainda não estão em visualização pública serão lançados para visualização em breve.
+> No momento, as APIs de tipos de dados só estão disponíveis na visualização pública. As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
+>
+> Para usar APIs de visualização:
+>
+> - Você deve fazer referência à biblioteca **beta** na CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O arquivo de definição de tipo [ ](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é|está|estiver encontrado na CDN e [ DefinitelyTyped ](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`. Para obter informações adicionais, consulte o leia-me do pacote NPM [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js).
+> - Pode ser necessário ingressar no [programa Office Insider](https://insider.office.com) para acessar versões mais recentes do Office.
+>
+> Para testar os tipos de dados no Office do Windows, você deve ter um número de build do Excel maior ou igual a 16.0.14626.10000. Para testar os tipos de dados no Office no Mac, você deve ter um número de build do Excel maior ou igual a 16.55.21102600.
 
 Os tipos de dados na API JavaScript do Excel permitem que os desenvolvedores de suplementos organizem estruturas de dados complexas como objetos, como valores numéricos formatados, imagens da Web e valores de entidade.
 
@@ -35,6 +39,6 @@ Os tipos de dados aprimoram o poder das funções personalizadas. As funções p
 
 ## <a name="see-also"></a>Confira também
 
-* [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
-* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-* [Visão geral de tipos de dados e funções personalizadas](custom-functions-data-types-overview.md)
+- [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
+- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Visão geral de tipos de dados e funções personalizadas](custom-functions-data-types-overview.md)
