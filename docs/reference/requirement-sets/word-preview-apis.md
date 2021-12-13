@@ -4,12 +4,12 @@ description: Detalhes sobre as FUTURAS APIs JavaScript do Word.
 ms.date: 10/13/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: ba33c6c53dd62aa0adc37b90963d35988165fa96
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
+ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367430"
+ms.lasthandoff: 12/13/2021
+ms.locfileid: "61420240"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização javascript do Word
 
@@ -65,7 +65,7 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização,
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Ocorre quando um controle de conteúdo é adicionado.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Executa uma pesquisa com as SearchOptions especificadas no escopo de todo o documento.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|Executa uma pesquisa com as SearchOptions especificadas no escopo de todo o documento.|
 ||[configurações](/javascript/api/word/word.document#settings)|Obtém as configurações do complemento no documento.|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Obtém as partes XML personalizadas no documento.|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Exclui um indicador, se existir, do documento.|
@@ -103,7 +103,7 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização 
 ||[notas de rodapé](/javascript/api/word/word.body#footnotes)|Obtém a coleção de notas de rodapé no corpo.|
 ||[getComments()](/javascript/api/word/word.body#getComments__)|Obtém comentários associados ao corpo.|
 ||[tipo](/javascript/api/word/word.body#type)|Obtém o tipo do corpo.|
-|[Comentário](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtém o email do autor do comentário.|
+|[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtém o email do autor do comentário.|
 ||[authorName](/javascript/api/word/word.comment#authorName)|Obtém o nome do autor do comentário.|
 ||[content](/javascript/api/word/word.comment#content)|Obtém ou define o conteúdo do comentário como texto sem texto.|
 ||[creationDate](/javascript/api/word/word.comment#creationDate)|Obtém a data de criação do comentário.|
