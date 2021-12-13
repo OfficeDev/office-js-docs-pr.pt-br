@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook.
-ms.date: 11/01/2021
+ms.date: 11/18/2021
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 07e3f8da6c9d5af1d06f1bb388588dcd109b137e
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: f94f76edfd7ba9fcb5d45fc426f5d8579aefe863
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681497"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406646"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -72,7 +72,7 @@ Os desenvolvedores devem usar o conjunto de requisitos mínimos que contém o co
 Nesta seção, vemos a gama de conjuntos de requisitos com suporte do Exchange Server e clientes do Outlook. Para obter detalhes sobre os requisitos de cliente e servidor para executar suplementos do Outlook, confira [requisitos dos suplementos do Outlook](../../outlook/add-in-requirements.md).
 
 > [!IMPORTANT]
-> Se o seu Exchange Server de destino e o cliente do Outlook oferecem suporte a conjuntos de requisitos diferentes, então você estará restrito ao intervalo menor de conjunto de requisitos. Por exemplo, se um suplemento estiver sendo executado no Outlook 2016 para Mac (conjunto de requisitos mais alto: 1.6) em relação ao Exchange 2013 (conjunto de requisitos mais alto: 1.1), seu suplemento estará limitado ao conjunto de requisitos 1.1.
+> Se o servidor Exchange de destino e o cliente do Outlook suportarem conjuntos de requisitos diferentes, então você estará restrito ao intervalo de conjunto de requisitos mais baixo. Por exemplo, se um suplemento estiver sendo executado no Outlook 2016 para Mac (conjunto de requisitos mais alto: 1.6) em relação ao Exchange 2013 (conjunto de requisitos mais alto: 1.1), seu suplemento poderá limitar-se ao conjunto de requisitos 1.1.
 
 ### <a name="exchange-server-support"></a>Suporte do Exchange Server
 
@@ -86,7 +86,7 @@ Os clientes a seguir oferecem suporte aos suplementos do Outlook.
 || 2013 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 > [!NOTE]
-> \* Para exigir o conjunto 1.3 da API de Identidade no código do suplemento, verifique se ele tem suporte ligando para `isSetSupported('IdentityAPI', '1.3')`. Não há suporte para declará-lo no manifesto do seu suplemento. Você também pode determinar se a API tem suporte, verificando se ela não é `undefined`. Para mais detalhes, confira [Usar APIs de conjuntos de requisitos posteriores](#using-apis-from-later-requirement-sets).
+> \* [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 
 ### <a name="outlook-client-support"></a>Suporte a cliente Outlook
 
@@ -113,7 +113,7 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 > [!NOTE]
 > <sup>1</sup> Suporte para **1.8** do Outlook no Windows com uma assinatura Microsoft 365 ou uma compra única no varejo está disponível a partir da versão 1910 (compilação 12130.20272). O suporte para **1.9** do Outlook no Windows com uma assinatura Microsoft 365 está disponível a partir da versão 2008 (compilação 13127.20296). O suporte para **1.10** do Outlook no Windows com uma assinatura Microsoft 365 está disponível a partir da versão 2104 (compilação 13929.20296). O suporte para **1.11** no Outlook no Windows com uma assinatura Microsoft 365 está disponível na versão 2110 (build 14527.20226). Para obter mais detalhes em relação à sua versão, consulte a página do histórico de atualizações do [Office 2019](/officeupdates/update-history-office-2019) ou [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) e de como [encontrar a versão do cliente do Office e atualizar o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
-> <sup>2</sup> Para exigir o conjunto 1.3 da API de Identidade no código do suplemento, verifique se ele tem suporte ligando para `isSetSupported('IdentityAPI', '1.3')`. Não há suporte para declará-lo no manifesto do seu suplemento. Você também pode determinar se a API tem suporte, verificando se ela não é `undefined`. Para mais detalhes, confira [Usar APIs de conjuntos de requisitos posteriores](#using-apis-from-later-requirement-sets).
+> <sup>2</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 >
 > <sup>3</sup> O suporte de 1.3 no Outlook 2013 foi adicionado como parte da atualização de [8 de dezembro de 2015 do Outlook 2013 (KB3114349).](https://support.microsoft.com/kb/3114349). O suporte para a versão 1.4 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 13 de setembro de 2016 (KB3118280)](https://support.microsoft.com/help/3118280). O suporte para a versão 1.4 no Outlook 2016 (compra única) foi adicionado como parte da [atualização para o Office 2016 de 3 de julho de 2018 (KB4022223)](https://support.microsoft.com/help/4022223).
 >

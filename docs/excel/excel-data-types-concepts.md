@@ -1,31 +1,35 @@
 ---
 title: Conceitos básicos dos tipos de dados da API JavaScript do Excel
 description: Conheça os principais conceitos para usar os tipos de dados do Excel no Suplemento do Office.
-ms.date: 11/08/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6155805245b14d3c3365d759bcd647419266f499
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 37fe1b90065dd8a784fc7cfc191ccb9cdc3ce5b9
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889976"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406617"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
 > [!NOTE]
-> No momento, as APIs de tipos de dados só estão disponíveis na visualização pública. As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
-
-> [!IMPORTANT]
-> Alguns dos conceitos de tipos de dados descritos neste artigo, como `Range.valuesAsJSON` estão em desenvolvimento ativo e ainda não estão disponíveis na visualização pública. Este artigo destina-se a uma introdução conceitual. Os conceitos descritos neste artigo que ainda não estão em visualização pública serão lançados para versão prévia em breve.
+> No momento, as APIs de tipos de dados só estão disponíveis na visualização pública. As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
+>
+> Para usar APIs de visualização:
+>
+> - Você deve fazer referência à biblioteca **beta** na CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`. Para obter informações adicionais, confira o arquivo Leiame do pacote NPM [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js).
+> - Pode ser necessário ingressar no [programa Office Insider](https://insider.office.com) para acessar builds mais recentes do Office.
+>
+> Para testar os tipos de dados do Office no Windows, você deve ter um número de build do Excel maior ou igual a 16.0.14626.10000. Para testar os tipos de dados do Office no Mac, você deve ter um número de build do Excel maior ou igual a 16.55.21102600.
 
 Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para trabalhar com tipos de dados. Ele apresenta conceitos fundamentais para o desenvolvimento de tipos de dados.
 
 ## <a name="core-concepts"></a>Principais conceitos
 
-Use a propriedade `Range.valuesAsJSON` para trabalhar com valores de tipo de dados. Essa propriedade é semelhante ao [Range.values](/javascript/api/excel/excel.range#values), mas `Range.values` retorna apenas os quatro tipos básicos: cadeia de caracteres, número, booliano ou valores de erro. `Range.valuesAsJSON` pode retornar informações expandidas sobre os quatro tipos básicos, e essa propriedade pode retornar tipos de dados, como valores de número formatados, entidades e imagens da Web.
+Use a propriedade [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) para trabalhar com valores de tipo de dados. Essa propriedade é semelhante ao [Range.values](/javascript/api/excel/excel.range#values), mas `Range.values` retorna apenas os quatro tipos básicos: cadeia de caracteres, número, booliano ou valores de erro. `Range.valuesAsJson` pode retornar informações expandidas sobre os quatro tipos básicos, e essa propriedade pode retornar tipos de dados, como valores de número formatados, entidades e imagens da Web.
 
 ### <a name="json-schema"></a>Esquema JSON
 
