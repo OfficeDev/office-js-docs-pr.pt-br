@@ -1,14 +1,14 @@
 ---
 title: Elemento Override no arquivo de manifesto
 description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
-ms.date: 05/19/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0f4d8877ba2228d5bfc2053f53b2a8e1ab7b29
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dda8f6ca5aee1492c51960fc637d96e4d82796cb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152136"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61513995"
 ---
 # <a name="override-element"></a>Elemento Override
 
@@ -143,7 +143,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ### <a name="must-contain"></a>Deve conter
 
-|Elemento|Conteúdo|Correio|TaskPane|
+|Elemento|Conteúdo|Email|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Requisitos](requirements.md)|||x|
 
@@ -200,7 +200,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 > [!IMPORTANT]
 > O suporte a esse elemento foi introduzido no conjunto de requisitos de Caixa de [Correio 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) com o [recurso de ativação baseada em evento.](../../outlook/autolaunch.md) Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
-Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RuntimeOverride**, o atributo será a condição e o `type` atributo será o `resid` conseqüente. Por exemplo, o seguinte é ler "Se o tipo for 'javascript', será `resid` 'JSRuntime.Url'." Outlook A área de trabalho requer esse elemento [para manipuladores de pontos de extensão LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent)
+Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RuntimeOverride**, o atributo será a condição e o `type` atributo será o `resid` conseqüente. Por exemplo, o seguinte é ler "Se o tipo for 'javascript', será `resid` 'JSRuntime.Url'." Outlook Desktop requer esse elemento para manipuladores de ponto de extensão [LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent)
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
@@ -218,7 +218,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ### <a name="contained-in"></a>Contido em
 
-- [Tempo de execução](runtime.md)
+- [Runtime](runtime.md)
 
 ### <a name="attributes"></a>Atributos
 
@@ -233,7 +233,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 <!-- Event-based activation happens in a lightweight runtime.-->
 <Runtimes>
   <!-- HTML file including reference to or inline JavaScript event handlers.
-  This is used by Outlook on the web. -->
+  This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
   <Runtime resid="WebViewRuntime.Url">
     <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
     <Override type="javascript" resid="JSRuntime.Url"/>
@@ -243,5 +243,5 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ### <a name="see-also"></a>Confira também
 
-- [Tempo de execução](runtime.md)
+- [Runtime](runtime.md)
 - [Configurar seu Outlook para ativação baseada em eventos](../../outlook/autolaunch.md)

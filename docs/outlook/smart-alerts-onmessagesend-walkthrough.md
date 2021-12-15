@@ -2,14 +2,14 @@
 title: Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 description: Saiba como lidar com o evento enviar mensagem em seu Outlook de envio usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e10f8609264d69ba32b78badc14c626c210d76
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681757"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514072"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 
@@ -49,7 +49,7 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -232,7 +232,7 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O se
 >
 > 1. Close Outlook.
 > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.
-> 1. Execute o seguinte comando.
+> 1. Execute o seguinte comando:
 >
 >    ```command&nbsp;line
 >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC

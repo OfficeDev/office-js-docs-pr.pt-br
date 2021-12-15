@@ -1,21 +1,18 @@
 ---
 title: Use marcas personalizadas em apresentações, slides e formas em PowerPoint
 description: Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.
-ms.date: 04/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db9d31424ac4e08e6eaccca824ca5881d2ef617e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 03f1656919ed16b801e97623f7f69c9f4adfaac8
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152053"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514206"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Use marcas personalizadas para apresentações, slides e formas em PowerPoint
 
 Um complemento pode anexar metadados personalizados, na forma de pares de valores-chave, chamados "marcas", a apresentações, slides específicos e formas específicas em um slide.
-
-> [!IMPORTANT]
-> As APIs para marcas estão em visualização. Experimente-os em um ambiente de desenvolvimento ou teste, mas não os adicione a um complemento de produção.
 
 Há dois cenários principais para o uso de marcas:
 
@@ -30,7 +27,7 @@ Uma marca é um par de valores-chave, onde o valor é sempre do tipo e `string` 
 
 Para adicionar uma marca a um objeto, chame o [método TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) da propriedade do objeto `tags` pai. O código a seguir adiciona duas marcas ao primeiro slide de uma apresentação. Sobre este código, observe:
 
-- O primeiro parâmetro do `add` método é a chave no par de valores-chave. 
+- O primeiro parâmetro do `add` método é a chave no par de valores-chave.
 - O segundo parâmetro é o valor.
 - A chave está em letras maiúsculas. Isso não é estritamente obrigatório para o método; no entanto, a chave é sempre armazenada pelo PowerPoint como maiúsculas, e alguns métodos relacionados a marca exigem que a chave seja expressa em maiúsculas, portanto, recomendamos como prática prática melhor que você sempre use maiúsculas em seu código para uma chave `add` de marca. 
 

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do PowerPoint
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do PowerPoint.
-ms.date: 01/08/2021
+ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 8cb557ed46490e52da3f372ae48848b7305cdd17
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2381252ef0d0a4e5b757b38534a826c77108a380
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152067"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514002"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do PowerPoint
 
@@ -19,6 +19,7 @@ A tabela a seguir lista os conjuntos de requisitos do PowerPoint, os aplicativos
 
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [PowerPointApi 1.3](powerpoint-api-1-3-requirement-set.md)  | Versão 2111 (Build 14701.20060) ou posterior| ainda não<br>com suporte | 16.55 ou posterior | Dezembro de 2021 |
 | [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Versão 2011 (Compilação 13426.20184) ou superior| ainda não<br>com suporte | 16.43 ou superior | outubro de 2020 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Versão 1810 (Build 11001.20074) ou posterior | 2.17 ou posterior | 16.19 ou posterior | Outubro de 2018 |
 
@@ -35,6 +36,10 @@ O PowerPoint JavaScript API 1.1 contém uma [única API para criar uma nova apre
 ## <a name="powerpoint-javascript-api-12"></a>API JavaScript do PowerPoint 1.2
 
 A API JavaScript do PowerPoint 1.2 adiciona suporte para inserir slides de outra apresentação do PowerPoint na apresentação atual e para excluir slides. Para obter detalhes sobre as APIs, consulte [Inserir e excluir slides em uma apresentação do PowerPoint](../../powerpoint/insert-slides-into-presentation.md).
+
+## <a name="powerpoint-javascript-api-13"></a>API JavaScript do PowerPoint 1.3
+
+A API JavaScript do PowerPoint 1.3 adiciona suporte adicional para adicionar e excluir slides. Ele também permite que os suplementos apliquem marcas personalizadas de metadados. Para obter detalhes sobre as APIs, confira [Adicionar e excluir slides no PowerPoint](../../powerpoint/add-slides.md) e [Usar marcas personalizadas para apresentações, slides e formas no PowerPoint](../../powerpoint/tagging-presentations-slides-shapes.md).
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>Como usar os conjuntos de requisitos do PowerPoint em tempo de execução e no manifesto
 

@@ -1,16 +1,16 @@
 ---
-title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
+title: Visão geral da plataforma de Suplementos do Office
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: bc4406379320c27351bc73bf67e0f53e6c58b510
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 237650f1ee3b2577a51bb4e6625b96be54a11838
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152056"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514100"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -123,7 +123,7 @@ Para obter uma introdução mais detalhada sobre o desenvolvimento de Suplemento
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

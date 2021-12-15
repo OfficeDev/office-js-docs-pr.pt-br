@@ -2,15 +2,15 @@
 title: Visão geral dos suplementos do Word
 description: Aprenda o básico dos Suplementos do Word.
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 1f55977cba42c1c16a8533958f60b6da0e9a3650
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 488b009861349940c7ccc69a720139c2c3599ee1
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148910"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514142"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 

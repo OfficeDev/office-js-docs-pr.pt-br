@@ -2,14 +2,15 @@
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
 ms.date: 07/16/2021
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 9785effec3ba71128aacdbfc4f521fef9a433dba
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: cfda46d5006b8ff351fcd339c601ef3e22613519
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148585"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514135"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 

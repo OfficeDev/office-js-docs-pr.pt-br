@@ -1,27 +1,22 @@
 ---
 title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
-ms.date: 07/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 915409c83e4eee2028a02f921e87065ee824bd7d
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148971"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514107"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 
 Um PowerPoint pode adicionar slides à apresentação e, opcionalmente, especificar qual slide mestre e qual layout do mestre é usado para o novo slide. O complemento também pode excluir slides.
 
-> [!IMPORTANT]
-> As APIs para adicionar slides estão na [visualização](../reference/requirement-sets/powerpoint-preview-apis.md) e não estão disponíveis para os complementos de produção. A API para *excluir* slides foi lançada.
-
 As APIs para adicionar slides são usadas principalmente em cenários em que as IDs dos slides mestres e layouts da apresentação são conhecidas no momento da codificação ou podem ser encontradas em uma fonte de dados em tempo de execução. Nesse cenário, você ou o cliente devem criar e manter uma fonte de dados que correlaciona o critério de seleção (como nomes ou imagens de slides mestres e layouts) com as IDs dos slides mestres e layouts. As APIs também podem ser usadas em cenários em que o usuário pode inserir slides que usam o slide mestre padrão e o layout padrão do mestre e em cenários em que o usuário pode selecionar um slide existente e criar um novo com o mesmo slide mestre e layout (mas não o mesmo conteúdo). Confira [Selecionar o slide mestre e o layout a ser usado](#select-which-slide-master-and-layout-to-use) para obter mais informações sobre isso.
 
-## <a name="add-a-slide-with-slidecollectionadd-preview"></a>Adicionar um slide com SlideCollection.add (visualização)
-
-[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
+## <a name="add-a-slide-with-slidecollectionadd"></a>Adicionar um slide com SlideCollection.add
 
 Adicione slides com o [método SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) A seguir, um exemplo simples no qual um slide que usa o slide mestre padrão da apresentação e o primeiro layout desse mestre é adicionado. O método sempre adiciona novos slides ao final da apresentação. Apresentamos um exemplo a seguir.
 

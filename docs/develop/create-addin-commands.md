@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 07/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e71a73c6f253587968affb5e04d28cc95649b8c5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148624"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514079"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -33,9 +33,9 @@ A imagem a seguir representa uma visão geral dos elementos dos comandos de supl
 
 ![Visão geral dos elementos de comandos do complemento no manifesto. O nó superior aqui é VersionOverrides com hosts e recursos filhos. Em Hosts estão Host e, em seguida, DesktopFormFactor. Em DesktopFormFactor estão FunctionFile e ExtensionPoint. Em ExtensionPoint estão CustomTab ou OfficeTab e Office Menu. Em CustomTab ou Office tab são Group e Control then Action. Em Office Menu estão Controle e Ação. Em Recursos (filho de VersionOverrides) estão Imagens, Urls, ShortStrings e LongStrings.](../images/version-overrides.png)
 
-## <a name="step-1-start-from-a-sample"></a>Etapa 1: iniciar usando uma amostra
+## <a name="step-1-create-the-project"></a>Etapa 1: Criar o projeto
 
-É altamente recomendável iniciar usando uma das amostras fornecidas em [Amostras de comandos de suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Como opção, você pode criar seu próprio manifesto seguindo as etapas neste guia. É possível validar o manifesto usando o arquivo XSD no site de Amostras de comandos de suplemento do Office. Não deixe de ler o artigo [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md), antes de usar os comandos de suplemento.
+Recomendamos que você crie um projeto seguindo uma das iniciações rápidas, como Criar um Excel [de painel de tarefas](../quickstarts/excel-quickstart-jquery.md). Cada início rápido para Excel, Word e PowerPoint gera um projeto que já contém um comando de complemento (botão) para mostrar o painel de tarefas. Verifique se você leu comandos de complemento para [Excel, Word e PowerPoint](../design/add-in-commands.md) antes de usar comandos de complemento.
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Etapa 2: criar um suplemento de painel de tarefas
 
@@ -442,3 +442,6 @@ No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa 
 ## <a name="see-also"></a>Confira também
 
 - [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)
+- [Exemplo: criar um Excel com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
+- [Exemplo: Criar um complemento do Word com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
+- [Exemplo: criar um PowerPoint com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)

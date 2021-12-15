@@ -1,20 +1,18 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 10/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250431"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514114"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
 Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Office e iniciam ações no suplemento. Você pode usar comandos de suplemento para adicionar um botão à faixa de opções ou um item a um menu de contexto. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas. Os comandos de suplemento ajudam os usuários a localizar e usar o suplemento, o que pode ajudá-lo a aumentar a adoção e a reutilização do suplemento, além de melhorar a retenção de clientes.
-
-Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Aplicativo do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
 > Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pelos[Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
