@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 12/14/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc0d75d9bf0f32d4df2de1a88bc4d175c291c2a
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: b97faa9b294b597aea7085209e9ab2dae7be4d8e
+ms.sourcegitcommit: 9ca8259b17566b8d73169de7f98bd4e16764bcdc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514227"
+ms.lasthandoff: 12/16/2021
+ms.locfileid: "61537880"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -51,7 +51,7 @@ Para visualizar esses eventos quando disponível:
   - [Configure a versão direcionada em seu Microsoft 365 locatário](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Fazer referência **à biblioteca beta** no CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
 - Para Outlook no Windows:
-  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider](https://insider.office.com) para acessar Office beta.
+  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider](https://insider.office.com/join/windows) e escolha o **Canal Beta** para acesso a Office beta.
   - Configure o Registro. Outlook inclui uma cópia local das versões de produção e beta do Office.js em vez de carregar do CDN. Por padrão, a cópia de produção local da API é referenciada. Para alternar para a cópia beta local das APIs javaScript Outlook, você precisa adicionar essa entrada do Registro, caso contrário, as APIs beta podem não ser encontradas.
     1. Crie a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` .
     1. Adicione uma entrada chamada `EnableBetaAPIsInJavaScript` e desmarcar o valor como `1` . A imagem a seguir mostra qual deve ser a aparência de registro.
