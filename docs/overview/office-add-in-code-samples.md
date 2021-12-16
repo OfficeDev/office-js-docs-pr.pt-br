@@ -1,18 +1,27 @@
 ---
 title: Amostras de código de suplemento do Office
 description: Uma lista de exemplos de código de suplementos do Office para ajudá-lo a aprender e criar seus próprios suplementos.
-ms.date: 10/07/2021
+ms.date: 11/18/2021
 localization_priority: high
-ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 62bce4c5c6a01895db5d183e0526e0af820156ea
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250480"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514009"
 ---
 # <a name="office-add-in-code-samples"></a>Amostras de código de suplemento do Office
 
 Esses exemplos de código são escritos para ajudá-lo a aprender como usar vários recursos ao desenvolver suplementos do Office.
+
+## <a name="getting-started"></a>Introdução
+
+Os exemplos a seguir mostram como construir o Suplemento do Office mais simples com apenas um manifesto, página da web HTML e um logotipo. Esses componentes são as partes fundamentais de um Suplemento do Office. Para obter informações adicionais sobre os primeiros passos, consulte nossos [primeiros passos](../quickstarts/excel-quickstart-jquery.md) e [tutoriais](/search/?terms=tutorial&scope=Office%20Add-ins).
+
+* [Suplemento "Hello World" do Excel](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
+* [Suplemento "Hello world" do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
+* [Suplemento "Olá, mundo" do PowerPoint](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Suplemento do Word "Olá, mundo"](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
 
 ## <a name="outlook"></a>Outlook
 
