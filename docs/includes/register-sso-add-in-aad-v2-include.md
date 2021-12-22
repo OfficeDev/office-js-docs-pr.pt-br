@@ -47,9 +47,13 @@
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `93d53678-613d-4013-afc1-62e9e444a0a5`(Office na Web)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
     * `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
+
+    > [!NOTE]
+    > A ID inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO do Office de `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` complemento. 
 
     Para cada ID, tome estas etapas.
 

@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 12/16/2021
+ms.date: 12/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb758db993052614bd479cc6c8e62525a0bf02d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565368"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583802"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -252,6 +252,8 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     ![Captura de tela de uma janela de mensagem Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch-1.png)
 
 1. Em Outlook na nova visualização da interface do usuário do Mac, crie uma nova mensagem.
+
+    ![Captura de tela de uma janela de mensagem Outlook na nova visualização da interface do usuário do Mac com o assunto definido na composição.](../images/outlook-mac-autolaunch.png)
 
 1. Em Outlook no Windows, crie uma nova mensagem.
 

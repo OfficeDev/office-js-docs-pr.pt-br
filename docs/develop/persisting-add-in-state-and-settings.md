@@ -1,14 +1,14 @@
 ---
 title: Persistir o estado e as configurações do suplemento
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
-ms.date: 03/23/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc99285aaaedfe5aa8385709fc5512f7cedfb2a6
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148745"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583795"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -22,7 +22,7 @@ Essencialmente, os suplementos do Office são aplicativos Web em execução no a
 
 - Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     > [!NOTE]
-    > O usuário pode bloquear técnicas de armazenamento baseadas em navegador, dependendo das configurações escolhidas.
+    > Alguns navegadores ou as configurações do navegador do usuário podem bloquear técnicas de armazenamento baseadas no navegador. Você deve testar a disponibilidade conforme documentado em [Using the Web Armazenamento API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
 Este artigo se concentra em como usar a API javaScript Office para persistir o estado do add-in no documento atual. Se você precisar manter o estado entre documentos, como controlar as preferências do usuário em todos os documentos abertos, você precisará usar uma abordagem diferente. Por exemplo, você pode usar [o SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) para obter a identidade do usuário e salvar a ID do usuário e suas configurações em um banco de dados online.
 
