@@ -2,14 +2,14 @@
 title: Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 description: Saiba como lidar com o evento enviar mensagem em seu Outlook de envio usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 12/13/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d0745ac0f91fbda7866f52cba431369e45e2a1fe
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514072"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598376"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 
@@ -232,10 +232,16 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O se
 >
 > 1. Close Outlook.
 > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.
-> 1. Execute o seguinte comando:
+> 1. Se você estiver usando `https://localhost` (a versão padrão no manifesto), execute o seguinte comando.
 >
 >    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+>    ```
+>
+> 1. Se você estiver usando `http://localhost` , execute o seguinte comando.
+>
+>    ```command&nbsp;line
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
 >    ```
 >
 > 1. Reinicie o Outlook.

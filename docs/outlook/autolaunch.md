@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em eventos
 description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 12/17/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583802"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598362"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
@@ -264,10 +264,16 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     >
     > 1. Close Outlook.
     > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.
-    > 1. Execute o seguinte comando:
+    > 1. Se você estiver usando `https://localhost` (a versão padrão no manifesto), execute o seguinte comando.
     >
     >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+    >    ```
+    >
+    > 1. Se você estiver usando `http://localhost` , execute o seguinte comando.
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
     > 1. Reinicie o Outlook.
