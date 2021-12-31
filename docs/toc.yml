@@ -773,10 +773,7 @@ items:
           - name: Gerar automaticamente metadados JSON
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: Visão geral dos tipos de dados e das funções personalizadas (visualização)
-            href: excel/custom-functions-data-types-overview.md
-            displayName: 'Excel, Custom Functions'
-          - name: Conceitos dos tipos de dados e das funções personalizadas (visualização)
+          - name: Tipos de dados (visualização)
             href: excel/custom-functions-data-types-concepts.md
             displayName: 'Excel, Custom Functions'
           - name: Chamar APIs de JavaScript do Excel
