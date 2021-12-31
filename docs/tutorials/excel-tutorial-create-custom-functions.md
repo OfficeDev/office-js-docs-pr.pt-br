@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250452"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647969"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -17,7 +17,7 @@ Funções personalizadas permitem que você adicione novas funções do Excel de
 
 Neste tutorial, você vai:
 > [!div class="checklist"]
-> - Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](https://www.npmjs.com/package/generator-office). 
+> - Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](https://www.npmjs.com/package/generator-office).
 > - Usar uma função personalizada predefinida para realizar um cálculo simples.
 > - Criar uma função personalizada que solicita dados da web.
 > - Criar uma função personalizada que transmite os dados da web em tempo real.
@@ -31,6 +31,9 @@ Neste tutorial, você vai:
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
  Para começar, crie do código do projeto para criar o seu suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
+
+> [!NOTE]
+> Se você recriar o projeto yo office, poderá receber um erro porque o cache do Office já tem uma instância de uma função com o mesmo nome. Você pode impedir isso [limpando o cache do Office](../testing/clear-cache.md) antes de executar `npm run start`.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
