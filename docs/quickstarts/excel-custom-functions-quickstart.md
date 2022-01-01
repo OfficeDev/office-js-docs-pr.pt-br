@@ -1,15 +1,15 @@
 ---
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250494"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647998"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -105,6 +105,12 @@ Você criou com êxito uma função personalizada em um suplemento do Excel, par
 
 > [!div class="nextstepaction"]
 > [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
+
+## <a name="troubleshooting"></a>Solução de problemas
+
+Você poderá encontrar problemas se executar o início rápido várias vezes. Se o Office cache já tiver uma instância de uma função com o mesmo nome, o seu complemento obtém um erro quando ele é sideload. Você pode impedir isso [limpando o cache Office ](../testing/clear-cache.md) antes de executar `npm run start`.
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="Uma mensagem de erro Excel intitulada &quot;Funções de instalação de erro&quot;. Ele contém o texto 'Esse complemento não foi instalado porque uma função personalizada com o mesmo nome já existe'.":::
 
 ## <a name="see-also"></a>Confira também
 
