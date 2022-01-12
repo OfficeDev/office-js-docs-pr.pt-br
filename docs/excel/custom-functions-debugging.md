@@ -1,14 +1,14 @@
 ---
 title: Depuração de funções personalizadas sem interface do usuário
 description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
-ms.date: 07/08/2021
+ms.date: 01/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 112374758aab8f7fb493cb8bbe1c214765edd5a5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 28f597d7a4dd6befac7b2df6d1d6c7f8bfc3033f
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148706"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765945"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -20,7 +20,7 @@ Este artigo discute a depuração *apenas* para funções personalizadas que nã
 
 No Windows:
 
-- [Excel Depurador Visual Studio Code (VS Code)](#use-the-vs-code-debugger-for-excel-desktop)
+- [Excel Depurador de área de trabalho e Visual Studio Code (VS Code)](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel na Web e VS Code depurador](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
 - [Excel na Web e ferramentas do navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Linha de comando](#use-the-command-line-tools-to-debug)
@@ -68,7 +68,7 @@ Neste ponto, a execução será parada na linha de código onde você definirá 
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Use o VS Code depurador para Excel em Microsoft Edge
 
-Você pode usar VS Code para depurar funções personalizadas sem interface do usuário Excel no navegador Microsoft Edge usuário. Para usar VS Code com Microsoft Edge, você deve instalar o [Depurador para Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extensão.
+Você pode usar VS Code para depurar funções personalizadas sem interface do usuário Excel no navegador Microsoft Edge usuário. Para usar VS Code com Microsoft Edge, você deve instalar a extensão [Microsoft Edge DevTools para Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
 
 ### <a name="run-your-add-in-from-vs-code"></a>Execute o seu complemento do VS Code
 

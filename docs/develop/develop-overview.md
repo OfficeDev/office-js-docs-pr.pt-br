@@ -3,12 +3,12 @@ title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 03e04fa7b1b5df751c161aec01d2d3f29eed6db9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148607"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765938"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -87,7 +87,7 @@ O Script Lab é um suplemento que permite explorar a API JavaScript para Office 
 
 O vídeo de um minuto a seguir mostra o Script Lab em ação.
 
-[![Vídeo curto mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab.')](https://aka.ms/scriptlabvideo)
+[![Vídeo curto mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
 
 Para saber mais sobre o Script Lab, confira [Explorar as APIs JavaScript para Office usando o Script Lab](../overview/explore-with-script-lab.md).
 

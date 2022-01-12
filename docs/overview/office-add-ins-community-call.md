@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office da comunidade de complementos
 description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
-ms.date: 12/21/2021
+ms.date: 01/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c3edeb05e327fd676a1d4d94c74bf18e22682d
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: be9f637db2161f3c3b2da07503a623c0401c1121
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583788"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765917"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de complementos
 
@@ -16,7 +16,8 @@ A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde 
 
 ## <a name="agenda-for-january-12th-call"></a>Agenda para a chamada de 12 de janeiro
 
-A agenda de janeiro será postada cerca de uma semana antes da chamada.
+- Excel APIs de personalização de atalho
+- Atualizações para o SSO no Office
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 

@@ -5,12 +5,12 @@ ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca2cf894cf1c25529f79c99326719427a1e4faf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2a8d7f94eab26bc1cb831f95a30442e8e08afe70
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151771"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765931"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explore a API JavaScript do Office usando o Script Lab
 
@@ -22,7 +22,7 @@ O Script Lab é uma ferramenta para quem deseja saber como desenvolver suplement
 
 Parece bom até agora? Dê uma olhada neste vídeo de um minuto para ver o Script Lab em ação.
 
-[![Visualização de vídeo mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab.')](https://aka.ms/scriptlabvideo)
+[![Visualização de vídeo mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>Principais recursos
 
