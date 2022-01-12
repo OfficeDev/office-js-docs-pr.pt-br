@@ -258,9 +258,12 @@ items:
             href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Testar e depurar
         items:
-          - name: Testar e depurar Suplementos do Office
+          - name: Testar os Suplementos do Office
             href: testing/test-debug-office-add-ins.md
             displayName: 'test, debug'
+          - name: Depurar suplementos do Office
+            href: testing/debug-add-ins-overview.md
+            displayName: debug
           - name: Windows
             items:
               - name: Realizar o sideload de Suplementos do Office no Windows

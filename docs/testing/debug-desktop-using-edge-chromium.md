@@ -1,18 +1,18 @@
 ---
 title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 description: Saiba como depurar Suplementos do Office que usam o WebView2 do Microsoft Edge (baseado em Chromium) usando o Depurador para a extensão do Microsoft Edge no VS Code.
-ms.date: 11/09/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 370aee798b40631000310f65b7ace931d0c2ae3e
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889983"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765896"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
-Os suplementos do Office em execução no Windows podem usar a extensão Debugger for Microsoft Edge no Visual Studio Code para depurar no tempo de execução Edge Chromium WebView2. 
+Os suplementos do Office em execução no Windows podem usar a extensão Debugger for Microsoft Edge no Visual Studio Code para depurar no tempo de execução Edge Chromium WebView2.
 
 > [!TIP]
 > Se você não pode, ou não deseja, depurar usando ferramentas incorporadas ao Visual Studio Code; ou você está encontrando um problema que ocorre apenas quando o suplemento é executado fora do Visual Studio Code, você pode depurar o tempo de execução do Edge Chromium WebView2 usando as ferramentas de desenvolvedor do Edge (baseado em Chromium), conforme descrito em [Depurar suplementos usando ferramentas de desenvolvedor para Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
@@ -35,7 +35,7 @@ Os suplementos do Office em execução no Windows podem usar a extensão Debugge
    > npx office-addin-debugging start <your manifest path>
    > ```
 
-1. Abra o projeto no VS Code. Dentro do código VS, selecione **Ctrl+Shift+X** para abrir a Barra de extensões. Procure a extensão "Depurador do Microsoft Edge" e instale-a.
+1. Abra o projeto no VS Code. Dentro do código VS, selecione **Ctrl+Shift+X** para abrir a Barra de extensões. Pesquise a extensão "[Microsoft Edge DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)" e instale-a.
 
 1. Em seguida, escolha  **Visualizar > Executar** ou digite **Ctrl+Shift+D** para alternar para a modo de depuração.
 

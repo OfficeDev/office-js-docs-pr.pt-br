@@ -1,16 +1,16 @@
 ---
-title: Testar e depurar suplementos do Office
-description: Aprenda a testar e depurar Suplementos do Office.
-ms.date: 11/14/2021
+title: Testar os Suplementos do Office
+description: Saiba como testar seu Suplemento do Office
+ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 3eaf86d7cc2702e0501522debad2e64ac24c323c
-ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
+ms.openlocfilehash: 8d57f396c5387faf22ba8b03fd2e5019be4e14d2
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61124391"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765910"
 ---
-# <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
+# <a name="test-office-add-ins"></a>Testar os Suplementos do Office
 
 Esta seção contém orientações sobre testes, depuração de bugs e solução de problemas em Suplementos do Office.
 
@@ -44,15 +44,7 @@ Para obter informações sobre como adicionar testes de unidade ao seu projeto d
 
 ## <a name="debug-an-office-add-in"></a>Depurar um suplemento do Office
 
-O procedimento para depurar um Suplemento do Office também varia de acordo com a plataforma. Cada um dos artigos a seguir descreve como depurar suplementos do Office em uma plataforma específica.
-
-- [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)
-- [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
-- [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
-- [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)
-- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
+O procedimento para depurar um Suplemento do Office varia de acordo com a sua plataforma e o ambiente. Para obter mais informações, consulte [Depurar Suplementos do Office](debug-add-ins-overview.md).
 
 ## <a name="validate-an-office-add-in-manifest"></a>Validar o manifesto de suplemento do Office
 
