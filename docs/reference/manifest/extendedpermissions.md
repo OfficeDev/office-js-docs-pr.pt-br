@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtendedPermissions no arquivo de manifesto
 description: Define a coleção de permissões estendidas que o add-in precisa para acessar APIs ou recursos associados.
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c8316e045323b6b8c9c8ef140944b92c08f543c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 46ca6e3e2fb992755d9067b4251200073f07ade1
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990639"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042123"
 ---
 # <a name="extendedpermissions-element"></a>Elemento ExtendedPermissions
 
@@ -18,6 +18,16 @@ Define a coleção de permissões estendidas que o add-in precisa para acessar A
 > O suporte a esse elemento foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 **Tipo de suplemento:** Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos:**
+
+- [Caixa de correio 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
 ## <a name="child-elements"></a>Elementos filho
 
