@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 02239437c12e44708e870540c95f1333e78351f9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148771"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073350"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -439,22 +439,22 @@ Todos os exemplos a seguir usam `displayDialogAsync` . Alguns têm servidores ba
 
 **Exemplos mais complexos:**
 
-- [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
-- [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Office Exemplo de monetização SAAS de complemento](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
-- [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook SSO de complemento](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Office do Microsoft add-in Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office exemplo de monetização saas de complemento](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlook Do Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook Visualizador de Token de Complemento](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlook Mensagem acionável do add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
-- [Outlook Compartilhamento de complemento para OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [Outlook mensagem acionável do complemento](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlook Compartilhamento de Complementos para OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
 - [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Excel Cenário de tempo de execução compartilhado](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
-- [Excel QuickBooks DO ASPNET de complemento](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Excel de tempo de execução compartilhado](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
+- [Excel QuickBooks do ASPNET de complemento](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 - [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
 - [Word Add-in JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
 - [OAuth do cliente do AngularJS do Word Add-in](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
 - [Suplemento do Office Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Office A OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-- [Office Código de padrões de design deux do complemento](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Office de OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Office código de padrões de design deux de complemento](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

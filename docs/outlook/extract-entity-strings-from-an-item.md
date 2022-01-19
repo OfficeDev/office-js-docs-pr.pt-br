@@ -3,12 +3,12 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151864"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074277"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
@@ -99,7 +99,7 @@ xsi:type="MailApp">
 
 O arquivo HTML do suplemento de entidades especifica botões para o usuário selecionar cada tipo de entidade e outro botão para limpar instâncias exibidas de uma entidade. Ele inclui um arquivo JavaScript, default_entities.js, que é descrito na próxima seção em [Implementação de JavaScript](#javascript-implementation). O arquivo JavaScript inclui os manipuladores de evento para cada um dos botões.
 
-Observe que todos os suplementos do Outlook devem incluir o office.js. O arquivo HTML a seguir inclui a versão 1.1 do office.js na CDN. 
+Observe que todos os suplementos do Outlook devem incluir o office.js. O arquivo HTML a seguir inclui a versão 1.1 do office.js na rede de distribuição de conteúdo (CDN).
 
 ```html
 <!DOCTYPE html>

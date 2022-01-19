@@ -3,12 +3,12 @@ title: Obter anexos em um suplemento do Outlook
 description: Seu suplemento pode usar a API de anexos para enviar informações sobre os anexos a um serviço remoto.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: de31ff257484379af1904ba530f94cb9ab5c3197
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ae6d635535e9d8882877a6567160fa540c138310
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151857"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074347"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obter anexos de um item do Outlook a partir do servidor
 
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Criar suplementos do Outlook para formulários de leitura](read-scenario.md)
 - [Explorar os recursos do EWS Managed API, do EWS e dos serviços Web no Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Introdução aos aplicativos clientes de API gerenciada por EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook SSO de complemento](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)

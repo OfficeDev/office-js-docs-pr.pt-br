@@ -3,12 +3,12 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
 ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: a4777ebeb9b2ca005f58010e0f8e0b7daf5a8d94
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990653"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074249"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
@@ -28,8 +28,8 @@ Recomendamos fortemente que você use uma ferramenta que possa interceptar e exi
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>Causas e tratamento dos erros do getAccessToken
 
 Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
-- [HomeES6.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+- [HomeES6.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -107,7 +107,7 @@ No desenvolvimento, o suplemento é sideloaded no Outlook e a opção `forMSGrap
 
 ### <a name="13013"></a>13013
 
-O foi chamado muitas vezes em um curto período de `getAccessToken` tempo, Office a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há cenários ao se lembrar do método. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja chamado repetidamente. Se o mesmo caminho de código "repetir" estiver sendo executado novamente, o código deverá voltar para um sistema alternativo de autenticação do usuário. Para um exemplo de código, consulte como a `retryGetAccessToken` variável é usada em [HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
+O foi chamado muitas vezes em um curto período de `getAccessToken` tempo, Office a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há cenários ao se lembrar do método. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja chamado repetidamente. Se o mesmo caminho de código "repetir" estiver sendo executado novamente, o código deverá voltar para um sistema alternativo de autenticação do usuário. Para um exemplo de código, consulte como a `retryGetAccessToken` variável é usada em [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -118,8 +118,8 @@ Em um suplemento de produção, o suplemento deverá responder a esse erro recor
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
 
 Para exemplos do tratamento de erro descritos nesta seção, confira:
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>Erros no acesso condicional/autenticação multifatorial
 
@@ -127,7 +127,7 @@ Em determinadas configurações de identidade no AAD e no Microsoft 365, é poss
 
 O código deve testar essa propriedade de `claims`. Dependendo da arquitetura do seu suplemento, você poderá testá-lo no lado do cliente ou testá-lo no lado do servidor e retransmiti-lo ao cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. Se você retransmiti-lo do lado do servidor, a mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta.
 
-Independentemente da arquitetura, se o valor de declarações tiver sido enviado do AAD, seu código deverá ser chamado e passar a `getAccessToken` `authChallenge: CLAIMS-STRING-HERE` opção no `options` parâmetro. Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
+Independentemente da arquitetura, se o valor de declarações tiver sido enviado de AAD, seu código deverá ser chamado e passar a `getAccessToken` opção `authChallenge: CLAIMS-STRING-HERE` no `options` parâmetro. Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
 
 ### <a name="consent-missing-errors"></a>Erros de falta de consentimento
 

@@ -3,12 +3,12 @@ title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Javascript do Internet Explorer 11 e do ES5 no seu complemento.
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f762231face1b69a3354b584ca0bbea1742050
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 755bcde8748b3cc0ce2f5de92a6ba5f04f6d263c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681129"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074256"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 
@@ -20,7 +20,7 @@ ms.locfileid: "60681129"
 > - Office na Web abre mais no Internet Explorer. Consequentemente, o AppSource não testa mais os Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e Office *desktop* que usam o Internet Explorer.
 > - A [Script Lab não](../overview/explore-with-script-lab.md) dá mais suporte ao Internet Explorer.
 
-Office Os complementos são aplicativos Web que são exibidos dentro de IFrames ao executar em Office na Web. Office Os complementos são exibidos usando controles de navegador incorporados ao executar Office em Windows ou Office no Mac. Os controles de navegador incorporados são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.
+Office Os complementos são aplicativos Web que são exibidos dentro de IFrames quando executados em Office na Web. Office os complementos são exibidos usando controles de navegador incorporados ao executar Office em Windows ou Office no Mac. Os controles de navegador incorporados são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.
 
 Se você planeja comercializar seu complemento por meio do AppSource ou planeja dar suporte a versões mais antigas do Windows e Office, o seu complemento deve funcionar no controle de navegador in-loca que se baseia no Internet Explorer 11 (IE11). Para obter informações sobre quais combinações de Windows e Office usam o controle de navegador baseado no IE11, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
@@ -40,7 +40,7 @@ Há dois transpiladores populares. Ambos podem trabalhar com arquivos de origem 
 - [babel](https://babeljs.io/)
 - [tsc](https://www.typescriptlang.org/index.html)
 
-Consulte a documentação para obter informações sobre como instalar e configurar o transpiler em seu projeto de complemento. Recomendamos que você use um participante de tarefas, como [o Grunhido](https://gruntjs.com/) ou [WebPack,](https://webpack.js.org/) para automatizar a transpilação. Para um exemplo de complemento que usa tsc, consulte [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/auth/Office-Add-in-Microsoft-Graph-React). Para um exemplo que usa o babel, consulte [Offline Armazenamento Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/Excel.OfflineStorageAddin).
+Consulte a documentação para obter informações sobre como instalar e configurar o transpiler em seu projeto de complemento. Recomendamos que você use um participante de tarefas, como [o Grunhido](https://gruntjs.com/) ou [WebPack,](https://webpack.js.org/) para automatizar a transpilação. Para um exemplo de complemento que usa tsc, consulte [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React). Para um exemplo que usa o babel, consulte [Offline Armazenamento Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin).
 
 > [!NOTE]
 > Se você estiver usando Visual Studio (não Visual Studio Code), o tsc provavelmente será mais fácil de usar. Você pode instalar o suporte para ele com um pacote nuget. Para obter mais informações, consulte [JavaScript e TypeScript no Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Para usar o babel com Visual Studio, crie um script de complicação ou use o Explorador de Tarefas no Visual Studio com ferramentas como o [WebPack Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou [o NpM Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner).

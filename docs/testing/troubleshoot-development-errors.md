@@ -3,12 +3,12 @@ title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a17a9eafd91cd174209b1974eea61715385c0ad
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 5c8c17077295313b4f10874a851c4d9d6dbef62b
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990800"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074312"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -33,7 +33,7 @@ O navegador pode estar armazenando esses arquivos em cache. Para evitar isso, de
 - Pragma: "sem cache"
 - Expira: "-1"
 
-Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 Se o seu suplemento estiver hospedado no Servidor de Informações da Internet (IIS), você também poderá adicionar o seguinte ao web.config.
 
@@ -107,8 +107,8 @@ Você pode repetir o processo anterior para quaisquer esquemas adicionais que es
 
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Depurar suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
+- [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)  
+- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Solucionar erros de usuários com Suplementos do Office](testing-and-troubleshooting.md)

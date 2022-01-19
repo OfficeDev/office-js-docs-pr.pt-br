@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: Autenticar usuários usando funções personalizadas Excel que não usam o painel de tarefas.
 title: Autenticação para funções personalizadas sem interface do usuário
 ms.localizationpriority: medium
-ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 57a003dbcf3c36842c2b5c98aba7844c9e53e012
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148708"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074235"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>Autenticação para funções personalizadas sem interface do usuário
 
@@ -45,7 +45,7 @@ O diagrama a seguir descreve esse processo básico. A linha pontilhada indica qu
 
 ## <a name="storing-the-token"></a>Armazenando o token
 
-Os exemplos a seguir são do exemplo de código [Usando OfficeRuntime.storage em funções personalizadas](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage). Consulte este exemplo de código para um exemplo completo de compartilhamento de dados entre funções personalizadas sem interface do usuário e o painel de tarefas.
+Os exemplos a seguir são do exemplo de código [Usando OfficeRuntime.storage em funções personalizadas](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage). Consulte este exemplo de código para um exemplo completo de compartilhamento de dados entre funções personalizadas sem interface do usuário e o painel de tarefas.
 
 Se a função personalizada sem interface do usuário for autenticada, ela receberá o token de acesso e precisará armazená-lo em `storage` . O exemplo de código a seguir mostra como chamar o método `storage.setItem` para armazenar um valor. A função é uma função personalizada sem interface do usuário que, por exemplo, armazena um `storeValue` valor do usuário. Você pode modificá-la para que seja armazenado qualquer valor de token que você precise.
 

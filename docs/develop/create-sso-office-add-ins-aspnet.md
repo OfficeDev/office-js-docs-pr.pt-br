@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 99471b78100c2627186ceb8f1c93afce5a19d396
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fd586656d0b584c7fb394e7c53bdb869584accd0
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148613"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073364"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -32,7 +32,7 @@ Este artigo orienta você sobre o processo de habilitação de SSO (login único
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
-Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > Há duas versões do exemplo.
@@ -630,4 +630,4 @@ Para testar o caminho de autorização de fallback, force o caminho do SSO a fal
 
 Como todos os Office Web, quando você estiver pronto para mover para um servidor de preparação ou produção, você deve atualizar o domínio no manifesto com o `localhost:44355` novo domínio. Da mesma forma, você deve atualizar o domínio no arquivo web.config.
 
-Como o domínio aparece no registro do AAD, você precisa atualizar esse registro para usar o novo domínio no lugar de onde `localhost:44355` quer que ele apareça.
+Como o domínio aparece no registro AAD, você precisa atualizar esse registro para usar o novo domínio no lugar de onde `localhost:44355` quer que ele apareça.

@@ -1,14 +1,14 @@
 ---
 title: Núcleo da Malha em Suplementos do Office
 description: Obter uma visão geral de como usar o Fabric Core e os componentes da interface do usuário do Fabric em Office de complementos.
-ms.date: 07/08/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cd534809bb443134e2df06de478e8283a3452aac
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d10cc5d8f33c8dd66f4f988fdd5a082580b1aca
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148786"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074200"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Núcleo da Malha em Suplementos do Office
 
@@ -21,7 +21,7 @@ Se a interface do usuário do seu React não for baseada em React, você também
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>Uso do Fabric Core: ícones, fontes, cores
 
-1. Adicione a referência da CDN ao HTML da sua página.  
+1. Adicione a referência de rede de entrega de conteúdo (CDN) ao HTML em sua página.
 
     ```html
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
@@ -51,11 +51,11 @@ Exemplos são incluídos nos [Exemplos](#samples) posteriormente neste artigo.
 
 Os seguintes exemplos de complementos usam o Fabric Core e/ou Office UI Fabric componentes JS. Algumas dessas repos são arquivadas, o que significa que elas não estão mais sendo atualizadas com correções de bugs ou de segurança, mas você ainda pode usá-las para aprender a usar componentes do Fabric Core e da interface do usuário do Fabric.
 
-- [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
+- [Excel JavaScript SalesTracker de complemento](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
 - [Excel SalesLeads de complemento](https://github.com/OfficeDev/Excel-Add-in-SalesLeads)
-- [Excel Tendências de despesas de woodgrove do add-in](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)
-- [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)
-- [Office Exemplo de interface do usuário do Fabric do add-in](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
+- [Excel tendências de despesas de woodgrove do add-in](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)
+- [Excel De conteúdo do Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)
+- [Office exemplo de interface do usuário do Fabric do Add-in](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Outlook Add-in GifMe](https://github.com/OfficeDev/Outlook-Add-in-GifMe)
 - [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)

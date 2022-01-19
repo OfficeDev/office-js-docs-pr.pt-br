@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 ms.localizationpriority: high
-ms.openlocfilehash: 087d35a6de6618a238ec7c2a30331abcdfdd44f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ddf1e22141cee516bcd7808fd37b789f6943e093
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148914"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073136"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -55,12 +55,12 @@ Também são necessários:
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>O suplemento VSTO do analisador de células
 
-Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). A pasta **/start** contém a solução de suplemento VSTO que você migrará. Sua meta é migrar o Suplemento VSTO para um Suplemento do Office moderno, quando possível.
+Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration). A pasta **/start** contém a solução de suplemento VSTO que você migrará. Sua meta é migrar o Suplemento VSTO para um Suplemento do Office moderno, quando possível.
 
 > [!NOTE]
 > O exemplo usa C#, mas você pode aplicar as técnicas deste tutorial a um suplemento VSTO escrito em qualquer linguagem .NET.
 
-1. Baixe a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) para trabalhar em um arquivo em seu computador.
+1. Baixe a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) para trabalhar em um arquivo em seu computador.
 1. Inicie o Visual Studio 2019 e abra a solução **/start/Cell-Analyzer.sln**.
 1. No menu **Depurar**, selecione **Iniciar Depuração**.
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no projeto **Cell-Analyzer** e escolha **Propriedades**.

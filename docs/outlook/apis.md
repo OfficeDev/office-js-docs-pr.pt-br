@@ -1,14 +1,14 @@
 ---
 title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
-ms.date: 02/21/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7346882a11b81321c65730390dc213d76879773
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151893"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074291"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
@@ -16,13 +16,14 @@ Para usar APIs no seu suplemento do Outlook, você deve especificar o local da b
 
 ## <a name="officejs-library"></a>Biblioteca Office.js
 
-Para interagir com a API do suplemento do Outlook, você precisará usar as APIs JavaScript no Office.js. A CDN da biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
+Para interagir com a API do suplemento do Outlook, você precisará usar as APIs JavaScript no Office.js. A rede de distribuição de conteúdo (CDN) para a biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` . Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
 
 Referência CDN em um `<script>` marca na `<head>` marca da página da web (arquivo. HTML,. aspx ou. PHP) implementa interface do usuário do seu suplemento.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
+
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]

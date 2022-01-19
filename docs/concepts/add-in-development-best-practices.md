@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar Office de complementos.
-ms.date: 05/12/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148670"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073336"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -92,7 +92,6 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 > [!NOTE]
 > Se você estiver usando Fluent interface do usuário [React](../design/using-office-ui-fabric-react.md) seus elementos de design, muitos desses elementos são integrados ao sistema de design.
 
-
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento
 
 - Crie a percepção de respostas rápidas da interface do usuário. Seu suplemento deverá ser carregado em 500 ms ou menos.
@@ -101,7 +100,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Forneça indicadores de carregamento para operações com longa execução.
 
-- Use uma CDN para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
+- Use uma rede de distribuição de conteúdo (CDN) para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
 
 - Siga as práticas da Web padrão para otimizar a página. Use apenas versões reduzidas das bibliotecas na produção. Carregue somente os recursos que você precisar e otimize como os recursos são carregados.
 

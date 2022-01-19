@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: b871258d2a179f39a53b6f062de73ddd14a70a17
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c371372bc954496ccbce12f65191c76e01ce0bd2
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148726"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074263"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
@@ -20,7 +20,7 @@ Os usuários entrarão no Office (plataformas online, móveis e de área de trab
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para mais informações sobre como fazer isso com um Suplemento do Office, consulte [Autorizar serviços externos no Suplemento do Office](auth-external-add-ins.md). Para *Outlook*, há um sistema de fallback recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](../outlook/implement-sso-in-outlook-add-in.md). Para exemplos que usam o Azure Active Directory como o sistema de fallback, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para mais informações sobre como fazer isso com um Suplemento do Office, consulte [Autorizar serviços externos no Suplemento do Office](auth-external-add-ins.md). Para *Outlook*, há um sistema de fallback recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](../outlook/implement-sso-in-outlook-add-in.md). Para exemplos que usam o Azure Active Directory como o sistema de fallback, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ## <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
@@ -99,7 +99,7 @@ Adicione o JavaScript ao suplemento para:
 Aqui está um exemplo simples de uma chamada para `getAccessToken`.
 
 > [!NOTE]
-> Este exemplo lida explicitamente com apenas um tipo de erro. Para exemplos de tratamento de erro mais elaborados, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+> Este exemplo lida explicitamente com apenas um tipo de erro. Para exemplos de tratamento de erro mais elaborados, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ```js
 async function getGraphData() {

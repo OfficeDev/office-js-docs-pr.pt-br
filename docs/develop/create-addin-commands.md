@@ -3,12 +3,12 @@ title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514079"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073378"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -442,6 +442,6 @@ No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa 
 ## <a name="see-also"></a>Confira também
 
 - [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)
-- [Exemplo: criar um Excel com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
-- [Exemplo: Criar um complemento do Word com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
-- [Exemplo: criar um PowerPoint com botões de comando](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
+- [Exemplo: criar um Excel com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [Exemplo: Criar um complemento do Word com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [Exemplo: criar um PowerPoint com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

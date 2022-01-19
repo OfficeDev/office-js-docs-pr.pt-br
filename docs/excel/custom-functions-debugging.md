@@ -1,14 +1,14 @@
 ---
 title: Depuração de funções personalizadas sem interface do usuário
 description: Saiba como depurar suas Excel funções personalizadas que não usam um painel de tarefas.
-ms.date: 01/07/2022
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f597d7a4dd6befac7b2df6d1d6c7f8bfc3033f
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: a4ec54bc731ab37335070c01eae2f9700327e360
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765945"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074221"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -149,9 +149,9 @@ Se você não estiver usando VS Code, poderá usar a linha de comando (como bash
   
     Ou se você preferir iniciar o seu Excel na Web executar o seguinte comando.
   
-    `npm run start:web`
+    `npm run start:web -- --document {url}`(onde `{url}` está a URL de um arquivo Excel no OneDrive ou SharePoint)
   
-    Para Excel na Web você também precisa fazer sideload do seu complemento. Siga as etapas em [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Em seguida, continue até a próxima seção para iniciar a depuração.
+    Se o seu complemento não fizer sideload no documento, siga as etapas em Sideload do seu [add-in](#sideload-your-add-in) para fazer sideload do seu add-in. Em seguida, continue até a próxima seção para iniciar a depuração.
   
 4. Abra ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores F12 abrirá as ferramentas de desenvolvedor.
 5. Em ferramentas de desenvolvedor, abra seu arquivo de script de código-fonte (**functions.js** **ou functions.ts**). Seu código de funções personalizadas pode estar localizado perto do final do arquivo.
@@ -171,7 +171,7 @@ Há várias tarefas de com build disponíveis.
 Você pode usar as seguintes tarefas para iniciar a depuração na área de trabalho ou online.
 
 - `npm run start:desktop`: Inicia Excel na área de trabalho e faz o sideload do seu complemento.
-- `npm run start:web`: Inicia Excel na Web e descarrega o seu complemento.
+- `npm run start:web -- --document {url}`(onde está a URL de um arquivo Excel no OneDrive ou SharePoint): inicia Excel na Web e descarrega o `{url}` seu complemento.
 - `npm run stop`: Interrompe Excel e depuração.
 
 ## <a name="next-steps"></a>Próximas etapas
