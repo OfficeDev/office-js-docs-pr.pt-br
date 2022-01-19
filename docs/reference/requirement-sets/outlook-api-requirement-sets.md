@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook.
-ms.date: 12/13/2021
+ms.date: 01/14/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 05f44eb07c9484447e1380a02e7047ab0d410a32
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 111cd8a7153b602e726209bfca84ca5c891f2302
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514128"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074326"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -30,7 +30,7 @@ Todas as APIs do Outlook pertencem ao [conjunto de requisitos](../../develop/spe
 A especificação de uma versão mínima de conjunto de requisitos controla em quais clientes do Outlook o suplemento aparecerá. Se um cliente não oferece suporte para o conjunto de requisitos mínimos, ele não carrega o suplemento. Por exemplo, se for especificada a versão 1.3 do conjunto de requisitos, significa que o suplemento não aparecerá nos clientes do Outlook incompatíveis com a versão 1.3.
 
 > [!NOTE]
-> Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN (https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
+> Para usar APIs em qualquer um dos conjuntos de requisitos numerados, você deve fazer referência à biblioteca de **produção** na [rede de distribuição de conteúdo (CDN) do Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
 >
 > Para obter informações sobre o uso de APIs de visualização, confira a seção [Usando APIs de visualização ](#using-preview-apis), mais adiante neste artigo.
 
