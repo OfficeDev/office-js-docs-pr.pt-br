@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Word.
-ms.date: 10/08/2021
+ms.date: 01/14/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 6838ed66b6a91f522e7ae78aeeee3d545b6bbf2c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250529"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074319"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
@@ -20,7 +20,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 Os suplementos do Word são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, e o Office na Web, iPad e Mac. A tabela a seguir lista os conjuntos de requisitos do Word, os aplicativos cliente do Office que suportam esse conjunto de requisitos e os números de versão ou build desses aplicativos.
 
 > [!NOTE]
-> Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
+> Para usar APIs em qualquer um dos conjuntos de requisitos numerados, você deve fazer referência à biblioteca de **produção** na [rede de distribuição de conteúdo (CDN) do Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
 >
 > Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Word](word-preview-apis.md).
 
