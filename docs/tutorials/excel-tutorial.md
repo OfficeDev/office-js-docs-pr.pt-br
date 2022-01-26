@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Crie um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 09/23/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990821"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222176"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -175,8 +175,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 1. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de continuar. O servidor Web local é iniciado quando este comando é executado.
@@ -191,13 +190,9 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
         npm start
         ```
 
-    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -207,18 +202,18 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     ![Captura de tela do Excel, exibindo um painel de tarefas de suplemento com um botão Criar Tabela, e uma tabela na planilha preenchida com dados de Data, Comerciante, Categoria e Quantidade.](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table&quot;></a>Filtrar e classificar uma tabela
+## <a name="filter-and-sort-a-table"></a>Filtrar e classificar uma tabela
 
 Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou anteriormente.
 
-### <a name=&quot;filter-the-table&quot;></a>Filtrar a tabela
+### <a name="filter-the-table"></a>Filtrar a tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 1. Localize o elemento `<button>` do botão `create-table` e adicione a seguinte marcação logo após essa linha.
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -226,7 +221,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela.
 
     ```js
-    document.getElementById(&quot;filter-table").onclick = filterTable;
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
 1. Adicione a seguinte função ao final do arquivo.
@@ -334,18 +329,18 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
     ![Captura de tela do Excel, com os botões Filtrar Tabela e Classificar Tabela visíveis no painel de tarefas do suplemento.](../images/excel-tutorial-filter-and-sort-table-2.png)
 
-## <a name="create-a-chart&quot;></a>Criar um gráfico
+## <a name="create-a-chart"></a>Criar um gráfico
 
 Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que você criou anteriormente e depois vai formatar o gráfico.
 
-### <a name=&quot;chart-a-chart-using-table-data&quot;></a>Gráfico de um gráfico com dados de tabela
+### <a name="chart-a-chart-using-table-data"></a>Gráfico de um gráfico com dados de tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 1. Localize o elemento `<button>` do botão `sort-table` e adicione a seguinte marcação logo após essa linha.
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;create-chart&quot;>Create Chart</button><br/><br/>
+    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -353,7 +348,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela.
 
     ```js
-    document.getElementById(&quot;create-chart").onclick = createChart;
+    document.getElementById("create-chart").onclick = createChart;
     ```
 
 1. Adicione a seguinte função ao final do arquivo.
@@ -429,18 +424,18 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
     ![Captura de tela do Excel, com um botão Criar Gráfico visível no painel de tarefas do suplemento e um gráfico na planilha exibindo dados de despesas com alimentos e educação.](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header&quot;></a>Congelar um cabeçalho de tabela
+## <a name="freeze-a-table-header"></a>Congelar um cabeçalho de tabela
 
 Quando uma tabela for longa o suficiente para que um usuário precise rolar para ver algumas linhas, a linha de cabeçalho poderá ficar fora da vista. Nesta etapa do tutorial, você precisará congelar a linha do cabeçalho da tabela que criou anteriormente para que ela permaneça visível, mesmo que o usuário role ao longo da planilha.
 
-### <a name=&quot;freeze-the-tables-header-row&quot;></a>Congelar a linha de cabeçalho da tabela
+### <a name="freeze-the-tables-header-row"></a>Congelar a linha de cabeçalho da tabela
 
 1. Abra o arquivo **./src/taskpane/taskpane.html**.
 
 1. Localize o elemento `<button>` do botão `create-chart` e adicione a seguinte marcação logo após essa linha.
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
@@ -448,7 +443,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela.
 
     ```js
-    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
 1. Adicione a seguinte função ao final do arquivo.
@@ -754,7 +749,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         npm run start:web
         ```
 
-        Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        Para usar seu suplemento, abra um documento no Excel na Web e realize o sideload do suplemento seguindo as instruções em [Realizar Sideload de Suplementos do Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
 1. Na guia **Página Inicial** no Excel, escolha o botão **Proteger Planilha**. A maioria dos controles da faixa de opções está desabilitada e esmaecida, como mostra a captura de tela a seguir.
 
