@@ -3,12 +3,12 @@ title: Teste de unidade em Office de complementos
 description: Saiba como usar o código de teste de unidade que chama as OFFICE APIs JavaScript
 ms.date: 11/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8824b8e759e3c1acecf30683f2b89bb41bd558f3
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: b93bee764b0019f7095eef203cc8916375cf7223
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242037"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222154"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Teste de unidade em Office de complementos
 
@@ -370,42 +370,6 @@ describe("Insert blue paragraph at end tests", () => {
   });
 })
 ```
-
-## <a name="adding-mock-objects-properties-and-methods-dynamically-when-testing"></a>Adicionando objetos, propriedades e métodos simulados dinamicamente ao testar
-
-Em alguns cenários, testes eficientes exigem que objetos simulados sejam criados ou modificados no tempo de execução; ou seja, enquanto os testes estão sendo executados. Estes são alguns exemplos:
-
-- A função que está sendo testada se comporta de forma diferente quando chamada uma segunda vez. Você precisa primeiro testar a função com um objeto mock, depois alterar esse objeto mock e testar a função novamente com o objeto mock alterado.
-- Você precisa testar uma função contra vários objetos simulados semelhantes, mas não idênticos. Por exemplo, você precisa testar uma função com um objeto mock que tenha uma propriedade de cor e, em seguida, testar a função novamente com um objeto mock que tenha uma propriedade de texto, mas é idêntico ao objeto mock original.
-
-O `OfficeMockObject` tem três métodos para ajudar nesses cenários.
-
-- `OfficeMockObject.setMock` adiciona uma propriedade e um valor a um `OfficeMockObject` objeto. O exemplo a seguir adiciona a `address` propriedade.
-
-    ```javascript
-    rangeMock.setMock("address", "G6:K9");
-    ```
-
-- `OfficeMockObject.addMockFunction` adiciona uma função simulada a `OfficeMockObject` um objeto, conforme mostrado no exemplo a seguir.
-
-    ```javascript
-    workbookMock.addMockFunction("getSelectedRange", function () { 
-      const range = {
-        address: "B2:G5",
-      };
-      return range;
-    });
-    ```
-
-    > [!NOTE]
-    > O parâmetro function é opcional. Se não estiver presente, uma função vazia será criada.
-
-- `OfficeMockObject.addMock` adiciona um novo `OfficeMockObject` objeto como uma propriedade a uma propriedade existente e lhe dá um nome. Ele teria os membros mínimos que `OfficeMockObject` todos têm, como `load` e `sync` . Membros adicionais podem ser adicionados com `setMock` os `addMockFunction` métodos e. A seguir, um exemplo que adiciona um objeto mock `Excel.WorkbookProtection` como uma propriedade a uma lista de trabalho `protection` simulada. Em seguida, adiciona `protected` uma propriedade ao novo objeto mock.
-
-    ```javascript
-    workbookMock.addMock("protection");
-    workbookMock.protection.setMock("protected", true);
-    ```
 
 > [!NOTE]
 > A documentação de referência completa `OfficeMockObject` do tipo está [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).

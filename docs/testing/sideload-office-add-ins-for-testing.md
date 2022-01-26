@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
-ms.date: 11/04/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2067bc4de24c3e9cfecdf957af4b57856d8ee7b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: f09dad4c959082be985ef2076def3bee4d105402
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793607"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222028"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -46,7 +46,9 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
     > Se você estiver usando o gerador Yeoman, adicionar essas informações não será necessário, pois a ferramenta Yeoman acrescenta essas informações automaticamente.
     > Observe que, em ambos os casos, no entanto, você só pode carregar manifestos de localhost.
 
-1. Na linha de comando que começa no diretório raiz do seu projeto, execute o seguinte comando: `npm run start:web` .
+1. Na linha de comando que começa no diretório raiz do seu projeto, execute o seguinte comando. Substitua "{url}" pela URL de um documento Office em seu OneDrive ou uma biblioteca SharePoint para a qual você tem permissões.
+
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção Para **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
 
@@ -103,7 +105,7 @@ Se você estiver usando Visual Studio para desenvolver seu complemento, o proces
 
 Você pode remover um complemento com sideload anteriormente limpando o cache do navegador. Se você fizer alterações no manifesto do seu complemento (por exemplo, atualizar nomes de arquivos de ícones ou texto de comandos de complemento), talvez seja necessário limpar o cache do navegador e, em seguida, re-sideload do complemento usando o manifesto atualizado. Isso permitirá Office na Web renderizar o complemento conforme descrito pelo manifesto atualizado.
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
 - [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)

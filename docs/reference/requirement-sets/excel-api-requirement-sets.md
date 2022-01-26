@@ -4,12 +4,12 @@ description: Informações do conjunto de requisitos do Suplemento do Office par
 ms.date: 01/14/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 6ddab3218b313fff244cdd83d8464e8953921f4b
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 615a615f965fdbcef38d14020e307de26a7e4401
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074333"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222217"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -20,7 +20,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 Os suplementos de Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de cliente do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou número de build desses aplicativos.
 
 > [!NOTE]
-> Para usar APIs em qualquer um dos conjuntos de requisitos numerados ou `ExcelApiOnline`, você deve fazer referência à biblioteca de **produção** na [rede de distribuição de conteúdo (CDN) do Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js.).
+> Para usar APIs em qualquer um dos conjuntos de requisitos numerados ou `ExcelApiOnline`, você deve fazer referência à biblioteca de **produção** na [rede de distribuição de conteúdo (CDN) do Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
 >
 > Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Excel](excel-preview-apis.md).
 

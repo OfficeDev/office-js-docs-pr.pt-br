@@ -1,14 +1,14 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
-ms.date: 09/03/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a105ff917816d24dd412be200fc84181610a09a6
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073350"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222168"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -334,7 +334,7 @@ Como você pode fazer várias chamadas da página host, mas você tem apenas um 
 > Em algumas situações, a API, que faz parte do conjunto de requisitos `messageChild` [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md), pode não ter suporte. Algumas maneiras alternativas para mensagens pai para caixa de diálogo são descritas em Maneiras alternativas de passar mensagens para uma caixa de diálogo de [sua página host](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> O [conjunto de requisitos DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) não pode ser especificado na seção `<Requirements>` de um manifesto de complemento. Você terá que verificar se há suporte para DialogApi 1.2 no tempo de execução usando o [método isSetSupported.](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) O suporte para requisitos de manifesto está em desenvolvimento.
+> O [conjunto de requisitos DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) não pode ser especificado na seção **Requisitos** de um manifesto de um complemento. Você terá que verificar se há suporte para DialogApi 1.2 em tempo de execução usando o método conforme descrito em Runtime verifica se há suporte ao método e ao conjunto `isSetSupported` [de requisitos.](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) O suporte para requisitos de manifesto está em desenvolvimento.
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Mensagens entre domínios para o tempo de execução da caixa de diálogo
 
@@ -355,7 +355,7 @@ Se a mensagem não incluir dados confidenciais, você poderá definir como " " q
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Como o tempo de execução javaScript que está hospedando a caixa de diálogo não pode acessar a seção do manifesto e, assim, determinar se o domínio de onde a mensagem vem é confiável, você deve usar o manipulador para determinar `<AppDomains>`  `DialogParentMessageReceived` isso. O objeto que é passado para o manipulador contém o domínio atualmente hospedado no pai como sua `origin` propriedade. Veja a seguir um exemplo de como usar a propriedade.
+Como o tempo de execução javaScript que está hospedando a caixa de diálogo não pode  acessar a seção **AppDomains** do manifesto e, assim, determinar se o domínio de onde a mensagem vem é confiável, você deve usar o manipulador para determinar `DialogParentMessageReceived` isso. O objeto que é passado para o manipulador contém o domínio atualmente hospedado no pai como sua `origin` propriedade. Veja a seguir um exemplo de como usar a propriedade.
 
 ```javascript
 function onMessageFromParent(arg) {

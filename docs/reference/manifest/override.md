@@ -1,14 +1,14 @@
 ---
 title: Elemento Override no arquivo de manifesto
 description: O elemento Override permite que você especifique o valor de uma configuração dependendo de uma condição especificada.
-ms.date: 12/13/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dda8f6ca5aee1492c51960fc637d96e4d82796cb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: e4e2ccd9936eec12fd7adb4eca8e46a5f391785f
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61513995"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222259"
 ---
 # <a name="override-element"></a>Elemento Override
 
@@ -18,15 +18,15 @@ Fornece uma maneira de substituir o valor de uma configuração de manifesto, de
 - Um padrão de suporte ao conjunto de requisitos diferente do `RequirementToken` padrão, chamado **RequirementTokenOverride**.
 - A origem é diferente do `Runtime` padrão , chamado **RuntimeOverride**.
 
-Um `<Override>` elemento que está dentro de um elemento deve ser do tipo `<Runtime>` **RuntimeOverride**.
+Um **elemento Override** que está dentro de um elemento **Runtime** deve ser do tipo **RuntimeOverride**.
 
-Não há `overrideType` atributo para o `<Override>` elemento. A diferença é determinada pelo elemento pai e pelo tipo do elemento pai. Um elemento que está dentro de um elemento cujo é , deve ser do `<Override>` `<Token>` tipo `xsi:type` `RequirementToken` **RequirementTokenOverride**. Um elemento dentro de qualquer outro elemento pai ou dentro de um elemento de tipo deve ser do `<Override>` `<Override>` tipo `LocaleToken` **LocaleTokenOverride**. Para obter mais informações sobre o uso desse elemento quando ele é filho de um elemento, consulte Trabalhar com substituições `<Token>` [estendidas do manifesto](../../develop/extended-overrides.md).
+Não há atributo `overrideType` para o elemento **Override.** A diferença é determinada pelo elemento pai e pelo tipo do elemento pai. Um **elemento Override** que está dentro de um elemento **Token** cujo é , deve ser do `xsi:type` tipo `RequirementToken` **RequirementTokenOverride**. Um **elemento Override** dentro de qualquer outro elemento pai, ou dentro de um elemento **Override** do tipo , deve ser do tipo `LocaleToken` **LocaleTokenOverride**. Para obter mais informações sobre o uso desse elemento quando ele é filho de um elemento **Token,** consulte Trabalhar com substituições [estendidas do manifesto](../../develop/extended-overrides.md).
 
 Cada tipo é descrito em seções separadas posteriormente neste artigo.
 
 ## <a name="override-element-for-localetoken"></a>Elemento Override para `LocaleToken`
 
-Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **LocaleTokenOverride**, o atributo será a condição e o `Locale` atributo será o `Value` conseqüente. Por exemplo, o seguinte é lido "Se a configuração de Office local for fr-fr, o nome para exibição será 'Lecteur vidéo'."
+Um **elemento Override** expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o **elemento Override** for do tipo **LocaleTokenOverride**, o atributo será a condição e o `Locale` atributo será o `Value` conseqüente. Por exemplo, o seguinte é lido "Se a configuração de Office local for fr-fr, o nome para exibição será 'Lecteur vidéo'."
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -99,7 +99,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ## <a name="override-element-for-requirementtoken"></a>Elemento Override para `RequirementToken`
 
-Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RequirementTokenOverride**, o elemento filho expressará a condição `<Requirements>` e o atributo será o `Value` conseqüente. Por exemplo, o primeiro na seguinte leitura é "Se a plataforma atual dá suporte ao FeatureOne versão 1.7, use a cadeia de caracteres 'oldAddinVersion' no lugar do token na URL do vô-vô (em vez da cadeia de caracteres `<Override>` `${token.requirements}` padrão `<ExtendedOverrides>` 'upgrade')."
+Um **elemento Override** expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o **elemento Override** for do tipo **RequirementsTokenOverride**, o elemento **filho Requirements** expressará a condição e o atributo será `Value` o conseqüente. Por exemplo,  a primeira Substituição no seguinte é ler "Se a plataforma atual dá suporte ao FeatureOne versão 1.7, use a cadeia de caracteres 'oldAddinVersion' no lugar do token na URL do vô-vô (em vez da cadeia de caracteres `${token.requirements}` `<ExtendedOverrides>` padrão 'upgrade')."
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -143,7 +143,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 
 ### <a name="must-contain"></a>Deve conter
 
-|Elemento|Conteúdo|Email|TaskPane|
+|Elemento|Conteúdo|Correio|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Requisitos](requirements.md)|||x|
 
@@ -192,7 +192,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 ### <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Definir o elemento Requirements no manifesto](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
+- [Especificar quais Office e plataformas podem hospedar seu complemento](../../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)
 - [Atalhos de teclado para o SharePoint](../../design/keyboard-shortcuts.md)
 
 ## <a name="override-element-for-runtime"></a>Elemento Override para `Runtime`
@@ -200,7 +200,7 @@ Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ...
 > [!IMPORTANT]
 > O suporte a esse elemento foi introduzido no conjunto de requisitos de Caixa de [Correio 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) com o [recurso de ativação baseada em evento.](../../outlook/autolaunch.md) Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
-Um `<Override>` elemento expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o `<Override>` elemento for do tipo **RuntimeOverride**, o atributo será a condição e o `type` atributo será o `resid` conseqüente. Por exemplo, o seguinte é ler "Se o tipo for 'javascript', será `resid` 'JSRuntime.Url'." Outlook Desktop requer esse elemento para manipuladores de ponto de extensão [LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent)
+Um **elemento Override** expressa uma condição e pode ser lido como um "Se ... then ..." instrução. Se o **elemento Override** for do tipo **RuntimeOverride**, o atributo será a condição e o `type` atributo será o `resid` conseqüente. Por exemplo, o seguinte é ler "Se o tipo for 'javascript', será `resid` 'JSRuntime.Url'." Outlook Desktop requer esse elemento para manipuladores de ponto de extensão [LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent)
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">

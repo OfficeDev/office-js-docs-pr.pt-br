@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647969"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222252"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -74,23 +74,9 @@ npm run start:desktop
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
+Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
-```command&nbsp;line
-npm run start:web
-```
-
-Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
-
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
-
-   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
-
-1. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
-
-1. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 ---
 

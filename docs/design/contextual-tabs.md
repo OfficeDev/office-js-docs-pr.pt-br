@@ -1,14 +1,14 @@
 ---
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
-ms.date: 09/09/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fd89d2e7dd90f00e027187fe662d220cde760aae
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7a2c6c93c009b42e1017bd52272ff0cb8a60085e
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074207"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222133"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -33,7 +33,7 @@ Uma guia contextual é um controle de tabulação oculto na faixa Office que é 
 > - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 >
-> Você pode usar as verificações de tempo de execução em seu código para testar se a combinação de host e plataforma do usuário oferece suporte a esses conjuntos de requisitos, conforme descrito em Especificar aplicativos Office e requisitos [de API](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (A técnica de especificar os conjuntos de requisitos no manifesto, que também é descrito nesse artigo, não funciona atualmente para RibbonApi 1.2.) Como alternativa, você pode [implementar uma experiência de interface do usuário alternativa quando guias contextuais personalizadas não são suportadas](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
+> Você pode usar as verificações de tempo de execução em seu código para testar se a combinação de host e plataforma do usuário oferece suporte a esses conjuntos de requisitos, conforme descrito em [Runtime checks for method](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)and requirement set support . (A técnica de especificar os conjuntos de requisitos no manifesto, que também é descrito nesse artigo, não funciona atualmente para RibbonApi 1.2.) Como alternativa, você pode [implementar uma experiência de interface do usuário alternativa quando guias contextuais personalizadas não são suportadas](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportamento de guias contextuais personalizadas
 
@@ -117,7 +117,7 @@ Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema
 1. No exemplo simples em andamento, a guia contextual tem apenas um único grupo. Adicione o seguinte como o único membro da `groups` matriz. Sobre essa marcação, observe:
 
     - Todas as propriedades são necessárias.
-    - A `id` propriedade deve ser exclusiva entre todos os grupos na guia. Use uma ID breve e descritiva.
+    - A `id` propriedade deve ser exclusiva entre todos os grupos no manifesto. Use uma ID breve e descritiva de até 125 caracteres.
     - A `label` é uma cadeia de caracteres amigável para servir como o rótulo do grupo.
     - O valor da propriedade é uma matriz de objetos que especificam os ícones que o grupo terá na faixa de opções, dependendo do tamanho da faixa de opções e da janela Office `icon` aplicativo.
     - O `controls` valor da propriedade é uma matriz de objetos que especificam os botões e os menus no grupo. Deve haver pelo menos um.
@@ -381,7 +381,7 @@ function myContextChanges() {
 
 ## <a name="open-a-task-pane-from-contextual-tabs"></a>Abra um painel de tarefas de guias contextuais
 
-Para abrir o painel de tarefas de um botão em uma guia contextual personalizada, crie uma ação no JSON com `type` um `ShowTaskpane` de . Em seguida, defina um botão `actionId` com a propriedade definida como a da `id` ação. Isso abre o painel de tarefas padrão especificado pelo `<Runtime>` elemento em seu manifesto.
+Para abrir o painel de tarefas de um botão em uma guia contextual personalizada, crie uma ação no JSON com `type` um `ShowTaskpane` de . Em seguida, defina um botão `actionId` com a propriedade definida como a da `id` ação. Isso abre o painel de tarefas padrão especificado pelo elemento **Runtime** em seu manifesto.
 
 ```json
 `{
@@ -533,7 +533,7 @@ Algumas combinações de plataforma, Office aplicativo e Office build não supor
 
 Há um elemento de manifesto, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas.
 
-A estratégia mais simples para usar esse elemento é que você define no manifesto uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais)* que duplicam as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona como o primeiro elemento filho dos elementos de grupo, controle e menu duplicados nas `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` guias principais [](../reference/manifest/group.md) [](../reference/manifest/control.md) `<Item>` personalizadas. O efeito de fazer isso é o seguinte:
+A estratégia mais simples para usar esse elemento é definir uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais)* no manifesto que duplica as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona como o primeiro elemento filho dos elementos `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` [Group,](../reference/manifest/group.md) [Control](../reference/manifest/control.md)e menu **Item** duplicados nas guias principais personalizadas. O efeito de fazer isso é o seguinte:
 
 - Se o complemento for executado em um aplicativo e plataforma que suportam guias contextuais personalizadas, os grupos e controles principais personalizados não aparecerão na faixa de opções. Em vez disso, a guia contextual personalizada será criada quando o complemento chamar o `requestCreateControls` método.
 - Se o complemento for executado em  um aplicativo ou plataforma que não oferece suporte, os elementos aparecerão nas `requestCreateControls` guias principais personalizadas.
@@ -554,7 +554,7 @@ Apresentamos um exemplo a seguir. Observe que "MyButton" aparecerá na guia prin
               ...
               <Group ...>
                 ...
-                <Control ... id="MyButton">
+                <Control ... id="Contoso.MyButton1">
                   <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
                   ...
                   <Action ...>
@@ -564,14 +564,14 @@ Apresentamos um exemplo a seguir. Observe que "MyButton" aparecerá na guia prin
 
 Para obter mais exemplos, consulte [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-Quando um grupo pai ou menu é marcado com , ele não fica visível e toda a marcação filha é ignorada quando as guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se qualquer um desses elementos filho tem o `<OverriddenByRibbonApi>` elemento ou qual é seu valor. A implicação disso é que, se um item de menu ou controle deve estar visível em todos os contextos, então não só não deve ser marcado com , mas seu menu e grupo ancestral também não devem ser marcados `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` *dessa forma*.
+Quando um grupo pai ou menu é marcado com , ele não fica visível e toda a marcação filha é ignorada quando as guias contextuais personalizadas não são `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` suportadas. Portanto, não importa se qualquer um desses elementos filho tem o **elemento OverriddenByRibbonApi** ou qual é seu valor. A implicação disso é que, se um item de menu ou controle deve estar visível em todos os contextos, então não só não deve ser marcado com , mas seu menu e grupo ancestral também não devem ser marcados `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` *dessa forma*.
 
 > [!IMPORTANT]
-> Não marque todos *os* elementos filho de um grupo ou menu com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Isso não faz sentido se o elemento pai for marcado com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` por motivos dados no parágrafo anterior. Além disso, se você deixar de fora o no pai (ou defini-lo como ), o pai aparecerá independentemente de as guias contextuais personalizadas serem suportadas, mas elas estarão vazias quando elas são `<OverriddenByRibbonApi>` `false` suportadas. Portanto, se todos os elementos filho não aparecerem quando as guias contextuais personalizadas são suportadas, marque o pai e somente o pai, com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
+> Não marque todos *os* elementos filho de um grupo ou menu com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Isso não faz sentido se o elemento pai for marcado com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` por motivos dados no parágrafo anterior. Além disso, se você deixar de fora o **OverriddenByRibbonApi** no pai (ou defini-lo como ), o pai aparecerá independentemente de as guias contextuais personalizadas serem suportadas, mas elas estarão vazias quando elas são `false` suportadas. Portanto, se todos os elementos filho não aparecerem quando as guias contextuais personalizadas são suportadas, marque o pai com `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>Usar APIs que mostram ou ocultam um painel de tarefas em contextos especificados
 
-Como alternativa a , seu complemento pode definir um painel de tarefas com controles de interface do usuário que duplicam a funcionalidade dos controles em uma `<OverriddenByRibbonApi>` guia contextual personalizada. Em seguida, use os métodos [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) [e Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) para mostrar o painel de tarefas quando e somente quando a guia contextual teria sido mostrada se tivesse suporte. Para obter detalhes sobre como usar esses métodos, consulte [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
+Como alternativa a **OverriddenByRibbonApi**, o seu complemento pode definir um painel de tarefas com controles de interface do usuário que duplicam a funcionalidade dos controles em uma guia contextual personalizada. Em seguida, use os métodos [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) [e Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) para mostrar o painel de tarefas quando a guia contextual teria sido mostrada se tivesse suporte. Para obter detalhes sobre como usar esses métodos, consulte [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
 
 ### <a name="handle-the-hostrestartneeded-error"></a>Manipular o erro HostRestartNeeded
 

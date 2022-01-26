@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647998"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222301"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -59,19 +59,15 @@ Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comand
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run start`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando.
+Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
-```command&nbsp;line
-npm run start:web
-```
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run start`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
 

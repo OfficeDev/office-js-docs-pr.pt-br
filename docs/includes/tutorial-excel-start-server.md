@@ -6,10 +6,7 @@ Se o servidor da Web local já estiver em execução e seu suplemento já estive
     npm start
     ```
 
-- Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+- Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
-    ```command&nbsp;line
-    npm run start:web
-    ```
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-    Para usar o seu suplemento, abra um novo documento no Excel na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).

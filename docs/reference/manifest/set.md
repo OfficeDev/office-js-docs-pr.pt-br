@@ -1,20 +1,38 @@
 ---
 title: Elemento Set no arquivo de manifesto
-description: O elemento Set especifica um conjunto Office de requisitos da API JavaScript que seu Office de complemento requer para ativar.
-ms.date: 03/19/2019
+description: O elemento Set especifica um conjunto de requisitos da API JavaScript Office que seu Office Add-in requer para ser ativado por Office ou para substituir as configurações de manifesto base.
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 93524d64fd915d6f42f4e4a0cd0ab6cc3335f4ce
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 55e1b25765bfbe53108bc9201c0c851c6ef9161d
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152002"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222231"
 ---
 # <a name="set-element"></a>Elemento Set
 
-Especifica um conjunto de requisitos da API JavaScript Office que o seu Office Descrição requer para ativar.
+O significado desse elemento depende de onde ele é usado no manifesto.
+
+## <a name="in-the-base-manifest"></a>No manifesto base
+
+Quando usado no manifesto base (ou seja, o elemento Requisitos do vôrent [](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) é um filho direto do [OfficeApp](officeapp.md)), o elemento **Set** especifica um conjunto de requisitos da API JavaScript do Office que seu add-in do Office precisa para ser ativado por Office. 
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
+
+## <a name="as-a-great-grandchild-of-a-versionoverrides-element"></a>Como bisneto de um elemento VersionOverrides
+
+Especifica um [](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) conjunto de requisitos da API JavaScript do Office que deve ser suportado pela versão e plataforma do Office (como Windows, Mac, Web e iOS ou iPad) para que [o VersionOverrides](versionoverrides.md) entre em vigor.
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nestes esquemas VersionOverrides:**
+
+- O mesmo que o elemento [Requisitos](requirements.md) do vôver.
+
+**Associado a esses conjuntos de requisitos:**
+
+- O mesmo que o elemento [Requisitos](requirements.md) do vôver.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,7 +55,5 @@ Especifica um conjunto de requisitos da API JavaScript Office que o seu Office D
 
 Para saber mais sobre os conjuntos de requisitos, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-Para obter mais informações sobre o atributo **MinVersion** do elemento **Set** e o atributo **DefaultMinVersion** do elemento **Sets,** consulte Definir o elemento [Requirements no manifesto](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
+Para obter mais informações sobre o atributo **MinVersion** do elemento **Set** e o atributo **DefaultMinVersion** do elemento **Sets,** consulte Specify which Office versions and platforms can host [your add-in](../../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in).
 
-> [!IMPORTANT]
-> Para suplementos de email, há apenas um conjunto de requisitos `"Mailbox"` disponível. Esse conjunto de requisitos contém o subconjunto completo da API compatível com os suplementos de email do Outlook. Você deve especificar o conjunto de requisitos de `"Mailbox"` no manifesto de seu suplemento de email (não é opcional como no caso de suplementos de conteúdo e do painel de tarefas). Além disso, você não pode declarar suporte para métodos específicos nos suplementos de email.

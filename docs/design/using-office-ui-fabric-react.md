@@ -1,14 +1,14 @@
 ---
 title: Interface do usuário Fluent React em Suplementos do Office
 description: Saiba como usar Fluent interface do usuário React em Office de complementos.
-ms.date: 11/19/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153460"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222238"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar Fluent interface do usuário React em Office de usuário
 
@@ -50,10 +50,9 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
     cd "My Office Add-in"
     ```
 
-2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
+2. Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sideload do seu suplemento.
 
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.
@@ -62,19 +61,15 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
     > npm run dev-server
     > ```
 
-    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Word com o suplemento carregado.
+    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local e abre o Word com o seu complemento carregado.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
+    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado. Substitua "{url}" pela URL de um documento do Word em seu OneDrive ou uma biblioteca SharePoint para a qual você tem permissões.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 3. Para abrir o painel de tarefas do complemento, na guia **Página** Início, escolha o **botão Mostrar Painel de Tarefas.** Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e um botão criando um componente React que usa componentes UX Fluent interface do usuário React.
 
