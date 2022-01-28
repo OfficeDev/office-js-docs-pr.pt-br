@@ -1,18 +1,18 @@
 ---
 title: Microsoft Office da comunidade de complementos
 description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
-ms.date: 01/14/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b0be6e0fe2196cf0ff80970cd9035ed8e66b5e
-ms.sourcegitcommit: 015e0839c4acca0f4dc5ec5df08489314fb509ca
+ms.openlocfilehash: 94f86ef910d032069fe3e537ae5bf5e63bb4ffb0
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "62055055"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62262999"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de complementos
 
-A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 PDT. Você pode baixar o convite do calendário em [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
+A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 hora do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
 
 ## <a name="agenda-for-february-9th-call"></a>Agenda para a chamada de 9 de fevereiro
 
@@ -22,6 +22,7 @@ A agenda de fevereiro será postada cerca de uma semana antes da chamada.
 
 Errou uma chamada da comunidade anterior? Confira os recursos do blog a seguir para acompanhar a discussão!
 
+- [12 de janeiro de 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [8 de dezembro de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [10 de novembro de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [13 de outubro de 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)

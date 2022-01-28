@@ -1,21 +1,21 @@
 ---
 title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com Visual Studio.
-ms.date: 07/08/2021
+ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 169e0d553ba5fbaee506cd3745b95b4dde5ddbaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148610"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263041"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
 Esse artigo descreve como usar o Visual Studio para desenvolver um suplemento do Office. Caso você já tenha criado seu suplemento, você pode pular para a seção [Desenvolver o suplemento usando o Visual Studio](#develop-the-add-in-using-visual-studio).
 
 > [!NOTE]
-> Como uma alternativa ao uso do Visual Studio, você pode optar por usar o gerador Yeoman para suplementos do Office e o VS Code para criar um suplemento do Office. Para obter mais informações sobre essa escolha, consulte [Criando um Suplemento do Office](../develop/develop-overview.md)#creating-an-office-add-in).
+> Como uma alternativa ao uso do Visual Studio, você pode optar por usar o gerador Yeoman para suplementos do Office e o VS Code para criar um suplemento do Office. Para obter mais informações sobre essa opção, confira [Criar um suplemento do Office](../develop/develop-overview.md#create-an-office-add-in).
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Criar o projeto de suplemento usando o Visual Studio
 

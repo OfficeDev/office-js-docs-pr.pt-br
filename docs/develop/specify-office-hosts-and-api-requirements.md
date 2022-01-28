@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme esperado.
-ms.date: 01/22/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ac1792c74b80de0d3dcb188e1f9d2425eb2d3267
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: e0cf0a99706861a5446512542b28f3b27db54d8d
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222224"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263048"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -132,30 +132,30 @@ O exemplo de código a seguir mostra como configurar um add-in que pode ser inst
 ```
 Observe o seguinte sobre este exemplo.
 
-- O **elemento Requirements** contém os elementos filho **Conjuntos** e Métodos. 
-- O **elemento Sets** pode conter um ou mais elementos **Set.** `DefaultMinVersion` especifica o valor `MinVersion` padrão de todos os elementos **Set** filho.
-- Um [elemento Set](../reference/manifest/set.md) especifica um conjunto de requisitos que o aplicativo Office deve suportar para tornar o add-in instaível. O `Name` atributo especifica o nome do conjunto de requisitos. Especifica `MinVersion` a versão mínima do conjunto de requisitos. `MinVersion` substitui o valor do `DefaultMinVersion` atributo nos conjuntos **pai**.
-- O **elemento Methods** pode conter um ou mais [elementos Method.](../reference/manifest/method.md) Você não pode usar o elemento **Methods** com suplementos do Outlook.
-- O **elemento Method** especifica um método individual que o Office aplicativo deve dar suporte para tornar o add-in in insustentável. O `Name` atributo é necessário e especifica o nome do método qualificado com seu objeto pai.
+- O **elemento Requirements** contém os **elementos** filho **Conjuntos** e Métodos.
+- O **elemento Sets** pode conter um ou mais **elementos Set** . `DefaultMinVersion` especifica o valor padrão `MinVersion` de todos os elementos **Set** filho.
+- Um [elemento Set](../reference/manifest/set.md) especifica um conjunto de requisitos que o aplicativo Office deve dar suporte para tornar o add-in instaível. O `Name` atributo especifica o nome do conjunto de requisitos. Especifica `MinVersion` a versão mínima do conjunto de requisitos. `MinVersion` substitui o valor do atributo `DefaultMinVersion` nos Conjuntos **pai**.
+- O **elemento Methods** pode conter um ou mais [elementos Method](../reference/manifest/method.md) . Você não pode usar o elemento **Methods** com suplementos do Outlook.
+- O **elemento Method** especifica um método individual que o aplicativo Office deve suportar para tornar o add-in instaível. O `Name` atributo é necessário e especifica o nome do método qualificado com seu objeto pai.
 
 ## <a name="design-for-alternate-experiences"></a>Design para experiências alternativas
 
 Os recursos de extensibilidade que a plataforma de Office de complementos fornece podem ser divididos de forma útil em três tipos:
 
-- Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do complemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](../reference/manifest/versionoverrides.md) no manifesto. Um exemplo desse tipo de recurso é [Comandos](../design/add-in-commands.md)de Complemento, que são botões de faixa de opções personalizados e menus.
+- Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do complemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](../reference/manifest/versionoverrides.md) no manifesto. Um exemplo desse tipo de recurso é [Comandos de Complemento](../design/add-in-commands.md), que são botões de faixa de opções personalizados e menus.
 - Recursos de extensibilidade que estão disponíveis somente quando o add-in está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [Caixas de Diálogo](../design/dialog-boxes.md).
-- Recursos de extensibilidade que estão disponíveis apenas no tempo de execução, mas são implementados com uma combinação de Office.js JavaScript e configuração em um **elemento VersionOverrides.** Exemplos disso são Excel [funções personalizadas,](../excel/custom-functions-overview.md) [login único](sso-in-office-add-ins.md)e [guias contextuais personalizadas.](../design/contextual-tabs.md)
+- Recursos de extensibilidade que estão disponíveis apenas no tempo de execução, mas são implementados com uma combinação de Office.js JavaScript e configuração em **um elemento VersionOverrides** . Exemplos disso são Excel [funções personalizadas](../excel/custom-functions-overview.md), [um único login](sso-in-office-add-ins.md) e [guias contextuais personalizadas](../design/contextual-tabs.md).
 
 Se o seu add-in usa um recurso de extensibilidade específico para algumas de suas funcionalidades, mas tem outras funcionalidades úteis que não exigem o recurso de extensibilidade, você deve projetar o add-in para que ele seja instalado em combinações de versão de plataforma e Office que não suportam o recurso de extensibilidade. Ele pode fornecer uma experiência valiosa, embora diminuída, nessas combinações. 
 
 Você implementa esse design de forma diferente, dependendo de como o recurso de extensibilidade é implementado: 
 
 - Para recursos implementados inteiramente com JavaScript, consulte [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support).
-- Para recursos que exigem que você configure **um elemento VersionOverrides,** consulte Especificando requisitos [em um elemento VersionOverrides](#specify-requirements-in-a-versionoverrides-element).
+- Para recursos que exigem que você configure **um elemento VersionOverrides** , consulte [Especificando requisitos em um elemento VersionOverrides](#specify-requirements-in-a-versionoverrides-element).
 
 ### <a name="runtime-checks-for-method-and-requirement-set-support"></a>Verifica se há suporte ao método e ao conjunto de requisitos 
 
-Você testa um tempo de execução para descobrir se a Office do usuário oferece suporte a um conjunto de requisitos com o [método isSetSupported.](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) Passe o nome do conjunto de requisitos e a versão mínima como parâmetros. Se o conjunto de requisitos for suportado, `isSetSupported` **retornará true**. O código a seguir mostra um exemplo.
+Você testa no tempo de execução para descobrir se a Office do usuário oferece suporte a um conjunto de requisitos com o [método isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_). Passe o nome do conjunto de requisitos e a versão mínima como parâmetros. Se o conjunto de requisitos for suportado, `isSetSupported` **retornará true**. O código a seguir mostra um exemplo.
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -168,10 +168,10 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 Sobre este código, observe:
 
 - O primeiro parâmetro é necessário. É uma cadeia de caracteres que representa o nome do conjunto de requisitos. Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
-- O segundo parâmetro é opcional. É uma cadeia de caracteres que especifica a versão mínima do conjunto de requisitos que o aplicativo Office deve suportar para que o código dentro da instrução seja executado `if` (por exemplo, "**1,9**"). Se não for usada, a versão "1.1" será presumida.
+- O segundo parâmetro é opcional. É uma cadeia de caracteres que especifica a versão mínima do conjunto de requisitos que o aplicativo Office `if` deve suportar para que o código dentro da instrução seja executado (por exemplo, "**1.9**"). Se não for usada, a versão "1.1" será presumida.
 
 > [!WARNING]
-> Ao chamar o método, o valor do `isSetSupported` segundo parâmetro (se especificado) deve ser uma cadeia de caracteres e não um número. O analisador JavaScript não pode diferenciar entre valores numéricos como 1.1 e 1.10, enquanto ele pode para valores de cadeia de caracteres como "1.1" e "1.10".
+> Ao chamar o `isSetSupported` método, o valor do segundo parâmetro (se especificado) deve ser uma cadeia de caracteres e não um número. O analisador JavaScript não pode diferenciar entre valores numéricos como 1.1 e 1.10, enquanto ele pode para valores de cadeia de caracteres como "1.1" e "1.10".
 
 A tabela a seguir mostra os nomes de conjunto de requisitos para os modelos de API específicos do aplicativo.
 
@@ -197,14 +197,14 @@ else
 ```
 
 > [!NOTE] 
-> O método e os conjuntos de requisitos para esses aplicativos estão disponíveis no arquivo Office.js mais recente `isSetSupported` no CDN. Se você não usar Office.js do CDN, o seu complemento poderá gerar exceções se você estiver usando uma versão antiga da biblioteca na qual está `isSetSupported` indefinida. Para obter mais informações, [consulte Use the latest Office JavaScript API library](#use-the-latest-office-javascript-api-library).
+> O `isSetSupported` método e os conjuntos de requisitos para esses aplicativos estão disponíveis no arquivo Office.js mais recente no CDN. Se você não usar Office.js do CDN, `isSetSupported` o seu complemento poderá gerar exceções se você estiver usando uma versão antiga da biblioteca na qual está indefinida. Para obter mais informações, [consulte Use the latest Office JavaScript API library](#use-the-latest-office-javascript-api-library).
 
 Quando o seu add-in depende de um método que não faz parte de um conjunto de requisitos, use a verificação de tempo de execução para determinar se o método é suportado pelo aplicativo Office, conforme mostrado no exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > Recomendamos limitar o uso desse tipo de verificação no tempo de execução no código de seu suplemento.
 
-O exemplo de código a seguir verifica se o aplicativo Office suporta `document.setSelectedDataAsync` .
+O exemplo de código a seguir verifica se o aplicativo Office compatível `document.setSelectedDataAsync`com .
 
 ```js
 if (Office.context.document.setSelectedDataAsync)
@@ -217,11 +217,11 @@ if (Office.context.document.setSelectedDataAsync)
 
 O elemento [VersionOverrides](../reference/manifest/versionoverrides.md) foi adicionado ao esquema de manifesto principalmente, mas não exclusivamente, para dar suporte a recursos que devem estar disponíveis imediatamente após a instalação de um add-in, como comandos de complemento (botões de faixa de opções personalizados e menus). Office deve saber sobre esses recursos quando analisar o manifesto do complemento. 
 
-Suponha que o seu complemento use um desses recursos, mas o complemento é valioso e deve ser instalado, mesmo em versões Office que não suportam o recurso. Neste cenário, identifique o recurso usando um elemento [](../reference/manifest/methods.md) [Requirements](../reference/manifest/requirements.md) (e seus elementos Filho [Conjuntos](../reference/manifest/sets.md) e Métodos) que você inclui como filho do próprio elemento **VersionOverrides** em vez de como filho do elemento `OfficeApp` base. O efeito de fazer isso é que o Office permitirá que o add-in seja instalado, mas o Office ignorará determinados dos elementos filho do **elemento VersionOverrides** em versões Office em que o recurso não é suportado.
+Suponha que o seu complemento use um desses recursos, mas o complemento é valioso e deve ser instalado, mesmo em versões Office que não suportam o recurso. Neste cenário, identifique o recurso usando um elemento [Requirements](../reference/manifest/requirements.md) (e seus elementos Filho [Conjuntos](../reference/manifest/sets.md) e [](../reference/manifest/methods.md) Métodos) que você inclui como filho do próprio elemento **VersionOverrides** em vez de como filho do elemento base`OfficeApp`. O efeito de fazer isso é que o Office permitirá que o add-in seja instalado, mas o Office ignorará determinados dos elementos filho do **elemento VersionOverrides** em versões Office em que o recurso não é suportado.
 
-Especificamente, os elementos filho dos **VersionOverrides** que substituem elementos no manifesto base, como um elemento **Hosts,** são ignorados e os elementos correspondentes do manifesto base são usados em vez disso. No entanto, pode haver elementos filho em **um VersionOverrides** que implementem recursos adicionais em vez de substituir as configurações no manifesto base. Dois exemplos são `WebApplicationInfo` e `EquivalentAddins` . Essas partes do **VersionOverrides** não serão ignoradas, supondo que a plataforma e a versão do Office suportam o recurso correspondente.   
+Especificamente, os elementos filho dos **VersionOverrides** que substituem elementos no manifesto base, como um elemento **Hosts** , são ignorados e os elementos correspondentes do manifesto base são usados em vez disso. No entanto, pode haver elementos filho em **um VersionOverrides** que implementem recursos adicionais em vez de substituir as configurações no manifesto base. Dois exemplos são e `WebApplicationInfo` `EquivalentAddins`. Essas partes do **VersionOverrides** não serão  ignoradas, pressupondo que a plataforma e a versão do Office suportam o recurso correspondente.  
 
-Para obter informações sobre os elementos descendentes do elemento **Requirements,** consulte [Elemento Requirements](#requirements-element) anteriormente neste artigo.
+Para obter informações sobre os elementos descendentes do elemento **Requirements** , consulte [Elemento Requirements](#requirements-element) anteriormente neste artigo.
 
 Apresentamos um exemplo a seguir.
 
@@ -245,10 +245,10 @@ Apresentamos um exemplo a seguir.
 ```
 
 > [!WARNING]
-> Você deve ter muito cuidado antes de usar um elemento **Requirements** em **um VersionOverrides**, porque em combinações de plataforma e versão que não suportam o *requisito,* nenhum dos comandos do add-in será instalado, mesmo aqueles que invocam a funcionalidade que não precisa do *requisito*. Considere, por exemplo, um complemento que tenha dois botões de faixa de opções personalizados. Uma delas chama Office APIs JavaScript disponíveis no conjunto de requisitos **ExcelApi 1.4** (e posterior). As outras CHAMADAS APIs que estão disponíveis apenas no **ExcelApi 1.9** (e posteriores). Se você colocar um requisito para **o ExcelApi 1.9** no **VersionOverrides,** *nenhum* botão aparecerá na faixa de opções. Uma estratégia melhor nesse cenário seria usar a técnica descrita em Verificações de tempo de execução para suporte ao método e ao conjunto [de requisitos.](#runtime-checks-for-method-and-requirement-set-support) O código invocado pelo segundo botão primeiro usa para verificar se há suporte `isSetSupported` do **ExcelApi 1.9**. Se não for suportado, o código dará ao usuário uma mensagem dizendo que esse recurso do complemento não está disponível em sua versão de Office. 
+> Use um grande cuidado antes de usar um elemento **Requirements** em **um VersionOverrides**, porque em combinações de plataforma e versão que não suportam o *requisito, nenhum* dos comandos do add-in será instalado, mesmo aqueles que invocam a funcionalidade que não precisa do *requisito*. Considere, por exemplo, um complemento que tenha dois botões de faixa de opções personalizados. Uma delas chama Office APIs JavaScript disponíveis no conjunto de requisitos **ExcelApi 1.4** (e posterior). As outras CHAMADAS APIs que estão disponíveis apenas no **ExcelApi 1.9** (e posteriores). Se você colocar um requisito para **ExcelApi 1.9** no **VersionOverrides**, quando 1.9 não tiver suporte nenhum botão aparecerá na faixa de opções. Uma estratégia melhor nesse cenário seria usar a técnica descrita em Verificações de tempo de execução [para suporte ao método e ao conjunto de requisitos](#runtime-checks-for-method-and-requirement-set-support). O código invocado pelo segundo botão primeiro usa `isSetSupported` para verificar se há suporte do **ExcelApi 1.9**. Se não for suportado, o código dará ao usuário uma mensagem dizendo que esse recurso do complemento não está disponível em sua versão de Office. 
 
 > [!TIP]
-> Não faz sentido repetir um elemento **Requirement** em **um VersionOverrides** que já aparece no manifesto base. Se o requisito for especificado no manifesto base, o complemento não poderá instalar onde o requisito não é suportado para que Office nem mesmo analisar o elemento **VersionOverrides.** 
+> Não faz sentido repetir um elemento **Requirement** em **um VersionOverrides** que já aparece no manifesto base. Se o requisito for especificado no manifesto base, o add-in não poderá instalar onde o requisito não é suportado para que Office nem mesmo analisar o elemento **VersionOverrides**. 
 
 ## <a name="see-also"></a>Confira também
 
