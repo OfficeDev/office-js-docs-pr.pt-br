@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office
 description: Encontre a diretrizes de depuração do Suplemento do Office para seu ambiente de desenvolvimento
-ms.date: 12/02/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa98bda4de1786f58b730b2375e5586d2cb8b0ad
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61766094"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263055"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Visão geral da depuração de Suplementos do Office
 
@@ -78,3 +78,7 @@ Não há uma versão de área de trabalho do Office para Linux, então será nec
 
 > [!NOTE]
 > Não recomendamos que você desenvolva Suplementos do Office em um computador Linux, exceto no caso incomum em que você pode ter certeza de que todos os usuários do suplemento acessarão o suplemento por meio do Office na Web a partir de um computador Linux.
+
+## <a name="debug-add-ins-in-staging-or-production"></a>Depurar suplementos em preparo ou produção
+
+Para depurar um suplemento que já está em preparo ou produção, anexe um depurador da interface do usuário do suplemento. Para obter instruções, [Anexe um depurador no painel de tarefas](attach-debugger-from-task-pane.md).
