@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização javascript do Word
 description: Detalhes sobre as FUTURAS APIs JavaScript do Word.
-ms.date: 12/14/2021
+ms.date: 02/01/2022
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: 4ef8bd9897689b354fa7c19ba0d7be7f8fb92be9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565361"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320155"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização javascript do Word
 
@@ -20,7 +20,7 @@ As novas APIs JavaScript do Word são introduzidas pela primeira vez em "visuali
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização, exceto as que estão disponíveis apenas [em Word na Web](#web-only-api-list). Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs JavaScript do Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
+A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização, exceto as que estão disponíveis apenas [em](#web-only-api-list) Word na Web. Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs lançadas [anteriormente), consulte todas as APIs JavaScript do Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -95,7 +95,7 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização,
 
 ## <a name="web-only-api-list"></a>Lista de API somente na Web
 
-A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização apenas Word na Web. Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs JavaScript do Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
+A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização apenas Word na Web. Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs lançadas [anteriormente), consulte todas as APIs JavaScript do Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -107,6 +107,7 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização 
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtém o email do autor do comentário.|
 ||[authorName](/javascript/api/word/word.comment#authorName)|Obtém o nome do autor do comentário.|
 ||[content](/javascript/api/word/word.comment#content)|Obtém ou define o conteúdo do comentário como texto sem texto.|
+||[contentRange](/javascript/api/word/word.comment#contentRange)|Obtém ou define o status do thread de comentário.|
 ||[creationDate](/javascript/api/word/word.comment#creationDate)|Obtém a data de criação do comentário.|
 ||[delete()](/javascript/api/word/word.comment#delete__)|Exclui o comentário e suas respostas.|
 ||[getRange()](/javascript/api/word/word.comment#getRange__)|Obtém o intervalo no documento principal em que o comentário está.|
@@ -115,18 +116,27 @@ A tabela a seguir lista as APIs JavaScript do Word atualmente em visualização 
 ||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|Adiciona uma nova resposta ao final do thread de comentário.|
 ||[resolvido](/javascript/api/word/word.comment#resolved)|Obtém ou define o status do thread de comentário.|
 |[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|Obtém o primeiro comentário na coleção.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtém o primeiro comentário ou objeto nulo na coleção.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtém o primeiro comentário na coleção.|
 ||[getItem(index: number)](/javascript/api/word/word.commentcollection#getItem_index_)|Obtém um objeto comment por seu índice na coleção.|
 ||[items](/javascript/api/word/word.commentcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[CommentContentRange](/javascript/api/word/word.commentcontentrange)|[bold](/javascript/api/word/word.commentcontentrange#bold)|Obtém ou define um valor que indica se o texto do comentário está em negrito.|
+||[hiperlink](/javascript/api/word/word.commentcontentrange#hyperlink)|Obtém o primeiro hiperlink no intervalo ou define um hiperlink no intervalo.|
+||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.commentcontentrange#insertText_text__insertLocation_)|Insere texto no local especificado.|
+||[isEmpty](/javascript/api/word/word.commentcontentrange#isEmpty)|Verifica se o comprimento do intervalo é zero.|
+||[italic](/javascript/api/word/word.commentcontentrange#italic)|Obtém ou define um valor que indica se o texto do comentário é itálico.|
+||[strikeThrough](/javascript/api/word/word.commentcontentrange#strikeThrough)|Obtém ou define um valor que indica se o texto do comentário tem um tachado.|
+||[texto](/javascript/api/word/word.commentcontentrange#text)|Obtém o texto do intervalo de comentários.|
+||[underline](/javascript/api/word/word.commentcontentrange#underline)|Obtém ou define um valor que indica o tipo de sublinhado do texto de comentário.|
 |[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Obtém o email do autor da resposta do comentário.|
 ||[authorName](/javascript/api/word/word.commentreply#authorName)|Obtém o nome do autor da resposta do comentário.|
 ||[content](/javascript/api/word/word.commentreply#content)|Obtém ou define o conteúdo da resposta do comentário.|
+||[contentRange](/javascript/api/word/word.commentreply#contentRange)|Obtém ou define o intervalo de conteúdo do commentReply.|
 ||[creationDate](/javascript/api/word/word.commentreply#creationDate)|Obtém a data de criação da resposta de comentário.|
 ||[delete()](/javascript/api/word/word.commentreply#delete__)|Exclui a resposta do comentário. |
 ||[id](/javascript/api/word/word.commentreply#id)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#parentComment)|Obtém o comentário pai desta resposta.|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|Obtém a primeira resposta de comentário na coleção.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtém a primeira resposta de comentário ou objeto nulo na coleção.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtém a primeira resposta de comentário na coleção.|
 ||[getItem(index: number)](/javascript/api/word/word.commentreplycollection#getItem_index_)|Obtém um objeto de resposta de comentário pelo índice na coleção.|
 ||[items](/javascript/api/word/word.commentreplycollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|Obtém a coleção de notas de fim no controle de conteúdo.|

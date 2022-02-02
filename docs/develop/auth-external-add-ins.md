@@ -1,21 +1,18 @@
 ---
-title: Autorizar serviços externos no seu suplemento do Office
-description: Obter autorização para outras fontes de dados além da Microsoft como Google, Facebook, LinkedIn, SalesForce e GitHub, usando o OAuth 2.0, o código de autorização e os fluxos implícitos.
-ms.date: 07/08/2021
+title: Autorização com provedores de identidade que não são da Microsoft
+description: Obter autorização para fontes de dados que não são da Microsoft usando o OAuth 2.0, o Código de Autorização e fluxos implícitos.
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b633fa5cf41603d77454c23390f40f4a33201b8a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148901"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320427"
 ---
-# <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
+# <a name="authorization-with-non-microsoft-identity-providers"></a>Autorização com provedores de identidade que não são da Microsoft
 
-Serviços online populares, incluindo Microsoft 365, Google, Facebook, LinkedIn, SalesForce e GitHub, permitem que os desenvolvedores dêem aos usuários acesso às suas contas em outros aplicativos. Isso dá a você a capacidade de incluir esses serviços no seu Suplemento do Office.
-
-> [!NOTE]
-> O restante deste artigo é sobre o acesso a serviços que não são da Microsoft. Para obter informações sobre como acessar o Microsoft Graph (incluindo Microsoft 365), consulte [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and Access to Microsoft Graph without [SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+Há muitos serviços de identidade popular que fornecem, além do plataforma de identidade da Microsoft, que você pode usar no seu complemento. Eles dão aos usuários e aplicativos, como seu Office, acesso às contas dos usuários em outros aplicativos.
 
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
@@ -47,8 +44,6 @@ Muitas bibliotecas estão disponíveis para implementar o fluxo de Código de Au
 
 As bibliotecas estão disponíveis para vários idiomas e plataformas, tanto para o fluxo implícito quanto para o fluxo do Código de Autorização. Algumas bibliotecas são de propósito geral, enquanto outras são para serviços online específicos.
 
-**Google**: Pesquise "auth" ou o nome da sua linguagem no [GitHub.com/Google](https://github.com/google). A maioria dos repositórios relevantes se chama `google-auth-library-[name of language]`.
-
 **Facebook**: Pesquise "library" ou "sdk" no [Facebook para Desenvolvedores](https://developers.facebook.com).
 
 **OAuth 2.0 Geral**: Uma página de links para bibliotecas de mais de uma dúzia de linguagens é mantida pelo IETF OAuth Working Group, em: [Código OAuth](https://oauth.net/code/). Observe que algumas dessas bibliotecas são para implementar um serviço compatível com o OAuth. As bibliotecas interessantes para você, como desenvolvedor do suplemento, são chamadas de bibliotecas de *cliente* nesta página, pois o servidor Web é um cliente do serviço compatível com o OAuth.
@@ -62,3 +57,7 @@ Seu suplemento pode usar um serviço intermediário, como o [OAuth.io](https://o
 ## <a name="what-is-cors"></a>O que é CORS?
 
 CORS significa [Compartilhamento de Recursos Entre Origens](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). Para obter informações sobre como usar o CORS nos suplementos, confira [Como lidar com as limitações da política de mesma origem nos suplementos do Office](addressing-same-origin-policy-limitations.md).
+
+## <a name="see-also"></a>Confira também
+
+- [Visão geral da autenticação e da autorização Office de complementos](overview-authn-authz.md).

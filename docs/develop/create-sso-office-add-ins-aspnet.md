@@ -1,26 +1,25 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Office com um back-in ASP.NET para usar o SSO (sign-on único).
-ms.date: 09/03/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fd586656d0b584c7fb394e7c53bdb869584accd0
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a8d2cd20e9ad47e18ff6ee84cbd45c27f89d537c
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073364"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320253"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
 Quando os usuários estão conectados ao Office, o seu suplemento pode usar as mesmas credenciais para permitir que os usuários acessem vários aplicativos sem exigir que eles entrem uma segunda vez. Confira uma visão geral no artigo [Habilitar o SSO em um Suplemento do Office](sso-in-office-add-ins.md).
 Este artigo orienta você sobre o processo de habilitação de SSO (login único) em um complemento criado com ASP.NET.
 
-> [!NOTE]
-> Para ler um artigo semelhante sobre um suplemento baseado em Node.js, confira [Criar um Suplemento do Office com Node.js que use logon único](create-sso-office-add-ins-nodejs.md).
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Visual Studio 2019 ou posterior.
+
+* A **Office/SharePoint de desenvolvimento** ao configurar o Visual studio.
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
@@ -28,7 +27,7 @@ Este artigo orienta você sobre o processo de habilitação de SSO (login único
 
 * Pelo menos alguns arquivos e pastas armazenados em OneDrive for Business em sua assinatura Microsoft 365 assinatura.
 
-* Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Uma conta do Azure com uma assinatura ativa - [crie uma conta gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -40,73 +39,84 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
 > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Complete" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade v2.0 do Azure AD
+## <a name="register-the-add-in-through-an-app-registration"></a>Registrar o add-in por meio de um registro de aplicativo
 
-1. Acesse a página [Portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar o seu aplicativo.
+Primeiro, conclua as etapas em [Início Rápido: Registre](/azure/active-directory/develop/quickstart-register-app) um aplicativo com o plataforma de identidade da Microsoft para registrar o complemento.
 
-1. Entre com as ***credenciais de*** administrador no seu Microsoft 365 de adoção. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+Use as configurações a seguir para o registro do aplicativo.
 
-1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
-
-    * Defina **Nome** para `Office-Add-in-ASPNET-SSO`.
-    * Defina **Tipos de conta com suporte** para **Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**. (Se você quiser que o suplemento possa ser usado somente por usuários no locatário em que você está os registrando, escolha **Contas somente neste diretório organizacional...**, mas execute algumas etapas adicionais. Confira **Configuração para locatário único** abaixo.)
-    * Na seção **URI de redirecionamento**, verifique se **Web** está selecionado no menu suspenso e defina o URI como ` https://localhost:44355/AzureADAuth/Authorize`.
-    * Escolha **Registrar**.
-
-1. Na página **Office-Add-in-ASPNET-SSO,** copie e salve o valor da ID do aplicativo **(cliente).** Você precisará dele em procedimentos posteriores.
+* Nome: `Office-Add-in-ASPNET-SSO`
+* Tipos de conta com suporte: contas em qualquer diretório organizacional (qualquer diretório **do Azure AD - multitenente) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**
 
     > [!NOTE]
-    > Essa ID de Aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    >  Se você quiser que o add-in seja usável apenas pelos usuários no local onde você o está registrando, você pode escolher Contas neste diretório organizacional somente **...** em vez disso, mas você precisará passar por algumas etapas de configuração adicionais. Consulte **Setup for single-tenant** later in this article.
 
-1. Em **Gerenciar**, selecione **Certificados e segredos**. Selecione o botão **Novo segredo do cliente**. Insira um valor para **Descrição** e, em seguida, selecione uma opção adequada para **Expira** e escolha **Adicionar**. Copie o valor do segredo do cliente (não a *ID Secreta)* imediatamente e salve-o com a ID do aplicativo antes de prosseguir, pois você precisará dele em um procedimento posterior.
+* Plataforma: **Web**
+* URI de redirecionamento: **https://localhost:44355/AzureADAuth/Authorize**
+* Segredo do cliente: `*********` (grave esse valor após a criação - ele é mostrado apenas uma vez)
 
-1. Em **Gerenciar**, selecione **Expor uma API**. Selecione o link **Definir** para gerar o URI da ID de Aplicativo no formato "api: / / $App ID GUID$", em que $App ID GUID$ é **ID do aplicativo (cliente)**. Insira `localhost:44355/` (Observe a barra "/" anexada ao fim) após o `//` e antes do GUID. A ID inteira deve ter o formulário `api://localhost:44355/$App ID GUID$`; por exemplo `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+### <a name="expose-a-web-api"></a>Expor uma API da Web
 
-1. Marque **Salvar** na caixa de diálogo.
+1. No registro do aplicativo criado, selecione **Expor uma api > Adicionar um escopo**.
+   Você será solicitado a definir um **URI de ID** de aplicativo se ainda não tiver configurado um.
 
-1. Selecione o botão **Adicionar um escopo**. No painel que se abre, insira `access_as_user` como o **Nome de escopo**.
+    O URI da ID do Aplicativo age como o prefixo para os escopos que você referencia no código da API e deve ser globalmente exclusivo. Use o formulário `api://localhost:44355/[application-id-guid]`; por exemplo `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-1. Definir **Quem pode consentir?** aos **Administradores e usuários**.
+1. Especifique os atributos do escopo no **painel Adicionar um** escopo.
 
-1. Preencha os campos para configurar os prompts de consentimento do administrador e do usuário com valores apropriados para o escopo que permite que o aplicativo cliente Office use as APIs da Web do seu complemento com os mesmos direitos do usuário `access_as_user` atual. Sugestões:
+    |Campo          |Valor  |
+    |---------------|---------|
+    |**Nome do Escopo** | `access_as_user`|
+    |**Who pode consentir** | **Administradores e usuários**|
+    |**Nome de exibição de consentimento do administrador** | Office pode atuar como o usuário.|
+    |**Descrição do consentimento do administrador** | Habilita Office chamar as APIs da Web do complemento com os mesmos direitos do usuário atual.|
+    |**Nome de exibição de consentimento do usuário** | Office pode agir como você.|
+    |**Descrição do consentimento do usuário** | Habilita Office chamar as APIs da Web do complemento com os mesmos direitos que você tem.|
 
-    * **Nome de exibição** de consentimento do administrador : Office pode atuar como o usuário.
-    * **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-    * **Nome de exibição** de consentimento do usuário : Office pode atuar como você.
-    * **Descrição do** consentimento do usuário : Office para chamar as APIs da Web do complemento com os mesmos direitos que você tem.
-
-1. Verifique se o **Estado** está definido como **Habilitado**.
-
-1. Selecione **Adicionar escopo**.
+1. De definir **o Estado** **como Habilitado e** selecione **Adicionar escopo**.
 
     > [!NOTE]
     > A parte de domínio do nome de **Escopo** exibidos logo abaixo do campo de texto deve corresponder automaticamente ao URI de ID do aplicativo definidos na etapa anterior com `/access_as_user` acrescentado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. Na seção **Aplicativos clientes autorizados**, você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada.
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
-    * `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
+    |ID do cliente                              |Aplicativo  |
+    |---------------------------------------|-----------------|
+    |`d3590ed6-52b3-4102-aeff-aad2292ab01c` |Microsoft Office |
+    |`ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` |Microsoft Office |
+    |`93d53678-613d-4013-afc1-62e9e444a0a5` |Office na Web |
+    |`57fb890c-0dab-4253-a5e0-7188c88b2bb4` |Office na Web |
+    |`08e18876-6177-487e-b8b5-cf950c1e598c` |Office na Web |
+    |`bc59ab01-8403-45c6-8796-ac3ef710b3e3` |Outlook na Web |
 
-    Para cada ID, tome estas etapas.
+    > [!NOTE]
+    > A ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO do complemento Office.
 
-    a. Selecione o botão **Adicionar um aplicativo cliente** e, no painel que se abre, defina o ID do cliente para o respectivo GUID e marque a caixa `api://localhost:44355/$App ID GUID$/access_as_user`.
+    Para cada ID do Cliente, tome as etapas a seguir.
+
+    a. Selecione **Adicionar um aplicativo cliente**. No painel que é aberto, de definir a ID do Cliente como o GUID respectivo e marque a caixa para `api://localhost:44355/[application-id-guid]/access_as_user`.
 
     b. Selecione **Adicionar aplicativo**.
 
-1. Em **Gerenciar**, selecione **Permissões para API** e selecione **Adicionar uma permissão**. No painel que se abre, escolha **Microsoft Graph** e, em seguida, escolha **Permissões delegadas**.
+### <a name="configure-microsoft-graph-permissions"></a>Configurar permissões Graph Microsoft
 
-1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário pelo seu próprio complemento; mas a permissão é necessária para que o aplicativo Office para obter um `profile` token para seu aplicativo Web de complemento.
+1. Selecione **permissões de API > Adicionar uma permissão > Microsoft Graph**.
 
-    * Files.Read.All
-    * perfil
+1. Selecione **Permissões delegadas**. O microsoft Graph expõe muitas permissões, com as mais comumente usadas na parte superior da lista.
+
+1. Em **Selecionar permissões**, selecione as seguintes permissões.
+
+    |Permissão     |Descrição  |
+    |---------------|-------------|
+    |Files.Read.All |Leia todos os arquivos que o usuário pode acessar. |
+    |perfil        |Exibir o perfil básico dos usuários. Necessário para o aplicativo Office para obter um token para seu aplicativo Web de complemento. |
 
     > [!NOTE]
     > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões desnecessárias, por isso recomendamos desmarcar a caixa para essa permissão se o suplemento não precisar dela.
 
-1. Marque a caixa de seleção para cada permissão conforme elas forem exibidas. Depois de selecionar as permissões que o suplemento precisa, selecione o botão **Adicionar permissões** na parte inferior do painel.
+1. Selecione **Adicionar permissões para** concluir o processo.
+
+Sempre que você configura permissões, os usuários do seu aplicativo são solicitados na entrada para permitir que seu aplicativo acesse a API de recursos em nome deles. Como administrador, você também pode conceder consentimento em nome de todos os usuários para que não seja solicitado a fazer isso.
 
 1. Na mesma página, escolha o botão **conceder permissão de administrador para [nome do locatário]** e, em seguida, selecione **Aceitar** para a confirmação exibida.
 
@@ -119,16 +129,16 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 1. Em **Propriedades Comuns**, selecione **Projeto de Inicialização** e **Vários projetos de inicialização**. Verifique se a **Ação** para ambos os projetos está definida como **Iniciar** e se o projeto terminado em "...WebAPI" está listado primeiro. Feche a caixa de diálogo.
 
-1. No **Explorador de** Soluções, selecione (não clique com o botão direito do mouse) no projeto **Office-Add-in-ASPNET-SSO-WebAPI.** O painel **Propriedades** é exibido. Verifique se **SSL Habilitado** é **Verdadeiro**. Verifique se a **URL do SSL** é `http://localhost:44355/`.
+1. No **Explorador de** Soluções, selecione (não clique com o botão direito do mouse) no projeto **Office-Add-in-ASPNET-SSO-WebAPI**. O painel **Propriedades** é exibido. Verifique se **SSL Habilitado** é **Verdadeiro**. Verifique se a **URL do SSL** é `http://localhost:44355/`.
 
-1. Em "Web.config", use os valores copiados anteriormente. Defina **ida:ClientID** e **ida:Audience** para sua **ID do aplicativo (cliente)** e defina **ida:Password** para a senha de cliente. Além disso, de definir **ida:Domain** como `http://localhost:44355` (sem barra de encaminhamento "/" no final).
+1. Em "Web.config", use os valores copiados anteriormente. Defina **ida:ClientID** e **ida:Audience** para sua **ID do aplicativo (cliente)** e defina **ida:Password** para a senha de cliente. Além disso, **de definir ida:Domain** como `http://localhost:44355` (sem barra de encaminhamento "/" no final).
 
     > [!NOTE]
-    > A ID de aplicativo **(cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > A **ID de aplicativo (cliente)** é o valor "público" quando outros aplicativos, como o aplicativo cliente Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Se você não tiver escolhido "Somente contas neste diretório organizacional" para **TIPOS DE CONTA COM SUPORTE** ao registrar o suplemento, salve e feche o Web.config. Caso contrário, salve, mas deixe-o aberto.
 
-1. Ainda no **Explorador** de Soluções, escolha o projeto **Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da `</VersionOverrides>` marca final, você encontrará a marcação a seguir.
+1. Ainda no **Explorador** de Soluções, escolha o projeto **Office-Add-in-ASPNET-SSO** e abra o arquivo de manifesto do complemento "Office-Add-in-ASPNET-SSO.xml" e role até a parte inferior do arquivo. Logo acima da marca `</VersionOverrides>` final, você encontrará a marcação a seguir.
 
     ```xml
     <WebApplicationInfo>
@@ -150,7 +160,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 
 ### <a name="setup-for-single-tenant"></a>Configuração para locatário único
 
-Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS DE CONTA COM SUPORTE quando registrou o complemento, você precisará seguir estas etapas de configuração adicionais.
+Se você escolheu "Contas nesse diretório organizacional somente" para TIPOS  DE CONTA COM SUPORTE quando registrou o complemento, você precisará seguir estas etapas de configuração adicionais.
 
 1. Volte para o Portal do Azure e abra a lâmina **Visão geral** do registro do suplemento. Copie a **ID de diretório (locatário)**.
 
@@ -166,7 +176,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
     * Uma atribuição ao método `Office.initialize` que, por sua vez, atribui um manipulador ao evento clicar do botão `getGraphAccessTokenButton`.
     * Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
     * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
-    * O código implementa o sistema de autorização de fallback que o suplemento usará em situações em que o SSO não é compatível ou gera um erro.
+    * Código que implementa o sistema de autorização de fallback que o add-in usará em cenários em que o SSO não tem suporte ou ocorreu um erro.
 
 1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Sobre este código, observe:
 
@@ -184,12 +194,15 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
 
 1. Abaixo da função `getGraphData`, adicione a função a seguir. Observe que você criará a função `handleClientSideErrors` em uma etapa posterior.
 
+    > [!NOTE]
+    > Para distinguir entre os dois tokens de acesso com os que você trabalha neste artigo, o token retornado de getAccessToken() é chamado de token bootstrap. Posteriormente, ele é trocado por meio do fluxo On-Behalf-Of para um novo token com acesso ao Microsoft Graph.
+
     ```javascript
     async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graph and then get the data
+            //         for a new access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -204,16 +217,17 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
     }
     ```
 
+
 1. Substitua `TODO 1` pelo código a seguir para obter o token de acesso do Office host. O **parâmetro** options contém as seguintes configurações passadas da função **getGraphData()** anterior.
 
     * `allowSignInPrompt` é definido como true. Isso Office solicitar que o usuário entre se o usuário ainda não estiver Office.
     * `allowConsentPrompt` é definido como true. Isso Office solicitar que o usuário consenta em permitir que o usuário acesse o perfil Microsoft Azure Active Directory usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite* que o usuário consenta com quaisquer escopos Graph Microsoft.)
-    * `forMSGraphAccess` é definido como true. Isso informa Office retornar um erro (código 13012) se o usuário ou administrador não tiver concedido consentimento para Graph escopos para o complemento. Para acessar a Microsoft Graph o complemento deve trocar o token de acesso por um novo token de acesso por meio do fluxo em nome do usuário. A configuração como true ajuda a evitar o cenário em que `forMSGraphAccess` **getAccessToken()** é bem-sucedido, mas, em seguida, o fluxo em nome do fluxo falha mais tarde para o Microsoft Graph. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback.
+    * `forMSGraphAccess` é definido como true. Isso informa Office retornar um erro (código 13012) se o usuário ou administrador não tiver concedido consentimento para Graph escopos para o complemento. Para acessar a Microsoft Graph o complemento deve trocar o token de acesso por um novo token de acesso por meio do fluxo em nome do usuário. A `forMSGraphAccess` configuração como true ajuda a evitar o cenário em que **getAccessToken()** é bem-sucedido, mas, em seguida, o fluxo em nome do fluxo falha mais tarde para o Microsoft Graph. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback.
 
     Observe também o seguinte código:
 
     * Você criará a função `getData` em uma última etapa.
-    * O parâmetro é a URL de um controlador do lado do servidor que usará o fluxo em nome do fluxo para trocar o token por um novo token de acesso para chamar `/api/values` a Microsoft Graph.
+    * O `/api/values` parâmetro é a URL de um controlador do lado do servidor que usará o fluxo em nome do fluxo para trocar o token por um novo token de acesso para chamar a Microsoft Graph.
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -427,7 +441,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
 
     * O código instrui o OWIN a garantir que o público especificado no token bootstrap que vem do aplicativo Office deve corresponder ao valor especificado no web.config.
     * As contas da Microsoft têm um GUID de emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
-    * A `SaveSigninToken` `true` configuração como faz com que o OWIN salve o token de inicialização bruto do aplicativo Office aplicativo. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
+    * A `SaveSigninToken` configuração `true` como faz com que o OWIN salve o token de inicialização bruto do aplicativo Office aplicativo. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
     * Os escopos não são validados pelo middleware OWIN. Os escopos do token de bootstrap, que devem conter `access_as_user`, são validados no controlador.
 
     ```csharp
@@ -489,9 +503,9 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
         // TODO 2: Assemble all the information that is needed to get a
         //         token for Microsoft Graph using the on-behalf-of flow.
 
-        // TODO 3: Get the access token for Microsoft Graph.
+        // TODO 3: Get a new access token for Microsoft Graph.
 
-        // TODO 4: Use the token to call Microsoft Graph.
+        // TODO 4: Use the new access token to call Microsoft Graph.
     }
     ```
 
@@ -511,7 +525,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
     * Seu add-in não está mais desempenhando a função de um recurso (ou audiência) ao qual o aplicativo Office usuário precisa de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
     * A partir da MSAL.NET 3.x.x, o `bootstrapContext` é apenas o token de bootstrap em si.
     * A Autoridade vem do Web.config. Ela é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
-    * O MSAL lançará um erro se seu código solicitar , que é realmente usado apenas quando o aplicativo cliente Office obtém o token para o aplicativo Web do `profile` seu complemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
+    * O MSAL `profile`lançará um erro se seu código solicitar , que é realmente usado apenas quando o aplicativo cliente Office obtém o token para o aplicativo Web do seu complemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -552,7 +566,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
 1. Substitua `TODO 3a` pelo código a seguir. Sobre este código, observe:
 
     * Se a autenticação multifator for exigida pelo recurso Microsoft Graph e o usuário ainda não a tiver fornecido, o Azure AD retornará "400 Bad Request" com o erro `AADSTS50076` e uma propriedade **Declarações**. O MSAL exibe **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações.
-    * O **valor da** propriedade Claims deve ser passado para o cliente, que deve passá-lo para o aplicativo Office, que o inclui em uma solicitação para um novo token bootstrap. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
+    * O **valor da propriedade Claims** deve ser passado para o cliente que deve passá-lo para o aplicativo Office, que o inclui em uma solicitação para um novo token bootstrap. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
     * As APIs que criam respostas HTTP a partir de exceções não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto de resposta. É necessário criar manualmente uma mensagem que inclua esse recurso. Uma propriedade **Message** personalizada, no entanto, impede a criação de uma propriedade **ExceptionMessage**, portanto, a única maneira de obter a ID de erro `AADSTS50076` para o cliente é adicioná-la à **Message** personalizada. O JavaScript no cliente precisará descobrir se uma resposta tem uma **Message** ou **ExceptionMessage** para saber qual ler.
     * A mensagem personalizada é formatada como JSON para que o JavaScript do cliente possa analisá-la com métodos de objeto `JSON` JavaScript conhecidos.
 
@@ -612,7 +626,7 @@ Se você escolheu "Contas nesse diretório  organizacional somente" para TIPOS D
 
 Para testar o caminho de autorização de fallback, force o caminho do SSO a falhar com as etapas a seguir.
 
-1. Adicione o código a seguir à parte superior do `getDataWithToken` método no arquivo HomeES6.js.
+1. Adicione o código a seguir à parte superior do método `getDataWithToken` no arquivo HomeES6.js.
 
     ```javascript
     function MockSSOError(code) {
@@ -620,7 +634,7 @@ Para testar o caminho de autorização de fallback, force o caminho do SSO a fal
     }
     ```
 
-1. Em seguida, adicione a seguinte linha à parte superior do `try` bloco nesse mesmo método, logo acima da chamada para `getAccessToken` .
+1. Em seguida, adicione a seguinte linha à parte superior do `try` bloco nesse mesmo método, logo acima da chamada para `getAccessToken`.
 
     ```javascript
     throw new MockSSOError("13003");
@@ -628,6 +642,6 @@ Para testar o caminho de autorização de fallback, force o caminho do SSO a fal
 
 ## <a name="updating-the-add-in-when-you-go-to-staging-and-production"></a>Atualizando o complemento quando você vai para preparação e produção
 
-Como todos os Office Web, quando você estiver pronto para mover para um servidor de preparação ou produção, você deve atualizar o domínio no manifesto com o `localhost:44355` novo domínio. Da mesma forma, você deve atualizar o domínio no arquivo web.config.
+Como todos os Office Web, quando você estiver pronto para mover para um servidor de preparação ou produção, `localhost:44355` você deve atualizar o domínio no manifesto com o novo domínio. Da mesma forma, você deve atualizar o domínio no arquivo web.config.
 
-Como o domínio aparece no registro AAD, você precisa atualizar esse registro para usar o novo domínio no lugar de onde `localhost:44355` quer que ele apareça.
+Como o domínio aparece no registro AAD, `localhost:44355` você precisa atualizar esse registro para usar o novo domínio no lugar de onde quer que ele apareça.
