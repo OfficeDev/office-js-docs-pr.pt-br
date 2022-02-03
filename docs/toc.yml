@@ -107,42 +107,46 @@ items:
               - name: Atualizar a versão da API e do manifesto
                 href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
                 displayName: manifest
-          - name: 'Privacidade, segurança e autenticação'
+          - name: Privacidade e segurança
             items:
               - name: Visão geral da privacidade e segurança do suplemento
                 href: concepts/privacy-and-security.md
-              - name: Visão geral da autenticação e autorização
+              - name: 'Solicitar permissões para uso da API em suplementos '
+                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: Cookies ITP e de terceiros
+                href: develop/itp-and-third-party-cookies.md
+          - name: Autenticação e autorização
+            items:
+              - name: Visão geral
                 href: develop/overview-authn-authz.md
-              - name: Autenticação e autorização com a API da caixa de diálogo do Office
-                href: develop/auth-with-office-dialog-api.md
-              - name: Autorizar serviços externos
-                href: develop/auth-external-add-ins.md
-              - name: Autorizar o Microsoft Graph sem SSO
-                href: develop/authorize-to-microsoft-graph-without-sso.md
-              - name: Habilitar o SSO em um suplemento
+              - name: SSO (logon único)
                 items:
-                  - name: Habilitar o logon único
+                  - name: Habilitar o logon único em um suplemento do Office
                     href: develop/sso-in-office-add-ins.md
-                  - name: Início rápido do SSO
+                  - name: Início rápido
                     href: quickstarts/sso-quickstart.md
-                  - name: Personalizar o seu suplemento habilitado para SSO
+                  - name: Personalizar o início rápido
                     href: quickstarts/sso-quickstart-customize.md
-                  - name: Autorizar o Microsoft Graph com SSO
+                  - name: Registrar-se na plataforma de identidade da Microsoft
+                    href: develop/register-sso-add-in-aad-v2.md
+                  - name: Conceder consentimento do administrador
+                    href: develop/grant-admin-consent-to-an-add-in.md
+                  - name: Obter o token de identidade
+                    href: develop/use-sso-to-get-office-signed-in-user-token.md
+                  - name: Autorizar o Microsoft Graph
                     href: develop/authorize-to-microsoft-graph.md
                   - name: Criar um suplemento com SSO usando ASP.NET
                     href: develop/create-sso-office-add-ins-aspnet.md
                   - name: Criar um suplemento com SSO usando Node.js
                     href: develop/create-sso-office-add-ins-nodejs.md
-                  - name: Registrar um Suplemento do Office que usa SSO com o Azure AD v2.0
-                    href: develop/register-sso-add-in-aad-v2.md
-                  - name: Conceder consentimento ao administrador para o suplemento
-                    href: develop/grant-admin-consent-to-an-add-in.md
-                  - name: Solucionar problemas de mensagens de erro no logon único (SSO)
+                  - name: Solucionar problemas de mensagens de erro
                     href: develop/troubleshoot-sso-in-office-add-ins.md
-              - name: 'Solicitar permissões para uso da API em suplementos '
-                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              - name: Cookies ITP e de terceiros
-                href: develop/itp-and-third-party-cookies.md
+              - name: API de caixa de diálogo do Office
+                href: develop/auth-with-office-dialog-api.md
+              - name: Provedores de Identidade
+                href: develop/auth-external-add-ins.md
+              - name: Acesso Microsoft Graph
+                href: develop/authorize-to-microsoft-graph-without-sso.md
           - name: Interface do usuário (UI) e experiência do usuário (UX)
             items:
               - name: Visão Geral

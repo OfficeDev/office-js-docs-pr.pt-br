@@ -1,18 +1,20 @@
 ---
 title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
-ms.date: 07/22/2021
+ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa4ce5b74752623e10b61082d6f9becc1a26b713
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 90a8bed04a5f563de1bdbb509def39d96c732b11
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074186"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320183"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
-Várias autoridades de identidade, também chamadas de Serviços de Token Seguro (STS), impedem que a página de logon seja aberta em um IFrame. Isso inclui o Google, o Facebook e os serviços protegidos pela Plataforma de Identidade da Microsoft (antigo Azure AD V 2.0), como uma conta da Microsoft, uma conta corporativa ou de estudante do Microsoft 365 ou outra conta comum. Isso cria um problema para os suplementos do Office, porque quando o suplemento é executado no **Office na Web**, o painel de tarefas é um IFrame. Os usuários de um suplemento só podem fazer logon em um desses serviços se o suplemento puder abrir uma instância do navegador completamente separada. Isso porque o Office fornece a [API da Caixa de Diálogo](dialog-api-in-office-add-ins.md), especificamente o método [displayDialogAsync](/javascript/api/office/office.ui).
+Sempre use a API de caixa de diálogo do Office para autenticar e autorizar usuários com seu Suplemento do Office. Você também deve usar a API de caixa de diálogo do Office se estiver implementando a autenticação de fallback quando o SSO (logon único) não puder ser usado.
+
+Várias autoridades de identidade, também chamadas de Serviços de Token Seguro (STS), impedem que a página de logon seja aberta em um IFrame. Isso inclui Google, Facebook e serviços protegidos pela plataforma de identidade da Microsoft (anteriormente Azure Active Directory V 2.0), como um conta Microsoft, uma conta corporativa ou do Microsoft 365 Education ou outra conta comum. Isso cria um problema para os suplementos do Office, porque quando o suplemento é executado no **Office na Web**, o painel de tarefas é um IFrame. Os usuários de um suplemento só poderão entrar em um desses serviços se o suplemento puder abrir uma instância do navegador totalmente separada. Isso porque o Office fornece a [API da Caixa de Diálogo](dialog-api-in-office-add-ins.md), especificamente o método [displayDialogAsync](/javascript/api/office/office.ui).
 
 > [!NOTE]
 > Esse artigo presume que você esteja familiarizado com o [Uso da API da Caixa de Diálogo do Office nos suplementos do Office.](dialog-api-in-office-add-ins.md).
@@ -27,11 +29,10 @@ A caixa de diálogo aberta com essa API tem as seguintes características.
 - A primeira página aberta na caixa de diálogo deve estar hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta, se houver.
 - A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_). Recomendamos que esse método seja chamado somente de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo protocolo, subdomínios e porta. Caso contrário, haverá complicações em como você chama o método e processa a mensagem. Para obter mais informações, [mensagens entre domínios para o runtime do host](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
-
-Por padrão, a caixa de diálogo é aberta em um controle de exibição da Web totalmente novo, não em um iframe. Isso garante que ele possa abrir a página de logon de um provedor de identidade. Como será mostrado neste artigo, as características da caixa de diálogo têm implicações sobre como você usa as bibliotecas de autenticação ou autorização, como a MSAL e o Passport.
+Por padrão, a caixa de diálogo é aberta em um novo controle de exibição da Web, não em um iframe. Isso garante que ele possa abrir a página de entrada de um provedor de identidade. Como você verá mais adiante neste artigo, as características da caixa de diálogo do Office têm implicações sobre como você usa bibliotecas de autenticação ou autorização, como a MSAL (Biblioteca de Autenticação da Microsoft) e o Passport.
 
 > [!NOTE]
-> Para configurar a caixa de diálogo para abrir em um iframe flutuante: passe a opção `displayInIframe: true` na chamada do `displayDialogAsync`. *Não* faça isso quando estiver usando a API da Caixa de Diálogo do Office para logon.
+> Para configurar a caixa de diálogo para abrir em um iframe flutuante, passe a `displayInIframe: true`opção na chamada para `displayDialogAsync`. *Não* fazer isso quando estiver usando a API de caixa de diálogo do Office para entrar.
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>Fluxo de autenticação com a caixa de diálogo do Office
 
@@ -61,13 +62,13 @@ Quando um usuário invoca uma função no aplicativo que acessa os dados do usu�
 Você pode usar as APIs de Caixa de Diálogo do Office para gerenciar esse processo usando um fluxo semelhante àquele descrito para os usuários entrarem. As únicas diferenças são:
 
 - Se o usuário ainda não tiver concedido ao aplicativo as permissões necessárias, será solicitado a fazê-lo na caixa de diálogo após entrar.
-- A janela da caixa de diálogo envia o token de acesso à janela do host usando `messageParent` para enviar o token de acesso em formato de cadeia de caracteres ou armazenando o token de acesso em um local onde a janela do host poderá recuperá-lo (e usando `messageParent` para informar à janela do host que o token está disponível). O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
+- O código na janela da caixa de diálogo envia o token de acesso à janela do host usando o `messageParent` para enviar o token de acesso com cadeia de caracteres ou armazenando o token de acesso onde a janela do host pode recuperá-lo (e usando o `messageParent` para informar à janela do host que o token está disponível). O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
 
 Alguns suplementos de exemplo de autenticação que usam a API da Caixa de Diálogo do Office para essa finalidade estão listados em [Amostras](#samples).
 
-## <a name="using-authentication-libraries-with-the-dialog-box"></a>Usar bibliotecas de autenticação pela caixa de diálogo
+## <a name="use-authentication-libraries-with-the-dialog-box"></a>Usar bibliotecas de autenticação com a caixa de diálogo
 
-O fato de a Caixa de Diálogo do Office e o painel de tarefas serem executados em navegadores diferentes e no tempo de execução do JavaScript, as instâncias significam que você deve usar muitas bibliotecas de autenticação/autorização de maneira diferente de como elas são usadas quando a autenticação e a autorização ocorrem na mesma janela. As seções a seguir descrevem as principais maneiras pelas quais, geralmente, você não pode usar essas bibliotecas e a maneira que você *pode* usá-las.
+Como a caixa de diálogo do Office e o painel de tarefas são executados em diferentes instâncias de runtime do JavaScript e do navegador, você deve usar bibliotecas de autenticação/autorização de forma diferente de como elas são usadas quando a autenticação e a autorização ocorrem na mesma janela. As seções a seguir descrevem as maneiras pelas quais você pode ou não usar essas bibliotecas.
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>Geralmente, você não pode usar o cache interno da biblioteca para armazenar tokens
 
