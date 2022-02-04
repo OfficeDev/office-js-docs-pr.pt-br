@@ -1,17 +1,17 @@
 ---
-title: Use o gerador Yeoman para criar um Suplemento do Office que utilize o SSO
+title: Início rápido logon único (SSO).
 description: Use o gerador Yeoman para construir um Suplemento Office Node.js que utilize o logon único.
-ms.date: 11/03/2020
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 5153c1ed3987f619b180dd22ba90f2eb4c760d09
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e6c2c65d21b6fac215c8903a5f3e4fd93331e621
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152089"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320288"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Use o gerador Yeoman para criar um Suplemento do Office que utilize o logon único.
+# <a name="single-sign-on-sso-quick-start"></a>Início rápido logon único (SSO).
 
 Neste artigo, você seguirá pelo processo de uso do gerador Yeoman para criar um Suplemento do Office para Excel, Outlook, Word ou PowerPoint que usa o logon único (SSO) sempre que possível, e usa um método alternativo de autenticação do usuário quando não há suporte ao SSO.
 
@@ -46,7 +46,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 - **Qual será o nome do suplemento?** `My SSO Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-sso-excel.png)
+![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-sso-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -62,7 +62,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um códi
 
 Nesse ponto, seu projeto de suplemento foi criado e contém o código necessário para facilitar o processo de SSO. Depois, execute as etapas a seguir para configurar o SSO do seu suplemento.
 
-1. Navegue até a pasta raiz do projeto.
+1. Vá para a pasta raiz do projeto.
 
     ```command&nbsp;line
     cd "My SSO Office Add-in"
@@ -94,8 +94,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 1. Quando o processo de configuração do SSO for concluído, execute o seguinte comando para criar o projeto: inicie o servidor Web local e sideload o suplemento no aplicativo cliente do Office selecionado anteriormente.
 
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -126,8 +125,7 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 1. Quando concluir o processo de configuração de SSO, execute o seguinte comando para criar o projeto e iniciar o servidor Web local.
 
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
