@@ -3,19 +3,14 @@ title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8c17077295313b4f10874a851c4d9d6dbef62b
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074312"
 ---
+
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
 Aqui está uma lista de problemas comuns que podem ser encontrados durante o desenvolvimento de um Office Add-in.
 
 > [!TIP]
-> Limpar o Office geralmente corrige problemas relacionados ao código desleleo. Isso garante que o manifesto mais recente seja carregado, usando os nomes de arquivo atuais, o texto do menu e outros elementos de comando. Para saber mais, consulte [Clear the Office cache](clear-cache.md).
+> Limpar o Office geralmente corrige problemas relacionados ao código desleleo. Isso garante que o manifesto mais recente seja carregado, usando os nomes de arquivo atuais, o texto do menu e outros elementos de comando. Para saber mais, confira [Limpar o Office cache](clear-cache.md).
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Não é possível carregar o suplemento no painel de tarefas ou outros problemas relacionados ao manifesto do suplemento
 
@@ -52,7 +47,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>Alterações feitas em valores de propriedade não ocorrem e não há mensagem de erro
 
-Verifique a documentação de referência da propriedade para ver se ela é somente leitura. Além disso, as [definições TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) para Office JS especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta definir erroneamente a propriedade somente [leitura](/javascript/api/excel/excel.chart#id)Chart.id . Consulte também [Algumas propriedades não podem ser definidas diretamente](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
+Verifique a documentação de referência da propriedade para ver se ela é somente leitura. Além disso, [as definições TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) para Office JS especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta definir erroneamente a propriedade somente [leitura Chart.id](/javascript/api/excel/excel.chart#excel-excel-chart-id-member). Consulte também [Algumas propriedades não podem ser definidas diretamente](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -66,9 +61,9 @@ A seguir estão algumas das causas desse erro. Se você descobrir causas adicion
 - Se você estiver usando Visual Studio, pode haver um problema com o sideload. Feche todas as instâncias do host Office e Visual Studio. Reinicie Visual Studio e tente pressionar F5 novamente.
 - O manifesto do add-in foi removido de seu local de implantação, como Implantação Centralizada, um catálogo SharePoint ou um compartilhamento de rede.
 - O valor do elemento [ID](../reference/manifest/id.md) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o complemento do host Office e substitua o manifesto original pelo manifesto alterado. Muitos precisam limpar o cache Office para remover todos os rastreamentos do original. Consulte o [artigo Limpar o Office de cache](clear-cache.md) para obter instruções sobre como limpar o cache do seu sistema operacional.
-- O manifesto do add-in tem um que não é definido em qualquer lugar na seção Recursos do manifesto, ou há uma incompatibilidade na ortografia do entre onde ele é usado e onde ele é definido na `resid` [](../reference/manifest/resources.md) `resid` `<Resources>` seção.
-- Há um `resid` atributo em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo e o atributo do recurso correspondente na seção não podem ter mais de `id` `<Resources>` 32 caracteres.
-- O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento.](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- O manifesto do add-in `resid` tem um que não é definido em qualquer lugar na seção [Recursos](../reference/manifest/resources.md) do manifesto, `resid` `<Resources>` ou há uma incompatibilidade na ortografia do entre onde ele é usado e onde ele é definido na seção.
+- Há um atributo `resid` em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo e o `id` atributo do recurso correspondente na `<Resources>` seção não podem ter mais de 32 caracteres.
+- O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento](../reference/requirement-sets/add-in-commands-requirement-sets.md).
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O complemento não funciona no Edge, mas funciona em outros navegadores
 
@@ -76,22 +71,22 @@ Consulte [Solução de problemas Microsoft Edge problemas](../concepts/browsers-
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel de complemento lança erros, mas não de forma consistente
 
-Consulte [Solução de Excel de soluções para possíveis](../excel/excel-add-ins-troubleshooting.md) causas.
+Consulte [Solução de Excel de Excel para possíveis](../excel/excel-add-ins-troubleshooting.md) causas.
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erros de validação de esquema de manifesto em Visual Studio projetos
 
-Se você estiver usando recursos mais novos que exigem alterações no arquivo de manifesto, poderá obter erros de validação Visual Studio. Por exemplo, ao adicionar o elemento para implementar o tempo de execução `<Runtimes>` javaScript compartilhado, você pode ver o seguinte erro de validação.
+Se você estiver usando recursos mais novos que exigem alterações no arquivo de manifesto, poderá obter erros de validação Visual Studio. Por exemplo, ao adicionar o `<Runtimes>` elemento para implementar o tempo de execução javaScript compartilhado, você pode ver o seguinte erro de validação.
 
-**O elemento 'Host' no namespace ' ' tem o elemento filho http://schemas.microsoft.com/office/taskpaneappversionoverrides inválido 'Runtimes' no namespace http://schemas.microsoft.com/office/taskpaneappversionoverrides ' '**
+**O elemento 'Host' no namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' tem o elemento filho inválido 'Runtimes' no namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
 Se isso ocorrer, você poderá atualizar os arquivos XSD que Visual Studio usa para as versões mais recentes. As versões mais recentes do esquema estão [em [MS-OWEMXML]: Apêndice A: Esquema XML completo](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ### <a name="locate-the-xsd-files"></a>Localizar os arquivos XSD
 
 1. Abra seu projeto em Visual Studio.
-1. No **Explorador de Soluções,** abra o arquivo manifest.xml. O manifesto normalmente está no primeiro projeto em sua solução.
-1. Escolha **Exibir Janela** de  >  **Propriedades** (F4).
-1. Na Janela **Propriedades**, escolha a reellipse (...) para abrir o **editor esquemas XML.** Aqui você pode encontrar o local exato da pasta de todos os arquivos de esquema que seu projeto usa.
+1. No **Explorador de Soluções**, abra o manifest.xml arquivo. O manifesto normalmente está no primeiro projeto em sua solução.
+1. Escolha **Janela** **ExibirProperties** >  (F4).
+1. Na Janela **Propriedades**, escolha a reellipse (...) para abrir o **editor esquemas XML** . Aqui você pode encontrar o local exato da pasta de todos os arquivos de esquema que seu projeto usa.
 
 ### <a name="update-the-xsd-files"></a>Atualizar os arquivos XSD
 

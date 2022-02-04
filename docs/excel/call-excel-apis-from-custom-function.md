@@ -3,13 +3,8 @@ title: Chamar Excel APIs JavaScript de uma função personalizada
 description: Saiba quais Excel APIs JavaScript que você pode chamar de sua função personalizada.
 ms.date: 08/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148709"
 ---
+
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar Excel APIs JavaScript de uma função personalizada
 
 Chame Excel APIs JavaScript de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos. Chamar Excel APIs JavaScript por meio de uma função personalizada pode ser útil quando:
@@ -24,7 +19,7 @@ Chame Excel APIs JavaScript de suas funções personalizadas para obter dados de
 
 Para chamar Excel APIs JavaScript de uma função personalizada, primeiro você precisa de um contexto. Use o [Excel. Objeto RequestContext](/javascript/api/excel/excel.requestcontext) para obter um contexto. Em seguida, use o contexto para chamar as APIs de que você precisa na guia de trabalho.
 
-O exemplo de código a seguir mostra como usar para obter um `Excel.RequestContext` valor de uma célula na lista de trabalho. Neste exemplo, o parâmetro é passado para o Excel `address` JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função personalizada inserida na interface do usuário Excel deve seguir o padrão , onde é o endereço da célula da qual `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` recuperar o valor.
+O exemplo de código a seguir mostra como usar `Excel.RequestContext` para obter um valor de uma célula na lista de trabalho. Neste exemplo, o `address` parâmetro é passado para o Excel [JavaScript API Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função `=CONTOSO.GETRANGEVALUE("A1")`personalizada inserida na interface do usuário Excel deve seguir o padrão , `"A1"` onde é o endereço da célula da qual recuperar o valor.
 
 ```JavaScript
 /**

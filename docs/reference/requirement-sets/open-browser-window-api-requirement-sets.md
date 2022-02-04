@@ -4,13 +4,8 @@ description: Especifica quais Office e builds suportam a API openBrowserWindow.
 ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65088c6a8fa7c7f9bd3e53da0d2b1755b7ec22e6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138783"
 ---
+
 # <a name="open-browser-window-api-requirement-sets"></a>Conjuntos de requisitos da API da Janela do Navegador Aberto
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
@@ -42,7 +37,7 @@ Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos 
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1.1
 
-O OpenBrowserWindowApi 1.1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o [tópico de referência Office.context.ui.](/javascript/api/office/office.context#ui)
+O OpenBrowserWindowApi 1.1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o [tópico de referência Office.context.ui](/javascript/api/office/office.context#office-office-context-ui-member).
 
 ## <a name="see-also"></a>Confira também
 

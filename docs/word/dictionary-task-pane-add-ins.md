@@ -3,13 +3,9 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um complemento do painel de tarefas do dicionário
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f340afbc372d37f3d82c55583906e4212e01da0a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151818"
 ---
+
+
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
 
@@ -23,7 +19,7 @@ Em um suplemento de painel de tarefas de dicionário típico, um usuário seleci
 
 ![Aplicativo de dicionário exibindo uma definição.](../images/dictionary-agave-01.jpg)
 
-Você pode determinar se clicar no **link** Ver Mais na interface do usuário HTML do complemento do dicionário exibe mais informações no painel de tarefas ou abre uma janela separada do navegador para a página da Web completa para a palavra ou frase selecionada.
+Você pode determinar se clicar **no link Ver** Mais na interface do usuário HTML do complemento do dicionário exibe mais informações no painel de tarefas ou abre uma janela separada do navegador para a página da Web completa para a palavra ou frase selecionada.
 A Figura 2 mostra o **comando de** menu Definir contexto que permite aos usuários iniciar rapidamente dicionários instalados. As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.
 
 *Figura 2. Comando Definir no menu de contexto*
@@ -54,38 +50,38 @@ Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicio
     
 As seções a seguir fornecem exemplos de como criar esses componentes.
 
-## <a name="creating-a-dictionary-xml-web-service&quot;></a>Criar um serviço Web XML de dicionário
+## <a name="creating-a-dictionary-xml-web-service"></a>Criar um serviço Web XML de dicionário
 
 
 O serviço Web XML deve retornar consultas ao serviço Web como XML que estejam de acordo com o esquema XML OfficeDefinitions. As duas seções a seguir descrevem o esquema XML OfficeDefinitions e fornecem um exemplo de como escrever código para um serviço Web XML que retorna consultas nesse formato XML.
 
 
-### <a name=&quot;officedefinitions-xml-schema&quot;></a>Esquema XML OfficeDefinitions
+### <a name="officedefinitions-xml-schema"></a>Esquema XML OfficeDefinitions
 
 O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  xmlns:xs=&quot;https://www.w3.org/2001/XMLSchema&quot;
-  targetNamespace=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;
-  xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <xs:element name=&quot;Result&quot;>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
+  xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <xs:element name="Result">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name=&quot;SeeMoreURL&quot; type=&quot;xs:anyURI&quot;/>
-        <xs:element name=&quot;Definitions&quot; type=&quot;DefinitionListType&quot;/>
+        <xs:element name="SeeMoreURL" type="xs:anyURI"/>
+        <xs:element name="Definitions" type="DefinitionListType"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name=&quot;DefinitionListType&quot;>
+  <xs:complexType name="DefinitionListType">
     <xs:sequence>
-      <xs:element name=&quot;Definition&quot; maxOccurs=&quot;3&quot;>
+      <xs:element name="Definition" maxOccurs="3">
         <xs:simpleType>
-          <xs:restriction base=&quot;xs:normalizedString&quot;>
-            <xs:maxLength value=&quot;400&quot;/>
+          <xs:restriction base="xs:normalizedString">
+            <xs:maxLength value="400"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -94,13 +90,13 @@ O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 </xs:schema>
 ```
 
-O XML retornado que está em conformidade com o esquema OfficeDefinitions consiste em um elemento raiz que contém um elemento com de zero a três elementos filhos, cada um deles contém definições que não têm mais de `Result` `Definitions` `Definition` 400 caracteres. Além disso, a URL para a página completa no site do dicionário deve ser fornecida no `SeeMoreURL` elemento. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
+O XML retornado que está em conformidade com o esquema OfficeDefinitions consiste em um elemento raiz que contém um elemento com de zero `Definition` a `Result` `Definitions` três elementos filhos, cada um deles contém definições que não têm mais de 400 caracteres. Além disso, a URL para a página completa no site do dicionário deve ser fornecida no `SeeMoreURL` elemento. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
-<Result xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <SeeMoreURL xmlns=&quot;&quot;>www.bing.com/dictionary/search?q=example</SeeMoreURL>
-  <Definitions xmlns=&quot;&quot;>
+<?xml version="1.0" encoding="utf-8"?>
+<Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
+  <Definitions xmlns="">
     <Definition>Definition1</Definition>
     <Definition>Definition2</Definition>
     <Definition>Definition3</Definition>
@@ -110,7 +106,7 @@ O XML retornado que está em conformidade com o esquema OfficeDefinitions consis
 ```
 
 
-### <a name=&quot;sample-dictionary-xml-web-service&quot;></a>Serviço Web XML de dicionário de exemplo
+### <a name="sample-dictionary-xml-web-service"></a>Serviço Web XML de dicionário de exemplo
 
 O código C# a seguir fornece um exemplo simples de como escrever código para um serviço Web XML que retorna o resultado de uma consulta ao dicionário no formato XML OfficeDefinitions.
 
@@ -129,7 +125,7 @@ using System.Net;
 /// <summary>
 /// Summary description for _Default
 /// </summary>
-[WebService(Namespace = &quot;http://tempuri.org/")]
+[WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this web service to be called from script, using ASP.NET AJAX, uncomment the following line. 
 // [System.Web.Script.Services.ScriptService]
@@ -258,7 +254,7 @@ A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionári
 </OfficeApp>
 ```
 
-O elemento e seus elementos filho específicos da criação do arquivo de manifesto de um complemento de dicionário `Dictionary` são descritos nas seções a seguir. Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+O `Dictionary` elemento e seus elementos filho específicos da criação do arquivo de manifesto de um complemento de dicionário são descritos nas seções a seguir. Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
 
 ### <a name="dictionary-element"></a>Elemento Dictionary
@@ -276,7 +272,7 @@ Especifica configurações para suplementos de dicionário.
 
  **Comentários**
 
-O elemento e seus elementos filho são adicionados ao manifesto de um complemento do painel de tarefas quando você cria um `Dictionary` complemento de dicionário.
+O `Dictionary` elemento e seus elementos filho são adicionados ao manifesto de um complemento do painel de tarefas quando você cria um complemento de dicionário.
 
 
 #### <a name="targetdialects-element"></a>Elemento TargetDialects
@@ -529,13 +525,13 @@ O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.
 Os principais membros da API Office JavaScript (Office.js) que são chamados a partir dessa implementação são:
 
 
-- O [evento initialize](/javascript/api/office) do objeto, que é gerado quando o contexto do add-in é inicializado, e fornece acesso a uma instância de objeto Document que representa o documento com o qual o `Office` complemento está interagindo. [](/javascript/api/office/office.document)
+- O [evento initialize](/javascript/api/office) `Office` do objeto, que é gerado quando o contexto do add-in é inicializado, e fornece acesso a uma instância de objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o complemento está interagindo.
     
-- O [método addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) do objeto, que é chamado na função para adicionar um manipulador de eventos para o `Document` evento `initialize` [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações de seleção do usuário.
+- O [método addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) `Document` do objeto, `initialize` que é chamado na função para adicionar um manipulador de eventos para o [evento SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações de seleção do usuário.
     
-- O [método getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) do objeto, que é chamado na função quando o manipulador de eventos é gerado para obter a palavra ou frase que o usuário selecionou, coagi-lo para texto sem texto e, em seguida, executar a função de retorno de chamada `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` assíncrona.
+- O [método getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) `Document` do objeto, `tryUpdatingSelectedWord()` `SelectionChanged` que é chamado na função quando o manipulador de eventos é gerado para obter a palavra ou frase que o usuário selecionou, coagi-lo `selectedTextCallback` para texto sem texto e, em seguida, executar a função de retorno de chamada assíncrona.
     
-- Quando a função de retorno de chamada  `selectTextCallback` assíncrona passada como o argumento _de_ retorno de chamada do método é executada, ela obtém o valor do texto selecionado quando o retorno de `getSelectedDataAsync` chamada retorna. Ele obtém esse valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto `AsyncResult` retornado.
+- Quando a  `selectTextCallback` função de retorno de chamada assíncrona passada como o argumento _de_ `getSelectedDataAsync` retorno de chamada do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém esse valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) do objeto `AsyncResult` retornado.
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     

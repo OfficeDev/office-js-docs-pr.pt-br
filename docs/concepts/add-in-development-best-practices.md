@@ -3,13 +3,8 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar Office de complementos.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073336"
 ---
+
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
 Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que estende os aplicativos do Office de uma maneira visualmente atraente. Para criar um excelente suplemento, ofereça uma primeira experiência envolvente para seus usuários, desenvolva uma experiência de interface de usuário de alto nível e otimize o desempenho do seu suplemento. Aplique as práticas recomendadas descritas neste artigo para criar suplementos que ajudem os usuários a concluir suas tarefas de forma rápida e eficiente.
@@ -76,7 +71,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#touchEnabled) para detectar se o aplicativo Office que o seu complemento executa está habilitado para toque.
+- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) para detectar se o aplicativo Office que o seu complemento executa está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
@@ -90,7 +85,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 - Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Se você estiver usando Fluent interface do usuário [React](../design/using-office-ui-fabric-react.md) seus elementos de design, muitos desses elementos são integrados ao sistema de design.
+> Se você estiver usando Fluent [interface](../design/using-office-ui-fabric-react.md) do usuário React seus elementos de design, muitos desses elementos são integrados ao sistema de design.
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento
 

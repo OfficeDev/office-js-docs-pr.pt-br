@@ -3,13 +3,8 @@ title: Trabalhar com conteúdo da página do OneNote
 description: Saiba como trabalhar com o OneNote de página usando a API JavaScript.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a5402d16f8d8a39903b3285c62ade48a409578
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151909"
 ---
+
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
 Na API JavaScript de suplementos do OneNote, o conteúdo da página é representado pelo seguinte modelo de objeto.
@@ -23,8 +18,8 @@ Na API JavaScript de suplementos do OneNote, o conteúdo da página é represent
 
 Para criar uma página de OneNote vazia, use um dos seguintes métodos.
 
-- [Section.addPage](/javascript/api/onenote/onenote.section#addPage_title_)
-- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertSectionAsSibling_location__title_)
+- [Section.addPage](/javascript/api/onenote/onenote.section#onenote-onenote-section-addpage-member(1))
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#onenote-onenote-section-insertsectionassibling-member(1))
 
 Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como `Page.addOutline` e `Outline.appendHtml`.
 

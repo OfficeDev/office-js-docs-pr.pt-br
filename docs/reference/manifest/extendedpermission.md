@@ -3,13 +3,8 @@ title: Elemento ExtendedPermission no arquivo de manifesto
 description: Define uma permissão estendida que o complemento precisa para acessar a API ou recurso associado.
 ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed3745da87c2fa04839a8fbd1c677f62ad771dc
-ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "62042137"
 ---
+
 # <a name="extendedpermission-element"></a>`ExtendedPermission` elemento
 
 Define uma permissão estendida que o complemento precisa para acessar a API ou recurso associado. O `ExtendedPermission` elemento é um elemento filho de [ExtendedPermissions](extendedpermissions.md).
@@ -19,13 +14,13 @@ Define uma permissão estendida que o complemento precisa para acessar a API ou 
 
 **Tipo de suplemento:** Email
 
-**Válido somente nestes esquemas VersionOverrides:**
+**Válido somente nesses esquemas VersionOverrides**:
 
 - Email 1.1
 
 Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
-**Associado a esses conjuntos de requisitos:**
+**Associado a esses conjuntos de requisitos**:
 
 - [Caixa de correio 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
@@ -35,7 +30,7 @@ A seguir estão os valores disponíveis.
 
 |Valor disponível|Descrição|Hosts|
 |---|---|---|
-|`AppendOnSend`|Declara que o complemento está usando o [Office. API Body.appendOnSendAsync.](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_)|Outlook|
+|`AppendOnSend`|Declara que o complemento está usando o [Office. API Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-appendonsendasync-member(1)).|Outlook|
 
 ## <a name="extendedpermission-example"></a>`ExtendedPermission` exemplo
 

@@ -4,16 +4,11 @@ description: Discute como configurar um Outlook de celular para um provedor de s
 ms.topic: article
 ms.date: 07/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 339763294e2e3609a1a503cd59d74eb4af4fefb3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148587"
 ---
+
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um Outlook de dispositivo móvel para um provedor de reunião online
 
-Configurar uma reunião online é uma experiência fundamental para um usuário Outlook, e é fácil criar uma reunião Teams [com](/microsoftteams/teams-add-in-for-outlook) Outlook celular. No entanto, criar uma reunião online Outlook com um serviço que não seja da Microsoft pode ser complicado. Ao implementar esse recurso, os provedores de serviços podem simplificar a experiência de criação de reuniões online para seus usuários Outlook de complemento.
+Configurar uma reunião online é uma experiência essencial para um usuário Outlook, e é fácil criar uma reunião Teams [com](/microsoftteams/teams-add-in-for-outlook) Outlook celular. No entanto, criar uma reunião online Outlook com um serviço que não seja da Microsoft pode ser complicado. Ao implementar esse recurso, os provedores de serviços podem simplificar a experiência de criação de reuniões online para seus usuários Outlook de complemento.
 
 > [!IMPORTANT]
 > Esse recurso só tem suporte para Android e iOS com uma assinatura Microsoft 365 assinatura.
@@ -26,13 +21,13 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para permitir que os usuários criem reuniões online com seu complemento, você deve configurar o ponto de extensão [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) no manifesto sob o elemento pai `MobileFormFactor` . Outros fatores de formulário não são suportados.
+Para permitir que os usuários criem reuniões online com seu complemento, você deve configurar o ponto de extensão [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) no manifesto sob o elemento pai `MobileFormFactor`. Outros fatores de formulário não são suportados.
 
 1. No editor de código, abra o projeto de início rápido.
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione o nó `<VersionOverrides>` inteiro (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro `<VersionOverrides>` (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -122,7 +117,7 @@ Para permitir que os usuários criem reuniões online com seu complemento, você
 ```
 
 > [!TIP]
-> Para saber mais sobre manifestos para Outlook de Outlook, consulte [Outlook manifestos](manifests.md) de complemento e Adicionar suporte para comandos de complemento para [Outlook Mobile](add-mobile-support.md).
+> Para saber mais sobre manifestos para Outlook de Outlook, consulte [Outlook manifestos](manifests.md) de complemento e Adicionar suporte para comandos de Outlook [Mobile](add-mobile-support.md).
 
 ## <a name="implement-adding-online-meeting-details"></a>Implementar a adição de detalhes da reunião online
 
@@ -207,7 +202,7 @@ Nesta seção, saiba como seu script de complemento pode atualizar a reunião de
 
 ## <a name="testing-and-validation"></a>Teste e validação
 
-Siga as diretrizes usuais para [testar e validar seu complemento](testing-and-tips.md). Depois [de fazer sideload](sideload-outlook-add-ins-for-testing.md) em Outlook na Web, Windows ou Mac, reinicie Outlook em seu dispositivo móvel Android ou iOS. Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída por sua própria.
+Siga as diretrizes usuais [para testar e validar seu complemento](testing-and-tips.md). Depois [de fazer sideload](sideload-outlook-add-ins-for-testing.md) em Outlook na Web, Windows ou Mac, reinicie Outlook em seu dispositivo móvel Android ou iOS. Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída por sua própria.
 
 ### <a name="create-meeting-ui"></a>Criar interface do usuário de reunião
 
@@ -222,7 +217,7 @@ Como participante de reunião, você deve ver uma tela semelhante à imagem a se
 [![Captura de tela da tela de reunião de junção no Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> Se você não vir o **link** Ingressar, pode ser que o modelo de reunião online para seu serviço não esteja registrado em nossos servidores. Consulte a [seção Registrar seu modelo de reunião online](#register-your-online-meeting-template) para obter detalhes.
+> Se você não vir **o link Ingressar** , pode ser que o modelo de reunião online para seu serviço não esteja registrado em nossos servidores. Consulte a [seção Registrar seu modelo de reunião online](#register-your-online-meeting-template) para obter detalhes.
 
 ## <a name="register-your-online-meeting-template"></a>Registrar seu modelo de reunião online
 
@@ -230,8 +225,8 @@ Se você quiser registrar o modelo de reunião online para seu serviço, você p
 
 1. Vá para a **seção Comentários** no final deste artigo.
 1. Pressione o link **Esta** página.
-1. De definir **o Título** do novo problema como "Registrar o modelo de reunião online para meu serviço", substituindo pelo nome `my-service` do serviço.
-1. No corpo do problema, substitua a cadeia de caracteres "[Insira comentários aqui]" pela cadeia de caracteres definida na variável ou semelhante na seção Implementar a adição de detalhes da reunião online anteriormente `newBody` neste artigo. [](#implement-adding-online-meeting-details)
+1. De definir **o Título** do novo problema como "Registrar o modelo de reunião online para meu serviço", substituindo `my-service` pelo nome do serviço.
+1. No corpo do problema, substitua a cadeia de caracteres "[Insira comentários aqui]" `newBody` pela cadeia de caracteres definida na variável ou semelhante na seção [Implementar a](#implement-adding-online-meeting-details) adição de detalhes da reunião online anteriormente neste artigo.
 1. Clique **em Enviar novo problema**.
 
 ![screenshot of new GitHub issue screen with Contoso sample content.](../images/outlook-request-to-register-online-meeting-template.png)
@@ -241,14 +236,14 @@ Se você quiser registrar o modelo de reunião online para seu serviço, você p
 As APIs a seguir estão disponíveis para esse recurso.
 
 - APIs organizadores de compromissos
-  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getAsync_coercionType__options__callback_), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setAsync_data__options__callback_))
-  - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#end) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location) ([Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) ([Hora](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) ([Assunto](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1)))
+  - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) ([Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Assunto](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
   - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
 - Manipular fluxo de auth
   - [APIs de caixa de diálogo](../develop/dialog-api-in-office-add-ins.md)
@@ -259,7 +254,7 @@ Várias restrições se aplicam.
 
 - Aplicável somente a provedores de serviços de reunião online.
 - Somente os complementos instalados pelo administrador aparecerão na tela de redação da reunião, substituindo a opção padrão Teams ou Skype de reunião. Os complementos instalados pelo usuário não serão ativados.
-- O ícone do add-in deve estar em escala de cinza usando código hexaxa ou seu equivalente `#919191` em [outros formatos de cor.](https://convertingcolors.com/hex-color-919191.html)
+- O ícone do add-in deve estar em escala de cinza usando código hexaxa `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 - Somente um comando sem interface do usuário é suportado no modo Organizador de Compromissos (redação).
 - O complemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o add-in abriu para autenticação, etc. é excluído do período de tempo de tempo.
 

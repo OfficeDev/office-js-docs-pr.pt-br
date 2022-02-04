@@ -1,23 +1,18 @@
 ---
 title: Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
-description: Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.
+description: 'Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.'
 ms.date: 07/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ddd60f3cd87f528616fe376003b9eb7d3374f4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151737"
 ---
+
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
 
-Este artigo fornece exemplos de código que encontram células especiais em um intervalo usando a API JavaScript Excel javascript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que encontram células especiais em um intervalo usando a API JavaScript Excel javascript. Para ver a lista completa de propriedades e métodos `Range` compatíveis com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="find-ranges-with-special-cells"></a>Encontrar intervalos com células especiais
 
-Os [métodos Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_) e [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_) encontram intervalos com base nas características de suas células e nos tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
+Os [métodos Range.getSpecialCells](/javascript/api/excel/excel.range#excel-excel-range-getspecialcells-member(1)) e [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#excel-excel-range-getspecialcellsornullobject-member(1)) encontram intervalos com base nas características de suas células e nos tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -27,7 +22,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-O exemplo de código a seguir usa `getSpecialCells` o método para encontrar todas as células com fórmulas. Sobre este código, observe:
+O exemplo de código a seguir usa o `getSpecialCells` método para encontrar todas as células com fórmulas. Sobre este código, observe:
 
 - Ele limita a parte da planilha que precisa ser pesquisada chamando primeiro `Worksheet.getUsedRange` e chamando `getSpecialCells` para apenas esse intervalo.
 - O método `getSpecialCells` retorna um objeto `RangeAreas`, então todas as células com fórmulas serão coloridas de rosa, mesmo que não sejam todas contíguas.
@@ -43,12 +38,12 @@ Excel.run(function (context) {
 })
 ```
 
-Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um `catch` bloco, o erro interromperá o método.
+Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um bloco `catch` , o erro interromperá o método.
 
 Se você espera que células com característica direcionada sempre deveriam existir, provavelmente desejará o código para gerar um erro se as células não estiverem lá. Se for um cenário válido que não há uma ou mais células correspondentes, o código deve verificar se há essa possibilidade e tratar normalmente sem enviar um erro. Você pode obter esse comportamento com o `getSpecialCellsOrNullObject` método e sua propriedade retornada `isNullObject`. O exemplo de código a seguir usa esse padrão. Sobre este código, observe:
 
-- O `getSpecialCellsOrNullObject` método sempre retorna um objeto proxy, portanto, nunca está no sentido `null` javaScript comum. Mas se nenhuma célula de correspondência for encontrada, as propriedades do objeto`isNullObject` serão definida como `true`.
-- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a `isNullObject` propriedade. Ele é carregado automaticamente pelo `context.sync` mesmo se não for chamado no `load` objeto. Para obter mais informações, consulte Métodos e propriedades [ \* OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
+- O `getSpecialCellsOrNullObject` método sempre retorna um objeto proxy, portanto, nunca está `null` no sentido javaScript comum. Mas se nenhuma célula de correspondência for encontrada, as propriedades do objeto`isNullObject` serão definida como `true`.
+- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a `isNullObject` propriedade. Ele é carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para obter mais informações, consulte [\*Métodos e propriedades OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 - Você pode testar esse código selecionando primeiro um intervalo sem células de fórmula e executando-o. Selecione um intervalo que tem pelo menos uma célula com uma fórmula e execute novamente.
 
 ```js
@@ -68,7 +63,7 @@ Excel.run(function (context) {
 })
 ```
 
-Para simplificar, todos os outros exemplos de código neste artigo usam o `getSpecialCells` método em vez de  `getSpecialCellsOrNullObject` .
+Para simplificar, todos os outros exemplos de código neste artigo usam o `getSpecialCells` método em vez de  `getSpecialCellsOrNullObject`.
 
 ## <a name="narrow-the-target-cells-with-cell-value-types"></a>Restrinja as células de destino com tipos de valor de célula
 

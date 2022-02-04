@@ -3,19 +3,14 @@ title: Gerenciar estado e configurações para um Outlook de dados
 description: Saiba como persistir o estado e as configurações do Outlook de um complemento.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dee9d49c50df610957cb009c73451c58507adbc5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148590"
 ---
+
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de dados
 
 > [!NOTE]
-> Revise o estado e as configurações persistentes do [add-in](../develop/persisting-add-in-state-and-settings.md) na seção **Conceitos principais** desta documentação antes de ler este artigo.
+> Revise o estado e as configurações [persistentes do add-in](../develop/persisting-add-in-state-and-settings.md) na seção **Conceitos principais** desta documentação antes de ler este artigo.
 
-Para Outlook, Office API JavaScript do Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
+Para Outlook de Outlook, a API JavaScript Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
 
 |**Objeto**|**Local de armazenamento**|
 |:-----|:-----|
@@ -36,7 +31,7 @@ var _settings = Office.context.roamingSettings;
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>Criar ou atribuir uma configuração móvel
 
-Continuando com o exemplo anterior, a função `setAppSetting` a seguir mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set_name__value_) para definir ou atualizar uma configuração chamada `cookie` com a data de hoje. Em seguida, ele salva todas as configurações móveis de volta no Exchange Server com o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveAsync_callback_).
+Continuando com o exemplo anterior, a função `setAppSetting` a seguir mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-set-member(1)) para definir ou atualizar uma configuração chamada `cookie` com a data de hoje. Em seguida, ele salva todas as configurações móveis de volta no Exchange Server com o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)).
 
 ```js
 // Set an add-in setting.
@@ -57,7 +52,7 @@ O método **saveAsync** salva as configurações móveis de forma assíncrona e 
 
 ### <a name="removing-a-roaming-setting"></a>Remover uma configuração móvel
 
-Também estendendo os exemplos anteriores, a função `removeAppSetting` a seguir mostra como usar o método [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove_name_) para remover a configuração `cookie` e salvar todas as configurações móveis de volta no Exchange Server.
+Também estendendo os exemplos anteriores, a função `removeAppSetting` a seguir mostra como usar o método [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) para remover a configuração `cookie` e salvar todas as configurações móveis de volta no Exchange Server.
 
 ```js
 // Remove an application setting.
@@ -72,7 +67,7 @@ function removeAppSetting()
 
 As propriedades personalizadas permitem que o suplemento do Outlook armazene informações sobre um item com o qual está trabalhando. Por exemplo, se o suplemento do Outlook criar um compromisso com base em uma sugestão de reunião em uma mensagem, você pode usar propriedades personalizadas para armazenar o fato de que a reunião foi criada. Isso garante que, se a mensagem for aberta novamente, o suplemento do Outlook não se ofereça para criar novamente o compromisso.
 
-Para poder usar propriedades personalizadas para uma mensagem, um compromisso ou um item de solicitação de reunião específico, você deve carregar as propriedades na memória chamando o método [loadCustomPropertiesAsync](/javascript/api/outlook/office.mailbox) do objeto **Item**. Se propriedades personalizadas já estiverem definidas para o item atual, elas serão carregadas do servidor Exchange nesse momento. Após carregar as propriedades, você pode usar os métodos [set](/javascript/api/outlook/office.customproperties#set_name__value_) e [get](/javascript/api/outlook/office.roamingsettings) para o objeto **CustomProperties** para adicionar, atualizar e recuperar propriedades na memória. Para salvar as alterações feitas nas propriedades personalizadas do item, você deve usar o método [saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) para persistir as alterações no item no servidor Exchange.
+Para poder usar propriedades personalizadas para uma mensagem, um compromisso ou um item de solicitação de reunião específico, você deve carregar as propriedades na memória chamando o método [loadCustomPropertiesAsync](/javascript/api/outlook/office.mailbox) do objeto **Item**. Se propriedades personalizadas já estiverem definidas para o item atual, elas serão carregadas do servidor Exchange nesse momento. Após carregar as propriedades, você pode usar os métodos [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) e [get](/javascript/api/outlook/office.roamingsettings) para o objeto **CustomProperties** para adicionar, atualizar e recuperar propriedades na memória. Para salvar as alterações feitas nas propriedades personalizadas do item, você deve usar o método [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) para persistir as alterações no item no servidor Exchange.
 
 ### <a name="custom-properties-example"></a>Exemplo de propriedades personalizadas
 
@@ -152,7 +147,7 @@ Para lidar com a situação Windows:
 
 1. Verifique se há propriedades existentes na inicialização do seu add-in e mantenha-os ou desmarcar-os conforme necessário.
 1. Ao definir propriedades personalizadas, inclua uma propriedade adicional para indicar se as propriedades personalizadas foram adicionadas durante a leitura da mensagem ou pelo modo de leitura do complemento. Isso ajudará você a diferenciar se a propriedade foi criada durante a composição ou herdada do pai.
-1. Para verificar se o usuário está encaminhando um email ou respondendo, você pode usar [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (disponível no conjunto de requisitos 1.10).
+1. Para verificar se o usuário está encaminhando um email ou respondendo, você pode usar [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (disponível no conjunto de requisitos 1.10).
 
 ## <a name="see-also"></a>Confira também
 

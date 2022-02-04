@@ -3,13 +3,8 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Saiba como a autenticação e a autorização funcionam nos Suplementos do Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1dab5e7e4cd1d5a32115bdecca3fa742699a53b9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320120"
 ---
+
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
 Os Suplementos do Office permitem o acesso anônimo por padrão, mas você pode exigir que os usuários se conectem para usar seu suplemento com um conta Microsoft, uma conta corporativa ou do Microsoft 365 Education ou outra conta comum. Essa tarefa é chamada de autenticação do usuário, pois permite que o suplemento saiba quem é o usuário.
@@ -32,7 +27,7 @@ Usar o SSO (logon único) é conveniente para o usuário porque ele só precisa 
 
 Geralmente, seu suplemento precisa apenas da identidade do usuário. Por exemplo, talvez você queira apenas personalizar seu suplemento e exibir o nome do usuário no painel de tarefas. Ou talvez você queira uma ID exclusiva para associar o usuário aos dados em seu banco de dados. Isso pode ser feito ao obter o token de acesso do usuário do Office.
 
-Para obter a identidade do usuário por meio do SSO, chame o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). O método retorna um token de acesso que também é um token de identidade que contém várias declarações exclusivas do usuário conectado no momento, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter mais informações sobre essas propriedades, confira os [Tokens de ID da plataforma de identidade da Microsoft](/azure/active-directory/develop/id-tokens). Para obter um exemplo do token retornado por [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_), confira o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
+Para obter a identidade do usuário por meio do SSO, chame o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). O método retorna um token de acesso que também é um token de identidade que contém várias declarações exclusivas do usuário conectado no momento, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter mais informações sobre essas propriedades, confira os [Tokens de ID da plataforma de identidade da Microsoft](/azure/active-directory/develop/id-tokens). Para obter um exemplo do token retornado por [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)), confira o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
 
 Se o usuário não estiver conectado, o Office abrirá uma caixa de diálogo e usará a plataforma de identidade da Microsoft para solicitar que o usuário entre. Em seguida, o método retornará um token de acesso ou gerará um erro se não for possível conectar o usuário.
 
@@ -42,7 +37,7 @@ Antes de começar a implementar a autenticação do usuário com o SSO, certifiq
 
 ### <a name="access-your-web-apis-through-sso"></a>Acessar suas APIs Web por meio do SSO
 
-Se seu suplemento tiver APIs no servidor que exigem um usuário autorizado, chame o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) para obter um token de acesso. O token de acesso fornece acesso ao seu próprio servidor Web (configurado por meio de um [registro de aplicativo do Microsoft Azure](register-sso-add-in-aad-v2.md)). Ao chamar APIs no seu servidor Web, você também passa o token de acesso para autorizar o usuário.
+Se seu suplemento tiver APIs no servidor que exigem um usuário autorizado, chame o método [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) para obter um token de acesso. O token de acesso fornece acesso ao seu próprio servidor Web (configurado por meio de um [registro de aplicativo do Microsoft Azure](register-sso-add-in-aad-v2.md)). Ao chamar APIs no seu servidor Web, você também passa o token de acesso para autorizar o usuário.
 
 O código a seguir mostra como construir uma solicitação HTTPS GET para a API do servidor Web do suplemento para obter alguns dados. O código é executado do lado do cliente, como em um painel de tarefas. Primeiro, ele obtém o token de acesso chamando `getAccessToken`. Em seguida, ele constrói uma chamada AJAX com a URL e o cabeçalho de autorização corretos para a API do servidor.
 
@@ -77,7 +72,7 @@ O código a seguir mostra um exemplo de manipulador /api/data para a chamada RES
 
 Em alguns cenários, você não precisa somente da identidade do usuário, mas também precisa acessar os recursos do [Microsoft Graph](/graph) em nome do usuário. Por exemplo, talvez seja necessário enviar um email ou criar um chat no Teams em nome do usuário. Essas ações e muito mais podem ser realizadas por meio do Microsoft Graph. Você precisará seguir essas etapas: 
 
-1. Obtenha o token de acesso para o usuário atual por meio do SSO chamando [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Se o usuário não estiver conectado, o Office abrirá uma caixa de diálogo e conectará o usuário com a plataforma de identidade da Microsoft. Após o usuário entrar ou se o usuário já tiver entrado, o método retorna um token de acesso.
+1. Obtenha o token de acesso para o usuário atual por meio do SSO chamando [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Se o usuário não estiver conectado, o Office abrirá uma caixa de diálogo e conectará o usuário com a plataforma de identidade da Microsoft. Após o usuário entrar ou se o usuário já tiver entrado, o método retorna um token de acesso.
 1. Passe o token de acesso para o código do servidor.
 1. No servidor, use o [Fluxo On-Behalf-Of do OAuth 2.0](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) para trocar o token de acesso por um novo token de acesso que contém a identidade de usuário delegada necessária e as permissões para chamar o Microsoft Graph.
 

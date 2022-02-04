@@ -1,17 +1,12 @@
 ---
 title: Suplementos do PowerPoint
-description: Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.
+description: 'Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.'
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 2b44b17b14f49e386c44d1581cf2d638005a9a5c
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514213"
 ---
+
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
 Você pode usar suplementos do PowerPoint para criar soluções envolventes para as apresentações dos seus usuários em várias plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de suplementos do PowerPoint:
@@ -39,9 +34,9 @@ Se você estiver criando um suplemento de conteúdo, será necessário obter o m
 
 No seguinte exemplo de código:
 
-- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
+- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
 
-- A função `registerActiveViewChanged` chama o método [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) para registrar um manipulador para o evento [Document.ActiveViewChanged](/javascript/api/office/office.document).
+- A função `registerActiveViewChanged` chama o método [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) para registrar um manipulador para o evento [Document.ActiveViewChanged](/javascript/api/office/office.document).
 
 
 ```js
@@ -90,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegue até um determinado slide na apresentação
 
-No seguinte exemplo de código, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamado `slides`. A matriz `slides` contém os ids, títulos e índices de um intervalo selecionado de slides (ou do slide atual, se não forem selecionados vários slides). Ele também salva o id do primeiro slide no intervalo selecionado para uma variável global.
+No seguinte exemplo de código, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamado `slides`. A matriz `slides` contém os ids, títulos e índices de um intervalo selecionado de slides (ou do slide atual, se não forem selecionados vários slides). Ele também salva o id do primeiro slide no intervalo selecionado para uma variável global.
 
 ```js
 function getSelectedRange() {
@@ -109,7 +104,7 @@ function getSelectedRange() {
 }
 ```
 
-No seguinte exemplo de código, o método `goToFirstSlide` função chamadas a [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) para navegar até o primeiro slide identificado pela `getSelectedRange` função mostrada anteriormente.
+No seguinte exemplo de código, o método `goToFirstSlide` função chamadas a [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1)) para navegar até o primeiro slide identificado pela `getSelectedRange` função mostrada anteriormente.
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obtenha a URL da apresentação
 
-No seguinte exemplo de código, o método `getFileUrl` função chamadas a [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) para obter a URL do arquivo da apresentação.
+No seguinte exemplo de código, o método `getFileUrl` função chamadas a [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) para obter a URL do arquivo da apresentação.
 
 ```js
 function getFileUrl() {

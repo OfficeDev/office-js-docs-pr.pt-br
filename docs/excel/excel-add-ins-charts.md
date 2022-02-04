@@ -3,17 +3,12 @@ title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: Exemplos de código que demonstram tarefas de gráfico usando Excel API JavaScript.
 ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242066"
 ---
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
 Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel.
-Para ver a lista completa de propriedades e métodos que os objetos e `Chart` `ChartCollection` suportam, consulte Objeto Chart [(API JavaScript para Excel)](/javascript/api/excel/excel.chart) e Objeto da coleção [Chart (API JavaScript](/javascript/api/excel/excel.chartcollection)para Excel) .
+Para ver a lista completa de propriedades e métodos que os objetos e suportam, consulte [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto chart collection (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).`Chart` `ChartCollection`
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
@@ -128,7 +123,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
-O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais para o eixo do valor do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como `true` .
+O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais para o eixo do valor do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como `true`.
 
 ```js
 Excel.run(function (context) {
@@ -169,7 +164,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>Atualizar uma linha de tendência
 
-O exemplo de código a seguir define a linha de tendência para digitar para a primeira série no `Linear` primeiro gráfico da planilha chamada **Sample**.
+O exemplo de código a seguir define a linha de tendência para digitar `Linear` para a primeira série no primeiro gráfico da planilha chamada **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -190,11 +185,11 @@ Excel.run(function (context) {
 
 ## <a name="add-and-format-a-chart-data-table"></a>Adicionar e formatar uma tabela de dados de gráfico
 
-Você pode acessar o elemento de tabela de dados de um gráfico com o [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) método. Este método retorna o [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) objeto. O `ChartDataTable` objeto tem propriedades de formatação booliana, como , e `visible` `showLegendKey` `showHorizontalBorder` .
+Você pode acessar o elemento de tabela de dados de um gráfico com o [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getdatatableornullobject-member(1)) método. Este método retorna o [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) objeto. O `ChartDataTable` objeto tem propriedades de formatação booliana, como `visible`, `showLegendKey`e `showHorizontalBorder`.
 
-A propriedade retorna o objeto, que permite que `ChartDataTable.format` você [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) formate e estilmente a tabela de dados. O `ChartDataTableFormat` objeto oferece , e `border` `fill` `font` propriedades.
+A `ChartDataTable.format` propriedade retorna o [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) objeto, que permite que você formate e estilmente a tabela de dados. O `ChartDataTableFormat` objeto oferece `border`, `fill`e `font` propriedades.
 
-O exemplo de código a seguir mostra como adicionar uma tabela de dados a um gráfico e formatar essa tabela de dados usando `ChartDataTable` os objetos `ChartDataTableFormat` e.
+O exemplo de código a seguir mostra como adicionar uma tabela de dados a um gráfico e formatar essa tabela de dados usando os `ChartDataTable` objetos e `ChartDataTableFormat` .
 
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 

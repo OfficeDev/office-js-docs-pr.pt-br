@@ -1,18 +1,23 @@
 ---
 title: Elemento Resources no arquivo de manifesto
-description: O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.
-ms.date: 03/30/2021
+description: 'O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.'
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 874c89a504fa32d7fc7b21324a08d21681d5a11a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151834"
 ---
+
 # <a name="resources-element"></a>Elemento Resources
 
 Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **d** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva dentro do manifesto e pode ter no máximo 32 caracteres.
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 Cada recurso pode ter um ou mais elementos filhos **Override** para definir um recurso diferente para uma localidade específica.
 
@@ -30,7 +35,7 @@ Cada recurso pode ter um ou mais elementos filhos **Override** para definir um r
 
 ### <a name="images"></a>Imagens
 
-Cada ícone deve ter três **elementos Images,** um para cada um dos três tamanhos obrigatórios:
+Cada ícone deve ter três **elementos Images** , um para cada um dos três tamanhos obrigatórios:
 
 - 16 x 16
 - 32x32
@@ -47,7 +52,7 @@ Os seguintes tamanhos adicionais também são suportados, mas não são necessá
 > [!IMPORTANT]
 >
 > - Se essa imagem for o ícone representativo do seu complemento, consulte [Create effective listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office for size and other requirements.
-> - O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.
+> - Office os complementos exigem a capacidade de armazenar em cache recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Essas diretivas resultam em Office substituir automaticamente uma imagem genérica ou padrão. Para forçar o uso de novos ícones em seu computador de desenvolvimento, [limpe o Office cache](../../testing/clear-cache.md). Para forçar o uso de novos ícones nos computadores do usuário final, você deve dar aos novos ícones uma URL diferente das antigas.
 
 ## <a name="resources-examples"></a>Exemplos de recursos
 

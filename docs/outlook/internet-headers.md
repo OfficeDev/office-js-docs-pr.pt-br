@@ -3,32 +3,27 @@ title: Obter e definir os headers da Internet
 description: Como obter e definir os headers da Internet em uma mensagem em um Outlook de um complemento.
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9784ef16c70e273e6bd1c242ffe91d97aa5d40ed
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149001"
 ---
+
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir os headers da Internet em uma mensagem em um Outlook de um Outlook de dados
 
 ## <a name="background"></a>Histórico
 
 Um requisito comum no Outlook desenvolvimento de complementos é armazenar propriedades personalizadas associadas a um complemento em diferentes níveis. Atualmente, as propriedades personalizadas são armazenadas no nível do item ou da caixa de correio.
 
-- Nível do item - Para propriedades que se aplicam a um item específico, use o [objeto CustomProperties.](/javascript/api/outlook/office.customproperties) Por exemplo, armazene um código de cliente associado à pessoa que enviou o email.
-- Nível da caixa de correio - Para propriedades que se aplicam a todos os itens de email na caixa de correio do usuário, use o [objeto RoamingSettings.](/javascript/api/outlook/office.roamingsettings) Por exemplo, armazene a preferência de um usuário para mostrar a temperatura em uma escala específica.
+- Nível do item - Para propriedades que se aplicam a um item específico, use o [objeto CustomProperties](/javascript/api/outlook/office.customproperties) . Por exemplo, armazene um código de cliente associado à pessoa que enviou o email.
+- Nível da caixa de correio - Para propriedades que se aplicam a todos os itens de email na caixa de correio do usuário, use o [objeto RoamingSettings](/javascript/api/outlook/office.roamingsettings) . Por exemplo, armazene a preferência de um usuário para mostrar a temperatura em uma escala específica.
 
 Ambos os tipos de propriedades não são preservados depois que o item deixa o servidor Exchange para que os destinatários de email não possam obter nenhuma propriedade definida no item. Portanto, os desenvolvedores não podem acessar essas configurações ou outras propriedades MIME para habilitar cenários de leitura melhores.
 
-Embora haja uma maneira de definir os headers da Internet por meio de solicitações EWS, em alguns cenários fazer uma solicitação EWS não funcionará. Por exemplo, no modo Redação Outlook área de trabalho, a id do item não é sincronizada  `saveAsync`   no modo em cache.
+Embora haja uma maneira de definir os headers da Internet por meio de solicitações EWS, em alguns cenários fazer uma solicitação EWS não funcionará. Por exemplo, no modo Redação Outlook desktop, a id do item não é sincronizada no `saveAsync`  modo em cache.
 
 > [!TIP]
-> Consulte [Obter e definir metadados](metadata-for-an-outlook-add-in.md) do Outlook de um Outlook para saber mais sobre como usar essas opções.
+> Consulte [Obter e definir metadados do Outlook de um Outlook para](metadata-for-an-outlook-add-in.md) saber mais sobre como usar essas opções.
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Finalidade da API de headers da Internet
 
-Introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de headers da Internet permitem que os desenvolvedores:
+Introduzidas [no conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de headers da Internet permitem que os desenvolvedores:
 
 - Carimbo de informações em um email que persiste depois que ele Exchange em todos os clientes.
 - Leia informações sobre um email que persistia depois que o email saiu Exchange todos os clientes em cenários de leitura de email.
@@ -38,7 +33,7 @@ Introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>Definir os headers da Internet ao compor uma mensagem
 
-Tente usar a [propriedade item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) para gerenciar os headers personalizados da Internet que você coloca na mensagem atual no modo Redação.
+Tente usar a [propriedade item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) para gerenciar os headers personalizados da Internet que você coloca na mensagem atual no modo Redação.
 
 ### <a name="set-get-and-remove-custom-headers-example"></a>Definir, obter e remover exemplo de headers personalizados
 
@@ -107,7 +102,7 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## <a name="get-internet-headers-while-reading-a-message"></a>Obter os headers da Internet durante a leitura de uma mensagem
 
-Tente chamar [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) para obter os headers da Internet na mensagem atual no modo de leitura.
+Tente chamar [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) para obter os headers da Internet na mensagem atual no modo de leitura.
 
 ### <a name="get-sender-preferences-from-current-mime-headers-example"></a>Obter preferências de remetente do exemplo de headers MIME atuais
 
@@ -132,7 +127,7 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> Este exemplo funciona para casos simples. Para recuperação de informações mais complexas (por exemplo, headers de várias instâncias ou valores dobrados conforme descrito em [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca mime-parsing apropriada.
+> Este exemplo funciona para casos simples. Para recuperação de informações mais complexas (por exemplo, headers de várias instâncias ou valores dobrados, conforme descrito na [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca mime-parsing apropriada.
 
 ## <a name="recommended-practices"></a>Práticas recomendadas
 

@@ -3,15 +3,10 @@ title: Visão geral da programação da API JavaScript do OneNote
 description: Saiba mais sobre a API JavaScript do OneNote para suplementos do OneNote na Web.
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 7c08a684a3b6b88b060edebc14d5711fc5bcc3de
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514234"
 ---
+
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
 O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
@@ -96,7 +91,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
-Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) e [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_).
+Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) e [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)).
 
 Por exemplo:  
 
@@ -119,10 +114,10 @@ Os suplementos do OneNote dão suporte apenas às APIs comuns a seguir.
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
-| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#get_name_) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set_name__value_) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
+| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).

@@ -1,35 +1,30 @@
 ---
-title: Use marcas personalizadas em apresentações, slides e formas em PowerPoint
-description: Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.
+title: 'Use marcas personalizadas em apresentações, slides e formas em PowerPoint'
+description: 'Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.'
 ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 03f1656919ed16b801e97623f7f69c9f4adfaac8
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514206"
 ---
+
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Use marcas personalizadas para apresentações, slides e formas em PowerPoint
 
 Um complemento pode anexar metadados personalizados, na forma de pares de valores-chave, chamados "marcas", a apresentações, slides específicos e formas específicas em um slide.
 
 Há dois cenários principais para o uso de marcas:
 
-- Quando aplicada a um slide ou uma forma, uma marca permite que o objeto seja categorizado para processamento em lotes. Por exemplo, suponha que uma apresentação tenha alguns slides que devem ser incluídos em apresentações para a região Leste, mas não para a região Oeste. Da mesma forma, há slides alternativos que devem ser mostrados somente para o O oeste. Seu complemento pode criar uma marca com a chave e o valor e aplicá-la aos slides que só devem ser `REGION` `East` usados no Leste. O valor da marca é definido como `West` para os slides que devem ser mostrados apenas para a região Oeste. Pouco antes de uma apresentação para o Leste, um botão no complemento executa o código que faz um loop por todos os slides verificando o valor da `REGION` marca. Slides onde a região `West` está são excluídos. Em seguida, o usuário fecha o complemento e inicia a apresentação de slides.
+- Quando aplicada a um slide ou uma forma, uma marca permite que o objeto seja categorizado para processamento em lotes. Por exemplo, suponha que uma apresentação tenha alguns slides que devem ser incluídos em apresentações para a região Leste, mas não para a região Oeste. Da mesma forma, há slides alternativos que devem ser mostrados somente para o O oeste. Seu complemento pode criar uma marca `REGION` `East` com a chave e o valor e aplicá-la aos slides que só devem ser usados no Leste. O valor da marca é definido como `West` para os slides que devem ser mostrados apenas para a região Oeste. Pouco antes de uma apresentação para o Leste, um botão no complemento executa o código que faz um loop por todos os slides verificando o valor da `REGION` marca. Slides onde a região está `West` são excluídos. Em seguida, o usuário fecha o complemento e inicia a apresentação de slides.
 - Quando aplicada a uma apresentação, uma marca é efetivamente uma propriedade personalizada no documento de apresentação (semelhante a [uma CustomProperty](/javascript/api/word/word.customproperty) no Word).
 
 ## <a name="tag-slides-and-shapes"></a>Slides de marca e formas
 
-Uma marca é um par de valores-chave, onde o valor é sempre do tipo e `string` é representado por um objeto [Tag.](/javascript/api/powerpoint/powerpoint.tag) Cada tipo de objeto pai, como um [objeto Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide)ou [Shape,](/javascript/api/powerpoint/powerpoint.shape) tem uma propriedade do `tags` tipo [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
+Uma marca é um par de valores-chave, onde o valor é sempre do tipo `string` e é representado por um [objeto Tag](/javascript/api/powerpoint/powerpoint.tag) . Cada tipo de objeto pai, como [um objeto Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide) ou [Shape](/javascript/api/powerpoint/powerpoint.shape) , tem uma `tags` propriedade do [tipo TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
 
 ### <a name="add-update-and-delete-tags"></a>Adicionar, atualizar e excluir marcas
 
-Para adicionar uma marca a um objeto, chame o [método TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) da propriedade do objeto `tags` pai. O código a seguir adiciona duas marcas ao primeiro slide de uma apresentação. Sobre este código, observe:
+Para adicionar uma marca a um objeto, chame o [método TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#powerpoint-powerpoint-tagcollection-add-member(1)) da propriedade do `tags` objeto pai. O código a seguir adiciona duas marcas ao primeiro slide de uma apresentação. Sobre este código, observe:
 
-- O primeiro parâmetro do `add` método é a chave no par de valores-chave.
+- O primeiro parâmetro do método `add` é a chave no par de valores-chave.
 - O segundo parâmetro é o valor.
-- A chave está em letras maiúsculas. Isso não é estritamente obrigatório para o método; no entanto, a chave é sempre armazenada pelo PowerPoint como maiúsculas, e alguns métodos relacionados a marca exigem que a chave seja expressa em maiúsculas, portanto, recomendamos como prática prática melhor que você sempre use maiúsculas em seu código para uma chave `add` de marca. 
+- A chave está em letras maiúsculas. `add` Isso não é estritamente obrigatório para o método; no entanto, a chave é sempre armazenada pelo PowerPoint como maiúsculas, e alguns métodos relacionados a marca exigem que a chave seja expressa em maiúsculas, portanto, recomendamos como prática de melhor prática que você sempre use *maiúsculas* em seu código para uma chave de marca.
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -56,7 +51,7 @@ async function updateTag() {
 }
 ```
 
-Para excluir uma marca, chame o método em seu objeto pai e passe a chave `delete` da marca como o `TagsCollection` parâmetro. Para um exemplo, consulte [Definir metadados personalizados na apresentação](#set-custom-metadata-on-the-presentation).
+Para excluir uma marca, chame `delete` o método em seu `TagsCollection` objeto pai e passe a chave da marca como o parâmetro. Para um exemplo, consulte [Definir metadados personalizados na apresentação](#set-custom-metadata-on-the-presentation).
 
 ### <a name="use-tags-to-selectively-process-slides-and-shapes"></a>Usar marcas para processar seletivamente slides e formas
 
@@ -65,7 +60,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 1. Crie um método que marca o slide selecionado no momento como destinado aos `Premium` clientes. Sobre este código, observe:
 
     - A `getSelectedSlideIndex` função é definida na próxima etapa. Ele retorna o índice baseado em 1 do slide selecionado no momento.
-    - O valor retornado pela função deve ser decrementado porque o método `getSelectedSlideIndex` [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#getItemAt_index_) é baseado em 0.
+    - O valor retornado pela função `getSelectedSlideIndex` deve ser decrementado porque o método [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) é baseado em 0.
 
     ```javascript
     async function addTagToSelectedSlide() {
@@ -82,10 +77,10 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 
 2. O código a seguir cria um método para obter o índice do slide selecionado. Sobre este código, observe:
 
-    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
+    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` retorna uma matriz porque vários slides podem ser selecionados. Nesse cenário, o usuário selecionou apenas um, portanto, o código obtém o primeiro slide (0th), que é o único selecionado.
-    - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel PowerPoint `index` miniaturas da interface do usuário.
+    - O `index` valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel PowerPoint miniaturas da interface do usuário.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -108,7 +103,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 
 3. O código a seguir cria um método para excluir slides marcados para clientes premium. Sobre este código, observe:
 
-    - Como as propriedades e das marcas serão lidas `key` depois do , eles devem ser `value` `context.sync` carregados primeiro.
+    - Como as `key` propriedades `value` e das marcas serão lidas depois `context.sync`do , eles devem ser carregados primeiro.
 
     ```javascript
     async function deleteSlidesByAudience() {
@@ -135,7 +130,7 @@ Considere o seguinte cenário: a Contoso Consulting tem uma apresentação que e
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>Definir metadados personalizados na apresentação
 
-Os complementos também podem aplicar marcas à apresentação como um todo. Isso permite que você use marcas para metadados no nível de documento semelhantes à forma como a [classe CustomProperty](/javascript/api/word/word.customproperty)é usada no Word. Mas, ao contrário da classe `CustomProperty` Word, o valor de uma marca PowerPoint só pode ser do tipo `string` .
+Os complementos também podem aplicar marcas à apresentação como um todo. Isso permite que você use marcas para metadados no nível de documento semelhantes à forma como [a CustomPropertyclass](/javascript/api/word/word.customproperty) é usada no Word. Mas, ao contrário da classe Word`CustomProperty`, o valor de uma marca PowerPoint só pode ser do tipo `string`.
 
 O código a seguir é um exemplo de adição de uma marca a uma apresentação. 
 
@@ -150,7 +145,7 @@ async function addPresentationTag() {
 }
 ```
 
-O código a seguir é um exemplo de exclusão de uma marca de uma apresentação. Observe que a chave da marca é passada para o `delete` método do objeto `TagsCollection` pai.
+O código a seguir é um exemplo de exclusão de uma marca de uma apresentação. Observe que a chave da marca é passada para o método `delete` do objeto `TagsCollection` pai.
 
 ```javascript
 async function deletePresentationTag() {

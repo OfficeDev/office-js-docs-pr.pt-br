@@ -1,15 +1,10 @@
 ---
 ms.date: 03/08/2021
-description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos Excel, parâmetros opcionais, contexto de invocação e muito mais.
+description: 'Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos Excel, parâmetros opcionais, contexto de invocação e muito mais.'
 title: Opções para Excel funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 760e680441472d3089e9f6a986af60aac26a02f1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149021"
 ---
+
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetro de funções personalizadas
 
 Funções personalizadas são configuráveis com muitas opções de parâmetros diferentes.
@@ -61,9 +56,9 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> Quando nenhum valor é especificado para um parâmetro opcional, Excel atribui a ele o valor `null` . Isso significa que os parâmetros inicializados por padrão no TypeScript não funcionarão conforme o esperado. Não use a sintaxe `function add(first:number, second:number, third=0):number` porque ela não será inicializada como `third` 0. Em vez disso, use a sintaxe TypeScript conforme mostrado no exemplo anterior.
+> Quando nenhum valor é especificado para um parâmetro opcional, Excel atribui a ele o valor `null`. Isso significa que os parâmetros inicializados por padrão no TypeScript não funcionarão conforme o esperado. Não use a sintaxe porque `function add(first:number, second:number, third=0):number` ela não será inicializada `third` como 0. Em vez disso, use a sintaxe TypeScript conforme mostrado no exemplo anterior.
 
-Quando você definir uma função que contém um ou mais parâmetros opcionais, especifique o que acontece quando os parâmetros opcionais são nulos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro for nulo, o valor padrão será definido como `98052` . Se o `dayOfWeek` parâmetro for nulo, ele será definido como quarta-feira.
+Quando você definir uma função que contém um ou mais parâmetros opcionais, especifique o que acontece quando os parâmetros opcionais são nulos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro for nulo, o valor padrão será definido como `98052`. Se o `dayOfWeek` parâmetro for nulo, ele será definido como quarta-feira.
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -119,7 +114,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. Excel passará um intervalo de dados de células como uma matriz bidimensional.
 
-Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o parâmetro , e a sintaxe JSDOC define a propriedade do parâmetro como nos `values` `number[][]` metadados `dimensionality` `matrix` JSON para essa função. 
+Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o `values`parâmetro , e a sintaxe JSDOC `number[][]` `dimensionality` `matrix` define a propriedade do parâmetro como nos metadados JSON para essa função. 
 
 ```js
 /**
@@ -146,7 +141,7 @@ function secondHighest(values) {
 
 ## <a name="repeating-parameters"></a>Parâmetros repetidos
 
-Um parâmetro repetido permite que um usuário insira uma série de argumentos opcionais em uma função. Quando a função é chamada, os valores são fornecidos em uma matriz para o parâmetro. Se o nome do parâmetro terminar com um número, o número de cada argumento aumentará incrementalmente, como `ADD(number1, [number2], [number3],…)` . Isso corresponde à convenção usada para funções de Excel de usuário.
+Um parâmetro repetido permite que um usuário insira uma série de argumentos opcionais em uma função. Quando a função é chamada, os valores são fornecidos em uma matriz para o parâmetro. Se o nome do parâmetro terminar com um número, o número de cada argumento aumentará incrementalmente, como `ADD(number1, [number2], [number3],…)`. Isso corresponde à convenção usada para funções de Excel de usuário.
 
 A função a seguir soma o total de números, endereços de célula, bem como intervalos, se inseridos.
 
@@ -221,20 +216,20 @@ Um parâmetro de intervalo repetido permite que vários intervalos ou números s
 
 
 ### <a name="declaring-repeating-parameters"></a>Declarando parâmetros repetidos
-Em Typescript, indique que o parâmetro é multidimensional. Por exemplo,  `ADD(values: number[])` indicaria uma matriz unidimensional, indicaria uma matriz `ADD(values:number[][])` bidimensional e assim por diante.
+Em Typescript, indique que o parâmetro é multidimensional. Por exemplo,  `ADD(values: number[])` indicaria uma matriz unidimensional, `ADD(values:number[][])` indicaria uma matriz bidimensional e assim por diante.
 
-Em JavaScript, use para matrizes unidimensionais, para matrizes bidimensionais e assim `@param values {number[]}` por diante para mais `@param <name> {number[][]}` dimensões.
+Em JavaScript, use `@param values {number[]}` para matrizes unidimensionais, `@param <name> {number[][]}` para matrizes bidimensionais e assim por diante para mais dimensões.
 
-Para JSON de autoria manual, verifique se o parâmetro está especificado como no arquivo JSON, bem como verifique se seus parâmetros estão `"repeating": true` marcados como `"dimensionality": matrix` .
+Para JSON de autoria manual, `"repeating": true` verifique se o parâmetro está especificado como no arquivo JSON, bem como verifique se seus parâmetros estão marcados como `"dimensionality": matrix`.
 
 ## <a name="invocation-parameter"></a>Parâmetro Invocation
 
-Todas as funções personalizadas são automaticamente passadas como o último parâmetro de entrada, mesmo que não `invocation` seja declarada explicitamente. Esse `invocation` parâmetro corresponde ao objeto [Invocation.](/javascript/api/custom-functions-runtime/customfunctions.invocation) O objeto pode ser usado para recuperar contexto adicional, como o endereço da célula que `Invocation` invocou sua função personalizada. Para acessar o `Invocation` objeto, você deve `invocation` declarar como o último parâmetro em sua função personalizada. 
+Todas as funções personalizadas são automaticamente passadas como `invocation` o último parâmetro de entrada, mesmo que não seja declarada explicitamente. Esse `invocation` parâmetro corresponde ao [objeto Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) . O `Invocation` objeto pode ser usado para recuperar contexto adicional, como o endereço da célula que invocou sua função personalizada. Para acessar o `Invocation` objeto, você deve declarar `invocation` como o último parâmetro em sua função personalizada. 
 
 > [!NOTE]
 > O `invocation` parâmetro não aparece como um argumento de função personalizada para usuários no Excel.
 
-O exemplo a seguir mostra como usar o parâmetro para retornar o endereço da célula que `invocation` invocou sua função personalizada. Este exemplo usa a [propriedade address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) do `Invocation` objeto. Para acessar o `Invocation` objeto, primeiro declare `CustomFunctions.Invocation` como um parâmetro em seu JSDoc. Em seguida, `@requiresAddress` declare em seu JSDoc para acessar a `address` propriedade do `Invocation` objeto. Por fim, dentro da função, recupere e retorne a `address` propriedade. 
+O exemplo a seguir mostra como usar o `invocation` parâmetro para retornar o endereço da célula que invocou sua função personalizada. Este exemplo usa a [propriedade address](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-address-member) do `Invocation` objeto. Para acessar o `Invocation` objeto, primeiro declare `CustomFunctions.Invocation` como um parâmetro em seu JSDoc. Em seguida, declare `@requiresAddress` em seu JSDoc para acessar a `address` propriedade do `Invocation` objeto. Por fim, dentro da função, recupere e retorne a `address` propriedade. 
 
 ```js
 /**
@@ -251,20 +246,20 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-Em Excel, uma função personalizada chamando a propriedade do objeto retornará o endereço absoluto após o formato na célula que `address` `Invocation` `SheetName!RelativeCellAddress` invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Prices** na célula F6, o valor de endereço do parâmetro retornado será `Prices!F6` . 
+Em Excel, uma função personalizada chamando a `address` `Invocation` `SheetName!RelativeCellAddress` propriedade do objeto retornará o endereço absoluto após o formato na célula que invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Prices** na célula F6, o valor de endereço do parâmetro retornado será `Prices!F6`. 
 
 O `invocation` parâmetro também pode ser usado para enviar informações para Excel. Confira [Fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function) para saber mais.
 
 ## <a name="detect-the-address-of-a-parameter"></a>Detectar o endereço de um parâmetro
 
-Em combinação com o [parâmetro invocação](#invocation-parameter), você pode usar o [objeto Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) para recuperar o endereço de um parâmetro de entrada de função personalizada. Quando invocada, a [propriedade parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) do objeto permite que uma função retorne os `Invocation` endereços de todos os parâmetros de entrada. 
+Em combinação com o [parâmetro invocação](#invocation-parameter), você pode usar o [objeto Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) para recuperar o endereço de um parâmetro de entrada de função personalizada. Quando invocada, a [propriedade parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameteraddresses-member) `Invocation` do objeto permite que uma função retorne os endereços de todos os parâmetros de entrada. 
 
 Isso é útil em cenários em que os tipos de dados de entrada podem variar. O endereço de um parâmetro de entrada pode ser usado para verificar o formato de número do valor de entrada. O formato de número pode ser ajustado antes da entrada, se necessário. O endereço de um parâmetro de entrada também pode ser usado para detectar se o valor de entrada tem propriedades relacionadas que podem ser relevantes para cálculos subsequentes. 
 
 >[!NOTE]
-> Se você estiver trabalhando com metadados JSON criados [manualmente](custom-functions-json.md) para retornar endereços de parâmetro em vez do gerador Yo Office, o objeto deve ter a propriedade definida como , e o objeto deve ter a propriedade definida `options` como `requiresParameterAddresses` `true` `result` `dimensionality` `matrix` .
+> Se você estiver trabalhando com metadados [JSON criados manualmente](custom-functions-json.md) para retornar endereços de parâmetro em vez do gerador Yo Office, `options` `requiresParameterAddresses` `true`o objeto deve ter a propriedade definida como , `result` `dimensionality` e o objeto deve ter a propriedade definida como .`matrix`
 
-A função personalizada a seguir recebe três parâmetros de entrada, recupera a propriedade do objeto para cada parâmetro e retorna `parameterAddresses` `Invocation` os endereços. 
+A função personalizada a seguir recebe três parâmetros de entrada, `parameterAddresses` `Invocation` recupera a propriedade do objeto para cada parâmetro e retorna os endereços. 
 
 ```js
 /**
@@ -287,11 +282,11 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
-Quando uma função personalizada chamando a propriedade é executado, o endereço do parâmetro é retornado seguindo o formato na célula `parameterAddresses` `SheetName!RelativeCellAddress` que invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Custos** na célula D8, o valor de endereço do parâmetro retornado será `Costs!D8` . Se a função personalizada tiver vários parâmetros e mais de um endereço de parâmetro for retornado, os endereços retornados serão respingados em várias células, descendentes verticalmente da célula que invocou a função. 
+Quando uma função personalizada chamando a `parameterAddresses` propriedade é executado, o endereço do parâmetro `SheetName!RelativeCellAddress` é retornado seguindo o formato na célula que invocou a função. Por exemplo, se o parâmetro de entrada estiver localizado em uma planilha chamada **Custos** na célula D8, o valor de endereço do parâmetro retornado será `Costs!D8`. Se a função personalizada tiver vários parâmetros e mais de um endereço de parâmetro for retornado, os endereços retornados serão respingados em várias células, descendentes verticalmente da célula que invocou a função. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba como usar valores [voláteis em suas funções personalizadas.](custom-functions-volatile.md)
+Saiba como usar valores [voláteis em suas funções personalizadas](custom-functions-volatile.md).
 
 ## <a name="see-also"></a>Confira também
 

@@ -4,16 +4,11 @@ description: Saiba como executar tarefas comuns com as guias de trabalho ou recu
 ms.date: 06/07/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 50371c0670e8e66bf7a36c5c52c7a9753154f29d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151693"
 ---
+
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos que o objeto oferece suporte, consulte `Workbook` [Objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para ver a lista completa de propriedades e `Workbook` métodos que o objeto oferece suporte, consulte [Objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
 
 O objeto Workbook é o ponto de entrada para que se suplemento interaja com o Excel. Ele mantém conjuntos de planilhas, tabelas, Tabelas Dinâmicas e muito mais, através dos quais os dados do Excel são acessados e alterados. O objeto [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) dá a seu suplemento acesso a todos os dados de pastas de trabalho através de planilhas individuais. Especificamente, ele permite seu suplemento adicione planilhas, navegue entre elas e atribua manipuladores a eventos de planilhas. O artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md) descreve como acessar e editar planilhas.
 
@@ -52,7 +47,7 @@ Excel.createWorkbook();
 
 O método `createWorkbook` também cria uma cópia de uma pasta de trabalho existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .xlsx como parâmetro opcional. A pasta de trabalho resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo. xlsx válido.
 
-Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de caracteres codificada com base64 usando o [corte de arquivo](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
+Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de caracteres codificada com base64 usando o [fatiamento de arquivo](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -76,16 +71,16 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
 
-O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o método para inserir cópias das planilhas da pasta de trabalho de destino em `insertWorksheetsFromBase64` si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada. 
+O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o `insertWorksheetsFromBase64` método para inserir cópias das planilhas da pasta de trabalho de destino em si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada. 
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> O `insertWorksheetsFromBase64` método é suportado para Excel no Windows, Mac e na Web. Não há suporte para iOS. Além disso, Excel na Web este método não dá suporte a planilhas de origem com elementos PivotTable, Chart, Comment ou Slicer. Se esses objetos estão presentes, o `insertWorksheetsFromBase64` método retorna o erro em `UnsupportedFeature` Excel na Web. 
+> O `insertWorksheetsFromBase64` método é suportado para Excel no Windows, Mac e na Web. Não há suporte para iOS. Além disso, Excel na Web este método não dá suporte a planilhas de origem com elementos PivotTable, Chart, Comment ou Slicer. Se esses objetos estão presentes, o `insertWorksheetsFromBase64` método retorna o `UnsupportedFeature` erro em Excel na Web. 
 
-O exemplo de código a seguir mostra como inserir planilhas de outra pasta de trabalho na pasta de trabalho atual. Este exemplo de código primeiro processa um arquivo de pasta de trabalho com um objeto e extrai uma cadeia de caracteres codificada com base64 e insere essa cadeia de caracteres codificada com base64 na pasta de trabalho [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) atual. As novas planilhas são inseridas após a planilha chamada **Sheet1**. Observe que é passado como o parâmetro para a `[]` [propriedade InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Isso significa que todas as planilhas da pasta de trabalho de destino são inseridas na pasta de trabalho atual.
+O exemplo de código a seguir mostra como inserir planilhas de outra pasta de trabalho na pasta de trabalho atual. [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) Este exemplo de código primeiro processa um arquivo de pasta de trabalho com um objeto e extrai uma cadeia de caracteres codificada com base64 e insere essa cadeia de caracteres codificada com base64 na pasta de trabalho atual. As novas planilhas são inseridas após a planilha chamada **Sheet1**. Observe que `[]` é passado como o parâmetro para a [propriedade InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) . Isso significa que todas as planilhas da pasta de trabalho de destino são inseridas na pasta de trabalho atual.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -232,9 +227,9 @@ Excel.run(function (context) {
 
 Uma workbook tem configurações de idioma e cultura que afetam a forma como determinados dados são exibidos. Essas configurações podem ajudar a localização de dados quando os usuários do seu complemento estão compartilhando as guias de trabalho em diferentes idiomas e culturas. Seu complemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja dados no formato de sua própria cultura.
 
-`Application.cultureInfo`define as configurações de cultura do sistema como um [objeto CultureInfo.](/javascript/api/excel/excel.cultureinfo) Isso contém configurações como o separador decimal numérico ou o formato de data.
+`Application.cultureInfo` define as configurações de cultura do sistema como um [objeto CultureInfo](/javascript/api/excel/excel.cultureinfo) . Isso contém configurações como o separador decimal numérico ou o formato de data.
 
-Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário Excel](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)interface do usuário . As configurações do sistema são preservadas no `CultureInfo` objeto. Quaisquer alterações locais são mantidas como [propriedades de](/javascript/api/excel/excel.application)nível de aplicativo, como `Application.decimalSeparator` .
+Algumas configurações de cultura podem ser [alteradas por meio da interface Excel interface do usuário](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas no `CultureInfo` objeto. Quaisquer alterações locais são mantidas como [propriedades no](/javascript/api/excel/excel.application) nível do aplicativo, como `Application.decimalSeparator`.
 
 O exemplo a seguir altera o caractere separador decimal de uma cadeia numérica de um ',' para o caractere usado pelas configurações do sistema.
 
@@ -343,12 +338,12 @@ context.application.suspendApiCalculationUntilNextSync();
 
 O seu complemento pode detectar quando uma workbook é ativada. Uma workbook fica *inativa* quando o usuário alterna o foco para outra workbook, para outro aplicativo ou (em Excel na Web) para outra guia do navegador da Web. Uma workbook *é ativada quando* o usuário retorna o foco para a workbook. A ativação da workbook pode disparar funções de retorno de chamada no seu complemento, como atualizar dados da agenda de trabalho.
 
-Para detectar quando uma caixa de trabalho é ativada, [registre](excel-add-ins-events.md#register-an-event-handler) um manipulador de eventos para o [evento onActivated](/javascript/api/excel/excel.workbook#onActivated) de uma workbook. Os manipuladores de eventos `onActivated` do evento recebem um objeto [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) quando o evento é acionado.
+Para detectar quando uma caixa de trabalho é ativada, [registre](excel-add-ins-events.md#register-an-event-handler) um manipulador de eventos para o [evento onActivated](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member) de uma workbook. Os manipuladores de eventos do evento `onActivated` recebem um [objeto WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) quando o evento é acionado.
 
 > [!IMPORTANT]
 > O `onActivated` evento não detecta quando uma workbook é aberta. Esse evento só detecta quando um usuário alterna o foco de volta para uma workbook já aberta.
 
-O exemplo de código a seguir mostra como registrar o manipulador de eventos `onActivated` e configurar uma função de retorno de chamada.
+O exemplo de código a seguir mostra como registrar o manipulador `onActivated` de eventos e configurar uma função de retorno de chamada.
 
 ```js
 Excel.run(function (context) {
@@ -377,7 +372,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
 
-`Workbook.save` salva a pasta de trabalho para armazenamento persistente. O `save` método tem um único parâmetro opcional que pode ser um dos seguintes `saveBehavior` valores.
+`Workbook.save` salva a pasta de trabalho para armazenamento persistente. O `save` método tem um único parâmetro opcional `saveBehavior` que pode ser um dos seguintes valores.
 
 - `Excel.SaveBehavior.save` (padrão): o arquivo será salvo sem solicitar que o usuário especifique o nome do arquivo e local de salvamento. Se o arquivo não tiver sido salvo anteriormente, ele será salvo no local padrão. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local.
 - `Excel.SaveBehavior.prompt`: se o arquivo ainda não foi salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local de salvamento. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local sem que o usuário seja solicitado.
@@ -391,7 +386,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
 
-`Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O `close` método tem um único parâmetro opcional que pode ser um dos seguintes `closeBehavior` valores.
+`Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O `close` método tem um único parâmetro opcional `closeBehavior` que pode ser um dos seguintes valores.
 
 - `Excel.CloseBehavior.save` (padrão): o arquivo será salvo antes de fechar. Se o arquivo não tiver sido salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local para salvá-lo.
 - `Excel.CloseBehavior.skipSave`: o arquivo é fechado imediatamente, sem ser salvo. Quaisquer alterações não salvas serão perdidas.

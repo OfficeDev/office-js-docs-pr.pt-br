@@ -3,13 +3,8 @@ title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um Office add-in podem usar o SSO (login único) para buscar dados do Microsoft Graph.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 538648e96233bd0c2b497ef588d10c4f708e8522
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320260"
 ---
+
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
 Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente.
@@ -26,7 +21,7 @@ O diagrama a seguir mostra as etapas envolvidas para entrar e acessar o Microsof
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="Diagrama mostrando o processo de SSO." border="false":::
 
-1. O código do lado do cliente do complemento chama a API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Isso diz ao Office host para obter um token de acesso para o complemento.
+1. O código do lado do cliente do complemento chama a API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Isso diz ao Office host para obter um token de acesso para o complemento.
 
     Se o usuário não estiver Office, o host Office em conjunto com o plataforma de identidade da Microsoft fornece interface do usuário para o usuário entrar e consentir.
 
@@ -81,5 +76,5 @@ Para Outlook de Outlook, certifique-se de habilitar a Autenticação Moderna par
 ## <a name="see-also"></a>Confira também
 
 * [Token OAuth2 Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
-* [plataforma de identidade da Microsoft e fluxo OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+* [Plataforma de identidade da Microsoft e Fluxo On-Behalf-Of do OAuth 2.0](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
 * [Conjuntos de requisitos IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)

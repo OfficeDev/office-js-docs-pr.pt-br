@@ -1,15 +1,10 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com.
-ms.date: 09/22/2021
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990814"
 ---
+
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
@@ -25,9 +20,6 @@ Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365
 **Um painel de tarefas de exemplo no Outlook no Android**
 
 ![Captura de tela de um painel de tarefas em Outlook no Android.](../images/outlook-mobile-addin-taskpane-android.png)
-
-> [!IMPORTANT]
-> Os complementos não funcionam na versão moderna do Outlook em um navegador móvel. Para obter mais informações, [consulte Outlook no navegador móvel está sendo atualizado](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 
 ## <a name="whats-different-on-mobile"></a>Qual é a diferença no celular?
 
@@ -65,11 +57,14 @@ Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Teste seus suplementos no celular
 
-Para testar um complemento no Outlook Mobile, primeiro coloque um [sideload](sideload-outlook-add-ins-for-testing.md) de um complemento em uma conta O365 ou Outlook.com na Web, Windows ou Mac. Certifique-se de que o manifesto está formatado corretamente para conter ou ele não será carregado no `MobileFormFactor` cliente Outlook no celular.
+Para testar um complemento no Outlook Mobile, primeiro [fazer o sideload](sideload-outlook-add-ins-for-testing.md) de um complemento em uma conta Microsoft 365 ou Outlook.com na Web, Windows ou Mac. Certifique-se de que o manifesto está formatado corretamente para conter `MobileFormFactor` ou ele não será carregado no cliente Outlook no celular.
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 
-A solução de problemas em dispositivos móveis pode ser difícil, pois você pode não ter as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+A solução de problemas em dispositivos móveis pode ser difícil, pois você pode não ter as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este [tutorial sobre como usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+
+> [!NOTE]
+> Os complementos não funcionam em um Outlook em um navegador da Web no Android. Para obter informações sobre dispositivos com suporte, consulte [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## <a name="next-steps"></a>Próximas etapas
 

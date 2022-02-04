@@ -3,13 +3,8 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074277"
 ---
+
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
 Este artigo descreve como criar o suplemento do Outlook **Exibir entidades**, que extrai instâncias de cadeia de caracteres de entidades conhecidas compatíveis no assunto e no corpo do item do Outlook escolhido. Esse item pode ser um compromisso, uma mensagem de email ou solicitação, resposta ou cancelamento de reunião.
@@ -205,7 +200,7 @@ As seções restantes descrevem como essa amostra (arquivo default_entities.js) 
 
 ## <a name="extracting-entities-upon-initialization"></a>Extrair entidades na inicialização
 
-Após o evento [Office.initialize](/javascript/api/office#Office_initialize_reason_), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável global uma matriz de `_MyEntities` instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
+Após o evento [Office.initialize](/javascript/api/office#Office_initialize_reason_), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável `_MyEntities` global uma matriz de instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -234,7 +229,7 @@ Office.initialize = function () {
 ## <a name="extracting-addresses"></a>Extrair endereços
 
 
-Quando o usuário clica no botão **Obter Endereços**, o manipulador de eventos `myGetAddresses` obtém uma matriz dos endereços da propriedade [addresses](/javascript/api/outlook/office.entities#addresses) do objeto `_MyEntities`, caso algum endereço seja extraído. Cada endereço extraído é armazenado como uma cadeia de caracteres da matriz. `myGetAddresses` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de endereços extraídos. A seguir, apresentamos o código JavaScript relacionado.
+Quando o usuário clica no botão **Obter Endereços**, o manipulador de eventos `myGetAddresses` obtém uma matriz dos endereços da propriedade [addresses](/javascript/api/outlook/office.entities#outlook-office-entities-addresses-member) do objeto `_MyEntities`, caso algum endereço seja extraído. Cada endereço extraído é armazenado como uma cadeia de caracteres da matriz. `myGetAddresses` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de endereços extraídos. A seguir, apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -258,22 +253,22 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>Extrair informações de contato
 
 
-Quando o usuário clica no botão **Obter** Informações de Contato, o manipulador de eventos obtém uma matriz de contatos juntamente com suas informações da propriedade contacts do objeto, se algum tiver sido `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` extraído. Cada contato extraído é armazenado como o objeto [Contact](/javascript/api/outlook/office.contact) na matriz. `myGetContacts` obtém mais dados sobre cada contato. Observe que o contexto determina se Outlook pode extrair um contato de um item uma assinatura no final de uma mensagem de email ou pelo menos algumas das informações a seguir teriam que existir nas proximidades do &mdash; contato.
+Quando o usuário clica no botão **Obter** Informações de Contato, `myGetContacts` o manipulador de eventos obtém uma matriz de contatos juntamente com suas informações da propriedade [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` do objeto, se algum tiver sido extraído. Cada contato extraído é armazenado como o objeto [Contact](/javascript/api/outlook/office.contact) na matriz. `myGetContacts` obtém mais dados sobre cada contato. Observe que o contexto determina se o Outlook pode extrair um contato de uma assinatura itema&mdash; no final de uma mensagem de email ou pelo menos algumas das informações a seguir teriam que existir nas proximidades do contato.
 
 
-- A cadeia de caracteres que representa o nome do contato da propriedade [Contact.personName](/javascript/api/outlook/office.contact#personName).
+- A cadeia de caracteres que representa o nome do contato da propriedade [Contact.personName](/javascript/api/outlook/office.contact#outlook-office-contact-personname-member).
 
-- A cadeia de caracteres que representa o nome comercial associado ao contato na propriedade [Contact.businessName](/javascript/api/outlook/office.contact#businessName).
+- A cadeia de caracteres que representa o nome comercial associado ao contato na propriedade [Contact.businessName](/javascript/api/outlook/office.contact#outlook-office-contact-businessname-member).
 
-- A matriz de números de telefone associada ao contato na propriedade [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phoneNumbers). Cada número de telefone é representado por um objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber).
+- A matriz de números de telefone associada ao contato na propriedade [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member). Cada número de telefone é representado por um objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber).
 
-- Para cada membro **PhoneNumber** na matriz de números de telefone, a cadeia de caracteres que representa o número de telefone da propriedade [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString).
+- Para cada membro **PhoneNumber** na matriz de números de telefone, a cadeia de caracteres que representa o número de telefone da propriedade [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member).
 
-- A matriz de URLs associada ao contato na propriedade [Contact.urls](/javascript/api/outlook/office.contact#urls). Cada URL é representada como uma cadeia de caracteres em um membro da matriz.
+- A matriz de URLs associada ao contato na propriedade [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member). Cada URL é representada como uma cadeia de caracteres em um membro da matriz.
 
-- A matriz de endereços de email associada ao contato na propriedade [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailAddresses). Cada endereço de email é representado como uma cadeia de caracteres em um membro da matriz.
+- A matriz de endereços de email associada ao contato na propriedade [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member). Cada endereço de email é representado como uma cadeia de caracteres em um membro da matriz.
 
-- A matriz de endereços postais associada ao contato na propriedade [Contact.addresses](/javascript/api/outlook/office.contact#addresses). Cada endereço postal é representado como uma cadeia de caracteres em um membro da matriz.
+- A matriz de endereços postais associada ao contato na propriedade [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member). Cada endereço postal é representado como uma cadeia de caracteres em um membro da matriz.
 
 `myGetContacts` forma uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada contato. A seguir apresentamos o código JavaScript relacionado.
 
@@ -346,7 +341,7 @@ function myGetContacts()
 ## <a name="extracting-email-addresses"></a>Extrair endereços de email
 
 
-Quando o usuário clica no botão **Obter Endereços de Email**, o manipulador de eventos `myGetEmailAddresses` obtém uma matriz de endereços de email SMTP na propriedade [emailAddresses](/javascript/api/outlook/office.entities#emailAddresses) do objeto `_MyEntities`, caso algum seja extraído. Cada endereço de email extraído é armazenado como uma cadeia de caracteres na matriz. `myGetEmailAddresses` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de endereços de email extraídos. A seguir apresentamos o código JavaScript relacionado.
+Quando o usuário clica no botão **Obter Endereços de Email**, o manipulador de eventos `myGetEmailAddresses` obtém uma matriz de endereços de email SMTP na propriedade [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) do objeto `_MyEntities`, caso algum seja extraído. Cada endereço de email extraído é armazenado como uma cadeia de caracteres na matriz. `myGetEmailAddresses` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de endereços de email extraídos. A seguir apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -369,30 +364,30 @@ function myGetEmailAddresses() {
 ## <a name="extracting-meeting-suggestions"></a>Extrair sugestões de reunião
 
 
-Quando o usuário clica no botão **Obter Sugestões de Reunião**, o manipulador de eventos `myGetMeetingSuggestions` obtém uma matriz de sugestões de reunião da propriedade [meetingSuggestions](/javascript/api/outlook/office.entities#meetingSuggestions) do objeto `_MyEntities`, caso algum seja extraído.
+Quando o usuário clica no botão **Obter Sugestões de Reunião**, o manipulador de eventos `myGetMeetingSuggestions` obtém uma matriz de sugestões de reunião da propriedade [meetingSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-meetingsuggestions-member) do objeto `_MyEntities`, caso algum seja extraído.
 
 
  > [!NOTE]
- > Somente mensagens, mas não compromissos, suportam o `MeetingSuggestion` tipo de entidade.
+ > Somente mensagens, mas não compromissos, suportam o tipo `MeetingSuggestion` de entidade.
 
 Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) na matriz. `myGetMeetingSuggestions` obtém dados adicionais sobre cada sugestão de reunião:
 
 
-- A cadeia de caracteres que foi identificada como uma sugestão de reunião na propriedade [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingString).
+- A cadeia de caracteres que foi identificada como uma sugestão de reunião na propriedade [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member).
 
-- A matriz de participantes da reunião na propriedade [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees). Cada participante é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
+- A matriz de participantes da reunião na propriedade [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member). Cada participante é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
 
-- Para cada participante, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName).
+- Para cada participante, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member).
 
-- Para cada participante, o endereço SMTP na propriedade [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress).
+- Para cada participante, o endereço SMTP na propriedade [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member).
 
-- A cadeia de caracteres que representa a localização de sugestão de reunião na propriedade [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location).
+- A cadeia de caracteres que representa a localização de sugestão de reunião na propriedade [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-location-member).
 
-- A cadeia de caracteres que representa o assunto da sugestão de reunião na propriedade [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject).
+- A cadeia de caracteres que representa o assunto da sugestão de reunião na propriedade [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-subject-member).
 
-- A cadeia de caracteres que representa a hora de início da sugestão de reunião na propriedade [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start).
+- A cadeia de caracteres que representa a hora de início da sugestão de reunião na propriedade [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-start-member).
 
-- A cadeia de caracteres que representa a hora de término da sugestão de reunião na propriedade [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end).
+- A cadeia de caracteres que representa a hora de término da sugestão de reunião na propriedade [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-end-member).
 
 `myGetMeetingSuggestions` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada uma das sugestões de reunião. A seguir apresentamos o código JavaScript relacionado.
 
@@ -455,14 +450,14 @@ function myGetMeetingSuggestions() {
 ## <a name="extracting-phone-numbers"></a>Extrair números de telefone
 
 
-Quando o usuário clica no botão **Obter Números de Telefone**, o manipulador de eventos `myGetPhoneNumbers` obtém uma matriz de números de telefone na propriedade [phoneNumbers](/javascript/api/outlook/office.entities#phoneNumbers) do objeto `_MyEntities`, caso algum seja extraído. Cada número de telefone extraído é armazenado como objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber) na matriz. `myGetPhoneNumbers` obtém mais dados sobre cada número de telefone:
+Quando o usuário clica no botão **Obter Números de Telefone**, o manipulador de eventos `myGetPhoneNumbers` obtém uma matriz de números de telefone na propriedade [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) do objeto `_MyEntities`, caso algum seja extraído. Cada número de telefone extraído é armazenado como objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber) na matriz. `myGetPhoneNumbers` obtém mais dados sobre cada número de telefone:
 
 
-- A cadeia de caracteres que representa o tipo de número de telefone, por exemplo, número de telefone residencial, na propriedade [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type).
+- A cadeia de caracteres que representa o tipo de número de telefone, por exemplo, número de telefone residencial, na propriedade [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member).
 
-- A cadeia de caracteres que representa o número de telefone real na propriedade [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString).
+- A cadeia de caracteres que representa o número de telefone real na propriedade [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member).
 
-- A cadeia de caracteres que foi originalmente identificada como o número de telefone na propriedade [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalPhoneString).
+- A cadeia de caracteres que foi originalmente identificada como o número de telefone na propriedade [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-originalphonestring-member).
 
 `myGetPhoneNumbers` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada um dos números de telefone. A seguir apresentamos o código JavaScript relacionado.
 
@@ -506,16 +501,16 @@ function myGetPhoneNumbers()
 ## <a name="extracting-task-suggestions"></a>Extrair sugestões de tarefa
 
 
-Quando o usuário clica no botão **Obter Sugestões de Tarefa**, o manipulador de eventos `myGetTaskSuggestions` obtém uma matriz de sugestões de tarefa na propriedade [taskSuggestions](/javascript/api/outlook/office.entities#taskSuggestions) do objeto `_MyEntities`, caso algum seja extraído. Cada sugestão de tarefa extraída é armazenada como um objeto [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) da matriz. `myGetTaskSuggestions` obtém dados adicionais sobre cada sugestão de tarefa:
+Quando o usuário clica no botão **Obter Sugestões de Tarefa**, o manipulador de eventos `myGetTaskSuggestions` obtém uma matriz de sugestões de tarefa na propriedade [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) do objeto `_MyEntities`, caso algum seja extraído. Cada sugestão de tarefa extraída é armazenada como um objeto [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) da matriz. `myGetTaskSuggestions` obtém dados adicionais sobre cada sugestão de tarefa:
 
 
-- A cadeia de caracteres que foi originalmente identificada como uma sugestão de tarefa na propriedade [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskString).
+- A cadeia de caracteres que foi originalmente identificada como uma sugestão de tarefa na propriedade [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member).
 
-- A matriz dos destinatários da tarefa na propriedade [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees). Cada destinatário é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
+- A matriz dos destinatários da tarefa na propriedade [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member). Cada destinatário é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
 
-- Para cada destinatário, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName).
+- Para cada destinatário, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member).
 
-- Para cada destinatário, o endereço SMTP da propriedade [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress).
+- Para cada destinatário, o endereço SMTP da propriedade [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member).
 
 `myGetTaskSuggestions` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada sugestão de tarefa. A seguir apresentamos o código JavaScript relacionado.
 
@@ -571,7 +566,7 @@ function myGetTaskSuggestions()
 ## <a name="extracting-urls"></a>Extrair URLs
 
 
-Quando o usuário clica no botão **Obter URLs**, o manipulador de eventos `myGetUrls` obtém uma matriz de URLs na propriedade [urls](/javascript/api/outlook/office.entities#urls) do objeto `_MyEntities`, caso algum seja extraído. Cada URL extraída é armazenada como uma cadeia de caracteres na matriz. `myGetUrls` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de URLs extraídas.
+Quando o usuário clica no botão **Obter URLs**, o manipulador de eventos `myGetUrls` obtém uma matriz de URLs na propriedade [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) do objeto `_MyEntities`, caso algum seja extraído. Cada URL extraída é armazenada como uma cadeia de caracteres na matriz. `myGetUrls` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de URLs extraídas.
 
 
 ```js

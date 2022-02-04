@@ -1,16 +1,11 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
-description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 05/12/2021
+description: 'Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.'
+ms.date: 01/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: d79089ee8b63883d0fe07a98042c8d683a8bfb43
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152027"
 ---
+
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
 Este tutorial ensina como criar um suplemento que pode ser usado em mensagens no modo de redação do Outlook para inserir conteúdo no corpo de uma mensagem.
@@ -158,10 +153,9 @@ Faça as seguintes atualizações no arquivo **manifest.xml** para especificar a
 
 Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para confirmar que o projeto está configurado corretamente.
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executa este comando, o servidor web local será iniciado (se ainda não estiver em execução) e seu suplemento será transferido.
+1. Execute o seguinte comando no diretório raiz do seu projeto. Ao executar esse comando, o servidor Web local será iniciado e seu complemento será sideload.
 
     ```command&nbsp;line
     npm start
@@ -858,7 +852,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>Criar um arquivo para gerenciar configurações
 
-O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe. Crie um arquivo chamado **addin-config.js** na pasta **./src/helpers** e adicione o seguinte código. O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.RoamingSettings) para definir valores de configuração.
+O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe. Crie um arquivo chamado **addin-config.js** na pasta **./src/helpers** e adicione o seguinte código. O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.roamingsettings) para definir valores de configuração.
 
 ```js
 function getConfig() {

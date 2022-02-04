@@ -3,13 +3,8 @@ title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
 ms.date: 07/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fd34e40a35d7a0cc190265587fec6bf8dd60593c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148565"
 ---
+
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
 O namespace [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
@@ -17,7 +12,7 @@ O namespace [Office.context.mailbox.item](../reference/objectmodel/preview-requi
 > [!IMPORTANT]
 > **As OUTLOOK REST são preteridas**
 >
-> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de novembro de [2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, compare os pontos de extremidade Graph e Outlook API REST da [Microsoft.](/outlook/rest/compare-graph)
+> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, [compare os pontos de extremidade Graph e Outlook DA API REST da Microsoft](/outlook/rest/compare-graph).
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 
@@ -54,7 +49,7 @@ Para recuperar o item atual pela REST, o suplemento precisará da ID do item, fo
 - Em outros clientes do Outlook, o valor retornado por `Office.context.mailbox.item.itemId` é uma ID formatada para EWS e deve ser convertida usando o método [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 - Também é necessário converter a ID do anexo em uma ID com formato REST para usá-la. As IDs devem ser convertidas porque as IDs EWS podem conter valores não seguros para URL que causarão problemas ao REST.
 
-O suplemento pode determinar em qual cliente do Outlook ele será carregado verificando a propriedade [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName).
+O suplemento pode determinar em qual cliente do Outlook ele será carregado verificando a propriedade [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member).
 
 ### <a name="example"></a>Exemplo
 

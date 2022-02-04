@@ -3,13 +3,8 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 description: Recursos e APIs que foram introduzidos para Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.3.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a8688d5d63cd658084bd0ba4601ed85a631bf8d8
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237766"
 ---
+
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
 O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
@@ -23,14 +18,14 @@ O conjunto de requisitos 1.3 inclui todos os recursos do conjunto [de requisitos
 
 - Foi adicionado o suporte para [comandos de suplemento](../../../outlook/add-in-commands-for-outlook.md).
 - Foi adicionada a capacidade para salvar ou fechar um item que está sendo composto.
-- Objeto [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) aprimorado para permitir que os complementos recebam ou deem o corpo inteiro.
+- Objeto [Body aprimorado](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) para permitir que os complementos recebam ou deem o corpo inteiro.
 - Foram adicionados os métodos de conversão para converter IDs entre os formatos EWS e REST.
 - Mais capacidade de adicionar mensagens de notificação à barra de informações nos itens.
 
 ### <a name="change-log"></a>Log de alterações
 
-- Foi adicionado o [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_): Retorna o corpo atual em um formato especificado.
-- Foi adicionado o [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_): Substitui todo o corpo com o texto especificado.
+- Foi adicionado o [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#outlook-office-body-getasync-member(1)): Retorna o corpo atual em um formato especificado.
+- Foi adicionado o [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#outlook-office-body-setasync-member(1)): Substitui todo o corpo com o texto especificado.
 - Foi adicionado o objeto [Event](/javascript/api/office/office.addincommands.event?view=outlook-js-1.3&preserve-view=true): Passado como um parâmetro para funções de comando sem interface de usuário em um suplemento do Outlook. Usado para sinalizar a conclusão do processamento.
 - Foi adicionado o [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods): Fecha o item atual que está sendo composto.
 - Foi adicionado o [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods): Salva um item de forma assíncrona.

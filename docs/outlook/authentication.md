@@ -1,15 +1,10 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
-description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
+description: 'Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.'
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 30991c09b5e98fbf098771cc753081d578d107e6
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074354"
 ---
+
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
 O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
@@ -50,7 +45,7 @@ Os tokens de identidade do usuário do Exchange fornecem uma maneira de o suplem
 - Quando o suplemento precisar acessar um serviço que não seja da Microsoft que você controle.
 - Como uma autenticação de recurso quando o suplemento está sendo executado em uma versão do Office que não suporta SSO.
 
-Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) para obter tokens de identidade do usuário do Exchange. Para obter detalhes sobre o uso desses tokens, confira [Autenticar um usuário com um token de identidade para o Exchange](authenticate-a-user-with-an-identity-token.md).
+Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) para obter tokens de identidade do usuário do Exchange. Para obter detalhes sobre o uso desses tokens, confira [Autenticar um usuário com um token de identidade para o Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Tokens de acesso obtidos por meio de fluxos do OAuth2
 
@@ -58,7 +53,7 @@ Os suplementos também podem acessar serviços de terceiros que oferecem suporte
 
 - Precisar acessar um serviço de terceiros fora do seu controle
 
-Com esse método, o suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) para inicializar o fluxo do OAuth2 ou usando a [biblioteca office-js-helpers](https://github.com/OfficeDev/office-js-helpers) para o fluxo do OAuth2 Implícito.
+Com esse método, o suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) para inicializar o fluxo do OAuth2 ou usando a [biblioteca office-js-helpers](https://github.com/OfficeDev/office-js-helpers) para o fluxo do OAuth2 Implícito.
 
 ## <a name="callback-tokens"></a>Tokens de retorno de chamada
 

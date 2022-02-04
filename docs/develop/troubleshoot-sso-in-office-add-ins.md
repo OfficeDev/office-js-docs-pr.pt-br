@@ -3,13 +3,8 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b6f72ec43a3d9d654206ab895cd5e4eb98bf7e
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320218"
 ---
+
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
 Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
@@ -33,7 +28,7 @@ Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 
 ### <a name="13000"></a>13000
 
-A API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) não é compatível pelo suplemento ou pela versão do Office.
+A API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) não é compatível pelo suplemento ou pela versão do Office.
 
 - A versão do Office não é compatível com o SSO. A versão necessária é Microsoft 365 assinatura, em qualquer canal mensal.
 - O manifesto do suplemento está sem a seção [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) adequada.

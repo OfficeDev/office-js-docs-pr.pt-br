@@ -3,16 +3,11 @@ title: Obter ou definir a hora do compromisso em um suplemento do Outlook
 description: Saiba como obter ou definir a hora de início e término de um compromisso em um suplemento do Outlook.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4016923a883a259a3c9c478639ae288b1ebdf7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151853"
 ---
+
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obter ou definir a hora ao compor um compromisso no Outlook
 
-A API JavaScript Office fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_) e [Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) para obter e definir a hora de início ou término de um compromisso que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar os formulários de redação do complemento, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
+A API Office JavaScript fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) e [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) para obter e definir a hora de início ou término de um compromisso que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para que o Outlook ative o complemento em formulários de redação, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
 
 As propriedades [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) estão disponíveis para compromissos tanto em formulários de composição quanto de leitura. No formulário de leitura, você pode acessar as propriedades diretamente do objeto pai, como em:
 
@@ -38,7 +33,7 @@ e:
 item.end.getAsync
 ```
 
-Como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Assim como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-the-start-or-end-time"></a>Obter a hora de início ou de término
@@ -51,7 +46,7 @@ Esta seção mostra um exemplo de código que obtém a hora de início do compro
 
 ```
 
-Para usar **item.stsart.getAsync** ou **item.end.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, pode-se obter a hora de início como um objeto **Date** no formato UTC usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Para usar **item.stsart.getAsync** ou **item.end.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, pode-se obter a hora de início como um objeto **Date** no formato UTC usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 
 ```js

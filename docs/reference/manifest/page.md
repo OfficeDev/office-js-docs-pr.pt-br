@@ -1,18 +1,25 @@
 ---
 title: Elemento Page no arquivo de manifesto
 description: O elemento Page define configurações de página HTML que uma função personalizada usa no Excel.
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bde3ba86270874b1d9059b2f1c44952241bf00f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152134"
 ---
+
 # <a name="page-element"></a>Elemento Page
 
 Define as configurações de página HTML usadas por uma função personalizada no Excel.
+
+**Tipo de complemento:** Função Personalizada
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Taskpane 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md) 
 
 ## <a name="attributes"></a>Atributos
 

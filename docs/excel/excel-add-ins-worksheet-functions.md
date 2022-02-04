@@ -1,15 +1,10 @@
 ---
 title: Chamar funções internas de planilha do Excel usando as APIs JavaScript do Excel
-description: Saiba como chamar funções de Excel de planilha, como e usando Excel `VLOOKUP` `SUM` API JavaScript.
+description: 'Saiba como chamar funções de Excel de planilha, `VLOOKUP` `SUM` como e usando Excel API JavaScript.'
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151734"
 ---
+
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 
 Este artigo explica como chamar funções internas de planilha do Excel, como `VLOOKUP` e `SUM`, usando as API JavaScript do Excel. Também fornece a lista completa de funções internas de planilha Excel que podem ser chamadas usando as APIs JavaScript do Excel.
@@ -19,7 +14,7 @@ Este artigo explica como chamar funções internas de planilha do Excel, como `V
 
 ## <a name="calling-a-worksheet-function"></a>Chamar uma função de planilha
 
-O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A propriedade do objeto retornado por `value` uma função de planilha contém o resultado da função `FunctionResult` especificada. Como este exemplo mostra, você `load` deve ter a propriedade do objeto antes de poder `value` `FunctionResult` lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
+O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A `value` propriedade do objeto `FunctionResult` retornado por uma função de planilha contém o resultado da função especificada. Como este exemplo mostra, você deve `load` ter a `value` propriedade do `FunctionResult` objeto antes de poder lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -447,4 +442,4 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Classe Functions (API JavaScript para Excel)](/javascript/api/excel/excel.functions)
-- [Objeto Workbook Functions (API JavaScript para Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Objeto Workbook Functions (API JavaScript para Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

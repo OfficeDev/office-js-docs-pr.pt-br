@@ -1,15 +1,10 @@
 ---
 title: Adicionar validação de dados para intervalos do Excel
-description: Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.
+description: 'Saiba como as EXCEL JavaScript permitem que seu complemento adicione validação automática de dados a tabelas, colunas, linhas e outros intervalos em uma workbook.'
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f7f21621b6ddffa3cb7e51134a3b4cd1cc2aaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149018"
 ---
+
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
 A biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione a validação de dados automáticos a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia da validação de dados, consulte os artigos a seguir sobre como os usuários adicionam validação de dados por meio da interface do usuário Excel usuário.
@@ -163,7 +158,7 @@ Excel.run(function (context) {
 Você pode criar um alerta de erro personalizado que aparece quando um usuário tenta inserir dados inválidos em uma célula. Apresentamos um exemplo simples a seguir. Observe o seguinte sobre este código.
 
 - A propriedade `style` determina se o usuário recebe um alerta informativo, um aviso e um alerta "parar". Apenas `Stop` realmente impede que o usuário adicione dados inválidos. O pop-up para `Warning` e `Information` tem opções para permitir que o usuário insira dados inválidos assim mesmo.
-- As propriedades `showAlert` padrão para `true`. Isso significa Excel um alerta genérico (de tipo), a menos que você crie um alerta personalizado que define ou define uma mensagem, título e `Stop` `showAlert` estilo `false` personalizados. O código define uma mensagem personalizada e o título.
+- As propriedades `showAlert` padrão para `true`. Isso significa que Excel um alerta genérico (`Stop`de tipo), a `showAlert` `false` menos que você crie um alerta personalizado que define ou define uma mensagem personalizada, título e estilo. O código define uma mensagem personalizada e o título.
 
 ```js
 Excel.run(function (context) {
@@ -210,7 +205,7 @@ Para saber mais, confira [DataValidationPrompt](/javascript/api/excel/excel.data
 
 ## <a name="remove-data-validation-from-a-range"></a>Remover validação de dados de um intervalo
 
-Para remover a validação de dados de um intervalo, acione o método [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__).
+Para remover a validação de dados de um intervalo, acione o método [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#excel-excel-datavalidation-clear-member(1)).
 
 ```js
 myrange.dataValidation.clear()

@@ -3,13 +3,8 @@ title: Solução de problemas de ativação de suplementos contextuais do Outloo
 description: Possíveis motivos para o seu complemento não ser ativado como você espera.
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c1656df532943a8958494a2ad3734fea97d597a5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148570"
 ---
+
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
 Outlook ativação de um complemento contextual se baseia nas regras de ativação no manifesto do complemento. Quando as condições para o item selecionado no momento atendem às regras de ativação do complemento, o aplicativo ativa e exibe o botão de complemento na interface do usuário do Outlook (painel de seleção de complementos para complementos de composição, barra de complementos para complementos de leitura). No entanto, se seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
@@ -24,7 +19,7 @@ Você pode verificar a versão do Exchange 2013 usando uma das seguintes abordag
 
 - Se você estiver testando o suplemento no Outlook na Web ou em dispositivos móveis em um depurador de script (por exemplo, o Depurador JScript que acompanha o Internet Explorer), procure o atributo **src** da marca **script** que especifica o local do qual os scripts são carregados. O caminho deve conter uma subcadeia de caracteres **owa/15.0.516.x/owa2/...**, em que **15.0.516.x** representa a versão do Exchange Server, como **15.0.516.2**.
 
-- Como alternativa, você pode usar a propriedade [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) para verificar a versão. No Outlook na Web e nos dispositivos móveis, essa propriedade retorna a versão do Exchange Server.
+- Como alternativa, você pode usar a propriedade [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) para verificar a versão. No Outlook na Web e nos dispositivos móveis, essa propriedade retorna a versão do Exchange Server.
 
 - Se você puder testar o Outlook do Outlook, poderá usar a seguinte técnica de depuração simples que usa o modelo de objeto Outlook e o editor Visual Basic.
 
@@ -77,7 +72,7 @@ Mesmo se um item de email não for um dos tipos de acima, se ele não veio de um
 Se seu suplemento é um suplemento de redação e deve ser ativado quando o usuário cria uma mensagem ou solicitação de reunião, verifique se o item não está protegido por IRM. No entanto, há algumas exceções.
 
 1. Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte na visualização, consulte Ativação de complemento em itens protegidos [pelo IRM (Gerenciamento](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)de Direitos de Informação).
+1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte na visualização, consulte Ativação de complemento em [itens protegidos pelo GERENCIAMENTO de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 
@@ -183,7 +178,7 @@ Já que as expressões regulares nas regras de ativação fazem parte do arquivo
 
 Os clientes avançados do Outlook usam um mecanismo de expressões regulares diferente daquele usado pelo Outlook na Web e pelos dispositivos móveis. Clientes avançados do Outlook usam o mecanismo de expressões regulares C++ fornecido como parte da biblioteca de modelo padrão do Visual Studio. Esse mecanismo é compatível com as normas ECMAScript 5. O Outlook na Web e os dispositivos móveis usam a avaliação da expressão regular que faz parte do JavaScript, é fornecida pelo navegador e dá suporte a um subconjunto dos ECMAScript 5.
 
-Embora, na maioria dos casos, Outlook clientes encontrem as mesmas combinações para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se o regex incluir uma classe de caractere personalizada com base em classes de caracteres predefinidas, um cliente Outlook cliente rico poderá retornar resultados diferentes de Outlook na Web e dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em diferentes aplicativos, use `(\d|\w)` em vez disso.
+Embora, na maioria dos casos, Outlook clientes encontrem as mesmas combinações para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se o regex incluir uma classe de caractere personalizada com base em classes de caracteres predefinidas, um cliente Outlook cliente rico poderá retornar resultados diferentes de Outlook na Web e dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em diferentes aplicativos, use em `(\d|\w)` vez disso.
 
 Teste sua expressão regular minuciosamente. Se ela retornar resultados diferentes, reescreva a expressão regular para ficar compatível em ambos os mecanismos. Para verificar os resultados de avaliação em um cliente avançado do Outlook, escreva um programa C++ pequeno que aplica a expressão regular em uma amostra do texto que você está tentando corresponder. Sendo executado no Visual Studio, o programa de teste C++ usaria a biblioteca de modelo padrão, simulando o comportamento do cliente avançado do Outlook ao executar a mesma expressão regular. Para verificar os resultados de avaliação do Outlook na Web ou nos dispositivos móveis, use seu avaliador de expressão regular JavaScript favorito.
 

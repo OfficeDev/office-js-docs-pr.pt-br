@@ -3,16 +3,11 @@ title: Obter ou definir o assunto em um suplemento do Outlook
 description: Saiba como obter ou definir o assunto de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 534b0cff9d065873ddf566a0d82a3716529414df
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151854"
 ---
+
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obter ou definir o assunto ao compor um compromisso ou uma mensagem no Outlook
 
-A API javaScript Office fornece métodos assíncronos ([subject.getAsync](/javascript/api/outlook/office.Subject#getAsync_options__callback_) e [subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)) para obter e definir o assunto de um compromisso ou mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar o complemento em formulários de redação.
+A API Office JavaScript fornece métodos assíncronos ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) e [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) para obter e definir o assunto de um compromisso ou mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para Outlook ativar o complemento em formulários de redação.
 
 A propriedade **subject** está disponível para acesso de leitura nos formulários de leitura e de redação de compromissos e de mensagens. Em um formulário de leitura, é possível acessar a propriedade diretamente do objeto pai, como em:
 
@@ -28,7 +23,7 @@ item.subject.getAsync
 
 A propriedade **subject** está disponível para acesso de gravação somente nos formulários de redação, e não nos de leitura.
 
-Como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira "Passar parâmetros opcionais para métodos assíncronos" em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Assim como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira "Passar parâmetros opcionais para métodos assíncronos" em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-the-subject"></a>Obter o assunto
@@ -44,7 +39,7 @@ Esta seção mostra um exemplo de código que obtém o assunto do compromisso ou
 
 ```
 
-Para usar **item.subject.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o assunto como texto sem formatação usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Para usar **item.subject.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o assunto como texto sem formatação usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 
 ```js

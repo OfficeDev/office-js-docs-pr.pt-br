@@ -3,13 +3,8 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c1af8c641e949a3d86df9d7edf807a2dd7bef379
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222147"
 ---
+
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
 Quando alguma funcionalidade do seu suplemento deve estar disponível apenas em determinados contextos, você pode habilitar ou desabilitar programaticamente seus Comandos de Suplemento personalizados. Por exemplo, uma função que altera o cabeçalho de uma tabela só deve ser ativada quando o cursor estiver em uma tabela.
@@ -29,24 +24,24 @@ As APIs descritas neste artigo estão disponíveis apenas Excel em todas as plat
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Office Os complementos usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação Office aplicativo e plataforma oferece suporte a APIs que um complemento precisa. Para obter mais informações, [consulte Office versões e conjuntos de requisitos.](../develop/office-versions-and-requirement-sets.md)
+Os conjuntos de requisitos são grupos nomeados de membros da API. Office Os complementos usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação Office aplicativo e plataforma oferece suporte a APIs que um complemento precisa. Para obter mais informações, [consulte Office versões e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
-As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
 
 > [!NOTE]
-> O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, não é possível especificá-lo na seção **Requisitos do** manifesto. Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se e *somente se*, essa chamada retornar , seu código poderá chamar `true` as APIs habilitar/desabilitar. Se a chamada de retornar , todos os `isSetSupported` `false` comandos de complemento personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos de uso, consulte Specify Office applications and API requirements , especially `isSetSupported` [Runtime checks for method and requirements set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). [](../develop/specify-office-hosts-and-api-requirements.md) (A seção [Especificar quais Office e plataformas](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) podem hospedar seu complemento desse artigo não se aplica à Faixa de Opções 1.1.)
+> O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, não é possível especificá-lo na seção **Requisitos do** manifesto. Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Se e *somente se essa* chamada retornar `true`, seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` retornar `false`, todos os comandos de complemento personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos `isSetSupported`de uso, consulte [Especificar Office aplicativos e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md), especialmente verificações de tempo de execução para suporte ao [método e ao conjunto de requisitos](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (A seção [Especificar quais Office e plataformas](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) podem hospedar seu complemento desse artigo não se aplica à Faixa de Opções 1.1.)
 
 ## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
 As APIs e a marcação de manifesto descritas neste artigo exigem que o manifesto do suplemento especifique que ele deve usar um tempo de execução compartilhado. Para fazer isso, tome as etapas a seguir.
 
-1. No elemento [Runtimes](../reference/manifest/runtimes.md) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento **Runtimes** no manifesto, crie-o como o primeiro filho no elemento **Host** na seção **VersionOverrides.)**
+1. No elemento [Runtimes](../reference/manifest/runtimes.md) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento **Runtimes** no manifesto, crie-o como o primeiro filho no elemento **Host** na seção **VersionOverrides** .)
 2. Na seção [Resources.Urls](../reference/manifest/resources.md) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, onde `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. Dependendo se o seu add-in contém um painel de tarefas, um arquivo de função ou uma função Excel personalizada, você deve fazer uma ou mais das três etapas a seguir.
 
-    - Se o add-in contiver um painel de tarefas, desmarque o `resid` atributo da [Ação](../reference/manifest/action.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) para exatamente a mesma cadeia de caracteres usada para o elemento Runtime na etapa `resid` 1; por exemplo,  `Contoso.SharedRuntime.Url` . O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o add-in contiver uma função Excel personalizada, de definir o `resid` atributo da [página](../reference/manifest/page.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) exatamente a mesma cadeia de caracteres usada para o elemento Runtime na etapa `resid` 1; por exemplo,  `Contoso.SharedRuntime.Url` . O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o add-in contiver um arquivo de função, de definir o atributo do elemento FunctionFile como exatamente a mesma cadeia de caracteres usada para o elemento Runtime na etapa `resid` 1; por [](../reference/manifest/functionfile.md) `resid` exemplo,  `Contoso.SharedRuntime.Url` . O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver um painel de tarefas, desmarque o `resid` atributo da [Ação](../reference/manifest/action.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) para exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver uma função Excel personalizada, de definir o `resid` atributo da [Página](../reference/manifest/page.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver um arquivo de função, `resid` de definir o atributo do [elemento FunctionFile](../reference/manifest/functionfile.md) `resid` como exatamente a mesma cadeia de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## <a name="set-the-default-state-to-disabled"></a>Defina o estado padrão como desabilitado
 
@@ -79,7 +74,7 @@ Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do
 As etapas essenciais para alterar o status habilitado de um Comando de Suplemento são:
 
 1. Crie um [objeto RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifica o comando e seu grupo pai e guia, por suas IDs conforme declarado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
-2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_).
+2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)).
 
 Apresentamos um exemplo simples a seguir. Observe que "MyButton", "OfficeAddinTab1" e "CustomGroup111" são copiados do manifesto.
 

@@ -1,15 +1,11 @@
 ---
 title: Coautoria em suplementos do Excel
-description: Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.
+description: 'Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.'
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a906a9fa46c99881469dea101ac3cf329d74b113
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148710"
 ---
+
+
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
 Com a [coautoria](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
@@ -46,16 +42,16 @@ Se quiser que as visualizações personalizadas do Usuário A respondam às alte
 
 Conforme descrito anteriormente, em alguns cenários, acionar eventos para todos os coautores proporciona uma experiência do usuários aprimorada. No entanto, lembre-se de que, em alguns cenários, esse comportamento pode resultar em uma má experiência do usuário.
 
-Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que estavam trabalhando na guia de trabalho, levando a uma experiência de usuário `BindingDataChanged` ruim. Evite a exibição da interface do usuário ao usar eventos no suplemento.
+Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos `BindingDataChanged` do evento exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que estavam trabalhando na guia de trabalho, levando a uma experiência de usuário ruim. Evite a exibição da interface do usuário ao usar eventos no suplemento.
 
 ## <a name="avoid-table-row-coauthoring-conflicts"></a>Evitar conflitos de coautor da linha de tabela
 
-É um problema conhecido que as chamadas para a [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários `TableRowCollection.add` atualizem).
+É um problema conhecido que as chamadas para [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) a API podem causar conflitos de coautoria. Não recomendamos o uso dessa API se você antecipar que seu complemento será executado enquanto outros usuários estão editando a workbook do complemento (especificamente, se eles estão editando a tabela ou qualquer intervalo sob a tabela). As orientações a seguir devem `TableRowCollection.add` ajudá-lo a evitar problemas com o método (e evitar a acionamento da barra amarela Excel mostra que solicita que os usuários atualizem).
 
-1. Use [`Range.values`](/javascript/api/excel/excel.range#values) em vez de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) . Definir os `Range` valores diretamente abaixo da tabela expande automaticamente a tabela. Caso contrário, adicionar linhas de tabela por meio das APIs resulta em conflitos `Table` de mesclagem para usuários de coauth.
+1. Use [`Range.values`](/javascript/api/excel/excel.range#excel-excel-range-values-member) em vez de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)). Definir os `Range` valores diretamente abaixo da tabela expande automaticamente a tabela. Caso contrário, adicionar linhas de tabela por `Table` meio das APIs resulta em conflitos de mesclagem para usuários de coauth.
 1. Não deve haver regras [de validação de](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) dados aplicadas a células abaixo da tabela, a menos que a validação de dados seja aplicada a toda a coluna.
-1. Se houver dados sob a tabela, o complemento precisará lidar com isso antes de definir o valor do intervalo. Usar [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) para inserir uma linha vazia moverá os dados e dará espaço para a tabela de expansão. Caso contrário, você corre o risco de sobrescrever células abaixo da tabela.
-1. Não é possível adicionar uma linha vazia a uma tabela com `Range.values` . A tabela só se expande automaticamente se os dados estão presentes nas células diretamente abaixo da tabela. Use dados temporários ou colunas ocultas como solução alternativa para adicionar uma linha de tabela vazia.
+1. Se houver dados sob a tabela, o complemento precisará lidar com isso antes de definir o valor do intervalo. Usar [`Range.insert`](/javascript/api/excel/excel.range#excel-excel-range-insert-member(1)) para inserir uma linha vazia moverá os dados e dará espaço para a tabela de expansão. Caso contrário, você corre o risco de sobrescrever células abaixo da tabela.
+1. Não é possível adicionar uma linha vazia a uma tabela com `Range.values`. A tabela só se expande automaticamente se os dados estão presentes nas células diretamente abaixo da tabela. Use dados temporários ou colunas ocultas como solução alternativa para adicionar uma linha de tabela vazia.
 
 ## <a name="see-also"></a>Confira também
 

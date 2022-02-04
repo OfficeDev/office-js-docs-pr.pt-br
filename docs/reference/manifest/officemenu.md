@@ -1,18 +1,25 @@
 ---
 title: Elemento OfficeMenu no arquivo de manifesto
 description: O elemento OfficeMenu define uma coleção de controles a serem adicionados ao menu Office de contexto.
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eba4431fd31ee7df918014cb30d8085a4040880f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151837"
 ---
+
 # <a name="officemenu-element"></a>Elemento OfficeMenu
 
 Define um conjunto de controles que serão adicionados ao menu de contexto do Office. Aplica-se aos suplementos do Word, do Excel, do PowerPoint e do OneNote.
+
+**Tipo de suplemento:** Painel de tarefas
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Taskpane 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="attributes"></a>Atributos
 
@@ -41,7 +48,7 @@ Cada elemento **OfficeMenu** requer um ou mais controles de [menu](control.md#me
 
 ```xml
 <OfficeMenu id="ContextMenuCell">
-    <Control xsi:type="Menu" id="myMenuID">
+    <Control xsi:type="Menu" id="Contoso.myMenu">
       <Label resid="residLabel3" />
       <Supertip>
           <Title resid="residLabel" />

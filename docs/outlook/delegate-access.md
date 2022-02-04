@@ -3,22 +3,17 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 346d05db7bdfec6b3ea95d487780c7a146130b59
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138734"
 ---
+
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
-Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de representante) e cenários de caixa de correio compartilhada (agora em visualização [)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)no seu Outlook add-in, incluindo quais permissões a API JavaScript Office suporta.
+Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de [representante) e](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) cenários de caixa de correio compartilhada (agora em visualização) no seu complemento do Outlook, incluindo quais permissões Office API JavaScript suporta.
 
 ## <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para esse recurso, incluindo a Atualização Cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Cliente | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
+| Client | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Não|Não|Não|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
@@ -26,7 +21,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para esse
 |Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Não|Não|Não|
 
 > [!IMPORTANT]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (para obter detalhes, consulte [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (para obter detalhes, consulte [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 ## <a name="supported-setups"></a>Configurações com suporte
 
@@ -36,13 +31,13 @@ As seções a seguir descrevem configurações com suporte para caixas de correi
 
 #### <a name="shared-folders"></a>Pastas compartilhadas
 
-O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926). O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa ao seu perfil" do artigo Gerenciar itens de calendário e email de [outra pessoa.](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)
+O proprietário da caixa de correio [deve primeiro fornecer acesso a um representante](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926). O representante deve seguir as instruções descritas na seção "Adicionar caixa de correio de outra pessoa ao seu perfil" do artigo Gerenciar itens de email e [calendário de outra pessoa](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
 
 #### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (visualização)
 
 Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
 
-Um recurso Exchange Server conhecido como "automapping" está ativado por [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) padrão, o que significa que, posteriormente, a caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook do usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador tiver desabilitado a automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+Um recurso Exchange Server conhecido como "automapping" está ativado por padrão, o que significa que, posteriormente, [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) a caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook do usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador tiver desabilitado a automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo [Abrir](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd) e usar uma caixa de correio compartilhada no Outlook.
 
 > [!WARNING]
 > Não **entre** na caixa de correio compartilhada com uma senha. As APIs de recurso não funcionarão nesse caso.
@@ -57,7 +52,7 @@ O proprietário da caixa de correio [deve primeiro fornecer acesso a um represen
 
 Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
 
-Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook na Web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo [Abrir](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207) e usar uma caixa de correio compartilhada no Outlook na Web.
 
 > [!WARNING]
 > NÃO **use** outras opções como "Abrir outra caixa de correio". As APIs de recurso podem não funcionar corretamente.
@@ -84,7 +79,7 @@ Se o proprietário do calendário concedeu amplo acesso ao calendário (por exem
 
 ---
 
-Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte a seção Itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de Outlook de complementos.
+Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte [a](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) seção Itens de Caixa de Correio disponíveis para os Outlook da página de visão geral de Outlook de complementos.
 
 ## <a name="supported-permissions"></a>Permissões com suporte
 
@@ -92,8 +87,8 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Leitura|1 (000001)|Pode ler itens.|
-|Gravação|2 (000010)|Pode criar itens.|
+|Ler|1 (000001)|Pode ler itens.|
+|Gravar|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir apenas os itens criados.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
 |EditOwn|16 (010000)|Pode editar apenas os itens criados.|
@@ -102,7 +97,7 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 > [!NOTE]
 > Atualmente, a API oferece suporte para obter permissões existentes, mas não para definir permissões.
 
-O [objeto DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma máscara de bits para indicar as permissões. Cada posição na máscara de bits representa uma permissão específica e, se estiver definida como, o `1` usuário terá a respectiva permissão. Por exemplo, se o segundo bit da direita for `1` , o usuário terá permissão **Gravar.** Você pode ver um exemplo de como verificar uma permissão específica na seção Executar uma operação como representante ou usuário de caixa de correio [compartilhada](#perform-an-operation-as-delegate-or-shared-mailbox-user) mais adiante neste artigo.
+O [objeto DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma máscara de bits para indicar as permissões. Cada posição na máscara de bits representa uma permissão específica e, se estiver definida `1` como, o usuário terá a respectiva permissão. Por exemplo, se o segundo bit da direita for `1`, o usuário terá **permissão Gravar** . Você pode ver um exemplo de como verificar uma permissão específica na seção Executar uma operação como representante ou usuário de caixa de [correio compartilhada mais](#perform-an-operation-as-delegate-or-shared-mailbox-user) adiante neste artigo.
 
 ## <a name="sync-across-shared-folder-clients"></a>Sincronizar entre clientes de pasta compartilhada
 
@@ -115,11 +110,11 @@ No entanto, se as operações REST ou Exchange Web Services (EWS) foram usadas p
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas no seu complemento, você deve definir o [elemento SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) como no manifesto sob `true` o elemento pai `DesktopFormFactor` . Atualmente, outros fatores de formulário não são suportados.
+Para habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas no seu complemento, você deve definir o [elemento SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) como `true` no manifesto sob o elemento pai `DesktopFormFactor`. Atualmente, outros fatores de formulário não são suportados.
 
-Para dar suporte a chamadas REST de um representante, de definir o nó [Permissões](../reference/manifest/permissions.md) no manifesto como `ReadWriteMailbox` .
+Para dar suporte a chamadas REST de um representante, de definir o nó [Permissões](../reference/manifest/permissions.md) no manifesto como `ReadWriteMailbox`.
 
-O exemplo a seguir mostra `SupportsSharedFolders` o elemento definido como em uma seção do `true` manifesto.
+O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true` em uma seção do manifesto.
 
 ```XML
 ...
@@ -148,9 +143,9 @@ O exemplo a seguir mostra `SupportsSharedFolders` o elemento definido como em um
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>Executar uma operação como representante ou usuário de caixa de correio compartilhada
 
-Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do usuário, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
+Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do usuário, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
 
-O exemplo a seguir mostra como obter as propriedades compartilhadas de uma  mensagem ou compromisso, verificar se o representante ou usuário de caixa de correio compartilhada tem permissão Gravar e fazer uma chamada REST.
+O exemplo a seguir mostra como obter as propriedades compartilhadas de uma mensagem ou compromisso, verificar se o representante ou usuário de caixa  de correio compartilhada tem permissão Gravar e fazer uma chamada REST.
 
 ```js
 function performOperation() {
@@ -202,11 +197,11 @@ function performOperation() {
 ```
 
 > [!TIP]
-> Como representante, você pode usar REST para obter o conteúdo de uma mensagem Outlook anexada a um item Outlook [ou postagem de grupo.](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)
+> Como representante, você pode usar REST para obter o conteúdo de uma mensagem Outlook [anexada a um item Outlook ou postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Manipular a chamada REST em itens compartilhados e não compartilhados
 
-Se você quiser chamar uma operação REST em um item, se o item é compartilhado ou não, você pode usar a API para determinar se o `getSharedPropertiesAsync` item é compartilhado. Depois disso, você pode construir a URL REST para a operação usando o objeto apropriado.
+Se você quiser chamar uma operação REST em um item, se o item é compartilhado ou não, `getSharedPropertiesAsync` você pode usar a API para determinar se o item é compartilhado. Depois disso, você pode construir a URL REST para a operação usando o objeto apropriado.
 
 ```js
 if (item.getSharedPropertiesAsync) {
@@ -228,7 +223,7 @@ Dependendo dos cenários do seu complemento, há algumas limitações a consider
 
 ### <a name="message-compose-mode"></a>Modo De composição de Mensagens
 
-No modo Redação de Mensagem, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) não é suportado no Outlook na Web ou no Windows a menos que as seguintes condições sejam atendidas.
+No modo Redação de Mensagem, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) não é suportado no Outlook na Web ou no Windows a menos que as seguintes condições sejam atendidas.
 
 a. **Delegar acesso/pastas compartilhadas**
 
@@ -246,11 +241,11 @@ A mensagem agora está em um contexto compartilhado e os complementos que suport
 
 ### <a name="rest-and-ews"></a>REST e EWS
 
-Seu complemento pode usar REST e a permissão do complemento deve ser definida como para habilitar o acesso REST à caixa de correio do proprietário ou à caixa de correio compartilhada conforme `ReadWriteMailbox` aplicável. Não há suporte para EWS.
+Seu complemento pode usar REST `ReadWriteMailbox` e a permissão do complemento deve ser definida como para habilitar o acesso REST à caixa de correio do proprietário ou à caixa de correio compartilhada conforme aplicável. Não há suporte para EWS.
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>Usuário ou caixa de correio compartilhada oculta de uma lista de endereços
 
-Se um administrador ocultou um usuário ou endereço de caixa de correio compartilhado de uma lista de endereços, como a GAL (lista de endereços global), os itens de email afetados abriram no relatório de caixa de correio `Office.context.mailbox.item` como nulos. Por exemplo, se o usuário abrir um item de email em uma caixa de correio compartilhada oculta da GAL, representar esse `Office.context.mailbox.item` item de email será nulo.
+Se um administrador ocultou um usuário ou endereço de caixa de correio compartilhado de uma lista de endereços, como a GAL (lista de endereços global), os itens de email `Office.context.mailbox.item` afetados abriram no relatório de caixa de correio como nulos. Por exemplo, se o usuário abrir um item de email em uma caixa de correio compartilhada oculta da GAL, `Office.context.mailbox.item` representar esse item de email será nulo.
 
 ## <a name="see-also"></a>Confira também
 

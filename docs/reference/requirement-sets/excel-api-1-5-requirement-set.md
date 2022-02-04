@@ -1,19 +1,14 @@
 ---
-title: Excel Conjunto de requisitos da API JavaScript 1.5
+title: Excel conjunto de requisitos da API JavaScript 1.5
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.5.
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 78145585b368d576879d2a36472639283e453169
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151830"
 ---
+
 # <a name="whats-new-in-excel-javascript-api-15"></a>Quais são as novidades na API JavaScript do Excel 1.5
 
-O ExcelApi 1.5 adiciona partes XML personalizadas. Eles são acessíveis por meio da [coleção de](/javascript/api/excel/excel.workbook#customxmlparts) partes XML personalizadas no objeto da workbook.
+O ExcelApi 1.5 adiciona partes XML personalizadas. Eles são acessíveis por meio da [coleção de partes XML](/javascript/api/excel/excel.workbook#excel-excel-workbook-customxmlparts-member) personalizadas no objeto da workbook.
 
 ## <a name="custom-xml-part"></a>Parte XML personalizada
 
@@ -30,37 +25,37 @@ O ExcelApi 1.5 adiciona partes XML personalizadas. Eles são acessíveis por mei
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.5. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.5 ou anterior, consulte Excel APIs no conjunto de requisitos [1.5](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)ou anterior .
+A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.5. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.5 ou anterior, consulte Excel APIs no conjunto de requisitos [1.5 ou anterior](/javascript/api/excel?view=excel-js-1.5&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[CustomXmlPart](/javascript/api/excel/excel.customxmlpart)|[delete()](/javascript/api/excel/excel.customxmlpart#delete__)|Exclui a parte XML personalizada.|
-||[getXml()](/javascript/api/excel/excel.customxmlpart#getXml__)|Obtém o conteúdo XML completo da parte XML personalizada.|
-||[id](/javascript/api/excel/excel.customxmlpart#id)|A ID da parte XML personalizada.|
-||[namespaceUri](/javascript/api/excel/excel.customxmlpart#namespaceUri)|URI do namespace da parte XML personalizada.|
-||[setXml(xml: string)](/javascript/api/excel/excel.customxmlpart#setXml_xml_)|Define o conteúdo XML completo da parte XML personalizada.|
-|[CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection)|[add(xml: string)](/javascript/api/excel/excel.customxmlpartcollection#add_xml_)|Adiciona uma nova parte XML personalizada à pasta de trabalho.|
-||[getByNamespace(namespaceUri: string)](/javascript/api/excel/excel.customxmlpartcollection#getByNamespace_namespaceUri_)|Obtém uma nova coleção com escopo de partes XML personalizadas cujos namespaces correspondem ao namespace especificado.|
-||[getCount()](/javascript/api/excel/excel.customxmlpartcollection#getCount__)|Obtém o número de partes XML personalizadas na coleção.|
-||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getItem_id_)|Obtém uma parte XML personalizada com base em sua ID.|
-||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getItemOrNullObject_id_)|Obtém uma parte XML personalizada com base em sua ID.|
-||[items](/javascript/api/excel/excel.customxmlpartcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[CustomXmlPartScopedCollection](/javascript/api/excel/excel.customxmlpartscopedcollection)|[getCount()](/javascript/api/excel/excel.customxmlpartscopedcollection#getCount__)|Obtém o número de partes CustomXML nesta coleção.|
-||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#getItem_id_)|Obtém uma parte XML personalizada com base em sua ID.|
-||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#getItemOrNullObject_id_)|Obtém uma parte XML personalizada com base em sua ID.|
-||[getOnlyItem()](/javascript/api/excel/excel.customxmlpartscopedcollection#getOnlyItem__)|Se o conjunto contiver exatamente um item, esse método o retornará.|
-||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getOnlyItemOrNullObject__)|Se o conjunto contiver exatamente um item, esse método o retornará.|
-||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ID da tabela dinâmica.|
-|[RequestContext](/javascript/api/excel/excel.requestcontext)|[runtime](/javascript/api/excel/excel.requestcontext#runtime)||
+|[CustomXmlPart](/javascript/api/excel/excel.customxmlpart)|[delete()](/javascript/api/excel/excel.customxmlpart#excel-excel-customxmlpart-delete-member(1))|Exclui a parte XML personalizada.|
+||[getXml()](/javascript/api/excel/excel.customxmlpart#excel-excel-customxmlpart-getxml-member(1))|Obtém o conteúdo XML completo da parte XML personalizada.|
+||[id](/javascript/api/excel/excel.customxmlpart#excel-excel-customxmlpart-id-member)|A ID da parte XML personalizada.|
+||[namespaceUri](/javascript/api/excel/excel.customxmlpart#excel-excel-customxmlpart-namespaceuri-member)|URI do namespace da parte XML personalizada.|
+||[setXml(xml: string)](/javascript/api/excel/excel.customxmlpart#excel-excel-customxmlpart-setxml-member(1))|Define o conteúdo XML completo da parte XML personalizada.|
+|[CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection)|[add(xml: string)](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-add-member(1))|Adiciona uma nova parte XML personalizada à pasta de trabalho.|
+||[getByNamespace(namespaceUri: string)](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-getbynamespace-member(1))|Obtém uma nova coleção com escopo de partes XML personalizadas cujos namespaces correspondem ao namespace especificado.|
+||[getCount()](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-getcount-member(1))|Obtém o número de partes XML personalizadas na coleção.|
+||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-getitem-member(1))|Obtém uma parte XML personalizada com base em sua ID.|
+||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-getitemornullobject-member(1))|Obtém uma parte XML personalizada com base em sua ID.|
+||[items](/javascript/api/excel/excel.customxmlpartcollection#excel-excel-customxmlpartcollection-items-member)|Obtém os itens filhos carregados nesta coleção.|
+|[CustomXmlPartScopedCollection](/javascript/api/excel/excel.customxmlpartscopedcollection)|[getCount()](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-getcount-member(1))|Obtém o número de partes CustomXML nesta coleção.|
+||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-getitem-member(1))|Obtém uma parte XML personalizada com base em sua ID.|
+||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-getitemornullobject-member(1))|Obtém uma parte XML personalizada com base em sua ID.|
+||[getOnlyItem()](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-getonlyitem-member(1))|Se o conjunto contiver exatamente um item, esse método o retornará.|
+||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-getonlyitemornullobject-member(1))|Se o conjunto contiver exatamente um item, esse método o retornará.|
+||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#excel-excel-customxmlpartscopedcollection-items-member)|Obtém os itens filhos carregados nesta coleção.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-id-member)|ID da tabela dinâmica.|
+|[RequestContext](/javascript/api/excel/excel.requestcontext)|[runtime](/javascript/api/excel/excel.requestcontext#excel-excel-requestcontext-runtime-member)||
 |[Tempo de execução](/javascript/api/excel/excel.runtime)|||
-|[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customXmlParts)|Representa a coleção de partes XML personalizadas contidas nesta workbook.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNext_visibleOnly_)|Obtém a planilha que segue esta.|
-||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNextOrNullObject_visibleOnly_)|Obtém a planilha que segue esta.|
-||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPrevious_visibleOnly_)|Obtém a planilha que precede essa.|
-||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPreviousOrNullObject_visibleOnly_)|Obtém a planilha que precede essa.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getFirst(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getFirst_visibleOnly_)|Obtém a primeira planilha na coleção.|
-||[getLast(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getLast_visibleOnly_)|Obtém a última planilha na coleção.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#excel-excel-workbook-customxmlparts-member)|Representa a coleção de partes XML personalizadas contidas nesta workbook.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getnext-member(1))|Obtém a planilha que segue esta.|
+||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getnextornullobject-member(1))|Obtém a planilha que segue esta.|
+||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getprevious-member(1))|Obtém a planilha que precede essa.|
+||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getpreviousornullobject-member(1))|Obtém a planilha que precede essa.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getFirst(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-getfirst-member(1))|Obtém a primeira planilha na coleção.|
+||[getLast(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-getlast-member(1))|Obtém a última planilha na coleção.|
 
 ## <a name="see-also"></a>Confira também
 

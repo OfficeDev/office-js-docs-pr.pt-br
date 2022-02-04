@@ -4,15 +4,10 @@ description: Conheça os principais conceitos para usar os tipos de dados do Exc
 ms.date: 01/14/2021
 ms.topic: conceptual
 ms.prod: excel
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: a769010ad46af7bba2210d9a6f9d66082cb3f815
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074305"
 ---
+
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
 > [!NOTE]
@@ -29,11 +24,11 @@ Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview
 
 ## <a name="core-concepts"></a>Principais conceitos
 
-Use a propriedade [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) para trabalhar com valores de tipo de dados. Essa propriedade é semelhante ao [Range.values](/javascript/api/excel/excel.range#values), mas `Range.values` retorna apenas os quatro tipos básicos: cadeia de caracteres, número, booliano ou valores de erro. `Range.valuesAsJson` pode retornar informações expandidas sobre os quatro tipos básicos, e essa propriedade pode retornar tipos de dados, como valores de número formatados, entidades e imagens da Web.
+Use a propriedade [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) para trabalhar com valores de tipo de dados. Essa propriedade é semelhante ao [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), mas `Range.values` retorna apenas os quatro tipos básicos: cadeia de caracteres, número, booliano ou valores de erro. `Range.valuesAsJson` pode retornar informações expandidas sobre os quatro tipos básicos, e essa propriedade pode retornar tipos de dados, como valores de número formatados, entidades e imagens da Web.
 
 ### <a name="json-schema"></a>Esquema JSON
 
-Cada tipo de dados usa um esquema de metadados JSON projetado para este tipo. Isso define o [CellValueType](/javascript/api/excel/excel.cellvaluetype) dos dados e informações adicionais sobre a célula, tais como `basicValue`, `numberFormat` ou `address`. Cada `CellValueType` tem propriedades disponíveis de acordo com esse tipo. Por exemplo, o tipo `webImage` inclui as propriedades [altText](/javascript/api/excel/excel.webimagecellvalue#altText) e [atribuição](/javascript/api/excel/excel.webimagecellvalue#attribution). As seções a seguir mostram exemplos de código JSON do valor de número formatado, valor de entidade e tipos de dados de imagem da Web.
+Cada tipo de dados usa um esquema de metadados JSON projetado para este tipo. Isso define o [CellValueType](/javascript/api/excel/excel.cellvaluetype) dos dados e informações adicionais sobre a célula, tais como `basicValue`, `numberFormat` ou `address`. Cada `CellValueType` tem propriedades disponíveis de acordo com esse tipo. Por exemplo, o tipo `webImage` inclui as propriedades [altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) e [atribuição](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member). As seções a seguir mostram exemplos de código JSON do valor de número formatado, valor de entidade e tipos de dados de imagem da Web.
 
 O esquema de metadados JSON para cada tipo de dados também inclui uma ou mais propriedades somente leitura que são usadas quando os cálculos encontram cenários incompatíveis, tais como uma versão do Excel que não atende ao requisito mínimo de número de build para o recurso de tipos de dados. A propriedade `basicType` faz parte dos metadados JSON de todos os tipos de dados e é sempre uma propriedade somente leitura. A propriedade `basicType` é usada como um fallback quando o tipo de dados não é suportado ou está formatado incorretamente.
 

@@ -3,13 +3,8 @@ title: Aplicar formatação condicional a intervalos com a API JavaScript do Exc
 description: Saiba mais sobre formatação condicional no contexto de Excel de JavaScript.
 ms.date: 04/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d36989b1161ad6953c21207f9f478a60aceafb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148593"
 ---
+
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional a intervalos do Excel
 
 A Biblioteca de JavaScript do Excel fornece APIs para aplicar a formatação condicional aos intervalos de dados nas suas planilhas. Esse recurso simplifica a visualização da análise de grandes conjuntos de dados. A formatação também atualiza dinamicamente com base nas alterações no intervalo.
@@ -33,7 +28,7 @@ A `Range.conditionalFormats` propriedade é uma coleção de objetos [Conditiona
 -    `topBottom`
 
 > [!NOTE]
-> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na [ \* seção Métodos OrNullObject.](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)
+> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na [seção\* Métodos OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 
 Somente um tipo de formato pode ser definido para o objeto ConditionalFormat. Isso é determinado pela `type` propriedade, que é uma enumeração de valor[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). `type` é definido quando um formato condicional para um intervalo é adicionado.
 
@@ -153,7 +148,7 @@ await context.sync();
 
 ### <a name="icon-set"></a>[Conjunto de ícones](/javascript/api/excel/excel.iconsetconditionalformat)
 
-A formatação condicional do conjunto de ícones usa os [ícones](/javascript/api/excel/excel.icon) do Excel para realçar células. A `criteria` propriedade é uma matriz [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion), que define o símbolo a ser inserido e a condição em que ele é inserido. Essa matriz é automaticamente pré-preenchida com critério de elementos com propriedades padrão. Propriedades individuais não podem ser substituídas. Em vez disso, todo o objeto de critérios deve ser substituído. 
+A formatação condicional do conjunto de ícones usa os [ícones](/javascript/api/excel/excel.icon) do Excel para realçar células. A `criteria` propriedade é uma matriz [ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion), que define o símbolo a ser inserido e a condição em que ele é inserido. Essa matriz é automaticamente pré-preenchida com critério de elementos com propriedades padrão. Propriedades individuais não podem ser substituídas. Em vez disso, todo o objeto de critérios deve ser substituído. 
 
 O exemplo a seguir mostra um conjunto de ícones de três triângulos aplicado ao intervalo.
 
@@ -196,7 +191,7 @@ await context.sync();
 
 ### <a name="preset-criteria"></a>[Critérios predefinidos](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-A formatação condicional predefinida aplica um formato definido pelo usuário ao intervalo com base em uma regra padrão selecionada. Essas regras são definidas pelo[ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) no [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
+A formatação condicional predefinida aplica um formato definido pelo usuário ao intervalo com base em uma regra padrão selecionada. Essas regras são definidas pelo[ConditionalFormatPresetCriterion](/javascript/api/excel/excel.conditionalformatpresetcriterion) no [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
 O exemplo a seguir colore a fonte branca onde quer que o valor de uma célula seja pelo menos um desvio padrão acima da média do intervalo.
 
@@ -243,7 +238,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottom"></a>[Superiores/inferiores](/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottom"></a>[Superiores/inferiores](/javascript/api/excel/excel.topbottomconditionalformat)
 
 A formatação condicional superiores/inferiores aplica um formato para maiores ou menores valores em um intervalo. As `rule` propriedade é do tipo [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule), define a condição se baseia no maior ou menor, e se a avaliação é ordenada ou na baseada na porcentagem. 
 

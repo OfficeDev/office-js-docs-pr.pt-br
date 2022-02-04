@@ -1,22 +1,17 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa executar Office Desajustes.
-ms.date: 09/23/2021
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
-ms.translationtype: MT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990555"
 ---
+
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
 Este artigo descreve os requisitos de software e de dispositivo para execução de Suplementos do Office.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Para uma exibição de alto nível de onde os Office de Office atualmente são [suportados,](../overview/office-add-in-availability.md)consulte Office disponibilidade de aplicativo cliente e plataforma para Office de Office.
+Para uma exibição de alto nível de onde os Office atualmente são suportados, consulte Office disponibilidade de aplicativo cliente e plataforma para Office [Desempate](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Requisitos de servidor
 
@@ -29,7 +24,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para os complementos de conteúdo e do painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo de manifesto XML do complemento ou você precisa implantar o complemento usando Aplicativos [Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps). [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
+Para os complementos de conteúdo e do painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo de [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) manifesto XML do complemento ou você precisa implantar o complemento usando Aplicativos [Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 Para testar e executar um Outlook de Outlook, a conta de email Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível por meio do Microsoft 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 
@@ -71,18 +66,19 @@ Qualquer navegador, exceto o Internet Explorer, que oferece suporte a ECMAScript
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphones e tablets sem Windows
 
-Especificamente para o Outlook em execução em um navegador em smartphones e tablets sem Windows, os softwares a seguir são necessários para testar e executar suplementos do Outlook.
-
+Especificamente para Outlook em execução em smartphones e dispositivos tablet não Windows, o software a seguir é necessário para testar e executar Outlook de Outlook de usuário.
 
 | Aplicativo do Office | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
-|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
+|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para Android; navegador não aplicável|
+|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para iOS; navegador não aplicável|
 |Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|No Microsoft 365, Exchange Online ou local no Exchange Server 2013 ou posterior|Safari|
 
-> [!NOTE]
-> Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone foram [preteridos](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) e não são mais necessários ou estão disponíveis para testar os suplementos do Outlook.
-
+> [!IMPORTANT]
+> Os seguintes não são mais necessários ou disponíveis para testes Outlook de complementos.
+>
+> - Navegadores da Web no Android.
+> - Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone - eles foram [preterido](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 
 ## <a name="see-also"></a>Confira também
 
