@@ -1,16 +1,11 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook.
-ms.date: 01/25/2022
+ms.date: 02/01/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 111b8c0b0b0f01877821e1a0d292355a779a026e
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263083"
 ---
+
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
 Os Suplementos do Outlook declaram quais versões de API exigem usando o elemento Requisitos em seu manifesto. Os suplementos do Outlook sempre incluem um elemento Conjunto com um atributo  definido como  e um atributo  definido como o conjunto de requisitos mínimo de API compatível com os cenários do suplemento.
@@ -107,7 +102,7 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 || compra avulsa 2016 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 | iOS | Assinatura do Microsoft 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>5</sup> |
 | Android | Assinatura do Microsoft 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>5</sup> |
-| Navegador da Web | interface do usuário moderna do Outlook quando conectado ao<br>Exchange Online: assinatura do Microsoft 365, Outlook.com | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md), [1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md), [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), [1.9](../objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md), [1.10](../objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md), [1.11](../objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br>[IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)<sup>2</sup> |
+| Navegador da Web<sup>6</sup> | interface do usuário moderna do Outlook quando conectado ao<br>Exchange Online: assinatura do Microsoft 365, Outlook.com | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md), [1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md), [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), [1.9](../objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md), [1.10](../objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md), [1.11](../objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br>[IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)<sup>2</sup> |
 || interface do usuário clássica do Outlook quando conectado ao<br>Exchange local | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
@@ -120,6 +115,8 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 > <sup>4</sup> O suporte para a nova Interface do Usuário do Mac (visualização) está disponível no Outlook versão 16.38.506. Para mais informações, consulte a seção [Suporte de Suplemento no Outlook na nova Interface do Usuário do Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview).
 >
 > <sup>5</sup> No momento, existem considerações adicionais ao se projetar e implementar suplementos para clientes móveis. Por exemplo, o único modo suportado é o Message Read. Para obter mais detalhes, consulte [considerações de código ao adicionar suporte aos comandos de suplemento do Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
+>
+> <sup>6</sup> Os suplementos não funcionam no Outlook moderno em um navegador da Web no Android. Para obter informações sobre dispositivos suportados, confira [Requisitos para executar Suplementos do Office](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 > [!TIP]
 > É possível distinguir o Outlook clássico do moderno no navegador da Web, verificando sua barra de ferramentas da caixa de correio.
