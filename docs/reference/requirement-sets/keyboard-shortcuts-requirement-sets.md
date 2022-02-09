@@ -1,17 +1,17 @@
 ---
-title: Conjuntos de requisitos de Atalhos de Teclado
+title: Conjuntos de requisitos de Atalhos de teclado
 description: Informações de conjunto de requisitos de atalhos de teclado para Office de complementos.
-ms.date: 11/22/2021
+ms.date: 02/07/2022
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 209cc46c37ac004422796e267a8c350e33ffc615
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 074460510e054cdcfbeca4676883c4180bb2202d
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153791"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467840"
 ---
-# <a name="keyboard-shortcuts-requirement-sets"></a>Conjuntos de requisitos de Atalhos de Teclado
+# <a name="keyboard-shortcuts-requirement-sets"></a>Conjuntos de requisitos de Atalhos de teclado
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
@@ -20,6 +20,9 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 |  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | KeyboardShortcuts 1.1  | N/D | Versão: 2111 (build 14701.10000) | N/D | 16.55 | Setembro de 2021 |
+
+> [!NOTE]
+> O **conjunto de requisitos KeyboardShortcuts 1.1** só tem suporte em Excel.
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 

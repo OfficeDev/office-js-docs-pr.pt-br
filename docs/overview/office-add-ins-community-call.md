@@ -1,10 +1,15 @@
 ---
 title: Microsoft Office da comunidade de complementos
-description: 'A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.'
-ms.date: 02/03/2022
+description: A agenda, Microsoft Office de chamada, agenda e recursos da comunidade de complementos mensalmente.
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 0a5ea373a45bd8d8b6ee0a3e3e396db2fb5b7234
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467712"
 ---
-
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de complementos
 
 A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre a criação de Office de complementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8:00 hora do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
@@ -13,6 +18,7 @@ A Microsoft Office da comunidade de Microsoft Office é uma chamada mensal onde 
 
 - Trabalhe com [tipos de](../excel/excel-data-types-overview.md) dados na API Excel.
 - Atualização nas APIs do Word.
+- Outlook e Outlook desativação REST V2.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 

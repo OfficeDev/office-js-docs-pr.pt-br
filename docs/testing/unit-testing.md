@@ -1,10 +1,15 @@
 ---
 title: Teste de unidade em Office de complementos
 description: Saiba como usar o código de teste de unidade que chama as OFFICE APIs JavaScript
-ms.date: 11/30/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 39bd49f52087433a7095d0949bf22abd10dd0bb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467754"
 ---
-
 # <a name="unit-testing-in-office-add-ins"></a>Teste de unidade em Office de complementos
 
 Os testes de unidade verificam a funcionalidade do seu complemento sem exigir conexões de rede ou serviço, incluindo conexões com o Office aplicativo. O código do lado do servidor de teste de unidade e o código do  lado do cliente que não chama as [APIs JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md), é o mesmo em complementos do Office como está em qualquer aplicativo Web, portanto, não requer documentação especial. Mas o código do lado do cliente que chama Office APIs JavaScript é um desafio para testar. Para resolver esses problemas, criamos uma biblioteca para simplificar a criação de objetos Office simulados em testes de unidade: [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). A biblioteca facilita os testes das seguintes maneiras:
@@ -185,6 +190,7 @@ module.exports = myOutlookAddinFeature;
 
 O arquivo de teste, nomeado `my-outlook-add-in-feature.test.js` está em uma subpasta, em relação ao local do arquivo de código do complemento. O seguinte mostra o conteúdo do arquivo. Observe que a propriedade de nível superior é `context`, um [Office. Objeto Context](/javascript/api/office/office.context), portanto, o objeto que está sendo simulado é o pai dessa propriedade: um [objeto Office](/javascript/api/office). Observe o seguinte sobre este código:
 
+- A `host` propriedade no objeto mock é usada internamente pela biblioteca simulada para identificar o Office aplicativo. É obrigatório para Outlook. Atualmente, ele não serve para nenhuma outra finalidade Office aplicativo.
 - Como a Office JavaScript não é carregada no processo de nó, `Office` o objeto referenciado no código do complemento deve ser declarado e inicializado.
 
 ```javascript
@@ -193,6 +199,8 @@ const myOutlookAddinFeature = require("../my-outlook-add-in-feature");
 
 // Create the seed mock object.
 const mockData = {
+  // Identify the host to the mock library (required for Outlook).
+  host: "outlook",
   context: {
     mailbox: {
       item: {

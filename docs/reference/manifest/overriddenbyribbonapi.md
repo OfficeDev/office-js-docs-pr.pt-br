@@ -1,13 +1,18 @@
 ---
 title: Elemento OverriddenByRibbonApi no arquivo de manifesto
-description: 'Saiba como especificar que uma guia, grupo, controle ou item de menu personalizado não deve aparecer quando também faz parte de uma guia contextual personalizada.'
-ms.date: 02/02/2022
+description: Saiba como especificar que uma guia, grupo, controle ou item de menu personalizado não deve aparecer quando também faz parte de uma guia contextual personalizada.
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 48977691ee4bf2ccd71bc146647dae452ce9e2fc
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467684"
 ---
-
 # <a name="overriddenbyribbonapi-element"></a>Elemento OverriddenByRibbonApi
 
-Especifica se um [grupo](group.md), controle [button](control.md#button-control), controle [menu](control.md#menu-dropdown-button-controls) ou item de menu será oculto em combinações de aplicativos e plataformas que suportam a API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) que instala guias contextuais personalizadas na faixa de opções.
+Especifica se um [grupo](group.md), controle [button](control-button.md), controle [menu](control-menu.md) ou item de menu será oculto em combinações de aplicativos e plataformas que suportam a API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) que instala guias contextuais personalizadas na faixa de opções.
 
 **Tipo de suplemento:** Painel de tarefas
 
@@ -38,7 +43,7 @@ O objetivo deste elemento é criar uma experiência de fallback em um add-in que
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom1">
-    <Group id="Contoso.CustomTab.group1">
+    <Group id="Contoso.CustomTab1.group1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Control  xsi:type="Button" id="Contoso.MyButton1">
         <!-- Child elements omitted. -->
@@ -70,7 +75,7 @@ O objetivo deste elemento é criar uma experiência de fallback em um add-in que
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom3">
-    <Group id="Contoso.CustomTab3.group3.">
+    <Group id="Contoso.CustomTab3.group3">
       <Control  xsi:type="Menu" id="Contoso.MyMenu">
         <!-- Other child elements omitted. -->
         <Items>

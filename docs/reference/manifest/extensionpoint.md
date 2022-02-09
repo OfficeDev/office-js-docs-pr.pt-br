@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
-ms.date: 09/29/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17e39cf85ef19516d4b2a04ba6b96cf97b32336b
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 279cc1b27f42d55e2ead00ee0c4df64afab16a3d
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138762"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467861"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -16,7 +16,7 @@ ms.locfileid: "60138762"
 
 **Tipo de complemento:** Painel de tarefas, Email
 
-**Válido somente nestes esquemas VersionOverrides:**
+**Válido somente nesses esquemas VersionOverrides**:
 
 - Painel de tarefas 1.0
 - Email 1.0
@@ -83,16 +83,16 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
  
 |Elemento|Descrição|
 |:-----|:-----|
-|**CustomTab**|Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. |
-|**OfficeTab**|Obrigatório se você quiser estender uma guia padrão Aplicativo do Office faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. Para saber mais, confira [OfficeTab](officetab.md).|
-|**OfficeMenu**|Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> - **ContextMenuText** para o Excel ou Word. Exibe o item no menu de contexto quando o texto for selecionado e o usuário clicar com o botão direito do mouse no texto selecionado. <br/> - **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha.|
-|**Group**|Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. |
-|**Label**|Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
-|**Icon**|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Image.** O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
-|**Tooltip**|Opcional. A dica de ferramenta do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String.** O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
-|**Control**|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seções [Controles de botão](control.md#button-control) e [Controles de menu](control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **dos Recursos** relacionados sejam adicionados um de cada vez.|
-|**Script**|Links para o arquivo JavaScript com a definição de função personalizada e o código de registro Esse elemento não é usado na Visualização do Desenvolvedor. Em vez disso, a página HTML é responsável por carregar todos os arquivos JavaScript.|
-|**Page**|Links para a página HTML de suas funções personalizadas.|
+|[CustomTab](customtab.md)|Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. |
+|[OfficeTab](officetab.md)|Obrigatório se você quiser estender uma guia padrão Aplicativo do Office faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado.|
+|[OfficeMenu](officemenu.md)|Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> - **ContextMenuText** para o Excel ou Word. Exibe o item no menu de contexto quando o texto for selecionado e o usuário clicar com o botão direito do mouse no texto selecionado. <br/> - **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha.|
+|[Group](group.md)|Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. |
+|**Label**|Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String** . O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**.|
+|[Icon](icon.md)|Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno, ou quando muitos botões forem exibidos. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Image** . O elemento **Image** é elemento filho do elemento **Images**, que é elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho, em pixels, da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels.|
+|**Tooltip**|Opcional. A dica de ferramenta do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento String** . O elemento **String** é um elemento filho do elemento **LongStrings**, que, por sua vez, é um elemento filho do elemento **Resources**.|
+|[Control](control.md)|Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista lista de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira [Controle de botão](control-button.md) e [controle menu](control-menu.md) para obter mais informações.<br/>**Observação:**  Para facilitar a solução de problemas, recomendamos que um elemento **Control** e os elementos filho **dos Recursos** relacionados sejam adicionados um de cada vez.|
+|[Script](script.md)|Links para o arquivo JavaScript com a definição de função personalizada e o código de registro Esse elemento não é usado na Visualização do Desenvolvedor. Em vez disso, a página HTML é responsável por carregar todos os arquivos JavaScript.|
+|[Page](page.md)|Links para a página HTML de suas funções personalizadas.|
 
 ## <a name="extension-points-for-outlook"></a>Pontos de extensão para Outlook
 
@@ -274,7 +274,7 @@ Os elementos **Control** contidos neste ponto de extensão precisam ter o atribu
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Esse ponto de extensão coloca uma alternância apropriada para o modo na superfície de comando para um compromisso no fator de forma móvel. Um organizador de reunião pode criar uma reunião online. Um participante pode participar posteriormente da reunião online. Para saber mais sobre esse cenário, consulte o artigo Criar um Outlook para [um provedor de reunião](../../outlook/online-meeting.md) online.
+Esse ponto de extensão coloca uma alternância apropriada para o modo na superfície de comando para um compromisso no fator de forma móvel. Um organizador de reunião pode criar uma reunião online. Um participante pode participar posteriormente da reunião online. Para saber mais sobre esse cenário, consulte o artigo Criar um Outlook para um [provedor de reunião](../../outlook/online-meeting.md) online.
 
 > [!NOTE]
 > Esse ponto de extensão só é suportado no Android e no iOS com uma assinatura Microsoft 365 assinatura.
@@ -289,9 +289,9 @@ Esse ponto de extensão coloca uma alternância apropriada para o modo na superf
 
 `ExtensionPoint` elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
 
-O `Control` elemento contido neste ponto de extensão deve ter o atributo definido como `xsi:type` `MobileButton` .
+O `Control` elemento contido neste ponto de extensão deve ter o `xsi:type` atributo definido como `MobileButton`.
 
-As `Icon` imagens devem estar em escala de cinza usando código hexaxa `#919191` ou seu equivalente em outros [formatos de cor.](https://convertingcolors.com/hex-color-919191.html)
+As `Icon` imagens devem estar em escala de cinza usando código hexaxa `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 
 #### <a name="example"></a>Exemplo
 
@@ -383,7 +383,7 @@ O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor d
 
 #### <a name="label"></a>Label
 
-Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources.](resources.md)
+Obrigatório. O rótulo do grupo. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no [elemento Resources](resources.md) .
 
 #### <a name="highlight-requirements"></a>Requisitos de realce
 

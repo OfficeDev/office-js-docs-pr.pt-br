@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 12/13/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 3a239d6b5b33d2244c6a172c2c61baa894535ab7
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073378"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467747"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -27,7 +27,7 @@ Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** em seu man
 Este artigo descreve como editar seu manifesto para definir comandos de suplemento. O diagrama a seguir mostra a hierarquia de elementos usada para definir comandos de suplemento. Descrevemos esses elementos com mais detalhes neste artigo.
 
 > [!NOTE]
-> Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, [consulte Comandos de complemento para Outlook](../outlook/add-in-commands-for-outlook.md)
+> Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, consulte [Comandos de complemento para Outlook](../outlook/add-in-commands-for-outlook.md)
 
 A imagem a seguir representa uma visão geral dos elementos dos comandos de suplemento no manifesto.
 
@@ -35,11 +35,11 @@ A imagem a seguir representa uma visão geral dos elementos dos comandos de supl
 
 ## <a name="step-1-create-the-project"></a>Etapa 1: Criar o projeto
 
-Recomendamos que você crie um projeto seguindo uma das iniciações rápidas, como Criar um Excel [de painel de tarefas](../quickstarts/excel-quickstart-jquery.md). Cada início rápido para Excel, Word e PowerPoint gera um projeto que já contém um comando de complemento (botão) para mostrar o painel de tarefas. Verifique se você leu comandos de complemento para [Excel, Word e PowerPoint](../design/add-in-commands.md) antes de usar comandos de complemento.
+Recomendamos que você crie um projeto seguindo uma das iniciações rápidas, como Criar um Excel [de painel de tarefas](../quickstarts/excel-quickstart-jquery.md). Cada início rápido para Excel, Word e PowerPoint gera um projeto que já contém um comando de complemento (botão) para mostrar o painel de tarefas. Verifique se você leu comandos [de complemento para Excel, Word e PowerPoint](../design/add-in-commands.md) antes de usar comandos de complemento.
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Etapa 2: criar um suplemento de painel de tarefas
 
-Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Não é possível usar comandos de complemento com os complementos de conteúdo. Se você estiver atualizando um manifesto existente, adicione os **namespaces XML apropriados,** bem como adicione o elemento **VersionOverrides** ao manifesto conforme descrito na Etapa [3: Adicionar elemento VersionOverrides](#step-3-add-versionoverrides-element).
+Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Não é possível usar comandos de complemento com os complementos de conteúdo. Se estiver atualizando um manifesto existente, adicione os **namespaces XML apropriados** , bem como adicione o elemento **VersionOverrides** ao manifesto conforme descrito na Etapa [3: Adicionar elemento VersionOverrides](#step-3-add-versionoverrides-element).
 
 O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há comandos de suplemento nesse manifesto porque não há elemento **VersionOverrides**. O Office 2013 não dá suporte a comandos de suplemento, mas com a adição de **VersionOverrides** a esse manifesto, o suplemento será executado no Office 2013 e no Office 2016. No Office 2013, o suplemento não exibirá comandos de suplemento e usa o valor de **SourceLocation** para executar seu suplemento como um único suplemento de painel de tarefas. No Office 2016, se nenhum elemento **VersionOverrides** estiver incluído, **SourceLocation** será usado para executar o suplemento. Entretanto, se você incluir **VersionOverrides**, o suplemento exibirá apenas os comandos de suplemento e não exibirá o suplemento como um único suplemento de painel de tarefas.
   
@@ -86,7 +86,7 @@ A tabela a seguir identifica os elementos filho de **VersionOverrides**.
 |Elemento|Descrição|
 |:-----|:-----|
 |**Descrição** <br/> |Opcional. Descreve o suplemento. Esse elemento filho **Description** substitui um elemento **Description** anterior na parte pai do manifesto. O atributo **resid** para esse elemento **Description** é definido como a **id** de um elemento **String**. O elemento **String** contém o texto para **Description**. <br/> |
-|**Requisitos** <br/> |Opcional. Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Esse elemento filho **Requirements** substitui o elemento **Requirements** na parte pai do manifesto. Para obter mais informações, consulte [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
+|**Requisitos** <br/> |Opcional. Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Esse elemento filho **Requirements** substitui o elemento **Requirements** na parte pai do manifesto. Para obter mais informações, consulte [Especificar Office aplicativos e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
 |**Hosts** <br/> |Obrigatório. Especifica uma coleção de Office aplicativos. O elemento filho **Hosts** substitui o elemento **Hosts** na parte pai do manifesto. Você deve incluir um conjunto de atributos **xsi:type** como "Pasta de trabalho" ou "Documento". <br/> |
 |**Resources** <br/> |Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) referenciado por outros elementos de manifesto. Por exemplo, o valor do elemento **Description** refere-se a um elemento filho em **Resources**. O elemento **Resources** é descrito na [Etapa 7: adicionar o elemento Resources](#step-7-add-the-resources-element) mais adiante neste artigo. <br/> |
 
@@ -118,7 +118,7 @@ O exemplo a seguir mostra como usar o elemento **VersionOverrides** e seus eleme
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>Etapa 4: adicionar os elementos Hosts, Host e DesktopFormFactor
 
-O elemento **Hosts** contém um ou mais elementos **Host**. Um **elemento Host** especifica um aplicativo Office específico. O **elemento Host** contém elementos filho que especificam os comandos do add-in a ser exibidos após a instalação do seu Office aplicativo. Para mostrar os mesmos comandos de complemento em dois ou mais aplicativos Office diferentes, você deve duplicar os elementos filho em cada **Host**.
+O elemento **Hosts** contém um ou mais elementos **Host**. Um **elemento Host** especifica um aplicativo Office específico. O **elemento Host** contém elementos filho que especificam os comandos do add-in a ser exibidos após a instalação do seu Office. Para mostrar os mesmos comandos de complemento em dois ou mais aplicativos Office diferentes, você deve duplicar os elementos filho em cada **Host**.
 
 O elemento **DesktopFormFactor** especifica as configurações para um suplemento que é executado no Office Online (em um navegador) e no Windows.
 
@@ -146,7 +146,7 @@ Veja a seguir um exemplo dos elementos **Hosts**, **Host** e **DesktopFormFactor
 
 ## <a name="step-5-add-the-functionfile-element"></a>Etapa 5: adicionar o elemento FunctionFile
 
-O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](../reference/manifest/control.md#button-control) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
+O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](../reference/manifest/control-button.md) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
 
 Veja a seguir um exemplo do elemento **FunctionFile**.
   
@@ -164,7 +164,7 @@ Veja a seguir um exemplo do elemento **FunctionFile**.
 > [!IMPORTANT]
 > Verifique se seu código JavaScript chama `Office.initialize`.
 
-O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](../reference/manifest/control.md#button-control) para obter uma descrição) usa as funções em **FunctionFile**.
+O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](../reference/manifest/control-button.md) para obter uma descrição) usa as funções em **FunctionFile**.
 
 O código a seguir mostra como implementar a função usada por **FunctionName**.
 
@@ -203,7 +203,7 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etapa 6: adicionar elementos do ExtensionPoint
 
-O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir **elementos ExtensionPoint** com esses **valores xsi:type.**
+O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir **elementos ExtensionPoint** com esses **valores xsi:type** .
 
 - **PrimaryCommandSurface**, que se refere à faixa de opções no Office.
 
@@ -249,13 +249,13 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |Elemento|Descrição|
 |:-----|:-----|
 |**CustomTab** <br/> |Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. <br/> |
-|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia padrão Aplicativo do Office faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de tabulação a ser usado com o atributo **id,** consulte Valores de [tabulação para guias](../reference/manifest/officetab.md)padrão Aplicativo do Office faixa de opções .  <br/> |
+|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia padrão Aplicativo do Office faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de tabulação a ser usado com o atributo **id**, consulte Valores de tabulação para [guias padrão Aplicativo do Office faixa de opções](../reference/manifest/officetab.md).  <br/> |
 |**OfficeMenu** <br/> | Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> **ContextMenuText** para Excel ou Word. Exibe o item no menu de contexto quando o texto é selecionado e o usuário clica com o botão direito do mouse no texto selecionado. <br/> **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha. <br/> |
 |**Group** <br/> |Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. <br/> |
 |**Label** <br/> |Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> |Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno ou quando muitos botões são exibidos. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho da imagem em pixels. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels. <br/> |
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
-|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](../reference/manifest/control.md#button-control) e [Controles de menu](../reference/manifest/control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
+|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Consulte [Controles de botão](../reference/manifest/control-button.md) [e controles de menu](../reference/manifest/control-menu.md) para obter mais informações. <br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
 
 ### <a name="button-controls"></a>Controles de botão
 
@@ -380,7 +380,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**SuperTip** <br/> | Obrigatório. A superdica para o menu, que é definida pelos seguintes itens: <br/> **Título** <br/>  Obrigatório. O texto da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> **Descrição** <br/>  Obrigatório. A descrição da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> | Obrigatório. Contém os elementos **Image** para o menu. Arquivos de imagem devem estar no formato .png. <br/> **Image** <br/>  Uma imagem para o menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem, em pixels, são obrigatórios: 16, 32 e 80 pixels. Cinco tamanhos opcionais, em pixels, também têm suporte: 20, 24, 40, 48 e 64 pixels. <br/> |
-|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](../reference/manifest/control.md#button-control).  <br/> |
+|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](../reference/manifest/control-button.md).  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>Etapa 7: adicionar o elemento Resources
 

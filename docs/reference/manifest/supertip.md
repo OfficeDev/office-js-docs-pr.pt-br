@@ -1,13 +1,18 @@
 ---
 title: Elemento Supertip no arquivo de manifesto
 description: O elemento Supertip define uma dica de ferramenta rica (título e descrição).
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: aab7ab3f17e772940403e75796346020b2b9aebe
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467854"
 ---
-
 # <a name="supertip"></a>Supertip
 
-Define uma dica de ferramenta avançada (título e descrição). É usada pelos controles de [Botão](control.md#button-control) ou [Menu](control.md#menu-dropdown-button-controls).
+Define uma dica de ferramenta avançada (título e descrição). Ele é usado pelos controles [Button e](control-button.md) [Menu](control-menu.md).
 
 **Tipo de complemento:** Painel de tarefas, Email
 

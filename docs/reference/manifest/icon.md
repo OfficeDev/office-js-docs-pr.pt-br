@@ -1,18 +1,18 @@
 ---
 title: Elemento Icon no arquivo de manifesto
 description: Define elementos de Imagem para controles de Botão ou de Menu.
-ms.date: 10/30/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681723"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467726"
 ---
 # <a name="icon-element"></a>Elemento Icon
 
-Define elementos de **Imagem** para controles de [Botão](control.md#button-control) ou de [Menu](control.md#menu-dropdown-button-controls).
+Define elementos **image** para [controles button e](control-button.md) [controles de menu](control-menu.md).
 
 ## <a name="attributes"></a>Atributos
 
@@ -28,7 +28,7 @@ Define elementos de **Imagem** para controles de [Botão](control.md#button-cont
 
 ### <a name="image"></a>Image
 
-Uma imagem para o botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **Image** no elemento **Images** no [elemento Resources.](resources.md) O atributo **tamanho** indica o tamanho em pixels da imagem. Três tamanhos de imagem são necessários (16, 32 e 80 pixels), enquanto cinco outros tamanhos são suportados (20, 24, 40, 48 e 64 pixels).
+Uma imagem para o botão. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um elemento **Image** no elemento **Images** no [elemento Resources](resources.md) . O atributo **tamanho** indica o tamanho em pixels da imagem. Três tamanhos de imagem são necessários (16, 32 e 80 pixels), enquanto cinco outros tamanhos são suportados (20, 24, 40, 48 e 64 pixels).
 
 ```xml
 <Icon>
@@ -43,7 +43,7 @@ Uma imagem para o botão. O **atributo resid** não pode ter mais de 32 caracter
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Requisitos adicionais para fatores forma móveis
 
-Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer no mínimo tamanhos de pixel 25, 32 e 48. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`. Esse atributo especifica a `UIScreen.scale` propriedade para dispositivos iOS. Para obter mais informações, consulte [scale](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale).
+Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer no mínimo tamanhos de pixel 25, 32 e 48. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`. Esse atributo especifica a propriedade `UIScreen.scale` para dispositivos iOS. Para obter mais informações, consulte [scale](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale).
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

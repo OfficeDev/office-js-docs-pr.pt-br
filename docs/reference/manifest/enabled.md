@@ -1,32 +1,32 @@
 ---
 title: Elemento habilitado no arquivo de manifesto
 description: Saiba como especificar que um Comando de Complemento está desabilitado quando o complemento é lançado.
-ms.date: 11/16/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c0107daaf73aee6ba116553a8d01250e9c7d981
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: a3d83a6d117c498cc4d54dfbe73ae6d800995cb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081432"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467847"
 ---
 # <a name="enabled-element"></a>Elemento Enabled
 
-Especifica se um controle [Button](control.md#button-control) ou [Menu](control.md#menu-dropdown-button-controls) está habilitado quando o complemento é lançado. O **elemento Enabled** é um elemento filho de [Control](control.md). Se for omitido, o padrão será `true` .
+Especifica se um controle [Button](control-button.md) ou [Menu está](control-menu.md) habilitado quando o complemento é lançado. O **elemento Enabled** é um elemento filho de [Control](control.md). Se for omitido, o padrão será `true`.
 
 **Tipo de suplemento:** Painel de tarefas
 
-**Válido somente nestes esquemas VersionOverrides:**
+**Válido somente nesses esquemas VersionOverrides**:
 
 - Painel de tarefas 1.0
 
 Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
-**Associado a esses conjuntos de requisitos:**
+**Associado a esses conjuntos de requisitos**:
 
 - [RibbonApi 1.0](../requirement-sets/ribbon-api-requirement-sets.md)
 
-Esse elemento só é válido no Excel, ou seja, quando o atributo do `Name` [elemento Host](host.md) é "Workbook".
+Esse elemento só é válido em Excel, ou seja, `Name` quando o atributo do [elemento Host](host.md) é "Workbook".
 
 O controle pai também pode ser habilitado e desabilitado programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
 
