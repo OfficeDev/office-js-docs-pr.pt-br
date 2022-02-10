@@ -283,6 +283,8 @@ items:
               - name: Depurar usando Visual Studio Code e Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
+              - name: Depurar usando Visual Studio Code e Edge Legacy WebView
+                href: testing/debug-with-vs-extension.md
               - name: Testar com o Internet Explorer 11
                 href: testing/ie-11-testing.md
           - name: Navegador da Web
@@ -302,8 +304,6 @@ items:
             displayName: 'uninstall, sideload'
           - name: Depurar com o log de tempo de execução
             href: testing/runtime-logging.md
-          - name: Extensão depurador para o Visual Studio Code
-            href: testing/debug-with-vs-extension.md
           - name: Desempenho
             items:
               - name: Evite usar o método context.sync em loops
@@ -485,6 +485,12 @@ items:
                     href: reference/manifest/allformfactors.md
                   - name: Controle
                     href: reference/manifest/control.md
+                  - name: Botão (Controle)
+                    href: reference/manifest/control-button.md
+                  - name: Menu (Controle)
+                    href: reference/manifest/control-menu.md
+                  - name: Controle (MobileButton)
+                    href: reference/manifest/control-mobilebutton.md
                   - name: CustomTab
                     href: reference/manifest/customtab.md
                   - name: DesktopFormFactor
@@ -513,6 +519,10 @@ items:
                     href: reference/manifest/hosts.md
                   - name: Ícone
                     href: reference/manifest/icon.md
+                  - name: Item
+                    href: reference/manifest/item.md
+                  - name: Itens
+                    href: reference/manifest/items.md
                   - name: LaunchEvent
                     href: reference/manifest/launchevent.md
                   - name: LaunchEvents
