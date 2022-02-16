@@ -3,12 +3,12 @@ title: Execute o código em seu Suplemento do Office quando o documento for aber
 description: Saiba como executar código em seu Office de complemento quando o documento for aberto.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990548"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855545"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Execute o código em seu Suplemento do Office quando o documento for aberto
 
@@ -31,7 +31,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ## <a name="place-startup-code-in-officeinitialize"></a>Colocar código de inicialização em Office.initialize
 
-Quando o seu add-in estiver configurado para carregar no documento aberto, ele será executado imediatamente. O `Office.initialize` manipulador de eventos será chamado. Coloque seu código de inicialização no `Office.initialize` manipulador `Office.onReady` de eventos ou.
+Quando o seu add-in estiver configurado para carregar no documento aberto, ele será executado imediatamente. O `Office.initialize` manipulador de eventos será chamado. Coloque seu código de inicialização no manipulador `Office.initialize` de eventos `Office.onReady` ou.
 
 O código Excel de complemento a seguir mostra como registrar um manipulador de eventos para eventos de alteração da planilha ativa. Se você configurar seu complemento para carregar no documento aberto, esse código registrará o manipulador de eventos quando o documento for aberto. Você pode manipular eventos de alteração antes que o painel de tarefas seja aberto.
 
@@ -55,12 +55,11 @@ Office.initialize = () => {
  * @param event The event information from Excel
  */
 async function onChange(event) {
-  return Excel.run(function(context) {
-    return context.sync().then(function() {
-      console.log("Change type of event: " + event.changeType);
-      console.log("Address of event: " + event.address);
-      console.log("Source of event: " + event.source);
-    });
+    await Excel.run(async (context) => {    
+        await context.sync();
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);
   });
 }
 ```
@@ -103,7 +102,7 @@ Para determinar qual é o comportamento atual de inicialização, execute a segu
 let behavior = await Office.addin.getStartupBehavior();
 ```
 
-## <a name="see-also"></a>Ver também
+## <a name="see-also"></a>Confira também
 
 - [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Compartilhar dados e eventos entre Excel funções personalizadas e tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

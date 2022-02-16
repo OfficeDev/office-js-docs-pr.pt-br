@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu Office de Office na Web ao fazer sideload.
-ms.date: 01/13/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f09dad4c959082be985ef2076def3bee4d105402
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 5f8c2a9cc30093f6b307239367b9d81d31b2caf8
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222028"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855615"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -23,11 +23,11 @@ O sideload varia entre aplicativos host (por exemplo, Excel).
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Realizar sideload de um suplemento do Office no Office na Web
 
-Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e **Word.** Para outros aplicativos host, consulte as instruções de sideload manual na seção a seguir. Este projeto de exemplo pressupo que você está usando um projeto criado com o gerador [Yeoman para Office Desempois](https://github.com/OfficeDev/generator-office).
+Esse processo tem suporte apenas para **Excel**, **OneNote**, **PowerPoint** e **Word**. Para outros aplicativos host, consulte as instruções de sideload manual na seção a seguir. Este projeto de exemplo pressupo que você está usando um projeto criado com o gerador [Yeoman para Office Desempois](https://github.com/OfficeDev/generator-office).
 
-1. Abra [Office na Web](https://office.live.com/). Usando a **opção Criar,** crie um documento em **Excel,** **OneNote,** **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
+1. Abra [Office na Web](https://office.live.com/). Usando a **opção Criar**, crie um documento em **Excel**, **OneNote**, **PowerPoint** ou **Word**. Neste novo documento, selecione **Compartilhar** na faixa de opções, selecione **Copiar Link** e copie a URL.
 
-1. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivo package.json.** Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
+1. No diretório raiz dos arquivos do projeto yo do office, abra o **arquivo package.json** . Na seção **config** deste arquivo, crie uma `"document"` propriedade. Colar a URL copiada como o valor da `"document"` propriedade. Por exemplo, o seu terá uma aparência assim:
 
     ```json
       "config": {
@@ -39,9 +39,9 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
     > [!TIP]
     > Se você estiver criando um complemento que não está usando nosso gerador Yeoman, poderá adicionar parâmetros de consulta à URL do documento, acrescentando o seguinte à URL existente.
     >
-    > - A porta do servidor de dev, como `&wdaddindevserverport=3000` .
-    > - O nome do arquivo de manifesto, como `&wdaddinmanifestfile=manifest1.xml` .
-    > - O GUID do manifesto, como `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` .
+    > - A porta do servidor de dev, como `&wdaddindevserverport=3000`.
+    > - O nome do arquivo de manifesto, como `&wdaddinmanifestfile=manifest1.xml`.
+    > - O GUID do manifesto, como `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
     >
     > Se você estiver usando o gerador Yeoman, adicionar essas informações não será necessário, pois a ferramenta Yeoman acrescenta essas informações automaticamente.
     > Observe que, em ambos os casos, no entanto, você só pode carregar manifestos de localhost.
@@ -50,7 +50,7 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção Para **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
+1. Na primeira vez que você usar esse método para fazer sideload de um complemento na Web, você verá uma caixa de diálogo solicitando que você habilita o modo de desenvolvedor. Selecione a caixa de seleção **Habilitar o Modo de Desenvolvedor agora** e selecione **OK**.
 
 1. Você verá uma segunda caixa de diálogo, perguntando se deseja registrar um manifesto de Office de complemento do seu computador. Você deve selecionar **Sim**.
 
@@ -60,9 +60,9 @@ Esse processo é suportado apenas para **Excel,** **OneNote,** **PowerPoint** e 
 
 Esse método não usa a linha de comando e pode ser realizado usando comandos somente no aplicativo host (como Excel).
 
-1. Abra [Office na Web](https://office.live.com/). Abra um documento em **Excel,** **Word** ou **PowerPoint**. Na guia **Inserir** na faixa de opções na seção **Add-ins,** escolha **Office Adicionar.**
+1. Abra [Office na Web](https://office.com/). Abra um documento no **Excel**, **OneNote**, **PowerPoint** ou **Word**. Na guia **Inserir** na faixa de opções na seção **Add-ins**, escolha **Office Adicionar**.
 
-1. Na caixa **de diálogo Office de** Office, selecione a guia MEUS **ADD-INS,** escolha Gerenciar Meus **Complementos** e, em seguida, **Upload Meu Complemento**.
+1. Na caixa **de Office** de Office, selecione a guia **MEUS ADD-INS**, escolha **Gerenciar Meus Complementos** e, em seguida, **Upload Meu Complemento**.
 
     ![A caixa Office de Office com um drop-down na leitura superior direita "Gerenciar meus complementos" e um drop-down abaixo dele com a opção "Upload Meu Complemento".](../images/office-add-ins-my-account.png)
 
@@ -73,7 +73,7 @@ Esse método não usa a linha de comando e pode ser realizado usando comandos so
 1. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
-> Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> Para testar seu Office de Microsoft Edge com o WebView (EdgeHTML) original, uma etapa de configuração adicional é necessária. Em um Windows de comando, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. Isso não é necessário quando o Office está usando o Chromium WebView2 baseado em Borda. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
@@ -81,7 +81,7 @@ Esse método não usa a linha de comando e pode ser realizado usando comandos so
 
 1. Entre na sua conta Microsoft 365 de usuário.
 
-1. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
+1. Abra o Iniciador de Aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **PowerPoint** ou **Word** e crie um novo documento.
 
 1. As etapas 3 a 6 são as mesmas da seção anterior **Realize sideload para um suplemento do Office no Office na Web**. 
 

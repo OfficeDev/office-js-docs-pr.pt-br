@@ -1,18 +1,30 @@
 ---
 title: Elemento Namespace no arquivo de manifesto
 description: O elemento Namespace define o namespace que uma função personalizada usa em Excel.
-ms.date: 10/09/2018
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5afed3d55bde7e9735df534215f96ae1ba7bd3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f9fddaca6ec8ce6128ae638c9b798efb06319ba0
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152152"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855622"
 ---
 # <a name="namespace-element"></a>Elemento Namespace
 
 Define o namespace usado por uma função personalizada no Excel.
+
+**Tipo de complemento:** Função Personalizada
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Taskpane 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>Atributos
 

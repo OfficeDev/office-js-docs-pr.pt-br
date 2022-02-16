@@ -1,19 +1,24 @@
 ---
 title: Usando o modelo de API específica do aplicativo
-description: 'Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.'
-ms.date: 07/08/2021
+description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ffce8433be95de0bf75ec1cfba813f7d6cbf57f
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855580"
 ---
-
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
-Este artigo descreve como usar o modelo de API para construir suplementos do Excel, do Word e do OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
+Este artigo descreve como usar o modelo de API para a criação de Excel, Word, PowerPoint e OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
 
 > [!NOTE]
 > Esse modelo não tem suporte nos clientes do Office 2013. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](../overview/office-add-in-availability.md).
 
 > [!TIP]
-> Os exemplos nesta página usam as APIs JavaScript do Excel, mas os conceitos também se aplicam às APIs Javascript do OneNote, do Visio e do Word.
+> Os exemplos nesta página usam as APIs javaScript Excel, mas os conceitos também se aplicam OneNote, PowerPoint, Visio e APIs JavaScript do Word.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Caráter assíncrono das APIs baseadas em promessas
 
@@ -90,18 +95,11 @@ Chamar o método `sync()` no contexto de solicitação sincroniza o estado entre
 O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaScript local (`selectedRange`), carrega uma propriedade desse objeto e, em seguida, usa o padrão de promessas do JavaScript para chamar `context.sync()`, a fim de sincronizar o estado entre objetos proxy e objetos no documento do Excel.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
+    console.log('The selected range is: ' + selectedRange.address);
 });
 ```
 
@@ -118,25 +116,18 @@ Na API do JavaScript do Excel, `sync()` é a única operação assíncrona e pod
 Antes de poder ler as propriedades de um objeto proxy, será necessário carregar explicitamente as propriedades para preencher o objeto proxy com dados do documento do Office e, em seguida, chamar `context.sync()`. Por exemplo, se você criar um objeto proxy para referenciar um intervalo selecionado e, em seguida, quiser ler a propriedade `address` do intervalo selecionado, carregue a propriedade `address` antes de poder lê-la. Para solicitar que as propriedades de um objeto proxy sejam carregadas, chame o método `load()` no objeto e especifique as propriedades a serem carregadas. O exemplo a seguir mostra a propriedade `Range.address` sendo carregada para `myRange`.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var sheetName = 'Sheet1';
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
+    await context.sync();
+      
+    console.log (myRange.address);   // ok
+    //console.log (myRange.values);  // not ok as it was not loaded
 
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);   // ok
-        //console.log (myRange.values);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    console.log('done');
 });
 ```
 
@@ -179,11 +170,10 @@ var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
-return context.sync()
-    .then(function () {
-        // Trying to log the value before calling sync would throw an error.
-        console.log (tableCount.value);
-    });
+await context.sync();
+
+// Trying to log the value before calling sync would throw an error.
+console.log (tableCount.value);
 ```
 
 ### <a name="set"></a>set()
@@ -193,8 +183,8 @@ A definição de propriedades em um objeto com propriedades de navegação aninh
 O exemplo de código a seguir define várias propriedades do formato de um intervalo chamando o método `set()` e passando um objeto JavaScript com nomes e tipos de propriedade que espelham a estrutura das propriedades no objeto `Range`. Este exemplo supõe que há dados no intervalo **B2:E2**.
 
 ```js
-Excel.run(function (ctx) {
-    var sheet = ctx.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -209,12 +199,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync();
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
 });
 ```
 
@@ -250,20 +235,21 @@ Por exemplo, você pode chamar o método `getItemOrNullObject()` em uma coleçã
 > [!NOTE]
 > As variações `*OrNullObject` nunca retornam o valor de JavaScript `null`. Elas retornam objetos proxy comuns do Office. Se a entidade que o objeto representa não existir, então a propriedade `isNullObject` do objeto será definida como `true`. Não teste o objeto retornado para nulidade ou falsidade. Ele nunca é `null`, `false`ou `undefined`.
 
-O exemplo de código a seguir tenta recuperar uma planilha do Excel chamada "Dados", usando o método `getItemOrNullObject()`. Se uma planilha com esse nome não existir, uma nova planilha será criada. Observe que o código não carrega a propriedade `isNullObject`. O Office carrega automaticamente essa propriedade quando `context.sync` for chamada, então não é necessário carregá-la explicitamente com algo como `datasheet.load('isNullObject')`.
+O exemplo de código a seguir tenta recuperar uma planilha do Excel chamada "Dados", usando o método `getItemOrNullObject()`. Se uma planilha com esse nome não existir, uma nova planilha será criada. Observe que o código não carrega a propriedade `isNullObject`. O Office carrega automaticamente essa propriedade quando `context.sync` for chamada, então não é necessário carregá-la explicitamente com algo como `dataSheet.load('isNullObject')`.
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
-
-return context.sync()
-    .then(function () {
-        if (dataSheet.isNullObject) {
-            dataSheet = context.workbook.worksheets.add("Data");
-        }
-
-        // Set `dataSheet` to be the second worksheet in the workbook.
-        dataSheet.position = 1;
-    });
+await Excel.run(async (context) => {
+    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    
+    await context.sync();
+    
+    if (dataSheet.isNullObject) {
+        dataSheet = context.workbook.worksheets.add("Data");
+    }
+    
+    // Set `dataSheet` to be the second worksheet in the workbook.
+    dataSheet.position = 1;
+});
 ```
 
 ## <a name="see-also"></a>Confira também

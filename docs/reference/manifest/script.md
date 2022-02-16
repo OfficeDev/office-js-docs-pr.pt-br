@@ -1,20 +1,30 @@
 ---
 title: Elemento Script no arquivo de manifesto
 description: O elemento Script define as configurações de script que uma função personalizada usa no Excel.
-ms.date: 09/24/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 259976f752cf3fca72c5012bedd92b9bf021f6aa
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 0f32314912dd66d8578750bf4818af8483c8ef36
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990667"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855538"
 ---
 # <a name="script-element"></a>Elemento Script
 
 Define as configurações de script usadas por uma função personalizada no Excel.
 
-**Tipo de complemento:** Função personalizada
+**Tipo de complemento:** Função Personalizada
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Taskpane 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>Atributos
 

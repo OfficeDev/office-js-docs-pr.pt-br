@@ -1,18 +1,30 @@
 ---
 title: Elemento Metadata no arquivo de manifesto
 description: O elemento Metadados define as configurações de metadados que uma função personalizada usa no Excel.
-ms.date: 10/09/2018
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f58b00bb13bde1e2b1742462716119b8b6d369d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 52938155442bb5424a170634d1324de77de2b788
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151752"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855531"
 ---
 # <a name="metadata-element"></a>Elemento Metadata
 
 Define as configurações de metadados usados por uma função personalizada no Excel.
+
+**Tipo de complemento:** Função Personalizada
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Taskpane 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>Atributos
 
