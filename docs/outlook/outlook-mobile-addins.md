@@ -1,10 +1,15 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892521"
 ---
-
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
@@ -64,7 +69,7 @@ Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tam
 A solução de problemas em dispositivos móveis pode ser difícil, pois você pode não ter as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este [tutorial sobre como usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Os complementos não funcionam em um Outlook em um navegador da Web no Android. Para obter informações sobre dispositivos com suporte, consulte [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Os Outlook na Web modernos em iPhone e smartphones Android não são mais necessários ou disponíveis para testar Outlook de complementos. Para obter informações sobre dispositivos com suporte, consulte [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## <a name="next-steps"></a>Próximas etapas
 

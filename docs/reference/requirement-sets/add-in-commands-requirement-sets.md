@@ -1,11 +1,16 @@
 ---
 title: Conjuntos de requisitos dos comandos de suplemento
 description: Visão geral Office conjuntos de requisitos de comandos de complemento.
-ms.date: 01/20/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e35a36c10f9ca275d5dd969a3592df42a5e1000a
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892542"
 ---
-
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
@@ -17,7 +22,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 
 A versão inicial dos comandos de complemento não tem um conjunto de requisitos correspondente (ou seja, não há um conjunto de requisitos AddinCommands 1.0). A tabela a seguir lista os aplicativos Office cliente que suportam a versão de versão inicial e as versões de com build ou número desses aplicativos.  
 
-| Lançar   |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office 2021 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365)   |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
+| Lançar   |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office 2021 no Windows<br>(compra avulsa) | Office no Windows<br>(assinatura)   |  Office no iPad<br>(assinatura)  |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)   | Office na Web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Comandos de suplemento (versão inicial, nenhum conjunto de requisitos) | N/D | N/D | Versão 1809 (Build 10827.20150) ou posterior| 16.0.14326.20454 ou posterior |Versão 1603 (Build 6769.0000) ou posterior | N/D | 15.33 ou posterior| Janeiro de 2016 |
 
@@ -27,7 +32,7 @@ O conjunto de requisitos de comandos do add-in **1.3** introduz a marcação de 
 
 A tabela a seguir lista os conjuntos de requisitos de comandos de Office, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou versão do aplicativo Office.
 
-|  Conjunto de requisitos  |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) |  Office 2021 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365)   |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |  
+|  Conjunto de requisitos  |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) |  Office 2021 no Windows<br>(compra avulsa) | Office no Windows<br>(assinatura)   |  Office no iPad<br>(assinatura)  |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)   | Office na Web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.3  | N/D | N/D | N/D | N/D | Sem suporte | N/D | Sem suporte | Novembro de 2020 |
 | AddInCommands 1.1  | N/D | N/D  | Versão 1809 (Build 10827.20150) ou posterior&dagger; | 16.0.14326.20454 ou posterior&dagger; | Versão 1705 (Build 8121.1000) ou posterior&dagger; | N/D | 15.34 ou posterior&dagger;\*| Maio de 2017 |

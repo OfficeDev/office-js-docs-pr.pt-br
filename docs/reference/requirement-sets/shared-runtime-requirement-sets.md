@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
-ms.date: 11/03/2021
+ms.date: 02/05/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f7d3c9394de047b358d7f190c5adae5b5199b1
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793600"
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892528"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 
@@ -19,9 +19,9 @@ Partes de um Office que executem código JavaScript, como painéis de tarefas, a
 
 A tabela a seguir lista o conjunto de requisitos SharedRuntime 1.1, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-| Conjunto de requisitos | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) | Office no iPad<br>(conectado a uma assinatura do Microsoft 365) | Office no Mac<br>(conectado a uma assinatura do Microsoft 365) | Office na Web | Servidor do Office Online |
+| Conjunto de requisitos | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) | Office no iPad<br>(conectado a uma assinatura do Microsoft 365) | Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)  | Office na Web | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Build 16.0.14326.20454 ou posterior | Versão 2002 (build 12527.20092) ou posterior | Não disponível | 16.35 ou posterior | Fevereiro de 2020 | Não disponível |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou posterior | Versão 2002 (build 12527.20092) ou posterior | N/D | 16.35 ou posterior | Fevereiro de 2020 | N/D |
 
 > [!IMPORTANT]
 > No momento, o tempo de execução de JavaScript compartilhado não é compatível com iPad ou em versões de compra avulsa do Office 2019 ou anterior. Para obter detalhes adicionais de suporte, consulte as seções a seguir.
