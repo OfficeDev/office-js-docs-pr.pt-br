@@ -1,11 +1,16 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.prod: outlook
 ms.localizationpriority: high
+ms.openlocfilehash: 4398afa60c2a3a15571db2a706cb01811c9f41f7
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892507"
 ---
-
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
 Os Suplementos do Outlook declaram quais versões de API exigem usando o elemento Requisitos em seu manifesto. Os suplementos do Outlook sempre incluem um elemento Conjunto com um atributo  definido como  e um atributo  definido como o conjunto de requisitos mínimo de API compatível com os cenários do suplemento.
@@ -116,18 +121,9 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 >
 > <sup>5</sup> No momento, existem considerações adicionais ao se projetar e implementar suplementos para clientes móveis. Por exemplo, o único modo suportado é o Message Read. Para obter mais detalhes, consulte [considerações de código ao adicionar suporte aos comandos de suplemento do Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
 >
-> <sup>6</sup> Os suplementos não funcionam no Outlook moderno em um navegador da Web no Android. Para obter informações sobre dispositivos suportados, confira [Requisitos para executar Suplementos do Office](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> <sup>6</sup> Os complementos não funcionam em sistemas Outlook na Web modernos em smartphones iPhone e Android. Para obter informações sobre os dispositivos suportados, confira [Requisitos para executar Suplementos do Office](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
-> [!TIP]
-> É possível distinguir o Outlook clássico do moderno no navegador da Web, verificando sua barra de ferramentas da caixa de correio.
->
-> **moderno**
->
-> ![Captura de tela parcial da barra de ferramentas moderna do Outlook.](../../images/outlook-on-the-web-new-toolbar.png)
->
-> **clássico**
->
-> ![Captura de tela parcial da barra de ferramentas clássica do Outlook.](../../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="using-preview-apis"></a>Usando APIs de visualização
 
