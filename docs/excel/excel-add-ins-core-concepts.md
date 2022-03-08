@@ -1,15 +1,15 @@
 ---
 title: Modelo de objeto JavaScript do Excel em suplementos do Office
 description: Aprenda os principais tipos de objetos nas APIs JavaScript do Excel e como usá-los para criar suplementos para o Excel.
-ms.date: 04/05/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d2972a3cc30b899340cc47c24c6792eb3e5d202c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148591"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340817"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modelo de objeto JavaScript do Excel em suplementos do Office
 
@@ -49,51 +49,51 @@ Para entender as APIs do Excel, você deve entender como os componentes de uma p
 
 ### <a name="ranges"></a>Intervalos
 
-Um intervalo é um grupo de células contíguas na pasta de trabalho. Os suplementos costumam usar uma notação estilo A1 (por ex.: **B3** para a única célula na coluna **B** e linha **3** ou **C2:F4** para as células das colunas **C** a **F** e linhas **2** a **4**) para definir intervalos.
+Um intervalo é um grupo de células contíguas na pasta de trabalho. Os suplementos normalmente usam notação no estilo A1 (por exemplo, **B3** para a única célula na coluna **B** e linha **3** ou **C2:F4** para as células das colunas **C** pelas linhas **F** e **2** através do **4**) para definir os intervalos.
 
-Os intervalos têm três propriedades principais: `values`, `formulas` e `format`. Essas propriedades recebem ou definem os valores da célula, as fórmulas a serem avaliadas e a formatação visual das células.
+Os intervalos têm três propriedades principais: `values`, `formulas`e `format`. Essas propriedades obtêm ou definem os valores de célula, as fórmulas a serem avaliadas e a formatação visual das células.
 
 #### <a name="range-sample"></a>Exemplo de intervalo
 
 O exemplo a seguir mostra como criar registros de vendas. Essa função usa objetos `Range` para definir os valores, fórmulas e formatos.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Create the headers and format them to stand out.
-    var headers = [
+    let headers = [
       ["Product", "Quantity", "Unit Price", "Totals"]
     ];
-    var headerRange = sheet.getRange("B2:E2");
+    let headerRange = sheet.getRange("B2:E2");
     headerRange.values = headers;
     headerRange.format.fill.color = "#4472C4";
     headerRange.format.font.color = "white";
 
     // Create the product data rows.
-    var productData = [
+    let productData = [
       ["Almonds", 6, 7.5],
       ["Coffee", 20, 34.5],
       ["Chocolate", 10, 9.56],
     ];
-    var dataRange = sheet.getRange("B3:D5");
+    let dataRange = sheet.getRange("B3:D5");
     dataRange.values = productData;
 
     // Create the formulas to total the amounts sold.
-    var totalFormulas = [
+    let totalFormulas = [
       ["=C3 * D3"],
       ["=C4 * D4"],
       ["=C5 * D5"],
       ["=SUM(E3:E5)"]
     ];
-    var totalRange = sheet.getRange("E3:E6");
+    let totalRange = sheet.getRange("E3:E6");
     totalRange.formulas = totalFormulas;
     totalRange.format.font.bold = true;
 
     // Display the totals as US dollar amounts.
     totalRange.numberFormat = [["$0.00"]];
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -114,10 +114,10 @@ Crie tabelas usando intervalos preenchidos com dados. A formatação e os contro
 O exemplo a seguir cria uma tabela usando os intervalos do exemplo anterior.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.tables.add("B2:E5", true);
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -134,11 +134,11 @@ Crie gráficos para visualizar os dados em um intervalo. As APIs suportam inúme
 O exemplo a seguir cria um gráfico de colunas simples para três itens e o coloca 100 pixels abaixo da parte superior da planilha.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
     chart.top = 100;
-    return context.sync();
+    await context.sync();
 });
 ```
 

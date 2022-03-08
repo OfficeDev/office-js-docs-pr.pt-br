@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 description: Saiba como depurar suplementos do Office que usam Microsoft Edge WebView2 (baseados em Chromium) no VS Code.
-ms.date: 02/01/2022
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 90e7bef4d3902f0282a739569a87b8ca57095f50
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467698"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340152"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
@@ -68,8 +68,7 @@ Estas instruções pressupõem que você tenha experiência usando a linha de co
 
    Clique em **OK**.
 
-   > [!NOTE]
-   > Se você selecionar **Cancelar**, a caixa de diálogo não será mostrada novamente enquanto esta instância do suplemento estiver em execução. No entanto, se você reiniciar o suplemento, você verá a caixa de diálogo novamente.
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. Agora você pode definir pontos de interrupção no código e depuração do projeto. Para definir pontos de interrupção Visual Studio Code, passe o mouse ao lado de uma linha de código e selecione o círculo vermelho que aparece.
 
@@ -132,7 +131,7 @@ Se seu projeto não tiver sido criado com o Yo Office, você precisará criar um
 1. Feche a janela Nó onde o servidor local está sendo executado, se ele não fechar automaticamente.
 1. Feche o aplicativo do Office se ele não fechar automaticamente.
 1. Abra o `\.vscode\launch.json` arquivo no projeto. 
-1. Na matriz `configurations`, há vários objetos de configuração. Localize aquele cujo nome tem o padrão `$HOST$ Desktop (Edge Chromium)`, onde $HOST$ é um aplicativo do Office que seu suplemento executa; por exemplo, `Outlook Desktop (Edge Chromium)` ou `Word Desktop (Edge Chromium)`. 
+1. Na matriz `configurations`, há vários objetos de configuração.Localize aquele cujo nome tem o padrão `$HOST$ Desktop (Edge Chromium)`, onde $HOST$ é um aplicativo do Office que seu suplemento executa; por exemplo, `Outlook Desktop (Edge Chromium)` ou `Word Desktop (Edge Chromium)`. 
 1. Altere o valor da propriedade `"type"` de `"edge"` para `"pwa-msedge"`.
 1. Altere o valor da propriedade `"useWebView"` da cadeia de caracteres `"advanced"` para o booleano `true` (observe que não há aspas ao redor do `true`).
 1. Salve o arquivo.
