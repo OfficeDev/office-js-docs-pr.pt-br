@@ -1,14 +1,19 @@
 ---
 title: Intervalos de grupo usando a EXCEL JavaScript
 description: Saiba como agrupar linhas ou colunas de um intervalo para criar um contorno usando Excel API JavaScript.
-ms.date: 04/05/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 7a982fc9965772cfeb27934cf60cc4c83967ce51
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340796"
 ---
-
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Intervalos de grupo para um contorno usando a EXCEL JavaScript
 
-Este artigo fornece um exemplo de código que mostra como agrupar intervalos para um contorno usando a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos `Range` compatíveis com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo fornece um exemplo de código que mostra como agrupar intervalos para um contorno usando o Excel API JavaScript. Para ver a lista completa de propriedades e métodos compatíveis `Range` com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>Linhas de grupo ou colunas de um intervalo para um contorno
 
@@ -19,8 +24,8 @@ Um contorno pode ter uma hierarquia, onde grupos menores são aninhados em grupo
 O exemplo de código a seguir cria um contorno com dois níveis de grupos para as linhas e colunas. A imagem subsequente mostra os agrupamentos desse contorno. No exemplo de código, os intervalos que estão sendo agrupados não incluem a linha ou coluna do controle de contorno (os "Totais" deste exemplo). Um grupo define o que será recolhido, não a linha ou coluna com o controle.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Group the larger, main level. Note that the outline controls
     // will be on row 10, meaning 4-9 will collapse and expand.
@@ -40,8 +45,8 @@ Excel.run(function (context) {
     sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
     sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
     sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ![Intervalo com um contorno de dois níveis e duas dimensões.](../images/excel-outline.png)

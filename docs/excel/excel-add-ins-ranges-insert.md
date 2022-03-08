@@ -1,19 +1,19 @@
 ---
 title: Inserir intervalos usando a EXCEL JavaScript
 description: Saiba como inserir um intervalo de células com a EXCEL JavaScript.
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e14aeb030e01dbf170d3acc1edd4952b4989a557
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0e1ed6d2302bcdb4a11688cd6d77448811f8a93b
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148690"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340544"
 ---
 # <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>Inserir um intervalo de células usando a EXCEL JavaScript
 
-Este artigo fornece um exemplo de código que insere um intervalo de células com a EXCEL JavaScript. Para ver a lista completa de propriedades e métodos compatíveis com o `Range` objeto, consulte o [Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo fornece um exemplo de código que insere um intervalo de células com a EXCEL JavaScript. Para ver a lista completa de propriedades e métodos `Range` compatíveis com o objeto, consulte o Excel[. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -22,23 +22,23 @@ Este artigo fornece um exemplo de código que insere um intervalo de células co
 O exemplo de código a seguir insere um intervalo de células no local **B4:E4** e desloca outras células para baixo a fim de fornecer espaço para as novas células.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B4:E4");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-inserted"></a>Dados antes da inserção do intervalo
 
-![Dados na Excel antes da inserção do intervalo.](../images/excel-ranges-start.png)
+![Dados em Excel antes da inserção do intervalo.](../images/excel-ranges-start.png)
 
 ### <a name="data-after-range-is-inserted"></a>Dados após a inserção do intervalo
 
-![Dados na Excel após a inserção do intervalo.](../images/excel-ranges-after-insert.png)
+![Dados no Excel após a inserção do intervalo.](../images/excel-ranges-after-insert.png)
 
 ## <a name="see-also"></a>Confira também
 

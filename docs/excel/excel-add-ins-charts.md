@@ -1,67 +1,69 @@
 ---
 title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: Exemplos de código que demonstram tarefas de gráfico usando Excel API JavaScript.
-ms.date: 11/29/2021
+ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: fa9409370d08329a288ba16d6cbb69bbd6c88f7c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855608"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340782"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
 Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel.
-Para ver a lista completa de propriedades e métodos que os objetos e suportam, consulte [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto chart collection (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).`Chart` `ChartCollection`
+Para ver a lista completa de propriedades e métodos que os objetos e suportam, consulte [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto da coleção Chart (API JavaScript](/javascript/api/excel/excel.chartcollection) para Excel).`Chart` `ChartCollection`
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
 O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é de **Linha** e se baseia em dados do intervalo **A1:B13**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var dataRange = sheet.getRange("A1:B13");
-    var chart = sheet.charts.add("Line", dataRange, "auto");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let dataRange = sheet.getRange("A1:B13");
+    let chart = sheet.charts.add(
+      Excel.ChartType.line, 
+      dataRange, 
+      Excel.ChartSeriesBy.auto);
 
     chart.title.text = "Sales Data";
-    chart.legend.position = "right"
+    chart.legend.position = Excel.ChartLegendPosition.right;
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Novo gráfico de linhas**
+### <a name="new-line-chart"></a>Novo gráfico de linhas
 
 ![Novo gráfico de linha em Excel.](../images/excel-charts-create-line.png)
-
 
 ## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma série de dados a um gráfico
 
 O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var chart = sheet.charts.getItemAt(0);
-    var dataRange = sheet.getRange("D2:D5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let chart = sheet.charts.getItemAt(0);
+    let dataRange = sheet.getRange("D2:D5");
 
-    var newSeries = chart.series.add("2016");
+    let newSeries = chart.series.add("2016");
     newSeries.setValues(dataRange);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico antes da adição da série de dados de 2016**
+### <a name="chart-before-the-2016-data-series-is-added"></a>Gráfico antes da adição da série de dados de 2016
 
 ![Gráfico em Excel antes da adoção da série de dados de 2016.](../images/excel-charts-data-series-before.png)
 
-**Gráfico após a adição da série de dados de 2016**
+### <a name="chart-after-the-2016-data-series-is-added"></a>Gráfico após a adição da série de dados de 2016
 
 ![Gráfico em Excel depois que a série de dados de 2016 foi adicionada.](../images/excel-charts-data-series-after.png)
 
@@ -70,17 +72,17 @@ Excel.run(function (context) {
 O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.title.text = "Sales Data by Year";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico após definição do título**
+### <a name="chart-after-title-is-set"></a>Gráfico após definição do título
 
 ![Gráfico com título em Excel.](../images/excel-charts-title-set.png)
 
@@ -93,36 +95,36 @@ Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia
 O exemplo de código a seguir define o título do eixo das categorias para o primeiro gráfico na planilha como **Product**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.categoryAxis.title.text = "Product";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico após definição do título do eixo das categorias**
+### <a name="chart-after-title-of-category-axis-is-set"></a>Gráfico após definição do título do eixo das categorias
 
-![Gráfico com título de eixo Excel.](../images/excel-charts-axis-title-set.png)
+![Gráfico com o título do eixo Excel.](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Definir unidade de exibição do eixo
 
 O exemplo de código a seguir define a unidade de exibição do eixo de valor para o primeiro gráfico na planilha para **centenas**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.displayUnit = "Hundreds";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico após a definição da unidade de exibição do eixo de valor**
+### <a name="chart-after-display-unit-of-value-axis-is-set"></a>Gráfico após a definição da unidade de exibição do eixo de valor
 
 ![Gráfico com unidade de exibição de eixo Excel.](../images/excel-charts-axis-display-unit-set.png)
 
@@ -131,17 +133,17 @@ Excel.run(function (context) {
 O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais para o eixo do valor do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como `true`.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.majorGridlines.visible = false;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico com linhas de grade ocultas**
+### <a name="chart-with-gridlines-hidden"></a>Gráfico com linhas de grade ocultas
 
 ![Gráfico com linhas de grade ocultas Excel.](../images/excel-charts-gridlines-removed.png)
 
@@ -152,18 +154,18 @@ Excel.run(function (context) {
 O exemplo de código a seguir adiciona uma linha de tendência de média móvel à primeira série no primeiro gráfico da planilha chamada **Amostra**. A linha de tendência mostra uma média móvel de cinco períodos.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
     seriesCollection.getItemAt(0).trendlines.add("MovingAverage").movingAveragePeriod = 5;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico com linha de tendência de média móvel**
+#### <a name="chart-with-moving-average-trendline"></a>Gráfico com linha de tendência de média móvel
 
 ![Gráfico com linha de tendência média móvel Excel.](../images/excel-charts-create-trendline.png)
 
@@ -172,19 +174,19 @@ Excel.run(function (context) {
 O exemplo de código a seguir define a linha de tendência para digitar `Linear` para a primeira série no primeiro gráfico da planilha chamada **Sample**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
-    var series = seriesCollection.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
+    let series = seriesCollection.getItemAt(0);
     series.trendlines.getItem(0).type = "Linear";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Gráfico com linha de tendência linear**
+#### <a name="chart-with-linear-trendline"></a>Gráfico com linha de tendência linear
 
 ![Gráfico com linha de tendência linear Excel.](../images/excel-charts-trendline-linear.png)
 
@@ -199,12 +201,12 @@ O exemplo de código a seguir mostra como adicionar uma tabela de dados a um gr�
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 
 // and then adjusts the display and format of that data table.
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the chart on the "Sample" worksheet.
-    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+    let chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
 
     // Get the chart data table object and load its properties.
-    var chartDataTable = chart.getDataTableOrNullObject();
+    let chartDataTable = chart.getDataTableOrNullObject();
     chartDataTable.load();
 
     // Set the display properties of the chart data table.
@@ -215,13 +217,13 @@ Excel.run(function (context) {
     chartDataTable.showOutlineBorder = true;
 
     // Retrieve the chart data table format object and set font and border properties. 
-    var chartDataTableFormat = chartDataTable.format;
+    let chartDataTableFormat = chartDataTable.format;
     chartDataTableFormat.font.color = "#B76E79";
     chartDataTableFormat.font.name = "Comic Sans";
     chartDataTableFormat.border.color = "blue";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 A captura de tela a seguir mostra a tabela de dados que o exemplo de código anterior cria.
@@ -233,14 +235,14 @@ A captura de tela a seguir mostra a tabela de dados que o exemplo de código ant
 Os gráficos podem ser processados como imagens fora do Excel. `Chart.getImage` retorna o gráfico como uma cadeia de caracteres codificada na base 64 representando o gráfico como uma imagem JPEG. O código a seguir mostra como obter a cadeia de caracteres de imagem e registrá-la no console.
 
 ```js
-Excel.run(function (context) {
-    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    var imageAsString = chart.getImage();
-    return context.sync().then(function () {
-        console.log(imageAsString.value);
-        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
-    });
-}).catch(errorHandlerFunction);
+await Excel.run(async (context) => {
+    let chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    let imageAsString = chart.getImage();
+    await context.sync();
+    
+    console.log(imageAsString.value);
+    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+});
 ```
 
 `Chart.getImage` usa três parâmetros opcionais: largura, altura e o modo de ajuste.

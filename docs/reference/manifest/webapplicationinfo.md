@@ -1,21 +1,36 @@
 ---
 title: Elemento WebApplicationInfo no arquivo de manifesto
 description: Documentação de referência do elemento WebApplicationInfo para Office arquivos XML (manifesto de complementos).
-ms.date: 10/25/2021
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: aa74c4fc19d060f92c8c0ac2fe723c42f6ad9cdd
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681546"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340656"
 ---
 # <a name="webapplicationinfo-element"></a>Elemento WebApplicationInfo
 
 Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém informações sobre o suplemento como:
 
-- Um recurso OAuth 2.0  para o qual o Office cliente pode precisar de permissões.
+- Um recurso OAuth *2.0 para* o qual o Office cliente pode precisar de permissões.
 - Um *cliente* do OAuth 2.0 que pode exigir permissões para o Microsoft Graph.
+
+**Tipo de complemento:** Painel de tarefas, Email, Conteúdo
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+- Conteúdo 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)
 
 > [!NOTE]
 > No momento, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais sobre os programas para os quais a API de logon único tem suporte no momento, consulte [Conjuntos de requisitos da IdentityAPI](../requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).

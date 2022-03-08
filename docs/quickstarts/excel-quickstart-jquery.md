@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 08/04/2021
+ms.date: 02/25/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 041feee3ced0a42e2e6a39eabf9188e57ebcf0fe
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1a4639aaa49ed06acb3f24bbd8cb132577670bae
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152013"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341020"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -18,6 +18,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
+
 # <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
@@ -129,12 +130,12 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
             });
         });
 
-        function setColor() {
-            Excel.run(function (context) {
+        async function setColor() {
+            await Excel.run(async (context) => {
                 var range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
-                return context.sync();
+                await context.sync();
             }).catch(function (error) {
                 console.log("Error: " + error);
                 if (error instanceof OfficeExtension.Error) {

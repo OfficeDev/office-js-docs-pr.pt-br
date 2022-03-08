@@ -1,14 +1,19 @@
 ---
-title: Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
-description: 'Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.'
-ms.date: 07/08/2021
+title: Encontre células especiais em um intervalo usando a api javascript Excel javascript
+description: Saiba como usar a EXCEL JavaScript para encontrar células especiais, como células com fórmulas, erros ou números.
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1252fe599f93a3408fb161e2b8204600fa483339
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340516"
 ---
+# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a api javascript Excel javascript
 
-# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Encontre células especiais em um intervalo usando a API JavaScript Excel JavaScript
-
-Este artigo fornece exemplos de código que encontram células especiais em um intervalo usando a API JavaScript Excel javascript. Para ver a lista completa de propriedades e métodos `Range` compatíveis com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que encontram células especiais dentro de um intervalo usando Excel API JavaScript. Para ver a lista completa de propriedades e métodos compatíveis `Range` com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="find-ranges-with-special-cells"></a>Encontrar intervalos com células especiais
 
@@ -28,14 +33,14 @@ O exemplo de código a seguir usa o `getSpecialCells` método para encontrar tod
 - O método `getSpecialCells` retorna um objeto `RangeAreas`, então todas as células com fórmulas serão coloridas de rosa, mesmo que não sejam todas contíguas.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
     formulaRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um bloco `catch` , o erro interromperá o método.
@@ -47,20 +52,20 @@ Se você espera que células com característica direcionada sempre deveriam exi
 - Você pode testar esse código selecionando primeiro um intervalo sem células de fórmula e executando-o. Selecione um intervalo que tem pelo menos uma célula com uma fórmula e execute novamente.
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
-    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
-    return context.sync()
-        .then(function() {
-            if (formulaRanges.isNullObject) {
-                console.log("No cells have formulas");
-            }
-            else {
-                formulaRanges.format.fill.color = "pink";
-            }
-        })
-        .then(context.sync);
-})
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
+    let formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    await context.sync();
+        
+    if (formulaRanges.isNullObject) {
+        console.log("No cells have formulas");
+    }
+    else {
+        formulaRanges.format.fill.color = "pink";
+    }
+    
+    await context.sync();
+});
 ```
 
 Para simplificar, todos os outros exemplos de código neste artigo usam o `getSpecialCells` método em vez de  `getSpecialCellsOrNullObject`.
@@ -87,16 +92,16 @@ O exemplo de código a seguir localiza células especiais que são constantes nu
 - Para testar o código, certifique-se de que a planilha tenha algumas células com valores numéricos literais, algumas com outros tipos de valores literais e algumas com fórmulas.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var constantNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let constantNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.constants,
         Excel.SpecialCellValueType.numbers);
     constantNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ### <a name="test-for-multiple-cell-value-types"></a>Teste para vários tipos de valores de célula
@@ -104,21 +109,21 @@ Excel.run(function (context) {
 Às vezes, você precisa operar com mais de um tipo de valor de célula, como todas as células com valor de texto e com valor booliano ("Lógico"). (`Excel.SpecialCellValueType.logical`). O `Excel.SpecialCellValueType` enumeração tem valores com tipos combinado. Por exemplo, `Excel.SpecialCellValueType.logicalText` segmentará todas as células boolianas e todos os valores de texto. `Excel.SpecialCellValueType.all` é o valor padrão, que não limita os tipos de valor da célula retornados. O exemplo de código a seguir colore todas as células com fórmulas que produzem número ou valor booleano.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaLogicalNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.formulas,
         Excel.SpecialCellValueType.logicalNumbers);
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com células usando a EXCEL JavaScript](excel-add-ins-cells.md)
-- [Encontre uma cadeia de caracteres usando a EXCEL JavaScript](excel-add-ins-ranges-string-match.md)
+- [Encontre uma cadeia de caracteres usando Excel API JavaScript](excel-add-ins-ranges-string-match.md)
 - [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)

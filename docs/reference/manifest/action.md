@@ -1,18 +1,32 @@
 ---
 title: Elemento Action no arquivo de manifesto
 description: Esse elemento especifica a ação a ser executar quando o usuário seleciona um botão ou um controle de menu.
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eee17864ecacf101d7fbfe3519b3da500768deb
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 21c8f9a6345641f23aad70efed67c9c45f72a1c8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467868"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340411"
 ---
 # <a name="action-element"></a>Elemento Action
 
-Especifica a ação a ser executar quando o usuário seleciona um controle [Button](control-button.md) ou [controle Menu](control-menu.md).
+Especifica a ação a ser executar quando o usuário seleciona um  [controle Button](control-button.md) ou [Menu](control-menu.md) .
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) quando o **VersionOverrides** pai é o tipo Taskpane 1.0.
+- [Caixa de correio 1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) quando o **VersionOverrides** pai é o tipo Mail 1.0.
+- [Caixa de correio 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) quando o **VersionOverrides** pai é o tipo Mail 1.1.
 
 ## <a name="attributes"></a>Atributos
 
@@ -42,7 +56,7 @@ Este atributo especifica o tipo de ação realizada quando o usuário seleciona 
 
 ## <a name="functionname"></a>FunctionName
 
-Elemento obrigatório quando **xsi:type** é "ExecuteFunction". Especifica o nome da função a ser executada. A função está contida no arquivo especificado no elemento [FunctionFile](functionfile.md).
+Elemento obrigatório quando **xsi:type** é `ExecuteFunction`. Especifica o nome da função a ser executada. A função está contida no arquivo especificado no elemento [FunctionFile](functionfile.md).
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -52,7 +66,7 @@ Elemento obrigatório quando **xsi:type** é "ExecuteFunction". Especifica o nom
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Elemento obrigatório quando **xsi:type** é "ShowTaskpane". Especifica o local do arquivo de origem para essa ação. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Url** no elemento **Urls** no elemento [Resources](resources.md) .
+Elemento obrigatório quando **xsi:type** é `ShowTaskpane`. Especifica o local do arquivo de origem para essa ação. O **atributo resid** não pode ter mais de 32 caracteres e deve ser definido como o valor do atributo **id** de um **elemento Url** no elemento **Urls** no elemento [Resources](resources.md) .
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -62,7 +76,19 @@ Elemento obrigatório quando **xsi:type** é "ShowTaskpane". Especifica o local 
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica a ID do contêiner do painel de tarefas. Quando você tiver várias ações "ShowTaskpane", use uma **TaskpaneId** diferente se desejar ter um painel independente para cada uma. Use a mesma **TaskpaneId** para diferentes ações que compartilhem o mesmo painel. Quando os usuários escolhem comandos que compartilham o mesmo **TaskpaneId**, o contêiner do painel permanece aberto, mas o conteúdo do painel é substituído pela ação correspondente "SourceLocation".
+Elemento opcional quando  **xsi:type** é `ShowTaskpane`. Especifica a ID do contêiner do painel de tarefas. Quando você tiver várias `ShowTaskpane` ações, use um **TaskpaneId** diferente se quiser um painel independente para cada um. Use a mesma **TaskpaneId** para diferentes ações que compartilhem o mesmo painel. Quando os usuários escolhem comandos que compartilham o mesmo **TaskpaneId**, o contêiner do painel permanecerá aberto, mas o conteúdo do painel será substituído pela Ação correspondente `SourceLocation`.
+
+**Tipo de suplemento:** Painel de tarefas
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > Esse elemento não tem suporte no Outlook.
@@ -104,7 +130,19 @@ O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Par
 
 ## <a name="title"></a>Cargo
 
-Elemento opcional quando **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
+Elemento opcional quando  **xsi:type** é `ShowTaskpane`. Especifica o título personalizado do painel de tarefas desta ação.
+
+**Tipo de suplemento:** Painel de tarefas
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > Esse elemento filho não é suportado em Outlook de complementos.
@@ -134,10 +172,22 @@ O exemplo a seguir mostra uma ação que usa o **elemento Title** . Observe que 
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
+Elemento opcional quando **xsi:type** é `ShowTaskpane`. Os elementos [VersionOverrides](versionoverrides.md) que contêm devem ter um valor de atributo **xsi:type** de `VersionOverridesV1_1`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
+
+**Tipo de suplemento:** Email
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [Caixa de correio 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 > [!IMPORTANT]
-> Embora o `SupportsPinning` elemento tenha sido introduzido no conjunto de requisitos [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele é atualmente suportado apenas para assinantes Microsoft 365 usando o seguinte:
+> Embora o **elemento SupportsPinning** tenha sido introduzido no conjunto de requisitos [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele atualmente só tem suporte para assinantes Microsoft 365 usando o seguinte:
 >
 > - Outlook 2016 ou posterior no Windows (build 7628.1000 ou posterior)
 > - Outlook 2016 ou posterior no Mac (build 16.13.503 ou posterior)

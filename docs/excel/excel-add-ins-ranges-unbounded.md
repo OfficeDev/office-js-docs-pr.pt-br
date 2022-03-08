@@ -1,24 +1,28 @@
 ---
-title: Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel JavaScript
+title: Ler ou gravar em um intervalo não ressalvado usando Excel API JavaScript
 description: Saiba como usar a EXCEL JavaScript para ler ou gravar em um intervalo não-rebote.
-ms.date: 04/05/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: a7b2a564377d0dab73d4f3ad6d3aacf2219ddeae
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151735"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340950"
 ---
-# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Ler ou gravar em um intervalo não-rebote usando a API JavaScript Excel JavaScript
+# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Ler ou gravar em um intervalo não ressalvado usando Excel API JavaScript
 
-Este artigo descreve como ler e gravar em um intervalo não-rebote com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo descreve como ler e gravar em um intervalo não-rebote com a API JavaScript Excel JavaScript. Para ver a lista completa de propriedades e métodos compatíveis `Range` com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 Um endereço de intervalo não rebotado é um endereço de intervalo que especifica colunas inteiras ou linhas inteiras. Por exemplo:
 
-- Endereços de intervalo compostos por colunas inteiras:<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- Endereços de intervalo compostos por linhas inteiras:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- Endereços de intervalo compostos por colunas inteiras.
+  - `C:C`
+  - `A:F`
+- Endereços de intervalo compostos por linhas inteiras.
+  - `2:2`
+  - `1:4`
 
 ## <a name="read-an-unbounded-range"></a>Ler um intervalo não limitado
 
@@ -26,11 +30,11 @@ Quando uma API faz uma solicitação para recuperar um intervalo não limitado (
 
 ## <a name="write-to-an-unbounded-range"></a>Gravar em um intervalo não limitado
 
-Não é possível definir propriedades no nível da célula, como , e em um intervalo não rebotado porque a solicitação de `values` `numberFormat` entrada é muito `formula` grande. Por exemplo, o exemplo de código a seguir não é válido porque ele tenta especificar para um `values` intervalo não-rebote. A API retornará um erro se você tentar definir propriedades no nível da célula para um intervalo não-rebote.
+Não é possível definir propriedades no nível `values`da célula, como , e `numberFormat``formula` em um intervalo não rebotado porque a solicitação de entrada é muito grande. Por exemplo, o exemplo de código a seguir não é válido porque ele tenta especificar para `values` um intervalo não-rebote. A API retornará um erro se você tentar definir propriedades no nível da célula para um intervalo não-rebote.
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 

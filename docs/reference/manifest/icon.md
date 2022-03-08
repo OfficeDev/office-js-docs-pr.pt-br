@@ -1,18 +1,34 @@
 ---
 title: Elemento Icon no arquivo de manifesto
 description: Define elementos de Imagem para controles de Botão ou de Menu.
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 9eb4ccf394bb1c894f2b17f34038ca64fee09dc5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467726"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341062"
 ---
 # <a name="icon-element"></a>Elemento Icon
 
-Define elementos **image** para [controles button e](control-button.md) [controles de menu](control-menu.md).
+Define um conjunto de elementos **Image** para [controles Button](control-button.md) ou [Menu](control-menu.md) .
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associado a esses conjuntos de requisitos**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) quando o **VersionOverrides** pai é o tipo Taskpane 1.0.
+- [Caixa de correio 1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) quando o **VersionOverrides** pai é o tipo Mail 1.0.
+- [Caixa de correio 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) quando o **VersionOverrides** pai é o tipo Mail 1.1.
 
 ## <a name="attributes"></a>Atributos
 

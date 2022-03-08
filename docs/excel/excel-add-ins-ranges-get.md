@@ -1,88 +1,84 @@
 ---
 title: Obter um intervalo usando a EXCEL JavaScript
-description: Saiba como recuperar um intervalo usando a EXCEL JavaScript.
-ms.date: 04/02/2021
+description: Saiba como recuperar um intervalo usando a Excel JavaScript.
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e51305a822fc528e81a178c20545b11fb80bf2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 16c42ccf8f3496316fbf7b52e4d8139f819c6da1
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151747"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340936"
 ---
 # <a name="get-a-range-using-the-excel-javascript-api"></a>Obter um intervalo usando a EXCEL JavaScript
 
-Este artigo fornece exemplos que mostram diferentes maneiras de obter um intervalo dentro de uma planilha usando a api javascript Excel javascript. Para ver a lista completa de propriedades e métodos que o `Range` objeto oferece suporte, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos que mostram diferentes maneiras de obter um intervalo dentro de uma planilha usando o Excel API JavaScript. Para ver a lista completa de propriedades e métodos compatíveis `Range` com o objeto, [consulte Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="get-range-by-address"></a>Obter intervalo por endereço
 
-O exemplo de código a seguir obtém o intervalo com o endereço **B2:C5** da planilha denominada **Exemplo**, carrega sua propriedade e grava uma mensagem `address` no console.
+O exemplo de código a seguir obtém o intervalo com o endereço **B2:C5** da planilha chamada **Sample**, `address` carrega sua propriedade e grava uma mensagem no console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    
+    let range = sheet.getRange("B2:C5");
     range.load("address");
-
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the range B2:C5 is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    console.log(`The address of the range B2:C5 is "${range.address}"`);
+});
 ```
 
 ## <a name="get-range-by-name"></a>Obter intervalo por nome
 
-O exemplo de código a seguir obtém o intervalo nomeado da planilha denominada Exemplo , carrega sua propriedade e grava `MyRange` uma mensagem no  `address` console.
+O exemplo de código a seguir obtém o intervalo `MyRange` nomeado da planilha denominada **Exemplo**, `address` carrega sua propriedade e grava uma mensagem no console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("MyRange");
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the range "MyRange" is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange("MyRange");
+    range.load("address");
+    await context.sync();
+
+    console.log(`The address of the range "MyRange" is "${range.address}"`);
+});
 ```
 
 ## <a name="get-used-range"></a>Obter intervalo usado
 
-O exemplo de código a seguir obtém o intervalo usado da planilha denominada **Exemplo**, carrega sua propriedade e grava `address` uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, o método retornará um intervalo que `getUsedRange()` consiste apenas na célula superior esquerda.
+O exemplo de código a seguir obtém o intervalo usado da planilha denominada **Exemplo**, `address` carrega sua propriedade e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, o `getUsedRange()` método retornará um intervalo que consiste apenas na célula superior esquerda.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getUsedRange();
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the used range in the worksheet is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getUsedRange();
+    range.load("address");
+    await context.sync();
+    
+    console.log(`The address of the used range in the worksheet is "${range.address}"`);
+});
 ```
 
 ## <a name="get-entire-range"></a>Obter intervalo inteiro
 
-O exemplo de código a seguir obtém todo o intervalo de planilhas da planilha denominada **Exemplo**, carrega sua propriedade e grava `address` uma mensagem no console.
+O exemplo de código a seguir obtém todo o intervalo de planilhas da planilha denominada **Exemplo**, `address` carrega sua propriedade e grava uma mensagem no console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange();
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the entire worksheet range is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange();
+    range.load("address");
+    await context.sync();
+    
+    console.log(`The address of the entire worksheet range is "${range.address}"`);
+});
 ```
 
 ## <a name="see-also"></a>Confira também

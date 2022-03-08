@@ -1,14 +1,14 @@
 ---
 title: Elemento Host no arquivo de manifesto
 description: Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
-ms.date: 11/05/2019
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e262183f11361d02d1a710d1f442539a8e936bcd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ea0f5c8bc07c72c0c888fb56b40d98c6030c2ebc
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152084"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340684"
 ---
 # <a name="host-element"></a>Elemento Host
 
@@ -25,7 +25,7 @@ Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de h
 
 | Atributo     | Tipo   | Obrigatório | Descrição                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo Office cliente. |
+| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo cliente Office cliente. |
 
 ### <a name="name"></a>Name
 
@@ -53,13 +53,25 @@ Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma da
 
 ## <a name="versionoverrides-node"></a>Nó VersionOverrides
 
-Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`.
+Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`. 
+
+Esse elemento substitui o **elemento Hosts** no manifesto básico.
+
+**Tipo de complemento:** Painel de tarefas, Email
+
+**Válido somente nesses esquemas VersionOverrides**:
+
+- Painel de tarefas 1.0
+- Email 1.0
+- Email 1.1
+
+Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ### <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Sim  | Descreve o aplicativo Office em que essas configurações se aplicam.|
+|  [xsi:type](#xsitype)  |  Sim  | Especifica o aplicativo Office em que essas configurações se aplicam.|
 
 ### <a name="child-elements"></a>Elementos filho
 

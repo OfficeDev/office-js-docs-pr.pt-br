@@ -1,14 +1,19 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Saiba como executar tarefas comuns com as guias de trabalho ou recursos no nível do aplicativo usando Excel API JavaScript.
-ms.date: 06/07/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 4e07ac7ba679a7016ce19bfbce1b7570ddf29ee5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340551"
 ---
-
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para ver a lista completa de propriedades e `Workbook` métodos que o objeto oferece suporte, consulte [Objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto `Workbook` suporta, confira [Objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
 
 O objeto Workbook é o ponto de entrada para que se suplemento interaja com o Excel. Ele mantém conjuntos de planilhas, tabelas, Tabelas Dinâmicas e muito mais, através dos quais os dados do Excel são acessados e alterados. O objeto [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) dá a seu suplemento acesso a todos os dados de pastas de trabalho através de planilhas individuais. Especificamente, ele permite seu suplemento adicione planilhas, navegue entre elas e atribua manipuladores a eventos de planilhas. O artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md) descreve como acessar e editar planilhas.
 
@@ -17,24 +22,23 @@ O objeto Workbook é o ponto de entrada para que se suplemento interaja com o Ex
 O objeto Workbook contém dois métodos que obtêm um intervalo de células que o usuário ou o suplemento selecionaram: `getActiveCell()` e `getSelectedRange()`. `getActiveCell()` obtém a célula ativa da pasta de trabalho como um [objeto Range](/javascript/api/excel/excel.range). O exemplo a seguir mostra uma chamada para `getActiveCell()`, seguida do endereço da célula que está sendo impresso no console.
 
 ```js
-Excel.run(function (context) {
-    var activeCell = context.workbook.getActiveCell();
+await Excel.run(async (context) => {
+    let activeCell = context.workbook.getActiveCell();
     activeCell.load("address");
+    await context.sync();
 
-    return context.sync().then(function () {
-        console.log("The active cell is " + activeCell.address);
-    });
-}).catch(errorHandlerFunction);
+    console.log("The active cell is " + activeCell.address);
+});
 ```
 
 O método `getSelectedRange()` retorna o intervalo único selecionado atualmente. Se houver vários intervalos selecionados, será gerado um erro InvalidSelection. O exemplo a seguir mostra uma chamada para `getSelectedRange()` que, em seguida, define a cor de preenchimento do intervalo como amarelo.
 
 ```js
-Excel.run(function(context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.format.fill.color = "yellow";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="create-a-workbook"></a>Criar uma pasta de trabalho
@@ -51,18 +55,18 @@ Você pode obter a pasta de trabalho atual do seu complemento como uma cadeia de
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(externalWorkbook);
         return context.sync();
-    }).catch(errorHandlerFunction);
+    });
 });
 
 // Read the file as a data URL so we can parse the base64-encoded string.
@@ -71,33 +75,33 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
 
-O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o `insertWorksheetsFromBase64` método para inserir cópias das planilhas da pasta de trabalho de destino em si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada. 
+O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma [pasta de](/javascript/api/excel/excel.workbook) trabalho tem o `insertWorksheetsFromBase64` método para inserir cópias das planilhas da pasta de trabalho de destino em si. O arquivo da outra pasta de trabalho é passado como uma cadeia de caracteres codificada com base64, assim como a `Excel.createWorkbook` chamada.
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> O `insertWorksheetsFromBase64` método é suportado para Excel no Windows, Mac e na Web. Não há suporte para iOS. Além disso, Excel na Web este método não dá suporte a planilhas de origem com elementos PivotTable, Chart, Comment ou Slicer. Se esses objetos estão presentes, o `insertWorksheetsFromBase64` método retorna o `UnsupportedFeature` erro em Excel na Web. 
+> O `insertWorksheetsFromBase64` método é suportado para Excel no Windows, Mac e na Web. Não há suporte para iOS. Além disso, Excel na Web esse método não dá suporte a planilhas de origem com elementos PivotTable, Chart, Comment ou Slicer. Se esses objetos estão presentes, o `insertWorksheetsFromBase64` método retorna o `UnsupportedFeature` erro em Excel na Web.
 
 O exemplo de código a seguir mostra como inserir planilhas de outra pasta de trabalho na pasta de trabalho atual. [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) Este exemplo de código primeiro processa um arquivo de pasta de trabalho com um objeto e extrai uma cadeia de caracteres codificada com base64 e insere essa cadeia de caracteres codificada com base64 na pasta de trabalho atual. As novas planilhas são inseridas após a planilha chamada **Sheet1**. Observe que `[]` é passado como o parâmetro para a [propriedade InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) . Isso significa que todas as planilhas da pasta de trabalho de destino são inseridas na pasta de trabalho atual.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
         // Retrieve the current workbook.
-        var workbook = context.workbook;
+        let workbook = context.workbook;
             
         // Set up the insert options. 
-        var options = { 
+        let options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
             relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
@@ -118,16 +122,15 @@ reader.readAsDataURL(myFile.files[0]);
 O suplemento pode controlar a capacidade de um usuário de editar dados em uma pasta de trabalho. A propriedade `protection` do objeto Workbook é um objeto [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) com um método `protect()`. O exemplo a seguir mostra um cenário básico ativando/desativando a proteção da pasta de trabalho.
 
 ```js
-Excel.run(function (context) {
-    var workbook = context.workbook;
+await Excel.run(async (context) => {
+    let workbook = context.workbook;
     workbook.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!workbook.protection.protected) {
-            workbook.protection.protect();
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (!workbook.protection.protected) {
+        workbook.protection.protect();
+    }
+});
 ```
 
 O método `protect` aceita um parâmetro opcional de cadeia de caracteres. Esta cadeia de caracteres representa a senha necessária para um usuário ignorar a proteção e alterar a estrutura da pasta de trabalho.
@@ -142,11 +145,11 @@ A proteção também ser definida no nível da planilha para prevenir a edição
 Objetos Workbook têm acesso aos metadados dos arquivos do Office, que são conhecidos como [propriedades de documentos](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). A propriedade `properties` do objeto Workbook é um objeto [DocumentProperties](/javascript/api/excel/excel.documentproperties) que contém esses valores de metadados. O exemplo a seguir mostra como definir a `author` propriedade.
 
 ```js
-Excel.run(function (context) {
-    var docProperties = context.workbook.properties;
+await Excel.run(async (context) => {
+    let docProperties = context.workbook.properties;
     docProperties.author = "Alex";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="custom-properties"></a>Propriedades personalizadas
@@ -154,24 +157,23 @@ Excel.run(function (context) {
 Você também pode definir propriedades personalizadas. O objeto DocumentProperties contém uma propriedade `custom` que representa um conjunto de pares de valores-chave para propriedades definidas pelo usuário. O exemplo a seguir mostra como criar uma propriedade personalizada chamada **Introduction** com o valor "Olá" e, em seguida, recuperá-la.
 
 ```js
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
     customDocProperties.add("Introduction", "Hello");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
-    var customProperty = customDocProperties.getItem("Introduction");
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
+    let customProperty = customDocProperties.getItem("Introduction");
     customProperty.load(["key, value"]);
+    await context.sync();
 
-    return context.sync().then(function() {
-        console.log("Custom key  : " + customProperty.key); // "Introduction"
-        console.log("Custom value : " + customProperty.value); // "Hello"
-    });
-}).catch(errorHandlerFunction);
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
 ```
 
 #### <a name="worksheet-level-custom-properties"></a>Propriedades personalizadas no nível da planilha
@@ -179,31 +181,31 @@ Excel.run(function (context) {
 As propriedades personalizadas também podem ser definidas no nível da planilha. Elas são semelhantes às propriedades personalizadas no nível do documento, exceto que a mesma chave pode ser repetida em planilhas diferentes. O exemplo a seguir mostra como criar uma propriedade personalizada chamada **WorksheetGroup** com o valor "Alfa" na planilha atual e, em seguida, recuperá-la.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Add the custom property.
-    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    let customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
     customWorksheetProperties.add("WorksheetGroup", "Alpha");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Load the keys and values of all custom properties in the current worksheet.
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
     worksheet.load("name");
 
-    var customWorksheetProperties = worksheet.customProperties;
-    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    let customWorksheetProperties = worksheet.customProperties;
+    let customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
     customWorksheetProperty.load(["key", "value"]);
 
-    return context.sync().then(function() {
-        // Log the WorksheetGroup custom property to the console.
-        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
-        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // Log the WorksheetGroup custom property to the console.
+    console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+    console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
+});
 ```
 
 ## <a name="access-document-settings"></a>Acessar configurações do documentos
@@ -211,16 +213,15 @@ Excel.run(function (context) {
 As configurações da pasta de trabalho são semelhantes ao conjunto de propriedades personalizadas. A diferença é que as configurações são exclusivas para um único arquivo do Excel e emparelhamento de suplementos, enquanto que as propriedades estão somente conectadas ao arquivo. O exemplo a seguir mostra como criar e acessar uma configuração.
 
 ```js
-Excel.run(function (context) {
-    var settings = context.workbook.settings;
+await Excel.run(async (context) => {
+    let settings = context.workbook.settings;
     settings.add("NeedsReview", true);
-    var needsReview = settings.getItem("NeedsReview");
+    let needsReview = settings.getItem("NeedsReview");
     needsReview.load("value");
 
-    return context.sync().then(function() {
-        console.log("Workbook needs review : " + needsReview.value);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Workbook needs review : " + needsReview.value);
+});
 ```
 
 ## <a name="access-application-culture-settings"></a>Configurações de cultura de aplicativos do Access
@@ -236,25 +237,25 @@ O exemplo a seguir altera o caractere separador decimal de uma cadeia numérica 
 ```js
 // This will convert a number like "14,37" to "14.37"
 // (assuming the system decimal separator is ".").
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var decimalSource = sheet.getRange("B2");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let decimalSource = sheet.getRange("B2");
+
     decimalSource.load("values");
     context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+    await context.sync();
 
-    return context.sync().then(function() {
-        var systemDecimalSeparator =
-            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
-        var oldDecimalString = decimalSource.values[0][0];
+    let systemDecimalSeparator =
+        context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+    let oldDecimalString = decimalSource.values[0][0];
 
-        // This assumes the input column is standardized to use "," as the decimal separator.
-        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+    // This assumes the input column is standardized to use "," as the decimal separator.
+    let newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
 
-        var resultRange = sheet.getRange("C2");
-        resultRange.values = [[newDecimalString]];
-        resultRange.format.autofitColumns();
-        return context.sync();
-    });
+    let resultRange = sheet.getRange("C2");
+    resultRange.values = [[newDecimalString]];
+    resultRange.format.autofitColumns();
+    await context.sync();
 });
 ```
 
@@ -267,39 +268,38 @@ Uma pasta de trabalho contém um [CustomXmlPartCollection](/javascript/api/excel
 Os exemplos a seguir mostram como usar partes XML personalizadas. O primeiro bloco de códigos demonstra como inserir dados XML no documento. Ele armazena uma lista de revisores e usa as configurações da pasta de trabalho para salvar a `id` do XML para recuperação futura. O segundo bloco mostra como acessar esse XML mais tarde. A configuração "ContosoReviewXmlPartId" é carregada e transmitida para `customXmlParts` da pasta de trabalho. Os dados XML são então impressos no console.
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Add reviewer data to the document as XML
-    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
     customXmlPart.load("id");
+    await context.sync();
 
-    return context.sync().then(function() {
-        // Store the XML part's ID in a setting
-        var settings = context.workbook.settings;
-        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
-    });
-}).catch(errorHandlerFunction);
+    // Store the XML part's ID in a setting
+    let settings = context.workbook.settings;
+    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+});
 ```
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Retrieve the XML part's id from the setting
-    var settings = context.workbook.settings;
-    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+    let settings = context.workbook.settings;
+    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
 
-    return context.sync().then(function () {
-        if (xmlPartIDSetting.value) {
-            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-            var xmlBlob = customXmlPart.getXml();
+    await context.sync();
 
-            return context.sync().then(function () {
-                // Add spaces to make more human readable in the console
-                var readableXML = xmlBlob.value.replace(/></g, "> <");
-                console.log(readableXML);
-            });
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (xmlPartIDSetting.value) {
+        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+        let xmlBlob = customXmlPart.getXml();
+
+        await context.sync();
+
+        // Add spaces to make it more human-readable in the console.
+        let readableXML = xmlBlob.value.replace(/></g, "> <");
+        console.log(readableXML);
+    }
+});
 ```
 
 > [!NOTE]
@@ -346,26 +346,26 @@ Para detectar quando uma caixa de trabalho é ativada, [registre](excel-add-ins-
 O exemplo de código a seguir mostra como registrar o manipulador `onActivated` de eventos e configurar uma função de retorno de chamada.
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the workbook.
-    var workbook = context.workbook;
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the workbook.
+        let workbook = context.workbook;
+    
+        // Register the workbook activated event handler.
+        workbook.onActivated.add(workbookActivated);
+        await context.sync();
+    });
+}
 
-    // Register the workbook activated event handler.
-    workbook.onActivated.add(workbookActivated);
-
-    return context.sync();
-});
-
-function workbookActivated(event) {
-    Excel.run(function (context) {
+async function workbookActivated(event) {
+    await Excel.run(async (context) => {
         // Retrieve the workbook and load the name.
-        var workbook = context.workbook;
-        workbook.load("name");
-        
-        return context.sync().then(function () {
-            // Callback function for when the workbook is activated.
-            console.log(`The workbook ${workbook.name} was activated.`);
-        });
+        let workbook = context.workbook;
+        workbook.load("name");        
+        await context.sync();
+
+        // Callback function for when the workbook is activated.
+        console.log(`The workbook ${workbook.name} was activated.`);
     });
 }
 ```

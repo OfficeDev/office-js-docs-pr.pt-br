@@ -1,20 +1,20 @@
 ---
 ms.date: 05/11/2020
-description: Retornar vários resultados de sua função personalizada em um Office Excel de usuário.
+description: Retorne vários resultados de sua função personalizada em um Office Excel de usuário.
 title: Retornar vários resultados de sua função personalizada
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a9e74d311f26a618312a3ab7f81238cad69c21
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: afd4abb4de6d978c6fd69fd447fd29e94ba2e7d1
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148705"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340425"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Retornar vários resultados de sua função personalizada
 
-Você pode retornar vários resultados de sua função personalizada que serão retornados para células vizinhas. Esse comportamento é chamado de vazamento. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas Excel, consulte [Matrizes dinâmicas e comportamento de matriz descarada](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531).
+Você pode retornar vários resultados de sua função personalizada que serão retornados para células vizinhas. Esse comportamento é chamado de vazamento. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas Excel, consulte [Matrizes dinâmicas e comportamento de matrizes descarada](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531).
 
-A imagem a seguir mostra como `SORT` a função é derramada para baixo em células vizinhas. Sua função personalizada também pode retornar vários resultados como este.
+A imagem a seguir mostra como a `SORT` função é derramada para baixo em células vizinhas. Sua função personalizada também pode retornar vários resultados como este.
 
 ![Captura de tela da função 'SORT' exibindo vários resultados para baixo em várias células.](../images/dynamic-array-spill.png)
 
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-O exemplo a seguir mostra como retornar uma matriz dinâmica que se espalha à direita. 
+O exemplo a seguir mostra como retornar uma matriz dinâmica que se espalha à direita.
 
 ```javascript
 /**

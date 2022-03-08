@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: O suplemento do Excel permite que você estenda a funcionalidade do aplicativo Excel em várias plataformas, como Windows, Mac, iPad e em um navegador.
-ms.date: 10/14/2020
+ms.date: 02/16/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f4141fb743e61605906d4460025f6570ce243480
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 84246ce43df4b442e32771ee36afe1309e95b7fb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514086"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340866"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -61,8 +61,6 @@ Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel
 
 Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Excel e iniciam ações no suplemento. É possível adicionar um botão à faixa de opções ou um item a um menu de contexto do Excel. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas. 
 
-**Comandos de suplemento**
-
 ![Comandos de suplemento no Excel.](../images/excel-add-in-commands-script-lab.png)
 
 Para saber mais sobre recursos de comando, plataformas suportadas e práticas recomendadas para o desenvolvimento de comandos de suplemento, confira [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md).
@@ -70,8 +68,6 @@ Para saber mais sobre recursos de comando, plataformas suportadas e práticas re
 ### <a name="task-panes"></a>Painéis de tarefas
 
 Os painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Excel. Os painéis de tarefas dão aos usuários acesso a controles de interface que executam códigos para modificar o documento do Excel ou exibir dados de uma fonte de dados.
-
-**Painel de tarefas**
 
 ![Suplemento do painel de tarefas no Excel.](../images/excel-add-in-task-pane-insights.png)
 
@@ -81,8 +77,6 @@ Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos S
 
 Funções personalizadas permitem que desenvolvedores adicionem novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`.
 
-**Função personalizada**
-
 ![Imagem animada mostrando um usuário final inserindo MYFUNCTION. Função personalizada SPHEREVOLUME em uma célula de uma planilha do Excel.](../images/SphereVolumeNew.gif)
 
 Para obter mais informações sobre funções personalizadas, consulte[Criar funções personalizadas no Excel](custom-functions-overview.md).
@@ -91,8 +85,6 @@ Para obter mais informações sobre funções personalizadas, consulte[Criar fun
 
 As caixas de diálogo são superfícies que flutuam acima da janela do aplicativo do Excel ativo. Você pode usar caixas de diálogo para tarefas como exibir páginas de entrada que não podem ser abertas diretamente em um painel de tarefas, solicitar que o usuário confirme uma ação ou hospedar vídeos que possam ser muito pequenos se confinados a um painel de tarefas. Para abrir caixas de diálogo no suplemento do Excel, use a [API da Caixa de Diálogo](/javascript/api/office/office.ui).
 
-**Caixa de diálogo**
-
 ![Caixa de diálogo do suplemento no Excel.](../images/excel-add-in-dialog-choose-number.png)
 
 Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [Caixas de diálogo nos Suplementos do Office](../design/dialog-boxes.md) e [Usar a API da Caixa de Diálogo em Suplementos do Office](../develop/dialog-api-in-office-add-ins.md).
@@ -100,8 +92,6 @@ Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [
 ### <a name="content-add-ins"></a>Suplementos de conteúdo
 
 Os suplementos de conteúdo são superfícies que podem ser inseridas diretamente em documentos do Excel. É possível usar suplementos de conteúdo para inserir objetos sofisticados baseados na Web, como gráficos, visualizações de dados ou mídia em uma planilha ou para conceder aos usuários acesso aos controles de interface que executam código para modificar o documento do Excel ou exibir dados de uma fonte de dados. Use suplementos de conteúdo quando quiser inserir a funcionalidade diretamente no documento.
-
-**Suplemento de conteúdo**
 
 ![Suplemento de conteúdo no Excel.](../images/excel-add-in-content-map.png)
 

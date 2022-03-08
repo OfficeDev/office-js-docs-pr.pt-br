@@ -1,14 +1,14 @@
 ---
 title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
-description: Saiba como a Excel javaScript permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
-ms.date: 04/01/2021
+description: Saiba como a Excel JavaScript permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
+ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 571e19814cb5f1b8d3117cd6cccbe18f584330d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 75b1248a15c37c548b11fa8ac47a809b045571e4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149014"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340908"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
@@ -16,7 +16,7 @@ A biblioteca de JavaScript do Excel permite que o suplemento realize operações
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Um conjunto de intervalos (possivelmente desconfiados) é representado por um [objeto RangeAreas.](/javascript/api/excel/excel.rangeareas) Possui propriedades e métodos semelhantes ao tipo `Range` (muitos com os mesmos nomes ou semelhantes), mas foram feitos ajustes para:
+Um conjunto de intervalos (possivelmente desconfiados) é representado por um [objeto RangeAreas](/javascript/api/excel/excel.rangeareas) . Possui propriedades e métodos semelhantes ao tipo `Range` (muitos com os mesmos nomes ou semelhantes), mas foram feitos ajustes para:
 
 - Os tipos de dados para propriedades e o comportamento dos setters e getters.
 - Os tipos de dados dos parâmetros do método e os comportamentos do método.
@@ -31,9 +31,9 @@ Alguns exemplos:
 - `RangeAreas.getEntireColumn` e `RangeAreas.getEntireRow` retornar outra `RangeAreas` objeto que representa todas as colunas (ou linhas) em todos os intervalos no `RangeAreas`. Por exemplo, se `RangeAreas` representa "A1: C4" e "F14:L15" em seguida, `RangeAreas.getEntireColumn` retorna um objeto `RangeAreas` que representa "A:C" e "F:L".
 - `RangeAreas.copyFrom` pode ter o parâmetro `Range` ou `RangeAreas` que representam os intervalos de origem da operação de cópia.
 
-#### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>Lista completa de membros do intervalo que também estão disponíveis em RangeAreas
+### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>Lista completa de membros do intervalo que também estão disponíveis em RangeAreas
 
-##### <a name="properties"></a>Propriedades
+#### <a name="properties"></a>Propriedades
 
 Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-of-rangeareas) antes de escrever o código que lê as propriedades listadas. Existem sutilezas para o que é retornado.
 
@@ -49,7 +49,7 @@ Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-o
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Métodos
+#### <a name="methods"></a>Métodos
 
 - `calculate()`
 - `clear()`
@@ -79,7 +79,7 @@ O tipo `RangeAreas` tem alguns métodos e propriedades que não estão no objeto
 
 - `areas`: O objeto `RangeCollection` que contém todos os intervalos representados pelo objeto `RangeAreas`. O objeto `RangeCollection` também é novidade e é semelhante a outros objetos do conjunto do Excel. É uma propriedade `items` que é uma matriz de objetos `Range` que representam os intervalos.
 - `areaCount`: O número total de intervalos em `RangeAreas`.
-- `getOffsetRangeAreas`: Funciona como [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), exceto pelo fato de que o `RangeAreas` é retornado e contém os intervalos que são todos os deslocamentos de um dos intervalos do `RangeAreas` original.
+- `getOffsetRangeAreas`: Funciona como [Range.getOffsetRange](/javascript/api/excel/excel.range#excel-excel-range-getoffsetrange-member(1)), exceto pelo fato de que o `RangeAreas` é retornado e contém os intervalos que são todos os deslocamentos de um dos intervalos do `RangeAreas` original.
 
 ## <a name="create-rangeareas"></a>Criar RangeAreas
 
@@ -103,13 +103,13 @@ Definir uma propriedade em um `RangeAreas` objeto define a propriedade correspon
 A seguir, um exemplo de configuração de uma propriedade em vários intervalos. A função realça os intervalos **F3:F5** e **H3:H5**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 Este exemplo se aplica a cenários nos quais você pode codificar os endereços de intervalo para os quais você passa para `getRanges` ou facilmente calculá-los no tempo de execução. Alguns dos cenários em que isso pode ser verdadeiro incluem:
@@ -128,25 +128,22 @@ Ao chamar as `getSpecialCells` ou `getSpecialCellsOrNullObject` método em um `R
 
 ## <a name="read-properties-of-rangeareas"></a>Ler propriedades de RangeAreas
 
-A leitura de valores de propriedade `RangeAreas` requer cuidados, porque uma determinada propriedade pode ter valores diferentes para intervalos diferentes dentro de`RangeAreas`. A regra geral é que, se um valor consistente *puder* ser retornado, ele será retornado. Por exemplo, no código a seguir, o código RGB para rosa ( ) e será registrado no console porque ambos os intervalos no objeto têm um preenchimento rosa e ambos são `#FFC0CB` `true` `RangeAreas` colunas inteiras.
+A leitura de valores de propriedade `RangeAreas` requer cuidados, porque uma determinada propriedade pode ter valores diferentes para intervalos diferentes dentro de`RangeAreas`. A regra geral é que, se um valor consistente *puder* ser retornado, ele será retornado. Por exemplo, no código a seguir, o código RGB para rosa (`#FFC0CB`) `true` e será registrado no console porque ambos os intervalos no objeto têm um preenchimento rosa e ambos são colunas `RangeAreas` inteiras.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    var rangeAreas = sheet.getRanges("F:F, H:H");  
+    let rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // #FFC0CB
-            console.log(rangeAreas.isEntireColumn); // true
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // #FFC0CB
+    console.log(rangeAreas.isEntireColumn); // true
+});
 ```
 
 As coisas ficam mais complicadas quando a consistência não é possível. O comportamento das propriedades `RangeAreas` seguem estes três princípios de três:
@@ -158,23 +155,20 @@ As coisas ficam mais complicadas quando a consistência não é possível. O com
 Por exemplo, o código a seguir cria um `RangeAreas` no qual apenas um intervalo é uma coluna inteira e apenas um é preenchido com rosa. O console mostrará `null` para a cor de preenchimento `false` para a propriedade `isEntireRow` e "Planilha1! F3:F5, Planilha1! H:H"(supondo que o nome da planilha  seja "Planilha1") para a propriedade`address`.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H:H");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    var pinkColumnRange = sheet.getRange("H:H");
+    let pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // null
-            console.log(rangeAreas.isEntireColumn); // false
-            console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // null
+    console.log(rangeAreas.isEntireColumn); // false
+    console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
+});
 ```
 
 ## <a name="see-also"></a>Confira também

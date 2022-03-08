@@ -1,37 +1,49 @@
 ---
 title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
-ms.date: 11/16/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dcc6991e762f8d3defca50df406952ee7f1385b
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: fa03cd9a3ccee9fce1cbb7025baf6c2463ff938d
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066657"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340537"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
 Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
 
 > [!NOTE]
-> Para obter mais informações sobre o método e a natureza assíncrona da API JavaScript Excel, consulte Excel modelo de objeto `sync()` [JavaScript em Office Add-ins](excel-add-ins-core-concepts.md).
+> Para obter `sync()` mais informações sobre o método e a natureza assíncrona da API JavaScript Excel, consulte Excel modelo de objeto [JavaScript em Office Add-ins](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Em todos os exemplos de código desta documentação, você notará que cada chamada a `Excel.run` é acompanhada de uma instrução `catch` para capturar todos os erros que ocorrem no `Excel.run`. É recomendável usar o mesmo padrão quando você cria um suplemento usando as APIs JavaScript do Excel.
+Em nossos [exemplos](https://github.com/OfficeDev/Office-Add-in-samples) de código [e](../overview/explore-with-script-lab.md) Script Lab trechos de código, `Excel.run` `catch` você notará que cada chamada é acompanhada por uma instrução para capturar quaisquer erros que ocorram dentro do `Excel.run`. É recomendável usar o mesmo padrão quando você cria um suplemento usando as APIs JavaScript do Excel.
 
 ```js
-Excel.run(function (context) {
-  
-  // Excel JavaScript API calls here
+$("#run").click(() => tryCatch(run));
 
-  // Await the completion of context.sync() before continuing.
-  return context.sync()
-    .then(function () {
-      console.log("Finished!");
-    })
-}).catch(errorHandlerFunction);
+async function run() {
+  await Excel.run(async (context) => {
+      // Add your Excel JavaScript API calls here.
+
+      // Await the completion of context.sync() before continuing.
+    await context.sync();
+    console.log("Finished!");
+  });
+}
+
+/** Default helper for invoking an action and handling errors. */
+async function tryCatch(callback) {
+  try {
+    await callback();
+  } catch (error) {
+    // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+    console.error(error);
+  }
+}
+
 ```
 
 ## <a name="api-errors"></a>Erros de API
@@ -51,7 +63,7 @@ Quando uma solicitação Excel API JavaScript falha ao executar com êxito, a AP
 
 A tabela a seguir é uma lista de erros que a API pode retornar.
 
-|Código de erro | Mensagem de erro | Observações |
+|Código de erro | Mensagem de erro | Notas |
 |:----------|:--------------|:------|
 |`AccessDenied` |Você não pode realizar a operação solicitada.| |
 |`ActivityLimitReached`|O limite de atividades foi alcançado.| |
@@ -79,13 +91,13 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`MergedRangeConflict`|Não é possível concluir a operação. Uma tabela não pode se sobrepor a outra tabela, um relatório de tabela dinâmica, resultados de consulta, células mescladas ou um mapa XML.|
 |`NonBlankCellOffSheet`|Microsoft Excel não pode inserir novas células porque empurraria células não vazias do final da planilha. Essas células não vazias podem aparecer vazias, mas têm valores em branco, algumas formatação ou uma fórmula. Exclua linhas ou colunas suficientes para dar espaço ao que você deseja inserir e tente novamente.| |
 |`NotImplemented`|O recurso solicitado não foi implementado.| |
-|`OperationCellsExceedLimit`|A operação tentada afeta mais do que o limite de 33554000 células.| Se o gatilho disparar esse erro, confirme se não há dados não intencional dentro da planilha, mas `TableColumnCollection.add API` fora da tabela. Em particular, verifique se há dados nas colunas mais à direita da planilha. Remova os dados não intencionados para resolver esse erro. Uma maneira de verificar quantas células uma operação processa é executar o seguinte cálculo: `(number of table rows) x (16383 - (number of table columns))` . O número 16383 é o número máximo de colunas que Excel suporta. <br><br>Esse erro só ocorre em Excel na Web. |
+|`OperationCellsExceedLimit`|A operação tentada afeta mais do que o limite de 33554000 células.| Se o `TableColumnCollection.add API` gatilho disparar esse erro, confirme se não há dados não intencional dentro da planilha, mas fora da tabela. Em particular, verifique se há dados nas colunas mais à direita da planilha. Remova os dados não intencionados para resolver esse erro. Uma maneira de verificar quantas células uma operação processa é executar o seguinte cálculo: `(number of table rows) x (16383 - (number of table columns))`. O número 16383 é o número máximo de colunas que Excel suporta. <br><br>Esse erro só ocorre em Excel na Web. |
 |`PivotTableRangeConflict`|A operação tentada causa um conflito com um intervalo de tabela dinâmica.| |
-|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| |
+|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo suportado. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de Complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| |
 |`RefreshWorkbookLinksBlocked`|A operação falhou porque o usuário não concedeu permissão para atualizar os links da agenda de trabalho externa.| |
 |`RequestAborted`|A solicitação foi anulada durante o tempo de execução.| |
-|`RequestPayloadSizeLimitExceeded`|O tamanho da carga de solicitação excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| Esse erro só ocorre em Excel na Web.|
-|`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|  Esse erro só ocorre em Excel na Web.|
+|`RequestPayloadSizeLimitExceeded`|O tamanho da carga de solicitação excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de Complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| Esse erro só ocorre em Excel na Web.|
+|`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Office de Complementos](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|  Esse erro só ocorre em Excel na Web.|
 |`ServiceNotAvailable`|O serviço não está disponível.| |
 |`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.| |
 |`UnsupportedFeature`|A operação falhou porque a planilha de origem contém um ou mais recursos sem suporte.| |
@@ -93,7 +105,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma planilha Macro ou Gráfico.| |
 
 > [!NOTE]
-> A tabela anterior lista mensagens de erro que você pode encontrar ao usar a API JavaScript Excel javascript. Se você estiver trabalhando com a API Comum em vez da Excel API JavaScript específica do aplicativo, consulte Office códigos de erro comuns da [API](../reference/javascript-api-for-office-error-codes.md) para saber mais sobre mensagens de erro relevantes.
+> A tabela anterior lista mensagens de erro que você pode encontrar ao usar Excel API JavaScript. Se você estiver trabalhando com a API Comum em vez da Excel API JavaScript específica do aplicativo, consulte Office códigos de erro comuns da [API](../reference/javascript-api-for-office-error-codes.md) para saber mais sobre mensagens de erro relevantes.
 
 ## <a name="see-also"></a>Confira também
 

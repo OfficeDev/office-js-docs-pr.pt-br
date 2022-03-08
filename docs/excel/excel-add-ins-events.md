@@ -1,10 +1,15 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
-description: Uma lista de eventos para Excel JavaScript. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
-ms.date: 12/06/2021
+description: Uma lista de eventos para Excel objetos JavaScript. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
+ms.date: 02/16/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 8bc1dcad8bccb51dbcedfee741954fabf6967670
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340579"
 ---
-
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
 Este artigo descreve conceitos importantes relacionados ao trabalho com eventos no Excel e fornece exemplos de código que mostram como registrar manipuladores de eventos, lidar com eventos e remover manipuladores de eventos usando as APIs JavaScript do Excel.
@@ -69,14 +74,12 @@ Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem traba
 O exemplo de código a seguir registra um manipulador de eventos para o evento `onChanged` na planilha **Sample**. O código especifica que, quando os dados forem alterados na planilha, a função `handleChange` deve ser executada.
 
 ```js
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     worksheet.onChanged.add(handleChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onChanged event in the worksheet.");
-        });
+    await context.sync();
+    console.log("Event handler successfully registered for onChanged event in the worksheet.");
 }).catch(errorHandlerFunction);
 ```
 
@@ -85,56 +88,48 @@ Excel.run(function (context) {
 Como mostrado no exemplo anterior, quando você registrar um manipulador de eventos, indica a função a ser executada quando o evento especificado ocorre. Você pode criar essa função para executar as ações que seu cenário exige. O exemplo de código a seguir mostra uma função de manipulador de eventos que simplesmente grava informações sobre o evento no console.
 
 ```js
-function handleChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Change type of event: " + event.changeType);
-                console.log("Address of event: " + event.address);
-                console.log("Source of event: " + event.source);
-            });
+async function handleChange(event) {
+    await Excel.run(async (context) => {
+        await context.sync();        
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);       
     }).catch(errorHandlerFunction);
 }
 ```
 
 ## <a name="remove-an-event-handler"></a>Remover um manipulador de eventos
 
-O exemplo de código a seguir registra um manipulador de eventos para o evento `onSelectionChanged` na planilha **Sample** e define a função `handleSelectionChange` a executar quando o evento ocorrer. Também define a função `remove()` que pode ser chamada posteriormente para remover aquele manipulador de eventos. Observe que o usado `RequestContext` para criar o manipulador de eventos é necessário para removê-lo. 
+O exemplo de código a seguir registra um manipulador de eventos para o evento `onSelectionChanged` na planilha **Sample** e define a função `handleSelectionChange` a executar quando o evento ocorrer. Também define a função `remove()` que pode ser chamada posteriormente para remover aquele manipulador de eventos. Observe que o usado `RequestContext` para criar o manipulador de eventos é necessário para removê-lo.
 
 ```js
-var eventResult;
+let eventResult;
 
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     eventResult = worksheet.onSelectionChanged.add(handleSelectionChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
-        });
-}).catch(errorHandlerFunction);
-
-function handleSelectionChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Address of current selection: " + event.address);
-            });
-    }).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
+  });
 }
 
-function remove() {
-    return Excel.run(eventResult.context, function (context) {
-        eventResult.remove();
+async function handleSelectionChange(event) {
+  await Excel.run(async (context) => {
+    await context.sync();
+    console.log("Address of current selection: " + event.address);
+  });
+}
 
-        return context.sync()
-            .then(function() {
-                eventResult = null;
-                console.log("Event handler successfully removed.");
-            });
-    }).catch(errorHandlerFunction);
+async function remove() {
+  await Excel.run(eventResult.context, async (context) => {
+    eventResult.remove();
+    await context.sync();
+    
+    eventResult = null;
+    console.log("Event handler successfully removed.");
+  });
 }
 ```
 
@@ -149,19 +144,20 @@ A `enableEvents` propriedade determina se os eventos são disparados e se seus m
 O código a seguir mostra como ativar ou desativar os eventos.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     context.runtime.load("enableEvents");
-    return context.sync()
-        .then(function () {
-            var eventBoolean = !context.runtime.enableEvents;
-            context.runtime.enableEvents = eventBoolean;
-            if (eventBoolean) {
-                console.log("Events are currently on.");
-            } else {
-                console.log("Events are currently off.");
-            }
-        }).then(context.sync);
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    let eventBoolean = !context.runtime.enableEvents;
+    context.runtime.enableEvents = eventBoolean;
+    if (eventBoolean) {
+        console.log("Events are currently on.");
+    } else {
+        console.log("Events are currently off.");
+    }
+    
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>Confira também
