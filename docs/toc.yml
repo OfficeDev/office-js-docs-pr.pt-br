@@ -252,8 +252,6 @@ items:
                   - name: Visão Geral
                     href: develop/develop-add-ins-visual-studio.md
                     displayName: Visual Studio
-                  - name: Depurar Suplementos do Office no Visual Studio
-                    href: develop/debug-office-add-ins-in-visual-studio.md
                   - name: Obter o JavaScript IntelliSense no Visual Studio
                     href: develop/get-javascript-intellisense-in-visual-studio.md
                   - name: Converter projetos JavaScript em TypeScript
@@ -282,9 +280,10 @@ items:
                 href: testing/debug-add-ins-using-devtools-edge-chromium.md
               - name: Depurar usando Visual Studio Code e Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
-                displayName: 'debug, windows'
               - name: Depurar usando Visual Studio Code e Edge Legacy WebView
                 href: testing/debug-with-vs-extension.md
+              - name: Depurar Suplementos do Office no Visual Studio
+                href: develop/debug-office-add-ins-in-visual-studio.md
               - name: Testar com o Internet Explorer 11
                 href: testing/ie-11-testing.md
           - name: Navegador da Web
