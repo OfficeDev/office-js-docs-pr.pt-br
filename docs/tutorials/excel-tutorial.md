@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Crie um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 01/13/2022
+ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222176"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340873"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -54,7 +54,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 1. Abra o projeto em seu editor de código.
 
-1. Abra o arquivo **./src/taskpane/taskpane.html**.  Ele contém a marcação HTML para o painel de tarefas.
+1. Abra o arquivo **./src/taskpane/taskpane.html**.  Este arquivo contém a marcação HTML para o painel de tarefas.
 
 1. Localize o elemento `<main>` e exclua todas as linhas que aparecem após a marca de abertura `<main>` e antes da marca de fechamento `</main>`.
 
@@ -64,7 +64,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. Abra o arquivo **./src/taskpane/taskpane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.
+1. Abra o arquivo **./src/taskpane/taskpane.js**. Esse arquivo contém o código API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office.
 
 1. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
 
@@ -72,7 +72,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     - Localize e exclua toda a função `run()`.
 
-1. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o seguinte código imediatamente após ela. Observação:
+1. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o código a seguir imediatamente após essa linha. Observação:
 
     - A primeira parte desse código determina se a versão do Excel do usuário oferece suporte a uma versão do Excel.js que inclua todas as APIs que essa série de tutoriais usará. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a IU que chamaria APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento que são compatíveis com sua versão do Excel.
 
@@ -94,11 +94,11 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     - O método `context.sync` envia todos os comandos da fila para execução no Excel.
 
-    - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir. 
+    - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.
 
     ```js
-    function createTable() {
-        Excel.run(function (context) {
+    async function createTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue table creation logic here.
 
@@ -106,7 +106,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
             // TODO3: Queue commands to format the table.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -126,8 +126,8 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     - Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -227,13 +227,13 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 1. Adicione a seguinte função ao final do arquivo.
 
     ```js
-    function filterTable() {
-        Excel.run(function (context) {
+    async function filterTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -251,9 +251,9 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
    - O método `applyValuesFilter` é um dos vários métodos de filtragem do objeto `Filter`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var categoryFilter = expensesTable.columns.getItem('Category').filter;
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ```
 
@@ -278,12 +278,12 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 1. Adicione a seguinte função ao final do arquivo.
 
     ```js
-    function sortTable() {
-        Excel.run(function (context) {
+    async function sortTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to sort the table by Merchant name.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -303,9 +303,9 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
    - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `apply` do objeto `TableSort`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var sortFields = [
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -354,8 +354,8 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 1. Adicione a seguinte função ao final do arquivo.
 
     ```js
-    function createChart() {
-        Excel.run(function (context) {
+    async function createChart() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to get the range of data to be charted.
 
@@ -363,7 +363,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
             // TODO3: Queue commands to position and format the chart.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -377,12 +377,12 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 1. Na função `createChart()`, substitua `TODO1` pelo código a seguir. Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var dataRange = expensesTable.getDataBodyRange();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const dataRange = expensesTable.getDataBodyRange();
     ```
 
-1. Na função `createChart()`, substitua `TODO2` pelo código a seguir. Observe os seguintes parâmetros.
+1. Na função `createChart()`, substitua `TODO2` com o seguinte código. Observe os seguintes parâmetros.
 
    - O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos.
 
@@ -391,7 +391,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
    - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve ser representada por linha ou coluna. A opção `auto` informa ao Excel para decidir o melhor método.
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
+    const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 1. Na função `createChart()`, substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
@@ -449,12 +449,12 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 1. Adicione a seguinte função ao final do arquivo.
 
     ```js
-    function freezeHeader() {
-        Excel.run(function (context) {
+    async function freezeHeader() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -472,7 +472,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
    - O método `freezeRows` toma como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar. Passamos `1` para fixar a primeira linha no lugar.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
@@ -601,12 +601,12 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 1. Adicione a seguinte função imediatamente após a função `action`. Especificamos um parâmetro `args` para a função, e a última linha da função chama `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo do cliente Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -627,7 +627,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 1. Na função `toggleProtection`, substitua `TODO1` pelo código a seguir. O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão. O `TODO2` será explicado na próxima seção.
 
     ```js
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -655,53 +655,30 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
    - Todos os objetos do Excel têm um método `load`. Especifique as propriedades do objeto que você deseja ler no parâmetro como uma cadeia de caracteres de nomes delimitados por vírgulas. Nesse caso, a propriedade que você precisa ler é uma subpropriedade de `protection`. Referencie a subpropriedade quase exatamente como você faria em qualquer lugar do seu código, mas usando uma barra (“/”) em vez de um ponto (".").
 
-   - Para garantir que a lógica de botão de alternância, `sheet.protection.protected`, não seja executada até após `sync` ser concluído e o `sheet.protection.protected` ser atribuída ao valor correto buscado no documento, ele será movido (na próxima etapa) para uma função `then` que não será executada até `sync` ser concluído.
+   - Para garantir que a lógica de alternância, que lê `sheet.protection.protected`, não seja executada até que o `sync` seja concluído e o `sheet.protection.protected` tenha recebido o valor correto obtido do documento, ele deverá vir depois que o operador `await` garantir que `sync` tenha sido concluído.
 
     ```js
     sheet.load('protection/protected');
-    return context.sync()
-        .then(
-            function() {
-                // TODO3: Move the queued toggle logic here.
-            }
-        )
-        // TODO4: Move the final call of `context.sync` here and ensure that it
-        //        does not run until the toggle logic has been queued.
-    ```
-
-1. Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Excel.run`. Você adicionará um novo `context.sync` final em uma etapa posterior.
-
-1. Recorte a estrutura `if ... else` na função `toggleProtection` e a cole no lugar de `TODO3`.
-
-1. Substitua `TODO4` pelo código a seguir. Observação:
-
-   - Passar o método `sync` para uma função `then` garante que ele não seja executado até que `sheet.protection.unprotect()` ou `sheet.protection.protect()` seja enfileirado.
-
-   - O método `then` invoca qualquer função que é passada para ele e não é recomendável que `sync` seja chamado duas vezes, portanto, remova os “()” do fim de `context.sync`.
-
-    ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
    Quando terminar, a função inteira deve se parecer com o seguinte:
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
-          var sheet = context.workbook.worksheets.getActiveWorksheet();
-          sheet.load('protection/protected');
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            sheet.load('protection/protected');
 
-          return context.sync()
-              .then(
-                  function() {
-                    if (sheet.protection.protected) {
-                        sheet.protection.unprotect();
-                    } else {
-                        sheet.protection.protect();
-                    }
-                  }
-              )
-              .then(context.sync);
+            await context.sync();
+
+            if (sheet.protection.protected) {
+                sheet.protection.unprotect();
+            } else {
+                sheet.protection.protect();
+            }
+            
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -828,11 +805,11 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-1. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro deve ser uma cadeia de caracteres, que inclui qualquer coisa que possa ser serializada como uma cadeia de caracteres, como XML ou JSON, ou qualquer tipo que possa ser convertido em uma cadeia de caracteres.
+1. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, nesse caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON., ou qualquer tipo que possa ser convertido em uma cadeia de caracteres.
 
     ```js
     function sendStringToParentPage() {
-        var userName = document.getElementById("name-box").value;
+        const userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
@@ -926,7 +903,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o seguinte código após ela. Você criará o método `openDialog` em uma etapa posterior.
+1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o código a seguir logo após essa linha. Você criará o método `openDialog` em uma etapa posterior.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
@@ -935,7 +912,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 1. Adicione a seguinte declaração ao final do arquivo. Esta variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediário ao contexto de execução da página de diálogo.
 
     ```js
-    var dialog = null;
+    let dialog = null;
     ```
 
 1. Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os aplicativos do Office, portanto, ela faz parte da API Comum de JavaScript do Office, não da API específica do Excel.
@@ -965,7 +942,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Processar a mensagem da caixa de diálogo e depois fechá-la
 
-1. Na função `openDialog` no arquivo **./src/taskpane/taskpane.js**, substitua `TODO2` pelo código a seguir. Observação:
+1. Na função `openDialog` no arquivo **./src/taskpane/taskpane.js**, substitua `TODO2` pelo seguinte código. Observação:
 
    - O retorno de chamada é executado imediatamente depois que a caixa de diálogo é aberta com êxito e antes de usuário executar a ação na caixa de diálogo.
 

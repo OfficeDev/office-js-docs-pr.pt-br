@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você criará um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 05/12/2021
+ms.date: 02/18/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: efddb10e0d72ad79b5da10c3e9b5e7c8d24ecf54
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38430240b768709d0c6d1bca12c91ebbf019a662
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152025"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340159"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -41,6 +41,11 @@ Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usa
 5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
      ![A captura de tela da janela do gerenciador de soluções do Microsoft Visual Studio mostrando HelloWorld e HelloWorldWeb, os 2 projetos na solução HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
+
+6. Os seguintes pacotes NuGet devem ser instalados. Instale-os usando o **Gerenciador de Pacotes NuGet** no Visual Studio. Consulte a ajuda do Visual Studio para obter instruções. O segundo deles pode ser instalado automaticamente quando você instala o primeiro.
+
+   - Microsoft.AspNet.WebApi.WebHost
+   - Microsoft.AspNet.WebApi.Core
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -243,7 +248,7 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
 
 1. No arquivo **Home.html**, substitua `TODO2` pela marcação a seguir para adicionar uma seção de cabeçalho e um título ao painel de tarefas. Observação:
 
-    - Os estilos que começam com `ms-` são definidos pelo [Fabric Core em Suplementos do Office ](../design/fabric-core.md), uma estrutura de front-end JavaScript para construir experiências do usuário para o Office. O arquivo **Home.html** inclui uma referência à folha de estilo do Fabric Core.
+    - Os estilos que começam com `ms-` são definidos pelo [Núcleo da Malha em Suplementos do Office](../design/fabric-core.md), uma estrutura de front-end JavaScript para criar experiências do usuário do Office. O arquivo **Home.html** inclui uma referência à folha de estilos do Fabric.
 
     ```html
     <div id="content-header">
@@ -259,7 +264,7 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Usando o Visual Studio, teste o suplemento do PowerPoint ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do PowerPoint pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
     ![Captura de tela mostrando o botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -311,7 +316,7 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
     ![Captura de tela do Microsoft Visual Studio com o botão Iniciar realçado.](../images/powerpoint-tutorial-start.png)
 
@@ -370,7 +375,7 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
     ![Captura de tela realçando o botão Iniciar no Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -470,7 +475,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Usando o Visual Studio, teste o suplemento ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
     ![Captura de tela mostrando o botão Iniciar realçado na barra de ferramentas do Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
 
