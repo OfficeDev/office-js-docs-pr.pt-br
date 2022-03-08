@@ -3,10 +3,15 @@ title: Visão geral da programação da API JavaScript do OneNote
 description: Saiba mais sobre a API JavaScript do OneNote para suplementos do OneNote na Web.
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: 1aa50bf12bb7e2777e31a3dc7875208d8b2966a4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340971"
 ---
-
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
 O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
@@ -50,33 +55,24 @@ Use o objeto `Application` para acessar os objetos do OneNote, como **Bloco de A
 Por exemplo:
 
 ```js
-function getPagesInSection() {
-    OneNote.run(function (context) {
+async function getPagesInSection() {
+    await OneNote.run(async (context) => {
 
         // Get the pages in the current section.
-        var pages = context.application.getActiveSection().pages;
+        const pages = context.application.getActiveSection().pages;
 
         // Queue a command to load the id and title for each page.
         pages.load('id,title');
 
         // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync()
-            .then(function () {
-
-                // Read the id and title of each page.
-                $.each(pages.items, function(index, page) {
-                    var pageId = page.id;
-                    var pageTitle = page.title;
-                    console.log(pageTitle + ': ' + pageId);
-                });
-            })
-            .catch(function (error) {
-                app.showNotification("Error: " + error);
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
+        await context.sync();
+            
+        // Read the id and title of each page.
+        $.each(pages.items, function(index, page) {
+            let pageId = page.id;
+            let pageTitle = page.title;
+            console.log(pageTitle + ': ' + pageId);
+        });
     });
 }
 ```
@@ -87,7 +83,7 @@ Você pode encontrar objetos do OneNote e operações compatíveis na [Referênc
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do OneNote, consulte [Conjuntos de requisitos da API JavaScript do OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte às APIs que um suplemento precisa. Para obter informações detalhadas dos conjuntos de requisitos da API JavaScript do OneNote, consulte [Conjuntos de requisitos da API JavaScript do OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 

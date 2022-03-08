@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 01/13/2022
+ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 55a54dd08d18204bfe4d821ba9403e3a3d9c09a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222210"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340446"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -39,7 +39,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -88,7 +88,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 ### <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/word-tutorial.md).
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo o [tutorial do suplemento Word](../tutorials/word-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -164,24 +164,23 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
             });
         });
 
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
+        async function insertEmersonQuoteAtSelection() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                var thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
+                await context.sync();
+                console.log('Added a quote from Ralph Waldo Emerson.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -191,20 +190,19 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
             });
         }
 
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
+        async function insertChekhovQuoteAtTheBeginning() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
+                await context.sync();
+                console.log('Added a quote from Anton Chekhov.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -214,20 +212,19 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
             });
         }
 
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
+        async function insertChineseProverbAtTheEnd() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
+                await context.sync();
+                console.log('Added a quote from a Chinese proverb.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -292,7 +289,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Word recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando **F5** ou escolhendo **Depurar** > **Iniciar Depuração** para iniciar o Word com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. (Caso esteja usando uma versão de compra avulsa do Office, em vez da versão do Microsoft 365, os botões personalizados não serão compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
