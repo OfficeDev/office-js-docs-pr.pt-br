@@ -1331,6 +1331,9 @@ items:
           - name: Ler e gravar dados na seleção ativa
             href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
             displayName: Word
+          - name: Valores nulos
+            href: word/null-values.md
+            displayName: Word
           - name: Usar as opções de pesquisa para localizar o texto no suplemento do Word
             href: word/search-option-guidance.md
             displayName: Word
