@@ -1,5 +1,5 @@
 > [!NOTE]
-> Se você estiver executando o seu complemento no localhost e vir o erro "Lamentamos, não foi possível acessar *{your-add-in-name-here}*. Certifique-se de ter uma conexão de rede. Se o problema continuar, tente novamente mais tarde.", talvez seja necessário habilitar uma isenção de loopback.
+> Outlook no Windows: se você estiver executando o seu complemento no localhost e vir o erro "Lamentamos, não foi possível acessar *{your-add-in-name-here}*. Certifique-se de ter uma conexão de rede. Se o problema continuar, tente novamente mais tarde.", talvez seja necessário habilitar uma isenção de loopback.
 >
 > 1. Close Outlook.
 > 1. Abra o **Gerenciador de Tarefas** e certifique-se de que o **msoadfsb.exe** não está em execução.

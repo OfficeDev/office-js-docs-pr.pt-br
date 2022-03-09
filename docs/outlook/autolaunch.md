@@ -1,17 +1,17 @@
 ---
-title: Configurar seu complemento do Outlook para ativação baseada em eventos
-description: Saiba como configurar seu complemento do Outlook para ativação baseada em eventos.
+title: Configurar seu Outlook para ativação baseada em eventos
+description: Saiba como configurar seu Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7c3445199098efc95ed54b20105418502368bc16
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340285"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63399996"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu complemento do Outlook para ativação baseada em eventos
+# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
 
 Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário.
 
@@ -25,7 +25,7 @@ No final deste passo a passo, você terá um complemento que é executado sempre
 A tabela a seguir lista os eventos que estão disponíveis no momento e os clientes com suporte para cada evento. Quando um evento é gerado, o manipulador recebe um `event` objeto que pode incluir detalhes específicos do tipo de evento. A **coluna Descrição** inclui um link para o objeto relacionado quando aplicável.
 
 > [!IMPORTANT]
-> Os eventos ainda em visualização só podem estar disponíveis com uma assinatura do Microsoft 365 e em um conjunto limitado de clientes com suporte, conforme notado na tabela a seguir. Para obter detalhes de configuração do cliente, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
+> Os eventos ainda em visualização só podem estar disponíveis com uma assinatura Microsoft 365 e em um conjunto limitado de clientes com suporte, conforme o que está na tabela a seguir. Para obter detalhes de configuração do cliente, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
 
 |Evento|Descrição|Conjunto de requisitos mínimos e clientes com suporte|
 |---|---|---|
@@ -43,26 +43,21 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 
 ### <a name="how-to-preview"></a>Como visualizar
 
-Convidamos você a experimentar os eventos agora na visualização! Deixe-nos saber seus cenários e como podemos melhorar nos dando feedback por meio do GitHub (consulte a seção **Comentários** no final desta página).
+Convidamos você a experimentar os eventos agora na visualização! Deixe-nos saber seus cenários e como podemos melhorar nos dando comentários por meio GitHub (consulte a seção **Comentários** no final desta página).
 
 Para visualizar esses eventos quando disponível:
 
-- Para o Outlook na Web:
-  - [Configure a versão direcionada em seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
-  - Fazer referência **à biblioteca beta** na CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
-- Para o Outlook na nova visualização da interface do usuário do Mac:
-  - O build mínimo necessário é 16,54 (21101001). Participe do [programa Office Insider](https://insider.office.com/join/Mac) e escolha o **Canal Beta** para acesso a builds beta do Office.
-- Para o Outlook no Windows:
-  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider](https://insider.office.com/join/windows) e escolha o **Canal Beta** para acesso a builds beta do Office.
-  - Configure o Registro. O Outlook inclui uma cópia local das versões de produção e beta do Office.js em vez de carregar da CDN (rede de distribuição de conteúdo). Por padrão, a cópia de produção local da API é referenciada. Para alternar para a cópia beta local das APIs JavaScript do Outlook, você precisa adicionar essa entrada do Registro, caso contrário, as APIs beta podem não ser encontradas.
-    1. Crie a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
-    1. Adicione uma entrada chamada `EnableBetaAPIsInJavaScript` e desmarcar o valor como `1`. A imagem a seguir mostra qual deve ser a aparência de registro.
-
-        ![Captura de tela do editor do Registro com um valor de chave do Registro EnableBetaAPIsInJavaScript.](../images/outlook-beta-registry-key.png)
+- Para Outlook na Web:
+  - [Configure a versão direcionada em seu Microsoft 365 locatário.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+  - Fazer referência **à biblioteca beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
+- Para Outlook na nova visualização da interface do usuário do Mac:
+  - O build mínimo necessário é 16,54 (21101001). Participe do [programa Office Insider](https://insider.office.com/join/Mac) e escolha o **Canal Beta** para acesso às Office beta.
+- Para Outlook no Windows:
+  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider](https://insider.office.com/join/windows) e escolha o **Canal Beta** para acesso às Office beta.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de complemento com o gerador Yeoman para Os Complementos do Office.
+Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido que cria um projeto de complemento com o gerador Yeoman para Office Desempois.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -202,7 +197,7 @@ Você precisa implementar o tratamento para os eventos selecionados.
 
 Nesse cenário, você adicionará a manipulação para compor novos itens.
 
-1. No mesmo projeto de início rápido, crie uma nova pasta chamada **launchevent** no **diretório /src/** .
+1. No mesmo projeto de início rápido, crie uma nova pasta chamada **launchevent** no **diretório ./src** .
 
 1. Na pasta **./src/launchevent** , crie um novo arquivo chamado **launchevent.js**.
 
@@ -247,9 +242,21 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 > [!IMPORTANT]
 > Windows: no momento, as importações não são suportadas no arquivo JavaScript onde você implementa o tratamento para a ativação baseada em eventos.
 
+## <a name="update-the-commands-html-file"></a>Atualizar o arquivo HTML de comandos
+
+1. Na pasta **./src/commands** , abra **commands.html**.
+
+1. Imediatamente antes da marca **de cabeça** de fechamento (`<\head>`), adicione uma entrada de script para incluir o código JavaScript de manipulação de eventos.
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. Salve suas alterações.
+
 ## <a name="update-webpack-config-settings"></a>Atualizar as configurações webpack config
 
-Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e conclua as etapas a seguir.
+1. Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e conclua as etapas a seguir.
 
 1. Localize `plugins` a matriz dentro do `config` objeto e adicione esse novo objeto no início da matriz.
 
@@ -292,8 +299,6 @@ Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e 
 
     ![Captura de tela de uma janela de mensagem Outlook no Windows com o assunto definido na redação.](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## <a name="debug"></a>Depurar
 
 À medida que você faz alterações no tratamento de eventos de início no seu complemento, você deve estar ciente de que:
@@ -304,6 +309,8 @@ Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e 
 Ao implementar sua própria funcionalidade, talvez seja necessário depurar seu código. Para obter orientações sobre como depurar a ativação de um add-in baseado em eventos, consulte [Depurar seu Outlook de evento](debug-autolaunch.md).
 
 O log de tempo de execução também está disponível para esse recurso em Windows. Para obter mais informações, consulte [Depurar seu add-in com o log de tempo de execução](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="deploy-to-users"></a>Implantar para usuários
 

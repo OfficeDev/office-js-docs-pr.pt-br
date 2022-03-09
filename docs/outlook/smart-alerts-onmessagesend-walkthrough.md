@@ -2,14 +2,14 @@
 title: Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 description: Saiba como lidar com o evento enviar mensagem em seu Outlook-in usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dba12ba6ae667f3f5db740495a58ffc425d3aef3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340845"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63400003"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 
@@ -146,7 +146,7 @@ Você precisa implementar o tratamento para o evento selecionado.
 
 Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O seu complemento verificará se há determinadas palavras-chave na mensagem. Se alguma dessas palavras-chave for encontrada, ela verificará se há anexos. Se não houver anexos, o seu complemento recomendará ao usuário adicionar o anexo possivelmente ausente.
 
-1. No mesmo projeto de início rápido, crie uma nova pasta chamada **launchevent** no **diretório /src/** .
+1. No mesmo projeto de início rápido, crie uma nova pasta chamada **launchevent** no **diretório ./src** .
 
 1. Na pasta **./src/launchevent** , crie um novo arquivo chamado **launchevent.js**.
 
@@ -161,50 +161,64 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O se
     function onMessageSendHandler(event) {
       Office.context.mailbox.item.body.getAsync(
         "text",
-        { "asyncContext": event },
-        function (asyncResult) {
-          let event = asyncResult.asyncContext;
-          let body = "";
-          let matches;
-          if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
-            body = asyncResult.value;
-          }
+        { asyncContext: event },
+        getBodyCallback
+      );
+    }
 
-          const arrayOfTerms = ["send", "picture", "document", "attachment"];
-          for (let index = 0; index < arrayOfTerms.length; index++) {
-            let term = arrayOfTerms[index].trim();
-            const regex = RegExp(term, 'i');
-            if (regex.test(body)) {
-              matches.push(term);
-            }
-          }
+    function getBodyCallback(asyncResult){
+      let event = asyncResult.asyncContext;
+      let body = "";
+      if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
+        body = asyncResult.value;
+      } else {
+        let message = "Failed to get body text";
+        console.error(message);
+        event.completed({ allowEvent: false, errorMessage: message });
+        return;
+      }
 
-          if (matches.length > 0) {
-            // Let's verify if there's an attachment!
-            Office.context.mailbox.item.getAttachmentsAsync(
-              { "asyncContext": event },
-              function(result) {
-                let event = result.asyncContext;
-                if (result.value.length <= 0) {
-                  const message = "Looks like you're forgetting to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                } else {
-                  for (let i = 0; i < result.value.length; i++) {
-                    if (result.value[i].isInline == false) {
-                      event.completed({ allowEvent: true });
-                      return;
-                    }
-                  }
-      
-                  const message = "Looks like you forgot to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                }
-              });
-            } else {
-              event.completed({ allowEvent: true });
-            }
+      let matches = hasMatches(body);
+      if (matches) {
+        Office.context.mailbox.item.getAttachmentsAsync(
+          { asyncContext: event },
+          getAttachmentsCallback);
+      } else {
+        event.completed({ allowEvent: true });
+      }
+    }
+
+    function hasMatches(body) {
+      if (body == null || body == "") {
+        return false;
+      }
+
+      const arrayOfTerms = ["send", "picture", "document", "attachment"];
+      for (let index = 0; index < arrayOfTerms.length; index++) {
+        const term = arrayOfTerms[index].trim();
+        const regex = RegExp(term, 'i');
+        if (regex.test(body)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function getAttachmentsCallback(asyncResult) {
+      let event = asyncResult.asyncContext;
+      if (asyncResult.value.length > 0) {
+        for (let i = 0; i < asyncResult.value.length; i++) {
+          if (asyncResult.value[i].isInline == false) {
+            event.completed({ allowEvent: true });
+            return;
           }
-        );
+        }
+
+        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
+      } else {
+        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
+      }
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
@@ -213,14 +227,11 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O se
 
 1. Salve suas alterações.
 
-> [!IMPORTANT]
-> Windows: no momento, as importações não são suportadas no arquivo JavaScript onde você implementa o tratamento para a ativação baseada em eventos.
-
 ## <a name="update-webpack-config-settings"></a>Atualizar as configurações webpack config
 
-Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e conclua as etapas a seguir.
+1. Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e conclua as etapas a seguir.
 
-1. Localize `plugins` a matriz dentro do `config` objeto e adicione esse novo objeto no início da matriz.
+1. Localize `plugins` a matriz dentro do `config` objeto e adicione esse novo objeto ao início da matriz.
 
     ```js
     new CopyWebpackPlugin({
@@ -251,9 +262,10 @@ Abra o **webpack.config.js** arquivo encontrado no diretório raiz do projeto e 
 
 1. Em Outlook no Windows, crie uma nova mensagem e de definir o assunto. No corpo, adicione texto como "Ei, confira esta imagem do meu cachorro!".
 1. Envie a mensagem. Uma caixa de diálogo deve aparecer com uma recomendação para adicionar um anexo.
-1. Adicione um anexo e envie a mensagem novamente. Não deve haver nenhum alerta desta vez.
 
-[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
+    ![Captura de tela de uma janela de mensagem Outlook no Windows com a caixa de diálogo.](../images/outlook-win-smart-alert.png)
+
+1. Adicione um anexo e envie a mensagem novamente. Não deve haver nenhum alerta desta vez.
 
 ## <a name="see-also"></a>Confira também
 
