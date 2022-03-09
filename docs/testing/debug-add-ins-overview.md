@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office
 description: Encontre a diretrizes de depuração do Suplemento do Office para seu ambiente de desenvolvimento
-ms.date: 01/27/2022
+ms.date: 02/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 67afa308625c4f18775c3470c2bc2410af37905c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263055"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340376"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Visão geral da depuração de Suplementos do Office
 
@@ -42,9 +42,9 @@ Para encontrar as diretrizes para depurar o código do lado do cliente, a primei
 
 A seguir, as diretrizes gerais para a depuração no Windows. Há instruções especiais para a depuração de funções personalizadas sem interface do usuário no Excel e suplementos baseados em eventos no Outlook. Consulte [Casos especiais no Windows](#special-cases-in-windows) posteriormente nesta seção. A depuração no Windows depende do seu IDE:
 
-- **Visual Studio**: Depure usando o depurador interno. Consulte [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
+- **Visual Studio**: depurar usando as ferramentas F12 do navegador. Consulte [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Depure usando a [Extensão do Depurador de Suplemento para Visual Studio Code](debug-with-vs-extension.md).
-- **Qualquer outro IDE** (ou você não deseja depurar dentro do seu IDE): Use as ferramentas de desenvolvedor associadas ao runtime do navegador que os suplementos utilizam no seu computador de desenvolvimento. Confira um dos procedimentos a seguir:
+- **Qualquer outro IDE** (ou você não quer depurar dentro do seu IDE): use as ferramentas de desenvolvedor associadas ao runtime do navegador que os suplementos usam no seu computador de desenvolvimento. Consulte uma das seguintes opções:
 
     - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
     - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
@@ -74,7 +74,7 @@ Para depurar funções personalizadas sem interface do usuário no Mac, consulte
 
 ## <a name="debug-on-linux"></a>Depurar no Linux
 
-Não há uma versão de área de trabalho do Office para Linux, então será necessário fazer o [sideload do suplemento para o Office na Web](sideload-office-add-ins-for-testing.md) para testá-lo e depurá-lo. As diretrizes de depuração estão em [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md).
+Não há versões da área de trabalho do Office para Linux, portanto, você precisará [realizar o sideload do suplemento do Office na Web](sideload-office-add-ins-for-testing.md) para testá-lo e depurá-lo. As diretrizes de depuração estão nos [Suplementos de depuração no Office na Web](debug-add-ins-in-office-online.md).
 
 > [!NOTE]
 > Não recomendamos que você desenvolva Suplementos do Office em um computador Linux, exceto no caso incomum em que você pode ter certeza de que todos os usuários do suplemento acessarão o suplemento por meio do Office na Web a partir de um computador Linux.
