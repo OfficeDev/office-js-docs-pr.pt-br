@@ -1,53 +1,39 @@
 ---
 title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
-ms.date: 12/02/2021
+ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 5a07185c064d65432c7a3afce1e9f32e99034c3e
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765903"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63435687"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
-Você pode criar e depurar suplementos em um computador que não esteja executando o Windows ou os clientes de área de trabalho do Office 2013 ou do Office 2016, por exemplo, se você estiver desenvolvendo no Mac. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. Este artigo descreve como usar o Office na Web para testar e depurar seus suplementos. 
+Este artigo descreve como usar o Office na Web para depurar seus complementos. Use esta técnica:
 
-## <a name="prerequisites"></a>Pré-requisitos
+- Para depurar os complementos&mdash; em um computador que não esteja executando o Windows ou o cliente da área de trabalho Office por exemplo, se você estiver desenvolvendo em um Mac ou Linux.
+- Como um processo alternativo de depuração se você não puder ou não desejar depurar um IDE, como Visual Studio ou Visual Studio Code.
 
-Para começar:
+Este artigo supõe que você tenha um projeto de complemento que precisa ser depurado. Se você deseja apenas praticar a depuração na Web, crie um novo projeto usando um dos inícios rápidos para aplicativos Office específicos, como este início rápido [para o Word](../quickstarts/word-quickstart.md).
 
-- Obter uma Microsoft 365 de desenvolvedor se você ainda não tiver uma ou tiver acesso a um SharePoint site.
-
-  > [!NOTE]
-  > Para obter uma assinatura de desenvolvedor renovável de 90 dias Microsoft 365, participe do nosso [programa Microsoft 365 desenvolvedor.](https://developer.microsoft.com/office/dev-program) Consulte a [documentação Microsoft 365](/office/developer-program/office-365-developer-program) do programa de desenvolvedor para obter instruções passo a passo sobre como ingressar no programa Microsoft 365 desenvolvedor e configurar sua assinatura.
-
-- Configurar um catálogo de aplicativos no SharePoint Online. Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para Office de complementos. Se você tiver seu próprio site SharePoint, poderá configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, [consulte Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
-
-
-## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Depurar seu suplemento do Excel ou Word na Web
+## <a name="debug-your-add-in"></a>Depurar o suplemento
 
 Para depurar seu suplemento usando o Office na Web:
 
-1. Implante o suplemento em um servidor que dê suporte a SSL.
+1. Execute o projeto no localhost e o recarregue em um documento Office na Web. Para obter instruções detalhadas de sideload, consulte [Sideload Office Add-ins na Web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
 
-    > [!NOTE]
-    > Recomendamos que você use o [gerador Yeoman](https://github.com/OfficeDev/generator-office) para criar e hospedar seu suplemento.
+2. Abra as ferramentas de desenvolvedor do navegador. Isso geralmente é feito pressionando F12. Abra a ferramenta de depurador e use-a para definir pontos de interrupção e observar variáveis. Para saber mais sobre como usar a ferramenta do navegador, confira um dos seguintes:  
 
-2. No seu [arquivo de manifesto de suplemento](../develop/add-in-manifests.md), atualize o valor do elemento **SourceLocation** para incluir um URI absoluto, em vez de relativo. Por exemplo:
+   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
-
-3. Carregue o manifesto para a biblioteca de suplementos do Office no catálogo de aplicativos no SharePoint.
-
-4. Iniciar Excel ou Word na Web do launcher de aplicativos no Microsoft 365 e abra um novo documento.
-
-5. Na guia Inserir, escolha **Meus Complementos** ou **Office-ins** para inserir seu complemento e testá-lo no aplicativo.
-
-6. Use a ferramenta de depuração do navegador para depurar o seu complemento. Normalmente, ele é aberto pressionando F12.
+   > [!NOTE]
+   > Office na Web não abrirá no Internet Explorer.
 
 ## <a name="potential-issues"></a>Possíveis problemas
 
@@ -57,11 +43,9 @@ A seguir estão alguns problemas que você pode encontrar ao depurar.
 
 - O navegador pode mostrar um erro de certificado inválido que você deve ignorar. O processo para fazer isso varia com o navegador e as interfaces de usuário dos vários navegadores para fazer essa alteração periodicamente. Você deve pesquisar na ajuda do navegador ou pesquisar online para obter instruções. (Por exemplo, procure por "Aviso de certificado inválido do Microsoft Edge".) A maioria dos navegadores terá um link na página de aviso que permite que você clique na página do suplemento. Por exemplo, o Microsoft Edge possui um link "Ir para a página da Web (não recomendado)". Mas você geralmente terá que passar por este link toda vez que o suplemento for recarregado. Para um bypass mais duradouro, consulte a ajuda, como sugerido.
 
-- Se você definir pontos de interrupção no seu código, o Office na Web pode lançar uma mensagem de erro indicando que não é possível salvar.
+- Se você definir pontos de interrupção em seu código, Office na Web pode lançar um erro indicando que ele não é capaz de salvar.
 
 ## <a name="see-also"></a>Confira também
 
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
-- [Políticas de validação do AppSource](/legal/marketplace/certification-policies)  
-- [Criar aplicativos e suplementos eficazes para o AppSource](/office/dev/store/create-effective-office-store-listings)  
-- [Solucionar erros de usuários com suplementos do Office](testing-and-troubleshooting.md)
+- [Solucionar erros de usuários com Suplementos do Office](testing-and-troubleshooting.md)
