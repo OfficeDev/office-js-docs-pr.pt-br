@@ -1,4 +1,4 @@
-- [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
+- [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
 - A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de Suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando.
 

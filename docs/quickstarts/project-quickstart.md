@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 08/04/2021
+ms.date: 01/06/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: cb291a76a97c6cf3c7d816c7c2019337132aecc8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9c80769d0116186c574b6e4fa86e89eadfadc410
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151788"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "63511366"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -98,8 +98,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Inicie o servidor Web local.
 
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     Execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado.
 

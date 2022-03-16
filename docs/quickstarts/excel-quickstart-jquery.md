@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 02/25/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1a4639aaa49ed06acb3f24bbd8cb132577670bae
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: bd503b9f51bb4c97bc8d0cfa144d448bb4ea649d
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63341020"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511389"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -116,6 +116,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
     ```
 
 2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

@@ -4,16 +4,14 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0c6a12cc84f35ceb04e26df8be4635bddd42ca04
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340446"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511332"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
-
-_Aplica-se a: Word 2016 ou posterior no Windows, Word para iPad e Mac_
 
 Neste artigo, você aprenderá sobre o processo de criação de um suplemento do painel de tarefas do Word.
 
@@ -139,6 +137,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     ```
 
 2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

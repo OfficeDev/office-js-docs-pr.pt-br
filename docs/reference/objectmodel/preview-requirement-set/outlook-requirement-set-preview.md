@@ -1,10 +1,15 @@
 ---
 title: Outlook conjunto de requisitos de visualização de API de complemento
 description: Recursos e APIs que estão atualmente em visualização para Outlook de complementos.
-ms.date: 11/01/2021
+ms.date: 03/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 714be93351ff67ad49cd07154f145f19949efa68
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511275"
 ---
-
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conjunto de requisitos de visualização de API de complemento
 
 O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.
@@ -17,7 +22,7 @@ O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos,
 > [!TIP]
 > Você pode ser capaz de visualizar recursos no Outlook na Web configurando a versão direcionada [em seu locatário Microsoft 365 locatário.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) "Configure preview access" é notado nesta página para recursos aplicáveis.
 >
-> Para outros recursos, você pode solicitar acesso a bits de visualização para Outlook na Web usando sua conta Microsoft 365 concluindo e enviando [esse formulário](https://aka.ms/OWAPreview). "Solicitar acesso de visualização" é notado nesses recursos.
+> Para outros recursos, você pode solicitar acesso a bits de visualização para Outlook na Web usando sua conta Microsoft 365 completando e enviando [esse formulário](https://aka.ms/OWAPreview). "Solicitar acesso de visualização" é notado nesses recursos.
 
 O conjunto de requisitos de visualização inclui todos os recursos do conjunto [de requisitos 1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md).
 
@@ -29,7 +34,7 @@ Os seguintes recursos estão no modo de visualização.
 
 Os complementos agora podem ser ativados em itens protegidos por IRM. Para ativar esse recurso, um administrador de locatário precisa habilitar o direito de uso definindo a `OBJMODEL` opção **Permitir** política personalizada de acesso programático em Office. Confira [Direitos de uso e descrições](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) para obter mais informações.
 
-**Disponível em**: Outlook no Windows, começando com a com build 13229.10000 (conectado a uma assinatura Microsoft 365)
+**Disponível em**: Outlook no Windows, começando com a com build 13229.10000 (conectada a uma assinatura Microsoft 365)
 
 <br>
 
@@ -101,6 +106,12 @@ Esse recurso foi lançado no [conjunto de requisitos 1.10](../requirement-set-1.
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura de Microsoft 365)
 
+#### <a name="officeaddincommandseventcompletedoptionserrormessage"></a>[Office. AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-errormessage-member)
+
+Adicionada uma nova propriedade para exibir uma mensagem de erro ao usuário se o evento manipulado não puder continuar a ser executado. Por exemplo, consulte o passo a passo [alertas inteligentes](../../../outlook/smart-alerts-onmessagesend-walkthrough.md).
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura de Microsoft 365)
+
 <br>
 
 ---
@@ -145,7 +156,7 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 O suporte a recursos para pastas compartilhadas (ou seja, acesso de representante) foi lançado no [conjunto de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). No entanto, o suporte para caixas de correio compartilhadas agora está disponível na visualização. Para saber mais, consultar [Habilitar pastas compartilhadas e cenários de caixas de correio compartilhada](../../../outlook/delegate-access.md).
 
-**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365 de Microsoft 365), Outlook na Web (moderno), Outlook no Mac
+**Disponível em**: Outlook no Windows (conectado a uma assinatura Microsoft 365), Outlook na Web (moderno), Outlook no Mac
 
 ## <a name="see-also"></a>Confira também
 

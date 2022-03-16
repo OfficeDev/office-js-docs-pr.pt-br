@@ -1,18 +1,18 @@
 ---
 title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bf359c29552a7ca64e9d14a6b40aa5dc671bbb6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 285a73b144470798e20d6d4ca374fb8a1655db2b
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855587"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511269"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
-Uma guia contextual é um controle de tabulação oculto na faixa Office que é exibido na linha de tabulação quando um evento especificado ocorre no documento Office. Por exemplo, a **guia Design** de Tabela que aparece na faixa Excel quando uma tabela é selecionada. Você inclui guias contextuais personalizadas no seu Office e especifica quando elas estão visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
+Uma guia contextual é um controle de tabulação oculto na faixa de opções Office que é exibida na linha de tabulação quando um evento especificado ocorre no documento Office. Por exemplo, a **guia Design** de Tabela que aparece na faixa Excel quando uma tabela é selecionada. Você inclui guias contextuais personalizadas no seu Office e especifica quando elas estão visíveis ou ocultas, criando manipuladores de eventos que alteram a visibilidade. (No entanto, as guias contextuais personalizadas não respondem a alterações de foco.)
 
 > [!NOTE]
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
@@ -23,6 +23,7 @@ Uma guia contextual é um controle de tabulação oculto na faixa Office que é 
 > Atualmente, as guias contextuais personalizadas só têm suporte Excel e somente nessas plataformas e builds.
 >
 > - Excel no Windows (somente Microsoft 365 assinatura): Versão 2102 (Build 13801.20294) ou posterior.
+> - Excel no Mac: Versão 16.53.806.0 ou posterior.
 > - Excel Online
 
 > [!NOTE]
@@ -63,7 +64,7 @@ Ao contrário das guias principais personalizadas, definidas com XML no manifest
 > [!NOTE]
 > A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no XML do manifesto.
 
-Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON está [em dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
+Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON está [em dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - Esquemas e configurações JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
 1. Comece criando uma cadeia de caracteres JSON com duas propriedades de matriz nomeadas `actions` e `tabs`. A `actions` matriz é uma especificação de todas as funções que podem ser executadas por controles na guia contextual. A `tabs` matriz define uma ou mais guias contextuais, *até um máximo de 20*.
 
@@ -292,7 +293,7 @@ Office.onReady(async () => {
 
 Em seguida, defina os manipuladores. Veja a seguir um exemplo simples de um `showDataTab`, mas consulte [Manipulando o erro HostRestartNeeded](#handle-the-hostrestartneeded-error) posteriormente neste artigo para obter uma versão mais robusta da função. Sobre este código, observe:
 
-- O Office controla quando atualiza o estado da faixa de opções. O [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) enfileia uma solicitação para atualizar. O método resolverá o `Promise` objeto assim que tiver enraizado a solicitação, não quando a faixa de opções realmente for atualizada.
+- O Office controla quando atualiza o estado da faixa de opções. O [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) enfilinha uma solicitação para atualizar. O método resolverá o `Promise` objeto assim que tiver enraizado a solicitação, não quando a faixa de opções realmente for atualizada.
 - O parâmetro `requestUpdate` para o método é um objeto [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifica a guia por sua ID exatamente como especificado no *JSON* e (2) especifica a visibilidade da guia.
 - Se você tiver mais de uma guia contextual personalizada que deve estar visível no mesmo contexto, basta adicionar objetos de tabulação adicionais à `tabs` matriz.
 

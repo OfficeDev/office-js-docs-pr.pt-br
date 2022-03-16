@@ -1,21 +1,21 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhados
 description: Especifica as plataformas e Office que suportam as APIs sharedRuntime.
-ms.date: 02/05/2022
+ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892528"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511286"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhados
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-Partes de um Office que executem código JavaScript, como painéis de tarefas, arquivos de função lançados a partir de comandos de Excel e funções personalizadas, podem compartilhar um único tempo de execução do JavaScript. Isso permite que todas as partes compartilhem um conjunto de variáveis globais, compartilhem um conjunto de bibliotecas carregadas e se comuniquem entre si sem precisar passar mensagens por meio de um armazenamento persistente. Para obter mais informações, [consulte Configure your Office Add-in to use a shared JavaScript runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Partes de um Office que executem código JavaScript, como painéis de tarefas, arquivos de função lançados de comandos de Excel e funções personalizadas do Excel, podem compartilhar um único tempo de execução do JavaScript. Isso permite que todas as partes compartilhem um conjunto de variáveis globais, compartilhem um conjunto de bibliotecas carregadas e se comuniquem entre si sem precisar passar mensagens por meio de um armazenamento persistente. Para obter mais informações, [consulte Configure your Office Add-in to use a shared JavaScript runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 A tabela a seguir lista o conjunto de requisitos SharedRuntime 1.1, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
@@ -37,6 +37,8 @@ A tabela a seguir lista builds de aplicativo adicionais que suportam uma visuali
 |Aplicativo do Office |Compilar |
 |-------------------|------|
 |PowerPoint no Windows |Build 16.0.13218.10000 ou posterior |
+|PowerPoint no Mac |Build Build 16.46.207.0 ou posterior |
+|PowerPoint Online | Fevereiro de 2022 |
 |Word no Windows |Build 16.0.13218.10000 ou posterior |
 |Word no Mac |Build 16.46.207.0 ou posterior |
 
