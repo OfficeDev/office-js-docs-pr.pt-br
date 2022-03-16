@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 08/04/2021
+ms.date: 02/28/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 51ec95f49ef89f21aaf6a776115f8754c4a87c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152008"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511398"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -25,16 +25,11 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- [Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de Suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) ou seu editor de código preferido
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.
+- Outlook 2016 ou posterior no Windows (conectado a uma conta do Microsoft 365) ou Outlook na Web
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
@@ -71,7 +66,10 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o arquivo **./src/taskpane/taskpane.html** e substitua o elemento `<main>` inteiro (dentro do elemento `<body>`) com a seguinte marcação. A próxima marcação adiciona uma etiqueta onde o script no **./src/taskpane/taskpane.js** gravará os dados.
+1. Abra o projeto no VS Code ou no seu editor de código preferido.
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. Abra o arquivo **./src/taskpane/taskpane.html** e substitua todo o elemento **\<main\>** (dentro do elemento **\<body\>**) pela marcação a seguir. A próxima marcação adiciona uma etiqueta onde o script no **./src/taskpane/taskpane.js** gravará os dados.
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -83,7 +81,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
     </main>
     ```
 
-1. No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`. Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade `subject` no painel de tarefas.
+1. No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**. Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade **subject** no painel de tarefas.
 
     ```js
     // Get a reference to the current message
@@ -95,16 +93,13 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ### <a name="try-it-out"></a>Experimente
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executa este comando, o servidor web local será iniciado (se ainda não estiver em execução) e seu suplemento será transferido.
+1. Execute o seguinte comando no diretório raiz do seu projeto. Ao executar esse comando, o servidor Web local será iniciado e seu complemento será [sideload](../outlook/sideload-outlook-add-ins-for-testing.md).
 
     ```command&nbsp;line
     npm start
     ```
-
-1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.
 
 1. No Outlook, exiba uma mensagem no [Painel de leitura](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) ou abra a mensagem em sua própria janela.
 
@@ -115,6 +110,10 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
     > [!NOTE]
     > Se você receber a mensagem de erro "Não é possível abrir este suplemento do localhost" no painel de tarefas, siga as etapas descritas no [artigo de solução de problemas](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
+1. Quando solicitado com a caixa de diálogo **Parar na Carga do Modo de Exibição da Web**, selecione **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
 1. Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.
 
     ![Captura de tela do painel de tarefas do suplemento com o link Executar realçado.](../images/quick-start-task-pane-2.png)
@@ -123,7 +122,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ### <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook! Em seguida, saiba mais sobre os recursos de um suplemento do Outlook e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/outlook-tutorial.md).
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Outlook. Em seguida, saiba mais sobre os recursos de um suplemento do Outlook e crie um suplemento mais complexo seguindo o [tutorial do suplemento Outlook](../tutorials/outlook-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -147,7 +146,7 @@ Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook
 
 1. Dê um nome ao projeto e escolha **OK**.
 
-1. O Visual Studio cria uma solução, e os dois projetos dele aparecem no **Gerenciador de Soluções**. O arquivo **MessageRead.html** é aberto no Visual Studio.
+1. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **MessageRead.html** é aberto no Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -160,7 +159,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. **MessageRead.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **MessageRead.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
+1. **MessageRead.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **MessageRead.html**, substitua o elemento **\<body\>** pela marcação a seguir e salve o arquivo.
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -245,11 +244,11 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
-1. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+1. O elemento **ProviderName** tem um valor de espaço reservado. Substitua-o com seu nome.
 
-1. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o por `My Office Add-in`.
+1. O atributo **DefaultValue** do elemento **DisplayName** tem um espaço reservado. Substitua-o por `My Office Add-in`.
 
-1. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por `My First Outlook add-in`.
+1. O atributo **DefaultValue** do elemento **Description** tem um espaço reservado. Substitua-o por `My First Outlook add-in`.
 
 1. Salve o arquivo.
 

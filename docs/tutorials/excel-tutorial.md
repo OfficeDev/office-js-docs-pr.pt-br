@@ -4,12 +4,12 @@ description: Crie um suplemento do Excel que cria, preenche, filtra e classifica
 ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: f8d21b0003f24b1b216e0e6823d1962778e18223
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340873"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511302"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -30,6 +30,11 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Office conectado a uma assinatura Microsoft 365 (incluindo o Office na web).
+
+    > [!NOTE]
+    > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.
 
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
@@ -64,7 +69,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. Abra o arquivo **./src/taskpane/taskpane.js**. Esse arquivo contém o código API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office.
+1. Abra o arquivo **./src/taskpane/taskpane.js**. Esse arquivo contém o código da API do JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office.
 
 1. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
 
@@ -95,6 +100,8 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     - O método `context.sync` envia todos os comandos da fila para execução no Excel.
 
     - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function createTable() {
@@ -300,7 +307,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
    - A propriedade `key` de um objeto `SortField` é o índice baseado em zero da coluna usada para classificação. As linhas da tabela são classificadas com base nos valores da coluna referenciada.
 
-   - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `apply` do objeto `TableSort`.
+   - O `sort` membro de um `Table` é um `TableSort` objeto, não um método. Os `SortField`s são passados ao `TableSort` método do `apply` objeto.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -374,7 +381,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     }
     ```
 
-1. Na função `createChart()`, substitua `TODO1` pelo código a seguir. Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.
+1. Dentro da função `createChart()`, substitua `TODO1` pelo seguinte código. Observe que, para excluir a linha do cabeçalho, o código usa o método `Table.getDataBodyRange` para obter o intervalo de dados que você deseja registrar em vez do método `getRange`.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -394,7 +401,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. Na função `createChart()`, substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
+1. Na função `createChart()`, substitua `TODO3` pelo seguinte código. A maior parte desse código é autoexplicativa. Observação:
 
    - Os parâmetros do método `setPosition` especificam as células da esquerda superior e da direita inferior da área da planilha que deve conter o gráfico. O Excel ajusta detalhes como a largura da linha para criar uma boa aparência para o gráfico no espaço fornecido.
 
@@ -502,7 +509,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 
 1. Abra o arquivo de manifesto **./manifest.xml**.
 
-1. Localize o elemento `<Control>`. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de fechamento `</Control>` e a marca de fechamento`</Group>`, adicione a marcação a seguir.
+1. Localize o elemento `<Control>`. Esse elemento define o botão **Mostrar painel de tarefas** na faixa **Página inicial** que você está usando para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa **Página inicial**. Entre os rótulos `</Control>` de fechamento `</Group>`adicione a seguinte marcação.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -528,7 +535,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-1. Os próximos três `TODO`s definem IDs de recurso ou `resid`s. Um recurso é uma cadeia de caracteres (com um comprimento máximo de 32 caracteres), e você cria essas três cadeias em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ser "Toggle Protection", mas o *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", para que o elemento `Label` fique assim:
+1. Os três `TODO`s seguintes definem as IDs dos recursos, ou `resid`s. Um recurso é uma cadeia de caracteres (com um comprimento máximo de 32 caracteres) e você criará essas três cadeias de caracteres em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ser "Toggle Protection", mas a *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", então o elemento `Label` deve ser semelhante a este:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
@@ -546,7 +553,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
    > [!NOTE]
    > Em um suplemento de produção,não é recomendável usar o mesmo ícone para dois botões diferentes; mas, para simplificar este tutorial, faremos isso. Portanto, a marcação `Icon` em nosso novo `Control` é apenas uma cópia do elemento `Icon` do `Control` existente.
 
-1. O elemento `Action` dentro do elemento original `Control` tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abre um painel de tarefas; ele executará uma função personalizada criada em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas. A marca de abertura para o elemento `Action` deve ficar assim:
+1. O elemento `Action` dentro do elemento original `Control` está com seu tipo definido para `ShowTaskpane`, mas nosso novo botão não abrirá um painel de tarefas; ele executará uma função personalizada que você criará em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, pois é o tipo de ação para botões que acionam funções personalizadas. O rótulo de abertura do elemento `Action` deve ser semelhante a este:
 
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -624,7 +631,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
     g.toggleProtection = toggleProtection;
     ```
 
-1. Na função `toggleProtection`, substitua `TODO1` pelo código a seguir. O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão. O `TODO2` será explicado na próxima seção.
+1. Na função `toggleProtection`, substitua `TODO1` pelo seguinte código. Esse código usa a propriedade de proteção do objeto de planilha em um padrão de alternância padrão. O `TODO2` será explicado na próxima seção.
 
     ```js
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -641,7 +648,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas
 
-Em cada função criada neste tutorial até agora, você enfileirou comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. No entanto, o código que você adicionou na última etapa chama o `sheet.protection.protected property`. Essa é uma diferença significativa das funções anteriores que você escreveu, porque o objeto `sheet` é apenas um objeto proxy que existe no script do painel de tarefas. O objeto proxy não conhece o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. Para evitar um erro de exceção, você deve primeiro buscar o status de proteção do documento e usá-lo para definir o valor de`sheet.protection.protected`. Esse processo de busca tem três etapas.
+Em cada função que você criou neste tutorial até agora, você enfileirou comandos para *escrever* no documento do Office. Cada função termina com uma chamada ao método `context.sync()`, que envia os comandos enfileirados ao documento a ser executado. No entanto, o código que você adicionou na última etapa chama o `sheet.protection.protected property`. Essa é uma diferença significativa em relação às funções anteriores que você escreveu, porque o objeto `sheet` é apenas um objeto proxy que existe no script do painel de tarefas. O objeto proxy não conhece o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. Para evitar um erro de exceção, você deve primeiro buscar o status de proteção do documento e usá-lo para definir o valor de `sheet.protection.protected`. Esse processo de busca possui três etapas.
 
    1. Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.
 
@@ -728,7 +735,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
         Para usar seu suplemento, abra um documento no Excel na Web e realize o sideload do suplemento seguindo as instruções em [Realizar Sideload de Suplementos do Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-1. Na guia **Página Inicial** no Excel, escolha o botão **Proteger Planilha**. A maioria dos controles da faixa de opções está desabilitada e esmaecida, como mostra a captura de tela a seguir.
+1. Na aba **Página inicial** do Excel, escolha o botão **Ativar a proteção da planilha**. Observe que a maioria dos controles da faixa de opções estão desabilitados (e esmaecidos visualmente) como visto na captura de tela a seguir.
 
     ![Captura de tela da faixa de opções do Excel com o botão Alternar Proteção de Planilha realçado e habilitado. A maioria dos outros botões aparecem cinza e desabilitados.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
@@ -895,7 +902,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-1. A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas. O painel de tarefas o exibirá em um rótulo. Imediatamente após o `button` que você adicionou, adicione a marcação a seguir.
+1. A caixa de diálogo pedirá que o usuário insira um nome e passe o nome do usuário para o painel de tarefas. O painel de tarefas o exibirá em um rótulo. Imediatamente após o `button` que você acabou de adicionar, adicione a seguinte marcação.
 
     ```html
     <label id="user-name"></label><br/><br/>
@@ -915,7 +922,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
     let dialog = null;
     ```
 
-1. Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os aplicativos do Office, portanto, ela faz parte da API Comum de JavaScript do Office, não da API específica do Excel.
+1. Adicione a seguinte função ao final do arquivo (depois da declaração de `dialog`). O importante a observar sobre esse código é o que *não* está lá: não há chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada entre todos os aplicativos do Office, por isso, faz parte da API comum do JavaScript do Office, não da API específica do Excel.
 
     ```js
     function openDialog() {
@@ -978,7 +985,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 1. Enquanto a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas, mas não pode iniciar uma segunda caixa de diálogo a partir da mesma página do painel de tarefas.
 
-1. Na caixa de diálogo, digite um nome e escolha o botão **OK**. O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.
+1. Na caixa de diálogo, insira um nome e selecione o botão **OK**. O nome é exibido no painel de tarefas e a caixa de diálogo é fechada.
 
 1. Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.
 
