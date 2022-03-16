@@ -1,11 +1,16 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
-description: 'Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.'
-ms.date: 01/06/2022
+description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
+ms.date: 02/23/2022
 ms.prod: outlook
 ms.localizationpriority: high
+ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511384"
 ---
-
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
 Este tutorial ensina como criar um suplemento que pode ser usado em mensagens no modo de redação do Outlook para inserir conteúdo no corpo de uma mensagem.
@@ -22,16 +27,9 @@ Neste tutorial, você vai:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de Suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) ou seu editor de código preferido
 
 - Outlook 2016 ou posterior no Windows (conectado a uma conta do Microsoft 365) ou Outlook na Web
 
@@ -119,7 +117,7 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
 
 1. Este suplemento usará as seguintes bibliotecas.
 
-    - Biblioteca [Showdown](https://github.com/showdownjs/showdown) para converter o Markdown para HTML
+    - Biblioteca [Showdown](https://github.com/showdownjs/showdown) para converter Markdown em HTML.
     - Biblioteca [URI.js](https://github.com/medialize/URI.js) para criar URLs relativos.
     - Biblioteca [jquery](https://jquery.com/) para simplificar as interações com o DOM.
 
@@ -129,6 +127,10 @@ O suplemento que você criará neste tutorial lerá [gists](https://gist.github.
     npm install showdown urijs jquery --save
     ```
 
+1. Abra o projeto no VS Code ou no seu editor de código preferido.
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
 O manifesto controla como o suplemento é exibido no Outlook. Ele define a maneira como o suplemento aparece na lista de suplementos e os botões que aparecem na faixa de opções, além de definir as URLs para os arquivos HTML e JavaScript usados pelo suplemento.
@@ -137,13 +139,13 @@ O manifesto controla como o suplemento é exibido no Outlook. Ele define a manei
 
 Faça as seguintes atualizações no arquivo **manifest.xml** para especificar algumas informações básicas sobre o suplemento.
 
-1. Encontre o elemento `ProviderName` e substitua o valor padrão pelo nome da sua empresa.
+1. Localize o elemento **ProviderName** e substitua o valor padrão pelo nome da empresa.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Localize o elemento`Description`, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.
+1. Localize o elemento **Description**, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -161,7 +163,13 @@ Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para 
     npm start
     ```
 
-1. No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**. Se tudo tiver sido configurado corretamente, o painel de tarefas será aberto e exibirá a página de boas-vindas do suplemento.
+1. No Outlook, abra uma mensagem existente e selecione o botão **Mostrar Painel de Tarefas**.
+
+1. Quando solicitado com a caixa de diálogo **Parar na Carga do Modo de Exibição da Web**, selecione **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
+    Se tudo tiver sido configurado corretamente, o painel de tarefas será aberto e exibirá a página de boas-vindas do suplemento.
 
     ![Captura de tela do botão "Mostrar Painel de Tarefas" e do Git do painel de tarefas de gist adicionado pelo exemplo.](../images/button-and-pane.png)
 
@@ -175,21 +183,21 @@ Agora que você verificou que o complemento básico funciona, você pode persona
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>Remover o ponto de extensão MessageReadCommandSurface
 
-Abra o arquivo **manifest. XML** e localize o elemento `ExtensionPoint` com tipo `MessageReadCommandSurface`. Exclua esse elemento `ExtensionPoint`(incluindo a marca de fechamento) para remover os botões na janela de mensagem de leitura.
+Abra o arquivo **manifest.xml** e localize o elemento **ExtensionPoint** com o tipo **MessageReadCommandSurface**. Exclua esse elemento **ExtensionPoint** (incluindo a marca de fechamento) para remover os botões da janela de mensagem de leitura.
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Adicionar o ponto de extensão MessageComposeCommandSurface
 
 Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente antes dessa linha, insira a marcação XML a seguir. Observe o seguinte sobre esta marcação.
 
-- `ExtensionPoint` com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela de composição de mensagem.
+- O **ExtensionPoint** com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela Redigir mensagem.
 
-- Ao usar um elemento `OfficeTab` com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.
+- Ao usar um elemento **OfficeTab** com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.
 
-- O elemento `Group` define o agrupamento dos novos botões, com um rótulo definido pelo recurso `groupLabel`.
+- O elemento **Group** define o agrupamento dos novos botões, com um rótulo definido pelo recurso **groupLabel**.
 
-- O primeiro elemento `Control` contém um elemento `Action` com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.
+- O primeiro elemento **Control** contém um elemento **Action** com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.
 
-- O segundo elemento `Control` contém um elemento `Action` com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.
+- O segundo elemento **Control** contém um elemento **Action** com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.
 
 ```xml
 <!-- Message Compose -->
@@ -234,11 +242,11 @@ Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente an
 
 ### <a name="update-resources-in-the-manifest"></a>Atualização de recursos no manifesto
 
-O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Você especificará estas informações na seção `Resources` do manifesto.
+O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Você especificará estas informações na seção **Resources** do manifesto.
 
-1. Localize o elemento `Resources` no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).
+1. Localize o elemento **Resources** no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).
 
-1. No mesmo local, adicione a seguinte marcação para substituir o elemento `Resources` que você acabou de remover.
+1. No mesmo local, adicione a seguinte marcação para substituir o elemento **Resources** que você acabou de remover.
 
     ```xml
     <Resources>
@@ -269,15 +277,15 @@ O código anterior faz referência a rótulos, dicas de ferramentas e URLs que v
 
 ### <a name="reinstall-the-add-in"></a>Reinstalar o suplemento
 
-Como você já instalou o suplemento a partir de um arquivo, você precisa reinstalá-lo para que as alterações de manifesto entrem em vigor.
+Você deve reinstalar o complemento para que as alterações de manifesto entrem em vigor.
 
-1. Siga as instruções para remover o **Git de gist** de [suplementos de sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+1. Se o servidor Web estiver em execução, feche a janela de comando do nó.
 
-1. Fechar a janela **Meus suplementos**.
+1. Execute o comando a seguir para iniciar o servidor Web local e realizar o sideload automático do suplemento.
 
-1. O botão personalizado deve desaparecer momentaneamente da faixa de opções.
-
-1. Siga as instruções em [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para reinstalar o suplemento utilizando o arquivo **manifest.xml**.
+    ```command&nbsp;line
+    npm start
+    ```
 
 Depois de reinstalar o suplemento, você pode verificar se ele foi instalado com êxito verificando os comandos **Inserir gist** e **Inserir gist padrão** na janela de composição de mensagem. Observe que nada acontece quando você escolhe um destes itens, porque você ainda não terminou de criar este suplemento.
 
@@ -295,7 +303,7 @@ Este suplemento precisa ser capaz de ler gists da conta do GitHub do usuário e 
 
 ### <a name="collect-data-from-the-user"></a>Coletar dados do usuário
 
-Para começar, vamos criar o UI para a caixa de diálogo. Dentro da pasta **./src**, crie uma nova subpasta chamada **configurações**. Na pasta **./src/settings**, crie um arquivo chamado **dialog.html** e adicione a marcação a seguir para definir um formulário bem básico com uma entrada de texto para um nome de usuário do GitHub e uma lista vazia para gists que serão preenchidas por meio de JavaScript.
+Para começar, vamos criar o UI para a caixa de diálogo. Dentro da pasta **./src**, crie uma nova subpasta chamada **configurações**. Na pasta **./src/settings**, crie um arquivo chamado **dialog.html** e adicione a marcação a seguir para definir um formulário básico com uma entrada de texto de um nome de usuário do GitHub e uma lista vazia de gists que será preenchida via JavaScript.
 
 ```html
 <!DOCTYPE html>
@@ -360,7 +368,6 @@ Para começar, vamos criar o UI para a caixa de diálogo. Dentro da pasta **./sr
       </div>
     </section>
   </main>
-  <script type="text/javascript" src="../../node_modules/core-js/client/core.js"></script>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
@@ -368,6 +375,8 @@ Para começar, vamos criar o UI para a caixa de diálogo. Dentro da pasta **./sr
 
 </html>
 ```
+
+Você deve ter notado que o arquivo HTML faz referência a um arquivo JavaScript, **gist-api.js**, que ainda não existe. Esse arquivo será criado na seção abaixo [Buscar dados do GitHub](#fetch-data-from-github).
 
 Em seguida, crie um arquivo na pasta **./src/settings** chamado **dialog.css** e adicione o seguinte código para especificar os estilos que são usados pelo **dialog.html**.
 
@@ -404,7 +413,7 @@ ul {
 }
 ```
 
-Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa. Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código. Observe que o código usa jQuery registrar eventos e usa o `messageParent` função enviar as opções do usuário para o chamador.
+Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa. Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código. Observe que esse código usa jQuery para registrar eventos e usa a função **messageParent** para enviar as opções do usuário de volta ao chamador.
 
 ```js
 (function(){
@@ -510,62 +519,70 @@ Agora que você definiu a IU da caixa de diálogo, você pode escrever código q
 
 #### <a name="update-webpack-config-settings"></a>Atualizar as configurações webpack config
 
-Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as seguintes etapas.
+Por fim, abra o arquivo **webpack.config.js** encontrado no diretório raiz do projeto e conclua as etapas a seguir.
 
 1. Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `dialog`.
 
     ```js
-    dialog: "./src/settings/dialog.js"
+    dialog: "./src/settings/dialog.js",
     ```
 
     Após fazer isso, o novo objeto `entry` ficará assim:
 
     ```js
     entry: {
-      polyfill: "@babel/polyfill",
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      dialog: "./src/settings/dialog.js"
+      dialog: "./src/settings/dialog.js",
     },
     ```
 
-1. Localize a `plugins` matriz dentro do `config` objeto. Na `patterns` matriz do `new CopyWebpackPlugin` objeto, adicione uma nova entrada depois da `taskpane.css` entrada.
+1. Localize a `plugins` matriz dentro do `config` objeto. Na matriz `patterns` do objeto `new CopyWebpackPlugin`, adicione novas entradas para **taskpane.css** e **dialog.css**.
 
     ```js
     {
+      from: "./src/taskpane/taskpane.css",
+      to: "taskpane.css",
+    },
+    {
+      from: "./src/settings/dialog.css",
       to: "dialog.css",
-      from: "./src/settings/dialog.css"
     },
     ```
 
     Após fazer isso, o `new CopyWebpackPlugin` objeto terá a seguinte aparência:
 
     ```js
-      new CopyWebpackPlugin({
-        patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
+    new CopyWebpackPlugin({
+      patterns: [
+      {
+        from: "./src/taskpane/taskpane.css",
+        to: "taskpane.css",
+      },
+      {
+        from: "./src/settings/dialog.css",
+        to: "dialog.css",
+      },
+      {
+        from: "assets/*",
+        to: "assets/[name][ext][query]",
+      },
+      {
+        from: "manifest*.xml",
+        to: "[name]." + buildType + "[ext]",
+        transform(content) {
+          if (dev) {
+            return content;
+          } else {
+            return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
           }
-        }
-      ]}),
+        },
+      },
+    ]}),
     ```
 
-1. Localize a `plugins` matriz no `config` objeto e adicione esse novo objeto ao final dela.
+1. Na mesma matriz `plugins` do objeto `config`, adicione esse novo objeto ao final da matriz.
 
     ```js
     new HtmlWebpackPlugin({
@@ -579,38 +596,42 @@ Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e co
 
     ```js
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane"]
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
-          }
-        }
-      ]}),
+          {
+            from: "./src/taskpane/taskpane.css",
+            to: "taskpane.css",
+          },
+          {
+            from: "./src/settings/dialog.css",
+            to: "dialog.css",
+          },
+          {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+          },
+          {
+            from: "manifest*.xml",
+            to: "[name]." + buildType + "[ext]",
+            transform(content) {
+              if (dev) {
+                return content;
+              } else {
+                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+              }
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
+        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "dialog.html",
@@ -620,25 +641,11 @@ Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e co
     ],
     ```
 
-1. Se o servidor Web estiver em execução, feche a janela de comando do nó.
-
-1. Execute o seguinte comando para recriar o projeto.
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-1. Exe para cute o seguinte comando para iniciar o servidor Web e fazer o sideload do seu suplemento.
-
-    ```command&nbsp;line
-    npm start
-    ```
-
 ### <a name="fetch-data-from-github"></a>Buscar dados do GitHub
 
-As **dialog.js** arquivo que você criou Especifica que o suplemento deverá ser carregada gists quando o `change` incêndios evento para o campo de nome de usuário do GitHub. Para recuperar gists do usuário do GitHub, você usará o [GitHub Gists API](https://developer.github.com/v3/gists/).
+O arquivo **dialog.js** que você acabou de criar especifica que o suplemento deve carregar gists quando o evento de **alteração** for acionado para o campo de nome de usuário do GitHub. Para recuperar gists do usuário do GitHub, você usará o [GitHub Gists API](https://developer.github.com/v3/gists/).
 
-Dentro da pasta **./src**, crie uma nova subpasta chamada **auxiliares**. Na pasta **./src/helpers**, crie um arquivo chamado **gist-api.js** e adicione o seguinte código para recuperar gists do usuário no GitHub e criar a lista de gists.
+Dentro da pasta **./src**, crie uma nova subpasta nomeada **helpers**. Na pasta **./src/helpers**, crie um arquivo nomeado **gist-api.js** e adicione o seguinte código para recuperar os gists do usuário do GitHub e criar a lista de gists.
 
 ```js
 function getUserGists(user, callback) {
@@ -708,8 +715,11 @@ function buildFileList(files) {
 }
 ```
 
-> [!NOTE]
-> Você deve ter notado que não há nenhum botão para invocar a caixa de diálogo de configurações. Em vez disso, o suplemento verificará se ele foi configurado quando o usuário seleciona o botão **Inserir gist padrão** ou o botão **Inserir gist**. Se o suplemento ainda não tiver sido configurado, a caixa de diálogo de configurações solicitará que o usuário o configure antes de prosseguir.
+Execute o seguinte comando para recriar o projeto.
+
+```command&nbsp;line
+npm run build
+```
 
 ## <a name="implement-a-ui-less-button"></a>Implementar um botão sem interface do usuário
 
@@ -721,7 +731,7 @@ O botão **Inserir gist padrão** do suplemento é um botão sem interface do us
 
 ### <a name="update-the-function-file-html"></a>Atualizar o arquivo de função (HTML)
 
-Uma função invocada por um botão sem interface do usuário devem ser definidas no arquivo especificado pelo elemento `FunctionFile` no manifesto para o fator forma correspondente. O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.
+Uma função que é invocada por um botão sem interface do usuário deve ser definida no arquivo que é especificado pelo elemento **FunctionFile** no manifesto do fator de forma correspondente. O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.
 
 Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pela marcação a seguir.
 
@@ -736,11 +746,11 @@ Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pel
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-    <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-    <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-    <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+    <script type="text/javascript" src="../helpers/addin-config.js"></script>
+    <script type="text/javascript" src="../helpers/gist-api.js"></script>
 </head>
 
 <body>
@@ -751,9 +761,11 @@ Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pel
 </html>
 ```
 
+Você deve ter notado que o arquivo HTML faz referência a um arquivo JavaScript, **addin-config.js**, que ainda não existe. Esse arquivo será criado na seção [Criar um arquivo para gerenciar as definições de configuração](#create-a-file-to-manage-configuration-settings) posteriormente neste tutorial.
+
 ### <a name="update-the-function-file-javascript"></a>Atualizar o arquivo de função (JavaScript)
 
-Abra o arquivo **./src/commands/commands.js** e substitua todo o conteúdo pelo código a seguir. Observe que, se a função`insertDefaultGist` determinar que o suplemento ainda não foi configurado, ele adicionará o parâmetro `?warn=1` à URL de caixa de diálogo. Isso faz com que a caixa de diálogo de configurações renderize a barra de mensagens que está definida em **./settings/dialog.html**, para informar ao usuário porque está vendo a caixa de diálogo.
+Abra o arquivo **./src/commands/commands.js** e substitua todo o conteúdo pelo código a seguir. Observe que, se a função **insertDefaultGist** determinar que o suplemento ainda não foi configurado, ele adicionará o parâmetro `?warn=1` à URL da caixa de diálogo. Isso faz com que a caixa de diálogo de configurações renderize a barra de mensagens definida no **./src/settings/dialog.html**, para informar ao usuário por que ele vê a caixa de diálogo.
 
 ```js
 var config;
@@ -810,7 +822,7 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
     var dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
@@ -852,7 +864,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>Criar um arquivo para gerenciar configurações
 
-O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe. Crie um arquivo chamado **addin-config.js** na pasta **./src/helpers** e adicione o seguinte código. O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.roamingsettings) para definir valores de configuração.
+O arquivo de função HTML faz referência a um arquivo chamado **suplemento config.js**, que ainda não existe. Na pasta **./src/helpers**, crie um arquivo chamado **addin-config.js** e adicione o código a seguir. O código usa o [Objeto RoamingSettings](/javascript/api/outlook/office.roamingsettings) para definir valores de configuração.
 
 ```js
 function getConfig() {
@@ -906,7 +918,7 @@ function buildBodyContent(gist, callback) {
         // We have a winner.
         switch (file.language) {
           case 'HTML':
-            // Insert as-is.
+            // Insert as is.
             callback(file.content);
             break;
           case 'Markdown':
@@ -930,7 +942,7 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a>Testar o botão
+### <a name="test-the-insert-default-gist-button"></a>Testar o botão Inserir gist padrão
 
 Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir Gist Padrão**.
 
@@ -940,11 +952,11 @@ Salvar todas as suas alterações e executar `npm start` do prompt de comando, s
 
     ![Captura de tela do prompt de diálogo para configurar o suplemento.](../images/addin-prompt-configure.png)
 
-1. Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em outro lugar na caixa de diálogo para invocar o evento `change` que deve carregar sua lista de gists públicos. Selecione um gist para ser o padrão e selecione **Concluído**.
+1. Na caixa de diálogo de configurações, insira seu nome de usuário do GitHub e, em seguida, **Tab** ou clique em qualquer lugar na caixa de diálogo para invocar o evento **change**, que deve carregar sua lista de gists públicos. Selecione um gist para ser o padrão e selecione **Concluído**.
 
     ![Captura de tela de caixa de diálogo de configurações do suplemento.](../images/addin-settings.png)
 
-1. Clique no botão **Insert Default Gist** novamente. Desta vez, você deverá ver o conteúdo do gist inserido no corpo do email.
+1. Selecione o botão **Inserir gist padrão** novamente. Desta vez, você deve ver o conteúdo do gist inserido no corpo do email.
 
    > [!NOTE]
    > Outlook no Windows: Para selecionar as configurações mais recentes, talvez seja necessário fechar e reabrir a janela de composição de mensagens.
@@ -1006,11 +1018,11 @@ No projeto que você criou, o painel de tarefas HTML é especificado no arquivo 
       <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
     </div>
   </footer>
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="taskpane.js"></script>
 </body>
 
@@ -1137,11 +1149,8 @@ ul {
       -webkit-flex: 1 0 0px;
               flex: 1 0 0px;
       padding: 20px; }
-      .ms-landing-page__footer--left:active, .ms-landing-page__footer--left:hover {
-        background: #005ca4;
-        cursor: pointer; }
       .ms-landing-page__footer--left:active {
-        background: #005ca4; }
+        cursor: default; }
       .ms-landing-page__footer--left--disabled {
         opacity: 0.6;
         pointer-events: none;
@@ -1230,7 +1239,7 @@ No projeto que você criou, o painel de tarefas JavaScript é especificado no ar
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
+        var url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
@@ -1291,7 +1300,7 @@ No projeto que você criou, o painel de tarefas JavaScript é especificado no ar
 })();
 ```
 
-### <a name="test-the-button"></a>Testar o botão
+### <a name="test-the-insert-gist-button"></a>Testar o botão Inserir gist
 
 Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir gist** botão.
 
