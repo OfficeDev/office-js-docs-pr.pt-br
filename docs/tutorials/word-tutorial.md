@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340166"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511246"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -29,6 +29,11 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Office conectado a uma assinatura Microsoft 365 (incluindo o Office na web).
+
+    > [!NOTE]
+    > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.
 
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
@@ -93,6 +98,8 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
    - O método `context.sync` envia todos os comandos da fila para execução no Word.
 
    - `Word.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.
+
+   [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function insertParagraph() {
@@ -201,7 +208,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     }
     ```
 
-1. Na função `applyStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.
+1. Dentro da função `applyStyle()`, substitua `TODO1` pelo código a seguir. Observe que o código aplica um estilo a um parágrafo, mas os estilos também podem ser aplicados a intervalos de texto.
 
     ```js
     const firstParagraph = context.document.body.paragraphs.getFirst();
@@ -245,7 +252,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
     }
     ```
 
-1. Na função `applyCustomStyle()`, substitua `TODO1` pelo código a seguir. O código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).
+1. Dentro da função `applyCustomStyle()`, substitua `TODO1` pelo código a seguir. Observe que o código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).
 
     ```js
     const lastParagraph = context.document.body.paragraphs.getLast();
@@ -310,7 +317,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **Página Inicial** e escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abri-lo.
 
-1. Verifique se há pelo menos três parágrafos no documento. É possível escolher o botão **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*
+1. Verifique se há pelo menos três parágrafos no documento. Você pode escolher o botão **inserir parágrafo** três vezes. *Verifique cuidadosamente se não há nenhum parágrafo em branco no final do documento. Se houver, exclua-o.*
 
 1. No Word, crie um [estilo personalizado](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "MyCustomStyle". Pode ter a formatação que você quiser.
 
@@ -387,7 +394,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     originalRange.insertText(" (C2R)", "End");
     ```
 
-1. Vamos deixar `TODO2` de lado até a próxima seção. Na função `insertTextIntoRange()`, substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.
+1. Vamos deixar `TODO2` de lado até a próxima seção. Com a função `insertTextIntoRange()`, substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -562,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. Na função `replaceText()`, substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+1. Dentro da função`replaceText()`, substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
     ```js
     const doc = context.document;
@@ -654,7 +661,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
     }
     ```
 
-1. Na função `insertImage()`, substitua `TODO1` pelo código a seguir. Esta linha insere a imagem codificada em base 64 no final do documento. (O objeto `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*`. Confira a seção insertHTML a seguir para conferir um exemplo).
+1. Dentro da função `insertImage()`, substitua `TODO1` pelo código a seguir. Observe que essa linha insere a imagem codificada em base 64 no final do documento. (O `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*` dados. Consulte a seção insertHTML a seguir para obter um exemplo.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -915,7 +922,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo com "Microsoft 365" no início do documento.
 
-1. No documento, selecione o texto "Microsoft 365" e, em seguida, escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".
+1. No documento, selecione o texto "Microsoft 365" e escolha o botão **Criar controle de conteúdo**. Observe que a frase é encapsulada em marcas rotuladas como "Nome do serviço".
 
 1. Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".
 
