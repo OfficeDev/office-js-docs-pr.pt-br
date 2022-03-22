@@ -1,10 +1,15 @@
 ---
 ms.date: 03/08/2021
-description: 'Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos Excel, parâmetros opcionais, contexto de invocação e muito mais.'
+description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para Excel funções personalizadas
 ms.localizationpriority: medium
+ms.openlocfilehash: 2cc0c825932afe3a70d0f9ab6483327051c199fd
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711018"
 ---
-
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetro de funções personalizadas
 
 Funções personalizadas são configuráveis com muitas opções de parâmetros diferentes.
@@ -13,7 +18,7 @@ Funções personalizadas são configuráveis com muitas opções de parâmetros 
 
 ## <a name="optional-parameters"></a>Parâmetros opcionais
 
-Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função add pode, opcionalmente, adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` na Excel.
+Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função add pode, opcionalmente, adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` Excel.
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -112,7 +117,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ## <a name="range-parameters"></a>Parâmetros de intervalo
 
-Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. Excel passará um intervalo de dados de células como uma matriz bidimensional.
+Sua função personalizada pode aceitar um intervalo de dados de célula como um parâmetro de entrada. Uma função também pode retornar um intervalo de dados. Excel passará um intervalo de dados de célula como uma matriz bidimensional.
 
 Por exemplo, suponha que sua função retorne o segundo maior valor de um intervalo de números armazenados no Excel. A função a seguir aceita o `values`parâmetro , e a sintaxe JSDOC `number[][]` `dimensionality` `matrix` define a propriedade do parâmetro como nos metadados JSON para essa função. 
 
@@ -227,7 +232,7 @@ Para JSON de autoria manual, `"repeating": true` verifique se o parâmetro está
 Todas as funções personalizadas são automaticamente passadas como `invocation` o último parâmetro de entrada, mesmo que não seja declarada explicitamente. Esse `invocation` parâmetro corresponde ao [objeto Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) . O `Invocation` objeto pode ser usado para recuperar contexto adicional, como o endereço da célula que invocou sua função personalizada. Para acessar o `Invocation` objeto, você deve declarar `invocation` como o último parâmetro em sua função personalizada. 
 
 > [!NOTE]
-> O `invocation` parâmetro não aparece como um argumento de função personalizada para usuários no Excel.
+> O `invocation` parâmetro não aparece como um argumento de função personalizado para usuários no Excel.
 
 O exemplo a seguir mostra como usar o `invocation` parâmetro para retornar o endereço da célula que invocou sua função personalizada. Este exemplo usa a [propriedade address](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-address-member) do `Invocation` objeto. Para acessar o `Invocation` objeto, primeiro declare `CustomFunctions.Invocation` como um parâmetro em seu JSDoc. Em seguida, declare `@requiresAddress` em seu JSDoc para acessar a `address` propriedade do `Invocation` objeto. Por fim, dentro da função, recupere e retorne a `address` propriedade. 
 
@@ -257,7 +262,7 @@ Em combinação com o [parâmetro invocação](#invocation-parameter), você pod
 Isso é útil em cenários em que os tipos de dados de entrada podem variar. O endereço de um parâmetro de entrada pode ser usado para verificar o formato de número do valor de entrada. O formato de número pode ser ajustado antes da entrada, se necessário. O endereço de um parâmetro de entrada também pode ser usado para detectar se o valor de entrada tem propriedades relacionadas que podem ser relevantes para cálculos subsequentes. 
 
 >[!NOTE]
-> Se você estiver trabalhando com metadados [JSON criados manualmente](custom-functions-json.md) para retornar endereços de parâmetro em vez do gerador Yo Office, `options` `requiresParameterAddresses` `true`o objeto deve ter a propriedade definida como , `result` `dimensionality` e o objeto deve ter a propriedade definida como .`matrix`
+> Se você estiver trabalhando com metadados [JSON criados manualmente](custom-functions-json.md) para retornar endereços de parâmetro em vez do gerador [Yeoman para os complementos do Office](../develop/yeoman-generator-overview.md), `options` `requiresParameterAddresses` `true`o objeto deve ter a propriedade definida como , `result` `dimensionality` e o objeto deve ter a propriedade definida como .`matrix`
 
 A função personalizada a seguir recebe três parâmetros de entrada, `parameterAddresses` `Invocation` recupera a propriedade do objeto para cada parâmetro e retorna os endereços. 
 

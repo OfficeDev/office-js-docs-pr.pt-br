@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office em um Mac
 description: Saiba como usar um Mac para depurar Office Add-ins.
-ms.date: 10/16/2020
+ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 46104e5cbd9c81e56c1a83b6f49ae5883097b3e5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc9017eb7bd27ee0bc22d3ad448e5996895c5eee
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148999"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711201"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 
@@ -18,7 +18,7 @@ Como os suplementos são desenvolvidos usando HTML e Javascript, são projetados
 
 Se você tiver um suplemento que mostre a interface do usuário em um painel de tarefas ou em um suplemento de conteúdo, o Safari Web Inspector poderá ser usado para depurar um Suplemento do Office.
 
-Para poder depurar Office Depurações no Mac, você deve ter Mac OS High Sierra E Mac Office versão 16.9.1 (build 18012504) ou posterior. Se você não tiver uma com build Office Mac, poderá obter um insalando-se no programa Microsoft 365 [desenvolvedor.](https://developer.microsoft.com/office/dev-program)
+Para poder depurar Office Depuração de Office No Mac, você deve ter Mac OS High Sierra AND Mac Office versão 16.9.1 (build 18012504) ou posterior. Se você não tiver uma com Office do Mac, poderá obter uma ao ingressar no programa Microsoft 365 [desenvolvedor.](https://developer.microsoft.com/office/dev-program)
 
 Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperExtras` do aplicativo relevante do Office da seguinte maneira:
 

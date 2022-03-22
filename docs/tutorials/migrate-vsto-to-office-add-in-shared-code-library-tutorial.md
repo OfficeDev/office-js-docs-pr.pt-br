@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 ms.localizationpriority: high
-ms.openlocfilehash: 91ecee722bf18c5a88758ce24bc8861b6c772805
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 76b9e49adcf5954f50794aaae2fdf740c436c480
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855461"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711249"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -50,8 +50,8 @@ Para configurar seu ambiente de desenvolvimento:
 
 Também são necessários:
 
-- Uma conta do Microsoft 365. Participe do [programa para desenvolvedores do Microsoft 365](https://aka.ms/devprogramsignup) que oferece uma assinatura renovável do Microsoft 365 de 90 dias que inclui aplicativos do Office.
-- Um Locatário do Microsoft Azure. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- Uma conta Microsoft 365. Você pode participar do [Programa para desenvolvedores Microsoft 365](https://aka.ms/devprogramsignup) que fornece uma assinatura renovável de 90 dias do Microsoft 365 que inclui aplicativos do Office.
+- Um Locatário do Microsoft Azure. Uma assinatura de avaliação pode ser adquirida aqui: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>O suplemento VSTO do analisador de células
 
@@ -66,7 +66,7 @@ Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO p
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse no projeto **Cell-Analyzer** e escolha **Propriedades**.
 1. Escolha a categoria **Assinatura** nas propriedades.
 1. Escolha **Assinar os manifestos ClickOnce** e, em seguida, escolha **Criar certificado de teste**.
-1. Na caixa de diálogo **criar certificado de teste**, digite e confirme a senha. Em seguida, escolha **OK**.
+1. Na caixa de diálogo **Criar Certificado de Teste**, digite e confirme uma senha. Em seguida, escolha **OK**.
 
 O suplemento é um painel de tarefas personalizado do Excel. Você pode selecionar qualquer célula com o texto e escolher o botão **Mostrar o Unicode**. Na seção **Resultado**, o suplemento exibirá uma lista de cada caractere no texto junto com seu número Unicode correspondente.
 
@@ -245,7 +245,7 @@ Ao criar o Suplemento do Office, ele faz uma chamada para a API REST. Mas, prime
 
 ### <a name="add-the-office-add-in-project"></a>Adicione o projeto do Suplemento do Office
 
-Para simplificar, mantenha todo o código em uma solução. Adicione o projeto do Suplemento do Office à solução existente do Visual Studio. No entanto, se você estiver familiarizado com o [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office) e do Código do Visual Studio, também poderá executar `yo office` para criar o projeto. As etapas são muito semelhantes.
+Para simplificar, mantenha todo o código em uma solução. Adicione o projeto do Suplemento do Office à solução existente do Visual Studio. No entanto, se você estiver familiarizado com o [Gerador Yeoman de Suplementos do Office](../develop/yeoman-generator-overview.md) e do Código do Visual Studio, também poderá executar `yo office` para criar o projeto. As etapas são muito semelhantes.
 
 1. No **Gerenciador de soluções**, clique com o botão direito do mouse na solução **Cell-Analyzer** e escolha **Adicionar > Novo projeto**.
 1. Na **caixa de diálogo Adicionar um novo projeto**, clique em **Suplemento do Web Add-in** e escolha **Próximo**.

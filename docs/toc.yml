@@ -243,13 +243,15 @@ items:
                 href: develop/show-hide-add-in.md
               - name: Localização
                 href: develop/localization.md
-          - name: Estruturas e IDEs
+          - name: 'Estruturas, IDEs e outras ferramentas'
             items:
               - name: Desenvolver suplementos com o Angular
                 href: develop/add-ins-with-angular2.md
+              - name: Criar suplementos com o Gerador Yeoman
+                href: develop/yeoman-generator-overview.md
               - name: Desenvolver suplementos com o Código do Visual Studio
                 href: develop/develop-add-ins-vscode.md
-              - name: Desenvolver suplementos com o Visual Studio
+              - name: Criar e desenvolver suplementos com o Visual Studio
                 items:
                   - name: Visão Geral
                     href: develop/develop-add-ins-visual-studio.md

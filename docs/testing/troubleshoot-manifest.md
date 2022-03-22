@@ -3,12 +3,12 @@ title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 89335ffb670f6bb9a41f2d29f300123e1ea78397
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081418"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711256"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -19,7 +19,7 @@ Talvez você queira validar o arquivo de manifesto do seu suplemento para garant
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Validar o manifesto com o gerador Yeoman para Suplementos do Office
 
-Se você usou o [gerador de Yeoman para suplementos](https://www.npmjs.com/package/generator-office) do Office para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto do seu projeto. Execute o seguinte comando no diretório raiz do seu projeto.
+Se você usou o [gerador de Yeoman para suplementos](../develop/yeoman-generator-overview.md) do Office para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto do seu projeto. Execute o seguinte comando no diretório raiz do seu projeto.
 
 ```command&nbsp;line
 npm run validate
@@ -28,11 +28,11 @@ npm run validate
 ![GIF animado que mostra o validador Yo Office sendo executado na linha de comando e gerando resultados que mostram Validation Passed.](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> Para ter acesso a essa funcionalidade, o projeto de suplemento deve ter sido criado usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) versão 1.1.17 ou posterior.
+> Para acessar essa funcionalidade, seu projeto de add-in deve ser criado usando o gerador [Yeoman para Office add-ins](../develop/yeoman-generator-overview.md) versão 1.1.17 ou posterior.
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>Valide seu manifesto com o office-addin-manifest
 
-Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto usando o[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+Se você não tiver usado o [gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto usando o[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Instale o [Node.js](https://nodejs.org/download/).
 
@@ -49,7 +49,7 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
     ```
 
     > [!NOTE]
-    > Se esse comando não estiver disponível ou não estiver funcionando, execute o seguinte comando para forçar o uso da versão mais recente da ferramenta office-addin-manifest (substituindo pelo nome do arquivo `MANIFEST_FILE` de manifesto).
+    > Se esse comando não estiver disponível ou não estiver funcionando, execute o seguinte comando para forçar o uso da versão mais recente da ferramenta office-addin-manifest ( `MANIFEST_FILE` substituindo pelo nome do arquivo de manifesto).
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -77,4 +77,4 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor no Microsoft Edge (Chromium baseados em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)

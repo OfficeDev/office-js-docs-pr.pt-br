@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf1a1df922a08f63af80498da2e357d285775e9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: df076c1b148ce604c0b52fe5fbb76fe5f8e3deb5
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074228"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711144"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>Chamadas de função personalizada em lotes para um serviço remoto
 
@@ -20,9 +20,9 @@ Por exemplo, se alguém usou sua função personalizada em 100 células em uma p
 
 ## <a name="view-the-completed-sample"></a>Ver o exemplo concluído
 
-Você pode seguir este artigo e colar os exemplos de código em seu próprio projeto. Por exemplo, você pode usar o [gerador do Yo Office](https://github.com/OfficeDev/generator-office) para criar um novo projeto de função personalizada para TypeScript e, em seguida, adicionar todo o código deste artigo ao projeto. Você pode então executar o código e experimentá-lo.
+Para exibir o exemplo concluído, siga este artigo e colar os exemplos de código em seu próprio projeto. Por exemplo, para criar um novo projeto de função personalizada para TypeScript, use o gerador [Yeoman](../develop/yeoman-generator-overview.md) para Office Desempois e adicione todo o código deste artigo ao projeto. Execute o código e teste-o.
 
-Além disso, você pode fazer o download ou visualizar o projeto de exemplo completo no [Padrão de envio em lotes de funções personalizadas](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Se você quiser ver o código inteiro antes de ler mais, dê uma olhada no [arquivo de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+Como alternativa, baixe ou veja o projeto de exemplo completo em [Padrão de lotes de função personalizada](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Se você quiser ver o código inteiro antes de ler mais, dê uma olhada no [arquivo de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>Crie o padrão de envio em lotes deste artigo
 
@@ -32,7 +32,7 @@ Para configurar o envio em lotes para suas funções personalizadas, você preci
 2. Uma função para fazer o pedido remoto quando o lote estiver pronto.
 3. Código do servidor para responder à solicitação em lote, calcular todos os resultados da operação e retornar os valores.
 
-Nas seções a seguir, você verá como construir o código com um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo **functions.ts**. É recomendável que você crie um novo projeto de funções personalizadas usando o gerador do Yo Office. Para criar um novo projeto, confira [Começar a desenvolver funções personalizadas do Excel](../quickstarts/excel-custom-functions-quickstart.md) e use TypeScript em vez de JavaScript.
+Nas seções a seguir, você aprenderá a construir o código um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo **functions.ts**. É recomendável criar um novo projeto de funções personalizadas usando o gerador [Yeoman para Office de complementos](../develop/yeoman-generator-overview.md). Para criar um novo projeto, consulte [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Agrupe cada chamada à sua função personalizada
 

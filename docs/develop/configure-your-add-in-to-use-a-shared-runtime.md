@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: f11c2060d48dc30f2403fd16f1d7d10481107f75
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081425"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711172"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -19,7 +19,7 @@ ms.locfileid: "61081425"
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto de suplemento
 
-Se você estiver iniciando um novo projeto, siga estas etapas para usar o [ gerador Yeoman para suplementos do Office ](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento do Excel ou PowerPoint.
+Se você estiver iniciando um novo projeto, siga estas etapas para usar o [ gerador Yeoman para suplementos do Office ](yeoman-generator-overview.md) para criar um projeto de suplemento do Excel ou PowerPoint.
 
 Faça um dos seguintes:
 
@@ -36,7 +36,7 @@ O gerador criará o projeto e instalará os componentes do Node de suporte.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Siga estas etapas para um projeto novo ou existente para configurá-lo para usar um tempo de execução compartilhado. Estas etapas pressupõem que você gerou seu projeto usando o [Gerador Yeoman para Suplementos do Office ](https://github.com/OfficeDev/generator-office).
+Siga estas etapas para um projeto novo ou existente para configurá-lo para usar um tempo de execução compartilhado. Estas etapas pressupõem que você gerou seu projeto usando o [Gerador Yeoman para Suplementos do Office ](yeoman-generator-overview.md).
 
 1. Inicie o Visual Studio Code e abra o projeto de suplemento do Excel ou PowerPoint que você gerou.
 1. Abra o arquivo **manifest.xml**.

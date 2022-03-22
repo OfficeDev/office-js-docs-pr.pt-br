@@ -3,12 +3,12 @@ title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge
 description: Saiba como depurar suplementos do Office que usam Microsoft Edge WebView2 (baseados em Chromium) no VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340152"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711011"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
@@ -33,11 +33,11 @@ Esse modo de depuração é dinâmico, permitindo definir pontos de interrupçã
 
 ## <a name="use-the-visual-studio-code-debugger"></a>Usar o depurador do Visual Studio Code
 
-Estas instruções pressupõem que você tenha experiência usando a linha de comando, entenda JavaScript básico e tenha criado um projeto de Suplemento do Office antes de usar o gerador Yo Office. Se você ainda não fez isso antes, considere visitar um de nossos tutoriais, como o [Tutorial de Suplemento do Office do Excel](../tutorials/excel-tutorial.md).
+Estas instruções assumem que você tem experiência com o uso da linha de comando, que entende JavaScript básico e criou um projeto de Suplemento do Office antes de usar o [gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md). Se você não tiver feito isso antes, veja um de nossos tutoriais, tal como o [tutorial do Suplemento do Office Excel](../tutorials/excel-tutorial.md).
 
 1. A primeira etapa depende do projeto e de como ele foi criado.
 
-   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o [Gerador Yeoman para Suplemento do Office](https://github.com/OfficeDev/generator-office). Use qualquer um de nossos guias de início rápido, como o [início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md), para fazer isso. 
+   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o [Gerador Yeoman para Suplemento do Office](../develop/yeoman-generator-overview.md). Use qualquer um de nossos guias de início rápido, como o [início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md), para fazer isso. 
    - Se você quiser depurar um projeto existente que foi criado com Yo Office, pule para a próxima etapa.
    - Se você quiser depurar um projeto existente que não foi criado com Yo Office, conclua o procedimento no [Apêndice A](#appendix-a) e retorne para a próxima etapa deste procedimento.
 

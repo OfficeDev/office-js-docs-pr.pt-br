@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 44509ab9188d812cf85c9ffa25534444f4d66fe5
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: d3866c5091c586c039029cab205a5ae0519e992b
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074214"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711032"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -40,7 +40,7 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Como uma função personalizada é definida em código
 
-Se você usar o [Gerador Yo Office](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento funções personalizadas do Excel, ele criará os arquivos que controlam as funções e o painel de tarefas. Vamos nos concentrar em arquivos que são importantes para funções personalizadas.
+Se você usar o [Gerador do Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar um projeto de suplemento funções personalizadas do Excel, ele criará os arquivos que controlam as funções e o painel de tarefas. Vamos nos concentrar em arquivos que são importantes para funções personalizadas.
 
 | File | Formato de arquivo | Descrição |
 |------|-------------|-------------|
@@ -70,15 +70,15 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas.
+O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o [Gerador do Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) cria) faz várias coisas.
 
 - Define o namespace para suas funções personalizadas. Um namespace se precede às suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do suplemento.
 - Usa os elementos `<ExtensionPoint>` e `<Resources>` que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
 - Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas.
 
-Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Se você estiver usando o [Gerador do Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-Para ver um manifesto funcional completo de um suplemento de amostra, consulte [esse repositório do GitHub](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
+Para ver um manifesto de trabalho completo de um suplemento de exemplo, confira o manifesto em [um dos nossos repositórios Github de exemplos de Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 

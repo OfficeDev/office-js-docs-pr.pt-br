@@ -1,24 +1,24 @@
 ---
 title: Depurar os suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView herdado (EdgeHTML)
-description: Saiba como depurar Office Depuração de Versão Prévia do Microsoft Edge Que usam o WebView (EdgeHTML) usando Office Extensão de Depurador de Office no VS Code.
+description: Saiba como depurar Office Depuração de Versão Prévia do Microsoft Edge WebView (EdgeHTML) usando Office Extensão de Depurador de Complementos Office no VS Code.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0e8c072e7b08182f9028414a9321bf78a049b1
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 98ac2fc4eab8ef20ddc416b299fde88095ef4fb4
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892535"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710941"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 
-Office Os Windows em execução no Windows podem usar Office Extensão de Depurador de Complementos no Visual Studio Code para depurar Versão Prévia do Microsoft Edge com o tempo de execução do WebView (EdgeHTML) original. 
+Office Os Windows em execução no Windows podem usar a Extensão de Depurador de Complemento do Office no Visual Studio Code para depurar o Versão Prévia do Microsoft Edge com o tempo de execução do WebView (EdgeHTML) original. 
 
 > [!IMPORTANT]
-> Este artigo só se aplica quando Office executa os complementos no tempo de execução do WebView (EdgeHTML) original, conforme explicado em [Navegadores usados por Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Para obter instruções sobre Visual Studio depuração em um código Microsoft Edge WebView2 (baseado em Chromium), consulte [Microsoft Office Extensão de Depurador](debug-desktop-using-edge-chromium.md) de Microsoft Office para Visual Studio Code.
+> Este artigo só se aplica quando Office executa os complementos no tempo de execução do WebView (EdgeHTML) original, conforme explicado em [Navegadores usados por Office Desempes](../concepts/browsers-used-by-office-web-add-ins.md). Para obter instruções sobre Visual Studio depuração no código Microsoft Edge webView2 (baseado em Chromium), consulte [Microsoft Office Extensão de Depurador de Microsoft Office](debug-desktop-using-edge-chromium.md) para Visual Studio Code.
 
 > [!TIP]
-> Se você não puder, ou não desejar, depurar usando ferramentas criadas no Visual Studio Code ou estiver encontrando um problema que só ocorre quando o complemento é executado fora do Visual Studio Code, você pode depurar o tempo de execução do Edge Legacy (EdgeHTML) usando as ferramentas de desenvolvedor herdadas de borda conforme descrito em [Depurar os complementos usando ferramentas de desenvolvedor em Versão Prévia do Microsoft Edge](debug-add-ins-using-devtools-edge-legacy.md).
+> Se você não puder, ou não desejar, depurar usando ferramentas criadas no Visual Studio Code ou estiver encontrando um problema que só ocorre quando o complemento é executado fora do Visual Studio Code, você pode depurar o tempo de execução do Edge Legacy (EdgeHTML) usando as ferramentas de desenvolvedor herdadas de borda conforme descrito em Depurar os complementos usando ferramentas de desenvolvedor em [ Versão Prévia do Microsoft Edge](debug-add-ins-using-devtools-edge-legacy.md).
 
 Esse modo de depuração é dinâmico, permitindo definir pontos de interrupção enquanto o código está em execução. Você pode ver alterações em seu código imediatamente enquanto o depurador está anexado, tudo sem perder sua sessão de depuração. As alterações de código também persistem, para que você possa ver os resultados de várias alterações no código. A imagem a seguir mostra essa extensão em ação.
 
@@ -33,11 +33,11 @@ Esse modo de depuração é dinâmico, permitindo definir pontos de interrupçã
 
 ## <a name="install-and-use-the-debugger"></a>Instalar e usar o depurador
 
-Estas instruções pressupõem que você tenha experiência usando a linha de comando, entenda JavaScript básico e tenha criado um projeto de Suplemento do Office antes de usar o gerador Yo Office. Se você ainda não fez isso antes, considere visitar um de nossos tutoriais, como este Excel Office [tutorial de complemento](../tutorials/excel-tutorial.md).
+Estas instruções pressupom que você tenha experiência usando a linha de comando, entenda JavaScript básico e tenha criado um projeto de Office de complemento antes de usar o gerador [Yeoman para Office Add-ins](../develop/yeoman-generator-overview.md). Se você ainda não fez isso antes, considere visitar um de nossos tutoriais, como este tutorial de Excel Office [de complemento](../tutorials/excel-tutorial.md).
 
 1. A primeira etapa depende do projeto e de como ele foi criado.
 
-   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o [Gerador Yeoman para Suplemento do Office](https://github.com/OfficeDev/generator-office). Use qualquer um de nossos guias de início rápido, como o [início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md), para fazer isso. 
+   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o [Gerador Yeoman para Suplemento do Office](../develop/yeoman-generator-overview.md). Use qualquer um de nossos guias de início rápido, como o [início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md), para fazer isso. 
    - Se você quiser depurar um projeto existente que foi criado com Yo Office, pule para a próxima etapa.
    - Se você quiser depurar um projeto existente que não foi criado com Yo Office, realize o procedimento no Apêndice e retorne para a próxima [](#appendix) etapa deste procedimento.
 
@@ -117,7 +117,7 @@ Se seu projeto não tiver sido criado com o Yo Office, você precisará criar um
 ## <a name="see-also"></a>Confira também
 
 - [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
-- [Depurar os Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseados em Chromium)](debug-desktop-using-edge-chromium.md).
+- [Depurar os Windows usando Visual Studio Code e Microsoft Edge WebView2 (Chromium baseado em Chromium)](debug-desktop-using-edge-chromium.md).
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)

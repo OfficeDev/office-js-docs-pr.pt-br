@@ -3,12 +3,12 @@ title: Office glossário de termos de complementos
 description: Um glossário de termos comumente usado em toda a documentação Office de complementos.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c83f056f4eea9c8750bbf4c2d47a2888af96ec2
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 327c7a8bcc8c3ab21c437c50003e57d34fb933e0
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855724"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711214"
 ---
 # <a name="office-add-ins-glossary"></a>Office glossário de complementos
 
@@ -22,15 +22,15 @@ Office Os complementos do Office diferem dos complementos VBA, COM e VSTO porque
 
 ## <a name="add-in-commands"></a>comandos de add-in
 
-**Comandos de complemento são** elementos de interface do usuário, como botões e menus, que estendem o Office interface do usuário para o seu complemento. Quando os usuários selecionam um elemento de comando de complemento, eles iniciam ações como executar código JavaScript ou exibir o complemento em um painel de tarefas. Os comandos de complemento permitem que o seu complemento pareça uma parte do Office, o que dá aos usuários mais confiança no seu complemento. Consulte [Comandos de Excel, PowerPoint Word](../design/add-in-commands.md) e [Add-in](../outlook/add-in-commands-for-outlook.md) para Outlook saber mais.
+**Comandos de complemento são** elementos de interface do usuário, como botões e menus, que estendem o Office interface do usuário do seu complemento. Quando os usuários selecionam um elemento de comando de complemento, eles iniciam ações como executar código JavaScript ou exibir o complemento em um painel de tarefas. Os comandos de complemento permitem que o seu add-in pareça uma parte do Office, o que dá aos usuários mais confiança no seu complemento. Consulte [Comandos de Excel, PowerPoint Word](../design/add-in-commands.md) e [Add-in](../outlook/add-in-commands-for-outlook.md) para Outlook saber mais.
 
 Consulte também: [faixa de opções, botão faixa de opções](#ribbon-ribbon-button).
 
 ## <a name="application"></a>aplicação
 
-**O** aplicativo refere-se a um Office aplicativo. Os Office que suportam Office de Office são Excel, OneNote, Outlook, PowerPoint, Project e Word.
+**O** aplicativo se refere a um Office aplicativo. Os aplicativos Office que suportam Office de Office são Excel, OneNote, Outlook, PowerPoint, Project e Word.
 
-Consulte também: [cliente](#client), [host](#host), [aplicativo Office, Office cliente](#office-application-office-client).
+Consulte também: [cliente](#client), [host](#host), [Office aplicativo, Office cliente](#office-application-office-client).
 
 ## <a name="application-specific-api"></a>API específica do aplicativo
 
@@ -40,13 +40,13 @@ Consulte também: [API comum](#common-api).
 
 ## <a name="client"></a>client
 
-**O** cliente normalmente se refere a um Office aplicativo. Os aplicativos Office ou clientes que suportam Office de Office são Excel, OneNote, Outlook, PowerPoint, Project e Word.
+**O** cliente normalmente se refere a um Office aplicativo. Os aplicativos Office, ou clientes, que suportam Office Add-ins são Excel, OneNote, Outlook, PowerPoint, Project e Word.
 
 Consulte também: [aplicativo](#application), [host](#host), [Office aplicativo, Office cliente](#office-application-office-client).
 
 ## <a name="common-api"></a>Common API
 
-APIs comuns são usadas para acessar recursos como interface do usuário, caixas de diálogo e configurações de cliente comuns em vários Office aplicativos. Esse modelo de API usa [retornos de chamada](https://developer.mozilla.org/docs/Glossary/Callback_function), que permitem especificar apenas uma operação em cada solicitação enviada ao aplicativo do Office.
+APIs comuns são usadas para acessar recursos como interface do usuário, caixas de diálogo e configurações de cliente que são comuns em vários Office aplicativos. Esse modelo de API usa [retornos de chamada](https://developer.mozilla.org/docs/Glossary/Callback_function), que permitem especificar apenas uma operação em cada solicitação enviada ao aplicativo do Office.
 
 APIs comuns foram introduzidas com Office 2013 e são usadas para interagir com Office 2013 ou posterior. Algumas APIs comuns são APIs herdas do início de 2010. Excel, PowerPoint e Word têm a funcionalidade da API comum, mas a maior parte dessa funcionalidade foi substituída ou substituída pelo modelo de API específico do aplicativo. As APIs específicas do aplicativo são preferenciais quando possível.
 
@@ -56,7 +56,7 @@ Consulte também: [API específica do aplicativo](#application-specific-api).
 
 ## <a name="content-add-in"></a>add-in de conteúdo
 
-**Os complementos de conteúdo são** webviews, ou exibições do navegador da Web, que são inseridos diretamente em Excel, OneNote ou PowerPoint documentos. Os suplementos de conteúdo concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados. Use suplementos de conteúdo quando quiser inserir a funcionalidade diretamente no documento. Consulte [Content Office Add-ins](../design/content-add-ins.md) para saber mais.
+**Os complementos de conteúdo** são webviews, ou exibições do navegador da Web, que são incorporados diretamente Excel, OneNote ou PowerPoint documentos. Os suplementos de conteúdo concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados. Use suplementos de conteúdo quando quiser inserir a funcionalidade diretamente no documento. Consulte [Content Office Add-ins](../design/content-add-ins.md) para saber mais.
 
 Consulte também: [webview](#webview).
 
@@ -92,7 +92,7 @@ Consulte também: [tempo de execução de funções personalizadas](#custom-func
 
 ## <a name="office-application-office-client"></a>Office aplicativo, Office cliente
 
-**Office cliente** refere-se a um Office aplicativo. Os aplicativos Office ou clientes que suportam Office de Office são Excel, OneNote, Outlook, PowerPoint, Project e Word.
+**Office cliente refere-se** a um Office aplicativo. Os aplicativos Office, ou clientes, que suportam Office Add-ins são Excel, OneNote, Outlook, PowerPoint, Project e Word.
 
 Consulte também: [aplicativo](#application), [cliente](#client), [host](#host).
 
@@ -144,7 +144,7 @@ Consulte também: [função personalizada](#custom-function), [tempo de execuç�
 
 ## <a name="web-add-in"></a>web add-in
 
-**O add-in da** Web é um termo herdado para um Office Add-in. Esse termo pode ser usado quando Microsoft 365 documentação do Office precisa distinguir os Office modernos de outros tipos de complementos, como VBA, COM ou VSTO.
+**O complemento da Web** é um termo herdado para um Office Add-in. Esse termo pode ser usado quando Microsoft 365 documentação do Office precisa distinguir os Office modernos de outros tipos de complementos, como VBA, COM ou VSTO.
 
 Consulte também: [add-in](#add-in).
 
@@ -162,7 +162,7 @@ Consulte também: [função personalizada](#custom-function).
 
 ## <a name="yeoman-generator-yo-office"></a>Gerador Yeoman, yo office
 
-O [gerador Yeoman para Office](https://github.com/OfficeDev/generator-office) Desemana usa a ferramenta [Yeoman](https://github.com/yeoman/yo) de código aberto para gerar um Office add-in por meio da linha de comando. `yo office`é o comando que executa o gerador Yeoman para Office Add-ins. Os Office de complementos rápidos e tutoriais usam o gerador Yeoman.
+O [gerador Yeoman para Office](../develop/yeoman-generator-overview.md) de usuário usa a ferramenta [Yeoman](https://github.com/yeoman/yo) de código aberto para gerar um Office Add-in por meio da linha de comando. `yo office`é o comando que executa o gerador Yeoman para Office Add-ins. Os Office de complementos rápidos e tutoriais usam o gerador Yeoman.
 
 ## <a name="see-also"></a>Confira também
 

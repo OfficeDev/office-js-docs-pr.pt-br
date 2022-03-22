@@ -1,14 +1,14 @@
 ---
 title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
-ms.date: 07/08/2021
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: aa56af832d1be3d868700ec4fae731ec55507579
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765938"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711158"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -19,11 +19,11 @@ Todos os Suplementos do Office são criados com base na plataforma de Suplemento
 
 ## <a name="create-an-office-add-in"></a>Criar um Suplemento do Office
 
-Você pode criar um suplemento do Office usando o Gerador Yeoman para suplementos do Office ou Visual Studio.
+Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](yeoman-generator-overview.md) ou Visual Studio.
 
-### <a name="yeoman-generator-for-office-add-ins"></a>Gerador Yeoman para suplementos do Office
+### <a name="yeoman-generator"></a>Gerador do Yeoman
 
-O [Gerador Yeoman para suplementos do Office](https://github.com/officedev/generator-office) pode ser usado para criar um projeto de suplemento do Office Node.js que pode ser gerenciado com o Visual Studio Code ou qualquer outro editor. O gerador pode criar suplementos do Office para qualquer um dos seguintes aplicativos:
+O gerador Yeoman para Suplementos do Office pode ser usado para criar um projeto de Suplemento do Office com Node.js que pode ser gerenciado com o Visual Studio Code ou qualquer outro editor. O gerador pode criar Suplementos do Office para qualquer um dos seguintes:
 
 - Excel
 - OneNote
@@ -33,7 +33,7 @@ O [Gerador Yeoman para suplementos do Office](https://github.com/officedev/gener
 - Word
 - Funções personalizadas do Excel
 
-Você pode optar por criar o projeto usando HTML, CSS e JavaScript ou usando o Angular ou React. Para qualquer estrutura escolhida, você pode escolher entre o JavaScript e o Typescript também. Para saber mais sobre como criar suplementos com o gerador Yeoman, confira [Desenvolver Suplementos do Office com o Código do Visual Studio](../develop/develop-add-ins-vscode.md).
+Crie seu projeto usando HTML, CSS e JavaScript (ou TypeScript) ou usando o Angular ou React. Para qualquer estrutura escolhida, você pode escolher entre o JavaScript e o Typescript também. Para saber mais sobre como criar suplementos com o gerador, confira [Gerador do Yeoman para Suplementos do Office](yeoman-generator-overview.md).
 
 ### <a name="visual-studio"></a>Visual Studio
 
