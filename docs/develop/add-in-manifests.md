@@ -3,8 +3,13 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 09/28/2021
 ms.localizationpriority: high
+ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743694"
 ---
-
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
 O arquivo de manifesto XML de um Suplemento do Office descreve como seu suplemento deve ser ativado quando um usuário final o instala e usa com os aplicativos e documentos do Office.

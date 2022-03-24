@@ -3,12 +3,12 @@ title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: Teste seu Office de iPad e Mac ao fazer sideload.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c2d39cf5dc997492899a41e430413e2ae388b4
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b57b072df1fa7c55e709f4ed4045cece8b95aa7e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990716"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746610"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -21,9 +21,9 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 - Um computador com Windows ou Mac com [iTunes](https://www.apple.com/itunes/download/) instalado.
   > [!IMPORTANT]
-  > Se você estiver executando o macOS Catalina, [o iTunes](https://support.apple.com/HT210200) não estará mais disponível, portanto, você deve seguir as instruções na seção Sideload de um complemento no Excel ou word no iPad usando [macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) mais adiante neste artigo.
+  > Se você estiver executando o macOS Catalina, [o iTunes](https://support.apple.com/HT210200) não estará mais disponível, portanto, você deve seguir as instruções na seção Sideload de um complemento no Excel ou no [Word no iPad usando macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) mais adiante neste artigo.
 
-- Um iPad executando o iOS 8.2 ou posterior com Excel [ou](https://apps.apple.com/app/microsoft-excel/id586683407) [Word](https://apps.apple.com/app/microsoft-word/id586447913) instalado e um cabo de sincronização.
+- Um iPad executando o iOS 8.2 ou posterior com Excel ou [Word](https://apps.apple.com/app/microsoft-word/id586447913) instalado e um cabo de sincronização.[](https://apps.apple.com/app/microsoft-excel/id586683407)
 
 - O arquivo de manifesto .xml para o suplemento que você deseja testar.
 
@@ -47,36 +47,36 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 3. Em **Configurações** lado esquerdo do iTunes, escolha **Aplicativos**.
 
-4. No lado direito do iTunes, role para baixo  até **Compartilhamento** de Arquivos e escolha Excel ou **Word** na coluna **Complementos.**
+4. No lado direito do iTunes, role para baixo até Compartilhamento de Arquivos e escolha Excel  ou **Word** na coluna **Complementos**.
 
-5. Na parte inferior da coluna **Excel** ou Documentos do **Word,** escolha **Adicionar** Arquivo e selecione o arquivo .xml de manifesto do complemento que você deseja fazer sideload.
+5. Na parte inferior da coluna **Excel** ou Documentos do **Word**, escolha **Adicionar** Arquivo e selecione o arquivo .xml de manifesto do complemento que você deseja fazer sideload.
 
-6. Abra o aplicativo Excel ou Word em seu iPad. Se o Excel ou o aplicativo word já estiver em execução, escolha o botão **Início** e feche e reinicie o aplicativo.
+6. Abra o aplicativo Excel ou Word em seu iPad. Se o Excel ou o aplicativo word já estiver em execução, escolha o **botão Início** e feche e reinicie o aplicativo.
 
 7. Abra um documento.
 
-8. Escolha **Complementos na**  guia Inserir. (Na guia Inserir, talvez seja necessário rolar horizontalmente até ver o botão **Adicionar.)**  Seu complemento sideload está disponível para ser inserido no título **Desenvolvedor** na interface do usuário **de complementos.**
+8. Escolha **Complementos na** guia Inserir.  (Na guia Inserir, talvez  seja necessário rolar horizontalmente até ver o botão **Adicionar.)** Seu complemento sideload está disponível para ser inserido no **título Desenvolvedor na** interface **do usuário de complementos**.
 
     ![Insira os complementos no aplicativo Excel.](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>Fazer sideload de um complemento no Excel ou no Word no iPad usando macOS Catalina
 
 > [!IMPORTANT]
-> Com a introdução do macOS Catalina, a Apple descontinuou [o iTunes](https://support.apple.com/HT210200) no Mac e a funcionalidade integrada necessária para sideload de aplicativos **no Finder**.
+> Com a introdução do macOS Catalina, a Apple descontinuou [o iTunes no Mac](https://support.apple.com/HT210200) e a funcionalidade integrada necessária para sideload de aplicativos **no Finder**.
 
-1. Use um cabo de sincronização para conectar seu iPad ao computador. Se você estiver conectando o iPad ao computador pela primeira vez, será solicitado a confiar **neste computador?**. Escolha **Confiar** para continuar. Você também pode ser perguntado se esse é um novo iPad ou se você está restaurando um.
+1. Use um cabo de sincronização para conectar seu iPad ao computador. Se você estiver conectando o iPad ao computador pela primeira vez, será solicitado a confiar **neste computador?**. Escolha **Confiar** para continuar. Você também pode ser perguntado se essa é uma nova iPad ou se você está restaurando um.
 
-2. No Localizador, em **Locais,** escolha **o** ícone iPad abaixo da barra de menus.
+2. No Localizador, em **Locais**, **escolha o ícone** iPad abaixo da barra de menus.
 
-3. Na parte superior da janela Localizador, clique em **Arquivos** e, em seguida, localize **Excel** ou **Word**.
+3. Na parte superior da janela Localizador, clique em **Arquivos** e localize **Excel** ou **Word**.
 
-4. Em uma janela do Finder diferente, arraste e solte o arquivo manifest.xml do complemento que você deseja carregar no arquivo **Excel** ou **Word** na primeira janela do Finder.
+4. Em uma janela do Finder diferente, arraste e solte o arquivo manifest.xml do complemento que você deseja carregar lateralmente no arquivo **Excel** ou **Word** na primeira janela do Finder.
 
-5. Abra o aplicativo Excel ou Word em seu iPad. Se o Excel ou o aplicativo word já estiver em execução, escolha o botão **Início** e feche e reinicie o aplicativo.
+5. Abra o aplicativo Excel ou Word em seu iPad. Se o Excel ou o aplicativo word já estiver em execução, escolha o **botão Início** e feche e reinicie o aplicativo.
 
 6. Abra um documento.
 
-7. Escolha **Complementos na**  guia Inserir. (Na guia Inserir, talvez seja necessário rolar horizontalmente até ver o botão **Adicionar.)**  Seu complemento sideload está disponível para ser inserido no título **Desenvolvedor** na interface do usuário **de complementos.**
+7. Escolha **Complementos na** guia Inserir.  (Na guia Inserir, talvez  seja necessário rolar horizontalmente até ver o botão **Adicionar.)** Seu complemento sideload está disponível para ser inserido no **título Desenvolvedor na** interface **do usuário de complementos**.
 
     ![Insira os complementos no aplicativo Excel.](../images/excel-insert-add-in.png)
 
@@ -94,22 +94,22 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 3. Abra o Word e abra um documento. Reinicie o Word se já estiver em execução.
 
-4. No Word, **escolha Inserir** Meus  >    >  **Complementos** (menu suspenso) e escolha o seu complemento.
+4. No Word, escolha **InsertAdd-insMy** >  >  **Add-ins** (menu suspenso) e escolha seu complemento.
 
-    ![Meus Complementos no Office no Mac.](../images/my-add-ins-wikipedia.png)
+    ![Meus complementos no Office no Mac.](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > Aplicativos em que foi feito o sideload não aparecerão na caixa de diálogo Meus Suplementos. Eles só ficam visíveis dentro do menu suspenso (pequena seta para baixo à direita de Meus Suplementos na guia **Inserir**). Os suplementos em que foi feito o sideload são exibidos na lista sob o título **Suplementos do Desenvolvedor** nesse menu.
 
 5. Verifique se o seu suplemento é exibido no Word.
 
-    ![Office O complemento exibido no Office no Mac.](../images/lorem-ipsum-wikipedia.png)
+    ![Office Add-in exibido no Office no Mac.](../images/lorem-ipsum-wikipedia.png)
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um complemento com sideload
 
-Você pode remover um complemento com sideload anteriormente limpando o cache Office em seu computador. Detalhes sobre como limpar o cache de cada plataforma e aplicativo podem ser encontrados no artigo [Limpar o Office cache](clear-cache.md).
+Você pode remover um complemento com sideload anteriormente limpando o cache Office em seu computador. Detalhes sobre como limpar o cache de cada plataforma e aplicativo podem ser encontrados no artigo [Limpar o cache Office de dados](clear-cache.md).
 
-## <a name="see-also"></a>Ver também
+## <a name="see-also"></a>Confira também
 
-- [Depurar suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)

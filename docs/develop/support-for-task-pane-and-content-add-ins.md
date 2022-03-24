@@ -1,19 +1,24 @@
 ---
 title: Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
-description: Use a Office JavaScript para criar um painel de tarefas no Office 2013.
+description: Use a OFFICE JavaScript para criar um painel de tarefas no Office 2013.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f0edaa6c58399542a87721f4429a72b90cf1667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744239"
 ---
-
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Você pode usar a [api Office JavaScript](../reference/javascript-api-for-office.md) para criar o painel de tarefas ou os complementos de conteúdo para Office aplicativos cliente 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
+Você pode usar a [API Office JavaScript](../reference/javascript-api-for-office.md) para criar o painel de tarefas ou os complementos de conteúdo para Office aplicativos cliente 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
 
-1. **Objetos comuns compartilhados com outros Office de dados.** Esses objetos [incluem Office](/javascript/api/office), [Context](/javascript/api/office/office.context) e [AsyncResult](/javascript/api/office/office.asyncresult). O `Office` objeto é o objeto raiz da API JavaScript Office JavaScript. O `Context` objeto representa o ambiente de tempo de execução do complemento. Ambos `Office` e `Context` são os objetos fundamentais para qualquer Office Add-in. O `AsyncResult` objeto representa os resultados de uma operação assíncrona, `getSelectedDataAsync` como os dados retornados ao método, que lê o que um usuário selecionou em um documento.
+1. **Objetos comuns compartilhados com outros Office de complementos.** Esses objetos incluem [Office](/javascript/api/office), [Context](/javascript/api/office/office.context) e [AsyncResult](/javascript/api/office/office.asyncresult). O `Office` objeto é o objeto raiz da API JavaScript Office JavaScript. O `Context` objeto representa o ambiente de tempo de execução do complemento. Ambos `Office` e `Context` são os objetos fundamentais para qualquer Office Add-in. O `AsyncResult` objeto representa os resultados de uma operação assíncrona, `getSelectedDataAsync` como os dados retornados ao método, que lê o que um usuário selecionou em um documento.
 
-2. **O objeto Document.** A maioria da API disponível para o conteúdo e os complementos do painel de tarefas é exposta por meio dos métodos, propriedades e eventos do [objeto Document](/javascript/api/office/office.document) . Um complemento de conteúdo ou painel de tarefas pode usar a propriedade [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) para acessar o objeto **Document** e, por meio dele, pode acessar os membros-chave da API para trabalhar com dados em documentos, como os objetos [Bindings](/javascript/api/office/office.bindings) e [CustomXmlParts](/javascript/api/office/office.customxmlparts), e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)), [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) e [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). O `Document` objeto também fornece a propriedade [mode](/javascript/api/office/office.document#office-office-document-mode-member) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [url](/javascript/api/office/office.document#office-office-document-url-member) para obter a URL do documento atual e o acesso [ao objeto Configurações](/javascript/api/office/office.settings). O `Document` objeto também dá suporte à adição de manipuladores de eventos para o [evento SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
+2. **O objeto Document.** A maioria da API disponível para o conteúdo e os complementos do painel de tarefas é exposta por meio dos métodos, propriedades e eventos do [objeto Document](/javascript/api/office/office.document) . Um add-in de conteúdo ou painel de tarefas pode usar [a propriedade Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) para acessar o objeto **Document** e, por meio dele, pode acessar os membros-chave da API para trabalhar com dados em documentos, como os objetos [Bindings](/javascript/api/office/office.bindings) e [CustomXmlParts](/javascript/api/office/office.customxmlparts), e [os métodos getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)), [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) e [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). O `Document` objeto também fornece a propriedade [mode](/javascript/api/office/office.document#office-office-document-mode-member) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [url](/javascript/api/office/office.document#office-office-document-url-member) para obter a URL do documento atual e o acesso [ao objeto Configurações](/javascript/api/office/office.settings). O `Document` objeto também dá suporte à adição de manipuladores de eventos para o [evento SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
 
    Um conteúdo ou `Document` um complemento do painel de tarefas pode acessar o objeto somente depois que o dom e o ambiente de tempo de execução foram carregados, normalmente no manipulador de eventos do [evento Office.initialize](/javascript/api/office). Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
 
@@ -30,7 +35,7 @@ Você pode usar a [api Office JavaScript](../reference/javascript-api-for-office
 > [!IMPORTANT]
 > Alguns membros da API não têm suporte em todos os aplicativos do Office que podem hospedar suplementos de conteúdo e de painel de tarefas. Para determinar quais membros têm suporte, confira o seguinte:
 
-Para um resumo do Office da API JavaScript em todos os Office cliente, consulte [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
+Para um resumo do Office da API JavaScript em todos os aplicativos Office cliente, consulte [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
 ## <a name="read-and-write-to-an-active-selection-in-a-document-spreadsheet-or-presentation"></a>Ler e gravar em uma seleção ativa em um documento, planilha ou apresentação
 
@@ -126,7 +131,7 @@ Para obter exemplos de leitura de dados do Project, consulte [Criar seu primeiro
 
 ## <a name="permissions-model-and-governance"></a>Modelo de permissões e governança
 
-Seu add-in usa o `Permissions` elemento em seu manifesto para solicitar permissão para acessar o nível de funcionalidade que ele exige da API Office JavaScript. Por exemplo, se o seu complemento exigir acesso de leitura/gravação ao documento, seu manifesto `ReadWriteDocument` deverá especificar como o valor de texto em seu `Permissions` elemento. Uma vez existem permissões para proteger a privacidade e a segurança do usuário, como prática recomendada, você deve solicitar o nível mínimo de permissões necessárias para seus recursos. O exemplo a seguir mostra como solicitar a permissão **ReadDocument** no manifesto de um painel de tarefas.
+O seu add-in usa `Permissions` o elemento em seu manifesto para solicitar permissão para acessar o nível de funcionalidade que ele exige da API Office JavaScript. Por exemplo, se o seu complemento exigir acesso de leitura/gravação ao documento, seu manifesto `ReadWriteDocument` deverá especificar como o valor de texto em seu `Permissions` elemento. Uma vez existem permissões para proteger a privacidade e a segurança do usuário, como prática recomendada, você deve solicitar o nível mínimo de permissões necessárias para seus recursos. O exemplo a seguir mostra como solicitar a permissão **ReadDocument** no manifesto de um painel de tarefas.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>

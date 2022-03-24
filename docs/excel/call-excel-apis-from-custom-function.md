@@ -3,8 +3,13 @@ title: Chamar Excel APIs JavaScript de uma função personalizada
 description: Saiba quais Excel APIs JavaScript que você pode chamar de sua função personalizada.
 ms.date: 08/30/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744392"
 ---
-
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar Excel APIs JavaScript de uma função personalizada
 
 Chame Excel APIs JavaScript de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos. Chamar Excel APIs JavaScript por meio de uma função personalizada pode ser útil quando:
@@ -19,7 +24,7 @@ Chame Excel APIs JavaScript de suas funções personalizadas para obter dados de
 
 Para chamar Excel APIs JavaScript de uma função personalizada, primeiro você precisa de um contexto. Use o [Excel. Objeto RequestContext](/javascript/api/excel/excel.requestcontext) para obter um contexto. Em seguida, use o contexto para chamar as APIs de que você precisa na guia de trabalho.
 
-O exemplo de código a seguir mostra como usar `Excel.RequestContext` para obter um valor de uma célula na lista de trabalho. Neste exemplo, o `address` parâmetro é passado para o Excel [JavaScript API Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função `=CONTOSO.GETRANGEVALUE("A1")`personalizada inserida na interface do usuário Excel deve seguir o padrão , `"A1"` onde é o endereço da célula da qual recuperar o valor.
+O exemplo de código a seguir mostra como usar `Excel.RequestContext` para obter um valor de uma célula na lista de trabalho. Neste exemplo, o `address` parâmetro é passado para o método Excel API JavaScript [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) e deve ser inserido como uma cadeia de caracteres. Por exemplo, a função `=CONTOSO.GETRANGEVALUE("A1")`personalizada inserida na interface do usuário Excel deve seguir o padrão , `"A1"` onde é o endereço da célula da qual recuperar o valor.
 
 ```JavaScript
 /**
@@ -52,7 +57,7 @@ Não chame Excel APIs JavaScript de uma função personalizada que altere o ambi
 - Adicione nomes a uma lista de trabalho.
 - Definir propriedades ou executar a maioria dos métodos.
 
-Alterar Excel pode resultar em um desempenho ruim, tempos de tempo e loops infinitos. Os cálculos de função personalizados não devem ser executados enquanto um recálculo Excel está ocorrendo, pois resultará em resultados imprevisíveis.
+Alterar Excel pode resultar em desempenho ruim, tempo de insufinições e loops infinitos. Os cálculos de função personalizados não devem ser executados enquanto um recálculo Excel está ocorrendo, pois resultará em resultados imprevisíveis.
 
 Em vez disso, faça alterações Excel do contexto de um botão de faixa de opções ou painel de tarefas.
 

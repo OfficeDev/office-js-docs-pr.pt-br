@@ -3,25 +3,25 @@ title: Trabalhar com substituições estendidas do manifesto
 description: Saiba como configurar recursos de extensibilidade com substituições estendidas do manifesto.
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d9af67a19233979cc46ecccc7030fe5b4a65beb7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148770"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743790"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>Trabalhar com substituições estendidas do manifesto
 
 Alguns recursos de extensibilidade de Office os complementos são configurados com arquivos JSON hospedados em seu servidor, em vez de com o manifesto XML do complemento.
 
 > [!NOTE]
-> Este artigo supõe que você esteja familiarizado com Office de complemento e sua função em complementos. Leia Office manifesto XML de [Complementos,](add-in-manifests.md)se você não tiver lido recentemente.
+> Este artigo supõe que você esteja familiarizado com os Office de complemento e sua função em complementos. Leia [Office manifesto XML de Complementos](add-in-manifests.md), caso não tenha lido recentemente.
 
 A tabela a seguir especifica os recursos de extensibilidade que exigem uma substituição estendida juntamente com links para a documentação do recurso.
 
 | Recurso | Instruções de desenvolvimento |
 | :----- | :----- |
-| Atalhos de teclado | [Adicionar atalhos de teclado personalizados aos Office de usuário](../design/keyboard-shortcuts.md) |
+| Atalhos de teclado | [Adicionar atalhos de teclado personalizados aos seus Office de usuário](../design/keyboard-shortcuts.md) |
 
 O esquema que define o formato JSON é [o esquema de manifesto estendido](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
@@ -30,7 +30,7 @@ O esquema que define o formato JSON é [o esquema de manifesto estendido](https:
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>Diga Office onde encontrar o arquivo JSON
 
-Use o manifesto para Office onde encontrar o arquivo JSON. Imediatamente *abaixo* (não dentro) `<VersionOverrides>` do elemento no manifesto, adicione um elemento [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) De definir `Url` o atributo como a URL completa de um arquivo JSON. A seguir, um exemplo do elemento mais `<ExtendedOverrides>` simples possível.
+Use o manifesto para Office onde encontrar o arquivo JSON. Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) . De definir o `Url` atributo como a URL completa de um arquivo JSON. A seguir, um exemplo do elemento mais simples `<ExtendedOverrides>` possível.
 
 ```xml
     ...
@@ -63,7 +63,7 @@ A seguir, um exemplo de um arquivo JSON estendido muito simples substitui. Ele a
 
 ## <a name="localize-the-extended-overrides-file"></a>Localize o arquivo de substituições estendidas
 
-Se o seu add-in oferece suporte a várias localidades, você pode usar o atributo do elemento para apontar Office para um `ResourceUrl` `<ExtendedOverrides>` arquivo de recursos localizados. Apresentamos um exemplo a seguir.
+Se o seu add-in dá suporte a várias localidades, você pode usar `ResourceUrl` `<ExtendedOverrides>` o atributo do elemento para apontar Office para um arquivo de recursos localizados. Apresentamos um exemplo a seguir.
 
 ```xml
     ...

@@ -4,9 +4,14 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.12.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 3c88f8c472ba2ac08ad8c96128616b290dcbb1f1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747064"
 ---
-
-# <a name="whats-new-in-excel-javascript-api-112"></a>Novidades na EXCEL JavaScript 1.12
+# <a name="whats-new-in-excel-javascript-api-112"></a>Novidades na API JavaScript 1.12 Excel JavaScript
 
 O ExcelApi 1.12 aumentou o suporte a fórmulas em intervalos adicionando APIs para controlar matrizes dinâmicas e encontrando precedentes diretos de uma fórmula. Ele também adicionou controle API de filtros de tabela dinâmica. Melhorias também foram feitas nas áreas de recurso comentário, configurações de cultura e propriedades personalizadas.
 
@@ -27,7 +32,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |:---|:---|:---|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#excel-excel-chartaxistitle-textorientation-member)|Especifica o ângulo para o qual o texto é orientado para o título do eixo do gráfico.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[getDimensionValues(dimension: Excel. ChartSeriesDimension)](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-getdimensionvalues-member(1))|Obtém os valores de uma única dimensão da série de gráficos.|
-|[Comment](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#excel-excel-comment-contenttype-member)|Obtém o tipo de conteúdo do comentário.|
+|[Comentário](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#excel-excel-comment-contenttype-member)|Obtém o tipo de conteúdo do comentário.|
 |[CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)|[commentDetails](/javascript/api/excel/excel.commentaddedeventargs#excel-excel-commentaddedeventargs-commentdetails-member)|Obtém `CommentDetail` a matriz que contém as IDs e as IDs de comentários de suas respostas relacionadas.|
 ||[source](/javascript/api/excel/excel.commentaddedeventargs#excel-excel-commentaddedeventargs-source-member)|Especifica a origem do evento.|
 ||[tipo](/javascript/api/excel/excel.commentaddedeventargs#excel-excel-commentaddedeventargs-type-member)|Obtém o tipo do evento.|

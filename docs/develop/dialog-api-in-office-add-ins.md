@@ -1,16 +1,21 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
-description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Add-in.
+description: Saiba as noções básicas sobre como criar uma caixa de diálogo em um Office Desem.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: c84a5cd9079b1af754375dfc803284165ccea6e9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743826"
 ---
-
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
 Você pode usar a [API de Caixa de diálogo do Office](/javascript/api/office/office.ui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
 
 > [!NOTE]
-> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). No momento, a API de Diálogo tem suporte para Excel, PowerPoint e Word. Outlook suporte está incluído em vários conjuntos de requisitos de Caixa&mdash; de Correio para ver a referência da API para obter mais detalhes.
+> Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md). No momento, a API de Diálogo tem suporte para Excel, PowerPoint e Word. Outlook suporte está incluído em vários conjuntos de requisitos de Caixa de&mdash; Correio para ver a referência da API para obter mais detalhes.
 
 Um cenário fundamental para a API de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
 
@@ -21,7 +26,7 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 - Hospedar um vídeo que seria muito pequeno se fosse confinado em um painel de tarefas.
 
 > [!NOTE]
-> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, consulte o [exemplo Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) de complemento.
+> Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, consulte o exemplo [Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) de complemento.
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
@@ -81,7 +86,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 > [!NOTE]
 >
 > - Para esclarecer, nesta seção, chamamos a mensagem de [destino da](../reference/manifest/functionfile.md) *página host,* mas estritamente falando, as mensagens estão indo para o tempo de execução *JavaScript* no painel de tarefas (ou o tempo de execução que está hospedando um arquivo de função). A distinção só é significativa no caso de mensagens entre domínios. Para obter mais informações, [mensagens entre domínios para o runtime do host](#cross-domain-messaging-to-the-host-runtime).
-> - A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que Office biblioteca da API JavaScript seja carregada na página. (Como qualquer página que use a biblioteca Office API JavaScript, o script da página deve inicializar o add-in. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).)
+> - A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que Office biblioteca da API JavaScript seja carregada na página. (Como qualquer página que usa a biblioteca Office API JavaScript, o script da página deve inicializar o add-in. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).)
 
 O código na caixa de diálogo usa a [função messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) para enviar uma mensagem de cadeia de caracteres para a página host. A cadeia de caracteres pode ser uma palavra, frase, blob XML, JSON stringified ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres ou lançada em uma cadeia de caracteres. Apresentamos um exemplo a seguir.
 
@@ -92,7 +97,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
-> - A `messageParent` função é uma das *duas* Office APIs JS que podem ser chamadas na caixa de diálogo.
+> - A `messageParent` função é uma das *duas* OFFICE JS que podem ser chamadas na caixa de diálogo.
 > - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported`. Para obter informações sobre ele, consulte [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, essa API não é suportada Outlook 2016 compra única (ou seja, a versão MSI).
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
@@ -231,7 +236,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
 > [!TIP]
-> O `DialogMessageOptions` parâmetro foi adicionado ao método `messageParent` como um parâmetro necessário em meados de 2021. Os complementos mais antigos que enviam uma mensagem entre domínios com o método não funcionam mais até que sejam atualizados para usar o novo parâmetro. Até que o add-in seja atualizado, somente no Office para Windows, os usuários e administradores do sistema poderão habilitar esses complementos *a* continuar funcionando especificando os domínios confiáveis com uma configuração de registro: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Para fazer isso, crie `.reg` um arquivo com uma extensão, salve-o no computador Windows e clique duas vezes nele para executar. A seguir, um exemplo do conteúdo desse arquivo.
+> O `DialogMessageOptions` parâmetro foi adicionado ao método `messageParent` como um parâmetro necessário em meados de 2021. Os complementos mais antigos que enviam uma mensagem entre domínios com o método não funcionam mais até que sejam atualizados para usar o novo parâmetro. Até *que* o add-in seja atualizado, somente no Office para Windows, os usuários e administradores do sistema poderão permitir que esses complementos continuem trabalhando especificando os domínios confiáveis com uma configuração de registro: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Para fazer isso, crie `.reg` um arquivo com uma extensão, salve-o no computador Windows e clique duas vezes nele para executar. A seguir, um exemplo do conteúdo desse arquivo.
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -366,7 +371,7 @@ function onMessageFromParent(arg) {
 Por exemplo, seu código pode usar os métodos [Office.onReady ou Office.initialize](initialize-add-in.md) para armazenar uma matriz de domínios confiáveis em uma variável global. Em `arg.origin` seguida, a propriedade pode ser verificada em relação a essa lista no manipulador.
 
 > [!TIP]
-> O `DialogMessageOptions` parâmetro foi adicionado ao método `messageChild` como um parâmetro necessário em meados de 2021. Os complementos mais antigos que enviam uma mensagem entre domínios com o método não funcionam mais até que sejam atualizados para usar o novo parâmetro. Até que o add-in seja atualizado, somente no Office para Windows, os usuários e administradores do sistema poderão habilitar esses complementos *a* continuar funcionando especificando os domínios confiáveis com uma configuração de registro: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Para fazer isso, crie `.reg` um arquivo com uma extensão, salve-o no computador Windows e clique duas vezes nele para executar. A seguir, um exemplo do conteúdo desse arquivo.
+> O `DialogMessageOptions` parâmetro foi adicionado ao método `messageChild` como um parâmetro necessário em meados de 2021. Os complementos mais antigos que enviam uma mensagem entre domínios com o método não funcionam mais até que sejam atualizados para usar o novo parâmetro. Até *que* o add-in seja atualizado, somente no Office para Windows, os usuários e administradores do sistema poderão permitir que esses complementos continuem trabalhando especificando os domínios confiáveis com uma configuração de registro: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Para fazer isso, crie `.reg` um arquivo com uma extensão, salve-o no computador Windows e clique duas vezes nele para executar. A seguir, um exemplo do conteúdo desse arquivo.
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -425,7 +430,7 @@ Saiba mais sobre as armadilhas e as práticas recomendadas para a API de diálog
 
 ## <a name="samples"></a>Exemplos
 
-Todos os exemplos a seguir usam `displayDialogAsync`. Alguns têm servidores baseados em NodeJS e outros têm servidores baseados em ASP.NET/IIS, mas a lógica de usar o método é a mesma, independentemente de como o lado do servidor do add-in é implementado.
+Todos os exemplos a seguir usam `displayDialogAsync`. Alguns têm servidores baseados em NodeJS e outros têm servidores baseados em ASP.NET/IIS, mas a lógica de usar o método é a mesma, independentemente de como o lado do servidor do complemento é implementado.
 
 **Noções básicas:**
 
@@ -434,15 +439,15 @@ Todos os exemplos a seguir usam `displayDialogAsync`. Alguns têm servidores bas
 
 **Exemplos mais complexos:**
 
-- [Office do Microsoft add-in Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Office Do Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [Office add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Office exemplo de monetização saas de complemento](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook Do Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook Visualizador de Token de Complemento](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlook mensagem acionável do complemento](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlook mensagem acionável do add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook Compartilhamento de Complementos para OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
 - [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
 - [Excel de tempo de execução compartilhado](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)

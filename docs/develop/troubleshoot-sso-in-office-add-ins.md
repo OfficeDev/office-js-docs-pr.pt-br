@@ -1,10 +1,15 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
-description: Diretrizes sobre como solucionar problemas com SSO (SSO) de Office e lidar com condições especiais ou erros.
+description: Diretrizes sobre como solucionar problemas com o SSO (SSO) de login único em Office e lidar com condições especiais ou erros.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744186"
 ---
-
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
 Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
@@ -54,7 +59,7 @@ O usuário abortou a entrada ou o consentimento; por exemplo, escolhendo **Cance
 
 ### <a name="13003"></a>13003
 
-Tipo de Usuário não suportado. O usuário não está Office conta válida da Microsoft ou Microsoft 365 Education ou conta de trabalho. Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. No Outlook, esse erro também poderá ocorrer se a autenticação [](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) moderna estiver desabilitada para o locatário do usuário no Exchange Online. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+Tipo de Usuário não suportado. O usuário não está Office com uma conta válida da Microsoft ou Microsoft 365 Education ou conta de trabalho. Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. No Outlook, esse erro também poderá ocorrer se a autenticação moderna estiver desabilitada para o locatário do usuário no Exchange Online.[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
@@ -77,7 +82,7 @@ O Office aplicativo não conseguiu obter um token de acesso ao serviço Web do c
 - Se ocorrer este erro durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permissões de `profile` (e a permissão de `openid`, se estiver usando o MSAL.NET). Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - Na produção, há várias coisas que podem causar esse erro. Algumas delas são:
   - O usuário tem uma identidade de conta da Microsoft.
-  - Algumas situações que causaria um dos outros erros do 13xxx com uma conta Microsoft 365 Education ou de trabalho causarão um 13007 quando um MSA for usado.
+  - Algumas situações que causaria um dos outros erros da 13xxx com uma conta de Microsoft 365 Education ou de trabalho causarão um 13007 quando um MSA for usado.
 
   Em todos esses casos, o código deve retornar a um sistema alternativo de autenticação de usuário.
 

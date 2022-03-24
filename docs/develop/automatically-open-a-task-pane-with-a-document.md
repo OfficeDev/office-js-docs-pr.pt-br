@@ -3,18 +3,18 @@ title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
-ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
+ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "59326762"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743069"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
-Você pode usar comandos de Office de Office para estender a interface do usuário Office por meio da adição de botões à faixa de Aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
+Você pode usar comandos de Office de Office para estender a interface do usuário Office adicionando botões à faixa Aplicativo do Office de usuário. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
-Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no conjunto de [requisitos AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
+Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
@@ -112,7 +112,7 @@ A parte `webextension` também inclui uma referência para a loja ou o catálogo
 |valor `storeType`|`id` value|`store` value|valor `version`|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|A ID do ativo AppSource do complemento (consulte Observação).|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo AppSource (consulte Observação).|
-|WOPICatalog (hosts [WOPI](/microsoft-365/cloud-storage-partner-program/online/) de terceiros)| A ID do ativo AppSource do complemento (consulte Observação). | "wopicatalog". Use esse valor para os complementos publicados na Fonte de Aplicativos e instalados em hosts WOPI de terceiros. Para obter mais informações, [consulte Integrando com Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
+|WOPICatalog (hosts [WOPI de terceiros](/microsoft-365/cloud-storage-partner-program/online/) )| A ID do ativo AppSource do complemento (consulte Observação). | "wopicatalog". Use esse valor para os complementos publicados na Fonte de Aplicativos e instalados em hosts WOPI de terceiros. Para obter mais informações, [consulte Integrando com Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
 |EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.|
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
@@ -139,7 +139,7 @@ Definir o `visibility` como "1" é uma boa opção quando o suplemento e o model
 > [!NOTE]
 > Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
-Uma maneira fácil de gravar o XML é [](#tag-the-document-on-the-client-side) primeiro executar o seu complemento e marcar o documento no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade [do SDK open XML](https://www.nuget.org/packages/Open-XML-SDK) para gerar C# código para adicionar programaticamente a marcação com base no XML gerado.
+Uma maneira fácil de gravar o XML é primeiro executar o seu complemento e marcar o [](#tag-the-document-on-the-client-side) documento no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade [open XML SDK](https://www.nuget.org/packages/Open-XML-SDK) para gerar C# código para adicionar programaticamente a marcação com base no XML gerado.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 
@@ -155,7 +155,7 @@ Você pode implantar uma versão de teste do seu add-in que abrirá automaticame
 </we:webextension>
 ```
 
-Você pode testar o exemplo anterior usando sua assinatura Microsoft 365 para experimentar a Implantação Centralizada e verificar se o seu complemento funciona conforme esperado. Se você ainda não tiver uma assinatura de Microsoft 365, poderá obter uma assinatura de 90 dias de assinatura renovável de 90 dias Microsoft 365 ingressar no programa de desenvolvedor [Microsoft 365.](https://developer.microsoft.com/office/dev-program)
+Você pode testar o exemplo anterior usando sua assinatura Microsoft 365 para experimentar a Implantação Centralizada e verificar se o seu complemento funciona conforme esperado. Se você ainda não tiver uma assinatura de Microsoft 365, poderá obter uma assinatura de 90 dias renováveis Microsoft 365 assinatura de 90 dias ao ingressar no programa Microsoft 365 [desenvolvedor](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Confira também
 

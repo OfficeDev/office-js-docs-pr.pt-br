@@ -3,20 +3,20 @@ title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074291"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745691"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
-Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs javaScript Office expostas por meio do [objeto Mailbox.](#mailbox-object)
+Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs javaScript Office expostas por meio do [objeto Mailbox](#mailbox-object).
 
 ## <a name="officejs-library"></a>Biblioteca Office.js
 
-Para interagir com a API do suplemento do Outlook, você precisará usar as APIs JavaScript no Office.js. A rede de distribuição de conteúdo (CDN) para a biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` . Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
+Para interagir com a API do suplemento do Outlook, você precisará usar as APIs JavaScript no Office.js. A rede de distribuição de conteúdo (CDN) para a biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
 
 Referência CDN em um `<script>` marca na `<head>` marca da página da web (arquivo. HTML,. aspx ou. PHP) implementa interface do usuário do seu suplemento.
 
@@ -27,7 +27,7 @@ Referência CDN em um `<script>` marca na `<head>` marca da página da web (arqu
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]
-> Ao desenvolver um add-in para qualquer aplicativo cliente Office, consulte a API JavaScript Office de dentro `<head>` da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
+> Ao desenvolver um add-in para qualquer aplicativo cliente Office, referenciar a API `<head>` JavaScript Office de dentro da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
@@ -65,7 +65,7 @@ Seu suplemento requer as permissões apropriadas para usar as APIs de que precis
 | **Leitura/gravação** | Além do que é permitido em **Leitura do item**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
 | **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte Privacidade e [segurança para Office Desadições](../concepts/privacy-and-security.md).
+Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Office Desadições](../concepts/privacy-and-security.md).
 
 ## <a name="mailbox-object"></a>Objeto Mailbox
 

@@ -3,8 +3,13 @@ title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um complemento enquanto ele é executado continuamente.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7e881f5fc0d5258aa886709a0aee2eee5836feef
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743960"
 ---
-
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
@@ -35,7 +40,7 @@ O código anterior é um manipulador que está registrado para o [Office. Evento
 
 ## <a name="additional-details-on-showing-the-task-pane"></a>Detalhes adicionais sobre como mostrar o painel de tarefas
 
-Quando você chamar `Office.addin.showAsTaskpane()`, Office exibirá em um painel de tarefas o arquivo atribuído como o valor de ID do recurso (`resid`) do painel de tarefas. Esse `resid` valor pode ser atribuído ou alterado abrindo seu **arquivomanifest.xml** e localizando dentro `<SourceLocation>` do `<Action xsi:type="ShowTaskpane">` elemento.
+Quando você chamar `Office.addin.showAsTaskpane()`, Office exibirá em um painel de tarefas o arquivo atribuído como o valor de ID de recurso (`resid`) do painel de tarefas. Esse `resid` valor pode ser atribuído ou alterado abrindo seu **arquivomanifest.xml** e localizando `<SourceLocation>` dentro do `<Action xsi:type="ShowTaskpane">` elemento.
 (Consulte [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
 
 Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código continuará em execução até que a função seja concluída. Aguarde essa conclusão com `await` a `then()` palavra-chave ou um método, dependendo da sintaxe JavaScript que você está usando.
@@ -50,7 +55,7 @@ Os `hide()` métodos and `showAsTaskpane()` alteram apenas *a visibilidade* do p
 
 Considere o seguinte cenário: um painel de tarefas foi projetado com guias. A **guia** Início é aberta quando o complemento é lançado pela primeira vez. Suponha que um usuário abra **a guia Configurações** e, posteriormente, o código no painel de tarefas chama `hide()` em resposta a algum evento. Ainda mais tarde, o código chama `showAsTaskpane()` em resposta a outro evento. O painel de tarefas reaparecerá e a **guia Configurações** ainda está selecionada.
 
-![Uma captura de tela do painel de tarefas que tem quatro guias rotuladas Home, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
+![Uma captura de tela do painel de tarefas que tem quatro guias rotuladas home, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
 
 Além disso, todos os ouvintes de eventos registrados no painel de tarefas continuam a ser executados mesmo quando o painel de tarefas está oculto.
 
@@ -58,7 +63,7 @@ Considere o seguinte cenário: o painel de `Worksheet.onActivated` `Worksheet.on
 
 ## <a name="handle-the-visibility-changed-event"></a>Manipular o evento de visibilidade alterado
 
-Quando seu código altera a visibilidade do painel de tarefas com `showAsTaskpane()` ou `hide()`, Office dispara o `VisibilityModeChanged` evento. Pode ser útil lidar com esse evento. Por exemplo, suponha que o painel de tarefas exibe uma lista de todas as planilhas em uma planilha. Se uma nova planilha for adicionada enquanto o painel de tarefas estiver oculto, tornar o painel de tarefas visível não adicionaria, por si só, o novo nome da planilha à lista. Mas seu código pode `VisibilityModeChanged` responder ao evento para recarregar [a propriedade Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de todas as planilhas na coleção [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , conforme mostrado no código de exemplo abaixo.
+Quando seu código altera a visibilidade do painel de tarefas com `showAsTaskpane()` ou `hide()`, Office dispara o `VisibilityModeChanged` evento. Pode ser útil lidar com esse evento. Por exemplo, suponha que o painel de tarefas exibe uma lista de todas as planilhas em uma planilha. Se uma nova planilha for adicionada enquanto o painel de tarefas estiver oculto, tornar o painel de tarefas visível não adicionaria, por si só, o novo nome da planilha à lista. Mas seu código pode `VisibilityModeChanged` responder ao evento para recarregar [a propriedade Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de todas as planilhas da coleção [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , conforme mostrado no código de exemplo abaixo.
 
 Para registrar um manipulador para o evento, você não usa um método "adicionar manipulador" como faria na maioria dos Office javaScript. Em vez disso, há uma função especial para a qual você passa seu manipulador: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Apresentamos um exemplo a seguir. Observe que a propriedade `args.visibilityMode` é tipo [VisibilityMode](/javascript/api/office/office.visibilitymode).
 

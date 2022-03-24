@@ -1,16 +1,21 @@
 ---
 title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
-description: 'Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA)'
+description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA).
 ms.date: 07/22/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 773edd6b041ad6e49b479b3705ebcdea1875e561
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743501"
 ---
-
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
-Este artigo fornece regras, gotchas e práticas recomendadas para a API de diálogo Office, incluindo práticas recomendadas para projetar a interface do usuário de uma caixa de diálogo e usar a API com em um aplicativo de página única (SPA)
+Este artigo fornece regras, gotchas e práticas recomendadas para a API de diálogo Office, incluindo as práticas recomendadas para projetar a interface do usuário de uma caixa de diálogo e usar a API com em um aplicativo de página única (SPA)
 
 > [!NOTE]
-> Este artigo pressupõe que você está familiarizado com as noções básicas de uso da API de diálogo Office conforme descrito em Usar Office API de diálogo Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md).
+> Este artigo pressupõe que você está familiarizado com as noções básicas de uso da API de diálogo Office conforme descrito em Usar Office API de diálogo do Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md).
 > 
 > Consulte também [Tratamento de erros e eventos com a caixa Office caixa de diálogo](dialog-handle-errors-events.md).
 
@@ -28,11 +33,11 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 
 ### <a name="avoid-overusing-dialog-boxes"></a>Evitar o excesso de caixas de diálogo
 
-Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, consulte o [exemplo Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) de complemento.
+Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Para ver um exemplo de um painel de tarefas com guias, consulte o exemplo [Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) de complemento.
 
 ### <a name="design-a-dialog-box-ui"></a>Criar uma interface do usuário da caixa de diálogo
 
-Para saber mais sobre as práticas recomendadas no design da caixa de diálogo, consulte Caixas de diálogo [em Office Add-ins](../design/dialog-boxes.md).
+Para saber mais sobre as práticas recomendadas no design da caixa de diálogo, consulte [Caixas de diálogo Office Adicionar.](../design/dialog-boxes.md)
 
 ### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>Manipular bloqueadores pop-up com Office na Web
 
@@ -40,9 +45,9 @@ Tentar exibir uma caixa de diálogo enquanto Office na Web pode fazer com que o 
 
 ![Captura de tela mostrando o prompt com uma breve descrição e botões Permitir e Ignorar que um complemento pode gerar para evitar bloqueadores pop-up no navegador](../images/dialog-prompt-before-open.png)
 
-Se o usuário escolher **Permitir, a** caixa Office caixa de diálogo será aberta. Se o usuário escolher **Ignorar**, o prompt será fechado e Office caixa de diálogo não será aberta. Em vez disso `displayDialogAsync` , o método retorna o erro 12009. Seu código deve capturar esse erro e fornecer uma experiência alternativa que não exija uma caixa de diálogo ou exibir uma mensagem para o usuário avisando que o complemento exige que eles permitam a caixa de diálogo. (Para obter mais sobre 12009, consulte [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
+Se o usuário escolher **Permitir, a** caixa de Office de diálogo será aberta. Se o usuário escolher **Ignorar**, o prompt será fechado e Office caixa de diálogo não será aberta. Em vez disso `displayDialogAsync` , o método retorna o erro 12009. Seu código deve capturar esse erro e fornecer uma experiência alternativa que não exija uma caixa de diálogo ou exibir uma mensagem para o usuário avisando que o complemento exige que eles permitam a caixa de diálogo. (Para obter mais sobre 12009, consulte [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 
-Se, por qualquer motivo, você quiser desativar esse recurso, seu código deverá desativar. Ela faz essa solicitação com o [objeto DialogOptions](/javascript/api/office/office.dialogoptions) que é passado para o `displayDialogAsync` método. Especificamente, o objeto deve incluir `promptBeforeOpen: false`. Quando essa opção for definida como false, Office na Web solicitará que o usuário permita que o add-in abra uma caixa de diálogo e a caixa de diálogo Office não será aberta.
+Se, por qualquer motivo, você quiser desativar esse recurso, seu código deverá desativar. Ela faz essa solicitação com o [objeto DialogOptions](/javascript/api/office/office.dialogoptions) que é passado para o `displayDialogAsync` método. Especificamente, o objeto deve incluir `promptBeforeOpen: false`. Quando essa opção for definida como false, Office na Web solicitará que o usuário permita que o complemento abra uma caixa de diálogo e a caixa de diálogo Office não será aberta.
 
 ### <a name="do-not-use-the-_host_info-value"></a>Não use o valor \_hostinfo\_
 
@@ -50,7 +55,7 @@ Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` �
 
 ### <a name="open-another-dialog-immediately-after-closing-one"></a>Abra outra caixa de diálogo imediatamente após o fechamento de um
 
-Você não pode ter mais de uma caixa de diálogo aberta de uma determinada página host, portanto, seu código deve chamar [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) `displayDialogAsync` em uma caixa de diálogo aberta antes de chamar para abrir outra caixa de diálogo. O `close` método é assíncrono. Por esse motivo, se `displayDialogAsync` você chamar imediatamente após uma chamada de , a `close`primeira caixa de diálogo pode não ter sido completamente fechada quando Office tentar abrir a segunda. Se isso acontecer, Office retornará um erro [12007](dialog-handle-errors-events.md#12007): "A operação falhou porque esse complemento já tem uma caixa de diálogo ativa".
+Você não pode ter mais de uma caixa de diálogo aberta de uma determinada página host, portanto, seu código deve chamar [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) `displayDialogAsync` em uma caixa de diálogo aberta antes de chamar para abrir outra caixa de diálogo. O `close` método é assíncrono. Por esse motivo, se você `displayDialogAsync` chamar imediatamente após uma chamada de , a `close`primeira caixa de diálogo poderá não ter sido fechada completamente quando Office tentar abrir a segunda. Se isso acontecer, Office retornará um erro [12007](dialog-handle-errors-events.md#12007): "A operação falhou porque esse complemento já tem uma caixa de diálogo ativa".
 
 O `close` método não aceita um parâmetro de retorno de chamada e não retorna um objeto Promise `await` , portanto, ele não pode ser aguardado com a palavra-chave ou com um `then` método. Por esse motivo, sugerimos a seguinte técnica quando você precisa abrir uma nova caixa de diálogo imediatamente após o fechamento de uma caixa de diálogo: encapsular o código para abrir a nova caixa de diálogo em um método e projetar o método para chamar a si mesmo de forma recursiva `displayDialogAsync` se a chamada de retornar `12007`. Apresentamos um exemplo a seguir.
 

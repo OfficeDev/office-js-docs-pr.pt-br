@@ -1,11 +1,16 @@
 ---
 title: Conjuntos de requisitos de Coerção de Imagens
-description: 'Suporte para conjuntos de requisitos de Coerção de Imagem com Office de Excel, PowerPoint e Word.'
+description: Suporte para conjuntos de requisitos de Coerção de Imagem com Office de Excel, PowerPoint e Word.
 ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 50533d179180eeef81825a97c9c39fda95af554f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746922"
 ---
-
 # <a name="image-coercion-requirement-sets"></a>Conjuntos de requisitos de Coerção de Imagens
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
@@ -36,7 +41,7 @@ ImageCoercion 1.2 permite a conversão para o formato SVG (`Office.CoercionType.
 - PowerPoint 2021 e posterior em Windows
 - PowerPoint 2021 e posterior no Mac
 - PowerPoint Online
-- Word 2021 e posterior no Windows
+- Word 2021 e posterior Windows
 - Word 2021 e posterior no Mac
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office

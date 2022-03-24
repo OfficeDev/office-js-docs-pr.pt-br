@@ -1,15 +1,15 @@
 ---
-title: PowerPoint Conjunto de requisitos da API JavaScript 1.1
+title: PowerPoint conjunto de requisitos da API JavaScript 1.1
 description: Detalhes sobre o conjunto de requisitos do PowerPointApi 1.1.
 ms.date: 01/08/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ad178a4b989412ec98c7ad3d75e2baa1faa91f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3a9e82721945751169ef573965890b71e20bd930
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151919"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745800"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-11"></a>Novidades na API JavaScript 1.1 PowerPoint JavaScript
 
@@ -21,4 +21,4 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Powe
 
 | Classe | Método | Descrição |
 |:---|:---|:---|
-|[PowerPoint](/javascript/api/powerpoint)|[createPresentation](/javascript/api/powerpoint#PowerPoint_createPresentation_base64File_)|Cria uma nova apresentação e a abre em outra PowerPoint janela.|
+|[PowerPoint](/javascript/api/powerpoint)|[createPresentation](/javascript/api/powerpoint#PowerPoint_createPresentation_base64File_)|Cria uma nova apresentação e a abre em outra PowerPoint.|

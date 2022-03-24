@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do OneNote
-description: Saiba mais sobre a API JavaScript do OneNote
+description: Saiba mais sobre a API do JavaScript do OneNote.
 ms.date: 07/28/2020
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: ea4aaeb40b83f61dea48423fa0f69847dc834e1e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8fdbe6b6706e7e85729d85e13b76b4d1b4e6b9d3
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151697"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744539"
 ---
 # <a name="onenote-javascript-api-overview"></a>Visão geral da API JavaScript do OneNote
 

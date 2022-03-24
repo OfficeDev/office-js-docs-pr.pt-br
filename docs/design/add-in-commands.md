@@ -3,12 +3,12 @@ title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
 ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f5acefe4023a37e04b56cc6e27346965a6e39774
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514114"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742813"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -107,7 +107,7 @@ Aplique as práticas recomendadas a seguir ao desenvolver comandos de suplemento
   - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior.
   - Nomeie seu grupo de acordo com o nome do seu suplemento. Se você tiver vários grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.
   - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.
-  - Não posicione uma guia personalizada à esquerda da guia Página inicial ou dê a ela o foco por padrão quando o documento for aberto, a menos que seu suplemento seja a principal maneira como os usuários vão interagir com o documento. Dar destaque excessivo as inconveniências do seu suplemento e incomodar os usuários e os administradores.
+  - Não posicione uma guia personalizada à esquerda da guia da Página inicial, ou dê a ela o foco por padrão quando o documento for aberto, a menos que seu suplemento seja a principal forma de os usuários interagirem com o documento. Dar destaque excessivo aos inconvenientes do suplemento e irrita os usuários e administradores.
   - Se o seu suplemento for a principal maneira como os usuários interagem com o documento e você tiver uma guia personalizada na faixa de opções, considere integrar na guia os botões das funções do Office que os usuários frequentemente precisarão.
   - Se a funcionalidade fornecida com uma guia personalizada deve estar disponível apenas em determinados contextos, use [guias contextuais personalizadas](contextual-tabs.md). Se você usar guias contextuais personalizadas, certifique-se de implementar uma experiência de [fallback para quando o suplemento for executado em plataformas que não oferecem suporte a guias contextuais personalizadas](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 

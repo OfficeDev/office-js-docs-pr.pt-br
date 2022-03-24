@@ -3,12 +3,12 @@ title: Registrar um Office que usa o SSO com o plataforma de identidade da Micro
 description: Saiba como registrar um Office com o plataforma de identidade da Microsoft para usar o SSO com o Word, Excel, PowerPoint e Outlook.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b11ce5130e020b049038631b9ae1c0e62fdadeab
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: e408a57534437f0d0fe0c5fb3b4ab844f7dde9ac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320240"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743384"
 ---
 # <a name="register-an-office-add-in-that-uses-single-sign-on-sso-with-the-microsoft-identity-platform"></a>Registrar um Office de usuário que usa o SSO (sign-on único) com o plataforma de identidade da Microsoft
 

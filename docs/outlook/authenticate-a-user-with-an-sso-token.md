@@ -3,8 +3,13 @@ title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 108b11327087972ac064420357c822ff5bfe67d8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745830"
 ---
-
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de login único em um Outlook de usuário
 
 O SSO (logon único) oferece uma maneira simples para que o suplemento autentique usuários (e, opcionalmente, obtenha tokens de acesso para fazer uma chamada à [API do Microsoft Graph](/graph/overview)).
@@ -16,9 +21,9 @@ Usando este método, o suplemento pode obter um token de acesso com escopo para 
 
 Para obter uma visão geral do SSO em suplementos do Office, confira [Habilitar o logon único para suplementos do Office](../develop/sso-in-office-add-ins.md) e [Autorizar acesso ao Microsoft Graph em suplementos do Office](../develop/authorize-to-microsoft-graph.md).
 
-## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar a autenticação moderna em sua Microsoft 365 de Microsoft 365 de usuário
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar autenticação moderna em sua Microsoft 365 de Microsoft 365 de usuário
 
-Para usar o SSO com um Outlook, você deve habilitar a Autenticação Moderna para o Microsoft 365 de autenticação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Para usar o SSO com um Outlook de Outlook, você deve habilitar a Autenticação Moderna para a Microsoft 365 de autenticação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Registrar seu suplemento
 
@@ -53,4 +58,4 @@ Há etapas adicionais a serem tomadas se o seu complemento usar a ativação bas
 - Para ver um Outlook de exemplo que usa o token SSO para acessar a API do Microsoft Graph, consulte [Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [Referência da API do SSO](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [Conjunto de requisitos IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
-- [Habilitar o SSO (login único) em Outlook que usam a ativação baseada em evento](use-sso-in-event-based-activation.md)
+- [Habilitar o SSO (login único) em Outlook de complementos que usam a ativação baseada em evento](use-sso-in-event-based-activation.md)

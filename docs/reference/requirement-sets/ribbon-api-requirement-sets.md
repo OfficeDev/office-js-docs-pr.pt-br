@@ -4,12 +4,12 @@ description: Especifica quais plataformas Office e builds suportam as APIs dinâ
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfce106eeb563fce59ccb998878f47f874b0ff9
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511356"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746689"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 

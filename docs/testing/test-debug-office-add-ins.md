@@ -1,14 +1,14 @@
 ---
 title: Testar os Suplementos do Office
-description: Saiba como testar seu Suplemento do Office
+description: Saiba como testar seu Suplemento do Office.
 ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 8d57f396c5387faf22ba8b03fd2e5019be4e14d2
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 3c02968a3726a696d76d728fc38030172c815cf2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765910"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745943"
 ---
 # <a name="test-office-add-ins"></a>Testar os Suplementos do Office
 

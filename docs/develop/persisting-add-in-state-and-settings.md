@@ -3,8 +3,13 @@ title: Persistir o estado e as configurações do add-in
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: b09520d997354e5acc7ec68e3408d97230e4c9dc
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743678"
 ---
-
 # <a name="persist-add-in-state-and-settings"></a>Persistir o estado e as configurações do add-in
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -19,16 +24,16 @@ Essencialmente, os suplementos do Office são aplicativos Web em execução no a
     > [!NOTE]
     > Alguns navegadores ou as configurações do navegador do usuário podem bloquear técnicas de armazenamento baseadas no navegador. Você deve testar a disponibilidade conforme documentado em [Using the Web Armazenamento API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
-Este artigo se concentra em como usar a API javaScript Office para persistir o estado do add-in no documento atual. Se você precisar manter o estado entre documentos, como controlar as preferências do usuário em todos os documentos abertos, você precisará usar uma abordagem diferente. Por exemplo, você pode usar [o SSO](use-sso-to-get-office-signed-in-user-token.md) para obter a identidade do usuário e salvar a ID do usuário e suas configurações em um banco de dados online.
+Este artigo se concentra em como usar a API JavaScript Office para persistir o estado do add-in no documento atual. Se você precisar manter o estado entre documentos, como controlar as preferências do usuário em todos os documentos abertos, você precisará usar uma abordagem diferente. Por exemplo, você pode usar [o SSO](use-sso-to-get-office-signed-in-user-token.md) para obter a identidade do usuário e salvar a ID do usuário e suas configurações em um banco de dados online.
 
-## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistir o estado e as configurações do add-in com a OFFICE JavaScript
+## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistir o estado e as configurações do Office JavaScript
 
-A OFFICE JavaScript fornece os [objetos Configurações](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
+A API Office JavaScript fornece os [objetos Configurações](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do complemento em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
 
 |**Object**|**Suporte a tipos de suplementos**|**Local de armazenamento**|**Office suporte a aplicativos**|
 |:-----|:-----|:-----|:-----|
-|[Configurações](/javascript/api/office/office.settings)|conteúdo e painel de tarefas|O documento, planilha ou apresentação com o qual o suplemento está trabalhando. As configurações de add-in de conteúdo e painel de tarefas estão disponíveis para o complemento que os criou a partir do documento em que são salvos.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais com o objeto **Settings**. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word, Excel ou PowerPoint<br/><br/> **Observação:** os suplementos de painel de tarefas para o Project 2013 não dão suporte à API **Settings** para o armazenamento do estado ou das configurações do suplemento. No entanto, para os complementos em execução no Project (bem como outros aplicativos cliente Office) você pode usar técnicas como cookies do navegador ou armazenamento da Web. Para saber mais sobre essas técnicas, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|A caixa de correio Exchange servidor do usuário onde o complemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "circular" com o usuário e estão disponíveis para o add-in quando estão sendo executados no contexto de qualquer aplicativo cliente ou navegador do Office com suporte acessando a caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|Outlook|
+|[Configurações](/javascript/api/office/office.settings)|conteúdo e painel de tarefas|O documento, planilha ou apresentação com o qual o suplemento está trabalhando. As configurações de add-in de conteúdo e painel de tarefas estão disponíveis para o complemento que os criou a partir do documento em que são salvos.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais com o objeto **Settings**. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word, Excel ou PowerPoint<br/><br/> **Observação:** os suplementos de painel de tarefas para o Project 2013 não dão suporte à API **Settings** para o armazenamento do estado ou das configurações do suplemento. No entanto, para os Project em execução no Project (bem como outros aplicativos Office cliente) você pode usar técnicas como cookies do navegador ou armazenamento da Web. Para saber mais sobre essas técnicas, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|A caixa de correio Exchange servidor do usuário onde o complemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "circular" com o usuário e estão disponíveis para o add-in quando estão em execução no contexto de qualquer aplicativo cliente Office ou navegador de cliente com suporte para acessar a caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|A mensagem, o compromisso ou o item de solicitação de reunião com o qual o suplemento está trabalhando. As propriedades personalizadas de itens de suplementos do Outlook estão disponíveis apenas para o suplemento que as criou e apenas por meio do item em que estão salvas.|Outlook|
 |[CustomXmlParts](/javascript/api/office/office.customxmlparts)|painel de tarefas|O documento, planilha ou apresentação com o qual o suplemento está trabalhando. As configurações de suplementos do painel de tarefas estão disponíveis para o suplemento que as criou por meio do documento em que são salvos.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais em uma parte XML personalizada. objeto. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word (usando a Office api comum javascript) Excel (usando a API JavaScript específica do aplicativo Excel JavaScript|
 
@@ -49,7 +54,7 @@ Este exemplo da estrutura do conjunto de propriedades contém três valores de *
 }
 ```
 
-Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, `get`**as configurações** são gerenciadas inteiramente na memória usando os métodos , `set`e do `remove` objeto que corresponde ao tipo de configuração que você está criando (Configurações, **CustomProperties** ou **RoamingSettings**).
+Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, `get`as configurações são gerenciadas inteiramente na memória usando os métodos , `set`e do `remove` objeto que corresponde ao tipo de configuração que você está criando (**Configurações**, **CustomProperties** ou **RoamingSettings**).
 
 > [!IMPORTANT]
 > Para persistir quaisquer adições, atualizações ou exclusões feitas durante a sessão atual do add-in para o local de armazenamento, `saveAsync` você deve chamar o método do objeto correspondente usado para trabalhar com esse tipo de configurações. Os `get`métodos , `set`e `remove` operam somente na cópia na memória do pacote de propriedades de configurações. Se o seu add-in estiver fechado sem chamar `saveAsync`, quaisquer alterações feitas nas configurações durante essa sessão serão perdidas.
@@ -173,11 +178,11 @@ function getReviewers() {
 
 ## <a name="how-to-save-settings-in-an-outlook-add-in"></a>Como salvar configurações em um Outlook de dados
 
-Para obter informações sobre como salvar configurações em um Outlook de Outlook, consulte Gerenciar estado e configurações para um [Outlook de um Outlook.](../outlook/manage-state-and-settings-outlook.md)
+Para obter informações sobre como salvar configurações em um Outlook de Outlook, consulte [Manage state and settings for an Outlook add-in](../outlook/manage-state-and-settings-outlook.md).
 
 ## <a name="see-also"></a>Confira também
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)
-- [Gerenciar estado e configurações para um Outlook de dados](../outlook/manage-state-and-settings-outlook.md)
+- [Gerenciar estado e configurações para um Outlook de um Outlook de dados](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

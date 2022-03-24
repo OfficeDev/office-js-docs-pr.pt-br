@@ -3,12 +3,12 @@ title: Depurar os suplementos usando as ferramentas de desenvolvedor para o Inte
 description: Depurar os complementos usando as ferramentas de desenvolvedor no Internet Explorer.
 ms.date: 11/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fb830f90c23b64e19420c73bee695bef669d93d1
-ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
+ms.openlocfilehash: bb7c328e6b1f839d5d711f81beceaf7519545fe3
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "60809082"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744671"
 ---
 # <a name="debug-add-ins-using-developer-tools-in-internet-explorer"></a>Depurar os complementos usando ferramentas de desenvolvedor no Internet Explorer
 
@@ -27,20 +27,20 @@ Para determinar qual navegador está sendo usado em seu computador, consulte [Br
 
 ## <a name="debug-a-task-pane-add-in-using-the-f12-tools"></a>Depurar um complemento do painel de tarefas usando as ferramentas F12
 
-Windows 10 e 11 incluem uma ferramenta de desenvolvimento da Web chamada "F12" porque ela foi originalmente lançada pressionando F12 no Internet Explorer. O F12 agora é um aplicativo independente usado para depurar seu complemento quando ele está sendo executado no controle webview do Internet Explorer, Trident. O aplicativo não está disponível em versões anteriores do Windows.
+Windows 10 e 11 incluem uma ferramenta de desenvolvimento da Web chamada "F12" porque foi originalmente lançada pressionando F12 no Internet Explorer. O F12 agora é um aplicativo independente usado para depurar seu complemento quando ele está sendo executado no controle webview do Internet Explorer, Trident. O aplicativo não está disponível em versões anteriores do Windows.
 
 > [!NOTE]
-> Se o seu add-in tiver um comando de complemento que execute uma função, a função será executada em um processo de navegador oculto ao qual as ferramentas F12 não podem detectar ou anexar, portanto, a técnica descrita neste artigo não pode ser usada para depurar o código na função. [](../design/add-in-commands.md)
+> Se o seu add-in tiver [](../design/add-in-commands.md) um comando de complemento que execute uma função, a função será executada em um processo de navegador oculto ao qual as ferramentas F12 não podem detectar ou anexar, portanto, a técnica descrita neste artigo não pode ser usada para depurar o código na função.
 
-As etapas a seguir são as instruções para depurar seu complemento. Se você quiser apenas testar as próprias ferramentas F12, consulte [Exemplo de complemento para testar as ferramentas F12](#example-add-in-to-test-the-f12-tools).
+As etapas a seguir são as instruções para depurar seu complemento. Se você quiser testar as próprias ferramentas F12, consulte [Exemplo de complemento para testar as ferramentas F12](#example-add-in-to-test-the-f12-tools).
 
 1. [Fazer sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) e executar o complemento.
-1. Iniciar as ferramentas de desenvolvimento F12 que correspondem à sua versão de Office.
+1. Iniciar as ferramentas de desenvolvimento F12 que correspondem à sua versão do Office.
 
    - Para a versão de 32 bits do Office, use C:\Windows\System32\F12\F12Chooser.exe
    - Para a versão de 64 bits do Office, use C:\Windows\SysWOW64\F12\F12Chooser.exe
 
-   IEChooser é aberto com uma janela chamada **Escolher destino para depurar**. Seu complemento aparecerá na janela nomeada pelo nome do arquivo da home page do complemento. Na captura de tela a seguir, é `Home.html` . Apenas os processos que estão sendo executados no Internet Explorer ou no Trident são exibidos. A ferramenta não pode ser anexada a processos que estão sendo executados em outros navegadores ou webviews, incluindo Microsoft Edge.
+   O IEChooser é aberto com uma janela chamada **Escolher destino a ser depurado**. Seu complemento aparecerá na janela nomeada pelo nome do arquivo da home page do complemento. Na captura de tela a seguir, é `Home.html`. Apenas os processos que estão sendo executados no Internet Explorer ou no Trident são exibidos. A ferramenta não pode ser anexada a processos que estão sendo executados em outros navegadores ou webviews, incluindo Microsoft Edge.
 
     :::image type="content" source="../images/choose-target-to-debug.png" alt-text="Tela IEChooser, com vários processos internet Explorer e Trident listados. Um é chamado Home.html.":::
 
@@ -50,7 +50,7 @@ As etapas a seguir são as instruções para depurar seu complemento. Se você q
 
     :::image type="content" source="../images/f12-file-dropdown.png" alt-text="Captura de tela do canto superior esquerdo da guia depurador com uma pasta listada aberta e uma lista de arquivos.":::
 
-1. Selecione o arquivo que você deseja depurar e ele será aberto no **painel de script** (à esquerda) da guia **Depurador.** Se você estiver usando um transpiler, empacotador ou minifier, que altera o nome do arquivo, ele terá o nome final que é realmente carregado, não o nome do arquivo de origem original.
+1. Selecione o arquivo que você deseja depurar e ele será aberto no **painel de script** (à esquerda) da guia **Depurador** . Se você estiver usando um transpiler, empacotador ou minifier, que altera o nome do arquivo, ele terá o nome final que é realmente carregado, não o nome do arquivo de origem original.
 
 1. Role para uma linha onde você deseja definir um ponto de interrupção e clique na margem à esquerda do número da linha. Você verá um ponto vermelho à esquerda da linha e uma linha correspondente aparece na guia **Pontos** de Interrupção do painel inferior direito. A captura de tela a seguir é um exemplo.
 
@@ -68,21 +68,21 @@ As etapas a seguir são as instruções para depurar seu complemento. Se você q
 Este exemplo usa o Word e um suplemento gratuito do AppSource.
 
 1. Abra o Word e escolha um documento em branco.
-1. Na guia **Inserir,** no grupo **Add-ins,** selecione **Meus Complementos** para abrir **a** caixa de diálogo Office de Office e selecione a **guia STORE.**
-1. Selecione o **complemento QR4Office.** Ele abre em um painel de tarefas.
+1. Na guia **Inserir**, no grupo **Add-ins**, selecione **Meus Complementos** para abrir **a** caixa de diálogo Office de Office e selecione a **guia STORE**.
+1. Selecione o **complemento QR4Office** . Ele abre em um painel de tarefas.
 1. Iniciar as ferramentas de desenvolvimento F12 que correspondem à sua versão do Office conforme descrito na seção anterior.
 1. Na janela F12, selecione **Home.html**.
-1. Na guia **Depurador,** abra o arquivo **Home.js** conforme descrito na seção anterior.
+1. Na guia **Depurador** , abra o **arquivoHome.jsconforme** descrito na seção anterior.
 1. De definir os pontos de interrupção nas linhas 310 e 312.
-1. No complemento, selecione o **botão Inserir.** Um ou outro ponto de interrupção é atingido.
+1. No complemento, selecione o **botão Inserir** . Um ou outro ponto de interrupção é atingido.
 
 ## <a name="debug-a-dialog-in-an-add-in"></a>Depurar uma caixa de diálogo em um complemento
 
-Se o seu add-in usar a API de caixa de diálogo Office, a caixa de diálogo será executado em um processo separado do painel de tarefas (se for o caso) e as ferramentas deverão ser anexados a esse processo. Siga estas etapas.
+Se o seu add-in usar a API de caixa de diálogo Office, a caixa de diálogo será executado em um processo separado do painel de tarefas (se algum) e as ferramentas deverão ser anexados a esse processo. Siga estas etapas.
 
 1. Execute o complemento e as ferramentas. 
 1. Abra a caixa de diálogo e selecione o **botão Atualizar** nas ferramentas. O processo de caixa de diálogo é mostrado. Seu nome é o nome do arquivo que está aberto na caixa de diálogo.
-1. Selecione o processo para abri-lo e depurar conforme descrito na seção Depurar um complemento do painel de tarefas usando as [ferramentas F12](#debug-a-task-pane-add-in-using-the-f12-tools).
+1. Selecione o processo para abri-lo e depurar conforme descrito na seção Depurar um complemento do painel de [tarefas usando as ferramentas F12](#debug-a-task-pane-add-in-using-the-f12-tools).
 
 ## <a name="switch-to-the-internet-explorer-11-webview"></a>Alternar para o Webview do Internet Explorer 11
 

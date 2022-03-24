@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081439"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745866"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -85,7 +85,7 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    De definida como um dos seguintes valores para habilitar o log de tempo `<bundle id>` de execução para o aplicativo correspondente.
+    De `<bundle id>` definida como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -145,4 +145,4 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 - [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Depurar os complementos usando ferramentas de desenvolvedor no Microsoft Edge (Chromium baseados em Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 

@@ -1,11 +1,16 @@
 ---
 title: Conjunto de requisitos da API JavaScript do Word 1.1
-description: Detalhes sobre o conjunto de requisitos do WordApi 1.1
+description: Detalhes sobre o conjunto de requisitos do WordApi 1.1.
 ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: dfcb1954cd9522de6165130cc115fddbb5f3ec45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744211"
 ---
-
 # <a name="whats-new-in-word-javascript-api-11"></a>Novidades na API JavaScript do Word 1.1
 
 O WordApi 1.1 é o primeiro conjunto de requisitos da API JavaScript do Word. É o único conjunto de requisitos de API do Word com suporte Word 2016.
@@ -41,7 +46,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do W
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.body#word-word-body-search-member(1))|Executa uma pesquisa com as SearchOptions especificadas no escopo do objeto body.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.body#word-word-body-select-member(1))|Seleciona o corpo e navega na interface do usuário do Word até ele.|
 ||[style](/javascript/api/word/word.body#word-word-body-style-member)|Obtém ou define o nome de estilo do corpo.|
-||[texto](/javascript/api/word/word.body#word-word-body-text-member)|Obtém o texto do corpo.|
+||[text](/javascript/api/word/word.body#word-word-body-text-member)|Obtém o texto do corpo.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[appearance](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-appearance-member)|Obtém ou define a aparência do controle de conteúdo.|
 ||[cannotDelete](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-cannotdelete-member)|Obtém ou define um valor que indica se o usuário pode excluir o controle de conteúdo.|
 ||[cannotEdit](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-cannotedit-member)|Obtém ou define um valor que indica se o usuário pode editar o conteúdo do controle de conteúdo.|

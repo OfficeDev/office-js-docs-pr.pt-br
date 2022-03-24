@@ -2,18 +2,18 @@
 title: Documentação de suplementos do Project
 summary: Com os suplementos do Project, é possível usar tecnologias de Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no Project no Windows. Saiba como criar, testar, depurar e publicar suplementos do Project.
 metadata:
-  title: Documentação de Suplementos do Project
+  title: Documentação de suplementos do Project
   description: Recursos para saber mais sobre suplementos do Project.
   ms.prod: project
   ms.topic: landing-page
   ms.date: 03/29/2021
   ms.localizationpriority: high
-  ms.openlocfilehash: 8c3b93565d6c986f5eb334364889dbcb12ced6ee
-  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+  ms.openlocfilehash: e6668ebf74752081279b4e171ab4b4c8fb3f8425
+  ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "59152046"
+  ms.lasthandoff: 03/23/2022
+  ms.locfileid: "63744323"
 landingContent:
 - title: Sobre Project de complementos
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Testar e depurar Project Depuração de Project Depuração
+    - text: Testar e depurar um Project de um novo complemento
       url: ../testing/test-debug-office-add-ins.md
     - text: Implantar e publicar um Project de usuário
       url: ../publish/publish.md

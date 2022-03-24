@@ -1,14 +1,14 @@
 ---
 title: Teste de unidade em Office de complementos
-description: Saiba como usar o código de teste de unidade que chama as OFFICE APIs JavaScript
+description: Saiba como usar o código de teste de unidade que chama as OFFICE APIs JavaScript.
 ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e7debe376ccd180549fec9c21f4bda970b88004e
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 6f6b0483b23c3f7199a8bd308bf8a4118402ee08
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711186"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746132"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Teste de unidade em Office de complementos
 

@@ -6,7 +6,7 @@ Registrar seu aplicativo (o complemento) estabelece uma relação de confiança 
 1. Em **Gerenciar**, selecione **Registros de aplicativoNovo** >  **registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
     * Defina **Nome** para `<add-in-name>`.
-    * Definir **tipos de** conta com suporte como Contas em qualquer diretório organizacional (qualquer diretório **do Azure AD - multitenant) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**.
+    * Definir **tipos de** conta com suporte como Contas em qualquer diretório organizacional (qualquer diretório **do Azure AD - multitenente) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**.
     * Deixe o **URI de Redirecionamento** vazio.
     * Escolha **Registrar**.
 
@@ -66,7 +66,7 @@ Registrar seu aplicativo (o complemento) estabelece uma relação de confiança 
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
     > [!NOTE]
-    > A ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO do Office de complemento.
+    > A ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO do Office Add-in.
 
     Para cada ID, tome estas etapas.
 

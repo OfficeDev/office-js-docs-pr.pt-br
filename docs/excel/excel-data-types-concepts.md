@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 969712a2ae26e515ab3aa28b7c7a0901f456a61f
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: b0827509c4592958a9529af20e3a76da4a4008be
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855601"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743351"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
@@ -83,7 +83,7 @@ const myEntity: Excel.EntityCellValue = {
 
 ## <a name="web-image-values"></a>Valores de imagem da Web
 
-O objeto [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) cria a capacidade de armazenar uma imagem como parte de uma [entidade](#entity-values) ou como um valor independente em um intervalo. Esse objeto oferece muitas propriedades, incluindo `address`, `altText` e `relatedImagesAddress`.
+O objeto [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) cria a capacidade de armazenar uma imagem como parte de uma [entidade](#entity-values) ou como um valor independente em um intervalo. Este objeto oferece muitas propriedades, incluindo `address`, `altText` e `relatedImagesAddress`.
 
 As propriedades `basicType` e `basicValue` definem como os cálculos leem o tipo de dados de imagem da Web se os requisitos mínimos de compatibilidade para usar o recurso de tipos de dados não forem atendidos. Neste cenário, esse tipo de dados de imagem da Web é exibido como um **#VALUE!** erro na interface do usuário do Excel.
 

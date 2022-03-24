@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d158a4067a4492901128438392cd1607ad851bcf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148804"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742950"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -25,7 +25,7 @@ Suplementos de conteúdo são superfícies que podem ser incorporadas diretament
 
 ## <a name="variants"></a>Variantes
 
-Tamanhos de complemento de conteúdo para Excel e PowerPoint no Office desktop e Microsoft 365 são especificados pelo usuário.
+Os tamanhos de Excel e PowerPoint de conteúdo Office área de trabalho e Microsoft 365 são especificados pelo usuário.
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
@@ -35,7 +35,7 @@ No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
 *Figura 2. Menu de personalidade no Windows*
 
-![Menu de personalidade de 12x32 pixels Windows área de trabalho.](../images/personality-menu-win.png)
+![Menu de personalidade de 12x32 pixels Windows desktop.](../images/personality-menu-win.png)
 
 No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço ocupado para 34 x 32 pixels, como mostrado.
 
@@ -49,7 +49,7 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
 
-- Verifique se o seu Office de usuário funcionará em um [aplicativo Office ou plataforma específico.](../overview/office-add-in-availability.md)
+- Verifique se o seu Office de usuário funcionará em um [aplicativo ou plataforma Office específico](../overview/office-add-in-availability.md).
 - Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
 - Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 

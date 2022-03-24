@@ -3,8 +3,13 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Saiba como a autenticação e a autorização funcionam nos Suplementos do Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743700"
 ---
-
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
 Os Suplementos do Office permitem o acesso anônimo por padrão, mas você pode exigir que os usuários se conectem para usar seu suplemento com um conta Microsoft, uma conta corporativa ou do Microsoft 365 Education ou outra conta comum. Essa tarefa é chamada de autenticação do usuário, pois permite que o suplemento saiba quem é o usuário.

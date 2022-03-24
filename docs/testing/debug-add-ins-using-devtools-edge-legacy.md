@@ -3,12 +3,12 @@ title: Depurar os complementos usando ferramentas de desenvolvedor para Versão 
 description: Depurar os complementos usando as ferramentas de desenvolvedor no Versão Prévia do Microsoft Edge.
 ms.date: 11/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d0b77a6898dcefc7fba7c9d52eb739a2d685aa
-ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
+ms.openlocfilehash: 62f27e2ee266e3b6a92d090e8008b74bac4a9663
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "60809074"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744679"
 ---
 # <a name="debug-add-ins-using-developer-tools-in-microsoft-edge-legacy"></a>Depurar os complementos usando ferramentas de desenvolvedor no Versão Prévia do Microsoft Edge
 
@@ -18,7 +18,7 @@ Este artigo mostra como depurar o código do lado do cliente (JavaScript ou Type
 - Seu computador está usando uma combinação de Windows e Office que usam o controle webview de Borda original, EdgeHTML.
 
 > [!TIP]
-> Para obter informações sobre a depuração com o Legado de Borda dentro Visual Studio Code, consulte Microsoft Office Extensão de [Depurador](debug-with-vs-extension.md)de Visual Studio Code .
+> Para obter informações sobre a depuração com o Legado de Borda dentro Visual Studio Code, consulte [Microsoft Office Extensão de Depurador de Visual Studio Code](debug-with-vs-extension.md).
 
 Para determinar qual navegador você está usando, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
@@ -26,14 +26,14 @@ Para determinar qual navegador você está usando, consulte [Browsers used by Of
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 > [!NOTE]
-> Para instalar uma versão do Office que usa o webview herdado de Borda ou para forçar sua versão atual do Office a usar o Edge Legacy, consulte Alternar para o [webview](#switch-to-the-edge-legacy-webview)herdado de borda .
+> Para instalar uma versão do Office que usa a webview herdada de Borda ou para forçar sua versão atual do Office a usar o Edge Legacy, consulte [Switch to the Edge Legacy webview](#switch-to-the-edge-legacy-webview).
 
 ## <a name="debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview"></a>Depurar um complemento do painel de tarefas usando Microsoft Edge Visualização do DevTools
 
 1. Instale o [Microsoft Edge Visualização do DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). (A palavra "Visualização" está no nome por motivos históricos. Não há uma versão mais recente.)
 
    > [!NOTE]
-   > Se o seu add-in tiver um comando de complemento que execute uma função, a função será executada em um processo de navegador oculto ao qual o Microsoft Edge DevTools não pode detectar ou anexar, portanto, a técnica descrita neste artigo não pode ser usada para depurar o código na função. [](../design/add-in-commands.md)
+   > Se o seu add-in tiver [](../design/add-in-commands.md) um comando de complemento que execute uma função, a função será executada em um processo de navegador oculto ao qual o Microsoft Edge DevTools não pode detectar ou anexar, portanto, a técnica descrita neste artigo não pode ser usada para depurar o código na função.
 
 1. [Fazer sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) e executar o complemento.
 1. Execute o Microsoft Edge DevTools.
@@ -60,17 +60,17 @@ Para determinar qual navegador você está usando, consulte [Browsers used by Of
 
 ## <a name="debug-a-dialog-in-an-add-in"></a>Depurar uma caixa de diálogo em um complemento
 
-Se o seu add-in usar a API de caixa de diálogo Office, a caixa de diálogo será executado em um processo separado do painel de tarefas (se for o caso) e as ferramentas deverão ser anexados a esse processo. Siga estas etapas.
+Se o seu add-in usar a API de caixa de diálogo Office, a caixa de diálogo será executado em um processo separado do painel de tarefas (se algum) e as ferramentas deverão ser anexados a esse processo. Siga estas etapas.
 
 1. Execute o complemento e as ferramentas.
-1. Abra a caixa de diálogo e selecione o **botão Atualizar** nas ferramentas. O processo de caixa de diálogo é mostrado. Seu nome vem do `<title>` elemento no arquivo HTML que está aberto na caixa de diálogo.
-1. Selecione o processo para abri-lo e depurar conforme descrito na seção Depurar um complemento do painel de tarefas usando [Microsoft Edge Visualização do DevTools](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
+1. Abra a caixa de diálogo e selecione o **botão Atualizar** nas ferramentas. O processo de caixa de diálogo é mostrado. Seu nome vem do elemento `<title>` no arquivo HTML que está aberto na caixa de diálogo.
+1. Selecione o processo para abri-lo e depurar conforme descrito na seção Depurar um complemento do painel de tarefas usando Microsoft Edge [Visualização do DevTools](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
 
    :::image type="content" source="../images/edge-devtools-with-add-in-and-dialog-processes.png" alt-text="Captura de tela de Edge DevTools mostrando um processo chamado Minha Caixa de Diálogo.":::
 
 ## <a name="switch-to-the-edge-legacy-webview"></a>Alternar para a webview herdda de borda
 
-Há duas maneiras de alternar o modo webview herddo de borda. Você pode executar um comando simples em um prompt de comando ou instalar uma versão do Office que usa o Edge Legacy por padrão. Recomendamos o primeiro método. Mas você deve usar o segundo nos cenários a seguir.
+Há duas maneiras de alternar o modo webview herddo de borda. Você pode executar um comando simples em um prompt de comando ou pode instalar uma versão do Office que usa Edge Legacy por padrão. Recomendamos o primeiro método. Mas você deve usar o segundo nos cenários a seguir.
 
 - Seu projeto foi desenvolvido com Visual Studio e IIS. Não é baseado em node.js.
 - Você deseja ser absolutamente robusto em seus testes.

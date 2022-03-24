@@ -3,19 +3,19 @@ title: Interface do usuário Fluent React em Suplementos do Office
 description: Saiba como usar Fluent interface do usuário React em Office de complementos.
 ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 453befe44dbcec6527930fcd73c5cb2cb243d965
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222238"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743130"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Usar Fluent interface do usuário React em Office de usuário
 
 Fluent interface do usuário React é a estrutura de front-end javaScript de código aberto oficial projetada para criar experiências que se encaixem perfeitamente em uma ampla variedade de produtos Microsoft, incluindo Office. Ele fornece componentes robustos, atualizados e acessíveis baseados no React que são altamente personalizáveis usando o CSS-in-JS.
 
 > [!NOTE]
-> Este artigo descreve o uso de Fluent interface do usuário React no contexto de Office Desem. Mas também é usado em uma ampla variedade de Microsoft 365 aplicativos e extensões. Para obter mais informações, [consulte Fluent interface do usuário React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) o repo de código aberto Fluent [UI Web](https://github.com/microsoft/fluentui).
+> Este artigo descreve o uso de Fluent de interface do usuário React no contexto de Office Desem. Mas também é usado em uma ampla variedade de Microsoft 365 aplicativos e extensões. Para obter mais informações, [consulte Fluent interface do usuário React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) e o aplicativo de Fluent [da interface do usuário.](https://github.com/microsoft/fluentui)
 
 Este artigo descreve como criar um add-in criado com o React e usa Fluent de interface do usuário React componentes.
 
@@ -36,7 +36,7 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-word-react.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -67,17 +67,17 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
         npm start
         ```
 
-    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado. Substitua "{url}" pela URL de um documento do Word em seu OneDrive ou uma biblioteca SharePoint para a qual você tem permissões.
+    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado. Substitua "{url}" pelo URL de um documento do Word no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-3. Para abrir o painel de tarefas do complemento, na guia **Página** Início, escolha o **botão Mostrar Painel de Tarefas.** Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e um botão criando um componente React que usa componentes UX Fluent interface do usuário React.
+3. Para abrir o painel de tarefas do complemento, na guia **Página** Início, escolha o **botão Mostrar Painel de Tarefas** . Observe o texto padrão e o botão **Executar** na parte inferior do painel de tarefas. No restante deste passo a passo, você redefinirá esse texto e um botão criando um componente React que usa componentes de interface do usuário Fluent interface do usuário React.
 
     ![Captura de tela mostrando o aplicativo Word com o botão mostrar faixa de opções do Painel de Tarefas realçada e o botão Executar e imediatamente o texto anterior realçado no painel de tarefas.](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>Criar um React que usa Fluent interface do usuário React
 
-Neste ponto, você criou um suplemento muito básico do painel de tarefas usando o React. Em seguida, siga as etapas abaixo para criar um novo componente React (`ButtonPrimaryExample`) dentro do projeto de suplemento. O componente usa os `Label` componentes e `PrimaryButton` de Fluent interface do usuário React.
+Neste ponto, você criou um suplemento muito básico do painel de tarefas usando o React. Em seguida, siga as etapas abaixo para criar um novo componente React (`ButtonPrimaryExample`) dentro do projeto de suplemento. O componente usa os componentes `Label` e `PrimaryButton` de Fluent interface do usuário React.
 
 1. Abra a pasta do projeto criada pelo gerador Yeoman e acesse **src\taskpane\components**.
 2. Nesta pasta, crie um novo arquivo chamado **Button.tsx**.
@@ -121,14 +121,14 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Esse código faz o seguinte:
 
 - Faz referência à biblioteca React usando `import * as React from 'react';`.
-- Faz referência aos Fluent da interface do usuário React componentes ( , , ) usados `PrimaryButton` `IButtonProps` para criar `Label` `ButtonPrimaryExample` .
+- Faz referência aos Fluent de interface do usuário React (`PrimaryButton`, , ), `Label`que são usados para criar `ButtonPrimaryExample``IButtonProps`.
 - Declara o novo `ButtonPrimaryExample` componente usando `export class ButtonPrimaryExample extends React.Component`.
 - Declara a `insertText` função que manipulará o evento do `onClick` botão.
-- Define a interface do usuário do componente do React na função `render`. A marcação HTML usa os componentes e do Fluent interface do usuário React e especifica que, quando o evento for ativos, a função `Label` `PrimaryButton` será `onClick` `insertText` executado.
+- Define a interface do usuário do componente do React na função `render`. A marcação HTML usa os `Label` `PrimaryButton` `onClick` componentes e do Fluent interface do usuário React e especifica que, quando o evento for ativos, `insertText` a função será executado.
 
 ## <a name="add-the-react-component-to-your-add-in"></a>Adicionar o componente do React ao suplemento
 
-Adicione o componente ao seu complemento abrindo `ButtonPrimaryExample` **src\components\App.tsx** e concluindo as etapas a seguir.
+Adicione o `ButtonPrimaryExample` componente ao seu complemento abrindo **src\components\App.tsx** e concluindo as etapas a seguir.
 
 1. Adicione a seguinte declaração de importação para a referência `ButtonPrimaryExample` do **Button.tsx**.
 
@@ -165,7 +165,7 @@ No Word, o painel de tarefas do suplemento será atualizado automaticamente quan
 
 ![Captura de tela mostrando o aplicativo Word com o "Inserir texto..." botão e texto imediatamente anterior realçado.](../images/word-task-pane-with-react-component.png)
 
-Parabéns, você criou com êxito um complemento do painel de tarefas usando React e Fluent interface do usuário React!
+Parabéns, você criou com êxito um complemento do painel de tarefas usando o React e Fluent interface do usuário React!
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Teste de usabilidade de Suplementos do Office
 description: Saiba como testar o design do seu complemento com usuários reais.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b7ef0b2665d9cef5079d414cfa45e9ee0400d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ebfde462bcfd2e3b6536a97dc45cba9dbf98415c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148712"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744415"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 

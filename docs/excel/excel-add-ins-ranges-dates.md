@@ -4,12 +4,12 @@ description: Use o Moment-MSDate plug-in com a API javaScript Excel para trabalh
 ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: becbbc9deb6f07e244ed0aac1f04b3dad1a800eb
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7ca6e0eacab7aab0308b2e397f313a8e07b59777
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340565"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745073"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Trabalhar com datas usando Excel API JavaScript e o Moment-MSDate plug-in
 

@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.7.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: cd8f0f333b76306a6feecff95b9ba8831428606a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744529"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
 O conjunto de requisitos 1.7 da API JavaScript do Excel incluei APIs para gráficos, eventos, planilhas, intervalos, propriedades do documento, itens nomeados, opções de proteção e estilos.
@@ -60,7 +65,7 @@ Além disso:
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Excel 1.7. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.7 ou anterior, consulte Excel APIs no conjunto de requisitos [1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) ou anterior.
+A tabela a seguir lista as APIs no Excel de requisitos da API JavaScript 1.7. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.7 ou anterior, consulte Excel APIs no conjunto de requisitos [1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) ou anterior.
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -120,7 +125,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 |[ChartPoint](/javascript/api/excel/excel.chartpoint)|[dataLabel](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-datalabel-member)|Retorna o rótulo de dados de um ponto de gráfico.|
 ||[hasDataLabel](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-hasdatalabel-member)|Representa se um ponto de dados tem um rótulo de dados.|
 ||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerbackgroundcolor-member)|Representação de código de cor HTML da cor de plano de fundo do marcador de um ponto de dados (por exemplo, #FF0000 representa Vermelho).|
-||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerforegroundcolor-member)|Representação de código de cor HTML da cor de primeiro plano do marcador de um ponto de dados (por exemplo, #FF0000 representa Vermelho).|
+||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerforegroundcolor-member)|Representação de código de cor HTML da cor do marcador em primeiro plano de um ponto de dados (por exemplo, #FF0000 representa Vermelho).|
 ||[markerSize](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markersize-member)|Representa o tamanho do marcador de um ponto de dados.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerstyle-member)|Representa estilo do marcador de um ponto de dados do gráfico.|
 |[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[borda](/javascript/api/excel/excel.chartpointformat#excel-excel-chartpointformat-border-member)|Representa o formato de borda de um ponto de dados do gráfico, que inclui informações de cor, estilo e peso.|

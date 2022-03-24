@@ -4,8 +4,13 @@ description: Detalhes sobre as próximas Excel APIs JavaScript.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f15a72631f83a5102fb4e042cc1357d179d1fa3d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747178"
 ---
-
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
 As novas APIs do JavaScript para Excel são introduzidas pela primeira vez na "visualização" e, posteriormente, tornam-se parte de um conjunto específico de requisitos numerados, após passarem por vários testes e após a recolha das opiniões de usuários.
@@ -26,7 +31,7 @@ A tabela a seguir fornece um resumo conciso das APIs, enquanto a tabela de lista
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. Para uma lista completa de todas as EXCEL JavaScript (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs javascript Excel JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
+A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. Para uma lista completa de todas as EXCEL JavaScript (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs JavaScript Excel JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -91,7 +96,7 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. P
 |[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[description](/javascript/api/excel/excel.cellvalueproviderattributes#excel-excel-cellvalueproviderattributes-description-member)|Representa a propriedade de descrição do provedor usada no exibição de cartão se nenhum logotipo for especificado.|
 ||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#excel-excel-cellvalueproviderattributes-logosourceaddress-member)|Representa uma URL usada para baixar uma imagem que será usada como um logotipo no exibição de cartão.|
 ||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#excel-excel-cellvalueproviderattributes-logotargetaddress-member)|Representa uma URL que será o destino de navegação se o usuário clicar no elemento logo no modo de exibição de cartão.|
-|[Comentário](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#excel-excel-comment-assigntask-member(1))|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#excel-excel-comment-assigntask-member(1))|Atribui a tarefa anexada ao comentário ao usuário dado como um destinatário.|
 ||[getTask()](/javascript/api/excel/excel.comment#excel-excel-comment-gettask-member(1))|Obtém a tarefa associada a este comentário.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#excel-excel-comment-gettaskornullobject-member(1))|Obtém a tarefa associada a este comentário.|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#excel-excel-commentreply-assigntask-member(1))|Atribui a tarefa anexada ao comentário ao usuário determinado como o único destinatário.|
@@ -200,10 +205,10 @@ A tabela a seguir lista as Excel APIs JavaScript atualmente em visualização. P
 |[LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)|[basicType](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-basictype-member)|Representa o valor que seria retornado por uma `Range.valueTypes` célula com esse valor.|
 ||[basicValue](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-basicvalue-member)|Representa o valor que seria retornado por uma `Range.values` célula com esse valor.|
 ||[id](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-id-member)|Representa a fonte de serviço que forneceu as informações nesse valor.|
-||[properties: { [key: string]: CellValue & { propertyMetadata](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-properties-member)|Representa as propriedades dessa entidade e seus metadados.|
+||[propriedades: { [key: string]: CellValue & { propertyMetadata](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-properties-member)|Representa as propriedades dessa entidade e seus metadados.|
 ||[propertyMetadata](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-propertymetadata-member)||
 ||[provider](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-provider-member)|Representa informações que descrevem o serviço que forneceu a imagem.|
-||[texto](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-text-member)|Representa o texto mostrado quando uma célula com esse valor é renderizada.|
+||[text](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-text-member)|Representa o texto mostrado quando uma célula com esse valor é renderizada.|
 ||[tipo](/javascript/api/excel/excel.linkedentitycellvalue#excel-excel-linkedentitycellvalue-type-member)|Representa o tipo desse valor de célula.|
 |[LinkedEntityId](/javascript/api/excel/excel.linkedentityid)|[culture](/javascript/api/excel/excel.linkedentityid#excel-excel-linkedentityid-culture-member)|Representa qual cultura de idioma foi usada para criar isso `CellValue`.|
 ||[domainId](/javascript/api/excel/excel.linkedentityid#excel-excel-linkedentityid-domainid-member)|Representa um domínio específico de um serviço usado para criar o `CellValue`.|

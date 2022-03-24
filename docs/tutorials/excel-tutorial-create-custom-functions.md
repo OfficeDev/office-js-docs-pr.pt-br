@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222252"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745580"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -17,7 +17,7 @@ Funções personalizadas permitem que você adicione novas funções do Excel de
 
 Neste tutorial, você vai:
 > [!div class="checklist"]
-> - Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](https://www.npmjs.com/package/generator-office).
+> - Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](../develop/yeoman-generator-overview.md).
 > - Usar uma função personalizada predefinida para realizar um cálculo simples.
 > - Criar uma função personalizada que solicita dados da web.
 > - Criar uma função personalizada que transmite os dados da web em tempo real.
@@ -26,14 +26,17 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior) ou Excel na Web.
+- Office conectado a uma assinatura Microsoft 365 (incluindo o Office na web).
+
+  > [!NOTE]
+  > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
- Para começar, crie do código do projeto para criar o seu suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
+ Para começar, crie do código do projeto para criar o seu suplemento de função personalizada. O [gerador Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
 
 > [!NOTE]
-> Se você recriar o projeto yo office, poderá receber um erro porque o cache do Office já tem uma instância de uma função com o mesmo nome. Você pode impedir isso [limpando o cache do Office](../testing/clear-cache.md) antes de executar `npm run start`.
+> Se você recriar o projeto Yo Office, poderá receber um erro porque o cache do Office já tem uma instância de uma função com o mesmo nome. Você pode evitar isso [limpando o cache do Office](../testing/clear-cache.md) antes de executar `npm run start`.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -60,9 +63,9 @@ Neste tutorial, você vai:
     ```
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    > Suplementos do Office devem usar HTTPS, não HTTP, mesmo quando você estiver desenvolvendo. Se você for solicitado a instalar um certificado depois de executar `npm run build`, aceite o prompt para instalar o certificado fornecido pelo gerador do Yeoman.
 
-1. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
+1. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento de função personalizada no Excel.
 
 # <a name="excel-on-windows-or-mac"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
@@ -72,11 +75,15 @@ Para testar o seu suplemento no Excel para Windows ou Mac, execute o seguinte co
 npm run start:desktop
 ```
 
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
+Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 

@@ -3,12 +3,12 @@ title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fa03cd9a3ccee9fce1cbb7025baf6c2463ff938d
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 829e8ccc947ffd7997146de1aafaf517fd7ebf06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340537"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744979"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
@@ -63,7 +63,7 @@ Quando uma solicitação Excel API JavaScript falha ao executar com êxito, a AP
 
 A tabela a seguir é uma lista de erros que a API pode retornar.
 
-|Código de erro | Mensagem de erro | Notas |
+|Código de erro | Mensagem de erro | Observações |
 |:----------|:--------------|:------|
 |`AccessDenied` |Você não pode realizar a operação solicitada.| |
 |`ActivityLimitReached`|O limite de atividades foi alcançado.| |

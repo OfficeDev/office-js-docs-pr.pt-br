@@ -1,20 +1,25 @@
 ---
 title: Abrir conjuntos de requisitos de janela do navegador
 description: Especifica quais Office e builds suportam a API openBrowserWindow.
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 3162315b7d90a416d0b847d796a2a45876f102df
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746412"
 ---
-
 # <a name="open-browser-window-api-requirement-sets"></a>Conjuntos de requisitos da API da Janela do Navegador Aberto
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-O conjunto de API OpenBrowserWindow permite que os complementos abram um navegador para realizar tarefas que nem sempre podem ser feitas no controle de webview em áreas externas dentro do próprio add-in; por exemplo, baixando um arquivo PDF quando o controle webview é fornecido por Microsoft Edge.
+O conjunto de API OpenBrowserWindow permite que os complementos abram um navegador para realizar tarefas que nem sempre podem ser feitas no controle de webview em áreas externas dentro do próprio add-in; por exemplo, baixar um arquivo PDF quando o controle webview é fornecido por Microsoft Edge.
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API OpenBrowserWindow, os aplicativos host Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(Conectado à assinatura do Microsoft 365) |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2021 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(Conectado à assinatura do Microsoft 365) |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)   | Office na Web  |  Servidor do Office Online  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | OpenBrowserWindowApi 1.1  | Build 16.0.14326.20454 ou posterior | Versão 1810 (build 16.0.11001.20074) ou posterior | 16.0.0.0 ou posterior | 16.0.0.0 ou posterior | N/D | N/D|
 
@@ -28,7 +33,7 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
 
 - [Números de versão e com build de versões de canal de atualização para Microsoft 365 Apps](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Qual versão do Office estou usando?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Onde você pode encontrar a versão e o número de com build para um aplicativo Office cliente](/officeupdates/update-history-microsoft365-apps-by-date)
+- [Onde você pode encontrar a versão e o número de com build de um Office cliente](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office

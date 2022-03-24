@@ -3,21 +3,21 @@ title: Manipulando erros e eventos na caixa de diálogo do Office
 description: Saiba como interceptar e manipular erros ao abrir e usar Office caixa de diálogo.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f4d69d86591cc9f8053dddba7e8886fed9ed43
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 96bb2189ccf9b9ef6c976bb154746368c5bde69a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149026"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743815"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>Manipular erros e eventos na caixa de Office de diálogo
 
 Este artigo descreve como interceptar e manipular erros ao abrir a caixa de diálogo e erros que ocorrem dentro da caixa de diálogo.
 
 > [!NOTE]
-> Este artigo pressupõe que você está familiarizado com as noções básicas de uso da API de diálogo Office conforme descrito em Usar Office API de diálogo Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md)do Office .
+> Este artigo pressupõe que você está familiarizado com as noções básicas de uso da API de diálogo Office conforme descrito em Usar Office API de diálogo do Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md).
 > 
-> Consulte também [Práticas recomendadas e regras para a API Office caixa de diálogo](dialog-best-practices.md).
+> Consulte também [Práticas recomendadas e regras para a API de Office de diálogo](dialog-best-practices.md).
 
 Seu código deve manipular duas categorias de eventos.
 
@@ -26,7 +26,7 @@ Seu código deve manipular duas categorias de eventos.
 
 ## <a name="errors-from-displaydialogasync"></a>Erros de displayDialogAsync
 
-Além dos erros gerais da plataforma e do sistema, quatro erros são específicos para chamar `displayDialogAsync` .
+Além dos erros gerais da plataforma e do sistema, quatro erros são específicos para chamar `displayDialogAsync`.
 
 |Número do código|Significado|
 |:-----|:-----|
@@ -35,7 +35,7 @@ Além dos erros gerais da plataforma e do sistema, quatro erros são específico
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez.|
 |12009|O usuário opta por ignorar a caixa de diálogo. Esse erro pode ocorrer Office na Web, onde os usuários podem optar por não permitir que um complemento apresente uma caixa de diálogo. Para obter mais informações, consulte [Tratamento de bloqueadores pop-up com Office na Web](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web).|
 
-Quando `displayDialogAsync` é chamado, ele passa um [objeto AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Quando a chamada é bem-sucedida, a caixa de diálogo é aberta e `value` a propriedade do objeto é um objeto `AsyncResult` [Dialog.](/javascript/api/office/office.dialog) Para obter um exemplo disso, consulte [Enviar informações da caixa de diálogo para a página host](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Quando a chamada falha, a caixa de diálogo não é criada, a propriedade do objeto é definida como , e a propriedade do `displayDialogAsync` `status` objeto é `AsyncResult` `Office.AsyncResultStatus.Failed` `error` preenchida. Você sempre deve fornecer um retorno de chamada que testa e `status` responde quando é um erro. Para um exemplo que relata a mensagem de erro independentemente do número de código, consulte o código a seguir. (A `showNotification` função, não definida neste artigo, exibe ou registra o erro. Para ver um exemplo de como você pode implementar essa função no seu complemento, consulte Office Exemplo da API de Diálogo de [Complementos](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
+Quando `displayDialogAsync` é chamado, ele passa um [objeto AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Quando a chamada é bem-sucedida, a caixa de diálogo é aberta e `value` a propriedade do `AsyncResult` objeto é um [objeto Dialog](/javascript/api/office/office.dialog) . Para obter um exemplo disso, consulte [Enviar informações da caixa de diálogo para a página host](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Quando a chamada falha`displayDialogAsync`, a caixa de diálogo não é criada, `Office.AsyncResultStatus.Failed``status` `AsyncResult` a propriedade do objeto é definida como , `error` e a propriedade do objeto é preenchida. Você sempre deve fornecer um retorno de chamada que testa e `status` responde quando é um erro. Para um exemplo que relata a mensagem de erro independentemente do número de código, consulte o código a seguir. (A `showNotification` função, não definida neste artigo, exibe ou registra o erro. Para ver um exemplo de como você pode implementar essa função no seu complemento, [consulte Office Exemplo da API de Diálogo de Complementos](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
 var dialog;
@@ -52,11 +52,11 @@ function (asyncResult) {
 
 ## <a name="errors-and-events-in-the-dialog-box"></a>Erros e eventos na caixa de diálogo
 
-Três erros e eventos na caixa de diálogo levantarão um `DialogEventReceived` evento na página host. Para um lembrete do que é uma página host, consulte Abrir uma caixa [de diálogo de uma página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).
+Três erros e eventos na caixa de diálogo levantarão um `DialogEventReceived` evento na página host. Para um lembrete do que é uma página host, consulte [Abrir uma caixa de diálogo de uma página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).
 
 |Número do código|Significado|
 |:-----|:-----|
-|12002|Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página que foi passada para carregada, mas a caixa de diálogo foi então redirecionada para uma página que não pode encontrar ou carregar, ou foi direcionada para uma URL com sintaxe `displayDialogAsync` inválida.|
+|12002|Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página `displayDialogAsync` que foi passada para carregada, mas a caixa de diálogo foi então redirecionada para uma página que não pode encontrar ou carregar, ou foi direcionada para uma URL com sintaxe inválida.|
 |12003|A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário.|
 |12006|A caixa de diálogo foi fechada, geralmente porque o usuário escolheu o **botão Fechar** **X**.|
 
@@ -72,7 +72,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 );
 ```
 
-Para um exemplo de um manipulador para o evento que cria mensagens de erro personalizadas para cada código de `DialogEventReceived` erro, consulte o exemplo a seguir.
+Para um exemplo de um manipulador para o evento `DialogEventReceived` que cria mensagens de erro personalizadas para cada código de erro, consulte o exemplo a seguir.
 
 ```js
 function processDialogEvent(arg) {

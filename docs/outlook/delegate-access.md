@@ -3,17 +3,22 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745847"
 ---
-
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
-Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de [representante) e](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) cenários de caixa de correio compartilhada (agora em visualização) no seu complemento do Outlook, incluindo quais permissões Office API JavaScript suporta.
+Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de [representante) e](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) cenários de caixa de correio compartilhada (agora em visualização) no seu Outlook add-in, incluindo quais permissões Office API JavaScript suporta.
 
 ## <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para esse recurso, incluindo a Atualização Cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Client | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
+| Cliente | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Não|Não|Não|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
@@ -52,7 +57,7 @@ O proprietário da caixa de correio [deve primeiro fornecer acesso a um represen
 
 Exchange administradores de servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
 
-Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida em sua caixa de correio principal" do artigo [Abrir](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207) e usar uma caixa de correio compartilhada no Outlook na Web.
+Depois de receber acesso, um usuário de caixa de correio compartilhada deve seguir as etapas descritas na seção "Adicionar a caixa de correio compartilhada para que ela seja exibida sob sua caixa de correio principal" do artigo [Abrir](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207) e usar uma caixa de correio compartilhada no Outlook na Web.
 
 > [!WARNING]
 > NÃO **use** outras opções como "Abrir outra caixa de correio". As APIs de recurso podem não funcionar corretamente.
@@ -79,7 +84,7 @@ Se o proprietário do calendário concedeu amplo acesso ao calendário (por exem
 
 ---
 
-Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte [a](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) seção Itens de Caixa de Correio disponíveis para os Outlook da página de visão geral de Outlook de complementos.
+Para saber mais sobre onde os complementos fazem e não são ativados em geral, consulte a seção Itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de Outlook de complementos.
 
 ## <a name="supported-permissions"></a>Permissões com suporte
 
@@ -87,7 +92,7 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Ler|1 (000001)|Pode ler itens.|
+|Leitura|1 (000001)|Pode ler itens.|
 |Gravar|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir apenas os itens criados.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
@@ -197,7 +202,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> Como representante, você pode usar REST para obter o conteúdo de uma mensagem Outlook [anexada a um item Outlook ou postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+> Como representante, você pode usar REST para obter o conteúdo de uma mensagem [Outlook anexada a um item Outlook ou postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Manipular a chamada REST em itens compartilhados e não compartilhados
 
@@ -251,7 +256,7 @@ Se um administrador ocultou um usuário ou endereço de caixa de correio compart
 
 - [Permitir que outra pessoa gerencie seu email e calendário](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário em Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
-- [Adicionar uma caixa de correio compartilhada Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
+- [Adicionar uma caixa de correio compartilhada ao Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [Como solicitar elementos de manifesto](../develop/manifest-element-ordering.md)
 - [Máscara (computação)](https://en.wikipedia.org/wiki/Mask_(computing))
 - [Operadores de bit do JavaScript](https://www.w3schools.com/js/js_bitwise.asp)

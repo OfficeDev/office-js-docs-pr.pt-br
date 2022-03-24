@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.6.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: d68bfae3494ec21df1eee5909ac2df532a0537b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745838"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-16"></a>Quais são as novidades na API JavaScript do Excel 1.6
 
 ## <a name="conditional-formatting"></a>Formatação condicional
@@ -27,7 +32,7 @@ Além disso:
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Excel 1.6. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.6 ou anterior, consulte Excel APIs no conjunto de requisitos [1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true) ou anterior.
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Excel 1.6. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.6 ou anterior, consulte Excel APIs no conjunto de requisitos [1.6 ou anterior](/javascript/api/excel?view=excel-js-1.6&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -103,7 +108,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[direita](/javascript/api/excel/excel.conditionalrangebordercollection#excel-excel-conditionalrangebordercollection-right-member)|Obtém a borda direita.|
 ||[top](/javascript/api/excel/excel.conditionalrangebordercollection#excel-excel-conditionalrangebordercollection-top-member)|Obtém a borda superior.|
 |[ConditionalRangeFill](/javascript/api/excel/excel.conditionalrangefill)|[clear()](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-clear-member(1))|Redefine o preenchimento.|
-||[color](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-color-member)|Código de cor HTML que representa a cor do preenchimento, no formulário #RRGGBB (por exemplo, "FFA500") ou como uma cor HTML nomeada (por exemplo, "laranja").|
+||[color](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-color-member)|Código de cor HTML que representa a cor do preenchimento, no formato #RRGGBB (por exemplo, "FFA500") ou como uma cor HTML nomeada (por exemplo, "laranja").|
 |[ConditionalRangeFont](/javascript/api/excel/excel.conditionalrangefont)|[bold](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-bold-member)|Especifica se a fonte está em negrito.|
 ||[clear()](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-clear-member(1))|Redefine os formatos de fonte.|
 ||[color](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-color-member)|Representação de código de cor HTML da cor do texto (por exemplo, #FF0000 representa Vermelho).|

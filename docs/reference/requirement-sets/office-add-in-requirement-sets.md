@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos Office API comum.
 ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 743473566e632022946bdc2b7e372b5bb6fede49
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153467"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744115"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
@@ -32,7 +32,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 As seções a seguir listam os conjuntos de requisitos da API comum, os métodos em cada conjunto e os Office cliente que suportam esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
 
 > [!TIP]
-> Precisa de informações sobre onde os complementos e conjuntos de requisitos têm suporte Office aplicativo e versão? Consulte [Office disponibilidade de aplicativo cliente e plataforma para Office de complementos](../../overview/office-add-in-availability.md).
+> Precisa de informações sobre onde os complementos e conjuntos de requisitos têm suporte Office aplicativo e versão? Consulte [Office disponibilidade de aplicativo cliente e plataforma para Office de aplicativos.](../../overview/office-add-in-availability.md)
 
 ### <a name="activeview"></a>ActiveView
 
@@ -172,7 +172,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Consulte [Open Browser Window API requirement sets](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
+| Consulte [Conjuntos de requisitos da API da Janela do Navegador Aberto](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
 
 ---
 
@@ -220,7 +220,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Consulte [Conjuntos de requisitos de tempo de execução compartilhados.](shared-runtime-requirement-sets.md) | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
+| Consulte [Conjuntos de requisitos de tempo de execução compartilhados](shared-runtime-requirement-sets.md). | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 

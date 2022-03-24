@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
-description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma Office de complementos.
+description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Office de complementos.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f1e18279c9a05e618e1101cfb4f7c54b9b63653
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 0ec6f45ffc30f19ed4f3b3f293da0b3617bd3fcb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263062"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742840"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -22,7 +22,7 @@ Os suplementos do Office são protegidos por um ambiente de tempo de execução 
 
 - Interações modais não são permitidas - por exemplo, chamadas para JavaScript `alert`, e `confirm``prompt` funções não são permitidas porque são modais.
 
-Além disso, a estrutura de tempo de execução oferece os seguintes benefícios para garantir que um Office de usuário não possa danificar o ambiente do usuário.
+Além disso, a estrutura de tempo de execução fornece os seguintes benefícios para garantir que um Office de usuário não possa danificar o ambiente do usuário.
 
 - Isola o processo no qual o suplemento é executado.
 
@@ -54,7 +54,7 @@ O tempo de execução de Suplementos do Office gerencia a comunicação entre pr
 
 ### <a name="web-clients"></a>Clientes Web
 
-Em clientes Da Web com suporte, Office os complementos são hospedados em um **iframe** que é executado usando o atributo **de área de área de risco** HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que oferece suporte Office de Office em execução no navegador e os componentes relevantes (o cliente Web, **o iframe**, o tempo de execução de complementos do Office e a API JavaScript para Office) que são necessários para dar suporte a eles.
+Em clientes Da Web com suporte, Office os complementos são hospedados em um **iframe** que é executado usando o atributo **de área de área de risco** HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que dá suporte a Office de complementos em execução no navegador e os componentes relevantes (cliente Web, **iframe**, tempo de execução de Office Add-ins e API JavaScript para Office) que são necessários para dar suporte a eles.
 
 *Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
 
@@ -72,9 +72,9 @@ Você pode disponibilizar seus Office para o público publicando-os no AppSource
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para Office de Office, o impacto da desabilitação da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios e os complementos implantados pelo administrador de IT de uma organização [](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis Outlook na Web, independentemente do status da configuração.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para Office, o impacto da desabilitação da configuração Experiências conectadas opcionais é que os usuários não podem mais acessar os complementos ou o Office Store por meio desses clientes. No entanto, determinados complementos da Microsoft considerados essenciais ou críticos para os negócios e os complementos implantados pelo administrador de IT de uma organização [](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) por meio da Implantação Centralizada ainda estarão disponíveis. Além disso, os complementos e a Loja permanecem disponíveis Outlook na Web, independentemente do status da configuração.
 
-Para saber mais Outlook comportamento específico, consulte [Privacidade, permissões e segurança para Outlook de usuário](../outlook/privacy-and-security.md#optional-connected-experiences).
+Para obter mais Outlook comportamento específico, consulte [Privacidade, permissões e segurança para Outlook de Outlook de usuário](../outlook/privacy-and-security.md#optional-connected-experiences).
 
 Observe que, se um administrador de IT desabilitar o uso de experiências conectadas no [Office, ele](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences) terá o mesmo efeito nos complementos que desativar apenas experiências conectadas opcionais.
 
@@ -95,13 +95,13 @@ A plataforma de complemento aborda as preocupações de privacidade dos usuário
 
 - Antes de instalar um suplemento do AppSource, o usuário pode exibir a política de privacidade e os requisitos desse suplemento. Além disso, os suplementos do Outlook que interagem com caixas de correio dos usuários expõem as permissões específicas das quais precisam. O usuário pode examinar os termos de uso, as permissões solicitadas e a política de privacidade antes de instalar um suplemento do Outlook.
 
-- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um complemento que o usuário não tenha usado antes, o aplicativo cliente Office solicitará que o usuário conceda permissão para que o complemento seja executado no documento. Em um ambiente organizacional, o aplicativo Office cliente também solicita ao usuário se o documento vem de uma fonte externa.
+- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um complemento que o usuário não tenha usado antes, o aplicativo cliente Office solicita que o usuário conceda permissão para que o complemento seja executado no documento. Em um ambiente organizacional, o aplicativo Office cliente também solicita ao usuário se o documento vem de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os complementos de conteúdo e do painel de tarefas, os usuários gerenciam o acesso **a** >  complementos e catálogos confiáveis da Central de Confiações no cliente do host Office (aberto do **Centro de** >  >  >  Confiação do Centro Configurações **Trusted Add-in Catalogs**). Para Outlook de Outlook, os usos podem gerenciar os complementos escolhendo o botão Gerenciar **Complementos**: no Outlook no Windows, escolha **FileManage** >  **Add-ins**. Em Outlook no Mac, escolha o botão **Gerenciar Complementos** na barra de complementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os complementos de conteúdo e do painel de tarefas, os usuários gerenciam o  acesso a  >  complementos e catálogos confiáveis da Central de Confiações no cliente do host Office (aberto a partir de Catálogos de Complementos confiáveis do Centro Configurações **Trusted Add-in** >  Do **FileOptionsTrust** >  >  Center). Para Outlook de Outlook, os usos podem gerenciar os complementos escolhendo o botão Gerenciar **Complementos**: no Outlook no Windows, escolha **Adicionar** **FileManage** > . Em Outlook no Mac, escolha o **botão Gerenciar Complementos** na barra de complementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma de complemento fornece segurança e desempenho para os usuários finais das seguintes maneiras.
 
-  - Um Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de um Office de complemento. Esse design fornece isolamento de segurança e desempenho do aplicativo cliente.
+  - Um Office de usuário é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de Office de complemento. Esse design fornece isolamento de segurança e desempenho do aplicativo cliente.
 
   - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
 
@@ -202,7 +202,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como Office os complementos são renderizados em um iframe ao executar em um navegador com aplicativos cliente Office, use as dicas a seguir para minimizar o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) , uma técnica usada por hackers para enganar os usuários a revelar informações confidenciais.
+Como os Office são renderizados em um iframe ao executar em um navegador com aplicativos cliente Office, use as dicas a seguir para minimizar o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) , uma técnica usada por hackers para enganar os usuários a revelar informações confidenciais.
 
 Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
 
@@ -256,9 +256,9 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 
 | Nome da configuração | Descrição |
 |--------------|-------------|
-| Permitir catálogos e suplementos da Web inseguros | Permite que os usuários executem Office Desembolsos não seguros, que são Office add-ins que têm locais de página da Web ou catálogo que não estão protegidos por SSL (https://) e que não estão nas zonas da Internet dos usuários. |
+| Permitir catálogos e suplementos da Web inseguros | Permite que os usuários executem Office Desembolsos não seguros, que são Office que possuem sites ou locais de catálogo que não estão protegidos por SSL (https://) e que não estão nas zonas da Internet dos usuários. |
 | Bloquear Suplementos da Web | Permite que você impeça os usuários de executarem Office de complementos que usam tecnologias web. |
-| Bloquear a Office Store |  Permite que você impeça os usuários de obter ou executar Office de Office que vêm da Office Store. |
+| Bloquear a Office Store |  Permite que você impeça os usuários de obter ou executar Office de complementos que vêm da Office Store. |
 
 > [!IMPORTANT]
 > Se os seus grupos de trabalho estiverem usando diversas edições do Office, os parâmetros da política de grupo devem ser configurados para cada edição. Consulte o [Usando Política de Grupo para gerenciar como os usuários podem instalar e usar aplicativos do Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) do artigo [Visão geral dos aplicativos do Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) para detalhes sobre as configuração da política de grupo do Office 2013.

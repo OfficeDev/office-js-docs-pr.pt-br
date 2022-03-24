@@ -1,14 +1,14 @@
 ---
 title: Autenticar um usuário com um token de identidade em um suplemento.
 description: Saiba como usar o token de identidade fornecido por um suplemento do Outlook para implementar o SSO com o seu serviço.
-ms.date: 10/31/2019
+ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff51cd4759d4b6e59fd18d6a613a4e6a85f2e152
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151891"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744619"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Autenticar um usuário com um token de identidade para o Exchange
 
@@ -50,7 +50,7 @@ O serviço de back-end pode calcular uma ID de usuário exclusiva a partir do to
 
 ### <a name="generate-a-unique-id"></a>Gerar uma ID exclusiva
 
-Recomendamos usar uma combinação das propriedades `msexchuid` e `amurl`. Você pode, por exemplo, concatenar os dois valores em conjunto e gerar uma cadeia de caracteres codificada em Base64. Esse valor poderá sempre ser confiavelmente gerado a partir do token para que você possa mapear um token de identidade do usuário do Exchange para o usuário em seu sistema.
+Use uma combinação das propriedades `msexchuid` e `amurl` . Você pode, por exemplo, concatenar os dois valores em conjunto e gerar uma cadeia de caracteres codificada em Base64. Esse valor poderá sempre ser confiavelmente gerado a partir do token para que você possa mapear um token de identidade do usuário do Exchange para o usuário em seu sistema.
 
 ### <a name="check-the-user"></a>Verificar o usuário
 

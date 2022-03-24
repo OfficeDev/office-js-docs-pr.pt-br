@@ -3,12 +3,12 @@ title: Padrões de tela de apresentação para suplemento dos Office
 description: Saiba as práticas recomendadas para projetar experiências de primeira Office de complementos.
 ms.date: 07/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a89fb53a0693c4a7f6da49713413986f10584514
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 43127e2a83c07ae659c6672a57486e5488ad268e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148787"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743248"
 ---
 # <a name="first-run-experience-patterns"></a>Padrões de tela de apresentação
 
@@ -38,7 +38,7 @@ O carrossel apresenta aos usuários uma série de recursos ou página de informa
 
 *Figura 2. Minimizar o número de telas de carrossel apenas para o que é necessário para comunicar efetivamente sua mensagem*
 
-![Ilustração mostrando a etapa 2 de um carrossel na primeira experiência de Office de tarefas do aplicativo de área de trabalho. Neste exemplo, há três telas de carrossel no painel de tarefas.](../images/add-in-FRE-step-2.png)
+![Ilustração mostrando a etapa 2 de um carrossel na primeira experiência de Office de aplicativos de área de trabalho. Neste exemplo, há três telas de carrossel no painel de tarefas.](../images/add-in-FRE-step-2.png)
 
 *Figura 3. Fornecer uma chamada clara para a ação para sair da primeira experiência de executar*
 
@@ -50,7 +50,7 @@ O posicionamento do valor informa a proposta de valor do seu suplemento com posi
 
 *Figura 4. Um placemat de valor com logotipo, proposta de valor desmarcada, resumo de recursos e chamada para ação*
 
-![Ilustração mostrando um placemat de valor na primeira experiência de Office de aplicativos de área de trabalho. Neste exemplo, o painel de tarefas exibe o logotipo do complemento, uma descrição do complemento e um botão para começar.](../images/add-in-FRE-value.png)
+![Ilustração mostrando um placemat de valor na primeira experiência de Office de tarefas do aplicativo de área de trabalho. Neste exemplo, o painel de tarefas exibe o logotipo do complemento, uma descrição do complemento e um botão para começar.](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>Roteiro de vídeo
 
@@ -58,8 +58,8 @@ O roteiro de vídeo mostra aos usuários um vídeo antes que eles comecem a usar
 
 *Figura 5. Primeiro executar o placemat de vídeo - A tela contém uma imagem de still do vídeo com um botão de reprodução e um botão de chamada para ação des clara*
 
-![Ilustração mostrando um placemat de vídeo na primeira experiência de Office de aplicativos de área de trabalho.](../images/add-in-FRE-video.png)
+![Ilustração mostrando um placemat de vídeo na primeira experiência de Office de tarefas do aplicativo de área de trabalho.](../images/add-in-FRE-video.png)
 
 *Figura 6. Player de vídeo - Usuários apresentados com um vídeo dentro de uma janela de diálogo*
 
-![Ilustração mostrando um vídeo em uma janela de diálogo com um Office de área de trabalho e painel de tarefas do complemento em segundo plano.](../images/add-in-FRE-video-dialog.png)
+![Ilustração mostrando um vídeo em uma janela de diálogo com um Office de área de trabalho e painel de tarefas de complemento em segundo plano.](../images/add-in-FRE-video-dialog.png)

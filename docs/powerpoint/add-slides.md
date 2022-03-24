@@ -3,12 +3,12 @@ title: Adicionar e excluir slides no PowerPoint
 description: Saiba como adicionar e excluir slides e especificar o mestre e o layout de novos slides.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 915409c83e4eee2028a02f921e87065ee824bd7d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: b14323a13332f2b1c9e26991c2446549ff78e745
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514107"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747007"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Adicionar e excluir slides no PowerPoint
 
@@ -18,7 +18,7 @@ As APIs para adicionar slides são usadas principalmente em cenários em que as 
 
 ## <a name="add-a-slide-with-slidecollectionadd"></a>Adicionar um slide com SlideCollection.add
 
-Adicione slides com o [método SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) A seguir, um exemplo simples no qual um slide que usa o slide mestre padrão da apresentação e o primeiro layout desse mestre é adicionado. O método sempre adiciona novos slides ao final da apresentação. Apresentamos um exemplo a seguir.
+Adicione slides com o [método SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) . A seguir, um exemplo simples no qual um slide que usa o slide mestre padrão da apresentação e o primeiro layout desse mestre é adicionado. O método sempre adiciona novos slides ao final da apresentação. Apresentamos um exemplo a seguir.
 
 ```javascript
 async function addSlide() {
@@ -36,10 +36,10 @@ Use o [parâmetro AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslid
 
 - Você pode incluir as duas propriedades do `AddSlideOptions` objeto.
 - Se ambas as propriedades são usadas, o layout especificado deve pertencer ao mestre especificado ou um erro é lançado.
-- Se a propriedade não estiver presente (ou seu valor for uma cadeia de caracteres vazia), o slide mestre padrão será usado e o deve ser um `masterId` `layoutId` layout desse slide mestre.
+- Se a `masterId` propriedade não estiver presente (ou seu valor for uma cadeia de caracteres vazia), o slide mestre `layoutId` padrão será usado e o deve ser um layout desse slide mestre.
 - O slide mestre padrão é o slide mestre usado pelo último slide da apresentação. (No caso incomum em que atualmente não há slides na apresentação, o slide mestre padrão é o primeiro slide mestre na apresentação.)
-- Se a propriedade não estiver presente (ou seu valor for uma cadeia de caracteres vazia), o primeiro layout do mestre especificado `layoutId` pelo `masterId` é usado.
-- Ambas as propriedades são cadeias de caracteres de uma das três formas possíveis: ***nnnnnnnnnn*#**, * *#* mmmmmmmmm***, ou **_nnnnnnnnnn_ #* mmmmmmm****, onde *nnnnnnnnnn* é a ID do mestre ou layout (normalmente 10 dígitos) e *mmmmmmmmm* é a ID de criação do mestre ou layout (normalmente de 6 a 10 dígitos). Alguns exemplos são `2147483690#2908289500` , `2147483690#` e `#2908289500` .
+- Se a `layoutId` propriedade não estiver presente (ou seu valor for uma cadeia de caracteres vazia), o primeiro layout do mestre especificado pelo `masterId` é usado.
+- Ambas as propriedades são cadeias de caracteres de uma das três formas possíveis: ***nnnnnnnnnn*#**, **#* mmmmmmmmm***, ou **_nnnnnnnnnnmmmmmmm_#****, onde *nnnnnnnnnn* é a ID do mestre ou layout (normalmente 10 dígitos) e *mmmmmmmmm* é a ID de criação do mestre ou layout (normalmente 6 a 10 dígitos). Alguns exemplos são `2147483690#2908289500`, `2147483690#`e `#2908289500`.
 
 ```javascript
 async function addSlide() {
@@ -54,20 +54,20 @@ async function addSlide() {
 }
 ```
 
-Não há nenhuma maneira prática de os usuários descobrirem a ID ou a ID de criação de um slide mestre ou layout. Por esse motivo, você só pode usar o parâmetro quando você conhece as IDs no momento da codificação ou seu complemento pode `AddSlideOptions` descobri-los em tempo de execução. Como não é esperado que os usuários memorizem as IDs, você também precisa de uma maneira de habilitar o usuário a selecionar slides, talvez por nome ou por uma imagem, e correlacionar cada título ou imagem com a ID do slide.
+Não há nenhuma maneira prática de os usuários descobrirem a ID ou a ID de criação de um slide mestre ou layout. Por esse motivo, você só `AddSlideOptions` pode usar o parâmetro quando você conhece as IDs no momento da codificação ou seu complemento pode descobri-los em tempo de execução. Como não é esperado que os usuários memorizem as IDs, você também precisa de uma maneira de habilitar o usuário a selecionar slides, talvez por nome ou por uma imagem, e correlacionar cada título ou imagem com a ID do slide.
 
-Portanto, o parâmetro é usado principalmente em cenários nos quais o complemento foi projetado para trabalhar com um conjunto específico de slides mestres e `AddSlideOptions` layouts cujas IDs são conhecidas. Nesse cenário, você ou o cliente devem criar e manter uma fonte de dados que correlaciona um critério de seleção (como nomes ou imagens do slide mestre e layout) com as IDs ou IDs de criação correspondentes.
+Portanto, o `AddSlideOptions` parâmetro é usado principalmente em cenários nos quais o complemento foi projetado para trabalhar com um conjunto específico de slides mestres e layouts cujas IDs são conhecidas. Nesse cenário, você ou o cliente devem criar e manter uma fonte de dados que correlaciona um critério de seleção (como nomes ou imagens do slide mestre e layout) com as IDs ou IDs de criação correspondentes.
 
 #### <a name="have-the-user-choose-a-matching-slide"></a>Fazer com que o usuário escolha um slide correspondente
 
-Se o seu add-in puder ser usado em cenários em que o novo slide deve usar *a* mesma combinação de slide mestre e layout que é usado por um slide existente, seu complemento pode (1) solicitar que o usuário selecione um slide e (2) leia as IDs do slide mestre e layout. As etapas a seguir mostram como ler as IDs e adicionar um slide com um mestre e layout correspondentes.
+Se o seu add-in puder ser usado em cenários em que o novo slide deve *usar a mesma* combinação de slide mestre e layout que é usado por um slide existente, seu complemento pode (1) solicitar que o usuário selecione um slide e (2) leia as IDs do slide mestre e layout. As etapas a seguir mostram como ler as IDs e adicionar um slide com um mestre e layout correspondentes.
 
 1. Crie um método para obter o índice do slide selecionado. Apresentamos um exemplo a seguir. Sobre este código, observe:
 
-    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) das APIs JavaScript Comuns.
+    - Ele usa o [método Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) das APIs JavaScript Comuns.
     - A chamada para `getSelectedDataAsync` é inserida em uma função de retorno de promessa. Para obter mais informações sobre por que e como fazer isso, consulte [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` retorna uma matriz porque vários slides podem ser selecionados. Nesse cenário, o usuário selecionou apenas um, portanto, o código obtém o primeiro slide (0th), que é o único selecionado.
-    - O valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no `index` painel de miniaturas.
+    - O `index` valor do slide é o valor baseado em 1 que o usuário vê ao lado do slide no painel de miniaturas.
 
     ```javascript
     function getSelectedSlideIndex() {

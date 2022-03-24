@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: d3866c5091c586c039029cab205a5ae0519e992b
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 0d3e478e6deaf630f6665b3bba2796c26826fcde
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711032"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744492"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -40,7 +40,7 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Como uma função personalizada é definida em código
 
-Se você usar o [Gerador do Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar um projeto de suplemento funções personalizadas do Excel, ele criará os arquivos que controlam as funções e o painel de tarefas. Vamos nos concentrar em arquivos que são importantes para funções personalizadas.
+Se você usar o [gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar um projeto de suplemento de funções personalizadas do Excel, ele criará arquivos que controlam suas funções e o painel de tarefas. Nos concentraremos nos arquivos que são importantes para funções personalizadas.
 
 | File | Formato de arquivo | Descrição |
 |------|-------------|-------------|

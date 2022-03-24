@@ -5,12 +5,12 @@ ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dfce989064ac21a09e07805b408ef744f9dcd3bf
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 393777730a6f4889d7d053382fd885de3714a4d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647955"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744363"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Usar tipos de dados com funções personalizadas no Excel (visualização)
 
@@ -37,7 +37,7 @@ Para usar esse recurso, você precisa atualizar manualmente os metadados JSON. P
 
 Projetos de funções personalizadas incluem um arquivo de metadados JSON. Esse arquivo de metadados JSON difere do esquema JSON usado pelas APIs de tipos de dados. Para usar a integração de tipos de dados com funções personalizadas, o arquivo de metadados JSON de funções personalizadas deve ser atualizado manualmente para incluir a propriedade `allowCustomDataForDataTypeAny`. Defina essa propriedade como `true`.
 
-Para obter uma descrição completa do processo manual de criação de JSON, consulte [criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md). Consulte [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) para obter detalhes adicionais sobre essa propriedade.
+Para obter uma descrição completa do processo de criação manual de JSON, confira [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md). Confira [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) para obter detalhes adicionais sobre essa propriedade.
 
 ### <a name="script-lab-option"></a>Opção Script Lab
 

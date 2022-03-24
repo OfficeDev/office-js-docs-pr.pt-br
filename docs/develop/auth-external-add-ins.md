@@ -1,14 +1,14 @@
 ---
 title: Autorização com provedores de identidade que não são da Microsoft
-description: Obter autorização para fontes de dados que não são da Microsoft usando o OAuth 2.0, o Código de Autorização e fluxos implícitos.
+description: Obter autorização para fontes de dados que não são da Microsoft usando o OAuth 2.0 e o Código de Autorização e fluxos implícitos.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 873bf0ad86490670db7a4733db971e377748babf
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320427"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743639"
 ---
 # <a name="authorization-with-non-microsoft-identity-providers"></a>Autorização com provedores de identidade que não são da Microsoft
 
@@ -60,4 +60,4 @@ CORS significa [Compartilhamento de Recursos Entre Origens](https://developer.mo
 
 ## <a name="see-also"></a>Confira também
 
-- [Visão geral da autenticação e da autorização Office de complementos](overview-authn-authz.md).
+- [Visão geral da autenticação e da autorização em Office de complementos](overview-authn-authz.md).

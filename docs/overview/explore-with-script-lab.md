@@ -5,12 +5,12 @@ ms.date: 01/14/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 75b4b5f1e30549628ba9327957e6d0b39c308da9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 568628f60b36a3c6bcb7dd3ab3856e86d96956b7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074270"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744631"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explore a API JavaScript do Office usando o Script Lab
 
@@ -70,7 +70,7 @@ O Script Lab para Outlook está disponível para os seguintes clientes.
 Para obter mais detalhes sobre o Script Lab para Outlook, confira a [postagem do blog](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/) relacionada.
 
 > [!IMPORTANT]
-> O Script Lab não funciona mais com combinações de plataforma e as versões do Office que usam o Internet Explorer para hospedar suplementos. Isso inclui a compra avulsa de versões do Office até o Office 2019. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> O Script Lab não funciona mais com combinações de plataforma e versão do Office que usam o Internet Explorer para hospedar suplementos. Isso inclui versões do Office de compra única por meio do Office 2019. Para obter mais informações, confira [Navegadores usados ​​pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

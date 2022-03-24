@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61a835ac425d862ed417b3b47a892e963b6a1b27
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: ccd09288d3f6e7fff4b102743391efc8f6e75e4b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514121"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743359"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -68,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>Objetos proxy
 
-Os objetos JavaScript do Visio declarados e usados em uma sessão incorporada são objetos proxy para os objetos reais em um documento do Visio. Todas as ações executadas em objetos proxy não são percebidas no Visio, e o estado do documento do Visio não é percebido em objetos proxy, até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
+Os objetos JavaScript do Visio declarados e usados em uma sessão incorporada são objetos proxy para os objetos reais em um documento do Visio. Todas as ações realizadas em objetos proxy não são realizadas no Visio e o estado do documento do Visio não é realizado nos objetos proxy até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
 
 Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações nesses objetos não são realizadas até que o método `sync()` seja executado.
 
@@ -78,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-O método `sync()` sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio, com a execução de instruções enfileiradas no contexto e com a recuperação de propriedades de objetos carregados do Office para uso no código. Este método retorna uma promessa, que é resolvida quando o sistema conclui a sincronização.
+O método `sync()` sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio executando instruções enfileiradas no contexto e recuperando as propriedades de objetos carregados do Office para usar no seu código. Este método retorna uma promessa, que é resolvida quando a sincronização é concluída.
 
 ## <a name="load"></a>load()
 
-O método `load()` é usado para preencher os objetos proxy criados na camada JavaScript do suplemento. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Você pode usar esse objeto para colocar a configuração das respectivas propriedades em fila e para invocar métodos. No entanto, para ler as propriedades ou relações do objeto, os métodos `load()`e `sync()` precisam ser chamados primeiro. O método load() leva nas propriedades e relações que precisam ser carregadas quando o método `sync()` é chamado.
+O método `load()` é usado para preencher os objetos proxy criados na camada JavaScript. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Esse objeto pode ser usado para enfileirar a configuração das suas propriedades e invocar métodos. No entanto, para ler propriedades ou relações de objeto, os métodos `load()` e `sync()` precisam ser invocados primeiro. O método load() recebe as propriedades e relações que precisam ser carregadas quando o método `sync()` é chamado.
 
 A seguir, é mostrada a sintaxe do método `load()`.
 

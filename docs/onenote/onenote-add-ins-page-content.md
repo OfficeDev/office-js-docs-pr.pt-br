@@ -3,8 +3,13 @@ title: Trabalhar com conteúdo da página do OneNote
 description: Saiba como trabalhar com o OneNote de página usando a API JavaScript.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 780e7a23f30482f3f8b52524b7a21339c6e19110
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746012"
 ---
-
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
 Na API JavaScript de suplementos do OneNote, o conteúdo da página é representado pelo seguinte modelo de objeto.
@@ -31,7 +36,7 @@ O conteúdo e a estrutura da página do OneNote são representados por HTML. Ape
 
 ## <a name="supported-html"></a>HTML com suporte
 
-A OneNote api JavaScript de complemento oferece suporte ao SEGUINTE HTML para criar e atualizar conteúdo de página.
+A OneNote api JavaScript de complemento oferece suporte ao SEGUINTE HTML para criar e atualizar o conteúdo da página.
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

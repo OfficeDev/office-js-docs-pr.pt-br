@@ -3,12 +3,12 @@ title: Office namespace - conjunto de requisitos 1.11
 description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.11.
 ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b45b2afaebb0edafc41641ddc9da7bbb0de2734
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a32a828a2b74520294d8bef5dab06841c2a8cf00
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681730"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746974"
 ---
 # <a name="office-mailbox-requirement-set-111"></a>Office (conjunto de requisitos de caixa de correio 1.11)
 
@@ -31,14 +31,14 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Escrever<br>Leitura | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.11&preserve-view=true): inclui várias enumerações específicas Outlook, por exemplo, `ItemType` , , , , , e `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.11&preserve-view=true): inclui várias enumerações específicas Outlook, por exemplo, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, , `ResponseType`e `ItemNotificationMessageType`.
 
 ## <a name="enumeration-details"></a>Detalhes da enumeração
 
@@ -81,7 +81,7 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
+|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -108,13 +108,13 @@ Especifica o evento associado a um manipulador de eventos.
 
 | Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| String | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`AttachmentsChanged`| String | Um anexo foi adicionado ou removido do item. | 1,8 |
-|`EnhancedLocationsChanged`| String | O local do compromisso selecionado foi alterado. | 1,8 |
-|`ItemChanged`| String | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
-|`OfficeThemeChanged`| String | O Office tema na caixa de correio foi alterado. | 1.10 |
-|`RecipientsChanged`| String | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
-|`RecurrenceChanged`| String | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
+|`AppointmentTimeChanged`| Cadeia de Caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`AttachmentsChanged`| Cadeia de Caracteres | Um anexo foi adicionado ou removido do item. | 1,8 |
+|`EnhancedLocationsChanged`| Cadeia de Caracteres | O local do compromisso selecionado foi alterado. | 1,8 |
+|`ItemChanged`| Cadeia de Caracteres | Um item Outlook diferente é selecionado para exibição enquanto o painel de tarefas é fixado. | 1,5 |
+|`OfficeThemeChanged`| Cadeia de Caracteres | O Office da caixa de correio foi alterado. | 1.10 |
+|`RecipientsChanged`| Cadeia de Caracteres | A lista de destinatários do item ou local do compromisso selecionado foi alterada. | 1.7 |
+|`RecurrenceChanged`| Cadeia de caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -140,7 +140,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos

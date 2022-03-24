@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para o Angular
 description: Use Angular para criar um Office como um aplicativo de página única.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148646"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743644"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize
 
-Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para obter detalhes, [consulte Initialize your Office Add-in](initialize-add-in.md).) Office chama esse método imediatamente após ter inicializado as bibliotecas Office JavaScript.
+Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para obter detalhes, consulte [Initialize your Office Add-in](initialize-add-in.md).) Office chama esse método imediatamente após ter inicializado as bibliotecas Office JavaScript.
 
 **O seu código de inicialização do Angular deve ser chamado dentro do método atribuído a `Office.initialize`** para garantir que as bibliotecas JavaScript do Office inicializem primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
 
@@ -82,7 +82,7 @@ A API da caixa de diálogo Suplemento do Office permite que o suplemento abra um
 
 O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro, ou você pode transmitir a URL de uma rota em um aplicativo do Angular.
 
-É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a [propriedade Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) que não é acessível a partir do código no painel de tarefas.  
+É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a [propriedade Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), que não é acessível a partir do código no painel de tarefas.  
 
 ## <a name="trigger-the-ui-update"></a>Acionar a atualização da interface do usuário
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
 
-Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de algumas APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado `window.history` Windows clientes da área de trabalho. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as APIs adicionando o código a seguir à página deindex.html`window.history` do seu complemento. 
+Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de alguns `window.history` APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado Windows desktop. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as `window.history` APIs adicionando o código a seguir à página de **index.htmldo seu** complemento.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

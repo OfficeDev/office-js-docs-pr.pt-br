@@ -3,8 +3,13 @@ title: Outlook conjunto de requisitos de API de complemento 1.10
 description: Conjunto de requisitos 1.10 para Outlook api de complemento.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: a7412c655423d016101b406444f86da0f2be610d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746527"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conjunto de requisitos de API de complemento 1.10
 
 O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.

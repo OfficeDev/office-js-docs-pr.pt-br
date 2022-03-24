@@ -1,10 +1,15 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
-description: 'Saiba mais sobre os limites de recursos da plataforma de Office de complemento, incluindo CPU e memória.'
+description: Saiba mais sobre os limites de recursos da plataforma de Office de complemento, incluindo CPU e memória.
 ms.date: 08/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: bc32b547ddfc68eb4028b944d92f0efb36dbc6f5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742817"
 ---
-
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
 Para criar a melhor experiência para os usuários, verifique se o desempenho do Suplemento do Office está dentro dos limites específicos para uso de memória e núcleo de CPU, confiabilidade e, para suplementos do Outlook, tempo de resposta para avaliar expressões regulares. Esses limites de uso de recursos de tempo de execução aplicam-se aos suplementos em execução em clientes do Office para Windows e OS X, mas não a aplicativos móveis ou a um navegador.
@@ -13,7 +18,7 @@ Também é possível otimizar o desempenho dos suplementos em dispositivos móve
 
 ## <a name="resource-usage-limits-for-add-ins"></a>Limites de uso de recursos para suplementos
 
-Os limites de uso de recursos em tempo de executar se aplicam a todos os tipos de Office Desem. Esses limites ajudam a garantir o desempenho dos usuários e reduzir os ataques de negação de serviço. Certifique-se de testar seu Office add-in em seu aplicativo de Office de destino usando um intervalo de dados possíveis e mede seu desempenho em relação aos seguintes limites de uso em tempo de execução.
+Os limites de uso de recursos em tempo de executar se aplicam a todos os tipos de Office Desem. Esses limites ajudam a garantir o desempenho dos usuários e reduzir os ataques de negação de serviço. Certifique-se de testar seu Office no aplicativo de Office de destino usando um intervalo de dados possíveis e mede seu desempenho em relação aos seguintes limites de uso em tempo de execução.
 
 - **Uso de núcleo de CPU**: um limite de uso de núcleo de CPU único de 90%, observado três vezes em intervalos padrão de cinco segundos.
 
@@ -29,7 +34,7 @@ Os limites de uso de recursos em tempo de executar se aplicam a todos os tipos d
 
 - **Bloqueio de aplicativo**: um limite prolongado de falta de resposta de cinco segundos para um suplemento.
 
-   Isso afeta as experiências do usuário do aplicativo de Office. Quando isso ocorre, o aplicativo Office reinicia automaticamente todos os complementos ativos para um documento ou caixa de correio (quando aplicável) e avisa o usuário sobre qual add-in se tornou não responsivo. Suplementos podem atingir esse limite quando não têm rendimento do processamento regularmente ao realizar tarefas de execução demorada. Há técnicas para garantir que não ocorra bloqueio. Os administradores não podem substituir esse limite.
+   Isso afeta as experiências do usuário do add-in e do Office aplicativo. Quando isso ocorre, o aplicativo Office reinicia automaticamente todos os complementos ativos para um documento ou caixa de correio (quando aplicável) e avisa o usuário sobre qual complemento se tornou não responsivo. Suplementos podem atingir esse limite quando não têm rendimento do processamento regularmente ao realizar tarefas de execução demorada. Há técnicas para garantir que não ocorra bloqueio. Os administradores não podem substituir esse limite.
 
 ### <a name="outlook-add-ins"></a>Suplementos do Outlook
 
@@ -44,7 +49,7 @@ Além das regras de núcleo da CPU, memória e confiabilidade, os Outlook dever�
 
     Usando uma política de grupo ou configuração específica de aplicativo no registro Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
 
-- **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado pelo **OutlookActivationAlertThreshold**, se essa configuração existir no registro Windows), o Outlook desabilitará o Outlook add-in do Outlook. O Exchange Admin Center exibe o status desabilitado, e o complemento está desabilitado para uso nos clientes Outlook clientes Outlook na Web e dispositivos móveis.
+- **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado pelo **OutlookActivationAlertThreshold**, se essa configuração existir no registro do Windows), o Outlook desabilitará o Outlook add-in do Outlook. O Exchange de administração exibe o status desabilitado, e o complemento está desabilitado para uso nos clientes Outlook clientes ricos e Outlook na Web e dispositivos móveis.
 
     Usando uma política de grupo ou configuração específica do aplicativo no registro Windows, os administradores podem ajustar esse número de vezes para repetir a avaliação na **configuração OutlookActivationManagerRetryLimit**.
 
@@ -83,11 +88,11 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 
 |**ID do Evento**|**Título**|**Severidade**|**Descrição**|
 |:-----|:-----|:-----|:-----|
-|7 |Manifesto de suplemento baixado com êxito||O manifesto do Office de Office foi carregado e lido com êxito pelo aplicativo Office.|
+|7 |Manifesto de suplemento baixado com êxito||O manifesto do Office de Office foi carregado e lido com êxito pelo Office aplicativo.|
 |8 |Manifesto de suplemento não baixado|Crítico|O Office aplicativo não pôde carregar o arquivo de manifesto do Office do SharePoint, catálogo corporativo ou AppSource.|
-|9 |Não foi possível analisar a marcação do suplemento|Crítico|O Office o aplicativo carregou o manifesto de Office de complemento, mas não conseguiu ler a marcação HTML do aplicativo.|
+|9 |Não foi possível analisar a marcação do suplemento|Crítico|O Office o aplicativo carregou o manifesto Office de complemento, mas não conseguiu ler a marcação HTML do aplicativo.|
 |10 |O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
-|15 |Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O Outlook de dados listado na coluna Arquivo foi desabilitado  por Outlook porque ele temporizou repetidamente ao tentar corresponder a uma expressão regular.|
+|15 |Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O Outlook de dados listado na coluna Arquivo foi desabilitado por Outlook porque ele temporizou repetidamente ao tentar corresponder a uma expressão regular.|
 |18 |Suplemento fechado com êxito||O Office aplicativo foi capaz de fechar o Office Add-in com êxito.|
 |19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para obter mais detalhes, consulte o log **Microsoft Office Alertas** usando o visualizador de eventos Windows no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para obter mais detalhes, consulte o log **Microsoft Office Alertas** usando o visualizador de eventos Windows no computador que encontrou o erro.|

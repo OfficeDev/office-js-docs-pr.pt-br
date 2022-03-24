@@ -3,8 +3,13 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar Office de complementos.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742850"
 ---
-
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
 Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que estende os aplicativos do Office de uma maneira visualmente atraente. Para criar um excelente suplemento, ofereça uma primeira experiência envolvente para seus usuários, desenvolva uma experiência de interface de usuário de alto nível e otimize o desempenho do seu suplemento. Aplique as práticas recomendadas descritas neste artigo para criar suplementos que ajudem os usuários a concluir suas tarefas de forma rápida e eficiente.

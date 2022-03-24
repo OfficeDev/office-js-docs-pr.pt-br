@@ -3,12 +3,12 @@ title: Diretrizes de ícone para suplementos do Office
 description: Obter uma visão geral de como projetar ícones e os estilos de design Fresh e Monoline para comandos de complemento.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eeed616651535dfd20b6ac443a76fb1138ff51d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 930035dffcbb9c1815c042518a76cace25251710
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148809"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742981"
 ---
 # <a name="icons"></a>Ícones
 
@@ -22,8 +22,8 @@ Muitos contêineres HTML contêm controles com iconografia. Use a fonte personal
 
 Os [Comandos de suplementos](add-in-commands.md) adicionam botões, texto e ícones à interface do usuário do Office. Os botões de comando de suplemento devem fornecer ícones significativos e rótulos que identifiquem claramente a ação que o usuário está realizando ao usar um comando. Os artigos a seguir fornecem diretrizes estilísticas e de produção para ajudá-lo a projetar ícones que se integram perfeitamente Office.
 
-- Para o estilo monoline de Microsoft 365, consulte Diretrizes de ícone de estilo monoline para Office [Desempaco.](add-in-icons-monoline.md)
-- Para o estilo Fresh de não assinatura Office 2013+, consulte Diretrizes de ícones de estilo novo para Office [Desem.](add-in-icons-fresh.md)
+- Para o estilo monoline de Microsoft 365, consulte [Diretrizes de ícone de estilo monoline para Office Desempaco.](add-in-icons-monoline.md)
+- Para o estilo Fresh de não assinatura Office 2013+, consulte Diretrizes de ícone de estilo novo para [Office Desemprises](add-in-icons-fresh.md).
 
 > [!NOTE]
 > Você deve escolher um estilo ou o outro e o seu complemento usará os mesmos ícones se ele está sendo executado no Microsoft 365 ou não Office.

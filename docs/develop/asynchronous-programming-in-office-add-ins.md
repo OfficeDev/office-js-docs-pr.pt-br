@@ -3,17 +3,22 @@ title: Programação assíncrona em Suplementos do Office
 description: Saiba como a biblioteca Office JavaScript usa programação assíncrona em Office de complementos.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: eae14e015d10c31ba531325f15cb8465fae76725
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743931"
 ---
-
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Por que a API de Suplementos do Office usa a programação assíncrona? Como o JavaScript é uma linguagem de thread único, se o script invocar um processo síncrono demorado, todas as execuções subsequentes do script serão bloqueadas até que o processo seja concluído. Como determinadas operações em relação Office clientes Web (mas clientes ricos também) podem bloquear a execução se elas são executadas de forma síncrona, a maioria das APIs javaScript Office são projetadas para executar de forma assíncrona. Isso garante que os Office de Ads sejam responsivos e rápidos. Em geral, isso também requer que você escreva funções de retorno de chamada ao trabalhar com esses métodos assíncronos.
+Por que a API de Suplementos do Office usa a programação assíncrona? Como o JavaScript é uma linguagem de thread único, se o script invocar um processo síncrono demorado, todas as execuções subsequentes do script serão bloqueadas até que o processo seja concluído. Como determinadas operações em relação Office clientes Web (mas clientes ricos também) podem bloquear a execução se elas são executadas de forma síncrona, a maioria das APIs JavaScript Office são projetadas para executar de forma assíncrona. Isso garante que os Office de Ads sejam responsivos e rápidos. Em geral, isso também requer que você escreva funções de retorno de chamada ao trabalhar com esses métodos assíncronos.
 
 Os nomes de todos os métodos assíncronos na API terminam com "Async", `Document.getSelectedDataAsync`como os métodos , `Binding.getDataAsync`ou `Item.loadCustomPropertiesAsync` . Quando um método "Async" é chamado, ele é executado imediatamente e qualquer execução subsequente do script poderá continuar. A função de retorno de chamada opcional que você passar para um método de "Async" é executada assim que os dados ou a operação solicitada está pronta. Isso geralmente ocorre imediatamente, mas pode haver um pequeno atraso antes de retornar.
 
-O diagrama a seguir mostra o fluxo de execução de uma chamada para um método "Async" que lê os dados selecionados pelo usuário em um documento aberto no Word ou no Excel. No ponto em que a chamada "Async" é feita, o thread de execução javascript é gratuito para executar qualquer processamento adicional do lado do cliente (embora nenhum seja mostrado no diagrama). Quando o método "Async" retorna, o retorno de chamada retoma a execução no thread, e o complemento pode acessar dados, fazer algo com ele e exibir o resultado. O mesmo padrão de execução assíncrona mantém ao trabalhar com os aplicativos cliente Office rich, como o Word 2013 ou Excel 2013.
+O diagrama a seguir mostra o fluxo de execução de uma chamada para um método "Async" que lê os dados selecionados pelo usuário em um documento aberto no Word ou no Excel. No ponto em que a chamada "Async" é feita, o thread de execução javascript é gratuito para executar qualquer processamento adicional do lado do cliente (embora nenhum seja mostrado no diagrama). Quando o método "Async" retorna, o retorno de chamada retoma a execução no thread, e o complemento pode acessar dados, fazer algo com ele e exibir o resultado. O mesmo padrão de execução assíncrona se mantém ao trabalhar com os aplicativos cliente Office, como o Word 2013 ou Excel 2013.
 
 *Figura 1. Fluxo de execução da programação assíncrona*
 
@@ -103,10 +108,10 @@ A Office JavaScript oferece suporte a dois tipos de padrões de programação as
 
 A programação assíncrona com funções de retorno de chamada frequentemente exigem que você aninhe o resultado retornado de um retorno de chamada dentro de dois ou mais retornos de chamada. Se você precisar fazer isso, é possível usar retornos de chamada aninhados de todos os métodos "Async" da API.
 
-Usar retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas códigos com retornos de chamada profundamente aninhados podem ser difíceis de ler e entender. Como alternativa aos retornos de chamada aninhados, Office API JavaScript também oferece suporte a uma implementação do padrão de promessas.
+Usar retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas códigos com retornos de chamada profundamente aninhados podem ser difíceis de ler e entender. Como alternativa aos retornos de chamada aninhados, a API javaScript Office também oferece suporte a uma implementação do padrão de promessas.
 
 > [!NOTE]
-> Na versão atual da API JavaScript *Office, o* suporte interno para o padrão de promessas só funciona com código para vinculações em [planilhas Excel e documentos do Word](bind-to-regions-in-a-document-or-spreadsheet.md). No entanto, você pode quebrar outras funções que têm retornos de chamada dentro de sua própria função de retorno de promessa personalizada. Para obter mais informações, consulte [Wrap Common APIs in Promise-returning functions](#wrap-common-apis-in-promise-returning-functions).
+> Na versão atual da API javaScript *Office, o* suporte interno para o padrão de promessas só funciona com código para vinculações em [planilhas Excel e documentos do Word](bind-to-regions-in-a-document-or-spreadsheet.md). No entanto, você pode quebrar outras funções que têm retornos de chamada dentro de sua própria função de retorno de promessa personalizada. Para obter mais informações, consulte [Wrap Common APIs in Promise-returning functions](#wrap-common-apis-in-promise-returning-functions).
 
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programação assíncrona usando funções aninhadas de retorno de chamada
 
@@ -133,7 +138,7 @@ function write(message){
 }
 ```
 
-Esse padrão de retorno de chamada aninhado básico pode ser usado para todos os métodos assíncronos Office API JavaScript.
+Esse padrão de retorno de chamada aninhado básico pode ser usado para todos os métodos assíncronos na API Office JavaScript.
 
 As seções a seguir mostram como usar funções anônimas ou nomeadas para retornos de chamada aninhados em métodos assíncronos.
 
@@ -340,7 +345,7 @@ Em ambos os exemplos de parâmetro opcional, o parâmetro _callback_ é especifi
 
 ## <a name="wrap-common-apis-in-promise-returning-functions"></a>Wrap COMMON APIs in Promise-returning functions
 
-Os métodos API comum (e Outlook API) não retornam [Promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Portanto, você não pode usar [a espera](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) para pausar a execução até que a operação assíncrona seja concluída. Se precisar de `await` comportamento, você pode envolver a chamada de método em um Promise criado explicitamente. 
+Os métodos API comum (e Outlook API) não [retornam Promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Portanto, você não pode usar [a espera](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) para pausar a execução até que a operação assíncrona seja concluída. Se precisar de `await` comportamento, você pode envolver a chamada de método em um Promise criado explicitamente. 
 
 O padrão básico é criar um método *assíncrono* que retorna um objeto Promise imediatamente e resolve esse objeto Promise quando o método interno é concluído ou rejeita o objeto  se o método falhar. Apresentamos um exemplo simples a seguir.
 

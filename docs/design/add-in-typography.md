@@ -3,12 +3,12 @@ title: Diretrizes de tipografia para suplementos do Office
 description: Saiba quais tipos e tamanhos de fonte usar em Office Add-ins.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fe64f211cb9538226fdbb715e14f586d0ba8f2b9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f63d4b6816b916dc52711a8f4b11e826efd58105
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148807"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742959"
 ---
 # <a name="typography"></a>Tipografia
 

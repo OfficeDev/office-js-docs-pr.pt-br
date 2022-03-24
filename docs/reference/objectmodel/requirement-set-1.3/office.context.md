@@ -1,14 +1,14 @@
 ---
 title: Office.context - conjunto de requisitos 1.3
-description: Office. Membros do objeto context disponível para Outlook os complementos usando o conjunto de requisitos da API de Caixa de Correio 1.3.
+description: Office. Membros do objeto Context disponíveis para Outlook de entrada usando o conjunto de requisitos da API de Caixa de Correio 1.3.
 ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 96473c8406d82757b43965247af4567b05632dd9
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: bb354617a710dad2c53645a2f6392794ff254a98
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250389"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744904"
 ---
 # <a name="context-mailbox-requirement-set-13"></a>context (Conjunto de requisitos de caixa de correio 1.3)
 
@@ -27,7 +27,7 @@ Office.context fornece interfaces compartilhadas que são usadas por complemento
 
 | Propriedade | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | Escrever<br>Leitura | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Escrever<br>Leitura | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | Escrever<br>Leitura | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -41,7 +41,7 @@ Office.context fornece interfaces compartilhadas que são usadas por complemento
 
 Obtém a localidade (idioma) especificada pelo usuário para editar o item.
 
-O `contentLanguage` valor reflete a **configuração** atual de Idioma de Edição especificada com opções de > de arquivo **> idioma** no aplicativo Office cliente.
+O `contentLanguage` valor reflete a **configuração** atual de Idioma de Edição especificada com > **Opções > Idioma** no aplicativo Office cliente.
 
 ##### <a name="type"></a>Tipo
 
@@ -111,9 +111,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage: String
 
-Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo cliente Office cliente.
+Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo Office cliente.
 
-O valor reflete a configuração atual de Idioma de Exibição especificada com Opções > > Idioma no aplicativo Office `displayLanguage` cliente.  
+O `displayLanguage` valor reflete a configuração atual **de Idioma** de Exibição especificada com Opções de > **de arquivo > idioma** no aplicativo Office cliente.
 
 ##### <a name="type"></a>Tipo
 
@@ -174,7 +174,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ```
 
 > [!IMPORTANT]
-> Atualmente, há um bug em que, erroneamente, retorna Outlook na Web `isSetSupported('mailbox', '1.3')` `true` 2013 Exchange 2013. Para saber mais sobre as combinações suportadas de conjuntos de requisitos, servidores Exchange e clientes Outlook, consulte Conjuntos de requisitos suportados por servidores Exchange e [clientes Outlook](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+> Atualmente, há um bug em que `isSetSupported('mailbox', '1.3')` retorna erroneamentete`true` no Outlook na Web em relação ao Exchange 2013. Para saber mais sobre as combinações com suporte de conjuntos de requisitos, servidores Exchange e clientes do Outlook, consulte [Conjuntos de requisitos compatíveis com servidores Exchange e clientes Outlook](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 <br>
 
@@ -185,7 +185,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
-O objeto permite que você armazene e acesse dados para um complemento de email armazenado na caixa de correio de um usuário, de modo que está disponível para esse complemento quando ele está sendo executado de qualquer cliente Outlook usado para acessar essa caixa de `RoamingSettings` correio.
+O `RoamingSettings` objeto permite que você armazene e acesse dados para um complemento de email armazenado na caixa de correio de um usuário, de modo que está disponível para esse complemento quando ele está sendo executado de qualquer cliente Outlook usado para acessar essa caixa de correio.
 
 ##### <a name="type"></a>Tipo
 

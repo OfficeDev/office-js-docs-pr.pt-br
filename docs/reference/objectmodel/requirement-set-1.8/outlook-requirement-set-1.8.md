@@ -3,12 +3,12 @@ title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
 description: Conjunto de requisitos 1.8 para Outlook api de complemento.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 956bf1ed7109ce274d47ad6f2fda3999d1db913b
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: b8edd22cfd0b6c7febc369b183f2d8807810f7e2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237760"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745220"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
@@ -28,7 +28,7 @@ O conjunto de requisitos 1.8 inclui todos os recursos do conjunto [de requisitos
 ### <a name="change-log"></a>Log de mudanças
 
 - Adicionado [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa o conteúdo de um anexo.
-- [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)adicionado : adiciona um novo objeto que representa os detalhes de um anexo no modo Redação.
+- [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true) adicionado: adiciona um novo objeto que representa os detalhes de um anexo no modo Redação.
 - Adicionado [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa as categorias de um item.
 - Adicionado [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa os detalhes de uma categoria (nome e cor associada).
 - Adicionado [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa o conjunto de locais em um compromisso.
@@ -36,7 +36,7 @@ O conjunto de requisitos 1.8 inclui todos os recursos do conjunto [de requisitos
 - Adicionado [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa um local. Somente leitura.
 - Adicionado [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa a ID de um local.
 - Adicionado [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa a lista mestre de categorias em uma caixa de correio.
-- [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true)adicionado : adiciona um novo objeto que representa as propriedades de um compromisso ou item de mensagem em uma pasta compartilhada.
+- [SharedProperties adicionado](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): adiciona um novo objeto que representa as propriedades de um compromisso ou item de mensagem em uma pasta compartilhada.
 - Adicionado [elemento de manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md): adiciona um elemento filho ao elemento de manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 - Adicionado [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties): adiciona uma nova propriedade que representa a lista principal de categorias em uma caixa de correio.
 - Adicionado [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa o conjunto de categorias em um item.

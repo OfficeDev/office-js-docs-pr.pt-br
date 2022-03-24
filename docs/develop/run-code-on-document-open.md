@@ -1,20 +1,20 @@
 ---
 title: Execute o código em seu Suplemento do Office quando o documento for aberto
-description: Saiba como executar código em seu Office de complemento quando o documento for aberto.
+description: Saiba como executar o código no seu Office de complemento quando o documento for aberto.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 20cd7a90f34c0141ca166119ceae92960a904595
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855545"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744080"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Execute o código em seu Suplemento do Office quando o documento for aberto
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Você pode configurar seu Office de usuário para carregar e executar o código assim que o documento for aberto. Isso é útil se você precisar registrar manipuladores de eventos, pré-carregar dados para o painel de tarefas, sincronizar a interface do usuário ou executar outras tarefas antes que o complemento seja visível.
+Você pode configurar seu Office de usuário para carregar e executar código assim que o documento for aberto. Isso é útil se você precisar registrar manipuladores de eventos, pré-carregar dados para o painel de tarefas, sincronizar a interface do usuário ou executar outras tarefas antes que o complemento seja visível.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -64,7 +64,7 @@ async function onChange(event) {
 }
 ```
 
-O código PowerPoint de complemento a seguir mostra como registrar um manipulador de eventos para eventos de alteração de seleção do PowerPoint documento. Se você configurar seu complemento para carregar no documento aberto, esse código registrará o manipulador de eventos quando o documento for aberto. Você pode manipular eventos de alteração antes que o painel de tarefas seja aberto.
+O código PowerPoint de complemento a seguir mostra como registrar um manipulador de eventos para eventos de alteração de seleção do documento PowerPoint de seleção. Se você configurar seu complemento para carregar no documento aberto, esse código registrará o manipulador de eventos quando o documento for aberto. Você pode manipular eventos de alteração antes que o painel de tarefas seja aberto.
 
 ```JavaScript
 // This is called as soon as the document opens.

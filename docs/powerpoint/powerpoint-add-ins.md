@@ -1,12 +1,17 @@
 ---
 title: Suplementos do PowerPoint
-description: 'Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.'
+description: Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: a1bfa8f17f6a63896025a374a9fe8a6bdbf36f55
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746993"
 ---
-
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
 Você pode usar suplementos do PowerPoint para criar soluções envolventes para as apresentações dos seus usuários em várias plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de suplementos do PowerPoint:

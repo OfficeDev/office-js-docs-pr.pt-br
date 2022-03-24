@@ -4,11 +4,16 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApiOnline.
 ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f3ec510e889ecfe565767352c59cd349e0701830
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746609"
 ---
-
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel conjunto de requisitos somente da API JavaScript online
 
-O `ExcelApiOnline` conjunto de requisitos é um conjunto de requisitos especial que inclui recursos que estão disponíveis apenas para Excel na Web. As APIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações comportamentais ou estruturais não documentados) para o aplicativo Excel na Web. `ExcelApiOnline`As APIs são consideradas APIs de "visualização" para outras plataformas (Windows, Mac, iOS) e podem não ser suportadas por nenhuma dessas plataformas.
+O `ExcelApiOnline` conjunto de requisitos é um conjunto de requisitos especial que inclui recursos que estão disponíveis apenas para Excel na Web. ApIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações comportamentais ou estruturais não documentados) para o aplicativo Excel na Web. `ExcelApiOnline`As APIs são consideradas APIs de "visualização" para outras plataformas (Windows, Mac, iOS) e podem não ser suportadas por nenhuma dessas plataformas.
 
 Quando as APIs no conjunto `ExcelApiOnline` de requisitos são suportadas em todas as plataformas, elas serão adicionadas ao próximo conjunto de requisitos lançado (`ExcelApi 1.[NEXT]`). Depois que esse novo requisito for público, essas APIs serão removidas de `ExcelApiOnline`. Pense nisso como um processo de promoção semelhante a uma API que está mudando da visualização para a versão.
 

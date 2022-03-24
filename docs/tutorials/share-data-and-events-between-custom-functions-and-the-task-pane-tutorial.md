@@ -4,20 +4,20 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 69dbb7c2b57d09f3d71397db0b1d56babf7c64a6
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: 6942e20495f8d4743df2fa3db1e0c729c1c1d608
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242051"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710913"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
-Compartilhe dados globais e envie eventos entre o painel de tarefas e funções personalizadas do suplemento do Excel com um runtime compartilhado. Para a maioria dos cenários de funções personalizadas, recomendamos usar um tempo de execução compartilhada, a menos que você tenha uma razão específica para usar uma função personalizada fora do painel de tarefa (sem IU). Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do Office para criar adicionais no projetos de. Considere concluir o [Tutorial de funções personalizadas do Excel](excel-tutorial-create-custom-functions.md), se ainda não o fez.
+Compartilhe dados globais e envie eventos entre o painel de tarefas e funções personalizadas do suplemento do Excel com um runtime compartilhado. Para a maioria dos cenários de funções personalizadas, recomendamos usar um tempo de execução compartilhada, a menos que você tenha uma razão específica para usar uma função personalizada fora do painel de tarefa (sem IU). Este tutorial pressupõe que você esteja familiarizado com o uso do [Gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar projetos de suplementos. Considere concluir o [Tutorial de funções personalizadas do Excel](excel-tutorial-create-custom-functions.md), se ainda não o fez.
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) para criar o projeto de suplemento do Excel.
+Use o [Gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar o projeto de suplemento do Excel.
 
 - Para gerar um suplemento do Excel com funções personalizadas, execute o comando.
     

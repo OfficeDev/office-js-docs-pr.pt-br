@@ -1,10 +1,15 @@
 ---
 title: Modelo de objeto comum de API JavaScript para Office
-description: Saiba mais sobre o Office de objeto da API comum JavaScript
+description: Saiba mais sobre o Office de objeto da API comum JavaScript.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 381d3089b47fe04f403459ecae249bf68f7ca872
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743770"
 ---
-
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -59,7 +64,7 @@ Para ajudá-lo a entender como os métodos de acesso de dados baseados na seleç
 
  **Aplica-se a:** tipos de suplemento de conteúdo e painel de tarefas
 
-Para criar extensões que funcionam perfeitamente em diferentes documentos Office, Office API JavaScript do Office abstrai as particularidades de cada aplicativo Office por meio de tipos de dados comuns e a capacidade de coagir conteúdos de documentos diferentes em três tipos de dados comuns.
+Para criar extensões que funcionam perfeitamente em diferentes documentos Office, Office API JavaScript do Office abstrai as particularidades de cada aplicativo Office por meio de tipos de dados comuns e a capacidade de coagir diferentes conteúdos de documentos em três tipos de dados comuns.
 
 #### <a name="common-data-types"></a>Tipo comuns de dados
 

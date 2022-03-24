@@ -1,14 +1,14 @@
 ---
 title: Office.context - conjunto de requisitos 1.10
-description: Office. Membros do objeto context disponível para Outlook de entrada usando o conjunto de requisitos da API de Caixa de Correio 1.10.
+description: Office. Membros do objeto Context disponíveis para Outlook de entrada usando o conjunto de requisitos da API de Caixa de Correio 1.10.
 ms.date: 05/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c8eeac33802f233ec6af994abdf5fb7e426f0a
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 69dc90d758e2232b66facc4bf35b099c3f83720a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237445"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746081"
 ---
 # <a name="context-mailbox-requirement-set-110"></a>context (Conjunto de requisitos de caixa de correio 1.10)
 
@@ -28,9 +28,9 @@ Office.context fornece interfaces compartilhadas que são usadas por complemento
 | Propriedade | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
 | [auth](#auth-auth) | Escrever<br>Leitura | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
-| [contentLanguage](#contentlanguage-string) | Escrever<br>Leitura | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Escrever<br>Leitura | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Escrever<br>Leitura | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | Escrever<br>Leitura | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | Escrever<br>Leitura | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [platform](#platform-platformtype) | Escrever<br>Leitura | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
@@ -42,7 +42,7 @@ Office.context fornece interfaces compartilhadas que são usadas por complemento
 
 #### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true)
 
-Oferece suporte a [SSO (login único)](../../../outlook/authenticate-a-user-with-an-sso-token.md) fornecendo um método que permite ao aplicativo Office obter um token de acesso ao aplicativo Web do complemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+Oferece [suporte ao SSO (](../../../outlook/authenticate-a-user-with-an-sso-token.md)login único) fornecendo um método que permite ao aplicativo Office obter um token de acesso ao aplicativo Web do complemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ##### <a name="type"></a>Tipo
 
@@ -77,7 +77,7 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 Obtém a localidade (idioma) especificada pelo usuário para editar o item.
 
-O `contentLanguage` valor reflete a **configuração** atual de Idioma de Edição especificada com opções de > de arquivo **> idioma** no aplicativo Office cliente.
+O `contentLanguage` valor reflete a **configuração** atual de Idioma de Edição especificada com > **Opções > Idioma** no aplicativo Office cliente.
 
 ##### <a name="type"></a>Tipo
 
@@ -147,9 +147,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage: String
 
-Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo cliente Office cliente.
+Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo Office cliente.
 
-O valor reflete a configuração atual de Idioma de Exibição especificada com Opções > > Idioma no aplicativo Office `displayLanguage` cliente.  
+O `displayLanguage` valor reflete a configuração atual **de Idioma** de Exibição especificada com Opções de > **de arquivo > idioma** no aplicativo Office cliente.
 
 ##### <a name="type"></a>Tipo
 
@@ -190,7 +190,7 @@ function write(message){
 
 #### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true)
 
-Obtém o Office aplicativo que está hospedando o complemento.
+Obtém Office aplicativo que está hospedando o complemento.
 
 > [!NOTE]
 > Como alternativa, você pode usar a [propriedade Office.context.diagnostics](#diagnostics-contextinformation) para obter o host.
@@ -276,7 +276,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
-O objeto permite que você armazene e acesse dados para um complemento de email armazenado na caixa de correio de um usuário, de modo que está disponível para esse complemento quando ele está sendo executado de qualquer cliente Outlook usado para acessar essa caixa de `RoamingSettings` correio.
+O `RoamingSettings` objeto permite que você armazene e acesse dados para um complemento de email armazenado na caixa de correio de um usuário, de modo que está disponível para esse complemento quando ele está sendo executado de qualquer cliente Outlook usado para acessar essa caixa de correio.
 
 ##### <a name="type"></a>Tipo
 

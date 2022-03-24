@@ -3,19 +3,19 @@ title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com Visual Studio.
 ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 52740e16363e3e038269e08a9e50e0f08877db66
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263041"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743842"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
 Esse artigo descreve como usar o Visual Studio para desenvolver um suplemento do Office. Caso você já tenha criado seu suplemento, você pode pular para a seção [Desenvolver o suplemento usando o Visual Studio](#develop-the-add-in-using-visual-studio).
 
 > [!NOTE]
-> Como uma alternativa ao uso do Visual Studio, você pode optar por usar o gerador Yeoman para suplementos do Office e o VS Code para criar um suplemento do Office. Para obter mais informações sobre essa opção, confira [Criar um suplemento do Office](../develop/develop-overview.md#create-an-office-add-in).
+> Como alternativa ao uso do Visual Studio, você pode optar por usar o gerador do Yeoman para Suplementos do Office e VS Code para criar um Suplemento do Office. Para obter mais informações sobre essa opção, confira [Criando um Suplemento do Office](../develop/develop-overview.md#create-an-office-add-in).
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Criar o projeto de suplemento usando o Visual Studio
 
@@ -26,7 +26,7 @@ O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Ou
 - [Início rápido do Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Início rápido do PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-O Visual Studio não tem suporte para a criação de suplementos do Office para o OneNote ou Project. Para criar suplementos do Office para qualquer um desses aplicativos, você precisará usar o gerador Yeoman para Suplementos do Office, conforme descrito no [Início rápido do OneNote](../quickstarts/onenote-quickstart.md) ou no [Início rápido do Project](../quickstarts/project-quickstart.md).
+O Visual Studio não dá suporte à criação de Suplementos do Office para OneNote ou Project. Para criar Suplementos do Office para qualquer um desses aplicativos, você precisará usar o gerador Yeoman para Suplementos do Office, conforme descrito no [Início rápido do OneNote](../quickstarts/onenote-quickstart.md) ou no [Início rápido do Project](../quickstarts/project-quickstart.md).
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Desenvolver o suplemento usando o Visual Studio
 
@@ -54,7 +54,7 @@ Enquanto você estiver desenvolvendo seu suplemento no Visual Studio, seu suplem
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publicar Suplementos do Office](../publish/publish.md)

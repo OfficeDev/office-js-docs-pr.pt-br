@@ -3,12 +3,12 @@ title: Adiar a execução enquanto a célula está sendo editada
 description: Saiba como atrasar a execução do método Excel.run quando uma célula está sendo editada.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c5609fbb2a39d6ecc69063d4bccdfbc1da1c102d
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7f7e6b95a437890caa61491d136435931936eaf5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340803"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744896"
 ---
 # <a name="delay-execution-while-cell-is-being-edited"></a>Adiar a execução enquanto a célula está sendo editada
 

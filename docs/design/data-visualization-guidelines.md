@@ -1,20 +1,20 @@
 ---
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
-description: Obter algumas práticas recomendadas para visualizar dados em um Office Desem.
+description: Obter algumas práticas recomendadas sobre como visualizar dados em um Office Add-in.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3c743e3a793c4d4fdc2639313eb40a01923ada
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173416be6ac3346ede19737939b00c7a437f6588
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148793"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743266"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.
 
-Recomendamos que você use [Fluent interface do usuário](../design/add-in-design.md) para criar o cromado para suas visualizações de dados. Fluent A interface do usuário inclui estilos e componentes que se integram perfeitamente ao Office aparência.
+Recomendamos que você use [Fluent interface do usuário para](../design/add-in-design.md) criar o cromado para suas visualizações de dados. Fluent interface do usuário inclui estilos e componentes que se integram perfeitamente ao Office aparência.
 
 ## <a name="data-visualization-elements"></a>Elementos de visualização de dados
 
@@ -28,7 +28,7 @@ Siga estas diretrizes para títulos de gráfico.
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore [a Fluent de tipo](https://developer.microsoft.com/fluentui#/styles/web/typography) de interface do usuário para tornar seus gráficos consistentes com a interface do usuário Office, que usa Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore [a Fluent de tipo de interface](https://developer.microsoft.com/fluentui#/styles/web/typography) do usuário para tornar seus gráficos consistentes com a interface do usuário Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 ### <a name="axis-labels"></a>Rótulos dos eixos

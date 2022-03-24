@@ -1,14 +1,14 @@
 ---
 title: Office namespace - conjunto de requisitos 1.4
-description: Office namespace disponíveis para Outlook que usam conjunto de requisitos da API de Caixa de Correio 1.4.
+description: Office namespace disponíveis para os Outlook que usam o conjunto de requisitos da API de Caixa de Correio 1.4.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f351dc22dd22ac92dc7cc6bec53369471ed634
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: cc177e1c003ecd50a1151a0466240b37d040da5b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237592"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746753"
 ---
 # <a name="office-mailbox-requirement-set-14"></a>Office (conjunto de requisitos de caixa de correio 1.4)
 
@@ -31,13 +31,13 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Enumeração | Modos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Leitura | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Leitura | Cadeia de caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Leitura | Cadeia de Caracteres | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Namespaces
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true): inclui várias enumerações específicas Outlook, por exemplo, `ItemType` , , , , , e `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true): inclui várias enumerações específicas Outlook, por exemplo, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, , `ResponseType`e `ItemNotificationMessageType`.
 
 ## <a name="enumeration-details"></a>Detalhes da enumeração
 
@@ -53,7 +53,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| Cadeia de caracteres|A chamada foi bem-sucedida.|
+|`Succeeded`| String|A chamada foi bem-sucedida.|
 |`Failed`| String|Falha na chamada.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -80,7 +80,7 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
+|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos

@@ -3,12 +3,12 @@ title: Instale a última versão do Office
 description: Informações sobre como desativar essa opção para obter as versões mais recentes do Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d1a9b40daa648d33f1bf30cfa9a14cdbf69679d2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ce13e35ecd3969d4b5917a2635bb785b499ec787
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148765"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743809"
 ---
 # <a name="install-the-latest-version-of-office"></a>Instale a última versão do Office
 
@@ -16,7 +16,7 @@ Novos recursos de desenvolvedor, inclusive os que ainda estão na visualização
 
 ## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>Opte por obter as versões mais recentes do Office
 
-- Se você for um Microsoft 365 Family, pessoal ou assinante da Universidade, consulte Ser um Office [Insider](https://insider.office.com).
+- Se você for um Microsoft 365 Family, pessoal ou assinante da Universidade, consulte [Ser um Office Insider](https://insider.office.com).
 - Se você for um cliente Microsoft 365 Apps para Pequenos e Médios negócios, consulte [Install the First Release build for Microsoft 365 Apps para Pequenos e Médios negócios customers](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - Se você estiver executando o Office em um Mac:
   - Abra um aplicativo do Office.

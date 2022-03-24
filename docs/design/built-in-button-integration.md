@@ -3,30 +3,30 @@ title: Integrar botões de Office integrados a grupos e guias de controle person
 description: Saiba como incluir botões de Office em seus grupos de comandos personalizados e guias na faixa de Office de opções.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 81765f470d95a43e597e06f976ad2bfa2a7b66c8
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: b9f334bdc84353409c81059a3f5cfd60bbb4c0fa
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222126"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743086"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>Integrar botões de Office integrados a grupos e guias de controle personalizados
 
-Você pode inserir botões de Office em seus grupos de controle personalizados na faixa Office faixa de opções usando marcação no manifesto do complemento. (Você não pode inserir seus comandos de complemento personalizados em um grupo de Office integrado.) Você também pode inserir grupos de controle Office inteiros em suas guias de faixa de opções personalizadas.
+Você pode inserir botões de Office em seus grupos de controle personalizados Office faixa de opções usando a marcação no manifesto do complemento. (Você não pode inserir seus comandos de complemento personalizados em um grupo de Office integrado.) Você também pode inserir grupos de controle Office inteiros em suas guias de faixa de opções personalizadas.
 
 > [!NOTE]
-> Este artigo supõe que você está familiarizado com o artigo [Conceitos básicos para comandos de complemento.](add-in-commands.md) Revise-o se não tiver feito isso recentemente.
+> Este artigo supõe que você está familiarizado com o artigo [Conceitos básicos para comandos de complemento](add-in-commands.md). Revise-o se não tiver feito isso recentemente.
 
 > [!IMPORTANT]
 >
-> - O recurso de complemento e a marcação descritos neste artigo só estão disponíveis *em PowerPoint na Web*.
-> - A marcação descrita neste artigo só funciona em plataformas que suportam o conjunto de **requisitos AddinCommands 1.3**. Consulte a seção Comportamento [posterior em plataformas sem suporte.](#behavior-on-unsupported-platforms)
+> - O recurso de complemento e a marcação descritos neste artigo só *estão disponíveis PowerPoint na Web*.
+> - A marcação descrita neste artigo só funciona em plataformas que suportam o conjunto de **requisitos AddinCommands 1.3**. Consulte a seção Comportamento [posterior em plataformas sem suporte](#behavior-on-unsupported-platforms).
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>Inserir um grupo de controle integrado em uma guia personalizada
 
-Para inserir um grupo de controle Office em uma guia, adicione um elemento [OfficeGroup](../reference/manifest/customtab.md#officegroup) como um elemento filho no elemento **CustomTab** pai. O `id` atributo do elemento **OfficeGroup** é definido como a ID do grupo integrado. Consulte [Encontre as IDs de controles e grupos de controle.](#find-the-ids-of-controls-and-control-groups)
+Para inserir um grupo de controle Office em uma guia, adicione um elemento [OfficeGroup](../reference/manifest/customtab.md#officegroup) como um elemento filho no elemento **CustomTab** pai. O `id` atributo do elemento **OfficeGroup** é definido como a ID do grupo integrado. Consulte [Encontre as IDs de controles e grupos de controle](#find-the-ids-of-controls-and-control-groups).
 
-O exemplo de marcação a seguir adiciona o grupo Office controle Paragraph a uma guia personalizada e posiciona-a para aparecer logo após um grupo personalizado.
+O exemplo de marcação a seguir adiciona o grupo de controle Office Paragraph a uma guia personalizada e posiciona-o para aparecer logo após um grupo personalizado.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -42,7 +42,7 @@ O exemplo de marcação a seguir adiciona o grupo Office controle Paragraph a um
 
 ## <a name="insert-a-built-in-control-into-a-custom-group"></a>Inserir um controle integrado em um grupo personalizado
 
-Para inserir um controle Office em um grupo personalizado, adicione um elemento [OfficeControl](../reference/manifest/group.md#officecontrol) como um elemento filho no elemento **Group** pai. O `id` atributo do elemento **OfficeControl** é definido como a ID do controle integrado. Consulte [Encontre as IDs de controles e grupos de controle.](#find-the-ids-of-controls-and-control-groups)
+Para inserir um controle Office em um grupo personalizado, adicione um elemento [OfficeControl](../reference/manifest/group.md#officecontrol) como um elemento filho no elemento **Group** pai. O `id` atributo do **elemento OfficeControl** é definido como a ID do controle integrado. Consulte [Encontre as IDs de controles e grupos de controle](#find-the-ids-of-controls-and-control-groups).
 
 O exemplo de marcação a seguir adiciona o Office sobrescrito a um grupo personalizado e posiciona-o para aparecer logo após um botão personalizado.
 
@@ -72,8 +72,8 @@ O exemplo de marcação a seguir adiciona o Office sobrescrito a um grupo person
 
 ## <a name="find-the-ids-of-controls-and-control-groups"></a>Encontre as IDs de controles e grupos de controle
 
-As IDs para controles suportados e grupos de controle estão em arquivos no repo [Office IDs de Controle.](https://github.com/OfficeDev/office-control-ids) Siga as instruções no arquivo ReadMe desse repo.
+As IDs para controles e grupos de controle com suporte estão em arquivos no repo [Office IDs de controle](https://github.com/OfficeDev/office-control-ids). Siga as instruções no arquivo ReadMe desse repo.
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportamento em plataformas sem suporte
 
-Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), a marcação descrita neste artigo será ignorada e os controles/grupos de Office internos não aparecerão em seus grupos/guias personalizados. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos do manifesto.  Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência quando **AddinCommands 1.3** não tiver suporte, conforme descrito em Design para experiências [alternativas.](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences) Por exemplo, se o seu add-in contiver instruções que pressuem que os botões integrados estão em seus grupos personalizados, você pode projetar uma versão que presume que os botões integrados estão apenas em seus locais usuais.
+Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), a marcação descrita neste artigo será ignorada e os controles/grupos de Office internos não aparecerão em seus grupos/guias personalizados. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos  do manifesto. Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência quando **AddinCommands 1.3** não tiver suporte, conforme descrito em [Design para experiências alternativas](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Por exemplo, se o seu add-in contiver instruções que pressuem que os botões integrados estão em seus grupos personalizados, você pode projetar uma versão que presume que os botões integrados estão apenas em seus locais usuais.

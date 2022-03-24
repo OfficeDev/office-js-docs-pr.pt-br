@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 10/22/2021
+ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 5f9a76aec20574b5397df9fcfd18e4714e5c8dd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711242"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745707"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
@@ -49,7 +49,7 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 > [!NOTE]
 > Se sua organização tiver incluído seu logotipo na barra de ferramentas da caixa de correio, você verá algo um pouco diferente do mostrado nas imagens anteriores.
 
-### <a name="new-outlook-on-the-web"></a>Novo Outlook na Web
+#### <a name="new-outlook-on-the-web"></a>Novo Outlook na Web
 
 1. Acesse o [Outlook na Web](https://outlook.office.com).
 
@@ -69,7 +69,7 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 
 1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
-### <a name="classic-outlook-on-the-web"></a>Clássico Outlook na Web
+#### <a name="classic-outlook-on-the-web"></a>Clássico Outlook na Web
 
 1. Acesse o [Outlook na Web](https://outlook.office.com).
 
@@ -89,22 +89,44 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 
 ### <a name="outlook-on-the-desktop"></a>Outlook na área de trabalho
 
-### <a name="outlook-2016-or-later"></a>Outlook 2016 ou posterior
+#### <a name="outlook-2016-or-later-on-windows-or-mac"></a>Outlook 2016 ou posterior no Windows ou Mac
 
 1. Abra Outlook 2016 ou posterior no Windows ou Mac.
 
 1. Selecione o botão **Obter Suplementos** na faixa de opções.
 
-    ![Outlook 2016 faixa de opções apontando para o botão Obter Complementos.](../images/outlook-sideload-desktop-store.png)
+    # <a name="windows"></a>[Windows](#tab/windows)
+
+    ![Outlook em Windows faixa de opções apontando para o botão Obter Complementos.](../images/outlook-sideload-desktop-windows.png)
+
+    # <a name="mac"></a>[Mac](#tab/mac)
+
+    ![Outlook faixa de opções do Mac apontando para o botão Obter Complementos.](../images/outlook-sideload-mac-classic.png)
+
+    ---
 
     > [!IMPORTANT]
-    > Se você não vir o botão **Obter Complementos** na sua versão do Outlook, selecione:
+    > Se você não vir o botão **Obter Complementos** na sua versão do Outlook, faça um dos seguintes:
     >
-    > - **Botão Armazenar** na faixa de opções, se disponível.
+    > # <a name="windows"></a>[Windows](#tab/windows)
     >
-    >   OU
+    > - Se você configurou o layout da faixa de opções como Faixa de Opções Simplificada, selecione o botão de reellipse (`...`) na faixa de opções e selecione **Obter Complementos**.
     >
-    > - **Menu** Arquivo e selecione o botão **Gerenciar Complementos** na guia Informações para abrir  a caixa de diálogo **Dedros** no Outlook na Web.<br>Você pode ver mais sobre a experiência da Web na seção anterior [Sideload an add-in in Outlook na Web](#outlook-on-the-web).
+    >   ![Outlook no Windows apontando para o botão Obter Complementos do botão de reellipse.](../images/outlook-sideload-simplified-ribbon.png)
+    >
+    > - Selecione o **botão Loja** na faixa de opções, se disponível.
+    >
+    > - Selecione o menu **Arquivo** e selecione o botão **Gerenciar Add-ins** na guia Informações  para abrir a caixa de diálogo **Adicionar-ins** no Outlook na Web. Você pode ver mais sobre a experiência da Web na seção anterior [Sideload an add-in in Outlook na Web](#outlook-on-the-web).
+    >
+    > # <a name="mac"></a>[Mac](#tab/mac)
+    >
+    > - Selecione o botão de reellipse (`...`) na faixa de opções e selecione **Obter Complementos**.
+    >
+    >   ![Outlook mac apontando para o botão Obter Complementos a partir do botão de reellipse.](../images/outlook-sideload-deskop-mac.png)
+    >
+    > - Selecione o **botão Loja** na faixa de opções, se disponível.
+    >
+    > ---
 
 1. Se houver guias próximas à parte superior da caixa de diálogo, verifique se a guia **Complementos** está selecionada. Escolha **Meus complementos**.
 
@@ -116,7 +138,7 @@ O processo de sideload de um complemento no Outlook na Web depende se você est�
 
 1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
-### <a name="outlook-2013"></a>Outlook 2013
+#### <a name="outlook-2013-on-windows"></a>Outlook 2013 no Windows
 
 1. Abra Outlook 2013 no Windows.
 

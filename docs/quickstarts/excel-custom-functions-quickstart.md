@@ -1,27 +1,29 @@
 ---
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222301"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746400"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
-Com as funções personalizadas, os desenvolvedores agora podem adicionar novas funções ao Excel definindo-as em JavaScript ou Typescript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`.
+Com as funções personalizadas, os desenvolvedores podem adicionar novas funções ao Excel definindo-as em JavaScript ou TypeScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel no Windows (versão 1904 ou posterior) ou Excel na Web.
-- O Office no Mac (conectado a uma assinatura do Microsoft 365) é compatível com as funções personalizadas do Excel) e uma atualização desse tutorial está a caminho.
+- Office conectado a uma assinatura Microsoft 365 (incluindo o Office na web).
+
+  > [!NOTE]
+  > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.
 
 ## <a name="build-your-first-custom-functions-project"></a>Crie seu primeiro projeto com funções personalizadas
 
@@ -49,11 +51,11 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     npm run build
     ```
 
-1. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora seja opcional. Ainda é possível executar as funções personalizadas sem abrir o painel de tarefas do suplemento.
+1. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento de função personalizada no Excel. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora seja opcional. Ainda é possível executar as funções personalizadas sem abrir o painel de tarefas do suplemento.
 
-# <a name="excel-on-windows"></a>[Excel no Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
-Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
+Para testar o seu suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,18 +70,6 @@ Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
-
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
-
-   ![Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
-
-1. Escolha **Procurar...** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
-
-1. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
 ---
 

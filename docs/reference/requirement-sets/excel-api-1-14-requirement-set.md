@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.14.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 93b1690a3c03e51dadb2110ec6382ca6ee86cfe1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747015"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-114"></a>Novidades na API JavaScript 1.14 Excel JavaScript
 
 O ExcelApi 1.14 adicionou objetos para controlar o recurso de tabela de dados de um gráfico, um método para localizar todas as células precedentes de uma fórmula e eventos de proteção de planilha para rastrear alterações no estado de proteção de uma planilha. Ele também adicionou vários [`getItemOrNullObject`](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties) métodos para objetos como `CommentCollection`, `ShapeCollection`e para melhorar `StyleCollection` o tratamento de erros.

@@ -3,12 +3,12 @@ ms.date: 11/06/2020
 description: Localize suas Excel funções personalizadas.
 title: Localize funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 596ab23f578f7bb0d12d009d06871e946302300c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7219c838cfd5a6c827b74b5d04442280be7ebac7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148938"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744505"
 ---
 # <a name="localize-custom-functions"></a>Localize funções personalizadas
 
@@ -21,11 +21,11 @@ Você pode localizar seu complemento e seus nomes de função personalizados. Pa
 
 ## <a name="localize-function-names"></a>Nomes de função de localização
 
-Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, crie `name` e propriedades no idioma de `description` destino. O arquivo padrão para inglês é **chamado functions.json**. Use a localidade no nome do arquivo para cada arquivo JSON adicional, como **functions-de.json** para ajudar a identificá-los.
+Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, crie e `name` propriedades `description` no idioma de destino. O arquivo padrão para inglês é **chamado functions.json**. Use a localidade no nome do arquivo para cada arquivo JSON adicional, como **functions-de.json para ajudar a identificá-los** .
 
-The `name` and appear in Excel and are `description` localized. No entanto, `id` a de cada função não está localizada. A propriedade é como Excel identifica sua função como exclusiva e não deve `id` ser alterada depois de definida.
+The `name` and `description` appear in Excel and are localized. No entanto, `id` a de cada função não está localizada. A `id` propriedade é como Excel identifica sua função como exclusiva e não deve ser alterada depois de definida.
 
-O JSON a seguir mostra como definir uma função com a `id` propriedade "MULTIPLY". A `name` propriedade e da função é localizada para `description` alemão. Cada parâmetro `name` e também é localizado para `description` alemão.
+O JSON a seguir mostra como definir uma função com `id` a propriedade "MULTIPLY". A `name` propriedade e `description` da função é localizada para alemão. Cada parâmetro `name` e `description` também é localizado para alemão.
 
 ```JSON
 {
@@ -99,7 +99,7 @@ Depois de criar um arquivo JSON para cada idioma, atualize seu arquivo de manife
 Para obter mais informações sobre o processo de localização de um add-in, consulte [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba mais [sobre as convenções de nomenis para funções personalizadas](custom-functions-naming.md) ou descubra as [práticas recomendadas de](custom-functions-errors.md)tratamento de erros.
+Saiba mais [sobre as convenções de nomenização para funções personalizadas](custom-functions-naming.md) ou descubra [as práticas recomendadas de tratamento de erros](custom-functions-errors.md).
 
 ## <a name="see-also"></a>Confira também
 

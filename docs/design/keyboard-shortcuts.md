@@ -1,10 +1,15 @@
 ---
 title: Atalhos de teclado personalizados em Office de complementos
-description: 'Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.'
+description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 11/22/2021
 localization_priority: Normal
+ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743235"
 ---
-
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
 Atalhos de teclado, também conhecidos como combinações de teclas, permitem que os usuários do seu complemento funcionem com mais eficiência. Atalhos de teclado também melhoram a acessibilidade do complemento para usuários com deficiências, fornecendo uma alternativa ao mouse.
@@ -97,7 +102,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     ```
 
 1. Para continuar o exemplo, use `'SHOWTASKPANE'` como o primeiro parâmetro.
-1. Para o corpo da função, use o método [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
+1. Para o corpo da função, use o [método Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) para abrir o painel de tarefas do complemento. Quando terminar, o código deverá ter a seguinte aparência:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -111,7 +116,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-1. Adicione uma segunda chamada de `Office.actions.associate` função para mapear `HIDETASKPANE` a ação para uma função que [chama Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)). Apresentamos um exemplo a seguir.
+1. Adicione uma segunda chamada de função `Office.actions.associate` para mapear `HIDETASKPANE` a ação para uma função que [chama Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)). Apresentamos um exemplo a seguir.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -125,7 +130,7 @@ Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo c
     });
     ```
 
-Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de tarefas pressionando **Ctrl+Alt+Up** e **Ctrl+Alt+Down**. O mesmo comportamento é mostrado no exemplo Excel [atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado no repo pnP de Office de GitHub.
+Seguindo as etapas anteriores, o seu add-in alterna a visibilidade do painel de tarefas pressionando **Ctrl+Alt+Up** e **Ctrl+Alt+Down**. O mesmo comportamento é mostrado no exemplo Excel [atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado no Office pnP de GitHub.
 
 ## <a name="details-and-restrictions"></a>Detalhes e restrições
 
@@ -203,7 +208,7 @@ No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez q
 
 ![Ilustração mostrando um modo de conflito com duas ações diferentes para um único atalho.](../images/add-in-shortcut-conflict-modal.png)
 
-O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, poderá invocar **o comando Redefinir Office preferências** de atalho de complementos na caixa de pesquisa Diga-me. Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante.
+O usuário pode selecionar qual ação o atalho do teclado tomará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário desejar alterar suas preferências, ele poderá invocar o comando **Redefinir Office preferências** de atalho de Complementos da caixa de pesquisa **Diga-me**. Invocar o comando limpa todas as preferências de atalho do complemento do usuário e o usuário será novamente solicitado com a caixa de diálogo conflito na próxima vez que tentar usar um atalho conflitante.
 
 ![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir Office preferências de atalho do add-in.](../images/add-in-reset-shortcuts-action.png)
 
@@ -212,7 +217,7 @@ Para a melhor experiência do usuário, recomendamos que você minimize os confl
 - Use apenas atalhos de teclado com o seguinte padrão: **Ctrl+Shift+Alt+* x***, onde *x* é outra chave.
 - Se você precisar de mais atalhos de teclado, verifique a lista de [atalhos Excel teclado](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f) e evite usar qualquer um deles no seu complemento.
 - Quando o foco do teclado estiver dentro da interface do usuário do complemento, **Ctrl+Spacebar** e **Ctrl+Shift+F10** não funcionarão, pois são atalhos de acessibilidade essenciais.
-- Em um computador Windows ou Mac, se o comando "Redefinir preferências de atalho de complementos do Office" não estiver disponível no menu de pesquisa, o usuário poderá adicionar manualmente o comando à faixa de opções personalização da faixa de opções por meio do menu de contexto.
+- Em um computador Windows ou Mac, se o comando Office "Redefinir preferências de atalho de complementos" não estiver disponível no menu de pesquisa, o usuário poderá adicionar manualmente o comando à faixa de opções personalização da faixa de opções por meio do menu de contexto.
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>Personalizar os atalhos de teclado por plataforma
 
@@ -267,7 +272,7 @@ O seu complemento pode permitir que os usuários reatribuam as ações do add-in
 > [!NOTE]
 > As APIs descritas nesta seção exigem o [conjunto de requisitos KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) .
 
-Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações de teclado personalizadas de um usuário às ações de seus complementos. O método assume um parâmetro de tipo `{[actionId:string]: string|null}`, `actionId`onde os s são um subconjunto das IDs de ação que devem ser definidas no manifesto estendido JSON do complemento. Os valores são as combinações de teclas preferidas do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no manifesto estendido JSON do complemento.
+Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações personalizadas de teclado de um usuário às ações de seus complementos. O método assume um parâmetro de tipo `{[actionId:string]: string|null}`, `actionId`onde os s são um subconjunto das IDs de ação que devem ser definidas no manifesto estendido JSON do complemento. Os valores são as combinações de teclas preferidas do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no manifesto estendido JSON do complemento.
 
 Se o usuário estiver conectado Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário por plataforma. No momento, a personalização de atalhos não é suportada para usuários anônimos.
 

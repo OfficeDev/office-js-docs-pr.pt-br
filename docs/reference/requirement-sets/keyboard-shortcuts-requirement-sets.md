@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de Atalhos de teclado
 description: Informações de conjunto de requisitos de atalhos de teclado para Office de complementos.
-ms.date: 02/07/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 074460510e054cdcfbeca4676883c4180bb2202d
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: bf7cd3cb8e0a6054f3e279e148e4b47c480e28fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467840"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745906"
 ---
 # <a name="keyboard-shortcuts-requirement-sets"></a>Conjuntos de requisitos de Atalhos de teclado
 
@@ -17,12 +17,12 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos de Atalhos de Teclado, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou versão do aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
+|  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)   | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | KeyboardShortcuts 1.1  | N/D | Versão: 2111 (build 14701.10000) | N/D | 16.55 | Setembro de 2021 |
 
 > [!NOTE]
-> O **conjunto de requisitos KeyboardShortcuts 1.1** só tem suporte em Excel.
+> O **conjunto de requisitos KeyboardShortcuts 1.1** é suportado somente em Excel.
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 

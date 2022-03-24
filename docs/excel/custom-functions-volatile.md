@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Aprenda a implementar funções personalizadas de streaming voláteis e offline.
 title: Valores voláteis nas funções
 ms.localizationpriority: medium
-ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 401be3e04a7b36a226547175df4311fc653c027a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149019"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744475"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
@@ -20,7 +20,7 @@ O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Par
 
 Funções personalizadas permitem que você crie suas próprias funções voláteis, que podem ser úteis ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, [as simulações de Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
-Se optar por gerar automaticamente seu arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a geração automática, consulte [Metadados JSON](custom-functions-json-autogeneration.md)de geração automática para funções personalizadas.
+Se optar por gerar automaticamente seu arquivo JSON, declare uma função volátil com a marca de comentário `@volatile`JSDoc . Para obter mais informações sobre a geração automática, consulte [Metadados JSON de geração automática para funções personalizadas](custom-functions-json-autogeneration.md).
 
 Segue-se um exemplo de uma função personalizada volátil, que simula a rolagem de um dado de seis lados.
 
@@ -38,7 +38,7 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-* Saiba mais [sobre as opções de parâmetro de funções personalizadas](custom-functions-parameter-options.md).
+* Saiba mais [sobre as opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md).
 
 ## <a name="see-also"></a>Confira também
 

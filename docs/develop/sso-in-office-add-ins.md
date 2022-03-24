@@ -1,13 +1,18 @@
 ---
 title: Habilitar o login único (SSO) em um Suplemento do Office
-description: 'Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.'
+description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744254"
 ---
-
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
-Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. Aproveite isso e use o SSO (login único) para autenticar e autorizar o usuário ao seu suplemento sem exigir que ele entre uma segunda vez.
+Os usuários entram no Office (plataformas online, dispositivos móveis e área de trabalho) usando suas contas Microsoft pessoal, contas corporativas ou contas do Microsoft 365 Education. Aproveite isso e use o logon único (SSO) para autenticar e autorizar o usuário no seu suplemento sem exigir que ele entre uma segunda vez.
 
 ![Imagem mostrando o processo de logon de um suplemento.](../images/sso-for-office-addins.png)
 
@@ -23,7 +28,7 @@ O diagrama a seguir mostra como funciona o processo de SSO. Os elementos azuis r
 4. O aplicativo host do Office solicita o **token de acesso** da plataforma de identidade da Microsoft para o usuário atual.
 5. O plataforma de identidade da Microsoft retorna o token de acesso ao Office. O Office armazenará o token no seu nome para que futuras chamadas do **getAccessToken** retornem ao token armazenado em cache.
 6. O aplicativo host do Office retorna o **token de acesso** ao suplemento como parte do objeto de resultado retornado pela `getAccessToken` chamada.
-7. O token é um **token de acesso** e um **token de identidade**. Você pode usá-lo como um token de identidade para analisar e examinar as declarações sobre o usuário, como o nome e o endereço de e-mail do usuário.
+7. O token é um **token de acesso** e um **token de identidade**. Você pode utilizá-lo como um token de identidade para analisar e examinar declarações sobre o usuário, como o nome e o endereço de email do usuário.
 8. Opcionalmente, o suplemento pode usar o token como um **token de acesso** para fazer solicitações HTTPS autenticadas nas APIs ao lado do servidor. Como o token de acesso contém declarações de identidade, o servidor pode armazenar informações associadas à identidade do usuário; como as preferências do usuário.
 
 ## <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
@@ -102,7 +107,7 @@ Veja a seguir um exemplo da marcação.
 
 ### <a name="include-the-identity-api-requirement-set"></a>Inclua o conjunto de requisitos da API de identidade
 
-Para usar o SSO, seu complemento precisa do conjunto de requisitos da API de Identidade 1.3. Para obter mais informações, consulte [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+Para usar o SSO, seu suplemento exige o conjunto de requisitos da API de identidade 1.3. Para obter mais informações, confira [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
 
 ### <a name="add-client-side-code"></a>Adicionar código do lado do cliente
 

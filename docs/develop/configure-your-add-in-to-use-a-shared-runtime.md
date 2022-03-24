@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711172"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743923"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 

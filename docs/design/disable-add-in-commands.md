@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: b50311b814f91d44792325fce408d58e80e68a1f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511348"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743210"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 

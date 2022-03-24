@@ -4,12 +4,12 @@ description: Saiba como recuperar um intervalo usando a Excel JavaScript.
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 16c42ccf8f3496316fbf7b52e4d8139f819c6da1
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 3062005c1febb90749c7d129a84635f7374cd69a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340936"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744626"
 ---
 # <a name="get-a-range-using-the-excel-javascript-api"></a>Obter um intervalo usando a EXCEL JavaScript
 

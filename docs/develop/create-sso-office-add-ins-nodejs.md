@@ -1,14 +1,14 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
-description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
+description: Saiba como criar um Node.js baseado em Office que usa Office Login Único.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dbcc2e9dcc1c5abdf03e192e869fe36045ce3a19
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 911268198d5607953f34461ccaf8bcbc67dfe478
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320148"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743907"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -31,7 +31,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Um editor de códigos. Recomendamos o código do Visual Studio.
 
-* Pelo menos alguns arquivos e pastas armazenados em OneDrive for Business em sua assinatura Microsoft 365 assinatura.
+* Pelo menos alguns arquivos e pastas armazenados em OneDrive for Business em sua assinatura Microsoft 365.
 
 * Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -76,7 +76,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Selecione **Certificados e segredos** sob **Gerenciar**. Selecione o botão **Novo segredo do cliente**. Insira um valor para **Descrição** e, em seguida, selecione uma opção adequada para **Expira** e escolha **Adicionar**. *Copiar o valor de segredo do cliente imediatamente e salvá-lo com a ID de aplicativo* antes de prosseguir, pois ele será necessário em um procedimento posterior.
 
-1. Selecionar **Expor uma API** em **Gerenciar**. Selecione o link **Definir** . Isso gerará o URI de ID do aplicativo no formato "api://$App ID GUID$", onde $App ID GUID$ é a **ID do aplicativo (cliente**).
+1. Selecionar **Expor uma API** em **Gerenciar**. Selecione o link **Definir** . Isso gerará o URI de ID do Aplicativo no formato "api://$App ID GUID$", onde $App ID GUID$ é a **ID do aplicativo (cliente**).
 
 1. Na ID gerada, insira `localhost:44355/` (observe a barra de avanço "/" anexada ao final) entre as barras de avanço duplo e o GUID. Quando terminar, a ID inteira deverá ter o formulário `api://localhost:44355/$App ID GUID$`; por exemplo `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
@@ -88,7 +88,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
     * **Nome de exibição de consentimento do** administrador: Office pode atuar como usuário.
     * **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-    * **Nome de exibição de consentimento do** usuário: Office pode agir como você.
+    * **Nome de exibição** de consentimento do usuário: Office pode agir como você.
     * **Descrição do** consentimento do usuário: Office para chamar as APIs da Web do complemento com os mesmos direitos que você tem.
 
 1. Verifique se o **Estado** está definido como **Habilitado**.
@@ -108,7 +108,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
     > [!NOTE]
-    > A ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO do complemento Office.
+    > A ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e inclui todas as outras IDs listadas e pode ser usada de forma singular para pré-autorizar todos os pontos de extremidade do host do Office para uso com seu serviço no fluxo de SSO de complemento do Office.
 
     Para cada ID, tome estas etapas.
 
@@ -257,7 +257,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Abaixo do método `getGraphData`, adicione a função a seguir. Observe que é `/auth` uma rota Express do lado do servidor que troca o token bootstrap com o Azure AD por um token de acesso com permissões para o Microsoft Graph.
+1. Abaixo do método `getGraphData`, adicione a função a seguir. Observe que `/auth` é uma rota Express do lado do servidor que troca o token bootstrap com o Azure AD por um token de acesso com permissões para o Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -339,7 +339,7 @@ Para saber mais sobre esses erros, confira [Solucionar problemas de SSO em suple
     }
     ```
 
-1. Em raras ocasiões, o token bootstrap que Office em cache não éexpirido quando o Office o valida, mas expira quando ele atinge o Azure AD para exchange. O Azure AD responderá com o erro **AADSTS500133**. Nesse caso, o complemento deve simplesmente chamar novamente `getGraphData` . Como o token de inicialização em cache já expirou, o Office receberá um novo token do Azure AD. Portanto, substitua `TODO 8` pelo seguinte.
+1. Em raras ocasiões, o token bootstrap Office armazenado em cache não éexpirido quando o Office o valida, mas expira quando ele atinge o Azure AD para exchange. O Azure AD responderá com o erro **AADSTS500133**. Nesse caso, o complemento deve simplesmente chamar novamente `getGraphData` . Como o token de inicialização em cache já expirou, o Office receberá um novo token do Azure AD. Portanto, substitua `TODO 8` pelo seguinte.
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -582,7 +582,7 @@ Para saber mais sobre esses erros, confira [Solucionar problemas de SSO em suple
 
 1. No aplicativo do Office, na faixa de opções **Home**, selecione o botão **Mostrar suplemento** no grupo **SSO Node.js** para abrir o suplemento do painel de tarefas.
 
-1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de Microsoft 365 Education ou de trabalho, ou uma conta da Microsoft, e o SSO estiver funcionando conforme esperado, os primeiros 10 nomes de arquivo e pasta em seu OneDrive for Business serão inseridos no documento. (Pode levar até 15 segundos na primeira vez.) Se você não estiver conectado ou estiver em um cenário que não dá suporte ao SSO, ou o SSO não estiver funcionando por qualquer motivo, você será solicitado a entrar. Depois de entrar, os nomes de arquivo e pasta aparecem.
+1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta Microsoft 365 Education ou de trabalho, ou uma conta da Microsoft, e o SSO estiver funcionando conforme esperado, os primeiros 10 nomes de arquivo e pasta em seu OneDrive for Business serão inseridos no documento. (Pode levar até 15 segundos na primeira vez.) Se você não estiver conectado ou estiver em um cenário que não dá suporte ao SSO, ou o SSO não estiver funcionando por qualquer motivo, você será solicitado a entrar. Depois de entrar, os nomes de arquivo e pasta aparecem.
 
 > [!NOTE]
 > Se você entrou no Office com uma ID diferente e se alguns aplicativos do Office que estavam abertos no momento continuam abertos, o Office pode não alterar de forma confiável sua ID, mesmo que pareça ter feito isso. Se isso acontecer, a chamada para o Microsoft Graph pode falhar ou os dados da ID anterior podem ser retornados. Para evitar isso, certifique-se de *fechar todos os outros aplicativos do Office* antes de pressionar **Obter nomes de arquivos do OneDrive**.

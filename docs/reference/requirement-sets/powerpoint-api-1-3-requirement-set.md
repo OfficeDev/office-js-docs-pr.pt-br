@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do PowerPointApi 1.3.
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 185ece64559d124d8af7c4051d54267da7b11542
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746488"
 ---
-
 # <a name="whats-new-in-powerpoint-javascript-api-13"></a>Novidades na API JavaScript 1.3 PowerPoint JavaScript
 
 O PowerPointApi 1.3 adicionou suporte adicional para gerenciamento de slides e marcação personalizada.
@@ -19,7 +24,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista o PowerPoint de requisitos da API JavaScript 1.3. Para uma lista completa de todas as POWERPOINT JavaScript (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs do JavaScript PowerPoint JavaScript](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true).
+A tabela a seguir lista o PowerPoint de requisitos da API JavaScript 1.3. Para ver uma lista completa de todas PowerPoint APIs JavaScript (incluindo APIs de visualização e APIs lançadas anteriormente), consulte todas as [APIs javascript PowerPoint JavaScript](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -69,5 +74,5 @@ A tabela a seguir lista o PowerPoint de requisitos da API JavaScript 1.3. Para u
 
 ## <a name="see-also"></a>Confira também
 
-- [PowerPoint de referência da API JavaScript](/javascript/api/powerpoint?view=powerpoint-js-1.3&preserve-view=true)
+- [PowerPoint documentação de referência da API JavaScript](/javascript/api/powerpoint?view=powerpoint-js-1.3&preserve-view=true)
 - [Conjuntos de requisitos de API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md)

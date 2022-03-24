@@ -3,12 +3,12 @@ title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 description: Saiba como a Excel JavaScript permite que o seu add-in execute operações e desmarque propriedades em vários intervalos simultaneamente.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b1248a15c37c548b11fa8ac47a809b045571e4
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: d03dcde5f91dc1f0cf78738bd6b565f27de44ede
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340908"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745056"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 

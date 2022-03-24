@@ -1,10 +1,15 @@
 ---
-title: 'Use marcas personalizadas em apresentações, slides e formas em PowerPoint'
-description: 'Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.'
+title: Use marcas personalizadas em apresentações, slides e formas em PowerPoint
+description: Saiba como usar marcas para metadados personalizados sobre apresentações, slides e formas.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 01c8ce5c5e3689ef6bd2131334363b3a77710cac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746969"
 ---
-
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Use marcas personalizadas para apresentações, slides e formas em PowerPoint
 
 Um complemento pode anexar metadados personalizados, na forma de pares de valores-chave, chamados "marcas", a apresentações, slides específicos e formas específicas em um slide.

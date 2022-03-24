@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
-description: Informações do conjunto de requisitos do Suplemento do Office para builds do Word.
+description: Informações do conjunto de requisitos do Suplemento do Office para o Word.
 ms.date: 01/14/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 6838ed66b6a91f522e7ae78aeeee3d545b6bbf2c
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 25a698a82669210a596026807d9e30be38a68762
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074319"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746174"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 

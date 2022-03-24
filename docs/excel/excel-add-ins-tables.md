@@ -3,16 +3,16 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando Excel API JavaScript.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b4ea42468c9cc64682ab02423f7df4813333edc7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340264"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745234"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos `Table` e `TableCollection` dão suporte, confira [Objeto Table (API do JavaScript para Excel)](/javascript/api/excel/excel.table) e [Objeto TableCollection (API do JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para ver a lista completa de propriedades e métodos que os objetos e suportam, consulte [Objeto Table (API JavaScript para Excel)](/javascript/api/excel/excel.table) e [Objeto TableCollection (API JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).`Table` `TableCollection`
 
 ## <a name="create-a-table"></a>Criar uma tabela
 
@@ -59,7 +59,7 @@ await Excel.run(async (context) => {
 O exemplo de código a seguir adiciona sete novas linhas à tabela **ExpensesTable** na planilha **Exemplo**. As novas linhas são adicionadas ao fim da tabela. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](../reference/requirement-sets/excel-api-requirement-sets.md) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 > [!NOTE]
-> A propriedade `index` de um objeto [TableRow](/javascript/api/excel/excel.tablerow) indica o número de índice da linha no conjunto de linhas da tabela. Um objeto `TableRow` não contém uma propriedade `id` que pode ser usada como chave exclusiva para identificar a linha.
+> A `index` propriedade de [um objeto TableRow](/javascript/api/excel/excel.tablerow) indica o número de índice da linha na coleção rows da tabela. Um `TableRow` objeto não contém uma propriedade `id` que pode ser usada como uma chave exclusiva para identificar a linha.
 
 ```js
 await Excel.run(async (context) => {
@@ -362,7 +362,7 @@ await Excel.run(async (context) => {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obter o intervalo visível de uma tabela filtrada
 
-O exemplo de código a seguir obtém um intervalo que contém dados somente para células que estão visíveis atualmente na tabela especificada e grava os valores do intervalo no console. Você pode usar o método `getVisibleView()` conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que filtros de coluna tiverem sido aplicados.
+O exemplo de código a seguir obtém um intervalo que contém dados somente para células que estão visíveis atualmente na tabela especificada e grava os valores do intervalo no console. Você pode usar o método `getVisibleView()` conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que os filtros de coluna foram aplicados.
 
 ```js
 await Excel.run(async (context) => {

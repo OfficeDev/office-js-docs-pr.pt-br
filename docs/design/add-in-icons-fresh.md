@@ -3,20 +3,20 @@ title: Diretrizes de ícone de estilo novo para Office de complementos
 description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e7281304ca448ed498b0ab20422af3688a24336
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148813"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743099"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
-As Office versões do 2013+ (sem assinatura) do Office usam a iconografia de estilo Fresh da Microsoft. Se você preferir que seus ícones corresponderem ao estilo monoline do Microsoft 365, consulte Diretrizes de ícone de estilo monoline para Office [Desempaco.](add-in-icons-monoline.md)
+As Office versões do 2013+ (sem assinatura) do Office usam a iconografia de estilo Fresh da Microsoft. Se preferir que seus ícones corresponderem ao estilo Monoline do Microsoft 365, consulte Diretrizes de ícone [de estilo monoline para Office Desempaco.](add-in-icons-monoline.md)
 
-## <a name="office-fresh-visual-style"></a>Office Estilo visual atualizado
+## <a name="office-fresh-visual-style"></a>Office estilo visual novo
 
-Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para melhor se ajustar Office clientes que não são de assinatura.
+Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para se ajustar melhor Office clientes que não são de assinatura.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -28,7 +28,7 @@ Siga estas diretrizes ao criar seus ícones.
 |Usar a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilizar os glifos do Fabric Core para comandos de Aplicativo do Office faixa de opções ou menus contextuais. Os ícones do Fabric Core são estilicamente diferentes e não corresponderão.|
 |Reutilizar metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.|Não reutilizar metáforas visuais para comandos diferentes. Usar o mesmo ícone para conceitos e comportamentos diferentes pode causar confusão. |
 |Redesenhar os ícones para deixá-los pequenos ou maiores. Dedicar um tempo para redesenhar recortes, cantos e bordas arredondadas para maximizar a clareza da linha. |Não redimensionar os ícones reduzindo-os ou aumentando-os. Isso pode levar a uma baixa qualidade visual e a ações confusas. Os ícones complexos criados em um tamanho maior podem perder clareza ao ser redimensionados para ficar menores sem um redesenho. |
-|Usar um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  |Evite confiar no seu logotipo ou marca para comunicar o que um comando de suplemento faz. Nem sempre é possível reconhecer as marcas em ícones menores e quando os modificadores são aplicados. Marcas de marca geralmente conflitam com Aplicativo do Office de ícone da faixa de opções e podem competir pela atenção do usuário em um ambiente saturado. |
+|Usar um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  |Evite confiar no seu logotipo ou marca para comunicar o que um comando de suplemento faz. Nem sempre é possível reconhecer as marcas em ícones menores e quando os modificadores são aplicados. Marcas de marca geralmente conflitam com Aplicativo do Office de ícone de faixa de opções e podem competir pela atenção do usuário em um ambiente saturado. |
 |Usar o formato PNG com uma tela de fundo transparente. ||
 |Evitar usar conteúdo localizável nos ícones, como caracteres tipográficos, indicações de parágrafos e pontos de interrogação. ||
 

@@ -1,27 +1,32 @@
 ---
 title: Conjuntos de requisitos da Dialog API
 description: Saiba mais sobre os conjuntos de requisitos da API de Caixa de Diálogo.
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e0130ddae76bad97ae840375cb4b1801c628bdc9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747170"
 ---
-
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da API de Caixa de diálogo
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Caixa de Diálogo, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou versão do aplicativo Office.
 
-| Conjunto de requisitos | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 no Windows\*<br>(compra avulsa) | Office 2019 no Windows\*<br>(compra avulsa) | Office 2021 ou posterior no Windows\*<br>(compra avulsa) | Office no Windows<br>(assinatura) | Office no iPad<br>(assinatura) |  Office no Mac<br>(assinatura) | Office na Web | Servidor do Office Online |
+| Conjunto de requisitos | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 no Windows\*<br>(compra avulsa) | Office 2019 no Windows\*<br>(compra avulsa) | Office 2021 ou posterior no Windows\*<br>(compra avulsa) | Office no Windows<br>(assinatura) | Office no iPad<br>(assinatura) |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior) | Office na Web | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.2  | N/D | N/D | N/D | Build 16.0.14326.20454 ou posterior | Consulte suporte<br>seção abaixo | 2.37 ou posterior | 16.37 ou posterior | Junho de 2020 | N/D |
 | DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Build 16.0.12527.20720 or later | Build 16.0.14326.20454 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior | Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
 
->\*Os usuários da compra única Office podem não ter aceito todos os patches e atualizações. Em caso afirmativo, a DLL que Office usa para relatar sua versão na interface do usuário pode ser maior do que as versões listadas aqui, mesmo que as DLLs atualizadas necessárias para dar suporte a DialogApi não tenham sido instaladas no computador do usuário. Para garantir que o patch necessário seja instalado, o usuário deve ir para Office lista de atualizações do Office (lista [do Office 2013](/officeupdates/msp-files-office-2013) ou lista [do Office 2016](/officeupdates/msp-files-office-2016)), pesquisar **por osfclient-x-none** e instalar o patch listado.
+>\*Os usuários da compra única Office podem não ter aceito todos os patches e atualizações. Em caso afirmativo, a DLL que Office usa para relatar sua versão na interface do usuário pode ser maior do que as versões listadas aqui, mesmo que as DLLs atualizadas necessárias para dar suporte a DialogApi não tenham sido instaladas no computador do usuário. Para garantir que o patch necessário seja instalado, o usuário deve ir para a lista de atualizações do Office (lista [do Office 2013](/officeupdates/msp-files-office-2013) ou lista [do Office 2016](/officeupdates/msp-files-office-2016)), pesquisar **osfclient-x-none** e instalar o patch listado.
 
 ## <a name="office-on-windows-subscription-support"></a>Office suporte Windows (assinatura)
 
-O conjunto de requisitos DialogApi 1.2 é suportado no Canal do Consumidor versão 2005 (build 12827.20268 ou superior). Para Office no Windows, o recurso também é suportado nas builds do Canal Semi-Annual e do Canal mensal Enterprise disponíveis em 9 de junho de 2020 ou posterior. As builds mínimas com suporte para cada canal são as seguinte:  
+O conjunto de requisitos DialogApi 1.2 é suportado no Canal do Consumidor versão 2005 (build 12827.20268 ou superior). Para Office no Windows, o recurso também é suportado nas builds do Canal Semi-Annual e do Canal mensal Enterprise disponíveis em 9 de junho de 2020 ou posteriores. As builds mínimas com suporte para cada canal são as seguinte:  
 
 |Canal | Versão | Build|
 |:-----|:-----|:-----|

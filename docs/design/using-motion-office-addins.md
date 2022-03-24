@@ -3,12 +3,12 @@ title: Usar movimento em suplementos do Office
 description: Obter práticas recomendadas para o uso de transições, movimento ou animação em Office de complementos.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0b9af5c11c6b2363b6198fc0ebeaf4cb524820
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d5d67e50f3e1d2a0883c35bf65d23098dda6868
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148773"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743140"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Usar movimento em suplementos do Office
 
@@ -62,5 +62,5 @@ Considere o tamanho da tela HTML (painel de tarefas, caixa de diálogo ou suplem
 
 ## <a name="see-also"></a>Confira também
 
-* [Fluent Diretrizes de animação da interface do usuário](https://developer.microsoft.com/fluentui#/styles/web/motion)
+* [Fluent de animação da interface do usuário](https://developer.microsoft.com/fluentui#/styles/web/motion)
 * [Movimento para aplicativos da Plataforma Universal do Windows](/windows/uwp/design/motion)

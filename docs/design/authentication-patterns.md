@@ -3,12 +3,12 @@ title: Diretrizes de design de autenticação para suplementos do Office
 ms.date: 02/09/2021
 description: Saiba como projetar visualmente uma página de login ou de assinatura em um Office Desem.
 ms.localizationpriority: medium
-ms.openlocfilehash: 3edfbcf805718444fc58823eb5bd726c033636ed
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9df30377c9f10b424c02fe39fbfeeda0980d4ab4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148808"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742968"
 ---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
@@ -37,7 +37,7 @@ Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar
 
 1. Entrada de um provedor de identidade: os provedores de identidade têm as próprias interfaces de usuário. Microsoft Azure Active Directory permite a personalização de páginas de painel de entrada e acesso para uma aparência consistente com seu serviço. [Saiba mais](/azure/active-directory/fundamentals/customize-branding).
 
-    ![Captura de tela mostrando a caixa de diálogo Entrar do Provedor de Identidade em um aplicativo Office de identidade.](../images/add-in-auth-identity-sign-in.png)
+    ![Captura de tela mostrando a caixa de diálogo Entrar do Provedor de Identidade em um Office aplicativo.](../images/add-in-auth-identity-sign-in.png)
 
 1. Progresso: indique o progresso enquanto as configurações e a interface do usuário são carregadas.
 

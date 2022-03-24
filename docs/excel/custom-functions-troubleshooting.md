@@ -3,12 +3,12 @@ ms.date: 03/30/2021
 description: Solucionar problemas comuns com Excel funções personalizadas.
 title: Solução de problemas das funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: b95dae1acb60fe21298641076fb63f0655193e11
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149020"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744481"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -76,11 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Para obter mais informações sobre esse processo, consulte [Associando nomes de função a metadados JSON.](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)
+Para obter mais informações sobre esse processo, consulte [Associando nomes de função a metadados JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Problemas conhecidos são rastreados e relatados [no Excel Funções Personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Problemas conhecidos são rastreados e relatados [no repositório Excel Funções Personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

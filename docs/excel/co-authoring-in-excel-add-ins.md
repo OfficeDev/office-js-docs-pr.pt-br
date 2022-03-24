@@ -1,11 +1,15 @@
 ---
 title: Coautoria em suplementos do Excel
-description: 'Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.'
+description: Aprenda a coautor uma Excel de trabalho armazenada em OneDrive, OneDrive for Business ou SharePoint Online.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7fd2e2846c4256e7aac1ffa7263b4aa57b744d21
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744381"
 ---
-
-
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
 Com a [coautoria](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
@@ -15,7 +19,7 @@ Com a [coautoria](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3
 
 ## <a name="coauthoring-overview"></a>Visão geral da coautoria
 
-Quando você altera o conteúdo de uma pasta de trabalho, o Excel sincroniza automaticamente essas alterações entre todos os coautores. Os coautores podem alterar o conteúdo de uma pasta de trabalho, assim como o código em execução em um suplemento do Excel. Por exemplo, quando o código JavaScript a seguir é executado em um Office, o valor de um intervalo é definido como Contoso.
+Quando você altera o conteúdo de uma pasta de trabalho, o Excel sincroniza automaticamente essas alterações entre todos os coautores. Os coautores podem alterar o conteúdo de uma pasta de trabalho, assim como o código em execução em um suplemento do Excel. Por exemplo, quando o código JavaScript a seguir é executado em um Office Add-in, o valor de um intervalo é definido como Contoso.
 
 ```js
 range.values = [['Contoso']];

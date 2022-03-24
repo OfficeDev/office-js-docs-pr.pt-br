@@ -1,11 +1,16 @@
 ---
 title: PowerPoint APIs de visualização do JavaScript
-description: Detalhes sobre as próximas POWERPOINT APIs JavaScript.
+description: Detalhes sobre as próximas PowerPoint APIs JavaScript.
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 2d43ca19d36b9f30e8699370bc97ecf194395d06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742948"
 ---
-
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint APIs de visualização do JavaScript
 
 Novas PowerPoint APIs JavaScript são introduzidas pela primeira vez em "visualização" e, posteriormente, tornam-se parte de um conjunto de requisitos numerados específico depois que ocorrem testes suficientes e os comentários do usuário são adquiridos.
@@ -41,7 +46,7 @@ A tabela a seguir lista as PowerPoint APIs JavaScript atualmente em visualizaç�
 ||[left](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-left-member)|Especifica a distância, em pontos, do lado esquerdo da forma até o lado esquerdo do slide.|
 ||[top](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-top-member)|Especifica a distância, em pontos, da borda superior da forma até a borda superior do slide.|
 ||[width](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-width-member)|Especifica a largura, em pontos, da forma.|
-|[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[addGeometricShape(geometricShapeType: PowerPoint. GeometricShapeType, opções?: PowerPoint. ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgeometricshape-member(1))|Adiciona uma forma geométrica ao slide.|
+|[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[addGeometricShape(geometricShapeType: PowerPoint. GeometricShapeType, options?: PowerPoint. ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgeometricshape-member(1))|Adiciona uma forma geométrica ao slide.|
 ||[addLine(connectorType?: PowerPoint. ConnectorType, opções?: PowerPoint. ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addline-member(1))|Adiciona uma linha ao slide.|
 ||[addTextBox(text: string, options?: PowerPoint. ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1))|Adiciona uma caixa de texto ao slide com o texto fornecido como o conteúdo.|
 |[ShapeFill](/javascript/api/powerpoint/powerpoint.shapefill)|[clear()](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-clear-member(1))|Limpa a formatação do preenchimento de um objeto de forma.|
@@ -78,5 +83,5 @@ A tabela a seguir lista as PowerPoint APIs JavaScript atualmente em visualizaç�
 
 ## <a name="see-also"></a>Confira também
 
-- [PowerPoint de referência da API JavaScript](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
+- [PowerPoint documentação de referência da API JavaScript](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
 - [Conjuntos de requisitos de API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md)

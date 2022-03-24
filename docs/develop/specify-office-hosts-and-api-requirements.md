@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme o esperado.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 785ef21a44844eed51ef6815d50ac2542d00de26
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 1df753dfe3e5c517f49d597f9298744cf0c79f52
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711151"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744061"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -140,7 +140,7 @@ Observe o seguinte sobre este exemplo.
 
 ## <a name="design-for-alternate-experiences"></a>Design para experiências alternativas
 
-Os recursos de extensibilidade que a plataforma de Office de complementos fornece podem ser divididos de forma útil em três tipos:
+Os recursos de extensibilidade que a plataforma de Office add-in fornece podem ser divididos de forma útil em três tipos:
 
 - Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do complemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](../reference/manifest/versionoverrides.md) no manifesto. Um exemplo desse tipo de recurso é [Comandos de Complemento](../design/add-in-commands.md), que são botões de faixa de opções personalizados e menus.
 - Recursos de extensibilidade que estão disponíveis somente quando o add-in está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [Caixas de Diálogo](../design/dialog-boxes.md).

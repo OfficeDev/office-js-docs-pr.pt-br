@@ -3,18 +3,18 @@ title: Diretrizes de ícone de estilo monolinha para Office de complementos
 description: Diretrizes para usar ícones de estilo monoline em Office de complementos.
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43048b2e32810fb1f702e58ffb8eb5d9d85bbd4b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148812"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743045"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monolinha para Office de complementos
 
 Iconografia de estilo monoline é usada em Office aplicativos. Se você preferir que seus ícones corresponderem ao estilo Fresh de não assinatura Office 2013+, consulte Diretrizes de ícone de estilo novo [para Office Add-ins](add-in-icons-fresh.md).
 
-## <a name="office-monoline-visual-style"></a>Office Estilo visual monoline
+## <a name="office-monoline-visual-style"></a>Office estilo visual monoline
 
 O objetivo do estilo Monoline é ter uma iconografia consistente, clara e acessível para comunicar ações e recursos com elementos visuais simples, garantir que os ícones sejam acessíveis a todos os usuários e tenham um estilo consistente com os usados em outros locais Windows.
 
@@ -71,7 +71,7 @@ A seguir, um exemplo de layout de ícone com um modificador.
 
 #### <a name="elements"></a>Elementos
 
-- **Base**: O conceito principal que o ícone representa. Normalmente, esse é o único visual necessário para o ícone, mas às vezes o conceito principal pode ser aprimorado com um elemento secundário, um modificador.
+- **Base**: o conceito principal que o ícone representa. Normalmente, esse é o único visual necessário para o ícone, mas às vezes o conceito principal pode ser aprimorado com um elemento secundário, um modificador.
 
 - **Modificador** Qualquer elemento que sobrepõe a base; ou seja, um modificador que normalmente representa uma ação ou um status. Modifica o elemento base agindo como uma adição, alteração ou descritor.
 
@@ -195,7 +195,7 @@ Use **Cinza Médio** para "conteúdo" interno, como linhas de grade em um ícone
 
 #### <a name="text-lines"></a>Linhas de texto
 
-Quando as linhas de texto estão em um "contêiner" (por exemplo, texto em um documento), use cinza médio. Linhas de texto que não estão em um contêiner devem ser **Cinza Escuro**.
+Quando as linhas de texto estão em um "contêiner" (por exemplo, texto em um documento), use cinza médio. As linhas de texto que não estão em um contêiner devem ser **Cinza Escuro**.
 
 ### <a name="text"></a>Texto
 

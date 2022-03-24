@@ -1,10 +1,15 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
-description: Recursos e APIs que foram introduzidos para Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.3.
+description: Recursos e APIs que foram introduzidos para os Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.3.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: d85828a598f5bf332cecac0349550246a827673e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745617"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
 O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um Outlook de usuário.

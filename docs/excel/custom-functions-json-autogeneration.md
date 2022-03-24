@@ -1,18 +1,18 @@
 ---
 ms.date: 07/08/2021
-description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
+description: Use marcas JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: c5047fb48fe30ba5fdeb69cef46b3a2178ca2343
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c14196da1d686beb32b31589187e57b2b6f2616d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148940"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744546"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
-Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o arquivo de metadados JSON. O uso de marcas JSDoc salva você do esforço de editar manualmente o arquivo de [metadados JSON.](custom-functions-json.md)
+Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o arquivo de metadados JSON. O uso de marcas JSDoc salva você do esforço de [editar manualmente o arquivo de metadados JSON](custom-functions-json.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -56,7 +56,7 @@ As seguintes marcas JSDoc são suportadas em Excel funções personalizadas.
 
 Indica que uma função personalizada executa uma ação quando a função é cancelada.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.CancelableInvocation`. A função pode atribuir uma função à `oncanceled` propriedade para indicar o resultado quando a função é cancelada.
+O último parâmetro da função deve ser do tipo `CustomFunctions.CancelableInvocation`. A função pode atribuir uma função `oncanceled` à propriedade para indicar o resultado quando a função é cancelada.
 
 Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvocation`, ela será considerada `@cancelable`, mesmo se a tag não estiver presente.
 
@@ -138,7 +138,7 @@ Sintaxe: @helpurl _url_
 
 A _url_ fornecida é exibida no Excel.
 
-No exemplo a seguir, `helpurl` o é `www.contoso.com/weatherhelp` .
+No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp`.
 
 ```js
 /**
@@ -156,8 +156,8 @@ No exemplo a seguir, `helpurl` o é `www.contoso.com/weatherhelp` .
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}` especifica as informações de tipo em chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo `any` padrão será usado.
-* `name` especifica o parâmetro ao @param se aplica. É necessário.
+* `{type}` especifica as informações de tipo em chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo padrão `any` será usado.
+* `name` especifica o parâmetro ao @param marca se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Para indicar um parâmetro de função personalizado como opcional, coloque colchetes ao redor do nome do parâmetro. Por exemplo, `@param {string} [text] Optional text`.
@@ -182,7 +182,7 @@ O exemplo a seguir mostra uma função ADD que adiciona dois ou três números, 
 
 Sintaxe de TypeScript: @param nome _descrição_
 
-* `name` especifica o parâmetro ao @param se aplica. É necessário.
+* `name` especifica o parâmetro ao @param marca se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
@@ -218,9 +218,9 @@ function add(first: number, second: number): number {
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
-O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar `@requiresAddress` . Quando a função é chamada, a propriedade `address` conterá o endereço.
+O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar `@requiresAddress`. Quando a função é chamada, a propriedade `address` conterá o endereço.
 
-O exemplo a seguir mostra como usar o parâmetro em combinação com para retornar o endereço da célula que `invocation` `@requiresAddress` invocou sua função personalizada. Consulte [o parâmetro Invocation](custom-functions-parameter-options.md#invocation-parameter) para obter mais informações.
+O exemplo a seguir mostra como usar o `invocation` parâmetro em `@requiresAddress` combinação com para retornar o endereço da célula que invocou sua função personalizada. Consulte [o parâmetro Invocation](custom-functions-parameter-options.md#invocation-parameter) para obter mais informações.
 
 ```js
 /**
@@ -242,11 +242,11 @@ function getAddress(first, second, invocation) {
 
 Indica que a função deve retornar os endereços dos parâmetros de entrada. 
 
-O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar  `@requiresParameterAddresses` . O comentário JSDoc também deve incluir uma marca especificando que o valor de retorno seja uma `@returns` matriz, como `@returns {string[][]}` ou `@returns {number[][]}` . Consulte [Tipos de matriz](#matrix-type) para obter informações adicionais. 
+O último parâmetro de função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado para usar  `@requiresParameterAddresses`. O comentário JSDoc também deve `@returns` incluir uma marca especificando que o valor de retorno seja uma matriz, como `@returns {string[][]}` ou `@returns {number[][]}`. Consulte [Tipos de matriz](#matrix-type) para obter informações adicionais. 
 
 Quando a função for chamada, a `parameterAddresses` propriedade conterá os endereços dos parâmetros de entrada.
 
-O exemplo a seguir mostra como usar o parâmetro em combinação com para `invocation` `@requiresParameterAddresses` retornar os endereços de três parâmetros de entrada. Consulte [Detectar o endereço de um parâmetro para](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) obter mais informações. 
+O exemplo a seguir mostra como usar o `invocation` parâmetro em combinação com `@requiresParameterAddresses` para retornar os endereços de três parâmetros de entrada. Consulte [Detectar o endereço de um parâmetro para](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) obter mais informações. 
 
 ```js
 /**
@@ -298,8 +298,8 @@ function add(first: number, second: number): number {
 
 Usado para indicar que uma função personalizada é uma função de streaming. 
 
-O último parâmetro é do tipo `CustomFunctions.StreamingInvocation<ResultType>` .
-A função retorna `void` .
+O último parâmetro é do tipo `CustomFunctions.StreamingInvocation<ResultType>`.
+A função retorna `void`.
 
 As funções de streaming não retornam valores diretamente, em vez disso, elas chamam `setResult(result: ResultType)` usando o último parâmetro.
 
@@ -339,7 +339,7 @@ Um valor pode ser representado usando um dos seguintes tipos: `boolean``number``
 
 ### <a name="matrix-type"></a>Tipo de matriz
 
-Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números e indica uma matriz de `string[][]` cadeias de caracteres.
+Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números e `string[][]` indica uma matriz de cadeias de caracteres.
 
 ### <a name="error-type"></a>Tipo de erro
 

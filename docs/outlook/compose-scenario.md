@@ -3,12 +3,12 @@ title: Crie suplementos do Outlook para formulários de redação
 description: Saiba mais sobre os cenários e recursos dos suplementos do Outlook nos formulários de redação.
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: b755c727cde9ab705e129c1159a536d654dfbe0e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f34c46c720a650890d2b991cb539862e3cb8187
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151874"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746784"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Criar suplementos do Outlook para formulários de redação
 

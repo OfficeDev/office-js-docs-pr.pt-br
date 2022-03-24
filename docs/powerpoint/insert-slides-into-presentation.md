@@ -3,8 +3,13 @@ title: Inserir slides em uma apresentação PowerPoint apresentação
 description: Saiba como inserir slides de uma apresentação em outra.
 ms.date: 03/07/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: b08dd8bd82e5d4f4f86114630e9238b6c43b6ae7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747025"
 ---
-
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Inserir slides em uma apresentação PowerPoint apresentação
 
 Um PowerPoint pode inserir slides de uma apresentação na apresentação atual usando PowerPoint biblioteca JavaScript específica do aplicativo. Você pode controlar se os slides inseridos mantêm a formatação da apresentação de origem ou a formatação da apresentação de destino.
@@ -36,7 +41,7 @@ Há muitas maneiras de converter um arquivo em base64. Qual linguagem de program
     ![Captura de tela mostrando um controle de entrada de tipo de arquivo HTML precedido por uma frase instrucional que lê "Selecione uma apresentação PowerPoint da qual inserir slides". O controle consiste em um botão rotulado "Escolher arquivo" seguido da frase "Nenhum arquivo escolhido".](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > Há muitas outras maneiras de obter um arquivo PowerPoint arquivo. Por exemplo, se o arquivo for armazenado em OneDrive ou SharePoint, você poderá usar o Microsoft Graph baixá-lo. Para obter mais informações, consulte [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/learn/modules/msgraph-access-file-data/).
+    > Há muitas outras maneiras de obter um arquivo PowerPoint. Por exemplo, se o arquivo for armazenado em OneDrive ou SharePoint, você poderá usar o Microsoft Graph baixá-lo. Para obter mais informações, consulte [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/learn/modules/msgraph-access-file-data/).
 
 2. Adicione o código a seguir ao JavaScript do complemento para atribuir uma função ao evento do controle de `change` entrada. (Crie a `storeFileAsBase64` função na próxima etapa.)
 
@@ -70,7 +75,7 @@ Há muitas maneiras de converter um arquivo em base64. Qual linguagem de program
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>Inserir slides com insertSlidesFromBase64
 
-Seu complemento insere slides de outra apresentação PowerPoint apresentação atual com o método [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)). A seguir, um exemplo simples no qual todos os slides da apresentação de origem são inseridos no início da apresentação atual e os slides inseridos mantêm a formatação do arquivo de origem. Observe que `chosenFileBase64` é uma variável global que contém uma versão codificada com base64 de um arquivo PowerPoint apresentação.
+Seu complemento insere slides de outra apresentação PowerPoint na apresentação atual com o método [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)). A seguir, um exemplo simples no qual todos os slides da apresentação de origem são inseridos no início da apresentação atual e os slides inseridos mantêm a formatação do arquivo de origem. Observe que `chosenFileBase64` é uma variável global que contém uma versão codificada com base64 de um arquivo PowerPoint apresentação.
 
 ```javascript
 async function insertAllSlides() {

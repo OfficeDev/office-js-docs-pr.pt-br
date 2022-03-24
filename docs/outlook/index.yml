@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentação de suplementos do Outlook
-summary: Com os Outlook, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executado no Outlook em várias plataformas, incluindo na Web, Windows, Mac e iOS. Saiba como criar, testar, depurar e publicar suplementos do Outlook.
+summary: Com os Outlook, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que pode ser executado no Outlook em várias plataformas, incluindo na Web, Windows, Mac e iOS. Saiba como criar, testar, depurar e publicar suplementos do Outlook.
 metadata:
   title: Documentação de suplementos do Outlook
   description: Recursos para saber mais sobre suplementos do Outlook.
@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   ms.localizationpriority: high
-  ms.openlocfilehash: 00b0db41c60a8eaf23d9cee39126df2413ee9c68
-  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+  ms.openlocfilehash: ac60bd35b7140dbdd2d2ca46196e5fd90318efa8
+  ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "59151849"
+  ms.lasthandoff: 03/23/2022
+  ms.locfileid: "63745057"
 landingContent:
 - title: Sobre Outlook de complementos
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
     links:
     - text: Usar a OUTLOOK JavaScript para interagir com objetos
       url: apis.md
-    - text: Testar e depurar um Outlook de dados
+    - text: Testar e depurar um Outlook de um add-in
       url: ../testing/test-debug-office-add-ins.md
     - text: Implantar e publicar um Outlook de usuário
       url: ../publish/publish.md

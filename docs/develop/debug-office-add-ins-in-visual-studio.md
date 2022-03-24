@@ -1,18 +1,18 @@
 ---
 title: Depurar suplementos do Office no Visual Studio
-description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
+description: Use Visual Studio para depurar Office Depuração de Office cliente da área de trabalho no Windows.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f8b48666955db413e3bdaa6c329326f80bdb07
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340257"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743526"
 ---
-# <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
+# <a name="debug-office-add-ins-in-visual-studio"></a>Depurar Suplementos do Office no Visual Studio
 
-Este artigo descreve como depurar o código do lado do cliente em Office de complementos criados com um dos modelos de projeto do Office Add-in no Visual Studio 2022.  Para obter informações sobre a depuração de código do lado do servidor em Office de Office, consulte [Overview of debugging Office Add-ins - Server-side or client-side?](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+Este artigo descreve como depurar o código do lado do cliente em Office de complementos criados com um dos modelos de projeto do Office Add-in no Visual Studio 2022.  Para obter informações sobre a depuração de código do lado do servidor em Office de Office, consulte [Overview of debugging Office Add-ins - Server-side ou client-side?](../testing/debug-add-ins-overview.md#server-side-or-client-side).
 
 > [!NOTE]
 > Você não pode usar o Visual Studio para depurar os Office no Mac. Para obter informações sobre a depuração em um Mac, consulte [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).

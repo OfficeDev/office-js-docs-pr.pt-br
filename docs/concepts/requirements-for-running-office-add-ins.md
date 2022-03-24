@@ -1,17 +1,22 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa executar Office Desajustes.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 6e1bd7eb5f2949d6b0c70654c3aa3a276a3ee83c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742829"
 ---
-
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
 Este artigo descreve os requisitos de software e de dispositivo para execução de Suplementos do Office.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Para uma exibição de alto nível de onde os Office atualmente são suportados, consulte Office disponibilidade de aplicativo cliente e plataforma para Office [Desempate](../overview/office-add-in-availability.md).
+Para uma exibição de alto nível de onde Office os Office atualmente são suportados, consulte Office disponibilidade de aplicativo cliente e plataforma para Office [Desempate](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Requisitos de servidor
 
@@ -24,9 +29,9 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para os complementos de conteúdo e do painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo de [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) manifesto XML do complemento ou você precisa implantar o complemento usando Aplicativos [Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+Para os complementos de conteúdo e do painel de tarefas, nos aplicativos cliente do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um catálogo de aplicativos no SharePoint para carregar o arquivo [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) de manifesto XML do complemento ou você precisa implantar o complemento usando Aplicativos [Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
-Para testar e executar um Outlook de Outlook, a conta de email Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível por meio do Microsoft 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
+Para testar e executar um Outlook de Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível por meio de Microsoft 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 
 > [!NOTE]
 > Contas de email POP e IMAP no Outlook não são compatíveis com Suplementos do Office.
@@ -39,7 +44,7 @@ O software a seguir é necessário para o desenvolvimento de um Office Add-in pa
   - A versão de 32 ou de 64 bits do Office 2013 ou uma versão posterior, em execução no Windows 7 ou em uma versão posterior.
   - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013 ou uma versão posterior do cliente do Office, se você estiver testando ou executando um Suplemento do Office especificamente para um desses clientes de área de trabalho do Office. É possível instalar clientes de área de trabalho do Office localmente ou por meio do recurso Clique para Executar no computador cliente.
 
-  Se você tiver uma assinatura Microsoft 365 e não tiver acesso ao cliente Office, poderá baixar e instalar a versão mais [recente do Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
+  Se você tiver uma assinatura Microsoft 365 e não tiver acesso ao cliente Office, poderá baixar e instalar a versão mais recente [do Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md) para obter mais detalhes.
 
@@ -63,22 +68,23 @@ Estas são as versões mínimas do cliente do Office para Mac que suporta suplem
 
 Qualquer navegador, exceto o Internet Explorer, que oferece suporte a ECMAScript 5.1, HTML5 e CSS3, como Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
-
-## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphones e tablets sem Windows
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphone e tablet Windows não compatíveis
 
 Especificamente para Outlook em execução em smartphones e dispositivos tablet não Windows, o software a seguir é necessário para testar e executar Outlook de Outlook de usuário.
 
 | Aplicativo do Office | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para Android; navegador não aplicável|
-|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Aplicativo nativo para iOS; navegador não aplicável|
-|Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|No Microsoft 365, Exchange Online ou local no Exchange Server 2013 ou posterior|Safari|
+|Outlook no Android|- Tablets Android<br>- Smartphones Android|- KitKat do Android 4.4 ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Navegador não aplicável. Use o aplicativo nativo para Android. <sup>1</sup>|
+|Outlook no iOS|- iPad tablets<br>- iPhone smartphones|- iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps para Pequenos e Médios negócios ou Exchange Online|Navegador não aplicável. Use o aplicativo nativo para iOS. <sup>1</sup>|
+|Outlook na Web (moderno)<sup>2</sup>|- iPad 2 ou posterior<br>- Tablets Android |- iOS 5 ou posterior<br>- KitKat do Android 4.4 ou posterior|No Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook na Web (clássico)|- iPhone 4 ou posterior<br>- iPad 2 ou posterior<br>- iPod Touch 4 ou posterior|- iOS 5 ou posterior|No local Exchange Server 2013 ou posterior|- Safari|
 
-> [!IMPORTANT]
-> Os seguintes não são mais necessários ou disponíveis para testes Outlook de complementos.
+> [!NOTE]
+> <sup>1</sup> OWA para Android, OWA para iPad e OWA para iPhone aplicativos nativos foram [preterido](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 >
-> - Navegadores da Web no Android.
-> - Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone - eles foram [preterido](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+> <sup>2</sup> Os Outlook na Web em iPhone e smartphones Android não são mais necessários ou disponíveis para testar Outlook de complementos.
+
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="see-also"></a>Confira também
 

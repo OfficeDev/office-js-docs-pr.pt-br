@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ce900104d301fed1038fa1ede78fe661f7257e0f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745603"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-111"></a>Novidades na EXCEL JavaScript 1.11
 
 O ExcelApi 1.11 aprimorou o suporte para comentários e controles no nível da planilha (como salvar e fechar a planilha). Ele também adicionou acesso às configurações de cultura para ajudar a contabilizar a localização.
@@ -15,13 +20,13 @@ O ExcelApi 1.11 aprimorou o suporte para comentários e controles no nível da p
 | [Menções de comentário](../../excel/excel-add-ins-comments.md#mentions) |Marca e notifica outros usuários da área de trabalho por meio de comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
 | Resolução de [comentários](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | Resolver threads de comentário e obter o status da resolução. | [Comentário](/javascript/api/excel/excel.comment) |
 | [Configurações de cultura](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | Obtém configurações do sistema cultural para a caixa de trabalho, como formatação de número. | [CultureInfo](/javascript/api/excel/excel.cultureinfo), [Aplicativo NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [](/javascript/api/excel/excel.application) |
-| [Cortar e colar (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Replica a funcionalidade de recortar e colar no Excel para um Range. | [Range](/javascript/api/excel/excel.range) |
+| [Cortar e colar (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Replica a funcionalidade de recorte e colar no Excel para um Range. | [Range](/javascript/api/excel/excel.range) |
 | [Salvar](../../excel/excel-add-ins-workbooks.md#save-the-workbook) e [Fechar](../../excel/excel-add-ins-workbooks.md#close-the-workbook) a pasta de trabalho | Salve e feche a pasta de trabalho. | [Workbook](/javascript/api/excel/excel.workbook) |
 | Eventos de planilha | Eventos adicionais e informações de evento para cálculos de planilha e linhas ocultas. | [WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs), [WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs) |
 
 ## <a name="api-list"></a>Lista de API
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Excel 1.11. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.11 ou anterior, consulte Excel APIs no conjunto de requisitos [1.11 ou anterior](/javascript/api/excel?view=excel-js-1.11&preserve-view=true).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Excel 1.11. Para exibir a documentação de referência da API para todas as APIs suportadas pelo Excel conjunto de requisitos da API JavaScript 1.11 ou anterior, consulte Excel APIs no conjunto de requisitos [1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true) ou anterior.
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -29,7 +34,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript Exce
 ||[decimalSeparator](/javascript/api/excel/excel.application#excel-excel-application-decimalseparator-member)|Obtém a cadeia de caracteres usada como separador decimal para valores numéricos.|
 ||[thousandsSeparator](/javascript/api/excel/excel.application#excel-excel-application-thousandsseparator-member)|Obtém a cadeia de caracteres usada para separar grupos de dígitos à esquerda do decimal para valores numéricos.|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#excel-excel-application-usesystemseparators-member)|Especifica se os separadores do sistema de Excel estão habilitados.|
-|[Comentário](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#excel-excel-comment-mentions-member)|Obtém as entidades (por exemplo, pessoas) mencionadas nos comentários.|
+|[Comment](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#excel-excel-comment-mentions-member)|Obtém as entidades (por exemplo, pessoas) mencionadas nos comentários.|
 ||[resolvido](/javascript/api/excel/excel.comment#excel-excel-comment-resolved-member)|O status do thread de comentário.|
 ||[richContent](/javascript/api/excel/excel.comment#excel-excel-comment-richcontent-member)|Obtém o conteúdo rich comment (por exemplo, menções nos comentários).|
 ||[updateMentions(contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.comment#excel-excel-comment-updatementions-member(1))|Atualiza o conteúdo do comentário com uma cadeia de caracteres especialmente formatada e uma lista de menções.|

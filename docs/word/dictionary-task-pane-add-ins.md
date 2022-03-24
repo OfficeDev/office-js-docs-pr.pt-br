@@ -1,11 +1,15 @@
 ---
 title: Criar um suplemento de painel de tarefas de dicionário
-description: Saiba como criar um complemento do painel de tarefas do dicionário
+description: Saiba como criar um complemento do painel de tarefas do dicionário.
 ms.date: 09/26/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8eebf7f42073bd144ab3b3010c67c9ece1e8bd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746720"
 ---
-
-
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
 
@@ -522,7 +526,7 @@ a:hover, a:active
 
 O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
 
-Os principais membros da API Office JavaScript (Office.js) que são chamados a partir dessa implementação são:
+Os membros principais da API Office JavaScript (Office.js) que são chamados a partir dessa implementação são:
 
 
 - O [evento initialize](/javascript/api/office) `Office` do objeto, que é gerado quando o contexto do add-in é inicializado, e fornece acesso a uma instância de objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o complemento está interagindo.

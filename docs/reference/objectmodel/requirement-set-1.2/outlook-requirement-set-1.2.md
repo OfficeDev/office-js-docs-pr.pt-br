@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.2
-description: Recursos e APIs que foram introduzidos para os Outlook e as APIs JavaScript Office como parte da API de Caixa de Correio 1.2.
+description: Recursos e APIs que foram introduzidos para Outlook e as APIs javaScript Office como parte da API de Caixa de Correio 1.2.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 75acb3ae5122c4edb8d0661b3cb08a5cc4d4d15a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 14f94bf8b1a1b3560e46f5d4d75955606af8cab7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151753"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743673"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.2
 
@@ -19,7 +19,7 @@ O Outlook de API de Office da API JavaScript do Office inclui objetos, métodos,
 
 ## <a name="whats-new-in-12"></a>Novidades na versão 1.2?
 
-O conjunto de requisitos 1.2 inclui todos os recursos do conjunto de requisitos [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md). Ele adicionou a capacidade de os suplementos inserirem texto no cursor do usuário, no assunto ou no corpo da mensagem.
+O conjunto de requisitos 1.2 inclui todos os recursos do conjunto [de requisitos 1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md). Ele adicionou a capacidade de os suplementos inserirem texto no cursor do usuário, no assunto ou no corpo da mensagem.
 
 ### <a name="change-log"></a>Log de alterações
 

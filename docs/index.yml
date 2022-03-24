@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Documentação de Suplementos do Office
-summary: 'Use Office plataforma de Office para criar soluções que estendem os aplicativos Office e interagem com o conteúdo em documentos Office e em mensagens de email e itens de calendário Outlook de email. Com os Office, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executados em Office na Web, Windows, Mac e celular.'
+summary: 'Use Outlook Office plataforma de Office para criar soluções que estendem Office aplicativos e interagem com conteúdo em documentos Office e em mensagens de email e itens de calendário. Com os Office, você pode usar tecnologias web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executados em Office na Web, Windows, Mac e celular.'
 brand: office
 metadata:
   title: Documentação de Suplementos do Office
@@ -17,7 +17,7 @@ highlightedContent:
       title: Visão geral da plataforma de Suplementos do Office
       url: overview/office-add-ins.md
     - itemType: quickstart
-      title: Configurar um Excel em 5 minutos
+      title: Configurar um Excel de Excel em 5 minutos
       url: quickstarts/excel-quickstart-jquery.md
     - itemType: learn
       title: 'Microsoft Learn: Introdução Office personalização do cliente com os complementos'
@@ -26,10 +26,10 @@ highlightedContent:
       title: 'Microsoft Learn: Estender Office clientes com Office Desempois'
       url: /learn/paths/m365-office-add-in-associate
     - itemType: sample
-      title: Exemplos de Office de Office de dados
+      title: Exemplos de Office de complementos
       url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
-      title: Office Guia de Iniciantes de Complementos
+      title: Office guia do Iniciante de Complementos
       url: overview/learning-path-beginner.md
     - itemType: reference
       title: Documentação de Referência da API JavaScript do Office
@@ -109,7 +109,7 @@ conceptualContent:
           text: Fazer perguntas sobre Office.js no Microsoft Q&A
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
-          text: Fazer perguntas sobre Office.js sobre Stack Overflow
+          text: Fazer perguntas sobre Office.js sobre Estouro de Pilha
         - url: 'https://github.com/OfficeDev/office-js/issues'
           itemType: reference
           text: Relatar um bug ou problema

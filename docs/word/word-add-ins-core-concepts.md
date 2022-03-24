@@ -1,34 +1,34 @@
 ---
 title: Modelo de objeto de JavaScript do Word em Suplementos do Office
 description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
-ms.date: 10/14/2020
+ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5ecd2a02dc81f4a329d625e05b777b9eaaa2688a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c0e601c75bdf4f163118de93d0c06d4668594c4b
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148911"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710934"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 
-Este artigo descreve conceitos fundamentais para o uso da [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos. Ele introduz os principais conceitos fundamentais para o sua da API.
+Este artigo descreve os conceitos fundamentais para usar a [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos.
 
 > [!IMPORTANT]
 > Confira [Usar o modelo da API específica do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre a natureza assíncrona das APIs do Word e como elas funcionam com o documento.
 
 ## <a name="officejs-apis-for-word"></a>APIs Office.js para Word
 
-Um suplemento do Word interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
+Um suplemento do Word interage com objetos no Word usando a API JavaScript do Office. Isso inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Word**: a [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar documentos, intervalos, tabelas, listas, formatação e mais.
+* **API JavaScript do Word**: a [API JavaScript do Word](/javascript/api/word) fornece objetos fortemente tipados que você pode usar para acessar documentos, intervalos, tabelas, listas, formatação e mais.
 
-* **As APIs Comuns**: a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
+* **APIs comuns**: a [API Comum](/javascript/api/office) dá acesso a recursos como interface do usuário, caixas de diálogo e configurações de cliente que são comuns em vários aplicativos do Office.
 
 Embora você provavelmente use a API JavaScript do Word para desenvolver a maioria das funcionalidades em suplementos destinados ao Word, você também usará objetos na API Comum. Por exemplo:
 
-* [Contexto](/javascript/api/office/office.context): o objeto `Context` representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
-* [Documento](/javascript/api/office/office.document): o `Document` objeto fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Word em que o suplemento está sendo executado.
+* [Office.Context](/javascript/api/office/office.context): o objeto `Context` representa o ambiente de tempo de execução do suplemento e fornece acesso aos principais objetos da API. Ele consiste em detalhes de configuração do documento, como `contentLanguage` e `officeTheme`, e também fornece informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se um conjunto de requisitos especificado é compatível com o aplicativo Word em que o suplemento está sendo executado.
+* [Office.Document](/javascript/api/office/office.document): o objeto `Office.Document` fornece o método `getFileAsync()`, que você pode usar para fazer download do arquivo do Word onde o suplemento está sendo executado. Isso é separado do objeto [Word.Document](/javascript/api/word/word.document).
 
 ![Diferenças entre a API JS do Word e as APIs comuns.](../images/word-js-api-common-api.png)
 

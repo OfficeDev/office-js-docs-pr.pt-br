@@ -3,8 +3,13 @@ title: Comparar Outlook suporte a um Outlook no Mac
 description: Saiba como o suporte ao Outlook no Mac se compara a outros Outlook clientes.
 ms.date: 12/13/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 55e647e5932cbbf1d51fe3158d76a664e54a9516
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744782"
 ---
-
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar Outlook suporte a um Outlook no Mac com outros Outlook clientes
 
 Você pode criar e executar um Outlook do mesmo modo no Outlook no Mac, como nos outros clientes, incluindo Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada cliente. As mesmas chamadas do add-in para a API JavaScript Office geralmente funcionam da mesma maneira, exceto para as áreas descritas na tabela a seguir.

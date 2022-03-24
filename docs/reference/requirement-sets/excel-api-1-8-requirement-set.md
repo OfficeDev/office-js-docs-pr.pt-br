@@ -1,11 +1,16 @@
 ---
-title: Excel conjunto de requisitos da API JavaScript 1.8
+title: Excel de requisitos da API JavaScript 1.8
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 39f3a5daf89849d3f8517794ab8cd4214309a667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746854"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-18"></a>Novidades na API JavaScript 1.8 Excel JavaScript
 
 O conjunto de requisitos 1.8 da API JavaScript do Excel inclui APIs para tabelas dinâmicas, validação de dados, gráficos, eventos de gráficos, opções de desempenho e criação de pasta de trabalho.

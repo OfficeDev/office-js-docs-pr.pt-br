@@ -1,11 +1,16 @@
 ---
-title: Excel de requisitos da API JavaScript 1.9
+title: Excel conjunto de requisitos da API JavaScript 1.9
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1.9.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f34b109f95f013cf27f0abfca9c2a8c6b1e4e7c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746697"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-19"></a>Novidades na API JavaScript 1.9 Excel JavaScript
 
 Mais de 500 novas APIs do Excel foram introduzidas com o conjunto de requisitos 1.9. A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fornece uma lista detalhada.

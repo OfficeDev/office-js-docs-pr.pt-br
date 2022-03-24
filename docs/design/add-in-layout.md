@@ -3,18 +3,18 @@ title: Diretrizes de layout para Suplementos do Office
 description: Obter diretrizes sobre como layout de um painel de tarefas ou caixa de diálogo em um Office Add-in.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e309a274835f429d3c9fd5f71de497161474ad45
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3e9f64a4568015b4149eee537da2d80b0218ac2e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148948"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742971"
 ---
 # <a name="layout"></a>Layout
 
 Cada contêiner HTML inserido no Office terá um layout. Esses layouts são das telas principais do suplemento. Nelas, você criará experiências que permitem que os clientes iniciem ações, modifiquem configurações, exibam, rolem ou naveguem pelo conteúdo. Projeta o suplemento com layouts consistentes nas telas para garantir a continuidade da experiência. Se você tiver um site existente com o qual ps clientes estão familiarizados, considere a reutilização de layouts de páginas da Web existentes. Adapte-as para se ajustar de forma harmoniosa em contêineres HTML do Office.
 
-Para obter diretrizes de layout, confira [Painel de tarefas](task-pane-add-ins.md), [Conteúdo](content-add-ins.md) e [Caixa de diálogo](dialog-boxes.md). Para obter mais informações sobre como montar Fluent interface do usuário React [,](using-office-ui-fabric-react.md)ou [Office UI Fabric JS](fabric-core.md), [componentes](ux-design-pattern-templates.md)em layouts comuns e fluxos de experiência do usuário, consulte modelos de padrões de design deux .
+Para obter diretrizes de layout, confira [Painel de tarefas](task-pane-add-ins.md), [Conteúdo](content-add-ins.md) e [Caixa de diálogo](dialog-boxes.md). Para obter mais informações sobre [como](using-office-ui-fabric-react.md) montar Fluent interface do usuário React, ou [Office UI Fabric JS](fabric-core.md), componentes em layouts comuns e fluxos de experiência do usuário, consulte modelos de padrões de [design deux](ux-design-pattern-templates.md).
 
 Aplique as seguintes diretrizes gerais para layouts.
 

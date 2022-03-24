@@ -1,10 +1,15 @@
 ---
 title: Adicionar suporte móvel a um suplemento do Outlook
-description: 'A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.'
+description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 07/16/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: ae8fbc6635e568cc6a9e8888ed52f0877f817320
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745970"
 ---
-
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
 O uso de comandos de Outlook Mobile permite que os usuários acessem a mesma funcionalidade (com algumas limitações[) que](#code-considerations) eles já têm no Outlook na Web, Windows e Mac. A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
@@ -67,7 +72,7 @@ Criar um suplemento para o Mobile traz algumas considerações adicionais.
 
 O método [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportado no Outlook Mobile. Os suplementos devem preferir obter as informações da API Office.js sempre que possível. Se os suplementos exigem informações que não são expostas pela API Office.js devem usar as [APIs REST do Outlook](/outlook/rest/) para acessar as caixas de correio do usuário.
 
-O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão do [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova propriedade [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) que pode ser usada para encontrar o ponto de extremidade da API REST para o usuário.
+O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão de [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova [propriedade Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) que pode ser usada para encontrar o ponto de extremidade da API REST para o usuário.
 
 ### <a name="pinch-zoom"></a>Pinçar e zoom
 
@@ -83,7 +88,7 @@ Atualmente, os complementos no Outlook Mobile só suportam a ativação ao ler m
 
 ### <a name="unsupported-apis"></a>APIs sem suporte
 
-As APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suportadas pelo Outlook Mobile. As APIs a seguir de conjuntos de requisitos anteriores também não são suportadas.
+AS APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suportadas pelo Outlook Mobile. As APIs a seguir de conjuntos de requisitos anteriores também não são suportadas.
 
 - [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)

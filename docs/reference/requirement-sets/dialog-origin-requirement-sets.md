@@ -1,23 +1,23 @@
 ---
 title: Conjuntos de requisitos de origem da caixa de diálogo
 description: Saiba mais sobre os conjuntos de requisitos de Origem da Caixa de Diálogo.
-ms.date: 07/22/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: db97b19c0a23fa7dbd1b93e03ccd7a7b76317d7a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 47713f2c7c6a9516d04eed608c69b55899c859c8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151962"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746072"
 ---
 # <a name="dialog-origin-requirement-sets"></a>Conjuntos de requisitos de origem da caixa de diálogo
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos de Origem da Caixa de Diálogo, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version do aplicativo Office.
+Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos de Origem da Caixa de Diálogo, os aplicativos cliente Office que suportam esse conjunto de requisitos e os números de com build ou version para o aplicativo Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(assinatura) |  Office no iPad<br>(assinatura)  |  Office no Mac<br>(assinatura)  | Office na Web  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(assinatura) |  Office no iPad<br>(assinatura)  |  Office no Mac<br>(ambas as assinaturas<br> e compra única Office no Mac 2019 e posterior)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogOrigin 1.1  | Compilar<br>15.0.5371.1000<br>ou posterior | Compilar<br>16.0.5200.1000<br>ou posterior | Compilar<br>A definir<br>ou posterior | A definir | 2,52 ou posterior | 16,52 ou posterior | Julho de 2021 | Versão 2108<br>(Build 10377.1000)<br>ou posterior |
 

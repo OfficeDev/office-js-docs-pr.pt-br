@@ -4,8 +4,13 @@ description: Detalhes sobre o conjunto de requisitos do WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: d9e0d450b601845d4e11e0fd74652c4e167f802c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746029"
 ---
-
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
 O WordApi 1.3 adicionou mais suporte para controles de conteúdo e configurações no nível do documento.
@@ -19,7 +24,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do W
 |[Aplicativo](/javascript/api/word/word.application)|[createDocument(base64File?: string)](/javascript/api/word/word.application#word-word-application-createdocument-member(1))|Cria um novo documento usando um arquivo .docx base64 opcional.|
 |[Body](/javascript/api/word/word.body)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.body#word-word-body-getrange-member(1))|Obtém o corpo todo, ou então, os pontos inicial ou final do corpo, como um intervalo.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.body#word-word-body-inserttable-member(1))|Insere uma tabela com a quantidade especificada de linhas e colunas.|
-||[lists](/javascript/api/word/word.body#word-word-body-lists-member)|Obtém a coleção de listas de objetos no corpo.|
+||[listas](/javascript/api/word/word.body#word-word-body-lists-member)|Obtém a coleção de listas de objetos no corpo.|
 ||[parentBody](/javascript/api/word/word.body#word-word-body-parentbody-member)|Obtém o corpo pai do corpo.|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#word-word-body-parentbodyornullobject-member)|Obtém o corpo pai do corpo.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#word-word-body-parentcontentcontrolornullobject-member)|Obtém o controle de conteúdo que inclui o corpo.|
@@ -31,7 +36,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do W
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-getrange-member(1))|Obtém o controle de todo o conteúdo, ou então, os pontos inicial ou final do controle de conteúdo, como um intervalo.|
 ||[getTextRanges(endingMarks: string[], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-gettextranges-member(1))|Obtém os intervalos de texto no controle de conteúdo usando marcas de pontuação e/ou outras marcas finais.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserttable-member(1))|Insere uma tabela com a quantidade especificada de linhas e colunas dentro ou próxima do controle de conteúdo.|
-||[lists](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|Obtém a coleção de listas de objetos no controle de conteúdo.|
+||[listas](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|Obtém a coleção de listas de objetos no controle de conteúdo.|
 ||[parentBody](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentbody-member)|Obtém o corpo pai do controle de conteúdo.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentcontentcontrolornullobject-member)|Obtém o controle de conteúdo que inclui o controle de conteúdo.|
 ||[parentTable](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parenttable-member)|Obtém a tabela que contém o controle de conteúdo.|
@@ -158,7 +163,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do W
 ||[intersectWith(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwith-member(1))|Retorna um novo intervalo como ponto de interseção deste intervalo com outro intervalo.|
 ||[intersectWithOrNullObject(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwithornullobject-member(1))|Retorna um novo intervalo como ponto de interseção deste intervalo com outro intervalo.|
 ||[isEmpty](/javascript/api/word/word.range#word-word-range-isempty-member)|Verifica se o comprimento do intervalo é zero.|
-||[lists](/javascript/api/word/word.range#word-word-range-lists-member)|Obtém a coleção de listas de objetos no intervalo.|
+||[listas](/javascript/api/word/word.range#word-word-range-lists-member)|Obtém a coleção de listas de objetos no intervalo.|
 ||[parentBody](/javascript/api/word/word.range#word-word-range-parentbody-member)|Obtém o corpo pai do intervalo.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#word-word-range-parentcontentcontrolornullobject-member)|Obtém o controle de conteúdo que inclui o intervalo.|
 ||[parentTable](/javascript/api/word/word.range#word-word-range-parenttable-member)|Obtém a tabela que contém o intervalo.|

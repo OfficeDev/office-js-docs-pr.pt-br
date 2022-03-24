@@ -3,12 +3,12 @@ title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3cd43cbdc58a7b43cf4712e198198a808dcf93a
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2bd29b4df28ae3d4831da625580097f1970a532d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681115"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743404"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -19,12 +19,12 @@ A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](/openspecs
 Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem. Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`. Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.
 
 > [!NOTE]
-> O validador dentro do [office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) usa a mesma mensagem de erro quando um elemento está fora de ordem quando um elemento está sob o pai errado. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
+> O [validador dentro do office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) usa a mesma mensagem de erro quando um elemento está fora de ordem quando um elemento está sob o pai errado. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
 
-As seções a seguir mostram os elementos de manifesto na ordem em que devem aparecer. Há diferenças dependendo se o `type` atributo do elemento é , ou `<OfficeApp>` `TaskPaneApp` `ContentApp` `MailApp` . Para impedir que essas seções se torne muito desinteressada, o elemento altamente complexo é dividido `<VersionOverrides>` em seções separadas.
+As seções a seguir mostram os elementos de manifesto na ordem em que devem aparecer. Há diferenças dependendo se o `type` atributo do elemento `<OfficeApp>` é `TaskPaneApp`, `ContentApp`ou `MailApp`. Para impedir que essas seções se torne muito desinteressada, `<VersionOverrides>` o elemento altamente complexo é dividido em seções separadas.
 
 > [!Note]
-> Nem todos os elementos mostrados são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema,](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)o elemento será opcional.
+> Nem todos os elementos mostrados são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3), o elemento será opcional.
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>Ordenação básica do elemento de complemento do painel de tarefas
 
@@ -149,7 +149,7 @@ As seções a seguir mostram os elementos de manifesto na ordem em que devem apa
     <VersionOverrides>*
 ```
 
-\*Consulte Ordenação de elemento de complemento de conteúdo [em VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) para a ordenação de elementos filhos de VersionOverrides.
+\*Consulte [Ordenação de elemento de complemento de conteúdo em VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) para a ordenação de elementos filhos de VersionOverrides.
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>Ordenação de elemento de add-in do painel de tarefas em VersionOverrides
 
@@ -388,7 +388,7 @@ As seções a seguir mostram os elementos de manifesto na ordem em que devem apa
     <VersionOverrides>*
 ```
 
-\* Um VersionOverrides com valor , em vez de , pode ser `type` `VersionOverridesV1_1` aninhado no final do `VersionOverridesV1_0` VersionOverrides externo. Consulte Ordenação de elemento de complemento de email [em VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) para a ordenação de elementos em `VersionOverridesV1_1` .
+\* Um VersionOverrides com `type` valor `VersionOverridesV1_1`, em vez de `VersionOverridesV1_0`, pode ser aninhado no final do VersionOverrides externo. Consulte [Ordenação de elemento de complemento de email em VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) para a ordenação de elementos em `VersionOverridesV1_1`.
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Ordenação de elemento de complemento de email em VersionOverrides Ver. 1.1
 

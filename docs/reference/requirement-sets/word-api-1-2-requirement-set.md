@@ -1,11 +1,16 @@
 ---
 title: Conjunto de requisitos da API JavaScript do Word 1.2
-description: Detalhes sobre o conjunto de requisitos do WordApi 1.2
+description: Detalhes sobre o conjunto de requisitos do WordApi 1.2.
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: 1a5af83615786b241c43ecb07ee0d23b3758cfc8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744221"
 ---
-
 # <a name="whats-new-in-word-javascript-api-12"></a>Quais são as novidades na API JavaScript do Word 1.2
 
 O WordApi 1.2 adicionou suporte para imagens em linha.

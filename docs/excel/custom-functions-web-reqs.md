@@ -1,14 +1,14 @@
 ---
 ms.date: 07/08/2021
-description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
+description: Solicitar, transmitir e cancelar a transmissão de dados externos para sua agenda de trabalho com funções personalizadas em Excel.
 title: Receber e tratar dados com funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aee26cb3c22d43a11ee2b0f500d04f9c7e596e8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 641c6da717ede364d59591838849cd47d887f63c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151695"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744656"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -27,7 +27,7 @@ Se uma função personalizada recupera dados de uma fonte externa como na web, e
 
 ### <a name="fetch-example"></a>Exemplo de busca
 
-No exemplo de código a seguir, a função alcança a hipotética API Contoso "Número de Pessoas no Espaço", que rastreia o número de pessoas atualmente na Estação Espacial `webRequest` Internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
+No exemplo de código a seguir, `webRequest` a função alcança a hipotética API Contoso "Número de Pessoas no Espaço", que rastreia o número de pessoas atualmente na Estação Espacial Internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
 
 Ao desenvolver suas próprias funções, talvez você queira executar uma ação caso a solicitação da Web não tenha sido concluída de maneira oportuna ou considere [o envio de várias solicitações](custom-functions-batching.md)da API.
 
@@ -56,7 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
-No exemplo de código a seguir, a função chama a API Github para descobrir a quantidade de estrelas fornecidas ao repositório de um usuário `getStarCount` específico. Essa é uma função assíncrona que retorna uma promessa de JavaScript. Quando os dados forem obtidos da chamada da Web, a promessa será resolvida, que retornará os dados para a célula.
+No exemplo de código a seguir, `getStarCount` a função chama a API Github para descobrir a quantidade de estrelas fornecidas ao repositório de um usuário específico. Essa é uma função assíncrona que retorna uma promessa de JavaScript. Quando os dados forem obtidos da chamada da Web, a promessa será resolvida, que retornará os dados para a célula.
 
 ```TS
 /**
@@ -145,9 +145,9 @@ Observe que há também uma categoria de funções chamada de funções cancelá
 
 ### <a name="use-an-invocation-parameter"></a>Usar um parâmetro de invocação
 
-O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O parâmetro fornece contexto sobre a célula (como seu endereço e conteúdo) e permite que `invocation` você use `setResult` e `onCanceled` métodos. Esses métodos definem o que uma função faz quando a função transmite (`setResult`) ou é cancelada (`onCanceled`).
+O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O `invocation` parâmetro fornece contexto sobre a célula (como seu endereço e conteúdo) e permite que você use `setResult` e `onCanceled` métodos. Esses métodos definem o que uma função faz quando a função transmite (`setResult`) ou é cancelada (`onCanceled`).
 
-Se você estiver usando TypeScript, o manipulador de invocação precisará ser do tipo [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) ou [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) .
+Se você estiver usando TypeScript, o manipulador de invocação precisará ser do tipo [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) ou [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
 
 ## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
 

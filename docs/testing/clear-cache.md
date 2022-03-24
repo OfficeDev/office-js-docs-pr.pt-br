@@ -1,14 +1,14 @@
 ---
 title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
-ms.date: 01/27/2022
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2c2b22ececbf293578c9467269c4ad6779eb9aea
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 04a329e9e7289f90b02b9307c67eef2818191221
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263090"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711228"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -21,11 +21,11 @@ Além disso, se você fizer alterações no manifesto do seu suplemento (por exe
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
-Há três maneiras de limpar o cache do Office em um computador Windows: automaticamente, manualmente e usando as ferramentas de desenvolvedor do Microsoft Edge. Os métodos são descritos nas subseções a seguir.
+Existem três maneiras de limpar o cache do Office em um computador Windows: automaticamente, manualmente e usando as ferramentas de desenvolvedor do Microsoft Edge. Os métodos são descritos nas subseções a seguir.
 
 ### <a name="automatically"></a>Automaticamente
 
-Este método é recomendado para computadores de desenvolvimento de suplementos. Se a versão do Office no Windows for 2108 ou posterior, as etapas a seguir configurarão o cache do Office para ser limpo na próxima vez que o Office for reaberto.
+Este método é recomendado para computadores de desenvolvimento de suplementos. Se a versão do Office no Windows for 2108 ou posterior, as etapas a seguir configuram o cache do Office para ser limpo na próxima vez que o Office for reaberto.
 
 > [!NOTE]
 > O método automático não é suportado para Outlook.
