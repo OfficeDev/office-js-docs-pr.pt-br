@@ -1,14 +1,14 @@
 ---
 title: Modelo de objeto de JavaScript do Word em Suplementos do Office
-description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
+description: Saiba mais sobre os principais componentes no modelo de objeto JavaScript específico do Word.
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c0e601c75bdf4f163118de93d0c06d4668594c4b
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710934"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746100"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 

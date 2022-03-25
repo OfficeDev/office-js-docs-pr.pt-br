@@ -4,12 +4,12 @@ description: Use o gerador Yeoman para construir um Suplemento Office Node.js qu
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711235"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747190"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>Início rápido logon único (SSO).
 
@@ -75,7 +75,7 @@ Nesse ponto, seu projeto de suplemento foi criado e contém o código necessári
     ```
 
     > [!WARNING]
-    > Este comando falhará se seu locatário estiver configurado para exigir autenticação de dois fatores. Nesse cenário, você precisará concluir manualmente as etapas de registro de aplicativo do Azure e configuração de SSO, conforme descrito no tutorial [Criar um suplemento do Office Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md).
+    > Este comando falhará se seu locatário estiver configurado para exigir a autenticação de dois fatores. Nesse cenário, você precisará concluir manualmente as etapas do registro e configuração de SSO do aplicativo do Azure, conforme descrito no tutorial [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md).
 
 3. Uma janela de navegador da Web será exibida e solicitará que você entre no Azure.  Entre no Azure com as suas credenciais de administrador do Microsoft 365. Essas credenciais serão usadas para registrar um novo aplicativo no Azure e definir as configurações necessárias para o SSO.
 
@@ -100,7 +100,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
     npm start
     ```
 
-2. No aplicativo cliente do Office que é aberto quando você executa o comando anterior (ou seja, Excel, Word ou PowerPoint), certifique-se de estar conectado com um usuário que seja membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você costumava se conectar ao Azure enquanto configurava o SSO na etapa 3 da [seção anterior](#configure-sso). Isso estabelece as condições apropriadas para que o SSO seja bem-sucedido.
+2. No aplicativo cliente do Office que é aberto quando você executa o comando anterior (ou seja, Excel, Word ou PowerPoint), certifique-se de estar conectado com um usuário que seja membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usava para se conectar ao Azure ao configurar o SSO na etapa 3 da [seção anterior](#configure-sso). Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido.
 
 3. No aplicativo cliente do Office, escolha a guia **Página Inicial** e, em seguida, escolha o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. A imagem a seguir mostra esse botão no Excel.
 
