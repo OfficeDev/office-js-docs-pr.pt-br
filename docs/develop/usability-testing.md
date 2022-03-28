@@ -3,12 +3,12 @@ title: Teste de usabilidade de Suplementos do Office
 description: Saiba como testar o design do seu complemento com usuários reais.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfde462bcfd2e3b6536a97dc45cba9dbf98415c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fbdb8f7474412e95aba03d2a409ac2e5bc4b25a6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744415"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483510"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
@@ -25,7 +25,7 @@ Esses serviços de teste o ajudam a simplificar a criação do plano de teste e 
 Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
 
 > [!NOTE]
-> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-appsource-via-partner-center) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](../overview/office-add-in-availability.md).
+> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-appsource-via-partner-center) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](/javascript/api/requirement-sets).
 
 ## <a name="1-sign-up-for-a-testing-service"></a>1. Inscreva-se em um serviço de teste
 

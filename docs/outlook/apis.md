@@ -3,12 +3,12 @@ title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745691"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484299"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > essas verificações não são necessárias para APIs que estão na versão do conjunto de requisitos especificada no manifesto.
 
-Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto nos elementos `<Requirements>`. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md).
+Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto nos elementos `<Requirements>`. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets).
 
 O elemento `<Methods>` não se aplica a suplementos do Outlook e, portanto, você não pode declarar suporte a métodos específicos.
 
@@ -63,7 +63,7 @@ Seu suplemento requer as permissões apropriadas para usar as APIs de que precis
 | **Restrito** | Permite o uso de entidades, mas não de expressões regulares. |
 | **Leitura de item** | Além do que é permitido em **Restrito**, ele permite:<ul><li>expressões regulares</li><li>acesso de leitura para a API do suplemento do Outlook</li><li>obter as propriedades do item e o token de retorno de chamada</li></ul> |
 | **Leitura/gravação** | Além do que é permitido em **Leitura do item**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
-| **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
+| **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
 Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Office Desadições](../concepts/privacy-and-security.md).
 
@@ -74,5 +74,5 @@ Em geral, você deve especificar a permissão mínima necessária para o seu sup
 ## <a name="see-also"></a>Confira também
 
 - [Manifestos de suplementos do Outlook](manifests.md)
-- [Noções básicas sobre conjuntos de requisitos da API do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [Noções básicas sobre conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets)
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)

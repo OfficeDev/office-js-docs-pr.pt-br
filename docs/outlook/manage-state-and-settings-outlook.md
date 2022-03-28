@@ -1,16 +1,21 @@
 ---
-title: Gerenciar estado e configurações para um Outlook de dados
-description: Saiba como persistir o estado e as configurações do Outlook de um complemento.
+title: Gerenciar estado e configurações para um Outlook de um Outlook de dados
+description: Saiba como persistir o estado e as configurações do Outlook de um Outlook.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 896c473baad95515b199d8934c81745c619374a0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484677"
 ---
-
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de dados
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar estado e configurações para um Outlook de um Outlook de dados
 
 > [!NOTE]
 > Revise o estado e as configurações [persistentes do add-in](../develop/persisting-add-in-state-and-settings.md) na seção **Conceitos principais** desta documentação antes de ler este artigo.
 
-Para Outlook de Outlook, a API JavaScript Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
+Para Outlook de Outlook, a API javaScript Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do add-in em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](/javascript/api/manifest/id) do suplemento que os criou.
 
 |**Objeto**|**Local de armazenamento**|
 |:-----|:-----|
@@ -143,7 +148,7 @@ A tabela a seguir resume o comportamento de propriedades personalizadas salvas e
 |Item enviado de resposta ou resposta a todos|null|null|null|
 |Item enviado do forward|Remove as propriedades do pai se não for salva|null|null|
 
-Para lidar com a situação Windows:
+Para lidar com a situação em Windows:
 
 1. Verifique se há propriedades existentes na inicialização do seu add-in e mantenha-os ou desmarcar-os conforme necessário.
 1. Ao definir propriedades personalizadas, inclua uma propriedade adicional para indicar se as propriedades personalizadas foram adicionadas durante a leitura da mensagem ou pelo modo de leitura do complemento. Isso ajudará você a diferenciar se a propriedade foi criada durante a composição ou herdada do pai.

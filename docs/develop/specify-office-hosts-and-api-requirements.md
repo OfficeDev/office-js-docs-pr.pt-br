@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme o esperado.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df753dfe3e5c517f49d597f9298744cf0c79f52
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e4533f1de76b8d40c5b9c938ff0e113529d73d95
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744061"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483590"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -27,7 +27,7 @@ Também há cenários em que você deseja controlar quais recursos do seu comple
 Este artigo ajuda você a entender quais opções você deve escolher para garantir que seu suplemento funcione conforme o esperado e atinja o público mais amplo possível.
 
 > [!NOTE]
-> Para uma exibição de alto nível de onde os Office de Office atualmente são suportados, consulte Office disponibilidade de aplicativos cliente e plataforma para Office de [Office Desempate](../overview/office-add-in-availability.md).
+> Para uma exibição de alto nível de onde os Office de Office atualmente são suportados, consulte Office disponibilidade de aplicativos cliente e plataforma para Office de [Office Desempate](/javascript/api/requirement-sets).
 
 > [!TIP]
 > Muitas das tarefas descritas neste artigo são realizadas para você, no todo ou em parte, quando você cria seu projeto de complemento com uma ferramenta, como o gerador [Yeoman para complementos do Office](yeoman-generator-overview.md) ou um dos modelos de complemento do Office no Visual Studio. Nesses casos, interprete a tarefa como o que significa que você deve verificar se ela foi feita.
@@ -44,7 +44,7 @@ O seu complemento deve carregar a versão mais atual da biblioteca de API JavaSc
 
 Por padrão, um complemento pode ser instalado em todos os aplicativos Office suportados pelo tipo de complemento especificado (ou seja, Email, Painel de Tarefas ou Conteúdo). Por exemplo, um complemento do painel de tarefas é instalado por padrão no Access, Excel, OneNote, PowerPoint, Project e Word. 
 
-Para garantir que o seu add-in seja instalado em um subconjunto de aplicativos Office, use os elementos [Hosts](../reference/manifest/hosts.md) e [Host](../reference/manifest/host.md) no manifesto.
+Para garantir que o seu add-in seja instalado em um subconjunto de aplicativos Office, use os elementos [Hosts](/javascript/api/manifest/hosts) e [Host](/javascript/api/manifest/host) no manifesto.
 
 Por exemplo, a seguinte declaração **hosts** e **host** especifica que o complemento pode instalar em qualquer versão do Excel, que inclui Excel na Web, Windows e iPad, mas não pode ser instalado em qualquer outro aplicativo Office.
 
@@ -67,7 +67,7 @@ O **elemento Hosts** pode conter um ou mais **elementos Host** . Deve haver um e
 | Workbook      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
 
 > [!NOTE]
-> Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Normalmente, você não pode especificar qual plataforma pode ser usada para executar o seu complemento. Por exemplo, se você especificar `Workbook`, Excel na Web e Windows pode ser usado para executar o seu complemento. No entanto, se você especificar `Mailbox`, o seu add-in não será executado Outlook clientes móveis, a menos que você defina o [ponto de extensão móvel](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface).
+> Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Normalmente, você não pode especificar qual plataforma pode ser usada para executar o seu complemento. Por exemplo, se você especificar `Workbook`, Excel na Web e Windows pode ser usado para executar o seu complemento. No entanto, se você especificar `Mailbox`, o seu add-in não será executado Outlook clientes móveis, a menos que você defina o [ponto de extensão móvel](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface).
 
 > [!NOTE]
 > Não é possível que um manifesto de complemento se aplique a mais de um tipo: Email, Painel de Tarefas ou Conteúdo. Isso significa que, se você quiser que o seu add-in seja instalado no Outlook e em um dos outros aplicativos Office, você deve criar dois complementos,  um com um manifesto de tipo Mail e outro com um painel de tarefas ou manifesto de tipo de conteúdo.
@@ -91,7 +91,7 @@ Os conjuntos de requisitos são versionados. Por exemplo, as APIs que suportam [
 O suporte ao conjunto de requisitos varia de acordo com Office aplicativo, a versão do aplicativo Office e a plataforma na qual ele está sendo executado. Por exemplo, o DialogApi 1.2 não é suportado em versões de compra única do Office antes do Office 2021, mas o DialogApi 1.1 é suportado em todas as versões de compra única de volta ao Office 2013. Você deseja que o seu add-in seja instalado em todas as combinações de plataforma e versão Office que suportam as APIs que ele usa, portanto, você sempre deve especificar no manifesto a  versão mínima de cada conjunto de requisitos que seu complemento exige. Detalhes sobre como fazer isso são posteriormente neste artigo.
 
 > [!TIP]
-> Para obter mais informações sobre o controle de versão do conjunto de requisitos, consulte [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) disponibilidade de conjuntos de requisitos e para obter as listas completas de conjuntos de requisitos e informações sobre as APIs em cada uma delas, comece com Office [conjuntos](../reference/requirement-sets/office-add-in-requirement-sets.md) de requisitos de complemento. Os tópicos de referência para a maioria Office.js APIs também especificam o conjunto de requisitos ao qual pertencem (se algum).
+> Para obter mais informações sobre o controle de versão do conjunto de requisitos, consulte [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) disponibilidade de conjuntos de requisitos e para obter as listas completas de conjuntos de requisitos e informações sobre as APIs em cada uma delas, comece com Office [conjuntos](/javascript/api/requirement-sets/office-add-in-requirement-sets) de requisitos de complemento. Os tópicos de referência para a maioria Office.js APIs também especificam o conjunto de requisitos ao qual pertencem (se algum).
 
 > [!NOTE]
 > Alguns conjuntos de requisitos também têm elementos de manifesto associados a eles. Consulte [Especificando requisitos em um elemento VersionOverrides](#specify-requirements-in-a-versionoverrides-element) para obter informações sobre quando esse fato é relevante para o design do seu complemento.
@@ -102,12 +102,12 @@ Todas as APIs nos modelos específicos do aplicativo estão em conjuntos de requ
 
 ### <a name="requirements-element"></a>Elemento Requirements
 
-Use o [elemento Requirements](../reference/manifest/requirements.md) e seus elementos filho [Conjuntos](../reference/manifest/sets.md) e Métodos para especificar os conjuntos de [requisitos mínimos](../reference/manifest/methods.md) ou membros da API que devem ser suportados pelo aplicativo Office para instalar o seu complemento. 
+Use o [elemento Requirements](/javascript/api/manifest/requirements) e seus elementos filho [Conjuntos](/javascript/api/manifest/sets) e Métodos para especificar os conjuntos de [requisitos mínimos](/javascript/api/manifest/methods) ou membros da API que devem ser suportados pelo aplicativo Office para instalar o seu complemento. 
 
 Se o aplicativo ou a plataforma Office não oferece suporte aos conjuntos de requisitos ou membros da API especificados no elemento **Requirements**, o complemento não será executado nesse aplicativo ou plataforma e não será exibido em **Meus Complementos**. .
 
 > [!NOTE]
-> O **elemento Requirements** é opcional para todos os complementos, exceto para Outlook de complementos. Quando o `xsi:type` atributo do elemento raiz `OfficeApp` `MailBox`for , deve haver um elemento **Requirements** que especifica a versão mínima do conjunto de requisitos mailbox que o complemento requer. Para obter mais informações, [consulte Outlook conjuntos de requisitos da API JavaScript](../reference/requirement-sets/outlook-api-requirement-sets.md).
+> O **elemento Requirements** é opcional para todos os complementos, exceto para Outlook de complementos. Quando o `xsi:type` atributo do elemento raiz `OfficeApp` `MailBox`for , deve haver um elemento **Requirements** que especifica a versão mínima do conjunto de requisitos mailbox que o complemento requer. Para obter mais informações, [consulte Outlook conjuntos de requisitos da API JavaScript](/javascript/api/requirement-sets/outlook-api-requirement-sets).
 
 O exemplo de código a seguir mostra como configurar um complemento que pode ser instalado em todos os aplicativos Office que suportam o seguinte:
 
@@ -134,15 +134,15 @@ Observe o seguinte sobre este exemplo.
 
 - O **elemento Requirements** contém os **elementos** filho **Conjuntos** e Métodos.
 - O **elemento Sets** pode conter um ou mais **elementos Set** . `DefaultMinVersion` especifica o valor padrão `MinVersion` de todos os elementos **Set** filho.
-- Um [elemento Set](../reference/manifest/set.md) especifica um conjunto de requisitos que o aplicativo Office deve dar suporte para tornar o add-in instaível. O `Name` atributo especifica o nome do conjunto de requisitos. Especifica `MinVersion` a versão mínima do conjunto de requisitos. `MinVersion` substitui o valor do atributo `DefaultMinVersion` nos Conjuntos **pai**.
-- O **elemento Methods** pode conter um ou mais [elementos Method](../reference/manifest/method.md) . Você não pode usar o elemento **Methods** com suplementos do Outlook.
+- Um [elemento Set](/javascript/api/manifest/set) especifica um conjunto de requisitos que o aplicativo Office deve dar suporte para tornar o add-in instaível. O `Name` atributo especifica o nome do conjunto de requisitos. Especifica `MinVersion` a versão mínima do conjunto de requisitos. `MinVersion` substitui o valor do atributo `DefaultMinVersion` nos Conjuntos **pai**.
+- O **elemento Methods** pode conter um ou mais [elementos Method](/javascript/api/manifest/method) . Você não pode usar o elemento **Methods** com suplementos do Outlook.
 - O **elemento Method** especifica um método individual que o aplicativo Office deve dar suporte para tornar o add-in instaível. O `Name` atributo é necessário e especifica o nome do método qualificado com seu objeto pai.
 
 ## <a name="design-for-alternate-experiences"></a>Design para experiências alternativas
 
 Os recursos de extensibilidade que a plataforma de Office add-in fornece podem ser divididos de forma útil em três tipos:
 
-- Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do complemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](../reference/manifest/versionoverrides.md) no manifesto. Um exemplo desse tipo de recurso é [Comandos de Complemento](../design/add-in-commands.md), que são botões de faixa de opções personalizados e menus.
+- Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do complemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](/javascript/api/manifest/versionoverrides) no manifesto. Um exemplo desse tipo de recurso é [Comandos de Complemento](../design/add-in-commands.md), que são botões de faixa de opções personalizados e menus.
 - Recursos de extensibilidade que estão disponíveis somente quando o add-in está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [Caixas de Diálogo](../design/dialog-boxes.md).
 - Recursos de extensibilidade que estão disponíveis apenas no tempo de execução, mas são implementados com uma combinação de Office.js JavaScript e configuração em **um elemento VersionOverrides** . Exemplos disso são Excel [funções personalizadas](../excel/custom-functions-overview.md), [um único login](sso-in-office-add-ins.md) e [guias contextuais personalizadas](../design/contextual-tabs.md).
 
@@ -167,7 +167,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 Sobre este código, observe:
 
-- O primeiro parâmetro é necessário. É uma cadeia de caracteres que representa o nome do conjunto de requisitos. Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
+- O primeiro parâmetro é necessário. É uma cadeia de caracteres que representa o nome do conjunto de requisitos. Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](/javascript/api/requirement-sets/office-add-in-requirement-sets).
 - O segundo parâmetro é opcional. É uma cadeia de caracteres que especifica a versão mínima do conjunto de requisitos que o aplicativo Office `if` deve suportar para que o código dentro da instrução seja executado (por exemplo, "**1.9**"). Se não for usada, a versão "1.1" será presumida.
 
 > [!WARNING]
@@ -199,7 +199,7 @@ else
 > [!NOTE] 
 > O `isSetSupported` método e os conjuntos de requisitos para esses aplicativos estão disponíveis no arquivo Office.js mais recente no CDN. Se você não usar Office.js do CDN, `isSetSupported` o seu complemento poderá gerar exceções se você estiver usando uma versão antiga da biblioteca na qual está indefinida. Para obter mais informações, [consulte Usar a biblioteca Office API JavaScript mais recente](#use-the-latest-office-javascript-api-library).
 
-Quando o seu add-in depende de um método que não faz parte de um conjunto de requisitos, use a verificação de tempo de execução para determinar se o método é suportado pelo aplicativo Office, conforme mostrado no exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
+Quando o seu add-in depende de um método que não faz parte de um conjunto de requisitos, use a verificação de tempo de execução para determinar se o método é suportado pelo aplicativo Office, conforme mostrado no exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > Recomendamos limitar o uso desse tipo de verificação no tempo de execução no código de seu suplemento.
@@ -215,9 +215,9 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### <a name="specify-requirements-in-a-versionoverrides-element"></a>Especificar requisitos em um elemento VersionOverrides
 
-O elemento [VersionOverrides](../reference/manifest/versionoverrides.md) foi adicionado ao esquema de manifesto principalmente, mas não exclusivamente, para dar suporte a recursos que devem estar disponíveis imediatamente após a instalação de um add-in, como comandos de complemento (botões de faixa de opções personalizados e menus). Office deve saber sobre esses recursos quando analisar o manifesto do complemento. 
+O elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) foi adicionado ao esquema de manifesto principalmente, mas não exclusivamente, para dar suporte a recursos que devem estar disponíveis imediatamente após a instalação de um add-in, como comandos de complemento (botões de faixa de opções personalizados e menus). Office deve saber sobre esses recursos quando analisar o manifesto do complemento. 
 
-Suponha que o seu complemento use um desses recursos, mas o complemento é valioso e deve ser instalado, mesmo em versões Office que não suportam o recurso. Neste cenário, identifique o recurso usando um elemento [Requirements](../reference/manifest/requirements.md) (e seus elementos Filho [Conjuntos](../reference/manifest/sets.md) e [](../reference/manifest/methods.md) Métodos) que você inclui como filho do próprio elemento **VersionOverrides** em vez de como filho do elemento base`OfficeApp`. O efeito de fazer isso é que o Office permitirá que o add-in seja instalado, mas o Office ignorará determinados dos elementos filho do **elemento VersionOverrides** em versões Office em que o recurso não é suportado.
+Suponha que o seu complemento use um desses recursos, mas o complemento é valioso e deve ser instalado, mesmo em versões Office que não suportam o recurso. Neste cenário, identifique o recurso usando um elemento [Requirements](/javascript/api/manifest/requirements) (e seus elementos Filho [Conjuntos](/javascript/api/manifest/sets) e [](/javascript/api/manifest/methods) Métodos) que você inclui como filho do próprio elemento **VersionOverrides** em vez de como filho do elemento base`OfficeApp`. O efeito de fazer isso é que o Office permitirá que o add-in seja instalado, mas o Office ignorará determinados dos elementos filho do **elemento VersionOverrides** em versões Office em que o recurso não é suportado.
 
 Especificamente, os elementos filho dos **VersionOverrides** que substituem elementos no manifesto base, como um elemento **Hosts** , são ignorados e os elementos correspondentes do manifesto base são usados em vez disso. No entanto, pode haver elementos filho em **um VersionOverrides** que implementem recursos adicionais em vez de substituir as configurações no manifesto base. Dois exemplos são e `WebApplicationInfo` `EquivalentAddins`. Essas partes do **VersionOverrides** não serão  ignoradas, pressupondo que a plataforma e a versão do Office suportam o recurso correspondente.  
 
@@ -253,5 +253,5 @@ Apresentamos um exemplo a seguir.
 ## <a name="see-also"></a>Confira também
 
 - [Manifesto XML dos Suplementos do Office](add-in-manifests.md)
-- [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Conjuntos de requisitos de Suplemento do Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

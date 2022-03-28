@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b50311b814f91d44792325fce408d58e80e68a1f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 5530e1a2acc21ffbf3f2bb0c9a16aa178141202c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743210"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483857"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -29,7 +29,7 @@ As APIs descritas neste artigo estão disponíveis apenas Excel, PowerPoint e Wo
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Office Os complementos usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativo e plataforma Office oferece suporte a APIs que um complemento precisa. Para obter mais informações, [consulte Office versões e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
-As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
+As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](/javascript/api/requirement-sets/ribbon-api-requirement-sets) .
 
 > [!NOTE]
 > O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, não é possível especificá-lo na seção **Requisitos do** manifesto. Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Se e *somente se essa* chamada retornar `true`, seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` retornar `false`, todos os comandos de complemento personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos `isSetSupported`de uso, consulte [Especificar Office aplicativos](../develop/specify-office-hosts-and-api-requirements.md) e requisitos de API, especialmente verificações de tempo de execução para suporte ao [método e ao conjunto de requisitos](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (A seção [Especificar quais Office e plataformas](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) podem hospedar seu complemento desse artigo não se aplica à Faixa de Opções 1.1.)
@@ -38,17 +38,17 @@ As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](../re
 
 As APIs e a marcação de manifesto descritas neste artigo exigem que o manifesto do suplemento especifique que ele deve usar um tempo de execução compartilhado. Para fazer isso, tome as etapas a seguir.
 
-1. No elemento [Runtimes](../reference/manifest/runtimes.md) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento **Runtimes** no manifesto, crie-o como o primeiro filho no elemento **Host** na seção **VersionOverrides** .)
-2. Na seção [Resources.Urls](../reference/manifest/resources.md) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, onde `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
+1. No elemento [Runtimes](/javascript/api/manifest/runtimes) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento **Runtimes** no manifesto, crie-o como o primeiro filho no elemento **Host** na seção **VersionOverrides** .)
+2. Na seção [Resources.Urls](/javascript/api/manifest/resources) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, onde `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. Dependendo se o seu add-in contém um painel de tarefas, um arquivo de função ou uma função Excel personalizada, você deve fazer uma ou mais das três etapas a seguir.
 
-    - Se o add-in contiver um painel de tarefas, desmarque o `resid` atributo da [Ação](../reference/manifest/action.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) para exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o add-in contiver uma função Excel personalizada, de definir o `resid` atributo da [Página](../reference/manifest/page.md).[ Elemento SourceLocation](../reference/manifest/sourcelocation.md) exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o add-in contiver um arquivo de função, `resid` de definir o atributo do [elemento FunctionFile](../reference/manifest/functionfile.md) `resid` como exatamente a mesma cadeia de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver um painel de tarefas, desmarque o `resid` atributo da [Ação](/javascript/api/manifest/action).[ Elemento SourceLocation](/javascript/api/manifest/sourcelocation) para exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver uma função Excel personalizada, de definir o `resid` atributo da [Página](/javascript/api/manifest/page).[ Elemento SourceLocation](/javascript/api/manifest/sourcelocation) exatamente a mesma cadeia `resid` de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o add-in contiver um arquivo de função, `resid` de definir o atributo do [elemento FunctionFile](/javascript/api/manifest/functionfile) `resid` como exatamente a mesma cadeia de caracteres usada para o elemento **Runtime** na etapa 1; por exemplo, `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## <a name="set-the-default-state-to-disabled"></a>Defina o estado padrão como desabilitado
 
-Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do Office é iniciado. Se você deseja que um botão ou item de menu personalizado esteja desabilitado quando o aplicativo do Office for iniciado, especifique isso no manifesto. Basta adicionar um elemento [Enabled](../reference/manifest/enabled.md) (com o valor `false`) imediatamente *abaixo* (não dentro) do elemento [Ação](../reference/manifest/action.md) na declaração do controle. A seguir, mostra a estrutura básica.
+Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do Office é iniciado. Se você deseja que um botão ou item de menu personalizado esteja desabilitado quando o aplicativo do Office for iniciado, especifique isso no manifesto. Basta adicionar um elemento [Enabled](/javascript/api/manifest/enabled) (com o valor `false`) imediatamente *abaixo* (não dentro) do elemento [Ação](/javascript/api/manifest/action) na declaração do controle. A seguir, mostra a estrutura básica.
 
 ```xml
 <OfficeApp ...>
@@ -122,7 +122,7 @@ Você pode `await` chamar **requestUpdate()** se a função pai for assíncrona,
 
 Um cenário comum em que o estado da faixa de opções deve mudar é quando um evento iniciado pelo usuário altera o contexto do suplemento.
 
-Considere um cenário em que um botão deve ser ativado quando e somente quando um gráfico é ativado. A primeira etapa é definir o elemento [Enabled](../reference/manifest/enabled.md) para o botão no manifesto como `false`. Veja um exemplo acima.
+Considere um cenário em que um botão deve ser ativado quando e somente quando um gráfico é ativado. A primeira etapa é definir o elemento [Enabled](/javascript/api/manifest/enabled) para o botão no manifesto como `false`. Veja um exemplo acima.
 
 Segundo, atribua manipuladores. Isso geralmente é feito no método **Office.onReady**, como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos **onActivated** e **onDeactivated** de todos os gráficos da planilha.
 
@@ -173,7 +173,7 @@ Em algumas circunstâncias, a faixa de opções não é redesenhada após `reque
 1. Sempre que `requestUpdate` é chamado, o código deve registrar o estado pretendido dos botões e itens de menu personalizados.
 2. Quando um controle personalizado é clicado, o primeiro código no manipulador deve verificar se o botão deveria ter sido clicável. Se não deveria ter sido, o código deve relatar ou registrar um erro e tentar novamente definir os botões no estado pretendido.
 
-O exemplo a seguir mostra uma função que desativa um botão e registra o status do botão. Observe que `chartFormatButtonEnabled` é uma variável booleana global inicializada com o mesmo valor que o elemento [Enabled](../reference/manifest/enabled.md) para o botão no manifesto.
+O exemplo a seguir mostra uma função que desativa um botão e registra o status do botão. Observe que `chartFormatButtonEnabled` é uma variável booleana global inicializada com o mesmo valor que o elemento [Enabled](/javascript/api/manifest/enabled) para o botão no manifesto.
 
 ```javascript
 function disableChartFormat() {

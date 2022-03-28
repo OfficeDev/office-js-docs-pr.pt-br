@@ -3,16 +3,16 @@ title: Dentro do token de identidade do Exchange em um suplemento do Outlook
 description: Saiba mais sobre o conteúdo de um token de identidade do usuário do Exchange gerado a partir de um suplemento do Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b42d5c9d3cd08bc229acb55963b115fd16234a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149008"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484051"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Dentro do token de identidade do Exchange
 
-O token de identidade do usuário do Exchange retornado pelo método [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) oferece uma maneira do código do suplemento incluir a identidade do usuário com chamadas para o serviço de back-end. Este artigo discutirá o formato e o conteúdo do token.
+O token de identidade do usuário do Exchange retornado pelo método [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) oferece uma maneira do código do suplemento incluir a identidade do usuário com chamadas para o serviço de back-end. Este artigo discutirá o formato e o conteúdo do token.
 
 Um token de identidade do usuário do Exchange é uma cadeia de caracteres codificada como URL em Base64 assinada pelo Exchange Server que a enviou. O token não é criptografado, e a chave pública que você usa para validar a assinatura é armazenada no Exchange Server que emitiu o token. O token tem três partes: um cabeçalho, uma carga e uma assinatura. Na cadeia de caracteres do token, as partes são separadas por um caractere de ponto (`.`) para facilitar a divisão do token para você
 
@@ -66,7 +66,7 @@ A tabela a seguir lista as partes da carga do token de identidade.
 
 | Declaração | Descrição |
 |:-----|:-----|
-| `aud` | A URL do suplemento que solicitou o token. Um token só será válido se for enviado do suplemento está sendo executado no navegador do cliente. Se o suplemento usa o esquema de manifestos v1.1 de Suplementos do Office, essa URL é a URL especificada no primeiro elemento `SourceLocation`, no tipo de formulário `ItemRead` ou `ItemEdit`, o que ocorrer primeiro como parte do elemento [FormSettings](../reference/manifest/formsettings.md) no manifesto do suplemento. |
+| `aud` | A URL do suplemento que solicitou o token. Um token só será válido se for enviado do suplemento está sendo executado no navegador do cliente. Se o suplemento usa o esquema de manifestos v1.1 de Suplementos do Office, essa URL é a URL especificada no primeiro elemento `SourceLocation`, no tipo de formulário `ItemRead` ou `ItemEdit`, o que ocorrer primeiro como parte do elemento [FormSettings](/javascript/api/manifest/formsettings) no manifesto do suplemento. |
 | `iss` | Um identificador exclusivo para o Exchange Server que emitiu o token. Todos os tokens emitidos por esse Exchange Server terão o mesmo identificador. |
 | `nbf` | A data e a hora do início da validade do token. O valor é o número de segundos desde 1º de janeiro de 1970. |
 | `exp` | A data e a hora de validade do token. O valor é o número de segundos desde 1º de janeiro de 1970. |

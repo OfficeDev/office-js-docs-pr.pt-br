@@ -3,12 +3,12 @@ title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f9c9fa23dc59a36bee608fe8115b3ad77cfab623
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148977"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484423"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -24,7 +24,7 @@ Como parte do processo de desenvolvimento de um suplemento do Outlook, você pro
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>Criar um arquivo de manifesto para o suplemento
 
-Cada suplemento é descrito por um manifesto XML, um documento que fornece as informações do servidor sobre o suplemento, fornece informações sobre o suplemento para o usuário e identifica o local da interface do arquivo HTML de interface do usuário do suplemento. Você pode armazenar o manifesto em uma pasta ou servidor local, desde que o local possa ser acessado pelo servidor Exchange da caixa de correio que você está testando. Vamos pressupor que você armazena seu manifesto em uma pasta local. Para obter informações sobre como criar um arquivo de manifesto, confira [Manifestos de suplementos do Outlook](manifests.md).
+Cada suplemento é descrito por um manifesto XML, um documento que fornece ao servidor informações sobre o suplemento, fornece informações descritivas sobre o suplemento para o usuário e identifica o local do arquivo HTML da interface do usuário do suplemento. Você pode armazenar o manifesto em uma pasta ou servidor local, desde que o local seja acessível pelo servidor Exchange da caixa de correio com a qual você está testando. Vamos supor que você armazene seu manifesto em uma pasta local. Para informações sobre como criar um arquivo de manifesto, veja [Manifestos de suplementos do Outlook](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Implantar um suplemento em um servidor Web
 
@@ -76,7 +76,7 @@ A decisão de quais versões de cliente do Outlook testar depende dos seus requi
 
 - Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto, testar as versões para o navegador padrão da sua empresa também é importante.
 
-- Se você estiver desenvolvendo um suplemento para listar no [AppSource](https://appsource.microsoft.com), deverá testar as versões necessárias conforme especificado nas [Políticas de certificação do Commercial Marketplace 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
+- Se você estiver desenvolvendo um suplemento para listar no [AppSource](https://appsource.microsoft.com), você deve testar as versões obrigatória conforme especificado nas [Políticas de certificação do mercado comercial 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
   - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
   - A versão mais recente do Outlook no Mac.
   - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).
@@ -96,7 +96,7 @@ Como alternativa, você pode optar por pagar e usar um serviço que hospeda e ge
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-Além disso, se você não deseja que seus suplementos estejam disponíveis para usuários conectados ao Exchange local, é possível definir o [conjunto de requisitos](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) no manifesto de suplemento como 1.6 ou superior. Esses suplementos não serão testados nem validados na interface do usuário do Outlook na Web clássico.
+Além disso, se você não deseja que seus suplementos estejam disponíveis para usuários conectados ao Exchange local, é possível definir o [conjunto de requisitos](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support) no manifesto de suplemento como 1.6 ou superior. Esses suplementos não serão testados nem validados na interface do usuário do Outlook na Web clássico.
 
 ## <a name="see-also"></a>Confira também
 

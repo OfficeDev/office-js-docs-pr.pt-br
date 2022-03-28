@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monolinha para Office de complementos
 description: Diretrizes para usar ícones de estilo monoline em Office de complementos.
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8c076bae2efd15cdc927f65804f33096fd6ecacb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743045"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483967"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monolinha para Office de complementos
 
@@ -209,7 +209,7 @@ Os ícones finais devem ser salvos como arquivos .png imagem. Use o formato PNG 
 
 ## <a name="see-also"></a>Confira também
 
-- [Elemento de manifesto de ícone](../reference/manifest/icon.md)
-- [Elemento de manifesto IconUrl](../reference/manifest/iconurl.md)
-- [Elemento de manifesto HighResolutionIconUrl](../reference/manifest/highresolutioniconurl.md)
+- [Elemento de manifesto de ícone](/javascript/api/manifest/icon)
+- [Elemento de manifesto IconUrl](/javascript/api/manifest/iconurl)
+- [Elemento de manifesto HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl)
 - [Criar um ícone para o seu suplemento](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

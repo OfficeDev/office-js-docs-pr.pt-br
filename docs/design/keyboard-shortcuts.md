@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743235"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483874"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -35,7 +35,7 @@ A adição de atalhos personalizados de teclado exige que o seu complemento use 
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Vincular o arquivo de mapeamento ao manifesto
 
-Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) . De definir o `Url` atributo como a URL completa de um arquivo JSON em seu projeto que você criará em uma etapa posterior.
+Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . De definir o `Url` atributo como a URL completa de um arquivo JSON em seu projeto que você criará em uma etapa posterior.
 
 ```xml
     ...
@@ -46,7 +46,7 @@ Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifes
 
 ## <a name="create-or-edit-the-shortcuts-json-file"></a>Criar ou editar o arquivo JSON de atalhos
 
-Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo corresponde ao local especificado para `Url` o atributo do [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) . Este arquivo descreverá seus atalhos de teclado e as ações que eles invocarão.
+Crie um arquivo JSON em seu projeto. Certifique-se de que o caminho do arquivo corresponde ao local especificado para `Url` o atributo do [elemento ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Este arquivo descreverá seus atalhos de teclado e as ações que eles invocarão.
 
 1. Dentro do arquivo JSON, há duas matrizes. A matriz de ações conterá objetos que definem as ações a serem invocadas e a matriz de atalhos conterá objetos que mapeiam combinações de teclas em ações. Veja um exemplo.
     ```json
@@ -270,7 +270,7 @@ O seu complemento pode permitir que os usuários reatribuam as ações do add-in
 > Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
-> As APIs descritas nesta seção exigem o [conjunto de requisitos KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) .
+> As APIs descritas nesta seção exigem o [conjunto de requisitos KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) .
 
 Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações personalizadas de teclado de um usuário às ações de seus complementos. O método assume um parâmetro de tipo `{[actionId:string]: string|null}`, `actionId`onde os s são um subconjunto das IDs de ação que devem ser definidas no manifesto estendido JSON do complemento. Os valores são as combinações de teclas preferidas do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no manifesto estendido JSON do complemento.
 

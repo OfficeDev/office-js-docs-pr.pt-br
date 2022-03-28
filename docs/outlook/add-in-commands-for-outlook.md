@@ -3,12 +3,12 @@ title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
 ms.date: 07/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 52c1bda4a21fba869d67cb3a15d9573d660b8471
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745763"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483527"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -28,7 +28,7 @@ Os comandos de suplementos estão disponíveis apenas para suplementos que não 
 
 ## <a name="creating-the-add-in-command"></a>Criar o comando de suplemento
 
-Os comandos do suplemento são declarados no manifesto do suplemento no elemento [VersionOverrides](../reference/manifest/versionoverrides.md). Esse elemento é uma adição ao esquema de manifesto v1.1 que garante a compatibilidade com versões anteriores. Em um cliente que não dê suporte a `VersionOverrides`, os suplementos existentes continuarão a funcionar como faziam sem comandos de suplemento.
+Os comandos do suplemento são declarados no manifesto do suplemento no elemento [VersionOverrides](/javascript/api/manifest/versionoverrides). Esse elemento é uma adição ao esquema de manifesto v1.1 que garante a compatibilidade com versões anteriores. Em um cliente que não dê suporte a `VersionOverrides`, os suplementos existentes continuarão a funcionar como faziam sem comandos de suplemento.
 
 As entradas de manifesto `VersionOverrides` especificam muitos itens para o suplemento, como o aplicativo, tipos de controles a serem adicionados à faixa de opções, texto, ícones e quaisquer funções associadas.
 

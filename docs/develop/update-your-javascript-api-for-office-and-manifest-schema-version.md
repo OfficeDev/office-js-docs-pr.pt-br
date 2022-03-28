@@ -3,12 +3,12 @@ title: Atualizar para a biblioteca Office api JavaScript mais recente e o esquem
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5466b010cb0364d78819942f0a1dcc941e1c1269
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8545c3249b9d03e7c0014a38c4944e64b3348124
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742923"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483516"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Atualizar para a biblioteca Office api JavaScript mais recente e o esquema de manifesto de manifesto do complemento versão 1.1
 
@@ -74,7 +74,7 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```
 
 > [!NOTE]
-> Depois de atualizar a versão do esquema de manifesto do complemento para 1.1, você precisará remover os elementos **Recursos** e Funcionalidades e substituí-los por elementos [Hosts](../reference/manifest/hosts.md) e [Host](../reference/manifest/host.md) ou os elementos [Requisitos e Requisitos](specify-office-hosts-and-api-requirements.md).
+> Depois de atualizar a versão do esquema de manifesto do complemento para 1.1, você precisará remover os elementos **Recursos** e Funcionalidades e substituí-los por elementos [Hosts](/javascript/api/manifest/hosts) e [Host](/javascript/api/manifest/host) ou os elementos [Requisitos e Requisitos](specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Atualização de um projeto de suplemento do Office criado com um editor de texto ou outro IDE
 
@@ -116,11 +116,11 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```
 
 > [!NOTE]
-> Depois de atualizar a versão do esquema de manifesto do complemento para 1.1, você precisará remover os elementos **Recursos** e Funcionalidades e substituí-los por elementos [Hosts](../reference/manifest/hosts.md) e [Host](../reference/manifest/host.md) ou os elementos [Requisitos e Requisitos](specify-office-hosts-and-api-requirements.md).
+> Depois de atualizar a versão do esquema de manifesto do complemento para 1.1, você precisará remover os elementos **Recursos** e Funcionalidades e substituí-los por elementos [Hosts](/javascript/api/manifest/hosts) e [Host](/javascript/api/manifest/host) ou os elementos [Requisitos e Requisitos](specify-office-hosts-and-api-requirements.md).
 
 ## <a name="see-also"></a>Confira também
 
 - [Especificar Office aplicativos e requisitos de API](specify-office-hosts-and-api-requirements.md) ]
-- [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md)

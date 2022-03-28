@@ -1,14 +1,14 @@
 ---
 title: Corresponder cadeias de caracteres como entidades conhecidas em um suplemento do Outlook
-description: Usando a Office JavaScript, você pode obter cadeias de caracteres que corresponderem a entidades conhecidas específicas para processamento posterior.
+description: Usando a OFFICE JavaScript, você pode obter cadeias de caracteres que corresponderem a entidades conhecidas específicas para processamento posterior.
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 636414f3e90fba9ffa78338b20f23d2bd63e4983
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5c8d504b8d49e829311500aa036d2e99a016e4d6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148588"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484567"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas
 
@@ -35,11 +35,11 @@ A tabela a seguir lista as entidades que têm suporte e são reconhecidas pelo E
 |:-----|:-----|:-----|
 |**Endereço**|Endereços nos Estados Unidos. Por exemplo: 1234 Main Street, Redmond, WA 07722. Normalmente, para um endereço ser reconhecido, ele deve seguir a estrutura de um endereço postal dos Estados Unidos, com a maioria dos elementos de nome da rua, número, cidade, estado e CEP. O endereço pode ser especificado em uma ou várias linhas.|Objeto JavaScript **String**|
 |**Contato**|Uma referência às informações de uma pessoa assim reconhecida em sua língua materna. O reconhecimento de um contato depende do contexto. Por exemplo, uma assinatura no final de uma mensagem ou o nome da pessoa que aparece perto de algumas das seguintes informações: número de telefone, endereço, endereço de e-mail e URL.|Objeto [Contact](/javascript/api/outlook/office.contact)|
-|**EmailAddress**|Endereços de email SMTP.|Objeto `String` JavaScript|
+|**EmailAddress**|Endereços de email SMTP.|Objeto JavaScript `String`|
 |**MeetingSuggestion**|Uma referência a uma reunião ou a um evento. Por exemplo, o Exchange 2013 reconheceria o seguinte texto como uma sugestão de reunião:  _Vamos marcar um almoço amanhã._|Objeto [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|
 |**PhoneNumber**|Números de telefone dos Estados Unidos. Por exemplo:  _(235) 555-0110_|Objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber)|
 |**TaskSuggestion**|Frases acionáveis em um email. Por exemplo:  _Atualize a planilha._|Objeto [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)|
-|**Url**|Um endereço Web que especifica explicitamente o local de rede e o identificador de um recurso da Web. Exchange Server requer o protocolo de acesso no endereço da Web e não reconhece URLs inseridas no texto do link como instâncias da `Url` entidade. Exchange Server pode corresponder aos seguintes exemplos: `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |Objeto `String` JavaScript|
+|**Url**|Um endereço Web que especifica explicitamente o local de rede e o identificador de um recurso da Web. Exchange Server requer o protocolo de acesso no endereço da Web e não reconhece URLs inseridas no texto do link como instâncias da `Url` entidade. Exchange Server pode corresponder aos seguintes exemplos: `www.youtube.com/user/officevideos` `https://www.youtube.com/user/officevideos` |Objeto JavaScript `String`|
 
 <br/>
 
@@ -54,7 +54,7 @@ A figura a seguir descreve como o Exchange Server e o Outlook dão suporte a ent
 
 Para extrair entidades no seu código JavaScript ou fazer com que seu suplemento seja ativado com base na existência de determinadas entidades conhecidas, verifique se você solicitou as permissões apropriadas no manifesto do suplemento.
 
-A especificação da permissão restrita padrão permite que o seu add-in extraia `Address` a entidade , ou `MeetingSuggestion` `TaskSuggestion` . Para extrair as outras entidades, especifique as permissões de leitura de item, leitura/gravação de item ou leitura/gravação de caixa de correio. Para fazer isso no manifesto, use o elemento [Permissions](../reference/manifest/permissions.md) e especifique a permissão apropriada &mdash; **Restricted**, **ReadItem,** **ReadWriteItem** ou **ReadWriteMailbox,** como no &mdash; exemplo a seguir.
+A especificação da permissão restrita padrão permite que o seu add-in extraia `Address`a entidade , `MeetingSuggestion`ou `TaskSuggestion` . Para extrair as outras entidades, especifique as permissões de leitura de item, leitura/gravação de item ou leitura/gravação de caixa de correio. Para fazer isso no manifesto, use o elemento [Permissions](/javascript/api/manifest/permissions)&mdash; e especifique a permissão **apropriadaRestricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailboxas**&mdash; no exemplo a seguir.
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -63,15 +63,15 @@ A especificação da permissão restrita padrão permite que o seu add-in extrai
 
 ## <a name="retrieving-entities-in-your-add-in"></a>Recuperar entidades no seu suplemento
 
-Desde que o assunto ou o corpo do item que está sendo exibido pelo usuário contenha cadeias de caracteres que Exchange e Outlook possam reconhecer como entidades conhecidas, essas instâncias estão disponíveis para os complementos. Eles estão disponíveis mesmo que um complemento não seja ativado com base em entidades conhecidas. Com a permissão apropriada, você pode usar o método ou para recuperar entidades conhecidas que estão presentes `getEntities` na mensagem ou no compromisso `getEntitiesByType` atual.
+Desde que o assunto ou o corpo do item que está sendo exibido pelo usuário contenha cadeias de caracteres que Exchange e Outlook possam reconhecer como entidades conhecidas, essas instâncias estão disponíveis para os complementos. Eles estão disponíveis mesmo que um complemento não seja ativado com base em entidades conhecidas. Com a permissão apropriada, você pode usar `getEntities` o método ou `getEntitiesByType` para recuperar entidades conhecidas que estão presentes na mensagem ou no compromisso atual.
 
-O método retorna uma matriz de objetos Entities que contém todas as entidades `getEntities` conhecidas no [](/javascript/api/outlook/office.entities) item.
+O `getEntities` método retorna uma matriz de objetos [Entities](/javascript/api/outlook/office.entities) que contém todas as entidades conhecidas no item.
 
-Se você estiver interessado em um tipo específico de entidades, use o método que retorna uma matriz de apenas `getEntitiesByType` as entidades que você deseja. A enumeração [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) representa todos os tipos de entidades conhecidas que você pode extrair.
+Se você estiver interessado em um tipo específico de entidades, use `getEntitiesByType`o método que retorna uma matriz de apenas as entidades que você deseja. A enumeração [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) representa todos os tipos de entidades conhecidas que você pode extrair.
 
-Depois de chamar , você pode usar a propriedade correspondente do objeto para obter uma matriz de `getEntities` `Entities` instâncias de um tipo de entidade. Dependendo do tipo de entidade, as instâncias na matriz podem ser apenas cadeias de caracteres ou podem mapear para objetos específicos. 
+Depois de `getEntities`chamar , você pode usar a propriedade correspondente `Entities` do objeto para obter uma matriz de instâncias de um tipo de entidade. Dependendo do tipo de entidade, as instâncias na matriz podem ser apenas cadeias de caracteres ou podem mapear para objetos específicos. 
 
-Como o exemplo mostrado na figura anterior, acesse a matriz retornada por `getEntities().addresses[]` para obter endereços no item. A `Entities.addresses` propriedade retorna uma matriz de cadeias de caracteres que Outlook reconhece como endereços postais. Da mesma forma, `Entities.contacts` a propriedade retorna uma matriz de objetos que Outlook reconhece como informações de `Contact` contato. A Tabela 1 lista o tipo de objeto de uma instância de cada entidade compatível.
+Como o exemplo mostrado na figura anterior, acesse a matriz retornada por `getEntities().addresses[]` para obter endereços no item. A `Entities.addresses` propriedade retorna uma matriz de cadeias de caracteres que Outlook reconhece como endereços postais. Da mesma forma, a `Entities.contacts` propriedade retorna uma matriz de `Contact` objetos que Outlook reconhece como informações de contato. A Tabela 1 lista o tipo de objeto de uma instância de cada entidade compatível.
 
 O exemplo a seguir mostra como recuperar endereços encontrados em uma mensagem.
 
@@ -88,11 +88,11 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 ## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>Ativar um suplemento com base na existência de uma entidade
 
-Outra maneira de usar entidades conhecidas é fazer com que o Outlook ative o suplemento baseado na existência de um ou mais tipos de entidades no assunto ou no corpo do item exibido no momento. Você pode fazer isso especificando uma `ItemHasKnownEntity` regra no manifesto do complemento. O tipo simples [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) representa os diferentes tipos de entidades conhecidas com suporte por `ItemHasKnownEntity` regras. Depois de ativar o suplemento, também é possível recuperar as instâncias de tais entidades para seus propósitos, como descrito na seção anterior, [Recuperar entidades no seu suplemento](#retrieving-entities-in-your-add-in).
+Outra maneira de usar entidades conhecidas é fazer com que o Outlook ative o suplemento baseado na existência de um ou mais tipos de entidades no assunto ou no corpo do item exibido no momento. Você pode fazer isso especificando uma `ItemHasKnownEntity` regra no manifesto do complemento. O [tipo simples EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) representa os diferentes tipos de entidades conhecidas com suporte por `ItemHasKnownEntity` regras. Depois de ativar o suplemento, também é possível recuperar as instâncias de tais entidades para seus propósitos, como descrito na seção anterior, [Recuperar entidades no seu suplemento](#retrieving-entities-in-your-add-in).
 
-Opcionalmente, você pode aplicar uma expressão regular em uma regra, para filtrar mais instâncias de uma entidade e Outlook ativar um complemento somente em um subconjunto das instâncias da `ItemHasKnownEntity` entidade. Por exemplo, você pode especificar um filtro para a entidade de rua do endereço em uma mensagem que contenha um CEP do Rio de Janeiro que comece com "021". Para aplicar um filtro às instâncias da entidade, use os atributos e no elemento do `RegExFilter` `FilterName` tipo `Rule` [ItemHasKnownEntity.](../reference/manifest/rule.md#itemhasknownentity-rule)
+Opcionalmente, você pode aplicar uma expressão regular `ItemHasKnownEntity` em uma regra, para filtrar mais instâncias de uma entidade e Outlook ativar um complemento somente em um subconjunto das instâncias da entidade. Por exemplo, você pode especificar um filtro para a entidade de rua do endereço em uma mensagem que contenha um CEP do Rio de Janeiro que comece com "021". Para aplicar um filtro às instâncias da entidade, use os `RegExFilter` atributos e `FilterName` `Rule` no elemento do [tipo ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) .
 
-De forma semelhante às outras regras de ativação, você pode especificar várias regras a fim de formar uma coleção de regras para seu suplemento. O exemplo a seguir aplica uma operação "AND" em duas regras: `ItemIs` uma regra e uma `ItemHasKnownEntity` regra. Essa coleção de regras ativa o suplemento sempre que o item atual for uma mensagem e o Outlook reconhecer um endereço no assunto ou no corpo do item.
+De forma semelhante às outras regras de ativação, você pode especificar várias regras a fim de formar uma coleção de regras para seu suplemento. O exemplo a seguir aplica uma operação "AND" em duas regras: uma `ItemIs` regra e uma `ItemHasKnownEntity` regra. Essa coleção de regras ativa o suplemento sempre que o item atual for uma mensagem e o Outlook reconhecer um endereço no assunto ou no corpo do item.
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -103,7 +103,7 @@ De forma semelhante às outras regras de ativação, você pode especificar vár
 
 <br/>
 
-O exemplo a seguir `getEntitiesByType` usa o item atual para definir uma variável para os resultados da coleção de regras `addresses` anterior.
+O exemplo a seguir usa `getEntitiesByType` o item atual para definir uma variável `addresses` para os resultados da coleção de regras anterior.
 
 ```js
 var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnums.EntityType.Address);
@@ -111,7 +111,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-O exemplo de regra a seguir ativa o complemento sempre que houver uma URL no assunto ou no corpo do item atual, e a URL contém a cadeia de caracteres "youtube", independentemente do caso da cadeia de `ItemHasKnownEntity` caracteres.
+O exemplo `ItemHasKnownEntity` de regra a seguir ativa o complemento sempre que houver uma URL no assunto ou no corpo do item atual, e a URL contém a cadeia de caracteres "youtube", independentemente do caso da cadeia de caracteres.
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" 
@@ -123,7 +123,7 @@ O exemplo de regra a seguir ativa o complemento sempre que houver uma URL no ass
 
 <br/>
 
-O exemplo a seguir usa o item atual para definir uma variável para obter uma matriz de resultados que corresponderem à expressão `getFilteredEntitiesByName(name)` `videos` regular na regra `ItemHasKnownEntity` anterior.
+O exemplo a seguir usa `getFilteredEntitiesByName(name)` o item atual `videos` para definir uma variável para obter uma matriz de resultados que corresponderem à expressão regular na regra `ItemHasKnownEntity` anterior.
 
 ```js
 var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
@@ -141,19 +141,19 @@ Existem alguns fatos e limites de que você deve estar ciente ao usar entidades 
     
 - Você pode extrair entidades de compromissos que sejam reuniões organizadas por alguém que não seja o proprietário da caixa de correio. Você não pode extrair entidades de itens do calendário que não são reuniões ou reuniões organizadas pelo proprietário da caixa de correio.
     
-- Você pode extrair entidades do `MeetingSuggestion` tipo apenas de mensagens, mas não de compromissos.
+- Você pode extrair entidades do tipo `MeetingSuggestion` apenas de mensagens, mas não de compromissos.
     
-- Você pode extrair URLs que existem explicitamente no corpo do item, mas não URLs que estão inseridas no texto de hiperlink no corpo do item HTML. Considere usar uma `ItemHasRegularExpressionMatch` regra em vez disso para obter URLs explícitas e incorporadas. `BodyAsHTML`Especifique como _PropertyName_ e uma expressão regular que corresponde a URLs como _RegExValue_.
+- Você pode extrair URLs que existem explicitamente no corpo do item, mas não URLs que estão inseridas no texto de hiperlink no corpo do item HTML. Considere usar uma `ItemHasRegularExpressionMatch` regra em vez disso para obter URLs explícitas e incorporadas. Especifique `BodyAsHTML` como _PropertyName_ e uma expressão regular que corresponde a URLs como  _RegExValue_.
     
 - Você não pode extrair entidades de itens na pasta Itens Enviados.
     
-Além disso, o seguinte se aplica se você usar uma [regra ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) e pode afetar os cenários em que você espera que seu complemento seja ativado.
+Além disso, o seguinte se aplica se você usar uma [regra ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) e pode afetar os cenários em que você espera que seu complemento seja ativado.
 
-- Ao usar a regra, Outlook as cadeias de caracteres de entidade corresponder somente em inglês, independentemente da localidade padrão `ItemHasKnownEntity` especificada no manifesto.
+- Ao usar a `ItemHasKnownEntity` regra, Outlook para corresponder às cadeias de caracteres de entidade apenas em inglês, independentemente da localidade padrão especificada no manifesto.
     
-- Quando o seu add-in estiver em execução em um cliente Outlook rich, espere que Outlook a regra seja aplicada ao primeiro megabyte do corpo do item e não ao restante do corpo acima desse `ItemHasKnownEntity` limite.
+- Quando o seu add-in estiver sendo executado em um cliente Outlook rich, `ItemHasKnownEntity` espere que Outlook a regra seja aplicada ao primeiro megabyte do corpo do item e não ao restante do corpo acima desse limite.
     
-- Não é possível usar `ItemHasKnownEntity` uma regra para ativar um complemento para itens na pasta Itens Enviados.
+- Não é possível usar uma `ItemHasKnownEntity` regra para ativar um complemento para itens na pasta Itens Enviados.
     
 
 ## <a name="see-also"></a>Confira também

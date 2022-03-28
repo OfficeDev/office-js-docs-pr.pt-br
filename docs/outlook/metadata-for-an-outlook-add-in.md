@@ -3,8 +3,13 @@ title: Obter e definir metadados em um suplemento do Outlook
 description: Gerencie dados personalizados no suplemento do Outlook usando configurações de roaming ou propriedades personalizadas.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: b07322733f741747568fd57a99f03dc2d3e4d3bb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484145"
 ---
-
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obter e definir metadados de suplemento para um suplemento do Outlook
 
 Você pode gerenciar dados personalizados em seu suplemento do Outlook usando um destes procedimentos:
@@ -109,11 +114,11 @@ Você pode especificar dados específicos de um item na caixa de correio do usu�
 
 Semelhante às configurações de roaming, as mudanças nas propriedades personalizadas são armazenadas em cópias na memória das propriedades para a sessão atual do Outlook. Para garantir que essas propriedades personalizadas estarão disponíveis na próxima sessão, use[CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)).
 
-Essas propriedades personalizadas específicas do item e específicas do complemento só podem ser acessadas usando o `CustomProperties` objeto. Essas propriedades são diferentes das [UserProperties](/office/vba/api/Outlook.UserProperties) personalizadas baseadas em MAPI no modelo de objeto Outlook e propriedades estendidas no Exchange Web Services (EWS). Você não pode acessar `CustomProperties` diretamente usando o modelo de objeto Outlook, EWS ou REST. Para saber como acessar usando `CustomProperties` EWS ou REST, consulte a seção [Obter propriedades personalizadas usando EWS ou REST](#get-custom-properties-using-ews-or-rest).
+Essas propriedades personalizadas específicas do item e específicas do complemento só podem ser acessadas usando o `CustomProperties` objeto. Essas propriedades são diferentes das [UserProperties](/office/vba/api/Outlook.UserProperties) personalizadas baseadas em MAPI no modelo de objeto Outlook e propriedades estendidas no Exchange Web Services (EWS). Você não pode acessar diretamente `CustomProperties` usando o modelo de objeto Outlook, EWS ou REST. Para saber como acessar usando `CustomProperties` EWS ou REST, consulte a seção [Obter propriedades personalizadas usando EWS ou REST](#get-custom-properties-using-ews-or-rest).
 
 ### <a name="using-custom-properties"></a>Usar propriedades personalizadas
 
-Antes de poder usar propriedades personalizadas, você precisa carregá-las chamando o método [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Após ter criado o conjunto de propriedades, você poderá usar os métodos [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) e [get](/javascript/api/outlook/office.customproperties) para adicionar e recuperar propriedades personalizadas. Você deve usar o [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) método para salvar as alterações feitas no conjunto de propriedades.
+Antes de poder usar propriedades personalizadas, você precisa carregá-las chamando o método [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods). Após ter criado o conjunto de propriedades, você poderá usar os métodos [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) e [get](/javascript/api/outlook/office.customproperties) para adicionar e recuperar propriedades personalizadas. Você deve usar o [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) método para salvar as alterações feitas no conjunto de propriedades.
 
 
  > [!NOTE]
@@ -196,7 +201,7 @@ Propriedades personalizadas definidas por um suplemento não são equivalentes n
 
 #### <a name="get-custom-properties-using-ews"></a>Obtenha propriedades personalizadas usando EWS
 
-Seu complemento de email pode obter a `CustomProperties` propriedade estendida baseada em MAPI usando a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) do EWS. Acesse `GetItem` no lado do servidor usando um token de retorno de chamada ou no lado do cliente usando o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) . Na solicitação `GetItem` , especifique `CustomProperties` a propriedade baseada em MAPI em seu conjunto de propriedades usando os detalhes fornecidos na seção anterior Como as propriedades personalizadas são armazenadas [em um item](#how-custom-properties-are-stored-on-an-item).
+Seu complemento de email pode obter a `CustomProperties` propriedade estendida baseada em MAPI usando a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) do EWS. Acesse `GetItem` no lado do servidor usando um token de retorno de chamada ou no lado do cliente usando o método [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) . Na solicitação `GetItem` , especifique `CustomProperties` a propriedade baseada em MAPI em seu conjunto de propriedades usando os detalhes fornecidos na seção anterior Como as propriedades personalizadas são armazenadas [em um item](#how-custom-properties-are-stored-on-an-item).
 
 O exemplo a seguir mostra como acessar um item e suas propriedades personalizadas.
 

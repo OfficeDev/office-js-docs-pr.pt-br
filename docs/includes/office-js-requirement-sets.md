@@ -2,4 +2,4 @@ Os [Conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md)
 
 Seu suplemento pode usar conjuntos de requisitos para determinar se o aplicativo do Office oferece suporte aos membros da API necessários. Para saber mais sobre isso, confira [Especificar requisitos de API e aplicativos do Office](../develop/specify-office-hosts-and-api-requirements.md).
 
-O suporte ao conjunto de requisitos varia de acordo com o aplicativo, versão e plataforma do Office. Para obter informações detalhadas sobre as plataformas, conjuntos de requisitos e APIs comuns que cada aplicativo do Office oferece suporte, confira [Disponibilidade de plataforma e aplicativo cliente do Office para Suplementos do Office](../overview/office-add-in-availability.md).
+O suporte ao conjunto de requisitos varia de acordo com o aplicativo, versão e plataforma do Office. Para obter informações detalhadas sobre as plataformas, conjuntos de requisitos e APIs comuns que cada aplicativo do Office oferece suporte, confira [Disponibilidade de plataforma e aplicativo cliente do Office para Suplementos do Office](/javascript/api/requirement-sets).

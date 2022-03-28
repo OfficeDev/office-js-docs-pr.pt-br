@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745580"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404727"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -44,7 +44,7 @@ Neste tutorial, você vai:
     - **Escolha o tipo de script:** `JavaScript`
     - **Qual será o nome do suplemento?** `starcount`
 
-    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -99,6 +99,8 @@ Experimentar a função personalizada `ADD` preenchendo as seguintes etapas no E
 
 As `ADD` função personalizada calcula a soma dos dois números que você forneceu e retorna o resultado da **210**.
 
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
+
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Criar uma função personalizada que solicita dados da web
 
 Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `getStarCount` que mostra quantas estrelas um determinado repositório do GitHub tem.
@@ -145,14 +147,19 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Feche o Excel e abra-o novamente.
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada.](../images/select-insert.png)
+1. No Excel, escolha a guia **Inserir** e escolha a seta para baixo localizada à direita de **Meus Suplementos**.
+
+    :::image type="content" source="../images/select-insert.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com a seta para baixo Meus Suplementos realçada.":::
 
 1. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
-    ![Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.](../images/list-starcount.png)
+
+    :::image type="content" source="../images/list-starcount.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.":::
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado.](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="Captura de tela da faixa de opções Inserir no Excel na web, com o botão Meus suplementos destacado.":::
 
 1. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -160,7 +167,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
-5. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto **=CONTOSO. GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** e pressione Enter. Você deve ver que o resultado na célula **B1** é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto **=CONTOSO. GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** e pressione Enter. Você deve ver que o resultado na célula **B1** é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 

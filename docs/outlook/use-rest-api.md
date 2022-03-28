@@ -3,20 +3,25 @@ title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
 ms.date: 07/06/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 063a819ccb7f71351e0eec8cef1702d98c8466b0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483384"
 ---
-
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
-O namespace [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
+O namespace [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
 
 > [!IMPORTANT]
 > **As OUTLOOK REST são preteridas**
 >
-> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, [compare os pontos de extremidade Graph e Outlook DA API REST da Microsoft](/outlook/rest/compare-graph).
+> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, [compare os Graph e Outlook da API REST](/outlook/rest/compare-graph).
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 
-As APIs REST do Outlook exigem um token portador no cabeçalho `Authorization`. Normalmente, os aplicativos usam fluxos do OAuth2 para recuperar um token. No entanto, os suplementos podem recuperar um token sem implementar o OAuth2 usando o novo método [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) introduzido no conjunto de requisitos de Caixa de Correio 1.5.
+As APIs REST do Outlook exigem um token portador no cabeçalho `Authorization`. Normalmente, os aplicativos usam fluxos do OAuth2 para recuperar um token. No entanto, os suplementos podem recuperar um token sem implementar o OAuth2 usando o novo método [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) introduzido no conjunto de requisitos de Caixa de Correio 1.5.
 
 Ao definir a opção `isRest` como `true`, você poderá solicitar um token compatível com APIs REST.
 
@@ -43,10 +48,10 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 
 ## <a name="get-the-item-id"></a>Obter a ID do item
 
-Para recuperar o item atual pela REST, o suplemento precisará da ID do item, formatada corretamente para REST. Isto é obtido pela propriedade [Office.context.mailbox.item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), mas algumas verificações devem ser feitas para garantir que seja uma ID formatada para REST.
+Para recuperar o item atual pela REST, o suplemento precisará da ID do item, formatada corretamente para REST. Isto é obtido pela propriedade [Office.context.mailbox.item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), mas algumas verificações devem ser feitas para garantir que seja uma ID formatada para REST.
 
 - No Outlook Mobile, o valor retornado por `Office.context.mailbox.item.itemId` é uma ID formatada para REST e pode ser usado como está.
-- Em outros clientes do Outlook, o valor retornado por `Office.context.mailbox.item.itemId` é uma ID formatada para EWS e deve ser convertida usando o método [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
+- Em outros clientes do Outlook, o valor retornado por `Office.context.mailbox.item.itemId` é uma ID formatada para EWS e deve ser convertida usando o método [Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods).
 - Também é necessário converter a ID do anexo em uma ID com formato REST para usá-la. As IDs devem ser convertidas porque as IDs EWS podem conter valores não seguros para URL que causarão problemas ao REST.
 
 O suplemento pode determinar em qual cliente do Outlook ele será carregado verificando a propriedade [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member).
@@ -70,7 +75,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>Obter a URL da API REST
 
-A informação final que seu suplemento precisa para chamar a API REST é o nome do host que deve usar para enviar solicitações de API. Estas informações estão na propriedade [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties).
+A informação final que seu suplemento precisa para chamar a API REST é o nome do host que deve usar para enviar solicitações de API. Estas informações estão na propriedade [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties).
 
 ### <a name="example"></a>Exemplo
 
@@ -84,7 +89,7 @@ var restHost = Office.context.mailbox.restUrl;
 Depois que seu suplemento tiver o token de acesso, a ID do item e a URL da API REST, ele poderá passar essas informações para um serviço de back-end que chama a API REST ou pode chamá-la diretamente usando o AJAX. O exemplo a seguir chama a API REST do Email do Outlook para obter a mensagem atual.
 
 > [!IMPORTANT]
-> Para implantações Exchange locais, as solicitações do lado do cliente usando AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
+> Para implantações Exchange locais, as solicitações do lado do cliente usando a AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
 
 ```js
 function getCurrentItem(accessToken) {

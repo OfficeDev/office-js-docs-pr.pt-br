@@ -3,22 +3,22 @@ title: 'Cenário: implementar o logon único no seu serviço'
 description: Saiba como usar o token de logon único e o token de identidade do Exchange fornecidos por um suplemento do Outlook para implementar o SSO com o serviço.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a2d73439e7db8cdaf8274bd6b9ad54366c24770
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: cc13b13b0ba3469fe1bfd1a02689f39a28c4b0a6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073301"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484592"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>Cenário: implementar o logon único no serviço em um suplemento do Outlook
 
 Neste artigo exploraremos um método recomendado de usar o [token de acesso de logon único](authenticate-a-user-with-an-sso-token.md) e o [token de identidade do Exchange](authenticate-a-user-with-an-identity-token.md) juntos para fornecer um logon único na implementação do seu próprio serviço de back-end. Usando dois tokens em conjunto, será possível aproveitar os benefícios do token de acesso SSO quando ele estiver disponível, garantindo que o suplemento funcionará quando ele não estiver disponível, como quando o usuário alterna para um cliente não compatível ou quando a caixa de correio do usuário está em um servidor do Exchange local.
 
-Para um exemplo de complemento que implementa as ideias neste artigo, [consulte Outlook SSO de complemento.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+Para um exemplo de complemento que implementa as ideias neste artigo, [consulte Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 
 
 > [!NOTE]
-> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
@@ -83,7 +83,7 @@ Com base na resposta da API Web de back-end, talvez o suplemento precise da auto
 1. O suplemento informa o usuário que precisa que ele autorize o uso da API e pede a ele para clicar em um link ou em um botão para iniciar o processo.
 
     > [!NOTE]
-    > O exemplo de add-in [no Outlook SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) de complemento mostra como usar a [API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) de Diálogo e a biblioteca [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) como opções para iniciar o fluxo de Código de Autorização [OAuth2](/azure/active-directory/develop/active-directory-protocols-oauth-code) para a API.
+    > O exemplo de add-in no SSO do Outlook de complemento mostra como usar a [API de Diálogo](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) e [a](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) biblioteca [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) como opções para iniciar o fluxo de Código de Autorização [OAuth2](/azure/active-directory/develop/active-directory-protocols-oauth-code) para a API.
 
 1. Após a conclusão do fluxo, o suplemento envia o token de atualização à API Web de back-end e inclui o token SSO (se disponível) ou o token de identidade do Exchange.
 

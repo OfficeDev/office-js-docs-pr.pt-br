@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8bc2ea45588c7e10cd4fbd2fc32ff88a6c3233a2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746471"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484136"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -33,7 +33,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
 
 1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
 1. Abra o arquivo **manifest.xml**.
-1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md).
+1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
     ```
     
     > [!NOTE]
-    > Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](../reference/manifest/runtimes.md) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+    > Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Encontre o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 

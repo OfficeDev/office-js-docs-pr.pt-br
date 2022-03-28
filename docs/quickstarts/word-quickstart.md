@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 0c6a12cc84f35ceb04e26df8be4635bddd42ca04
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: c88f8b2b90c4078c4ba10e1ce37aec3a20e9639c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511332"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484339"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -146,12 +146,12 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     (function () {
 
         Office.onReady(function() {
-            // Office is ready
+            // Office is ready.
             $(document).ready(function () {
-                // The document is ready
+                // The document is ready.
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
-                    // Do something that is only available via the new APIs
+                    // Do something that is only available via the new APIs.
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);

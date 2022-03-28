@@ -3,12 +3,12 @@ title: 'Solicitar permissões para uso da API em suplementos '
 description: Saiba mais sobre diferentes níveis de permissão a declarar no manifesto de um conteúdo ou de um complemento do painel de tarefas para especificar o nível de acesso à API JavaScript.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9fa0276c7ec130621affdcd6070e034cd30b79
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1e4f0bf7f9f8d1142f5fa4f252a6d1f0a11c4aa3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743984"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483610"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Solicitar permissões para uso da API em suplementos 
 
@@ -22,7 +22,7 @@ Um modelo de permissões de acesso da API JavaScript com cinco níveis fornece a
 
 ![Níveis de permissões para aplicativos de painel de tarefas.](../images/office15-app-sdk-task-pane-app-permission.png)
 
-Essas permissões especificam o subconjunto da API que o tempo de execução do suplemento permitirá que o suplemento de conteúdo ou de painel de tarefas use quando um usuário inserir e ativar o suplemento (confiar nele). Para declarar o nível de permissão que o suplemento do conteúdo ou do painel de tarefas requer, especifique um dos valores de texto da permissão no elemento [Permissions](../reference/manifest/permissions.md) do manifesto do suplemento. O exemplo a seguir solicita a permissão  **WriteDocument**, que autorizará somente os métodos que podem gravar no documento, mas não lê-lo.
+Essas permissões especificam o subconjunto da API que o tempo de execução do suplemento permitirá que o suplemento de conteúdo ou de painel de tarefas use quando um usuário inserir e ativar o suplemento (confiar nele). Para declarar o nível de permissão que o suplemento do conteúdo ou do painel de tarefas requer, especifique um dos valores de texto da permissão no elemento [Permissions](/javascript/api/manifest/permissions) do manifesto do suplemento. O exemplo a seguir solicita a permissão  **WriteDocument**, que autorizará somente os métodos que podem gravar no documento, mas não lê-lo.
 
 ```XML
 <Permissions>WriteDocument</Permissions>

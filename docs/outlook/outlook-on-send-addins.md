@@ -3,8 +3,13 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 08/03/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 904e108e623324c6cfc241f81c794edf30c1a3c9
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483473"
 ---
-
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
 O recurso Ao enviar para suplementos do Outlook fornece uma maneira de manipular uma mensagem ou item de reunião, ou impede que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar. Por exemplo, você pode usar o recurso Ao enviar para:
@@ -28,7 +33,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 |Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Sim|Sim|
 
 > [!NOTE]
-> O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte [o servidor atual](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) e o suporte ao cliente para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte [o servidor atual](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) e o suporte ao cliente para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 > [!IMPORTANT]
 > Os complementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).
@@ -70,9 +75,9 @@ Além disso, não é `item.close()` recomendável que você chame o manipulador 
 
 A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além de situações em que os complementos não são ativados conforme o que é notado na seção Itens de Caixa de Correio disponíveis para os [complementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de complementos do Outlook, a funcionalidade não é suportada no momento para o modo offline em que esse modo está disponível.
 
-Nos casos em que Outlook os Outlook não são ativados, o complemento ao enviar não será executado e a mensagem será enviada.
+Nos casos em que Outlook os complementos não são ativados, o complemento ao enviar não será executado e a mensagem será enviada.
 
-No entanto, se o recurso ao enviar estiver habilitado e disponível, mas o cenário de caixa de correio não tiver suporte, Outlook não permitirá o envio.
+No entanto, se o recurso ao enviar estiver habilitado e disponível, mas o cenário de caixa de correio não for compatível, Outlook não permitirá o envio.
 
 ## <a name="multiple-on-send-add-ins"></a>Vários suplementos Ao enviar
 
@@ -375,7 +380,7 @@ Os suplementos Ao enviar serão executados durante o envio se o servidor do Exch
 Enquanto os complementos ao enviar estão  processamento de um item, o usuário pode editar o item adicionando, por exemplo, texto ou anexos inadequados. Se você quiser impedir que o usuário edite o item enquanto o seu add-in está  processamento no envio, você pode implementar uma solução alternativa usando uma caixa de diálogo. Essa solução alternativa pode ser usada em Outlook na Web (clássico), Windows e Mac.
 
 > [!IMPORTANT]
-> Modern Outlook na Web: para impedir que o usuário edite o item enquanto o seu complemento está sendo processada no envio, defina o sinalizador *OnSendAddinsEnabled* `true` como conforme descrito na seção Instalar os [complementos do Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) que usam a seção ao enviar anteriormente neste artigo.
+> Modern Outlook na Web: para impedir que o usuário edite o item enquanto o seu complemento está sendo processada no envio, você deve definir o sinalizador *OnSendAddinsEnabled* `true` como conforme descrito na seção Instalar os [complementos do Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) que usam a seção ao enviar anteriormente neste artigo.
 
 No manipulador ao enviar:
 
@@ -517,7 +522,7 @@ A seguir estão os parâmetros do `addAsync` método.
 Para sinalizar que o suplemento terminou de processar o evento `ItemSend` disparado pela operação enviar, chame o método `event.completed({allowEvent:Boolean})`. A propriedade `allowEvent` é um booleano. Se for definido como `true`, o envio será permitido. Se definido como `false`, a mensagem de email será impedida de ser enviada.
 
 > [!NOTE]
-> Para saber mais, confira [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [completed](/javascript/api/office/office.addincommands.event).
+> Para saber mais, confira [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [completed](/javascript/api/office/office.addincommands.event).
 
 ### <a name="replaceasync-removeasync-and-getallasync-methods"></a>Métodos `replaceAsync`, `removeAsync` e `getAllAsync`
 

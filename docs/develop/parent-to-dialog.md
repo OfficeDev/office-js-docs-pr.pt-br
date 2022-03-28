@@ -3,16 +3,16 @@ title: Maneiras alternativas de passar mensagens para uma caixa de diálogo de s
 description: Saiba soluções alternativas a ser usadas quando o método messageChild não é suportado.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e17cb81ab781c6b9acf0ae76a29c601a61c9f931
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 36500ac554c9e96de2c20ba76f80dd9dcb628a5a
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743367"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483637"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Maneiras alternativas de passar mensagens para uma caixa de diálogo de sua página host
 
-A maneira recomendada `messageChild` de passar dados e mensagens de uma página pai para uma caixa de diálogo filho é com o método conforme descrito em Use a API de diálogo Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). Se o seu add-in estiver em execução em uma plataforma ou host que não oferece suporte ao conjunto de requisitos [dialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md), há duas outras maneiras de passar informações para a caixa de diálogo.
+A maneira recomendada `messageChild` de passar dados e mensagens de uma página pai para uma caixa de diálogo filho é com o método conforme descrito em Use a API de diálogo Office em seus [Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). Se o seu add-in estiver em execução em uma plataforma ou host que não oferece suporte ao conjunto de requisitos [dialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets), há duas outras maneiras de passar informações para a caixa de diálogo.
 
 - Adicionar parâmetros de consulta à URL que é transmitida para `displayDialogAsync`.
 - Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum (a propriedade [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)), mas se elas têm o mesmo *domínio (incluindo* o número da porta, se for o caso), elas compartilham um local [comum](https://www.w3schools.com/html/html5_webstorage.asp) Armazenamento.\*

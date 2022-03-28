@@ -3,19 +3,19 @@ title: Obter e definir categorias
 description: Como gerenciar categorias na caixa de correio e no item.
 ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f9167fcc31110543d08019e5428952beab0ccc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3f39fba37e209b4f23955aebb54e8f88807f24dd
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746297"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484523"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 
 Em Outlook, um usuário pode aplicar categorias a mensagens e compromissos como um meio de organizar seus dados de caixa de correio. O usuário define a lista mestra de categorias codificadas por cores para sua caixa de correio e, em seguida, pode aplicar uma ou mais dessas categorias a qualquer mensagem ou item de compromisso. Cada [categoria](/javascript/api/outlook/office.categorydetails) na lista mestra é representada pelo nome e [cor](/javascript/api/outlook/office.mailboxenums.categorycolor) especificados pelo usuário. Você pode usar a api Office JavaScript para gerenciar a lista mestra categorias na caixa de correio e as categorias aplicadas a um item.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="manage-categories-in-the-master-list"></a>Gerenciar categorias na lista mestra
 
@@ -141,4 +141,4 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>Confira também
 
 - [Outlook permissões](understanding-outlook-add-in-permissions.md)
-- [Elemento Permissions no manifesto](../reference/manifest/permissions.md)
+- [Elemento Permissions no manifesto](/javascript/api/manifest/permissions)

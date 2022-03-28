@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo novo para Office de complementos
 description: Diretrizes para usar ícones de estilo fresh em Office de complementos.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: aa5e93eeced9a2accb6ad9f1f6dc32a72f9386e7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743099"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483542"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para Office de complementos
 
@@ -132,7 +132,7 @@ Os ícones do Office foram projetados para renderizar bem em modos de alto contr
 
 ## <a name="see-also"></a>Confira também
 
-- [Elemento de manifesto de ícone](../reference/manifest/icon.md)
-- [Elemento de manifesto IconUrl](../reference/manifest/iconurl.md)
-- [Elemento de manifesto HighResolutionIconUrl](../reference/manifest/highresolutioniconurl.md)
+- [Elemento de manifesto de ícone](/javascript/api/manifest/icon)
+- [Elemento de manifesto IconUrl](/javascript/api/manifest/iconurl)
+- [Elemento de manifesto HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl)
 - [Criar um ícone para o seu suplemento](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

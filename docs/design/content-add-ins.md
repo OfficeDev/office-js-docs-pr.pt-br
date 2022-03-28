@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: ea167f338834245975f2e752803e264ddb8da5e6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742950"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483930"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -49,13 +49,13 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
 
-- Verifique se o seu Office de usuário funcionará em um [aplicativo ou plataforma Office específico](../overview/office-add-in-availability.md).
+- Verifique se o seu Office de usuário funcionará em um [aplicativo ou plataforma Office específico](/javascript/api/requirement-sets).
 - Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
 - Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 
 ## <a name="see-also"></a>Confira também
 
-- [Disponibilidade de aplicativos e plataformas de cliente Office para Suplementos do Office](../overview/office-add-in-availability.md)
+- [Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office](/javascript/api/requirement-sets)
 - [Núcleo da Malha em Suplementos do Office](fabric-core.md)
 - [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
 - [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

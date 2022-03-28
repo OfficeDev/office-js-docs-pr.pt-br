@@ -3,12 +3,12 @@ title: Posicione uma guia personalizada sobre a faixa de opções
 description: Saiba como controlar onde uma guia personalizada aparece na faixa Office faixa de opções e se ela tem foco por padrão.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d5dd4e1268fdb7b596aa8b258666f16e65f10c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0e1309e0e12817b9a1434f7865b1a578b3aba3f1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743345"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483851"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Posicione uma guia personalizada sobre a faixa de opções
 
@@ -22,7 +22,7 @@ Você pode especificar onde deseja que a guia personalizada do seu Office apare�
 > - O recurso de complemento e a marcação descritos neste artigo só *estão disponíveis PowerPoint na Web*.
 > - A marcação descrita neste artigo só funciona em plataformas que suportam o conjunto de **requisitos AddinCommands 1.3**. Consulte [Comportamento em plataformas sem suporte](#behavior-on-unsupported-platforms) abaixo.
 
-Especifique onde você deseja que uma guia personalizada apareça identificando qual guia de Office integrado você deseja que ela seja ao lado e especificando se ela deve estar no lado esquerdo ou direito da guia inserida. Faça essas especificações incluindo um [insertBefore](../reference/manifest/customtab.md#insertbefore) (à esquerda) ou um elemento [InsertAfter](../reference/manifest/customtab.md#insertafter) (à direita) no elemento [CustomTab](../reference/manifest/customtab.md) do manifesto do seu complemento. (Você não pode ter ambos os elementos.)
+Especifique onde você deseja que uma guia personalizada apareça identificando qual guia de Office integrado você deseja que ela seja ao lado e especificando se ela deve estar no lado esquerdo ou direito da guia inserida. Faça essas especificações incluindo um [insertBefore](/javascript/api/manifest/customtab#insertbefore) (à esquerda) ou um elemento [InsertAfter](/javascript/api/manifest/customtab#insertafter) (à direita) no elemento [CustomTab](/javascript/api/manifest/customtab) do manifesto do seu complemento. (Você não pode ter ambos os elementos.)
 
 No exemplo a seguir, a guia personalizada é configurada para aparecer *logo após a* **guia** Revisão. Observe que o valor do **elemento InsertAfter** é a ID da guia Office. 
 
@@ -55,4 +55,4 @@ Office sempre dá foco padrão à guia que está imediatamente à direita da **g
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportamento em plataformas sem suporte
 
-Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), a marcação descrita neste artigo será ignorada e sua guia personalizada aparecerá como a guia mais à direita na faixa de opções. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos  do manifesto. Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência alternativa quando **AddinCommands 1.3** não for suportado, conforme descrito em [Design para experiências alternativas](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Por exemplo, se o seu add-in contiver instruções que pressuem que a guia personalizada é onde você deseja, você pode ter uma versão alternativa que presume que a guia seja a mais à direita.
+Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), a marcação descrita neste artigo será ignorada e sua guia personalizada aparecerá como a guia mais à direita na faixa de opções. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos  do manifesto. Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência alternativa quando **AddinCommands 1.3** não for suportado, conforme descrito em [Design para experiências alternativas](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Por exemplo, se o seu add-in contiver instruções que pressuem que a guia personalizada é onde você deseja, você pode ter uma versão alternativa que presume que a guia seja a mais à direita.

@@ -3,18 +3,18 @@ title: Usar regras de ativação de expressões regulares para mostrar um suplem
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
 ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f56d973ed3470b70bdfe834f9adc8a15a7623f0b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148566"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484415"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
-Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que o Outlook não ativa os complementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que Outlook não ativa os complementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
-Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
+Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
 O Outlook avalia expressões regulares com base em regras para o intérprete de JavaScript usado pelo navegador no computador cliente. O Outlook dá suporte à mesma lista de caracteres especiais que têm suporte em todos os processadores XML. A tabela a seguir lista os caracteres especiais. Você pode usar esses caracteres em uma expressão regular especificando a sequência de escape para o caractere correspondente, conforme descrito na tabela a seguir.
 
@@ -126,11 +126,11 @@ A regra `ItemHasKnownEntity` a seguir ativa o suplemento sempre que há uma URL 
 
 Você pode obter corresponde a uma expressão regular usando os métodos a seguir no item atual.
 
-- [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) retorna correspondências no item atual para todas as expressões regulares especificadas nas regras `ItemHasRegularExpressionMatch` e `ItemHasKnownEntity` do suplemento.
+- [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) retorna correspondências no item atual para todas as expressões regulares especificadas nas regras `ItemHasRegularExpressionMatch` e `ItemHasKnownEntity` do suplemento.
 
-- [getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) retorna correspondências no item atual para a expressão regular especificada na regra `ItemHasRegularExpressionMatch` do suplemento.
+- [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) retorna correspondências no item atual para a expressão regular especificada na regra `ItemHasRegularExpressionMatch` do suplemento.
 
-- [getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) retorna instâncias inteiras de entidades que contêm correspondências para a expressão regular identificada especificada em uma regra `ItemHasKnownEntity` do suplemento.
+- [getFilteredEntitiesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) retorna instâncias inteiras de entidades que contêm correspondências para a expressão regular identificada especificada em uma regra `ItemHasKnownEntity` do suplemento.
 
 Quando as expressões regulares são avaliadas, as correspondências são retornadas para seu suplemento em um objeto de matriz. Para `getRegExMatches`, esse objeto tem o identificador do nome da expressão regular.
 

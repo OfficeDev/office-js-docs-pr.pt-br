@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de Office de diálogo, como práticas recomendadas para um aplicativo de página única (SPA).
 ms.date: 07/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 773edd6b041ad6e49b479b3705ebcdea1875e561
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a9d9dcbbeeb52aa8d05c27c3cd823ce336c71233
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743501"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483735"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -23,7 +23,7 @@ Este artigo fornece regras, gotchas e práticas recomendadas para a API de diál
 
 - A caixa de diálogo só pode navegar até URLs HTTPS, não HTTP.
 - A URL passada para o [método displayDialogAsync](/javascript/api/office/office.ui) deve estar exatamente no mesmo domínio que o próprio complemento. Não pode ser um subdomínio. Mas a página passada para ela pode redirecionar para uma página em outro domínio.
-- Uma janela host, que pode ser um painel de tarefas ou o arquivo de função sem [](../reference/manifest/functionfile.md) interface do usuário de um comando de complemento, pode ter apenas uma caixa de diálogo aberta por vez.
+- Uma janela host, que pode ser um painel de tarefas ou o arquivo de função sem [](/javascript/api/manifest/functionfile) interface do usuário de um comando de complemento, pode ter apenas uma caixa de diálogo aberta por vez.
 - Somente duas Office APIs podem ser chamadas na caixa de diálogo:
   - A [função messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) .
   - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)

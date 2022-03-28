@@ -3,19 +3,19 @@ title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a89ad869305d88736c72619f9f86ecd7121437
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743648"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483825"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
 Este artigo descreve como usar o modelo de API para a criação de Excel, Word, PowerPoint e OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
 
 > [!NOTE]
-> Esse modelo não tem suporte nos clientes do Office 2013. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](../overview/office-add-in-availability.md).
+> Esse modelo não tem suporte nos clientes do Office 2013. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](/javascript/api/requirement-sets).
 
 > [!TIP]
 > Os exemplos nesta página usam as APIs javaScript Excel, mas os conceitos também se aplicam OneNote, PowerPoint, Visio e APIs JavaScript do Word.

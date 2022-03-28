@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa301996d653170d02280efbdb7e94733b5dd924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742932"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483892"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -29,8 +29,8 @@ Uma guia contextual é um controle de tabulação oculto na faixa de opções Of
 > [!NOTE]
 > As guias contextuais personalizadas funcionam somente em plataformas que suportam os seguintes conjuntos de requisitos. Para obter mais informações sobre conjuntos de requisitos e como trabalhar com eles, consulte [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
 >
 > Você pode usar as verificações de tempo de execução em seu código para testar se a combinação de host e plataforma do usuário oferece suporte a esses conjuntos de requisitos, conforme descrito em [Runtime verifica](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) se há suporte ao método e ao conjunto de requisitos. (A técnica de especificar os conjuntos de requisitos no manifesto, que também é descrito nesse artigo, não funciona atualmente para RibbonApi 1.2.) Como alternativa, você pode [implementar uma experiência de interface do usuário alternativa quando guias contextuais personalizadas não são suportadas](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
@@ -62,7 +62,7 @@ A adição de guias contextuais personalizadas exige que o seu add-in use o temp
 Ao contrário das guias principais personalizadas, definidas com XML no manifesto, as guias contextuais personalizadas são definidas no tempo de execução com um blob JSON. Seu código analisará o blob em um objeto JavaScript e passará o objeto para o método [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)). As guias contextuais personalizadas só estão presentes em documentos nos quais o seu complemento está sendo executado no momento. Isso é diferente das guias principais personalizadas que são adicionadas à faixa de opções do aplicativo Office quando o complemento é instalado e permanecem presentes quando outro documento é aberto. Além disso, o `requestCreateControls` método pode ser executado apenas uma vez em uma sessão do seu complemento. Se for chamado novamente, será lançado um erro.
 
 > [!NOTE]
-> A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](../reference/manifest/customtab.md) e seus elementos descendentes no XML do manifesto.
+> A estrutura das propriedades e subpropropriedades do blob JSON (e os nomes principais) é aproximadamente paralela à estrutura do elemento [CustomTab](/javascript/api/manifest/customtab) e seus elementos descendentes no XML do manifesto.
 
 Construiremos um exemplo de guias contextuais blob JSON passo a passo. O esquema completo da guia contextual JSON está [em dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Se você estiver trabalhando no Visual Studio Code, poderá usar esse arquivo para obter IntelliSense e validar seu JSON. Para obter mais informações, [consulte Editing JSON with Visual Studio Code - Esquemas e configurações JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
@@ -530,9 +530,9 @@ Algumas combinações de plataforma, Office aplicativo e Office build não supor
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>Usar guias ou controles nãocontextuais
 
-Há um elemento de manifesto, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas.
+Há um elemento de manifesto, [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi), projetado para criar uma experiência de fallback em um complemento que implementa guias contextuais personalizadas quando o add-in está sendo executado em um aplicativo ou plataforma que não oferece suporte a guias contextuais personalizadas.
 
-A estratégia mais simples para usar esse elemento é definir uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais* ) no manifesto que duplica as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` como o primeiro elemento filho dos elementos [Group](../reference/manifest/group.md), [Control](../reference/manifest/control.md) e menu **Item** duplicados nas guias principais personalizadas. O efeito de fazer isso é o seguinte:
+A estratégia mais simples para usar esse elemento é definir uma ou mais guias principais personalizadas (ou seja, guias personalizadas *nãocontextuais* ) no manifesto que duplica as personalizações da faixa de opções das guias contextuais personalizadas no seu complemento. Mas você adiciona `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` como o primeiro elemento filho dos elementos [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control) e menu **Item** duplicados nas guias principais personalizadas. O efeito de fazer isso é o seguinte:
 
 - Se o complemento for executado em um aplicativo e plataforma que suportam guias contextuais personalizadas, os grupos e controles principais personalizados não aparecerão na faixa de opções. Em vez disso, a guia contextual personalizada será criada quando o complemento chamar o `requestCreateControls` método.
 - Se o complemento for executado em  `requestCreateControls`um aplicativo ou plataforma que não oferece suporte, os elementos aparecerão nas guias principais personalizadas.
@@ -561,7 +561,7 @@ Apresentamos um exemplo a seguir. Observe que "MyButton" aparecerá na guia prin
 </OfficeApp>
 ```
 
-Para obter mais exemplos, consulte [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
+Para obter mais exemplos, consulte [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi).
 
 Quando um grupo pai ou menu `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`é marcado com , ele não fica visível e toda a marcação filha é ignorada quando as guias contextuais personalizadas não são suportadas. Portanto, não importa se qualquer um desses elementos filho tem o **elemento OverriddenByRibbonApi** ou qual é seu valor. A implicação disso é que, se um item de menu ou controle deve estar visível em todos os contextos, `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`então não só não deve ser marcado com , mas seu menu e grupo ancestral também não devem ser marcados *dessa maneira*.
 

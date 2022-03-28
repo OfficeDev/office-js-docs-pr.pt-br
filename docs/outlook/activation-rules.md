@@ -3,12 +3,12 @@ title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
 ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d59b6afa9140ad0aa4d362cf8dc82a8d2144f5e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 6af5003108efede78fa06b220abe3c89d472c6e5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746902"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484120"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -24,17 +24,17 @@ A figura a seguir mostra suplementos do Outlook ativados na barra de suplementos
 
 Para Outlook ativar um complemento para condições específicas, especifique as regras de ativação no manifesto do complemento usando um dos seguintes `Rule` elementos.
 
-- [Elemento Rule (MailApp complexType)](../reference/manifest/rule.md) - especifica uma regra individual.
-- [Elemento Rule (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - combina várias regras usando operações lógicas.
+- [Elemento Rule (MailApp complexType)](/javascript/api/manifest/rule) - especifica uma regra individual.
+- [Elemento Rule (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) - combina várias regras usando operações lógicas.
 
 
  > [!NOTE]
- > O `Rule` elemento que você usa para especificar uma regra individual é do tipo [complexo Rule](../reference/manifest/rule.md) abstrato. Cada um dos seguintes tipos de regras estende esse tipo complexo `Rule` abstrato. Portanto, ao especificar uma regra individual em um manifesto, é preciso usar o atributo [xsi:type](https://www.w3.org/TR/xmlschema-1/) para definir um dos tipos de regra a seguir.
+ > O `Rule` elemento que você usa para especificar uma regra individual é do tipo [complexo Rule](/javascript/api/manifest/rule) abstrato. Cada um dos seguintes tipos de regras estende esse tipo complexo `Rule` abstrato. Portanto, ao especificar uma regra individual em um manifesto, é preciso usar o atributo [xsi:type](https://www.w3.org/TR/xmlschema-1/) para definir um dos tipos de regra a seguir.
  > 
- > Por exemplo, a regra a seguir define uma [regra ItemIs](../reference/manifest/rule.md#itemis-rule) .
+ > Por exemplo, a regra a seguir define uma [regra ItemIs](/javascript/api/manifest/rule#itemis-rule) .
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > O `FormType` atributo se aplica às regras de ativação no manifesto v1.1, mas não é definido em `VersionOverrides` v1.0. Portanto, ele não pode ser usado [quando ItemIs](../reference/manifest/rule.md#itemis-rule) é usado no `VersionOverrides` nó.
+ > O `FormType` atributo se aplica às regras de ativação no manifesto v1.1, mas não é definido em `VersionOverrides` v1.0. Portanto, ele não pode ser usado [quando ItemIs](/javascript/api/manifest/rule#itemis-rule) é usado no `VersionOverrides` nó.
 
 A tabela a seguir lista os tipos de regra disponíveis. Veja mais informações após a tabela e nos artigos especificados em [Criar suplementos do Outlook para formulários de leitura](read-scenario.md).
 
@@ -67,7 +67,7 @@ O `FormType` atributo é usado para especificar o modo (leitura ou redação) no
  > [!NOTE]
  > O atributo ItemIs `FormType` é definido no esquema v1.1 e posterior, mas não em `VersionOverrides` v1.0. Não inclua o atributo `FormType` ao definir comandos de complemento.
 
-Depois que um suplemento é ativado, você pode usar a propriedade [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) para obter o item selecionado atualmente no Outlook e a propriedade [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) para obter o tipo do item atual.
+Depois que um suplemento é ativado, você pode usar a propriedade [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) para obter o item selecionado atualmente no Outlook e a propriedade [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para obter o tipo do item atual.
 
 Opcionalmente, `ItemClass` você pode usar o atributo para especificar a classe de mensagem do item e `IncludeSubClasses` o atributo para especificar se a regra deve ser **verdadeira** quando o item for uma subclasse da classe especificada.
 

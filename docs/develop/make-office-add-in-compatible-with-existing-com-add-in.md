@@ -3,12 +3,12 @@ title: Faça seu suplemento do Office ser compatível com um suplemento COM exis
 description: Habilita a compatibilidade entre o seu Office e o seu complemento COM equivalente.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f78f41532f916dc5df43cf5a6d4e455b6f16864f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d6c2b891fa12f4ec79b52bbff8cac02a8eb45861
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743797"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483667"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Faça seu suplemento do Office ser compatível com um suplemento COM existente
 
@@ -27,7 +27,7 @@ Você pode configurar seu Office Add-in para que, quando o complemento COM equiv
 
 Para habilitar a compatibilidade entre o seu Office e o complemento COM, identifique o complemento COM equivalente no manifesto do seu Office Add-in[](add-in-manifests.md). Em seguida Office no Windows usará o add-in COM em vez do Office de Office, se ambos estão instalados.
 
-O exemplo a seguir mostra a parte do manifesto que especifica um complemento COM como um complemento equivalente. O valor do elemento `ProgId` identifica o complemento COM e o [elemento EquivalentAddins](../reference/manifest/equivalentaddins.md) deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento.
+O exemplo a seguir mostra a parte do manifesto que especifica um complemento COM como um complemento equivalente. O valor do elemento `ProgId` identifica o complemento COM e o [elemento EquivalentAddins](/javascript/api/manifest/equivalentaddins) deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento.
 
 ```xml
 <VersionOverrides>

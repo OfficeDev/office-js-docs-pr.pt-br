@@ -3,22 +3,22 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745847"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484653"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
-Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de [representante) e](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) cenários de caixa de correio compartilhada (agora em visualização) no seu Outlook add-in, incluindo quais permissões Office API JavaScript suporta.
+Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso de [representante) e](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes) cenários de caixa de correio compartilhada (agora em visualização) no seu Outlook add-in, incluindo quais permissões Office API JavaScript suporta.
 
 ## <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para esse recurso, incluindo a Atualização Cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Cliente | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
+| Client | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Não|Não|Não|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
@@ -26,7 +26,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para esse
 |Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Não|Não|Não|
 
 > [!IMPORTANT]
-> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (para obter detalhes, consulte [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (para obter detalhes, consulte [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 ## <a name="supported-setups"></a>Configurações com suporte
 
@@ -92,7 +92,7 @@ A tabela a seguir descreve as permissões que a API JavaScript Office suporta pa
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Leitura|1 (000001)|Pode ler itens.|
+|Read|1 (000001)|Pode ler itens.|
 |Gravar|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir apenas os itens criados.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
@@ -115,9 +115,9 @@ No entanto, se as operações REST ou Exchange Web Services (EWS) foram usadas p
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas no seu complemento, você deve definir o [elemento SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) como `true` no manifesto sob o elemento pai `DesktopFormFactor`. Atualmente, outros fatores de formulário não são suportados.
+Para habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas no seu complemento, você deve definir o [elemento SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) como `true` no manifesto sob o elemento pai `DesktopFormFactor`. Atualmente, outros fatores de formulário não são suportados.
 
-Para dar suporte a chamadas REST de um representante, de definir o nó [Permissões](../reference/manifest/permissions.md) no manifesto como `ReadWriteMailbox`.
+Para dar suporte a chamadas REST de um representante, de definir o nó [Permissões](/javascript/api/manifest/permissions) no manifesto como `ReadWriteMailbox`.
 
 O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true` em uma seção do manifesto.
 
@@ -148,7 +148,7 @@ O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>Executar uma operação como representante ou usuário de caixa de correio compartilhada
 
-Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do usuário, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
+Você pode obter as propriedades compartilhadas de um item no modo Redação ou Leitura chamando o [método item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) . Isso retorna um [objeto SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do usuário, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
 
 O exemplo a seguir mostra como obter as propriedades compartilhadas de uma mensagem ou compromisso, verificar se o representante ou usuário de caixa  de correio compartilhada tem permissão Gravar e fazer uma chamada REST.
 

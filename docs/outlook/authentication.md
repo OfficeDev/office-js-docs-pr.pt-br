@@ -1,10 +1,15 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
-description: 'Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.'
+description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 09/03/2021
 ms.localizationpriority: high
+ms.openlocfilehash: 4f3195b8275d9befcd5b4e35c25ae93a2d188da9
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484537"
 ---
-
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
 O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
@@ -14,8 +19,7 @@ O suplemento do Outlook pode acessar informações de qualquer lugar na Internet
 Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento autenticar e obter tokens de acesso para fazer uma chamada para a [API do Microsoft Graph](/graph/overview). Esse recurso reduz conflitos porque o usuário não precisa inserir credenciais.
 
 > [!NOTE]
-> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de logon único é compatível com Word, Excel, Outlook e PowerPoint. Para mais informações sobre onde a API Logon Único tem suporte no momento, veja [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para a locação do Microsoft 365. Para informações sobre como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 
@@ -57,8 +61,8 @@ Com esse método, o suplemento solicita que o usuário entre no serviço usando 
 
 ## <a name="callback-tokens"></a>Tokens de retorno de chamada
 
-Os tokens de retorno de chamada fornecem acesso à caixa de correio do usuário a partir do back-end do servidor usando o [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou a [API REST do Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Considere usar tokens de retorno de chamada se o suplemento:
+Os tokens de retorno de chamada fornecem acesso à caixa de correio do usuário a partir do back-end do servidor, usando [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou a [API REST do Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Considere usar tokens de retorno de chamada se seu suplemento:
 
 - Precisar acessar a caixa de correio do usuário a partir do back-end do servidor.
 
-Os suplementos obtêm tokens de retorno de chamada usando um dos métodos [getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods). O nível de acesso é controlado pelas permissões especificadas no manifesto do suplemento.
+Os suplementos obtêm tokens de retorno de chamada usando um dos métodos [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods). O nível de acesso é controlado pelas permissões especificadas no manifesto do suplemento.

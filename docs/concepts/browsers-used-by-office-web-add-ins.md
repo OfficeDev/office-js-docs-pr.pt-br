@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff3bd07ff10e46705ac9a23139bf3cafaf7ef8b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a6dd2eceb320b9f88575c80f1f4a17becc06cbe5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742835"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483369"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -48,7 +48,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>2</sup> Consulte a página [histórico de](/officeupdates/update-history-office365-proplus-by-date) atualizações e como encontrar sua versão [Office cliente e o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) de atualização para obter mais detalhes.
 
-<sup>3</sup> Se o seu complemento `<Runtimes>` incluir o elemento no manifesto, ele não usará Microsoft Edge com o WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> Se o seu complemento `<Runtimes>` incluir o elemento no manifesto, ele não usará Microsoft Edge com o WebView original (EdgeHTML). Se as condições de uso Microsoft Edge webView2 (Chromium baseadas em Chromium) são atendidas, o complemento usa esse navegador. Caso contrário, ele usa o Internet Explorer 11, independentemente da Windows ou Microsoft 365 versão. Para mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes).
 
 <sup>4</sup> Em Windows versões anteriores Windows 11, o controle WebView2 deve ser instalado para que Office possa in-lo. Ele é instalado com o Microsoft 365, versão 2101 ou posterior, e com compra única Office 2021 ou posterior; mas não é instalado automaticamente com Microsoft Edge. Se você tiver uma versão anterior do Microsoft 365 ou de compra única Office, use as instruções para instalar o controle em [Microsoft Edge WebView2 / Incorporar conteúdo da Web ... com Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). No Microsoft 365 builds antes de 16.0.14326.xxxxx, você também deve criar a chave do **registro** HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2e definir seu valor como `dword:00000001`.
 

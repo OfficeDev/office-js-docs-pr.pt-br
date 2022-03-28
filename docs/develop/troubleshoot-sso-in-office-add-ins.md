@@ -3,19 +3,19 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com o SSO (SSO) de login único em Office e lidar com condições especiais ou erros.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744186"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483520"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
 Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
 
 > [!NOTE]
-> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
@@ -36,7 +36,7 @@ Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 A API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) não é compatível pelo suplemento ou pela versão do Office.
 
 - A versão do Office não é compatível com o SSO. A versão necessária é Microsoft 365 assinatura, em qualquer canal mensal.
-- O manifesto do suplemento está sem a seção [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) adequada.
+- O manifesto do suplemento está sem a seção [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) adequada.
 
 O suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
@@ -98,7 +98,7 @@ O usuário está executando o Office no Microsoft Edge. O domínio Microsoft 365
 
 Há várias causas possíveis.
 
-- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Consulte também [Conjuntos de requisitos da API de identidade](../reference/requirement-sets/identity-api-requirement-sets.md).
+- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Consulte também [Conjuntos de requisitos da API de identidade](/javascript/api/requirement-sets/identity-api-requirement-sets).
 - A opção `forMSGraphAccess` foi passada na chamada ao `getAccessToken` e o usuário obteve o suplemento no AppSource. Nesse cenário, o administrador do locatário não deu o consentimento ao suplemento para os escopos (permissões) do Microsoft Graph necessários. Uma nova chamada ao `getAccessToken` com o `allowConsentPrompt`, não resolverá o problema porque o Office poderá solicitar ao usuário o consentimento apenas para o escopo AAD do `profile`.
 
 O código deve retornar a um sistema alternativo de autenticação de usuário.
@@ -140,7 +140,7 @@ Se o suplemento precisar de escopos do Microsoft Graph que só possam ser consen
 Esse tipo de erro só deve aparecer no desenvolvimento.
 
 - Seu código do lado do servidor deve enviar a resposta `403 Forbidden` ao cliente, que deve registrar o erro no console ou gravá-lo em um log.
-- Verifique se a seção de [Escopos](../reference/manifest/scopes.md) do manifesto do suplemento especifica todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- Verifique se a seção de [Escopos](/javascript/api/manifest/scopes) do manifesto do suplemento especifica todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
 ### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Erro de audiência inválido no token de acesso do Microsoft Graph
 

@@ -3,12 +3,12 @@ title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c7994073dde86c76368f0a0e6ea4a4b71b8ca71b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 640c39e993a69b0204a5f3447abc1935d0922fd4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743243"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404692"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
 
@@ -53,7 +53,7 @@ As imagens a seguir mostram os vários tamanhos do painel de tarefas com Aplicat
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
-Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac.
+Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac. (O menu de personalidade não é suportado em Outlook.)
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 

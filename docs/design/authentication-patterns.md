@@ -3,12 +3,12 @@ title: Diretrizes de design de autenticação para suplementos do Office
 ms.date: 02/09/2021
 description: Saiba como projetar visualmente uma página de login ou de assinatura em um Office Desem.
 ms.localizationpriority: medium
-ms.openlocfilehash: 9df30377c9f10b424c02fe39fbfeeda0980d4ab4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0188487f7a4a32bf16c00eed3f151d0a9a52be87
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742968"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483937"
 ---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
@@ -49,7 +49,7 @@ Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar
 ## <a name="single-sign-on-authentication-flow"></a>Fluxo de autenticação Sign-On único
 
 > [!NOTE]
-> No momento, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para obter mais informações sobre o suporte a um único sign-on, consulte [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> No momento, a API de login único tem suporte para Word, Excel, Outlook e PowerPoint. Para obter mais informações sobre o suporte a um único sign-on, consulte [IdentityAPI requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Use o login único para uma experiência de usuário final mais suave. A identidade do usuário dentro Office (uma conta da Microsoft ou uma Microsoft 365 de usuário) é usada para entrar no seu complemento. Como resultado, os usuários só entrarão uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
 

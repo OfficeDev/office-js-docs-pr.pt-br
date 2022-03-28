@@ -3,12 +3,12 @@ title: Manipular e retornar erros de sua função personalizada
 description: 'Manipular e retornar erros como #NULL! de sua função personalizada.'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f93059f9082bc5a53c07159c9356a41cf16729
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445716"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483498"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 
@@ -54,7 +54,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Os `#VALUE!` erros e também `#N/A` suportam mensagens de erro personalizadas. As mensagens de erro personalizadas são exibidas no menu indicador de erro, que é acessado ao passar o mouse sobre o sinalizador de erro em cada célula com um erro. O exemplo a seguir mostra como retornar uma mensagem de erro personalizada com o `#VALUE!` erro.
+Os `#VALUE!` erros e `#N/A` também suportam mensagens de erro personalizadas. As mensagens de erro personalizadas são exibidas no menu indicador de erro, que é acessado ao passar o mouse sobre o sinalizador de erro em cada célula com um erro. O exemplo a seguir mostra como retornar uma mensagem de erro personalizada com o `#VALUE!` erro.
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
@@ -64,7 +64,7 @@ throw error;
 
 ### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Manipular erros ao trabalhar com matrizes dinâmicas
 
-Além de retornar um único erro, uma função personalizada pode saída de uma matriz dinâmica que inclui um erro. Por exemplo, uma função personalizada poderia fazer a saída da matriz `[1],[#NUM!],[3]` . O exemplo de código a seguir mostra como inserir três parâmetros em uma função personalizada, substituir um dos parâmetros de entrada por um erro e retornar uma matriz bidimensional com os resultados do processamento de cada parâmetro `#NUM!` de entrada.
+Além de retornar um único erro, uma função personalizada pode saída de uma matriz dinâmica que inclui um erro. Por exemplo, uma função personalizada poderia fazer a saída da matriz `[1],[#NUM!],[3]`. O exemplo de código a `#NUM!` seguir mostra como inserir três parâmetros em uma função personalizada, substituir um dos parâmetros de entrada por um erro e retornar uma matriz bidimensional com os resultados do processamento de cada parâmetro de entrada.
 
 ```js
 /**
@@ -96,16 +96,16 @@ function returnInvalidNumberError(first, second, third) {
 
 Uma função personalizada pode ser avaliada mesmo se o intervalo de entrada contiver um erro. Por exemplo, uma função personalizada pode usar o intervalo **A2:A7** como uma entrada, mesmo que **A6:A7** contenha um erro.
 
-Para processar entradas que contêm erros, uma função personalizada deve ter a propriedade de metadados JSON `allowErrorForDataTypeAny` definida como `true` . Confira [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md#metadata-reference) para obter mais informações.
+Para processar entradas que contêm erros, uma função personalizada deve ter a propriedade de metadados `allowErrorForDataTypeAny` JSON definida como `true`. Confira [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md#metadata-reference) para obter mais informações.
 
 > [!IMPORTANT]
-> A `allowErrorForDataTypeAny` propriedade só pode ser usada com [metadados JSON criados manualmente.](custom-functions-json.md) Essa propriedade não funciona com o processo de metadados JSON gerado automaticamente.
+> A `allowErrorForDataTypeAny` propriedade só pode ser usada com [metadados JSON criados manualmente](custom-functions-json.md). Essa propriedade não funciona com o processo de metadados JSON gerado automaticamente.
 
 ## <a name="use-trycatch-blocks"></a>Usar `try...catch` blocos
 
-Em geral, use [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) blocos em sua função personalizada para capturar possíveis erros que ocorram. Se você não lidar com exceções em seu código, elas serão retornadas para Excel. Por padrão, Excel retorna para erros ou exceções não a `#VALUE!` mão.
+Em geral, use [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) blocos em sua função personalizada para capturar possíveis erros que ocorram. Se você não lidar com exceções em seu código, elas serão retornadas para Excel. Por padrão, Excel retorna `#VALUE!` para erros ou exceções não a mão.
 
-No exemplo de código a seguir, a função personalizada faz uma chamada de busca para um serviço REST. É possível que a chamada falhe, por exemplo, se o serviço REST retornar um erro ou a rede cair. Se isso acontecer, a função personalizada retornará `#N/A` para indicar que a chamada da Web falhou.
+No exemplo de código a seguir, a função personalizada faz uma chamada de busca para um serviço REST. É possível que a chamada falhe, por exemplo, se o serviço REST retornar um erro ou a rede cair. Se isso acontecer, a função personalizada retornará para `#N/A` indicar que a chamada da Web falhou.
 
 ```typescript
 /**
@@ -135,5 +135,5 @@ Saiba como [solucionar problemas com as suas funções personalizadas](custom-fu
 ## <a name="see-also"></a>Confira também
 
 * [Depuração de funções personalizadas](custom-functions-debugging.md)
-* [Conjuntos de requisitos de funções personalizadas](../reference/requirement-sets/custom-functions-requirement-sets.md)
+* [Conjuntos de requisitos de funções personalizadas](/javascript/api/requirement-sets/custom-functions-requirement-sets)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

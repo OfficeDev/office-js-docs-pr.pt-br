@@ -3,12 +3,12 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 1b89a351ad19c6038c4ffe0942e5b7335c4206b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 837ceac37375052b31acb0c243f4d5b2e2601511
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148589"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484208"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -386,7 +386,7 @@ Para mais detalhes, confira [Especificar os domínios que você deseja abrir na 
 
 ## <a name="permissions"></a>Permissões
 
-O elemento **Permissions** contém as permissões necessárias para o suplemento. Em geral, você deve especificar a permissão mínima exigida por seu suplemento, dependendo dos métodos exatos que você planeja usar. Por exemplo, um suplemento de email ativado em formulários de redação que apenas lê, mas não grava nas propriedades do item, como [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), e não chama [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para acessar quaisquer operações dos Serviços Web do Exchange, deve especificar a permissão **ReadItem**. Confira detalhes sobre as permissões disponíveis em [Noções básicas sobre permissões de suplementos do Outlook](understanding-outlook-add-in-permissions.md).
+O elemento **Permissions** contém as permissões necessárias para o suplemento. Em geral, você deve especificar a permissão mínima exigida por seu suplemento, dependendo dos métodos exatos que você planeja usar. Por exemplo, um suplemento de email ativado em formulários de redação que apenas lê, mas não grava nas propriedades do item, como [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), e não chama [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para acessar quaisquer operações dos Serviços Web do Exchange, deve especificar a permissão **ReadItem**. Confira detalhes sobre as permissões disponíveis em [Noções básicas sobre permissões de suplementos do Outlook](understanding-outlook-add-in-permissions.md).
 
 **Modelo de permissões de quatro camadas para suplementos de email**
 

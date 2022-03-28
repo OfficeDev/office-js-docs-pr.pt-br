@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f0264ff5d8dd58419ede370cb28a2ceec888cd13
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 87cffbe8d28961f8469fbe149ece029bcaaa481d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746252"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484034"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -63,7 +63,7 @@ Para limpar o cache do Office no Windows 10 quando o suplemento estiver em execu
 > Se você deseja apenas que o suplemento sideloaded reflita as alterações recentes em seus arquivos de origem HTML ou JavaScript, não deve ser necessário limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **Ctrl+F5** para recarregar o suplemento.
 
 > [!NOTE]
-> Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface do usuário - por exemplo, um que usa o recurso [ao enviar](../outlook/outlook-on-send-addins.md) - você precisará adicionar um painel de tarefas ao seu suplemento que usa o mesmo domínio para [SourceLocation](../reference/manifest/sourcelocation.md), antes de usar as etapas a seguir para limpar o cache.
+> Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface do usuário - por exemplo, um que usa o recurso [ao enviar](../outlook/outlook-on-send-addins.md) - você precisará adicionar um painel de tarefas ao seu suplemento que usa o mesmo domínio para [SourceLocation](/javascript/api/manifest/sourcelocation), antes de usar as etapas a seguir para limpar o cache.
 
 1. Instalar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 

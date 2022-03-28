@@ -3,12 +3,12 @@ title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e418ba10fa5c0b35406b5b105fd1e97599323bc1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148981"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484151"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
@@ -17,9 +17,9 @@ A forma do [painel de tarefas](add-in-commands-for-outlook.md#launching-a-task-p
 No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensagem no painel de leitura e selecionar uma nova mensagem, o painel de tarefas será fechado automaticamente, por padrão. Para um suplemento bastante usado, o usuário pode optar por manter esse painel aberto, eliminando a necessidade de reativar o suplemento em cada mensagem. Com os painéis de tarefas fixáveis, o suplemento pode fornecer essa opção aos usuários.
 
 > [!NOTE]
-> Embora o recurso de painéis de tarefas pinnable tenha sido introduzido no conjunto de requisitos [1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele está disponível apenas para assinantes Microsoft 365 usando o seguinte:
+> Embora o recurso de painéis de tarefas pinnable tenha sido introduzido no conjunto de requisitos [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), ele está disponível apenas para Microsoft 365 assinantes usando o seguinte:
 >
-> - Outlook 2016 ou posterior no Windows (build 7668.2000 ou posterior para usuários nos canais Insider Current ou Office, build 7900.xxxx ou posterior para usuários em canais adiados)
+> - Outlook 2016 ou posterior no Windows (build 7668.2000 ou posterior para usuários nos Canais Atuais ou do Office Insider, build 7900.xxxx ou posterior para usuários em canais adiados)
 > - Outlook 2016 ou posterior no Mac (versão 16.13.503 ou posterior)
 > - Outlook na Web moderno
 
@@ -31,9 +31,9 @@ No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensag
 
 ## <a name="support-task-pane-pinning"></a>Suporte para fixação do painel de tarefas
 
-A primeira etapa consiste em adicionar o suporte para fixação no [manifesto](manifests.md) do suplemento. Para fazer isso, adicione o elemento [SupportsPinning](../reference/manifest/action.md#supportspinning) ao elemento `Action`, que descreve o botão do painel de tarefas.
+A primeira etapa consiste em adicionar o suporte para fixação no [manifesto](manifests.md) do suplemento. Para fazer isso, adicione o elemento [SupportsPinning](/javascript/api/manifest/action#supportspinning) ao elemento `Action`, que descreve o botão do painel de tarefas.
 
-O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Portanto, você deve incluir um elemento [VersionOverrides](../reference/manifest/versionoverrides.md) nas versões 1.0 e 1.1.
+O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Portanto, você deve incluir um elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) nas versões 1.0 e 1.1.
 
 > [!NOTE]
 > Se você pretende [publicar](../publish/publish.md) seu suplemento do Outlook em [AppSource](https://appsource.microsoft.com), quando usar o elemento **SupportsPinning**, para passar a [validação da AppSource](/legal/marketplace/certification-policies), o conteúdo do seu suplemento não deve ser estático e deve exibir claramente os dados relacionados à mensagem que está aberta ou selecionada na caixa de correio.
@@ -89,7 +89,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Registrar o manipulador de eventos
 
-Use o método [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para registrar o manipulador de eventos para o evento `Office.EventType.ItemChanged`. Você deve fazer isso na função `Office.initialize` do painel de tarefas.
+Use o método [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para registrar o manipulador de eventos para o evento `Office.EventType.ItemChanged`. Você deve fazer isso na função `Office.initialize` do painel de tarefas.
 
 ```js
 Office.initialize = function (reason) {

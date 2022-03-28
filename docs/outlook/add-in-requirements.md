@@ -3,12 +3,12 @@ title: Requisitos de suplementos do Outlook
 description: Há diversos requisitos para os servidores e clientes para que os Suplementos do Outlook possam carregar e funcionar de maneira apropriada.
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0946cf6841fd46957b21b0d24698042e8d3fcb8c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0b163c7c90cd430a4502800e7e39fe474b188a44
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746202"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483461"
 ---
 # <a name="outlook-add-in-requirements"></a>Requisitos de suplementos do Outlook
 
@@ -44,5 +44,5 @@ Os aquivos de suplemento (HTML, JavaScript, etc.) podem ser hospedados em qualqu
 ## <a name="see-also"></a>Confira também
 
 - [Requisitos para a execução de suplementos do Office](../concepts/requirements-for-running-office-add-ins.md)
-- [Disponibilidade de aplicativos e plataformas de cliente do Office para Suplementos do Office (seção do Outlook)](../overview/office-add-in-availability.md#outlook)
-- [Suporte ao conjunto de requisitos da API JavaScript do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+- [Disponibilidade de aplicativos e plataformas de cliente do Office para Suplementos do Office (seção do Outlook)](/javascript/api/requirement-sets#outlook)
+- [Suporte ao conjunto de requisitos da API JavaScript do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

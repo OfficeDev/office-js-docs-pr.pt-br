@@ -4,19 +4,19 @@ description: Saiba como implementar o recurso append-on-send em seu Outlook de c
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3411ba2527e0b6c99e5e5674811ff76e240ccf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151892"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484163"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar o append-on-send no seu Outlook de usuário
 
 No final deste passo a passo, você terá um Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
@@ -24,15 +24,15 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar o recurso append-on-send no seu complemento, você deve incluir a permissão na `AppendOnSend` coleção [ExtendedPermissions](../reference/manifest/extendedpermissions.md).
+Para habilitar o recurso append-on-send no seu complemento, `AppendOnSend` você deve incluir a permissão na coleção [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
-Para esse cenário, em vez de executar a função ao escolher o botão Executar uma `action` ação, você executará a  `appendOnSend` função.
+Para esse cenário, em vez de executar `action` a função ao escolher o botão **Executar** uma ação, você executará a `appendOnSend` função.
 
 1. No editor de código, abra o projeto de início rápido.
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione o nó `<VersionOverrides>` inteiro (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro `<VersionOverrides>` (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,14 +120,14 @@ Para esse cenário, em vez de executar a função ao escolher o botão Executar 
     ```
 
 > [!TIP]
-> Para saber mais sobre manifestos para Outlook de Outlook, [consulte Outlook manifestos de complemento.](manifests.md)
+> Para saber mais sobre manifestos para Outlook de Outlook, [consulte Outlook manifestos de complemento](manifests.md).
 
 ## <a name="implement-append-on-send-handling"></a>Implementar a manipulação de anexação ao envio
 
 Em seguida, implemente a aplicação dependendo do evento de envio.
 
 > [!IMPORTANT]
-> Se o seu add-in [ `ItemSend` ](outlook-on-send-addins.md)também implementar o tratamento de eventos ao enviar usando , chamar o manipulador ao enviar retornará um erro, pois esse cenário não `AppendOnSendAsync` é suportado.
+> Se o seu add-in [`ItemSend`](outlook-on-send-addins.md)também implementar o tratamento de eventos ao enviar usando , `AppendOnSendAsync` chamar o manipulador ao enviar retornará um erro, pois esse cenário não é suportado.
 
 Para esse cenário, você implementará a aplicação de um aviso de isenção de responsabilidade ao item quando o usuário enviar.
 
@@ -177,7 +177,7 @@ Para esse cenário, você implementará a aplicação de um aviso de isenção d
 
 1. No menu faixa de opções ou estouro, escolha **Executar uma ação**.
 
-1. Envie a mensagem e abra-a  da sua pasta Caixa de **Entrada** ou Itens Enviados para exibir o aviso de isenção de responsabilidade anexado.
+1. Envie a mensagem e abra-a da sua pasta Caixa de  **Entrada** ou Itens Enviados para exibir o aviso de isenção de responsabilidade anexado.
 
     ![Uma captura de tela de uma mensagem de exemplo com o aviso de isenção de responsabilidade anexado ao enviar Outlook na Web.](../images/outlook-web-append-disclaimer.png)
 

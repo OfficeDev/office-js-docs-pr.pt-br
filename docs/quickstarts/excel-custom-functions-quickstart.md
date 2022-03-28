@@ -1,15 +1,15 @@
 ---
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746400"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404700"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -35,7 +35,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     - **Escolha o tipo de script:** `JavaScript`
     - **Qual será o nome do suplemento?** `starcount`
 
-    ![Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -62,7 +62,7 @@ npm run start:desktop
 ```
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-    
+
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando. Substitua “{url}” pelo URL de um documento do Excel no seu OneDrive ou uma biblioteca do SharePoint para a qual você tenha permissões.
@@ -84,6 +84,8 @@ Em sua pasta de trabalho do Excel experimente a função personalizada `ADD` pre
 1. Executar a função `CONTOSO.ADD`, usando os números `10` e `200` como parâmetros de entrada, digitando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.
 
 O `ADD` função personalizada calcula a soma de dois números que você especificar como os parâmetros de entrada. Digitando `=CONTOSO.ADD(10,200)` deve obter o resultado **210** na célula, depois pressionar enter.
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 

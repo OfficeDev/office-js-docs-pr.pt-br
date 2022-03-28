@@ -3,14 +3,19 @@ title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: d409019dd5d99a27c030bea825c108f65fc35567
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484601"
 ---
-
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
 A Office API JavaScript fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está compondo. Atualmente, há duas propriedades que fornecem o local de um compromisso:
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API básica que permite obter e definir o local.
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API aprimorada que permite obter e definir o local e inclui a especificação [do tipo de local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location`.
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): API básica que permite obter e definir o local.
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): API aprimorada que permite obter e definir o local e inclui a especificação [do tipo de local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location`.
 
 A tabela a seguir lista as APIs de local e os modos (ou seja, Redação ou Leitura) onde eles estão disponíveis.
 
@@ -23,7 +28,7 @@ A tabela a seguir lista as APIs de local e os modos (ou seja, Redação ou Leitu
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
-Para usar os métodos disponíveis apenas para compor os complementos, configure o manifesto do add-in para ativar o add-in no modo Organizador/Redação. Confira [Criar Outlook para obter formulários de redação](compose-scenario.md) para obter mais detalhes.
+Para usar os métodos disponíveis apenas para compor os complementos, configure o manifesto do add-in para ativar o add-in no modo Organizador/Redação. Confira [Criar Outlook para formulários de redação](compose-scenario.md) para obter mais detalhes.
 
 ## <a name="use-the-enhancedlocation-api"></a>Usar a `enhancedLocation` API
 

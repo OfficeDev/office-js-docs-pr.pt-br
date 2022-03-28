@@ -1,15 +1,20 @@
 ---
 title: Obter e definir os headers da Internet
-description: Como obter e definir os headers da Internet em uma mensagem em um Outlook de um complemento.
+description: Como obter e definir os headers da Internet em uma mensagem em um Outlook de complemento.
 ms.date: 04/28/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: ddbb555f8901e1b244fb3e30682d73c21928963e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484000"
 ---
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir os headers da Internet em uma mensagem em um Outlook de dados
 
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir os headers da Internet em uma mensagem em um Outlook de um Outlook de dados
+## <a name="background"></a>Segundo plano
 
-## <a name="background"></a>Histórico
-
-Um requisito comum no Outlook desenvolvimento de complementos é armazenar propriedades personalizadas associadas a um complemento em diferentes níveis. Atualmente, as propriedades personalizadas são armazenadas no nível do item ou da caixa de correio.
+Um requisito comum no Outlook desenvolvimento de complementos é armazenar propriedades personalizadas associadas a um complemento em níveis diferentes. Atualmente, as propriedades personalizadas são armazenadas no nível do item ou da caixa de correio.
 
 - Nível do item - Para propriedades que se aplicam a um item específico, use o [objeto CustomProperties](/javascript/api/outlook/office.customproperties) . Por exemplo, armazene um código de cliente associado à pessoa que enviou o email.
 - Nível da caixa de correio - Para propriedades que se aplicam a todos os itens de email na caixa de correio do usuário, use o [objeto RoamingSettings](/javascript/api/outlook/office.roamingsettings) . Por exemplo, armazene a preferência de um usuário para mostrar a temperatura em uma escala específica.
@@ -19,11 +24,11 @@ Ambos os tipos de propriedades não são preservados depois que o item deixa o s
 Embora haja uma maneira de definir os headers da Internet por meio de solicitações EWS, em alguns cenários fazer uma solicitação EWS não funcionará. Por exemplo, no modo Redação Outlook desktop, a id do item não é sincronizada no `saveAsync`  modo em cache.
 
 > [!TIP]
-> Consulte [Obter e definir metadados do Outlook de um Outlook para](metadata-for-an-outlook-add-in.md) saber mais sobre como usar essas opções.
+> Consulte [Obter e definir metadados do Outlook de](metadata-for-an-outlook-add-in.md) um Outlook para saber mais sobre como usar essas opções.
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Finalidade da API de headers da Internet
 
-Introduzidas [no conjunto de requisitos 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de headers da Internet permitem que os desenvolvedores:
+Introduzidas [no conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), as APIs de headers da Internet permitem que os desenvolvedores:
 
 - Carimbo de informações em um email que persiste depois que ele Exchange em todos os clientes.
 - Leia informações sobre um email que persistia depois que o email saiu Exchange todos os clientes em cenários de leitura de email.

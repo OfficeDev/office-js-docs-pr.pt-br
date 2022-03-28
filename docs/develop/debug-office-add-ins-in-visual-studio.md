@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use Visual Studio para depurar Office Depuração de Office cliente da área de trabalho no Windows.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c0f5d0545c67ee64de40fa27c8bf3ae34fa62414
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743526"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483775"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar Suplementos do Office no Visual Studio
 
@@ -88,7 +88,7 @@ Quando Visual Studio cria o projeto, ele executa as seguintes tarefas:
 
 Depois, o Visual Studio faz o seguinte:
 
-1. Modifica o [elemento SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto XML ( `_ProjectName_\bin\Debug\OfficeAppManifests` que foi copiado para o diretório) `~remoteAppUrl` substituindo o token pelo endereço totalmente qualificado da página inicial (por exemplo, `https://localhost:44302/Home.html`).
+1. Modifica o [elemento SourceLocation](/javascript/api/manifest/sourcelocation) do arquivo de manifesto XML ( `_ProjectName_\bin\Debug\OfficeAppManifests` que foi copiado para o diretório) `~remoteAppUrl` substituindo o token pelo endereço totalmente qualificado da página inicial (por exemplo, `https://localhost:44302/Home.html`).
 
 2. Inicia o projeto de aplicativo Web no IIS Express.
 
@@ -144,7 +144,7 @@ Quando Visual Studio cria o projeto, ele executa as seguintes tarefas.
 
 Depois, o Visual Studio faz o seguinte:
 
-1. Modifica o [elemento SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto XML ( `_ProjectName_\bin\Debug\OfficeAppManifests` que foi copiado para o diretório) `~remoteAppUrl` substituindo o token pelo endereço totalmente qualificado da página inicial (por exemplo, `https://localhost:44302/Home.html`).
+1. Modifica o [elemento SourceLocation](/javascript/api/manifest/sourcelocation) do arquivo de manifesto XML ( `_ProjectName_\bin\Debug\OfficeAppManifests` que foi copiado para o diretório) `~remoteAppUrl` substituindo o token pelo endereço totalmente qualificado da página inicial (por exemplo, `https://localhost:44302/Home.html`).
 
 2. Inicia o projeto de aplicativo Web no IIS Express.
 

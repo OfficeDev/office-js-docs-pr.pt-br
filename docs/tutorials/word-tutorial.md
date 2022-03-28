@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511246"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484026"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -386,7 +386,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
    - A diferença entre "Fim" e "Depois" é que "Fim" insere o novo texto dentro o final do intervalo existente, mas "Depois" cria um novo intervalo com a cadeia de caracteres e insere o novo intervalo após o intervalo existente. Da mesma forma, "Início" insere o texto dentro do início do intervalo existente, e "Antes" insere um novo intervalo. "Substituir" substitui o texto do intervalo existente pela cadeia de caracteres do primeiro parâmetro.
 
-   - Você viu em um estágio anterior do tutorial que os métodos insert* do objeto de corpo não têm as opções "Antes" e "Depois". Isso ocorre porque não é possível colocar o conteúdo fora do corpo do documento.
+   - Você viu em um estágio anterior do tutorial que os métodos insert* do objeto body não têm as opções "Before" e "After". Isso ocorre porque você não pode colocar conteúdo fora do corpo do documento.
 
     ```js
     const doc = context.document;
@@ -404,11 +404,11 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `originalRange.text` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `originalRange` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o texto real do intervalo no documento, portanto, sua propriedade `text` não pode ter um valor real. Primeiro, é necessário buscar o valor de texto do intervalo no documento e usá-lo para definir o valor de `originalRange.text`. Somente então será possível chamar `originalRange.text` sem causar uma exceção. Esse processo de busca tem três etapas.
 
-   1. Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.
+1. Coloque em fila um comando para carregar (ou seja, buscar) as propriedades que seu código precisa ler.
 
-   1. Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.
+1. Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.
 
-   1. Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.
+1. Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.
 
 Essas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.
 
@@ -587,11 +587,11 @@ async function insertTextIntoRange() {
 
 1. No painel de tarefas, escolha o botão **Inserir Parágrafo** para garantir que haja um parágrafo no início do documento.
 
-1. No documento, selecione a frase "Clique para Executar". *Tenha cuidado para não incluir o espaço anterior ou a vírgula seguinte na seleção.*
+1. Dentro do documento, selecione a frase "Clique para Executar". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
 1. Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.
 
-1. No documento, selecione a frase "Microsoft 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
+1. Dentro do documento, selecione a frase "Microsoft 365". *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 
 1. Escolha o botão **Adicionar Informações de Versão**. O "Office 2019" está inserido entre o "Office 2016" e o "Microsoft 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.
 

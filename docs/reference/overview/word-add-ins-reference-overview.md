@@ -4,12 +4,12 @@ description: Visão geral da API do JavaScript do Word.
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: c442e654ee939b945ab0cdf1838a84fd6eee69e5
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747129"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484626"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -42,4 +42,4 @@ Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a tr
 * [Documentação de suplementos do Word](../../word/index.yml)
 * [Visão geral dos suplementos do Word](../../word/word-add-ins-programming-overview.md)
 * [Referências da API JavaScript do Word](/javascript/api/word)
-* [Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office](../../overview/office-add-in-availability.md)
+* [Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office](/javascript/api/requirement-sets)

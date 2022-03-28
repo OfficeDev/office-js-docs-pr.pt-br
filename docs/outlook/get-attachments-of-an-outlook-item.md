@@ -3,12 +3,12 @@ title: Obter anexos em um suplemento do Outlook
 description: Seu suplemento pode usar a API de anexos para enviar informações sobre os anexos a um serviço remoto.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6d635535e9d8882877a6567160fa540c138310
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b8f851eba0eae9373d751b63e37c35db5f5ead3a
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074347"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484262"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obter anexos de um item do Outlook a partir do servidor
 
@@ -18,17 +18,17 @@ Você pode obter os anexos de um item Outlook de várias maneiras, mas qual opç
 
     Seu complemento pode usar a API de anexos para enviar informações sobre os anexos para o serviço remoto. Em seguida, o serviço pode contatar o Exchange Server diretamente para recuperar os anexos.
 
-1. Use a API [getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponível no conjunto de requisitos 1.8. Formatos com suporte: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+1. Use a API [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) , disponível no conjunto de requisitos 1.8. Formatos com suporte: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    Essa API pode ser útil se o EWS/REST não estiver disponível (por exemplo, devido à configuração de administrador do seu servidor Exchange) ou se o seu complemento quiser usar o conteúdo base64 diretamente em HTML ou JavaScript. Além disso, a API está disponível em cenários de composição em que o anexo pode ainda não ter sincronizado com o Exchange; consulte Gerenciar anexos de um item em um formulário de redação em Outlook para saber `getAttachmentContentAsync` mais. [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
+    Essa API pode ser útil se o EWS/REST não estiver disponível (por exemplo, devido à configuração de administrador do seu servidor Exchange) ou se o seu complemento quiser usar o conteúdo base64 diretamente em HTML ou JavaScript. Além disso, `getAttachmentContentAsync` a API está disponível em cenários de composição em que o anexo pode ainda não ter sincronizado com o Exchange; consulte [Gerenciar anexos](add-and-remove-attachments-to-an-item-in-a-compose-form.md) de um item em um formulário de redação em Outlook para saber mais.
 
 Este artigo detalha a primeira opção. Para enviar informações de anexo ao serviço remoto, use as seguintes propriedades e função.
 
 - Propriedade [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities)&ndash;: fornece a URL dos Serviços Web do Exchange (EWS) no Exchange Server que hospeda a caixa de correio. Seu serviço usa essa URL para chamar o método [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) do EWS.
 
-- Propriedade [Office.context.mailbox.item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) &ndash; obtém uma matriz de objetos [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails), uma para cada anexo do item.
+- Propriedade [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) &ndash; obtém uma matriz de objetos [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails), uma para cada anexo do item.
 
-- Função [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) &ndash; faz uma chamada assíncrona ao Exchange Server que hospeda a caixa de correio para obter um token de retorno de chamada que o servidor envia de volta ao Exchange Server para autenticar uma solicitação de um anexo.
+- Função [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) &ndash; faz uma chamada assíncrona ao Exchange Server que hospeda a caixa de correio para obter um token de retorno de chamada que o servidor envia de volta ao Exchange Server para autenticar uma solicitação de um anexo.
 
 ## <a name="using-the-attachments-api"></a>Usar a API de anexos
 
@@ -49,7 +49,7 @@ Cada uma dessas etapas é abordada em detalhes nas seções a seguir usando o c�
 
 ## <a name="get-a-callback-token"></a>Obter um token de retorno de chamada
 
-O objeto [Office.context.mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) fornece a função `getCallbackTokenAsync` para obter um token que o servidor remoto pode usar para se autenticar com o Exchange Server. O código a seguir mostra uma função em um suplemento que inicia a solicitação assíncrona para obter o token de retorno de chamada e a função de retorno de chamada que obtém a resposta. O token de retorno de chamada é armazenado no objeto de solicitação de serviço que é definido na próxima seção.
+O objeto [Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) fornece a função `getCallbackTokenAsync` para obter um token que o servidor remoto pode usar para se autenticar com o Exchange Server. O código a seguir mostra uma função em um suplemento que inicia a solicitação assíncrona para obter o token de retorno de chamada e a função de retorno de chamada que obtém a resposta. O token de retorno de chamada é armazenado no objeto de solicitação de serviço que é definido na próxima seção.
 
 ```js
 function getAttachmentToken() {

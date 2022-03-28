@@ -3,12 +3,12 @@ title: Persistir o estado e as configurações do add-in
 description: Aprenda a persistir dados Office aplicativos Web de complemento em execução no ambiente sem estado de um controle do navegador.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b09520d997354e5acc7ec68e3408d97230e4c9dc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 512d23a361239399c77dba9bb831f1b630aa6796
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743678"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483648"
 ---
 # <a name="persist-add-in-state-and-settings"></a>Persistir o estado e as configurações do add-in
 
@@ -28,7 +28,7 @@ Este artigo se concentra em como usar a API JavaScript Office para persistir o e
 
 ## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistir o estado e as configurações do Office JavaScript
 
-A API Office JavaScript fornece os [objetos Configurações](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do complemento em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
+A API Office JavaScript fornece os [objetos Configurações](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do complemento em sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](/javascript/api/manifest/id) do suplemento que os criou.
 
 |**Object**|**Suporte a tipos de suplementos**|**Local de armazenamento**|**Office suporte a aplicativos**|
 |:-----|:-----|:-----|:-----|
@@ -182,7 +182,7 @@ Para obter informações sobre como salvar configurações em um Outlook de Outl
 
 ## <a name="see-also"></a>Confira também
 
-- [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)
 - [Gerenciar estado e configurações para um Outlook de um Outlook de dados](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

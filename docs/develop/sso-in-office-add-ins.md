@@ -3,12 +3,12 @@ title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744254"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483605"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
@@ -107,7 +107,7 @@ Veja a seguir um exemplo da marcação.
 
 ### <a name="include-the-identity-api-requirement-set"></a>Inclua o conjunto de requisitos da API de identidade
 
-Para usar o SSO, seu suplemento exige o conjunto de requisitos da API de identidade 1.3. Para obter mais informações, confira [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+Para usar o SSO, seu suplemento exige o conjunto de requisitos da API de identidade 1.3. Para obter mais informações, confira [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
 
 ### <a name="add-client-side-code"></a>Adicionar código do lado do cliente
 
@@ -248,4 +248,4 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 - [Documentação da plataforma de identidade da Microsoft](/azure/active-directory/develop/)
 - [Conjuntos de requisitos](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)

@@ -3,18 +3,18 @@ title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 29fd772fe201a568e7507235805f4b570bf1adb1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743069"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483788"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de Office de Office para estender a interface do usuário Office adicionando botões à faixa Aplicativo do Office de usuário. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
-Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
+Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](/javascript/api/requirement-sets/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
@@ -56,7 +56,7 @@ Aplique as seguintes práticas recomendadas ao usar o recurso autoopen.
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: especificar o painel de tarefas que será aberto
 
-Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](../reference/manifest/action.md#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
+Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](/javascript/api/manifest/action#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
 
 O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTaskpaneWithDocument.
 

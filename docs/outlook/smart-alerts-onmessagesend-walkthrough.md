@@ -4,12 +4,12 @@ description: Saiba como lidar com o evento enviar mensagem em seu Outlook-in usa
 ms.topic: article
 ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
-ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
+ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "63400003"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484505"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
 
@@ -137,7 +137,7 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
 
 > [!TIP]
 >
-> - Para **opções sendMode** disponíveis com o `OnMessageSend` evento, consulte [Opções de SendMode disponíveis](../reference/manifest/launchevent.md#available-sendmode-options-preview).
+> - Para **opções sendMode** disponíveis com o `OnMessageSend` evento, consulte [Opções de SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
 > - Para saber mais sobre manifestos para Outlook de Outlook, [consulte Outlook manifestos de complemento](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implementar o tratamento de eventos

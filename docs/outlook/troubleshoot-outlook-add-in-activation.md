@@ -3,8 +3,13 @@ title: Solução de problemas de ativação de suplementos contextuais do Outloo
 description: Possíveis motivos para o seu complemento não ser ativado como você espera.
 ms.date: 09/02/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: d5f52f9697b33711a69a9d07b831229a26c7d450
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484561"
 ---
-
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
 Outlook ativação de um complemento contextual se baseia nas regras de ativação no manifesto do complemento. Quando as condições para o item selecionado no momento atendem às regras de ativação do complemento, o aplicativo ativa e exibe o botão de complemento na interface do usuário do Outlook (painel de seleção de complementos para complementos de composição, barra de complementos para complementos de leitura). No entanto, se seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
@@ -65,14 +70,14 @@ Use uma das seguintes abordagens para verificar se um complemento está desabili
 
 Se o seu suplemento do Outlook é um suplemento de leitura e deve ser ativado quando o usuário está exibindo uma mensagem (inclusive mensagens de email, solicitações de reunião, respostas e cancelamentos de reunião) ou um compromisso, embora esses itens geralmente sejam compatíveis com suplementos, há exceções. Verifique se o item selecionado é um dos [listados em que os suplementos do Outlook não são ativados](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-Além disso, já que os compromissos sempre são salvos no formato Rich Text, uma regra [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) que especifica um valor **PropertyName** de **BodyAsHTML** não ativaria um suplemento em um compromisso ou uma mensagem salva em texto sem formatação ou no formato Rich Text.
+Além disso, já que os compromissos sempre são salvos no formato Rich Text, uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) que especifica um valor **PropertyName** de **BodyAsHTML** não ativaria um suplemento em um compromisso ou uma mensagem salva em texto sem formatação ou no formato Rich Text.
 
 Mesmo se um item de email não for um dos tipos de acima, se ele não veio de uma versão do Exchange Server com no mínimo o Exchange 2013, as propriedades e entidades conhecidas, como o endereço SMTP do remetente, não seriam identificadas no item. Regras de ativação que dependem dessas entidades ou propriedades não seriam atendidas e o suplemento não seria ativado.
 
 Se seu suplemento é um suplemento de redação e deve ser ativado quando o usuário cria uma mensagem ou solicitação de reunião, verifique se o item não está protegido por IRM. No entanto, há algumas exceções.
 
 1. Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte na visualização, consulte Ativação de complemento em [itens protegidos pelo GERENCIAMENTO de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte na visualização, consulte Ativação de complemento em [itens protegidos pelo GERENCIAMENTO de Direitos de Informação (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 
@@ -158,7 +163,7 @@ Confira [Validar e solucionar problemas com seu manifesto](../testing/troublesho
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>Você está usando as regras de ativação apropriadas?
 
-A partir da versão 1.1 do esquema de manifestos dos suplementos do Office, é possível criar suplementos que são ativados quando o usuário está em um formulário de redação (suplementos de redação) ou em um formulário de leitura (suplementos de leitura). Não deixe de especificar as regras de ativação apropriadas para cada tipo de formulário em que seu suplemento deve ser ativado. Por exemplo, você pode ativar suplementos de redação usando apenas regras [ItemIs](../reference/manifest/rule.md#itemis-rule) com o atributo **FormType** definido como **Edit** ou **ReadOrEdit** e não usar qualquer dos outros tipos de regras, como [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) e [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule), para suplementos de redação. Para saber mais, confira [Regras de ativação para suplementos do Outlook](activation-rules.md).
+A partir da versão 1.1 do esquema de manifestos dos suplementos do Office, é possível criar suplementos que são ativados quando o usuário está em um formulário de redação (suplementos de redação) ou em um formulário de leitura (suplementos de leitura). Não deixe de especificar as regras de ativação apropriadas para cada tipo de formulário em que seu suplemento deve ser ativado. Por exemplo, você pode ativar suplementos de redação usando apenas regras [ItemIs](/javascript/api/manifest/rule#itemis-rule) com o atributo **FormType** definido como **Edit** ou **ReadOrEdit** e não usar qualquer dos outros tipos de regras, como [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) e [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule), para suplementos de redação. Para saber mais, confira [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
 ## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>Se você está usando uma expressão regular, ela foi especificada corretamente?
 
@@ -232,9 +237,9 @@ Depois de verificar o valor da propriedade, você pode usar uma ferramenta de av
 
 ## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>O Outlook aplica todas as expressões regulares à parte do corpo do item como você espera?
 
-Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item da qual uma regra de ativação dependa tenha o valor esperado, Outlook pode não ser capaz de avaliar todas as expressões regulares em todo o valor da propriedade item. Para fornecer um desempenho razoável e controlar o uso excessivo de recursos por um complemento de leitura, Outlook observa os seguintes limites sobre o processamento de expressões regulares em regras de ativação em tempo de execução.
+Esta seção aplica-se a todas as regras de ativação que usam expressões regulares, particularmente àquelas que serão aplicadas ao corpo do item, que pode ser grande e levar mais tempo para avaliar correspondências. Você deve estar ciente de que, mesmo que a propriedade de item da qual uma regra de ativação depende tenha o valor esperado, Outlook pode não ser capaz de avaliar todas as expressões regulares no valor inteiro da propriedade do item. Para fornecer um desempenho razoável e controlar o uso excessivo de recursos por um complemento de leitura, o Outlook observa os seguintes limites sobre o processamento de expressões regulares em regras de ativação em tempo de execução.
 
-- O tamanho do corpo do item avaliado -- Há limites para a parte de um corpo de item no qual Outlook avalia uma expressão regular. Esses limites dependem do cliente Outlook, fator de formulário e formato do corpo do item. Confira os detalhes na Tabela 2 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- O tamanho do corpo do item avaliado -- Há limites para a parte de um corpo de item no qual Outlook avalia uma expressão regular. Esses limites dependem do cliente Outlook, do fator de formulário e do formato do corpo do item. Confira os detalhes na Tabela 2 em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 - Número de correspondências de expressão regular: os clientes avançados do Outlook, o Outlook na Web e nos dispositivos móveis retornam, cada um, no máximo 50 correspondências de expressões regulares. Essas correspondências são exclusivas e correspondências duplicadas não contam para esse limite. Não suponha uma ordem nas correspondências retornadas e não suponha que a ordem em um cliente avançado do Outlook é a mesma no Outlook na Web e no OWA para Dispositivos. Se espera muitas correspondências para expressões regulares em suas regras de ativação e está faltando uma correspondência, é possível que você esteja excedendo esse limite.
 

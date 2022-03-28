@@ -1,14 +1,14 @@
 ---
 title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um Office add-in usando o esquema XML e outras ferramentas.
-ms.date: 10/29/2020
+ms.date: 03/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d885fbfca96d759c10c556bea3533bc54433db
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 02273647a2e1f639aec7adb260453a811035d7e4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745668"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404714"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -29,6 +29,8 @@ npm run validate
 
 > [!NOTE]
 > Para acessar essa funcionalidade, seu projeto de add-in deve ser criado usando o gerador [Yeoman para Office add-ins](../develop/yeoman-generator-overview.md) versão 1.1.17 ou posterior.
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>Valide seu manifesto com o office-addin-manifest
 
@@ -54,6 +56,14 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](../devel
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
+
+Se você estiver com problemas com esse comando, tente o seguinte (substituindo `MANIFEST_FILE` pelo nome do arquivo de manifesto).
+
+```command&nbsp;line
+npx office-addin-manifest validate -p MANIFEST_FILE
+```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
 

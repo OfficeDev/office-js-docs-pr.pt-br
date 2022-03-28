@@ -3,12 +3,12 @@ title: Trabalhar com substituições estendidas do manifesto
 description: Saiba como configurar recursos de extensibilidade com substituições estendidas do manifesto.
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 34002ffcb621fad9f318aad80b32feb22ac45f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743790"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483720"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>Trabalhar com substituições estendidas do manifesto
 
@@ -30,7 +30,7 @@ O esquema que define o formato JSON é [o esquema de manifesto estendido](https:
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>Diga Office onde encontrar o arquivo JSON
 
-Use o manifesto para Office onde encontrar o arquivo JSON. Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](../reference/manifest/extendedoverrides.md) . De definir o `Url` atributo como a URL completa de um arquivo JSON. A seguir, um exemplo do elemento mais simples `<ExtendedOverrides>` possível.
+Use o manifesto para Office onde encontrar o arquivo JSON. Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . De definir o `Url` atributo como a URL completa de um arquivo JSON. A seguir, um exemplo do elemento mais simples `<ExtendedOverrides>` possível.
 
 ```xml
     ...

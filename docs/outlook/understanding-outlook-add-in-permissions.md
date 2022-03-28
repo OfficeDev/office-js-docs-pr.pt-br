@@ -1,10 +1,15 @@
 ---
 title: Noções básicas sobre permissões de suplemento do Outlook
-description: 'Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.'
+description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
 ms.date: 02/19/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484189"
 ---
-
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 
 Os suplementos do Outlook especificam o nível de permissão necessário nos seus manifestos. Os níveis disponíveis são **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox**. Esses níveis de permissões são cumulativos: **Restricted** é o nível mais baixo, e cada nível mais alto inclui as permissões dos níveis mais baixos. **ReadWriteMailbox** inclui todas as permissões com suporte.
@@ -13,7 +18,7 @@ Você pode ver as permissões solicitadas por um suplemento de email antes de in
 
 ## <a name="restricted-permission"></a>Permissão restrita
 
-A permissão **Restricted** é o nível mais básico de permissão. Especifique a **Restricted** no elemento [Permissions](../reference/manifest/permissions.md), no manifesto, para solicitar essa permissão. O Outlook atribui essa permissão a um suplemento de email por padrão se o suplemento não solicitar uma permissão específica em seu manifesto.
+A permissão **Restricted** é o nível mais básico de permissão. Especifique a **Restricted** no elemento [Permissions](/javascript/api/manifest/permissions), no manifesto, para solicitar essa permissão. O Outlook atribui essa permissão a um suplemento de email por padrão se o suplemento não solicitar uma permissão específica em seu manifesto.
 
 ### <a name="can-do"></a>Pode ser feito
 
@@ -25,31 +30,31 @@ A permissão **Restricted** é o nível mais básico de permissão. Especifique 
 
 ### <a name="cant-do"></a>Não pode ser feito
 
-- Use uma [regra ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no contato, endereço de email, sugestão de reunião ou entidade de sugestão de tarefa.
+- Use uma [regra ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) no contato, endereço de email, sugestão de reunião ou entidade de sugestão de tarefa.
 
-- Usar a regra [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) ou [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule).
+- Usar a regra [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) ou [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule).
 
 - Acessar os membros na lista a seguir que pertencem às informações do usuário ou do item. A tentativa de acessar os membros nessa lista retorna **null** e resulta em uma mensagem de erro informando que o Outlook que o suplemento de email tenha permissões elevadas.
 
-  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
+  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.body](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.from](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.organizer](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.sender](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.userProfile](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)
   - [Body](/javascript/api/outlook/office.body) e todos os seus membros filhos
   - [Location](/javascript/api/outlook/office.location) e todos os seus membros filhos
   - [Recipients](/javascript/api/outlook/office.recipients) e todos os seus membros filhos
@@ -62,7 +67,7 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
 
 ### <a name="can-do"></a>Pode ser feito
 
-- [Ler todas as propriedades](item-data.md) do item atual em um formulário de leitura ou [de redação](get-and-set-item-data-in-a-compose-form.md), por exemplo, [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) em um formulário de leitura e [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) em um formulário de redação.
+- [Ler todas as propriedades](item-data.md) do item atual em um formulário de leitura ou [de redação](get-and-set-item-data-in-a-compose-form.md), por exemplo, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) em um formulário de leitura e [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) em um formulário de redação.
 
 - [Obter um token de retorno de chamada para obter anexos do item](get-attachments-of-an-outlook-item.md) ou o item completo com os Serviços Web do Exchange (EWS) ou as [APIs REST do Outlook](use-rest-api.md).
 
@@ -70,7 +75,7 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
 
 - [Obter todas as entidades conhecidas existentes](match-strings-in-an-item-as-well-known-entities.md) do assunto ou do corpo do item, e não apenas um subconjunto.
 
-- Usar todas as [entidades conhecidas](activation-rules.md#itemhasknownentity-rule) nas regras [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ou [expressões regulares](activation-rules.md#itemhasregularexpressionmatch-rule) nas regras [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule). O exemplo a seguir segue a versão 1.1 do esquema. Ela mostra uma regra que ativa o complemento se uma ou mais entidades conhecidas forem encontradas no assunto ou no corpo da mensagem selecionada.
+- Usar todas as [entidades conhecidas](activation-rules.md#itemhasknownentity-rule) nas regras [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ou [expressões regulares](activation-rules.md#itemhasregularexpressionmatch-rule) nas regras [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule). O exemplo a seguir segue a versão 1.1 do esquema. Ela mostra uma regra que ativa o complemento se uma ou mais entidades conhecidas forem encontradas no assunto ou no corpo da mensagem selecionada.
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -98,9 +103,9 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
   - Obter o item de evento de calendário atual usando a API REST do Outlook.
 
 - Use qualquer uma das APIs a seguir.
-  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
@@ -112,7 +117,7 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
   - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
   - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
-  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
@@ -130,7 +135,7 @@ Especifique o **ReadWriteItem** no elemento **Permissions**, no manifesto, para 
 
 - [Adicionar ou remover anexos](add-and-remove-attachments-to-an-item-in-a-compose-form.md) desse item.
 
-- Use todos os outros membros da API javaScript Office aplicável aos complementos de email, exceto **Mailbox.makeEWSRequestAsync**.
+- Use todos os outros membros da OFFICE JavaScript aplicáveis aos complementos de email, exceto **Mailbox.makeEWSRequestAsync**.
 
 ### <a name="cant-do"></a>Não pode ser feito
 

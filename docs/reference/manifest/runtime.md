@@ -1,14 +1,14 @@
 ---
 title: Tempo de execução no arquivo de manifesto
 description: O elemento Runtime configura seu complemento para usar um tempo de execução JavaScript compartilhado para seus vários componentes, por exemplo, faixa de opções, painel de tarefas, funções personalizadas.
-ms.date: 09/28/2021
+ms.date: 03/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: acdff8f7ffb1e9392c1671eadc36a79348ece5fa
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 38920dc43349be8da629785167d03252578f2a42
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138440"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404671"
 ---
 # <a name="runtime-element"></a>Elemento Runtime
 
@@ -16,14 +16,14 @@ Configura seu complemento para usar um tempo de execução javaScript compartilh
 
 **Tipo de complemento:** Painel de tarefas, Email
 
-**Válido somente nestes esquemas VersionOverrides:**
+**Válido somente nesses esquemas VersionOverrides**:
 
  - Painel de tarefas 1.0
  - Email 1.1
 
 Para obter mais informações, consulte [Substituições de versão no manifesto](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
-**Associado a esses conjuntos de requisitos:**
+**Associado a esses conjuntos de requisitos**:
 
 - [SharedRuntime 1.1](../requirement-sets/shared-runtime-requirement-sets.md) (Somente quando usado em um complemento do painel de tarefas.)
 
@@ -45,14 +45,24 @@ Para obter mais informações, consulte [Substituições de versão no manifesto
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-| [Override](override.md) | Não | **Outlook**: especifica o local da URL do arquivo JavaScript que Outlook Desktop requer para manipuladores de ponto de extensão [LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent) **Importante:** no momento, você só pode definir um `<Override>` elemento e ele deve ser do tipo `javascript` .|
+| [Override](override.md) | Não | **Outlook**: especifica o local da URL do arquivo JavaScript que Outlook Desktop requer para manipuladores de ponto de extensão [LaunchEvent](../../reference/manifest/extensionpoint.md#launchevent). **Importante**: no momento, você só pode definir um `<Override>` elemento e ele deve ser do tipo `javascript`.|
 
 ## <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **resid**  |  Sim  | Especifica o local da URL da página HTML do seu complemento. O `resid` pode ter não mais de 32 caracteres e deve corresponder a um atributo de um elemento no `id` `Url` `Resources` elemento. |
-|  **lifetime**  |  Não  | O valor padrão `lifetime` para é e não precisa ser `short` especificado. Outlook os complementos usam apenas o `short` valor. Se você quiser usar um tempo de execução compartilhado em um Excel de Excel, de definir explicitamente o valor como `long` . |
+|  **resid**  |  Sim  | Especifica o local da URL da página HTML do seu complemento. O `resid` pode ter não mais de 32 caracteres e deve corresponder a `id` um atributo de um `Url` elemento no `Resources` elemento. |
+|  [lifetime](#lifetime-attribute)  |  Não  | O valor padrão para `lifetime` é `short` e não precisa ser especificado. Outlook de ativação baseada em evento usam apenas o `short` valor. Se você quiser usar um tempo de execução compartilhado em um Excel de Excel, de definir explicitamente o valor como `long`. |
+
+### <a name="lifetime-attribute"></a>atributo lifetime
+
+Opcional. Representa o período de tempo em que o add-in tem permissão para ser executado.
+
+**Valores disponíveis**
+
+`short`: Padrão. Usado apenas para Outlook de ativação baseada em eventos. Depois que o add-in for ativado, ele será executado por um período máximo de tempo, conforme especificado pela plataforma. Atualmente, isso é cerca de 5 minutos. Esse é o único valor suportado pelo Outlook.
+
+`long`: Usado somente ao configurar um [tempo de execução JavaScript compartilhado](../../develop/configure-your-add-in-to-use-a-shared-runtime.md). O complemento pode iniciar no documento aberto e executado indefinidamente. Por exemplo, o código do painel de tarefas continuará sendo executado mesmo quando o usuário fechar o painel de tarefas. Esse é o único valor suportado pelo tempo de execução compartilhado.
 
 ## <a name="see-also"></a>Confira também
 

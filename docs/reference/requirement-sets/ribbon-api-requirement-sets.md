@@ -4,16 +4,16 @@ description: Especifica quais plataformas Office e builds suportam as APIs dinâ
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8dc590471433f1a98e6a653cb167bac70e1cbf1a
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746689"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404658"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 O conjunto de APIs da Faixa de Opções dá suporte ao controle programático de quando os comandos de complemento personalizados (ou seja, botões de faixa de opções personalizados e itens de menu) são habilitados e desabilitados e quando as guias contextuais aparecem na faixa de opções.
 
@@ -27,7 +27,7 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 | RibbonApi 1.2  | Build 16.0.14326.20454 ou posterior | 2102 (build 13801.20294) | N/D | 16.53.806.0 | Maio de 2021 | N/D|
 | RibbonApi 1.1  | Build 16.0.14326.20454 ou posterior | Consulte suporte<br>seção abaixo | N/D | 16.38 | Novembro de 2020 | N/D|
 
-> **&#42;** A API da Faixa de Opções é suportada somente Excel.
+> **&#42;** A API da Faixa de Opções é suportada apenas para os complementos de produção Excel. Ele está disponível como uma visualização no PowerPoint e no Word, mas somente no Office no Windows (assinatura) e no Mac. 
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>Suporte para a versão 1.1 no Office no Windows (assinatura)
 
