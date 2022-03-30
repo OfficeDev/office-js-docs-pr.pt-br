@@ -3,12 +3,12 @@ title: Posicione uma guia personalizada sobre a faixa de opções
 description: Saiba como controlar onde uma guia personalizada aparece na faixa Office faixa de opções e se ela tem foco por padrão.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1309e0e12817b9a1434f7865b1a578b3aba3f1
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: a250a3fbffc0a2aef140c8f0ac0286f61e2c5dbc
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483851"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496735"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Posicione uma guia personalizada sobre a faixa de opções
 
@@ -55,4 +55,4 @@ Office sempre dá foco padrão à guia que está imediatamente à direita da **g
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportamento em plataformas sem suporte
 
-Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), a marcação descrita neste artigo será ignorada e sua guia personalizada aparecerá como a guia mais à direita na faixa de opções. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos  do manifesto. Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência alternativa quando **AddinCommands 1.3** não for suportado, conforme descrito em [Design para experiências alternativas](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Por exemplo, se o seu add-in contiver instruções que pressuem que a guia personalizada é onde você deseja, você pode ter uma versão alternativa que presume que a guia seja a mais à direita.
+Se o seu add-in estiver instalado em uma plataforma que não oferece suporte ao conjunto de [requisitos AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), a marcação descrita neste artigo será ignorada e sua guia personalizada aparecerá como a guia mais à direita na faixa de opções. Para impedir que o seu complemento seja instalado em plataformas que não suportam a marcação, adicione uma referência ao conjunto de requisitos na seção Requisitos  do manifesto. Para obter instruções, [consulte Especificar quais Office e plataformas podem hospedar seu complemento](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Como alternativa, projete seu complemento para ter uma experiência alternativa quando **AddinCommands 1.3** não for suportado, conforme descrito em [Design para experiências alternativas](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Por exemplo, se o seu add-in contiver instruções que pressuem que a guia personalizada é onde você deseja, você pode ter uma versão alternativa que presume que a guia seja a mais à direita.

@@ -4,19 +4,19 @@ description: Saiba como implementar o recurso append-on-send em seu Outlook de c
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1a7ec463c3998d9f85f1a085b6b28c43637651bd
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484163"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496891"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar o append-on-send no seu Outlook de usuário
 
 No final deste passo a passo, você terá um Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 

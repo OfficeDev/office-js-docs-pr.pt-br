@@ -3,20 +3,19 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Diretrizes sobre como solucionar problemas com o SSO (SSO) de login único em Office e lidar com condições especiais ou erros.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: e0607a059ec0ab14dc987d7703b7162330c58c44
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483520"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496793"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Solucionar problemas de mensagens de erro no logon único (SSO)
 
 Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
 
 > [!NOTE]
-> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de logon único é compatível com Word, Excel, Outlook e PowerPoint. Para mais informações sobre onde a API Logon Único tem suporte no momento, veja [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para a locação do Microsoft 365. Para informações sobre como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
 
@@ -98,7 +97,7 @@ O usuário está executando o Office no Microsoft Edge. O domínio Microsoft 365
 
 Há várias causas possíveis.
 
-- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Consulte também [Conjuntos de requisitos da API de identidade](/javascript/api/requirement-sets/identity-api-requirement-sets).
+- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Consulte também [Conjuntos de requisitos da API de identidade](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 - A opção `forMSGraphAccess` foi passada na chamada ao `getAccessToken` e o usuário obteve o suplemento no AppSource. Nesse cenário, o administrador do locatário não deu o consentimento ao suplemento para os escopos (permissões) do Microsoft Graph necessários. Uma nova chamada ao `getAccessToken` com o `allowConsentPrompt`, não resolverá o problema porque o Office poderá solicitar ao usuário o consentimento apenas para o escopo AAD do `profile`.
 
 O código deve retornar a um sistema alternativo de autenticação de usuário.

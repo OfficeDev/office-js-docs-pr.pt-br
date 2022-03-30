@@ -3,12 +3,12 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 08/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 904e108e623324c6cfc241f81c794edf30c1a3c9
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 583cf08e02ae72a65dcd3a6e006cd411ee824a74
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483473"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496863"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -33,7 +33,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 |Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Sim|Sim|
 
 > [!NOTE]
-> O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte [o servidor atual](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) e o suporte ao cliente para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte [o servidor atual](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) e o suporte ao cliente para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 > [!IMPORTANT]
 > Os complementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).

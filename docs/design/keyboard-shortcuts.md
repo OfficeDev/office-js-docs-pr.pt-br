@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Office de complementos
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao seu Office Add-in.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 69fbc94c0d0cda700ae3362168cc02a055c0e521
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483874"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496773"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos seus Office de usuário
 
@@ -270,7 +270,7 @@ O seu complemento pode permitir que os usuários reatribuam as ações do add-in
 > Uma boa maneira de experimentar os recursos de pré-visualização é usando uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, pode obter uma ingressando no[ programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
-> As APIs descritas nesta seção exigem o [conjunto de requisitos KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) .
+> As APIs descritas nesta seção exigem o [conjunto de requisitos KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) .
 
 Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações personalizadas de teclado de um usuário às ações de seus complementos. O método assume um parâmetro de tipo `{[actionId:string]: string|null}`, `actionId`onde os s são um subconjunto das IDs de ação que devem ser definidas no manifesto estendido JSON do complemento. Os valores são as combinações de teclas preferidas do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no manifesto estendido JSON do complemento.
 

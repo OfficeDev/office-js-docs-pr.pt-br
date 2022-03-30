@@ -3,12 +3,12 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando Excel API JavaScript.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf67b3b64d9038f8caa028b656668d51564e11b
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 9352be37c4a0d86dbbf9a1c1d62d0ccb640387aa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484082"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496933"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -16,7 +16,7 @@ Este artigo fornece exemplos de código que mostram como executar tarefas comuns
 
 ## <a name="create-a-table"></a>Criar uma tabela
 
-O exemplo de código a seguir cria uma tabela na planilha chamada **Exemplo**. A tabela tem cabeçalhos e contém quatro colunas e sete linhas de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir cria uma tabela na planilha chamada **Exemplo**. A tabela tem cabeçalhos e contém quatro colunas e sete linhas de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 > [!NOTE]
 > Para especificar um nome para uma tabela, você deve primeiro criar a tabela e, em seguida, definir `name` sua propriedade, conforme mostrado no exemplo a seguir.
@@ -56,7 +56,7 @@ await Excel.run(async (context) => {
 
 ## <a name="add-rows-to-a-table"></a>Adicionar linhas a uma tabela
 
-O exemplo de código a seguir adiciona sete novas linhas à tabela **ExpensesTable** na planilha **Exemplo**. As novas linhas são adicionadas ao fim da tabela. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir adiciona sete novas linhas à tabela **ExpensesTable** na planilha **Exemplo**. As novas linhas são adicionadas ao fim da tabela. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 > [!NOTE]
 > A `index` propriedade de [um objeto TableRow](/javascript/api/excel/excel.tablerow) indica o número de índice da linha na coleção rows da tabela. Um `TableRow` objeto não contém uma propriedade `id` que pode ser usada como uma chave exclusiva para identificar a linha.
@@ -98,7 +98,7 @@ Estes exemplos mostram como adicionar uma coluna a uma tabela. O primeiro exempl
 
 ### <a name="add-a-column-that-contains-static-values"></a>Adicionar uma coluna que contém valores estáticos
 
-O exemplo de código a seguir adiciona uma nova coluna à tabela **ExpensesTable** na planilha **Exemplo**. A nova coluna é adicionada após todas as colunas existentes na tabela e contém um cabeçalho ("Dia da Semana"), bem como dados para popular as células na coluna. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir adiciona uma nova coluna à tabela **ExpensesTable** na planilha **Exemplo**. A nova coluna é adicionada após todas as colunas existentes na tabela e contém um cabeçalho ("Dia da Semana"), bem como dados para popular as células na coluna. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 ```js
 await Excel.run(async (context) => {
@@ -131,7 +131,7 @@ await Excel.run(async (context) => {
 
 ### <a name="add-a-column-that-contains-formulas"></a>Adicionar uma coluna que contém fórmulas
 
-O exemplo de código a seguir adiciona uma nova coluna à tabela **ExpensesTable** na planilha **Exemplo**. A nova coluna é adicionada ao fim da tabela, contém um cabeçalho ("Tipo do Dia") e usa uma fórmula para popular cada célula na coluna de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir adiciona uma nova coluna à tabela **ExpensesTable** na planilha **Exemplo**. A nova coluna é adicionada ao fim da tabela, contém um cabeçalho ("Tipo do Dia") e usa uma fórmula para popular cada célula na coluna de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 ```js
 await Excel.run(async (context) => {
@@ -188,7 +188,7 @@ await Excel.run(async (context) => {
 
 ## <a name="update-column-name"></a>Atualizar o nome da coluna
 
-O exemplo de código a seguir atualiza o nome da primeira coluna da tabela para **Data da compra**. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir atualiza o nome da primeira coluna da tabela para **Data da compra**. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 ```js
 await Excel.run(async (context) => {
@@ -471,7 +471,7 @@ await Excel.run(async (context) => {
 
 ## <a name="import-json-data-into-a-table"></a>Importar dados JSON em uma tabela
 
-O exemplo de código a seguir cria uma tabela na planilha **Exemplo** e popula a tabela usando um objeto JSON que define duas linhas de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
+O exemplo de código a seguir cria uma tabela na planilha **Exemplo** e popula a tabela usando um objeto JSON que define duas linhas de dados. Se o aplicativo Excel em que o código está sendo executado oferece suporte [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) ao conjunto de requisitos **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para melhor se ajustar aos dados atuais na tabela.
 
 ```js
 await Excel.run(async (context) => {

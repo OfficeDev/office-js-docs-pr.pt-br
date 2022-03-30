@@ -3,12 +3,12 @@ title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484307"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496968"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -109,4 +109,4 @@ AS APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suport
 
 ## <a name="see-also"></a>Confira também
 
-[Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

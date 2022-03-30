@@ -3,19 +3,19 @@ title: Obter e definir categorias
 description: Como gerenciar categorias na caixa de correio e no item.
 ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f39fba37e209b4f23955aebb54e8f88807f24dd
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 82e6403ad0ac46cd713b9617c089cd4a3884789a
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484523"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496884"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 
 Em Outlook, um usuário pode aplicar categorias a mensagens e compromissos como um meio de organizar seus dados de caixa de correio. O usuário define a lista mestra de categorias codificadas por cores para sua caixa de correio e, em seguida, pode aplicar uma ou mais dessas categorias a qualquer mensagem ou item de compromisso. Cada [categoria](/javascript/api/outlook/office.categorydetails) na lista mestra é representada pelo nome e [cor](/javascript/api/outlook/office.mailboxenums.categorycolor) especificados pelo usuário. Você pode usar a api Office JavaScript para gerenciar a lista mestra categorias na caixa de correio e as categorias aplicadas a um item.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.8. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="manage-categories-in-the-master-list"></a>Gerenciar categorias na lista mestra
 

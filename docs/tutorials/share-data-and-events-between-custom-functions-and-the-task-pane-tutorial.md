@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484136"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496912"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -33,7 +33,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
 
 1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
 1. Abra o arquivo **manifest.xml**.
-1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
+1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>

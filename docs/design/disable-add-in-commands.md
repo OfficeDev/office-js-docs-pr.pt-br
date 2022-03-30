@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5530e1a2acc21ffbf3f2bb0c9a16aa178141202c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483857"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496730"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -29,7 +29,7 @@ As APIs descritas neste artigo estão disponíveis apenas Excel, PowerPoint e Wo
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Office Os complementos usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativo e plataforma Office oferece suporte a APIs que um complemento precisa. Para obter mais informações, [consulte Office versões e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
-As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](/javascript/api/requirement-sets/ribbon-api-requirement-sets) .
+As APIs enable/disable pertencem ao conjunto de [requisitos RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) .
 
 > [!NOTE]
 > O **conjunto de requisitos RibbonApi 1.1** ainda não tem suporte no manifesto, portanto, não é possível especificá-lo na seção **Requisitos do** manifesto. Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Se e *somente se essa* chamada retornar `true`, seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` retornar `false`, todos os comandos de complemento personalizados serão habilitados o tempo todo. Você deve projetar seu complemento de produção e quaisquer instruções no aplicativo para levar em conta como ele funcionará quando o conjunto de requisitos **RibbonApi 1.1** não for suportado. Para obter mais informações e exemplos `isSetSupported`de uso, consulte [Especificar Office aplicativos](../develop/specify-office-hosts-and-api-requirements.md) e requisitos de API, especialmente verificações de tempo de execução para suporte ao [método e ao conjunto de requisitos](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (A seção [Especificar quais Office e plataformas](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) podem hospedar seu complemento desse artigo não se aplica à Faixa de Opções 1.1.)

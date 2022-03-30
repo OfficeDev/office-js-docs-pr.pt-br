@@ -3,18 +3,18 @@ title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fd772fe201a568e7507235805f4b570bf1adb1
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 71834e1bd47e09e4ace5ac4b81d6018eea66f634
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483788"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496835"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de Office de Office para estender a interface do usuário Office adicionando botões à faixa Aplicativo do Office de usuário. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
-Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](/javascript/api/requirement-sets/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
+Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 

@@ -3,12 +3,12 @@ title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484683"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496898"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 
@@ -24,7 +24,7 @@ A seguir estão exemplos de complementos contextuais.
 > [!NOTE]
 > Atualmente, os suplementos contextuais não estão disponíveis no Outlook no Android e no iOS. Essa funcionalidade estará disponível no futuro.
 >
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.6. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.6. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Como fazer um suplemento contextual
 

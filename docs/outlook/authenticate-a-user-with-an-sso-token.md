@@ -3,12 +3,12 @@ title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 278c00a5add972aa527582a3b2031435c78a1281
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4b98a11786b4fdaa7ecb1e7b1924c18b706ba637
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483372"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496961"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de login único em um Outlook de usuário
 
@@ -57,5 +57,5 @@ Há etapas adicionais a serem tomadas se o seu complemento usar a ativação bas
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - Para ver um Outlook de exemplo que usa o token SSO para acessar a API do Microsoft Graph, consulte [Outlook SSO de complemento](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [Referência da API do SSO](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
-- [Conjunto de requisitos IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Conjunto de requisitos IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 - [Habilitar o SSO (login único) em Outlook de complementos que usam a ativação baseada em evento](use-sso-in-event-based-activation.md)

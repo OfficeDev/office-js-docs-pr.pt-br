@@ -3,12 +3,12 @@ title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 62dbac6c5f08596792c29ce5451cdaca077ddcdb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483657"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496814"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -36,18 +36,18 @@ Além disso, outras funcionalidades como comandos de suplemento (extensibilidade
 
 Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a versão do aplicativo do Office em que o suplemento está em execução. Para saber exatamente quais conjuntos de requisitos estão disponíveis para uma versão específica do aplicativo do Office, consulte os seguintes artigos do conjunto de requisitos específicos do aplicativo.
 
-- [Conjuntos de requisitos de API JavaScript para Excel](/javascript/api/requirement-sets/excel-api-requirement-sets) (ExcelApi)
-- [Conjuntos de requisitos de API JavaScript para Word](/javascript/api/requirement-sets/word-api-requirement-sets) (WordApi)
-- [Conjuntos de requisitos de API JavaScript para OneNote](/javascript/api/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Conjuntos de requisitos da API JavaScript do PowerPoint](/javascript/api/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [Noções básicas sobre os conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets) (Caixa de Correio)
+- [Conjuntos de requisitos de API JavaScript para Excel](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) (ExcelApi)
+- [Conjuntos de requisitos de API JavaScript para Word](/javascript/api/requirement-sets/word/word-api-requirement-sets) (WordApi)
+- [Conjuntos de requisitos de API JavaScript para OneNote](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets) (OneNoteApi)
+- [Conjuntos de requisitos da API JavaScript do PowerPoint](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets) (PowerPointApi)
+- [Noções básicas sobre os conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) (Caixa de Correio)
 
 Alguns conjuntos de requisitos contêm APIs que podem ser usadas por qualquer aplicativo do Office. Para obter informações sobre esses conjuntos de requisitos, consulte os artigos a seguir.
 
-- [Conjuntos de requisitos comuns do Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
-- [Conjuntos de requisitos dos comandos de suplemento](/javascript/api/requirement-sets/add-in-commands-requirement-sets)
-- [Conjuntos de requisitos da API de Caixa de Diálogo](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [Conjuntos de requisitos da API de Identidade](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Conjuntos de requisitos comuns do Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
+- [Conjuntos de requisitos dos comandos de suplemento](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
+- [Conjuntos de requisitos da API de Caixa de Diálogo](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Conjuntos de requisitos da API de Identidade](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 O número da versão de um conjunto de requisitos, como "1.1" no `ExcelApi 1.1`, tem relação com o aplicativo do Office. O número da versão de um certo conjunto de requisitos (por exemplo, `ExcelApi 1.1`), não corresponde ao número da versão do Office.js ou aos conjuntos de requisitos para outros aplicativos do Office (por exemplo, Word, Outlook etc.).  Lançamos os conjuntos de requisitos para diferentes aplicativos do Office em ritmos e períodos diferentes. Por exemplo, `ExcelApi 1.5` foi lançado antes do conjunto de requisitos `WordApi 1.3`.
 

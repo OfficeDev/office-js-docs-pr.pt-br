@@ -3,12 +3,12 @@ title: Manipular e retornar erros de sua função personalizada
 description: 'Manipular e retornar erros como #NULL! de sua função personalizada.'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c8f2667f47c1c983b135f38ce2c67ad1f31502c9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483498"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496289"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 
@@ -135,5 +135,5 @@ Saiba como [solucionar problemas com as suas funções personalizadas](custom-fu
 ## <a name="see-also"></a>Confira também
 
 * [Depuração de funções personalizadas](custom-functions-debugging.md)
-* [Conjuntos de requisitos de funções personalizadas](/javascript/api/requirement-sets/custom-functions-requirement-sets)
+* [Conjuntos de requisitos de funções personalizadas](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

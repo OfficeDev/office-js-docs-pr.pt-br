@@ -3,12 +3,12 @@ title: Criar suplementos melhores para o Word com o Office Open XML
 description: Visão geral de como melhorar o seu complemento do Word com Office Open XML.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f742c4a295e3f6312a4bcb01effc35d8b650b61
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8747f4c7f98cdb88a02e4fe55ec2bf09514c9eb3
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484581"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496947"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -16,7 +16,7 @@ ms.locfileid: "64484581"
 
 Se você estiver criando Office para ser executado no Word, talvez já saiba que Office API JavaScript (Office.js) oferece vários formatos para ler e escrever conteúdo de documento. Eles são chamados de tipos de coerção e incluem texto sem formatação, tabelas, HTML e Office Open XML.
 
-Então, quais são suas opções quando você precisa adicionar conteúdo avançado a um documento, como imagens, tabelas formatadas, gráficos ou apenas texto formatado? Comece com as APIs disponíveis por meio dos conjuntos de [requisitos do WordApi](/javascript/api/requirement-sets/word-api-requirement-sets) para ver se elas fornecem o que você precisa. Por exemplo, consulte o trecho [Inserir código de texto formatado](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) no [laboratório de scripts](https://appsource.microsoft.com/product/office/wa104380862) no Word.
+Então, quais são suas opções quando você precisa adicionar conteúdo avançado a um documento, como imagens, tabelas formatadas, gráficos ou apenas texto formatado? Comece com as APIs disponíveis por meio dos conjuntos de [requisitos do WordApi](/javascript/api/requirement-sets/word/word-api-requirement-sets) para ver se elas fornecem o que você precisa. Por exemplo, consulte o trecho [Inserir código de texto formatado](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) no [laboratório de scripts](https://appsource.microsoft.com/product/office/wa104380862) no Word.
 
 Se as APIs ainda não estão disponíveis, você pode usar HTML para inserir alguns tipos de conteúdo rico, como imagens. Dependendo do cenário, pode haver desvantagens na coerção de HTML, como limitações nas opções de formatação e posicionamento disponíveis para o conteúdo.
 

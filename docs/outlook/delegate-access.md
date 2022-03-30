@@ -3,12 +3,12 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte ao complemento para pastas compartilhadas (a.k.a. acesso delegado) e caixas de correio compartilhadas.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8ff71ad12fc3c0488c8c73040b125a1ae4674d88
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484653"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496926"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhadas em um Outlook de entrada
 
@@ -26,7 +26,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para esse
 |Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Não|Não|Não|
 
 > [!IMPORTANT]
-> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (para obter detalhes, consulte [clientes e plataformas](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (para obter detalhes, consulte [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
 
 ## <a name="supported-setups"></a>Configurações com suporte
 

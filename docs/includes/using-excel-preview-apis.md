@@ -1,2 +1,2 @@
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
-Para mais informações sobre as nossas futuras APIs, visite [ Conjuntos de requisitos da API JavaScript do Excel](/javascript/api/requirement-sets/excel-preview-apis).
+Para mais informações sobre as nossas futuras APIs, visite [ Conjuntos de requisitos da API JavaScript do Excel](/javascript/api/requirement-sets/excel/excel-preview-apis).

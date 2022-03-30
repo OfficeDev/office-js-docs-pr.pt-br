@@ -3,12 +3,12 @@ title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar erros de desenvolvimento em Office de complementos.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b16dbcbb9bf1c80e9d82f96fb0e6fa317b364840
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c1eb77a6d92926e83e3a0465112cc976fcaa8446
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484324"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496954"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -68,7 +68,7 @@ A seguir estão algumas das causas desse erro. Se você descobrir causas adicion
 - O valor do elemento [ID](/javascript/api/manifest/id) no manifesto foi alterado diretamente na cópia implantada. Se, por qualquer motivo, você quiser alterar essa ID, primeiro remova o complemento do host Office e substitua o manifesto original pelo manifesto alterado. Muitos precisam limpar o cache Office para remover todos os rastreamentos do original. Consulte o [artigo Limpar o Office cache](clear-cache.md) para obter instruções sobre como limpar o cache do seu sistema operacional.
 - O manifesto do add-in `resid` tem um que não é definido em qualquer lugar na seção [Recursos](/javascript/api/manifest/resources) do manifesto, `resid` `<Resources>` ou há uma incompatibilidade na ortografia do entre onde ele é usado e onde ele é definido na seção.
 - Há um atributo `resid` em algum lugar no manifesto com mais de 32 caracteres. Um `resid` atributo e o `id` atributo do recurso correspondente na `<Resources>` seção não podem ter mais de 32 caracteres.
-- O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento](/javascript/api/requirement-sets/add-in-commands-requirement-sets).
+- O add-in tem um Comando de Complemento personalizado, mas você está tentando executar em uma plataforma que não oferece suporte a eles. Para obter mais informações, consulte [Conjuntos de requisitos de comandos de complemento](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O complemento não funciona no Edge, mas funciona em outros navegadores
 

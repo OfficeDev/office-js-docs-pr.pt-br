@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Saiba como a autenticação e a autorização funcionam nos Suplementos do Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: ba7f55a0b8ca163b994bcfb91879c675b777a7c9
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483643"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496750"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -26,7 +26,7 @@ Esta documentação explica como criar e configurar Suplementos do Office para i
 
 ## <a name="sso-scenarios"></a>Cenários de SSO
 
-Usar o SSO (logon único) é conveniente para o usuário porque ele só precisa entrar no Office uma vez. Eles não precisam se conectar separadamente no seu suplemento. O SSO não é compatível com todas as versões do Office, portanto, você ainda precisará implementar uma abordagem de entrada alternativa, [usando a plataforma de identidade da Microsoft](#authenticate-with-the-microsoft-identity-platform). Para obter mais informações sobre as versões compatíveis do Office, confira os [Conjuntos de requisitos da API de Identidade](/javascript/api/requirement-sets/identity-api-requirement-sets)
+Usar o SSO (logon único) é conveniente para o usuário porque ele só precisa entrar no Office uma vez. Eles não precisam se conectar separadamente no seu suplemento. O SSO não é compatível com todas as versões do Office, portanto, você ainda precisará implementar uma abordagem de entrada alternativa, [usando a plataforma de identidade da Microsoft](#authenticate-with-the-microsoft-identity-platform). Para obter mais informações sobre as versões compatíveis do Office, confira os [Conjuntos de requisitos da API de Identidade](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 ### <a name="get-the-users-identity-through-sso"></a>Obter a identidade do usuário por meio do SSO
 

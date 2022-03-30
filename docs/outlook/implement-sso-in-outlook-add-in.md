@@ -3,12 +3,12 @@ title: 'Cenário: implementar o logon único no seu serviço'
 description: Saiba como usar o token de logon único e o token de identidade do Exchange fornecidos por um suplemento do Outlook para implementar o SSO com o serviço.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc13b13b0ba3469fe1bfd1a02689f39a28c4b0a6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2b9c4031a0011d2333582b4a10abe42f6844f763
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484592"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496919"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>Cenário: implementar o logon único no serviço em um suplemento do Outlook
 
@@ -18,8 +18,7 @@ Para um exemplo de complemento que implementa as ideias neste artigo, [consulte 
 
 
 > [!NOTE]
-> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de logon único é compatível com Word, Excel, Outlook e PowerPoint. Para mais informações sobre onde a API Logon Único tem suporte no momento, veja [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para a locação do Microsoft 365. Para informações sobre como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
 ## <a name="why-use-the-sso-access-token"></a>Por que usar o token de acesso SSO?

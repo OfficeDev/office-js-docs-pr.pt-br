@@ -3,12 +3,12 @@ title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um Office add-in podem usar o SSO (login único) para buscar dados do Microsoft Graph.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 07655b270e4de96656b7ed2930fdf4fd6cc6c97d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1dbe52d9fb4e223052d92249bb98311e91bd665d
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483794"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496765"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
@@ -82,4 +82,4 @@ Para Outlook de Outlook, certifique-se de habilitar a Autenticação Moderna par
 
 * [Token OAuth2 Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
 * [Plataforma de identidade da Microsoft e Fluxo On-Behalf-Of do OAuth 2.0](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
-* [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+* [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

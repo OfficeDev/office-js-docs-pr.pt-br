@@ -1,15 +1,15 @@
 ---
-ms.date: 10/05/2021
+ms.date: 03/23/2022
 title: Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743923"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496850"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -23,11 +23,14 @@ Se você estiver iniciando um novo projeto, siga estas etapas para usar o [ gera
 
 Faça um dos seguintes:
 
-- Para gerar um suplemento do Excel com funções personalizadas, execute o comando `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
+- Para gerar um suplemento do Excel com funções personalizadas, execute o comando `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`.
 
     ou
 
-- Para gerar um suplemento do PowerPoint, execute o comando `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`.
+- Para gerar um suplemento do PowerPoint, execute o comando `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`.
+
+> [!IMPORTANT]
+> O `--name` de argumento deve estar entre aspas duplas, mesmo que não tenha espaços.
 
 O gerador criará o projeto e instalará os componentes do Node de suporte.
 
@@ -40,7 +43,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
 
 1. Inicie o Visual Studio Code e abra o projeto de suplemento do Excel ou PowerPoint que você gerou.
 1. Abra o arquivo **manifest.xml**.
-1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](../reference/requirement-sets/shared-runtime-requirement-sets.md) em vez do tempo de execução de função personalizada. O XML deve aparecer da seguinte maneira.
+1. Se você gerou um suplemento do Excel, atualize a seção de requisitos para usar o [tempo de execução compartilhado](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) em vez do tempo de execução de função personalizada. O XML deve aparecer da seguinte maneira.
 
     ```xml
     <Hosts>
@@ -200,7 +203,7 @@ Ao adicionar o elemento `Runtime`, você também especifica um tempo de vida com
 ```
 
 > [!NOTE]
-> Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](../reference/manifest/runtimes.md) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="about-the-shared-javascript-runtime"></a>Sobre o tempo de execução de JavaScript compartilhado
 

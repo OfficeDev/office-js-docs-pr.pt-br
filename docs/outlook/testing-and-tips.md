@@ -3,12 +3,12 @@ title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b627dbf4b32daee4327cb139db58a56c4a704580
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484423"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496877"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -96,7 +96,7 @@ Como alternativa, você pode optar por pagar e usar um serviço que hospeda e ge
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-Além disso, se você não deseja que seus suplementos estejam disponíveis para usuários conectados ao Exchange local, é possível definir o [conjunto de requisitos](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support) no manifesto de suplemento como 1.6 ou superior. Esses suplementos não serão testados nem validados na interface do usuário do Outlook na Web clássico.
+Além disso, se você não deseja que seus suplementos estejam disponíveis para usuários conectados ao Exchange local, é possível definir o [conjunto de requisitos](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#exchange-server-support) no manifesto de suplemento como 1.6 ou superior. Esses suplementos não serão testados nem validados na interface do usuário do Outlook na Web clássico.
 
 ## <a name="see-also"></a>Confira também
 

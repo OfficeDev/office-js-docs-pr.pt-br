@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Office de complementos
 description: Saiba como adicionar guias contextuais personalizadas ao seu Office Add-in.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 57d95db1e425f1ca4f5111a79d99de44f8f09e31
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483892"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496737"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Office de complementos
 
@@ -29,8 +29,8 @@ Uma guia contextual é um controle de tabulação oculto na faixa de opções Of
 > [!NOTE]
 > As guias contextuais personalizadas funcionam somente em plataformas que suportam os seguintes conjuntos de requisitos. Para obter mais informações sobre conjuntos de requisitos e como trabalhar com eles, consulte [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 >
 > Você pode usar as verificações de tempo de execução em seu código para testar se a combinação de host e plataforma do usuário oferece suporte a esses conjuntos de requisitos, conforme descrito em [Runtime verifica](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) se há suporte ao método e ao conjunto de requisitos. (A técnica de especificar os conjuntos de requisitos no manifesto, que também é descrito nesse artigo, não funciona atualmente para RibbonApi 1.2.) Como alternativa, você pode [implementar uma experiência de interface do usuário alternativa quando guias contextuais personalizadas não são suportadas](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 

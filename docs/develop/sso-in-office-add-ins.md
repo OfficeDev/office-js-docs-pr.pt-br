@@ -3,12 +3,12 @@ title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483605"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496324"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
@@ -85,7 +85,7 @@ Adicione novas marcações ao manifesto do suplemento.
 - **Scopes** – O pai de uma ou mais elementos **Scope**.
 - **Escopo** - Especifica uma permissão que o suplemento precisa. As `profile` e `openID` permissões são sempre necessárias e podem ser as únicas permissões necessárias. Se o seu suplemento precisar de acesso ao Microsoft Graph ou outros recursos do Microsoft 365, você precisará de elementos **Escopo** adicionais. Por exemplo, para as permissões do Microsoft Graph você pode solicitar os escopos `User.Read` e `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
-Quanto ao suplemento do Word, Excel e PowerPoint, adicione a marcação ao final da `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` seção. Quanto aos suplementos do Outlook, adicione a marcação ao final da `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` seção.
+Para suplementos do Word, Excel e PowerPoint, adicione a marcação ao final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para suplementos do Outlook, adicione a marcação ao final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
 Veja a seguir um exemplo da marcação.
 
@@ -107,7 +107,7 @@ Veja a seguir um exemplo da marcação.
 
 ### <a name="include-the-identity-api-requirement-set"></a>Inclua o conjunto de requisitos da API de identidade
 
-Para usar o SSO, seu suplemento exige o conjunto de requisitos da API de identidade 1.3. Para obter mais informações, confira [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
+Para usar o SSO, seu suplemento exige o conjunto de requisitos da API de identidade 1.3. Para obter mais informações, confira [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 
 ### <a name="add-client-side-code"></a>Adicionar código do lado do cliente
 
@@ -248,4 +248,4 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 - [Documentação da plataforma de identidade da Microsoft](/azure/active-directory/develop/)
 - [Conjuntos de requisitos](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

@@ -3,12 +3,12 @@ title: Tratamento de erros com a EXCEL JavaScript
 description: Saiba mais Excel a lógica de tratamento de erros da API JavaScript para levar em conta erros de tempo de execução.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f826968ae5137931fc334e62c9594461850cf649
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d62a146262f66bb675fce2dbf0ec2a7c5da3ce2a
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484074"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496870"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Tratamento de erros com a EXCEL JavaScript
 
@@ -68,7 +68,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`AccessDenied` |Você não pode realizar a operação solicitada.| |
 |`ActivityLimitReached`|O limite de atividades foi alcançado.| |
 |`ApiNotAvailable`|A API solicitada não está disponível.| |
-|`ApiNotFound`|A API que você está tentando usar não foi encontrada. Ele pode estar disponível em uma versão mais recente do Excel. Consulte o [Excel de requisitos da API JavaScript para](/javascript/api/requirement-sets/excel-api-requirement-sets) obter mais informações.| |
+|`ApiNotFound`|A API que você está tentando usar não foi encontrada. Ele pode estar disponível em uma versão mais recente do Excel. Consulte o [Excel de requisitos da API JavaScript para](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) obter mais informações.| |
 |`BadPassword`|A senha fornecida está incorreta.| |
 |`Conflict`|A solicitação não pôde ser processada devido a um conflito.| |
 |`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está faltando.| |

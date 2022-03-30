@@ -3,12 +3,12 @@ title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484299"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496310"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > essas verificações não são necessárias para APIs que estão na versão do conjunto de requisitos especificada no manifesto.
 
-Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto nos elementos `<Requirements>`. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets).
+Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto nos elementos `<Requirements>`. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 O elemento `<Methods>` não se aplica a suplementos do Outlook e, portanto, você não pode declarar suporte a métodos específicos.
 
@@ -74,5 +74,5 @@ Em geral, você deve especificar a permissão mínima necessária para o seu sup
 ## <a name="see-also"></a>Confira também
 
 - [Manifestos de suplementos do Outlook](manifests.md)
-- [Noções básicas sobre conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [Noções básicas sobre conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
