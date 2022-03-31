@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o seu complemento funcione conforme o esperado.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e43aa05d543eb55f10c6e700b5011733792a401
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 9f08a4c5f52d52022b33285faf3d3914056a03e2
+ms.sourcegitcommit: f32123f2b7254e76965dc95c21108f081507feed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496800"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "64536542"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -88,7 +88,7 @@ Para simplificar o processo de especificação das APIs que seu complemento prec
 
 Os conjuntos de requisitos são versionados. Por exemplo, as APIs que suportam [Caixas](../design/dialog-boxes.md) de Diálogo estão no conjunto de requisitos DialogApi 1.1. Quando apIs adicionais que habilitam mensagens de um painel de tarefas para uma caixa de diálogo foram lançadas, elas foram agrupadas em DialogApi 1.2, juntamente com todas as APIs em DialogApi 1.1. *Cada versão de um conjunto de requisitos é um superconjunto de todas as versões anteriores.*
 
-O suporte ao conjunto de requisitos varia de acordo com Office aplicativo, a versão do aplicativo Office e a plataforma na qual ele está sendo executado. Por exemplo, o DialogApi 1.2 não é suportado em versões de compra única do Office antes do Office 2021, mas o DialogApi 1.1 é suportado em todas as versões de compra única de volta ao Office 2013. Você deseja que o seu add-in seja instalado em todas as combinações de plataforma e versão Office que suportam as APIs que ele usa, portanto, você sempre deve especificar no manifesto a  versão mínima de cada conjunto de requisitos que seu complemento exige. Detalhes sobre como fazer isso são posteriormente neste artigo.
+O suporte ao conjunto de requisitos varia de acordo com Office aplicativo, a versão do aplicativo Office e a plataforma na qual ele está sendo executado. Por exemplo, o DialogApi 1.2 não é suportado em versões de compra única do Office antes do Office 2021, mas o DialogApi 1.1 é suportado em todas as versões de compra única de volta para Office 2013. Você deseja que o seu add-in seja instalado em todas as combinações de plataforma e versão Office que suportam as APIs que ele usa, portanto, você sempre deve especificar no manifesto a  versão mínima de cada conjunto de requisitos que seu complemento exige. Detalhes sobre como fazer isso são posteriormente neste artigo.
 
 > [!TIP]
 > Para obter mais informações sobre o controle de versão do conjunto de requisitos, consulte [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) disponibilidade de conjuntos de requisitos e para obter as listas completas de conjuntos de requisitos e informações sobre as APIs em cada uma delas, comece com Office [conjuntos](/javascript/api/requirement-sets/common/office-add-in-requirement-sets) de requisitos de complemento. Os tópicos de referência para a maioria Office.js APIs também especificam o conjunto de requisitos ao qual pertencem (se algum).
@@ -104,7 +104,7 @@ Todas as APIs nos modelos específicos do aplicativo estão em conjuntos de requ
 
 Use o [elemento Requirements](/javascript/api/manifest/requirements) e seus elementos filho [Conjuntos](/javascript/api/manifest/sets) e Métodos para especificar os conjuntos de [requisitos mínimos](/javascript/api/manifest/methods) ou membros da API que devem ser suportados pelo aplicativo Office para instalar o seu complemento. 
 
-Se o aplicativo ou a plataforma Office não oferece suporte aos conjuntos de requisitos ou membros da API especificados no elemento **Requirements**, o complemento não será executado nesse aplicativo ou plataforma e não será exibido em **Meus Complementos**. .
+Se o aplicativo ou a plataforma Office não oferece suporte aos conjuntos de requisitos ou membros da API especificados no elemento **Requirements**, o complemento não será executado nesse aplicativo ou plataforma e não será exibido em **Meus Complementos**.
 
 > [!NOTE]
 > O **elemento Requirements** é opcional para todos os complementos, exceto para Outlook de complementos. Quando o `xsi:type` atributo do elemento raiz `OfficeApp` `MailBox`for , deve haver um elemento **Requirements** que especifica a versão mínima do conjunto de requisitos mailbox que o complemento requer. Para obter mais informações, [consulte Outlook conjuntos de requisitos da API JavaScript](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
