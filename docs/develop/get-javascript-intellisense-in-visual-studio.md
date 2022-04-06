@@ -1,18 +1,18 @@
 ---
-title: Obter o JavaScript IntelliSense no Visual Studio 2019
-description: Saiba como usar o JSDoc para criar IntelliSense para suas variáveis javaScript, objetos, parâmetros e valores de retorno.
-ms.date: 10/11/2019
+title: Obter o JavaScript IntelliSense no Visual Studio
+description: Saiba como usar o JSDoc para criar o IntelliSense para suas variáveis, objetos, parâmetros e valores retornados do JavaScript.
+ms.date: 04/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 142f4cf81f83cdc518fb94f65a8e6f67f41a4783
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4fb18199c53b7b836079754b5fb4561b76a968b1
+ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743495"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "64682256"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obter o JavaScript IntelliSense no Visual Studio 2019
+# <a name="get-javascript-intellisense-in-visual-studio"></a>Obter o JavaScript IntelliSense no Visual Studio
 
-Ao usar o Visual Studio 2019 para desenvolver Suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Ao usar o Visual Studio 2019 e posterior para desenvolver suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para suas variáveis, objetos, parâmetros e valores retornados do JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Definições de tipo do Office.js
 
@@ -49,7 +49,7 @@ A técnica básica é incluir antes da variável (ou do parâmetro e assim por d
 var subsetRange;
 ```
 
-![Captura de tela mostrando trecho de IntelliSense para variável 'subsetRange'.](../images/intellisense-vs17-var.png)
+![Captura de tela mostrando o trecho do IntelliSense para a variável 'subsetRange'.](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>Parâmetro
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![Captura de tela mostrando trecho de IntelliSense para parâmetro 'paras' (parâmetro 'parágrafos' no exemplo de JavaScript).](../images/intellisense-vs17-param.png)
+![Captura de tela mostrando o trecho do IntelliSense para o parâmetro 'paras' (parâmetro 'paragraphs' no exemplo de JavaScript).](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando o trecho de IntelliSense valor de retorno 'myFunc()'.](../images/intellisense-vs17-return.png)
+![Captura de tela mostrando o trecho do IntelliSense para o valor retornado 'myFunc()'.](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>Tipos complexos
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando IntelliSense declaração de tipo complexo de 'var myVar;' por exemplo.](../images/intellisense-vs17-complex-type.png)
+![Captura de tela mostrando o IntelliSense para declaração de tipo complexo de 'var myVar;', por exemplo.](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>Confira também
 
