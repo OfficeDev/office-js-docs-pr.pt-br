@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Crie um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 02/26/2022
+ms.date: 04/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca9ea0fdc600d6044cf3a5ef405dd0f3a98e2b3
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
+ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746419"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64863284"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -717,7 +717,11 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-1. Se o servidor da Web local já estiver em execução, feche a janela de comando do nó para interrompê-lo.
+1. Se o servidor da Web local já estiver em execução, interrompa-o digitando o seguinte comando no prompt de comando. Isso deve fechar a janela de comando do nó.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Como o arquivo de manifesto foi atualizado, você deve carregar o suplemento novamente usando esse arquivo. Inicie o servidor Web local e realize o sideload no seu suplemento:
 
@@ -884,7 +888,11 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
     ],
     ```
 
-1. Se o servidor da Web local estiver em execução, feche a janela de comando do nó para interrompê-lo.
+1. Se o servidor Web local estiver em execução, interrompa-o digitando o seguinte comando no prompt de comando. Isso deve fechar a janela de comando do nó.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Execute o seguinte comando para recriar o projeto.
 
