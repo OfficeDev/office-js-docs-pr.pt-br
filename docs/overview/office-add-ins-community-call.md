@@ -1,24 +1,22 @@
 ---
 title: Microsoft Office da comunidade de suplementos
 description: A agenda, o agendamento e os recursos Microsoft Office da comunidade de suplementos mensais.
-ms.date: 04/08/2022
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 225d3aa87101ba1c168435be7f27fb741e54a7e1
-ms.sourcegitcommit: 87f6a53a4df3966ff0dc1e12903198b2b94e9662
+ms.openlocfilehash: 4b96854c2d341b228bd2f70fe8f2010e0dbc5de9
+ms.sourcegitcommit: 345f950b4722903dda77af81ef7d700e6ea4bc83
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "64743880"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64884325"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de suplementos
 
 A Microsoft Office da comunidade de suplementos é uma chamada mensal em que você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre como criar Office Suplementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8h no Horário do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-april-13th-call"></a>Agenda para a chamada de 13 de abril
+## <a name="agenda-for-may-11th-call"></a>Agenda da chamada de 11 de maio
 
-- Atualizações da API da Faixa de Opções
-- APIs PowerPoint seleção
-- Suplementos no Compromisso lidos no Outlook Mobile
+A agenda de maio será postada cerca de uma semana antes da chamada.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 
