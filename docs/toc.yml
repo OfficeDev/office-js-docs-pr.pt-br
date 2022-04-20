@@ -656,8 +656,6 @@ items:
                 href: outlook/add-mobile-support.md
           - name: Requisitos de suplementos
             href: outlook/add-in-requirements.md
-          - name: APIs de suplemento
-            href: outlook/apis.md
           - name: Chamar APIs REST do Outlook
             href: outlook/use-rest-api.md
           - name: Chamar os serviços Web do Exchange

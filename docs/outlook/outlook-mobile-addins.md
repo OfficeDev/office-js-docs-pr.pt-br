@@ -1,24 +1,24 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
-description: Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com.
-ms.date: 02/15/2022
+description: Outlook suplementos móveis têm suporte em todas as contas Microsoft 365 e contas Outlook.com.
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e88b3b3596f2b11718b9fcf1af7402d7594fe7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2ceddbe4947a4818c90a517712bc8fa58376f72a
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483990"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963481"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
 Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
 
-Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365 e contas Outlook.com. No entanto, o suporte não está disponível atualmente em contas do Gmail.
+Outlook suplementos móveis têm suporte em todas as contas Microsoft 365 e contas Outlook.com. No entanto, o suporte não está disponível atualmente em contas do Gmail.
 
 **Um painel de tarefas de exemplo no Outlook no iOS**
 
-![Captura de tela de um painel de tarefas em Outlook no iOS.](../images/outlook-mobile-addin-taskpane.png)
+![Captura de tela de um painel de tarefas Outlook no iOS.](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
@@ -32,7 +32,7 @@ Outlook de dispositivos móveis são suportados em todas as contas Microsoft 365
   - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
   - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Em geral, apenas o modo De Leitura de Mensagem é suportado no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, o modo Organizador de Compromissos é suportado para os complementos integrados do provedor de reuniões online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um Outlook para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
+- Em geral, somente o modo de Leitura de Mensagem tem suporte no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, o modo Organizador de Compromissos tem suporte para suplementos integrados do provedor de reunião online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um Outlook para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
 
 - A API [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
 
@@ -52,24 +52,24 @@ Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
 **Uma interação de usuário de exemplo para criar um cartão do Trello com base em uma mensagem de email no iOS**
 
-![GIF animado mostrando a interação do usuário com um Outlook de celular no iOS.](../images/outlook-mobile-addin-interaction.gif)
+![GIF animado mostrando a interação do usuário com um Outlook mobile no iOS.](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
 **Uma interação de usuário de exemplo para criar um cartão do Trello com base em uma mensagem de email no Android**
 
-![GIF animado mostrando a interação do usuário com um Outlook de celular no Android.](../images/outlook-mobile-addin-interaction-android.gif)
+![GIF animado mostrando a interação do usuário com um suplemento Outlook Mobile no Android.](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Teste seus suplementos no celular
 
-Para testar um complemento no Outlook Mobile, primeiro [o sideload](sideload-outlook-add-ins-for-testing.md) de um complemento para uma conta Microsoft 365 ou Outlook.com na Web, Windows ou Mac. Certifique-se de que o manifesto está formatado corretamente para conter `MobileFormFactor` ou ele não será carregado em seu cliente Outlook em dispositivos móveis.
+Para testar um suplemento no Outlook Mobile, primeiro execute o [sideload](sideload-outlook-add-ins-for-testing.md) de um suplemento em uma conta Microsoft 365 ou Outlook.com na Web, Windows ou Mac. Verifique se o manifesto está formatado `MobileFormFactor` corretamente para conter ou se ele não será carregado no Outlook cliente móvel.
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 
-A solução de problemas em dispositivos móveis pode ser difícil, pois você pode não ter as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este [tutorial sobre como usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+A solução de problemas em dispositivos móveis pode ser difícil, pois talvez você não tenha as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Os Outlook na Web modernos em iPhone e smartphones Android não são mais necessários ou disponíveis para testes Outlook de complementos. Para obter informações sobre dispositivos com suporte, consulte [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Os Outlook na Web em iPhone e smartphones Android não são mais necessários ou estão disponíveis para teste Outlook suplementos. Além disso, não há suporte para suplementos no Outlook no Android, no iOS e na Web móvel moderna com contas Exchange locais. Determinados dispositivos iOS ainda dão suporte a suplementos ao usar contas Exchange locais com Outlook na Web. Para obter informações sobre os dispositivos suportados, confira [Requisitos para executar Suplementos do Office](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## <a name="next-steps"></a>Próximas etapas
 
