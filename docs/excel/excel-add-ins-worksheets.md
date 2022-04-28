@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
-ms.date: 02/17/2022
+ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 565a186220fb9b9a33d97ad73954fe405658cf97
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
+ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743396"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "65076681"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -295,17 +295,17 @@ function onWorksheetChanged(eventArgs) {
 
 ## <a name="detect-formula-changes"></a>Detectar alterações de fórmula
 
-Seu complemento pode acompanhar as alterações nas fórmulas em uma planilha. Isso é útil quando uma planilha está conectada a um banco de dados externo. Quando a fórmula é mudada na planilha, o evento nesse cenário dispara atualizações correspondentes no banco de dados externo.
+O suplemento pode controlar as alterações nas fórmulas em uma planilha. Isso é útil quando uma planilha está conectada a um banco de dados externo. Quando a fórmula é alterada na planilha, o evento nesse cenário dispara as atualizações correspondentes no banco de dados externo.
 
-Para detectar alterações nas fórmulas, [registre um manipulador](excel-add-ins-events.md#register-an-event-handler) de eventos para o [evento onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) de uma planilha. Os manipuladores de eventos do evento `onFormulaChanged` recebem um [objeto WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) quando o evento é ativos.
+Para detectar alterações em fórmulas, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [evento onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) de uma planilha. Os manipuladores de eventos para o `onFormulaChanged` evento recebem [um objeto WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) quando o evento é acionado.
 
 > [!IMPORTANT]
-> O `onFormulaChanged` evento detecta quando uma fórmula em si muda, não o valor de dados resultante do cálculo da fórmula.
+> O `onFormulaChanged` evento detecta quando uma fórmula em si é alterada, não o valor de dados resultante do cálculo da fórmula.
 
-`onFormulaChanged` O exemplo de código a seguir mostra como registrar o manipulador de eventos, `WorksheetFormulaChangedEventArgs` usar o objeto para recuperar a matriz [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) da fórmula alterada e imprimir detalhes sobre a fórmula alterada com as propriedades [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail).
+`onFormulaChanged` O exemplo de código a seguir mostra como registrar o manipulador de eventos, `WorksheetFormulaChangedEventArgs` usar o objeto para recuperar a matriz [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) da fórmula alterada e, em seguida, imprimir detalhes sobre a fórmula alterada com as propriedades [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail).
 
 > [!NOTE]
-> Esse exemplo de código só funciona quando uma única fórmula é alterada.
+> Este exemplo de código só funciona quando uma única fórmula é alterada.
 
 ```js
 async function run() {
@@ -349,9 +349,9 @@ Os eventos `onColumnSorted` e `onRowSorted` fornecem seus retornos de chamadas c
 
 As imagens a seguir mostram os intervalos retornados pela propriedade `address` para eventos de classificação. Primeiro, aqui estão os dados de exemplo antes da classificação:
 
-![Dados de tabela em Excel antes de serem classificação.](../images/excel-sort-event-before.png)
+![Dados de tabela Excel antes de serem classificados.](../images/excel-sort-event-before.png)
 
-Se uma classificação de cima para baixo for executada em "**Q1**" (os valores em "**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`.
+Se uma classificação de cima para baixo for executada em "**Q1**" (os valores em "**B**"), as linhas realçadas a seguir serão retornadas por `WorksheetRowSortedEventArgs.address`.
 
 ![Dados da tabela no Excel após uma classificação de cima para baixo. As linhas que foram movidas são realçadas.](../images/excel-sort-event-after-row.png)
 
@@ -387,31 +387,33 @@ await Excel.run(async (context) => {
 
 ## <a name="find-all-cells-with-matching-text"></a>Localizar todas as células com texto correspondente
 
-O objeto `Worksheet` tem o método `find` para pesquisar uma cadeia especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo. O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` exibirá um erro `ItemNotFound` se a cadeia especificada não existir na planilha. Se você acha que a cadeia especificada pode não estar na planilha, use o método [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) para que seu código manipule normalmente esse cenário.
+O `Worksheet` objeto tem um [`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) método para pesquisar uma cadeia de caracteres especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo.
+
+O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` gerará um `ItemNotFound` erro se a cadeia de caracteres especificada não existir na planilha. Se você não tiver certeza se a cadeia de caracteres especificada existe na planilha, use o método [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) para lidar normalmente com esse cenário.
 
 ```js
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
     await context.sync();
-    foundRanges.format.fill.color = "green"
+    foundRanges.format.fill.color = "green";
 });
 ```
 
 > [!NOTE]
 > Esta seção descreve como localizar as células e intervalos usando as funções do objeto `Worksheet`. Encontre mais informações de recuperação de intervalo nos artigos específicos do objeto.
 >
-> - Para obter exemplos que mostram como `Range` obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando [a API JavaScript Excel JavaScript](excel-add-ins-ranges-get.md).
+> - Para obter exemplos que mostram `Range` como obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando [o Excel API JavaScript](excel-add-ins-ranges-get.md).
 > - Para obter exemplos que mostram como obter intervalos de um objeto `Table`, confira [Trabalhar com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="filter-data"></a>Filtrar dados
 
-Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply`, que tem os seguintes parâmetros.
+Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply`, que tem os parâmetros a seguir.
 
 - `range`: O intervalo para o qual o filtro é aplicado, especificado como um `Range` objeto ou uma cadeia de caracteres.
 - `columnIndex`: O índice da coluna com base em zero contra os quais o critério de filtro é avaliado.
@@ -443,7 +445,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-O exemplo de código a `clearColumnCriteria` seguir mostra como usar o método para limpar o filtro automático de apenas uma coluna, deixando o filtro ativo em outras colunas.
+O exemplo de código a seguir `clearColumnCriteria` mostra como usar o método para limpar o filtro automático de apenas uma coluna, deixando o filtro ativo em outras colunas.
 
 ```js
 // This method clears the AutoFilter setting from one column.
@@ -495,9 +497,9 @@ O artigo [Proteger uma planilha](https://support.microsoft.com/office/3179efdb-1
 
 ### <a name="detect-changes-to-the-worksheet-protection-state"></a>Detectar alterações no estado de proteção da planilha
 
-O estado de proteção de uma planilha pode ser alterado por um complemento ou pela interface do usuário Excel usuário. Para detectar alterações no estado de proteção, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) evento de uma planilha. Os manipuladores de eventos para o `onProtectionChanged` evento recebem um [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) objeto quando o evento é a incêndio.
+O estado de proteção de uma planilha pode ser alterado por um suplemento ou por meio da Excel interface do usuário. Para detectar alterações no estado de proteção, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) evento de uma planilha. Manipuladores de eventos para o `onProtectionChanged` evento recebem um [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) objeto quando o evento é acionado.
 
-O exemplo de código a seguir mostra como registrar o manipulador `onProtectionChanged` de eventos e usar `WorksheetProtectionChangedEventArgs` o objeto para recuperar `isProtected`as propriedades , `worksheetId`e `source` do evento.
+O exemplo de código a seguir mostra como registrar o manipulador `onProtectionChanged` de eventos e usar `isProtected``WorksheetProtectionChangedEventArgs` o objeto para recuperar o , `worksheetId`e `source` as propriedades do evento.
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
