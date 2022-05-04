@@ -350,6 +350,8 @@ items:
             href: /legal/marketplace/certification-policies
           - name: Publicar suplementos em um catálogo de aplicativos do SharePoint
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+          - name: Manter seu Suplemento do Office
+            href: publish/maintain-breaking-changes.md
   - name: Excel
     items:
       - name: Documentação de suplementos do Excel
