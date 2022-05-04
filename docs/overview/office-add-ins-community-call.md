@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office da comunidade de suplementos
 description: A agenda, o agendamento e os recursos Microsoft Office da comunidade de suplementos mensais.
-ms.date: 04/14/2022
+ms.date: 05/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b96854c2d341b228bd2f70fe8f2010e0dbc5de9
-ms.sourcegitcommit: 345f950b4722903dda77af81ef7d700e6ea4bc83
+ms.openlocfilehash: 0912acca84090b8b73b6209b98a715c0124fc254
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64884325"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187305"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de suplementos
 
@@ -22,6 +22,7 @@ A agenda de maio será postada cerca de uma semana antes da chamada.
 
 Perdeu uma chamada da comunidade anterior? Confira os seguintes recursos de blog para acompanhar a discussão!
 
+- [13 de abril de 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-13-2022/ba-p/3288498)
 - [9 de março de 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-9-2022/ba-p/3255173)
 - [9 de fevereiro de 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [12 de janeiro de 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)

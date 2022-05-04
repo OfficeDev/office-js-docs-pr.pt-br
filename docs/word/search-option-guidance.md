@@ -1,14 +1,14 @@
 ---
 title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
-description: Aprenda a usar opções de pesquisa no seu complemento do Word.
+description: Saiba como usar as opções de pesquisa em seu suplemento do Word.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: baebde4cb288ac872f29531023db4c9500383bc7
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: e8f9dd2605af9307a49fabfafdecb0df4e97fe9f
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340418"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187340"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word
 
@@ -21,13 +21,13 @@ As opções de pesquisa são uma coleção de valores boolianos que definem como
 
 | Propriedade       | Descrição|
 |:---------------|:----|
-|ignorePunct|Obtém ou define um valor que indica se devem ser ignorados todos os caracteres de pontuação entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de pontuação" na caixa de diálogo Localizar e Substituir.|
-|ignoreSpace|Obtém ou define um valor que indica se devem ser ignorados todos os espaços em branco entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de espaço em branco" na caixa de diálogo Localizar e Substituir.|
-|matchCase|Obtém ou define um valor que determina quando realizar uma pesquisa que diferencia maiúsculas de minúsculas. Corresponde à caixa de seleção "Diferenciar maiúsculas de minúsculas", na caixa de diálogo "Localizar e Substituir" (menu Editar).|
-|matchPrefix|Obtém ou define um valor que indica se se deve corresponder palavras que começam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Corresponder prefixo" na caixa de diálogo "Localizar e Substituir".|
-|matchSuffix|Obtém ou define um valor que indica se se deve corresponder palavras que terminam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Corresponder sufixo", na caixa de diálogo "Localizar e Substituir".|
-|matchWholeWord|Obtém ou define um valor que indica se a operação de localização localiza apenas palavras inteiras, e não texto que faz parte de uma palavra maior. Corresponde à caixa de seleção "Localizar apenas palavras inteiras" na caixa de diálogo Localizar e Substituir.|
-|matchWildcards|Obtém ou define um valor que indica se a pesquisa será realizada com operadores de pesquisa especiais. Corresponde à caixa de seleção "Usar caracteres curinga" na caixa de diálogo "Localizar e Substituir".|
+|ignorePunct|Obtém ou define um valor que indica se devem ser ignorados todos os caracteres de pontuação entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de pontuação" na caixa de **diálogo Localizar e** Substituir.|
+|ignoreSpace|Obtém ou define um valor que indica se devem ser ignorados todos os espaços em branco entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de espaço em branco" na caixa de **diálogo Localizar e** Substituir.|
+|matchCase|Obtém ou define um valor que indica se uma pesquisa que diferencia maiúsculas de minúsculas deve ser executada. Corresponde à caixa de seleção "Diferenciar maiúsculas e minúsculas" na caixa de **diálogo Localizar e** Substituir.|
+|matchPrefix|Obtém ou define um valor que indica se se deve corresponder palavras que começam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Coincidir prefixo" na caixa de **diálogo Localizar e** Substituir.|
+|matchSuffix|Obtém ou define um valor que indica se se deve corresponder palavras que terminam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Coincidir sufixo" na caixa de **diálogo Localizar e** Substituir.|
+|matchWholeWord|Obtém ou define um valor que indica se a operação de localização localiza apenas palavras inteiras, e não texto que faz parte de uma palavra maior. Corresponde à caixa de seleção "Localizar somente palavras inteiras" na caixa de **diálogo Localizar e** Substituir.|
+|matchWildcards|Obtém ou define um valor que indica se a pesquisa será realizada com operadores de pesquisa especiais. Corresponde à caixa de seleção "Usar caracteres curinga" na caixa de **diálogo Localizar e** Substituir.|
 
 ## <a name="wildcard-guidance"></a>Diretrizes para caracteres curinga
 
@@ -35,21 +35,21 @@ A tabela a seguir fornece orientações em torno de caracteres curinga de pesqui
 
 | Para localizar:         | Curinga |  Exemplo |
 |:-----------------|:--------|:----------|
-| Qualquer caractere simples| ? |c?l localiza "calor" e "caldo". |
+|Qualquer caractere simples| ? |c?l localiza "calor" e "caldo". |
 |Qualquer cadeia de caracteres| * |g*s localiza gostar e gastar.|
 |O início de uma palavra|< |< (inter) localiza interseção e interessante, mas não localiza desinteresse.|
 |O final de uma palavra |> |(em)> localiza vargem e miragem, mas não localiza embrião.|
 |Um dos caracteres especificados|[ ] |t[eo]m localiza tem e tom.|
 |Qualquer caractere único deste intervalo| [-] |[r-t]olo localiza rolo e solo. Os intervalos devem estar em ordem crescente.|
 |Qualquer caractere único, exceto os caracteres do intervalo entre colchetes|[!x-z] |t[!a-m]que localiza toque e trunque, mas não localiza taque ou tique.|
-|Número de ocorrências exatas do caractere ou expressão anterior|{n} |ve{2}m localiza veem, mas não vem.|
-|Número mínimo de ocorrências do caractere ou expressão anterior|{n,} |ve{1,}m localiza vem e veem.|
-|Número de ocorrências do caractere ou expressão anterior dentro de um intervalo|{n,m} |10{1,3} localiza 10, 100 e 1000.|
+|Exatamente *n* ocorrências do caractere ou expressão anterior|{n} |ve{2}m localiza veem, mas não vem.|
+|Pelo menos *n* ocorrências do caractere ou expressão anterior|{n,} |ve{1,}m localiza vem e veem.|
+|De *n* a *m* ocorrências do caractere ou expressão anterior|{n,m} |10{1,3} localiza 10, 100 e 1000.|
 |Uma ou mais ocorrências do caractere ou expressão anterior|@ |re@r localiza reter e reverter.|
 
-### <a name="escaping-the-special-characters"></a>Escapar os caracteres especiais
+### <a name="escaping-special-characters"></a>Escape de caracteres especiais
 
-A pesquisa com caracteres curinga é essencialmente igual à pesquisa em uma expressão regular. Há caracteres especiais em expressões regulares, como “[', ']”, “(', ')”, “{”, “}”, “\*”, “?”, “<”, “>”, “!” e “@”. Se um desses caracteres fizer parte da cadeia de caracteres literal que o código está procurando, ele precisará ser escapado para que o Word saiba que ele deve ser tratado literalmente e não como parte da lógica da expressão regular. Para escapar um caractere na pesquisa da interface de usuário do Word, prefixe-o com um caractere “\'”, mas, para escapá-lo programaticamente, coloque-o entre caracteres “[]”. Por exemplo, “[\*]\*” pesquisa qualquer cadeia de caracteres que comece com “\*” seguido por qualquer número de outros caracteres.
+A pesquisa com caracteres curinga é essencialmente igual à pesquisa em uma expressão regular. Há caracteres especiais em expressões regulares, como “[', ']”, “(', ')”, “{”, “}”, “\*”, “?”, “<”, “>”, “!” e “@”. Se um desses caracteres fizer parte da cadeia de caracteres literal que o código está procurando, ele precisará ser escapado para que o Word saiba que ele deve ser tratado literalmente e não como parte da lógica da expressão regular. Para escapar de um caractere na pesquisa de interface do usuário do Word, você o precederia com um caractere de barra invertida ('\\'), mas, para escapar programaticamente, coloque-o entre caracteres '[]'. Por exemplo, “[\*]\*” pesquisa qualquer cadeia de caracteres que comece com “\*” seguido por qualquer número de outros caracteres.
 
 ## <a name="examples"></a>Exemplos
 
