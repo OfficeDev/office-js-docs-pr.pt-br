@@ -3,16 +3,16 @@ title: Design de suplementos do Outlook
 description: Diretrizes para ajudar a projetar e construir um suplemento atraente, que oferece o melhor do seu aplicativo diretamente para o Outlook – no Windows, na Web, no iOS, no Mac e no Android.
 ms.date: 08/12/2021
 ms.localizationpriority: high
-ms.openlocfilehash: d18c361f0c33275f588d7fb2157f870c4ed3de57
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 486913934be9be5c1150a2037d8a913ac234c645
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148584"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244825"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Diretrizes de design de suplementos do Outlook
 
-Os suplementos são uma ótima maneira de os parceiros estenderem a funcionalidade do Outlook para além do conjunto de recursos base. Os suplementos permitem que os usuários acessem experiências, tarefas e conteúdo de terceiros sem precisar sair da caixa de entrada. Uma vez instalados, os suplementos do Outlook estão disponíveis em todos os dispositivos e plataformas.  
+Os suplementos são uma ótima maneira de os parceiros estenderem a funcionalidade do Outlook para além do conjunto de recursos base. Os suplementos permitem que os usuários acessem experiências, tarefas e conteúdo externos sem precisar sair da caixa de entrada. Uma vez instalados, os suplementos do Outlook estarão disponíveis em todos os dispositivos e plataformas.  
 
 As seguintes diretrizes gerais o ajudarão a projetar e construir um suplemento atraente, que oferece o melhor do seu aplicativo diretamente para o Outlook – no Windows, na Web, no iOS, no Mac e no Android.
 

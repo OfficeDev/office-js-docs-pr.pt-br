@@ -1,28 +1,28 @@
 ---
 title: Visão geral da plataforma de Suplementos do Office
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 10/14/2020
+ms.date: 04/14/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 237650f1ee3b2577a51bb4e6625b96be54a11838
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 8216abbce1147280c722b2ac8450379e2425172b
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514100"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244853"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
-Você pode usar a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office através de várias plataformas, incluindo Windows, Mac, iPad e em um navegador.
+Use a plataforma de Suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com o conteúdo dos documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript para estender e interagir com o Outlook, Excel, Word, PowerPoint, OneNote e Project. Sua solução pode ser executada no Office em várias plataformas, incluindo no Windows, Mac, iPad e em um navegador.
 
 ![O aplicativo do Office mais um site inserido (suplemento) tornam infinitas as possibilidades de extensibilidade.](../images/addins-overview.png)
 
 Os suplementos do Office podem fazer quase tudo que uma página da Web pode fazer dentro do navegador. Use a plataforma de suplementos do Office para:
 
--  **Adicionar novas funcionalidades para os clientes do Office** – trazer dados externos para o Office, automatizar documentos do Office, expor a funcionalidade de terceiros em clientes do Office e muito mais. Por exemplo, use a API do Microsoft Graph para se conectar aos dados que orientam a produtividade.
+- **Adicione novas funcionalidades aos clientes do Office** - Traga dados externos para o Office, automatize documentos do Office, exponha funcionalidades da Microsoft e de outros clientes do Office e muito mais. Por exemplo, use a API do Microsoft Graph para se conectar a dados que impulsionam a produtividade.
 
--  **Crie novos objetos avançados e interativos que podem ser integrados em documentos do Office** ‒ Mapas, gráficos e visualizações interativas integrados que os usuários podem adicionar a suas próprias planilhas do Excel e apresentações do PowerPoint.
+- **Crie novos objetos avançados e interativos que podem ser integrados em documentos do Office** ‒ Mapas, gráficos e visualizações interativas integrados que os usuários podem adicionar a suas próprias planilhas do Excel e apresentações do PowerPoint.
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Quais são as diferenças entre os suplementos do Office e os suplementos de COM e VSTO?
 
@@ -58,8 +58,6 @@ O manifesto é um arquivo XML que especifica configurações e recursos do suple
 
 O Suplemento do Office mais básico consiste em uma página HTML estática que é exibida dentro de um aplicativo do Office, mas não interage com o documento do Office nem com qualquer outro recurso de Internet. No entanto, para criar uma experiência que interaja com os documentos do Office ou permita que o usuário interaja com os recursos online de um aplicativo cliente do Office, você pode usar qualquer tecnologia, tanto do lado do cliente como do servidor, a qual seu provedor de hospedagem dá suporte (como ASP.NET, PHP ou Node.js). Para interagir com clientes e documentos do Office, você usa as APIs Office.js e JavaScript.
 
-*Figura 2. Componentes de um suplemento Hello World do Office*
-
 ![Componentes de um suplemento Hello World.](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Estender os clientes do Office e interagir com eles
@@ -69,7 +67,7 @@ Os Suplementos do Office podem fazer o seguinte em um aplicativo cliente do Offi
 - Estender a funcionalidade (qualquer aplicativo do Office)
 
 - Criar novos objetos (Excel ou PowerPoint)
- 
+
 ### <a name="extend-office-functionality"></a>Estender a funcionalidade do Office
 
 Você pode adicionar novas funcionalidades a aplicativos do Office por meio do seguinte:  
@@ -84,15 +82,11 @@ Painéis personalizados de interface do usuário e de tarefa são especificados 
 
 Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções do Office na Web e no Windows. Isso facilita o acesso dos usuários ao seu suplemento diretamente no aplicativo do Office. Os botões de comando podem iniciar ações diferentes, como mostrar um painel de tarefas com HTML personalizado ou executar uma função JavaScript.  
 
-*Figura 3. Comandos do suplemento na faixa de opções*
-
 ![Botões e comandos de menu personalizados.](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>Painéis de tarefas  
 
 Você pode usar painéis de tarefas, além dos comandos de suplemento, para permitir que os usuários interajam com sua solução. Os clientes que não dão suporte aos comandos de suplemento (Office 2013 e Office para iPad) executarão seu suplemento como um painel de tarefas. Os usuários iniciam os suplementos do painel de tarefas através do botão **Meus suplementos** na guia **Inserir**.
-
-*Figura 4. Painel de tarefas*
 
 ![Usar painéis de tarefas, além dos comandos do suplemento.](../images/about-addins-taskpane.png)
 
@@ -108,8 +102,6 @@ Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplement
 
 Você pode inserir objetos baseados na web, chamados de suplementos de conteúdo, em documentos do Excel e PowerPoint. Com os suplementos de conteúdo, você pode integrar visualizações de dados avançadas e baseadas na Web, mídia (como um player de vídeo do YouTube ou uma galeria de imagens) e outros tipos de conteúdo externo.
 
-*Figura 5. Suplemento de conteúdo*
-
 ![Inserir objetos baseados na Web chamados suplementos de conteúdo.](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>APIs JavaScript para Office
@@ -123,7 +115,7 @@ Para obter uma introdução mais detalhada sobre o desenvolvimento de Suplemento
 ## <a name="see-also"></a>Confira também
 
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

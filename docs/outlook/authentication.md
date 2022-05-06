@@ -3,12 +3,12 @@ title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: dc5920408af4f5fd48e13a30741321269fe07a58
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 71b6a8a270bd044a972356db4e6d4394a01d8ace
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496296"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244839"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -53,9 +53,9 @@ Seu suplemento pode chamar [getUserIdentityTokenAsync](/javascript/api/outlook/o
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Tokens de acesso obtidos por meio de fluxos do OAuth2
 
-Os suplementos também podem acessar serviços de terceiros que oferecem suporte ao OAuth2 para autorização. Considere usar tokens OAuth2 se o suplemento:
+Os suplementos também podem acessar serviços da Microsoft e de outros que oferecem suporte ao OAuth2 para autorização. Considere usar tokens OAuth2 se o suplemento:
 
-- Precisar acessar um serviço de terceiros fora do seu controle
+- Precisa de acesso a um serviço fora do seu controle.
 
 Com esse método, o suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) para inicializar o fluxo do OAuth2 ou usando a [biblioteca office-js-helpers](https://github.com/OfficeDev/office-js-helpers) para o fluxo do OAuth2 Implícito.
 

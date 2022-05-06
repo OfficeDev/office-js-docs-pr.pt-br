@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 02/23/2022
+ms.date: 05/01/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511384"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244790"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -538,7 +538,7 @@ Por fim, abra o arquivo **webpack.config.js** encontrado no diretório raiz do p
     },
     ```
 
-1. Localize a `plugins` matriz dentro do `config` objeto. Na matriz `patterns` do objeto `new CopyWebpackPlugin`, adicione novas entradas para **taskpane.css** e **dialog.css**.
+1. Localize a matriz `plugins` dentro do objeto `config`. Na matriz `patterns` do objeto `new CopyWebpackPlugin`, adicione novas entradas para **taskpane.css** e **dialog.css**.
 
     ```js
     {
@@ -833,6 +833,9 @@ function insertDefaultGist(event) {
   }
 }
 
+// Register the function.
+Office.actions.associate("insertDefaultGist", insertDefaultGist);
+
 function receiveMessage(message) {
   config = JSON.parse(message.message);
   setConfig(config, function(result) {
@@ -848,18 +851,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>Criar um arquivo para gerenciar configurações
