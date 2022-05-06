@@ -3,16 +3,16 @@ title: Projete a IU dos suplementos do Office
 description: Conhecer as práticas recomendadas para o design visual de Suplementos do Office.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e54e39531ef6308fdc79d73ed3bc3ef2d3a0ae
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efbb0ee5f0ba75170b8bd4343392c07d9eda8501
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743064"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244748"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>Projete a IU dos suplementos do Office
 
-Os suplementos ampliam a experiência do Office fornecendo funcionalidades contextuais que os usuários podem acessar nos clientes Office. Os suplementos capacitam os usuários a produzir mais, permitindo o acesso a funcionalidades de terceiros dentro do Office, sem mudanças de contexto dispendiosas.
+Os Suplementos do Office estendem a experiência do Office fornecendo funcionalidade contextual que os usuários podem acessar nos clientes do Office. Os suplementos capacitam os usuários a fazer mais, permitindo que eles acessem funcionalidades externas no Office, sem trocas de contexto dispendiosas.
 
 O design da experiência de usuário do suplemento deve se integrar perfeitamente ao Office para proporcionar uma interação eficiente e natural aos usuários. Aproveite os [comandos de suplemento](add-in-commands.md) para fornecer acesso ao seu suplemento e aplique nossas práticas recomendadas ao criar sua interface do usuário personalizada baseada em HTML.
 

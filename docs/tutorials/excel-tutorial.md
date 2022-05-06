@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Crie um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 04/13/2022
+ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
+ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863284"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244797"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -624,11 +624,11 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
         args.completed();
     }
     ```
-
-1. Adicione a seguinte linha ao final do arquivo:
+    
+1. Adicione a seguinte linha imediatamente abaixo da função para registrá-la.
 
     ```js
-    g.toggleProtection = toggleProtection;
+    Office.actions.associate("toggleProtection", toggleProtection);
     ```
 
 1. Na função `toggleProtection`, substitua `TODO1` pelo seguinte código. Esse código usa a propriedade de proteção do objeto de planilha em um padrão de alternância padrão. O `TODO2` será explicado na próxima seção.
