@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor que um usuário final precisa para executar Office suplementos.
 ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963488"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244769"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -52,7 +52,7 @@ O software a seguir é necessário para desenvolver um suplemento do Office para
   > A Configuração de Segurança Aprimorada da (ESC) do Internet Explorer deve ser desativada para os suplementos Web do Office funcionarem. Se estiver usando um computador Windows Server como cliente, ao desenvolver suplementos observe se a ESC está ativada por padrão no Windows Server.
 
 - Um dos seguintes itens como o navegador padrão: Internet Explorer 11, Microsoft Edge em sua versão mais recente, Chrome, Firefox ou Safari (Mac OS).
-- Um editor de HTML e JavaScript, como o Bloco de Notas, o [Visual Studio e Ferramentas de Desenvolvimento da Microsoft](https://www.visualstudio.com/features/office-tools-vs), ou uma ferramenta de desenvolvimento para Web de terceiros.
+- Um editor de HTML e JavaScript, [como Visual Studio Code](https://code.visualstudio.com/), [Visual Studio Ferramentas](https://www.visualstudio.com/features/office-tools-vs) para Desenvolvedores da Microsoft ou uma ferramenta de desenvolvimento na Web que não seja da Microsoft.
 
 ## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: Computador com OS X
 

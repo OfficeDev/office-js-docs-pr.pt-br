@@ -1,24 +1,24 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
-description: Use VersionOverrides em seu manifesto para definir comandos de Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 02/04/2022
+description: Use VersionOverrides em seu manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 248fd3cf36e27cfbb345a5379591b30619584d6b
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 047e9a0d8704d076fe8e6a02d8ca1e443a3b88ce
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483780"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244755"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
-Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** no manifesto para definir comandos de Excel, PowerPoint e Word. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
+Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** em seu manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
 
 - Criar elementos de interface do usuário ou pontos de entrada que facilitam o uso da funcionalidade dos suplementos.
 - Adicionar botões ou uma lista suspensa de botões à faixa de opções.
 - Adicionar itens de menu individuais — cada um contendo submenus opcionais — aos menus de contexto específicos (atalho).
 - Executar ações quando seu comando de suplemento é escolhido. É possível:
-  - Mostrar um ou mais suplementos de painel de tarefa com os quais os usuários podem interagir. Dentro do seu complemento do painel de tarefas, você pode exibir HTML que usa Fluent interface do usuário para criar uma interface do usuário personalizada.
+  - Mostrar um ou mais suplementos de painel de tarefa com os quais os usuários podem interagir. Dentro do suplemento do painel de tarefas, você pode exibir HTML que usa Fluent interface do usuário para criar uma interface do usuário personalizada.
 
      *ou*
 
@@ -27,19 +27,19 @@ Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** no manifes
 Este artigo descreve como editar seu manifesto para definir comandos de suplemento. O diagrama a seguir mostra a hierarquia de elementos usada para definir comandos de suplemento. Descrevemos esses elementos com mais detalhes neste artigo.
 
 > [!NOTE]
-> Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, [consulte Comandos de complemento para Outlook](../outlook/add-in-commands-for-outlook.md)
+> Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, [consulte Comandos de suplemento para Outlook](../outlook/add-in-commands-for-outlook.md)
 
 A imagem a seguir representa uma visão geral dos elementos dos comandos de suplemento no manifesto.
 
-![Visão geral dos elementos de comandos do complemento no manifesto. O nó superior aqui é VersionOverrides com hosts e recursos filhos. Em Hosts estão Host e, em seguida, DesktopFormFactor. Em DesktopFormFactor estão FunctionFile e ExtensionPoint. Em ExtensionPoint estão CustomTab ou OfficeTab e Office Menu. Em CustomTab ou Office tab são Group then Control then Action. Em Office Menu estão Controle e Ação. Em Recursos (filho de VersionOverrides) estão Imagens, Urls, ShortStrings e LongStrings.](../images/version-overrides.png)
+![Visão geral dos elementos de comandos do suplemento no manifesto. O nó superior aqui é VersionOverrides com hosts e recursos filhos. Em Hosts estão Host e, em seguida, DesktopFormFactor. Em DesktopFormFactor estão FunctionFile e ExtensionPoint. Em ExtensionPoint estão CustomTab ou OfficeTab e Office Menu. Em CustomTab ou Office tab estão Agrupar e, em seguida, Controlar e Ação. No menu Office estão Control e Action. Em Recursos (filho de VersionOverrides) estão Imagens, URLs, ShortStrings e LongStrings.](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>Etapa 1: Criar o projeto
 
-Recomendamos que você crie um projeto seguindo uma das iniciações rápidas, como Criar um Excel [de painel de tarefas](../quickstarts/excel-quickstart-jquery.md). Cada início rápido para Excel, Word e PowerPoint gera um projeto que já contém um comando de complemento (botão) para mostrar o painel de tarefas. Verifique se você leu comandos [de complemento para Excel, Word e PowerPoint](../design/add-in-commands.md) antes de usar comandos de complemento.
+Recomendamos que você crie um projeto seguindo um dos inícios rápidos, como Criar um suplemento Excel painel [de tarefas.](../quickstarts/excel-quickstart-jquery.md) Cada início rápido para Excel, Word e PowerPoint gera um projeto que já contém um comando de suplemento (botão) para mostrar o painel de tarefas. Verifique se você tem comandos de suplemento de leitura [para Excel, Word e PowerPoint](../design/add-in-commands.md) antes de usar comandos de suplemento.
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Etapa 2: criar um suplemento de painel de tarefas
 
-Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Não é possível usar comandos de complemento com os complementos de conteúdo. Se estiver atualizando um manifesto existente, adicione os **namespaces XML apropriados** , bem como adicione o elemento **VersionOverrides** ao manifesto conforme descrito na Etapa [3: Adicionar elemento VersionOverrides](#step-3-add-versionoverrides-element).
+Para começar a usar os comandos de suplemento, primeiramente, é preciso criar um suplemento de painel de tarefas e modificar o manifesto do suplemento, conforme descrito neste artigo. Você não pode usar comandos de suplemento com suplementos de conteúdo. Se você estiver atualizando um manifesto existente, deverá adicionar os **namespaces XML apropriados** , bem como adicionar o elemento **VersionOverrides** ao manifesto, conforme descrito na Etapa [3: Adicionar elemento VersionOverrides](#step-3-add-versionoverrides-element).
 
 O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há comandos de suplemento nesse manifesto porque não há elemento **VersionOverrides**. O Office 2013 não dá suporte a comandos de suplemento, mas com a adição de **VersionOverrides** a esse manifesto, o suplemento será executado no Office 2013 e no Office 2016. No Office 2013, o suplemento não exibirá comandos de suplemento e usa o valor de **SourceLocation** para executar seu suplemento como um único suplemento de painel de tarefas. No Office 2016, se nenhum elemento **VersionOverrides** estiver incluído, **SourceLocation** será usado para executar o suplemento. Entretanto, se você incluir **VersionOverrides**, o suplemento exibirá apenas os comandos de suplemento e não exibirá o suplemento como um único suplemento de painel de tarefas.
   
@@ -86,7 +86,7 @@ A tabela a seguir identifica os elementos filho de **VersionOverrides**.
 |Elemento|Descrição|
 |:-----|:-----|
 |**Descrição** <br/> |Opcional. Descreve o suplemento. Esse elemento filho **Description** substitui um elemento **Description** anterior na parte pai do manifesto. O atributo **resid** para esse elemento **Description** é definido como a **id** de um elemento **String**. O elemento **String** contém o texto para **Description**. <br/> |
-|**Requisitos** <br/> |Opcional. Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Esse elemento filho **Requirements** substitui o elemento **Requirements** na parte pai do manifesto. Para obter mais informações, consulte [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
+|**Requisitos** <br/> |Opcional. Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Esse elemento filho **Requirements** substitui o elemento **Requirements** na parte pai do manifesto. Para obter mais informações, consulte [Especificar Office aplicativos e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
 |**Hosts** <br/> |Obrigatório. Especifica uma coleção de Office aplicativos. O elemento filho **Hosts** substitui o elemento **Hosts** na parte pai do manifesto. Você deve incluir um conjunto de atributos **xsi:type** como "Pasta de trabalho" ou "Documento". <br/> |
 |**Resources** <br/> |Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) referenciado por outros elementos de manifesto. Por exemplo, o valor do elemento **Description** refere-se a um elemento filho em **Resources**. O elemento **Resources** é descrito na [Etapa 7: adicionar o elemento Resources](#step-7-add-the-resources-element) mais adiante neste artigo. <br/> |
 
@@ -118,7 +118,7 @@ O exemplo a seguir mostra como usar o elemento **VersionOverrides** e seus eleme
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>Etapa 4: adicionar os elementos Hosts, Host e DesktopFormFactor
 
-O elemento **Hosts** contém um ou mais elementos **Host**. Um **elemento Host** especifica um aplicativo Office específico. O **elemento Host** contém elementos filho que especificam os comandos do add-in a ser exibidos após a instalação do seu Office aplicativo. Para mostrar os mesmos comandos de complemento em dois ou mais aplicativos Office diferentes, você deve duplicar os elementos filho em cada **Host**.
+O elemento **Hosts** contém um ou mais elementos **Host**. Um **elemento** Host especifica um aplicativo Office específico. O **elemento Host** contém elementos filho que especificam os comandos de suplemento a serem exibidos depois que o suplemento é instalado nesse Office aplicativo. Para mostrar os mesmos comandos de suplemento em dois ou mais aplicativos Office, você deve duplicar os elementos filho em cada **Host**.
 
 O elemento **DesktopFormFactor** especifica as configurações para um suplemento que é executado no Office Online (em um navegador) e no Windows.
 
@@ -177,7 +177,7 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
         };
     })();
 
-    // Your function must be in the global namespace.
+    // Define the function.
     function writeText(event) {
 
         // Implement your custom code here. The following code is a simple example.  
@@ -195,6 +195,9 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
         // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
+    
+    // You must register the function with the following line.
+    Office.actions.associate("writeText", writeText);
 </script>
 ```
 
@@ -203,7 +206,7 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etapa 6: adicionar elementos do ExtensionPoint
 
-O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir **elementos ExtensionPoint** com esses **valores xsi:type** .
+O elemento **ExtensionPoint** define onde os comandos de suplemento devem aparecer na interface do usuário do Office. Você pode definir **elementos extensionPoint** com esses **valores xsi:type** .
 
 - **PrimaryCommandSurface**, que se refere à faixa de opções no Office.
 
@@ -249,7 +252,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |Elemento|Descrição|
 |:-----|:-----|
 |**CustomTab** <br/> |Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. <br/> |
-|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia padrão Aplicativo do Office faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de tabulação a ser usado com o atributo **id**, consulte Valores de tabulação para guias padrão Aplicativo do Office [faixa de opções](/javascript/api/manifest/officetab).  <br/> |
+|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia de faixa de opções Aplicativo do Office padrão (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de guia a serem usados com o atributo **de ID**, consulte Valores de tabulação para obter Aplicativo do Office de [faixa de opções padrão](/javascript/api/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> **ContextMenuText** para Excel ou Word. Exibe o item no menu de contexto quando o texto é selecionado e o usuário clica com o botão direito do mouse no texto selecionado. <br/> **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha. <br/> |
 |**Group** <br/> |Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. <br/> |
 |**Label** <br/> |Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
@@ -433,7 +436,7 @@ Veja a seguir um exemplo de como usar o elemento **Resources**. Cada recurso pod
 
 No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa de opções usando as guias padrão da interface de usuário do Office. A tabela a seguir lista os valores que podem ser usados para o atributo **id** do elemento **OfficeTab**. Os valores da guia diferenciam maiúsculas de minúsculas.
 
-|Office cliente|Valores de guia|
+|Office aplicativo cliente|Valores de guia|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |
@@ -443,5 +446,5 @@ No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa 
 
 - [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)
 - [Exemplo: criar um Excel com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
-- [Exemplo: Criar um complemento do Word com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [Exemplo: Criar um suplemento do Word com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
 - [Exemplo: criar um PowerPoint com botões de comando](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

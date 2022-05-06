@@ -3,19 +3,19 @@ title: Obter e definir uma recorrência em um suplemento do Outlook
 description: Este tópico mostra como usar a API JavaScript do Office para obter e definir várias propriedades de recorrência de um item em um suplemento do Outlook.
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ebdce8236d55fc6569756aa88fb721d8e6ec9f1
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 17c774b9a9b0bb87dd158e18114c18dd745f64fc
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496282"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244741"
 ---
 # <a name="get-and-set-recurrence"></a>Obter e definir uma recorrência
 
-Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar Office API JavaScript para gerenciar os padrões de recorrência de uma série de compromissos no seu complemento.
+Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar a Office API JavaScript para gerenciar os padrões de recorrência de uma série de compromissos em seu suplemento.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos 1.7. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto [de requisitos 1.7](/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="available-recurrence-patterns"></a>Padrões de recorrência disponíveis
 
@@ -78,7 +78,7 @@ function callback(asyncResult)
 
 ## <a name="change-recurrence-as-the-organizer"></a>Alterar a recorrência como organizador
 
-No exemplo a seguir, no modo de redação, o organizador do compromisso obtém o objeto de recorrência de uma série de compromissos dada a série ou uma instância dessa série e define uma nova duração de recorrência.
+No exemplo a seguir, no modo de composição, o organizador do compromisso obtém o objeto de recorrência de uma série de compromissos considerando a série ou uma instância dessa série e define uma nova duração de recorrência.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);

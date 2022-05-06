@@ -1,30 +1,30 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
-description: Saiba como configurar um Office para abrir automaticamente quando um documento for aberto.
+description: Saiba como configurar um suplemento Office para abrir automaticamente quando um documento for aberto.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 71834e1bd47e09e4ace5ac4b81d6018eea66f634
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496835"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244728"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
-Você pode usar comandos de Office de Office para estender a interface do usuário Office adicionando botões à faixa Aplicativo do Office de usuário. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
+Você pode usar comandos de suplemento em seu suplemento Office para estender a interface do usuário do Office adicionando botões à faixa Aplicativo do Office de opções. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
-Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso do painel de tarefas autoopen, introduzido no [conjunto de requisitos AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
+Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso de painel de tarefas autoopen, introduzido no conjunto de [requisitos AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
-Quando um usuário lançar suplementos que não usam comandos de suplemento, por exemplo, suplementos que são executados no Office 2013, eles serão inseridos no documento e persistirão nesse documento. Como resultado, quando outros usuários abrem o documento, é solicitado que eles instalem o suplemento, e o painel de tarefas abrirá. O desafio com esse modelo é que, em muitos casos, os usuários não querem que o complemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam avisados para instalar esse suplemento quando abrirem o documento.
+Quando um usuário lançar suplementos que não usam comandos de suplemento, por exemplo, suplementos que são executados no Office 2013, eles serão inseridos no documento e persistirão nesse documento. Como resultado, quando outros usuários abrem o documento, é solicitado que eles instalem o suplemento, e o painel de tarefas abrirá. O desafio com esse modelo é que, em muitos casos, os usuários não querem que o suplemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam avisados para instalar esse suplemento quando abrirem o documento.
 
 Com o recurso autoopen, você pode explicitamente definir, ou permitir que o usuário defina, se um suplemento do painel de tarefas irá persistir em um documento específico.
 
 ## <a name="support-and-availability"></a>Suporte e disponibilidade
 
-No momento, o recurso autoopen tem suporte nos seguintes produtos e plataformas.
+Atualmente, há suporte para o recurso autoopen nos seguintes produtos e plataformas.
 
 |Produtos|Plataformas|
 |:-----------|:------------|
@@ -32,14 +32,14 @@ No momento, o recurso autoopen tem suporte nos seguintes produtos e plataformas.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Aplique as seguintes práticas recomendadas ao usar o recurso autoopen.
+Aplique as práticas recomendadas a seguir ao usar o recurso autoopen.
 
 - Use o recurso autoopen quando ele auxiliar a eficiência dos usuários do seu suplemento, como
   - Quando o documento precisa do suplemento para funcionar corretamente. Por exemplo, uma planilha que inclui valores de ações que são atualizados periodicamente por um suplemento. O suplemento deverá abrir automaticamente quando a planilha for aberta para manter os valores atualizados.
   - Quando é muito provável que o usuário sempre utilizará o suplemento com um determinado documento. Por exemplo, um suplemento que ajuda os usuários a preencher ou alterar dados em um documento puxando informações de um sistema de back-end.
 - Permita que os usuários ativem ou desativem o recurso autoopen. Inclua uma opção em sua interface de usuário para que eles possam escolher quando não querem mais que o suplemento abra automaticamente no painel de tarefas.  
-- Use a detecção de conjunto de requisitos para determinar se o recurso autoopen está disponível e fornecer um comportamento de fallback se não estiver.
-- Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não faz sentido que o seu complemento abra automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
+- Use a detecção de conjunto de requisitos para determinar se o recurso autoopen está disponível e fornecer um comportamento de fallback, caso contrário.
+- Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não fizer sentido para o suplemento abrir automaticamente com determinados documentos, esse recurso poderá incomodar os usuários.
 
     > [!NOTE]
     > Se a Microsoft detectar abuso do recurso autoopen, seu suplemento poderá ser rejeitado no AppSource.
@@ -109,12 +109,12 @@ A parte `webextension` inclui um conjunto de propriedades e uma propriedade cham
 
 A parte `webextension` também inclui uma referência para a loja ou o catálogo com atributos para `id`, `storeType`, `store` e `version`. Dos valores `storeType`, somente quatro são relevantes para o recurso autoopen. Os valores dos outros três atributos dependem do valor de `storeType`, conforme mostrado na tabela a seguir.
 
-|valor `storeType`|`id` value|`store` value|valor `version`|
+|`storeType` valor|`id` valor|`store` valor|`version` valor|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|A ID do ativo AppSource do complemento (consulte Observação).|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo AppSource (consulte Observação).|
-|WOPICatalog (hosts [WOPI de terceiros](/microsoft-365/cloud-storage-partner-program/online/) )| A ID do ativo AppSource do complemento (consulte Observação). | "wopicatalog". Use esse valor para os complementos publicados na Fonte de Aplicativos e instalados em hosts WOPI de terceiros. Para obter mais informações, [consulte Integrando com Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
+|OMEX (AppSource)|A ID do ativo do AppSource do suplemento (consulte a Observação).|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (consulte Observação).|
+|WOPICatalog (hosts [WOPI do](/microsoft-365/cloud-storage-partner-program/online/) parceiro)| A ID do ativo do AppSource do suplemento (consulte a Observação). | "wopicatalog". Use esse valor para suplementos publicados na Origem do Aplicativo e instalados em hosts WOPI. Para obter mais informações, [consulte Integração com o Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
-|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com os complementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.|
+|EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com suplementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.|
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
 > [!NOTE]
@@ -139,11 +139,11 @@ Definir o `visibility` como "1" é uma boa opção quando o suplemento e o model
 > [!NOTE]
 > Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
-Uma maneira fácil de gravar o XML é primeiro executar o seu complemento e marcar o [](#tag-the-document-on-the-client-side) documento no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade [open XML SDK](https://www.nuget.org/packages/Open-XML-SDK) para gerar C# código para adicionar programaticamente a marcação com base no XML gerado.
+Uma maneira fácil de escrever o XML é primeiro executar o suplemento e marcar o documento [](#tag-the-document-on-the-client-side) no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade do [SDK do Open XML](https://www.nuget.org/packages/Open-XML-SDK) para gerar código C# para adicionar programaticamente a marcação com base no XML gerado.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 
-Você pode implantar uma versão de teste do seu add-in que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
+Você pode implantar uma versão de teste do suplemento que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Centro de administração do Microsoft 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão de armazenamento EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -155,7 +155,7 @@ Você pode implantar uma versão de teste do seu add-in que abrirá automaticame
 </we:webextension>
 ```
 
-Você pode testar o exemplo anterior usando sua assinatura Microsoft 365 para experimentar a Implantação Centralizada e verificar se o seu complemento funciona conforme esperado. Se você ainda não tiver uma assinatura de Microsoft 365, poderá obter uma assinatura de 90 dias renováveis Microsoft 365 assinatura de 90 dias ao ingressar no programa Microsoft 365 [desenvolvedor](https://developer.microsoft.com/office/dev-program).
+Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para experimentar a Implantação Centralizada e verificar se o suplemento funciona conforme o esperado. Se você ainda não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura do Microsoft 365 renovável gratuita de 90 dias ingressando no programa [Microsoft 365 desenvolvedor](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Confira também
 

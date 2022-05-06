@@ -1,18 +1,18 @@
 ---
-ms.date: 07/08/2021
-description: Solicitar, transmitir e cancelar a transmissão de dados externos para sua agenda de trabalho com funções personalizadas em Excel.
+ms.date: 05/02/2022
+description: Solicitar, transmitir e cancelar o streaming de dados externos para sua pasta de trabalho com funções personalizadas Excel.
 title: Receber e tratar dados com funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 641c6da717ede364d59591838849cd47d887f63c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744656"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244846"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
-Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é através do recebimento de dados de outros locais diferente da pasta de trabalho, como a Web ou um servidor (por meio de WebSockets). É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
+Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é recebendo dados de locais diferentes da pasta de trabalho, como a Web ou um servidor (por meio de [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -22,22 +22,23 @@ Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Ex
 
 Se uma função personalizada recupera dados de uma fonte externa como na web, ela deve:
 
-1. Retornar uma Promise do JavaScript para o Excel.
-2. Resolva a promessa com o uso da função retorno de chamada de valor final.
+1. Retornar um [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) para Excel.
+2. Resolva com `Promise` o valor final usando a função de retorno de chamada.
 
 ### <a name="fetch-example"></a>Exemplo de busca
 
-No exemplo de código a seguir, `webRequest` a função alcança a hipotética API Contoso "Número de Pessoas no Espaço", que rastreia o número de pessoas atualmente na Estação Espacial Internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
+No exemplo de código a seguir, `webRequest` a função alcança uma API externa hipotética que rastreia o número de pessoas atualmente na Estação Espacial Internacional. A função retorna um JavaScript e `Promise` usa para `fetch` solicitar informações da API hipotética. Os dados resultantes são transformados em JSON `names` e a propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
 
 Ao desenvolver suas próprias funções, talvez você queira executar uma ação caso a solicitação da Web não tenha sido concluída de maneira oportuna ou considere [o envio de várias solicitações](custom-functions-batching.md)da API.
 
 ```JS
 /**
- * Requests the names of the people currently on the International Space Station from a hypothetical API.
+ * Requests the names of the people currently on the International Space Station.
+ * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
  * @customfunction
  */
 function webRequest() {
-  let url = "https://www.contoso.com/NumberOfPeopleInSpace";
+  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL.
   return new Promise(function (resolve, reject) {
     fetch(url)
       .then(function (response){
@@ -52,11 +53,11 @@ function webRequest() {
 ```
 
 > [!NOTE]
-> Usar `Fetch` evita retornos de chamada aninhados e pode ser preferível do XHR em alguns casos.
+> Usar `fetch` evita retornos de chamada aninhados e pode ser preferível do XHR em alguns casos.
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
-No exemplo de código a seguir, `getStarCount` a função chama a API Github para descobrir a quantidade de estrelas fornecidas ao repositório de um usuário específico. Essa é uma função assíncrona que retorna uma promessa de JavaScript. Quando os dados forem obtidos da chamada da Web, a promessa será resolvida, que retornará os dados para a célula.
+No exemplo de código a seguir, `getStarCount` a função chama a API do Github para descobrir a quantidade de estrelas fornecidas ao repositório de um usuário específico. Essa é uma função assíncrona que retorna um JavaScript `Promise`. Quando os dados são obtidos da chamada à Web, a promessa é resolvida, o que retorna os dados para a célula.
 
 ```TS
 /**
@@ -99,17 +100,17 @@ async function getStarCount(userName: string, repoName: string) {
 
 Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma. Isso pode ser útil para verificar dados ativos de um serviço online, como a função no [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
 
-Para declarar uma função de streaming, você pode usar:
+Para declarar uma função de streaming, você pode usar qualquer uma das duas opções a seguir.
 
 - A `@streaming` marca.
-- O `CustomFunctions.StreamingInvocation` parâmetro invocation.
+- O `CustomFunctions.StreamingInvocation` parâmetro de invocação.
 
 O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código.
 
 - O Excel exibe cada valor novo automaticamente usando o método `setResult`.
-- O segundo parâmetro de entrada, invocação, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
-- O retorno de chamada `onCanceled` define a função que é executada quando a função é cancelada.
-- O streaming não está necessariamente vinculado a fazer uma solicitação na Web: nesse caso, a função não está fazendo uma solicitação da Web, mas ainda está com dados em intervalos definidos, portanto, é `invocation` necessário usar o parâmetro de streaming.
+- O segundo parâmetro de entrada, `invocation`, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
+- O `onCanceled` retorno de chamada define a função que é executada quando a função é cancelada.
+- O streaming não está necessariamente vinculado a fazer uma solicitação da Web. Nesse caso, a função não está fazendo uma solicitação da Web, mas ainda está obtendo dados em intervalos definidos, portanto, ela requer o uso do parâmetro de streaming `invocation` .
 
 ```JS
 /**
@@ -133,7 +134,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>Cancelar uma função
 
-Excel cancela a execução de uma função nas seguintes situações.
+Excel cancela a execução de uma função nas situações a seguir.
 
 - Quando o usuário edita ou exclui uma célula que faz referência à função.
 - Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
@@ -141,7 +142,8 @@ Excel cancela a execução de uma função nas seguintes situações.
 
 Você também pode considerar a definição de um valor de streaming padrão para lidar com os casos em que uma solicitação for feita, mas você está offline.
 
-Observe que há também uma categoria de funções chamada de funções canceláveis, que _não_ estão relacionadas a funções de streaming. Somente funções personalizadas assíncronas que retornam um valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
+> [!NOTE]
+> Também há uma categoria de funções chamadas funções canceláveis, e elas não estão relacionadas _a funções_ de streaming. Somente funções personalizadas assíncronas que retornam um valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
 
 ### <a name="use-an-invocation-parameter"></a>Usar um parâmetro de invocação
 
@@ -151,7 +153,7 @@ Se você estiver usando TypeScript, o manipulador de invocação precisará ser 
 
 ## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
 
-Em uma função personalizada, é possível usar WebSockets para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, sua função personalizada pode abrir uma conexão com um servidor e receber automaticamente mensagens do servidor quando determinados eventos ocorrerem, sem precisar sondar explicitamente os dados do servidor.
+Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, sua função personalizada pode abrir uma conexão com um servidor e receber automaticamente mensagens do servidor quando determinados eventos ocorrerem, sem precisar sondar explicitamente o servidor para obter dados.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
@@ -178,6 +180,6 @@ ws.onerror(error){
 
 - [Valores voláteis nas funções](custom-functions-volatile.md)
 - [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
-- [Criar metadados JSON manualmente para funções personalizadas](custom-functions-json.md)
+- [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md)
 - [Criar funções personalizadas no Excel](custom-functions-overview.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
