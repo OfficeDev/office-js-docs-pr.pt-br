@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 10/22/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eefad27511935289d74a06744d1afc686dc5b7
-ms.sourcegitcommit: c1a41d3c52a1d3bd7ef8bebff257777bcde15e0a
+ms.openlocfilehash: 5e563c836b48a16f572aca492fa39f33b9661052
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "64822399"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313181"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -22,10 +22,13 @@ Qual navegador é usado depende do:
 > [!IMPORTANT]
 > **O Internet Explorer ainda é Office suplementos**
 >
-> A Microsoft está encerrando o suporte para o Internet Explorer, mas isso não afeta significativamente Office suplementos. Algumas combinações de plataformas e versões do Office, incluindo versões de compra única por meio do Office 2019, continuarão a usar o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Além disso, o suporte para essas combinações e, portanto, para o Internet Explorer, ainda é necessário para suplementos enviados ao [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Duas coisas *estão mudando* :
+> Algumas combinações de plataformas e versões do Office, incluindo versões de compra única por meio do Office 2019, ainda usam o controle de modo de exibição da Web que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
 >
-> - Office na Web abre mais no Internet Explorer. Consequentemente, o AppSource não testa mais os suplementos Office na Web usando o Internet Explorer como navegador. Mas o AppSource ainda testa combinações de plataforma e versões Office *desktop* que usam o Internet Explorer.
+> - Office na Web abre mais no Internet Explorer. Consequentemente, [o AppSource](/office/dev/store/submit-to-appsource-via-partner-center) não testa mais suplementos no Office na Web usando o Internet Explorer como navegador.
+> - O AppSource ainda testa combinações de versões de plataforma e área de  trabalho do Office que usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
 > - A [Script Lab não dá](../overview/explore-with-script-lab.md) mais suporte ao Internet Explorer.
+>
+> Para obter mais informações sobre como dar suporte ao Internet Explorer e configurar uma mensagem de falha normal em seu suplemento, consulte [Suporte do Internet Explorer 11](../develop/support-ie-11.md).
 
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
