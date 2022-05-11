@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 12/13/2021
+ms.date: 05/10/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 620452cee57532eee02c72d32dcbd4854b3ae909
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483402"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313188"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -64,14 +64,14 @@ Você pode especificar onde uma guia personalizada é exibida na faixa de opçõ
 > [!NOTE]
 > Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para saber mais, confira [Posicionar uma guia personalizada na faixa de opções](custom-tab-placement.md).
 
-### <a name="integration-of-built-in-office-buttons-preview"></a>Integração de botões internos do Office (visualização)
+### <a name="integration-of-built-in-office-buttons"></a>Integração de botões internos do Office
 
 Você pode inserir os botões internos da faixa de opções do Office em seus grupos de comandos personalizados e nas guias personalizadas da faixa de opções.
 
 > [!NOTE]
 > Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para saber mais, confira [Integrar os botões internos do Office em guias personalizadas](built-in-button-integration.md).
 
-### <a name="contextual-tabs-preview"></a>Guias contextuais (pré-visualização)
+### <a name="contextual-tabs"></a>Guias contextuais
 
 Você pode especificar que uma guia só seja visível na faixa de opções em determinados contextos, como quando um gráfico é selecionado no Excel.
 
