@@ -1,14 +1,14 @@
 ---
 title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
+ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496324"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "65432202"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
@@ -20,7 +20,7 @@ Os usuários entram no Office (plataformas online, dispositivos móveis e área 
 
 O diagrama a seguir mostra como funciona o processo de SSO. Os elementos azuis representam o Office ou a plataforma de identidade da Microsoft. Os elementos cinza representam o código que você escreve e incluem o código ao lado do cliente (painel de tarefas) e o código ao lado do servidor no seu suplemento.
 
-![Diagrama que mostra o processo de SSO.](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="Diagrama que mostra o processo de SSO." border="false":::
 
 1. No suplemento, seu código JavaScript chama a API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Se o usuário já estiver conectado ao Office, o host do Office retornará o token de acesso com as declarações do usuário conectado.
 2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma caixa de diálogo para o usuário entrar. O Office redireciona para a plataforma de identidade da Microsoft para concluir o processo de entrada.
