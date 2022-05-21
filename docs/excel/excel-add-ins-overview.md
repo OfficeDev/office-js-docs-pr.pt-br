@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: O suplemento do Excel permite que você estenda a funcionalidade do aplicativo Excel em várias plataformas, como Windows, Mac, iPad e em um navegador.
-ms.date: 02/16/2022
+ms.date: 05/19/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: db4b26ed605a50c1d127c6b37f9022294e49d420
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a95a49d386cfd1c57d007f4728f716c32db11d5c
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745080"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628100"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -87,7 +87,7 @@ As caixas de diálogo são superfícies que flutuam acima da janela do aplicativ
 
 ![Caixa de diálogo do suplemento no Excel.](../images/excel-add-in-dialog-choose-number.png)
 
-Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [Caixas de diálogo nos Suplementos do Office](../design/dialog-boxes.md) e [Usar a API da Caixa de Diálogo em Suplementos do Office](../develop/dialog-api-in-office-add-ins.md).
+Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [Usar a API da Caixa de Diálogo em Suplementos do Office](../develop/dialog-api-in-office-add-ins.md).
 
 ### <a name="content-add-ins"></a>Suplementos de conteúdo
 

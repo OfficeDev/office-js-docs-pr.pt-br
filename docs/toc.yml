@@ -230,8 +230,6 @@ items:
                     href: design/content-add-ins.md
                   - name: Caixas de diálogo
                     items:
-                      - name: Visão geral
-                        href: design/dialog-boxes.md
                       - name: Usar a API da caixa de diálogo do Office nos Suplementos do Office
                         href: develop/dialog-api-in-office-add-ins.md
                       - name: Práticas recomendadas e regras para a API da caixa de diálogo do Office
@@ -413,6 +411,9 @@ items:
                 displayName: Excel
               - name: Conceitos (visualização)
                 href: excel/excel-data-types-concepts.md
+                displayName: Excel
+              - name: Cartões de valor de entidade (visualização)
+                href: excel/excel-data-types-entity-card.md
                 displayName: Excel
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md

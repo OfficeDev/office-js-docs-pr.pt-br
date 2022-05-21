@@ -1,29 +1,21 @@
 ---
 title: Conceitos básicos dos tipos de dados da API JavaScript do Excel
 description: Conheça os principais conceitos para usar os tipos de dados do Excel no Suplemento do Office.
-ms.date: 04/19/2022
+ms.date: 05/18/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: eb1d459a75ef0268cc7ffa68153613aa975e5fe6
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963467"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628080"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
-> [!NOTE]
-> No momento, as APIs de tipos de dados só estão disponíveis na visualização pública. As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
->
-> Para usar APIs de visualização:
->
-> - Você deve fazer referência à biblioteca **beta** na rede de distribuição de conteúdo (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`. Para obter informações adicionais, confira o arquivo Leiame do pacote NPM [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js).
-> - Pode ser necessário ingressar no [programa Office Insider](https://insider.office.com) para acessar builds mais recentes do Office.
->
-> Para testar os tipos de dados do Office no Windows, você deve ter um número de build do Excel maior ou igual a 16.0.14626.10000. Para testar os tipos de dados do Office no Mac, você deve ter um número de build do Excel maior ou igual a 16.55.21102600.
+[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
 Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para trabalhar com tipos de dados. Ele apresenta conceitos fundamentais para o desenvolvimento de tipos de dados.
 
@@ -60,7 +52,7 @@ O objeto [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumberc
 
 O exemplo de código JSON a seguir mostra o esquema completo de um valor numérico formatado. O valor do número formatado `myDate` no exemplo de código é exibido como **16/1/1990** na interface do usuário do Excel. Se os requisitos mínimos de compatibilidade para o recurso de tipos de dados não forem atendidos, os cálculos usarão o `basicValue` no lugar do número formatado.
 
-```json
+```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate: Excel.FormattedNumberCellValue = {
@@ -79,7 +71,7 @@ As propriedades `basicType` e `basicValue` definem como os cálculos leem esse t
 
 O exemplo de código JSON a seguir mostra o esquema completo de um valor de entidade que contém texto, uma imagem, uma data e um valor de texto adicional.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity: Excel.EntityCellValue = {
@@ -98,6 +90,8 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+Os valores de entidade também oferecem uma propriedade `layouts` que cria um cartão para a entidade. O cartão é exibido como uma janela modal na interface do usuário do Excel e pode exibir informações adicionais contidas no valor da entidade, além do que é visível na célula. Para saber mais, confira [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md).
+
 ## <a name="web-image-values"></a>Valores de imagem da Web
 
 O objeto [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) cria a capacidade de armazenar uma imagem como parte de uma [entidade](#entity-values) ou como um valor independente em um intervalo. Este objeto oferece muitas propriedades, incluindo `address`, `altText` e `relatedImagesAddress`.
@@ -106,7 +100,7 @@ As propriedades `basicType` e `basicValue` definem como os cálculos leem o tipo
 
 O exemplo de código JSON a seguir mostra o esquema completo de uma imagem da Web.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
@@ -142,5 +136,6 @@ Cada um dos objetos de erro pode acessar uma enumeração por meio da propriedad
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
+- [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md)
 - [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
 - [Funções e tipos de dados personalizados](custom-functions-data-types-concepts.md)
