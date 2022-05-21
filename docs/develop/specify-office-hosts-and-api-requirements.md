@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar Office aplicativos e requisitos de API para que o suplemento funcione conforme o esperado.
-ms.date: 04/04/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 090557aca861e0d71ec011ed6d1d55c9a1f1df4c
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 60ad00c918b04b6f12ecb6eec6c40772448b2ab8
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682221"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628044"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -59,12 +59,12 @@ O **elemento Hosts** pode conter um ou mais **elementos host** . Deve haver um e
 | Nome          | Aplicativos cliente do Office                     | Tipos de suplemento disponíveis |
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Banco de dados      | Aplicativos Web do Access                                | Painel de tarefas              |
-| Document      | Word na Web, Windows, Mac, iPad            | Painel de tarefas              |
-| Mailbox       | Outlook na Web, Windows, Mac, Android, iOS | Correio                   |
+| Documento      | Word na Web, Windows, Mac, iPad            | Painel de tarefas              |
+| Mailbox       | Outlook na Web, Windows, Mac, Android, iOS | Email                   |
 | Notebook      | OneNote Online                             | Painel de tarefas, Conteúdo     |
 | Presentation  | PowerPoint na Web, Windows, Mac, iPad      | Painel de tarefas, Conteúdo     |
 | Project       | Project no Windows                             | Painel de tarefas              |
-| Workbook      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
+| Pasta de Trabalho      | Excel na Web, Windows, Mac, iPad           | Painel de tarefas, Conteúdo     |
 
 > [!NOTE]
 > Office aplicativos têm suporte em diferentes plataformas e são executados em desktops, navegadores da Web, tablets e dispositivos móveis. Normalmente, você não pode especificar qual plataforma pode ser usada para executar o suplemento. Por exemplo, se você especificar `Workbook`, Excel na Web e em Windows podem ser usados para executar o suplemento. No entanto, se você especificar`Mailbox`, o suplemento não será executado em Outlook clientes móveis, a menos que você defina o [ponto de extensão móvel](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface).
@@ -86,7 +86,7 @@ Você não pode especificar explicitamente as versões e builds do Office ou as 
 
 Para simplificar o processo de especificação das APIs de que seu suplemento precisa, Office agrupa a maioria das APIs em conjuntos *de requisitos*. As APIs no [Modelo de Objeto de API](understanding-the-javascript-api-for-office.md#api-models) Comum são agrupadas pelo recurso de desenvolvimento ao qual elas dão suporte. Por exemplo, todas as APIs conectadas a associações de tabela estão no conjunto de requisitos chamado "TableBindings 1.1". As APIs nos modelos [de](understanding-the-javascript-api-for-office.md#api-models) objeto específicos do aplicativo são agrupadas por quando elas foram liberadas para uso em suplementos de produção.
 
-Os conjuntos de requisitos têm controle de versão. Por exemplo, as APIs que dão suporte [a Caixas de](../design/dialog-boxes.md) Diálogo estão no conjunto de requisitos DialogApi 1.1. Quando apIs adicionais que habilitam mensagens de um painel de tarefas para uma caixa de diálogo foram lançadas, elas foram agrupadas em DialogApi 1.2, juntamente com todas as APIs no DialogApi 1.1. *Cada versão de um conjunto de requisitos é um superconjunto de todas as versões anteriores.*
+Os conjuntos de requisitos têm controle de versão. Por exemplo, as APIs que dão suporte [a Caixas de](../develop/dialog-api-in-office-add-ins.md) Diálogo estão no conjunto de requisitos DialogApi 1.1. Quando apIs adicionais que habilitam mensagens de um painel de tarefas para uma caixa de diálogo foram lançadas, elas foram agrupadas em DialogApi 1.2, juntamente com todas as APIs no DialogApi 1.1. *Cada versão de um conjunto de requisitos é um superconjunto de todas as versões anteriores.*
 
 O suporte ao conjunto de requisitos varia de acordo com Office aplicativo, a versão do aplicativo Office e a plataforma na qual ele está sendo executado. Por exemplo, o DialogApi 1.2 não tem suporte em versões de compra avures do Office antes do Office 2021, mas o DialogApi 1.1 tem suporte em todas as versões de compra avures de volta para o Office 2013. Você deseja que seu suplemento seja instalado em cada combinação de plataforma e versão do Office que dá suporte às APIs que ele usa, portanto, você sempre deve especificar no manifesto a versão mínima de cada  conjunto de requisitos que seu suplemento requer. Os detalhes sobre como fazer isso são posteriormente neste artigo.
 
@@ -143,7 +143,7 @@ Observe o seguinte sobre este exemplo.
 Os recursos de extensibilidade que a Office de suplementos fornece podem ser divididos de forma útil em três tipos:
 
 - Recursos de extensibilidade que estão disponíveis imediatamente após a instalação do suplemento. Você pode usar esse tipo de recurso configurando um [elemento VersionOverrides](/javascript/api/manifest/versionoverrides) no manifesto. Um exemplo desse tipo de recurso são comandos de [suplemento](../design/add-in-commands.md), que são botões e menus da faixa de opções personalizados.
-- Recursos de extensibilidade que estão disponíveis somente quando o suplemento está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [caixas de diálogo](../design/dialog-boxes.md).
+- Recursos de extensibilidade que estão disponíveis somente quando o suplemento está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [caixas de diálogo](../develop/dialog-api-in-office-add-ins.md).
 - Recursos de extensibilidade que estão disponíveis apenas em runtime, mas são implementados com uma combinação de Office.js JavaScript e configuração em um **elemento VersionOverrides** . Exemplos disso são [Excel funções personalizadas](../excel/custom-functions-overview.md), [logon](sso-in-office-add-ins.md) único e [guias contextuais personalizadas](../design/contextual-tabs.md).
 
 Se o suplemento usa um recurso de extensibilidade específico para algumas de suas funcionalidades, mas tem outras funcionalidades úteis que não exigem o recurso de extensibilidade, você deve projetar o suplemento para que ele seja instalado na plataforma e combinações de versão do Office que não dão suporte ao recurso de extensibilidade. Ele pode fornecer uma experiência valiosa, embora diminuída, nessas combinações. 
