@@ -1,14 +1,14 @@
 ---
 title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
-ms.date: 07/07/2020
+ms.date: 05/19/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483527"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650609"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -120,3 +120,5 @@ Quando você usa uma extensão de módulo, os comandos de suplemento aparecem na
 
 - [Suplemento do Outlook para demonstração de comando de suplemento](https://github.com/officedev/outlook-add-in-command-demo)
 - [Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint](../develop/create-addin-commands.md)
+- [Depurar seu suplemento do Outlook sem interface do usuário](debug-ui-less.md)
+- [Tutorial: criar uma mensagem para compor o suplemento do Outlook](../tutorials/outlook-tutorial.md)
