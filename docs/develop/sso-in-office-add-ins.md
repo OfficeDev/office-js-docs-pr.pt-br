@@ -3,16 +3,16 @@ title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
-ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
+ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "65432202"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650595"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
-Os usuários entram no Office (plataformas online, dispositivos móveis e área de trabalho) usando suas contas Microsoft pessoal, contas corporativas ou contas do Microsoft 365 Education. Aproveite isso e use o logon único (SSO) para autenticar e autorizar o usuário no seu suplemento sem exigir que ele entre uma segunda vez.
+Os usuários entram no Office usando suas contas Microsoft pessoal, contas corporativas ou contas do Microsoft 365 Education. Aproveite isso e use o logon único (SSO) para autenticar e autorizar o usuário no seu suplemento sem exigir que ele entre uma segunda vez.
 
 ![Imagem mostrando o processo de logon de um suplemento.](../images/sso-for-office-addins.png)
 
