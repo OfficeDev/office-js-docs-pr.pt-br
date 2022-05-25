@@ -105,6 +105,9 @@ items:
             items:
               - name: Visão geral
                 href: develop/add-in-manifests.md
+              - name: Manifesto de equipes para suplementos do Office
+                href: develop/json-manifest-overview.md
+                displayName: preview
               - name: Referência do manifesto
                 href: reference/manifest-reference.md
               - name: Substituições estendidas
@@ -404,17 +407,18 @@ items:
           - name: Comentários
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: Tipos de dados (visualização)
+          - name: Tipos de dados
+            displayName: preview
             items:
-              - name: Visão geral (visualização)
+              - name: Visão Geral
                 href: excel/excel-data-types-overview.md
-                displayName: Excel
-              - name: Conceitos (visualização)
+                displayName: 'Excel, preview'
+              - name: Conceitos
                 href: excel/excel-data-types-concepts.md
-                displayName: Excel
-              - name: Cartões de valor de entidade (visualização)
+                displayName: 'Excel, preview'
+              - name: Cartões de valor de entidade
                 href: excel/excel-data-types-entity-card.md
-                displayName: Excel
+                displayName: 'Excel, preview'
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -532,9 +536,9 @@ items:
           - name: Gerar automaticamente metadados JSON
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: Tipos de dados (visualização)
+          - name: Tipos de dados
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions'
+            displayName: 'Excel, Custom Functions, preview'
           - name: Chamar APIs de JavaScript do Excel
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
@@ -603,6 +607,9 @@ items:
       - name: Criar seu primeiro suplemento do Outlook
         href: quickstarts/outlook-quickstart.md
         displayName: Outlook
+      - name: Criar um suplemento do Outlook com um manifesto do Teams
+        href: quickstarts/outlook-quickstart-json-manifest.md
+        displayName: 'Outlook, preview'
       - name: Tutorial de suplemento do Outlook
         href: tutorials/outlook-tutorial.md
         displayName: Outlook

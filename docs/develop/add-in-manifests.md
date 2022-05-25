@@ -1,18 +1,21 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
-ms.date: 09/28/2021
+ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
+ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743694"
+ms.lasthandoff: 05/25/2022
+ms.locfileid: "65672056"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
 O arquivo de manifesto XML de um Suplemento do Office descreve como seu suplemento deve ser ativado quando um usuário final o instala e usa com os aplicativos e documentos do Office.
+
+> [!TIP]
+> Este artigo descreve o manifesto atual formatado em XML. Também há um manifesto de Teams formatado em JSON que está disponível na visualização. Para obter mais informações, consulte [Manifesto do Teams para Suplementos do Office (visualização)](json-manifest-overview.md).
 
 Um arquivo de manifesto XML permite que um Suplemento do Office faça o seguinte:
 
@@ -70,53 +73,53 @@ _\*\* SupportUrl só é necessário para suplementos distribuídos pelo AppSourc
 
 <!-- Links for above table -->
 
-[officeapp]: ../reference/manifest/officeapp.md
-[id]: ../reference/manifest/id.md
-[version]: ../reference/manifest/version.md
-[providername]: ../reference/manifest/providername.md
-[defaultlocale]: ../reference/manifest/defaultlocale.md
-[displayname]: ../reference/manifest/displayname.md
-[description]: ../reference/manifest/description.md
-[iconurl]: ../reference/manifest/iconurl.md
-[supporturl]: ../reference/manifest/supporturl.md
-[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
-[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
-[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
-[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[officeapp]: /javascript/api/manifest/officeapp
+[id]: /javascript/api/manifest/id
+[version]: /javascript/api/manifest/version
+[providername]: /javascript/api/manifest/providername
+[defaultlocale]: /javascript/api/manifest/defaultlocale
+[displayname]: /javascript/api/manifest/displayname
+[description]: /javascript/api/manifest/description
+[iconurl]: /javascript/api/manifest/iconurl
+[supporturl]: /javascript/api/manifest/supporturl
+[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
+[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
 [desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
 [sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
-[permissões (contentapp)]: ../reference/manifest/permissions.md
-[permissões (taskpaneapp)]: ../reference/manifest/permissions.md
-[permissões (mailapp)]: ../reference/manifest/permissions.md
-[regra (rulecollection)]: ../reference/manifest/rule.md
-[regra (mailapp)]: ../reference/manifest/rule.md
-[requisitos (mailapp)]: ../reference/manifest/requirements.md
-[set*]: ../reference/manifest/set.md
-[conjuntos (mailapprequirements)*]: ../reference/manifest/sets.md
-[formulário*]: ../reference/manifest/form.md
-[formsettings*]: ../reference/manifest/formsettings.md
-[conjuntos (requisitos)*]: ../reference/manifest/sets.md
-[hosts*]: ../reference/manifest/hosts.md
+[permissões (contentapp)]: /javascript/api/manifest/permissions
+[permissões (taskpaneapp)]: /javascript/api/manifest/permissions
+[permissões (mailapp)]: /javascript/api/manifest/permissions
+[regra (rulecollection)]: /javascript/api/manifest/rule
+[regra (mailapp)]: /javascript/api/manifest/rule
+[requisitos (mailapp)]: /javascript/api/manifest/requirements
+[set*]: /javascript/api/manifest/set
+[conjuntos (mailapprequirements)*]: /javascript/api/manifest/sets
+[formulário*]: /javascript/api/manifest/form
+[formsettings*]: /javascript/api/manifest/formsettings
+[conjuntos (requisitos)*]: /javascript/api/manifest/sets
+[hosts*]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
 Todas as imagem URIs, como as usadas para os [comandos do suplemento](create-addin-commands.md), devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
-Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](../reference/manifest/sourcelocation.md), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](/javascript/api/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
 Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
 
-Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](../reference/manifest/supporturl.md). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/legal/marketplace/certification-policies).
+Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](/javascript/api/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/legal/marketplace/certification-policies).
 
-Use apenas o elemento [AppDomains](../reference/manifest/appdomains.md) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](../reference/manifest/sourcelocation.md) para cenários de autenticação.
+Use apenas o elemento [AppDomains](/javascript/api/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](/javascript/api/manifest/sourcelocation) para cenários de autenticação.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office na Web, o painel de tarefas pode ser navegado por qualquer URL. Entretanto, em plataformas de área de trabalho, se o suplemento tentar ir para uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL será aberta em uma nova janela do navegador fora do painel de suplementos do aplicativo do Office.
+Ao executar no Office na Web, o painel de tarefas pode ser navegado por qualquer URL. Entretanto, em plataformas de área de trabalho, se o suplemento tentar ir para uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](/javascript/api/manifest/sourcelocation) do arquivo de manifesto), essa URL será aberta em uma nova janela do navegador fora do painel de suplementos do aplicativo do Office.
 
-Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](../reference/manifest/appdomains.md) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
+Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](/javascript/api/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
 > Há duas exceções para esse comportamento.
@@ -124,7 +127,7 @@ Para substituir esse comportamento (Office para desktop), especifique cada domí
 > - Ele se aplica apenas ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado no **AppDomains**, mesmo no Office da área de trabalho.
 > - Quando uma caixa de diálogo é aberta coma API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)), a URL que é passada para o método deve estar no mesmo domínio do suplemento, mas a caixa de diálogo pode ser direcionada para qualquer URL, independentemente de estar listada no **AppDomains**, mesmo no Office para área de trabalho.
 
-O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com` conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](../reference/manifest/appdomain.md) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio `www.northwindtraders.com`, essa página será aberta no painel de suplementos, mesmo na área de trabalho do Office.
+O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com` conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](/javascript/api/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio `www.northwindtraders.com`, essa página será aberta no painel de suplementos, mesmo na área de trabalho do Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -149,7 +152,7 @@ O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal 
 
 ## <a name="version-overrides-in-the-manifest"></a>Substituições de versão no manifesto
 
-O elemento opcional [VersionOverrides](../reference/manifest/versionoverrides.md) merece uma menção especial. Ele contém marcação infantil que habilita a recursos de suplemento adicionais. Alguns deles são:
+O elemento opcional [VersionOverrides](/javascript/api/manifest/versionoverrides) merece uma menção especial. Ele contém marcação infantil que habilita a recursos de suplemento adicionais. Alguns deles são:
 
  - Personalizando a faixa de opções do Office e os menus.
  - Personalizando como o Office funcionará com o runtime do navegador incorporado no qual os suplementos serão executados.
@@ -200,7 +203,7 @@ Para obter um exemplo de um manifesto que inclui um elemento `VersionOverrides`,
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Especificar domínios a partir dos quais as chamadas da API do Office.js são feitas
 
-Seu suplemento pode fazer chamadas API do Office.js a partir do domínio referenciado no elemento[SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto. Se você tiver outros iFrames dentro de seu suplemento que precisem acessar APIs do Office.js, adicione o domínio dessa URL de origem à lista especificada no elemento [AppDomains](../reference/manifest/appdomains.md) do arquivo de manifesto. Se um iFrame com uma fonte não incluída na lista `AppDomains` tentar fazer uma chamada de API do Office. js, o suplemento receberá um[ erro de permissão negada](../reference/javascript-api-for-office-error-codes.md).
+Seu suplemento pode fazer chamadas API do Office.js a partir do domínio referenciado no elemento[SourceLocation](/javascript/api/manifest/sourcelocation) do arquivo de manifesto. Se você tiver outros iFrames dentro de seu suplemento que precisem acessar APIs do Office.js, adicione o domínio dessa URL de origem à lista especificada no elemento [AppDomains](/javascript/api/manifest/appdomains) do arquivo de manifesto. Se um iFrame com uma fonte não incluída na lista `AppDomains` tentar fazer uma chamada de API do Office. js, o suplemento receberá um[ erro de permissão negada](../reference/javascript-api-for-office-error-codes.md).
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML de manifesto v1.1
 
