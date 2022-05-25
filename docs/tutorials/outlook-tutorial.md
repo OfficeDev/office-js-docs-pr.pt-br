@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 05/01/2022
+ms.date: 05/19/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244790"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650637"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -1309,3 +1309,10 @@ Neste tutorial, você criou um suplemento do Outlook que pode ser usado no modo 
 
 > [!div class="nextstepaction"]
 > [APIs de suplemento do Outlook](../outlook/apis.md)
+
+## <a name="see-also"></a>Confira também
+
+- [Manifestos de suplementos do Outlook](../outlook/manifests.md)
+- [Diretrizes de design de suplementos do Outlook](../outlook/outlook-addin-design.md)
+- [Comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md)
+- [Depurar seu suplemento do Outlook sem interface do usuário](../outlook/debug-ui-less.md)
