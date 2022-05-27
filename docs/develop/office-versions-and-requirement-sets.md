@@ -1,14 +1,14 @@
 ---
 title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript.
-ms.date: 07/08/2021
+ms.date: 05/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: bedf4378c60d39a121f4d9b7031d5a6aba7e44b8
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496814"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752845"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -47,7 +47,13 @@ Alguns conjuntos de requisitos contêm APIs que podem ser usadas por qualquer ap
 - [Conjuntos de requisitos comuns do Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Conjuntos de requisitos dos comandos de suplemento](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
 - [Conjuntos de requisitos da API de Caixa de Diálogo](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Conjuntos de requisitos de origem da caixa de diálogo](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)
 - [Conjuntos de requisitos da API de Identidade](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
+- [Conjuntos de requisitos de Coerção de Imagens](/javascript/api/requirement-sets/common/image-coercion-requirement-sets)
+- [Conjuntos de requisitos de Atalhos de teclado](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+- [Abrir conjuntos de requisitos de janela do navegador](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
+- [Conjuntos de requisitos comuns da API](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [Conjuntos de requisitos de tempo de execução compartilhado](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 
 O número da versão de um conjunto de requisitos, como "1.1" no `ExcelApi 1.1`, tem relação com o aplicativo do Office. O número da versão de um certo conjunto de requisitos (por exemplo, `ExcelApi 1.1`), não corresponde ao número da versão do Office.js ou aos conjuntos de requisitos para outros aplicativos do Office (por exemplo, Word, Outlook etc.).  Lançamos os conjuntos de requisitos para diferentes aplicativos do Office em ritmos e períodos diferentes. Por exemplo, `ExcelApi 1.5` foi lançado antes do conjunto de requisitos `WordApi 1.3`.
 
