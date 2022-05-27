@@ -1,14 +1,14 @@
 ---
 title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
-ms.date: 05/19/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1ea32ff4a77116c922b36257048b99a70e5fe304
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628065"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752873"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -58,7 +58,7 @@ Um manifesto do suplemento do Office (um arquivo XML) define as configurações 
 - Metadados que descrevem o suplemento (por exemplo, ID, versão, descrição, nome de exibição, local padrão).
 - Aplicativos do Office onde o suplemento será executado.
 - Permissões necessárias para o suplemento.
-- Como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada que o suplemento cria (por exemplo, guias personalizadas, botões da faixa de opções).
+- Como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada que o suplemento cria (por exemplo, uma guia personalizada ou botões de faixa de opções personalizados).
 - Localização de imagens que o suplemento usa para identidade visual e iconografia de comando.
 - Dimensões do suplemento (por exemplo, dimensões para suplementos de conteúdo, altura solicitada para suplementos do Outlook).
 - As regras que especificam quando o suplemento é ativado no contexto de uma mensagem ou de um compromisso (somente para suplementos do Outlook).
@@ -95,7 +95,7 @@ Para saber mais sobre o Script Lab, confira [Explorar as APIs JavaScript para Of
 
 Um suplemento do Office pode estender a interface do usuário do Office usando comandos de suplementos e contêineres HTML como painéis de tarefas, suplementos de conteúdo ou caixas de diálogo.
 
-- Os [comandos de suplemento](../design/add-in-commands.md) podem ser usados para adicionar guias, botões e menus personalizados à faixa de opções padrão no office ou para estender o menu de contexto padrão que aparece quando os usuários clicam com o botão direito do mouse em um texto em um documento do Office ou em um objeto no Excel. Quando os usuários selecionam um comando de suplemento, eles iniciam a tarefa que o comando de suplemento especifica, como a execução de código JavaScript, a abertura de um painel de tarefas ou a inicialização de uma caixa de diálogo.
+- [Os comandos de suplemento](../design/add-in-commands.md) podem ser usados para adicionar uma guia personalizada, botões personalizados e menus à faixa de opções padrão no Office ou para estender o menu de contexto padrão que aparece quando os usuários clicam com o botão direito do mouse em um documento do Office ou em um objeto no Excel. Quando os usuários selecionam um comando de suplemento, eles iniciam a tarefa que o comando de suplemento especifica, como a execução de código JavaScript, a abertura de um painel de tarefas ou a inicialização de uma caixa de diálogo.
 
 - Os contêineres HTML como [painéis de tarefas](../design/task-pane-add-ins.md), [suplementos de conteúdo](../design/content-add-ins.md) e [caixas de diálogo](../develop/dialog-api-in-office-add-ins.md) podem ser usadas para exibir a interface do usuário personalizada e expor uma funcionalidade adicional em um aplicativo do Office. O conteúdo e a funcionalidade de cada painel de tarefas, suplemento de conteúdo ou caixa de diálogo são derivados de uma página da Web que você especifica. Essas páginas da Web podem usar a API JavaScript para Office para interagir com o conteúdo do documento do Office no qual o suplemento está sendo executado, além disso, também pode fazer outras coisas que as páginas da Web geralmente fazem, como chamar serviços Web externos, facilitar a autenticação do usuário e mais.
 

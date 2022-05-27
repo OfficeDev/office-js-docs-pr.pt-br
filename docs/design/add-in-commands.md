@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 05/10/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313188"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752852"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -37,7 +37,7 @@ Os seguintes recursos de comando são compatíveis no momento.
 
 ### <a name="extension-points"></a>Pontos de extensão
 
-- Guias da faixa de opções: estender as guias internas ou criar uma nova guia personalizada.
+- Guias da Faixa de Opções - Estenda as guias internas ou crie uma nova guia personalizada. Um suplemento pode ter apenas uma guia personalizada.
 - Menus de contexto: estender menus de contexto selecionados.
 
 ### <a name="control-types"></a>Tipos de controle
@@ -66,7 +66,7 @@ Você pode especificar onde uma guia personalizada é exibida na faixa de opçõ
 
 ### <a name="integration-of-built-in-office-buttons"></a>Integração de botões internos do Office
 
-Você pode inserir os botões internos da faixa de opções do Office em seus grupos de comandos personalizados e nas guias personalizadas da faixa de opções.
+Você pode inserir os botões internos da faixa de opções do Office em seus grupos de comandos personalizados e na guia da faixa de opções personalizada.
 
 > [!NOTE]
 > Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para saber mais, confira [Integrar os botões internos do Office em guias personalizadas](built-in-button-integration.md).
