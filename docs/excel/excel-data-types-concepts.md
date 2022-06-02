@@ -1,17 +1,17 @@
 ---
 title: Conceitos básicos dos tipos de dados da API JavaScript do Excel
 description: Conheça os principais conceitos para usar os tipos de dados do Excel no Suplemento do Office.
-ms.date: 05/18/2022
+ms.date: 05/26/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628080"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833903"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Principais conceitos dos tipos de dados do Excel (versão prévia)
 
@@ -91,6 +91,10 @@ const myEntity: Excel.EntityCellValue = {
 ```
 
 Os valores de entidade também oferecem uma propriedade `layouts` que cria um cartão para a entidade. O cartão é exibido como uma janela modal na interface do usuário do Excel e pode exibir informações adicionais contidas no valor da entidade, além do que é visível na célula. Para saber mais, confira [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md).
+
+### <a name="linked-entities"></a>Entidades Vinculadas
+
+Os valores de entidade vinculados ou objetos [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) são um tipo de valor de entidade. Esses objetos integram os dados fornecidos por um serviço externo e podem exibir esses dados como um [cartão de entidade](excel-data-types-entity-card.md), como valores de entidade regulares. Os [Tipos de dados de Ações e Geografia](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) disponíveis através da interface do usuário do Excel são valores de entidade vinculados.
 
 ## <a name="web-image-values"></a>Valores de imagem da Web
 
