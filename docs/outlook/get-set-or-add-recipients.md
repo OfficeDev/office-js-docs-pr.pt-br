@@ -3,17 +3,17 @@ title: Obter ou modificar destinatários em um suplemento do Outlook
 description: Saiba como obter, definir ou adicionar destinatários de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 10/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5c93aef44b1d9119280962ff8b029af18f3448
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 42f34bcad93cceb8a5c51c40f3e31471b69065e0
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484438"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833889"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obter, configurar ou adicionar destinatários ao compor um compromisso ou uma mensagem no Outlook
 
 
-A API javaScript do Office fornece métodos assíncronos ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) ou [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) para obter, definir ou adicionar destinatários respectivamente em um formulário de composição de um compromisso ou mensagem. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para que o Outlook ative o add-in em formulários de composição, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
+A API JavaScript do Office fornece métodos assíncronos ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) ou [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) para obter, definir ou adicionar destinatários respectivamente em uma forma de composição de um compromisso ou mensagem. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para que o Outlook ative o suplemento em formulários de composição, conforme descrito em Criar [suplementos do Outlook](compose-scenario.md) para formulários de redação.
 
 Algumas das propriedades que representam destinatários em um compromisso ou uma mensagem estão disponíveis para acesso de leitura em formulários de redação e de leitura. Essas propriedades incluem [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para compromissos, e [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para mensagens.
 
@@ -23,7 +23,7 @@ No formulário de leitura, você pode acessar a propriedade diretamente do objet
 item.cc
 ```
 
-No entanto, em um formulário de composição, como o usuário e seu complemento podem estar inserindo ou alterando um destinatário ao mesmo tempo, você deve usar o método assíncrono `getAsync` para obter essas propriedades, como no exemplo a seguir.
+Mas em um formulário de composição, como o usuário e o suplemento podem inserir ou alterar um destinatário ao mesmo tempo, você deve usar o método assíncrono `getAsync` para obter essas propriedades, como no exemplo a seguir.
 
 
 ```js
@@ -32,7 +32,7 @@ item.cc.getAsync
 
 Essas propriedades estão disponíveis para acesso de gravação somente nos formulários de composição, e não nos de leitura.
 
-Como na maioria dos métodos assíncronos na API JavaScript para Office, `getAsync`, e `setAsync``addAsync` tome parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Assim como na maioria dos métodos assíncronos na API JavaScript para Office, `getAsync`e `setAsync`usar parâmetros `addAsync` de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-recipients"></a>Obter os destinatários
@@ -48,15 +48,15 @@ Esta seção mostra um exemplo de código que obtém os destinatários do compro
 </Rule>
 ```
 
-Na API JavaScript do Office, porque as propriedades que representam os destinatários de um compromisso ( **optionalAttendees** e **requiredAttendees**) são diferentes das de uma mensagem ([bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), **cc** e **to**), você deve primeiro usar a propriedade [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para identificar se o item que está sendo composto é um compromisso ou uma mensagem. No modo de redação, todas essas propriedades de compromissos e mensagens são objetos [Recipients](/javascript/api/outlook/office.recipients) , portanto, você pode aplicar o método assíncrono, `Recipients.getAsync`, para obter os destinatários correspondentes.
+Na API JavaScript do Office, como as propriedades que representam os destinatários de um compromisso (**optionalAttendees** e **requiredAttendees**) são diferentes das de uma mensagem ([cco](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), **cc** e **to**), você deve primeiro usar a propriedade [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para identificar se o item que está sendo composto é um compromisso ou uma mensagem. No modo de composição, todas essas propriedades de compromissos e mensagens são objetos [Recipients](/javascript/api/outlook/office.recipients) , portanto, você pode aplicar o método assíncrono para `Recipients.getAsync`obter os destinatários correspondentes.
 
-Para usar `getAsync` , forneça um método de retorno de chamada para verificar o status, os resultados e qualquer erro retornado pela chamada assíncrona `getAsync` . Você pode fornecer argumentos para o método de retorno de chamada usando o parâmetro opcional _asyncContext_. O método de retorno de chamada retorna um parâmetro de saída _asyncResult_. Você pode usar `status` `error` as propriedades e do objeto de parâmetro [AsyncResult](/javascript/api/office/office.asyncresult) para verificar se há status e qualquer mensagem de erro da chamada assíncrona e `value` a propriedade para obter os destinatários reais. Os destinatários são representados como uma matriz de objetos [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails).
+Para usar `getAsync` , forneça um método de retorno de chamada para verificar o status, os resultados e qualquer erro retornado pela chamada assíncrona `getAsync` . Você pode fornecer argumentos para o método de retorno de chamada usando o parâmetro opcional _asyncContext_. O método de retorno de chamada retorna um parâmetro de saída _asyncResult_. Você pode `status` `error` usar as propriedades do objeto de parâmetro [AsyncResult](/javascript/api/office/office.asyncresult) para verificar o status e as mensagens de erro da chamada assíncrona `value` e a propriedade para obter os destinatários reais. Os destinatários são representados como uma matriz de objetos [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails).
 
-`getAsync` Observe que, como o método é assíncrono, se houver ações subsequentes que dependam de obter com êxito os destinatários, você deve organizar seu código para iniciar essas ações somente no método de retorno de chamada correspondente quando a chamada assíncrona tiver sido concluída com êxito.
+`getAsync` Observe que, como o método é assíncrono, se houver ações subsequentes que dependam de obter os destinatários com êxito, você deverá organizar seu código para iniciar essas ações somente no método de retorno de chamada correspondente quando a chamada assíncrona for concluída com êxito.
 
 > [!IMPORTANT]
-> No Outlook na Web, se um usuário criou uma nova mensagem ativando o link de endereço de email de um contato a partir de seu cartão de contato ou perfil, `Recipients.getAsync` `displayName` `EmailAddressDetails` a chamada do seu complemento no momento não retornará um valor na propriedade do objeto associado.
-> Para obter mais detalhes, consulte o [problema GitHub relacionado](https://github.com/OfficeDev/office-js-docs-pr/issues/2962).
+> No Outlook na Web, se um usuário criou uma nova mensagem ativando o link de endereço de email de um contato de seu cartão de contato ou perfil, `Recipients.getAsync` `displayName` `EmailAddressDetails` a chamada do suplemento atualmente não retornará um valor na propriedade do objeto associado.
+> Para obter mais detalhes, consulte o [problema GitHub relacionado](https://github.com/OfficeDev/office-js/issues/2201).
 
 ```js
 var item;
@@ -151,9 +151,9 @@ function write(message){
 ## <a name="set-recipients"></a>Definir os destinatários
 
 
-Esta seção mostra um exemplo de código que define os destinatários do compromisso ou da mensagem que o usuário está compondo. A definição de destinatários substitui os destinatários existentes. Semelhante ao exemplo anterior que obtém os destinatários em um formulário de composição, este exemplo pressupõe que o suplemento é ativado nos formulários de composição para compromissos e mensagens. Este exemplo primeiro verifica se o item composto é um compromisso ou uma mensagem, portanto, para aplicar o método assíncrono, `Recipients.setAsync`, nas propriedades apropriadas que representam destinatários do compromisso ou da mensagem.
+Esta seção mostra um exemplo de código que define os destinatários do compromisso ou da mensagem que o usuário está compondo. A definição de destinatários substitui os destinatários existentes. Semelhante ao exemplo anterior que obtém os destinatários em um formulário de composição, este exemplo pressupõe que o suplemento é ativado nos formulários de composição para compromissos e mensagens. Este exemplo primeiro verifica se o item composto é um compromisso ou uma mensagem, portanto, para aplicar o método assíncrono, `Recipients.setAsync`nas propriedades apropriadas que representam os destinatários do compromisso ou da mensagem.
 
-Ao chamar `setAsync`, forneça uma matriz como argumento de entrada para o  _parâmetro recipients_ , em um dos seguintes formatos.
+Ao chamar `setAsync`, forneça uma matriz como argumento de entrada para o parâmetro  _de destinatários_ , em um dos formatos a seguir.
 
 
 - Uma matriz de cadeias de caracteres que são endereços SMTP.
@@ -162,7 +162,7 @@ Ao chamar `setAsync`, forneça uma matriz como argumento de entrada para o  _par
     
 - Uma matriz de `EmailAddressDetails` objetos, semelhante à retornada pelo `getAsync` método.
     
-Opcionalmente, você pode fornecer um método de `setAsync` retorno de chamada como um argumento de entrada para o método, para garantir que qualquer código que dependa da configuração bem-sucedida dos destinatários seria executado somente quando isso acontece. Você também pode fornecer argumentos para o método de retorno de chamada usando o parâmetro opcional _asyncContext_. Se você usar um método de retorno de chamada, poderá acessar um parâmetro de saída _asyncResult_ e usar as propriedades  **de status** `AsyncResult` e erro do objeto de parâmetro para verificar se há status e qualquer mensagem de erro da chamada assíncrona.
+Opcionalmente `setAsync` , você pode fornecer um método de retorno de chamada como um argumento de entrada para o método, para garantir que qualquer código que dependa da configuração bem-sucedida dos destinatários seja executado somente quando isso acontecer. Você também pode fornecer argumentos para o método de retorno de chamada usando o parâmetro opcional _asyncContext_. Se você usar um método de retorno de chamada, poderá acessar um parâmetro de saída _assíncrono e_ usar as propriedades  de **status** `AsyncResult` e erro do objeto de parâmetro para verificar o status e as mensagens de erro da chamada assíncrona.
 
 
 
@@ -277,7 +277,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>Adicionar destinatários
 
-Se você não quiser substituir quaisquer destinatários existentes em um compromisso ou mensagem, `Recipients.setAsync`em vez de usar , `Recipients.addAsync` você pode usar o método assíncrono para anexar destinatários. `addAsync` funciona da mesma forma que `setAsync` exige um _argumento de entrada de_ destinatários. Opcionalmente, você pode fornecer um método de retorno de chamada e os argumentos para o retorno de chamada usando o parâmetro asyncContext. Em seguida, você pode verificar o status, o resultado e qualquer erro da chamada assíncrona `addAsync` usando o parâmetro de saída _asyncResult_ do método de retorno de chamada. O exemplo a seguir verifica se o item que está sendo composto é um compromisso, e anexa dois destinatários obrigatórios a ele.
+Se você não quiser substituir nenhum destinatário existente em um compromisso ou mensagem, `Recipients.setAsync`em vez de usar, `Recipients.addAsync` poderá usar o método assíncrono para acrescentar destinatários. `addAsync` funciona da mesma forma que `setAsync` requer um argumento _de entrada_ de destinatários. Opcionalmente, você pode fornecer um método de retorno de chamada e os argumentos para o retorno de chamada usando o parâmetro asyncContext. Em seguida, você pode verificar o status, o resultado e qualquer erro da chamada assíncrona `addAsync` usando o parâmetro _de saída asyncResult_ do método de retorno de chamada. O exemplo a seguir verifica se o item que está sendo composto é um compromisso, e anexa dois destinatários obrigatórios a ele.
 
 
 ```js

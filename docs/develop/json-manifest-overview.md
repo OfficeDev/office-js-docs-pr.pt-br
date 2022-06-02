@@ -3,12 +3,12 @@ title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f5c529a982956922ae3a76de6d09e15e710f1f03
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672085"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833896"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
@@ -33,7 +33,7 @@ Durante o período de visualização inicial, as limitações a seguir se aplica
 
 ### <a name="schemas-and-general-points"></a>Esquemas e pontos gerais
 
-Há apenas um esquema para a [o manifesto JSON na versão prévia](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md), em comparação ao manifesto XML atual que tem um total de sete [Esquemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
+Há apenas um esquema para a [o manifesto JSON na versão prévia](/microsoftteams/platform/resources/dev-preview/developer-preview-intro), em comparação ao manifesto XML atual que tem um total de sete [Esquemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
 
 ### <a name="conceptual-mapping-of-the-preview-json-and-current-xml-manifests"></a>Mapeamento conceitual da versão prévia do JSON e dos manifestos XML atuais
 

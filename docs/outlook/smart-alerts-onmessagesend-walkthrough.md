@@ -1,32 +1,32 @@
 ---
-title: Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
-description: Saiba como lidar com o evento enviar mensagem em seu Outlook-in usando a ativação baseada em evento.
+title: Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento Outlook (versão prévia)
+description: Saiba como lidar com os eventos ao enviar em seu suplemento Outlook usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484505"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833912"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Use Alertas Inteligentes e o evento OnMessageSend no seu Outlook de usuário (visualização)
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento Outlook (versão prévia)
 
-O `OnMessageSend` evento tira proveito dos Alertas Inteligentes que permitem executar a lógica depois que um usuário seleciona **Enviar** em sua Outlook mensagem. O manipulador de eventos permite que você dê aos usuários a oportunidade de melhorar seus emails antes que eles são enviados. O `OnAppointmentSend` evento é semelhante, mas se aplica a um compromisso.
+Os `OnMessageSend` e `OnAppointmentSend` os eventos aproveitam os Alertas Inteligentes, que permitem que você execute a lógica depois que um  usuário seleciona Enviar em sua Outlook mensagem ou compromisso. O manipulador de eventos permite que você conceda aos usuários a oportunidade de melhorar seus emails e convites de reunião antes que eles sejam enviados.
 
-No final deste passo a passo, você terá um complemento que é executado sempre que uma mensagem estiver sendo enviada e verifica se o usuário esqueceu de adicionar um documento ou imagem mencionado no email.
+O passo a passo a seguir usa o `OnMessageSend` evento. Ao final deste passo a passo, você terá um suplemento executado sempre que uma mensagem estiver sendo enviada e verificará se o usuário esqueceu de adicionar um documento ou imagem mencionado no email.
 
 > [!IMPORTANT]
-> Os `OnMessageSend` eventos `OnAppointmentSend` e só estão disponíveis na visualização com uma assinatura Microsoft 365 no Outlook no Windows. Para obter mais detalhes, consulte [Como visualizar](autolaunch.md#how-to-preview). Eventos de visualização não devem ser usados em complementos de produção.
+> Os `OnMessageSend` eventos `OnAppointmentSend` e os eventos só estão disponíveis em versão prévia com uma assinatura Microsoft 365 no Outlook no Windows. Para obter mais detalhes, [consulte Como visualizar](autolaunch.md#how-to-preview). Eventos de visualização não devem ser usados em suplementos de produção.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-O `OnMessageSend` evento está disponível por meio do recurso de ativação baseada em evento. Para entender sobre como configurar seu add-in para usar esse recurso, eventos disponíveis, como visualizar esse evento, depuração, limitações de recursos e muito mais, consulte [Configure your Outlook add-in for event-based activation](autolaunch.md).
+O `OnMessageSend` evento está disponível por meio do recurso de ativação baseada em evento. Para entender como configurar seu suplemento para usar esse recurso, use outros eventos disponíveis, configure a visualização para esse evento, depure seu suplemento e muito mais, consulte Configurar seu suplemento [do Outlook para ativação](autolaunch.md) baseada em evento.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido que cria um projeto de complemento com o gerador Yeoman para Office Desempois.
+Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido, que cria um projeto de suplemento com o gerador Yeoman para Office suplementos.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -34,7 +34,7 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione todo o **nó VersionOverrides** (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir e salve suas alterações.
+1. Selecione todo o **nó VersionOverrides** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir e salve as alterações.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -137,20 +137,20 @@ Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenera
 
 > [!TIP]
 >
-> - Para **opções sendMode** disponíveis com o `OnMessageSend` evento, consulte [Opções de SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
-> - Para saber mais sobre manifestos para Outlook de Outlook, [consulte Outlook manifestos de complemento](manifests.md).
+> - Para **obter as opções sendMode** disponíveis com os eventos `OnMessageSend` `OnAppointmentSend` e os eventos, consulte [as opções de SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - Para saber mais sobre manifestos para Outlook suplementos, [consulte Outlook manifestos de suplemento](manifests.md).
 
-## <a name="implement-event-handling"></a>Implementar o tratamento de eventos
+## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
 
-Você precisa implementar o tratamento para o evento selecionado.
+Você precisa implementar a manipulação para o evento selecionado.
 
-Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O seu complemento verificará se há determinadas palavras-chave na mensagem. Se alguma dessas palavras-chave for encontrada, ela verificará se há anexos. Se não houver anexos, o seu complemento recomendará ao usuário adicionar o anexo possivelmente ausente.
+Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O suplemento verificará se há determinadas palavras-chave na mensagem. Se alguma dessas palavras-chave for encontrada, ela verificará se há anexos. Se não houver anexos, o suplemento recomendará que o usuário adicione o anexo possivelmente ausente.
 
 1. No mesmo projeto de início rápido, crie uma nova pasta chamada **launchevent** no **diretório ./src** .
 
 1. Na pasta **./src/launchevent** , crie um novo arquivo chamado **launchevent.js**.
 
-1. Abra o arquivo **./src/launchevent/launchevent.js** no editor de código e adicione o seguinte código JavaScript.
+1. Abra o arquivo **./src/launchevent/launchevent.js** no editor de código e adicione o código JavaScript a seguir.
 
     ```js
     /*
@@ -248,28 +248,82 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O se
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute os seguintes comandos no diretório raiz do seu projeto. Quando você executar `npm start`, o servidor Web local será acionado (se ele ainda não estiver em execução) e o seu complemento será sideload.
+1. Execute os comandos a seguir no diretório raiz do seu projeto. Quando você executar `npm start`, o servidor Web local será iniciado (se ele ainda não estiver em execução) e seu suplemento será sideload.
 
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
 
     > [!NOTE]
-    > Se o seu add-in não foi automaticamente sideload, siga as instruções em [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manualmente sideload the add-in in Outlook.
+    > Se o suplemento não foi carregado automaticamente no sideload, siga as instruções nos [suplementos do Sideload Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) para testar o sideload manual do suplemento no Outlook.
 
-1. Em Outlook no Windows, crie uma nova mensagem e de definir o assunto. No corpo, adicione texto como "Ei, confira esta imagem do meu cachorro!".
+1. Em Outlook no Windows, crie uma nova mensagem e defina o assunto. No corpo, adicione texto como "Ei, confira esta foto do meu cachorro!".
 1. Envie a mensagem. Uma caixa de diálogo deve aparecer com uma recomendação para adicionar um anexo.
 
-    ![Captura de tela de uma janela de mensagem Outlook no Windows com a caixa de diálogo.](../images/outlook-win-smart-alert.png)
+    ![Caixa de diálogo recomendando que o usuário inclua um anexo.](../images/outlook-win-smart-alert.png)
 
 1. Adicione um anexo e envie a mensagem novamente. Não deve haver nenhum alerta desta vez.
+
+## <a name="smart-alerts-feature-behavior-and-scenarios"></a>Cenários e comportamento de recursos de Alertas Inteligentes
+
+As descrições das **opções e recomendações do SendMode** para quando usá-las são detalhadas [nas opções Do SendMode disponíveis](/javascript/api/manifest/launchevent). O exemplo a seguir descreve o comportamento do recurso para determinados cenários.
+
+### <a name="add-in-is-unavailable"></a>O suplemento não está disponível
+
+Se o suplemento não estiver disponível quando uma mensagem ou compromisso estiver sendo enviado (por exemplo, ocorrerá um erro que impede o carregamento do suplemento), o usuário será alertado. As opções disponíveis para o usuário diferem dependendo da **opção SendMode** aplicada ao suplemento.
+
+Se a opção ou for usada, o usuário poderá escolher  Enviar Mesmo Assim para enviar o item sem que o suplemento o verifique ou Tente  Mais Tarde para permitir que o item seja verificado pelo suplemento quando ele ficar disponível novamente.`PromptUser` `SoftBlock`
+
+![Caixa de diálogo que alerta o usuário de que o suplemento não está disponível e dá ao usuário a opção de enviar o item agora ou mais tarde.](../images/outlook-soft-block-promptUser-unavailable.png)
+
+Se a `Block` opção for usada, o usuário não poderá enviar o item até que o suplemento fique disponível.
+
+![Caixa de diálogo que alerta o usuário de que o suplemento não está disponível. O usuário só pode enviar o item quando o suplemento estiver disponível novamente.](../images/outlook-hard-block-unavailable.png)
+
+### <a name="long-running-add-in-operations"></a>Operações de suplemento de execução longa
+
+Se o suplemento for executado por mais de cinco segundos, mas menos de cinco minutos, o usuário será alertado de que o suplemento está demorando mais do que o esperado para processar a mensagem ou o compromisso.
+
+Se a `PromptUser` opção for usada, o usuário poderá escolher **Enviar** Mesmo Assim para enviar o item sem que o suplemento conclua sua verificação. Como alternativa, o usuário pode selecionar **Não Enviar** para interromper o processamento do suplemento.
+
+![Caixa de diálogo que alerta o usuário de que o suplemento está demorando mais do que o esperado para processar o item. O usuário pode optar por enviar o item sem que o suplemento conclua sua verificação ou impedir que o suplemento processe o item.](../images/outlook-promptUser-long-running.png)
+
+No entanto, se `SoftBlock` a opção ou `Block` for usada, o usuário não poderá enviar o item até que o suplemento conclua o processamento.
+
+![Caixa de diálogo que alerta o usuário de que o suplemento está demorando mais do que o esperado para processar o item. O usuário deve aguardar até que o suplemento conclua o processamento do item antes que ele possa ser enviado.](../images/outlook-soft-hard-block-long-running.png)
+
+`OnMessageSend` e `OnAppointmentSend` os suplementos devem ser de curta duração e leve. Para evitar a caixa de diálogo de operação de execução longa, use outros eventos para processar verificações condicionais antes que `OnMessageSend` o evento `OnAppointmentSend` ou o evento seja ativado. Por exemplo, se o usuário precisar criptografar anexos para cada mensagem ou compromisso, `OnMessageAttachmentsChanged` `OnAppointmentAttachmentsChanged` considere usar o evento ou o evento para executar a verificação.
+
+### <a name="add-in-timed-out"></a>Tempo limite do suplemento
+
+Se o suplemento for executado por cinco minutos ou mais, ele terá o tempo limite limite. Se a `PromptUser` opção for usada, o usuário poderá escolher **Enviar** Mesmo Assim para enviar o item sem que o suplemento conclua sua verificação. Como alternativa, o usuário pode escolher **Não Enviar**.
+
+![Caixa de diálogo que alerta o usuário de que o processo de suplemento passou do tempo limite. O usuário pode optar por enviar o item sem que o suplemento conclua sua verificação ou não envie o item.](../images/outlook-promptUser-timeout.png)
+
+Se a `SoftBlock` opção `Block` ou for usada, o usuário não poderá enviar o item até que o suplemento conclua sua verificação. O usuário deve tentar enviar o item novamente para reativar o suplemento.
+
+![Caixa de diálogo que alerta o usuário de que o processo de suplemento passou do tempo limite. O usuário deve tentar enviar o item novamente para ativar o suplemento antes de poder enviar a mensagem ou o compromisso.](../images/outlook-soft-hard-block-timeout.png)
+
+## <a name="limitations"></a>Limitações
+
+Como os `OnMessageSend` eventos e `OnAppointmentSend` os eventos têm suporte por meio do recurso de ativação baseada em evento, as mesmas limitações de recursos se aplicam aos suplementos que são ativados como resultado desses eventos. Para obter uma descrição dessas limitações, consulte o comportamento e as limitações de [ativação baseada em eventos](autolaunch.md#event-based-activation-behavior-and-limitations).
+
+Além dessas restrições, apenas uma instância de cada evento `OnMessageSend` `OnAppointmentSend` pode ser declarada no manifesto. Se você precisar de vários `OnMessageSend` ou `OnAppointmentSend` eventos, deverá declarar cada um deles em um manifesto ou suplemento separado.
+
+Embora uma mensagem de diálogo alertas inteligentes possa ser alterada para se adequar ao seu cenário de suplemento usando a propriedade [errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions) do método event.completed, o seguinte não pode ser personalizado.
+
+- A barra de título do diálogo. O nome do suplemento sempre é exibido lá.
+- O formato da mensagem. Por exemplo, você não pode alterar o tamanho e a cor da fonte do texto nem inserir uma lista com marcadores.
+- As opções de diálogo. Por exemplo, as **opções Enviar Mesmo** **Assim e** Não Enviar são fixas e dependem da [opção SendMode selecionada](/javascript/api/manifest/launchevent) .
+- Caixas de diálogo de informações de progresso e processamento de ativação baseada em evento. Por exemplo, o texto e as opções que aparecem nas caixas de diálogo tempo limite e operação de execução longa não podem ser alterados.
 
 ## <a name="see-also"></a>Confira também
 
 - [Manifestos de suplementos do Outlook](manifests.md)
-- [Configurar seu Outlook para ativação baseada em eventos](autolaunch.md)
-- [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
-- [Opções de listagem do AppSource para seu Outlook de evento](autolaunch-store-options.md)
+- [Configurar seu Outlook para ativação baseada em evento](autolaunch.md)
+- [Como depurar suplementos baseados em eventos](debug-autolaunch.md)
+- [Opções de listagem do AppSource para seu suplemento de Outlook baseado em evento](autolaunch-store-options.md)
