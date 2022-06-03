@@ -2,14 +2,14 @@
 title: Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento Outlook (versão prévia)
 description: Saiba como lidar com os eventos ao enviar em seu suplemento Outlook usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 05/26/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 1adced1e138ad41cef38947ddb3ffe8c273be871
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833912"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872005"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento Outlook (versão prévia)
 
@@ -327,3 +327,4 @@ Embora uma mensagem de diálogo alertas inteligentes possa ser alterada para se 
 - [Configurar seu Outlook para ativação baseada em evento](autolaunch.md)
 - [Como depurar suplementos baseados em eventos](debug-autolaunch.md)
 - [Opções de listagem do AppSource para seu suplemento de Outlook baseado em evento](autolaunch-store-options.md)
+- [Office de código de suplementos: usar Outlook alertas inteligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)

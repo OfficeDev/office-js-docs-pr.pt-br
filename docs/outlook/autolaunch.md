@@ -1,73 +1,76 @@
 ---
-title: Configurar seu Outlook para ativação baseada em eventos
-description: Saiba como configurar seu Outlook para ativação baseada em eventos.
+title: Configurar seu Outlook para ativação baseada em evento
+description: Saiba como configurar seu suplemento Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 03/09/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6dfab38d59d5e120ca9672df8eb3ac6e7654e7
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5ce15f2b0f64459280714fc9e7734c9b7e52a6a1
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496905"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872019"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em eventos
+# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em evento
 
-Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um complemento para concluir suas tarefas. Esse recurso permite que o seu complemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário.
+Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Esse recurso permite que o suplemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário.
 
-No final deste passo a passo, você terá um complemento que é executado sempre que um novo item é criado e define o assunto.
+Ao final deste passo a passo, você terá um suplemento que é executado sempre que um novo item é criado e define o assunto.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto [de requisitos 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="supported-events"></a>Eventos com suporte
 
-A tabela a seguir lista os eventos que estão disponíveis no momento e os clientes com suporte para cada evento. Quando um evento é gerado, o manipulador recebe um `event` objeto que pode incluir detalhes específicos do tipo de evento. A **coluna Descrição** inclui um link para o objeto relacionado quando aplicável.
+A tabela a seguir lista os eventos que estão disponíveis no momento e os clientes com suporte para cada evento. Quando um evento é gerado, o manipulador recebe um `event` objeto que pode incluir detalhes específicos para o tipo de evento. A **coluna** Descrição inclui um link para o objeto relacionado quando aplicável.
 
 > [!IMPORTANT]
-> Os eventos ainda em visualização só podem estar disponíveis com uma assinatura Microsoft 365 e em um conjunto limitado de clientes com suporte, conforme o que está na tabela a seguir. Para obter detalhes de configuração do cliente, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em complementos de produção.
+> Os eventos ainda em versão prévia só podem estar disponíveis com uma assinatura Microsoft 365 e em um conjunto limitado de clientes com suporte, conforme mostrado na tabela a seguir. Para obter detalhes de configuração do cliente, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em suplementos de produção.
 
-|Evento|Descrição|Conjunto de requisitos mínimos e clientes com suporte|
+|Evento|Descrição|Conjunto de requisitos mínimo e clientes com suporte|
 |---|---|---|
-|`OnNewMessageCompose`|Ao compor uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Navegador da Web<br>- Nova visualização da interface do usuário do Mac|
-|`OnNewAppointmentOrganizer`|Ao criar um novo compromisso, mas não ao editar um existente.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Navegador da Web<br>- Nova visualização da interface do usuário do Mac|
-|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao compor uma mensagem.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos durante a composição de um compromisso.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao compor uma mensagem.<br><br>Objeto de dados específico do evento: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes durante a composição de um compromisso.<br><br>Objeto de dados específico do evento: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnAppointmentTimeChanged`|Ao alterar data/hora durante a composição de um compromisso.<br><br>Objeto de dados específico do evento: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao compor um compromisso. Se a data/hora for alterada, o `OnAppointmentTimeChanged` evento também será acionado.<br><br>Objeto de dados específicos do evento: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnInfoBarDismissClicked`|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o complemento que adicionou a notificação será notificado.<br><br>Objeto de dados específico do evento: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navegador da Web|
-|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, consulte o passo a passo [alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
-|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, consulte o passo a passo [alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
+|`OnNewMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova versão prévia da interface do usuário do Mac|
+|`OnNewAppointmentOrganizer`|Na criação de um novo compromisso, mas não na edição de um existente.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova versão prévia da interface do usuário do Mac|
+|`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao redigir uma mensagem.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos ao redigir um compromisso.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao redigir uma mensagem.<br><br>Objeto de dados específico do evento: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentAttendeesChanged`|Ao adicionar ou remover participantes ao redigir um compromisso.<br><br>Objeto de dados específico do evento: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentTimeChanged`|Ao alterar a data/hora ao compor um compromisso.<br><br>Objeto de dados específico do evento: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao redigir um compromisso. Se a data/hora for alterada, o `OnAppointmentTimeChanged` evento também será acionado.<br><br>Objeto de dados específico do evento: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnInfoBarDismissClicked`|Ao ignorar uma notificação ao redigir uma mensagem ou item de compromisso. Somente o suplemento que adicionou a notificação será notificado.<br><br>Objeto de dados específico do evento: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
+|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
+|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
+
+> [!NOTE]
+> <sup>1</sup> Os suplementos baseados em eventos no Outlook no Windows exigem Windows 10 versão 1809 (build 17763.2989) ou posterior para execução.
 
 ### <a name="how-to-preview"></a>Como visualizar
 
-Convidamos você a experimentar os eventos agora na visualização! Deixe-nos saber seus cenários e como podemos melhorar nos dando comentários por meio GitHub (consulte a seção **Comentários** no final desta página).
+Convidamos você a experimentar os eventos agora em versão prévia! Informe-nos seus cenários e como podemos melhorar fornecendo comentários por meio GitHub (consulte a seção Comentários no final  desta página).
 
 Para visualizar esses eventos quando disponível:
 
 - Para Outlook na Web:
   - [Configure a versão direcionada em seu Microsoft 365 locatário.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Fazer referência **à biblioteca beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
-- Para Outlook na nova visualização da interface do usuário do Mac:
-  - O build mínimo necessário é 16,54 (21101001). Participe do [programa Office Insider](https://insider.office.com/join/Mac) e escolha o **Canal Beta** para acesso às Office beta.
+- Para Outlook na nova versão prévia da interface do usuário do Mac:
+  - O build mínimo necessário é 16,54 (21101001). Participe do [programa Office Insider e](https://insider.office.com/join/Mac) escolha o **Canal Beta** para acesso Office builds beta.
 - Para Outlook no Windows:
-  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider](https://insider.office.com/join/windows) e escolha o **Canal Beta** para acesso às Office beta.
+  - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider e](https://insider.office.com/join/windows) escolha o **Canal Beta** para acesso Office builds beta.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido que cria um projeto de complemento com o gerador Yeoman para Office Desempois.
+Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido que cria um projeto de suplemento com o gerador Yeoman para Office suplementos.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar a ativação baseada em evento do seu add-in, você deve configurar o elemento [Runtimes](/javascript/api/manifest/runtimes) e o ponto de extensão [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) `VersionOverridesV1_1` no nó do manifesto. Por enquanto, `DesktopFormFactor` é o único fator de formulário suportado.
+Para habilitar a ativação baseada em evento do suplemento, você deve configurar o elemento [Runtimes](/javascript/api/manifest/runtimes) e o ponto de extensão [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) `VersionOverridesV1_1` no nó do manifesto. Por enquanto, `DesktopFormFactor` é o único fator forma com suporte.
 
 1. No editor de código, abra o projeto de início rápido.
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione o nó inteiro `<VersionOverrides>` (incluindo marcas abertas e próximas) e substitua-o pelo XML a seguir e salve suas alterações.
+1. Selecione o nó inteiro `<VersionOverrides>` (incluindo marcas abertas e de fechamento) e substitua-o pelo XML a seguir e salve as alterações.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -186,14 +189,14 @@ Para habilitar a ativação baseada em evento do seu add-in, você deve configur
 </VersionOverrides>
 ```
 
-Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova visualização da interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências `Resources` a ambos os arquivos no nó do manifesto, pois a plataforma Outlook determina se deve usar HTML ou JavaScript com base no cliente Outlook. Como tal, para configurar o tratamento de eventos, forneça o local do HTML `Runtime` no elemento e, em seguida, `Override` em seu elemento filho forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
+Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova versão prévia da interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer `Resources` referências a ambos os arquivos no nó do manifesto, pois a plataforma Outlook determina se deve usar HTML ou JavaScript com base no Outlook cliente. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML `Runtime` no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
 
 > [!TIP]
-> Para saber mais sobre manifestos para Outlook de Outlook, [consulte Outlook manifestos de complemento](manifests.md).
+> Para saber mais sobre manifestos para Outlook suplementos, [consulte Outlook manifestos de suplemento](manifests.md).
 
-## <a name="implement-event-handling"></a>Implementar o tratamento de eventos
+## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
 
-Você precisa implementar o tratamento para os eventos selecionados.
+Você precisa implementar a manipulação para os eventos selecionados.
 
 Nesse cenário, você adicionará a manipulação para compor novos itens.
 
@@ -201,7 +204,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 
 1. Na pasta **./src/launchevent** , crie um novo arquivo chamado **launchevent.js**.
 
-1. Abra o arquivo **./src/launchevent/launchevent.js** no editor de código e adicione o seguinte código JavaScript.
+1. Abra o arquivo **./src/launchevent/launchevent.js** no editor de código e adicione o código JavaScript a seguir.
 
     ```js
     /*
@@ -240,13 +243,13 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 1. Salve suas alterações.
 
 > [!IMPORTANT]
-> Windows: no momento, as importações não são suportadas no arquivo JavaScript onde você implementa o tratamento para a ativação baseada em eventos.
+> Windows: no momento, não há suporte para importações no arquivo JavaScript em que você implementa o tratamento para a ativação baseada em evento.
 
-## <a name="update-the-commands-html-file"></a>Atualizar o arquivo HTML de comandos
+## <a name="update-the-commands-html-file"></a>Atualizar o arquivo HTML dos comandos
 
 1. Na pasta **./src/commands** , abra **commands.html**.
 
-1. Imediatamente antes da marca **de cabeça** de fechamento (`<\head>`), adicione uma entrada de script para incluir o código JavaScript de manipulação de eventos.
+1. Imediatamente antes da marca **de cabeçalho** de fechamento (`<\head>`), adicione uma entrada de script para incluir o código JavaScript de manipulação de eventos.
 
     ```html
     <script type="text/javascript" src="../launchevent/launchevent.js"></script>
@@ -275,7 +278,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute os seguintes comandos no diretório raiz do seu projeto. Quando você executar `npm start`, o servidor Web local será acionado (se ele ainda não estiver em execução) e o seu complemento será sideload.
+1. Execute os comandos a seguir no diretório raiz do seu projeto. Quando você executar `npm start`, o servidor Web local será iniciado (se ele ainda não estiver em execução) e seu suplemento será sideload.
 
     ```command&nbsp;line
     npm run build
@@ -285,61 +288,61 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     ```
 
     > [!NOTE]
-    > Se o seu add-in não foi automaticamente sideload, siga as instruções em [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manualmente sideload the add-in in Outlook.
+    > Se o suplemento não foi carregado automaticamente no sideload, siga as instruções nos [suplementos do Sideload Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) para testar o sideload manual do suplemento no Outlook.
 
 1. No Outlook na Web, crie uma nova mensagem.
 
     ![Captura de tela de uma janela de mensagem Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch-1.png)
 
-1. Em Outlook na nova visualização da interface do usuário do Mac, crie uma nova mensagem.
+1. Na Outlook na nova versão prévia da interface do usuário do Mac, crie uma nova mensagem.
 
     ![Captura de tela de uma janela de mensagem Outlook na nova visualização da interface do usuário do Mac com o assunto definido na composição.](../images/outlook-mac-autolaunch.png)
 
 1. Em Outlook no Windows, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem Outlook no Windows com o assunto definido na redação.](../images/outlook-win-autolaunch.png)
+    ![Captura de tela de uma janela de mensagem Outlook no Windows com o assunto definido na composição.](../images/outlook-win-autolaunch.png)
 
 ## <a name="debug"></a>Depurar
 
-À medida que você faz alterações no tratamento de eventos de início no seu complemento, você deve estar ciente de que:
+Ao fazer alterações na manipulação de eventos de inicialização em seu suplemento, você deve estar ciente de que:
 
-- Se você atualizou o manifesto, [remova o complemento](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) e, em seguida, o sideload novamente. Se você estiver usando o Outlook no Windows, feche-o e reabra-o.
-- Se você fez alterações em arquivos que não o manifesto, feche e reabra o Outlook no Windows ou atualize a guia do navegador executando Outlook na Web.
+- Se você atualizou o manifesto, [remova o suplemento e](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), em seguida, o sideload novamente. Se você estiver usando o Outlook no Windows, feche-o e reabra-o.
+- Se você tiver feito alterações em arquivos diferentes do manifesto, feche e reabra Outlook no Windows ou atualize a guia do navegador em execução Outlook na Web.
 
-Ao implementar sua própria funcionalidade, talvez seja necessário depurar seu código. Para obter orientações sobre como depurar a ativação de um add-in baseado em eventos, consulte [Depurar seu Outlook de evento](debug-autolaunch.md).
+Ao implementar sua própria funcionalidade, talvez seja necessário depurar seu código. Para obter diretrizes sobre como depurar a ativação de suplemento baseado em evento, consulte Depurar seu suplemento baseado em [Outlook evento](debug-autolaunch.md).
 
-O log de tempo de execução também está disponível para esse recurso em Windows. Para obter mais informações, consulte [Depurar seu add-in com o log de tempo de execução](../testing/runtime-logging.md#runtime-logging-on-windows).
+O log de runtime também está disponível para esse recurso no Windows. Para obter mais informações, consulte [Depurar seu suplemento com o log de runtime](../testing/runtime-logging.md#runtime-logging-on-windows).
 
 [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="deploy-to-users"></a>Implantar para usuários
 
-Você pode implantar os complementos baseados em eventos carregando o manifesto por meio do Centro de administração do Microsoft 365. No portal de administração, expanda a **seção Configurações** no painel de navegação e selecione **Aplicativos integrados**. Na página **Aplicativos integrados**, escolha a **ação Upload aplicativos personalizados**.
+Você pode implantar suplementos baseados em eventos carregando o manifesto por meio do Centro de administração do Microsoft 365. No portal de administração, expanda **a seção Configurações** no painel de navegação e selecione **Aplicativos integrados**. Na página **Aplicativos integrados**, escolha a Upload **de aplicativos personalizados**.
 
 ![Captura de tela da página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Upload aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource e no Office Store: a capacidade de implantar os complementos baseados em eventos ou atualizar os complementos existentes para incluir o recurso de ativação baseada em eventos deve estar disponível em breve.
+AppSource e Office Store no aplicativo: a capacidade de implantar suplementos baseados em eventos ou atualizar suplementos existentes para incluir o recurso de ativação baseada em evento deve estar disponível em breve.
 
 > [!IMPORTANT]
-> Os complementos baseados em eventos são restritos apenas a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter os complementos baseados em eventos no AppSource ou no Office Store. Para saber mais, consulte As opções de [listagem do AppSource para seu Outlook de evento](autolaunch-store-options.md).
+> Os suplementos baseados em eventos são restritos somente a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter suplementos baseados em eventos do AppSource ou da Office Store. Para saber mais, confira as [opções de listagem do AppSource](autolaunch-store-options.md) para o suplemento Outlook evento.
 
-## <a name="event-based-activation-behavior-and-limitations"></a>Comportamento e limitações de ativação baseada em evento
+## <a name="event-based-activation-behavior-and-limitations"></a>Limitações e comportamento de ativação baseado em evento
 
-Espera-se que os manipuladores de eventos de início do add-in sejam curtos, leves e não invasivos possíveis. Após a ativação, o seu complemento terá um tempo limite de aproximadamente 300 segundos, o tempo máximo permitido para a execução de complementos baseados em eventos. Para sinalizar que o seu complemento concluiu o processamento de um evento de lançamento, recomendamos que o manipulador associado chame o `event.completed` método. (Observe que o código incluído após a instrução `event.completed` não é garantido para ser executado.) Sempre que um evento que seu complemento lida é disparado, o complemento é reativado e executa o manipulador de eventos associado e a janela de tempo de tempo é redefinida. O complemento termina após o tempo final, ou o usuário fecha a janela de redação ou envia o item.
+Espera-se que os manipuladores de eventos de inicialização de suplementos sejam de curta execução, leves e não invasivos possíveis. Após a ativação, o suplemento expirará em aproximadamente 300 segundos, o período máximo permitido para a execução de suplementos baseados em eventos. Para sinalizar que seu suplemento concluiu o processamento de um evento de inicialização, recomendamos que o manipulador associado chame o `event.completed` método. (Observe que o código incluído após a instrução `event.completed` não tem garantia de execução.) Sempre que um evento que seus identificadores de suplemento são disparados, o suplemento é reativado e executa o manipulador de eventos associado e a janela de tempo limite é redefinida. O suplemento termina após o tempo limite, ou o usuário fecha a janela de composição ou envia o item.
 
-Se o usuário tiver vários complementos inscritos no mesmo evento, a plataforma Outlook iniciará os complementos em nenhuma ordem específica. Atualmente, apenas cinco complementos baseados em eventos podem ser executados ativamente.
+Se o usuário tiver vários suplementos que assinaram o mesmo evento, a plataforma Outlook iniciará os suplementos em nenhuma ordem específica. Atualmente, apenas cinco suplementos baseados em eventos podem ser executados ativamente.
 
-O usuário pode alternar ou navegar para longe do item de email atual onde o complemento começou a ser executado. O complemento que foi lançado terminará sua operação em segundo plano.
+O usuário pode alternar ou navegar para longe do item de email atual em que o suplemento começou a ser executado. O suplemento que foi iniciado concluirá sua operação em segundo plano.
 
-As importações não são suportadas no arquivo JavaScript em que você implementa o tratamento para a ativação baseada em eventos no cliente Windows.
+Não há suporte para importações no arquivo JavaScript em que você implementa o tratamento para ativação baseada em evento no Windows cliente.
 
-Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de complementos baseados em eventos. A seguir estão as APIs bloqueadas.
+Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de suplementos baseados em eventos. A seguir estão as APIs bloqueadas.
 
 - Em `Office.context.auth`:
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` tem suporte. Para obter mais informações, consulte [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > `OfficeRuntime.auth` tem suporte. Para obter mais informações, consulte [Habilitar SSO (logon único) em Outlook suplementos que usam a ativação baseada em evento](use-sso-in-event-based-activation.md).
 - Em `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
@@ -355,19 +358,20 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 Você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)uma API Web padrão que emite solicitações HTTP para interagir com servidores.
 
-Esteja ciente de que você deve usar medidas de segurança adicionais ao criar XmlHttpRequests, exigindo a Política de Mesma [Origem](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) e [o CORS simples](https://www.w3.org/TR/cors/).
+Lembre-se de que você deve usar medidas de segurança adicionais ao fazer XmlHttpRequests, exigindo a [Mesma](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) Política de [Origem e CORS simples](https://www.w3.org/TR/cors/).
 
-Uma implementação de CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` header em CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`ou `multipart/form-data`.
+Uma implementação de CORS simples não pode usar cookies e dá suporte apenas a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho em CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`ou `multipart/form-data`.
 
-O suporte completo ao CORS está chegando em breve.
+O suporte completo ao CORS estará disponível em breve.
 
 ## <a name="see-also"></a>Confira também
 
 - [Manifestos de suplementos do Outlook](manifests.md)
-- [Como depurar os complementos baseados em eventos](debug-autolaunch.md)
-- [Opções de listagem do AppSource para seu Outlook de evento](autolaunch-store-options.md)
-- [Alertas Inteligentes e Passo a passo do OnMessageSend](smart-alerts-onmessagesend-walkthrough.md)
-- Exemplos pnP:
-  - [Use Outlook ativação baseada em eventos para criptografar anexos, processar os participantes da solicitação de reunião e reagir às alterações de data/hora do compromisso](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
+- [Como depurar suplementos baseados em eventos](debug-autolaunch.md)
+- [Opções de listagem do AppSource para seu suplemento de Outlook baseado em evento](autolaunch-store-options.md)
+- [Passo a passo de Alertas Inteligentes e OnMessageSend](smart-alerts-onmessagesend-walkthrough.md)
+- Office exemplos de código de suplementos:
+  - [Use Outlook ativação baseada em evento para criptografar anexos, processar participantes da solicitação de reunião e reagir a alterações de data/hora do compromisso](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Use a ativação baseada em eventos do Outlook para definir a assinatura](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Use a ativação baseada em eventos do Outlook para marcar destinatários externos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+  - [Usar Outlook alertas inteligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
