@@ -1,14 +1,14 @@
 ---
 title: Amostras de código de suplemento do Office
 description: Uma lista de exemplos de código de suplementos do Office para ajudá-lo a aprender e criar seus próprios suplementos.
-ms.date: 02/17/2022
+ms.date: 06/02/2022
 localization_priority: high
-ms.openlocfilehash: e727e1df0bfb02eade1133e575234554f7c2b144
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1ad5fcb3ed860832b093dc6aef212e9d1176f298
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745961"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872012"
 ---
 # <a name="office-add-in-code-samples"></a>Amostras de código de suplemento do Office
 
@@ -48,6 +48,7 @@ Os exemplos a seguir mostram como construir o Suplemento do Office mais simples 
 | [Criptografar anexos, processar os participantes de solicitação de reunião e reaja a alterações de data/hora do compromisso](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | Use a ativação baseada em eventos para criptografar anexos quando adicionados pelo usuário. Use também a manipulação de eventos para destinatários alterados em uma solicitação de reunião e alterações na data ou hora de início ou de término em uma solicitação de reunião. |
 | [Use a ativação baseada em eventos do Outlook para marcar destinatários externos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Use a ativação baseada em eventos para executar um suplemento do Outlook quando o usuário alterar os destinatários ao redigir uma mensagem. O suplemento também usa a API `appendOnSendAsync` para adicionar um aviso de isenção. |
 | [Use a ativação baseada em eventos do Outlook para definir a assinatura](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use a ativação baseada em eventos para executar um suplemento do Outlook quando o usuário criar uma nova mensagem ou compromisso. O suplemento pode responder a eventos, mesmo quando o painel de tarefas não está aberto. Ele também usa a API `setSignatureAsync`. |
+| [Usar Alertas Inteligentes do Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories) | Use os Alertas Inteligentes do Outlook para verificar se as categorias de cores necessárias são aplicadas a uma nova mensagem ou compromisso antes de enviá-la. |
 
 ## <a name="word"></a>Word
 
