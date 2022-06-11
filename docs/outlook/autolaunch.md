@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 06/02/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce15f2b0f64459280714fc9e7734c9b7e52a6a1
-ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
+ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
+ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "65872019"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "66019616"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em evento
 
@@ -29,8 +29,8 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 
 |Evento|Descrição|Conjunto de requisitos mínimo e clientes com suporte|
 |---|---|---|
-|`OnNewMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova versão prévia da interface do usuário do Mac|
-|`OnNewAppointmentOrganizer`|Na criação de um novo compromisso, mas não na edição de um existente.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova versão prévia da interface do usuário do Mac|
+|`OnNewMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar), mas não ao editar, por exemplo, um rascunho.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac |
+|`OnNewAppointmentOrganizer`|Na criação de um novo compromisso, mas não na edição de um existente.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac |
 |`OnMessageAttachmentsChanged`|Ao adicionar ou remover anexos ao redigir uma mensagem.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
 |`OnAppointmentAttachmentsChanged`|Ao adicionar ou remover anexos ao redigir um compromisso.<br><br>Objeto de dados específico do evento: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
 |`OnMessageRecipientsChanged`|Ao adicionar ou remover destinatários ao redigir uma mensagem.<br><br>Objeto de dados específico do evento: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>– Navegador da Web|
@@ -42,7 +42,7 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 |`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
 
 > [!NOTE]
-> <sup>1</sup> Os suplementos baseados em eventos no Outlook no Windows exigem Windows 10 versão 1809 (build 17763.2989) ou posterior para execução.
+> <sup>1</sup> Os suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (build 18362) ou do Windows Server 2019 versão 1903 para execução.
 
 ### <a name="how-to-preview"></a>Como visualizar
 
@@ -53,7 +53,7 @@ Para visualizar esses eventos quando disponível:
 - Para Outlook na Web:
   - [Configure a versão direcionada em seu Microsoft 365 locatário.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Fazer referência **à biblioteca beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
-- Para Outlook na nova versão prévia da interface do usuário do Mac:
+- Para Outlook na nova interface do usuário do Mac:
   - O build mínimo necessário é 16,54 (21101001). Participe do [programa Office Insider e](https://insider.office.com/join/Mac) escolha o **Canal Beta** para acesso Office builds beta.
 - Para Outlook no Windows:
   - O build mínimo necessário é 16.0.14511.10000. Participe do [programa Office Insider e](https://insider.office.com/join/windows) escolha o **Canal Beta** para acesso Office builds beta.
@@ -85,7 +85,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -189,7 +189,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
 </VersionOverrides>
 ```
 
-Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova versão prévia da interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer `Resources` referências a ambos os arquivos no nó do manifesto, pois a plataforma Outlook determina se deve usar HTML ou JavaScript com base no Outlook cliente. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML `Runtime` no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
+Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer `Resources` referências a ambos os arquivos no nó do manifesto, pois a plataforma Outlook determina se deve usar HTML ou JavaScript com base no Outlook cliente. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML `Runtime` no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
 
 > [!TIP]
 > Para saber mais sobre manifestos para Outlook suplementos, [consulte Outlook manifestos de suplemento](manifests.md).
@@ -292,15 +292,15 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 
 1. No Outlook na Web, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch-1.png)
+    ![Uma janela de mensagem Outlook na Web com o assunto definido na composição.](../images/outlook-web-autolaunch-1.png)
 
-1. Na Outlook na nova versão prévia da interface do usuário do Mac, crie uma nova mensagem.
+1. Em Outlook na nova interface do usuário do Mac, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem Outlook na nova visualização da interface do usuário do Mac com o assunto definido na composição.](../images/outlook-mac-autolaunch.png)
+    ![Uma janela de mensagem Outlook na nova interface do usuário do Mac com o assunto definido na composição.](../images/outlook-mac-autolaunch.png)
 
 1. Em Outlook no Windows, crie uma nova mensagem.
 
-    ![Captura de tela de uma janela de mensagem Outlook no Windows com o assunto definido na composição.](../images/outlook-win-autolaunch.png)
+    ![Uma janela de mensagem Outlook na Windows com o assunto definido na composição.](../images/outlook-win-autolaunch.png)
 
 ## <a name="debug"></a>Depurar
 
@@ -374,4 +374,4 @@ O suporte completo ao CORS estará disponível em breve.
   - [Use Outlook ativação baseada em evento para criptografar anexos, processar participantes da solicitação de reunião e reagir a alterações de data/hora do compromisso](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Use a ativação baseada em eventos do Outlook para definir a assinatura](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Use a ativação baseada em eventos do Outlook para marcar destinatários externos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
-  - [Usar Outlook alertas inteligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+  - [Usar Alertas Inteligentes do Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
