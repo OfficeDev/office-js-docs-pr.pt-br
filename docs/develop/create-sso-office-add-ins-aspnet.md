@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o SSO (logon único).
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b948b6beb22437b3b9bf7e6472c6e00e4bed7a0a
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 66ddd0e7bb4db54b48b56b493f3818523d7eb76c
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682249"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090891"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -46,14 +46,14 @@ Primeiro, conclua as etapas [no Início Rápido: Registre](/azure/active-directo
 Use as configurações a seguir para o registro do aplicativo.
 
 * Nome: `Office-Add-in-ASPNET-SSO`
-* Tipos de conta com suporte: contas em qualquer diretório organizacional (qualquer diretório do **Azure AD – multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**
+* Tipos de conta com suporte: contas em qualquer diretório organizacional **(qualquer diretório Azure AD – multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**
 
     > [!NOTE]
     >  Se você quiser que o suplemento seja utilizável somente por usuários na locação em que você o está registrando, poderá escolher Contas somente neste diretório organizacional **...** em vez disso, mas precisará passar por algumas etapas de configuração adicionais. Consulte **a Instalação para locatário único** posteriormente neste artigo.
 
 * Plataforma: **Web**
 * URI de redirecionamento: **https://localhost:44355/AzureADAuth/Authorize**
-* Segredo do cliente: `*********` (registre esse valor após a criação – ele é mostrado apenas uma vez)
+* Segredo do cliente: `*********` (O aplicativo Web usa o segredo do cliente para provar sua identidade quando solicita tokens. *Registre esse valor para uso em uma etapa posterior – ele é mostrado apenas uma vez.*)
 
 ### <a name="expose-a-web-api"></a>Expor uma API Web
 
@@ -68,8 +68,8 @@ Use as configurações a seguir para o registro do aplicativo.
     |---------------|---------|
     |**Nome do Escopo** | `access_as_user`|
     |**Quem pode consentir?** | **Administradores e usuários**|
-    |**Nome de exibição do consentimento do administrador** | Office pode atuar como o usuário.|
-    |**Descrição do consentimento do administrador** | Habilite Office para chamar as APIs Web do suplemento com os mesmos direitos que o usuário atual.|
+    |**Administração de exibição de consentimento** | Office pode atuar como o usuário.|
+    |**Administração de consentimento** | Habilite Office para chamar as APIs Web do suplemento com os mesmos direitos que o usuário atual.|
     |**Nome de exibição de consentimento do usuário** | Office pode agir como você.|
     |**Descrição de consentimento do usuário** | Habilite Office para chamar as APIs Web do suplemento com os mesmos direitos que você tem.|
 
@@ -487,7 +487,7 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Logo acima da linha que declara o `ValuesController`, adicione o atributo `[Authorize]`. Isso garante que seu suplemento executará o processo de autorização configurado no último procedimento sempre que um método controlador for chamado. Apenas os chamadores com um token de acesso válido para o seu suplemento podem invocar os métodos do controlador.
 
-1. Adicione o método a seguir ao `ValuesController`. Observe que é o valor de retorno é `Task<HttpResponseMessage>` em vez de `Task<IEnumerable<string>>`, como seria mais comum para um método `GET api/values`. Esse é um efeito colateral do fato de que a lógica de autorização OAuth deve estar no controlador, em vez de em um filtro ASP.NET dados. Algumas condições de erro na lógica exigem que um objeto de resposta HTTP seja enviado para o cliente do suplemento.
+1. Adicione o método a seguir ao `ValuesController`. Observe que é o valor de retorno é `Task<HttpResponseMessage>` em vez de `Task<IEnumerable<string>>`, como seria mais comum para um método `GET api/values`. Esse é um efeito colateral do fato de que a lógica de autorização OAuth deve estar no controlador, em vez de em um ASP.NET filtro. Algumas condições de erro na lógica exigem que um objeto de resposta HTTP seja enviado para o cliente do suplemento.
 
     ```csharp
     // GET api/values
@@ -639,4 +639,4 @@ Para testar o caminho de autorização de fallback, force o caminho do SSO a fal
 
 Assim como Office suplementos da Web, quando você estiver pronto para migrar para um servidor de preparo ou de produção, `localhost:44355` deverá atualizar o domínio no manifesto com o novo domínio. Da mesma forma, você deve atualizar o domínio no web.config arquivo.
 
-Como o domínio aparece no registro AAD, `localhost:44355` você precisa atualizar esse registro para usar o novo domínio no lugar de onde quer que ele apareça.
+Como o domínio aparece no registro do AAD, você precisa atualizar esse registro para usar o novo domínio no lugar de `localhost:44355` onde quer que ele apareça.

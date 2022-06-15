@@ -1,28 +1,26 @@
 ---
 title: Trabalhar com formas usando a POWERPOINT JavaScript
 description: Saiba como adicionar, remover e formatar formas em PowerPoint slides.
-ms.date: 02/22/2022
+ms.date: 06/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e2ad48cf4a33fe17c06538d3a22321aebd5561
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7f314cfebb26450e79dbabe1e65ac9e4c8fe9799
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746987"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091101"
 ---
-# <a name="work-with-shapes-using-the-powerpoint-javascript-api-preview"></a>Trabalhar com formas usando a POWERPOINT JavaScript (visualização)
+# <a name="work-with-shapes-using-the-powerpoint-javascript-api"></a>Trabalhar com formas usando a POWERPOINT JavaScript
 
 Este artigo descreve como usar formas geométricas, linhas e caixas de texto em conjunto com as APIs [Shape](/javascript/api/powerpoint/powerpoint.shape) e [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection) .
 
-[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
-
 ## <a name="create-shapes"></a>Criar formas
 
-As formas são criadas por meio e armazenadas na coleção de formas de um slide (`slide.shapes`). `ShapeCollection` tem vários `.add*` métodos para essa finalidade. Todas as formas têm nomes e IDs gerados para elas quando são adicionadas à coleção. Estas são as `name` propriedades e `id` , respectivamente. `name` pode ser definido pelo seu complemento.
+As formas são criadas por meio e armazenadas na coleção de formas de um slide (`slide.shapes`). `ShapeCollection` tem vários `.add*` métodos para essa finalidade. Todas as formas têm nomes e IDs gerados para elas quando são adicionadas à coleção. Essas são as propriedades `name` e as `id` propriedades, respectivamente. `name` pode ser definido pelo suplemento.
 
 ### <a name="geometric-shapes"></a>Formas geométricas
 
-Uma forma geométrica é criada com uma das sobrecargas de `ShapeCollection.addGeometricShape`. O primeiro parâmetro é um número [GeometricShapeType](/javascript/api/powerpoint/powerpoint.geometricshapetype) ou a cadeia de caracteres equivalente a um dos valores do número. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar o tamanho inicial da forma e sua posição em relação aos lados superior e esquerdo do slide, medido em pontos. Ou essas propriedades podem ser definidas depois que a forma for criada.
+Uma forma geométrica é criada com uma das sobrecargas de `ShapeCollection.addGeometricShape`. O primeiro parâmetro é uma enumeração [GeometricShapeType](/javascript/api/powerpoint/powerpoint.geometricshapetype) ou a cadeia de caracteres equivalente a um dos valores da enumeração. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar o tamanho inicial da forma e sua posição em relação aos lados superior e esquerdo do slide, medido em pontos. Ou essas propriedades podem ser definidas depois que a forma é criada.
 
 O exemplo de código a seguir cria um retângulo chamado **"Quadrado"** posicionado a 100 pontos dos lados superior e esquerdo do slide. O método retorna um `Shape` objeto.
 
@@ -43,10 +41,10 @@ await PowerPoint.run(async (context) => {
 
 ### <a name="lines"></a>Linhas
 
-Uma linha é criada com uma das sobrecargas de `ShapeCollection.addLine`. O primeiro parâmetro é um número [ConnectorType](/javascript/api/powerpoint/powerpoint.connectortype) ou a cadeia de caracteres equivalente a um dos valores do número para especificar como a linha se contorce entre pontos de extremidade. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar os pontos inicial e final da linha. Ou essas propriedades podem ser definidas depois que a forma for criada. O método retorna um `Shape` objeto.
+Uma linha é criada com uma das sobrecargas de `ShapeCollection.addLine`. O primeiro parâmetro é uma enumeração [ConnectorType](/javascript/api/powerpoint/powerpoint.connectortype) ou a cadeia de caracteres equivalente a um dos valores da enumeração para especificar como a linha contorts entre pontos de extremidade. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar os pontos inicial e final da linha. Ou essas propriedades podem ser definidas depois que a forma é criada. O método retorna um `Shape` objeto.
 
 > [!NOTE]
-> Quando a forma é uma linha, `top` `left` `Shape` `ShapeAddOptions` as propriedades e dos objetos e especificam o ponto inicial da linha em relação às bordas superior e esquerda do slide. As `height` propriedades e `width` especificam o ponto de extremidade da *linha em relação ao ponto inicial*. Portanto, o ponto final em relação às bordas superior e esquerda do slide é (`top` + `height`) por ().`left` + `width` A unidade de medida para todas as propriedades é pontos e os valores negativos são permitidos.
+> Quando a forma é uma linha, `top` `left` `Shape` `ShapeAddOptions` as propriedades e os objetos especificam o ponto inicial da linha em relação às bordas superior e esquerda do slide. As `height` propriedades `width` e o ponto de extremidade da linha *são especificados em relação ao ponto inicial*. Portanto, o ponto final relativo às bordas superior e esquerda do slide é (`top` + `height`) por ().`left` + `width` A unidade de medida para todas as propriedades é pontos e valores negativos são permitidos.
 
 O exemplo de código a seguir cria uma linha reta no slide.
 
@@ -62,7 +60,7 @@ await PowerPoint.run(async (context) => {
 
 ### <a name="text-boxes"></a>Caixas de texto
 
-Uma caixa de texto é criada com o [método addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) . O primeiro parâmetro é o texto que deve aparecer na caixa inicialmente. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar o tamanho inicial da caixa de texto e sua posição em relação aos lados superior e esquerdo do slide. Ou essas propriedades podem ser definidas depois que a forma for criada.
+Uma caixa de texto é criada com o [método addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) . O primeiro parâmetro é o texto que deve aparecer na caixa inicialmente. Há um segundo parâmetro opcional do tipo [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) que pode especificar o tamanho inicial da caixa de texto e sua posição em relação aos lados superior e esquerdo do slide. Ou essas propriedades podem ser definidas depois que a forma é criada.
 
 O exemplo de código a seguir mostra como criar uma caixa de texto no primeiro slide.
 
@@ -80,9 +78,9 @@ await PowerPoint.run(async (context) => {
 });
 ```
 
-## <a name="move-and-resize-shapes"></a>Mover e resize formas
+## <a name="move-and-resize-shapes"></a>Mover e redimensionar formas
 
-As formas ficam na parte superior do slide. Seu posicionamento é definido pelas propriedades `left` e `top` . Elas atuam como margens das respectivas bordas do slide, medida em pontos, com `left: 0` `top: 0` e sendo o canto superior esquerdo. O tamanho da forma é especificado pelas propriedades `height` e `width` . Seu código pode mover ou reorganizar a forma redefinindo essas propriedades. (Essas propriedades têm um significado ligeiramente diferente quando a forma é uma linha. Consulte [Lines](#lines).)
+As formas ficam sobre o slide. Seu posicionamento é definido pelo e `left` pelas `top` propriedades. Elas atuam como margens das respectivas bordas do slide, medida em pontos, com `left: 0` `top: 0` e sendo o canto superior esquerdo. O tamanho da forma é especificado pelas propriedades `height` `width` . Seu código pode mover ou redimensionar a forma redefinindo essas propriedades. (Essas propriedades têm um significado ligeiramente diferente quando a forma é uma linha. Ver [Linhas](#lines).)
 
 ## <a name="text-in-shapes"></a>Texto em formas
 
@@ -111,7 +109,7 @@ await PowerPoint.run(async (context) => {
 
 ## <a name="delete-shapes"></a>Excluir formas
 
-As formas são removidas do slide com o `Shape` método do `delete` objeto.
+As formas são removidas do slide com `Shape` o método do `delete` objeto.
 
 O exemplo de código a seguir mostra como excluir formas.
 

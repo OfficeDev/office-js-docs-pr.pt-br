@@ -1,14 +1,14 @@
 ---
-ms.date: 03/30/2021
+ms.date: 06/09/2022
 description: Solucionar problemas comuns com Excel funções personalizadas.
 title: Solução de problemas das funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744481"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090884"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -17,6 +17,12 @@ Ao desenvolver funções personalizadas, você poderá encontrar erros no produt
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Alem disso, verifique se há erros comuns, como [deixar promessas não resolvidas](#ensure-promises-return).
+
+## <a name="debugging-custom-functions"></a>Depurando funções personalizadas
+
+Para depurar suplementos de funções personalizadas que usam um runtime compartilhado, consulte Configurar seu suplemento Office para usar um [runtime de JavaScript compartilhado: Depurar](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+
+Para depurar suplementos de funções personalizadas que não usam um runtime compartilhado, consulte [Depuração de funções personalizadas](custom-functions-debugging.md).
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
@@ -39,9 +45,9 @@ Informações sobre funções personalizadas são armazenadas em cache pelo Offi
 
 ## <a name="common-problems-and-solutions"></a>Problemas e soluções comuns
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Não é possível abrir o complemento do localhost: use uma isenção de loopback local
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Não é possível abrir o suplemento do localhost: usar uma isenção de loopback local
 
-Se você vir o erro "Não podemos abrir esse complemento do localhost", você precisará habilitar uma isenção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+Se você vir o erro "Não é possível abrir este suplemento no localhost", será necessário habilitar uma isenção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
@@ -53,7 +59,7 @@ Quando o Excel está aguardando a conclusão de uma função personalizada, ele 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
 
-Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para o servidor de dev parar de executar.
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para que o servidor de desenvolvimento pare de ser executado.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
@@ -76,11 +82,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Para obter mais informações sobre esse processo, consulte [Associando nomes de função a metadados JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Para obter mais informações sobre esse processo, consulte [Associando nomes de função com metadados JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Problemas conhecidos são rastreados e relatados [no repositório Excel Funções Personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Os problemas conhecidos são rastreados e relatados [no Excel funções personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 
@@ -95,9 +101,11 @@ Se estiver usando o Excel no Windows ou Mac, envie comentários à equipe de ext
 Sinta-se à vontade para enviar problemas encontrados através do recurso "Comentários do conteúdo" na parte inferior de todas as páginas de documentação ou [informe um novo problema diretamente no repositório de funções personalizadas](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba como [tornar as suas funções personalizadas compatíveis com as funções definidas pelo usuário de XLL](make-custom-functions-compatible-with-xll-udf.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
-* [Criar funções personalizadas no Excel](custom-functions-overview.md)
+- [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
+- [Criar funções personalizadas no Excel](custom-functions-overview.md)
+- [Depuração de funções personalizadas](custom-functions-debugging.md)

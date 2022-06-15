@@ -2,21 +2,21 @@
 title: Criar um Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento Outlook móvel para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ada539c323ce6fdf578c26c221eb6090280b5a0a
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244860"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091115"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um Outlook para um provedor de reunião online
 
 Configurar uma reunião online é uma experiência fundamental para um Outlook e é fácil criar uma reunião Teams com o [Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. No entanto, criar uma reunião online Outlook com um serviço que não seja da Microsoft pode ser complicado. Ao implementar esse recurso, os provedores de serviços podem simplificar a experiência de criação de reunião online para seus Outlook de suplemento.
 
 > [!IMPORTANT]
-> Esse recurso só tem suporte no Android e no iOS com uma Microsoft 365 assinatura.
+> Esse recurso só tem suporte em Android e iOS com uma assinatura Microsoft 365 cliente.
 
 Neste artigo, você aprenderá a configurar seu suplemento móvel Outlook para permitir que os usuários organizem e ingressem em uma reunião usando seu serviço de reunião online. Ao longo deste artigo, usaremos um provedor de serviços de reunião online fictício, "Contoso".
 
@@ -194,34 +194,33 @@ Nesta seção, saiba como o script de suplemento pode atualizar a reunião de um
 
 ## <a name="testing-and-validation"></a>Teste e validação
 
-Siga as diretrizes usuais [para testar e validar seu suplemento](testing-and-tips.md). Após [o sideload](sideload-outlook-add-ins-for-testing.md) em Outlook na Web, Windows ou Mac, reinicie Outlook em seu dispositivo móvel Android ou iOS. Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída pela sua.
+Siga as diretrizes usuais [para testar e validar seu suplemento](testing-and-tips.md). Depois [de fazer o sideload](sideload-outlook-add-ins-for-testing.md) Outlook na Web, Windows ou Mac, reinicie o Outlook em seu Android ou iOS dispositivo móvel. Em seguida, em uma nova tela de reunião, verifique se a Microsoft Teams ou Skype alternância foi substituída pela sua.
 
 ### <a name="create-meeting-ui"></a>Criar interface do usuário da reunião
 
 Como organizador da reunião, você deverá ver telas semelhantes às três imagens a seguir ao criar uma reunião.
 
-[![A tela criar reunião no Android – Contoso desativa.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![A tela criar reunião no Android – carregando o botão de alternância Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![A tela Criar reunião no Android – Contoso está ativada.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![A tela criar reunião no Android com a opção Contoso desativada.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![A tela criar reunião no Android com um botão de alternância contoso de carregamento.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![A tela criar reunião no Android com a opção Contoso ativada.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Ingressar na interface do usuário da reunião
 
 Como participante da reunião, você deverá ver uma tela semelhante à imagem a seguir ao exibir a reunião.
 
-[![Captura de tela de ingresso na reunião no Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![A tela ingressar na reunião Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > Se você não vir **o link Ingressar** , pode ser que o modelo de reunião online para seu serviço não esteja registrado em nossos servidores. Consulte a [seção Registrar seu modelo de reunião online](#register-your-online-meeting-template) para obter detalhes.
 
 ## <a name="register-your-online-meeting-template"></a>Registrar seu modelo de reunião online
 
-Se você quiser registrar o modelo de reunião online para seu serviço, poderá criar um problema GitHub com os detalhes. Depois disso, entraremos em contato com você para coordenar a linha do tempo do registro.
+Registrar seu suplemento de reunião online é opcional. Ela só se aplica se você quiser exibir o botão **Ingressar** em reuniões, além do link da reunião. Depois de desenvolver seu suplemento de reunião online e quiser registrá-lo, crie um problema GitHub usando as diretrizes a seguir. Entraremos em contato com você para coordenar uma linha do tempo de registro.
 
-1. Vá para **a seção** Comentários no final deste artigo.
-1. Pressione o link **esta** página.
+1. Crie um [novo GitHub problema](https://github.com/OfficeDev/office-js/issues/new).
 1. Defina **o título** do novo problema como "Registrar o modelo de reunião online para meu serviço", substituindo `my-service` pelo nome do serviço.
-1. No corpo do problema, substitua a cadeia de caracteres "[Insira comentários aqui]" `newBody` pela cadeia de caracteres definida na variável ou semelhante da seção Implementar a adição de detalhes da reunião [online](#implement-adding-online-meeting-details) anteriormente neste artigo.
+1. No corpo do problema, substitua `newBody` o texto existente pela cadeia de caracteres definida na variável ou semelhante na seção Implementar a adição de detalhes da reunião [online](#implement-adding-online-meeting-details) anteriormente neste artigo.
 1. Clique **em Enviar novo problema**.
 
-![captura de tela da nova GitHub problema com o conteúdo de exemplo da Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
+![Uma nova tela GitHub problema com o conteúdo de exemplo da Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>APIs disponíveis
 

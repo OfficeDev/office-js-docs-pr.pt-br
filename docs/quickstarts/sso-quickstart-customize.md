@@ -1,15 +1,15 @@
 ---
 title: Adicionar a funcionalidade Graph Microsoft ao seu projeto de início rápido de SSO
 description: Saiba como adicionar novas funcionalidades Graph Microsoft ao suplemento habilitado para SSO que você criou.
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: dbcb32c14824448d2c4309df437c93d01b868288
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 6f8784dae3f947baaedc3232e06a5208988ba9e9
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650618"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091136"
 ---
 # <a name="add-microsoft-graph-functionality-to-your-sso-quick-start-project"></a>Adicionar a funcionalidade Graph Microsoft ao seu projeto de início rápido de SSO
 
@@ -349,3 +349,4 @@ Parabéns, você personalizou com êxito a funcionalidade do suplemento habilita
 - [Início rápido logon único (SSO).](sso-quickstart.md)
 - [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md)
 - [Solucionar problemas de mensagens de erro no logon único (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Usando Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

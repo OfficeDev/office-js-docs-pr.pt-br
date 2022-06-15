@@ -559,9 +559,6 @@ items:
               - name: Autenticação para funções sem IU
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: Depuração para funções sem IU
-                href: excel/custom-functions-debugging.md
-                displayName: 'Excel, Custom Functions'
               - name: Tempo de execução
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
@@ -570,6 +567,9 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Solicitações da Web
             href: excel/custom-functions-web-reqs.md
+            displayName: 'Excel, Custom Functions'
+          - name: Depuração
+            href: excel/custom-functions-debugging.md
             displayName: 'Excel, Custom Functions'
           - name: Solução de problemas
             href: excel/custom-functions-troubleshooting.md

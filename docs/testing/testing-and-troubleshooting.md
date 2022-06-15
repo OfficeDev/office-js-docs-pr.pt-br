@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
-description: Saiba como solucionar erros do usuário em Office de complementos.
-ms.date: 09/23/2021
+description: Saiba como solucionar problemas de erros do usuário Office suplementos.
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8b8be1c092bf18ae806e6dcd1b0462fba9193edd
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746388"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091143"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -24,14 +24,14 @@ A tabela a seguir lista as mensagens de erro comuns que os usuários podem receb
 |:-----|:-----|
 |Erro do aplicativo: catálogo não pôde ser alcançado|Verifique as configurações do firewall. "Catálogo" refere-se ao AppSource. Essa mensagem indica que o usuário não consegue acessar o AppSource.|
 |ERRO DO APLICATIVO: este aplicativo não pôde ser iniciado. Feche essa caixa de diálogo para ignorar o problema ou clique em "Reiniciar"para tentar novamente.|Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/kb/2986156/).|
-|Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas > **Modo de Exibição de Compatibilidade Configurações**.|
+|Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas > **exibição de compatibilidade Configurações**.|
 |Não foi possível carregar o aplicativo porque não há suporte para sua versão do navegador. Clique aqui para obter uma lista de versões do navegador compatíveis.|Verifique se o navegador dá suporte a armazenamento local HTML5 ou redefina as configurações do Internet Explorer. Para saber mais sobre os navegadores compatíveis, confira [Requisitos para a execução de Suplementos do Office](../concepts/requirements-for-running-office-add-ins.md).|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>Ao instalar um suplemento, você verá “erro ao carregar suplemento” na barra de status
 
 1. Feche o Office.
-1. Verifique se o manifesto é valido
-1. Reinicie o suplemento
+1. Verifique se o manifesto é válido. Consulte [Validar Office manifesto de um suplemento.](troubleshoot-manifest.md)
+1. Reiniciar o suplemento.
 1. Instale o suplemento novamente.
 
 Você também pode enviar comentários: se estiver usando o Excel no Windows ou Mac, envie comentários à equipe de extensibilidade do Office diretamente do Excel. Para fazer isso, selecione **Arquivo** | **Comentário** | **Enviar um Rosto Triste**. Enviando um rosto triste, você fornece os logs necessários para entendermos o problema.
@@ -40,14 +40,14 @@ Você também pode enviar comentários: se estiver usando o Excel no Windows ou 
 
 Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer.
 
-- Acesse Ferramentas > **InternetAdvanced** > .
-- Em **Navegação, desmarque** **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)**.
+- Vá para Ferramentas > **Opções avançadas da** > **Internet**.
+- Em **Navegação, desmarque** **Desabilitar depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros).**
 
-Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, verifique **Desabilitar a depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)** novamente.
+Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, verifique **Desabilitar depuração de script (Internet Explorer)** e **Desabilitar a depuração de script (Outros)** novamente.
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>O suplemento não é ativado no Office 2013
 
-Se o complemento não for ativado quando o usuário executar as etapas a seguir.
+Se o suplemento não for ativado quando o usuário executar as etapas a seguir.
 
 1. Entrar com a conta da Microsoft no Office 2013.
 
@@ -69,7 +69,7 @@ Quando o usuário usa um suplemento do Office, ele é solicitado a permitir a ex
 |:--------------------|:---------------------|
 |Microsoft Edge|Office na Web|
 
-Para resolver o problema, os usuários finais ou administradores podem adicionar o domínio do add-in à lista de sites confiáveis no Microsoft Edge navegador.
+Para resolver o problema, os usuários finais ou administradores podem adicionar o domínio do suplemento à lista de sites confiáveis no Microsoft Edge navegador.
 
 > [!IMPORTANT]
 > Caso não confie no suplemento, não adicione a respectiva URL à lista de sites confiáveis.
