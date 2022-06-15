@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650637"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091087"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -772,10 +772,9 @@ var config;
 var btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
-Office.initialize = function (reason) {
+Office.initialize = function () {
 };
 
-// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',
@@ -954,7 +953,7 @@ Salvar todas as suas alterações e executar `npm start` do prompt de comando, s
 
 ## <a name="implement-a-task-pane"></a>Implementar um painel de tarefas
 
-O botão **Inserir gist** deste suplemento abrirá o painel de tarefas e exibirá os gists do usuário. Em seguida, o usuário pode selecionar uma das gists para inserir no corpo da mensagem. Se o usuário ainda não tiver configurado o suplemento, ele será solicitado a fazê-lo.
+O botão **Inserir gist** deste suplemento abrirá o painel de tarefas e exibirá os gists do usuário. Em seguida, o usuário pode selecionar uma das gists para inserir no corpo da mensagem. Se o usuário ainda não tiver configurado o suplemento, ele será solicitado a fazer isso.
 
 ### <a name="specify-the-html-for-the-task-pane"></a>Especificar o arquivo HTML para o painel de tarefas
 
@@ -1098,83 +1097,97 @@ ul {
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   height: 100%; }
-  .ms-landing-page__main {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    height: 100%; }
 
-  .ms-landing-page__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    height: 100%;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    padding: 20px; }
-    .ms-landing-page__content h2 {
-      margin-bottom: 20px; }
-  .ms-landing-page__footer {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-justify-content: center;
-            justify-content: center;
-    -webkit-align-items: center;
-            align-items: center; }
-    .ms-landing-page__footer--left {
-      transition: background ease 0.1s, color ease 0.1s;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-justify-content: flex-start;
-              justify-content: flex-start;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-flex: 1 0 0px;
-              flex: 1 0 0px;
-      padding: 20px; }
-      .ms-landing-page__footer--left:active {
-        cursor: default; }
-      .ms-landing-page__footer--left--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
-          background: transparent; }
-      .ms-landing-page__footer--left img {
-        width: 40px;
-        height: 40px; }
-      .ms-landing-page__footer--left h1 {
-        -webkit-flex: 1 0 0px;
-                flex: 1 0 0px;
-        margin-left: 15px;
-        text-align: left;
-        width: auto;
-        max-width: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-    .ms-landing-page__footer--right {
-      transition: background ease 0.1s, color ease 0.1s;
-      padding: 29px 20px; }
-      .ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
-        background: #005ca4;
-        cursor: pointer; }
-      .ms-landing-page__footer--right:active {
-        background: #005ca4; }
-      .ms-landing-page__footer--right--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
-          background: transparent; }
+.ms-landing-page__main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  height: 100%; }
+
+.ms-landing-page__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 100%;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  padding: 20px; }
+
+.ms-landing-page__content h2 {
+  margin-bottom: 20px; }
+
+.ms-landing-page__footer {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center; }
+
+.ms-landing-page__footer--left {
+  transition: background ease 0.1s, color ease 0.1s;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  padding: 20px; }
+
+.ms-landing-page__footer--left:active {
+  cursor: default; }
+
+.ms-landing-page__footer--left--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
+  background: transparent; }
+
+.ms-landing-page__footer--left img {
+  width: 40px;
+  height: 40px; }
+
+.ms-landing-page__footer--left h1 {
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  margin-left: 15px;
+  text-align: left;
+  width: auto;
+  max-width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ms-landing-page__footer--right {
+  transition: background ease 0.1s, color ease 0.1s;
+  padding: 29px 20px; }
+
+.ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
+  background: #005ca4;
+  cursor: pointer; }
+
+.ms-landing-page__footer--right:active {
+  background: #005ca4; }
+
+.ms-landing-page__footer--right--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
+  background: transparent; }
 ```
 
 ### <a name="specify-the-javascript-for-the-task-pane"></a>Especificar o JavaScript para o painel de tarefas

@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 02/28/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511398"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091094"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -17,7 +17,7 @@ Neste artigo, você acompanhará o processo de criação de um suplemento do pai
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) ou Visual Studio. O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio. Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.
+Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md) ou Visual Studio. O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio. Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.
 
 # <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
@@ -293,3 +293,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook! Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+## <a name="see-also"></a>Confira também
+
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

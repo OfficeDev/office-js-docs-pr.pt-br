@@ -1,15 +1,15 @@
 ---
 title: Início rápido logon único (SSO).
 description: Use o gerador Yeoman para construir um Suplemento Office Node.js que utilize o logon único.
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 852cd9057d8f215f8ff3d637ea344c6f5c879eda
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747190"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091108"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>Início rápido logon único (SSO).
 
@@ -162,3 +162,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas que usa SSO
 - [Personalizar o suplemento habilitado para SSO do Node.js](sso-quickstart-customize.md).
 - [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md)
 - [Solucionar problemas de mensagens de erro no logon único (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

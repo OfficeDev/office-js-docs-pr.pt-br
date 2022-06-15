@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 01/13/2022
+ms.date: 06/10/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: c85205ac6e7adf5a265e6b68a185d1cacf7298a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: df4e7ced6c244f4ccf286ce2a9718e22459a144e
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222203"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091164"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -37,7 +37,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `PowerPoint`
 
-![Captura de tela mostrando os prompts e respostas para o gerador do Yeoman em uma interface de linha de comando.](../images/yo-office-powerpoint.png)
+![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -259,3 +259,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: Saiba como criar um suplemento do painel de tarefas do OneNote simples usando a API JS do Office.
-ms.date: 02/11/2022
+ms.date: 06/10/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 7d806922785f97430619bd74eb04c7c42595aa4e
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 9b5f4dd941ed8cc107bee04bc67a368520439948
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855573"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090849"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -120,3 +120,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote!
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

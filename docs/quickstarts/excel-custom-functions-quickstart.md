@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: aa44caf014a6d617112a616e96e1c67079c4c385
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404700"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091080"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -33,16 +33,16 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
     - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     - **Escolha o tipo de script:** `JavaScript`
-    - **Qual será o nome do suplemento?** `starcount`
+    - **Qual será o nome do suplemento?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
 1. O gerador Yeoman fornecerá algumas instruções na linha de comando sobre o que fazer com o projeto, mas ignore-as e continue seguindo nossas instruções. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Compile o projeto.
@@ -105,3 +105,4 @@ Você poderá encontrar problemas se executar o início rápido várias vezes. S
 - [Visão geral de funções personalizadas](../excel/custom-functions-overview.md)
 - [Metadados de funções personalizadas](../excel/custom-functions-json.md)
 - [Tempo de execução de funções personalizadas do Excel](../excel/custom-functions-runtime.md)
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
