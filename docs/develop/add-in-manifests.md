@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: a89207dc575e103ca7b29fa1ce69ca18aba2c0c0
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672056"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090954"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -19,17 +19,17 @@ O arquivo de manifesto XML de um Suplemento do Office descreve como seu suplemen
 
 Um arquivo de manifesto XML permite que um Suplemento do Office faça o seguinte:
 
-* Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
+- Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
-* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento](create-addin-commands.md) na faixa de opções do Aplicativo do Office.
+- Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento](create-addin-commands.md) na faixa de opções do Aplicativo do Office.
 
-* Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
+- Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
 
-* Especifique as dimensões padrão solicitadas para suplementos de conteúdo e a altura solicitada para Suplementos do Outlook.
+- Especifique as dimensões padrão solicitadas para suplementos de conteúdo e a altura solicitada para Suplementos do Outlook.
 
-* Declare permissões exigidas pelo Suplemento do Office, como ler ou gravar no documento.
+- Declare permissões exigidas pelo Suplemento do Office, como ler ou gravar no documento.
 
-* Para os suplementos do Outlook, defina a regra ou as regras que especificam o contexto no qual serão ativados e interagirão com uma mensagem, compromisso ou item de solicitação da reunião.
+- Para os suplementos do Outlook, defina a regra ou as regras que especificam o contexto no qual serão ativados e interagirão com uma mensagem, compromisso ou item de solicitação da reunião.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -44,28 +44,26 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 
 ### <a name="required-elements-by-office-add-in-type"></a>Elementos obrigatórios de acordo com o tipo de Suplemento do Office
 
-| Elemento                                                                                      | Conteúdo | Painel de tarefas | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Versão][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Descrição][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissões (ContentApp)][]<br/>[Permissões (TaskPaneApp)][]<br/>[Permissões (MailApp)][] |    X    |     X     |    X    |
-| [Regra (RuleCollection)][]<br/>[Regra (MailApp)][]                                             |         |           |    X    |
-| [Requisitos (MailApp)*][]                                                                  |         |           |    X    |
-| [Conjunto*][]<br/>[Conjuntos (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Formulário*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Conjuntos (Requisitos)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| Elemento                                                                                      | Conteúdo    | Painel de tarefas    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | Obrigatório   | Obrigatório     | Obrigatório     |
+| [Id][]                                                                                       | Obrigatório   | Obrigatório     | Obrigatório     |
+| [Versão][]                                                                                  | Obrigatório   | Obrigatório     | Obrigatório     |
+| [ProviderName][]                                                                             | Obrigatório   | Obrigatório     | Obrigatório     |
+| [DefaultLocale][]                                                                            | Obrigatório   | Obrigatório     | Obrigatório     |
+| [DisplayName][]                                                                              | Obrigatório   | Obrigatório     | Obrigatório     |
+| [Description][]                                                                              | Obrigatório   | Obrigatório     | Obrigatório     |
+| [IconUrl][]                                                                                  | Obrigatório   | Obrigatório     | Obrigatório     |
+| [SupportUrl][]\*\*                                                                           | Obrigatório   | Obrigatório     | Obrigatório     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Obrigatório   | Obrigatório     | Não disponível|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| Obrigatório | Obrigatório | Obrigatório   |
+| [DesktopSettings][]                                                                          | Não disponível | Não disponível | Obrigatório |
+| [Permissões (ContentApp)][]<br/>[Permissões (TaskPaneApp)][]<br/>[Permissões (MailApp)][] | Obrigatório   | Obrigatório     | Obrigatório     |
+| [Regra (RuleCollection)][]<br/>[Regra (MailApp)][]                                             | Não disponível | Não disponível | Obrigatório |
+| [Requisitos (MailApp)][]\*                                                                 | Não aplicável| Não disponível | Obrigatório |
+| [Conjuntos][]\*<br/>[Conjuntos (Requisitos)][]\*<br/>[Conjuntos (MailAppRequirements)][]\*                 | Obrigatório   | Obrigatório     | Obrigatório     |
+| [Formulário][]\*<br/>[FormSettings][]\*                                                            | Não disponível | Não disponível | Obrigatório |
+| [Hosts][]\*                                                                                  | Obrigatório   | Obrigatório     | Opcional     |
 
 _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
@@ -86,20 +84,20 @@ _\*\* SupportUrl só é necessário para suplementos distribuídos pelo AppSourc
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissões (contentapp)]: /javascript/api/manifest/permissions
 [permissões (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissões (mailapp)]: /javascript/api/manifest/permissions
 [regra (rulecollection)]: /javascript/api/manifest/rule
 [regra (mailapp)]: /javascript/api/manifest/rule
 [requisitos (mailapp)]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[conjuntos (mailapprequirements)*]: /javascript/api/manifest/sets
-[formulário*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[conjuntos (requisitos)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[set]: /javascript/api/manifest/set
+[conjuntos (mailapprequirements)]: /javascript/api/manifest/sets
+[formulário]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[conjuntos (requisitos)]: /javascript/api/manifest/sets
+[hosts]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
@@ -154,9 +152,9 @@ O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal 
 
 O elemento opcional [VersionOverrides](/javascript/api/manifest/versionoverrides) merece uma menção especial. Ele contém marcação infantil que habilita a recursos de suplemento adicionais. Alguns deles são:
 
- - Personalizando a faixa de opções do Office e os menus.
- - Personalizando como o Office funcionará com o runtime do navegador incorporado no qual os suplementos serão executados.
- - Configurando como o suplemento interage com o Azure Active Directory e o Microsoft Graph para o Logon único.
+- Personalizando a faixa de opções do Office e os menus.
+- Personalizando como o Office funcionará com o runtime do navegador incorporado no qual os suplementos serão executados.
+- Configurando como o suplemento interage com o Azure Active Directory e o Microsoft Graph para o Logon único.
 
 Alguns elementos descendentes de `VersionOverrides` têm valores que substituem os valores do elemento pai `OfficeApp`. Por exemplo, o elemento `Hosts` em `VersionOverrides` substitui o elemento `Hosts` em `OfficeApp`.
 
@@ -548,12 +546,12 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 
 ## <a name="see-also"></a>Confira também
 
-* [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
-* [Criar comandos de suplementos em seu manifesto](create-addin-commands.md)
-* [Especificar requisitos da API e de aplicativos do Office](specify-office-hosts-and-api-requirements.md)
-* [Localização para suplementos do Office](localization.md)
-* [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md)
+- [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
+- [Criar comandos de suplementos em seu manifesto](create-addin-commands.md)
+- [Especificar requisitos da API e de aplicativos do Office](specify-office-hosts-and-api-requirements.md)
+- [Localização para suplementos do Office](localization.md)
+- [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md)

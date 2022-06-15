@@ -6,9 +6,9 @@ Se o namespace `CONTOSO` não estiver disponível no menu de preenchimento autom
 
     :::image type="content" source="../images/select-insert.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com a seta para baixo Meus suplementos realçada.":::
 
-1. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
+1. Na lista de suplementos disponíveis, localize a seção **Suplementos do Desenvolvedor** e selecione **Meus suplementos de funções personalizadas** para registrá-lo.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.":::
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 

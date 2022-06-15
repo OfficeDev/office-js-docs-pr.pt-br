@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 01/06/2022
+ms.date: 06/10/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 9c80769d0116186c574b6e4fa86e89eadfadc410
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "63511366"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091038"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -127,3 +127,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Project!
 
 - [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
+- [Usando Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

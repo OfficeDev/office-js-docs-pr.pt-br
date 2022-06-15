@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 12/07/2021
+ms.date: 06/13/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
-ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
+ms.openlocfilehash: c6a6410ac2466995ceaf723d08a8735a3c4886c2
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "61331075"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091129"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -18,7 +18,7 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 |:---------|:------------|
 |[Sideload](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Como parte de seu processo de desenvolvimento, para testar seu suplemento em execução no Windows, iPad, Mac ou em um navegador. (Não para suplementos de produção.)|
 |[Compartilhamento de rede](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Como parte do processo de desenvolvimento, teste seu suplemento no Windows após publicá-lo em um servidor que não seja o host local. (Não se destina a suplementos de produção ou para testes no iPad, no Mac ou na Web).|
-|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Usado para distribuir o suplemento publicamente aos usuários.|
+|[AppSource][AppSource]|Usado para distribuir o suplemento publicamente aos usuários.|
 |[Centro de administração Microsoft 365](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|Em uma implantação de nuvem, para distribuir seu suplemento para usuários em sua organização usando o Centro de administração do Microsoft 365. Isso é feito por meio de [Aplicativos Integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [Implantação Centralizada](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
 |[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
@@ -33,9 +33,9 @@ As opções de implantação que estão disponíveis dependem do aplicativo do O
 
 | Ponto de extensão | Sideloading | Compartilhamento de rede | AppSource | Centro de administração Microsoft 365 | Catálogo do SharePoint\* |
 |:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Conteúdo         | X           | X             | X         | X                          | X                    |
-| Painel de tarefas       | X           | X             | X         | X                          | X                    |
-| Comando         | X           | X             | X         | X                          |                      |
+| Conteúdo         | Com suporte   | Com suporte     | Com suporte | Com suporte                  | Com suporte            |
+| Painel de tarefas       | Com suporte   | Com suporte     | Com suporte | Com suporte                  | Com suporte            |
+| Comando         | Com suporte   | Com suporte     | Com suporte | Com suporte                  | Não disponível        |
 
 &#42; Os catálogos do SharePoint não são compatíveis com o Office para Mac.
 
@@ -43,8 +43,8 @@ As opções de implantação que estão disponíveis dependem do aplicativo do O
 
 | Ponto de extensão | Sideloading | AppSource | Servidor Exchange |
 |:----------------|:-----------:|:---------:|:---------------:|
-| Aplicativo de email        | X           | X         | X               |
-| Comando         | X           | X         | X               |
+| Aplicativo de email        | Com suporte   | Com suporte | Com suporte       |
+| Comando         | Com suporte   | Com suporte | Com suporte       |
 
 ## <a name="production-deployment-methods"></a>Métodos de implantação de produção
 
@@ -87,9 +87,11 @@ Para atribuir os complementos aos locatários, use o centro de administração d
 
 - [Realizar sideload de suplementos do Outlook para teste](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Enviar para o AppSource][AppSource]
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
 - [Criar listagens eficazes do AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)
 - [O que é o mercado comercial da Microsoft?](/azure/marketplace/overview)
+- [página de publicação de aplicativos do Centro de Desenvolvimento da Microsoft](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
