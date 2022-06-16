@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do Outlook com um manifesto do Teams (versão prévia)
 description: Saiba como criar um Suplemento do Outlook simples com um manifesto JSON.
-ms.date: 06/02/2022
+ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 203440e8fca2277b2abd0ed10af3199cc8751b61
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891953"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091045"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Criar um suplemento do Outlook com um manifesto do Teams (versão prévia)
 
@@ -274,3 +274,4 @@ Adicione um botão personalizado à faixa de opções que insere texto em um cor
 ## <a name="see-also"></a>Confira também
 
 - [Manifesto do Teams para Suplementos do Office (visualização)](../develop/json-manifest-overview.md)
+- [Usando o Visual Studio Code para publicar](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
