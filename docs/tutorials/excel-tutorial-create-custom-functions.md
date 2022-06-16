@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: 9550986edcbbed56c69e25e183c304ebe6f6cc07
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404727"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091053"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -42,9 +42,9 @@ Neste tutorial, você vai:
 
     - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     - **Escolha o tipo de script:** `JavaScript`
-    - **Qual será o nome do suplemento?** `starcount`
+    - **Qual será o nome do suplemento?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Captura de tela da interface de linha de comando do gerador do suplemento Yeoman Office para projetos de funções personalizadas.":::
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
@@ -53,7 +53,7 @@ Neste tutorial, você vai:
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Compile o projeto.
@@ -105,7 +105,7 @@ As `ADD` função personalizada calcula a soma dos dois números que você forne
 
 Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `getStarCount` que mostra quantas estrelas um determinado repositório do GitHub tem.
 
-1. No projeto **Contagem de estrelas** localize o arquivo **./src/functions/functions.js** e abra-o no seu editor de código.
+1. No projeto **O meu suplemento de funções personalizadas** localize o arquivo **./src/functions/functions.js** e abra-o no editor de código.
 
 1. Em **function.js**, adicione o código a seguir.
 
@@ -149,11 +149,11 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 1. No Excel, escolha a guia **Inserir** e escolha a seta para baixo localizada à direita de **Meus Suplementos**.
 
-    :::image type="content" source="../images/select-insert.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com a seta para baixo Meus Suplementos realçada.":::
+    :::image type="content" source="../images/select-insert.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com a seta para baixo Meus suplementos realçada.":::
 
-1. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
+1. Na lista de suplementos disponíveis, localize a seção **Suplementos do Desenvolvedor** e selecione **Meus suplementos de funções personalizadas** para registrá-lo.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento Funções Personalizadas do Excel destacado na lista Meus suplementos.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Captura de tela da faixa de opções Inserir no Excel no Windows, com o suplemento funções personalizadas do Excel destacado na lista Meus suplementos.":::
 
 # <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
@@ -177,7 +177,7 @@ A função `getStarCount` retorna o número de estrelas que um repositório tem 
 
 No exemplo de código a seguir, você perceberá que há duas funções, `currentTime` e `clock`. A função `currentTime` é uma função estática que não usa streaming. Ele retorna a data como uma cadeia de caracteres. A função `clock` usa a função `currentTime` para fornecer o novo horário a cada segundo a uma célula no Excel. Ela usa `invocation.setResult` para fornecer o horário para a célula do Excel e `invocation.onCanceled` para controlar o que acontece quando a função é cancelada. 
 
-O projeto **starcount** já contém as duas funções a seguir no arquivo **./src/functions/functions.js** .
+O projeto **Meus suplementos de funções personalizadas** já contém as duas funções a seguir no arquivo **./src/functions/functions.js**.
 
 ```JS
 /**
