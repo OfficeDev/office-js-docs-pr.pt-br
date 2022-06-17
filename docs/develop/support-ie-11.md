@@ -3,12 +3,12 @@ title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Internet Explorer 11 e javascript ES5 em seu suplemento.
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fea604c17525836857b7cff4c8670da757f2a6
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313174"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136422"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 
@@ -79,9 +79,9 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
 ```
 
 > [!IMPORTANT]
-> Geralmente, não é uma boa prática ler a `userAgent` propriedade. Verifique se você está familiarizado com o [artigo, detecção](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent) de navegador usando o agente do usuário, incluindo as recomendações e alternativas à leitura `userAgent`. Em particular, se você estiver usando a opção 1 `else` na cláusula acima, considere usar a detecção de recursos em vez de testar para o agente do usuário.
+> Geralmente, não é uma boa prática ler a `userAgent` propriedade. Verifique se você está familiarizado com o [artigo, detecção](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent) de navegador usando o agente do usuário, incluindo as recomendações e alternativas à leitura `userAgent`. Em particular, se você estiver usando a opção 1 `else` na cláusula acima, considere usar a detecção de recursos em vez de testar para o agente do usuário.
 >
-> A partir de 30 de setembro de 2021, o texto na seção Qual parte do agente do usuário contém as informações que você está procurando [?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) Datas de antes do lançamento do Internet Explorer 11. Ele ainda é geralmente preciso e *as tabelas* na seção da versão em inglês do artigo estão atualizadas. Da mesma forma, o texto e, na maioria dos casos, as tabelas nas versões não em inglês do artigo estão desatualizadas.
+> A partir de 30 de setembro de 2021, o texto na seção Qual parte do agente do usuário contém as informações que você está procurando [?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) Datas de antes do lançamento do Internet Explorer 11. Ele ainda é geralmente preciso e *as tabelas* na seção da versão em inglês do artigo estão atualizadas. Da mesma forma, o texto e, na maioria dos casos, as tabelas nas versões não em inglês do artigo estão desatualizadas.
 
 ## <a name="test-an-add-in-on-internet-explorer"></a>Testar um suplemento no Internet Explorer
 
