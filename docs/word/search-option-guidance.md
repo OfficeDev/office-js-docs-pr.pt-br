@@ -1,19 +1,18 @@
 ---
-title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
+title: Usar opções de pesquisa no suplemento do Word para localizar texto
 description: Saiba como usar as opções de pesquisa em seu suplemento do Word.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f9dd2605af9307a49fabfafdecb0df4e97fe9f
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 988349275dc350a342dfcb80e8e999c76de78e7d
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187340"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229705"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word
+# <a name="use-search-options-in-your-word-add-in-to-find-text"></a>Usar opções de pesquisa no suplemento do Word para localizar texto
 
-Os suplementos frequentemente precisam agir com base no texto de um documento.
-Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](/javascript/api/word/word.body), [Parágrafo](/javascript/api/word/word.paragraph), [Intervalo](/javascript/api/word/word.range), [Tabela](/javascript/api/word/word.table), [ Coluna](/javascript/api/word/word.tablerow)e o objeto [ContentControl](/javascript/api/word/word.contentcontrol) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](/javascript/api/word/word.searchoptions). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
+Os suplementos frequentemente precisam agir com base no texto de um documento. Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](/javascript/api/word/word.body), [Parágrafo](/javascript/api/word/word.paragraph), [Intervalo](/javascript/api/word/word.range), [Tabela](/javascript/api/word/word.table), [ Coluna](/javascript/api/word/word.tablerow)e o objeto [ContentControl](/javascript/api/word/word.contentcontrol) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](/javascript/api/word/word.searchoptions). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
 
 ## <a name="search-options"></a>Opções de pesquisa
 

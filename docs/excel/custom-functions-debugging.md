@@ -1,14 +1,14 @@
 ---
 title: Depuração de funções personalizadas
 description: Saiba como depurar suas Excel funções personalizadas que não usam um runtime compartilhado.
-ms.date: 06/09/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b29f2f2cc08839d1d9d58fcff59ebe37d1089d1
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 1c53d73a0356d4f5f9af9bebbb6c34b99dbeb395
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090907"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229684"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
@@ -188,7 +188,7 @@ Você pode usar as tarefas a seguir para iniciar a depuração na área de traba
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre [as práticas de autenticação para funções personalizadas sem interface do usuário](custom-functions-authentication.md).
+Saiba mais [sobre a Autenticação para funções personalizadas sem um runtime compartilhado](custom-functions-authentication.md).
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 05/19/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e167c5611e2c3950a4f8f20119fc4a4483d1d779
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650602"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229649"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,7 +25,7 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar, incluindo a atualização cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
+| Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
@@ -53,11 +53,11 @@ A validação é feita no lado do cliente Outlook quando o evento de envio é di
 
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente adicione um assunto.
 
-![Captura de tela mostrando uma mensagem de erro solicitando que o usuário insira uma linha de assunto ausente.](../images/block-on-send-subject-cc-inforbar.png)
+![Uma mensagem de erro solicitando que o usuário insira uma linha de assunto ausente.](../images/block-on-send-subject-cc-inforbar.png)
 
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente de que foram encontradas palavras bloqueadas.
 
-![Captura de tela mostrando uma mensagem de erro informando ao usuário que palavras bloqueadas foram encontradas.](../images/block-on-send-body.png)
+![Uma mensagem de erro informando ao usuário que foram encontradas palavras bloqueadas.](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>Limitações
 
@@ -300,7 +300,7 @@ Por padrão, a política Ao enviar está desabilitada. Os administradores podem 
 
 1. Baixe a [ferramenta de Modelos Administrativos](https://www.microsoft.com/download/details.aspx?id=49030) mais recente.
 1. Abra o Editor Política de Grupo Local (**gpedit.msc**).
-1. Navegue **até User** **ConfigurationAdministrative** >  **TemplatesMicrosoft**  >  Outlook 2016  > **SecurityTrust** >  Center.
+1. Navegue **até Modelos Administrativos de** > **Configuração de**  > **Usuário do Microsoft Outlook 2016** >  **Segurança** > **Central de Confiabilidade**.
 1. Selecione o **envio de bloco quando os suplementos da Web não puderem carregar a configuração** .
 1. Abra o link para configuração Editar política.
 1. No envio **de bloco quando os suplementos da Web** não puderem carregar a janela de diálogo, selecione Habilitado  ou Desabilitado conforme apropriado e,  em seguida, selecione **OK** ou Aplicar para colocar a atualização em vigor.
@@ -332,6 +332,12 @@ Por motivos de conformidade, os administradores podem precisar garantir que os u
 ## <a name="on-send-feature-scenarios"></a>Cenários do recurso Ao enviar
 
 Veja a seguir os cenários com suporte e sem suporte para suplementos que usam o recurso Ao enviar.
+
+### <a name="event-handlers-are-dynamically-defined"></a>Os manipuladores de eventos são definidos dinamicamente
+
+Os manipuladores de eventos do suplemento devem ser definidos `Office.initialize` `Office.onReady()` pelo tempo ou chamados (para obter mais informações, consulte [Inicialização](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) de um suplemento do Outlook e Inicializar seu [suplemento Office](../develop/initialize-add-in.md)). Se o código do manipulador for definido dinamicamente por determinadas circunstâncias durante a inicialização, você deverá criar uma função de stub para chamar o manipulador quando ele estiver completamente definido. A função stub deve ser referenciada no **atributo** do elemento `FunctionName` Event do manifesto. Essa solução alternativa garante que o manipulador esteja definido e pronto para ser referenciado uma vez `Office.initialize` ou executado `Office.onReady()` .
+
+Se o manipulador não for definido depois que o suplemento for inicializado, o remetente será notificado de que "A função de retorno de chamada está inacessível" por meio de uma barra de informações no item de email.
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>A caixa de correio do usuário tem o recurso de suplemento Ao enviar habilitado, mas nenhum suplemento está instalado
 
@@ -606,6 +612,9 @@ Para saber mais sobre como adicionar um destinatário à linha CC e verificar se
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>Depurar Outlook suplementos que usam ao enviar
 
 Para obter instruções sobre como depurar seu suplemento ao enviar, consulte Depurar seu suplemento sem interface do usuário [Outlook suplemento](debug-ui-less.md).
+
+> [!TIP]
+> Se o erro "A função de retorno de chamada estiver inacessível" aparece quando os usuários executam o suplemento e o manipulador de eventos do suplemento é definido dinamicamente, você deve criar uma função de stub como uma solução alternativa. Consulte [Manipuladores de eventos são definidos dinamicamente](#event-handlers-are-dynamically-defined) para obter mais informações.
 
 ## <a name="see-also"></a>Confira também
 

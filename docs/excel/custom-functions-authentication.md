@@ -1,18 +1,18 @@
 ---
-ms.date: 05/17/2020
-description: Autenticar usuários usando funções personalizadas Excel que não usam o painel de tarefas.
-title: Autenticação para funções personalizadas sem interface do usuário
+ms.date: 06/15/2022
+description: Autenticar usuários usando funções personalizadas que não usam um runtime compartilhado.
+title: Autenticação para funções personalizadas sem um runtime compartilhado
 ms.localizationpriority: medium
-ms.openlocfilehash: 946800cf884f903e0794702d32ffb7e1075e1ca3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340271"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229677"
 ---
-# <a name="authentication-for-ui-less-custom-functions"></a>Autenticação para funções personalizadas sem interface do usuário
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>Autenticação para funções personalizadas sem um runtime compartilhado
 
-Em alguns cenários, sua função personalizada que não usa um painel de tarefas ou outros elementos de interface do usuário (função personalizada sem interface do usuário) precisará autenticar o usuário para acessar recursos protegidos. Esteja ciente de que as funções personalizadas sem interface do usuário são executados em um tempo de execução somente javaScript. Devido a isso, você precisará passar dados para frente e para trás entre o tempo de execução somente JavaScript e o tempo de execução típico do mecanismo de navegador usado pela maioria dos complementos `OfficeRuntime.storage` usando o objeto e a API de Caixa de Diálogo.
+Em alguns cenários, uma função personalizada que não usa um runtime compartilhado precisará autenticar o usuário para acessar recursos protegidos. Funções personalizadas que não usam uma execução de runtime compartilhado em um runtime somente javaScript. Por isso, se o suplemento tiver um painel de tarefas, você precisará passar dados entre o runtime somente JavaScript e o runtime de suporte a HTML usado pelo painel de tarefas. Faça isso usando o objeto [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) e uma API de Caixa de Diálogo especial.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -20,34 +20,34 @@ Em alguns cenários, sua função personalizada que não usa um painel de tarefa
 
 ## <a name="officeruntimestorage-object"></a>Objeto OfficeRuntime.storage
 
-O tempo de execução somente JavaScript usado por funções personalizadas `localStorage` sem interface do usuário não tem um objeto disponível na janela global, onde você normalmente armazena dados. Em vez disso, você deve compartilhar dados entre funções personalizadas sem interface do usuário e painéis de tarefas usando [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) para definir e obter dados.
+O runtime somente JavaScript não tem `localStorage` um objeto disponível na janela global, em que você normalmente armazena dados. Em vez disso, seu código deve compartilhar dados entre funções personalizadas e painéis de tarefas usando para `OfficeRuntime.storage` definir e obter dados.
 
 ### <a name="suggested-usage"></a>Uso sugerido
 
-Quando precisar se autenticar de uma função personalizada sem interface do usuário, `storage` verifique se o token de acesso já foi adquirido. Caso contrário, use a API de caixa de diálogo para autenticar o usuário, recuperar o token de acesso e, em seguida, armazenar o token em `storage` para uso futuro.
+Quando você precisa se autenticar de um suplemento de função personalizada que não usa um runtime compartilhado, `OfficeRuntime.storage` seu código deve verificar se o token de acesso já foi adquirido. Caso contrário, use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) para autenticar o usuário, recuperar o token de acesso e, em seguida, armazenar o token `OfficeRuntime.storage` para uso futuro.
 
-## <a name="dialog-api"></a>API de Caixa de Diálogo
+## <a name="dialog-api"></a>API de caixa de diálogo
 
-Se um token não existir, você deverá usar a API de diálogo para solicitar que o usuário faça logon. Depois que um usuário insere suas credenciais, o token de acesso resultante pode ser armazenado em `storage`.
+Se um token não existir, você deverá usar a `OfficeRuntime.dialog` API para solicitar que o usuário entre. Depois que um usuário insere suas credenciais, o token de acesso resultante pode ser armazenado como um item em `OfficeRuntime.storage`.
 
 > [!NOTE]
-> O tempo de execução somente JavaScript usa um objeto Dialog ligeiramente diferente do objeto Dialog no tempo de execução do mecanismo do navegador usado pelos painéis de tarefas. Ambos são chamados de "API de Diálogo", `OfficeRuntime.Dialog` mas usam para autenticar usuários no tempo de execução somente JavaScript.
+> O runtime somente JavaScript usa um objeto de caixa de diálogo ligeiramente diferente do objeto de diálogo no runtime do mecanismo do navegador usado pelos painéis de tarefas. Ambos são chamados de "API de Caixa de Diálogo", mas usam [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) para autenticar usuários no runtime somente JavaScript *, não* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
 
-O diagrama a seguir descreve esse processo básico. A linha pontilhada indica que funções personalizadas sem interface do usuário e o painel de tarefas do seu complemento fazem parte do seu complemento como um todo, embora usem tempos de execução separados.
+O diagrama a seguir descreve esse processo básico. A linha pontilhada indica que as funções personalizadas e o painel de tarefas do suplemento fazem parte do suplemento como um todo, embora usem runtimes separados.
 
-1. Você emitir uma chamada de função personalizada sem interface do usuário de uma célula em uma Excel de trabalho.
-2. A função personalizada sem interface do usuário usa `Dialog` para passar suas credenciais de usuário para um site.
-3. Em seguida, este site retorna um token de acesso à função personalizada sem interface do usuário.
-4. Sua função personalizada sem interface do usuário define esse token de acesso como `storage`.
-5. O painel de tarefas do seu suplemento acessa o token a partir de `storage`.
+1. As chamadas de função personalizada de uma célula são emitdas por você em uma pasta de trabalho do Excel.
+2. A função personalizada usa `OfficeRuntime.dialog` para passar suas credenciais de usuário para um site.
+3. Esse site, em seguida, retorna um token de acesso para a função personalizada.
+4. Em seguida, sua função personalizada define esse token de acesso para um item no `OfficeRuntime.storage`.
+5. O painel de tarefas do seu suplemento acessa o token a partir de `OfficeRuntime.storage`.
 
-![Diagrama da função personalizada usando a API de caixa de diálogo para obter token de acesso e, em seguida, compartilhar token com o painel de tarefas por meio da API OfficeRuntime.storage.](../images/authentication-diagram.png "Diagrama de autenticação.")
+![Diagrama de função personalizada usando a API da caixa de diálogo para obter o token de acesso e, em seguida, compartilhe o token com o painel de tarefas por meio da API OfficeRuntime.storage.](../images/authentication-diagram.png "Diagrama de autenticação.")
 
 ## <a name="storing-the-token"></a>Armazenando o token
 
-Os exemplos a seguir são do exemplo de código [Usando OfficeRuntime.storage em funções personalizadas](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage). Consulte este exemplo de código para um exemplo completo de compartilhamento de dados entre funções personalizadas sem interface do usuário e o painel de tarefas.
+Os exemplos a seguir são do exemplo de código [Usando OfficeRuntime.storage em funções personalizadas](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage). Consulte este exemplo de código para obter um exemplo completo de compartilhamento de dados entre funções personalizadas e o painel de tarefas em suplementos que não usam um runtime compartilhado.
 
-Se a função personalizada sem interface do usuário for autenticada, ela receberá o token de acesso e precisará armazená-lo em `storage`. O exemplo de código a seguir mostra como chamar o método `storage.setItem` para armazenar um valor. A `storeValue` função é uma função personalizada sem interface do usuário que, por exemplo, armazena um valor do usuário. Você pode modificá-la para que seja armazenado qualquer valor de token que você precise.
+Se a função personalizada for autenticada, ela receberá o token de acesso e precisará armazená-lo em `OfficeRuntime.storage`. O exemplo de código a seguir mostra como chamar o método `storage.setItem` para armazenar um valor. A `storeValue` função é uma função personalizada que armazena um valor do usuário. Você pode modificá-la para que seja armazenado qualquer valor de token que você precise.
 
 ```js
 /**
@@ -65,7 +65,7 @@ function storeValue(key, value) {
 }
 ```
 
-Quando o painel de tarefas precisa do token de acesso, ele pode recuperar o token de `storage`. O exemplo de código a seguir mostra como usar o método `storage.getItem` para recuperar o token.
+Quando o painel de tarefas precisa do token de acesso, ele pode recuperar o token do `OfficeRuntime.storage` item. O exemplo de código a seguir mostra como usar o método `storage.getItem` para recuperar o token.
 
 ```js
 /**
@@ -86,20 +86,20 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Orientação geral
 
-Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há nenhum padrão ou método específico que você deve seguir para implementar sua própria autenticação com funções personalizadas sem interface do usuário. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](../develop/auth-external-add-ins.md).  
+Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deva seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](../develop/auth-external-add-ins.md).  
 
-Evite usar os seguintes locais para armazenar dados ao desenvolver funções personalizadas: .
+Evite usar os seguintes locais para armazenar dados ao desenvolver funções personalizadas:
 
-- `localStorage`: As funções personalizadas sem interface do usuário não têm acesso ao objeto global `window` e, portanto, não têm acesso aos dados armazenados em `localStorage`.
-- `Office.context.document.settings`: Esse local não é seguro, e informações podem ser extraídas por qualquer pessoa usando o suplemento.
+- `localStorage`: funções personalizadas que não usam um runtime compartilhado não têm acesso ao objeto global `window` e, portanto, não têm acesso aos dados armazenados em `localStorage`.
+- `Office.context.document.settings`: esse local não é seguro e as informações podem ser extraídas por qualquer pessoa que use o suplemento.
 
-## <a name="dialog-box-api-example"></a>Exemplo da API da caixa de diálogo
+## <a name="dialog-box-api-example"></a>Exemplo de API da caixa de diálogo
 
-No exemplo de código a seguir, a função `getTokenViaDialog` usa `Dialog` a função da `displayWebDialogOptions` API para exibir uma caixa de diálogo. Este exemplo é fornecido para mostrar os recursos do `Dialog` objeto, não demonstrar como autenticar.
+No exemplo de código a seguir, a função `getTokenViaDialog` usa a `OfficeRuntime.displayWebDialog` função para exibir uma caixa de diálogo. Este exemplo é fornecido para mostrar os recursos do método, não demonstrar como autenticar.
 
 ```JavaScript
 /**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
@@ -143,9 +143,9 @@ function getTokenViaDialog(url) {
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba como [depurar funções personalizadas sem interface do usuário](custom-functions-debugging.md).
+Saiba como [depurar funções personalizadas](custom-functions-debugging.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Tempo de execução para funções personalizadas sem Excel de interface do usuário](custom-functions-runtime.md)
+* [Runtime somente javaScript para funções personalizadas](custom-functions-runtime.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,16 +1,16 @@
 ---
-title: Criar suplementos melhores para o Word com o Office Open XML
-description: Visão geral de como melhorar seu suplemento do Word com Office Open XML.
+title: Entender quando e como usar Office Open XML em seu suplemento do Word
+description: Visão geral de quando e como usar Office Open XML em seu suplemento do Word.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e127eb7a05e513daa38f65ea092e7ede8a3133c5
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187326"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229733"
 ---
-# <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
+# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Entender quando e como usar Office Open XML em seu suplemento do Word
 
 **Fornecido por:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
@@ -192,7 +192,7 @@ Você editou o exemplo Office Open XML mostrado aqui, conforme descrito na seç�
 ```
 
 > [!NOTE]
-> Se você adicionar a marcação mostrada aqui a um arquivo XML com as marcas de declaração de XML para versão e mso-application na parte superior do arquivo (mostrado na Figura 13), você poderá abri-lo no Word como um documento do Word. Ou, sem essas marcas, você ainda pode abri-lo **usando** **FileOpen** >  no Word. Você verá o **Modo** de Compatibilidade na barra de título no Word, pois removeu as configurações que informam ao Word que este é um documento do Word. Como você está adicionando essa marcação a um documento existente do Word, isso não afetará seu conteúdo.
+> Se você adicionar a marcação mostrada aqui a um arquivo XML com as marcas de declaração de XML para versão e mso-application na parte superior do arquivo (mostrado na Figura 13), você poderá abri-lo no Word como um documento do Word. Ou, sem essas marcas, você ainda pode abri-lo usando **o Arquivo** > **Aberto** no Word. Você verá o **Modo** de Compatibilidade na barra de título no Word, pois removeu as configurações que informam ao Word que este é um documento do Word. Como você está adicionando essa marcação a um documento existente do Word, isso não afetará seu conteúdo.
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript para usar setSelectedDataAsync
 

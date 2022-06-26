@@ -4,12 +4,12 @@ description: Visão geral da API do JavaScript do Word.
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2bb9b016b8711822164bccbcae45cdc8eb822a8e
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484626"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229719"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -27,7 +27,7 @@ Consulte [Modelo de objeto JavaScript do Word nos Suplementos do Office](../../w
 
 ## <a name="learn-about-api-capabilities"></a>Saiba mais sobre os recursos da API
 
-Use outros artigos nesta seção da documentação para aprender a [obter todo o documento de um suplemento](../../word/get-the-whole-document-from-an-add-in-for-word.md), [usar opções de pesquisa para localizar textos no seu suplemento do Word](../../word/search-option-guidance.md)e muito mais. Consulte o sumário para obter a lista completa de artigos disponíveis.
+Use outros artigos nesta seção da documentação para saber como [obter o documento inteiro de um suplemento](../../word/get-the-whole-document-from-an-add-in-for-word.md), [usar as opções de pesquisa para localizar texto no suplemento do Word](../../word/search-option-guidance.md) e muito mais. Confira o Sumário para obter a lista completa de artigos disponíveis.
 
 Para ter a experiência prática com o uso da API JavaScript do Word para acessar objetos no Word, conclua o [tutorial do suplemento do Word](../../tutorials/word-tutorial.md).
 

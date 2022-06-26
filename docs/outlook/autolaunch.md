@@ -2,14 +2,14 @@
 title: Configurar seu Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 0329817cc4906becdbaa1bb9d25ae34af5ea7719
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019616"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229691"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu Outlook para ativação baseada em evento
 
@@ -319,7 +319,7 @@ O log de runtime também está disponível para esse recurso no Windows. Para ob
 
 Você pode implantar suplementos baseados em eventos carregando o manifesto por meio do Centro de administração do Microsoft 365. No portal de administração, expanda **a seção Configurações** no painel de navegação e selecione **Aplicativos integrados**. Na página **Aplicativos integrados**, escolha a Upload **de aplicativos personalizados**.
 
-![Captura de tela da página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Upload aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
+![A página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a Upload de aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource e Office Store no aplicativo: a capacidade de implantar suplementos baseados em eventos ou atualizar suplementos existentes para incluir o recurso de ativação baseada em evento deve estar disponível em breve.
 
@@ -342,7 +342,7 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` tem suporte. Para obter mais informações, consulte [Habilitar SSO (logon único) em Outlook suplementos que usam a ativação baseada em evento](use-sso-in-event-based-activation.md).
+    > [O OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) tem suporte em todas as versões do Outlook que dão suporte à ativação baseada em evento e SSO (logon único), enquanto o [Office.auth](/javascript/api/office/office.auth) só tem suporte em determinados builds Outlook. Para obter mais informações, consulte [Habilitar SSO (logon único) em Outlook suplementos que usam a ativação baseada em evento](use-sso-in-event-based-activation.md).
 - Em `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

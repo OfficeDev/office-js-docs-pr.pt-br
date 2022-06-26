@@ -554,12 +554,12 @@ items:
           - name: Retornar uma matriz dinâmica
             href: excel/custom-functions-dynamic-arrays.md
             displayName: 'Excel, Custom Functions'
-          - name: Funções personalizadas sem IU
+          - name: Funções personalizadas sem um tempo de execução compartilhado
             items:
-              - name: Autenticação para funções sem IU
+              - name: Autenticação para funções personalizadas sem um tempo de execução compartilhado
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: Tempo de execução
+              - name: Tempo de execução somente de JavaScript para funções personalizadas
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
           - name: Funções voláteis
@@ -850,9 +850,6 @@ items:
           - name: Modelo de objetos do Word
             href: word/word-add-ins-core-concepts.md
             displayName: Word
-          - name: Criar suplementos melhores para o Word com o Office Open XML
-            href: word/create-better-add-ins-for-word-with-office-open-xml.md
-            displayName: Word
           - name: Suplementos de painel de tarefas de dicionário
             href: word/dictionary-task-pane-add-ins.md
             displayName: Word
@@ -862,11 +859,14 @@ items:
           - name: Ler e gravar dados na seleção ativa
             href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
             displayName: Word
-          - name: Valores nulos
+          - name: Entender valores nulos
             href: word/null-values.md
             displayName: Word
-          - name: Usar as opções de pesquisa para localizar o texto no suplemento do Word
+          - name: Usar opções de pesquisa para localizar texto
             href: word/search-option-guidance.md
+            displayName: Word
+          - name: Quando e como usar o Office Open XML
+            href: word/create-better-add-ins-for-word-with-office-open-xml.md
             displayName: Word
   - name: Exemplos
     items:

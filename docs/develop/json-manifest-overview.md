@@ -1,14 +1,14 @@
 ---
 title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
-ms.date: 05/24/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833896"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229635"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
@@ -108,7 +108,7 @@ A tabela a seguir mostra um mapeamento de algumas propriedades filho de alto ní
 | "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **Hosts** |  |
 | "faixas de opções" | As faixas de opções que o suplemento personaliza. | **Hosts**, **ExtensionPoints** e vários elementos **\*FormFactor** | As propriedade "faixas de opções" é uma matriz de objetos anônimos que mesclam as finalidades desses três elementos. Consulte [a tabela "faixas de opções"](#ribbons-table).|
 | "alternativas" | Especifica a compatibilidade de versões anteriores com um suplemento COM equivalente, XLL ou ambos. | **EquivalentAddins** | Consulte [EquivalentAddins - Consulte também ](/javascript/api/manifest/equivalentaddins#see-also) para obter informações de segundo plano. |
-| "runtimes"  | Configura vários tipos de suplementos "sem interface do usuário", como funções personalizadas e funções. São executados diretamente de botões personalizados da faixa de opções. | **Runtimes**. **FunctionFile** e **ExtensionPoint** (do tipo CustomFunctions) |  |
+| "runtimes"  | Configura vários tipos de suplementos "sem interface do usuário", como suplementos de funções personalizadas e funções executadas diretamente de botões personalizados da faixa de opções. | **Runtimes**. **FunctionFile** e **ExtensionPoint** (do tipo CustomFunctions) |  |
 | "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **Evento** e **ExtensionPoint** (do tipo Eventos) |  |
 
 ##### <a name="ribbons-table"></a>tabela "faixas de opções"
