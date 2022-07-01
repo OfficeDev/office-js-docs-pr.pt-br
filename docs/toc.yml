@@ -632,7 +632,7 @@ items:
             href: outlook/extension-module-outlook-add-ins.md
           - name: Suplementos do Outlook Mobile
             href: outlook/outlook-mobile-addins.md
-          - name: Reuniões online no dispositivo móvel
+          - name: Criar um suplemento de reunião online
             href: outlook/online-meeting.md
           - name: Suplementos ao enviar
             href: outlook/outlook-on-send-addins.md
