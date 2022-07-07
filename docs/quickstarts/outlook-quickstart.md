@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091094"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660148"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -244,11 +244,11 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
-1. O elemento **ProviderName** tem um valor de espaço reservado. Substitua-o com seu nome.
+1. O elemento **\<ProviderName\>** tem um valor de marcador. Substitua-o com seu nome.
 
-1. O atributo **DefaultValue** do elemento **DisplayName** tem um espaço reservado. Substitua-o por `My Office Add-in`.
+1. O atributo **DefaultValue** do elemento **\<DisplayName\>** tem um espaço reservado. Substitua-o por `My Office Add-in`.
 
-1. O atributo **DefaultValue** do elemento **Description** tem um espaço reservado. Substitua-o por `My First Outlook add-in`.
+1. O atributo **DefaultValue** do elemento **\<Description\>** tem um espaço reservado. Substitua-o por `My First Outlook add-in`.
 
 1. Salve o arquivo.
 

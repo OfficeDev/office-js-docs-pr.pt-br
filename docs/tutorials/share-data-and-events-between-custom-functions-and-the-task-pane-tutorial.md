@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0afb6bcd46873dd968c242e57ac1a6f8d7f41627
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229712"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659924"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -33,7 +33,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
 
 1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
 1. Abra o arquivo **manifest.xml**.
-1. Substitua (ou adicione) o seguinte seção XML `<Requirements>` para exigir o [conjunto de requisitos de runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Substitua (ou adicione) a seguinte **\<Requirements\>** seção XML para exigir o [ conjunto de requisitos de tempo de execução compartilhado ](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -57,7 +57,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
     <DefaultSettings>
     ```
 
-1. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na `<bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+1. Encontre a seção **\<VersionOverrides\>** e adicione a seguinte seção **\<Runtimes\>**. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na `<bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
     
     ```xml
     <Runtimes>
@@ -66,7 +66,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
     ```
     
     > [!IMPORTANT]
-    > A seção `<Runtimes>` deve ser inserida após o elemento `<Host xsi:type="...">` na ordem exata mostrada no XML a seguir.
+    > A seção **\<Runtimes\>** deve ser inserida após o elemento `<Host xsi:type="...">` na ordem exata mostrada no XML a seguir.
 
     ```xml
     <VersionOverrides ...>
@@ -82,7 +82,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
     > [!NOTE]
     > Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
-1. Encontre o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
+1. Localize o elemento **\<Page\>**. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>

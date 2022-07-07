@@ -4,12 +4,12 @@ description: Crie um suplemento do Excel que cria, preenche, filtra e classifica
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244797"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659714"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -509,7 +509,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 
 1. Abra o arquivo de manifesto **./manifest.xml**.
 
-1. Localize o elemento `<Control>`. Esse elemento define o botão **Mostrar painel de tarefas** na faixa **Página inicial** que você está usando para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa **Página inicial**. Entre os rótulos `</Control>` de fechamento `</Group>`adicione a seguinte marcação.
+1. Localize o **\<Control\>** elemento. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de fechamento **\</Control\>** e a marca de fechamento **\</Group\>**, adicione a marcação a seguir.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
