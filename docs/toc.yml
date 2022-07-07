@@ -619,6 +619,9 @@ items:
           - name: Visão Geral
             href: outlook/apis.md
             displayName: Outlook
+          - name: Conjunto de requisitos de caixa de correio
+            href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+            displayName: Outlook
           - name: Referência da API – versão mais recente
             href: reference/outlook-api-reference-1-11.md
             displayName: Outlook
