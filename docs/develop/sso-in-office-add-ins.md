@@ -3,12 +3,12 @@ title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650595"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659966"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
@@ -79,11 +79,11 @@ Para obter mais detalhes sobre esse processo, consulte [Registrar um Suplemento 
 
 Adicione novas marcações ao manifesto do suplemento.
 
-- **WebApplicationInfo** – o pai dos seguintes elementos.
-- **ID** - A ID do aplicativo (cliente) que você recebeu quando registrou a plataforma de identidade da Microsoft. Para obter mais informações, consulte [Registrar um Suplemento do Office que usa o SSO com a plataforma de identidade da Microsoft](register-sso-add-in-aad-v2.md).
-- **Recurso** - O URI do suplemento. Esse é o mesmo URI (incluindo `api:` o protocolo) que você usou ao registrar o suplemento com a plataforma de identidade da Microsoft. A parte de domínio deste URI deve corresponder ao domínio, incluindo subdomínios usados nas URLs na `<Resources>` seção do manifesto do suplemento e o URI deve terminar com a ID do cliente especificada no `<Id>` elemento.
-- **Scopes** – O pai de uma ou mais elementos **Scope**.
-- **Escopo** - Especifica uma permissão que o suplemento precisa. As `profile` e `openID` permissões são sempre necessárias e podem ser as únicas permissões necessárias. Se o seu suplemento precisar de acesso ao Microsoft Graph ou outros recursos do Microsoft 365, você precisará de elementos **Escopo** adicionais. Por exemplo, para as permissões do Microsoft Graph você pode solicitar os escopos `User.Read` e `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
+- **\<WebApplicationInfo\>** - O pai dos seguintes elementos.
+- **\<Id\>** - A ID do aplicativo (cliente) que você recebeu quando registrou o suplemento na plataforma de identidade da Microsoft. Para obter mais informações, consulte [Registrar um Suplemento do Office que usa o SSO com a plataforma de identidade da Microsoft](register-sso-add-in-aad-v2.md).
+- **\<Resource\>** - O URI do suplemento. Esse é o mesmo URI (incluindo `api:` o protocolo) que você usou ao registrar o suplemento com a plataforma de identidade da Microsoft. A parte do domínio deste URI deve corresponder ao domínio, incluindo quaisquer subdomínios, usado nas URLs na seção **\<Resources\>** do manifesto do suplemento e o URI deve terminar com a ID do cliente especificado no elemento **\<Id\>**.
+- **\<Scopes\>** - O pai de um ou mais elementos **\<Scope\>**.
+- **\<Scope\>** - Especifica uma permissão que o suplemento precisa. As `profile` e `openID` permissões são sempre necessárias e podem ser as únicas permissões necessárias. Se o suplemento precisar acessar o Microsoft Graph ou outros recursos do Microsoft 365, você precisará de elementos **\<Scope\>** adicionais. Por exemplo, para as permissões do Microsoft Graph você pode solicitar os escopos `User.Read` e `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
 Para suplementos do Word, Excel e PowerPoint, adicione a marcação ao final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para suplementos do Outlook, adicione a marcação ao final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 

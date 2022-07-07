@@ -4,12 +4,12 @@ title: Configure seu Suplemento do Office para usar um tempo de execução de Ja
 ms.prod: non-product-specific
 description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
 ms.localizationpriority: high
-ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
-ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
+ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2022
-ms.locfileid: "64715527"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659840"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
 
@@ -57,10 +57,10 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
     > [!NOTE]
     > Não adicione o requisito `SharedRuntime` definido ao manifesto para um suplemento do Word. Isso causará um erro ao carregar o suplemento, que é um problema conhecido no momento.
 
-1. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na `<bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
+1. Encontre a seção **\<VersionOverrides\>** e adicione a seguinte seção **\<Runtimes\>**. A vida útil deve ser **longa** para que o código do suplemento possa ser executado mesmo quando o painel de tarefas está fechado. O `resid`valor é **Taskpane.Url**, que faz referência ao local do arquivo **taskpane.html** especificado na `<bt:Urls>`seção próxima à parte inferior do arquivo **manifest.xml**.
 
     > [!IMPORTANT]
-    > A seção `<Runtimes>` deve ser inserida após o elemento `<Host>` na ordem exata mostrada no XML a seguir.
+    > A seção **\<Runtimes\>** deve ser inserida após o elemento **\<Host\>** na ordem exata mostrada no XML a seguir.
 
    ```xml
    <VersionOverrides ...>
@@ -73,7 +73,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
        </Host>
    ```
 
-1. Se você gerou um Suplemento do Excel com funções personalizadas, localize o elemento `<Page>`. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
+1. Se você gerou um suplemento do Excel com funções personalizadas, encontre o elemento **\<Page\>**. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -84,7 +84,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
    ...
    ```
 
-1. Localize a marca`<FunctionFile ...>` e altere o `resid` de **Commands.Url** para **Taskpane.Url**. Observe que, se você não tiver comandos de ação, não terá uma entrada **FunctionFile** e pode pular esta etapa.
+1. Encontre a marca **\<FunctionFile\>** e altere a marca `resid` de **Commands.Url** para  **Taskpane.Url**. Observe que, se você não tiver comandos de ação, não terá uma entrada **\<FunctionFile\>** e poderá pular esta etapa.
 
     ```xml
     </GetStarted>
