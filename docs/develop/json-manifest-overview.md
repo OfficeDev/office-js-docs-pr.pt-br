@@ -3,12 +3,12 @@ title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: c739ace05992812e0de733edea2f60cf393f3c48
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229635"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659637"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
@@ -51,7 +51,7 @@ Esta seção descreve a versão prévia do manifesto JSON para leitores que est�
       "text": "Some text"
   }
   ```
-- Há muitos locais no manifesto XML atual em que um elemento com um nome plural tem filhos com a versão singular do mesmo nome. Por exemplo, a marcação para configurar um menu personalizado inclui um elemento **Itens** que pode ter elementos filhos com vários **Itens**. O equivalente JSON desses elementos plurais é uma propriedade que tem uma matriz como seu valor. Os membros da matriz são objetos *anônimos*, não propriedades chamadas "item" ou "item1", "item2", etc. O item a seguir é um exemplo.
+- Há muitos locais no manifesto XML atual em que um elemento com um nome plural tem filhos com a versão singular do mesmo nome. Por exemplo, a marcação para configurar um menu personalizado inclui um elemento **\<Items\>** que pode ter vários elementos filhos **\<Item\>**. O equivalente JSON desses elementos plurais é uma propriedade que tem uma matriz como seu valor. Os membros da matriz são objetos *anônimos*, não propriedades chamadas "item" ou "item1", "item2", etc. O item a seguir é um exemplo.
 
   ```json
   "items": [
@@ -66,9 +66,9 @@ Esta seção descreve a versão prévia do manifesto JSON para leitores que est�
 
 #### <a name="top-level-structure"></a>Estrutura de nível superior
 
-O nível da raiz da versão prévia do  manifesto JSON, que corresponde aproximadamente ao elemento **OfficeApp** no manifesto XML atual, é um objeto anônimo. 
+O nível de raiz do manifesto JSON de visualização, que corresponde aproximadamente ao elemento **\<OfficeApp\>** no manifesto XML atual, é um objeto anônimo. 
 
-Os filhos de **OfficeApp** geralmente são divididos em duas categorias noções básicas. O elemento **VersionOverrides** é uma categoria. O outro consiste em todos os outros filhos de **OfficeApp** que são coletivamente chamados de manifesto base. Portanto, a versão prévia do manifesto JSON também tem uma divisão semelhante. Há uma propriedade de "extensão" de nível superior; que corresponde aproximadamente em suas finalidades, e propriedades filhas para o elemento **VersionOverrides**. A versão prévia do manifesto JSON também tem mais de 10 outras propriedades de nível superior que atendem coletivamente às mesmas finalidades que o manifesto base do manifesto XML. Essas outras propriedades podem ser consideradas coletivamente como o manifesto base do manifesto JSON. 
+Os filhos de **\<OfficeApp\>** são geralmente divididos em duas categorias nocionais. O elemento **\<VersionOverrides\>** é uma categoria. O outro consiste de todos os outros filhos de **\<OfficeApp\>**, que são coletivamente referidos como o manifesto base. Portanto, a versão prévia do manifesto JSON também tem uma divisão semelhante. Existe uma propriedade de "extensão" de nível superior que corresponde aproximadamente em suas finalidades e propriedades filho ao elemento **\<VersionOverrides\>**. A versão prévia do manifesto JSON também tem mais de 10 outras propriedades de nível superior que atendem coletivamente às mesmas finalidades que o manifesto base do manifesto XML. Essas outras propriedades podem ser consideradas coletivamente como o manifesto base do manifesto JSON. 
 
 > [!NOTE]
 > Quando for possível combinar um suplemento com outros tipos de extensão do Microsoft 365 em um único manifesto, haverá outras propriedades de nível superior que não se encaixam na noção do manifesto base. Normalmente, haverá uma propriedade de nível superior para cada tipo de extensão do Microsoft 365, como "configurableTabs", "bots" e "conectores". Para obter exemplos, consulte a [Documentação do manifesto do Teams](/microsoftteams/platform/resources/schema/manifest-schema). Essa estrutura deixa claro que a propriedade "extensão" representa um suplemento do Office como um tipo de extensão do Microsoft 365.
@@ -79,37 +79,37 @@ As propriedades do manifesto base especificam características do suplemento que
 
 |Propriedade JSON|Objetivo|Elemento XML|Comentários|
 |:-----|:-----|:-----|:-----|
-|"$schema"| Identifica o esquema do manifesto. | atributos de **OfficeApp** e **VersionOverrides** | |
-|"id"| GUID do suplemento. | **Id**| |
-|"versão"| A versão do suplemento. | **Versão** | |
-|"manifestVersion"| Versão do esquema do manifesto. |  atributos do **OfficeApp** | |
-|"nome"| O nome do suplemento. | **DisplayName** | |
-|"descrição"| Descrição pública do suplemento.  | **Descrição** | |
+|"$schema"| Identifica o esquema do manifesto. | atributos de **\<OfficeApp\>** e **\<VersionOverrides\>** | |
+|"id"| GUID do suplemento. | **\<Id\>**| |
+|"versão"| A versão do suplemento. | **\<Version\>** | |
+|"manifestVersion"| Versão do esquema do manifesto. |  atributos de **\<OfficeApp\>** | |
+|"nome"| O nome do suplemento. | **\<DisplayName\>** | |
+|"descrição"| Descrição pública do suplemento.  | **\<Description\>** | |
 |"accentColor"||| Essa propriedade não tem equivalente no manifesto XML atual e não é usada na versão prévia do manifesto JSON. Mas ela deve estar presente. |
-|"developer"| Identifica o desenvolvedor do suplemento. | **ProviderName** | |
-|"localizationInfo"| Configura a localidade padrão e outras localidades com suporte. | **DefaultLocale** e **Override** | |
-|"webApplicationInfo"| Identifica o aplicativo Web do suplemento como ele é conhecido no Azure Active Directory. | **WebApplicationInfo** | No manifesto XML atual, o elemento **WebApplicationInfo** está dentro de **VersionOverrides**, não no manifesto base. |
-|"autorização"| Identifica todas as permissões do Microsoft Graph que o suplemento precisa. | **WebApplicationInfo** | No manifesto XML atual, o elemento **WebApplicationInfo** está dentro de **VersionOverrides**, não no manifesto base. |
+|"developer"| Identifica o desenvolvedor do suplemento. | **\<ProviderName\>** | |
+|"localizationInfo"| Configura a localidade padrão e outras localidades com suporte. | **\<DefaultLocale\>** e **\<Override\>** | |
+|"webApplicationInfo"| Identifica o aplicativo Web do suplemento como ele é conhecido no Azure Active Directory. | **\<WebApplicationInfo\>** | No manifesto XML atual, o elemento **\<WebApplicationInfo\>** está dentro de **\<VersionOverrides\>**, não no manifesto base. |
+|"autorização"| Identifica todas as permissões do Microsoft Graph que o suplemento precisa. | **\<WebApplicationInfo\>** | No manifesto XML atual, o elemento **\<WebApplicationInfo\>** está dentro de **\<VersionOverrides\>**, não no manifesto base. |
 
-Os elementos **Hosts**, **Requisitos** e **ExtendedOverrides** fazem parte do manifesto base no manifesto XML atual. Mas conceitos e finalidades associados a esses elementos são configurados dentro da propriedade "extensão" da versão prévia do manifesto JSON. 
+Os elementos **\<Hosts\>**, **\<Requirements\>** e **\<ExtendedOverrides\>** fazem parte do manifesto base no manifesto XML atual. Mas conceitos e finalidades associados a esses elementos são configurados dentro da propriedade "extensão" da versão prévia do manifesto JSON. 
 
 #### <a name="extension-property"></a>propriedade "extensão"
 
-A propriedade "extensão" na versão prévia do manifesto JSON representa, principalmente, características do suplemento que não seriam relevantes para outros tipos de extensões do Microsoft 365. Por exemplo, os aplicativos do Office que o suplemento estende (como Excel, PowerPoint, Word e Outlook) são especificados dentro da propriedade "extensão", assim como as personalizações da faixa de opções do aplicativo do Office. As finalidades de configuração da propriedade "extensão" correspondem estreitamente às do elemento **VersionOverrides** no manifesto XML atual.
+A propriedade "extensão" na versão prévia do manifesto JSON representa, principalmente, características do suplemento que não seriam relevantes para outros tipos de extensões do Microsoft 365. Por exemplo, os aplicativos do Office que o suplemento estende (como Excel, PowerPoint, Word e Outlook) são especificados dentro da propriedade "extensão", assim como as personalizações da faixa de opções do aplicativo do Office. As finalidades de configuração da propriedade "extension" correspondem de perto às do elemento **\<VersionOverrides\>** no manifesto XML atual.
 
 > [!NOTE]
-> A seção **VersionOverrides** do manifesto XML atual tem um sistema de "salto duplo" para muitos recursos de cadeia de caracteres. Cadeias de caracteres, incluindo URLs, são especificadas e atribuídas a uma ID no filho dos **Recursos** de **VersionOverrides**. Os elementos que exigem uma cadeia de caracteres têm um atributo `resid` que corresponde à ID de uma cadeia de caracteres no elemento **Recursos**. A propriedade "extensão" da versão prévia do manifesto JSON simplifica as coisas, definindo cadeias de caracteres diretamente como valores de propriedade. Não há nada no manifesto JSON equivalente ao elemento **Recursos**.
+> A seção **\<VersionOverrides\>** do manifesto XML atual possui um sistema de "salto duplo" para muitos recursos de cadeia de caracteres. As cadeias de caracteres, incluindo URLs, são especificadas e atribuídas a uma ID no **\<Resources\>** filho de **\<VersionOverrides\>**. Elementos que exigem uma cadeia de caracteres têm um atributo `resid` que corresponde a ID de uma cadeia de caracteres no elemento **\<Resources\>**. A propriedade "extensão" da versão prévia do manifesto JSON simplifica as coisas, definindo cadeias de caracteres diretamente como valores de propriedade. Não há nada no manifesto JSON que seja equivalente ao elemento **\<Resources\>**.
 
 A tabela a seguir mostra um mapeamento de algumas propriedades filho de alto nível da propriedade "extensão" na versão prévia do manifesto JSON para elementos XML no manifesto atual. A notação de ponto é usada para referenciar propriedades filho.
 
 |Propriedade JSON|Objetivo|Elemento XML|Comentários|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | Identifica os conjuntos de requisitos que o suplemento precisa para ser instalado. | **Requisitos** e **Conjuntos** | |
-| "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **Hosts** |  |
-| "faixas de opções" | As faixas de opções que o suplemento personaliza. | **Hosts**, **ExtensionPoints** e vários elementos **\*FormFactor** | As propriedade "faixas de opções" é uma matriz de objetos anônimos que mesclam as finalidades desses três elementos. Consulte [a tabela "faixas de opções"](#ribbons-table).|
-| "alternativas" | Especifica a compatibilidade de versões anteriores com um suplemento COM equivalente, XLL ou ambos. | **EquivalentAddins** | Consulte [EquivalentAddins - Consulte também ](/javascript/api/manifest/equivalentaddins#see-also) para obter informações de segundo plano. |
-| "runtimes"  | Configura vários tipos de suplementos "sem interface do usuário", como suplementos de funções personalizadas e funções executadas diretamente de botões personalizados da faixa de opções. | **Runtimes**. **FunctionFile** e **ExtensionPoint** (do tipo CustomFunctions) |  |
-| "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **Evento** e **ExtensionPoint** (do tipo Eventos) |  |
+| "requirements.capabilities" | Identifica os conjuntos de requisitos que o suplemento precisa para ser instalado. | **\<Requirements\>** e **\<Sets\>** | |
+| "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **\<Hosts\>** |  |
+| "faixas de opções" | As faixas de opções que o suplemento personaliza. | **\<Hosts\>**, **ExtensionPoints** e vários elementos **\*FormFactor** | As propriedade "faixas de opções" é uma matriz de objetos anônimos que mesclam as finalidades desses três elementos. Consulte [a tabela "faixas de opções"](#ribbons-table).|
+| "alternativas" | Especifica a compatibilidade de versões anteriores com um suplemento COM equivalente, XLL ou ambos. | **\<EquivalentAddins\>** | Consulte [EquivalentAddins - Consulte também ](/javascript/api/manifest/equivalentaddins#see-also) para obter informações de segundo plano. |
+| "runtimes"  | Configura vários tipos de suplementos "sem interface do usuário", como suplementos de funções personalizadas e funções executadas diretamente de botões personalizados da faixa de opções. | **\<Runtimes\>**. **\<FunctionFile\>** e **\<ExtensionPoint\>** (do tipo CustomFunctions) |  |
+| "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **\<Event\>** e **\<ExtensionPoint\>** (do tipo Events) |  |
 
 ##### <a name="ribbons-table"></a>tabela "faixas de opções"
 
@@ -118,7 +118,7 @@ A tabela a seguir mapeia as propriedades filho dos objetos filho anônimos nas "
 |Propriedade JSON|Objetivo|Elemento XML|Comentários|
 |:-----|:-----|:-----|:-----|
 | "contextos" | Especifica as superfícies de comando que o suplemento personaliza. | vários elementos **\*CommandSurface**, como **PrimaryCommandSurface** e **MessageReadCommandSurface** |  |
-| "guias" | Configura guias personalizadas da faixa de opções. | **CustomTab** | Os nomes e a hierarquia das propriedades descendentes de "guias" corresponde estreitamente aos descendentes de **CustomTab**.  |
+| "guias" | Configura guias personalizadas da faixa de opções. | **\<CustomTab\>** | Os nomes e a hierarquia das propriedades descendentes de "guias" correspondem de perto aos descendentes de **\<CustomTab\>**.  |
 
 ## <a name="sample-preview-json-manifest"></a>Exemplo da versão prévia do manifesto JSON
 
