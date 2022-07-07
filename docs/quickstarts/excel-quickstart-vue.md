@@ -4,12 +4,12 @@ description: Aprenda a criar um suplemento do painel de tarefas simples do Excel
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090856"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659791"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Usar o Vue para criar um suplemento do painel de tarefas do Excel
 
@@ -112,7 +112,7 @@ O projeto de suplemento que você criou com o gerador Yeoman contém um código 
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. Abra **manifest.xml** e localize as marcas `<bt:Urls>` dentro da marca `<Resources>`. Localize a marca `<bt:Url>` com a ID`Taskpane.Url` e atualize seu atributo `DefaultValue`. O novo `DefaultValue` é `https://localhost:3000/index.html`. Toda a marca atualizada deve corresponder à linha a seguir.
+1. Abra **manifest.xml** e encontre as marcas `<bt:Urls>` dentro da marca **\<Resources\>**. Localize a marca `<bt:Url>` com a ID`Taskpane.Url` e atualize seu atributo `DefaultValue`. O novo `DefaultValue` é `https://localhost:3000/index.html`. Toda a marca atualizada deve corresponder à linha a seguir.
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
