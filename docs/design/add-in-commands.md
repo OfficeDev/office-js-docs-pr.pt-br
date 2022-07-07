@@ -1,21 +1,22 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 05/25/2022
+ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752852"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659672"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
 Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Office e iniciam ações no suplemento. Você pode usar comandos de suplemento para adicionar um botão à faixa de opções ou um item a um menu de contexto. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas. Os comandos de suplemento ajudam os usuários a localizar e usar o suplemento, o que pode ajudá-lo a aumentar a adoção e a reutilização do suplemento, além de melhorar a retenção de clientes.
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pelos[Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
+> - Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pelos[Aplicativos integrados](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
+> - Atualmente os suplementos de conteúdo não dão suporte a comandos de suplemento.
 
 > [!IMPORTANT]
 > Os comandos de suplemento também são compatíveis com o Outlook. Para saber mais, confira [Comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -28,12 +29,19 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 
 ![Captura de tela de um comando de suplemento no Excel na Web.](../images/add-in-commands-2.png)
 
+## <a name="types-of-add-in-commands"></a>Tipos de comandos de suplemento
+
+Há dois tipos de comandos de suplemento, com base no tipo de ação que o comando dispara.
+
+- **Comandos do painel de tarefas**: O botão ou item de menu abre o painel de tarefas do suplemento. Você adiciona esse tipo de comando de suplemento com marcação no manifesto. O "código por trás" do comando é fornecido pelo Office.
+- **Comandos de função**: O item de botão ou menu executa qualquer JavaScript arbitrário. O código quase sempre chama APIs na Biblioteca JavaScript do Office, mas não precisa. Esse tipo de suplemento normalmente não exibe nenhuma interface do usuário além do próprio item de menu ou botão. Observe o seguinte sobre comandos de função:
+
+   - A função disparada pode chamar o método [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) para mostrar uma caixa de diálogo, que é uma boa maneira de exibir um erro, mostrar o progresso ou solicitar a entrada do usuário. Se o suplemento estiver configurado para usar um runtime compartilhado, a função também poderá chamar o método [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)).
+   - O runtime do JavaScript no qual o comando de função é executado é um runtime completo baseado em navegador. Ele pode renderizar HTML e chamar a Internet para enviar ou obter dados.
+
 ## <a name="command-capabilities"></a>Recursos de comandos
 
 Os seguintes recursos de comando são compatíveis no momento.
-
-> [!NOTE]
-> Atualmente os suplementos de conteúdo não dão suporte a comandos de suplemento.
 
 ### <a name="extension-points"></a>Pontos de extensão
 
@@ -44,11 +52,6 @@ Os seguintes recursos de comando são compatíveis no momento.
 
 - Botões simples: disparar ações específicas.
 - Menus – menu suspenso simples com botões que disparam ações.
-
-### <a name="actions"></a>Ações
-
-- ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
-- ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](/javascript/api/office/office.ui).  
 
 ### <a name="default-enabled-or-disabled-status"></a>Status padrão Habilitado ou Desabilitado
 

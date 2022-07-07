@@ -1,22 +1,22 @@
 ---
-title: Depurar seu suplemento baseado em Outlook evento
-description: Saiba como depurar seu Outlook suplemento que implementa a ativação baseada em evento.
+title: Depurar seu suplemento do Outlook baseado em evento
+description: Saiba como depurar seu suplemento do Outlook que implementa a ativação baseada em evento.
 ms.topic: article
 ms.date: 04/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f779ab2bc8776d0926e1a5eb615f77107d7ac1e
-ms.sourcegitcommit: 1de45dec4fc2b0bc962e344bbb7f53ae95cfb515
+ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2022
-ms.locfileid: "65128088"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659679"
 ---
-# <a name="debug-your-event-based-outlook-add-in"></a>Depurar seu suplemento baseado em Outlook evento
+# <a name="debug-your-event-based-outlook-add-in"></a>Depurar seu suplemento do Outlook baseado em evento
 
 Este artigo fornece diretrizes de depuração à medida que [você implementa a](autolaunch.md) ativação baseada em eventos em seu suplemento. O recurso de ativação baseada em evento foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) com eventos adicionais agora disponíveis na versão prévia. Para obter mais informações, consulte [eventos com suporte](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
-> Essa funcionalidade de depuração só é compatível com Outlook no Windows com uma assinatura Microsoft 365 usuário.
+> Esse recurso de depuração só tem suporte no Outlook no Windows com uma assinatura do Microsoft 365.
 
 Neste artigo, discutiremos os principais estágios para habilitar a depuração.
 
@@ -25,11 +25,11 @@ Neste artigo, discutiremos os principais estágios para habilitar a depuração.
 - [Anexar Visual Studio Code](#attach-visual-studio-code)
 - [Depurar](#debug)
 
-Você tem várias opções para criar seu projeto de suplemento. Dependendo da opção que você está usando, as etapas podem variar. Nesse caso, se você usou o gerador Yeoman para suplementos do Office para criar seu projeto de suplemento (por exemplo, fazendo o passo a passo de ativação baseada em [evento), siga](autolaunch.md) as etapas do escritório yo, caso contrário, siga as outras etapas. Visual Studio Code deve ser pelo menos a versão 1.56.1.
+Você tem várias opções para criar seu projeto de suplemento. Dependendo da opção que você está usando, as etapas podem variar. Nesse caso, se você usou o gerador Yeoman para Suplementos do Office para criar seu projeto de suplemento (por exemplo, fazendo o passo a passo de ativação baseada em [evento), siga](autolaunch.md) as etapas do escritório yo, caso contrário, siga as outras  etapas. Visual Studio Code deve ser pelo menos a versão 1.56.1.
 
 ## <a name="mark-your-add-in-for-debugging"></a>Marcar seu suplemento para depuração
 
-1. Defina a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` é **a ID** no manifesto do suplemento.
+1. Defina a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` é o **\<Id\>** manifesto do suplemento.
 
     **yo office**: em uma janela de linha de comando, navegue até a raiz da pasta do suplemento e execute o comando a seguir.
 
@@ -39,11 +39,11 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
 
     Além de criar o código e iniciar o servidor local, `UseDirectDebugger` esse comando deve definir a chave do Registro para esse suplemento como `1`.
 
-    **Outros**: adicione a `UseDirectDebugger` chave do Registro em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Substitua `[Add-in ID]` pela **ID** do manifesto do suplemento. Defina a chave do Registro como `1`.
+    **Outros**: adicione a `UseDirectDebugger` chave do Registro em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Substitua `[Add-in ID]` pelo **\<Id\>** manifesto do suplemento. Defina a chave do Registro como `1`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Inicie Outlook área de trabalho (ou reinicie Outlook se ela já estiver aberta).
+1. Inicie a área de trabalho do Outlook (ou reinicie o Outlook se ele já estiver aberto).
 1. Redigir uma nova mensagem ou compromisso. Você deverá ver a caixa de diálogo a seguir. Não *interaja* com a caixa de diálogo ainda.
 
     ![Captura de tela da caixa de diálogo do manipulador baseado em Evento de Depuração.](../images/outlook-win-autolaunch-debug-dialog.png)
@@ -76,7 +76,7 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Área de** Trabalho).
 1. Abra o Visual Studio Code.
-1. Vá para **a Pasta** **FileOpen** > , navegue até a pasta que você acabou de criar e escolha **Selecionar Pasta**.
+1. Vá para **Abrir** > **Pasta de Arquivo**, navegue até a pasta que você acabou de criar e escolha **Selecionar Pasta**.
 1. Na Barra de Atividades, selecione o item **Depurar** (Ctrl+Shift+D).
 
     ![Captura de tela do ícone Depurar na Barra de Atividades.](../images/vs-code-debug.png)
@@ -102,7 +102,7 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
 
 ## <a name="attach-visual-studio-code"></a>Anexar Visual Studio Code
 
-1. Para localizar o nome do **bundle.js, abra** a seguinte pasta no Windows Explorer e pesquise a **ID** do suplemento (encontrada no manifesto).
+1. Para localizar o nome dobundle.js, abra **a** pasta a seguir no Windows Explorer **\<Id\>** e pesquise o suplemento (encontrado no manifesto).
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
@@ -119,17 +119,17 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
 
 ## <a name="debug"></a>Depurar
 
-1. Depois de confirmar que o depurador está anexado, retorne ao Outlook e, na caixa de diálogo manipulador baseado em evento de **depuração**, escolha **OK** .
+1. Depois de confirmar que o depurador está anexado, retorne ao Outlook e, na caixa de diálogo manipulador baseado em evento de **depuração** , escolha **OK** .
 
 1. Agora você pode atingir seus pontos de interrupção Visual Studio Code, permitindo que você depure seu código de ativação baseado em evento.
 
 ## <a name="stop-debugging"></a>Parar a depuração
 
-Para interromper a depuração para o restante da sessão Outlook da área de trabalho atual, na caixa **de** diálogo manipulador baseado em Evento de Depuração, escolha **Cancelar**. Para reabilitar a depuração, reinicie Outlook área de trabalho.
+Para interromper a depuração para o restante da sessão atual da área de trabalho do Outlook, na caixa de diálogo manipulador baseado em Evento de **Depuração** , escolha **Cancelar**. Para reabilitar a depuração, reinicie a área de trabalho do Outlook.
 
-Para impedir que a caixa de diálogo do manipulador baseado em evento de **depuração** seja exibida e interrompa a depuração para sessões Outlook subsequentes, exclua a chave do Registro associada ou defina seu valor como`0`: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`.
+Para impedir que a caixa de diálogo do manipulador baseado em evento de **depuração** apareça e interrompa a depuração para sessões subsequentes do Outlook, exclua a chave do Registro associada ou defina seu valor como `0`: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`.
 
 ## <a name="see-also"></a>Confira também
 
-- [Configurar seu Outlook para ativação baseada em evento](autolaunch.md)
+- [Configurar seu suplemento do Outlook para ativação baseada em evento](autolaunch.md)
 - [Depurar seu suplemento com o log do tempo de execução](../testing/runtime-logging.md#runtime-logging-on-windows)

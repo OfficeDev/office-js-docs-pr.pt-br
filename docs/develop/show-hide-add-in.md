@@ -1,20 +1,20 @@
 ---
 title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
-description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um complemento enquanto ele é executado continuamente.
+description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e881f5fc0d5258aa886709a0aee2eee5836feef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743960"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660127"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Você pode mostrar o painel de tarefas do seu Office Add-in chamando a `Office.addin.showAsTaskpane()` função.
+Você pode mostrar o painel de tarefas do suplemento do Office chamando a `Office.addin.showAsTaskpane()` função.
 
 ```javascript
 function onCurrentQuarter() {
@@ -26,7 +26,7 @@ function onCurrentQuarter() {
 }
 ```
 
-O código anterior assume um cenário em que há uma planilha Excel chamada **CurrentQuarterSales**. O complemento torna o painel de tarefas visível sempre que essa planilha for ativada. O método `onCurrentQuarter` é um manipulador para o [Office. Evento Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) que foi registrado na planilha.
+O código anterior pressupõe um cenário em que há uma planilha do Excel chamada **CurrentQuarterSales**. O suplemento tornará o painel de tarefas visível sempre que essa planilha for ativada. O método `onCurrentQuarter` é um manipulador para o [evento Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) que foi registrado para a planilha.
 
 Você também pode ocultar o painel de tarefas chamando a `Office.addin.hide()` função.
 
@@ -36,36 +36,36 @@ function onCurrentQuarterDeactivated() {
 }
 ```
 
-O código anterior é um manipulador que está registrado para o [Office. Evento Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member).
+O código anterior é um manipulador registrado para o [evento Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member) .
 
 ## <a name="additional-details-on-showing-the-task-pane"></a>Detalhes adicionais sobre como mostrar o painel de tarefas
 
-Quando você chamar `Office.addin.showAsTaskpane()`, Office exibirá em um painel de tarefas o arquivo atribuído como o valor de ID de recurso (`resid`) do painel de tarefas. Esse `resid` valor pode ser atribuído ou alterado abrindo seu **arquivomanifest.xml** e localizando `<SourceLocation>` dentro do `<Action xsi:type="ShowTaskpane">` elemento.
-(Consulte [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
+Quando você chamar `Office.addin.showAsTaskpane()`, o Office exibirá em um painel de tarefas o arquivo atribuído como o valor da ID do recurso (`resid`) do painel de tarefas. Esse `resid` valor pode ser atribuído ou alterado abrindo seu arquivo **manifest.xml** e localizando **\<SourceLocation\>** dentro do `<Action xsi:type="ShowTaskpane">` elemento.
+(Consulte [Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md) para obter detalhes adicionais.)
 
-Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código continuará em execução até que a função seja concluída. Aguarde essa conclusão com `await` a `then()` palavra-chave ou um método, dependendo da sintaxe JavaScript que você está usando.
+Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código continuará em execução até que a função seja concluída. Aguarde essa conclusão com a palavra-chave `await` ou um `then()` método, dependendo da sintaxe JavaScript que você está usando.
 
-## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurar seu complemento para usar o tempo de execução compartilhado
+## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurar o suplemento para usar o runtime compartilhado
 
-Para usar os `showAsTaskpane()` métodos e `hide()` , seu complemento deve usar o tempo de execução compartilhado. Para obter mais informações, [consulte Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+Para usar os `showAsTaskpane()` métodos `hide()` e os métodos, o suplemento deve usar o runtime compartilhado. Para obter mais informações, [consulte Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="preservation-of-state-and-event-listeners"></a>Preservação de ouvintes de estado e eventos
 
-Os `hide()` métodos and `showAsTaskpane()` alteram apenas *a visibilidade* do painel de tarefas. Eles não descarregam ou recarregam (ou reinicializam seu estado).
+Os `hide()` métodos `showAsTaskpane()` e os métodos alteram *apenas a visibilidade* do painel de tarefas. Eles não descarregam nem recarregam (ou reinicializam seu estado).
 
-Considere o seguinte cenário: um painel de tarefas foi projetado com guias. A **guia** Início é aberta quando o complemento é lançado pela primeira vez. Suponha que um usuário abra **a guia Configurações** e, posteriormente, o código no painel de tarefas chama `hide()` em resposta a algum evento. Ainda mais tarde, o código chama `showAsTaskpane()` em resposta a outro evento. O painel de tarefas reaparecerá e a **guia Configurações** ainda está selecionada.
+Considere o seguinte cenário: um painel de tarefas é projetado com guias. A **guia** Página Inicial é aberta quando o suplemento é iniciado pela primeira vez. Suponha que um usuário abra **a guia Configurações** e, posteriormente, o código no painel de tarefas chame `hide()` em resposta a algum evento. Ainda mais tarde, o código `showAsTaskpane()` chama em resposta a outro evento. O painel de tarefas reaparecerá e a **guia Configurações** ainda está selecionada.
 
-![Uma captura de tela do painel de tarefas que tem quatro guias rotuladas home, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
+![Uma captura de tela do painel de tarefas que tem quatro guias rotuladas como Página Inicial, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
 
 Além disso, todos os ouvintes de eventos registrados no painel de tarefas continuam a ser executados mesmo quando o painel de tarefas está oculto.
 
-Considere o seguinte cenário: o painel de `Worksheet.onActivated` `Worksheet.onDeactivated` tarefas tem um manipulador registrado para o Excel e eventos para uma planilha chamada **Sheet1**. O manipulador ativado faz com que um ponto verde apareça no painel de tarefas. O manipulador desativado transforma o ponto vermelho (que é seu estado padrão). Suponha então que o código chama `hide()` **quando Sheet1** não é ativado e o ponto é vermelho. Enquanto o painel de tarefas está oculto, **Sheet1** é ativado. Chamadas de código posteriores `showAsTaskpane()` em resposta a algum evento. Quando o painel de tarefas é aberto, o ponto fica verde porque os ouvintes e manipuladores de eventos foram embora o painel de tarefas tenha sido oculto.
+Considere o seguinte cenário: o painel de tarefas tem um manipulador registrado para o Excel `Worksheet.onActivated` `Worksheet.onDeactivated` e eventos para uma planilha chamada **Sheet1**. O manipulador ativado faz com que um ponto verde apareça no painel de tarefas. O manipulador desativado torna o ponto vermelho (que é seu estado padrão). Suponha que esse código chame quando `hide()` **Sheet1** não estiver ativado e o ponto estiver vermelho. Enquanto o painel de tarefas está oculto, **Sheet1** é ativado. Chamadas de código posteriores `showAsTaskpane()` em resposta a algum evento. Quando o painel de tarefas é aberto, o ponto fica verde porque os ouvintes e manipuladores de eventos foram executados mesmo que o painel de tarefas estivesse oculto.
 
-## <a name="handle-the-visibility-changed-event"></a>Manipular o evento de visibilidade alterado
+## <a name="handle-the-visibility-changed-event"></a>Manipular o evento de visibilidade alterada
 
-Quando seu código altera a visibilidade do painel de tarefas com `showAsTaskpane()` ou `hide()`, Office dispara o `VisibilityModeChanged` evento. Pode ser útil lidar com esse evento. Por exemplo, suponha que o painel de tarefas exibe uma lista de todas as planilhas em uma planilha. Se uma nova planilha for adicionada enquanto o painel de tarefas estiver oculto, tornar o painel de tarefas visível não adicionaria, por si só, o novo nome da planilha à lista. Mas seu código pode `VisibilityModeChanged` responder ao evento para recarregar [a propriedade Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de todas as planilhas da coleção [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , conforme mostrado no código de exemplo abaixo.
+Quando seu código altera a visibilidade do painel de tarefas com `showAsTaskpane()` ou `hide()`, o Office dispara o `VisibilityModeChanged` evento. Pode ser útil lidar com esse evento. Por exemplo, suponha que o painel de tarefas exiba uma lista de todas as planilhas em uma pasta de trabalho. Se uma nova planilha for adicionada enquanto o painel de tarefas estiver oculto, tornar o painel de tarefas visível não adicionaria, por si só, o novo nome da planilha à lista. Mas seu código pode `VisibilityModeChanged` responder ao evento para recarregar [a propriedade Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de todas as planilhas na coleção [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , conforme mostrado no código de exemplo abaixo.
 
-Para registrar um manipulador para o evento, você não usa um método "adicionar manipulador" como faria na maioria dos Office javaScript. Em vez disso, há uma função especial para a qual você passa seu manipulador: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Apresentamos um exemplo a seguir. Observe que a propriedade `args.visibilityMode` é tipo [VisibilityMode](/javascript/api/office/office.visibilitymode).
+Para registrar um manipulador para o evento, você não usa um método "adicionar manipulador" como faria na maioria dos contextos javaScript do Office. Em vez disso, há uma função especial para a qual você passa o manipulador: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Apresentamos um exemplo a seguir. Observe que a propriedade `args.visibilityMode` é do tipo [VisibilityMode](/javascript/api/office/office.visibilitymode).
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
@@ -77,7 +77,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-A função retorna outra função que *desregula* o manipulador. Aqui está um exemplo simples, mas não robusto.
+A função retorna outra função que *desregisia* o manipulador. Aqui está um exemplo simples, mas não robusto.
 
 ```javascript
 var removeVisibilityModeHandler =
@@ -92,7 +92,7 @@ var removeVisibilityModeHandler =
 removeVisibilityModeHandler();
 ```
 
-O `onVisibilityModeChanged` método é assíncrono e retorna uma promessa, o que significa que seu código precisa aguardar o cumprimento da promessa antes de chamar o manipulador **de registro** .
+O `onVisibilityModeChanged` método é assíncrono e retorna uma promessa, o que significa que seu código precisa aguardar o cumprimento da promessa antes de chamar o manipulador **de cancelamento** de registro.
 
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
@@ -105,7 +105,7 @@ var removeVisibilityModeHandler =
     });
 ```
 
-A função de desregister também é assíncrona e retorna uma promessa. Portanto, se você tiver um código que não deve ser executado até que a desregistração seja concluída, aguarde a promessa retornada pela função de desregister.
+A função de cancelamento de registro também é assíncrona e retorna uma promessa. Portanto, se você tiver um código que não deve ser executado até que o cancelamento do registro seja concluído, aguarde a promessa retornada pela função de cancelamento de registro.
 
 ```javascript
 // await the promise from the deregister handler before continuing

@@ -1,26 +1,26 @@
 ---
-title: Implementar o acréscimo ao enviar em seu Outlook suplemento
-description: Saiba como implementar o recurso de acréscimo ao enviar em seu Outlook suplemento.
+title: Implementar append-on-send em seu suplemento do Outlook
+description: Saiba como implementar o recurso de acréscimo ao enviar em seu suplemento do Outlook.
 ms.topic: article
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 968b730aca1fc36640e43ff45404c8d4c7b92d47
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244832"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659826"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar o acréscimo ao enviar em seu Outlook suplemento
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar append-on-send em seu suplemento do Outlook
 
-Ao final deste passo a passo, você terá um suplemento Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem é enviada.
+Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem é enviada.
 
 > [!NOTE]
 > O suporte para esse recurso foi introduzido no conjunto de requisitos 1.9. Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [Outlook início](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rápido que cria um projeto de suplemento com o gerador Yeoman para Office suplementos.
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -32,7 +32,7 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione o nó inteiro `<VersionOverrides>` (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,7 +120,7 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
     ```
 
 > [!TIP]
-> Para saber mais sobre manifestos para Outlook suplementos, [consulte Outlook manifestos de suplemento](manifests.md).
+> Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
 
 ## <a name="implement-append-on-send-handling"></a>Implementar a manipulação de acréscimo ao enviar
 

@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Suplementos do Office.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b473c6981e5dd1782e059a73393dc82ff919f8
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891946"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659665"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -87,7 +87,7 @@ Esta seção descreve a proteção oferecida pela plataforma de Suplementos do O
 Os Suplementos do Office são criados usando tecnologias da Web que são executadas em um controle de navegador ou **iframe**. Por causa disso, o uso de suplementos é semelhante à navegação em sites da Web na Internet ou intranet. Os suplementos podem ser externos a uma organização (se você adquirir o suplemento do AppSource) ou internos (se você adquirir o suplemento de um catálogo de suplementos do Exchange Server, catálogo de aplicativos do SharePoint ou compartilhamento de arquivos na rede de uma organização). Os suplementos têm acesso limitado à rede, e a maioria dos suplementos pode ler ou gravar no documento ativo ou no item de email. A plataforma de suplemento aplica certas restrições antes de um usuário ou administrador instalar ou iniciar um suplemento. Mas, como acontece com qualquer modelo de extensibilidade, os usuários devem ser cautelosos antes de iniciar um complemento desconhecido.
 
 > [!NOTE]
-> Os usuários podem ver um prompt de segurança para confiar no domínio na primeira vez que um suplemento é carregado. Isso acontecerá se o host de domínio do suplemento estiver fora do domínio do Exchange local ou do Servidor do Office Online.
+> Os usuários podem ver um prompt de segurança para confiar no domínio na primeira vez que um suplemento é carregado. Isso acontecerá se o host de domínio do suplemento estiver fora do domínio do Exchange local ou Servidor do Office Online.
 
 A plataforma de suplemento aborda as preocupações de privacidade dos usuários finais das seguintes maneiras.
 
@@ -101,7 +101,7 @@ A plataforma de suplemento aborda as preocupações de privacidade dos usuários
 
   - No Outlook no Windows, selecione **Mais Aplicativos** na faixa de opções e, em seguida, **escolha Obter Suplementos**.
   - No Outlook no Mac, selecione o botão de reticências (`...`) na faixa de opções e escolha Obter **Suplementos**.
-  - No Outlook na Web, escolha **Obter Suplementos** na faixa de opções.
+  - Em Outlook na Web, escolha **Obter Suplementos** na faixa de opções.
 
   Os administradores também podem gerenciar esse acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
@@ -232,9 +232,9 @@ Os desenvolvedores também devem tomar nota das seguintes práticas de seguranç
 
 - Os desenvolvedores não devem usar controles ActiveX em Suplementos do Office, pois os controles ActiveX não dão suporte à natureza de plataforma cruzada da plataforma de suplementos.
 
-- Os suplementos de conteúdo e de painel de tarefas assumem o uso das mesmas configurações de SSL que o navegador usa por padrão e permitem que a maioria do conteúdo seja fornecido apenas por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML para o suplemento.
+- Os suplementos de conteúdo e de painel de tarefas pressupõem as mesmas configurações de SSL que o navegador usa por padrão e permitem que a maioria do conteúdo seja entregue somente por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar **\<SourceLocation\>** no elemento do manifesto do suplemento uma URL que use HTTPS para identificar o local do arquivo HTML para o suplemento.
 
-  Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testar suplementos, os desenvolvedores devem verificar se as configurações a seguir estão selecionadas nas Opções da **Internet** no Painel de Controle e se nenhum aviso de segurança aparece em seus cenários de teste.
+  Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testar suplementos, os desenvolvedores devem verificar se as configurações a seguir estão selecionadas nas Opções da **Internet** no **Painel de Controle** e se nenhum aviso de segurança aparece em seus cenários de teste.
 
   - Verifique se a configuração de segurança, **Exibir conteúdo misto**, para a **zona da Internet** está definida como **Prompt**. Você pode fazer isso selecionando o seguinte em Opções da **Internet**: na  guia Segurança, selecione a zona da **Internet**, selecione Nível **personalizado, role** para procurar Exibir conteúdo misto e selecione  Solicitar se ainda não estiver selecionado.
 

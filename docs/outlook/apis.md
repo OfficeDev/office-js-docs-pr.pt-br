@@ -1,22 +1,22 @@
 ---
 title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
-ms.date: 01/14/2022
+ms.date: 06/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 583d2b07a0590e7a04b052d5675320b8ea73a61f
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496310"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660253"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
-Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs javaScript Office expostas por meio do [objeto Mailbox](#mailbox-object).
+Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs JavaScript do Office expostas por meio do [objeto Mailbox](#mailbox-object) .
 
 ## <a name="officejs-library"></a>Biblioteca Office.js
 
-Para interagir com a API do suplemento do Outlook, você precisará usar as APIs JavaScript no Office.js. A rede de distribuição de conteúdo (CDN) para a biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
+Para interagir com a [API de suplemento do Outlook](/javascript/api/outlook), você precisa usar as APIs JavaScript em Office.js. A CDN (rede de distribuição de conteúdo) da biblioteca é `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Suplementos enviados ao AppSource devem fazer referência ao Office.js por essa CDN. Eles não podem usar uma referência local.
 
 Referência CDN em um `<script>` marca na `<head>` marca da página da web (arquivo. HTML,. aspx ou. PHP) implementa interface do usuário do seu suplemento.
 
@@ -27,11 +27,11 @@ Referência CDN em um `<script>` marca na `<head>` marca da página da web (arqu
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]
-> Ao desenvolver um add-in para qualquer aplicativo cliente Office, referenciar a API `<head>` JavaScript Office de dentro da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
+> Ao desenvolver um suplemento para qualquer aplicativo cliente do Office, faça referência à API `<head>` JavaScript do Office de dentro da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
-Todas as APIs do Outlook pertencem ao conjunto de requisitos `Mailbox`. O conjunto de requisitos `Mailbox` tem versões, e cada novo conjunto de APIs lançado pertence a uma versão superior. Nem todos os clientes do Outlook terão suporte ao conjunto mais recente de APIs quando for lançado, mas se um cliente do Outlook declarar suporte a um conjunto de requisitos, ele dará suporte a todas as APIs nesse conjunto.
+Todas as APIs do Outlook pertencem ao conjunto [de requisitos de Caixa de Correio](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets). O conjunto de requisitos `Mailbox` tem versões, e cada novo conjunto de APIs lançado pertence a uma versão superior. Nem todos os clientes do Outlook terão suporte ao conjunto mais recente de APIs quando for lançado, mas se um cliente do Outlook declarar suporte a um conjunto de requisitos, ele dará suporte a todas as APIs nesse conjunto.
 
 Especifique uma versão mínima de conjunto de requisitos no manifesto para controlar em quais clientes do Outlook o suplemento aparecerá. Por exemplo, se você especificar a versão 1.3 do conjunto de requisitos, o suplemento não aparecerá nos clientes do Outlook incompatíveis com a versão mínima 1.3.
 
@@ -48,9 +48,9 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > essas verificações não são necessárias para APIs que estão na versão do conjunto de requisitos especificada no manifesto.
 
-Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto nos elementos `<Requirements>`. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto no **\<Requirements\>** elemento. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
-O elemento `<Methods>` não se aplica a suplementos do Outlook e, portanto, você não pode declarar suporte a métodos específicos.
+O **\<Methods\>** elemento não se aplica aos suplementos do Outlook, portanto, você não pode declarar suporte para métodos específicos.
 
 ## <a name="permissions"></a>Permissões
 
@@ -65,7 +65,7 @@ Seu suplemento requer as permissões apropriadas para usar as APIs de que precis
 | **Leitura/gravação** | Além do que é permitido em **Leitura do item**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
 | **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
-Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Office Desadições](../concepts/privacy-and-security.md).
+Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento **\<Permissions\>** no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md).
 
 ## <a name="mailbox-object"></a>Objeto Mailbox
 

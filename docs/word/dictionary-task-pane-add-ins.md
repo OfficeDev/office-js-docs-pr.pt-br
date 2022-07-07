@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um suplemento do painel de tarefas do dicionário.
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6df6ec5e3fc90899475e3fd089a8e5c0ca766b
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187319"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660057"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -250,11 +250,11 @@ Especifica configurações para suplementos de dicionário.
 
 **Elemento pai**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **Elementos filho**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **Comentários**
 
@@ -266,11 +266,11 @@ Especifica os idiomas regionais aos quais o dicionário oferece suporte. Necess�
 
 **Elemento pai**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Elemento filho**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **Comentários**
 
@@ -307,7 +307,7 @@ Especifica um idioma regional ao qual o dicionário oferece suporte. Necessário
 
 **Elemento pai**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **Comentários**
 
@@ -325,7 +325,7 @@ Especifica o ponto de extremidade do serviço de consulta de dicionário. Necess
 
 **Elemento pai**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Comentários**
 
@@ -343,7 +343,7 @@ Especifica o texto a ser usado em citações. Necessário para suplementos de di
 
 **Elemento pai**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Comentários**
 
@@ -363,7 +363,7 @@ Especifica o nome deste dicionário. Necessário para suplementos de dicionário
 
 **Elemento pai**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Comentários**
 
@@ -383,7 +383,7 @@ Especifica a URL da página inicial do dicionário. Necessário para suplementos
 
 **Elemento pai**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Comentários**
 
@@ -489,7 +489,7 @@ a:hover, a:active
 
 O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
 
-Os principais membros do Office API JavaScript (Office.js) que são chamados dessa implementação são os seguintes:
+Os principais membros da API JavaScript do Office (Office.js) que são chamados dessa implementação são os seguintes:
 
 - O [evento](/javascript/api/office) `Office` de inicialização do objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
 - O [método addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) `Document` do objeto, `initialize` que é chamado na função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para escutar as alterações de seleção do usuário.

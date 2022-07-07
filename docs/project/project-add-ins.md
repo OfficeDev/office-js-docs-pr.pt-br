@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ba6c01ea05174e9d965032c02c403c1bfe121dac
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744292"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659931"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -68,7 +68,7 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimento 1. Para criar o arquivo de manifesto do suplemento para Pesquisa do Bing
 
-- Crie um arquivo XML em um diretório local. O arquivo XML inclui o elemento **OfficeApp** e elementos filhos, que estão descritos em [Manifesto XML dos suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo denominado BingSearch.xml que contém o XML a seguir.
+- Crie um arquivo XML em um diretório local. O arquivo XML inclui o **\<OfficeApp\>** e os elementos filhos, que são descritos no [manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo denominado BingSearch.xml que contém o XML a seguir.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,16 +99,16 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
     ```
 
 - A seguir estão os elementos necessários no manifesto do suplemento.
-  - No elemento **OfficeApp**, o atributo `xsi:type="TaskPaneApp"` especifica que o suplemento é um tipo de painel de tarefas.
-  - O elemento **Id** é um UUID e precisa ser exclusivo.
-  - O elemento **Version** é a versão do suplemento. O elemento **ProviderName** é o nome da empresa ou do desenvolvedor que fornece o suplemento. O elemento **DefaultLocale** especifica a localidade padrão para as cadeias de caracteres no manifesto.
-  - O elemento **DisplayName** é o nome que mostra a lista suspensa **Suplemento do Painel de Tarefas** na guia **EXIBIÇÃO** da faixa de opções do Project 2013. O nome pode conter no máximo 32 caracteres.
-  - O elemento **Description** contém a descrição do suplemento para a localidade padrão. O nome pode conter no máximo 2000 caracteres.
+  - No elemento **\<OfficeApp\>**, o atributo `xsi:type="TaskPaneApp"` especifica que o suplemento é um tipo de painel de tarefas.
+  - O elemento **\<Id\>** é um UUID e deve ser exclusivo.
+  - O elemento **\<Version\>** é a versão do suplemento. O elemento **\<ProviderName\>** é o nome da empresa ou desenvolvedor que fornece o suplemento. O elemento **\<DefaultLocale\>** especifica a localidade padrão para as cadeias de caracteres no manifesto.
+  - O elemento **\<DisplayName\>** é o nome que aparece na lista suspensa **Suplemento do Painel de Tarefas** na guia **EXIBIR** da faixa de opções no Project 2013. O nome pode conter no máximo 32 caracteres.
+  - O elemento **\<Description\>** contém a descrição do suplemento para a localidade padrão. O nome pode conter no máximo 2000 caracteres.
   - O elemento **Recursos** contém um ou mais elementos filho **Funcionalidade** que especificam o aplicativo do Office.
-  - O elemento **DefaultSettings** inclui o elemento **SourceLocation**, que especifica o caminho de um arquivo HTML em um compartilhamento de arquivo ou a URL de uma página da Web que o suplemento usa. Um suplemento de painel de tarefas ignora os elementos **RequestedHeight** e **RequestedWidth**.
-  - O elemento **IconUrl** é opcional. Ele pode ser um ícone em um compartilhamento de arquivo ou a URL de um ícone em um aplicativo Web.
+  - O elemento **\<DefaultSettings\>** inclui o elemento **\<SourceLocation\>**, que especifica o caminho de um arquivo HTML em um compartilhamento de arquivos ou a URL de uma página da Web que o suplemento usa. Um suplemento do painel de tarefas ignora o elemento **\<RequestedHeight\>** e o elemento **\<RequestedWidth\>**.
+  - O elemento **\<IconUrl\>** é opcional. Ele pode ser um ícone em um compartilhamento de arquivo ou a URL de um ícone em um aplicativo Web.
 
-- (Opcional) Adicione elementos **Override** que têm valores de outras localidades. Por exemplo, o manifesto a seguir fornece elementos **Override** para valores em francês de **DisplayName**, **Description**, **IconUrl** e **SourceLocation**.
+- (Opcional) Adicione elementos **\<Override\>** que têm valores para outras localidades. Por exemplo, o manifesto a seguir fornece elementos **\<Override\>** para valores franceses de **\<DisplayName\>**, **\<Description\>**, **\<IconUrl\>**, e **\<SourceLocation\>**.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +146,7 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
 
 No Project 2013, é possível instalar suplementos como soluções autônomas em um compartilhamento de arquivos ou em um catálogo de suplementos particular. Também é possível avaliar e comprar suplementos no AppSource.
 
-Pode haver vários arquivos XML do manifesto do suplemento e subdiretórios em um compartilhamento de arquivos. Você pode adicionar ou remover locais e catálogos do diretório do manifesto usando a guia **Catálogos de Suplementos Confiáveis** na caixa de diálogo **Central de Confiabilidade** no Project 2013. Para mostrar um suplemento no Project, o elemento **SourceLocation** em um manifesto deve apontar para um site ou arquivo de origem HTML existente.
+Pode haver vários arquivos XML do manifesto do suplemento e subdiretórios em um compartilhamento de arquivos. Você pode adicionar ou remover catálogos e locais de diretório de manifesto usando a guia **Catálogos de Suplementos Confiáveis** na caixa de diálogo **Central de Confiabilidade** no Project 2013. Para mostrar um suplemento no Project, o elemento **\<SourceLocation\>** em manifesto deve apontar para um site ou arquivo de origem HTML existente.
 
 > [!NOTE]
 > Se estiver desenvolvendo em um computador com Windows, o Internet Explorer ou o Microsoft Edge devem ser instalados. Para obter mais detalhes consulte [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).

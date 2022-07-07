@@ -3,12 +3,12 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 837ceac37375052b31acb0c243f4d5b2e2601511
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484208"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660281"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -229,7 +229,7 @@ Um suplemento do Outlook é composto por dois componentes: o manifesto de suplem
 
 Nem todos os clientes do Outlook oferecem suporte aos recursos mais recentes e alguns usuários terão uma versão mais antiga do Outlook. Ter versões do esquema permite que os desenvolvedores compilem suplementos compatíveis com versões anteriores, usando os recursos mais recentes quando estiverem disponíveis, mas ainda funcionando em versões mais antigas.
 
-O elemento **VersionOverrides** no manifesto é um exemplo disso. Todos os elementos definidos dentro de **VersionOverrides** substituirão o mesmo elemento na outra parte do manifesto. Isso significa que, sempre que possível, o Outlook usará o que está na seção **VersionOverrides** para configurar o suplemento. No entanto, se a versão do Outlook não oferecer suporte a uma determinada versão de **VersionOverrides**, o Outlook a ignorará e dependerá das informações no restante do manifesto. 
+O elemento **\<VersionOverrides\>** no manifesto é um exemplo disso. Todos os elementos definidos dentro de **\<VersionOverrides\>** substituirão o mesmo elemento na outra parte do manifesto. Isso significa que, sempre que possível, o Outlook usará o que está na seção **\<VersionOverrides\>** para configurar o suplemento. No entanto, se a versão do Outlook não oferecer suporte a uma determinada versão de **\<VersionOverrides\>**, o Outlook a ignorará e dependerá das informações no restante do manifesto. 
 
 Com essa abordagem, os desenvolvedores não precisam criar vários manifestos individuais e podem, em vez disso, manter tudo definido em um único arquivo.
 
@@ -239,18 +239,18 @@ As versões atuais do esquema são:
 |Versão|Descrição|
 |:-----|:-----|
 |v1.0|Oferece suporte à versão 1.0 da API JavaScript do Office. Para suplementos do Outlook, isso oferece suporte ao formulário de leitura. |
-|v1.1|Oferece suporte à versão 1.1 da API do Office JavaScript e **VersionOverrides**. Para suplementos do Outlook, isso adiciona suporte ao formulário de composição.|
-|**VersionOverrides** 1.0|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento.|
-|**VersionOverrides** 1.1|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento e adiciona suporte para recursos mais recentes, como [painéis de tarefas fixáveis](pinnable-taskpane.md) e suplementos para dispositivos móveis.|
+|v1.1|Dá suporte à versão 1.1 da API JavaScript do Office e **\<VersionOverrides\>**. Para suplementos do Outlook, isso acrescenta o suporte ao formulário de composição.|
+|**\<VersionOverrides\>** 1.0|Dá suporte a versões posteriores da API JavaScript do Office. Oferece suporte aos comandos de suplemento.|
+|**\<VersionOverrides\>** 1.1|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento e adiciona suporte para recursos mais recentes, como [painéis de tarefas fixáveis](pinnable-taskpane.md) e suplementos para dispositivos móveis.|
 
-Este artigo abordará os requisitos de um manifesto da versão 1.1. Mesmo que seu manifesto de suplemento use o elemento **VersionOverrides**, ainda é importante incluir os elementos do manifesto da versão 1.1 para permitir que seu suplemento funcione com clientes mais antigos que não oferecem suporte a **VersionOverrides**.
+Este artigo abordará os requisitos de um manifesto da versão 1.1. Mesmo que seu manifesto de suplemento use o elemento **\<VersionOverrides\>**, ainda é importante incluir os elementos do manifesto da versão 1.1 para permitir que seu suplemento funcione com clientes mais antigos que não oferecem suporte a **\<VersionOverrides\>**.
 
 > [!NOTE]
 > O Outlook usa um esquema para validar manifestos. O esquema requer que os elementos no manifesto apareçam em uma ordem específica. Se você incluir elementos fora do pedido exigido, poderá ocorrer erros ao fazer o carregamento lateral do seu suplemento. Você pode carregar o [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) para ajudar a criar seu manifesto com elementos na ordem necessária.
 
 ## <a name="root-element"></a>Elemento root
 
-O elemento raiz do manifesto do suplemento do Outlook é **OfficeApp**. Esse elemento também declara o namespace padrão, a versão do esquema e o tipo de suplemento. Coloque todos os outros elementos no manifesto dentro de suas marcas de abertura e fechamento. A seguir está um exemplo do elemento raiz.
+O elemento root para o manifesto de suplementos do Outlook é **\<OfficeApp\>**. Esse elemento também declara o namespace padrão, a versão do esquema e o tipo de suplemento. Coloque todos os outros elementos no manifesto dentro de suas marcas de abertura e fechamento. A seguir está um exemplo do elemento root.
 
 
 ```XML
@@ -274,7 +274,7 @@ Se as permissões solicitadas do suplemento mudarem, os usuários serão solicit
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-O elemento **VersionOverrides** é a localização das informações para os [ comandos de suplemento](add-in-commands-for-outlook.md).
+O elemento **\<VersionOverrides\>** é a localização das informações para os [comandos de suplemento](add-in-commands-for-outlook.md).
 
 Este elemento também é onde os suplementos definem o suporte para [suplementos móveis](add-mobile-support.md).
 
@@ -282,7 +282,7 @@ Para uma discussão sobre este elemento, consulte [Criar comandos de suplementos
 
 ## <a name="localization"></a>Localização
 
-Alguns aspectos do suplemento precisam ser localizados para localidades diferentes, como o nome, a descrição e a URL carregada. Esses elementos podem ser localizados facilmente especificando o valor padrão e, em seguida, substituições de localidade no elemento **resources** dentro do elemento **VersionOverrides**. O exemplo a seguir mostra como substituir uma imagem, uma URL e uma cadeia de caracteres.
+Alguns aspectos do suplemento precisam ser localizados para localidades diferentes, como nome, descrição e a URL que é carregada. Esses elementos podem ser localizados facilmente especificando o valor padrão e, em seguida, a localidade substitui no elemento **\<Resources\>** dentro do elemento **\<VersionOverrides\>**. O exemplo a seguir mostra como substituir uma imagem, uma URL e uma cadeia de caracteres.
 
 
 ```XML
@@ -314,7 +314,7 @@ A referência de esquema contém informações completas sobre quais elementos p
 
 ## <a name="hosts"></a>Hosts
 
-Os suplementos do Outlook especificam o **hosts** como o seguinte:
+Os suplementos do Outlook especificam o elemento **\<Hosts\>** como o seguinte:
 
 ```XML
 <OfficeApp>
@@ -326,15 +326,15 @@ Os suplementos do Outlook especificam o **hosts** como o seguinte:
 </OfficeApp>
 ```
 
-Isso é separado do elemento **Hosts** dentro do elemento **VersionOverrides**, que é discutido em [Criar comandos de suplemento in em seu manifesto para Excel, PowerPoint e Word](../develop/create-addin-commands.md).
+Isso é separado do elemento **\<Hosts\>** dentro do elemento **\<VersionOverrides\>**, que é discutido em [Criar comandos de suplemento em seu manifesto para Excel, PowerPoint e Word](../develop/create-addin-commands.md).
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>Requisitos
 
-O elemento **Requirements** especifica o conjunto de APIs disponível para o suplemento. Para um suplemento do Outlook, o conjunto de requisitos deve ser uma caixa de correio e um valor de 1.1 ou superior. Confira a referência à API para obter a versão mais recente do conjunto de requisitos. Saiba mais sobre os conjuntos de requisitos em [APIs de suplementos do Outlook](apis.md).
+O elemento **\<Requirements\>** especifica o conjunto de APIs disponível para o suplemento. Para um suplemento do Outlook, o conjunto de requisitos deve ser uma Caixa de Correio e um valor de 1.1 ou superior. Confira a referência à API para obter a versão mais recente do conjunto de requisitos. Confira as [APIs de suplemento do Outlook](apis.md) para saber mais sobre os conjuntos de requisitos.
 
-O elemento **Requirements** também pode aparecer no elemento **VersionOverrides**, permitindo que o suplemento especifique um requisito diferente quando for carregado em clientes que oferecem suporte a **VersionOverrides**.
+O elemento **\<Requirements\>** também pode aparecer no elemento **\<VersionOverrides\>**, permitindo que o suplemento especifique um requisito diferente quando carregado em clientes que dão suporte a **\<VersionOverrides\>**.
 
-O exemplo a seguir usa o atributo **DefaultMinVersion** do elemento **Sets** a fim de exigir a versão 1.1 ou superior do office.js, e o atributo **MinVersion** do elemento **Set** a fim de exigir a versão 1.1 do conjunto de requisitos de caixa de correio.
+O exemplo a seguir usa o atributo **DefaultMinVersion** do elemento **\<Sets\>** para exigir o office.js versão 1.1 ou superior e o atributo **MinVersion** do elemento **\<Set\>** para exigir o conjunto de requisitos de Caixa de Correio versão 1.1.
 
 ```XML
 <OfficeApp>
@@ -350,15 +350,15 @@ O exemplo a seguir usa o atributo **DefaultMinVersion** do elemento **Sets** a f
 
 ## <a name="form-settings"></a>Configurações de formulário
 
-O elemento **FormSettings** é usado por clientes mais antigos do Outlook, que oferecem suporte apenas ao esquema 1.1 e não a **VersionOverrides**. Com esse elemento, os desenvolvedores podem definir como o suplemento será exibido nesses clientes. Há duas partes: **ItemRead** e **ItemEdit**. **ItemRead** é usado para especificar como o suplemento será exibido quando o usuário ler mensagens e compromissos. **ItemEdit** descreve como o suplemento será exibido enquanto o usuário estiver redigindo uma resposta, uma nova mensagem, um novo compromisso ou editando um compromisso do qual seja organizador.
+O elemento **\<FormSettings\>** é usado por clientes mais antigos do Outlook, que só dão suporte ao esquema 1.1 e não **\<VersionOverrides\>**. Com esse elemento, os desenvolvedores podem definir como o suplemento será exibido nesses clientes. Há duas partes: **ItemRead** e **ItemEdit**. **ItemRead** é usado para especificar como o suplemento aparece quando o usuário lê mensagens e compromissos. **ItemEdit** descreve como o suplemento será exibido enquanto o usuário estiver redigindo uma resposta, uma nova mensagem, um novo compromisso ou editando um compromisso do qual ele é o organizador.
 
-Essas configurações estão diretamente relacionadas às regras de ativação no elemento **Rule**. Por exemplo, se um suplemento especificar que ele deve aparecer em uma mensagem no modo de redação, será necessário especificar um formulário **ItemEdit**.
+Essas configurações estão diretamente relacionadas às regras de ativação no elemento **\<Rule\>**. Por exemplo, se um suplemento especificar que ele deve aparecer em uma mensagem no modo de composição, será necessário especificar um formulário **ItemEdit**.
 
 Para saber mais, confira a Referência de esquema para manifestos de Suplementos do Office (v1.1).
 
 ## <a name="app-domains"></a>Domínios de aplicativo
 
-O domínio da página inicial do suplemento que você especifica no elemento **SourceLocation** é o domínio padrão do suplemento. Sem usar os elementos **AppDomains** e **AppDomain**, se o suplemento tentar navegar para outro domínio, o navegador abrirá uma nova janela fora do painel do suplemento. Para permitir que o suplemento navegue para outro domínio dentro do painel do suplemento, adicione um elemento **AppDomains** e inclua cada domínio adicional em seu próprio subelemento **AppDomain** no manifesto do suplemento.
+O domínio da página inicial do suplemento que você especifica no elemento **\<SourceLocation\>** é o domínio padrão do suplemento. Sem usar os elementos **\<AppDomains\>** e **\<AppDomain\>**, se o suplemento tentar navegar para outro domínio, o navegador abrirá uma nova janela fora do painel do suplemento. Para permitir que o suplemento navegue até outro domínio dentro do painel do suplemento, adicione um elemento **\<AppDomains\>** e inclua cada domínio adicional em seu próprio subelemento **\<AppDomain\>** no manifesto do suplemento.
 
 O exemplo a seguir especifica um domínio  `https://www.contoso2.com` como um segundo domínio para o qual o suplemento pode navegar dentro do painel do suplemento.
 
@@ -386,7 +386,7 @@ Para mais detalhes, confira [Especificar os domínios que você deseja abrir na 
 
 ## <a name="permissions"></a>Permissões
 
-O elemento **Permissions** contém as permissões necessárias para o suplemento. Em geral, você deve especificar a permissão mínima exigida por seu suplemento, dependendo dos métodos exatos que você planeja usar. Por exemplo, um suplemento de email ativado em formulários de redação que apenas lê, mas não grava nas propriedades do item, como [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), e não chama [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para acessar quaisquer operações dos Serviços Web do Exchange, deve especificar a permissão **ReadItem**. Confira detalhes sobre as permissões disponíveis em [Noções básicas sobre permissões de suplementos do Outlook](understanding-outlook-add-in-permissions.md).
+O elemento **\<Permissions\>** contém as permissões necessárias para o suplemento. Em geral, você deve especificar a permissão mínima exigida por seu suplemento, dependendo dos métodos exatos que você planeja usar. Por exemplo, um suplemento de email ativado em formulários de composição que apenas lê, mas não grava nas propriedades do item, por exemplo, [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), e não chama [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para acessar quaisquer operações dos Serviços Web do Exchange, deve especificar a permissão **ReadItem**. Para obter detalhes sobre as permissões disponíveis, confira [Noções básicas sobre permissões de suplemento do Outlook](understanding-outlook-add-in-permissions.md).
 
 **Modelo de permissões de quatro camadas para suplementos de email**
 
@@ -402,12 +402,12 @@ O elemento **Permissions** contém as permissões necessárias para o suplemento
 
 ## <a name="activation-rules"></a>Regras de ativação
 
-As regras de ativação são especificadas no elemento **Rule**. O elemento **Rule** pode aparecer como um filho do elemento **OfficeApp** em manifestos 1.1.
+As regras de ativação são especificadas no elemento **\<Rule\>**. O elemento **\<Rule\>** pode aparecer como um filho do elemento **\<OfficeApp\>** em manifestos 1.1.
 
 As regras de ativação podem ser usadas para ativar um suplemento com base em uma ou mais das seguintes condições no item selecionado no momento.
 
 > [!NOTE]
-> As regras de ativação somente se aplicam aos clientes que não dão suporte ao elemento **VersionOverrides**.
+> As regras de ativação somente se aplicam aos clientes que não dão suporte ao elemento **\<VersionOverrides\>**.
 
 - O tipo de item e/ou a classe da mensagem
 

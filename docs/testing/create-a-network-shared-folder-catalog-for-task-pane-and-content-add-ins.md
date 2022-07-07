@@ -1,29 +1,29 @@
 ---
-title: Realizar sideload Office suplementos para teste de um compartilhamento de rede
-description: Saiba como fazer sideload de um Office para teste de um compartilhamento de rede.
+title: Realizar sideload de Suplementos do Office para teste de um compartilhamento de rede
+description: Saiba como fazer sideload de um Suplemento do Office para teste de um compartilhamento de rede.
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752880"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659833"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Realizar sideload Office suplementos para teste de um compartilhamento de rede
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Realizar sideload de Suplementos do Office para teste de um compartilhamento de rede
 
-Você pode testar um suplemento Office em um cliente Office que está no Windows publicando o manifesto em um compartilhamento de arquivos de rede (instruções abaixo). Essa opção de implantação destina-se a ser usada quando você tiver concluído o desenvolvimento e o teste em um localhost e quiser testar o suplemento de uma conta de nuvem ou servidor não local.
+Você pode testar um Suplemento do Office em um cliente do Office que está no Windows publicando o manifesto em um compartilhamento de arquivos de rede (instruções abaixo). Essa opção de implantação destina-se a ser usada quando você tiver concluído o desenvolvimento e o teste em um localhost e quiser testar o suplemento de uma conta de nuvem ou servidor não local.
 
 > [!IMPORTANT]
 > A implantação por compartilhamento de rede não tem suporte para suplementos de produção. Esse método tem as seguintes limitações.
 >
-> - O suplemento só pode ser instalado em Windows computadores.
+> - O suplemento só pode ser instalado em computadores Windows.
 > - Se uma nova versão de um suplemento alterar a faixa de opções, como adicionar uma guia personalizada ou um botão personalizado a ela, cada usuário precisará reinstalar o suplemento.
 
 > [!NOTE]
 > Se o projeto de suplemento tiver sido criado com uma versão suficientemente recente do [Gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md), o suplemento realizará sideload automaticamente no cliente de desktop do Office ao executar o `npm start`.
 
-Este artigo se aplica somente aos suplementos word, Excel, PowerPoint Project e somente Windows. Se você quiser testar em outra plataforma ou quiser testar um suplemento Outlook, consulte um dos tópicos a seguir para realizar o sideload do suplemento.
+Este artigo se aplica somente ao teste de suplementos do Word, Excel, PowerPoint e Project e somente no Windows. Se você quiser testar em outra plataforma ou quiser testar um suplemento do Outlook, consulte um dos tópicos a seguir para realizar o sideload do suplemento.
 
 - [Realizar sideload de suplementos do Office no Office na Web para teste](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -115,13 +115,13 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 ## <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
-1. Coloque o arquivo de manifesto XML de qualquer suplemento que você esteja testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
+1. Coloque o arquivo de manifesto XML de qualquer suplemento que você esteja testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Especifique a URL no elemento **\<SourceLocation\>** do arquivo de manifesto.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > Para Visual Studio, use o manifesto criado pelo projeto na `{projectfolder}\bin\Debug\OfficeAppManifests` pasta.
+    > Para projetos do Visual Studio, use o manifesto criado pelo projeto na `{projectfolder}\bin\Debug\OfficeAppManifests` pasta.
 
 1. No Excel, Word ou PowerPoint, selecione **Meus Suplementos** na guia **Inserir** da faixa de opções. No Project, selecione **Meus Suplementos** na guia **Projeto** da faixa de opções.
 
@@ -131,7 +131,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento de sideload
 
-Você pode remover um suplemento com sideload anteriormente limpando o cache Office no computador. Detalhes sobre como limpar o cache no Windows podem ser encontrados no artigo Limpar [o Office cache](clear-cache.md#clear-the-office-cache-on-windows).
+Você pode remover um suplemento com sideload anteriormente limpando o cache do Office em seu computador. Detalhes sobre como limpar o cache no Windows podem ser encontrados no artigo [Limpar o cache do Office](clear-cache.md#clear-the-office-cache-on-windows).
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,41 +3,41 @@ title: Usar o SSO para obter a identidade do usuário conectado
 description: Chame a API getAccessToken para obter o token de ID com nome, email e informações adicionais sobre o usuário conectado.
 ms.date: 02/16/2022
 localization_priority: Normal
-ms.openlocfilehash: 2e8cc0074f5b6f4f5598320f07c8bf5c0a7b301d
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 5416c469a15d7eda9333f511c61e2cff1a901018
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682235"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660064"
 ---
 # <a name="use-sso-to-get-the-identity-of-the-signed-in-user"></a>Usar o SSO para obter a identidade do usuário conectado
 
-Use a `getAccessToken` API para obter um token de acesso que contém a identidade do usuário atual conectado ao Office. O token de acesso também é um token de ID porque contém declarações de identidade sobre o usuário conectado, como seu nome e email. Você também pode usar o token de ID para identificar o usuário ao chamar seus próprios serviços Web. Para ligar`getAccessToken`, você deve configurar seu Office suplemento para usar o SSO com o Office.
+Use a `getAccessToken` API para obter um token de acesso que contém a identidade do usuário atual conectado ao Office. O token de acesso também é um token de ID porque contém declarações de identidade sobre o usuário conectado, como seu nome e email. Você também pode usar o token de ID para identificar o usuário ao chamar seus próprios serviços Web. Para ligar `getAccessToken` , você deve configurar seu Suplemento do Office para usar o SSO com o Office.
 
-Neste artigo, você criará um suplemento Office que obtém o token de ID e exibe o nome, o email e a ID exclusiva do usuário no painel de tarefas.
+Neste artigo, você criará um Suplemento do Office que obtém o token de ID e exibe o nome, o email e a ID exclusiva do usuário no painel de tarefas.
 
 > [!NOTE]
-> O SSO Office e a `getAccessToken` API não funcionam em todos os cenários. Sempre implemente uma caixa de diálogo de fallback para conectar o usuário quando o SSO não estiver disponível. Para obter mais informações, [consulte Autenticar e autorizar com a API Office caixa de diálogo](auth-with-office-dialog-api.md).
+> O SSO com o `getAccessToken` Office e a API não funciona em todos os cenários. Sempre implemente uma caixa de diálogo de fallback para conectar o usuário quando o SSO não estiver disponível. Para obter mais informações, consulte [Autenticar e autorizar com a API de caixa de diálogo do Office](auth-with-office-dialog-api.md).
 
 ## <a name="create-an-app-registration"></a>Criar um registro de aplicativo
 
-Para usar o SSO com o Office, você precisa criar um registro de aplicativo no portal do Azure para que o plataforma de identidade da Microsoft possa fornecer serviços de autenticação e autorização para seu suplemento do Office e seus usuários.
+Para usar o SSO com o Office, você precisa criar um registro de aplicativo no portal do Azure para que o plataforma de identidade da Microsoft possa fornecer serviços de autenticação e autorização para seu Suplemento do Office e seus usuários.
 
 1. Para registrar seu aplicativo, vá para a [portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) página.
 
-1. Entre com as **_credenciais de_** administrador em sua Microsoft 365 locatário. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as **_credenciais de_** administrador no locatário do Microsoft 365. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
 1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
    - Defina **Nome** para `Office-Add-in-SSO`.
    - Defina **Tipos de conta com suporte** para **Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**.
-   - Defina o tipo de aplicativo como **Web** e defina **o URI de Redirecionamento** como `https://localhost:[port]/dialog.html`. Substitua `[port]` pelo número da porta correto para seu aplicativo Web. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **url SSL** do projeto Web.
+   - Defina o tipo de aplicativo como **Web** e defina **o URI de Redirecionamento** como `https://localhost:[port]/dialog.html`. Substitua `[port]` pelo número da porta correto para seu aplicativo Web. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **de URL SSL** do projeto Web.
    - Escolha **Registrar**.
 
-1. Na página **Office Suplemento no SSO**, copie e salve os valores para a **ID** do Aplicativo (cliente) e a **ID do Diretório (locatário**). Use ambos os valores nos procedimentos posteriores.
+1. Na página **office-add-in-SSO** , copie e salve os valores para a **ID** do Aplicativo (cliente) e a **ID do Diretório (locatário**). Use ambos os valores nos procedimentos posteriores.
 
    > [!NOTE]
-   > Essa **ID** de aplicativo (cliente) é o valor de "público-alvo" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), buscam acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+   > Essa **ID** de Aplicativo (cliente) é o valor de "público", quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), buscam acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Selecione **Autenticação** em **Gerenciar**. Na seção **Concessão implícita** , habilite as caixas de seleção para **token de acesso** e **token de ID**.
 
@@ -45,33 +45,33 @@ Para usar o SSO com o Office, você precisa criar um registro de aplicativo no p
 
 1. Selecionar **Expor uma API** em **Gerenciar**. Selecione **o link** Definir. Isso gerará o URI da ID do Aplicativo no formulário `api://[app-id-guid]`, onde está `[app-id-guid]` a **ID do Aplicativo (cliente**).
 
-1. Na ID gerada, insira `localhost:[port]/` (observe a barra "/" acrescentada ao final) entre as barras duplas e o GUID. Substitua `[port]` pelo número da porta correto para seu aplicativo Web. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **url SSL** do projeto Web.
+1. Na ID gerada, insira `localhost:[port]/` (observe a barra "/" acrescentada ao final) entre as barras duplas e o GUID. Substitua `[port]` pelo número da porta correto para seu aplicativo Web. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **de URL SSL** do projeto Web.
    Quando terminar, a ID inteira deverá ter o formulário `api://localhost:[port]/[app-id-guid]`; por exemplo `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-1. Selecione o botão **Adicionar um escopo**. No painel que se abre, insira `access_as_user` como o **Nome de escopo**.
+1. Selecione o botão **Adicionar um escopo**. No painel que é aberto, insira `access_as_user` como o **\<Scope\>** nome.
 
 1. Definir **Quem pode consentir?** aos **Administradores e usuários**.
 
 1. Preencha os campos para configurar os prompts de consentimento do administrador e do usuário com valores apropriados `access_as_user` para o escopo que permite que o aplicativo cliente do Office use as APIs Web do suplemento com os mesmos direitos que o usuário atual. Sugestões:
 
-   - **Nome de exibição de** consentimento do administrador: Office pode atuar como o usuário.
+   - **Administração nome de exibição de consentimento**: o Office pode atuar como o usuário.
    - **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
-   - **Nome de exibição de** consentimento do usuário: Office pode agir como você.
-   - **Descrição de** consentimento do usuário: Office para chamar as APIs Web do suplemento com os mesmos direitos que você tem.
+   - **Nome de exibição de consentimento do** usuário: o Office pode agir como você.
+   - **Descrição de** consentimento do usuário: habilite o Office para chamar as APIs Web do suplemento com os mesmos direitos que você tem.
 
 1. Verifique se o **Estado** está definido como **Habilitado**.
 
 1. Selecione **Adicionar escopo**.
 
    > [!NOTE]
-   > A parte de domínio do nome de **Escopo** exibidos logo abaixo do campo de texto deve corresponder automaticamente ao URI de ID do aplicativo definidos na etapa anterior com `/access_as_user` acrescentado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+   > A parte do domínio **\<Scope\>** do nome exibida logo abaixo do campo de texto deve corresponder automaticamente ao URI da ID do Aplicativo que você definiu anteriormente, `/access_as_user` com acrescentado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. Na seção **Aplicativos cliente autorizados**, insira a ID a seguir para pré-autorizar todos os Microsoft Office de extremidade do aplicativo.
+1. Na seção **Aplicativos cliente autorizados** , insira a ID a seguir para pré-autorizar todos os pontos de extremidade de aplicativo do Microsoft Office.
 
-   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`(Todos os Microsoft Office de extremidade do aplicativo)
+   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Todos os pontos de extremidade de aplicativo do Microsoft Office)
 
     > [!NOTE]
-    > A `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pré-autoriza Office em todas as plataformas a seguir. Como alternativa, você pode inserir um subconjunto adequado das IDs a seguir se, por algum motivo, quiser negar a autorização para Office em algumas plataformas. Basta deixar de fora as IDs das plataformas das quais você deseja reprisar a autorização. Os usuários do suplemento nessas plataformas não poderão chamar suas APIs Web, mas outras funcionalidades no suplemento ainda funcionarão.
+    > A `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID autoriza previamente o Office em todas as plataformas a seguir. Como alternativa, você pode inserir um subconjunto adequado das IDs a seguir se, por algum motivo, quiser negar a autorização ao Office em algumas plataformas. Basta deixar de fora as IDs das plataformas das quais você deseja reprisar a autorização. Os usuários do suplemento nessas plataformas não poderão chamar suas APIs Web, mas outras funcionalidades no suplemento ainda funcionarão.
     >
     > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     > - `93d53678-613d-4013-afc1-62e9e444a0a5`(Office na Web)
@@ -83,7 +83,7 @@ Para usar o SSO com o Office, você precisa criar um registro de aplicativo no p
 
 1. Selecione **Permissões para API** em **Gerenciar** e selecione **Adicionar uma permissão**. No painel que se abre, escolha **Microsoft Graph** e, em seguida, escolha **Permissões delegadas**.
 
-1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Pesquise e selecione a **permissão de** perfil. A `profile` permissão é necessária para o aplicativo Office para obter um token para seu aplicativo Web de suplemento.
+1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Pesquise e selecione a **permissão de** perfil. A `profile` permissão é necessária para que o aplicativo do Office obtenha um token para seu aplicativo Web de suplemento.
 
    - perfil
 
@@ -98,14 +98,14 @@ Para usar o SSO com o Office, você precisa criar um registro de aplicativo no p
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. Inicie Visual Studio 2019 e escolha **Criar um novo projeto**.
-1. Pesquise e selecione **o Excel projeto de Suplemento** web. Depois clique em **Próximo**. Observação: o SSO funciona com qualquer Office, mas para este artigo funcionará com o Excel.
+1. Inicie o Visual Studio 2019 e escolha **Criar um novo projeto**.
+1. Pesquise e selecione o **modelo de projeto do** Suplemento Web do Excel. Depois clique em **Próximo**. Observação: o SSO funciona com qualquer aplicativo do Office, mas para este artigo funcionará com o Excel.
 1. Insira um nome de projeto, como **sso-display-user-info** e escolha **Criar**. Você pode deixar os outros campos com valores padrão.
-1. Na caixa **de diálogo Escolher o tipo de** suplemento, selecione Adicionar nova funcionalidade ao Excel e escolha **Concluir**.
+1. Na caixa **de diálogo Escolher o tipo de** suplemento, selecione **Adicionar nova funcionalidade ao Excel** e escolha **Concluir**.
 
 O projeto é criado e conterá dois projetos na solução.
 
-- **sso-display-user-info**: contém o manifesto e os detalhes para sideload do suplemento para Excel.
+- **sso-display-user-info**: contém o manifesto e os detalhes para sideload do suplemento para o Excel.
 - **sso-display-user-infoWeb**: o projeto ASP.NET que hospeda as páginas da Web para o suplemento.
 
 # <a name="yo-office"></a>[yo escritório](#tab/yooffice)
@@ -114,7 +114,7 @@ Verifique se você [configurou seu ambiente de desenvolvimento](../overview/set-
 
 1. Para criar o projeto, digite o seguinte comando.
 
-   ```command line
+   ```command line
    yo office --projectType taskpane --name 'sso-display-user-info' --host excel --js true
    ```
 
@@ -130,11 +130,11 @@ O projeto é criado em uma nova pasta chamada **sso-display-user-info**.
 
 # <a name="yo-office"></a>[yo escritório](#tab/yooffice)
 
-1. No Visual Studio, abra o **manifest.xml** arquivo.
+1. No Visual Studio Code, abra o **manifest.xml** arquivo.
 
 ---
 
-1. Próximo à parte inferior do manifesto há um elemento de `</Resources>` fechamento. Insira o XML a seguir logo abaixo do `</Resources>` elemento, mas antes do elemento de `</VersionOverrides>` fechamento. Para Office aplicativos diferentes Outlook, adicione a marcação ao final da `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` seção. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+1. Próximo à parte inferior do manifesto há um elemento de `</Resources>` fechamento. Insira o XML a seguir logo abaixo do `</Resources>` elemento, mas antes do elemento de `</VersionOverrides>` fechamento. Para aplicativos do Office diferentes do Outlook, adicione a marcação ao final da `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` seção. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
    ```xml
    <WebApplicationInfo>
@@ -148,27 +148,27 @@ O projeto é criado em uma nova pasta chamada **sso-display-user-info**.
    </WebApplicationInfo>
    ```
 
-1. Substitua `[port]` pelo número da porta correto para seu projeto. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **url SSL** do projeto Web.
+1. Substitua `[port]` pelo número da porta correto para seu projeto. Se você criou o suplemento usando o yo office, o número da porta normalmente é 3000 e encontrado no arquivo package.json. Se você criou o suplemento com o Visual Studio 2019, a porta será encontrada na propriedade **de URL SSL** do projeto Web.
 1. Substitua ambos `[application-id]` os espaços reservados pela ID do aplicativo real do registro do aplicativo.
 1. Salve o arquivo.
 
 O XML inserido contém os seguintes elementos e informações.
 
-- **WebApplicationInfo** – o pai dos seguintes elementos.
-- **ID** - O ID do cliente do suplemento Este é um ID do aplicativo que você obtém como parte do registro do suplemento. Confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
-- **Resource** – A URL do suplemento. Esse é o mesmo URI (incluindo o protocolo `api:`) que você usou ao registrar o suplemento no AAD. Parte do domínio deste URI deve corresponder ao domínio, incluindo quaisquer subdomínios, usados nos URLs na seção `<Resources>` do manifesto do suplemento e o URI deve terminar com o ID do cliente no `<Id>`.
-- **Scopes** – O pai de uma ou mais elementos **Scope**.
-- **Scope** – Especifica uma permissão que seu suplemento precisa para o AAD. As permissões `profile` e `openID` são sempre necessárias e podem ser as únicas permissões necessárias, se o suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisa de elementos **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
+- **\<WebApplicationInfo\>** - O pai dos elementos a seguir.
+- **\<Id\>** - A ID do cliente do suplemento Esta é uma ID de aplicativo que você obtém como parte do registro do suplemento. Confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- **\<Resource\>** - A URL do suplemento. Esse é o mesmo URI (incluindo o protocolo `api:`) que você usou ao registrar o suplemento no AAD. A parte de domínio desse URI deve corresponder ao domínio, incluindo quaisquer subdomínios, usados nas URLs **\<Resources\>** na seção do manifesto do suplemento e o URI deve terminar com a ID **\<Id\>** do cliente no .
+- **\<Scopes\>** - O pai de um ou mais **\<Scope\>** elementos.
+- **\<Scope\>** – Especifica uma permissão que o suplemento precisa para o AAD. As permissões `profile` e `openID` são sempre necessárias e podem ser as únicas permissões necessárias, se o suplemento não acessar o Microsoft Graph. Se isso ocorrer, você também precisará de **\<Scope\>** elementos para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
 ## <a name="add-the-jwt-decode-package"></a>Adicionar o pacote jwt-decode
 
-Você pode chamar a `getAccessToken` API para obter o token de ID de Office. Primeiro, vamos adicionar o pacote jwt-decode para facilitar a decodificar e exibir o token de ID.
+Você pode chamar a `getAccessToken` API para obter o token de ID do Office. Primeiro, vamos adicionar o pacote jwt-decode para facilitar a decodificar e exibir o token de ID.
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. Abra a Visual Studio solução.
-1. No menu, escolha **Ferramentas > NuGet Gerenciador de Pacotes > Gerenciador de Pacotes Console**.
-1. Insira o comando a seguir no **Gerenciador de Pacotes Console**.
+1. Abra a solução do Visual Studio.
+1. No menu, escolha **Ferramentas > Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
+1. Insira o comando a seguir no **Console do Gerenciador de Pacotes**.
 
    `Install-Package jwt-decode -Projectname sso-display-user-infoWeb`
 
@@ -338,7 +338,7 @@ Execute `npm start` na linha de comando.
 
 ---
 
-1. Quando Excel, entre no Office com a mesma conta de locatário usada para criar o registro do aplicativo.
+1. Quando o Excel for iniciado, entre no Office com a mesma conta de locatário usada para criar o registro de aplicativo.
 1. Na faixa **de opções** Página Inicial, **escolha Mostrar Painel de Tarefas** para abrir o suplemento.
 1. No painel de tarefas do suplemento, escolha **Obter token de ID**.
 

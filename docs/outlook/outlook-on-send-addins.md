@@ -3,12 +3,12 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: eda6444a84632de5349af42deab7744c712551ad
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229649"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660260"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,12 +25,12 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar, incluindo a atualização cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
+| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
-|Navegador da Web:<br>interface do Outlook moderna|Sim|Não aplicável|Não aplicável|
-|Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Sim|Sim|
+|Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|
+|Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Sim|Sim|
 
 > [!NOTE]
 > O recurso ao enviar foi lançado oficialmente no conjunto de requisitos 1.8 (consulte o servidor [atual e o suporte ao cliente](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
@@ -46,7 +46,7 @@ Você pode usar o recurso Ao enviar para criar um suplemento do Outlook que inte
 - Verifique se a mensagem inclui uma linha de assunto.
 - Defina um destinatário predeterminado.
 
-A validação é feita no lado do cliente Outlook quando o evento de envio é disparado e o suplemento tem até 5 minutos antes de expirar. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicita que o usuário execute uma ação.
+A validação é feita no lado do cliente no Outlook quando o evento de envio é disparado e o suplemento tem até 5 minutos antes de expirar. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicita que o usuário execute uma ação.
 
 > [!NOTE]
 > No Outlook na Web, quando o recurso ao enviar é disparado em uma mensagem que está sendo composta na guia do navegador Outlook, o item é exibido em sua própria janela ou guia do navegador para concluir a validação e outros processamentos.
@@ -73,11 +73,11 @@ Além disso, não é recomendável `item.close()` que você chame o manipulador 
 
 ### <a name="mailbox-typemode-limitations"></a>Limitações de tipo/modo de caixa de correio
 
-A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além das situações em que os suplementos não são ativados conforme descrito nos itens de Caixa de Correio disponíveis para a seção de [suplementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de suplementos do Outlook, a funcionalidade não tem suporte no momento para o modo offline em que esse modo está disponível.
+A funcionalidade Ao enviar é compatível apenas com caixas de correio de usuários no Outlook na Web, Windows e Mac. Além das situações em que os suplementos não são ativados conforme descrito nos itens de Caixa de Correio disponíveis para [a seção suplementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de suplementos do Outlook, a funcionalidade não tem suporte no momento para o modo offline em que esse modo está disponível.
 
-Nos casos em Outlook suplementos não são ativados, o suplemento ao enviar não será executado e a mensagem será enviada.
+Nos casos em que os suplementos do Outlook não são ativados, o suplemento ao enviar não será executado e a mensagem será enviada.
 
-No entanto, se o recurso ao enviar estiver habilitado e disponível, mas o cenário de caixa de correio não tiver suporte, Outlook permitirá o envio.
+No entanto, se o recurso ao enviar estiver habilitado e disponível, mas o cenário de caixa de correio não tiver suporte, o Outlook não permitirá o envio.
 
 ## <a name="multiple-on-send-add-ins"></a>Vários suplementos Ao enviar
 
@@ -287,12 +287,12 @@ Para definir políticas de caixa de correio, os administradores podem baixar a f
 
 #### <a name="what-the-policy-does"></a>O que a política faz
 
-Por motivos de conformidade, os administrador podem precisar garantir que os usuários não possam enviar itens de mensagem de reunião até que o último suplemento Ao enviar esteja disponível para execução. Os administradores devem habilitar o envio de blocos de política de grupo quando os **suplementos da Web** não puderem ser carregados para que todos os suplementos sejam atualizados do Exchange e disponíveis para verificar se cada item de mensagem ou de reunião atende às regras e regulamentos esperados ao enviar.
+Por motivos de conformidade, os administrador podem precisar garantir que os usuários não possam enviar itens de mensagem de reunião até que o último suplemento Ao enviar esteja disponível para execução. Os administradores devem habilitar o envio de blocos de política de grupo quando os **suplementos da Web** não puderem ser carregados para que todos os suplementos sejam atualizados do Exchange e estejam disponíveis para verificar se cada mensagem ou item de reunião atende às regras e regulamentos esperados no envio.
 
 |Status da política|Resultado|
 |---|---|
 |Desabilitado|Os manifestos baixados no momento dos suplementos ao enviar (não necessariamente as versões mais recentes) são executados em itens de mensagem ou reunião que estão sendo enviados. Esse é o status/comportamento padrão.|
-|Habilitado|Depois que os manifestos mais recentes dos suplementos ao enviar são baixados do Exchange, os suplementos são executados em itens de mensagem ou reunião que estão sendo enviados. Caso contrário, o envio será bloqueado.|
+|Habilitado|Depois que os manifestos mais recentes dos suplementos ao enviar são baixados do Exchange, os suplementos são executados nos itens de mensagem ou reunião que estão sendo enviados. Caso contrário, o envio será bloqueado.|
 
 #### <a name="manage-the-on-send-policy"></a>Gerenciar a política Ao enviar
 
@@ -325,7 +325,7 @@ Por motivos de conformidade, os administradores podem precisar garantir que os u
 |Estado da chave|Resultado|
 |---|---|
 |falso|Os manifestos baixados no momento dos suplementos ao enviar (não necessariamente as versões mais recentes) são executados em itens de mensagem ou reunião que estão sendo enviados. Esse é o estado/comportamento padrão.|
-|verdadeiro|Depois que os manifestos mais recentes dos suplementos ao enviar são baixados do Exchange, os suplementos são executados em itens de mensagem ou reunião que estão sendo enviados. Caso contrário, o envio será bloqueado e **o botão** Enviar será desabilitado.|
+|verdadeiro|Depois que os manifestos mais recentes dos suplementos ao enviar são baixados do Exchange, os suplementos são executados nos itens de mensagem ou reunião que estão sendo enviados. Caso contrário, o envio será bloqueado e **o botão** Enviar será desabilitado.|
 
 ---
 
@@ -335,7 +335,7 @@ Veja a seguir os cenários com suporte e sem suporte para suplementos que usam o
 
 ### <a name="event-handlers-are-dynamically-defined"></a>Os manipuladores de eventos são definidos dinamicamente
 
-Os manipuladores de eventos do suplemento devem ser definidos `Office.initialize` `Office.onReady()` pelo tempo ou chamados (para obter mais informações, consulte [Inicialização](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) de um suplemento do Outlook e Inicializar seu [suplemento Office](../develop/initialize-add-in.md)). Se o código do manipulador for definido dinamicamente por determinadas circunstâncias durante a inicialização, você deverá criar uma função de stub para chamar o manipulador quando ele estiver completamente definido. A função stub deve ser referenciada no **atributo** do elemento `FunctionName` Event do manifesto. Essa solução alternativa garante que o manipulador esteja definido e pronto para ser referenciado uma vez `Office.initialize` ou executado `Office.onReady()` .
+Os manipuladores de eventos do suplemento devem ser definidos `Office.initialize` `Office.onReady()` pelo tempo ou chamados (para obter mais informações, consulte Inicialização de um suplemento do [Outlook](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) e inicializar seu suplemento do [Office](../develop/initialize-add-in.md)). Se o código do manipulador for definido dinamicamente por determinadas circunstâncias durante a inicialização, você deverá criar uma função de stub para chamar o manipulador quando ele estiver completamente definido. A função stub deve ser referenciada no **\<Event\>** atributo do `FunctionName` elemento do manifesto. Essa solução alternativa garante que o manipulador esteja definido e pronto para ser referenciado uma vez `Office.initialize` ou executado `Office.onReady()` .
 
 Se o manipulador não for definido depois que o suplemento for inicializado, o remetente será notificado de que "A função de retorno de chamada está inacessível" por meio de uma barra de informações no item de email.
 
@@ -386,7 +386,7 @@ Os suplementos Ao enviar serão executados durante o envio se o servidor do Exch
 Enquanto suplementos ao enviar estão processando um item, o usuário pode editar o item adicionando, por exemplo, texto ou anexos inadequados. Se você quiser impedir que o usuário edite o item enquanto o suplemento estiver processando ao enviar, poderá implementar uma solução alternativa usando uma caixa de diálogo. Essa solução alternativa pode ser usada em Outlook na Web (clássico), Windows e Mac.
 
 > [!IMPORTANT]
-> Modern Outlook na Web: para impedir que o usuário edite o item enquanto o suplemento está processando no envio, você deve definir o sinalizador *OnSendAddinsEnabled* `true` como conforme descrito nos [suplementos install Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) que usam a seção ao enviar anteriormente neste artigo.
+> Modo Outlook na Web: para impedir que o usuário edite o item enquanto o suplemento está processando no envio, você deve definir o sinalizador *OnSendAddinsEnabled* `true` como conforme descrito nos [suplementos instalar o Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) que usam a seção ao enviar anteriormente neste artigo.
 
 No manipulador ao enviar:
 
@@ -431,7 +431,7 @@ No arquivo de manifesto `Contoso Message Body Checker.xml`, inclua o arquivo de 
 ```
 
 > [!IMPORTANT]
-> Se você estiver usando o Visual Studio 2019 para desenvolver seu suplemento ao enviar, poderá receber um aviso de validação como o seguinte: "Este é um xsi:type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'inválido". Para contornar isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1.xsd, que foi fornecida como um GitHub gist em um blog sobre esse [aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
+> Se você estiver usando o Visual Studio 2019 para desenvolver seu suplemento ao enviar, poderá receber um aviso de validação como o seguinte: "Este é um xsi:type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'inválido". Para contornar isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1.xsd, que foi fornecida como um gist do GitHub em um [blog sobre esse aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
 Para o arquivo de manifesto `Contoso Subject and CC Checker.xml`, o exemplo a seguir mostra o arquivo de função e o nome da função para chamar o evento de envio de mensagem.
 
@@ -609,9 +609,9 @@ function subjectOnSendChange(subject, event) {
 
 Para saber mais sobre como adicionar um destinatário à linha CC e verificar se a mensagem de e-mail inclui uma linha de assunto ao enviar e para ver as APIs que você pode usar, consulte o [exemplo Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send). O código é bem comentado.
 
-## <a name="debug-outlook-add-ins-that-use-on-send"></a>Depurar Outlook suplementos que usam ao enviar
+## <a name="debug-outlook-add-ins-that-use-on-send"></a>Depurar suplementos do Outlook que usam ao enviar
 
-Para obter instruções sobre como depurar seu suplemento ao enviar, consulte Depurar seu suplemento sem interface do usuário [Outlook suplemento](debug-ui-less.md).
+Para obter instruções sobre como depurar seu suplemento ao enviar, consulte Depurar seu suplemento do Outlook sem interface [do usuário](debug-ui-less.md).
 
 > [!TIP]
 > Se o erro "A função de retorno de chamada estiver inacessível" aparece quando os usuários executam o suplemento e o manipulador de eventos do suplemento é definido dinamicamente, você deve criar uma função de stub como uma solução alternativa. Consulte [Manipuladores de eventos são definidos dinamicamente](#event-handlers-are-dynamically-defined) para obter mais informações.

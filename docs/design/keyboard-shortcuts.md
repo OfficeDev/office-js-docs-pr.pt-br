@@ -1,23 +1,23 @@
 ---
-title: Atalhos de teclado personalizados Office suplementos
-description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao Office Suplemento.
+title: Atalhos de teclado personalizados em Suplementos do Office
+description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao suplemento do Office.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: bd3131ea8e5f0c2f1caadca58ab2e47f588fbfc6
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752866"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659980"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados Office suplementos
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos suplementos do Office
 
 Os atalhos de teclado, também conhecidos como combinações de teclas, permitem que os usuários do suplemento trabalhem com mais eficiência. Os atalhos de teclado também melhoram a acessibilidade do suplemento para usuários com deficiências, fornecendo uma alternativa ao mouse.
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> Para começar com uma versão funcional de um suplemento com atalhos de teclado já habilitados, clone e execute o exemplo Excel [atalhos de teclado](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). Quando estiver pronto para adicionar atalhos de teclado ao seu próprio suplemento, continue com este artigo.
+> Para começar com uma versão funcional de um suplemento com atalhos de teclado já habilitados, clone e execute os [atalhos de teclado do Excel de exemplo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). Quando estiver pronto para adicionar atalhos de teclado ao seu próprio suplemento, continue com este artigo.
 
 Há três etapas para adicionar atalhos de teclado a um suplemento.
 
@@ -35,7 +35,7 @@ Adicionar atalhos de teclado personalizados exige que o suplemento use o runtime
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Vincular o arquivo de mapeamento ao manifesto
 
-Imediatamente *abaixo* (não dentro) do `<VersionOverrides>` elemento no manifesto, adicione um [elemento ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Defina `Url` o atributo como a URL completa de um arquivo JSON em seu projeto que você criará em uma etapa posterior.
+Imediatamente *abaixo* (não dentro) do **\<VersionOverrides\>** elemento no manifesto, adicione um [elemento ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Defina `Url` o atributo como a URL completa de um arquivo JSON em seu projeto que você criará em uma etapa posterior.
 
 ```xml
     ...
@@ -89,7 +89,7 @@ Crie um arquivo JSON em seu projeto. Verifique se o caminho do arquivo correspon
 
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>Criar um mapeamento de ações para suas funções
 
-1. No projeto, abra o arquivo JavaScript carregado pela página HTML no `<FunctionFile>` elemento.
+1. No projeto, abra o arquivo JavaScript carregado pela página HTML no **\<FunctionFile\>** elemento.
 1. No arquivo JavaScript, use a API [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) para mapear cada ação especificada no arquivo JSON para uma função JavaScript. Adicione o JavaScript a seguir ao arquivo. Observe o seguinte sobre o código.
 
     - O primeiro parâmetro é uma das ações do arquivo JSON.
@@ -102,7 +102,7 @@ Crie um arquivo JSON em seu projeto. Verifique se o caminho do arquivo correspon
     ```
 
 1. Para continuar o exemplo, use `'SHOWTASKPANE'` como o primeiro parâmetro.
-1. Para o corpo da função, use [o método Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) para abrir o painel de tarefas do suplemento. Quando terminar, o código deverá ser semelhante ao seguinte:
+1. Para o corpo da função, use o [método Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) para abrir o painel de tarefas do suplemento. Quando terminar, o código deverá ser semelhante ao seguinte:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -130,7 +130,7 @@ Crie um arquivo JSON em seu projeto. Verifique se o caminho do arquivo correspon
     });
     ```
 
-Seguir as etapas anteriores permite que o suplemento alterne a visibilidade do painel de tarefas pressionando **Ctrl+Alt+Para** Cima e **Ctrl+Alt+Para Baixo**. O mesmo comportamento é mostrado no exemplo [Excel atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado no repositório PnP de suplementos do Office no GitHub.
+Seguir as etapas anteriores permite que o suplemento alterne a visibilidade do painel de tarefas pressionando **Ctrl+Alt+Para** Cima e **Ctrl+Alt+Para Baixo**. O mesmo comportamento é mostrado no exemplo [de atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado do Excel no repositório PnP de Suplementos do Office no GitHub.
 
 ## <a name="details-and-restrictions"></a>Detalhes e restrições
 
@@ -172,7 +172,7 @@ Use as diretrizes a seguir ao especificar os objetos na `shortcuts` matriz do sh
 - A `default` propriedade deve conter o nome de pelo menos uma tecla modificadora (Alt, Ctrl, Shift) e apenas uma outra tecla.
 - Shift não pode ser usado como a única tecla modificadora. Combine Shift com Alt ou Ctrl.
 - Para Macs, também damos suporte à chave modificadora command.
-- Para Macs, Alt é mapeado para a tecla Option. Por Windows, Command é mapeado para a tecla Ctrl.
+- Para Macs, Alt é mapeado para a tecla Option. Para o Windows, Command é mapeado para a tecla Ctrl.
 - Quando dois caracteres são vinculados à mesma tecla física em um teclado padrão, eles são sinônimos `default` na propriedade; por exemplo, Alt+a e Alt+A são o mesmo atalho, assim como Ctrl+ e Ctrl+\_ porque "-" e "_" são a mesma tecla física.
 - O caractere "+" indica que as teclas em ambos os lados são pressionadas simultaneamente.
 
@@ -198,7 +198,7 @@ Apresentamos um exemplo a seguir.
 O esquema completo para os atalhos JSON está em [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Não há suporte para dicas de tecla, também conhecidas como atalhos de tecla sequencial, como o atalho Excel para escolher uma cor de preenchimento **Alt+H, H**, Office Suplementos.
+> Dicas de tecla, também conhecidas como atalhos de tecla sequencial, como o atalho do Excel para escolher uma cor de preenchimento **Alt+H, H**, não têm suporte em Suplementos do Office.
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Evitar combinações de teclas em uso por outros suplementos
 
@@ -208,14 +208,14 @@ No caso de um conflito, o usuário verá uma caixa de diálogo na primeira vez q
 
 ![Ilustração mostrando um modal de conflito com duas ações diferentes para um único atalho.](../images/add-in-shortcut-conflict-modal.png)
 
-O usuário pode selecionar qual ação o atalho de teclado executará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário quiser alterar suas preferências, ele poderá invocar o comando **Redefinir Office preferências** de atalho de Suplementos na caixa de pesquisa **Diga-me**. Invocar o comando limpa todas as preferências de atalho do suplemento do usuário e o usuário será solicitado novamente com a caixa de diálogo de conflito na próxima vez que tentar usar um atalho conflitantes.
+O usuário pode selecionar qual ação o atalho de teclado executará. Depois de fazer a seleção, a preferência é salva para usos futuros do mesmo atalho. As preferências de atalho são salvas por usuário, por plataforma. Se o usuário quiser alterar suas preferências, ele poderá invocar o comando Redefinir preferências de atalho de **Suplementos do Office** na caixa de pesquisa Diga-me. Invocar o comando limpa todas as preferências de atalho do suplemento do usuário e o usuário será solicitado novamente com a caixa de diálogo de conflito na próxima vez que tentar usar um atalho conflitantes.
 
-![A caixa de pesquisa Diga-me Excel mostrando a ação redefinir Office preferências de atalho do suplemento.](../images/add-in-reset-shortcuts-action.png)
+![A caixa de pesquisa Diga-me no Excel mostrando a ação redefinir as preferências de atalho do Suplemento do Office.](../images/add-in-reset-shortcuts-action.png)
 
-Para obter a melhor experiência do usuário, recomendamos que você minimize conflitos com Excel com essas boas práticas.
+Para obter a melhor experiência do usuário, recomendamos que você minimize conflitos com o Excel com essas boas práticas.
 
 - Use apenas atalhos de teclado com o seguinte padrão: **Ctrl+Shift+Alt+* x***, em que *x* é alguma outra tecla.
-- Se você precisar de mais atalhos de teclado, verifique a lista de Excel [atalhos](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f) de teclado e evite usar qualquer um deles no suplemento.
+- Se precisar de mais atalhos de teclado, verifique a lista de [atalhos](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f) de teclado do Excel e evite usar qualquer um deles em seu suplemento.
 - Quando o foco do teclado estiver dentro da interface do usuário do suplemento, **Ctrl+** Barra de espaços e **Ctrl+Shift+F10** não funcionarão, pois esses são atalhos de acessibilidade essenciais.
 - Em um computador Windows ou Mac, se o comando "Redefinir preferências de atalho de Suplementos do Office" não estiver disponível no menu de pesquisa, o usuário poderá adicionar manualmente o comando à faixa de opções personalizando a faixa de opções por meio do menu de contexto.
 
@@ -223,7 +223,7 @@ Para obter a melhor experiência do usuário, recomendamos que você minimize co
 
 É possível personalizar atalhos para serem específicos da plataforma. A seguir está um exemplo do objeto `shortcuts` que personaliza os atalhos para cada uma das seguintes plataformas: `windows`, `mac`, `web`. Observe que você ainda deve ter uma tecla `default` de atalho para cada atalho.
 
-No exemplo a seguir, a `default` chave é a chave de fallback para qualquer plataforma que não seja especificada. A única plataforma não especificada é Windows, portanto, `default` a chave só se aplicará Windows.
+No exemplo a seguir, a `default` chave é a chave de fallback para qualquer plataforma que não seja especificada. A única plataforma não especificada é o Windows, portanto, a `default` chave só será aplicada ao Windows.
 
 ```json
     "shortcuts": [
@@ -268,9 +268,9 @@ O suplemento pode permitir que os usuários reatribuam as ações do suplemento 
 > [!NOTE]
 > As APIs descritas nesta seção exigem o conjunto de [requisitos keyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) .
 
-Use o [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações de teclado personalizadas de um usuário às ações de suplementos. O método usa um `{[actionId:string]: string|null}`parâmetro do tipo, `actionId`em que os s são um subconjunto das IDs de ação que devem ser definidas no JSON de manifesto estendido do suplemento. Os valores são as combinações de teclas preferenciais do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no JSON de manifesto estendido do suplemento.
+Use o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) para atribuir combinações de teclado personalizadas de um usuário às suas ações de suplementos. O método usa um `{[actionId:string]: string|null}`parâmetro do tipo, `actionId`em que os s são um subconjunto das IDs de ação que devem ser definidas no JSON de manifesto estendido do suplemento. Os valores são as combinações de teclas preferenciais do usuário. O valor também pode ser `null`, `actionId` que removerá qualquer personalização para isso e reverterá para a combinação de teclado padrão definida no JSON de manifesto estendido do suplemento.
 
-Se o usuário estiver conectado Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário por plataforma. Atualmente, não há suporte para a personalização de atalhos para usuários anônimos.
+Se o usuário estiver conectado ao Office, as combinações personalizadas serão salvas nas configurações de roaming do usuário por plataforma. Atualmente, não há suporte para a personalização de atalhos para usuários anônimos.
 
 ```javascript
 const userCustomShortcuts = {
@@ -288,10 +288,10 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-Para descobrir quais atalhos já estão em uso para o usuário, chame o [método Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member). Esse método retorna um objeto do tipo `[actionId:string]:string|null}`, em que os valores representam a combinação de teclado atual que o usuário deve usar para invocar a ação especificada. Os valores podem vir de três fontes diferentes:
+Para descobrir quais atalhos já estão em uso para o usuário, chame o [método Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) . Esse método retorna um objeto do tipo `[actionId:string]:string|null}`, em que os valores representam a combinação de teclado atual que o usuário deve usar para invocar a ação especificada. Os valores podem vir de três fontes diferentes:
 
 - Se houver um conflito com o atalho e o usuário tiver optado por usar uma ação diferente (nativa ou outro suplemento) para essa combinação de teclado, `null` o valor retornado será uma vez que o atalho foi substituído e não há nenhuma combinação de teclado que o usuário possa usar no momento para invocar essa ação de suplemento.
-- Se o atalho tiver sido personalizado usando o [método Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member), o valor retornado será a combinação de teclado personalizada.
+- Se o atalho tiver sido personalizado usando o método [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) , o valor retornado será a combinação de teclado personalizada.
 - Se o atalho não tiver sido substituído ou personalizado, ele retornará o valor do JSON do manifesto estendido do suplemento.
 
 Apresentamos um exemplo a seguir.
@@ -307,7 +307,7 @@ Office.actions.getShortcuts()
 
 ```
 
-Conforme descrito [em Evitar combinações de teclas](#avoid-key-combinations-in-use-by-other-add-ins) em uso por outros suplementos, é uma boa prática evitar conflitos em atalhos. Para descobrir se uma ou mais combinações de teclas já estão em uso, passe-as como uma matriz de cadeias de caracteres para o método [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). O método retorna um relatório que contém combinações de teclas que já estão em uso na forma de uma matriz de objetos do tipo `{shortcut: string, inUse: boolean}`. A `shortcut` propriedade é uma combinação de teclas, como "CTRL+SHIFT+1". Se a combinação já estiver registrada em outra ação, a `inUse` propriedade será definida como `true`. Por exemplo, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. O snippet de código a seguir é um exemplo:
+Conforme descrito [em Evitar combinações de teclas](#avoid-key-combinations-in-use-by-other-add-ins) em uso por outros suplementos, é uma boa prática evitar conflitos em atalhos. Para descobrir se uma ou mais combinações de teclas já estão em uso, passe-as como uma matriz de cadeias de caracteres para o método [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) . O método retorna um relatório que contém combinações de teclas que já estão em uso na forma de uma matriz de objetos do tipo `{shortcut: string, inUse: boolean}`. A `shortcut` propriedade é uma combinação de teclas, como "CTRL+SHIFT+1". Se a combinação já estiver registrada em outra ação, a `inUse` propriedade será definida como `true`. Por exemplo, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. O snippet de código a seguir é um exemplo:
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
@@ -323,5 +323,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Consulte o [Excel de exemplo de atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado.
+- Consulte o [suplemento de exemplo de atalhos](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) de teclado do Excel.
 - Obtenha uma visão geral de como trabalhar com substituições estendidas no [Work com substituições estendidas do manifesto](../develop/extended-overrides.md).

@@ -3,18 +3,18 @@ title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496898"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660134"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 
 Suplementos contextuais são suplementos do Outlook ativados com base no texto de um compromisso ou de uma mensagem. Usando suplementos contextuais, um usuário pode iniciar tarefas relacionadas a uma mensagem sem sair dela, o que resulta em uma experiência de usuário mais fácil e mais avançada.
 
-A seguir estão exemplos de complementos contextuais.
+A seguir estão exemplos de suplementos contextuais.
 
 - Escolher um endereço para abrir um mapa do local.
 - Escolher uma cadeia de caracteres que abre um suplemento de sugestão de reunião.
@@ -28,9 +28,9 @@ A seguir estão exemplos de complementos contextuais.
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Como fazer um suplemento contextual
 
-O manifesto de um suplemento contextual deve conter um elemento [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) com um atributo `xsi:type` definido como `DetectedEntity`. No elemento **ExtensionPoint**, o suplemento especifica as entidades ou a expressão regular que podem ativá-lo. Se uma entidade for especificada, ela poderá ser qualquer uma das propriedades no objeto [Entities](/javascript/api/outlook/office.entities).
+O manifesto de um suplemento contextual deve conter um elemento [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) com um atributo `xsi:type` definido como `DetectedEntity`. Dentro do **\<ExtensionPoint\>** elemento, o suplemento especifica as entidades ou a expressão regular que pode ativá-lo. Se uma entidade for especificada, ela poderá ser qualquer uma das propriedades no objeto [Entities](/javascript/api/outlook/office.entities).
 
-Dessa forma, o manifesto do suplemento precisa conter uma regra do tipo **ItemHasKnownEntity** ou **ItemHasRegularExpressionMatch**. O exemplo a seguir mostra como especificar que um complemento deve ser ativado em mensagens com uma entidade detectada que seja um número de telefone.
+Dessa forma, o manifesto do suplemento precisa conter uma regra do tipo **ItemHasKnownEntity** ou **ItemHasRegularExpressionMatch**. O exemplo a seguir mostra como especificar que um suplemento deve ser ativado em mensagens com uma entidade detectada que seja um número de telefone.
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -84,7 +84,7 @@ Para fechar o cartão e o suplemento, o usuário deve clicar em algum lugar fora
 
 ## <a name="current-contextual-add-ins"></a>Suplementos contextuais atuais
 
-Os seguintes complementos contextuais são instalados por padrão para usuários com Outlook de complementos.
+Os suplementos contextuais a seguir são instalados por padrão para usuários com suplementos do Outlook.
 
 - Bing Mapas
 - Reuniões sugeridas

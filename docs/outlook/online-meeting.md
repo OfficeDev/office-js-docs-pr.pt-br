@@ -4,12 +4,12 @@ description: Discute como configurar um suplemento do Outlook para um provedor d
 ms.topic: article
 ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
-ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
+ms.openlocfilehash: ad96cbd385f53959501dcb5ac8b7e9be22d4585a
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2022
-ms.locfileid: "66574422"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660274"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
@@ -26,7 +26,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o nó **VersionOverrides** no manifesto. Se você estiver criando um suplemento que só terá suporte no Outlook na Web, Windows e Mac, selecione a guia **Windows, Mac e Web** para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione **a guia** Móvel.
+Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o **\<VersionOverrides\>** nó no manifesto. Se você estiver criando um suplemento que só terá suporte no Outlook na Web, Windows e Mac, selecione a guia **Windows, Mac e Web** para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione **a guia** Móvel.
 
 # <a name="windows-mac-web"></a>[Windows, Mac, Web](#tab/non-mobile)
 
@@ -34,7 +34,7 @@ Para permitir que os usuários criem reuniões online com seu suplemento, você 
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione todo o **nó VersionOverrides** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -100,13 +100,13 @@ Para permitir que os usuários criem reuniões online com seu suplemento, você 
 
 # <a name="mobile"></a>[Dispositivo móvel](#tab/mobile)
 
-Para permitir que os usuários criem uma reunião online de seu dispositivo móvel, o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) é configurado no manifesto sob o elemento pai **MobileFormFactor**. Esse ponto de extensão não tem suporte em outros fatores forma.
+Para permitir que os usuários criem uma reunião online a partir de seu dispositivo móvel, o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) é configurado no manifesto sob o elemento pai **\<MobileFormFactor\>**. Esse ponto de extensão não tem suporte em outros fatores forma.
 
 1. No editor de código, abra o projeto de início rápido do Outlook que você criou.
 
 1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
 
-1. Selecione todo o **nó VersionOverrides** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

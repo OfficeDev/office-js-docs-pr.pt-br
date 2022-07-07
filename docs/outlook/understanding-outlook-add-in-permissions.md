@@ -3,12 +3,12 @@ title: Noções básicas sobre permissões de suplemento do Outlook
 description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b515ef470331a513d6b57007f372b3e4dec1d25b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484189"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660225"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 
@@ -63,7 +63,7 @@ A permissão **Restricted** é o nível mais básico de permissão. Especifique 
 
 ## <a name="readitem-permission"></a>Permissão ReadItem
 
-A permissão **ReadItem** é o nível seguinte de permissões no modelo de permissões. Especifique a **ReadItem** no elemento **Permissions**, no manifesto, para solicitar essa permissão.
+A permissão **ReadItem** é o nível seguinte de permissões no modelo de permissões. **Especifique ReadItem** no **\<Permissions\>** elemento no manifesto para solicitar essa permissão.
 
 ### <a name="can-do"></a>Pode ser feito
 
@@ -75,7 +75,7 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
 
 - [Obter todas as entidades conhecidas existentes](match-strings-in-an-item-as-well-known-entities.md) do assunto ou do corpo do item, e não apenas um subconjunto.
 
-- Usar todas as [entidades conhecidas](activation-rules.md#itemhasknownentity-rule) nas regras [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ou [expressões regulares](activation-rules.md#itemhasregularexpressionmatch-rule) nas regras [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule). O exemplo a seguir segue a versão 1.1 do esquema. Ela mostra uma regra que ativa o complemento se uma ou mais entidades conhecidas forem encontradas no assunto ou no corpo da mensagem selecionada.
+- Usar todas as [entidades conhecidas](activation-rules.md#itemhasknownentity-rule) nas regras [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ou [expressões regulares](activation-rules.md#itemhasregularexpressionmatch-rule) nas regras [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule). O exemplo a seguir segue a versão 1.1 do esquema. Ele mostra uma regra que ativa o suplemento se uma ou mais das entidades conhecidas forem encontradas no assunto ou no corpo da mensagem selecionada.
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -127,7 +127,7 @@ A permissão **ReadItem** é o nível seguinte de permissões no modelo de permi
 
 ## <a name="readwriteitem-permission"></a>Permissão ReadWriteItem
 
-Especifique o **ReadWriteItem** no elemento **Permissions**, no manifesto, para solicitar essa permissão. Os suplementos de email ativados nos formulários de redação que usam métodos de gravação (**Message.to.addAsync** ou **Message.to.setAsync**) devem usar pelo menos esse nível de permissão.
+**Especifique ReadWriteItem** no elemento **\<Permissions\>** no manifesto para solicitar essa permissão. Os suplementos de email ativados nos formulários de redação que usam métodos de gravação (**Message.to.addAsync** ou **Message.to.setAsync**) devem usar pelo menos esse nível de permissão.
 
 ### <a name="can-do"></a>Pode ser feito
 
@@ -135,7 +135,7 @@ Especifique o **ReadWriteItem** no elemento **Permissions**, no manifesto, para 
 
 - [Adicionar ou remover anexos](add-and-remove-attachments-to-an-item-in-a-compose-form.md) desse item.
 
-- Use todos os outros membros da OFFICE JavaScript aplicáveis aos complementos de email, exceto **Mailbox.makeEWSRequestAsync**.
+- Use todos os outros membros da API JavaScript do Office aplicáveis aos suplementos de email, exceto **Mailbox.makeEWSRequestAsync**.
 
 ### <a name="cant-do"></a>Não pode ser feito
 
@@ -147,7 +147,7 @@ Especifique o **ReadWriteItem** no elemento **Permissions**, no manifesto, para 
 
 ## <a name="readwritemailbox-permission"></a>Permissão ReadWriteMailbox
 
-A permissão **ReadWriteMailbox** é o mais alto nível de permissão. Especifique a **ReadWriteMailbox** no elemento **Permissions**, no manifesto, para solicitar essa permissão.
+A permissão **ReadWriteMailbox** é o mais alto nível de permissão. **Especifique ReadWriteMailbox** no **\<Permissions\>** elemento no manifesto para solicitar essa permissão.
 
 Além do suporte que a permissão **ReadWriteItem** oferece, o token fornecido pela **mailbox.getCallbackTokenAsync** fornece acesso para usar as operações dos Serviços Web do Exchange (EWS) ou as APIs REST do Outlook para fazer o seguinte:
 
@@ -155,7 +155,7 @@ Além do suporte que a permissão **ReadWriteItem** oferece, o token fornecido p
 - Criar, ler e gravar em qualquer pasta ou item nessa caixa de correio.
 - Enviar um item dessa caixa de correio.
 
-Por **meio de mailbox.makeEWSRequestAsync**, você pode acessar as seguintes operações EWS.
+Por **meio de mailbox.makeEWSRequestAsync**, você pode acessar as seguintes operações de EWS.
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

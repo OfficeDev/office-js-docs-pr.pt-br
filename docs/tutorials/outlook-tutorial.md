@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Outlook que insere G
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091087"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659700"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -139,13 +139,13 @@ O manifesto controla como o suplemento é exibido no Outlook. Ele define a manei
 
 Faça as seguintes atualizações no arquivo **manifest.xml** para especificar algumas informações básicas sobre o suplemento.
 
-1. Localize o elemento **ProviderName** e substitua o valor padrão pelo nome da empresa.
+1. Encontre o elemento **\<ProviderName\>** e substitua o valor padrão pelo nome da sua empresa.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Localize o elemento **Description**, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.
+1. Localize o elemento **\<Description\>**, substitua o valor padrão com uma descrição do suplemento e salve o arquivo.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -183,21 +183,21 @@ Agora que você verificou que o complemento básico funciona, você pode persona
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>Remover o ponto de extensão MessageReadCommandSurface
 
-Abra o arquivo **manifest.xml** e localize o elemento **ExtensionPoint** com o tipo **MessageReadCommandSurface**. Exclua esse elemento **ExtensionPoint** (incluindo a marca de fechamento) para remover os botões da janela de mensagem de leitura.
+Abra o arquivo **manifest.xml** e localize o elemento **\<ExtensionPoint\>** com o tipo **MessageReadCommandSurface**. Exclua esse elemento **\<ExtensionPoint\>** (incluindo a marca de fechamento) para remover os botões na janela de mensagem de leitura.
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Adicionar o ponto de extensão MessageComposeCommandSurface
 
 Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente antes dessa linha, insira a marcação XML a seguir. Observe o seguinte sobre esta marcação.
 
-- O **ExtensionPoint** com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões para adicionar à janela Redigir mensagem.
+- O **\<ExtensionPoint\>** com `xsi:type="MessageComposeCommandSurface"` indica que você está definindo botões a serem adicionados à janela de mensagem de composição.
 
-- Ao usar um elemento **OfficeTab** com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.
+- Ao usar um elemento **\<OfficeTab\>** com `id="TabDefault"`, você indica que quer adicionar os botões à guia padrão da faixa de opções.
 
-- O elemento **Group** define o agrupamento dos novos botões, com um rótulo definido pelo recurso **groupLabel**.
+- O elemento **\<Group\>** define o agrupamento dos novos botões, com um rótulo definido pelo recurso **groupLabel**.
 
-- O primeiro elemento **Control** contém um elemento **Action** com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.
+- O primeiro elemento **\<Control\>** contém um elemento **\<Action\>** com `xsi:type="ShowTaskPane"`, portanto, esse botão abre um painel de tarefas.
 
-- O segundo elemento **Control** contém um elemento **Action** com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.
+- O segundo elemento **\<Control\>** contém um elemento **\<Action\>** com `xsi:type="ExecuteFunction"`, o que indica que esse botão invoca uma função JavaScript contida no arquivo de função.
 
 ```xml
 <!-- Message Compose -->
@@ -242,11 +242,11 @@ Encontre a seguinte linha no manifesto: `</DesktopFormFactor>`. Imediatamente an
 
 ### <a name="update-resources-in-the-manifest"></a>Atualização de recursos no manifesto
 
-O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Você especificará estas informações na seção **Resources** do manifesto.
+O código anterior faz referência a rótulos, dicas de ferramentas e URLs que você precisa definir antes que o manifesto seja válido. Você especificará estas informações na seção **\<Resources\>** do manifesto.
 
-1. Localize o elemento **Resources** no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).
+1. Localize o elemento **\<Resources\>** no arquivo do manifesto e exclua o elemento inteiro (incluindo sua marca de fechamento).
 
-1. No mesmo local, adicione a seguinte marcação para substituir o elemento **Resources** que você acabou de remover.
+1. No mesmo local, adicione a seguinte marcação para substituir o elemento **\<Resources\>** que você acabou de remover.
 
     ```xml
     <Resources>
@@ -731,7 +731,7 @@ O botão **Inserir gist padrão** do suplemento é um botão sem interface do us
 
 ### <a name="update-the-function-file-html"></a>Atualizar o arquivo de função (HTML)
 
-Uma função que é invocada por um botão sem interface do usuário deve ser definida no arquivo que é especificado pelo elemento **FunctionFile** no manifesto do fator de forma correspondente. O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.
+Uma função invocada por um botão sem interface do usuário devem ser definidas no arquivo especificado pelo elemento **\<FunctionFile\>** no manifesto para o fator forma correspondente. O manifesto deste suplemento especifica `https://localhost:3000/commands.html` como o arquivo de função.
 
 Abra o arquivo **./src/commands/commands.html** e substitua todo o conteúdo pela marcação a seguir.
 
