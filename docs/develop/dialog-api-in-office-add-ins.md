@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conheça os conceitos básicos da criação de uma caixa de diálogo em um Suplemento do Office.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b5fa49a4667a0333ebe04114820912db3c15a7
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659959"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689387"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -215,7 +215,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>Mensagens entre domínios para o runtime do host
 
-A caixa de diálogo ou o runtime pai do JavaScript (em um painel de tarefas ou em um runtime sem interface do usuário que hospeda um arquivo de função) pode ser navegado para longe do domínio do suplemento depois que a caixa de diálogo é aberta. Se alguma dessas coisas tiver acontecido, uma chamada falhará, a `messageParent` menos que seu código especiize o domínio do runtime pai. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageParent`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que a caixa de diálogo está hospedando no momento.
+A caixa de diálogo ou o runtime pai do JavaScript pode ser navegado para fora do domínio do suplemento depois que a caixa de diálogo é aberta. Se alguma dessas coisas tiver acontecido, uma chamada falhará, a `messageParent` menos que seu código especiize o domínio do runtime pai. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageParent`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que a caixa de diálogo está hospedando no momento.
 
 > [!NOTE]
 > Usar `messageParent` para enviar uma mensagem entre domínios requer o conjunto de requisitos [da Origem da Caixa de Diálogo 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). O `DialogMessageOptions` parâmetro é ignorado em versões mais antigas do Office que não dão suporte ao conjunto de requisitos, portanto, o comportamento do método não será afetado se você passá-lo.
@@ -338,7 +338,7 @@ Como você pode fazer `messageChild` várias chamadas da página host, `DialogPa
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Mensagens entre domínios para o runtime da caixa de diálogo
 
-A caixa de diálogo ou o runtime pai do JavaScript (em um painel de tarefas ou em um runtime sem interface do usuário que hospeda um arquivo de função) pode ser navegado para longe do domínio do suplemento depois que a caixa de diálogo é aberta. Se alguma dessas coisas tiver acontecido, uma chamada falhará, a `messageChild` menos que seu código especiize o domínio do runtime da caixa de diálogo. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageChild`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que o runtime pai está hospedando no momento. 
+A caixa de diálogo ou o runtime pai do JavaScript pode sair do domínio do suplemento depois que a caixa de diálogo for aberta. Se qualquer uma dessas coisas acontecer, as `messageChild` chamadas falharão, a menos que seu código especibilize o domínio do runtime da caixa de diálogo. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageChild`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que o runtime pai está hospedando no momento. 
 
 > [!NOTE]
 > Usar `messageChild` para enviar uma mensagem entre domínios requer o conjunto de requisitos [da Origem da Caixa de Diálogo 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). O `DialogMessageOptions` parâmetro é ignorado em versões mais antigas do Office que não dão suporte ao conjunto de requisitos, portanto, o comportamento do método não será afetado se você passá-lo.

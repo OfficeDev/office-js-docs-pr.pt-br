@@ -3,12 +3,12 @@ title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c739ace05992812e0de733edea2f60cf393f3c48
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659637"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689380"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
@@ -108,7 +108,7 @@ A tabela a seguir mostra um mapeamento de algumas propriedades filho de alto ní
 | "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **\<Hosts\>** |  |
 | "faixas de opções" | As faixas de opções que o suplemento personaliza. | **\<Hosts\>**, **ExtensionPoints** e vários elementos **\*FormFactor** | As propriedade "faixas de opções" é uma matriz de objetos anônimos que mesclam as finalidades desses três elementos. Consulte [a tabela "faixas de opções"](#ribbons-table).|
 | "alternativas" | Especifica a compatibilidade de versões anteriores com um suplemento COM equivalente, XLL ou ambos. | **\<EquivalentAddins\>** | Consulte [EquivalentAddins - Consulte também ](/javascript/api/manifest/equivalentaddins#see-also) para obter informações de segundo plano. |
-| "runtimes"  | Configura vários tipos de suplementos "sem interface do usuário", como suplementos de funções personalizadas e funções executadas diretamente de botões personalizados da faixa de opções. | **\<Runtimes\>**. **\<FunctionFile\>** e **\<ExtensionPoint\>** (do tipo CustomFunctions) |  |
+| "runtimes"  | Configura vários tipos de suplementos que têm pouca ou nenhuma interface do usuário, como suplementos somente de função personalizada e [comandos de função](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>** e **\<ExtensionPoint\>** (do tipo CustomFunctions) |  |
 | "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **\<Event\>** e **\<ExtensionPoint\>** (do tipo Events) |  |
 
 ##### <a name="ribbons-table"></a>tabela "faixas de opções"
