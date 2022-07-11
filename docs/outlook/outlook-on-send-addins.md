@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 06/15/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eda6444a84632de5349af42deab7744c712551ad
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: cb67a813c876809440b29e029ff899cd34d7e365
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660260"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712752"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -467,13 +467,12 @@ A API Ao enviar requer `VersionOverrides v1_1`. Veja a seguir como adicionar o n
 > - [Manifestos de suplementos do Outlook](manifests.md)
 > - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
 
-
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>Objetos `Event` e `item`, e os métodos `body.getAsync` e `body.setAsync`
 
 Para acessar o item de mensagem ou de reunião selecionado no momento (neste exemplo, a mensagem redigida recentemente), use o namespace `Office.context.mailbox.item`. O evento `ItemSend` é passado automaticamente pelo recurso Ao enviar para a função especificada no manifesto&mdash;neste exemplo, a função `validateBody`.
 
 ```js
-var mailboxItem;
+let mailboxItem;
 
 Office.initialize = function (reason) {
     mailboxItem = Office.context.mailbox.item;
@@ -491,7 +490,6 @@ A função `validateBody` obtém o corpo atual no formato especificado (HTML) e 
 > [!NOTE]
 > Para saber mais, confira [Objeto do Evento](/javascript/api/office/office.addincommands.event) e [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).
   
-
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>Objeto `NotificationMessages` e método `event.completed`
 
 A função `checkBodyOnlyOnSendCallBack` usa uma expressão regular para determinar se o corpo da mensagem contém palavras bloqueadas. Se ela encontrar uma correspondência com uma matriz de palavras restritas, bloqueará os emails de serem enviados e notificará o remetente pela barra de informações. Para fazer isso, ele usa a propriedade `notificationMessages` do objeto `Item` para retornar um objeto `NotificationMessages`. Ele, em seguida, adiciona uma notificação ao item chamando o método `addAsync`, como mostrado no exemplo a seguir.
@@ -500,13 +498,13 @@ A função `checkBodyOnlyOnSendCallBack` usa uma expressão regular para determi
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
 // <param name="asyncResult">ItemSend event passed from the calling function.</param>
 function checkBodyOnlyOnSendCallBack(asyncResult) {
-    var listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
-    var wordExpression = listOfBlockedWords.join('|');
+    const listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
+    const wordExpression = listOfBlockedWords.join('|');
 
     // \b to perform a "whole words only" search using a regular expression in the form of \bword\b.
     // i to perform case-insensitive search.
-    var regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
-    var checkBody = regexCheck.test(asyncResult.value);
+    const regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
+    const checkBody = regexCheck.test(asyncResult.value);
 
     if (checkBody) {
         mailboxItem.notificationMessages.addAsync('NoSend', { type: 'errorMessage', message: 'Blocked words have been found in the body of this email. Please remove them.' });
@@ -534,7 +532,6 @@ Para sinalizar que o suplemento terminou de processar o evento `ItemSend` dispar
 
 Além do método `addAsync`, o objeto `NotificationMessages` também inclui os métodos `replaceAsync`, `removeAsync` e `getAllAsync`.  Esses métodos não são usados neste exemplo de código.  Para saber mais, veja [NotificationMessages](/javascript/api/outlook/office.notificationmessages).
 
-
 ### <a name="subject-and-cc-checker-code"></a>Código do Assunto e do verificador de CC
 
 O exemplo de código a seguir mostra como adicionar um destinatário à linha CC e verifica se a mensagem inclui um assunto ao enviar. Este exemplo usa o recurso Ao enviar para permitir ou proibir o envio de um email.  
@@ -555,7 +552,7 @@ function shouldChangeSubjectOnSend(event) {
             addCCOnSend(asyncResult.asyncContext);
             //console.log(asyncResult.value);
             // Match string.
-            var checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
+            const checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
             // Add [Checked]: to subject line.
             subject = '[Checked]: ' + asyncResult.value;
 

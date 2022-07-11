@@ -1,14 +1,14 @@
 ---
 title: Obter ou modificar destinatários em um suplemento do Outlook
 description: Saiba como obter, definir ou adicionar destinatários de uma mensagem ou compromisso em um suplemento do Outlook.
-ms.date: 06/27/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cd51bd20d90d0183cbe0794b644eaa307e2d6b7
-ms.sourcegitcommit: 2a0bd3155c732b6010b7e1e612f4bd7e45f79c52
+ms.openlocfilehash: e7c59765d38e32e7552b5fdf67b6085529ccf03b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "66241285"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712780"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obter, configurar ou adicionar destinatários ao compor um compromisso ou uma mensagem no Outlook
 
@@ -65,7 +65,7 @@ Para usar `getAsync`, forneça um método de retorno de chamada para verificar o
 > Para obter mais detalhes, consulte o [problema relacionado do GitHub](https://github.com/OfficeDev/office-js/issues/2201).
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -82,7 +82,7 @@ function getAllRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
@@ -143,7 +143,7 @@ function getAllRecipients() {
 // Recipients are in an array of EmailAddressDetails
 // objects passed in asyncResult.value.
 function displayAddresses (asyncResult) {
-    for (var i=0; i<asyncResult.value.length; i++)
+    for (let i=0; i<asyncResult.value.length; i++)
         write (asyncResult.value[i].emailAddress);
 }
 
@@ -166,7 +166,7 @@ Ao chamar `setAsync`, forneça uma matriz como argumento de entrada para o parâ
 Opcionalmente `setAsync` , você pode fornecer um método de retorno de chamada como um argumento de entrada para o método, para garantir que qualquer código que dependa da configuração bem-sucedida dos destinatários seja executado somente quando isso acontecer. Você também pode fornecer argumentos para o método de retorno de chamada usando o parâmetro opcional _asyncContext_. Se você usar um método de retorno de chamada, poderá acessar um parâmetro de saída _assíncrono e_ usar as propriedades  de **status** `AsyncResult` e erro do objeto de parâmetro para verificar o status e as mensagens de erro da chamada assíncrona.
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -184,7 +184,7 @@ function setRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
 
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
@@ -269,7 +269,6 @@ function setRecipients() {
 function write(message){
     document.getElementById('message').innerText += message; 
 }
-
 ```
 
 ## <a name="add-recipients"></a>Adicionar destinatários

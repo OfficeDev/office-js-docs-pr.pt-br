@@ -1,24 +1,22 @@
 ---
 title: Usar regras de ativação de expressões regulares para mostrar um suplemento
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
-ms.date: 07/28/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: f145df063f550351941eee5132a7b6b9d3267c04
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484415"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713067"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
-Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que Outlook não ativa os complementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Também há outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
 Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
 O Outlook avalia expressões regulares com base em regras para o intérprete de JavaScript usado pelo navegador no computador cliente. O Outlook dá suporte à mesma lista de caracteres especiais que têm suporte em todos os processadores XML. A tabela a seguir lista os caracteres especiais. Você pode usar esses caracteres em uma expressão regular especificando a sequência de escape para o caractere correspondente, conforme descrito na tabela a seguir.
-
-<br/>
 
 |Caractere|Descrição|Sequência de escape a ser usada|
 |:-----|:-----|:-----|
@@ -31,8 +29,6 @@ O Outlook avalia expressões regulares com base em regras para o intérprete de 
 ## <a name="itemhasregularexpressionmatch-rule"></a>Regra ItemHasRegularExpressionMatch
 
 Uma regra `ItemHasRegularExpressionMatch` é útil para controlar a ativação do suplemento com base em valores específicos de uma propriedade compatível. A regra `ItemHasRegularExpressionMatch` tem os seguintes atributos.
-
-<br/>
 
 |Nome do atributo|Descrição|
 |:-----|:-----|
@@ -53,7 +49,7 @@ Preste atenção especial ao seguinte ao usar expressões regulares.
 
 - O corpo HTML de um item é um pouco diferente entre um cliente avançado do Outlook e o Outlook na Web ou Outlook Mobile. Defina as expressões regulares com cuidado.
 
-- Dependendo do cliente Outlook, tipo de dispositivo ou propriedade em que uma expressão regular está sendo aplicada, há outras práticas recomendadas e limites para cada um dos clientes que você deve estar ciente ao projetar expressões regulares como regras de ativação. Confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para saber mais.
+- Dependendo do cliente do Outlook, do tipo de dispositivo ou da propriedade em que uma expressão regular está sendo aplicada, há outras práticas recomendadas e limites para cada um dos clientes que você deve estar ciente ao projetar expressões regulares como regras de ativação. Confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para saber mais.
 
 ### <a name="examples"></a>Exemplos
 
@@ -67,8 +63,6 @@ A regra `ItemHasRegularExpressionMatch` a seguir ativa o suplemento sempre que o
 />
 ```
 
-<br/>
-
 A seguir, temos outra maneira de especificar a mesma expressão regular usando o atributo `IgnoreCase`.
 
 ```XML
@@ -79,8 +73,6 @@ A seguir, temos outra maneira de especificar a mesma expressão regular usando o
     IgnoreCase="true"
 />
 ```
-
-<br/>
 
 A regra `ItemHasRegularExpressionMatch` a seguir ativa o suplemento sempre que um símbolo de ação estiver incluso no corpo do item atual.
 
@@ -100,8 +92,6 @@ Uma regra `ItemHasKnownEntity` ativa um suplemento com base na existência de um
 > O Outlook só pode extrair cadeias de caracteres de entidade em inglês, independentemente da localidade padrão especificada no manifesto. Somente as mensagens são compatíveis com o tipo entidade `MeetingSuggestion`; os compromissos, não. Não é possível extrair entidades de itens na pasta **Itens enviados** nem é possível usar uma regra `ItemHasKnownEntity` para ativar um suplemento para itens na pasta **Itens enviados**.
 
 A regra `ItemHasKnownEntity` é compatível com os atributos da tabela a seguir. Embora a especificação de uma expressão regular seja opcional em uma regra `ItemHasKnownEntity`, se você optar por usar uma expressão regular como filtro de entidade, deverá especificar ambos os atributos `RegExFilter` e `FilterName`.
-
-<br/>
 
 |Nome do atributo|Descrição|
 |:-----|:-----|
@@ -124,7 +114,7 @@ A regra `ItemHasKnownEntity` a seguir ativa o suplemento sempre que há uma URL 
 
 ## <a name="using-regular-expression-results-in-code"></a>Usar resultados de expressões regulares no código
 
-Você pode obter corresponde a uma expressão regular usando os métodos a seguir no item atual.
+Você pode obter correspondências com uma expressão regular usando os métodos a seguir no item atual.
 
 - [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) retorna correspondências no item atual para todas as expressões regulares especificadas nas regras `ItemHasRegularExpressionMatch` e `ItemHasKnownEntity` do suplemento.
 
@@ -148,38 +138,32 @@ A seguir temos um exemplo de uma coleção de regras que contém uma regra `Item
 </Rule>
 ```
 
-<br/>
-
 O exemplo a seguir usa `getRegExMatches` do item atual para definir uma variável `videos` nos resultados da regra `ItemHasRegularExpressionMatch` anterior.
 
 ```js
-var videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
-
-<br/>
 
 Várias correspondências são armazenadas como elementos de matriz nesse objeto. O exemplo a seguir mostra como repetir correspondências para uma expressão regular denominada `reg1` a fim de construir uma cadeia de caracteres para exibir como HTML.
 
 ```js
 function initDialer()
 {
-    var myEntities;
-    var myString;
-    var myCell;
+    let myEntities;
+    let myString;
+    let myCell;
     myEntities = Office.context.mailbox.item.getRegExMatches();
 
     myString = "";
     myCell = document.getElementById('dialerholder');
     // Loop over the myEntities collection.
-    for (var i in myEntities.reg1) {
+    for (let i in myEntities.reg1) {
         myString += "<p><a href='callto:tel:" + myEntities.reg1[i] + "'>" + myEntities.reg1[i] + "</a></p>";
     }
 
     myCell.innerHTML = myString;
 }
 ```
-
-<br/>
 
 A seguir temos um exemplo de uma regra `ItemHasKnownEntity` que especifica a entidade `MeetingSuggestion` e uma expressão regular denominada `CampSuggestion`. O Outlook ativará o suplemento se detectar que o atual item selecionado contém uma sugestão de reunião e o assunto ou corpo contêm o termo `WonderCamp`.
 
@@ -191,12 +175,10 @@ A seguir temos um exemplo de uma regra `ItemHasKnownEntity` que especifica a ent
     IgnoreCase="false"/>
 ```
 
-<br/>
-
 O exemplo de código a seguir usa `getFilteredEntitiesByName` do item atual para definir uma variável `suggestions` para uma matriz de sugestões de reunião detectadas para a regra `ItemHasKnownEntity` anterior.
 
 ```js
-var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
+const suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
 ```
 
 ## <a name="see-also"></a>Confira também

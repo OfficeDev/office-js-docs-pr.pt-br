@@ -1,22 +1,29 @@
 ---
-title: Microsoft Office da comunidade de suplementos
-description: A agenda, o agendamento e os recursos Microsoft Office da comunidade de suplementos mensais.
-ms.date: 06/14/2022
+title: Chamada da comunidade de Suplementos do Microsoft Office
+description: A agenda, o agendamento e os recursos da comunidade de Suplementos mensais do Microsoft Office.
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 19641c470442c019ff1301a94d230a05ba2d107f
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: a953336dc277d387166dcedffb01f7775e52e9e8
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136318"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713004"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office da comunidade de suplementos
+# <a name="microsoft-office-add-ins-community-call"></a>Chamada da comunidade de Suplementos do Microsoft Office
 
-A Microsoft Office da comunidade de suplementos é uma chamada mensal em que você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre como criar Office Suplementos. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8h no Horário do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
+A chamada da comunidade de Suplementos do Microsoft Office é uma chamada mensal em que você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre como criar suplementos do Office. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8h no Horário do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
 
 ## <a name="agenda-for-july-13th-call"></a>Agenda da chamada de 13 de julho
 
-A agenda de julho será postada cerca de uma semana antes da chamada.
+- Atualização de envolvimento da comunidade
+- Atualização de APIs do Word
+- Atualização do Outlook
+  - Atualização de encerramento do ponto de extremidade REST v2.0
+  - Suporte para pastas compartilhadas em servidores locais do Exchange
+  - Seleção Multiseleção de Item em breve
+- Atualização de APIs do Outlook
+- Atualização de exemplos de SSO
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 
@@ -38,13 +45,13 @@ Perdeu uma chamada da comunidade anterior? Confira os seguintes recursos de blog
 - [12 de maio de 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-may-2021/)
 - [14 de abril de 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-april-14-2021/)
 - [10 de março de 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-march-10-2021/)
-- [Chamadas da comunidade Office suplementos arquivados – 10 de junho de 2020 – 10 de fevereiro de 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
+- [Chamadas da comunidade de Suplementos do Office arquivados – 10 de junho de 2020 – 10 de fevereiro de 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Confira também
 
 - [Convite de calendário de chamadas da comunidade recorrentes e mensais](https://aka.ms/officeaddinscommunitycall)
-- [Community solicitações e perguntas do tópico de chamada](https://aka.ms/officeaddinsform)
-- [Microsoft 365 canal do YouTube para desenvolvedores](https://aka.ms/m365devyoutube)
-- [Microsoft 365 canal do YouTube da comunidade](https://aka.ms/m365pnp/videos)
-- [Microsoft 365 da comunidade](https://aka.ms/m365pnp/community)
-- [Microsoft 365 blog da comunidade](https://aka.ms/m365pnp/community/blog)
+- [Perguntas e solicitações de tópico de chamada da comunidade](https://aka.ms/officeaddinsform)
+- [Canal do YouTube para desenvolvedores do Microsoft 365](https://aka.ms/m365devyoutube)
+- [Canal do YouTube da comunidade do Microsoft 365](https://aka.ms/m365pnp/videos)
+- [Site da comunidade do Microsoft 365](https://aka.ms/m365pnp/community)
+- [Blog da comunidade do Microsoft 365](https://aka.ms/m365pnp/community/blog)

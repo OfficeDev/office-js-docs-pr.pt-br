@@ -3,12 +3,12 @@ title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar problemas de erros de desenvolvimento em Suplementos do Office.
 ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 427d35d49339c1130733a3b33aa1bfedc1bd8317
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660071"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712759"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -113,7 +113,8 @@ Quando você estiver carregando a Biblioteca JavaScript do Office de uma cópia 
 ## <a name="see-also"></a>Confira também
 
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
-- [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Realizar sideload de um Suplemento do Office no Mac](sideload-an-office-add-in-on-mac.md)  
+- [Realizar sideload de um Suplemento do Office no iPad](sideload-an-office-add-in-on-ipad.md)  
 - [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)

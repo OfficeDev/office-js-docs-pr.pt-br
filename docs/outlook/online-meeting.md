@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 06/28/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ad96cbd385f53959501dcb5ac8b7e9be22d4585a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: cc3afc58af0db7725b8e66ddbd557cfd1e75e128
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660274"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713039"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
@@ -223,7 +223,7 @@ Nesta seção, saiba como o script de suplemento pode atualizar a reunião de um
         '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
         '<br><br>';
 
-    var mailboxItem;
+    let mailboxItem;
 
     // Office is ready.
     Office.onReady(function () {

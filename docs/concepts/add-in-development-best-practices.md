@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
-description: Aplique as práticas recomendadas ao desenvolver para criar Office suplementos.
+description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: aab262f2f5020e7dc95ee8f716f0de40d2140291
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313202"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712955"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -21,7 +21,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 - Crie suplementos que ajudem os usuários a concluir tarefas de forma rápida e eficiente. Concentre-se nos cenários que fazem sentido para aplicativos do Office. Por exemplo:
   - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
   - Habilite novos cenários no Office.
-  - Inserir serviços complementares em aplicativos Office aplicativos.
+  - Inserir serviços complementares em aplicativos do Office.
   - Melhore a experiência do Office para aumentar a produtividade.
 - Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
 - Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
@@ -56,7 +56,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ## <a name="apply-ux-design-principles"></a>Aplicar os princípios de design de UX
 
-- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Consulte [Projetar a interface do usuário Office suplementos](../design/add-in-design.md).
+- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Consulte [Projetar a interface do usuário dos Suplementos do Office](../design/add-in-design.md).
 
 - Favoreça o conteúdo através do Chrome. Evite elementos de interface do usuário supérfluos que não agregam valor à experiência do usuário.
 
@@ -76,7 +76,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) para detectar se Office aplicativo em que o suplemento é executado está habilitado para toque.
+- Use a [propriedade Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) para detectar se o aplicativo do Office no qual o suplemento é executado está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
@@ -87,10 +87,10 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Verifique se o suplemento funciona nos modos retrato e paisagem. Observe que em dispositivos de toque, parte do suplemento pode ficar oculta pelo teclado virtual.
 
-- Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
+- Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad.md).
 
 > [!NOTE]
-> Se você estiver usando Fluent [interface](../design/using-office-ui-fabric-react.md) do usuário React elementos de design, muitos desses elementos serão incorporados ao sistema de design.
+> Se você estiver usando o [Fluent UI React](../design/using-office-ui-fabric-react.md) para seus elementos de design, muitos desses elementos serão integrados ao sistema de design.
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento
 
@@ -100,7 +100,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Forneça indicadores de carregamento para operações com longa execução.
 
-- Use uma rede de distribuição de conteúdo (CDN) para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
+- Use uma CDN (rede de distribuição de conteúdo) para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
 
 - Siga as práticas da Web padrão para otimizar a página. Use apenas versões reduzidas das bibliotecas na produção. Carregue somente os recursos que você precisar e otimize como os recursos são carregados.
 
@@ -119,7 +119,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
 
-- Minimize as trocas de dados entre o suplemento e o Office documento. Para obter mais informações, [consulte Evite usar o método context.sync em loops](correlated-objects-pattern.md).
+- Minimize as trocas de dados entre o suplemento e o documento do Office. Para obter mais informações, [consulte Evite usar o método context.sync em loops](correlated-objects-pattern.md).
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 

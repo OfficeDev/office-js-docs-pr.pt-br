@@ -1,20 +1,20 @@
 ---
 title: Códigos de erro comuns da API do Office
-description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Office Comum.
+description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d14aa998504972f7951e0c785e6fb6ce74a7833
-ms.sourcegitcommit: 600e163114f2e3f0d24d56b553487af5bc13f72c
+ms.openlocfilehash: 3ca281a007ba4c34e55972ac35757f7b31f6315d
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2022
-ms.locfileid: "62790587"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713032"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
-Este artigo documenta as mensagens de erro que você pode encontrar ao usar o modelo de API comum. Esses códigos de erro não se aplicam a APIs específicas do aplicativo, como a API JavaScript Excel ou a API JavaScript do Word.
+Este artigo documenta as mensagens de erro que você pode encontrar ao usar o modelo de API Comum. Esses códigos de erro não se aplicam a APIs específicas do aplicativo, como a API JavaScript do Excel ou a API JavaScript do Word.
 
-Consulte [modelos de API](../develop/understanding-the-javascript-api-for-office.md#api-models) para saber mais sobre as diferenças entre a API Comum e os modelos de API específicos do aplicativo.
+Consulte [os modelos de API](../develop/understanding-the-javascript-api-for-office.md#api-models) para saber mais sobre as diferenças entre a API Comum e os modelos de API específicos do aplicativo.
 
 ## <a name="error-codes"></a>Códigos de erro
 
@@ -22,7 +22,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 
 |**Error.code**|**Error.name**|**Error.message**|**Condição**|
 |:-----|:-----|:-----|:-----|
-|1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|O tipo de coerção não é suportado no Office aplicativo. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
+|1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|Não há suporte para o tipo de coerção no aplicativo do Office. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
 |1001|Erro de Leitura de Dados|A seleção atual não tem suporte.|Não há suporte para a seleção atual do usuário (ou seja, é algo diferente dos tipos de coerção com suporte).|
 |1002|Tipo inválido de coerção|O tipo de coerção especificado não é compatível com este tipo de associação.|O desenvolvedor da solução forneceu uma combinação incompatível de tipo de coerção e tipo de associação.|
 |1003|Erro de Leitura de Dados|Os valores rowCount ou columnCount especificados são inválidos.|O usuário fornece contagens inválidas de coluna ou de linha.|
@@ -30,7 +30,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |1005|Erro de Leitura de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
 |1006|Erro de Leitura de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção “Table” quando a tabela contiver células mescladas.|O usuário tenta obter dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas). |
 |1007|Erro de Leitura de Dados|O tamanho do documento é muito grande.|O usuário tentar obter um documento maior do que o tamanho compatível no momento.|
-|1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita ler dados além dos limites de dados definidos pelo Office aplicativo.|
+|1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita a leitura de dados além dos limites de dados definidos pelo aplicativo do Office.|
 |1009|Erro de Leitura de Dados|O tipo de arquivo especificado não tem suporte.|O usuário envia um tipo de arquivo inválido.|
 |2000|Erro de Gravação de Dados|Não há suporte para o tipo de objeto de dados fornecido. |Um objeto de dados sem suporte foi fornecido.|
 |2001|Erro de Gravação de Dados|Não é possível gravar na seleção atual.|Não há suporte para a seleção atual do usuário para uma operação de gravação. (Por exemplo, quando o usuário seleciona uma imagem.)|
@@ -41,7 +41,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2006|Erro de formato inválido|O formato do objeto de dados especificado não é válido.|O desenvolvedor de solução fornece uma cadeia de caracteres HTML ou OOXML inválida, uma cadeia de caracteres HTML mal formada ou uma cadeia de caracteres OOXML inválida.|
 |2007|Objeto de dados inválido|O tipo do objeto de dados especificado não é compatível com a seleção atual.|O desenvolvedor da solução fornece um objeto de dados incompatível com o tipo de coerção especificado.|
 |2008|Erro de Gravação de Dados|TBD|TBD|
-|2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelo Office aplicativo.|
+|2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelo aplicativo do Office.|
 |2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
 |3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|
 |3001|Erro de Criação de Associação|TBD|TBD|
@@ -50,23 +50,23 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3004|Erro de Criação de Associação|Não é possível criar uma ligação com a seleção atual e o tipo de ligação especificada.|Há várias condições em que isso pode acontecer. Confira a seção "Condições de erro de criação de associação" posteriormente neste artigo.|
 |3005|Operação de Associação Inválida|Operação sem suporte neste tipo de associação.|O desenvolvedor envia uma operação de adição de linha ou de adição de coluna em um tipo de associação que não é _table_.|
 |3006|Erro de Criação de Associação|O item nomeado não existe.|Não foi possível encontrar o item nomeado. Não existe um controle de conteúdo ou uma tabela com esse nome.|
-|3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: existe mais de um controle de conteúdo com o mesmo nome e a falha na colisão é definida como **true**.|
+|3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: mais de um controle de conteúdo com o mesmo nome existe e a falha na colisão é definida como **true**.|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|Não é possível associar o item nomeado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo coerção _table_.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos `addRowsAsync` ou do `deleteAllDataValuesAsync` `TableBinding` objeto em dados de matriz de tipo de coerção _._|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos `addRowsAsync` ou o `deleteAllDataValuesAsync` objeto `TableBinding` em dados de matriz de tipo de coerção _._|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|
-|5000|Erro de configurações obsoletos|Não há suporte para a operação.|A operação não é suportada no aplicativo Office atual. Por exemplo, é `document.getSelectionAsync` chamado de Outlook.|
-|5001|Erro interno|Ocorreu um erro interno.|Refere-se a uma condição de erro interna, que pode ocorrer por qualquer um dos seguintes motivos.<br/><table><tr><td>Um suplemento que está sendo usado por outro usuário que compartilha a pasta de trabalho criada com uma associação aproximadamente no mesmo momento, e seu suplemento precisa tentar realizar a associação novamente.</tr></td><tr><td>Ocorreu um erro desconhecido.</tr></td><tr><td>Falha na operação.</tr></td><tr><td>O acesso foi negado porque o usuário não é um membro de uma função autorizada.</tr></td><tr><td>O acesso foi negado porque é necessária a comunicação segura e criptografada.</tr></td><tr><td>Os dados estão obsoletos, e o usuário precisa confirmar permitindo que as consultas os atualizem.</tr></td><tr><td>A cota de CPU do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória da sessão foi excedida.</tr></td><tr><td>A pasta de trabalho está em um estado inválido, e a operação não pode ser executada.</tr></td><tr><td>A sessão expirou devido a inatividade, e o usuário precisa recarregar a pasta de trabalho.</tr></td><tr><td>A quantidade máxima de sessões permitida por usuário foi excedida.</tr></td><tr><td>A operação foi cancelada pelo usuário.</tr></td><tr><td>Não foi possível concluir a operação porque ela está demorando muito.</tr></td><tr><td>Não foi possível concluir a solicitação, e ela deve ser repetida.</tr></td><tr><td>O período de avaliação do produto expirou.</tr></td><tr><td>A sessão expirou devido a inatividade.</tr></td><tr><td>O usuário não tem permissão para executar a operação no intervalo especificado.</tr></td><tr><td>As configurações regionais do usuário não correspondem às da sessão atual de colaboração.</tr></td><tr><td>O usuário não está mais conectado e deve atualizar ou abrir novamente a pasta de trabalho.</tr></td><tr><td>O intervalo solicitado não existe na planilha.</tr></td><tr><td>O usuário não tem permissão para editar a pasta de trabalho.</tr></td><tr><td>Não foi possível editar a pasta de trabalho porque ela está bloqueada.</tr></td><tr><td>A sessão não pode salvar a pasta de trabalho automaticamente.</tr></td><tr><td>A sessão não pode atualizar seu bloqueio no arquivo de pasta de trabalho.</tr></td><tr><td>Não foi possível processar a solicitação, e ela deve ser repetida.</tr></td><tr><td>Não foi possível verificar as informações de entrada do usuário , e elas precisam ser inseridas novamente.</tr></td><tr><td>O usuário teve o acesso negado.</tr></td><tr><td>A pasta de trabalho compartilhada precisa ser atualizada.</tr></td></table>|
+|5000|Erro de configurações obsoletos|Não há suporte para a operação.|Não há suporte para a operação no aplicativo atual do Office. Por exemplo, é `document.getSelectionAsync` chamado do Outlook.|
+|5001|Erro interno|Ocorreu um erro interno.|Refere-se a uma condição de erro interna, que pode ocorrer por qualquer um dos motivos a seguir.<br/><table><tr><td>Um suplemento que está sendo usado por outro usuário que compartilha a pasta de trabalho criada com uma associação aproximadamente no mesmo momento, e seu suplemento precisa tentar realizar a associação novamente.</tr></td><tr><td>Ocorreu um erro desconhecido.</tr></td><tr><td>Falha na operação.</tr></td><tr><td>O acesso foi negado porque o usuário não é um membro de uma função autorizada.</tr></td><tr><td>O acesso foi negado porque é necessária a comunicação segura e criptografada.</tr></td><tr><td>Os dados estão obsoletos, e o usuário precisa confirmar permitindo que as consultas os atualizem.</tr></td><tr><td>A cota de CPU do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória da sessão foi excedida.</tr></td><tr><td>A pasta de trabalho está em um estado inválido, e a operação não pode ser executada.</tr></td><tr><td>A sessão expirou devido a inatividade, e o usuário precisa recarregar a pasta de trabalho.</tr></td><tr><td>A quantidade máxima de sessões permitida por usuário foi excedida.</tr></td><tr><td>A operação foi cancelada pelo usuário.</tr></td><tr><td>Não foi possível concluir a operação porque ela está demorando muito.</tr></td><tr><td>Não foi possível concluir a solicitação, e ela deve ser repetida.</tr></td><tr><td>O período de avaliação do produto expirou.</tr></td><tr><td>A sessão expirou devido a inatividade.</tr></td><tr><td>O usuário não tem permissão para executar a operação no intervalo especificado.</tr></td><tr><td>As configurações regionais do usuário não correspondem às da sessão atual de colaboração.</tr></td><tr><td>O usuário não está mais conectado e deve atualizar ou abrir novamente a pasta de trabalho.</tr></td><tr><td>O intervalo solicitado não existe na planilha.</tr></td><tr><td>O usuário não tem permissão para editar a pasta de trabalho.</tr></td><tr><td>Não foi possível editar a pasta de trabalho porque ela está bloqueada.</tr></td><tr><td>A sessão não pode salvar a pasta de trabalho automaticamente.</tr></td><tr><td>A sessão não pode atualizar seu bloqueio no arquivo de pasta de trabalho.</tr></td><tr><td>Não foi possível processar a solicitação, e ela deve ser repetida.</tr></td><tr><td>Não foi possível verificar as informações de entrada do usuário , e elas precisam ser inseridas novamente.</tr></td><tr><td>O usuário teve o acesso negado.</tr></td><tr><td>A pasta de trabalho compartilhada precisa ser atualizada.</tr></td></table>|
 |5002|Permissão negada|A operação solicitada não é permitida no modo de documento atual.|O desenvolvedor da solução envia uma operação de definição, mas o documento está em um modo que não permite alterações, como “Restringir Edição”.|
 |5003|Erro de registro de eventos|Não há suporte para o tipo de evento especificado pelo objeto atual.|O desenvolvedor da solução tenta registrar ou cancelar o registro de um manipulador para um evento que não existe.|
-|5004|Chamada de API inválida|Chamada à API inválida no contexto atual.|Uma chamada inválida é feita para o contexto, por exemplo, tentando usar um `CustomXMLPart` objeto em Excel.|
+|5004|Chamada de API inválida|Chamada à API inválida no contexto atual.|Uma chamada inválida é feita para o contexto, por exemplo, tentando usar um `CustomXMLPart` objeto no Excel.|
 |5005|Dados obsoletos|Falha na operação devido aos dados estarem obsoletos no servidor.|Os dados no servidor precisam ser atualizados.|
 |5006|Tempo Limite da Sessão|O tempo limite da sessão do documento esgotou-se. Recarregue o documento. |A sessão expirou.|
 |5007|Chamada de API inválida|Não há suporte à enumeração no contexto atual.|Não há suporte à enumeração no contexto atual.|
 |5009|Permissão negada|Acesso negado|O suplemento não tem permissão para chamar a API específica.|
-|5012|Sessão inválida ou esgotada|Sua Office do navegador expirou ou é inválida. Para continuar, atualize a página.|A sessão entre o cliente do Office e o servidor expirou, ou então a data, hora ou fuso horário estão incorretos em seu computador.|
+|5012|Sessão inválida ou esgotada|A sessão do navegador do Office expirou ou é inválida. Para continuar, atualize a página.|A sessão entre o cliente do Office e o servidor expirou, ou então a data, hora ou fuso horário estão incorretos em seu computador.|
 |6000|Nó inválido|O nó especificado não foi encontrado.|O `CustomXmlPart` nó não foi encontrado.|
 |6100|Erro no XML personalizado|Erro no XML personalizado|Chamada de API inválida.|
 |7000|ID inválida|A ID especificada não existe.|ID inválida.|
@@ -82,10 +82,10 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
 |9020|Erro de resposta genérica|Ocorreu um erro interno.|Refere-se a uma condição de erro interna, que pode ocorrer por vários motivos.|
-|9021|Salvar Erro|Erro de conexão durante a tentativa de salvar o item no servidor.|O item não pôde ser salvo. Isso pode ser devido a um erro de conexão de servidor se estiver usando o modo Online na área de trabalho Outlook ou devido a uma tentativa de salvar um item de rascunho que foi excluído do servidor Exchange.|
-|9022|Mensagem em erro de armazenamento diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro armazenamento.|A ID do EWS da mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
+|9021|Salvar Erro|Erro de conexão ao tentar salvar o item no servidor.|Não foi possível salvar o item. Isso pode ocorrer devido a um erro de conexão de servidor se estiver usando o Modo Online na área de trabalho do Outlook ou devido a uma tentativa de salvar novamente um item de rascunho que foi excluído do servidor Exchange.|
+|9022|Mensagem em erro de repositório diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro repositório.|A ID do EWS para a mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
 |9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à rede ou à Internet.|
-|9043|Tipo de anexo não suportado|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, `item.getAttachmentContentAsync` lança esse erro se o anexo for uma imagem incorporada no Formato rich text ou se for um tipo de item diferente de um email ou item de calendário (como um contato ou item de tarefa).|
+|9043|Tipo de anexo sem suporte|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, `item.getAttachmentContentAsync` gera esse erro se o anexo for uma imagem inserida no Formato Rich Text ou se for um tipo de item diferente de um email ou item de calendário (como um contato ou item de tarefa).|
 |12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12004|||O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|
@@ -142,6 +142,6 @@ A tabela a seguir resume o comportamento de associação no Word.
 
 - [Ciclo de vida de desenvolvimento de suplementos do Office](../overview/office-add-ins.md)
 - [Entendendo a API de JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md)
-- [Tratamento de erros com a EXCEL JavaScript](../excel/excel-add-ins-error-handling.md)
+- [Tratamento de erro com as APIs JavaScript específicas do aplicativo](../testing/application-specific-api-error-handling.md)
 - [Solucionar problemas de mensagens de erro no logon único (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
 - [Solucionar erros de desenvolvimento com Suplementos do Office](../testing/troubleshoot-development-errors.md)

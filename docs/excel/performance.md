@@ -1,21 +1,21 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
-description: Otimize Excel desempenho do complemento usando a API JavaScript.
+description: Otimize o desempenho do suplemento do Excel usando a API JavaScript.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dbaa566138666a049aa5a0c1d940adff056c92e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: bad5d35ec1cc3f99cd37b3571dee78d3432102e6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745630"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712724"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
 Existem várias maneiras de executar tarefas comuns com a API JavaScript do Excel. Você encontrará diferenças significativas de desempenho entre várias abordagens. Este artigo fornece orientações e amostras de código para mostrar como realizar tarefas comuns com eficiência usando as API JavaScript do Excel.
 
 > [!IMPORTANT]
-> Muitos problemas de desempenho podem ser resolvidos por meio do uso recomendado de chamadas `load` `sync` . Consulte a seção "Melhorias de desempenho com as APIs específicas do aplicativo" de Limites de recursos e otimização de desempenho para os Office de complementos para saber mais sobre como trabalhar com as APIs [específicas](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) do aplicativo de maneira eficiente.
+> Muitos problemas de desempenho podem ser resolvidos por meio do uso recomendado de `load` chamadas `sync` . Consulte a seção "Melhorias de desempenho com as APIs específicas do aplicativo" dos limites de recursos e otimização de desempenho para [Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) para obter conselhos sobre como trabalhar com as APIs específicas do aplicativo de maneira eficiente.
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspender temporariamente os processos do Excel
 
@@ -66,14 +66,14 @@ await Excel.run(async (context) => {
 });
 ```
 
-Observe que apenas os cálculos de fórmula estão suspensos. Quaisquer referências alteradas ainda são reconstruídas. Por exemplo, renomear uma planilha ainda atualiza quaisquer referências em fórmulas para essa planilha.
+Observe que apenas os cálculos de fórmula são suspensos. Todas as referências alteradas ainda são recriadas. Por exemplo, renomear uma planilha ainda atualiza quaisquer referências em fórmulas para essa planilha.
 
 ### <a name="suspend-screen-updating"></a>Suspender a atualização da tela
 
 O Excel exibe as alterações que seu suplemento faz aproximadamente conforme elas acontecem no código. Para conjuntos de dados grandes e interativos, talvez não seja necessário não esse andamento na tela em tempo real. `Application.suspendScreenUpdatingUntilNextSync()` pausa atualizações visuais no Excel até as chamadas do suplemento `context.sync()`, ou até o`Excel.run` terminar (chamadas implícitas `context.sync`). Lembre-se, o Excel não mostrará os sinais de atividade até a próxima sincronização. Seu suplemento deve fornecer orientação aos usuários para prepará-los para esse atraso ou fornecer uma barra de status para demonstrar atividade.
 
 > [!NOTE]
-> Não chame repetidamente `suspendScreenUpdatingUntilNextSync` (como em um loop). Chamadas repetidas fará com que a janela Excel trema.
+> Não chame repetidamente `suspendScreenUpdatingUntilNextSync` (como em um loop). Chamadas repetidas farão a janela do Excel piscar.
 
 ### <a name="enable-and-disable-events"></a>Habilitar e desabilitar eventos
 
@@ -109,21 +109,21 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > Você pode converter convenientemente um objeto de tabela em um objeto de intervalo usando o método[Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-converttorange-member(1)).
 
-## <a name="payload-size-limit-best-practices"></a>Práticas recomendadas de limite de tamanho de carga
+## <a name="payload-size-limit-best-practices"></a>Práticas recomendadas de limite de tamanho de conteúdo
 
-A Excel api JavaScript tem limitações de tamanho para chamadas de API. Excel na Web tem um limite de tamanho de carga para solicitações e respostas de 5 MB, e uma API `RichAPI.Error` retorna um erro se esse limite for excedido. Em todas as plataformas, um intervalo é limitado a cinco milhões de células para obter operações. Os intervalos grandes geralmente excedem ambas as limitações.
+A API JavaScript do Excel tem limitações de tamanho para chamadas à API. Excel na Web tem um limite de tamanho de carga para solicitações e respostas de 5 MB, e uma API `RichAPI.Error` retornará um erro se esse limite for excedido. Em todas as plataformas, um intervalo é limitado a cinco milhões de células para obter operações. Intervalos grandes geralmente excedem essas duas limitações.
 
 O tamanho da carga de uma solicitação é uma combinação dos três componentes a seguir.
 
-* O número de chamadas de API
-* O número de objetos, como objetos `Range`
-* O comprimento do valor a ser definido ou obter
+* O número de chamadas à API
+* O número de objetos, como `Range` objetos
+* O comprimento do valor a ser definido ou obtido
 
-Se uma API retornar o `RequestPayloadSizeLimitExceeded` erro, use as estratégias de práticas documentadas neste artigo para otimizar seu script e evitar o erro.
+Se uma API retornar o `RequestPayloadSizeLimitExceeded` erro, use as estratégias de melhores práticas documentadas neste artigo para otimizar o script e evitar o erro.
 
-### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>Estratégia 1: Mover valores inalterados de loops
+### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>Estratégia 1: mover valores inalterados de loops
 
-Limite o número de processos que ocorrem em loops para melhorar o desempenho. No exemplo de código a seguir, `context.workbook.worksheets.getActiveWorksheet()` pode ser movido para `for` fora do loop, porque ele não muda dentro desse loop.
+Limite o número de processos que ocorrem em loops para melhorar o desempenho. No exemplo de código a seguir, `context.workbook.worksheets.getActiveWorksheet()` pode ser movido para fora `for` do loop, porque ele não é alterado dentro desse loop.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -140,7 +140,7 @@ async function run() {
 }
 ```
 
-O exemplo de código a seguir mostra lógica semelhante à amostra de código anterior, mas com uma estratégia de desempenho aprimorada. O valor `context.workbook.worksheets.getActiveWorksheet()` é recuperado antes do `for` loop, porque esse valor não precisa ser recuperado sempre que o `for` loop for executado. Somente os valores que mudam dentro do contexto de um loop devem ser recuperados nesse loop.
+O exemplo de código a seguir mostra uma lógica semelhante ao exemplo de código anterior, mas com uma estratégia de desempenho aprimorada. O valor `context.workbook.worksheets.getActiveWorksheet()` é recuperado antes do `for` loop, porque esse valor não precisa ser recuperado sempre que o loop é `for` executado. Somente valores que mudam dentro do contexto de um loop devem ser recuperados dentro desse loop.
 
 ```js
 // This code sample shows a good performance strategy.
@@ -159,18 +159,18 @@ async function run() {
 }
 ```
 
-### <a name="strategy-2-create-fewer-range-objects"></a>Estratégia 2: Criar menos objetos de intervalo
+### <a name="strategy-2-create-fewer-range-objects"></a>Estratégia 2: criar menos objetos de intervalo
 
-Crie menos objetos de intervalo para melhorar o desempenho e minimizar o tamanho da carga. Duas abordagens para criar menos objetos de intervalo são descritas nas seções de artigo a seguir e exemplos de código.
+Crie menos objetos de intervalo para melhorar o desempenho e minimizar o tamanho da carga. Duas abordagens para criar menos objetos de intervalo são descritas nas seções e exemplos de código do artigo a seguir.
 
 #### <a name="split-each-range-array-into-multiple-arrays"></a>Dividir cada matriz de intervalo em várias matrizes
 
-Uma maneira de criar menos objetos de intervalo é dividir cada matriz de intervalo em várias matrizes e processar cada nova matriz com um loop e uma nova `context.sync()` chamada.
+Uma maneira de criar menos objetos de intervalo é dividir cada matriz de intervalo em várias matrizes e, em seguida, processar cada nova matriz com um loop e uma nova `context.sync()` chamada.
 
 > [!IMPORTANT]
-> Use essa estratégia somente se você tiver determinado pela primeira vez que está excedendo o limite de tamanho da solicitação de carga. O uso de vários loops pode reduzir o tamanho de cada solicitação de carga para evitar exceder o limite de 5 MB, mas o uso de vários loops `context.sync()` e várias chamadas também afeta negativamente o desempenho.
+> Use essa estratégia somente se você tiver determinado primeiro que está excedendo o limite de tamanho da solicitação de conteúdo. O uso de vários loops pode reduzir o tamanho de cada solicitação de carga para evitar exceder o limite de 5 MB, mas o uso de vários loops `context.sync()` e várias chamadas também afeta negativamente o desempenho.
 
-O exemplo de código a seguir tenta processar uma grande matriz de intervalos em um único loop e, em seguida, uma única `context.sync()` chamada. O processamento de muitos valores de intervalo em uma `context.sync()` chamada faz com que o tamanho da solicitação de carga exceda o limite de 5 MB.
+O exemplo de código a seguir tenta processar uma grande matriz de intervalos em um único loop e, em seguida, uma única `context.sync()` chamada. O processamento de muitos valores de intervalo em uma `context.sync()` chamada faz com que o tamanho da solicitação de conteúdo exceda o limite de 5 MB.
 
 ```js
 // This code sample does not show a recommended strategy.
@@ -189,7 +189,7 @@ async function run() {
 }
 ```
 
-O exemplo de código a seguir mostra lógica semelhante à amostra de código anterior, mas com uma estratégia que evita exceder o limite de tamanho da solicitação de carga de 5 MB. No exemplo de código a seguir, os intervalos são processados em dois loops separados e cada loop é seguido por uma `context.sync()` chamada.
+O exemplo de código a seguir mostra uma lógica semelhante ao exemplo de código anterior, mas com uma estratégia que evita exceder o limite de tamanho da solicitação de carga de 5 MB. No exemplo de código a seguir, os intervalos são processados em dois loops separados e cada loop é seguido por uma `context.sync()` chamada.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -220,7 +220,7 @@ async function run() {
 
 Outra maneira de criar menos objetos de intervalo é criar uma matriz, usar um loop para definir todos os dados nessa matriz e, em seguida, passar os valores da matriz para um intervalo. Isso beneficia o desempenho e o tamanho da carga. Em vez de chamar `range.values` cada intervalo em um loop, `range.values` é chamado uma vez fora do loop.
 
-O exemplo de código a `for` seguir mostra como criar uma matriz, definir os valores dessa matriz em um loop e, em seguida, passar os valores da matriz para um intervalo fora do loop.
+O exemplo de código a `for` seguir mostra como criar uma matriz, definir os valores dessa matriz em um loop e, em seguida, passar os valores de matriz para um intervalo fora do loop.
 
 ```js
 // This code sample shows a good performance strategy.
@@ -246,6 +246,6 @@ async function run() {
 ## <a name="see-also"></a>Confira também
 
 * [Modelo de objeto JavaScript do Excel em Suplementos do Office](excel-add-ins-core-concepts.md)
-* [Tratamento de erros com a EXCEL JavaScript](excel-add-ins-error-handling.md)
+* [Tratamento de erro com as APIs JavaScript específicas do aplicativo](../testing/application-specific-api-error-handling.md)
 * [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)
 * [Objeto de funções de planilha (API JavaScript para Excel)](/javascript/api/excel/excel.functions)

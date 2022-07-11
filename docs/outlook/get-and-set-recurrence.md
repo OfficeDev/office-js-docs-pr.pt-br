@@ -1,18 +1,18 @@
 ---
 title: Obter e definir uma recorrência em um suplemento do Outlook
 description: Este tópico mostra como usar a API JavaScript do Office para obter e definir várias propriedades de recorrência de um item em um suplemento do Outlook.
-ms.date: 08/18/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c774b9a9b0bb87dd158e18114c18dd745f64fc
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: de6bf8722578729159078396bb2f14a52cb648a3
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244741"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713109"
 ---
 # <a name="get-and-set-recurrence"></a>Obter e definir uma recorrência
 
-Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar a Office API JavaScript para gerenciar os padrões de recorrência de uma série de compromissos em seu suplemento.
+Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar a API JavaScript do Office para gerenciar os padrões de recorrência de uma série de compromissos em seu suplemento.
 
 > [!NOTE]
 > O suporte para esse recurso foi introduzido no conjunto [de requisitos 1.7](/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
@@ -25,14 +25,14 @@ Para configurar o padrão de recorrência, você precisa combinar o [tipo de rec
 
 |Tipo de recorrência|Propriedades válidas das recorrências|Uso|
 |---|---|---|
-|`daily`|-&nbsp;[`interval`][interval link]|Um compromisso ocorre a cada *interval* (intervalo) de dias. Exemplo: um compromisso ocorre a cada **_2_** dias.|
+|`daily`|-&nbsp;[`interval`][link de intervalo]|Um compromisso ocorre a cada *interval* (intervalo) de dias. Exemplo: um compromisso ocorre a cada **_2_** dias.|
 |`weekday`|Nenhum.|Um compromisso ocorre todos os dias úteis.|
-|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre no dia **_5_** a cada **_4_** meses.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) do *dayOfWeek* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre na **_terceira_** **_quinta-feira_** a cada **_2_** meses.|
-|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|Ocorre um compromisso nos *days* (dias) a cada *interval* (intervalo) de semanas. Exemplo: um compromisso ocorre na **_terça-feira_ e na _quinta-feira_** a cada **_2_** semanas.|
-|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre no dia **_7_** de **_setembro_** a cada **_4_** anos.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) *dayOfWeek* (diaDaSemana) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre na **_primeira_** **_quinta-feira_** de **_setembro_** a cada **_2_** anos.|
+|`monthly`|-&nbsp;[`interval`][link de intervalo]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre no dia **_5_** a cada **_4_** meses.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) do *dayOfWeek* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre na **_terceira_** **_quinta-feira_** a cada **_2_** meses.|
+|`weekly`|-&nbsp;[`interval`][link de intervalo]<br/>-&nbsp;[`days`][days link]|Ocorre um compromisso nos *days* (dias) a cada *interval* (intervalo) de semanas. Exemplo: um compromisso ocorre na **_terça-feira_ e na _quinta-feira_** a cada **_2_** semanas.|
+|`yearly`|-&nbsp;[`interval`][link de intervalo]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][link do mês]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre no dia **_7_** de **_setembro_** a cada **_4_** anos.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) *dayOfWeek* (diaDaSemana) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre na **_primeira_** **_quinta-feira_** de **_setembro_** a cada **_2_** anos.|
 
 > [!NOTE]
-> Você também pode usar a propriedade [`firstDayOfWeek`][firstDayOfWeek link] com o tipo de recorrência `weekly`. O dia especificado iniciará a lista de dias exibidos na caixa de diálogo de recorrência.
+> Você também pode usar a propriedade [`firstDayOfWeek`][firstDayOfWeek link] com o `weekly` tipo de recorrência. O dia especificado iniciará a lista de dias exibidos na caixa de diálogo de recorrência.
 
 ## <a name="access-recurrence"></a>Acessar a recorrência
 
@@ -51,18 +51,18 @@ Como você acessa o padrão de recorrência e o que pode fazer com ele depende d
 
 ## <a name="set-recurrence-as-the-organizer"></a>Definir recorrência como o organizador
 
-Com o padrão de recorrência, também é necessário determinar os horários e as datas de início e término da série de compromissos. O objeto [`SeriesTime`][SeriesTime link] é usado para gerenciar essas informações.
+Com o padrão de recorrência, também é necessário determinar os horários e as datas de início e término da série de compromissos. O objeto [`SeriesTime`][Link do SeriesTime] é usado para gerenciar essas informações.
 
 O organizador de compromisso só pode especificar o padrão de recorrência para uma série de compromissos no modo de redação. No exemplo a seguir, a série de compromissos está definida para ocorrer das 10:30 às 11:00 toda terça-feira e quinta-feira durante o período de 2 de novembro de 2019 a 2 de dezembro de 2019.
 
 ```js
-var seriesTimeObject = new Office.SeriesTime();
+const seriesTimeObject = new Office.SeriesTime();
 seriesTimeObject.setStartDate(2019,10,2);
 seriesTimeObject.setEndDate(2019,11,2);
 seriesTimeObject.setStartTime(10,30);
 seriesTimeObject.setDuration(30);
 
-var pattern = {
+const pattern = {
     "seriesTime": seriesTimeObject,
     "recurrenceType": "weekly",
     "recurrenceProperties": {"interval": 1, "days": ["tue", "thu"]},
@@ -84,7 +84,7 @@ No exemplo a seguir, no modo de composição, o organizador do compromisso obté
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult) {
-  var recurrencePattern = asyncResult.value;
+  const recurrencePattern = asyncResult.value;
   recurrencePattern.seriesTime.setDuration(60);
   Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
     if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
@@ -107,8 +107,8 @@ No exemplo a seguir, no modo de redação, o organizador de compromisso acessa o
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult){
-    var context = asyncResult.context;
-    var recurrence = asyncResult.value;
+    const context = asyncResult.context;
+    const recurrence = asyncResult.value;
 
     if (recurrence == null) {
         console.log("Non-recurring meeting");
@@ -121,7 +121,7 @@ function callback(asyncResult){
 O exemplo a seguir mostra os resultados da chamada `getAsync` que recupera a recorrência de uma série.
 
 > [!NOTE]
-> Neste exemplo, `seriesTimeObject` é um espaço reservado para o JSON que representa a propriedade `recurrence.seriesTime`. Você deve usar os métodos [`SeriesTime`][SeriesTime link] para acessar as propriedades de data e hora da recorrência.
+> Neste exemplo, `seriesTimeObject` é um espaço reservado para o JSON que representa a propriedade `recurrence.seriesTime`. Você deve usar os métodos [`SeriesTime`][SeriesTime link] para obter as propriedades de data e hora de recorrência.
 
 ```json
 {
@@ -144,8 +144,8 @@ No exemplo a seguir, o participante do compromisso pode acessar o objeto de reco
 outputRecurrence(Office.context.mailbox.item);
 
 function outputRecurrence(item) {
-    var recurrence = item.recurrence;
-    var seriesId = item.seriesId;
+    const recurrence = item.recurrence;
+    const seriesId = item.seriesId;
 
     if (recurrence == null) {
         console.log("Non-recurring item");
@@ -158,7 +158,7 @@ function outputRecurrence(item) {
 O exemplo a seguir mostra o valor da propriedade `item.recurrence` para uma série de compromissos.
 
 > [!NOTE]
-> Neste exemplo, `seriesTimeObject` é um espaço reservado para o JSON que representa a propriedade `recurrence.seriesTime`. Você deve usar os métodos [`SeriesTime`][SeriesTime link] para acessar as propriedades de data e hora da recorrência.
+> Neste exemplo, `seriesTimeObject` é um espaço reservado para o JSON que representa a propriedade `recurrence.seriesTime`. Você deve usar os métodos [`SeriesTime`][SeriesTime link] para obter as propriedades de data e hora de recorrência.
 
 ```json
 {
@@ -175,41 +175,29 @@ O exemplo a seguir mostra o valor da propriedade `item.recurrence` para uma sér
 
 ### <a name="get-the-recurrence-details"></a>Obter os detalhes de recorrência
 
-Depois que você recuperou o objeto de recorrência (seja do retorno de chamada de `getAsync` ou de `item.recurrence`), é possível obter as propriedades específicas da recorrência. Por exemplo, você pode usar os horários e as datas de início e término da série usando os [métodos][SeriesTime link] na propriedade `recurrence.seriesTime`.
+Depois que você recuperou o objeto de recorrência (seja do retorno de chamada de `getAsync` ou de `item.recurrence`), é possível obter as propriedades específicas da recorrência. Por exemplo, você pode obter as datas de início e término e as horas da série usando [métodos][link seriesTime] na `recurrence.seriesTime` propriedade.
 
 ```js
 // Get series date and time info
-var seriesTime = recurrence.seriesTime;
-var startTime = recurrence.seriesTime.getStartTime();
-var endTime = recurrence.seriesTime.getEndTime();
-var startDate = recurrence.seriesTime.getStartDate();
-var endDate = recurrence.seriesTime.getEndDate();
-var duration = recurrence.seriesTime.getDuration();
+const seriesTime = recurrence.seriesTime;
+const startTime = recurrence.seriesTime.getStartTime();
+const endTime = recurrence.seriesTime.getEndTime();
+const startDate = recurrence.seriesTime.getStartDate();
+const endDate = recurrence.seriesTime.getEndDate();
+const duration = recurrence.seriesTime.getDuration();
 
 // Get series time zone
-var timeZone = recurrence.recurrenceTimeZone;
+const timeZone = recurrence.recurrenceTimeZone;
 
 // Get recurrence properties
-var recurrenceProperties = recurrence.recurrenceProperties;
+const recurrenceProperties = recurrence.recurrenceProperties;
 
 // Get recurrence type
-var recurrenceType = recurrence.recurrenceType;
+const recurrenceType = recurrence.recurrenceType;
 ```
 
 ## <a name="see-also"></a>Confira também
 
-[Evento RecurrenceChanged](/javascript/api/office/office.eventtype)
-
-[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
-
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
-[days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
-[interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
-[month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
-
-[SeriesTime link]: /javascript/api/outlook/office.seriestime
+- [Evento RecurrenceChanged](/javascript/api/office/office.eventtype)
+- [Objeto Recorrência](/javascript/api/outlook/office.recurrence)
+- [Objeto SeriesTime](/javascript/api/outlook/office.seriestime)

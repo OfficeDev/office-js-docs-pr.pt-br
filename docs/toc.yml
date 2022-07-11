@@ -81,8 +81,6 @@ items:
                 href: develop/persisting-add-in-state-and-settings.md
               - name: Associar a regiões em um documento ou planilha
                 href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-              - name: Códigos de erro comuns da API
-                href: reference/javascript-api-for-office-error-codes.md
           - name: Configurar e executar seu suplemento
             items:
               - name: Referenciar o Office.js
@@ -308,8 +306,10 @@ items:
                 href: testing/debug-add-ins-in-office-online.md
           - name: iPad e Mac
             items:
-              - name: Realizar sideload de Suplementos do Office no iPad e no Mac
-                href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+              - name: Sideload de suplementos do Office no Mac
+                href: testing/sideload-an-office-add-in-on-mac.md
+              - name: Sideload de suplementos do Office no iPad
+                href: testing/sideload-an-office-add-in-on-ipad.md
               - name: Depurar no Mac
                 href: testing/debug-office-add-ins-on-ipad-and-mac.md
           - name: Limpar o cache do Office
@@ -317,16 +317,22 @@ items:
             displayName: 'uninstall, sideload'
           - name: Depurar com o log de tempo de execução
             href: testing/runtime-logging.md
+          - name: Erros
+            items:
+              - name: Tratamento de erro de API específico do aplicativo
+                href: testing/application-specific-api-error-handling.md
+              - name: Códigos de erro comuns da API
+                href: reference/javascript-api-for-office-error-codes.md
+              - name: Solucionar problemas de erros de usuário
+                href: testing/testing-and-troubleshooting.md
+              - name: Solucionar problemas de desenvolvimento
+                href: testing/troubleshoot-development-errors.md
           - name: Desempenho
             items:
               - name: Evite usar o método context.sync em loops
                 href: concepts/correlated-objects-pattern.md
               - name: Limites de recurso e otimização de desempenho para Suplementos do Office
                 href: concepts/resource-limits-and-performance-optimization.md
-          - name: Solucionar problemas de erros de usuário
-            href: testing/testing-and-troubleshooting.md
-          - name: Solucionar problemas de desenvolvimento
-            href: testing/troubleshoot-development-errors.md
           - name: Teste de unidades
             href: testing/unit-testing.md
           - name: Testes de usabilidade
@@ -421,9 +427,6 @@ items:
                 displayName: 'Excel, preview'
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: Tratamento de erros
-            href: excel/excel-add-ins-error-handling.md
             displayName: Excel
           - name: Eventos
             href: excel/excel-add-ins-events.md

@@ -2,14 +2,14 @@
 title: Implementar append-on-send em seu suplemento do Outlook
 description: Saiba como implementar o recurso de acréscimo ao enviar em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659826"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712969"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar append-on-send em seu suplemento do Outlook
 
@@ -137,7 +137,7 @@ Para esse cenário, você implementará anexar um aviso de isenção de responsa
 
     ```js
     function appendDisclaimerOnSend(event) {
-      var appendText =
+      const appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
         *************************************************************
@@ -158,7 +158,7 @@ Para esse cenário, você implementará anexar um aviso de isenção de responsa
       event.completed();
     }
     ```
-    
+
 1. Imediatamente abaixo da função, adicione a linha a seguir para registrar a função.
 
     ```js
@@ -167,7 +167,7 @@ Para esse cenário, você implementará anexar um aviso de isenção de responsa
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciado se ele ainda não estiver em execução e seu suplemento será sideload. 
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciado se ele ainda não estiver em execução e seu suplemento será sideload.
 
     ```command&nbsp;line
     npm start
@@ -179,7 +179,7 @@ Para esse cenário, você implementará anexar um aviso de isenção de responsa
 
 1. Envie a mensagem e, em seguida, abra-a na  pasta Caixa de Entrada ou Itens Enviados para exibir o aviso de isenção de responsabilidade acrescentado.
 
-    ![Uma captura de tela de uma mensagem de exemplo com o aviso de isenção de responsabilidade acrescentado ao enviar Outlook na Web.](../images/outlook-web-append-disclaimer.png)
+    ![Uma mensagem de exemplo com o aviso de isenção de responsabilidade acrescentado ao enviar Outlook na Web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Confira também
 

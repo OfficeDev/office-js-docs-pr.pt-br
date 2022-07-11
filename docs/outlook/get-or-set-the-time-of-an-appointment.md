@@ -1,18 +1,18 @@
 ---
 title: Obter ou definir a hora do compromisso em um suplemento do Outlook
 description: Saiba como obter ou definir a hora de início e término de um compromisso em um suplemento do Outlook.
-ms.date: 07/08/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f7a0956d7e355389c4cbe08a866686288ced66
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 9c98ae89c4c078e77a07724536498c7791db9d05
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484334"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713046"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obter ou definir a hora ao compor um compromisso no Outlook
 
-A API Office JavaScript fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) e [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) para obter e definir a hora de início ou término de um compromisso que o usuário está compondo. Esses métodos assíncronos estão disponíveis apenas para compor os complementos. Para usar esses métodos, certifique-se de configurar o manifesto do complemento adequadamente para que o Outlook ative o add-in em formulários de composição, conforme descrito em [Create Outlook add-ins for compose forms](compose-scenario.md).
+A API JavaScript do Office fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) e [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) para obter e definir a hora de início ou término de um compromisso que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento em formulários de composição, conforme descrito em Criar [suplementos do Outlook](compose-scenario.md) para formulários de redação.
 
 As propriedades [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) estão disponíveis para compromissos tanto em formulários de composição quanto de leitura. No formulário de leitura, você pode acessar as propriedades diretamente do objeto pai, como em:
 
@@ -38,24 +38,20 @@ e:
 item.end.getAsync
 ```
 
-Como na maioria dos métodos assíncronos na API javaScript Office, **getAsync** e **setAsync** levam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
-
+Assim como na maioria dos métodos assíncronos na API JavaScript do Office, **getAsync** e **setAsync** usam parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 ## <a name="get-the-start-or-end-time"></a>Obter a hora de início ou de término
 
 Esta seção mostra um exemplo de código que obtém a hora de início do compromisso que o usuário está compondo e a exibe. Você pode usar o mesmo código e substituir a propriedade **start** pela propriedade **end** para obter a hora de término. Este exemplo de código assume uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação de um compromisso, conforme mostrado abaixo.
 
-
 ```XML
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-
 ```
 
 Para usar **item.stsart.getAsync** ou **item.end.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, pode-se obter a hora de início como um objeto **Date** no formato UTC usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -89,7 +85,6 @@ function write(message){
 }
 ```
 
-
 ## <a name="set-the-start-or-end-time"></a>Definir a hora de início ou de término
 
 Esta seção mostra um exemplo de código que define a hora de início do compromisso ou da mensagem que o usuário está redigindo. Você pode usar o mesmo código e substituir a propriedade **start** pela propriedade **end** para definir a hora de término. Observe que se o formulário de redação de compromisso já tiver uma hora de início, definir a hora de início ajustará a hora de término para manter a duração anterior do compromisso. Se o formulário de redação de compromisso já tiver uma hora de término, definir a hora de término ajustará a hora de término e a duração. Se o compromisso tiver sido definido como um evento de dia inteiro, definir a hora de início ajustará a hora de término para 24 horas depois e desmarcará a interface do usuário do evento de dia inteiro no formulário de redação.
@@ -98,11 +93,8 @@ Semelhante ao exemplo anterior, o código a seguir considera uma regra no manife
 
 Para usar **item.start.setAsync** ou **item.end.setAsync**, especifique um valor **Date** em UTC no parâmetro _dateTime_. Se você obtiver uma data com base em uma entrada do usuário no cliente, poderá usar [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para converter o valor para um objeto **Date** em UTC. É possível fornecer um método de retorno opcional e os argumentos para o método de retorno de chamada no parâmetro _asyncContext_. Você deve verificar o status, o resultado e eventuais mensagens de erro no parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, **setAsync** inserirá a cadeia de caracteres de hora de início ou de término especificada como texto sem formatação, substituindo a hora de início ou de término existente para o item.
 
-
-
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -116,7 +108,7 @@ Office.initialize = function () {
 
 // Set the start time of the item that the user is composing.
 function setStartTime() {
-    var startDate = new Date("September 27, 2012 12:30:00");
+    const startDate = new Date("September 27, 2012 12:30:00");
     
     item.start.setAsync(
         startDate,
@@ -139,15 +131,13 @@ function write(message){
 }
 ```
 
-
 ## <a name="see-also"></a>Confira também
 
-- [Obter e definir dados de item em um formulário de redação no Outlook](get-and-set-item-data-in-a-compose-form.md)    
-- [Obter e definir dados de item do Outlook em formulários de leitura ou composição](item-data.md)   
-- [Criar suplementos do Outlook para formulários de composição](compose-scenario.md)    
+- [Obter e definir dados de item em um formulário de redação no Outlook](get-and-set-item-data-in-a-compose-form.md)
+- [Obter e definir dados de item do Outlook em formulários de leitura ou composição](item-data.md)
+- [Criar suplementos do Outlook para formulários de composição](compose-scenario.md)
 - [Programação assíncrona em Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Obter, configurar ou adicionar destinatários ao criar um compromisso ou uma mensagem no Outlook](get-set-or-add-recipients.md)  
-- [Obter ou definir o assunto ao criar um compromisso ou uma mensagem no Outlook](get-or-set-the-subject.md)   
-- [Inserir dados no corpo ao criar um compromisso ou uma mensagem no Outlook](insert-data-in-the-body.md)   
+- [Obter ou definir o assunto ao criar um compromisso ou uma mensagem no Outlook](get-or-set-the-subject.md)
+- [Inserir dados no corpo ao criar um compromisso ou uma mensagem no Outlook](insert-data-in-the-body.md)
 - [Obter ou definir o local ao criar um compromisso no Outlook](get-or-set-the-location-of-an-appointment.md)
-    

@@ -3,12 +3,12 @@ title: Realizar sideload de Suplementos do Office para teste de um compartilhame
 description: Saiba como fazer sideload de um Suplemento do Office para teste de um compartilhamento de rede.
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 87bdeb6cbd33bcd9b1828c7afa0a9f879d4c05e4
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659833"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712773"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Realizar sideload de Suplementos do Office para teste de um compartilhamento de rede
 
@@ -26,7 +26,8 @@ Você pode testar um Suplemento do Office em um cliente do Office que está no W
 Este artigo se aplica somente ao teste de suplementos do Word, Excel, PowerPoint e Project e somente no Windows. Se você quiser testar em outra plataforma ou quiser testar um suplemento do Outlook, consulte um dos tópicos a seguir para realizar o sideload do suplemento.
 
 - [Realizar sideload de suplementos do Office no Office na Web para teste](sideload-office-add-ins-for-testing.md)
-- [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Realizar sideload de Suplementos do Office no Mac para teste](sideload-an-office-add-in-on-mac.md)
+- [Realizar sideload de Suplementos do Office no iPad para teste](sideload-an-office-add-in-on-ipad.md)
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office na Web ou para área de trabalho usando um catálogo de pasta compartilhada.  

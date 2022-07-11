@@ -1,23 +1,23 @@
 ---
 title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
-ms.date: 07/06/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 063a819ccb7f71351e0eec8cef1702d98c8466b0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7c02b878b6636e6736ada4a29d123dd8ff772393
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483384"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712962"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
 O namespace [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
 
 > [!IMPORTANT]
-> **As OUTLOOK REST são preteridas**
+> **As APIs REST do Outlook foram preteridas**
 >
-> Os Outlook de extremidade REST serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar os complementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, [compare os Graph e Outlook da API REST](/outlook/rest/compare-graph).
+> Os pontos de extremidade REST do Outlook serão totalmente desativados em novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar suplementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Além disso, [compare os pontos de extremidade da API REST do Microsoft Graph e do Outlook](/outlook/rest/compare-graph).
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 
@@ -36,7 +36,7 @@ Se seu suplemento exigirá acesso de gravação para o item atual ou outros iten
 ```js
 Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
   if (result.status === "succeeded") {
-    var accessToken = result.value;
+    const accessToken = result.value;
 
     // Use the access token.
     getCurrentItem(accessToken);
@@ -81,7 +81,7 @@ A informação final que seu suplemento precisa para chamar a API REST é o nome
 
 ```js
 // Example: https://outlook.office.com
-var restHost = Office.context.mailbox.restUrl;
+const restHost = Office.context.mailbox.restUrl;
 ```
 
 ## <a name="call-the-api"></a>Chamar a API
@@ -89,17 +89,17 @@ var restHost = Office.context.mailbox.restUrl;
 Depois que seu suplemento tiver o token de acesso, a ID do item e a URL da API REST, ele poderá passar essas informações para um serviço de back-end que chama a API REST ou pode chamá-la diretamente usando o AJAX. O exemplo a seguir chama a API REST do Email do Outlook para obter a mensagem atual.
 
 > [!IMPORTANT]
-> Para implantações Exchange locais, as solicitações do lado do cliente usando a AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
+> Para implantações locais do Exchange, as solicitações do lado do cliente que usam AJAX ou bibliotecas semelhantes falham porque o CORS não tem suporte nessa configuração de servidor.
 
 ```js
 function getCurrentItem(accessToken) {
   // Get the item's REST ID.
-  var itemId = getItemRestId();
+  const itemId = getItemRestId();
 
   // Construct the REST URL to the current item.
   // Details for formatting the URL can be found at
   // https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
-  var getMessageUrl = Office.context.mailbox.restUrl +
+  const getMessageUrl = Office.context.mailbox.restUrl +
     '/v2.0/me/messages/' + itemId;
 
   $.ajax({
@@ -108,7 +108,7 @@ function getCurrentItem(accessToken) {
     headers: { 'Authorization': 'Bearer ' + accessToken }
   }).done(function(item){
     // Message is passed in `item`.
-    var subject = item.Subject;
+    const subject = item.Subject;
     ...
   }).fail(function(error){
     // Handle error.

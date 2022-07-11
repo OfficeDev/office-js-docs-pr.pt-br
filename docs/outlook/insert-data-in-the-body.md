@@ -1,34 +1,35 @@
 ---
 title: Inserir dados no corpo de um suplemento do Outlook
 description: Saiba como inserir dados no corpo de um compromisso ou mensagem em um suplemento do Outlook.
-ms.date: 04/15/2019
+ms.date: 07/08/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: a60401156603e85975d0efad7cb721d6d27666c1
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712738"
 ---
-
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Inserir dados no corpo ao compor um compromisso ou uma mensagem no Outlook
 
 Você pode usar os métodos assíncronos ([Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)), [Body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1)), [Body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1)) e [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))) para obter o tipo de corpo e inserir dados no corpo de um item de compromisso ou de uma mensagem que o usuário está compondo. Esses métodos assíncronos estão disponíveis somente para suplementos de composição. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento nos formulários de composição, conforme descrito em [Criar suplementos do Outlook para formulários de composição](compose-scenario.md).
 
-No Outlook, um usuário pode criar uma mensagem em texto, HTML ou RTF (Rich Text Format) e pode criar um compromisso no formato HTML. Antes de inserir, você sempre deve verificar primeiro o formato de item com suporte chamando **getTypeAsync**, pois talvez seja necessário tomar etapas adicionais. O valor **que getTypeAsync** retorna depende do formato de item original, bem como do suporte do sistema operacional do dispositivo e do aplicativo à edição no formato HTML (1). Em seguida, defina _coercionType_ parâmetro da **prependAsync** ou **setSelectedDataAsync** adequadamente (2) para inserir os dados, conforme mostrado na tabela a seguir. Se você não especifica um argumento, **prependAsync** e **setSelectedDataAsync** pressupõem que os dados a inserir estão no formato de texto.
+No Outlook, um usuário pode criar uma mensagem em texto, HTML ou RTF (Rich Text Format) e pode criar um compromisso no formato HTML. Antes de inserir, você sempre deve verificar primeiro o formato de item com suporte chamando **getTypeAsync**, pois talvez seja necessário executar etapas adicionais. O valor **retornado por getTypeAsync** depende do formato de item original, bem como do suporte do sistema operacional do dispositivo e do aplicativo para edição no formato HTML (1). Em seguida, defina _coercionType_ parâmetro da **prependAsync** ou **setSelectedDataAsync** adequadamente (2) para inserir os dados, conforme mostrado na tabela a seguir. Se você não especifica um argumento, **prependAsync** e **setSelectedDataAsync** pressupõem que os dados a inserir estão no formato de texto.
 
-<br/>
-
-|**Dados a inserir**|**Formato de item retornado por getTypeAsync**|**Usar este coercionType**|
+|Dados a inserir|Formato de item retornado por getTypeAsync|Usar este coercionType|
 |:-----|:-----|:-----|
 |Texto|Texto (1)|Texto|
 |HTML|Texto (1)|Texto (2)|
 |Texto|HTML|Texto/HTML|
 |HTML|HTML |HTML|
 
-1.  Em tablets e smartphones, **getTypeAsync** retorna **Office. MailboxEnums.BodyType.Text** se o sistema operacional ou aplicativo não dá suporte à edição de um item, que foi originalmente criado em HTML, no formato HTML.
+1. Em tablets e smartphones, **getTypeAsync** retornará **Office.MailboxEnums.BodyType.Text** se o sistema operacional ou o aplicativo não for compatível com a edição de um item, que foi originalmente criado em HTML, no formato HTML.
 
-2.  Se seus dados a inserir são HTML e **getTypeAsync** retorna um tipo de texto para esse item, reorganize seus dados como texto e insira-os **com Office. MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados **HTML comOffice.MailboxEnums.BodyType.Html** como _coercionType_, receberá um erro.
+1. Se os dados a serem inseridos for HTML e **getTypeAsync** retornar um tipo de texto para esse item, reorganize seus dados como texto e insira-os com **Office.MailboxEnums.BodyType.Text** como _coercionType_. Se você simplesmente inserir os dados HTML com um tipo de coerção de texto, o aplicativo exibirá as marcas HTML como texto. Se você tentar inserir os dados HTML com **Office.MailboxEnums.BodyType.Html** como _coercionType_, receberá um erro.
 
-Além do _coercionType_, como na maioria dos métodos assíncronos na API javaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** levam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
-
+Além de  _coercionType_, assim como na maioria dos métodos assíncronos na API JavaScript do Office, **getTypeAsync**, **prependAsync** e **setSelectedDataAsync** usam outros parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>Inserir dados na posição atual do cursor
-
 
 Esta seção mostra um exemplo de código que usa **getTypeAsync** para verificar o tipo de corpo do item que está sendo redigido e usa **setSelectedDataAsync** para inserir dados no local atual do cursor.
 
@@ -40,22 +41,15 @@ Se o usuário não tiver colocado o cursor no corpo do item, **setSelectedDataAs
 
 Este exemplo de código assume uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso ou uma mensagem, conforme mostrado abaixo.
 
-
-
-
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
   <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
 </Rule>
-
 ```
 
-
-
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -66,7 +60,6 @@ Office.initialize = function () {
         setItemBody();
     });
 }
-
 
 // Get the body type of the composed item, and set data in 
 // in the appropriate data type in the item body.
@@ -128,26 +121,20 @@ function write(message){
 }
 ```
 
-
 ## <a name="insert-data-at-the-beginning-of-the-item-body"></a>Inserir dados no início do corpo do item
-
 
 Como alternativa, você pode usar **prependAsync** para inserir dados no início do corpo do item e desconsiderar o local atual do cursor. Não sendo o ponto de inserção, **prependAsync** e **setSelectedDataAsync** se comportam de maneiras semelhantes:
 
+- Se você estiver pré-anexando dados HTML em um corpo de mensagem, primeiro verifique o tipo do corpo da mensagem para evitar o acréscimo de dados HTML a uma mensagem no formato de texto.
 
-- Se você estiver anexando dados HTML ao corpo da mensagem, primeiro deverá verificar o tipo do corpo da mensagem para evitar anexar dados HTML a uma mensagem no formato de texto.
-    
 - Forneça os itens a seguir como parâmetros de entrada para **prependAsync**: uma cadeia de caracteres de dados em formato de texto ou HTML e, opcionalmente, o formato dos dados a ser inserido, um método de retorno de chamada e seus parâmetros.
-    
+
 - O número máximo de caracteres que você pode anexar no início de cada vez é um milhão.
-    
+
 O código JavaScript a seguir faz parte de um suplemento de exemplo que é ativado nos formulários de redação de compromissos e mensagens. O exemplo chama **getTypeAsync** para verificar o tipo do corpo do item, insere dados HTML na parte superior do corpo do item se este for um compromisso ou uma mensagem em HTML. Caso contrário, ele insere os dados no formato de texto.
 
-
-
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -211,7 +198,6 @@ function prependItemBody() {
                 }
             }
         });
-
 }
 
 // Writes to a div with id='message' on the page.
@@ -220,15 +206,13 @@ function write(message){
 }
 ```
 
-
 ## <a name="see-also"></a>Confira também
 
-- [Obter e definir dados de item em um formulário de redação no Outlook](get-and-set-item-data-in-a-compose-form.md)    
-- [Obter e definir dados de item do Outlook em formulários de leitura ou composição](item-data.md)    
-- [Criar suplementos do Outlook para formulários de composição](compose-scenario.md)    
-- [Programação assíncrona em Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)    
+- [Obter e definir dados de item em um formulário de redação no Outlook](get-and-set-item-data-in-a-compose-form.md)
+- [Obter e definir dados de item do Outlook em formulários de leitura ou composição](item-data.md)
+- [Criar suplementos do Outlook para formulários de composição](compose-scenario.md)
+- [Programação assíncrona em Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Obter, configurar ou adicionar destinatários ao criar um compromisso ou uma mensagem no Outlook](get-set-or-add-recipients.md)  
 - [Obter ou definir o assunto ao criar um compromisso ou uma mensagem no Outlook](get-or-set-the-subject.md)  
-- [Obter ou definir o local ao criar um compromisso no Outlook](get-or-set-the-location-of-an-appointment.md) 
+- [Obter ou definir o local ao criar um compromisso no Outlook](get-or-set-the-location-of-an-appointment.md)
 - [Obter ou definir a hora ao criar um compromisso no Outlook](get-or-set-the-time-of-an-appointment.md)
-    
