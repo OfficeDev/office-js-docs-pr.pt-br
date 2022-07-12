@@ -3,12 +3,12 @@ title: Testar os Suplementos do Office
 description: Saiba como testar seu Suplemento do Office.
 ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ab730a9acc141195c378a490c670fada82ecc90f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d69d57e677e7f06457f49fef60df63bc6f9577fa
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484548"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712731"
 ---
 # <a name="test-office-add-ins"></a>Testar os Suplementos do Office
 
@@ -34,7 +34,9 @@ Você pode usar o sideload para instalar um Suplemento do Office para teste sem 
 
 - [Realizar sideload de suplementos do Office no Office na Web](sideload-office-add-ins-for-testing.md)
 
-- [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Sideload de suplementos do Office no Mac](sideload-an-office-add-in-on-mac.md)
+
+- [Sideload de suplementos do Office no iPad](sideload-an-office-add-in-on-ipad.md)
 
 - [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)
 
