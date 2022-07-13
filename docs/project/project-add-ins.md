@@ -5,19 +5,19 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1e7544d3f6957871b0779ae6fe6ab7a0227640f5
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659931"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765283"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
 O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou superior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos gerais do painel de tarefas desenvolvidos para Word ou Excel. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibição e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos empresariais.
 
 > [!NOTE]
-> O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
+> O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
 
 Para ver uma introdução sobre os suplementos do Office, confira [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md).
 
@@ -199,4 +199,4 @@ Você pode distribuir suplementos por meio de um compartilhamento de arquivos, p
 - [Desenvolvimento de Suplementos do Office ](../develop/develop-overview.md)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-- [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
+- [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435)

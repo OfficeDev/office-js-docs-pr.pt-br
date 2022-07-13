@@ -1,16 +1,16 @@
 ---
-title: Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada em um Outlook suplemento
+title: Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada em um suplemento do Outlook
 description: Discute como configurar o suporte a suplementos para pastas compartilhadas (também conhecido como acesso delegado) e caixas de correio compartilhadas.
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f981d1b1b691e3d2ebb4e292be44c338932453ff
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 7a01c81dcc1bcae4fa92e2d659c1aa40af4cdac5
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187298"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765276"
 ---
-# <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada em um Outlook suplemento
+# <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada em um suplemento do Outlook
 
 Este artigo descreve como habilitar pastas compartilhadas (também conhecidas como acesso [delegado) e](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes) cenários de caixa de correio compartilhada (agora em versão prévia) em seu suplemento do Outlook, incluindo quais permissões a API JavaScript do Office dá suporte.
 
@@ -20,10 +20,13 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para esse
 
 | Cliente | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Não|Não|Não|
+|Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Em versão prévia\*|Em versão prévia\*|Em versão prévia\*|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
-|Navegador da Web:<br>interface do Outlook moderna|Sim|Não aplicável|Não aplicável|Não aplicável|
-|Navegador da Web:<br>interface do usuário Outlook clássica|Não aplicável|Não|Não|Não|
+|Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|Não aplicável|
+|Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Não|Não|Não|
+
+> [!NOTE]
+> \* O suporte para esse recurso em um ambiente do Exchange local está atualmente em versão prévia a partir da versão 2205 (build 15228.10000).
 
 > [!IMPORTANT]
 > O suporte para esse recurso foi introduzido no conjunto de requisitos [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (para obter detalhes, consulte [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.
@@ -40,9 +43,9 @@ O proprietário da caixa de correio [deve primeiro fornecer acesso a um delegado
 
 #### <a name="shared-mailboxes-preview"></a>Caixas de correio compartilhadas (versão prévia)
 
-Exchange administradores do servidor podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. No momento, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) é a única versão de servidor com suporte para esse recurso.
+Os administradores do Exchange Server podem criar e gerenciar caixas de correio compartilhadas para conjuntos de usuários acessarem. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) ambientes locais do [Exchange (em versão prévia)](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) têm suporte.
 
-Um Exchange Server conhecido como "automação" está ativado por padrão, o que significa que, subsequentemente, a [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook de um usuário depois que o Outlook tiver sido fechado e reaberto. No entanto, se um administrador desativar o automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+Um Exchange Server conhecido como "automação" está ativado por padrão, o que significa que, subsequentemente, a [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) caixa de correio compartilhada deve aparecer automaticamente no aplicativo Outlook de um usuário depois que o Outlook for fechado e reaberto. No entanto, se um administrador desativar o automação, o usuário deverá seguir as etapas manuais descritas na seção "Adicionar uma caixa de correio compartilhada ao Outlook" do artigo Abrir e usar uma caixa de correio compartilhada no [Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 > [!WARNING]
 > NÃO **entre** na caixa de correio compartilhada com uma senha. As APIs de recurso não funcionarão nesse caso.
@@ -55,7 +58,7 @@ O proprietário da caixa de [correio deve primeiro fornecer acesso a um delegado
 
 #### <a name="shared-mailboxes"></a>Caixas de correio compartilhadas
 
-Cenários de caixa de correio Outlook suplementos não têm suporte no momento em Outlook na Web.
+Atualmente, não há suporte para cenários de caixa de correio compartilhada em suplementos do Outlook no Outlook na Web.
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -79,15 +82,15 @@ Se o proprietário do calendário concedeu acesso amplo ao calendário (por exem
 
 ---
 
-Para saber mais sobre onde os suplementos fazem e não são ativados em geral, consulte os itens de Caixa de Correio disponíveis para a seção de [suplementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de suplementos do Outlook.
+Para saber mais sobre onde os suplementos fazem e não são ativados em geral, consulte a seção Itens de caixa de correio disponíveis para [suplementos](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) da página de visão geral de suplementos do Outlook.
 
 ## <a name="supported-permissions"></a>Permissões com suporte
 
-A tabela a seguir descreve as permissões que o Office API JavaScript dá suporte para delegados e usuários de caixa de correio compartilhada.
+A tabela a seguir descreve as permissões compatíveis com a API JavaScript do Office para representantes e usuários de caixa de correio compartilhada.
 
 |Permissão|Valor|Descrição|
 |---|---:|---|
-|Read|1 (000001)|Pode ler itens.|
+|Ler|1 (000001)|Pode ler itens.|
 |Gravar|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Pode excluir somente os itens que eles criaram.|
 |DeleteAll|8 (001000)|Pode excluir todos os itens.|
@@ -103,7 +106,7 @@ O [objeto DelegatePermissions](/javascript/api/outlook/office.mailboxenums.deleg
 
 As atualizações de um representante para a caixa de correio do proprietário geralmente são sincronizadas entre caixas de correio imediatamente.
 
-No entanto, se as operações REST ou Exchange Serviços Web (EWS) forem usadas para definir uma propriedade estendida em um item, essas alterações poderão levar algumas horas para serem sincronizadas. Em vez disso, recomendamos que você use o [objeto CustomProperties](/javascript/api/outlook/office.customproperties) e as APIs relacionadas para evitar esse atraso. Para saber mais, confira [a seção de](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) propriedades personalizadas do artigo "Obter e definir metadados em um Outlook suplemento".
+No entanto, se as operações REST ou EWS (Exchange Web Services) forem usadas para definir uma propriedade estendida em um item, essas alterações poderão levar algumas horas para serem sincronizadas. Em vez disso, recomendamos que você use o [objeto CustomProperties](/javascript/api/outlook/office.customproperties) e as APIs relacionadas para evitar esse atraso. Para saber mais, confira a [seção de propriedades personalizadas](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) do artigo "Obter e definir metadados em um suplemento do Outlook".
 
 > [!IMPORTANT]
 > Em um cenário de delegado, você não pode usar o EWS com os tokens atualmente fornecidos pela office.js API.
@@ -197,7 +200,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> Como representante, você pode usar REST para obter o conteúdo de uma mensagem [Outlook anexada a um item Outlook ou postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+> Como representante, você pode usar REST para obter o conteúdo de uma mensagem do [Outlook anexada a um item ou postagem de grupo do Outlook](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Manipular chamada REST em itens compartilhados e não compartilhados
 
@@ -223,7 +226,7 @@ Dependendo dos cenários do suplemento, há algumas limitações a serem conside
 
 ### <a name="message-compose-mode"></a>Modo de composição de mensagem
 
-No modo Redigir Mensagem, não há suporte para [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) no Outlook na Web ou no Windows a menos que as condições a seguir sejam atendidas.
+No modo Redigir Mensagem, não há suporte para [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) no Outlook na Web ou no Windows, a menos que as condições a seguir sejam atendidas.
 
 a. **Delegar acesso/pastas compartilhadas**
 
@@ -231,7 +234,7 @@ a. **Delegar acesso/pastas compartilhadas**
 1. Eles salvam a mensagem e a movem de sua própria pasta **Rascunhos** para uma pasta compartilhada com o representante.
 1. O delegado abre o rascunho da pasta compartilhada e continua redigindo.
 
-b. **Caixa de correio compartilhada (aplica-se Outlook no Windows somente)**
+b. **Caixa de correio compartilhada (aplica-se somente ao Outlook no Windows)**
 
 1. Um usuário de caixa de correio compartilhada inicia uma mensagem. Pode ser uma nova mensagem, uma resposta ou um encaminhamento.
 1. Eles salvam a mensagem e a movem da própria pasta **Rascunhos** para uma pasta na caixa de correio compartilhada.
@@ -249,9 +252,9 @@ Se um administrador escondeu um usuário ou endereço de caixa de correio compar
 
 ## <a name="see-also"></a>Confira também
 
-- [Permitir que outra pessoa gerencie seu email e calendário](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [Permitir que outra pessoa gerencie seu e-mail e seu calendário](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário no Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
-- [Adicionar uma caixa de correio compartilhada Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
+- [Adicionar uma caixa de correio compartilhada ao Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [Como ordenar elementos de manifesto](../develop/manifest-element-ordering.md)
 - [Máscara (computação)](https://en.wikipedia.org/wiki/Mask_(computing))
 - [Operadores bit a bit do JavaScript](https://www.w3schools.com/js/js_bitwise.asp)
