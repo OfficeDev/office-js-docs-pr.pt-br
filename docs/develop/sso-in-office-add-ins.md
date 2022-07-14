@@ -3,12 +3,12 @@ title: Habilitar o login único (SSO) em um Suplemento do Office
 description: Conheça as principais etapas para habilitar o login único (SSO) do seu Suplemento do Office usando contas pessoais, corporativas ou educacionais comuns da Microsoft.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 6667862adf0a89a2cf34dae9ee4413cf7a0c8036
+ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659966"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "66789098"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Habilitar o login único (SSO) em um Suplemento do Office
 
@@ -59,9 +59,6 @@ Esta seção descreve as tarefas envolvidas na criação de um suplemento do Off
 
 - [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 - [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
-
-> [!NOTE]
-> Você pode usar o gerador Yeoman para criar um Suplemento do Office com Node.js habilitado para SSO. O gerador Yeoman simplifica o processo de criação de um suplemento habilitado para SSO, automatizando as etapas necessárias para configurar o SSO no Azure e gerando o código necessário para um suplemento usar o SSO. Para obter mais informações, confira [Início rápido de logon único (SSO)](../quickstarts/sso-quickstart.md).
 
 ### <a name="register-your-add-in-with-the-microsoft-identity-platform"></a>Registre seu suplemento com o plataforma de identidade da Microsoft
 
