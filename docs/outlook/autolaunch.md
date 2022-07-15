@@ -2,18 +2,18 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 06/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f2dc7e6c2745df9394135b46dbd4d99b6d790a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660078"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797614"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu suplemento do Outlook para ativação baseada em evento
 
-Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Esse recurso permite que o suplemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário.
+Sem o recurso de ativação baseada em evento, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Esse recurso permite que o suplemento execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a cada item. Você também pode integrar com o painel de tarefas e os comandos de função.
 
 Ao final deste passo a passo, você terá um suplemento que é executado sempre que um novo item é criado e define o assunto.
 

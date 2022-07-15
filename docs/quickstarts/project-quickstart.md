@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: c2f0e31b5a4c958cd155dfeb6d1648f7a2697c69
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091038"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797474"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -31,7 +31,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-project.png)
+![Os prompts e respostas para o gerador Yeoman em uma interface de linha de comando.](../images/yo-office-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -44,49 +44,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 - O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
 - O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
 - O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
-- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office.
-
-## <a name="update-the-code"></a>Atualizar o código
-
-No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`. Este código usa a API JavaScript do Office para configurar o `Name` campo e `Notes` campo da tarefa selecionada.
-
-```js
-var taskGuid;
-
-// Get the GUID of the selected task
-Office.context.document.getSelectedTaskAsync(
-    function (result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            taskGuid = result.value;
-
-            // Set the specified fields for the selected task.
-            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
-            var fieldValues = ['New task name', 'Notes for the task.'];
-
-            // Set the field value. If the call is successful, set the next field.
-            for (var i = 0; i < targetFields.length; i++) {
-                Office.context.document.setTaskFieldAsync(
-                    taskGuid,
-                    targetFields[i],
-                    fieldValues[i],
-                    function (result) {
-                        if (result.status === Office.AsyncResultStatus.Succeeded) {
-                            i++;
-                        }
-                        else {
-                            var err = result.error;
-                            console.log(err.name + ' ' + err.code + ' ' + err.message);
-                        }
-                    }
-                );
-            }
-        } else {
-            var err = result.error;
-            console.log(err.name + ' ' + err.code + ' ' + err.message);
-        }
-    }
-);
-```
+- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office. Neste início rápido, o código define o campo `Name` e o campo `Notes` da tarefa selecionada de um projeto.
 
 ## <a name="try-it-out"></a>Experimente
 
@@ -114,7 +72,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
 
-    ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado.](../images/project-quickstart-addin-1.png)
+    ![O aplicativo Project com o suplemento do painel de tarefas carregado.](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

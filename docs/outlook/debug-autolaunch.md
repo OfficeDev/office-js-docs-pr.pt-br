@@ -2,14 +2,14 @@
 title: Depurar seu suplemento do Outlook baseado em evento
 description: Saiba como depurar seu suplemento do Outlook que implementa a ativação baseada em evento.
 ms.topic: article
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659679"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797488"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>Depurar seu suplemento do Outlook baseado em evento
 
@@ -25,13 +25,13 @@ Neste artigo, discutiremos os principais estágios para habilitar a depuração.
 - [Anexar Visual Studio Code](#attach-visual-studio-code)
 - [Depurar](#debug)
 
-Você tem várias opções para criar seu projeto de suplemento. Dependendo da opção que você está usando, as etapas podem variar. Nesse caso, se você usou o gerador Yeoman para Suplementos do Office para criar seu projeto de suplemento (por exemplo, fazendo o passo a passo de ativação baseada em [evento), siga](autolaunch.md) as etapas do escritório yo, caso contrário, siga as outras  etapas. Visual Studio Code deve ser pelo menos a versão 1.56.1.
+Se você usou o Gerador Yeoman para Suplementos do Office para criar seu projeto de suplemento (por exemplo, fazendo o passo a passo de ativação baseada em [evento), siga](autolaunch.md) a opção de gerador Criado com **Yeoman** em todo este artigo. Caso contrário, siga **as outras** etapas. Visual Studio Code deve ser pelo menos a versão 1.56.1.
 
 ## <a name="mark-your-add-in-for-debugging"></a>Marcar seu suplemento para depuração
 
 1. Defina a chave do Registro `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` é o **\<Id\>** manifesto do suplemento.
 
-    **yo office**: em uma janela de linha de comando, navegue até a raiz da pasta do suplemento e execute o comando a seguir.
+    **Criado com o gerador Yeoman**: em uma janela de linha de comando, navegue até a raiz da pasta do suplemento e execute o comando a seguir.
 
     ```command&nbsp;line
     npm start
@@ -50,7 +50,7 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
 
 ## <a name="configure-visual-studio-code"></a>Configurar Visual Studio Code
 
-### <a name="yo-office"></a>yo escritório
+### <a name="created-with-yeoman-generator"></a>Criado com o gerador Yeoman
 
 1. De volta à janela de linha de comando, abra Visual Studio Code.
 
@@ -72,7 +72,7 @@ Você tem várias opções para criar seu projeto de suplemento. Dependendo da o
     }
     ```
 
-### <a name="other"></a>Outros
+### <a name="other"></a>Other
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Área de** Trabalho).
 1. Abra o Visual Studio Code.

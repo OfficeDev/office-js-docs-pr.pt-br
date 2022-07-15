@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: Saiba como criar um suplemento do painel de tarefas do OneNote simples usando a API JS do Office.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 9b5f4dd941ed8cc107bee04bc67a368520439948
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 294b315c3d5ebc80d908d0bd4f3d4ee36a32b908
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090849"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797628"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -29,7 +29,7 @@ Neste artigo, você verá o processo de criação de um suplemento do painel de 
 - **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
 
-![Captura de tela apresentando os avisos e respostas do gerador Yeoman em uma interface de linha de comando.](../images/yo-office-onenote.png)
+![Os prompts e respostas para o gerador Yeoman em uma interface de linha de comando.](../images/yo-office-onenote.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -53,13 +53,13 @@ try {
     await OneNote.run(async (context) => {
 
         // Get the current page.
-        var page = context.application.getActivePage();
+        const page = context.application.getActivePage();
 
         // Queue a command to set the page title.
         page.title = "Hello World";
 
         // Queue a command to add an outline to the page.
-        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        const html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
         // Run the queued commands.
@@ -104,7 +104,7 @@ try {
 
 1. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
-    ![Captura de tela apresentando o suplemento criado com base nesse passo a passo: exibir o painel de opções do painel de tarefas e o painel de tarefas no OneNote.](../images/onenote-first-add-in-4.png)
+    ![O suplemento incorporado a este passo a passo, onde o botão de faixa de opções Mostrar Painel de Tarefas foi usado para abrir o painel de tarefas no OneNote.](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

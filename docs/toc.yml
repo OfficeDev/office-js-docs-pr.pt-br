@@ -311,6 +311,10 @@ items:
             displayName: 'uninstall, sideload'
           - name: Depurar com o log de tempo de execução
             href: testing/runtime-logging.md
+          - name: Depurar um comando de função com um runtime não compartilhado
+            href: testing/debug-function-command.md
+          - name: Depurar os métodos inicializar e onReady
+            href: testing/debug-initialize-onready.md
           - name: Erros
             items:
               - name: Tratamento de erro de API específico do aplicativo
@@ -748,7 +752,7 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: Solução de problemas de ativação de suplementos
                 href: outlook/troubleshoot-outlook-add-in-activation.md
-              - name: Depurar suplementos sem interface do usuário
+              - name: Comandos de função de depuração
                 href: outlook/debug-ui-less.md
               - name: Depurar ativação baseada em evento
                 href: outlook/debug-autolaunch.md

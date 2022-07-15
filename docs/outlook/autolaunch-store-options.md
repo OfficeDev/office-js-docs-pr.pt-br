@@ -1,19 +1,19 @@
 ---
-title: Opções de listagem do AppSource para seu Outlook de evento
-description: Saiba mais sobre as opções de listagem do AppSource disponíveis para seu Outlook que implementa a ativação baseada em eventos.
+title: Opções de listagem do AppSource para seu suplemento do Outlook baseado em evento
+description: Saiba mais sobre as opções de listagem do AppSource disponíveis para seu suplemento do Outlook que implementa a ativação baseada em eventos.
 ms.topic: article
-ms.date: 08/05/2021
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b8ff55f852d7817903411ea21034df51f49accd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d8d2c2e9960d2aef2d32ede6e20eb5f1db125a6c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151883"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797677"
 ---
-# <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Opções de listagem do AppSource para seu Outlook de evento
+# <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Opções de listagem do AppSource para seu suplemento do Outlook baseado em evento
 
-Atualmente, os complementos devem ser implantados pelos administradores de uma organização para que os usuários finais acessem a funcionalidade de recurso baseada em evento. Estamos restringindo a ativação baseada em eventos se o usuário final adquiriu o complemento diretamente do AppSource. Por exemplo, se o add-in Contoso incluir o ponto de extensão com pelo menos um definido no nó, a invocação automática do add-in só acontecerá se o complemento tiver sido instalado para o usuário final pelo administrador da organização. Caso contrário, a invocação automática do complemento será `LaunchEvent` `LaunchEvent Type` `LaunchEvents` bloqueada. Consulte o trecho a seguir de um manifesto de exemplo do complemento.
+No momento, os suplementos devem ser implantados pelos administradores de uma organização para que os usuários finais acessem a funcionalidade de recurso baseada em evento. Estamos restringindo a ativação baseada em evento se o usuário final adquiriu o suplemento diretamente do AppSource. Por exemplo, se o suplemento Contoso `LaunchEvent` `LaunchEvent Type` `LaunchEvents` incluir o ponto de extensão com pelo menos um definido no nó, a invocação automática do suplemento só ocorrerá se o suplemento tiver sido instalado para o usuário final pelo administrador da organização. Caso contrário, a invocação automática do suplemento será bloqueada. Consulte o trecho a seguir de um manifesto de suplemento de exemplo.
 
 ```xml
 ...
@@ -23,60 +23,60 @@ Atualmente, os complementos devem ser implantados pelos administradores de uma o
     ...
 ```
 
-Um usuário final ou administrador pode adquirir os complementos por meio do AppSource ou do aplicativo Office Store. Se o cenário principal ou o fluxo de trabalho do seu complemento exigir a ativação baseada em eventos, talvez você queira restringir seus complementos disponíveis para a implantação do administrador. Para habilitar essa restrição, podemos fornecer URLs de código de voo. Graças aos códigos de pré-lançamento, somente os usuários finais com essas URLs especiais podem acessar a listagem. A seguir está uma URL de exemplo.
+Um usuário final ou administrador pode adquirir suplementos por meio do AppSource ou da Office Store no aplicativo. Se o cenário ou fluxo de trabalho principal do suplemento exigir a ativação baseada em evento, talvez você queira restringir os suplementos disponíveis para a implantação do administrador. Para habilitar essa restrição, podemos fornecer URLs de código de voo. Graças aos códigos de voo, somente os usuários finais com essas URLs especiais podem acessar a listagem. A seguir está um exemplo de URL.
 
 `https://appsource.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
-Os usuários e administradores não podem pesquisar explicitamente um complemento pelo nome no AppSource ou no aplicativo Office Store quando um código de pré-voo estiver habilitado para ele. Como criador do add-in, você pode compartilhar esses códigos de pré-lançamento em particular com os administradores da organização para implantação do complemento.
+Os usuários e administradores não podem pesquisar explicitamente um suplemento pelo nome no AppSource ou na Office Store no aplicativo quando um código de versão de pré-lançamento está habilitado para ele. Como criador do suplemento, você pode compartilhar esses códigos de versão de pré-lançamento de modo privado com os administradores da organização para implantação de suplementos.
 
 > [!NOTE]
-> Embora os usuários finais possam instalar o complemento usando um código de pré-lançamento, o complemento não incluirá a ativação baseada em evento.
+> Embora os usuários finais possam instalar o suplemento usando um código de versão de pré-lançamento, o suplemento não incluirá a ativação baseada em evento.
 
-## <a name="specify-a-flight-code"></a>Especificar um código de voo
+## <a name="specify-a-flight-code"></a>Especificar um código de versão de pré-lançamento
 
-Para especificar o código de voo que você deseja para o seu complemento, compartilhe essas informações no **Notes para** certificação quando estiver publicando seu complemento. _**Importante**:_ Os códigos de pré-lançamento são sensíveis a minúsculas.
+Para especificar o código de versão de pré-lançamento desejado para o suplemento, compartilhe essas informações  nas Notas para certificação quando estiver publicando o suplemento. _**Importante**:_ Os códigos de voo diferenciam maiúsculas de minúsculas.
 
-![Captura de tela mostrando exemplo de solicitação de código de voo no Notes para a tela de certificação durante o processo de publicação.](../images/outlook-publish-notes-for-certification-1.png)
+![Captura de tela mostrando a solicitação de exemplo de código de voo em Anotações para a tela de certificação durante o processo de publicação.](../images/outlook-publish-notes-for-certification-1.png)
 
-## <a name="deploy-add-in-with-flight-code"></a>Implantar o add-in com código de pré-voo
+## <a name="deploy-add-in-with-flight-code"></a>Implantar suplemento com código de versão de pré-lançamento
 
-Depois que os códigos de voo são definidos, você receberá a URL da equipe de certificação do aplicativo. Em seguida, você pode compartilhar a URL com administradores em particular.
+Depois que os códigos de voo forem definidos, você receberá a URL da equipe de certificação do aplicativo. Em seguida, você pode compartilhar a URL com os administradores em particular.
 
-Para implantar o complemento, o administrador pode usar as etapas a seguir.
+Para implantar o suplemento, o administrador pode usar as etapas a seguir.
 
-- Entre no admin.microsoft.com ou AppSource.com com sua conta Microsoft 365 administrador. Se o complemento tiver o SSO (SSO) único habilitado, serão necessárias credenciais de administrador global.
+- Entre no admin.microsoft.com ou AppSource.com com sua conta de administrador do Microsoft 365. Se o suplemento tiver o SSO (logon único) habilitado, serão necessárias credenciais de administrador global.
 - Abra a URL do código de voo em um navegador da Web.
-- Na página listagem de complementos, selecione **Obter agora**. Você deve ser redirecionado para o portal do aplicativo integrado.
+- Na página de listagem de suplementos, selecione **Obter agora**. Você deve ser redirecionado para o portal do aplicativo integrado.
 
 ## <a name="unrestricted-appsource-listing"></a>Listagem irrestrita do AppSource
 
-Se o seu add-in não usar a ativação baseada em eventos para cenários críticos (ou seja, seu complemento funciona bem sem invocação automática), considere listar seu complemento no AppSource sem códigos de pré-lançamento especiais. Se um usuário final receber seu complemento do AppSource, a ativação automática não acontecerá para o usuário. No entanto, eles podem usar outros componentes do seu complemento, como um painel de tarefas ou um comando sem interface do usuário.
+Se o suplemento não usar a ativação baseada em evento para cenários críticos (ou seja, seu suplemento funciona bem sem invocação automática), considere listar seu suplemento no AppSource sem nenhum código de voo especial. Se um usuário final receber seu suplemento do AppSource, a ativação automática não acontecerá para o usuário. No entanto, eles podem usar outros componentes do suplemento, como um painel de tarefas ou um comando de função.
 
 > [!IMPORTANT]
-> Esta é uma restrição temporária. No futuro, planejamos habilitar a ativação de add-in baseado em evento para usuários finais que adquirem diretamente o seu complemento.
+> Essa é uma restrição temporária. No futuro, planejamos habilitar a ativação de suplemento baseado em evento para usuários finais que adquirem diretamente seu suplemento.
 
-## <a name="update-existing-add-ins-to-include-event-based-activation"></a>Atualizar os complementos existentes para incluir a ativação baseada em eventos
+## <a name="update-existing-add-ins-to-include-event-based-activation"></a>Atualizar suplementos existentes para incluir a ativação baseada em evento
 
-Você pode atualizar o seu add-in existente para incluir a ativação baseada em evento e reapresentá-lo para validação e decidir se deseja uma listagem restrita ou irrestrita do AppSource.
+Você pode atualizar seu suplemento existente para incluir a ativação baseada em evento e, em seguida, reenviar para validação e decidir se deseja uma listagem restrita ou irrestrita do AppSource.
 
-Depois que o complemento atualizado for aprovado, os administradores da organização que já  implantaram o complemento receberão uma mensagem de atualização na seção Aplicativos integrados do centro de administração. A mensagem aconselha o administrador sobre as alterações de ativação baseadas em eventos. Depois que o administrador aceitar as alterações, a atualização será implantada para os usuários finais.
+Depois que o suplemento atualizado for aprovado, os administradores da organização que já implantaram o suplemento receberão uma mensagem de atualização na seção Aplicativos integrados do centro de administração. A mensagem aconselha o administrador sobre as alterações de ativação baseadas em evento. Depois que o administrador aceitar as alterações, a atualização será implantada para os usuários finais.
 
-![Captura de tela da notificação de atualização do aplicativo na tela "Aplicativos integrados".](../images/outlook-deploy-update-notification.png)
+![Captura de tela da notificação de atualização de aplicativo na tela "Aplicativos integrados".](../images/outlook-deploy-update-notification.png)
 
-Para usuários finais que instalaram o add-in por conta própria, o recurso de ativação baseada em eventos não funcionará mesmo depois que o complemento for atualizado.
+Para usuários finais que instalaram o suplemento por conta própria, o recurso de ativação baseada em evento não funcionará mesmo depois que o suplemento for atualizado.
 
-## <a name="admin-consent-for-installing-event-based-add-ins"></a>Consentimento do administrador para instalar os complementos baseados em eventos
+## <a name="admin-consent-for-installing-event-based-add-ins"></a>Administração consentimento para instalar suplementos baseados em eventos
 
-Sempre que um complemento baseado em  evento é implantado na tela Aplicativos Integrados, o administrador obtém detalhes sobre os recursos de ativação baseada em eventos do add-in no assistente de implantação. Os detalhes aparecem na seção **Permissões e Funcionalidades do** Aplicativo. O administrador deve ver todos os eventos em que o complemento pode ser ativado automaticamente.
+Sempre que um suplemento baseado em evento é implantado na tela Aplicativos Integrados, o administrador obtém detalhes sobre as funcionalidades de ativação baseada em eventos do suplemento no assistente de implantação. Os detalhes aparecem na seção **Permissões e Funcionalidades do** Aplicativo. O administrador deve ver todos os eventos em que o suplemento pode ser ativado automaticamente.
 
 ![Captura de tela da tela "Aceitar solicitações de permissões" ao implantar um novo aplicativo.](../images/outlook-deploy-accept-permissions-requests.png)
 
-Da mesma forma, quando um complemento existente é atualizado para a funcionalidade baseada em eventos, o administrador vê um status "Atualizar Pendentes" no complemento. O complemento atualizado será implantado somente se o administrador consentir com as alterações notadas na seção Permissões e **Funcionalidades** do Aplicativo, incluindo o conjunto de eventos em que o complemento pode ser ativado automaticamente.
+Da mesma forma, quando um suplemento existente é atualizado para a funcionalidade baseada em evento, o administrador vê um status de "Atualização Pendente" no suplemento. O suplemento atualizado será implantado somente se o administrador consentir com as alterações notadas na seção Permissões e **Funcionalidades** do Aplicativo, incluindo o conjunto de eventos em que o suplemento pode ser ativado automaticamente.
 
-Sempre que você adicionar qualquer novidade ao seu complemento, os administradores verão o fluxo de atualização no portal de administração e precisarão fornecer `LaunchEvent Type` consentimento para eventos adicionais.
+Sempre que você adicionar qualquer novidade `LaunchEvent Type` ao suplemento, os administradores verão o fluxo de atualização no portal de administração e precisarão fornecer consentimento para eventos adicionais.
 
 ![Captura de tela do fluxo "Atualizações" ao implantar um aplicativo atualizado.](../images/outlook-deploy-update-flow.png)
 
 ## <a name="see-also"></a>Confira também
 
-- [Configurar seu Outlook para ativação baseada em eventos](autolaunch.md)
+- [Configurar seu suplemento do Outlook para ativação baseada em evento](autolaunch.md)

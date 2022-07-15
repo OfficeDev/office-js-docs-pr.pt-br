@@ -3,28 +3,28 @@ title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484151"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797460"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
-A forma do [painel de tarefas](add-in-commands-for-outlook.md#launching-a-task-pane) da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer a interface do usuário a fim de obter interações mais detalhadas (preenchimento de vários campos etc.). Esse painel de tarefas pode ser exibido no painel de leitura durante a exibição de uma lista de mensagens, permitindo o processamento rápido de uma mensagem.
+A forma do [painel de tarefas](add-in-commands-for-outlook.md#launch-a-task-pane) da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer a interface do usuário a fim de obter interações mais detalhadas (preenchimento de vários campos etc.). Esse painel de tarefas pode ser exibido no painel de leitura durante a exibição de uma lista de mensagens, permitindo o processamento rápido de uma mensagem.
 
 No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensagem no painel de leitura e selecionar uma nova mensagem, o painel de tarefas será fechado automaticamente, por padrão. Para um suplemento bastante usado, o usuário pode optar por manter esse painel aberto, eliminando a necessidade de reativar o suplemento em cada mensagem. Com os painéis de tarefas fixáveis, o suplemento pode fornecer essa opção aos usuários.
 
 > [!NOTE]
-> Embora o recurso de painéis de tarefas pinnable tenha sido introduzido no conjunto de requisitos [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), ele está disponível apenas para Microsoft 365 assinantes usando o seguinte:
+> Embora o recurso de painéis de tarefas fixáveis tenha sido introduzido no conjunto de requisitos [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), ele está disponível apenas para assinantes do Microsoft 365 usando o seguinte:
 >
-> - Outlook 2016 ou posterior no Windows (build 7668.2000 ou posterior para usuários nos Canais Atuais ou do Office Insider, build 7900.xxxx ou posterior para usuários em canais adiados)
+> - O Outlook 2016 ou posterior para Windows (build 7668.2000 ou posterior para os usuários dos Canais Atuais ou do Office Insider, build 7900.xxxx ou posterior para os usuários em canais Adiados)
 > - Outlook 2016 ou posterior no Mac (versão 16.13.503 ou posterior)
 > - Outlook na Web moderno
 
 > [!IMPORTANT]
-> Os painéis de tarefas pinnable não estão disponíveis para o seguinte:
+> Os painéis de tarefas fixáveis não estão disponíveis para o seguinte:
 >
 > - Compromissos/Reuniões
 > - Outlook.com

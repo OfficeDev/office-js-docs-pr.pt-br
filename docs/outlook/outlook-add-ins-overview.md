@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 06/08/2022
+ms.date: 07/11/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: fcdc6dc87deff67138f18a2bc1b7bd58ea0fd85c
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 6c0b5d9547bbc0661d6410391f894586cdaffab3
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019623"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797502"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -34,7 +34,7 @@ Os pontos de extensão são as maneiras como os suplementos se integram ao Outlo
 
     **Suplemento com botões de comando na Faixa de Opções**
 
-    ![Comando de suplemento de forma sem interface do usuário.](../images/uiless-command-shape.png)
+    ![Comando de função de suplemento.](../images/uiless-command-shape.png)
 
 - Os suplementos podem desvincular correspondências de expressões regulares ou entidades detectadas em mensagens e compromissos. Para saber mais, confira [Suplementos contextuais do Outlook](contextual-outlook-add-ins.md).
 

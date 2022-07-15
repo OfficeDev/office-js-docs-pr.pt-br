@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3afc58af0db7725b8e66ddbd557cfd1e75e128
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713039"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797656"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
@@ -231,7 +231,7 @@ Nesta seção, saiba como o script de suplemento pode atualizar a reunião de um
         }
     );
 
-    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a function command named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -325,7 +325,7 @@ Várias restrições se aplicam.
 - Aplicável somente a provedores de serviços de reunião online.
 - Somente suplementos instalados pelo administrador aparecerão na tela de composição da reunião, substituindo a opção padrão do Teams ou do Skype. Os suplementos instalados pelo usuário não serão ativados.
 - O ícone de suplemento deve estar em escala de cinza usando código hexadecimal `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
-- Há suporte apenas para um comando sem interface do usuário no modo Organizador de Compromissos (redigir).
+- Há suporte para apenas um comando de função no modo Organizador de Compromissos (redigir).
 - O suplemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo limite de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o suplemento abriu para autenticação, etc. é excluído do período de tempo limite.
 
 ## <a name="see-also"></a>Confira também
