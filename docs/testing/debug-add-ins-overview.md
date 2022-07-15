@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office
 description: Localize a diretrizes de depuração do Suplemento do Office para seu ambiente de desenvolvimento.
-ms.date: 06/15/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229698"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797481"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Visão geral da depuração de Suplementos do Office
 
@@ -32,15 +32,28 @@ Depurar o código do lado do servidor de um suplemento do Office é o mesmo que 
 
 O restante deste artigo está preocupado apenas com a depuração do JavaScript do lado do cliente (que pode ser transpilado do TypeScript).
 
+## <a name="special-cases"></a>Casos especiais
+
+Existem alguns casos especiais em que o processo de depuração difere do normal para uma determinada combinação de plataforma, aplicativo do Office e ambiente de desenvolvimento. Se você estiver depurando qualquer um desses casos especiais, use os links nesta seção para encontrar a orientação adequada. Caso contrário, vá para [Orientação geral](#general-guidance).
+
+- **Depurando os métodos `Office.initialize` ou `Office.onReady`**: [Depure os métodos initialize e onReady](debug-initialize-onready.md).
+- **Depuração de uma função personalizada do Excel em um ambiente de execução _não compartilhado_**: [Depuração de funções personalizadas em um ambiente de execução não compartilhado](../excel/custom-functions-debugging.md).
+- **Depurando um [comando de função](../design/add-in-commands.md#types-of-add-in-commands) em um ambiente de execução _não compartilhado_**: 
+    - Suplementos do Outlook em um computador de desenvolvimento Windows: [Comandos de função de depuração em suplementos do Outlook](../outlook/debug-ui-less.md) 
+    - Outros suplementos de aplicativos do Office ou Outlook em um computador de desenvolvimento Mac: [Depure um comando de função com um tempo de execução não compartilhado](debug-function-command.md).
+- **Depurando um suplemento do Outlook baseado em eventos**: [Depure seu suplemento do Outlook baseado em eventos](../outlook/debug-autolaunch.md). 
+ 
+## <a name="general-guidance"></a>Diretrizes gerais
+
 Para encontrar as diretrizes para depurar o código do lado do cliente, a primeira variável é o sistema operacional do seu computador de desenvolvimento.
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)
 - [Linux ou outra variante Unix](#debug-on-linux)
 
-## <a name="debug-on-windows"></a>Depurar no Windows
+### <a name="debug-on-windows"></a>Depurar no Windows
 
-A seguir, as diretrizes gerais para a depuração no Windows. Há instruções especiais para depurar funções personalizadas no Excel e suplementos baseados em eventos no Outlook. Consulte [Casos especiais no Windows](#special-cases-in-windows) posteriormente nesta seção. A depuração no Windows depende do seu IDE:
+A seguir, as diretrizes gerais para a depuração no Windows. A depuração no Windows depende do seu IDE.
 
 - **Visual Studio**: depurar usando as ferramentas F12 do navegador. Consulte [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Depure usando a [Extensão do Depurador de Suplemento para Visual Studio Code](debug-with-vs-extension.md).
@@ -55,24 +68,15 @@ Para obter informações sobre qual runtime do navegador está sendo usado, conf
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="special-cases-in-windows"></a>Casos especiais no Windows
+### <a name="debug-on-mac"></a>Depurar no Mac
 
-Para depurar funções personalizadas sem um runtime compartilhado no Windows, consulte [Depuração de funções personalizadas](../excel/custom-functions-debugging.md).
-
-Para depurar suplementos baseados em eventos no Outlook, confira [Depurar seu suplemento do Outlook baseado em eventos](../outlook/debug-autolaunch.md). O processo exige o Visual Studio Code.
-
-## <a name="debug-on-mac"></a>Depurar no Mac
-
-Veja a seguir diretrizes gerais para depuração no Mac. Há instruções especiais para depurar funções personalizadas sem um runtime compartilhado no Excel. Consulte [Casos especiais no Mac](#special-cases-in-mac) posteriormente nesta seção.
+Veja a seguir diretrizes gerais para depuração no Mac.
 
 - Se você estiver usando o Visual Studio Code, depure usando a [Extensão do Depurador de Suplemento para Visual Studio Code ](debug-with-vs-extension.md).
 - Para qualquer outro IDE, use o Safari Web Inspector. As instruções estão em [Depurar Suplementos do Office em um Mac](debug-office-add-ins-on-ipad-and-mac.md).
 
-### <a name="special-cases-in-mac"></a>Casos especiais no Mac
 
-Para depurar funções personalizadas sem um runtime compartilhado no Mac, consulte [Depuração de funções personalizadas](../excel/custom-functions-debugging.md).
-
-## <a name="debug-on-linux"></a>Depurar no Linux
+### <a name="debug-on-linux"></a>Depurar no Linux
 
 Não há versões da área de trabalho do Office para Linux, portanto, você precisará [realizar o sideload do suplemento do Office na Web](sideload-office-add-ins-for-testing.md) para testá-lo e depurá-lo. As diretrizes de depuração estão nos [Suplementos de depuração no Office na Web](debug-add-ins-in-office-online.md).
 
