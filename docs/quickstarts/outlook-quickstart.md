@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 33f5e0f08bbb1472dcefc764941c8b7d6b6d4dbc
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660148"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797509"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -85,7 +85,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -160,7 +160,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 ### <a name="update-the-code"></a>Atualizar o código
 
 1. **MessageRead.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **MessageRead.html**, substitua o elemento **\<body\>** pela marcação a seguir e salve o arquivo.
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -275,15 +275,15 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 1. Dentro da mensagem, localize as reticências do menu de estouro que contém o botão do suplemento.
 
-    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com as reticências realçadas.](../images/quick-start-button-owa-1.png)
+    ![Uma janela de mensagem no Outlook na Web com as reticências realçadas.](../images/quick-start-button-owa-1.png)
 
 1. No menu excedente, localize o botão do suplemento.
 
-    ![Uma captura de tela de uma janela de mensagem do Outlook na Web com o botão do suplemento realçado.](../images/quick-start-button-owa-2.png)
+    ![Uma janela de mensagem no Outlook na Web com o botão de suplemento realçado.](../images/quick-start-button-owa-2.png)
 
 1. Clique no botão para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do painel de tarefas do suplemento no Outlook na Web exibindo as propriedades da mensagem.](../images/quick-start-task-pane-owa-1.png)
+    ![O painel de tarefas do suplemento no Outlook na Web exibindo propriedades da mensagem.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > Se o painel de tarefas não carregar, tente verificar abrindo-o em um navegador no mesmo computador.

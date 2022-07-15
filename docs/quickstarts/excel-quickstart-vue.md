@@ -1,15 +1,15 @@
 ---
 title: Usar o Vue para criar um suplemento do painel de tarefas do Excel
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o Vue.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 3024e759acd787a61992b84f31850ef7f0bfbe3b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d172e3b61fa4b8b66cc79b2cd364b3f2f0b37d96
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713053"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797495"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Usar o Vue para criar um suplemento do painel de tarefas do Excel
 
@@ -61,7 +61,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     - **Qual será o nome do suplemento?** `My Office Add-in`
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-    ![Captura de tela da interface de linha de comando do gerador do Suplemento do Yeoman Office, com o tipo de projeto definido como apenas manifesto.](../images/yo-office-manifest-only-vue.png)
+    ![A interface da linha de comando Gerador Yeoman para Suplementos do Office, com o tipo de projeto definido como somente manifesto.](../images/yo-office-manifest-only-vue.png)
 
 Após a conclusão, o assistente cria uma pasta **Meu suplemento do Office** contendo um arquivo **manifest.xml**. Você usará o manifesto para realizar o sideload e testar o suplemento.
 
@@ -75,9 +75,9 @@ Após a conclusão, o assistente cria uma pasta **Meu suplemento do Office** con
 1. Habilite HTTPS para seu aplicativo. Na pasta raiz do projeto Vue, crie um arquivo **vue.config.js** com o conteúdo a seguir.
 
     ```js
-    var fs = require("fs");
-    var path = require("path");
-    var homedir = require('os').homedir()
+    const fs = require("fs");
+    const path = require("path");
+    const homedir = require('os').homedir()
   
     module.exports = {
       devServer: {
@@ -219,13 +219,13 @@ O projeto de suplemento que você criou com o gerador Yeoman contém um código 
 
 1. Abra o painel de tarefas do suplemento no Excel. Na faixa de opções da guia **Página Inicial**, escolha o botão **Mostrar Painel de Tarefas**.
 
-   ![Captura de tela do menu da página inicial do Excel, com o botão Mostrar Painel de Tarefas realçado.](../images/excel-quickstart-addin-2a.png)
+   ![O menu Início do Excel, com o botão Mostrar painel de tarefas realçado.](../images/excel-quickstart-addin-2a.png)
 
 1. Selecione um intervalo de células na planilha.
 
 1. Defina a cor do intervalo selecionado como verde. No painel de tarefas do suplemento, escolha o botão **Definir cor**.
 
-   ![Captura de tela do Excel, com o painel de tarefas do suplemento aberto.](../images/excel-quickstart-addin-2c.png)
+   ![O painel de tarefas do suplemento está aberto no Excel.](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

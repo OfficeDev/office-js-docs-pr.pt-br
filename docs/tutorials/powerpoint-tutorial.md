@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você criará um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 05/11/2022
+ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
-ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
+ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "65393929"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797663"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -24,7 +24,7 @@ Neste tutorial, você usará o Visual Studio para criar um Suplementos do Painel
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Visual Studio 2019, *versão 16.10.3 ou anterior* ou Visual Studio 2022](https://www.visualstudio.com/vs/), com a carga de trabalho de **Desenvolvimento do Office/SharePoint** instalada. 
+- [Visual Studio 2019, *versão 16.10.3 ou anterior* ou Visual Studio 2022](https://www.visualstudio.com/vs/), com a carga de trabalho de **Desenvolvimento do Office/SharePoint** instalada.
 
     > [!IMPORTANT]
     > Algumas versões do Visual Studio 2019 após 16.10.3 têm um bug que impede que esse tutorial seja concluído. Use uma versão anterior do Visual Studio 2019 ou use o Visual Studio 2022.
@@ -37,24 +37,23 @@ Neste tutorial, você usará o Visual Studio para criar um Suplementos do Painel
     > [!NOTE]
     > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.
 
-
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
 Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usando o Visual Studio.
 
 1. Escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.
+1. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web**, em seguida, selecione **Próximo**.
 
-3. Nomeie o projeto como `HelloWorld` e selecione **Criar**.
+1. Nomeie o projeto como `HelloWorld` e selecione **Criar**.
 
-4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.
+1. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint** e depois **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+1. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
-     ![A captura de tela da janela do gerenciador de soluções do Microsoft Visual Studio mostrando HelloWorld e HelloWorldWeb, os 2 projetos na solução HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
+     ![A janela do Explorador de Soluções do Visual Studio mostrando HelloWorld e HelloWorldWeb, os dois projetos na solução HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
 
-6. Os seguintes pacotes NuGet devem ser instalados. Instale-os usando o **Gerenciador de Pacotes NuGet** no Visual Studio. Consulte a ajuda do Visual Studio para obter instruções. O segundo deles pode ser instalado automaticamente quando você instala o primeiro.
+1. Os seguintes pacotes NuGet devem ser instalados. Instale-os usando o **Gerenciador de Pacotes NuGet** no Visual Studio. Consulte a ajuda do Visual Studio para obter instruções. O segundo deles pode ser instalado automaticamente quando você instala o primeiro.
 
    - Microsoft.AspNet.WebApi.WebHost
    - Microsoft.AspNet.WebApi.Core
@@ -81,18 +80,18 @@ Edite o código do suplemento como mostrado a seguir para criar a estrutura que 
     </div>
     ```
 
-2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+1. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     (function () {
         "use strict";
 
-        var messageBanner;
+        let messageBanner;
 
         Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.MessageBanner');
+                const element = document.querySelector('.MessageBanner');
                 messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
@@ -129,18 +128,18 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 1. Usando o Explorador de soluções, adicione uma nova pasta chamada **Controladores** ao projeto **HelloWorldWeb**.
 
-    ![A captura de tela da janela do Gerenciador de Soluções do Microsoft Visual Studio mostrando a pasta Controladores realçada no projeto HelloWorldWeb.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![A janela Explorador de Soluções do Visual Studio mostrando a pasta Controladores realçada no projeto HelloWorldWeb.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. Clique com o botão direito do mouse na pasta **Controladores** e selecione **Adicionar > Novo item com scaffold...**.
+1. Clique com o botão direito do mouse na pasta **Controladores** e selecione **Adicionar > Novo item com scaffold...**.
 
-3. Na janela da caixa de diálogo **Adicionar Scaffold**, selecione **Controlador da Web API 2 – vazio** e escolha o botão **Adicionar**. 
+1. Na janela da caixa de diálogo **Adicionar Scaffold**, selecione **Controlador da Web API 2 – vazio** e escolha o botão **Adicionar**.
 
-4. Na janela da caixa de diálogo **Adicionar Controlador**, insira **PhotoController** como nome do controlador e escolha o botão **Adicionar**. O Visual Studio criará e abrirá o arquivo **PhotoController.cs**.
+1. Na janela da caixa de diálogo **Adicionar Controlador**, insira **PhotoController** como nome do controlador e escolha o botão **Adicionar**. O Visual Studio criará e abrirá o arquivo **PhotoController.cs**.
 
     > [!NOTE]
     > O processo de scaffolding não foi concluído corretamente em algumas versões do Visual Studio 2019 após a versão 16.10.3. O Visual Studio 2022 não foi afetado.
 
-5. Substitua todo o conteúdo do arquivo **PhotoController.cs** pelo código a seguir, que chama o serviço do Bing para recuperar a foto do dia como uma cadeia de caracteres com codificação Base64. Quando você usar a API JavaScript do Office para inserir uma imagem em um documento, especifique os dados de imagem como uma cadeia de caracteres com codificação Base64.
+1. Substitua todo o conteúdo do arquivo **PhotoController.cs** pelo código a seguir, que chama o serviço do Bing para recuperar a foto do dia como uma cadeia de caracteres com codificação Base64. Quando você usar a API JavaScript do Office para inserir uma imagem em um documento, especifique os dados de imagem como uma cadeia de caracteres com codificação Base64.
 
     ```csharp
     using System;
@@ -188,7 +187,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
     }
     ```
 
-6. No arquivo **Home.html**, substitua `TODO1` pela marcação a seguir. Essa marcação define o botão **Inserir Imagem** que aparecerá no painel de tarefas do suplemento.
+1. No arquivo **Home.html**, substitua `TODO1` pela marcação a seguir. Essa marcação define o botão **Inserir Imagem** que aparecerá no painel de tarefas do suplemento.
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -198,13 +197,13 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
     </button>
     ```
 
-7. No arquivo **Home.js**, substitua `TODO1` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Imagem**.
+1. No arquivo **Home.js**, substitua `TODO1` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Imagem**.
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função `insertImage`. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.
+1. No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função `insertImage`. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.
 
     ```js
     function insertImage() {
@@ -219,7 +218,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
     }
     ```
 
-9. No arquivo **Home.js**, substitua `TODO3` pelo código a seguir para definir a função `insertImageFromBase64String`. Esta função usa a API JavaScript do Office para inserir a imagem no documento. Observação:
+1. No arquivo **Home.js**, substitua `TODO3` pelo código a seguir para definir a função `insertImageFromBase64String`. Esta função usa a API JavaScript do Office para inserir a imagem no documento. Observação:
 
     - A opção `coercionType` especificada como segundo parâmetro da solicitação `setSelectedDataAsync` indica o tipo de dados inserido.
 
@@ -243,19 +242,19 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![A captura de tela mostrando o botão Iniciar realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![O botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar painel de tarefas realçado na faixa de opções página inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![O botão Mostrar Painel de Tarefas realçado na faixa de opções Início no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual.
+1. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado.](../images/powerpoint-tutorial-insert-image-button.png)
+    ![O suplemento do PowerPoint com o botão Inserir Imagem realçado.](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
+1. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela mostrando o botão Pare realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![O botão Parar realçado no Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="customize-user-interface-ui-elements"></a>Personalizar os elementos da IU (interface do usuário)
 
@@ -275,25 +274,25 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
     </div>
     ```
 
-2. No arquivo **Home.html**, localize a **div** com `class="footer"` e exclua toda a **div** para remover a seção de rodapé do painel de tarefas.
+1. No arquivo **Home.html**, localize a **div** com `class="footer"` e exclua toda a **div** para remover a seção de rodapé do painel de tarefas.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
 1. Usando o Visual Studio, teste o suplemento do PowerPoint pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela mostrando o botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![O botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página Inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![O botão Mostrar Painel de Tarefas realçado na faixa de opções do PowerPoint Home.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.
+1. Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Imagem realçado.](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![O suplemento do PowerPoint com botão Inserir Imagem.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
+1. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela exibindo o botão Pare realçado no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![O botão Parar realçado no Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="insert-text"></a>Inserir texto
 
@@ -310,13 +309,13 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
         </button>
     ```
 
-2. No arquivo **Home.js**, substitua `TODO4` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Texto**.
+1. No arquivo **Home.js**, substitua `TODO4` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Texto**.
 
     ```js
     $('#insert-text').click(insertText);
     ```
 
-3. No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função `insertText`. Esta função insere texto no slide atual.
+1. No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função `insertText`. Esta função insere texto no slide atual.
 
     ```js
     function insertText() {
@@ -333,23 +332,23 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
 
 1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela do Microsoft Visual Studio com o botão Iniciar realçado.](../images/powerpoint-tutorial-start.png)
+    ![O botão Iniciar realçado no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela realçando o botão Mostrar Painel de tarefas na faixa de opções da Página inicial no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![O botão Mostrar Painel de Tarefas na faixa de opções Início no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.
+1. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.
 
-    ![Captura de tela do PowerPoint com o slide atual realçado e suplemento com o botão Inserir Imagem realçado.](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![O slide de título do PowerPoint selecionado e o botão Inserir imagem realçados no suplemento.](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
-4. Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.
+1. Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Texto realçado.](../images/powerpoint-tutorial-insert-text.png)
+    ![O slide de título do PowerPoint selecionado com o botão Inserir texto realçado no suplemento.](../images/powerpoint-tutorial-insert-text.png)
 
-5. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
+1. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela do Microsoft Visual Studio com o botão Pare realçado.](../images/powerpoint-tutorial-stop.png)
+    ![O botão Parar realçado no Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="get-slide-metadata"></a>Obter metadados do slide
 
@@ -366,13 +365,13 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
     </button>
     ```
 
-2. No arquivo **Home.js**, substitua `TODO6` pelo código a seguir para atribuir o manipulador de eventos para o botão **Obter Metadados do Slide**.
+1. No arquivo **Home.js**, substitua `TODO6` pelo código a seguir para atribuir o manipulador de eventos para o botão **Obter Metadados do Slide**.
 
     ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função `getSlideMetadata`. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.
+1. No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função `getSlideMetadata`. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.
 
     ```js
     function getSlideMetadata() {
@@ -392,19 +391,19 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
 
 1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela realçando o botão Iniciar no Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![O botão Iniciar no Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela realçando o botão Mostrar painel de tarefas na faixa de opções da Página Inicial do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![O botão Mostrar Painel de Tarefas na faixa de opções Início do PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. No painel de tarefas, escolha o botão **Obter metadados do slide** para obter os metadados do slide selecionado. Os metadados do slide serão gravados na janela pop-up da caixa de diálogo na parte inferior do painel de tarefas. Nesse caso, a matriz `slides` dos metadados JSON contém um objeto que especifica `id`, `title` e `index` do slide selecionado. Se vários slides tivessem sido selecionados na recuperação de metadados do slide, a matriz `slides` dos metadados JSON conteria um objeto para cada slide selecionado.
+1. No painel de tarefas, escolha o botão **Obter metadados do slide** para obter os metadados do slide selecionado. Os metadados do slide serão gravados na janela pop-up da caixa de diálogo na parte inferior do painel de tarefas. Nesse caso, a matriz `slides` dos metadados JSON contém um objeto que especifica `id`, `title` e `index` do slide selecionado. Se vários slides tivessem sido selecionados na recuperação de metadados do slide, a matriz `slides` dos metadados JSON conteria um objeto para cada slide selecionado.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Obter metadados do slide realçado.](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![O botão Obter Metadados do Slide realçado no suplemento.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
+1. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela realçando o botão Pare no Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![O botão Parar no Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="navigate-between-slides"></a>Navegar entre slides
 
@@ -439,7 +438,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
     </button>
     ```
 
-2. No arquivo **Home.js**, substitua `TODO8` pelo código a seguir para atribuir o manipulador de eventos aos quatro botões de navegação.
+1. No arquivo **Home.js**, substitua `TODO8` pelo código a seguir para atribuir o manipulador de eventos aos quatro botões de navegação.
 
     ```js
     $('#go-to-first-slide').click(goToFirstSlide);
@@ -448,7 +447,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. No arquivo **Home.js**, substitua `TODO9` pelo seguinte código para definir as funções de navegação. Cada uma dessas funções utiliza a função `goToByIdAsync` para selecionar um slide com base na sua posição no documento (primeiro, último, anterior e próximo).
+1. No arquivo **Home.js**, substitua `TODO9` pelo seguinte código para definir as funções de navegação. Cada uma dessas funções utiliza a função `goToByIdAsync` para selecionar um slide com base na sua posição no documento (primeiro, último, anterior e próximo).
 
     ```js
     function goToFirstSlide() {
@@ -492,33 +491,33 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 1. Usando o Visual Studio, teste o suplemento pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-    ![Captura de tela mostrando o botão Iniciar realçado na barra de ferramentas do Microsoft Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![O botão Iniciar realçado na barra de ferramentas do Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No PowerPoint, selecione o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Captura de tela mostrando o botão Mostrar Painel de tarefas realçado na faixa de opções da Página inicial no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![O botão Mostrar Painel de Tarefas realçado na faixa de opções Início no PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Use o botão **Novo Slide** na faixa de opções da guia **Página Inicial** para adicionar dois novos slides ao documento.
+1. Use o botão **Novo Slide** na faixa de opções da guia **Página Inicial** para adicionar dois novos slides ao documento.
 
-4. No painel de tarefas, escolha o botão **Ir para o primeiro Slide**. O primeiro slide no documento é selecionado e exibido.
+1. No painel de tarefas, escolha o botão **Ir para o primeiro Slide**. O primeiro slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Primeiro Slide realçado.](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![O botão Ir para o Primeiro Slide realçado no suplemento.](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. No painel de tarefas, escolha o botão **Ir para o próximo Slide**. O próximo slide no documento é selecionado e exibido.
+1. No painel de tarefas, escolha o botão **Ir para o próximo Slide**. O próximo slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Próximo Slide realçado.](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![O botão Ir para o Próximo Slide realçado no suplemento.](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. No painel de tarefas, escolha o botão **Ir Para o Slide Anterior**. O slide anterior no documento é selecionado e exibido.
+1. No painel de tarefas, escolha o botão **Ir Para o Slide Anterior**. O slide anterior no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Slide Anterior realçado.](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![O botão Ir para o Slide Anterior realçado no suplemento.](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. No painel de tarefas, escolha o botão **Ir Para o Último Slide**. O último slide no documento é selecionado e exibido.
+1. No painel de tarefas, escolha o botão **Ir Para o Último Slide**. O último slide no documento é selecionado e exibido.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Ir Para o Último Slide realçado.](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![O botão Ir para o Último Slide realçado no suplemento.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
+1. No Visual Studio, pare o suplemento pressionando **Shift + F5** ou escolhendo o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
-    ![Captura de tela mostrando o botão Pare realçado na barra de ferramentas do Microsoft Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![O botão Parar realçado na barra de ferramentas do Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

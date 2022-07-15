@@ -1,14 +1,14 @@
 ---
 title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
-ms.date: 05/19/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: d58f8cd76f965007fdc9621c53fe52ed18dd6dd9
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650609"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797684"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -26,11 +26,11 @@ Os comandos de suplemento do Outlook oferecem maneiras de iniciar ações espec�
 
 Os comandos de suplementos estão disponíveis apenas para suplementos que não usam [regras ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) para limitar os tipos de itens em que são ativados. No entanto, os [suplementos contextuais](contextual-outlook-add-ins.md) podem apresentar comandos diferentes, dependendo do item selecionado no momento ser uma mensagem ou um compromisso, e podem optar por serem exibidos em cenários de leitura ou redação. É uma [prática recomendada](../concepts/add-in-development-best-practices.md) usar comandos de suplementos.
 
-## <a name="creating-the-add-in-command"></a>Criar o comando de suplemento
+## <a name="create-the-add-in-command"></a>Criar o comandos do suplemento
 
-Os comandos do suplemento são declarados no manifesto do suplemento no elemento [VersionOverrides](/javascript/api/manifest/versionoverrides). Esse elemento é uma adição ao esquema de manifesto v1.1 que garante a compatibilidade com versões anteriores. Em um cliente que não dê suporte a `VersionOverrides`, os suplementos existentes continuarão a funcionar como faziam sem comandos de suplemento.
+Os comandos do suplemento estão declarados no manifesto do suplemento no elemento [VersionOverrides ](/javascript/api/manifest/versionoverrides). Esse elemento é uma adição ao esquema de manifesto v1.1 que garante a compatibilidade com versões anteriores. Em um cliente que não suporta **\<VersionOverrides\>**, os suplementos existentes continuarão funcionando como funcionavam sem os comandos do suplemento.
 
-As entradas de manifesto `VersionOverrides` especificam muitos itens para o suplemento, como o aplicativo, tipos de controles a serem adicionados à faixa de opções, texto, ícones e quaisquer funções associadas.
+As entradas do manifesto **\<VersionOverrides\>** especificam muitas coisas para o suplemento, como o aplicativo, os tipos de controles a serem adicionados à faixa de opções, o texto, os ícones e quaisquer funções associadas.
 
 Quando um suplemento precisa fornecer atualizações de status, como indicadores de progresso ou mensagens de erro, ele deve fazer isso por meio das [APIs de notificação](/javascript/api/outlook/office.notificationmessages). O processamento para as notificações também deve ser definido em um arquivo HTML separado que é especificado no nó `FunctionFile` do manifesto.
 
@@ -38,7 +38,7 @@ Os desenvolvedores devem definir ícones para todos os tamanhos necessários, pa
 
 ## <a name="how-do-add-in-commands-appear"></a>Como os comandos de suplemento são exibidos?
 
-Um comando de suplemento é mostrado na faixa de opções como um botão. Quando um usuário instala um suplemento, seus comandos são mostrados na interface de usuário como um grupo de botões. Pode ser na guia padrão da faixa de opções ou em uma guia personalizada. Para mensagens, o padrão é a guia **Página Inicial** ou **Mensagem**. Para o calendário, o padrão é a guia **Reunião**, **Ocorrência de Reunião**, **Série de Reuniões** ou **Compromisso**. Para extensões de módulo, o padrão é uma guia personalizada. Na guia padrão, cada suplemento pode ter um grupo da faixa de opções com até seis comandos. Em guias personalizadas, o suplemento pode ter até dez grupos, cada um com seis comandos. Os suplementos estão limitados a apenas uma guia personalizada.
+Um comando de suplemento aparece na faixa de opções como um botão ou um item em um menu suspenso. Quando um usuário instala um suplemento, seus comandos aparecem na interface do usuário como um grupo de botões. Isso pode estar na guia padrão da faixa de opções ou em uma guia personalizada. Para mensagens, o padrão é a guia **Início** ou **Mensagem**. Para o calendário, o padrão é a guia **Reunião**, **Ocorrência de Reunião**, **Série de Reuniões** ou **Compromisso**. Para extensões de módulo, o padrão é uma guia personalizada. Na guia padrão, cada suplemento pode ter um grupo de faixa de opções com até 6 comandos. Em guias personalizadas, o suplemento pode ter até 10 grupos, cada um com 6 comandos. Os suplementos estão limitados a apenas uma guia personalizada.
 
 À medida que a faixa de opções fica mais cheia, os comandos de suplementos serão exibidos no menu estouro. Geralmente, os comandos de um suplemento serão agrupados.
 
@@ -56,15 +56,17 @@ No Outlook na Web, o nome do suplemento é exibido em um menu estouro. Se o supl
 
 ![Menu excedente exibindo botões de comando do suplemento.](../images/commands-overflow-menu-expand-web.png)
 
-## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quais formas da experiência do usuário existem para comandos de suplemento?
+## <a name="what-are-the-types-of-add-in-commands"></a>Quais são os tipos de comandos do suplemento?
 
-A forma da experiência do usuário para um comando de suplemento consiste em uma guia da faixa de opções no aplicativo do Office que contém botões que podem executar várias funções. Atualmente, há suporte para três formas de Interface do Usuário:
+A interface do usuário de um comando de suplemento consiste em um botão da faixa de opções ou um item em um menu suspenso. Há dois tipos de comandos de suplemento, com base no tipo de ação que o comando dispara.
 
-- Um botão que executa uma função JavaScript
-- Um botão que inicia um painel de tarefas
-- Um botão que mostra um menu suspenso com um ou mais botões dos outros dois tipos
+- **Comandos do painel de tarefas**: O botão ou item de menu abre o painel de tarefas do suplemento. Você adiciona esse tipo de comando de suplemento com marcação no manifesto. O "código por trás" do comando é fornecido pelo Office.
+- **Comandos de função**: O item de botão ou menu executa qualquer JavaScript arbitrário. O código quase sempre chama APIs na Biblioteca JavaScript do Office, mas não precisa. Esse tipo de suplemento normalmente não exibe nenhuma interface do usuário além do próprio item de menu ou botão. Observe o seguinte sobre comandos de função:
 
-### <a name="executing-a-javascript-function"></a>Executar uma função JavaScript
+   - A função disparada pode chamar o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) para mostrar uma caixa de diálogo, que é uma boa maneira de exibir um erro, mostrar o progresso ou solicitar a entrada do usuário.
+   - O runtime do JavaScript no qual o comando de função é executado é um runtime completo baseado em navegador. Ele pode renderizar HTML e chamar a Internet para enviar ou obter dados.
+
+### <a name="run-a-function-command"></a>Executar um comando de função
 
 Use um botão de comando de suplemento que executa uma função JavaScript para cenários em que o usuário não precisa fazer seleções adicionais para iniciar a ação. Isso pode ser para ações como acompanhar, lembrar-me ou imprimir ou cenários em que o usuário deseja obter informações mais detalhadas de um serviço.
 
@@ -72,7 +74,7 @@ Em extensões de módulo, o botão de comando de suplemento pode executar funç�
 
 ![Um botão que executa uma função na faixa de opções do Outlook.](../images/commands-uiless-button-1.png)
 
-### <a name="launching-a-task-pane"></a>Iniciar um painel de tarefas
+### <a name="launch-a-task-pane"></a>Iniciar um painel de tarefas
 
 Use um botão de comando de suplemento para iniciar um painel de tarefas para cenários em que um usuário precisa interagir com um suplemento por um período de tempo mais longo. Por exemplo, o suplemento requer alterações em configurações ou o preenchimento de vários campos.
 
@@ -88,7 +90,7 @@ Se um usuário escolher outro comando de suplemento que abre um painel de tarefa
 
 ### <a name="drop-down-menu"></a>Menu suspenso
 
-Um comando de suplemento de menu suspenso define uma lista estática de botões. Os botões no menu podem ser qualquer combinação de botões que executam uma função ou botões que abrem um painel de tarefas. Não há suporte para submenus.
+Um comando de suplemento do menu suspenso define uma lista estática de itens. O menu pode ser qualquer combinação de itens que executam uma função ou que abrem um painel de tarefas. Não há suporte para submenus.
 
 ![Um botão que exibe o menu na faixa de opções do Outlook.](../images/commands-menu-button-1.png)
 
@@ -120,5 +122,5 @@ Quando você usa uma extensão de módulo, os comandos de suplemento aparecem na
 
 - [Suplemento do Outlook para demonstração de comando de suplemento](https://github.com/officedev/outlook-add-in-command-demo)
 - [Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint](../develop/create-addin-commands.md)
-- [Depurar seu suplemento do Outlook sem interface do usuário](debug-ui-less.md)
+- [Comandos de função de depuração em suplementos do Outlook](debug-ui-less.md)
 - [Tutorial: criar uma mensagem para compor o suplemento do Outlook](../tutorials/outlook-tutorial.md)
