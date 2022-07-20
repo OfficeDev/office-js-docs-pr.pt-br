@@ -1,16 +1,16 @@
 ---
 title: Visão geral da programação da API JavaScript do OneNote
 description: Saiba mais sobre a API JavaScript do OneNote para suplementos do OneNote na Web.
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 938a9f6a954162c8774cfeea970596b41afb79ee
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496317"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889174"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -97,7 +97,7 @@ function getSelectionFromPage() {
         Office.CoercionType.Text,
         { valueFormat: "unformatted" },
         function (asyncResult) {
-            var error = asyncResult.error;
+            const error = asyncResult.error;
             if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                 console.log(error.message);
             }
@@ -111,15 +111,17 @@ Os suplementos do OneNote dão suporte apenas às APIs comuns a seguir.
 | API | Observações |
 |:------|:------|
 | [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
-| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` |
+| [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo |
+| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo |
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
+
 ## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote
+
 O diagrama a seguir representa o que está disponível atualmente na API JavaScript do OneNote.
 
   ![Diagrama do modelo de objeto do OneNote.](../images/onenote-om.png)
