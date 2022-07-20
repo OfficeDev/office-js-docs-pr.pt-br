@@ -1,14 +1,14 @@
 ---
 title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660127"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889223"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
@@ -55,7 +55,7 @@ Os `hide()` métodos `showAsTaskpane()` e os métodos alteram *apenas a visibili
 
 Considere o seguinte cenário: um painel de tarefas é projetado com guias. A **guia** Página Inicial é aberta quando o suplemento é iniciado pela primeira vez. Suponha que um usuário abra **a guia Configurações** e, posteriormente, o código no painel de tarefas chame `hide()` em resposta a algum evento. Ainda mais tarde, o código `showAsTaskpane()` chama em resposta a outro evento. O painel de tarefas reaparecerá e a **guia Configurações** ainda está selecionada.
 
-![Uma captura de tela do painel de tarefas que tem quatro guias rotuladas como Página Inicial, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
+![Um painel de tarefas que tem quatro guias rotuladas como Página Inicial, Configurações, Favoritos e Contas.](../images/TaskpaneWithTabs.png)
 
 Além disso, todos os ouvintes de eventos registrados no painel de tarefas continuam a ser executados mesmo quando o painel de tarefas está oculto.
 
@@ -80,7 +80,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 A função retorna outra função que *desregisia* o manipulador. Aqui está um exemplo simples, mas não robusto.
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -97,7 +97,7 @@ O `onVisibilityModeChanged` método é assíncrono e retorna uma promessa, o que
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.

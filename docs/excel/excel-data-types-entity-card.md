@@ -1,22 +1,22 @@
 ---
-title: Excel de valor de entidade de tipos de dados da API JavaScript
-description: Saiba como usar cartões de valor de entidade com tipos de dados Excel suplemento.
-ms.date: 05/19/2022
+title: Cartão de valor da entidade de tipos de dados da API JavaScript do Excel
+description: Saiba como usar cartões de valor de entidade com tipos de dados em seu suplemento do Excel.
+ms.date: 07/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9b2c146826c8247abee6ece105d04a335c41f1
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628146"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889153"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>Usar cartões com tipos de dados de valor de entidade (versão prévia)
 
 [!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
-Este artigo descreve como usar a [API javaScript](../reference/overview/excel-add-ins-reference-overview.md) Excel para criar janelas modais de cartão na interface do usuário Excel com tipos de dados de valor de entidade. Esses cartões podem exibir informações adicionais contidas em um valor de entidade, além do que já está visível em uma célula, como imagens relacionadas, informações de categoria de produto e atribuições de dados.
+Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para criar janelas modais de cartão na interface do usuário do Excel com tipos de dados de valor de entidade. Esses cartões podem exibir informações adicionais contidas em um valor de entidade, além do que já está visível em uma célula, como imagens relacionadas, informações de categoria de produto e atribuições de dados.
 
 Um valor de entidade, ou [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), é um contêiner para tipos de dados e semelhante a um objeto em programação orientada a objeto. Este artigo mostra como usar propriedades de cartão de valor de entidade, opções de layout e funcionalidade de atribuição de dados para criar valores de entidade que são exibidos como cartões.
 
@@ -49,6 +49,10 @@ const entity: Excel.EntityCellValue = {
             type: Excel.CellValueType.string,
             basicValue: productName || ""
         },
+        "Image": {
+            type: Excel.CellValueType.webImage,
+            address: product.productImage || ""
+        },
         "Quantity Per Unit": {
             type: Excel.CellValueType.string,
             basicValue: product.quantityPerUnit || ""
@@ -69,7 +73,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-A captura de tela a seguir mostra um cartão de valor de entidade que usa o snippet de código anterior. A captura de tela mostra as informações **de ID** **do produto,** **nome do** produto, quantidade por unidade e preço **unitário** do snippet de código anterior.
+A captura de tela a seguir mostra um cartão de valor de entidade que usa o snippet de código anterior. A captura de tela mostra as informações **de ID** do **produto, nome** **do produto,** **imagem, quantidade** por unidade e preço **unitário** do snippet de código anterior.
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="Uma captura de tela mostrando um tipo de dados de valor de entidade com a janela de layout do cartão exibida. O cartão mostra o nome do produto, a ID do produto, a quantidade por unidade e as informações de preço unitário.":::
 
@@ -82,9 +86,9 @@ A propriedade de [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-e
 
 Dentro da `card` propriedade, use o [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) objeto para definir os componentes do cartão `title`, como , `subTitle`e `sections`.
 
-O snippet de código JSON do valor da entidade a `card` seguir mostra um layout com um objeto aninhado `title` e três `sections` dentro do cartão. Observe que a propriedade `title` tem `"Product Name"` um tipo de dados correspondente na seção anterior do artigo [de propriedades do](#card-properties) cartão. A `sections` propriedade usa uma matriz aninhada e usa o [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) objeto para definir a aparência de cada seção.
+O snippet de código JSON do valor da entidade a `card` seguir mostra um layout `mainImage` `title` com objetos e aninhados, bem como três `sections` dentro do cartão. Observe que a propriedade `title` tem `"Product Name"` um tipo de dados correspondente na seção anterior do artigo [de propriedades do](#card-properties) cartão. A `mainImage` propriedade também tem um tipo de `"Image"` dados correspondente na seção anterior. A `sections` propriedade usa uma matriz aninhada e usa o [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) objeto para definir a aparência de cada seção.
 
-Em cada seção do cartão, você pode especificar elementos `layout`como , `title`e `properties`. A `layout` chave usa o [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) objeto e aceita o valor `"List"`. A `properties` chave aceita uma matriz de cadeias de caracteres. Observe que os valores `properties` , como `"Product ID"`, têm tipos de dados correspondentes na seção anterior do artigo de propriedades [do](#card-properties) cartão. As seções também podem ser recolhíveis e podem ser definidas com valores boolianos como recolhidos ou não recolhidos quando o cartão de entidade é aberto na Excel interface do usuário.
+Em cada seção do cartão, você pode especificar elementos `layout`como , `title`e `properties`. A `layout` chave usa o [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) objeto e aceita o valor `"List"`. A `properties` chave aceita uma matriz de cadeias de caracteres. Observe que os valores `properties` , como `"Product ID"`, têm tipos de dados correspondentes na seção anterior do artigo de propriedades [do](#card-properties) cartão. As seções também podem ser recolhíveis e podem ser definidas com valores boolianos como recolhidos ou não recolhidos quando o cartão de entidade é aberto na interface do usuário do Excel.
 
 > [!NOTE]
 > Para ver como usar esse JSON em um exemplo de código completo, visite o repositório [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) .
@@ -100,6 +104,9 @@ const entity: Excel.EntityCellValue = {
         card: {
             title: { 
                 property: "Product Name" 
+            },
+            mainImage: { 
+                property: "Image" 
             },
             sections: [
                 {
@@ -126,7 +133,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-A captura de tela a seguir mostra um cartão de valor de entidade que usa os snippets de código anteriores. A captura de tela mostra o `title` objeto, que usa o **Nome do** Produto e está definido como **Pavlova**. A captura de tela também mostra `sections`. A **seção Quantidade e** preço é recolhível e contém **Quantidade por Unidade e** **Preço Unitário**. O **campo Informações Adicionais** é recolhível e recolhido quando o cartão é aberto.
+A captura de tela a seguir mostra um cartão de valor de entidade que usa os snippets de código anteriores. A captura de tela mostra `mainImage` o objeto na parte superior, `title` seguido pelo objeto que usa o **Nome** do Produto e está definido como **Tofu**. A captura de tela também mostra `sections`. A **seção Quantidade e** preço é recolhível e contém **Quantidade por Unidade e** **Preço Unitário**. O **campo Informações Adicionais** é recolhível e recolhido quando o cartão é aberto.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="Uma captura de tela mostrando um tipo de dados de valor de entidade com a janela de layout do cartão exibida. O cartão mostra o título e as seções do cartão.":::
 

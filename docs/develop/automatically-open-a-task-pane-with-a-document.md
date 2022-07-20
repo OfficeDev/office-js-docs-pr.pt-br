@@ -1,18 +1,18 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
-description: Saiba como configurar um suplemento Office para abrir automaticamente quando um documento for aberto.
+description: Saiba como configurar um Suplemento do Office para abrir automaticamente quando um documento for aberto.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244728"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889489"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
-Você pode usar comandos de suplemento em seu suplemento Office para estender a interface do usuário do Office adicionando botões à faixa Aplicativo do Office de opções. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
+Você pode usar comandos de suplemento em seu Suplemento do Office para estender a interface do usuário do Office adicionando botões à faixa de opções do aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
 Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso de painel de tarefas autoopen, introduzido no conjunto de [requisitos AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
 
@@ -73,7 +73,7 @@ Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. 
 
 #### <a name="tag-the-document-on-the-client-side"></a>Marcar o documento no lado do cliente
 
-Use o método [settings.set](/javascript/api/office/office.settings) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
+Use o Office.js [settings.set](/javascript/api/office/office.settings) para definir **Office.AutoShowTaskpaneWithDocument** `true`como , conforme mostrado no exemplo a seguir.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -112,7 +112,7 @@ A parte `webextension` também inclui uma referência para a loja ou o catálogo
 |`storeType` valor|`id` valor|`store` valor|`version` valor|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|A ID do ativo do AppSource do suplemento (consulte a Observação).|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (consulte Observação).|
-|WOPICatalog (hosts [WOPI do](/microsoft-365/cloud-storage-partner-program/online/) parceiro)| A ID do ativo do AppSource do suplemento (consulte a Observação). | "wopicatalog". Use esse valor para suplementos publicados na Origem do Aplicativo e instalados em hosts WOPI. Para obter mais informações, [consulte Integração com o Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
+|WOPICatalog (hosts [WOPI do](/microsoft-365/cloud-storage-partner-program/online/) parceiro)| A ID do ativo do AppSource do suplemento (consulte a Observação). | "wopicatalog". Use esse valor para suplementos publicados na Origem do Aplicativo e instalados em hosts WOPI. Para obter mais informações, consulte [Integração com o Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | A versão no manifesto do suplemento.|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
 |EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog". A linha EXCatalog é a linha a ser usada com suplementos que usam a Implantação Centralizada no Centro de administração do Microsoft 365.|A versão no manifesto do suplemento.|
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
@@ -139,7 +139,7 @@ Definir o `visibility` como "1" é uma boa opção quando o suplemento e o model
 > [!NOTE]
 > Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
-Uma maneira fácil de escrever o XML é primeiro executar o suplemento e marcar o documento [](#tag-the-document-on-the-client-side) no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade do [SDK do Open XML](https://www.nuget.org/packages/Open-XML-SDK) para gerar código C# para adicionar programaticamente a marcação com base no XML gerado.
+Uma maneira fácil de escrever o XML é primeiro executar o suplemento e marcar o documento [](#tag-the-document-on-the-client-side) no lado do cliente para gravar o valor e, em seguida, salvar o documento e inspecionar o XML gerado. O Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a Ferramenta de Produtividade do [SDK do Open XML](https://www.nuget.org/packages/Open-XML-SDK) para gerar código C# para adicionar programaticamente a marcação com base no XML gerado.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 
@@ -155,9 +155,9 @@ Você pode implantar uma versão de teste do suplemento que abrirá automaticame
 </we:webextension>
 ```
 
-Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para experimentar a Implantação Centralizada e verificar se o suplemento funciona conforme o esperado. Se você ainda não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura do Microsoft 365 renovável gratuita de 90 dias ingressando no programa [Microsoft 365 desenvolvedor](https://developer.microsoft.com/office/dev-program).
+Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para experimentar a Implantação Centralizada e verificar se o suplemento funciona conforme o esperado. Se você ainda não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura gratuita e renovável do Microsoft 365 por 90 dias ingressando no programa de desenvolvedor [do Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Confira também
 
 - Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-- [Participe do programa Microsoft 365 desenvolvedor.](/office/developer-program/office-365-developer-program)
+- [Participe do programa de desenvolvedor do Microsoft 365.](/office/developer-program/office-365-developer-program)

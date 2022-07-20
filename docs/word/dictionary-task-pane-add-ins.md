@@ -1,14 +1,14 @@
 ---
 title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um suplemento do painel de tarefas do dicionário.
-ms.date: 09/26/2019
+ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 7ab542e37236aa4df2404ec14553c51202bcf1a6
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660057"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889531"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -29,22 +29,19 @@ A Figura 2 mostra o **comando Definir** no menu de contexto que permite aos usu�
 
 ![Defina o menu de contexto.](../images/dictionary-agave-02.jpg)
 
-
 *Figura 3. Definições nos painéis Ortografia e Gramática*
 
 ![Definições nos painéis Ortografia e Gramática.](../images/dictionary-agave-03.jpg)
-
 
 *Figura 4. Definições no painel Dicionário de Sinônimos*
 
 ![Definições no painel Dicionário de Sinônimos.](../images/dictionary-agave-04.jpg)
 
-
 *Figura 5. Definições no Modo de Leitura*
 
 ![Definições no Modo de Leitura.](../images/dictionary-agave-05.jpg)
 
-Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais: 
+Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais:
 
 - Um serviço Web XML que pesquisa definições de um serviço de dicionário e, em seguida, retorna os valores em um formato XML que pode ser consumido e exibido pelo suplemento de dicionário.
 - Um suplemento de painel de tarefas que envia a seleção atual do usuário ao serviço Web de dicionário, exibe definições e, opcionalmente, pode inserir esses valores no documento.
@@ -329,7 +326,7 @@ Especifica o ponto de extremidade do serviço de consulta de dicionário. Necess
 
 **Comentários**
 
-Esse é o URI do serviço Web XML para o provedor do dicionário. A consulta com escape correto será anexada a esse URI. 
+Esse é o URI do serviço Web XML para o provedor do dicionário. A consulta com escape correto será anexada a esse URI.
 
 **Exemplo**
 
@@ -487,27 +484,27 @@ a:hover, a:active
 
 ### <a name="writing-the-javascript-implementation"></a>Escrever a implementação de JavaScript
 
-O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
+O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Ele pode ser usado com um serviço Web XML `xmlServiceURL` em conformidade com OfficeDefinitions público modificando a variável na parte superior do arquivo e, em seguida, substituindo a chave de API do Bing para pronúncias por uma registrada corretamente.
 
 Os principais membros da API JavaScript do Office (Office.js) que são chamados dessa implementação são os seguintes:
 
 - O [evento](/javascript/api/office) `Office` de inicialização do objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
 - O [método addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) `Document` do objeto, `initialize` que é chamado na função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para escutar as alterações de seleção do usuário.
 - O [método getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) `Document` do objeto, `tryUpdatingSelectedWord()` `SelectionChanged` que é chamado na função quando o manipulador de eventos é gerado para obter a palavra ou frase selecionada pelo usuário, coerte-a `selectedTextCallback` em texto sem formatação e execute a função de retorno de chamada assíncrona.
-- Quando a `selectTextCallback` função de retorno de chamada assíncrona  `getSelectedDataAsync` passada como o argumento de retorno de chamada do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada é retornado. Ele obtém esse valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) do objeto `AsyncResult` retornado.
+- Quando a `selectTextCallback` função de retorno de chamada assíncrona  `getSelectedDataAsync` passada como o argumento de retorno de chamada do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada é retornado. Ele obtém esse valor do argumento *selectedText* do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) do objeto `AsyncResult` retornado.
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
 - O código restante em Dictionary.js exibe a lista de definições e o link de pronúncia na interface do usuário HTML do suplemento.
 
 ```js
 // The document the dictionary add-in is interacting with.
-var _doc;
+let _doc;
 // The last looked-up word, which is also the currently displayed word.
-var lastLookup;
+let lastLookup;
 // For demo purposes only!! Get an AppID if you intend to use the Pronunciation service for your feature.
-var appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
+const appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
 
 // The base URL for the OfficeDefinitions-conforming XML web service to query for definitions.
-var xmlServiceUrl = "WebService.asmx/Define?Word=";
+const xmlServiceUrl = "WebService.asmx/Define?Word=";
 
 // Initialize the add-in.
 // The initialize function is required for all add-ins.

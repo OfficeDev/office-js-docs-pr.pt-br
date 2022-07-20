@@ -1,24 +1,24 @@
 ---
 title: Obter o JavaScript IntelliSense no Visual Studio
 description: Saiba como usar o JSDoc para criar o IntelliSense para suas variáveis, objetos, parâmetros e valores retornados do JavaScript.
-ms.date: 04/03/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb18199c53b7b836079754b5fb4561b76a968b1
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: deef6fe4356264534732e7f38a58a4079223686d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682256"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889308"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio"></a>Obter o JavaScript IntelliSense no Visual Studio
 
-Ao usar o Visual Studio 2019 e posterior para desenvolver suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para suas variáveis, objetos, parâmetros e valores retornados do JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Ao usar o Visual Studio 2019 e posterior para desenvolver Suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para suas variáveis, objetos, parâmetros e valores retornados do JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).
 
 ## <a name="officejs-type-definitions"></a>Definições de tipo do Office.js
 
 Você precisa fornecer as definições dos tipos no Office.js para o Visual Studio. Para fazer isso, é possível:
 
-- Ter uma cópia local dos arquivos Office.js em uma pasta em sua solução denominada `\Office\1\`. Os modelos de projeto de Suplemento do Office no Visual Studio adicionam essa cópia local quando você cria o projeto de um suplemento. 
+- Ter uma cópia local dos arquivos Office.js em uma pasta em sua solução denominada `\Office\1\`. Os modelos de projeto de Suplemento do Office no Visual Studio adicionam essa cópia local quando você cria o projeto de um suplemento.
 - Use a versão online do Office.js adicionando um arquivo tsconfig.json à raiz do projeto de aplicativo da Web na solução do suplemento. O arquivo deve incluir o seguinte conteúdo:
 
     ```json
@@ -46,10 +46,10 @@ A técnica básica é incluir antes da variável (ou do parâmetro e assim por d
 
 ```js
 /** @type {Excel.Range} */
-var subsetRange;
+let subsetRange;
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para a variável 'subsetRange'.](../images/intellisense-vs17-var.png)
+![Trecho do IntelliSense para a variável 'subsetRange'.](../images/intellisense-vs22-var.png)
 
 ### <a name="parameter"></a>Parâmetro
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para o parâmetro 'paras' (parâmetro 'paragraphs' no exemplo de JavaScript).](../images/intellisense-vs17-param.png)
+![Trecho do IntelliSense para o parâmetro 'paras' (parâmetro 'paragraphs' no exemplo de JavaScript).](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando o trecho do IntelliSense para o valor retornado 'myFunc()'.](../images/intellisense-vs17-return.png)
+![Trecho do IntelliSense para o valor retornado 'myFunc()'.](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>Tipos complexos
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-![Captura de tela mostrando o IntelliSense para declaração de tipo complexo de 'var myVar;', por exemplo.](../images/intellisense-vs17-complex-type.png)
+![IntelliSense para declaração de tipo complexo de 'let myVar;', por exemplo.](../images/intellisense-vs22-complex-type.png)
 
 ## <a name="see-also"></a>Confira também
 

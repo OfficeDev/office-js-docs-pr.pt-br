@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 07/05/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e14abf670ba0fe205f728461e228623604ed465
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659658"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889506"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -18,7 +18,6 @@ ms.locfileid: "66659658"
 Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** em seu manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Para obter uma introdução aos comandos de suplemento, consulte comandos [de suplemento para Excel, PowerPoint e Word](../design/add-in-commands.md).
 
 Este artigo descreve como editar seu manifesto para definir comandos de suplemento e como criar o código para comandos [de função](../design/add-in-commands.md#types-of-add-in-commands). O diagrama a seguir mostra a hierarquia de elementos usada para definir comandos de suplemento. Descrevemos esses elementos com mais detalhes neste artigo.
-
 
 ![Visão geral dos elementos de comandos do suplemento no manifesto. O nó superior aqui é VersionOverrides com hosts e recursos filhos. Em Hosts estão Host e, em seguida, DesktopFormFactor. Em DesktopFormFactor estão FunctionFile e ExtensionPoint. Em ExtensionPoint estão CustomTab ou OfficeTab e Menu do Office. Na guia CustomTab ou Office estão Agrupar e, em seguida, Controlar e Ação. No Menu do Office, há Controle e Ação. Em Recursos (filho de VersionOverrides) estão Imagens, URLs, ShortStrings e LongStrings.](../images/version-overrides.png)
 
@@ -172,7 +171,7 @@ O código a seguir mostra como implementar a função usada por **\<FunctionName
         // Implement your custom code here. The following code is a simple example.  
         Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
-                var error = asyncResult.error;
+                const error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message.
                 }

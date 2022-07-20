@@ -1,14 +1,14 @@
 ---
 title: Criar guias contextuais personalizadas em Suplementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao suplemento do Office.
-ms.date: 05/25/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c95d435a033a0bda44808cef75f12bb8d9e196f7
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659917"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889188"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Suplementos do Office
 
@@ -92,7 +92,7 @@ Construiremos um exemplo de um blob JSON de guias contextuais passo a passo. O e
       "type": "ExecuteFunction",
       "functionName": "writeData"
     }
-   ```
+    ```
 
 1. Adicione o seguinte como o único membro da `tabs` matriz. Sobre essa marcação, observação:
 
@@ -281,7 +281,7 @@ Office.onReady(async () => {
     await Office.ribbon.requestCreateControls(contextualTab);
 
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(showDataTab);
@@ -476,7 +476,7 @@ O blob `requestCreateControls` JSON que é passado não é localizado da mesma m
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
-    var displayLanguage = Office.context.displayLanguage;
+    const displayLanguage = Office.context.displayLanguage;
 
         switch (displayLanguage) {
             case 'en-US':
@@ -519,7 +519,7 @@ function GetContextualTabsJsonSupportedLocale () {
 Em seguida, seu código chama a função para obter o blob localizado que é passado `requestCreateControls`para, como no exemplo a seguir.
 
 ```javascript
-var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+const contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
 ## <a name="best-practices-for-custom-contextual-tabs"></a>Práticas recomendadas para guias contextuais personalizadas

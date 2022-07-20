@@ -1,17 +1,17 @@
 ---
 title: Visão geral da API JavaScript do Visio
 description: Visão geral da API JavaScript do Visio.
-ms.date: 06/03/2020
+ms.date: 07/18/2022
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ccd09288d3f6e7fff4b102743391efc8f6e75e4b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 666b525dde96c6d281d5acf6d905e592b172bea3
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743359"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889622"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -35,7 +35,7 @@ Este artigo descreve como usar as APIs JavaScript do Visio com o Visio na Web pa
 O objeto EmbeddedSession inicia a comunicação entre o quadro do desenvolvedor e o quadro do Visio no navegador.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+const session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -54,7 +54,7 @@ O objeto RequestContext facilita as solicitações para o aplicativo Visio. Como
 ```js
 function hideToolbars() {
     Visio.run(session, function(context){
-        var app = context.document.application;
+        const app = context.document.application;
         app.showToolbars = false;
         return context.sync().then(function () {
             window.console.log("Toolbars Hidden");
@@ -73,7 +73,7 @@ Os objetos JavaScript do Visio declarados e usados em uma sessão incorporada s�
 Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações nesses objetos não são realizadas até que o método `sync()` seja executado.
 
 ```js
-var activePage = context.document.getActivePage();
+const activePage = context.document.getActivePage();
 ```
 
 ## <a name="sync"></a>sync()
@@ -103,12 +103,12 @@ Todos esses comandos são enfileirados e executados quando `context.sync()` é c
 
 ```js
 Visio.run(session, function (context) {
-    var page = context.document.getActivePage();
-    var shapes = page.shapes;
+    const page = context.document.getActivePage();
+    const shapes = page.shapes;
     shapes.load();
     return context.sync().then(function () {
-        for(var i=0; i<shapes.items.length;i++) {
-            var shape = shapes.items[i];
+        for(let i=0; i<shapes.items.length;i++) {
+            let shape = shapes.items[i];
             window.console.log("Shape Text: " + shape.text );
         }
     });
@@ -150,11 +150,11 @@ document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </t
 document.write("<div id='iframeHost' />");
 
 let session; // Global variable to store the session and pass it afterwards in Visio.run()
-var textArea;
+let textArea;
 // Loads the Visio application and Initializes communication between developer frame and Visio online frame
 function initEmbeddedFrame() {
     textArea = document.getElementById('ResultOutput');
-    var url = document.getElementById('fileUrl').value;
+    let url = document.getElementById('fileUrl').value;
     if (!url) {
         window.alert("File URL should not be empty");
     }
@@ -174,13 +174,13 @@ function initEmbeddedFrame() {
 // Code for getting selected Shape Text using the shapes collection object
 function getSelectedShapeText() {
     Visio.run(session, function (context) {
-        var page = context.document.getActivePage();
-        var shapes = page.shapes;
+        const page = context.document.getActivePage();
+        const shapes = page.shapes;
         shapes.load();
         return context.sync().then(function () {
             textArea.value = "Please select a Shape in the Diagram";
-            for(var i=0; i<shapes.items.length;i++) {
-                var shape = shapes.items[i];
+            for(let i=0; i<shapes.items.length;i++) {
+                let shape = shapes.items[i];
                 if ( shape.select == true) {
                     textArea.value = shape.text;
                     return;

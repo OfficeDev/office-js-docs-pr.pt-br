@@ -3,12 +3,12 @@ title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca281a007ba4c34e55972ac35757f7b31f6315d
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713032"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889608"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
@@ -48,12 +48,12 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3002|Erro de Associação Inválida|A ligação especificada não existe.|O desenvolvedor tenta associar a uma associação não existente ou removida.|
 |3003|Erro de Criação de Associação|Não há suporte para várias seleções não contíguas.|O usuário está fazendo várias seleções.|
 |3004|Erro de Criação de Associação|Não é possível criar uma ligação com a seleção atual e o tipo de ligação especificada.|Há várias condições em que isso pode acontecer. Confira a seção "Condições de erro de criação de associação" posteriormente neste artigo.|
-|3005|Operação de Associação Inválida|Operação sem suporte neste tipo de associação.|O desenvolvedor envia uma operação de adição de linha ou de adição de coluna em um tipo de associação que não é _table_.|
+|3005|Operação de Associação Inválida|Operação sem suporte neste tipo de associação.|O desenvolvedor envia uma operação adicionar linha ou adicionar coluna em um tipo de associação que não é do tipo de coerção `table`.|
 |3006|Erro de Criação de Associação|O item nomeado não existe.|Não foi possível encontrar o item nomeado. Não existe um controle de conteúdo ou uma tabela com esse nome.|
-|3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: mais de um controle de conteúdo com o mesmo nome existe e a falha na colisão é definida como **true**.|
-|3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|Não é possível associar o item nomeado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo coerção _table_.|
+|3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: existe mais de um controle de conteúdo com o mesmo nome e a falha na colisão é definida como `true`.|
+|3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|O item nomeado não pode ser associado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo de coerção `table`.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos `addRowsAsync` ou o `deleteAllDataValuesAsync` objeto `TableBinding` em dados de matriz de tipo de coerção _._|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos `addRowsAsync` ou o `deleteAllDataValuesAsync` objeto em `TableBinding` dados do tipo de coerção `matrix`.|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|
@@ -105,8 +105,8 @@ A tabela a seguir resume o comportamento de associação no Excel.
 
 |**Tipo de associação especificado**|**Seleção real**|**Comportamento**|
 |:-----|:-----|:-----|
-|Matriz|Intervalo de células (incluindo dentro de uma tabela e uma única célula)|Uma associação de tipo _matriz_ é criada nas células selecionadas. Nenhuma modificação no documento é esperada.|
-|Matriz|Texto selecionado na célula|Uma associação de tipo _matriz_ é criada na célula inteira. Nenhuma modificação no documento é esperada.|
+|Matriz|Intervalo de células (incluindo dentro de uma tabela e uma única célula)|Uma associação de tipo `matrix` é criada nas células selecionadas. Nenhuma modificação no documento é esperada.|
+|Matriz|Texto selecionado na célula|Uma associação de tipo `matrix` é criada em toda a célula. Nenhuma modificação no documento é esperada.|
 |Matriz|Várias seleções/seleção inválida (por exemplo, o usuário seleciona uma imagem, objeto ou WordArt.)|Não é possível criar a associação.|
 |Tabela|Intervalo de células (inclui uma única célula)|Não é possível criar a associação.|
 |Tabela|Intervalo de células dentro de uma tabela (inclui uma única célula dentro de uma tabela, ou a tabela inteira ou texto dentro de uma célula em uma tabela)|Uma associação é criada na tabela inteira.|
@@ -115,9 +115,9 @@ A tabela a seguir resume o comportamento de associação no Excel.
 |Tabela|Várias seleções/seleção inválida (por exemplo, o usuário seleciona uma imagem, objeto, WordArt etc.)|Não é possível criar a associação.|
 |Texto|Intervalo de células|Não é possível criar a associação.|
 |Texto|Intervalo de células dentro de uma tabela|Não é possível criar a associação.|
-|Texto|Célula única|Uma associação do tipo _text_ é criada.|
-|Texto|Célula única dentro de uma tabela|Uma associação do tipo _text_ é criada.|
-|Texto|Texto selecionado na célula|Uma associação do tipo _text_ é criada na célula inteira.|
+|Texto|Célula única|Uma associação de tipo `text` é criada.|
+|Texto|Célula única dentro de uma tabela|Uma associação de tipo `text` é criada.|
+|Texto|Texto selecionado na célula|Uma associação de tipo `text` em toda a célula é criada.|
 
 ### <a name="behavior-in-word"></a>Comportamento no Word
 
@@ -126,16 +126,16 @@ A tabela a seguir resume o comportamento de associação no Word.
 |**Tipo de associação especificado**|**Seleção real**|**Comportamento**|
 |:-----|:-----|:-----|
 |Matriz|Texto|Não é possível criar a associação.|
-|Matriz|Tabela inteira|Uma associação do tipo _matrix_ é criada. O documento é alterado e um controle de conteúdo deve envolver a tabela. |
+|Matriz|Tabela inteira|Uma associação de tipo `matrix` é criada. O documento é alterado e um controle de conteúdo deve encapsular a tabela. |
 |Matriz|Intervalo dentro de uma tabela|Não é possível criar a associação.|
 |Matriz|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
 |Tabela|Texto|Não é possível criar a associação.|
-|Tabela|Tabela inteira|Uma associação do tipo _text_ é criada.|
+|Tabela|Tabela inteira|Uma associação de tipo `text` é criada.|
 |Tabela|Intervalo dentro de uma tabela|Não é possível criar a associação.|
 |Tabela|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
-|Texto|Tabela inteira|Uma associação do tipo _text_ é criada.|
+|Texto|Tabela inteira|Uma associação de tipo `text` é criada.|
 |Texto|Intervalo dentro de uma tabela|Não é possível criar a associação.|
-|Texto|Seleção múltipla|A última seleção será envolvida com um controle de conteúdo e uma associação a esse controle. Um controle de conteúdo do tipo _texto_ é criado.|
+|Texto|Seleção múltipla|A última seleção será envolvida com um controle de conteúdo e uma associação a esse controle. Um controle de conteúdo do tipo `text` é criado.|
 |Texto|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
 
 ## <a name="see-also"></a>Confira também

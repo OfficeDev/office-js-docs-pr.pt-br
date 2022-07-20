@@ -1,20 +1,20 @@
 ---
-title: Entender quando e como usar Office Open XML em seu suplemento do Word
-description: Visão geral de quando e como usar Office Open XML em seu suplemento do Word.
-ms.date: 02/15/2022
+title: Entender quando e como usar o Office Open XML em seu suplemento do Word
+description: Visão geral de quando e como usar o Office Open XML em seu suplemento do Word.
+ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: b3a20c18677b6af11de835a996fc8eaf912a7770
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229733"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889545"
 ---
-# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Entender quando e como usar Office Open XML em seu suplemento do Word
+# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Entender quando e como usar o Office Open XML em seu suplemento do Word
 
 **Fornecido por:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-Se você estiver criando suplementos Office para execução no Word, talvez já saiba que a API JavaScript (Office.js) do Office oferece vários formatos para ler e gravar conteúdo de documento. Eles são chamados de tipos de coerção e incluem texto sem formatação, tabelas, HTML e Office Open XML.
+Se você estiver criando Suplementos do Office para execução no Word, talvez já saiba que a API JavaScript do Office (Office.js) oferece vários formatos para leitura e gravação de conteúdo de documento. Eles são chamados de tipos de coerção e incluem texto sem formatação, tabelas, HTML e Office Open XML.
 
 Então, quais são suas opções quando você precisa adicionar conteúdo avançado a um documento, como imagens, tabelas formatadas, gráficos ou apenas texto formatado? Comece com as APIs disponíveis por meio dos conjuntos de requisitos [do WordApi](/javascript/api/requirement-sets/word/word-api-requirement-sets) para ver se elas fornecem o que você precisa. Para obter um exemplo, consulte o snippet Inserir código de texto [formatado](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) no [laboratório script](https://appsource.microsoft.com/product/office/wa104380862) no Word.
 
@@ -23,10 +23,10 @@ Se as APIs ainda não estiverem disponíveis, você poderá usar HTML para inser
 Como o Office Open XML é a linguagem na qual os documentos do Word (como .docx e .dotx) são gravados, você pode inserir praticamente qualquer tipo de conteúdo que um usuário pode adicionar a um documento do Word, com praticamente qualquer tipo de formatação que o usuário possa aplicar. Determinar a marcação do Office Open XML necessária para fazer isso é mais fácil do que você imagina.
 
 > [!NOTE]
-> O Office Open XML também é a linguagem por trás dos documentos do PowerPoint e do Excel (e, a partir do Office 2013, do Visio). No entanto, atualmente, você pode fazer a coerção de conteúdo como Office Open XML somente em Suplementos do Office criados para o Word. Para obter mais informações sobre Office Open XML, incluindo a documentação de referência de linguagem completa, consulte a [seção](#see-also) Consulte também.
+> O Office Open XML também é a linguagem por trás dos documentos do PowerPoint e do Excel (e, a partir do Office 2013, do Visio). No entanto, atualmente, você pode fazer a coerção de conteúdo como Office Open XML somente em Suplementos do Office criados para o Word. Para obter mais informações sobre o Office Open XML, incluindo a documentação completa de referência de idioma, consulte [a seção](#see-also) Consulte também.
 
 Para começar, veja alguns dos tipos de conteúdo que você pode inserir usando a coerção do Office Open XML.
-Baixe o código de exemplo Carregar e gravar Open XML em seu suplemento [do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), que contém a marcação Office Open XML e o código Office.js necessários para inserir qualquer um dos exemplos a seguir no Word.
+Baixe o código de exemplo Carregar e gravar [Open XML no suplemento do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), que contém a marcação Office Open XML e o código Office.js necessário para inserir qualquer um dos exemplos a seguir no Word.
 
 > [!NOTE]
 > Ao longo deste artigo, os termos **tipos de** conteúdo e conteúdo avançado referem-se aos tipos de conteúdo avançado que você pode inserir em um documento do Word.
@@ -45,9 +45,9 @@ Use um estilo para coordenar automaticamente a aparência do texto inserido com 
 
 *Figura 3. Uma imagem simples*
 
-![Imagem de um logotipo.](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
+![Um logotipo de exemplo.](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
 
-Use o mesmo método para inserir qualquer formato Office imagem com suporte.
+Use o mesmo método para inserir qualquer formato de imagem com suporte do Office.
 
 *Figura 4. Uma imagem formatada usando efeitos e estilos de imagem*
 
@@ -89,7 +89,7 @@ Use estilos de tabela internos ou personalizados tão facilmente quanto usar um 
 
 ![Um diagrama SmartArt dinâmico no Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Office oferece uma ampla variedade de layouts de diagrama SmartArt (e você pode usar Office Open XML para criar seu próprio).
+O Office oferece uma ampla variedade de layouts de diagrama SmartArt (e você pode usar o Office Open XML para criar seu próprio).
 
 *Figura 11. Um gráfico*
 
@@ -97,10 +97,10 @@ Office oferece uma ampla variedade de layouts de diagrama SmartArt (e você pode
 
 Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word.
 Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento.
-Há duas maneiras simples de obter a marcação Office Open XML de que você precisa. Adicione seu conteúdo avançado a um documento do Word em branco e salve o arquivo no formato de Documento XML do Word ou use um suplemento de teste com o método [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) para capturar a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
+Há duas maneiras simples de obter a marcação do Office Open XML de que você precisa. Adicione seu conteúdo avançado a um documento do Word em branco e salve o arquivo no formato de Documento XML do Word ou use um suplemento de teste com o método [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) para capturar a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
 
 > [!NOTE]
-> Um documento do Office Open XML é realmente um pacote compactado de arquivos que representa o conteúdo do documento. Salvar o arquivo no formato documento XML do Word fornece todo o pacote Office Open XML mesclado em um arquivo XML, `getSelectedDataAsync` que também é o que você obtém ao usar para recuperar a marcação Office Open XML.
+> Um documento do Office Open XML é realmente um pacote compactado de arquivos que representa o conteúdo do documento. Salvar o arquivo no formato de Documento XML do Word oferece todo o pacote do Office Open XML mesclado em um arquivo XML, `getSelectedDataAsync` que também é o que você obtém ao usar para recuperar a marcação do Office Open XML.
 
 Se você salvar o arquivo em um formato XML do Word, observe que há duas opções na lista Salvar como Tipo na caixa de diálogo Salvar como para arquivos no formato .xml. Escolha o Documento **XML do Word e** não a opção Word 2003.
 Baixe o código de exemplo nomeado [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), que pode ser usado como uma ferramenta para recuperar e testar sua marcação.
@@ -108,20 +108,20 @@ Então é só isso que preciso fazer? Bem, não exatamente. Sim, para muitos cen
 Se você é um dos muitos desenvolvedores de suplementos que estão vendo a marcação do Office Open XML pela primeira vez, tentar entender a grande quantidade de marcação obtida até para o conteúdo mais simples pode parecer assustador, mas não precisa ser assim.
 Neste tópico, você usará alguns cenários comuns que temos ouvido da comunidade de desenvolvedores de Suplementos do Office para mostrar técnicas para simplificar o Office Open XML para uso em seu suplemento. Exploraremos a marcação para alguns tipos de conteúdo mostrados anteriormente, além das informações necessárias para minimizar a carga do Office Open XML. Também examinaremos o código necessário para inserir conteúdo avançado em um documento na seleção ativa e a maneira de usar o Office Open XML com o objeto de associação para adicionar ou substituir conteúdo em locais específicos.
 
-## <a name="explore-the-office-open-xml-document-package"></a>Explorar o pacote Office documento Open XML
+## <a name="explore-the-office-open-xml-document-package"></a>Explorar o pacote de documentos do Office Open XML
 
-Quando você usa [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) para recuperar o open XML do Office para uma seleção de conteúdo (ou quando você salva o documento no formato de documento XML do Word), o que você está obtendo não é apenas a marcação que descreve o conteúdo selecionado; é um documento inteiro com muitas opções e configurações que você quase certamente não precisa. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
+Quando você usa [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) para recuperar o Office Open XML para uma seleção de conteúdo (ou quando você salva o documento no formato de documento XML do Word), o que você está obtendo não é apenas a marcação que descreve o conteúdo selecionado; é um documento inteiro com muitas opções e configurações que você quase certamente não precisa. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
 
 Até mesmo um pacote de documento simples do Word inclui partes para propriedades de documentos, estilos, tema (configurações de formatação), configurações da Web, fontes e muito mais, além de partes para o conteúdo real.
 
-Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você pega o Office Open XML para o texto formatado `getSelectedDataAsync`usando, você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
+Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você pega o Office Open XML para o texto formatado  `getSelectedDataAsync`usando, você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
 
 > [!TIP]
-> Edite Office marcação Open XML em um editor de texto como Bloco de notas. Se você abri-lo no Visual Studio, use Editar documento de formato >Avançado > (Ctrl+K, Ctrl+D) para formatar o pacote para facilitar **a** edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
+> Edite a marcação do Office Open XML em um editor de texto como o Bloco de Notas. Se você abri-lo no Visual Studio, use Editar >Documento de Formato Avançado > (Ctrl+K, Ctrl+D) para formatar o pacote para facilitar **a** edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
 
 *Figura 12. Recolher e expandir partes do pacote para facilitar a edição no Visual Studio*
 
-![Office snippet de código Open XML para uma parte do pacote no Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+![Snippet de código do Office Open XML para uma parte do pacote no Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
 *Figura 13. As partes incluídas em um pacote de documento básico do Office Open XML do Word*
 
@@ -145,7 +145,7 @@ Vários dos outros tipos de conteúdo mostrados no início deste tópico também
 
 - Muitas partes são automaticamente ignoradas pelos métodos Set ao se inserir conteúdo em um documento usando a coerção do Office Open XML, assim, você pode removê-las. Isso inclui o arquivo theme1.xml (o tema de formatação do documento), as partes de propriedades do documento (núcleo, suplemento e miniatura) e arquivos de configurações (incluindo settings, webSettings e fontTable).
 
-- No exemplo da Figura 1, a formatação de texto é aplicada diretamente (ou seja, cada configuração de fonte e de formatação de parágrafo é aplicada individualmente). Contudo, se você usar um estilo (por exemplo, se desejar que o texto assuma automaticamente a formatação do estilo Título 1 no documento de destino) como mostrado anteriormente na Figura 2, precisará da parte styles.xml, bem como de uma definição de relacionamento para ele. Para obter mais informações, consulte a seção de tópico [Adicionar objetos que usam partes Office Open XML](#add-objects-that-use-additional-office-open-xml-parts).
+- No exemplo da Figura 1, a formatação de texto é aplicada diretamente (ou seja, cada configuração de fonte e de formatação de parágrafo é aplicada individualmente). Contudo, se você usar um estilo (por exemplo, se desejar que o texto assuma automaticamente a formatação do estilo Título 1 no documento de destino) como mostrado anteriormente na Figura 2, precisará da parte styles.xml, bem como de uma definição de relacionamento para ele. Para obter mais informações, consulte a seção de tópico [Adicionar objetos que usam partes adicionais do Office Open XML](#add-objects-that-use-additional-office-open-xml-parts).
 
 ## <a name="insert-document-content-at-the-selection"></a>Inserir conteúdo do documento na seleção
 
@@ -153,7 +153,7 @@ Vamos examinar a marcação mínima do Office Open XML necessária para o exempl
 
 ### <a name="simplified-office-open-xml-markup"></a>Marcação simplificada do Office Open XML
 
-Você editou o exemplo Office Open XML mostrado aqui, conforme descrito na seção anterior, para deixar apenas as partes necessárias do documento e apenas os elementos necessários em cada uma dessas partes. Você verá como editar a marcação por conta própria (e explicaremos um pouco mais sobre as partes que permanecem aqui) na próxima seção do tópico.
+Você editou o exemplo do Office Open XML mostrado aqui, conforme descrito na seção anterior, para deixar apenas as partes necessárias do documento e apenas os elementos necessários em cada uma dessas partes. Você verá como editar a marcação por conta própria (e explicaremos um pouco mais sobre as partes que permanecem aqui) na próxima seção do tópico.
 
 ```XML
 <pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
@@ -196,17 +196,17 @@ Você editou o exemplo Office Open XML mostrado aqui, conforme descrito na seç�
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript para usar setSelectedDataAsync
 
-Depois de salvar o Office Open XML anterior como um arquivo XML acessível da sua solução, use a função a seguir para definir o conteúdo de texto formatado no documento usando Office coerção Open XML.
+Depois de salvar o Office Open XML anterior como um arquivo XML acessível da sua solução, use a função a seguir para definir o conteúdo de texto formatado no documento usando a coerção do Office Open XML.
 
 Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) no fim da função. `setSelectedDataASync` requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
 
 > [!NOTE]
-> Substitua _yourXMLfilename_ pelo nome e pelo caminho do arquivo XML que você salvou na solução. Se você não tiver certeza de onde incluir arquivos XML em sua solução ou como fazer referência a eles em seu código, consulte o exemplo de código Carregar e gravar Open XML em seu suplemento do [Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) para obter exemplos disso e um exemplo funcional da marcação e do JavaScript mostrados aqui.
+> Substitua *yourXMLfilename* pelo nome e pelo caminho do arquivo XML que você salvou na solução. Se você não tiver certeza de onde incluir arquivos XML em sua solução ou como fazer referência a eles em seu código, consulte o exemplo de código Carregar e gravar Open XML em seu suplemento do [Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) para obter exemplos disso e um exemplo funcional da marcação e do JavaScript mostrados aqui.
 
 ```js
 function writeContent() {
-    var myOOXMLRequest = new XMLHttpRequest();
-    var myXML;
+    const myOOXMLRequest = new XMLHttpRequest();
+    let myXML;
     myOOXMLRequest.open('GET', 'yourXMLfilename', false);
     myOOXMLRequest.send();
     if (myOOXMLRequest.status === 200) {
@@ -215,6 +215,7 @@ function writeContent() {
     Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' });
 }
 ```
+
 ## <a name="create-your-own-markup-best-practices"></a>Criar sua própria marcação: práticas recomendadas
 
 Vamos examinar mais detalhadamente a marcação que deve ser inserida no exemplo de texto formatado anterior.
@@ -318,22 +319,22 @@ Para desativar atributos RSID no Word para documentos que você criar no futuro,
 1. Na caixa de diálogo Opções do Word, escolha **Central de Confiabilidade** e escolha **Configurações da Central de Confiabilidade**.
 1. Na caixa de diálogo Central de Confiabilidade, escolha **Opções de privacidade** e desative a configuração **Armazenar número aleatório para melhorar a precisão da combinação**.
 
-Para remover marcas RSID de um documento existente, tente o atalho a seguir com o documento aberto Office Open XML.
+Para remover marcas RSID de um documento existente, tente o atalho a seguir com o documento aberto no Office Open XML.
 
 1. Com o ponto de inserção no corpo do documento principal, pressione **Ctrl+Home** para ir para a parte superior do documento.
 1. No teclado, pressione **Barra de espaços**, **Delete**, **Barra de espaços**. Em seguida, salve o documento.
 
 Após remover a maior parte da marcação do pacote, resta a marcação mínima que precisa ser inserida para o exemplo, conforme mostrado na seção anterior.
 
-## <a name="use-the-same-office-open-xml-structure-for-different-content-types"></a>Usar a mesma estrutura Office Open XML para tipos de conteúdo diferentes
+## <a name="use-the-same-office-open-xml-structure-for-different-content-types"></a>Usar a mesma estrutura do Office Open XML para tipos de conteúdo diferentes
 
 Vários tipos de conteúdo avançado exigem somente os componentes .rels e document.xml mostrados no exemplo anterior, incluindo controles de conteúdo, formas de desenho e caixas de texto do Office e tabelas (a menos que um estilo seja aplicado à tabela). De fato, você pode reutilizar as mesmas partes de pacote editadas e trocar apenas o conteúdo de **body** em document.xml para a marcação do conteúdo.
 
-Para conferir a marcação do Office Open XML para obter os exemplos de cada um desses tipos de conteúdo mostrados anteriormente nas Figuras 5 a 8, explore o Exemplo de código open XML de carregamento e gravação em seu suplemento do [Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) referenciado na seção de visão geral.
+Para conferir a marcação do Office Open XML para obter os exemplos de cada um desses tipos de conteúdo mostrados anteriormente nas Figuras 5 a 8, explore o exemplo carregar e escrever Open XML no código do suplemento [do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) referenciado na seção de visão geral.
 
 Antes de seguir em frente, examine as diferenças a serem observadas para alguns desses tipos de conteúdo e como trocar as partes necessárias.
 
-### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>Entenda a marcação drawingML (Office gráficos) no Word: O que são fallbacks?
+### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>Entenda a marcação drawingML (elementos gráficos do Office) no Word: O que são fallbacks?
 
 Se a marcação para sua forma ou caixa de texto parecer muito mais complexa do que você esperaria, há um motivo para isso. Com o lançamento do Office 2007, houve a introdução dos Formatos do Office Open XML e de um novo mecanismo de elementos gráficos do Office que o PowerPoint e o Excel adotaram plenamente. Na versão 2007, o Word só incorporou parte desse mecanismo de elementos gráficos, adotando o mecanismo de elementos gráficos atualizado do Excel, elementos gráficos SmartArt e ferramentas de imagem avançadas. Para formas e caixas de texto, o Word 2007 continua a usar objetos de desenho herdados (VML). Na versão 2010, o Word lançou etapas adicionais com o mecanismo de elementos gráficos para incorporar formas e ferramentas de desenho atualizadas.
 
@@ -375,9 +376,9 @@ Ao usar controles de conteúdo com o suplemento, você também pode expandir mui
 > [!NOTE]
 > Não confunda a associação de dados XML no Word com a capacidade de associar a um controle por meio do suplemento. Esses são recursos completamente separados. No entanto, você pode incluir controles de conteúdo nomeados no conteúdo que inserir por meio do suplemento usando a coerção de OOXML e usar código no suplemento para associar a esses controles.
 
-Lembre-se também de que a associação de dados XML e Office.js podem interagir com partes XML personalizadas em seu aplicativo, portanto, é possível integrar essas ferramentas poderosas. Para saber mais sobre como trabalhar com partes XML personalizadas Office API JavaScript, consulte a [seção Recursos](#see-also) adicionais deste tópico.
+Lembre-se também de que a associação de dados XML e Office.js podem interagir com partes XML personalizadas em seu aplicativo, portanto, é possível integrar essas ferramentas poderosas. Para saber mais sobre como trabalhar com partes XML personalizadas na API JavaScript do Office, consulte a [seção Recursos](#see-also) adicionais deste tópico.
 
-O trabalho com associações no suplemento do Word é abordado na próxima seção do tópico. Primeiro, dê uma olhada em um exemplo do Office Open XML necessário para inserir um controle de conteúdo rich text ao qual você pode associar usando seu suplemento.
+O trabalho com associações no suplemento do Word é abordado na próxima seção do tópico. Primeiro, dê uma olhada em um exemplo do Office Open XML necessário para inserir um controle de conteúdo de rich text ao qual você pode associar usando seu suplemento.
 
 > [!IMPORTANT]
 > Controles RTF são o único tipo de controle de conteúdo que você pode usar para associar a um controle de conteúdo de dentro do suplemento.
@@ -435,7 +436,7 @@ A marca **w:sdt** que você vê no corpo de document.xml representa o controle d
 - Se você pretende associar ao controle, o conteúdo padrão para o controle (o que está dentro da marca **sdtContent**) deve incluir pelo menos um parágrafo completo (como neste exemplo), para que a associação aceite o conteúdo avançado com vários parágrafos.
 
 > [!NOTE]
-> O atributo de parte de documento que foi removido desta marca de exemplo **w:sdt** pode aparecer em um controle de conteúdo para fazer referência a uma parte separada no pacote em que as informações de conteúdo de espaço reservado podem ser armazenadas (partes localizados em um diretório de glossário no pacote do Office Open XML). Embora a parte do documento seja o termo usado para partes XML (ou seja, arquivos) em um pacote open XML do Office, o termo partes do documento, conforme usado na propriedade sdt, refere-se ao mesmo termo no Word que é usado para descrever alguns tipos de conteúdo, incluindo blocos de construção e partes rápidas da propriedade do documento (por exemplo, controles internos associados a dados XML). Se houver partes em um diretório de glossário no pacote do Office Open XML, talvez você precise mantê-las se o conteúdo que estiver inserindo incluir esses recursos. Para um controle de conteúdo típico que você pretende usar para associar do seu suplemento, eles não são necessários. Lembre-se apenas de que, se você excluir as partes de glossário do pacote, também deverá remover o atributo de parte de documento da marca w:sdt.
+> O atributo de parte de documento que foi removido desta marca de exemplo **w:sdt** pode aparecer em um controle de conteúdo para fazer referência a uma parte separada no pacote em que as informações de conteúdo de espaço reservado podem ser armazenadas (partes localizados em um diretório de glossário no pacote do Office Open XML). Embora a parte do documento seja o termo usado para partes XML (ou seja, arquivos) dentro de um pacote do Office Open XML, o termo partes do documento, conforme usado na propriedade sdt, refere-se ao mesmo termo no Word que é usado para descrever alguns tipos de conteúdo, incluindo blocos de construção e partes rápidas da propriedade do documento (por exemplo, controles internos associados a dados XML). Se houver partes em um diretório de glossário no pacote do Office Open XML, talvez você precise mantê-las se o conteúdo que estiver inserindo incluir esses recursos. Para um controle de conteúdo típico que você pretende usar para associar do seu suplemento, eles não são necessários. Lembre-se apenas de que, se você excluir as partes de glossário do pacote, também deverá remover o atributo de parte de documento da marca w:sdt.
 
 A próxima seção abordará como criar e usar associações no suplemento do Word.
 
@@ -468,8 +469,8 @@ function addAndBindControl() {
     Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' }, function (result) {
         if (result.status == "failed") {
             if (result.error.message == "The named item does not exist.")
-                var myOOXMLRequest = new XMLHttpRequest();
-                var myXML;
+                const myOOXMLRequest = new XMLHttpRequest();
+                let myXML;
                 myOOXMLRequest.open('GET', '../../Snippets_BindAndPopulate/ContentControl.xml', false);
                 myOOXMLRequest.send();
                 if (myOOXMLRequest.status === 200) {
@@ -507,8 +508,8 @@ O código para gravar conteúdo para uma associação é semelhante ao usado par
 
 ```js
 function populateBinding(filename) {
-  var myOOXMLRequest = new XMLHttpRequest();
-  var myXML;
+  const myOOXMLRequest = new XMLHttpRequest();
+  let myXML;
   myOOXMLRequest.open('GET', filename, false);
   myOOXMLRequest.send();
   if (myOOXMLRequest.status === 200) {
@@ -523,7 +524,7 @@ Assim como `setSelectedDataAsync`com , você especifica o conteúdo a ser inseri
 > [!NOTE]
 > O código anterior é tudo de que você precisará se estiver preenchendo ou substituindo inicialmente o conteúdo em uma associação. Quando você insere um novo item de conteúdo em um local associado, o conteúdo existente na associação é substituído automaticamente. Confira um exemplo disso no exemplo de código referenciado anteriormente, [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings), que fornece dois exemplos de conteúdo separados que você pode intercambiar para preencher a mesma associação.
 
-## <a name="add-objects-that-use-additional-office-open-xml-parts"></a>Adicionar objetos que usam partes adicionais Office Open XML
+## <a name="add-objects-that-use-additional-office-open-xml-parts"></a>Adicionar objetos que usam partes adicionais do Office Open XML
 
 Muitos tipos de conteúdo exigem partes adicionais do documento no pacote do Office Open XML, o que significa que fazem referência a informações em outra parte ou o próprio conteúdo é armazenado em uma ou mais partes adicionais e referenciado em document.xml.
 
@@ -633,7 +634,7 @@ No entanto, ao conferir a marcação da tabela em document.xml e da definição 
 
 ### <a name="work-with-images"></a>Trabalhar com imagens
 
-A marcação de uma imagem inclui uma referência a pelo menos uma parte que inclua os dados binários para descrever a imagem. Para uma imagem complexa, isso pode consistir em centenas de páginas de marcação, e você não pode editá-la. Como você nunca precisa tocar nas partes binárias, poderá simplesmente recolhê-la se estiver usando um editor estruturado, como o Visual Studio, para que você ainda possa examinar e editar facilmente o restante do pacote.
+A marcação de uma imagem inclui uma referência a pelo menos uma parte que inclua os dados binários para descrever a imagem. Para uma imagem complexa, isso pode consistir em centenas de páginas de marcação, e você não pode editá-la. Como você nunca precisa tocar nas partes binárias, você pode simplesmente recolhê-la se estiver usando um editor estruturado, como o Visual Studio, para que você ainda possa examinar e editar facilmente o restante do pacote.
 
 Se você fizer check-out da marcação de exemplo para a imagem simples mostrada anteriormente na Figura 3, disponível no exemplo de código referenciado anteriormente Carregar e gravar [Open XML no suplemento do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), verá que a marcação da imagem no document.xml inclui informações de tamanho e posição, bem como uma referência de relação à parte que contém os dados de imagem binária. Essa referência é incluída na marca **a:blip**, da seguinte maneira:
 
@@ -641,7 +642,7 @@ Se você fizer check-out da marcação de exemplo para a imagem simples mostrada
 <a:blip r:embed="rId4" cstate="print">
 ```
 
-Lembre-se de que, como uma referência de relação é usada explicitamente (**r:embed="rID4"** ) e essa parte relacionada é necessária para renderizar a imagem, se você não incluir os dados binários no pacote open XML do Office, receberá um erro. Isso é diferente do styles.xml, explicado anteriormente, que não gerará um erro se for omitido, pois a relação não é explicitamente referenciada e a relação é para uma parte que fornece atributos para o conteúdo (formatação) em vez de fazer parte do próprio conteúdo.
+Lembre-se de que, como uma referência de relação é usada explicitamente ( **r:embed="rID4"** ) e essa parte relacionada é necessária para renderizar a imagem, se você não incluir os dados binários em seu pacote do Office Open XML, receberá um erro. Isso é diferente do styles.xml, explicado anteriormente, que não gerará um erro se for omitido, pois a relação não é explicitamente referenciada e a relação é para uma parte que fornece atributos para o conteúdo (formatação) em vez de fazer parte do próprio conteúdo.
 
 > [!NOTE]
 > Ao examinar a marcação, observe os namespaces adicionais usados na marca a:blip. Você verá em document.xml que o namespace **xlmns:a** (o namespace principal drawingML) é colocado dinamicamente no início do uso de referências drawingML em vez de na parte superior da parte document.xml. However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
@@ -699,7 +700,7 @@ Consulte a marcação editada para o gráfico de exemplo mostrado na Figura 11 n
 
 ## <a name="edit-the-office-open-xml-for-use-in-your-task-pane-add-in"></a>Editar o Office Open XML para uso no suplemento do painel de tarefas
 
-Você já viu como identificar e editar o conteúdo na marcação. Se a tarefa ainda parecer difícil quando você examinar o pacote Open XML Office massivo gerado para o documento, veja a seguir um resumo rápido das etapas recomendadas para ajudá-lo a editar esse pacote rapidamente.
+Você já viu como identificar e editar o conteúdo na marcação. Se a tarefa ainda parecer difícil quando você examinar o pacote massivo do Office Open XML gerado para seu documento, veja a seguir um resumo rápido das etapas recomendadas para ajudá-lo a editar esse pacote rapidamente.
 
 > [!NOTE]
 > Lembre-se de que você pode usar todas as partes .rels no pacote como um mapa para verificar rapidamente se há partes do documento que pode remover.
@@ -723,11 +724,11 @@ Após executar as sete etapas anteriores, você provavelmente terá removido cer
 Independentemente de você parar por aqui ou optar por se aprofundar ainda mais no conteúdo para localizar todas as linhas de marcação que pode recortar, lembre-se de que pode usar o exemplo de código referenciado anteriormente, [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), como um bloco de rascunho para testar com rapidez e facilidade a marcação editada.
 
 > [!TIP]
-> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos de Internet temporários antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada em cache no computador. Claro, você pode limpar os arquivos de Internet temporários do navegador da Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro Visual Studio 2019, no menu **Depurar**, escolha **Opções**. Em seguida, **em Ambiente**, escolha **Navegador da Web** e, em seguida, escolha **Opções do Internet Explorer**.
+> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos de Internet temporários antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada em cache no computador. Claro, você pode limpar os arquivos de Internet temporários do navegador da Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro do Visual Studio 2019, no menu **Depurar** , escolha **Opções**. Em seguida, **em Ambiente**, escolha **Navegador da Web** e, em seguida, escolha **Opções do Internet Explorer**.
 
 ## <a name="create-an-add-in-for-both-template-and-standalone-use"></a>Criar um suplemento para uso autônomo e modelo
 
-Neste tópico, você viu vários exemplos do que pode fazer com o Office Open XML em seus suplementos. Você examinou uma ampla variedade de exemplos de tipo de conteúdo avançado que podem ser inseridos em documentos usando o tipo de coerção open XML do Office, juntamente com os métodos JavaScript para inserir esse conteúdo na seleção ou em um local especificado (associado).
+Neste tópico, você viu vários exemplos do que pode fazer com o Office Open XML em seus suplementos. Você examinou uma ampla variedade de exemplos de tipo de conteúdo avançado que podem ser inseridos em documentos usando o tipo de coerção do Office Open XML, juntamente com os métodos JavaScript para inserir esse conteúdo na seleção ou em um local especificado (associado).
 
 Portanto, o que mais você precisa saber se está criando seu suplemento para uso autônomo (ou seja, inserido da Loja ou de um local de servidor proprietário) e para uso em um modelo criado previamente projetado para funcionar com seu suplemento? A resposta pode ser que você já sabe tudo o que precisa saber.
 
@@ -738,5 +739,5 @@ Ao usar modelos com o aplicativo, se o suplemento será residente no modelo no m
 ## <a name="see-also"></a>Confira também
 
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
-- A referência de linguagem completa e a documentação relacionada no Open XML: [ECMA-376 Padrão: Office formatos de arquivo Open XML](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
-- [Explorando a api javascript Office: associação de dados e partes XML personalizadas](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)
+- A referência de idioma completa e a documentação relacionada no Open XML: [ECMA-376 Standard: Formatos de arquivo Do Office Open XML](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+- [Explorando a API JavaScript do Office: associação de dados e partes XML personalizadas](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)

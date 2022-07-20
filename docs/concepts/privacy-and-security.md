@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Suplementos do Office.
-ms.date: 01/26/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659665"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889202"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -133,7 +133,7 @@ Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Supleme
 
 A plataforma de suplementos fornece um modelo de permissões que o suplemento usa para declarar o nível de acesso aos dados de um usuário de que necessita para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que o suplemento tem permissão para usar para seus recursos. Por exemplo, a permissão **WriteDocument** para suplementos de conteúdo e painel de tarefas permite o acesso ao método [Document.setSelectedDataAsync](/javascript/api/office/office.document) que permite que um suplemento grave no documento do usuário, mas não permite o acesso a nenhum dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que só precisam gravar em um documento, como um suplemento em que o usuário pode consultar dados para inserir em seu documento.
 
-Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
+Como prática recomendada, você deve solicitar permissões com base no princípio de *privilégios mínimos*. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 
 Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, os suplementos do Outlook que solicitam a **permissão ReadWriteMailbox** exigem privilégio de administrador explícito para serem instalados.
 
@@ -172,7 +172,7 @@ A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook.
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 

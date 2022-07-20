@@ -1,14 +1,14 @@
 ---
 title: Exigências especiais de suplementos no iPad
 description: Conheça alguns requisitos para criar um Suplemento do Office executado em um iPad.
-ms.date: 09/03/2020
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df8855a987bd44e657f6ddfdec9925a979449a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cc75cc75daec756efcb066f3e3a77f865672e501
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712990"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889300"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Exigências especiais de suplementos no iPad
 
@@ -31,8 +31,8 @@ A tabela a seguir lista as tarefas a serem executadas.
 > [!NOTE]
 > Seu suplemento pode fornecer uma interface do usuário alternativa com base no dispositivo no qual ele está sendo executado. Para detectar se o suplemento está em execução em um iPad, você pode usar as APIs a seguir.
 >
-> - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
-> - var allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
+> - const isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
+> - const allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
 >
 > Em um iPad, retorna `touchEnabled` `true` e `commerceAllowed` retorna `false`.
 >
@@ -42,10 +42,10 @@ A tabela a seguir lista as tarefas a serem executadas.
 
 Aplique as práticas recomendadas a seguir para desenvolver suplementos executados no iPad.
 
--  **Desenvolva e depure o suplemento no Windows ou Mac e o sideload para um iPad.**
+- **Desenvolva e depure o suplemento no Windows ou Mac e o sideload para um iPad.**
 
     Você não pode desenvolver o suplemento diretamente em um iPad, mas pode depurá-lo em um computador Windows ou Mac e fazer sideload dele em um iPad para teste. Como um suplemento executado no Office no iOS ou Mac dá suporte às mesmas APIs que um suplemento em execução no Office no Windows, o código do suplemento deve ser executado da mesma maneira nessas plataformas. Para obter detalhes, [consulte Testar e depurar suplementos do Office](../testing/test-debug-office-add-ins.md) e [realizar sideload de suplementos do Office no iPad para teste](../testing/sideload-an-office-add-in-on-ipad.md).
 
--  **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
+- **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
 
     Quando você especificar requisitos de API no manifesto do suplemento, o Office determinará se o aplicativo cliente do Office dá suporte a esses membros da API. Se os membros da API estão disponíveis no aplicativo, seu suplemento estará disponível. Como alternativa, você pode executar uma verificação de runtime para determinar se um método está disponível no aplicativo antes de usá-lo em seu suplemento. Verificações de runtime garantem que o suplemento esteja sempre disponível no aplicativo e fornecem funcionalidade adicional se os métodos estão disponíveis. Para obter mais informações, consulte [Especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).

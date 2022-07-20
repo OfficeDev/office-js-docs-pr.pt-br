@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 07/11/2022
+ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797607"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889601"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -25,7 +25,7 @@ Para obter informações sobre limitações relacionadas ao recurso Ao enviar, c
 
 A tabela a seguir mostra combinações de cliente-servidor com suporte para o recurso ao enviar, incluindo a atualização cumulativa mínima necessária, quando aplicável. Não há suporte para combinações excluídas.
 
-| Cliente | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
+| Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
 |Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
@@ -65,6 +65,10 @@ Atualmente, o recurso Ao enviar tem as seguintes limitações.
 
 - **Recurso Append-on-send** &ndash; Se você chamar [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) no manipulador ao enviar, um erro será retornado.
 - **AppSource** &ndash; Você não pode publicar suplementos do Outlook que usem o recurso Ao enviar no [AppSource](https://appsource.microsoft.com), pois eles falharão na validação do AppSource. Os suplementos que usam o recurso Ao enviar devem ser implantados pelos administradores.
+  
+  > [!IMPORTANT]
+  > Ao executar `npm run validate` para [validar](../testing/troubleshoot-manifest.md) o manifesto do suplemento, você receberá o erro "O suplemento caixa de correio que contém o evento ItemSend é inválido. O manifesto do suplemento caixa de correio contém o evento ItemSend em VersionOverrides, o que não é permitido." Essa mensagem é exibida porque os suplementos que usam o evento, que é necessário para esta versão do recurso ao enviar, não podem ser publicados `ItemSend` no AppSource. Você ainda poderá realizar o sideload e executar o suplemento, desde que nenhum outro erro de validação seja encontrado.
+
 - **Manifesto** &ndash; Somente um evento `ItemSend` tem suporte por suplemento. Se você tiver dois ou mais eventos `ItemSend` em um manifesto, haverá falha na validação.
 - **Desempenho**&ndash; Várias idas e voltas ao servidor Web que hospeda o suplemento podem afetar o desempenho do suplemento. Considere os efeitos sobre o desempenho quando você cria suplemento que exigem várias mensagens ou operações baseadas em reuniões.
 - **Enviar mais tarde** (somente Mac) &ndash; Se houver suplementos Ao enviar, o recurso **Enviar mais tarde** ficará indisponível.
@@ -98,7 +102,7 @@ O recurso Ao enviar no Outlook exige que os suplementos sejam configurados para 
 
 ### <a name="web-browser---classic-outlook"></a>[Navegador da Web – Outlook clássico](#tab/classic)
 
-Os suplementos para Outlook na Web (clássicos) que usam o recurso Ao enviar serão executados para usuários aos quais é atribuída uma política de caixa de correio do Outlook na Web que tenha o sinalizador *OnSendAddinsEnabled* definido como **true**.
+Os suplementos para Outlook na Web (clássico) que usam o recurso ao enviar serão executados para usuários que recebem uma política de caixa de correio do Outlook na Web que tem o sinalizador *OnSendAddinsEnabled* definido como `true`.
 
 Para instalar um novo suplemento, execute os seguintes cmdlets do PowerShell do Exchange Online.
 
@@ -128,13 +132,13 @@ Para habilitar suplementos Ao enviar para todos os usuários:
     > [!NOTE]
     > Os administradores podem usar uma diretiva existente, mas a funcionalidade Ao enviar tem suporte apenas para certos tipos de caixa de correio. As caixas de correio sem suporte serão impedidas de enviar por padrão no Outlook na Web.
 
-2. Habilitar o recurso Ao enviar.
+1. Habilitar o recurso Ao enviar.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Atribua a política aos usuários.
+1. Atribua a política aos usuários.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -153,13 +157,13 @@ Para habilitar o recurso Ao enviar para um grupo específico de usuários, as et
    > [!NOTE]
    > Os administradores podem usar uma política existente, mas a funcionalidade Ao enviar é compatível apenas com certos tipos de caixa de correio (consulte [Limitações de tipo de caixa de correio](#multiple-on-send-add-ins) anteriormente neste artigo para obter mais informações). As caixas de correio sem suporte serão impedidas de enviar por padrão no Outlook na Web.
 
-2. Habilitar o recurso Ao enviar.
+1. Habilitar o recurso Ao enviar.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Atribua a política aos usuários.
+1. Atribua a política aos usuários.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -218,13 +222,13 @@ Para todos os usuários, não permitir a edição durante o processamento de sup
     > [!NOTE]
     > Os administradores podem usar uma diretiva existente, mas a funcionalidade Ao enviar tem suporte apenas para certos tipos de caixa de correio. As caixas de correio sem suporte serão impedidas de enviar por padrão no Outlook na Web.
 
-2. Impor a conformidade ao enviar.
+1. Impor a conformidade ao enviar.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Atribua a política aos usuários.
+1. Atribua a política aos usuários.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -243,13 +247,13 @@ Para impor a conformidade ao enviar para um grupo específico de usuários, as e
    > [!NOTE]
    > Os administradores podem usar uma política existente, mas a funcionalidade Ao enviar é compatível apenas com certos tipos de caixa de correio (consulte [Limitações de tipo de caixa de correio](#multiple-on-send-add-ins) anteriormente neste artigo para obter mais informações). As caixas de correio sem suporte serão impedidas de enviar por padrão no Outlook na Web.
 
-2. Impor a conformidade ao enviar.
+1. Impor a conformidade ao enviar.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Atribua a política aos usuários.
+1. Atribua a política aos usuários.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members

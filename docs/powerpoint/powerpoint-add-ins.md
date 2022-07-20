@@ -1,16 +1,16 @@
 ---
 title: Suplementos do PowerPoint
 description: Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a1bfa8f17f6a63896025a374a9fe8a6bdbf36f55
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 54e840c62a78af289a1c401ceb0961d610292f99
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746993"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889587"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -43,13 +43,12 @@ No seguinte exemplo de código:
 
 - A função `registerActiveViewChanged` chama o método [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) para registrar um manipulador para o evento [Document.ActiveViewChanged](/javascript/api/office/office.document).
 
-
 ```js
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
     //Gets whether the current view is edit or read.
-    var currentView = getActiveFileView();
+    const currentView = getActiveFileView();
 
     //register for the active view changed handler
     registerActiveViewChanged();
@@ -130,10 +129,10 @@ No exemplo de código a seguir, a função `goToSlideByIndex` chama o método `D
 
 ```js
 function goToSlideByIndex() {
-    var goToFirst = Office.Index.First;
-    var goToLast = Office.Index.Last;
-    var goToPrevious = Office.Index.Previous;
-    var goToNext = Office.Index.Next;
+    const goToFirst = Office.Index.First;
+    const goToLast = Office.Index.Last;
+    const goToPrevious = Office.Index.Previous;
+    const goToNext = Office.Index.Next;
 
     Office.context.document.goToByIdAsync(goToNext, Office.GoToType.Index, function (asyncResult) {
         if (asyncResult.status == "failed") {
@@ -154,7 +153,7 @@ No seguinte exemplo de código, o método `getFileUrl` função chamadas a [Docu
 function getFileUrl() {
     //Get the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
+        const fileUrl = asyncResult.value.url;
         if (fileUrl == "") {
             app.showNotification("The file hasn't been saved yet. Save the file and try again");
         }
@@ -176,13 +175,13 @@ PowerPoint.createPresentation();
 O método `createPresentation` também cria uma cópia de uma apresentação existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .pptx como parâmetro opcional. A apresentação resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo .pptx válido. A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no exemplo a seguir.
 
 ```js
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+const myFile = document.getElementById("file");
+const reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = reader.result.toString().indexOf("base64,");
-    var copyBase64 = reader.result.toString().substr(startIndex + 7);
+    const startIndex = reader.result.toString().indexOf("base64,");
+    const copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };

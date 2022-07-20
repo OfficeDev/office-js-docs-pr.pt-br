@@ -1,14 +1,14 @@
 ---
 title: Como lidar com limitações de política de mesma origem nos Suplementos do Office
 description: Saiba como acomodar limitações de política de mesma origem com JSONP, CORS, IFRAMEs e outras técnicas.
-ms.date: 10/17/2019
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fa152bf42b1d0f7ad16172324c7a9e75314e4f34
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cd6d8eabfc7f3be145405eeb38ca6b202b0af6c4
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743660"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889342"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Como lidar com limitações de política de mesma origem nos Suplementos do Office
 
@@ -28,7 +28,7 @@ Veja a seguir um exemplo de JSONP que usa uma técnica que funcionará em qualqu
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 
@@ -36,28 +36,20 @@ function loadVideoDetails(videoIndex) {
     // Insert the SCRIPT element at the end of the HEAD section.
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-
 ```
-
 
 ## <a name="implement-server-side-code-using-a-token-based-authorization-scheme"></a>Implemente o código servidor usando um esquema de autorização do token
 
-Outra maneira de resolver limitações de política de mesma origem é fornecer o código no servidor que usa fluxos [OAuth 2.0](https://oauth.net/2/) para habilitar um domínio a obter acesso autorizado a recursos hospedado em outro domínio. 
-
+Outra maneira de resolver limitações de política de mesma origem é fornecer o código no servidor que usa fluxos [OAuth 2.0](https://oauth.net/2/) para habilitar um domínio a obter acesso autorizado a recursos hospedado em outro domínio.
 
 ## <a name="use-cross-origin-resource-sharing-cors"></a>Use o CORS (compartilhamento de recursos entre origens)
 
-
 Para obter um exemplo de como usar o compartilhamento de recursos entre origens do [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), veja a seção "CORS (Compartilhamento de Recursos entre Origens)" de [Novos Truques no XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
-
 
 ## <a name="build-your-own-proxy-using-iframe-and-post-message-cross-window-messaging"></a>Criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGENS (Mensagens entre Janelas)
 
-
 Confira um exemplo de como criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGEM em [Mensagens entre janelas](http://ejohn.org/blog/cross-window-messaging/).
-
 
 ## <a name="see-also"></a>Confira também
 
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
-    

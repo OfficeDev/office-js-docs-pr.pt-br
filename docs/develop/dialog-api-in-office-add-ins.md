@@ -1,14 +1,14 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conheça os conceitos básicos da criação de uma caixa de diálogo em um Suplemento do Office.
-ms.date: 01/22/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689387"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889482"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -30,7 +30,7 @@ Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de con
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
-![Captura de tela mostrando a caixa de diálogo com três opções de entrada exibidas na frente do Word.](../images/auth-o-dialog-open.png)
+![Caixa de diálogo com três opções de entrada exibidas na frente do Word.](../images/auth-o-dialog-open.png)
 
 A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela não *émodal*– um usuário pode continuar a interagir com o documento no aplicativo do Office e com a página no painel de tarefas, se houver um.
 
@@ -47,6 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - A URL usa o protocolo HTTP **S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
 > - A caixa de diálogo é igual ao domínio da página de host, que pode ser a página em um painel de tarefas ou o [arquivo de função](/javascript/api/manifest/functionfile) de um comando de suplemento. Isso é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` deve estar no mesmo domínio que a página de host.
 
@@ -97,6 +98,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - A `messageParent` função é uma das *duas* APIs JS do Office que podem ser chamadas na caixa de diálogo.
 > - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported`. Para obter informações sobre ele, consulte [Especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, não há suporte para essa API Outlook 2016 compra única (ou seja, a versão MSI).
 
@@ -111,7 +113,7 @@ if (loginSuccess) {
 A página host deve ser configurada para receber a mensagem. Você pode fazer isso adicionando um parâmetro de retorno de chamada à chamada original de `displayDialogAsync`. O retorno de chamada atribui um manipulador ao evento `DialogMessageReceived`. Apresentamos um exemplo a seguir.
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20},
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -131,7 +133,7 @@ Veja a seguir um exemplo simples de um manipulador para o evento `DialogMessageR
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
 }
 ```
@@ -176,14 +178,14 @@ Como você pode enviar várias chamadas `messageParent` a partir da caixa de di�
 
 ```js
 if (loginSuccess) {
-    var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};
-    var jsonMessage = JSON.stringify(messageObject);
+    const userProfile = getProfile();
+    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
-    var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};
-    var jsonMessage = JSON.stringify(messageObject);
+    const errorDetails = getError();
+    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -198,7 +200,7 @@ O código do manipulador na página host usa o valor da propriedade `messageType
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
         dialog.close();
         showUserName(messageFromDialog.profile.name);
@@ -255,7 +257,7 @@ O suplemento pode enviar mensagens da página [host](dialog-api-in-office-add-in
 Quando você chama a API de caixa de diálogo do Office para abrir uma caixa de diálogo, um [objeto Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável que tenha um escopo maior do que o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) porque o objeto será referenciado por outros métodos. Apresentamos um exemplo a seguir.
 
 ```javascript
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -277,7 +279,7 @@ Considere um cenário no qual a interface do usuário da caixa de diálogo está
 
 ```javascript
 function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
+    const messageToDialog = JSON.stringify({
                                name: "My Sheet",
                                position: 2
                            });
@@ -303,7 +305,7 @@ Em seguida, defina o `onMessageFromParent` manipulador. O código a seguir conti
 
 ```javascript
 function onMessageFromParent(arg) {
-    var messageFromParent = JSON.parse(arg.message);
+    const messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -338,7 +340,7 @@ Como você pode fazer `messageChild` várias chamadas da página host, `DialogPa
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Mensagens entre domínios para o runtime da caixa de diálogo
 
-A caixa de diálogo ou o runtime pai do JavaScript pode sair do domínio do suplemento depois que a caixa de diálogo for aberta. Se qualquer uma dessas coisas acontecer, as `messageChild` chamadas falharão, a menos que seu código especibilize o domínio do runtime da caixa de diálogo. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageChild`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que o runtime pai está hospedando no momento. 
+A caixa de diálogo ou o runtime pai do JavaScript pode sair do domínio do suplemento depois que a caixa de diálogo for aberta. Se qualquer uma dessas coisas acontecer, as `messageChild` chamadas falharão, a menos que seu código especibilize o domínio do runtime da caixa de diálogo. Faça isso adicionando um [parâmetro DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à chamada de `messageChild`. Esse objeto tem uma `targetOrigin` propriedade que especifica o domínio para o qual a mensagem deve ser enviada. Se o parâmetro não for usado, o Office assumirá que o destino é o mesmo domínio que o runtime pai está hospedando no momento.
 
 > [!NOTE]
 > Usar `messageChild` para enviar uma mensagem entre domínios requer o conjunto de requisitos [da Origem da Caixa de Diálogo 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). O `DialogMessageOptions` parâmetro é ignorado em versões mais antigas do Office que não dão suporte ao conjunto de requisitos, portanto, o comportamento do método não será afetado se você passá-lo.
@@ -387,8 +389,8 @@ Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
+    const messageObject = {messageType: "dialogClosed"};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -397,7 +399,7 @@ O manipulador de página host de `DialogMessageReceived` poderia chamar `dialog.
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {
        dialog.close();
     }

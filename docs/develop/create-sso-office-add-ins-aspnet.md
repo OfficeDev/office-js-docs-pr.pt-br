@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Suplemento do Office com um back-end do ASP.NET para usar o SSO (logon único).
-ms.date: 06/10/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e84c3a0bef488a07d1dd1118bd1bb254dd704d9a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659973"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889377"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -17,17 +17,17 @@ Este artigo orienta você pelo processo de habilitar o SSO (logon único) em um 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Visual Studio 2019 ou posterior.
+- Visual Studio 2019 ou posterior.
 
-* A **carga de trabalho de desenvolvimento do Office/SharePoint** ao configurar o Visual Studio.
+- A **carga de trabalho de desenvolvimento do Office/SharePoint** ao configurar o Visual Studio.
 
-* [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
+- [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* Pelo menos alguns arquivos e pastas armazenados OneDrive for Business em sua assinatura do Microsoft 365.
+- Pelo menos alguns arquivos e pastas armazenados OneDrive for Business em sua assinatura do Microsoft 365.
 
-* Uma conta do Azure com uma assinatura ativa – [crie uma conta gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- Uma conta do Azure com uma assinatura ativa – [crie uma conta gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -36,8 +36,8 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 > [!NOTE]
 > Há duas versões do exemplo.
 >
-> * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
-> * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Complete" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
+> - A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
+> - A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Complete" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
 
 ## <a name="register-the-add-in-through-an-app-registration"></a>Registrar o suplemento por meio de um registro de aplicativo
 
@@ -45,15 +45,15 @@ Primeiro, conclua as etapas [no Início Rápido: Registre](/azure/active-directo
 
 Use as configurações a seguir para o registro do aplicativo.
 
-* Nome: `Office-Add-in-ASPNET-SSO`
-* Tipos de conta com suporte: contas em qualquer diretório organizacional **(qualquer diretório Azure AD - multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**
+- Nome: `Office-Add-in-ASPNET-SSO`
+- Tipos de conta com suporte: contas em qualquer diretório organizacional **(qualquer diretório Azure AD - multilocatário) e contas pessoais da Microsoft (por exemplo, Skype, Xbox)**
 
     > [!NOTE]
     >  Se você quiser que o suplemento seja utilizável somente por usuários na locação em que você o está registrando, poderá escolher Contas somente neste diretório organizacional **...** em vez disso, mas precisará passar por algumas etapas de configuração adicionais. Consulte **a Instalação para locatário único** posteriormente neste artigo.
 
-* Plataforma: **Web**
-* URI de redirecionamento: **https://localhost:44355/AzureADAuth/Authorize**
-* Segredo do cliente: `*********` (O aplicativo Web usa o segredo do cliente para provar sua identidade quando solicita tokens. *Registre esse valor para uso em uma etapa posterior – ele é mostrado apenas uma vez.*)
+- Plataforma: **Web**
+- URI de redirecionamento: **https://localhost:44355/AzureADAuth/Authorize**
+- Segredo do cliente: `*********` (O aplicativo Web usa o segredo do cliente para provar sua identidade quando solicita tokens. *Registre esse valor para uso em uma etapa posterior – ele é mostrado apenas uma vez.*)
 
 ### <a name="expose-a-web-api"></a>Expor uma API Web
 
@@ -167,20 +167,19 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Abra o arquivo HomeES6.js na pasta **Scripts**. Ele já tem algum código nele.
 
-    * Um polyfill que atribui o objeto Office.Promise ao objeto de janela global, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface de usuário. (Para obter mais detalhes, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).)
-    * Uma atribuição ao método `Office.initialize` que, por sua vez, atribui um manipulador ao evento clicar do botão `getGraphAccessTokenButton`.
-    * Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
-    * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
-    * Código que implementa o sistema de autorização de fallback que o suplemento usará em cenários em que não há suporte para SSO ou ocorreu um erro.
+    - Um polyfill que atribui o objeto Office.Promise ao objeto de janela global, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface de usuário. (Para obter mais detalhes, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).)
+    - Uma atribuição ao método `Office.initialize` que, por sua vez, atribui um manipulador ao evento clicar do botão `getGraphAccessTokenButton`.
+    - Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
+    - Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
+    - Código que implementa o sistema de autorização de fallback que o suplemento usará em cenários em que não há suporte para SSO ou ocorreu um erro.
 
 1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Sobre este código, observe:
 
-
-    * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `retryGetAccessToken` é usada para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
-    * A função `getGraphData` é definida com a palavra-chave ES6 `async`. Usar a sintaxe ES6 facilita o uso da API de SSO em Suplementos do Office. Esse é o único arquivo na solução que usará a sintaxe sem suporte do Internet Explorer. Colocamos "ES6" no nome do arquivo como um lembrete. A solução usa o transcompilador de tsc para transcompilar esse arquivo em ES5, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface do usuário. (Veja o arquivo tsconfig.json na raiz do projeto.)
+    - O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `retryGetAccessToken` é usada para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
+    - A função `getGraphData` é definida com a palavra-chave ES6 `async`. Usar a sintaxe ES6 facilita o uso da API de SSO em Suplementos do Office. Esse é o único arquivo na solução que usará a sintaxe sem suporte do Internet Explorer. Colocamos "ES6" no nome do arquivo como um lembrete. A solução usa o transcompilador de tsc para transcompilar esse arquivo em ES5, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface do usuário. (Veja o arquivo tsconfig.json na raiz do projeto.)
 
     ```javascript
-    var retryGetAccessToken = 0;
+    let retryGetAccessToken = 0;
 
     async function getGraphData() {
         await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
@@ -212,17 +211,16 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
     }
     ```
 
-
 1. Substitua `TODO 1` pelo código a seguir para obter o token de acesso do host do Office. O **parâmetro** options contém as seguintes configurações passadas da função **getGraphData()** anterior.
 
-    * `allowSignInPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário entre se o usuário ainda não estiver conectado ao Office.
-    * `allowConsentPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário consenta em permitir que o suplemento acesse o perfil Microsoft Azure Active Directory usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite que* o usuário consenta com nenhum escopo do Microsoft Graph.)
-    * `forMSGraphAccess` é definido como true. Isso informa ao Office para retornar um erro (código 13012) se o usuário ou o administrador não tiver concedido consentimento aos escopos do Graph para o suplemento. Para acessar o Microsoft Graph, o suplemento deve trocar o token de acesso por um novo token de acesso por meio do fluxo on-behalf-of. A `forMSGraphAccess` configuração como true ajuda a evitar o cenário em que **getAccessToken()** é bem-sucedido, mas, em seguida, o fluxo on-behalf-of falha mais tarde para o Microsoft Graph. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback.
+    - `allowSignInPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário entre se o usuário ainda não estiver conectado ao Office.
+    - `allowConsentPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário consenta em permitir que o suplemento acesse o perfil Microsoft Azure Active Directory usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite que* o usuário consenta com nenhum escopo do Microsoft Graph.)
+    - `forMSGraphAccess` é definido como true. Isso informa ao Office para retornar um erro (código 13012) se o usuário ou o administrador não tiver concedido consentimento aos escopos do Graph para o suplemento. Para acessar o Microsoft Graph, o suplemento deve trocar o token de acesso por um novo token de acesso por meio do fluxo on-behalf-of. A `forMSGraphAccess` configuração como true ajuda a evitar o cenário em que **getAccessToken()** é bem-sucedido, mas, em seguida, o fluxo on-behalf-of falha mais tarde para o Microsoft Graph. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback.
 
     Observe também o seguinte código:
 
-    * Você criará a função `getData` em uma última etapa.
-    * O `/api/values` parâmetro é a URL de um controlador do lado do servidor que usará o fluxo em nome de para trocar o token por um novo token de acesso para chamar o Microsoft Graph.
+    - Você criará a função `getData` em uma última etapa.
+    - O `/api/values` parâmetro é a URL de um controlador do lado do servidor que usará o fluxo em nome de para trocar o token por um novo token de acesso para chamar o Microsoft Graph.
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -232,11 +230,11 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Abaixo da função `getGraphData`, adicione o seguinte. Sobre este código, observe:
 
-    * Ele é usado pelos sistemas de autorização de fallback e SSO.
-    * O parâmetro `relativeUrl` é um controlador do lado do servidor.
-    * O parâmetro `accessToken` pode ser um token de bootstrap ou um token de acesso completo.
-    * O `writeFileNamesToOfficeDocument` já faz parte do projeto.
-    * Você criará a função `handleServerSideErrors` em uma última etapa.
+    - Ele é usado pelos sistemas de autorização de fallback e SSO.
+    - O parâmetro `relativeUrl` é um controlador do lado do servidor.
+    - O parâmetro `accessToken` pode ser um token de bootstrap ou um token de acesso completo.
+    - O `writeFileNamesToOfficeDocument` já faz parte do projeto.
+    - Você criará a função `handleServerSideErrors` em uma última etapa.
 
     ```javascript
     function getData(relativeUrl, accessToken) {
@@ -335,8 +333,8 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 1. Substitua `TODO 4` pelo seguinte. Sobre esse código, observe que as classes de erro ASP.NET foram criadas antes de haver algo como a MFA. Como um efeito colateral de como a lógica do lado do servidor lida com as solicitações de um segundo fator de autenticação, o erro do lado do servidor enviado para o cliente tem uma propriedade **Message**, mas não uma propriedade **ExceptionMessage**. Mas todos os outros erros terão uma propriedade **ExceptionMessage**, para que o código do cliente precise analisar a resposta para ambos. Uma ou outra variável será indefinida.
 
     ```javascript
-    var message = JSON.parse(result.responseText).Message;
-    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    const message = JSON.parse(result.responseText).Message;
+    const exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
 1. Substitua `TODO 5` pelo seguinte. Quando o Microsoft Graph requer uma forma adicional de autenticação, ele envia o erro AADSTS50076. Isso inclui informações sobre os requisitos adicionais na propriedade **Message.Claims**. Para lidar com isso, o código faz uma segunda tentativa de obter o token de bootstrap, mas, desta vez, ele inclui a solicitação de um fator adicional, como o valor da opção `authChallenge`, que informa ao Azure AD a solicitar todos os formulários de autenticação necessários.
@@ -344,8 +342,8 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
     ```javascript
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
-            var claims = JSON.parse(message).Claims;
-            var claimsAsString = JSON.stringify(claims);
+            const claims = JSON.parse(message).Claims;
+            const claimsAsString = JSON.stringify(claims);
             getDataWithToken({ authChallenge: claimsAsString });
             return;
         }
@@ -434,10 +432,10 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua o `TODO 1` pelo seguinte. Sobre este código, observe:
 
-    * O código instrui o OWIN a garantir que o público especificado no token de inicialização proveniente do aplicativo do Office deve corresponder ao valor especificado no web.config.
-    * As contas da Microsoft têm um GUID do emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
-    * A `SaveSigninToken` configuração `true` faz com que o OWIN salve o token de inicialização bruto do aplicativo do Office. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
-    * Os escopos não são validados pelo middleware OWIN. Os escopos do token de bootstrap, que devem conter `access_as_user`, são validados no controlador.
+    - O código instrui o OWIN a garantir que o público especificado no token de inicialização proveniente do aplicativo do Office deve corresponder ao valor especificado no web.config.
+    - As contas da Microsoft têm um GUID do emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
+    - A `SaveSigninToken` configuração `true` faz com que o OWIN salve o token de inicialização bruto do aplicativo do Office. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
+    - Os escopos não são validados pelo middleware OWIN. Os escopos do token de bootstrap, que devem conter `access_as_user`, são validados no controlador.
 
     ```csharp
     TokenValidationParameters tvps = new TokenValidationParameters
@@ -450,8 +448,8 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO 2` pelo seguinte. Sobre este código, observe:
 
-    * O método `UseOAuthBearerAuthentication` é chamado em vez do `UseWindowsAzureActiveDirectoryBearerAuthentication` que é mais comum, porque este último não é compatível com o ponto de extremidade V2 do Azure AD.
-    * A URL que é passada para o método é onde o middleware OWIN obtém instruções para obter a chave de que precisa para verificar a assinatura no token de inicialização recebido do aplicativo do Office. O segmento de Autoridade da URL vem do Web.config. Ele é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
+    - O método `UseOAuthBearerAuthentication` é chamado em vez do `UseWindowsAzureActiveDirectoryBearerAuthentication` que é mais comum, porque este último não é compatível com o ponto de extremidade V2 do Azure AD.
+    - A URL que é passada para o método é onde o middleware OWIN obtém instruções para obter a chave de que precisa para verificar a assinatura no token de inicialização recebido do aplicativo do Office. O segmento de Autoridade da URL vem do Web.config. Ele é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -506,7 +504,6 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO1` pelo seguinte código para validar que os escopos especificados no token incluam `access_as_user`. Observe que o segundo parâmetro do método `SendErrorToClient` é um objeto **Exception**. Nesse caso, o código passa `null` porque incluir o objeto **Exception** bloqueia a inclusão da propriedade **Message** na resposta HTTP que é gerada.
 
-
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (!(addinScopes.Contains("access_as_user")))
@@ -517,10 +514,10 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO 2` pelo seguinte código para montar todas as informações necessárias para obter um token do Microsoft Graph usando o fluxo "on behalf of". Sobre este código, observe:
 
-    * Seu suplemento não está mais executando a função de um recurso (ou audiência) ao qual o aplicativo do Office e o usuário precisam de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
-    * A partir da MSAL.NET 3.x.x, o `bootstrapContext` é apenas o token de bootstrap em si.
-    * A Autoridade vem do Web.config. Ela é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
-    * A MSAL gerará `profile`um erro se o código solicitar, que é realmente usado apenas quando o aplicativo cliente do Office obtém o token para o aplicativo Web do suplemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
+    - Seu suplemento não está mais executando a função de um recurso (ou audiência) ao qual o aplicativo do Office e o usuário precisam de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
+    - A partir da MSAL.NET 3.x.x, o `bootstrapContext` é apenas o token de bootstrap em si.
+    - A Autoridade vem do Web.config. Ela é a cadeia de caracteres "comum" ou, para um suplemento de locatário único, uma GUID.
+    - A MSAL gerará `profile`um erro se o código solicitar, que é realmente usado apenas quando o aplicativo cliente do Office obtém o token para o aplicativo Web do suplemento. Então, apenas `Files.Read.All` é explicitamente solicitado.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -537,8 +534,8 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO 3` pelo código a seguir. Sobre este código, observe:
 
-    * O método `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` procurará primeiro no cache da MSAL, que está na memória, para fazer a correspondência com o token de acesso. Somente se não houver um, ele iniciará o fluxo "on behalf of" com o ponto de extremidade V2 do Azure AD.
-    * Quaisquer exceções que não forem do tipo `MsalServiceException` são intencionalmente não detectadas, e, portanto, se propagarão para o cliente como mensagens `500 Server Error`.
+    - O método `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` procurará primeiro no cache da MSAL, que está na memória, para fazer a correspondência com o token de acesso. Somente se não houver um, ele iniciará o fluxo "on behalf of" com o ponto de extremidade V2 do Azure AD.
+    - Quaisquer exceções que não forem do tipo `MsalServiceException` são intencionalmente não detectadas, e, portanto, se propagarão para o cliente como mensagens `500 Server Error`.
 
     ```csharp
     AcquireTokenOnBehalfOfParameterBuilder parameterBuilder = null;
@@ -560,10 +557,10 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO 3a` pelo código a seguir. Sobre este código, observe:
 
-    * Se a autenticação multifator for exigida pelo recurso Microsoft Graph e o usuário ainda não a tiver fornecido, o Azure AD retornará "400 Bad Request" com o erro `AADSTS50076` e uma propriedade **Declarações**. O MSAL exibe **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações.
-    * O **valor da** propriedade Claims deve ser passado para o cliente, que deve passá-lo para o aplicativo do Office, que o inclui em uma solicitação para um novo token de inicialização. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
-    * As APIs que criam respostas HTTP a partir de exceções não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto de resposta. É necessário criar manualmente uma mensagem que inclua esse recurso. Uma propriedade **Message** personalizada, no entanto, impede a criação de uma propriedade **ExceptionMessage**, portanto, a única maneira de obter a ID de erro `AADSTS50076` para o cliente é adicioná-la à **Message** personalizada. O JavaScript no cliente precisará descobrir se uma resposta tem uma **Message** ou **ExceptionMessage** para saber qual ler.
-    * A mensagem personalizada é formatada como JSON para que o JavaScript do cliente possa analisá-la com métodos de objeto `JSON` JavaScript conhecidos.
+    - Se a autenticação multifator for exigida pelo recurso Microsoft Graph e o usuário ainda não a tiver fornecido, o Azure AD retornará "400 Bad Request" com o erro `AADSTS50076` e uma propriedade **Declarações**. O MSAL exibe **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações.
+    - O **valor da** propriedade Claims deve ser passado para o cliente, que deve passá-lo para o aplicativo do Office, que o inclui em uma solicitação para um novo token de inicialização. O Azure AD solicitará ao usuário todas as formas de autenticação necessárias.
+    - As APIs que criam respostas HTTP a partir de exceções não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto de resposta. É necessário criar manualmente uma mensagem que inclua esse recurso. Uma propriedade **Message** personalizada, no entanto, impede a criação de uma propriedade **ExceptionMessage**, portanto, a única maneira de obter a ID de erro `AADSTS50076` para o cliente é adicioná-la à **Message** personalizada. O JavaScript no cliente precisará descobrir se uma resposta tem uma **Message** ou **ExceptionMessage** para saber qual ler.
+    - A mensagem personalizada é formatada como JSON para que o JavaScript do cliente possa analisá-la com métodos de objeto `JSON` JavaScript conhecidos.
 
     ```csharp
     if (e.Message.StartsWith("AADSTS50076"))
@@ -575,10 +572,10 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 1. Substitua `TODO 3b` pelo código a seguir. Sobre este código, observe:
 
-    * Se a chamada para o Azure AD contiver pelo menos um escopo (permissão) que não tenha sido consentido pelo usuário ou por um administrador de locatários (ou se o consentimento foi revogado), o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS65001`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
-    * Se a chamada para o Azure AD contiver pelo menos um escopo que Azure AD não reconhece, o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS70011`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
-    * A descrição completa é incluída porque 70011 é retornado em outras condições e ele deverá ser processado neste suplemento somente quando significar que há um escopo inválido.
-    * O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** contendo as informações de erro seja incluída na resposta HTTP.
+    - Se a chamada para o Azure AD contiver pelo menos um escopo (permissão) que não tenha sido consentido pelo usuário ou por um administrador de locatários (ou se o consentimento foi revogado), o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS65001`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
+    - Se a chamada para o Azure AD contiver pelo menos um escopo que Azure AD não reconhece, o Azure AD retornará "400 Solicitação Incorreta" com o erro `AADSTS70011`. O MSAL exibe um **MsalUiRequiredException** com essas informações.
+    - A descrição completa é incluída porque 70011 é retornado em outras condições e ele deverá ser processado neste suplemento somente quando significar que há um escopo inválido.
+    - O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** contendo as informações de erro seja incluída na resposta HTTP.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

@@ -1,29 +1,22 @@
 ---
 title: Chamada da comunidade de Suplementos do Microsoft Office
 description: A agenda, o agendamento e os recursos da comunidade de Suplementos mensais do Microsoft Office.
-ms.date: 07/11/2022
+ms.date: 07/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a953336dc277d387166dcedffb01f7775e52e9e8
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7a96bc5d5b86164d5e7662708c357821792f9f1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713004"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889615"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Chamada da comunidade de Suplementos do Microsoft Office
 
 A chamada da comunidade de Suplementos do Microsoft Office é uma chamada mensal em que você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre como criar suplementos do Office. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8h no Horário do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-july-13th-call"></a>Agenda da chamada de 13 de julho
+## <a name="agenda-for-august-10th-call"></a>Agenda da chamada de 10 de agosto
 
-- Atualização de envolvimento da comunidade
-- Atualização de APIs do Word
-- Atualização do Outlook
-  - Atualização de encerramento do ponto de extremidade REST v2.0
-  - Suporte para pastas compartilhadas em servidores locais do Exchange
-  - Seleção Multiseleção de Item em breve
-- Atualização de APIs do Outlook
-- Atualização de exemplos de SSO
+A agenda de agosto será postada cerca de uma semana antes da chamada.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 
