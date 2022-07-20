@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar os aplicativos do Office e os requisitos de API para que seu suplemento funcione conforme o esperado.
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 602ff640e588d67b0473bb9cf6cb343ee971fb84
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 7b1520160e75c0e67eddfae8f8413bc929f35f7f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660092"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889363"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
@@ -42,7 +42,7 @@ O suplemento deve carregar a versão mais atual da biblioteca de API JavaScript 
 
 ## <a name="specify-which-office-applications-can-host-your-add-in"></a>Especificar quais aplicativos do Office podem hospedar seu suplemento
 
-Por padrão, um suplemento pode ser instalado em todos os aplicativos do Office compatíveis com o tipo de suplemento especificado (ou seja, Email, Painel de Tarefas ou Conteúdo). Por exemplo, um suplemento do painel de tarefas pode ser instalado por padrão no Access, Excel, OneNote, PowerPoint, Project e Word. 
+Por padrão, um suplemento pode ser instalado em todos os aplicativos do Office compatíveis com o tipo de suplemento especificado (ou seja, Email, Painel de Tarefas ou Conteúdo). Por exemplo, um suplemento do painel de tarefas pode ser instalado por padrão no Access, Excel, OneNote, PowerPoint, Project e Word.
 
 Para garantir que o suplemento seja instalado em um subconjunto de aplicativos do Office, use os [elementos Hosts](/javascript/api/manifest/hosts) e [Host](/javascript/api/manifest/host) no manifesto.
 
@@ -102,7 +102,7 @@ Todas as APIs nos modelos específicos do aplicativo estão em conjuntos de requ
 
 ### <a name="requirements-element"></a>Elemento Requirements
 
-Use o [elemento Requirements](/javascript/api/manifest/requirements) e seus conjuntos e [](/javascript/api/manifest/sets) métodos de elementos filho para especificar os conjuntos de [requisitos mínimos](/javascript/api/manifest/methods) ou membros da API que devem ter suporte do aplicativo do Office para instalar o suplemento. 
+Use o [elemento Requirements](/javascript/api/manifest/requirements) e seus conjuntos e [](/javascript/api/manifest/sets) métodos de elementos filho para especificar os conjuntos de [requisitos mínimos](/javascript/api/manifest/methods) ou membros da API que devem ter suporte do aplicativo do Office para instalar o suplemento.
 
 Se o aplicativo ou a plataforma do Office não for compatível com os conjuntos de requisitos ou membros da API **\<Requirements\>** especificados no elemento, o suplemento não será executado nesse aplicativo ou plataforma e não será exibido em Meus **Suplementos**.
 
@@ -111,9 +111,9 @@ Se o aplicativo ou a plataforma do Office não for compatível com os conjuntos 
 
 O exemplo de código a seguir mostra como configurar um suplemento que pode ser instalado em todos os aplicativos do Office que dão suporte ao seguinte:
 
--  `TableBindings` conjunto de requisitos, que tem uma versão mínima de "1.1".
--  `OOXML` conjunto de requisitos, que tem uma versão mínima de "1.1".
--  `Document.getSelectedDataAsync` Método.
+- `TableBindings` conjunto de requisitos, que tem uma versão mínima de "1.1".
+- `OOXML` conjunto de requisitos, que tem uma versão mínima de "1.1".
+- `Document.getSelectedDataAsync` Método.
 
 ```XML
 <OfficeApp ... >
@@ -130,6 +130,7 @@ O exemplo de código a seguir mostra como configurar um suplemento que pode ser 
     ...
 </OfficeApp>
 ```
+
 Observe o seguinte sobre este exemplo.
 
 - O **\<Requirements\>** elemento contém os elementos **\<Sets\>** filho **\<Methods\>** e os elementos.
@@ -146,16 +147,16 @@ Os recursos de extensibilidade que a plataforma de suplementos do Office fornece
 - Recursos de extensibilidade que estão disponíveis somente quando o suplemento está em execução e que são implementados com Office.js APIs JavaScript; por exemplo, [caixas de diálogo](../develop/dialog-api-in-office-add-ins.md).
 - Recursos de extensibilidade que estão disponíveis apenas em runtime, mas são implementados com uma combinação de Office.js JavaScript e configuração em um **\<VersionOverrides\>** elemento. Exemplos disso são [funções personalizadas do Excel](../excel/custom-functions-overview.md), [logon](sso-in-office-add-ins.md) único e [guias contextuais personalizadas](../design/contextual-tabs.md).
 
-Se o suplemento usa um recurso de extensibilidade específico para algumas de suas funcionalidades, mas tem outras funcionalidades úteis que não exigem o recurso de extensibilidade, você deve projetar o suplemento para que ele possa ser instalado na plataforma e combinações de versão do Office que não dão suporte ao recurso de extensibilidade. Ele pode fornecer uma experiência valiosa, embora diminuída, nessas combinações. 
+Se o suplemento usa um recurso de extensibilidade específico para algumas de suas funcionalidades, mas tem outras funcionalidades úteis que não exigem o recurso de extensibilidade, você deve projetar o suplemento para que ele possa ser instalado na plataforma e combinações de versão do Office que não dão suporte ao recurso de extensibilidade. Ele pode fornecer uma experiência valiosa, embora diminuída, nessas combinações.
 
-Você implementa esse design de maneira diferente, dependendo de como o recurso de extensibilidade é implementado: 
+Você implementa esse design de maneira diferente, dependendo de como o recurso de extensibilidade é implementado:
 
 - Para recursos implementados inteiramente com JavaScript, consulte [verificações de runtime para obter suporte ao método e ao conjunto de requisitos](#runtime-checks-for-method-and-requirement-set-support).
 - Para recursos que exigem que você configure um **\<VersionOverrides\>** elemento, consulte [Especificando requisitos em um elemento VersionOverrides](#specify-requirements-in-a-versionoverrides-element).
 
-### <a name="runtime-checks-for-method-and-requirement-set-support"></a>Verificações de runtime para suporte ao método e ao conjunto de requisitos 
+### <a name="runtime-checks-for-method-and-requirement-set-support"></a>Verificações de runtime para suporte ao método e ao conjunto de requisitos
 
-Teste em runtime para descobrir se o Office do usuário dá suporte a um conjunto de requisitos com o [método isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) . Passe o nome do conjunto de requisitos e a versão mínima como parâmetros. Se o conjunto de requisitos for compatível, retornará `isSetSupported` **true**. O código a seguir mostra um exemplo.
+Teste em runtime para descobrir se o Office do usuário dá suporte a um conjunto de requisitos com o [método isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) . Passe o nome do conjunto de requisitos e a versão mínima como parâmetros. Se o conjunto de requisitos for compatível, retornará `isSetSupported` `true`. O código a seguir mostra um exemplo.
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -165,6 +166,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
    // Provide diminished experience here. E.g., run alternate code when the user's Word is one-time purchase Word 2013 (which does not support WordApi 1.1).
 }
 ```
+
 Sobre este código, observe:
 
 - O primeiro parâmetro é necessário. É uma cadeia de caracteres que representa o nome do conjunto de requisitos. Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets).
@@ -196,7 +198,7 @@ else
 }
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > O `isSetSupported` método e os conjuntos de requisitos para esses aplicativos estão disponíveis no arquivo Office.js mais recente na CDN. Se você não usar Office.js cdn, `isSetSupported` seu suplemento poderá gerar exceções se você estiver usando uma versão antiga da biblioteca na qual é indefinida. Para obter mais informações, [consulte Usar a biblioteca mais recente da API JavaScript do Office](#use-the-latest-office-javascript-api-library).
 
 Quando o suplemento depende de um método que não faz parte de um conjunto de requisitos, use a verificação de runtime para determinar se o método tem suporte pelo aplicativo do Office, conforme mostrado no exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
@@ -215,7 +217,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### <a name="specify-requirements-in-a-versionoverrides-element"></a>Especificar requisitos em um elemento VersionOverrides
 
-O elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) foi adicionado ao esquema de manifesto principalmente, mas não exclusivamente, para dar suporte a recursos que devem estar disponíveis imediatamente após a instalação de um suplemento, como comandos de suplemento (botões e menus da faixa de opções personalizados). O Office deve saber sobre esses recursos quando analisa o manifesto do suplemento. 
+O elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) foi adicionado ao esquema de manifesto principalmente, mas não exclusivamente, para dar suporte a recursos que devem estar disponíveis imediatamente após a instalação de um suplemento, como comandos de suplemento (botões e menus da faixa de opções personalizados). O Office deve saber sobre esses recursos quando analisa o manifesto do suplemento.
 
 Suponha que seu suplemento use um desses recursos, mas o suplemento é valioso e deve ser inserível, mesmo em versões do Office que não dão suporte ao recurso. Nesse cenário, identifique o recurso usando um elemento [Requirements](/javascript/api/manifest/requirements) (e seus elementos Filho [](/javascript/api/manifest/sets) conjuntos e [](/javascript/api/manifest/methods) métodos) **\<VersionOverrides\>** que você inclui como um filho do próprio elemento em vez de como um filho do elemento base.`OfficeApp` O efeito de fazer isso é que o Office permitirá que o suplemento seja instalado, mas o Office **\<VersionOverrides\>** ignorará alguns dos elementos filho do elemento em versões do Office em que não há suporte para o recurso.
 
@@ -245,10 +247,10 @@ Apresentamos um exemplo a seguir.
 ```
 
 > [!WARNING]
-> **\<Requirements\>** Tenha muito cuidado antes de usar um elemento em um **\<VersionOverrides\>**, porque em combinações de plataforma e versão que não dão suporte ao *requisito, nenhum* dos comandos de suplemento será *instalado, mesmo* aqueles que invocam a funcionalidade que não precisa do requisito. Considere, por exemplo, um suplemento que tenha dois botões de faixa de opções personalizados. Um deles chama APIs JavaScript do Office que estão disponíveis no conjunto de requisitos **ExcelApi 1.4** (e posterior). As outras chamadas apIs que só estão disponíveis no **ExcelApi 1.9** (e posterior). Se você colocar um requisito para **ExcelApi 1.9** **\<VersionOverrides\>** no , então, quando não houver suporte para 1.9, nenhum botão será  exibido na faixa de opções. Uma estratégia melhor nesse cenário seria usar a técnica descrita nas verificações de [runtime para suporte ao método e ao conjunto de requisitos](#runtime-checks-for-method-and-requirement-set-support). O código invocado pelo segundo botão primeiro usa `isSetSupported` para verificar se há suporte do **ExcelApi 1.9**. Se não houver suporte, o código fornecerá ao usuário uma mensagem informando que esse recurso do suplemento não está disponível em sua versão do Office. 
+> **\<Requirements\>** Tenha muito cuidado antes de usar um elemento em um **\<VersionOverrides\>**, porque em combinações de plataforma e versão que não dão suporte ao *requisito, nenhum* dos comandos de suplemento será *instalado, mesmo* aqueles que invocam a funcionalidade que não precisa do requisito. Considere, por exemplo, um suplemento que tenha dois botões de faixa de opções personalizados. Um deles chama APIs JavaScript do Office que estão disponíveis no conjunto de requisitos **ExcelApi 1.4** (e posterior). As outras chamadas apIs que só estão disponíveis no **ExcelApi 1.9** (e posterior). Se você colocar um requisito para **ExcelApi 1.9** **\<VersionOverrides\>** no , então, quando não houver suporte para 1.9, nenhum botão será  exibido na faixa de opções. Uma estratégia melhor nesse cenário seria usar a técnica descrita nas verificações de [runtime para suporte ao método e ao conjunto de requisitos](#runtime-checks-for-method-and-requirement-set-support). O código invocado pelo segundo botão primeiro usa `isSetSupported` para verificar se há suporte do **ExcelApi 1.9**. Se não houver suporte, o código fornecerá ao usuário uma mensagem informando que esse recurso do suplemento não está disponível em sua versão do Office.
 
 > [!TIP]
-> Não há nenhum ponto para repetir um elemento **Requirement** em um **\<VersionOverrides\>** que já aparece no manifesto base. Se o requisito for especificado no manifesto base, o suplemento não poderá instalar onde o requisito não tem suporte para que o Office nem analise o **\<VersionOverrides\>** elemento. 
+> Não há nenhum ponto para repetir um elemento **Requirement** em um **\<VersionOverrides\>** que já aparece no manifesto base. Se o requisito for especificado no manifesto base, o suplemento não poderá instalar onde o requisito não tem suporte para que o Office nem analise o **\<VersionOverrides\>** elemento.
 
 ## <a name="see-also"></a>Confira também
 

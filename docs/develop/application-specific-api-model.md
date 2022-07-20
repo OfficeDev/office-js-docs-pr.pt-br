@@ -1,24 +1,24 @@
 ---
 title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
-ms.date: 02/11/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483825"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889335"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
-Este artigo descreve como usar o modelo de API para a criação de Excel, Word, PowerPoint e OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
+Este artigo descreve como usar o modelo de API para criar suplementos no Excel, Word, PowerPoint e OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
 
 > [!NOTE]
 > Esse modelo não tem suporte nos clientes do Office 2013. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](/javascript/api/requirement-sets).
 
 > [!TIP]
-> Os exemplos nesta página usam as APIs javaScript Excel, mas os conceitos também se aplicam OneNote, PowerPoint, Visio e APIs JavaScript do Word.
+> Os exemplos nesta página usam as APIs JavaScript do Excel, mas os conceitos também se aplicam às APIs JavaScript do OneNote, do PowerPoint, do Visio e do Word.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Caráter assíncrono das APIs baseadas em promessas
 
@@ -54,7 +54,7 @@ Os objetos JavaScript do Office, que você declara e usa com as APIs baseadas em
 Por exemplo, o trecho de código a seguir declara o objeto JavaScript [Excel.Range](/javascript/api/excel/excel.range) local, `selectedRange`, para fazer referência a um intervalo selecionado na pasta de trabalho do Excel e, em seguida, define algumas propriedades nesse objeto. O objeto `selectedRange` é um objeto proxy, de modo que as propriedades definidas e o método invocado nesse objeto não serão refletidos no documento do Excel até que seu suplemento chame `context.sync()`.
 
 ```js
-var selectedRange = context.workbook.getSelectedRange();
+const selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -71,7 +71,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-var range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
@@ -96,7 +96,7 @@ O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaSc
 
 ```js
 await Excel.run(async (context) => {
-    var selectedRange = context.workbook.getSelectedRange();
+    const selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
     await context.sync();
     console.log('The selected range is: ' + selectedRange.address);
@@ -117,9 +117,9 @@ Antes de poder ler as propriedades de um objeto proxy, será necessário carrega
 
 ```js
 await Excel.run(async (context) => {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    const sheetName = 'Sheet1';
+    const rangeAddress = 'A1:B2';
+    const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
     await context.sync();
@@ -155,7 +155,7 @@ Esteja ciente de que algumas das propriedades em um objeto podem ter o mesmo nom
 Se você chamar o método `load()` em um objeto (ou coleção) sem especificar nenhum parâmetro, todas as propriedades escalares do objeto ou dos objetos da coleção serão carregadas. Carregar dados não necessários desacelerá o seu suplemento. Sempre especifique explicitamente quais propriedades devem ser carregadas.
 
 > [!IMPORTANT]
-> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As propriedades a seguir são excluídas dessas operações de carga.
+> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As propriedades a seguir são excluídas dessas operações de carregamento.
 >
 > * `Excel.Range.numberFormatCategories`
 
@@ -166,7 +166,7 @@ Os métodos nas APIs baseadas em promessas que retornam tipos primitivos têm um
 O script a seguir obtém o número total de tabelas na pasta de trabalho do Excel e registra esse número no console.
 
 ```js
-var tableCount = context.workbook.tables.getCount();
+const tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
@@ -184,8 +184,8 @@ O exemplo de código a seguir define várias propriedades do formato de um inter
 
 ```js
 await Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E2");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:E2");
     range.set({
         format: {
             fill: {
@@ -239,7 +239,7 @@ O exemplo de código a seguir tenta recuperar uma planilha do Excel chamada "Dad
 
 ```js
 await Excel.run(async (context) => {
-    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
     
     await context.sync();
     
@@ -254,5 +254,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>Confira também
 
-* [Modelo de objeto comum de API JavaScript](office-javascript-api-object-model.md)
-* [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)
+- [Modelo de objeto comum de API JavaScript](office-javascript-api-object-model.md)
+- [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)

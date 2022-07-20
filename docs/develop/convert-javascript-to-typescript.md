@@ -1,36 +1,36 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
-description: Saiba como converter um projeto de Office de Visual Studio para usar TypeScript.
-ms.date: 02/11/2022
+description: Saiba como converter um projeto de suplemento do Office no Visual Studio para usar o TypeScript.
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c27e0d08421c397de92945e9dc450db1bc2b21f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: daa81c3785484083aa49516b04491acad1404884
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743512"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889349"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!IMPORTANT]
-> Este artigo descreve as etapas  mínimas necessárias para garantir que, quando você pressionar F5, o código será transpilado para JavaScript, que será então sideload automaticamente para Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas com a `var` palavra-chave `let` em vez de e não são declaradas com um tipo especificado. Para aproveitar ao máximo a digitação forte de TypeScript, considere fazer outras alterações no código.
+> Este artigo descreve as etapas  mínimas necessárias para garantir que, quando você pressionar F5, o código será transcompilado para JavaScript, que será então carregado automaticamente no Office. No entanto, o código não é muito "TypeScripty". Por exemplo, as variáveis são declaradas `var` com a palavra-chave `let` em vez de ou `const` não são declaradas com um tipo especificado. Para aproveitar ao máximo a forte digitação do TypeScript, considere fazer outras alterações no código.
 
 > [!NOTE]
 > Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](yeoman-generator-overview.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Visual Studio 2019 ou posterior com](https://www.visualstudio.com/vs/) a carga de trabalho de **Office/SharePoint de** desenvolvimento instalada
+- [Visual Studio 2019 ou posterior com a](https://www.visualstudio.com/vs/) carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!TIP]
     > Se você já instalou o Visual Studio, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho **de desenvolvimento do Office/SharePoint** esteja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio#modify-workloads).
 
-- TypeScript SDK versão 2.3 ou posterior.
+- SDK do TypeScript versão 2.3 ou posterior.
 
     > [!TIP]
-    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes **do SDK TypeScript** estiver selecionado, selecione a versão mais recente disponível do SDK e escolha **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components).
+    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente disponível do SDK e escolha  Modificar para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components).
 
 - Excel 2016 ou posterior.
 
@@ -38,30 +38,30 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 1. No Visual Studio, escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web**, em seguida, selecione **Próximo**.
+1. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web**, em seguida, selecione **Próximo**.
 
-3. Nomeie seu projeto e selecione **Criar**.
+1. Nomeie seu projeto e selecione **Criar**.
 
-4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel** e clique em **Concluir** para criar o projeto.
+1. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel** e clique em **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+1. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Converter o projeto do suplemento para TypeScript
 
 1. Localize o arquivo **Home.js** e o renomeie para **Home.ts**.
 
-2. Localize o arquivo **./Functions/FunctionFile.js** e renomeie-o para **FunctionFile.ts**.
+1. Localize o arquivo **./Functions/FunctionFile.js** e renomeie-o para **FunctionFile.ts**.
 
-3. Localize o arquivo **./Scripts/MessageBanner.js** e renomeie-o para **MessageBanner.ts**.
+1. Localize o arquivo **./Scripts/MessageBanner.js** e renomeie-o para **MessageBanner.ts**.
 
-4. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
+1. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
 
-5. Com a **guia Procurar** selecionada, digite **jquery. TypeScript.DefinitelyTyped**. Instale esse pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições jQuery TypeScript sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado por Visual Studio, chamado **packages.config**.
+1. Com a **guia** Procurar selecionada, insira **jquery. TypeScript.DefinitelyTyped**. Instale esse pacote ou atualize-o se ele já estiver instalado. Isso garantirá que as definições do TypeScript do jQuery sejam incluídas em seu projeto. Os pacotes para jQuery aparecem em um arquivo gerado pelo Visual Studio, chamado **packages.config**.
 
     > [!NOTE]
     > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.
 
-6. Em **Home.ts**, encontre a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para polifilar o global `window.Promise`, conforme mostrado aqui.
+1. Em **Home.ts**, localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente depois dela para polifilar o global `window.Promise`, conforme mostrado aqui.
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -70,7 +70,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
         ...
     ```
 
-7. Em **Home.ts**, encontre a `displaySelectedCells` função, substitua a função inteira pelo código a seguir e salve o arquivo.
+1. Em **Home.ts**, localize a função `displaySelectedCells` , substitua toda a função pelo código a seguir e salve o arquivo.
 
     ```TypeScript
     function displaySelectedCells() {
@@ -87,7 +87,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
     }
     ```
 
-8. Em **./Scripts/MessageBanner.ts**, localize a linha `_onResize(null);` e substitua-a pelo seguinte:
+1. Em **./Scripts/MessageBanner.ts**, localize a linha `_onResize(null);` e substitua-a pelo seguinte:
 
     ```TypeScript
     _onResize();
@@ -97,11 +97,11 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 1. No Visual Studio, pressione **F5** ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento estará hospedado localmente no IIS.
 
-2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+1. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-3. Na planilha, selecione as nove células que contêm números.
+1. Na planilha, selecione as nove células que contêm números.
 
-4. Pressione o botão **Realçar** no painel de tarefas para realçar a célula no intervalo selecionado com o maior valor.
+1. Pressione o botão **Realçar** no painel de tarefas para realçar a célula no intervalo selecionado com o maior valor.
 
 ## <a name="homets-code-file"></a>Arquivo de código Home.ts
 
