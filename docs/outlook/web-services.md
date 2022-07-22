@@ -3,12 +3,12 @@ title: Usar os Serviços Web do Exchange a partir de um suplemento do Outlook
 description: Fornece um exemplo que mostra como um suplemento do Outlook pode solicitar informações dos Serviços Web do Exchange.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab576f1c47bda85a0a33e527f483d384b264fbf2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889629"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958941"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Chamar serviços Web de um suplemento do Outlook
 
@@ -34,11 +34,11 @@ Para usar o `makeEwsRequestAsync` método para iniciar uma operação EWS, forne
 
 - O XML para a solicitação SOAP dessa operação dos EWS, como um argumento para o parâmetro _data_
 
-- Um método de retorno (como o argumento _callback_)
+- Uma função de retorno de chamada (como o  _argumento de retorno de_ chamada)
 
-- Outros dados de entrada opcionais para esse método de retorno de chamada (como o argumento _userContext_)
+- Quaisquer dados de entrada opcionais para essa função de retorno de chamada (como o  _argumento userContext_ )
 
-Quando a solicitação SOAP dos EWS é concluída, o Outlook chama o método de retorno de chamada com um argumento, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult). O método de `AsyncResult` retorno de chamada pode acessar duas propriedades do objeto: `value` a propriedade, que contém a resposta XML SOAP da operação EWS e, opcionalmente, `asyncContext` a propriedade, `userContext` que contém todos os dados passados como o parâmetro. Normalmente, o método de retorno de chamada analisa o XML na resposta SOAP para obter todas as informações relevantes e processa essas informações da maneira adequada.
+Quando a solicitação SOAP do EWS for concluída, o Outlook chamará a função de retorno de chamada com um argumento, que é um [objeto AsyncResult](/javascript/api/office/office.asyncresult) . `AsyncResult` A função de retorno de chamada pode acessar duas propriedades do objeto: `value` a propriedade, que contém a resposta XML SOAP da operação EWS e, opcionalmente, `asyncContext` a propriedade, `userContext` que contém todos os dados passados como o parâmetro. Normalmente, a função de retorno de chamada analisa o XML na resposta SOAP para obter informações relevantes e processa essas informações adequadamente.
 
 ## <a name="tips-for-parsing-ews-responses"></a>Dicas para analisar respostas dos EWS
 
@@ -91,7 +91,7 @@ O exemplo a seguir chama `makeEwsRequestAsync` para usar a [operação GetItem](
 
 - `getSubjectRequest`&ndash; Usa uma ID de item como entrada e retorna o XML para a solicitação SOAP chamar `GetItem` para o item especificado.
 
-- `sendRequest`&ndash; Chamadas `getSubjectRequest` para obter a solicitação SOAP para o item selecionado e, em seguida, passa a solicitação SOAP e o método de retorno de chamada, `callback``makeEwsRequestAsync` para obter o assunto do item especificado.
+- `sendRequest`&ndash; Chamadas `getSubjectRequest` para obter a solicitação SOAP para o item selecionado e, em seguida, passa a solicitação SOAP e a função de retorno de chamada, `callback``makeEwsRequestAsync` para obter o assunto do item especificado.
 
 - `callback` &ndash; processa a resposta SOAP que inclui o assunto e outras informações sobre o item especificado.
 
@@ -148,9 +148,9 @@ O exemplo a seguir descreve como você pode usar o `makeEwsRequestAsync` método
 
 1. Inclua a solicitação SOAP como um argumento para o  _parâmetro de_ dados de `makeEwsRequestAsync`.
 
-1. Especifique um método de retorno de chamada e chame `makeEwsRequestAsync`.
+1. Especifique uma função de retorno de chamada e uma chamada `makeEwsRequestAsync`.
 
-1. No método de retorno de chamada, verifique os resultados da operação na resposta SOAP.
+1. Na função de retorno de chamada, verifique os resultados da operação na resposta SOAP.
 
 1. Use os resultados da operação dos EWS de acordo com as suas necessidades.
 

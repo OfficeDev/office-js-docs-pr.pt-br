@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conheça os conceitos básicos da criação de uma caixa de diálogo em um Suplemento do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889482"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958479"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -193,7 +193,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - A variável `loginSuccess` poderia ser inicializada por meio da leitura da resposta HTTP no provedor de identidade.
-> - A implementação das funções `getProfile` e `getError` não é exibida. Cada uma delas obtém dados de um parâmetro de consulta ou do corpo da resposta HTTP.
+> - A implementação do e `getProfile` das `getError` funções não é mostrada. Cada uma delas obtém dados de um parâmetro de consulta ou do corpo da resposta HTTP.
 > - São enviados objetos anônimos de diferentes tipos se a entrada for bem-sucedida ou não. Ambos têm uma propriedade `messageType`, mas um tem uma propriedade `profile` e o outro tem uma propriedade `error`.
 
 O código do manipulador na página host usa o valor da propriedade `messageType` para ramificar como no exemplo a seguir. A função `showUserName` é a mesma do exemplo anterior e a função `showNotification` exibe o erro na interface do usuário da página host.
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Manipular DialogParentMessageReceived na caixa de diálogo
 
-No JavaScript da caixa de diálogo, registre um manipulador `DialogParentMessageReceived` para o evento com o [método UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) . Isso normalmente é feito nos métodos [Office.onReady ou Office.initialize](initialize-add-in.md), conforme mostrado a seguir. (Um exemplo mais robusto está abaixo.)
+No JavaScript da caixa de diálogo, registre um manipulador `DialogParentMessageReceived` para o evento com o [método UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) . Isso normalmente é feito na função [Office.onReady ou Office.initialize](initialize-add-in.md), conforme mostrado a seguir. (Um exemplo mais robusto é incluído posteriormente neste artigo.)
 
 ```javascript
 Office.onReady()
@@ -370,7 +370,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-Por exemplo, seu código pode usar os métodos [Office.onReady ou Office.initialize](initialize-add-in.md) para armazenar uma matriz de domínios confiáveis em uma variável global. Em `arg.origin` seguida, a propriedade pode ser verificada em relação a essa lista no manipulador.
+Por exemplo, seu código pode usar a função [Office.onReady ou Office.initialize](initialize-add-in.md) para armazenar uma matriz de domínios confiáveis em uma variável global. Em `arg.origin` seguida, a propriedade pode ser verificada em relação a essa lista no manipulador.
 
 > [!TIP]
 > O `DialogMessageOptions` parâmetro foi adicionado ao método `messageChild` como um parâmetro necessário em meados de 2021. Os suplementos mais antigos que enviam uma mensagem entre domínios com o método não funcionam mais até que sejam atualizados para usar o novo parâmetro. Até que o suplemento seja atualizado, somente no *Office para Windows*, os usuários e os administradores do sistema poderão permitir que esses suplementos continuem funcionando especificando os domínios confiáveis com uma configuração de registro: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Para fazer isso, crie um arquivo com uma `.reg` extensão, salve-o no computador Windows e clique duas vezes nele para executar. A seguir está um exemplo do conteúdo desse arquivo.

@@ -3,12 +3,12 @@ title: Criar um suplemento de Project que usa REST com um serviço OData local d
 description: Saiba como criar um suplemento do painel de tarefas para o Project Professional 2013 que compara os dados de custo e trabalho no projeto ativo com as médias de todos os projetos na instância atual do Project Web App.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ed0df5aa9957a0ab326f2d2191421087061aeae2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4a318ccd5f5b01e94262aaf17d48e1817dc12016
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889566"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958366"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento do Project que usa REST com um serviço OData local do Project Server
 
@@ -27,7 +27,7 @@ A seguir estão os pré-requisitos para a criação de um suplemento do painel d
     > [!NOTE]
     > Project Standard 2013 também pode hospedar suplementos do painel de tarefas, mas não pode entrar no Project Web App.
 
-- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção _Ferramentas_ de [Download de suplementos do Office e do SharePoint](https://developer.microsoft.com/office/docs).
+- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção *Ferramentas* de [Download de suplementos do Office e do SharePoint](https://developer.microsoft.com/office/docs).
 
 - Os procedimentos e exemplos de código neste artigo acessam o serviço **ProjectData** do Project Server 2013 em um domínio local. Os métodos jQuery neste artigo não funcionam com o Project na Web.
 
@@ -173,7 +173,7 @@ O painel de tarefas mostra o nome de exibição do suplemento na parte superior,
 
 1. No elemento **principal** do arquivo Home.html, adicione elementos de **link** adicionais para arquivos CSS usados pelo suplemento. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
 
-1. Adicione elementos de **script** adicionais para bibliotecas JavaScript que seu suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[versão]_.js, office.js e MicrosoftAjax.js na **pasta Scripts** .
+1. Adicione elementos de **script** adicionais para bibliotecas JavaScript que seu suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- *[versão]*.js, office.js e MicrosoftAjax.js na **pasta Scripts** .
 
     > [!NOTE]
     > Antes de implantar o suplemento, mude a referência office.js e a referência jQuery para a referência CDN (rede de distribuição de conteúdo). A referência CDN fornece a versão mais recente e melhora o desempenho.
@@ -299,14 +299,14 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: `retrieveOData
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
         });
     }
     ```
 
-1. Adicionar `setOdataUrl` e funções relacionadas. A `setOdataUrl` função chama `getProjectGuid` e `getDocumentUrl` inicializa as variáveis globais. No método [getProjectFieldAsync](/javascript/api/office/office.document),  `removeAttr` a função anônima para o parâmetro  de retorno de chamada habilita o botão Comparar Todos os Projetos usando o método na biblioteca jQuery e exibe a URL do serviço **ProjectData**. Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O SurfaceErrors.js arquivo inclui o `throwError` método.
+1. Adicionar `setOdataUrl` e funções relacionadas. A `setOdataUrl` função chama `getProjectGuid` e `getDocumentUrl` inicializa as variáveis globais. No método [getProjectFieldAsync](/javascript/api/office/office.document),  `removeAttr` a função anônima para o parâmetro  de retorno de chamada habilita o botão Comparar Todos os Projetos usando o método na biblioteca jQuery e exibe a URL do serviço **ProjectData**. Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O SurfaceErrors.js arquivo inclui a `throwError` função.
 
    > [!NOTE]
    > Se você executar o Visual Studio no computador do Project Server, para usar a depuração **F5** , `_pwa` remova o comentário do código após a linha que inicializa a variável global. Para habilitar o uso do método jQuery `ajax` ao depurar no computador do Project Server, `localhost` você deve definir o valor para a URL do PWA. Se você executar o Visual Studio em um computador remoto, `localhost` a URL não será necessária. Before you deploy the add-in, comment out that code.
@@ -372,7 +372,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: `retrieveOData
    > [!NOTE]
    > O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project na Web, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Na chamada `ajax` , você pode usar o parâmetro _de cabeçalho_ ou o _parâmetro beforeSend_ . O _parâmetro_ completo é uma função anônima para que ele esteja no mesmo escopo que as variáveis em `retrieveOData`. A função para o  _parâmetro completo_ exibe os resultados `odataText` no controle `parseODataResult` e também chama o método para analisar e exibir a resposta JSON. O _parâmetro_ de erro especifica a função `getProjectDataErrorHandler` nomeada, `odataText` `throwError` que grava uma mensagem de erro no controle e também usa o método para exibir uma mensagem pop-up.
+   Na chamada `ajax` , você pode usar o parâmetro *de cabeçalho* ou o *parâmetro beforeSend* . O *parâmetro* completo é uma função anônima para que ele esteja no mesmo escopo que as variáveis em `retrieveOData`. A função para o  *parâmetro completo* exibe os resultados `odataText` no controle `parseODataResult` e também chama o método para analisar e exibir a resposta JSON. O *parâmetro* de erro especifica a função `getProjectDataErrorHandler` nomeada, `odataText` `throwError` que grava uma mensagem de erro no controle e também usa a função para exibir uma mensagem pop-up.
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -428,7 +428,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: `retrieveOData
     }
     ```
 
-1. Adicione o `parseODataResult` método, que desserializa e processa a resposta JSON do serviço OData. `parseODataResult` O método calcula os valores médios dos dados de custo e trabalho com uma precisão de uma ou duas casas decimais, formata valores com a cor correta e adiciona uma unidade ( **$**, **hrs****%** ou ), e exibe os valores em células de tabela especificadas.
+1. Adicione a `parseODataResult` função, que desserializa e processa a resposta JSON do serviço OData. `parseODataResult` A função calcula os valores médios dos dados de custo e trabalho com uma precisão de uma ou duas casas decimais, formata valores com a cor correta e adiciona uma unidade ( **$**, **hrs** ou **%**), e exibe os valores em células de tabela especificadas.
 
    Se o GUID do projeto ativo corresponder ao `ProjectId` valor, a variável `myProjectIndex` será definida como o índice do projeto. Se `myProjectIndex` indicar que o projeto ativo foi publicado no Project Server, `parseODataResult` o método formata e exibe dados de custo e trabalho para esse projeto. If the active project is not published, values for the active project are displayed as a blue **NA**.
 
@@ -579,7 +579,7 @@ Os testes básicos devem incluir o seguinte:
 
     ![Exiba os resultados da consulta REST.](../images/pj15-hello-project-data-rest-results.png)
 
-1. Examine a saída na caixa de texto. Ele deve mostrar o caminho do documento, a consulta REST, as informações de status e os resultados JSON das chamadas para `ajax` e `parseODataResult`. A saída ajuda a entender, criar e depurar código no `parseODataResult` método, como `projCost += Number(res.d.results[i].ProjectCost);`.
+1. Examine a saída na caixa de texto. Ele deve mostrar o caminho do documento, a consulta REST, as informações de status e os resultados JSON das chamadas para `ajax` e `parseODataResult`. A saída ajuda a entender, criar e depurar código na `parseODataResult` função, como `projCost += Number(res.d.results[i].ProjectCost);`.
 
     A seguir está um exemplo da saída com quebras de linha e espaços adicionados ao texto para maior clareza, para três projetos em uma instância do Project Web App.
 
@@ -766,7 +766,7 @@ var _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectSe
 
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
     });
@@ -1093,7 +1093,7 @@ Você pode copiar o código para o arquivo SurfaceErrors.js da seção _Programa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Se **HelloProjectOData** fosse um suplemento de produção a ser vendido no AppSource ou distribuído em um catálogo de aplicativos do SharePoint, ele seria projetado de forma diferente. Por exemplo, não haveria nenhuma saída de depuração em uma caixa de texto e provavelmente nenhum botão para obter o ponto de extremidade **ProjectData**. Você também precisaria reescrever a função `retireveOData` para lidar com instâncias do Project Web App que têm mais de 100 projetos.
+Se **HelloProjectOData** fosse um suplemento de produção a ser vendido no AppSource ou distribuído em um catálogo de aplicativos do SharePoint, ele seria projetado de forma diferente. Por exemplo, não haveria nenhuma saída de depuração em uma caixa de texto e provavelmente nenhum botão para obter o ponto de extremidade **ProjectData**. Você também precisaria reescrever a função `retrieveOData` para lidar com instâncias do Project Web App que têm mais de 100 projetos.
 
 O suplemento deveria conter mais verificações de erro, além de lógica para capturar e explicar ou mostrar casos extremos. Por exemplo, se uma instância do Project Web App tiver mil projetos com uma duração média de cinco dias e custo médio de US$ 2.400, e o projeto ativo for o único que tem uma duração de mais de 20 dias, a comparação de custo e trabalho poderá ficar desequilibrada. Isso poderia ser exibido com um gráfico de frequência. Você poderia adicionar opções para exibir a duração, comparar projetos de tamanhos semelhantes ou comparar projetos de um mesmo departamento ou de departamentos diferentes. Ou poderia adicionar uma forma de o usuário selecionar os campos a exibir em uma lista.
 

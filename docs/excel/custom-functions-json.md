@@ -3,12 +3,12 @@ title: Criar manualmente metadados JSON para funções personalizadas no Excel
 description: Defina metadados JSON para funções personalizadas no Excel e associe suas propriedades de nome e ID de função.
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb3861a7924473b556020fea0ec5916e9291082
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660218"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958577"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar manualmente metadados JSON para funções personalizadas
 
@@ -181,7 +181,7 @@ O objeto `options` permite que você personalize alguns aspectos de como e quand
 | `cancelable`      | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, o Excel chamará o manipulador `CancelableInvocation` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. As funções canceláveis normalmente são usadas apenas para funções assíncronas que retornam um único resultado e precisam lidar com o cancelamento de uma solicitação de dados. Uma função não pode usar as propriedades `stream` e as `cancelable` propriedades. |
 | `requiresAddress` | booliano   | Não <br/><br/>O valor padrão é `false`. | If `true`, sua função personalizada pode acessar o endereço da célula que a invocou. A `address` propriedade do parâmetro [de invocação](custom-functions-parameter-options.md#invocation-parameter) contém o endereço da célula que invocou sua função personalizada. Uma função não pode usar as propriedades `stream` e as `requiresAddress` propriedades. |
 | `requiresParameterAddresses` | booliano   | Não <br/><br/>O valor padrão é `false`. | If `true`, sua função personalizada pode acessar os endereços dos parâmetros de entrada da função. Essa propriedade deve ser usada em combinação com a `dimensionality` propriedade do objeto [de](#result) resultado e `dimensionality` deve ser definida como `matrix`. Consulte [Detectar o endereço de um parâmetro para](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) obter mais informações. |
-| `stream`          | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `StreamingInvocation.setResult`. Para obter mais informações, consulte [Criar uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `stream`          | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor do resultado é passado como o argumento da função `StreamingInvocation.setResult` de retorno de chamada. Para obter mais informações, consulte [Criar uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `volatile`        | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true`, a função será recalculada sempre que o Excel for recalculado, em vez de somente quando os valores dependentes da fórmula tiverem sido alterados. Uma função não pode usar as propriedades `stream` e as `volatile` propriedades. Se a `stream` propriedade e `volatile` as propriedades forem definidas como `true`, a propriedade volátil será ignorada. |
 
 ### <a name="parameters"></a>parâmetros
@@ -208,7 +208,7 @@ O objeto `result` que define o tipo de informação que é retornado pela funç�
 
 ## <a name="associating-function-names-with-json-metadata"></a>Associar os nomes de função com metadados JSON
 
-Para que uma função funcione corretamente, você precisa associar a propriedade `id` da função à implementação do JavaScript. Verifique se há uma associação; caso contrário, a função não será registrada e não poderá ser usada no Excel. O exemplo de código a seguir mostra como fazer a associação usando o `CustomFunctions.associate()` método. A amostra define a função personalizada `add` e associa com o objeto no arquivo de metadados JSON onde o valor da `id` propriedade é **adicionar**.
+Para que uma função funcione corretamente, você precisa associar a propriedade `id` da função à implementação do JavaScript. Verifique se há uma associação; caso contrário, a função não será registrada e não poderá ser usada no Excel. O exemplo de código a seguir mostra como fazer a associação usando a `CustomFunctions.associate()` função. A amostra define a função personalizada `add` e associa com o objeto no arquivo de metadados JSON onde o valor da `id` propriedade é **adicionar**.
 
 ```js
 /**

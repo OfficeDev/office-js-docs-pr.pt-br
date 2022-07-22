@@ -1,14 +1,14 @@
 ---
 ms.date: 06/09/2022
-description: Solucionar problemas comuns com Excel funções personalizadas.
+description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090884"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958556"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -20,7 +20,7 @@ Para resolver problemas, você pode [habilitar o log de tempo de execução para
 
 ## <a name="debugging-custom-functions"></a>Depurando funções personalizadas
 
-Para depurar suplementos de funções personalizadas que usam um runtime compartilhado, consulte Configurar seu suplemento Office para usar um [runtime de JavaScript compartilhado: Depurar](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+Para depurar suplementos de funções personalizadas que usam um runtime compartilhado, consulte Configurar seu Suplemento do Office para usar um [runtime de JavaScript compartilhado: Depurar](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
 Para depurar suplementos de funções personalizadas que não usam um runtime compartilhado, consulte [Depuração de funções personalizadas](custom-functions-debugging.md).
 
@@ -63,7 +63,7 @@ Quando o Excel está aguardando a conclusão de uma função personalizada, ele 
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
-Nos casos em que seu JSON não tiver sido registrado e você tiver criado os seus próprios metadados JSON, talvez receba um `#VALUE!`erro ou receba uma notificação de que o seu suplemento não pode ser carregado. Geralmente, isso significa que você precisa associar cada função personalizada a `id`propriedade especificada no [arquivo de metadados JSON](custom-functions-json.md). Isso é feito usando o método `CustomFunctions.associate()`. Normalmente, essa chamada de método é feita após cada função ou no final do arquivo de script. Se uma função personalizada não estiver associada, ele não funcionará.
+Nos casos em que seu JSON não tiver sido registrado e você tiver criado os seus próprios metadados JSON, talvez receba um `#VALUE!`erro ou receba uma notificação de que o seu suplemento não pode ser carregado. Geralmente, isso significa que você precisa associar cada função personalizada a `id`propriedade especificada no [arquivo de metadados JSON](custom-functions-json.md). Isso é feito usando a `CustomFunctions.associate()` função. Normalmente, essa chamada de função é feita após cada função ou no final do arquivo de script. Se uma função personalizada não estiver associada, ele não funcionará.
 
 O exemplo a seguir mostra uma função add, seguida pelo nome `add` da função que está sendo associada a `ADD` da id JSON correspondente.
 
@@ -86,7 +86,7 @@ Para obter mais informações sobre esse processo, consulte [Associando nomes de
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Os problemas conhecidos são rastreados e relatados [no Excel funções personalizadas GitHub repositório](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Problemas conhecidos são rastreados e relatados no repositório [GitHub de Funções Personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

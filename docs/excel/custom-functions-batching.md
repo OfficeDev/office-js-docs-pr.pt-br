@@ -3,14 +3,14 @@ ms.date: 07/08/2021
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 ms.localizationpriority: medium
-ms.openlocfilehash: c22a2d52ca0b144eb8ccb8acf88225cca75f0980
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744390"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958598"
 ---
-# <a name="batch-custom-function-calls-for-a-remote-service"></a>Chamadas de função personalizada em lotes para um serviço remoto
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>Chamadas de função personalizadas em lote para um serviço remoto
 
 Se as suas funções personalizadas chamarem um serviço remoto, você poderá usar um padrão de envio em lotes para reduzir o número de chamadas de rede para o serviço remoto. Para reduzir a idas e voltas na rede, você reúne todas as chamadas em uma única chamada para o serviço da Web. Isso é ideal quando a planilha é recalculada.
 
@@ -20,9 +20,9 @@ Por exemplo, se alguém usou sua função personalizada em 100 células em uma p
 
 ## <a name="view-the-completed-sample"></a>Ver o exemplo concluído
 
-Para exibir o exemplo concluído, siga este artigo e colar os exemplos de código em seu próprio projeto. Por exemplo, para criar um novo projeto de função personalizada para TypeScript, use o gerador [Yeoman](../develop/yeoman-generator-overview.md) para Office Desempois e adicione todo o código deste artigo ao projeto. Execute o código e teste-o.
+Para exibir o exemplo concluído, siga este artigo e cole os exemplos de código em seu próprio projeto. Por exemplo, para criar um novo projeto de função personalizada para TypeScript, use o gerador [Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md) e adicione todo o código deste artigo ao projeto. Execute o código e experimente-o.
 
-Como alternativa, baixe ou veja o projeto de exemplo completo em [Padrão de lotes de função personalizada](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Se você quiser ver o código inteiro antes de ler mais, dê uma olhada no [arquivo de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+Como alternativa, baixe ou exiba o projeto de exemplo completo no [padrão de envio em lote de funções personalizadas](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Se você quiser ver o código inteiro antes de ler mais, dê uma olhada no [arquivo de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>Crie o padrão de envio em lotes deste artigo
 
@@ -32,7 +32,7 @@ Para configurar o envio em lotes para suas funções personalizadas, você preci
 2. Uma função para fazer o pedido remoto quando o lote estiver pronto.
 3. Código do servidor para responder à solicitação em lote, calcular todos os resultados da operação e retornar os valores.
 
-Nas seções a seguir, você aprenderá a construir o código um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo **functions.ts**. É recomendável criar um novo projeto de funções personalizadas usando o gerador [Yeoman para Office de complementos](../develop/yeoman-generator-overview.md). Para criar um novo projeto, consulte [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
+Nas seções a seguir, você aprenderá a construir o código um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo **functions.ts**. É recomendável que você crie um novo projeto de funções personalizadas usando o gerador [Yeoman para o gerador de Suplementos do Office](../develop/yeoman-generator-overview.md) . Para criar um novo projeto, consulte [Introdução ao desenvolvimento de funções personalizadas do Excel](../quickstarts/excel-custom-functions-quickstart.md) e use TypeScript em vez de JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Agrupe cada chamada à sua função personalizada
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>Modifique `_makeRemoteRequest` para sua própria solução
 
-A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você deseja usar esse código para um serviço remoto real, faça as seguintes alterações.
+A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você quiser usar esse código para um serviço remoto real, deverá fazer as alterações a seguir.
 
 - Decida como serializar as operações em lote pela rede. Por exemplo, você pode querer colocar a matriz em um corpo JSON.
 - Em vez de chamar `_fetchFromRemoteService`, você precisa fazer a chamada de rede real para o serviço remoto passando o lote de operações.
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifique `_fetchFromRemoteService` para o seu serviço remoto ao vivo
 
-Para modificar a `_fetchFromRemoteService` função a ser executado em seu serviço remoto ao vivo, faça as seguintes alterações.
+Para modificar a `_fetchFromRemoteService` função a ser executada em seu serviço remoto dinâmico, faça as seguintes alterações.
 
 - Dependendo da plataforma do servidor (Node.js ou outros), mapeie a chamada de rede do cliente para essa função.
 - Remova a função `pause` que simula a latência da rede como parte da simulação.
@@ -221,6 +221,6 @@ Saiba mais sobre [os vários parâmetros](custom-functions-parameter-options.md)
 
 ## <a name="see-also"></a>Confira também
 
-* [Valores voláteis nas funções](custom-functions-volatile.md)
-* [Criar funções personalizadas no Excel](custom-functions-overview.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Valores voláteis nas funções](custom-functions-volatile.md)
+- [Criar funções personalizadas no Excel](custom-functions-overview.md)
+- [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

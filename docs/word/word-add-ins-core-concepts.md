@@ -3,12 +3,12 @@ title: Modelo de objeto de JavaScript do Word em Suplementos do Office
 description: Saiba mais sobre os principais componentes no modelo de objeto JavaScript específico do Word.
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07055ee2c8b16315b5c4efea5f62a85331e48445
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746100"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958955"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 
@@ -44,8 +44,8 @@ Para entender as APIs do Word, você deve entender como os componentes de um doc
 
 ## <a name="see-also"></a>Confira também
 
-- [Visão geral da API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md)
-- [Criar seu primeiro suplemento do Word](../quickstarts/word-quickstart.md)
-- [Tutorial de suplemento do Word](../tutorials/word-tutorial.md)
-- [Referências da API JavaScript do Word](/javascript/api/word)
-- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Visão geral da API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md)
+* [Criar seu primeiro suplemento do Word](../quickstarts/word-quickstart.md)
+* [Tutorial de suplemento do Word](../tutorials/word-tutorial.md)
+* [Referências da API JavaScript do Word](/javascript/api/word)
+* [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

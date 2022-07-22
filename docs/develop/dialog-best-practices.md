@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como práticas recomendadas para um SPA (aplicativo de página única).
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe9841d12865c488a86a203026684e0b3570352
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689394"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958675"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -57,7 +57,7 @@ O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info`
 
 Você não pode ter mais de uma caixa de diálogo aberta em uma determinada página de host, portanto, seu código deve chamar [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) `displayDialogAsync` em um diálogo aberto antes que ele chame para abrir outro diálogo. O `close` método é assíncrono. Por esse motivo, se você `displayDialogAsync` ligar imediatamente após uma chamada, a `close`primeira caixa de diálogo poderá não ter sido completamente fechada quando o Office tentar abrir a segunda. Se isso acontecer, o Office retornará um erro [12007](dialog-handle-errors-events.md#12007) : "A operação falhou porque este suplemento já tem uma caixa de diálogo ativa".
 
-O `close` método não aceita um parâmetro de retorno de chamada e não retorna um objeto Promise `await` , portanto, ele não pode ser aguardado com a palavra-chave ou com um `then` método. Por esse motivo, sugerimos a seguinte técnica quando você precisar abrir uma nova caixa de diálogo imediatamente após fechar um diálogo: encapsular o código para abrir o novo diálogo em um método e projetar o método para chamar-se recursivamente `displayDialogAsync` se a chamada de retorna `12007`. Apresentamos um exemplo a seguir.
+O `close` método não aceita um parâmetro de retorno de chamada e não retorna um objeto Promise `await` , portanto, ele não pode ser aguardado com a palavra-chave ou com um `then` método. Por esse motivo, sugerimos a seguinte técnica quando você precisar abrir uma nova caixa de diálogo imediatamente após fechar um diálogo: encapsular o código para abrir o novo diálogo em uma função e projetar a função para chamar-se recursivamente `displayDialogAsync` se a chamada de retornar `12007`. Apresentamos um exemplo a seguir.
 
 ```javascript
 function openFirstDialog() {

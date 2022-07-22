@@ -3,12 +3,12 @@ title: Adicionar e remover os anexos em um suplemento do Outlook
 description: Use várias APIs de anexo para gerenciar os arquivos ou itens do Outlook anexados ao item que o usuário está redigindo.
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6600fc5926cdecd95e4d232223f11dd9a7b1fc41
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b82a9edb0a3ed43386b63d12f1a87b21b2ab634b
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712829"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958338"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
 
@@ -24,9 +24,9 @@ Você pode anexar um arquivo ou item do Outlook a um formulário de composição
 
 Esses são métodos assíncronos, o que significa que a execução pode continuar sem aguardar a conclusão da ação. Dependendo do local original e do tamanho do anexo que está sendo adicionado, a chamada assíncrona pode levar algum tempo para ser concluída.
 
-Se houver tarefas que dependam da conclusão da ação, você deverá executá-las em um método de retorno de chamada. Esse método de retorno de chamada é opcional e é invocado quando o carregamento do anexo é concluído. O método de retorno de chamada usa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) como um parâmetro de saída que fornece qualquer status, erro e valor retornado da adição do anexo. Se o retorno de chamada requer parâmetros adicionais, você pode especificá-los no parâmetro opcional `options.asyncContext`. `options.asyncContext` pode ser de qualquer tipo que seu método de retorno de chamada espere.
+Se houver tarefas que dependem da ação a ser concluída, você deverá executar essas tarefas em uma função de retorno de chamada. Essa função de retorno de chamada é opcional e é invocada quando o carregamento do anexo é concluído. A função de retorno de chamada usa um [objeto AsyncResult](/javascript/api/office/office.asyncresult) como um parâmetro de saída que fornece qualquer status, erro e valor retornado da adição do anexo. Se o retorno de chamada requer parâmetros adicionais, você pode especificá-los no parâmetro opcional `options.asyncContext`. `options.asyncContext` pode ser de qualquer tipo que sua função de retorno de chamada espera.
 
-Por exemplo, você pode definir como `options.asyncContext` um objeto JSON que contém um ou mais pares chave-valor. Você pode encontrar mais exemplos sobre como passar parâmetros opcionais para métodos assíncronos na plataforma de Suplementos do Office na programação assíncrona em [Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o parâmetro `asyncContext` para passar 2 argumentos para um método de retorno de chamada.
+Por exemplo, você pode definir como `options.asyncContext` um objeto JSON que contém um ou mais pares chave-valor. Você pode encontrar mais exemplos sobre como passar parâmetros opcionais para métodos assíncronos na plataforma de Suplementos do Office na programação assíncrona em [Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). O exemplo a seguir mostra como usar o parâmetro `asyncContext` para passar dois argumentos para uma função de retorno de chamada.
 
 ```js
 const options = { asyncContext: { var1: 1, var2: 2}};
@@ -34,7 +34,7 @@ const options = { asyncContext: { var1: 1, var2: 2}};
 Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon.png', 'icon.png', options, callback);
 ```
 
-Você pode verificar o sucesso ou o erro de uma chamada de método assíncrono no método de retorno de chamada usando as propriedades `status` e `error` do objeto `AsyncResult`. Se a anexação for concluída com êxito, você poderá usar a propriedade `AsyncResult.value` para obter a ID do anexo. A ID do anexo é um número inteiro que você pode usar posteriormente para remover o anexo.
+Você pode verificar se há êxito ou erro de uma chamada de método assíncrono `status` na função de retorno de chamada usando as propriedades `error` e o objeto `AsyncResult` . Se a anexação for concluída com êxito, você poderá usar `AsyncResult.value` a propriedade para obter a ID do anexo. A ID do anexo é um número inteiro que você pode usar posteriormente para remover o anexo.
 
 > [!NOTE]
 > A ID do anexo é válida somente dentro da mesma sessão e não há garantia de mapear para o mesmo anexo entre as sessões. Exemplos de quando uma sessão acabou incluem quando o usuário fecha o suplemento ou se o usuário começa a redigir em um formulário embutido e, subsequentemente, exibe o formulário embutido para continuar em uma janela separada.
@@ -43,19 +43,19 @@ Você pode verificar o sucesso ou o erro de uma chamada de método assíncrono n
 
 Você pode anexar um arquivo a `addFileAttachmentAsync` uma mensagem ou compromisso em um formulário de composição usando o método e especificando o URI do arquivo. Você também pode usar o método `addFileAttachmentFromBase64Async` , mas especificar a cadeia de caracteres base64 como entrada. Se o arquivo estiver protegido, você poderá incluir uma identidade ou um token de autenticação apropriado como um parâmetro de cadeia de caracteres de consulta de URI. O Exchange fará uma chamada à URI para obter o anexo, e o serviço Web que protege o arquivo precisará usar o token como um meio de autenticação.
 
-O exemplo de JavaScript a seguir é um suplemento de redação que anexa um arquivo, picture.png, de um servidor Web à mensagem ou ao compromisso que está sendo redigido. O método de retorno de chamada usa `asyncResult` como um parâmetro, verifica o status de resultado e obtém a ID do anexo caso o método tenha êxito.
+O exemplo de JavaScript a seguir é um suplemento de composição que anexa um arquivo, picture.png, de um servidor Web à mensagem ou ao compromisso que está sendo redigido. A função de retorno de chamada `asyncResult` usa como parâmetro, verifica o status do resultado e obtém a ID do anexo se o método for bem-sucedido.
 
 ```js
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add the specified file attachment to the item
         // being composed.
         // When the attachment finishes uploading, the
-        // callback method is invoked and gets the attachment ID.
+        // callback function is invoked and gets the attachment ID.
         // You can optionally pass any object that you would
-        // access in the callback method as an argument to
+        // access in the callback function as an argument to
         // the asyncContext parameter.
         Office.context.mailbox.item.addFileAttachmentAsync(
             `https://webserver/picture.png`,
@@ -90,11 +90,11 @@ A função JavaScript a seguir estende `addItemAttachment`o primeiro exemplo aci
 // ID is the EWS ID of the item to be attached.
 function addItemAttachment(itemId) {
     // When the attachment finishes uploading, the
-    // callback method is invoked. Here, the callback
-    // method uses only asyncResult as a parameter,
+    // callback function is invoked. Here, the callback
+    // function uses only asyncResult as a parameter,
     // and if the attaching succeeds, gets the attachment ID.
     // You can optionally pass any other object you wish to
-    // access in the callback method as an argument to
+    // access in the callback function as an argument to
     // the asyncContext parameter.
     Office.context.mailbox.item.addItemAttachmentAsync(
         itemId,
@@ -125,7 +125,7 @@ Você pode usar o [método getAttachmentsAsync](/javascript/api/requirement-sets
 
 Para obter o conteúdo de um anexo, você pode usar o [método getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) . Os formatos com suporte são listados na [enumeração AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
 
-Você deve fornecer um método de retorno de chamada para verificar o status e qualquer erro usando o objeto `AsyncResult` de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para o método de retorno de chamada usando o parâmetro `asyncContext` opcional.
+Você deve fornecer uma função de retorno de chamada para verificar o status e qualquer erro usando o objeto `AsyncResult` de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para a função de retorno de chamada usando o parâmetro `asyncContext` opcional.
 
 O exemplo de JavaScript a seguir obtém os anexos e permite que você configure a manipulação distinta para cada formato de anexo com suporte.
 
@@ -170,18 +170,18 @@ Você pode remover um anexo de arquivo ou item de uma mensagem ou item de compro
 > [!IMPORTANT]
 > Se você estiver usando o conjunto de requisitos 1.7 ou anterior, só deverá remover anexos que o mesmo suplemento adicionou na mesma sessão.
 
-Semelhante a `addFileAttachmentAsync`, `addItemAttachmentAsync`e métodos `getAttachmentsAsync` , `removeAttachmentAsync` é um método assíncrono. Você deve fornecer um método de retorno de chamada para verificar o status e qualquer erro usando o objeto `AsyncResult` de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para o método de retorno de chamada usando o parâmetro `asyncContext` opcional.
+Semelhante a `addFileAttachmentAsync`, `addItemAttachmentAsync`e métodos `getAttachmentsAsync` , `removeAttachmentAsync` é um método assíncrono. Você deve fornecer uma função de retorno de chamada para verificar o status e qualquer erro usando o objeto `AsyncResult` de parâmetro de saída. Você também pode passar quaisquer parâmetros adicionais para a função de retorno de chamada usando o parâmetro `asyncContext` opcional.
 
 A função JavaScript a seguir, `removeAttachment`continua estendendo os exemplos acima e remove o anexo especificado do email ou compromisso que está sendo composto. A função utiliza como argumento a ID do anexo a ser removido. Você pode obter a ID de um anexo após uma `addFileAttachmentAsync`chamada bem-sucedida , `addFileAttachmentFromBase64Async`ou `addItemAttachmentAsync` método, e usá-la em uma chamada de `removeAttachmentAsync` método subsequente. Você também pode chamar `getAttachmentsAsync` (introduzido no conjunto de requisitos 1.8) para obter os anexos e suas IDs para essa sessão de suplemento.
 
 ```js
 // Removes the specified attachment from the composed item.
 function removeAttachment(attachmentId) {
-    // When the attachment is removed, the callback method is invoked.
-    // Here, the callback method uses an asyncResult parameter and
+    // When the attachment is removed, the callback function is invoked.
+    // Here, the callback function uses an asyncResult parameter and
     // gets the ID of the removed attachment if the removal succeeds.
     // You can optionally pass any object you wish to access in the
-    // callback method as an argument to the asyncContext parameter.
+    // callback function as an argument to the asyncContext parameter.
     Office.context.mailbox.item.removeAttachmentAsync(
         attachmentId,
         { asyncContext: null },

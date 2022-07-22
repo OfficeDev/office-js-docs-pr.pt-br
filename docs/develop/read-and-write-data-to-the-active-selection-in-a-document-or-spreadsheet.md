@@ -1,14 +1,14 @@
 ---
 title: Ler e gravar dados na seleção ativa em um documento ou em uma planilha
-description: Saiba como ler e gravar dados na seleção ativa em um documento do Word ou Excel planilha.
+description: Saiba como ler e gravar dados na seleção ativa em um documento do Word ou planilha do Excel.
 ms.date: 01/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 360701bc43a7fc63f8447ff9a068256d187e2a70
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 220f768352aa3cf8a077f2e37ec812878cbeffba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187312"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958458"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 
@@ -41,9 +41,9 @@ Neste exemplo, o primeiro parâmetro, _coercionType_, `Office.CoercionType.Text`
 > [!TIP]
 > **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que os dados tabulares selecionados cresçam dinamicamente quando linhas e colunas forem adicionadas e precisar trabalhar com cabeçalhos de tabela, você deverá usar o tipo de dados da tabela (especificando o parâmetro _coercionType_ `getSelectedDataAsync` do método como `"table"` `Office.CoercionType.Table`ou ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando adicionar linhas e colunas e seus dados não exigirem a funcionalidade de cabeçalho, use o tipo de dados de matriz (especificando o parâmetro  _coercionType_ `getSelectedDataAsync` do método como `"matrix"` `Office.CoercionType.Matrix`ou ), que fornece um modelo mais simples de interação com os dados.
 
-A função anônima que é passada para a função como o segundo parâmetro, _retorno_ de chamada, é executada quando a `getSelectedDataAsync` operação é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, [a propriedade de](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) erro do `AsyncResult` objeto fornecerá acesso ao [objeto Error](/javascript/api/office/office.error) . Você pode verificar o valor das propriedades [Error.name](/javascript/api/office/office.error#office-office-error-name-member) e [Error.message](/javascript/api/office/office.error#office-office-error-message-member) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
+A função anônima que é passada para o método como o segundo parâmetro, _retorno_ de chamada, é executada quando a `getSelectedDataAsync` operação é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, [a propriedade de](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) erro do `AsyncResult` objeto fornecerá acesso ao [objeto Error](/javascript/api/office/office.error) . Você pode verificar o valor das propriedades [Error.name](/javascript/api/office/office.error#office-office-error-name-member) e [Error.message](/javascript/api/office/office.error#office-office-error-message-member) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
 
-A propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office. AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) é uma enumeração de valores de propriedade `AsyncResult.status` disponíveis. `Office.AsyncResultStatus.Failed` avalia a cadeia de caracteres "failed" (e, novamente, também pode ser especificada como essa cadeia de caracteres literal).
+A propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office.AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) é uma enumeração de valores de propriedade `AsyncResult.status` disponíveis. `Office.AsyncResultStatus.Failed` avalia a cadeia de caracteres "failed" (e, novamente, também pode ser especificada como essa cadeia de caracteres literal).
 
 ## <a name="write-data-to-the-selection"></a>Gravar dados na seleção
 
@@ -88,9 +88,9 @@ function write(message){
 }
 ```
 
-O primeiro parâmetro, _eventType_, especifica o nome do evento no qual assinar. Passar a cadeia de `"documentSelectionChanged"` caracteres para esse parâmetro é equivalente a passar o `Office.EventType.DocumentSelectionChanged` tipo de evento do [Office. Enumeração EventType](/javascript/api/office/office.eventtype).
+O primeiro parâmetro, _eventType_, especifica o nome do evento no qual assinar. Passar a cadeia de `"documentSelectionChanged"` caracteres para esse parâmetro é equivalente a passar o `Office.EventType.DocumentSelectionChanged` tipo de evento da [enumeração Office.EventType](/javascript/api/office/office.eventtype) .
 
-A  `myHandler()` função que é passada para a função como o segundo _parâmetro, manipulador_, é um manipulador de eventos executado quando a seleção é alterada no documento. A função é chamada com um único parâmetro, _eventArgs_, que conterá uma referência a um objeto [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) quando a operação assíncrona for concluída. Você pode usar a propriedade [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) para acessar o documento que gerou o evento.
+A  `myHandler()` função que é passada para o método como o segundo _parâmetro, manipulador_, é um manipulador de eventos executado quando a seleção é alterada no documento. A função é chamada com um único parâmetro, _eventArgs_, que conterá uma referência a um objeto [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) quando a operação assíncrona for concluída. Você pode usar a propriedade [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) para acessar o documento que gerou o evento.
 
 > [!NOTE]
 > Você pode adicionar vários manipuladores de eventos para `addHandlerAsync` um determinado evento chamando o método novamente e passando uma função de manipulador de eventos adicional para o parâmetro _do_ manipulador. This will work correctly as long as the name of each event handler function is unique.

@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Saiba como criar um Node.js baseado em Node.js que usa o Logon Único do Office.
 ms.date: 07/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f71630f2694db9c53ba6d2e3e6d07f54ab91cb8
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 470d6480308ed2695822aefd12e0b39b4abba32e
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689401"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958465"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -115,7 +115,7 @@ Você precisa criar um registro de aplicativo no Azure que representa o servidor
 1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente exigido pelo seu suplemento em si; mas o `profile` e as `openid` permissões são necessários para que o aplicativo do Office obtenha um token de acesso com a identidade do usuário para acessar o servidor de camada intermediária.
 
    - **Files.Read**
-   - **perfil**
+   - **profile**
    - **openid**
 
    > [!NOTE]
@@ -302,14 +302,14 @@ SERVER_SOURCE=https://localhost:44355
      // `allowSignInPrompt: true` option. Since this sample does that, you should not see
      // this error.
      showMessage(
-       "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+       "No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to log in, press the Get OneDrive File Names button again."
      );
      break;
    case 13002:
      // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
      // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
      showMessage(
-       "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+       "You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
      );
      break;
    case 13006:

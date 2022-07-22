@@ -3,12 +3,12 @@ title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides em seu manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4df14158d6a9fde9d18e75632c44e40fca235b8d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889506"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958703"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -156,7 +156,7 @@ O JavaScript no arquivo HTML referenciado pelo elemento **\<FunctionFile\>** dev
 
 O código a seguir mostra como implementar a função usada por **\<FunctionName\>**.
 
-```js
+```html
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {

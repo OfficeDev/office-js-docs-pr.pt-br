@@ -3,12 +3,12 @@ title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9b1ce064ff069aa48f6d9c979edc2dfa4fd3a4
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713095"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958983"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
@@ -49,7 +49,7 @@ const locations = [
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add to the location of the item being composed.
@@ -67,7 +67,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -95,7 +95,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -119,14 +119,14 @@ Você pode usar a `location` API para obter e definir o local de um compromisso.
 
 Esta seção mostra um exemplo de código que obtém o local do compromisso que o usuário está compondo e o exibe.
 
-Para usar `item.location.getAsync`, forneça um método de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional `asyncContext`. Você pode obter status, resultados e qualquer erro usando o parâmetro de saída `asyncResult` do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
+Para usar `item.location.getAsync`, forneça uma função de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para a função de retorno de chamada por meio do `asyncContext` parâmetro opcional. Você pode obter status, resultados e qualquer erro usando o parâmetro de saída `asyncResult` do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -158,7 +158,7 @@ function write(message){
 
 Esta seção mostra um exemplo de código que define a localização do compromisso que o usuário está redigindo.
 
-Para usar `item.location.setAsync`, especifique uma cadeia de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer um método de retorno de chamada e os argumentos para o método de retorno de chamada no parâmetro `asyncContext`. Você deve verificar o status, o resultado e qualquer mensagem de erro no parâmetro `asyncResult` de saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, `setAsync` inserirá a cadeia de caracteres de local especificada como texto sem formatação, substituindo o local existente pelo item.
+Para usar `item.location.setAsync`, especifique uma cadeia de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer uma função de retorno de chamada e quaisquer argumentos para a função de retorno de chamada no `asyncContext` parâmetro. Você deve verificar o status, o resultado e qualquer mensagem de erro no parâmetro `asyncResult` de saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, `setAsync` inserirá a cadeia de caracteres de local especificada como texto sem formatação, substituindo o local existente pelo item.
 
 > [!NOTE]
 > Você pode definir vários locais usando um ponto e vírgula como separador (por exemplo, "Sala de conferência A; Sala de conferência B').
@@ -168,7 +168,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the location of the item being composed.

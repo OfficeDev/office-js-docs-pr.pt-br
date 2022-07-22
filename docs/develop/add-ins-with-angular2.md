@@ -1,21 +1,21 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
-description: Use Angular para criar um Office como um aplicativo de página única.
+description: Use Angular para criar um Suplemento do Office como um aplicativo de página única.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743644"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958472"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
 Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Suplemento do Office como um aplicativo de página única.
 
 > [!NOTE]
-> Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? Você pode contribuir para [este artigo no GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ou fornecer seus comentários enviando um [problema](https://github.com/OfficeDev/office-js-docs-pr/issues) no repo.
+> Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? Você pode contribuir para [este artigo no GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ou fornecer seus comentários enviando um [problema](https://github.com/OfficeDev/office-js-docs-pr/issues) no repositório.
 
 Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
@@ -29,9 +29,9 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize
 
-Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para obter detalhes, consulte [Initialize your Office Add-in](initialize-add-in.md).) Office chama esse método imediatamente após ter inicializado as bibliotecas Office JavaScript.
+Em qualquer página que chame as APIs JavaScript do Office, word ou Excel, seu código deve primeiro atribuir uma função `Office.initialize`a . (Se você não tiver nenhum código de inicialização, o corpo da função poderá ser apenas símbolos "`{}`" vazios, mas você não deverá deixar `Office.initialize` a função indefinida. Para obter detalhes, [consulte Inicializar seu Suplemento do Office](initialize-add-in.md).) O Office chama essa função imediatamente depois de inicializar as bibliotecas JavaScript do Office.
 
-**O seu código de inicialização do Angular deve ser chamado dentro do método atribuído a `Office.initialize`** para garantir que as bibliotecas JavaScript do Office inicializem primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
+**Seu Angular código de inicialização `Office.initialize`** deve ser chamado dentro da função que você atribui para garantir que as bibliotecas JavaScript do Office tenham sido inicializadas primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
 
 ```js
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -76,13 +76,13 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="use-the-office-dialog-api-with-angular"></a>Use a OFFICE de diálogo com Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>Usar a API de caixa de diálogo do Office com Angular
 
 A API da caixa de diálogo Suplemento do Office permite que o suplemento abra uma página em uma caixa de diálogo não modal que pode trocar informações com a página principal, normalmente em um painel de tarefas.
 
 O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro, ou você pode transmitir a URL de uma rota em um aplicativo do Angular.
 
-É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a [propriedade Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), que não é acessível a partir do código no painel de tarefas.  
+É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão (a [propriedade Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), que não está acessível do código no painel de tarefas.  
 
 ## <a name="trigger-the-ui-update"></a>Acionar a atualização da interface do usuário
 
@@ -108,13 +108,13 @@ O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os 
 
 Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`.
 
-### <a name="push-instead-of-pull"></a>Push em vez de puxar
+### <a name="push-instead-of-pull"></a>Enviar por push em vez de efetuar pull
 
 Seu código "obtém" objetos `Promise` atribuindo-os a variáveis, mas objetos `Observable` "enviam" seus valores para objetos que se *inscrevem* no `Observable`. Os assinantes são objetos `Observer`. O benefício da arquitetura push é que novos membros podem ser adicionados à matriz `Observable` ao longo do tempo. Quando um novo membro é adicionado, todos os objetos `Observer` que assinam o `Observable` recebem uma notificação.
 
 O `Observer` é configurado para processar cada novo objeto (chamado o "próximo" objeto) com uma função. (Ele também é configurado para responder a um erro e a uma notificação de conclusão. Consulte a próxima seção para obter um exemplo.) Por esse motivo, os objetos `Observable` podem ser usados em uma maior variedade de cenários do que os objetos `Promise`. Por exemplo, além de retornarem um `Observable` de uma chamada AJAX, a maneira como você pode retornar um `Promise`, um `Observable` pode ser retornado de um manipulador de eventos, como o manipulador de eventos "modificado" de uma caixa de texto. Cada vez que um usuário insere texto na caixa, todos os objetos `Observer` inscritos reagem imediatamente usando o texto mais recente e/ou o estado atual do aplicativo como entrada.
 
-### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Aguarde até que todas as chamadas assíncronas tenham sido concluídas
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Aguarde até que todas as chamadas assíncronas sejam concluídas
 
 Quando quiser garantir que um retorno de chamada só seja executado quando todos os membros de um conjunto de objetos `Promise` forem resolvidos, use o método `Promise.all()`.
 
@@ -152,9 +152,9 @@ ng serve --aot
 > [!NOTE]
 > Para saber mais sobre o compilador Angular AOT (Ahead-of-Time), consulte o [guia oficial](https://angular.io/guide/aot-compiler).
 
-## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
+## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Dar suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
 
-Com base na versão Windows e no cliente da área de trabalho Office em que o seu complemento está sendo executado, o seu complemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de alguns `window.history` APIs, mas essas APIs não funcionam no tempo de execução do IE incorporado Windows desktop. Quando essas APIs não funcionam, o seu complemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá carregar antes Office.js. Nesse caso, você deve desabilitar as `window.history` APIs adicionando o código a seguir à página de **index.htmldo seu** complemento.
+Com base na versão do Windows e no cliente da área de trabalho do Office em que o suplemento está em execução, o suplemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de alguns `window.history` APIs, mas essas APIs não funcionam no runtime do IE inserido em clientes da área de trabalho do Windows. Quando essas APIs não funcionam, seu suplemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá ser carregado antes Office.js. Nesse caso, você deve desabilitar as `window.history` APIs adicionando o código a seguir à página de **index.htmldo suplemento** .
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

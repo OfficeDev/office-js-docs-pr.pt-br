@@ -1,14 +1,14 @@
 ---
 ms.date: 05/02/2022
-description: Solicitar, transmitir e cancelar o streaming de dados externos para sua pasta de trabalho com funções personalizadas Excel.
+description: Solicitar, transmitir e cancelar o streaming de dados externos para sua pasta de trabalho com funções personalizadas no Excel.
 title: Receber e tratar dados com funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fbe319e79d4cded5fe4b37ce5a654e633996f22a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244846"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958542"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -22,7 +22,7 @@ Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Ex
 
 Se uma função personalizada recupera dados de uma fonte externa como na web, ela deve:
 
-1. Retornar um [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) para Excel.
+1. Retornar um [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) para o Excel.
 2. Resolva com `Promise` o valor final usando a função de retorno de chamada.
 
 ### <a name="fetch-example"></a>Exemplo de busca
@@ -134,7 +134,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>Cancelar uma função
 
-Excel cancela a execução de uma função nas situações a seguir.
+O Excel cancela a execução de uma função nas situações a seguir.
 
 - Quando o usuário edita ou exclui uma célula que faz referência à função.
 - Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
@@ -147,7 +147,7 @@ Você também pode considerar a definição de um valor de streaming padrão par
 
 ### <a name="use-an-invocation-parameter"></a>Usar um parâmetro de invocação
 
-O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O `invocation` parâmetro fornece contexto sobre a célula (como seu endereço e conteúdo) e permite que você use `setResult` e `onCanceled` métodos. Esses métodos definem o que uma função faz quando a função transmite (`setResult`) ou é cancelada (`onCanceled`).
+O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O `invocation` parâmetro fornece contexto sobre a célula (como seu endereço e conteúdo) e permite que você use `setResult` `onCanceled` o método e o evento para definir o que uma função faz quando ela transmite (`setResult`) ou é cancelada (`onCanceled`).
 
 Se você estiver usando TypeScript, o manipulador de invocação precisará ser do tipo [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) ou [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
 

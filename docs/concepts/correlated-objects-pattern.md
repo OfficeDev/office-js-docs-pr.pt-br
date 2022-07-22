@@ -3,12 +3,12 @@ title: Evite usar o método context.sync em loops
 description: Saiba como usar o loop dividido e os padrões de objetos correlacionados para evitar chamar context.sync em um loop.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8327ad0b6c91a23452cf3efc791876f30408ceb
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 6b0239e05a597949160afbb2604143f3d6626462
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889209"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958696"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Evite usar o método context.sync em loops
 
@@ -42,7 +42,7 @@ Para alguns cenários de programação em Suplementos do Office que usam um dos 
 No caso mais simples, você está gravando apenas para membros de um objeto de coleção, não lendo suas propriedades. Por exemplo, o código a seguir realça em amarelo todas as instâncias de "o" em um documento do Word.
 
 > [!NOTE]
-> Geralmente, é uma boa prática `context.sync` colocar um final logo antes do caractere de fechamento "}" `run` do método de aplicativo ( `Excel.run`como , `Word.run`etc.). Isso ocorre porque o `run` método faz uma chamada oculta como a `context.sync` última coisa que ele faz se, e somente se, há comandos na fila que ainda não foram sincronizados. O fato de essa chamada estar oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o explícito `context.sync`. No entanto, considerando que este artigo é sobre minimizar `context.sync`chamadas de , é realmente mais confuso adicionar um final totalmente desnecessário `context.sync`. Portanto, neste artigo, o deixamos de fora quando não há comandos não sincronizados no final do `run`.
+> Geralmente, é uma boa prática `context.sync` colocar um final logo antes do caractere de fechamento "}" `run` da função de aplicativo ( `Excel.run`como , `Word.run`etc.). Isso ocorre porque `run` a função faz uma chamada oculta como a `context.sync` última coisa que faz se, e somente se, houver comandos na fila que ainda não foram sincronizados. O fato de essa chamada estar oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o explícito `context.sync`. No entanto, considerando que este artigo é sobre minimizar `context.sync`chamadas de , é realmente mais confuso adicionar um final totalmente desnecessário `context.sync`. Portanto, neste artigo, o deixamos de fora quando não há comandos não sincronizados no final do `run`.
 
 ```javascript
 await Word.run(async function (context) {

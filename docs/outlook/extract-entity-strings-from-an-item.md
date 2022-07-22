@@ -3,12 +3,12 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c51094adefbc60bad0716e2d65af0f40ed868d66
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: ca5540873be2969e15cea1a5773bb9fba850d9a1
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713116"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958990"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
@@ -215,7 +215,7 @@ Office.initialize = function () {
     // and body of the current item.
     MyEntities = _Item.getEntities();
     
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     });
@@ -577,7 +577,7 @@ Office.initialize = function () {
     // and body of the current item.
     _MyEntities = _Item.getEntities();
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     });

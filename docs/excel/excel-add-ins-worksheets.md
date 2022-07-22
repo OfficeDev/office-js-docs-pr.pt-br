@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
-description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando Excel API JavaScript.
+description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel.
 ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
-ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
+ms.openlocfilehash: b90970c3a168c3d82d0001c0e985583e3d23f8f0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "65076681"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958394"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -349,7 +349,7 @@ Os eventos `onColumnSorted` e `onRowSorted` fornecem seus retornos de chamadas c
 
 As imagens a seguir mostram os intervalos retornados pela propriedade `address` para eventos de classificação. Primeiro, aqui estão os dados de exemplo antes da classificação:
 
-![Dados de tabela Excel antes de serem classificados.](../images/excel-sort-event-before.png)
+![Dados de tabela no Excel antes de serem classificados.](../images/excel-sort-event-before.png)
 
 Se uma classificação de cima para baixo for executada em "**Q1**" (os valores em "**B**"), as linhas realçadas a seguir serão retornadas por `WorksheetRowSortedEventArgs.address`.
 
@@ -405,9 +405,9 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> Esta seção descreve como localizar as células e intervalos usando as funções do objeto `Worksheet`. Encontre mais informações de recuperação de intervalo nos artigos específicos do objeto.
+> Esta seção descreve como localizar células e intervalos usando `Worksheet` os métodos do objeto. Encontre mais informações de recuperação de intervalo nos artigos específicos do objeto.
 >
-> - Para obter exemplos que mostram `Range` como obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um intervalo usando [o Excel API JavaScript](excel-add-ins-ranges-get.md).
+> - Para obter exemplos que mostram como `Range` obter um intervalo dentro de uma planilha usando o objeto, consulte Obter um [intervalo usando a API JavaScript do Excel](excel-add-ins-ranges-get.md).
 > - Para obter exemplos que mostram como obter intervalos de um objeto `Table`, confira [Trabalhar com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
@@ -497,12 +497,12 @@ O artigo [Proteger uma planilha](https://support.microsoft.com/office/3179efdb-1
 
 ### <a name="detect-changes-to-the-worksheet-protection-state"></a>Detectar alterações no estado de proteção da planilha
 
-O estado de proteção de uma planilha pode ser alterado por um suplemento ou por meio da Excel interface do usuário. Para detectar alterações no estado de proteção, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) evento de uma planilha. Manipuladores de eventos para o `onProtectionChanged` evento recebem um [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) objeto quando o evento é acionado.
+O estado de proteção de uma planilha pode ser alterado por um suplemento ou por meio da interface do usuário do Excel. Para detectar alterações no estado de proteção, [registre um manipulador de](excel-add-ins-events.md#register-an-event-handler) eventos para o [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) evento de uma planilha. Manipuladores de eventos para o `onProtectionChanged` evento recebem um [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) objeto quando o evento é acionado.
 
 O exemplo de código a seguir mostra como registrar o manipulador `onProtectionChanged` de eventos e usar `isProtected``WorksheetProtectionChangedEventArgs` o objeto para recuperar o , `worksheetId`e `source` as propriedades do evento.
 
 ```js
-// This method registers an event handler for the onProtectionChanged event of a worksheet.
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
@@ -514,7 +514,7 @@ async function run() {
     });
 }
 
-// This method is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {

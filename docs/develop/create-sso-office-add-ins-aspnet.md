@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um Suplemento do Office com um back-end do ASP.NET para usar o SSO (logon único).
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889377"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958829"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -76,7 +76,7 @@ Use as configurações a seguir para o registro do aplicativo.
 1. Defina **o Estado** **como Habilitado e** selecione **Adicionar escopo**.
 
     > [!NOTE]
-    > A parte do domínio **\<Scope\>** do nome exibida logo abaixo do campo de texto deve corresponder automaticamente ao URI da ID do Aplicativo que você definiu anteriormente, `/access_as_user` com acrescentado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > A parte do domínio **\<Scope\>** do nome exibida logo após o campo de texto deve corresponder automaticamente ao URI da ID do Aplicativo que você definiu anteriormente, `/access_as_user` com acrescentado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. Na seção **Aplicativos cliente autorizados** , insira a ID a seguir para pré-autorizar todos os pontos de extremidade de aplicativo do Microsoft Office.
 
@@ -168,12 +168,12 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 1. Abra o arquivo HomeES6.js na pasta **Scripts**. Ele já tem algum código nele.
 
     - Um polyfill que atribui o objeto Office.Promise ao objeto de janela global, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface de usuário. (Para obter mais detalhes, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).)
-    - Uma atribuição ao método `Office.initialize` que, por sua vez, atribui um manipulador ao evento clicar do botão `getGraphAccessTokenButton`.
+    - Uma atribuição à função `Office.initialize` que, por sua vez, atribui um manipulador ao evento de clique `getGraphAccessTokenButton` de botão.
     - Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
     - Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
     - Código que implementa o sistema de autorização de fallback que o suplemento usará em cenários em que não há suporte para SSO ou ocorreu um erro.
 
-1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Sobre este código, observe:
+1. Após a atribuição, `Office.initialize`adicione o código a seguir. Sobre este código, observe:
 
     - O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `retryGetAccessToken` é usada para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
     - A função `getGraphData` é definida com a palavra-chave ES6 `async`. Usar a sintaxe ES6 facilita o uso da API de SSO em Suplementos do Office. Esse é o único arquivo na solução que usará a sintaxe sem suporte do Internet Explorer. Colocamos "ES6" no nome do arquivo como um lembrete. A solução usa o transcompilador de tsc para transcompilar esse arquivo em ES5, para que o suplemento possa ser executado quando o Office estiver usando o Internet Explorer para a interface do usuário. (Veja o arquivo tsconfig.json na raiz do projeto.)
@@ -186,7 +186,7 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
     }
     ```
 
-1. Abaixo da função `getGraphData`, adicione a função a seguir. Observe que você criará a função `handleClientSideErrors` em uma etapa posterior.
+1. Após a `getGraphData` função, adicione a função a seguir. Observe que você criará a função `handleClientSideErrors` em uma etapa posterior.
 
     > [!NOTE]
     > Para distinguir entre os dois tokens de acesso com os que você trabalha neste artigo, o token retornado de getAccessToken() é conhecido como um token de inicialização. Posteriormente, ele é trocado por meio do fluxo On-Behalf-Of por um novo token com acesso ao Microsoft Graph.
@@ -211,7 +211,8 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
     }
     ```
 
-1. Substitua `TODO 1` pelo código a seguir para obter o token de acesso do host do Office. O **parâmetro** options contém as seguintes configurações passadas da função **getGraphData()** anterior.
+
+1. Substitua `TODO 1` pelo código a seguir para obter o token de acesso do host do Office. O *parâmetro* options contém as seguintes configurações passadas da função `getGraphData()` anterior.
 
     - `allowSignInPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário entre se o usuário ainda não estiver conectado ao Office.
     - `allowConsentPrompt` é definido como true. Isso instrui o Office a solicitar que o usuário consenta em permitir que o suplemento acesse o perfil Microsoft Azure Active Directory usuário, se o consentimento ainda não tiver sido concedido. (O prompt resultante não *permite que* o usuário consenta com nenhum escopo do Microsoft Graph.)
@@ -228,7 +229,7 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
     getData("/api/values", bootstrapToken);
     ```
 
-1. Abaixo da função `getGraphData`, adicione o seguinte. Sobre este código, observe:
+1. Após a `getGraphData` função, adicione o seguinte. Sobre este código, observe:
 
     - Ele é usado pelos sistemas de autorização de fallback e SSO.
     - O parâmetro `relativeUrl` é um controlador do lado do servidor.
@@ -261,7 +262,7 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 ### <a name="handle-client-side-errors"></a>Tratar erros do lado do cliente
 
-1. Abaixo da função `getData`, adicione a função a seguir. Observe que `error.code` é um número, normalmente no intervalo 13xxx.
+1. Após a `getData` função, adicione a função a seguir. Observe que `error.code` é um número, normalmente no intervalo 13xxx.
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -284,12 +285,12 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
         // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-        showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
+        showResult(["You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
         // Only seen in Office on the web.
@@ -315,7 +316,7 @@ Se você escolheu "Contas somente neste diretório organizacional" para TIPOS  D
 
 ### <a name="handle-server-side-errors"></a>Resolver erros do lado do servidor
 
-1. Abaixo da função `handleClientSideErrors`, adicione a função a seguir.
+1. Após a `handleClientSideErrors` função, adicione a função a seguir.
 
     ```javascript
     function handleServerSideErrors(result) {

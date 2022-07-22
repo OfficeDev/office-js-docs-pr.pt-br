@@ -3,18 +3,18 @@ title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889223"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958605"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Você pode mostrar o painel de tarefas do suplemento do Office chamando a `Office.addin.showAsTaskpane()` função.
+Você pode mostrar o painel de tarefas do suplemento do Office chamando o `Office.addin.showAsTaskpane()` método.
 
 ```javascript
 function onCurrentQuarter() {
@@ -28,7 +28,7 @@ function onCurrentQuarter() {
 
 O código anterior pressupõe um cenário em que há uma planilha do Excel chamada **CurrentQuarterSales**. O suplemento tornará o painel de tarefas visível sempre que essa planilha for ativada. O método `onCurrentQuarter` é um manipulador para o [evento Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) que foi registrado para a planilha.
 
-Você também pode ocultar o painel de tarefas chamando a `Office.addin.hide()` função.
+Você também pode ocultar o painel de tarefas chamando o `Office.addin.hide()` método.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -43,7 +43,7 @@ O código anterior é um manipulador registrado para o [evento Office.Worksheet.
 Quando você chamar `Office.addin.showAsTaskpane()`, o Office exibirá em um painel de tarefas o arquivo atribuído como o valor da ID do recurso (`resid`) do painel de tarefas. Esse `resid` valor pode ser atribuído ou alterado abrindo seu arquivo **manifest.xml** e localizando **\<SourceLocation\>** dentro do `<Action xsi:type="ShowTaskpane">` elemento.
 (Consulte [Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md) para obter detalhes adicionais.)
 
-Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código continuará em execução até que a função seja concluída. Aguarde essa conclusão com a palavra-chave `await` ou um `then()` método, dependendo da sintaxe JavaScript que você está usando.
+Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código continuará em execução até que o método seja concluído. Aguarde essa conclusão com a palavra-chave `await` ou um `then()` método, dependendo da sintaxe JavaScript que você está usando.
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurar o suplemento para usar o runtime compartilhado
 

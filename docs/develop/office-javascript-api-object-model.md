@@ -3,12 +3,12 @@ title: Modelo de objeto comum de API JavaScript para Office
 description: Saiba mais sobre o modelo de objeto de API comum javaScript do Office.
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab311c548ec0ff8448f10f3ce64e3cd33ad32b12
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 1b856866c903a61a04bcbb232790649147fdb7fc
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712977"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958619"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
@@ -46,7 +46,7 @@ Você também pode usar o objeto `Document` para interagir com dados em document
 
 Todas essas formas de acesso a dados começam de uma instância do objeto `Document` abstrato.
 
-Você pode acessar uma instância `Document` do objeto quando o painel de tarefas ou o suplemento de conteúdo é inicializado usando a [propriedade do documento](/javascript/api/office/office.context#office-office-context-document-member) do `Context` objeto. O `Document` objeto define funções comuns de acesso a dados compartilhadas entre documentos do Word e do Excel e `CustomXmlParts` também fornece acesso ao objeto para documentos do Word.
+Você pode acessar uma instância `Document` do objeto quando o painel de tarefas ou o suplemento de conteúdo é inicializado usando a [propriedade do documento](/javascript/api/office/office.context#office-office-context-document-member) do `Context` objeto. O `Document` objeto define métodos comuns de acesso a dados compartilhados entre documentos do Word e do Excel e `CustomXmlParts` também fornece acesso ao objeto para documentos do Word.
 
 O `Document` objeto dá suporte a quatro maneiras para os desenvolvedores acessarem o conteúdo do documento.
 
@@ -103,7 +103,7 @@ O acesso a dados baseado em associação habilita os suplementos de conteúdo e 
 
 A criação de uma associação também permite que você se inscreva em eventos de alteração de seleção e de dados que apresentem um escopo definido para essa região específica do documento ou da planilha. Isso significa que o suplemento só é notificado sobre alterações que ocorrem dentro da região associada, e não sobre alterações gerais que ocorrem em todo o documento ou planilha.
 
-O [objeto Bindings](/javascript/api/office/office.bindings) expõe um [método getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) que fornece acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID usando os métodos [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) ou [Office.select](/javascript/api/office) . Você pode estabelecer novas associações, bem como remover as existentes `Bindings` usando um dos seguintes métodos do objeto: [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) ou [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
+O [objeto Bindings](/javascript/api/office/office.bindings) expõe um [método getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) que fornece acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID usando o método [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) ou a [função Office.select](/javascript/api/office) . Você pode estabelecer novas associações, bem como remover as existentes `Bindings` usando um dos seguintes métodos do objeto: [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) ou [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
 
 Há três tipos diferentes de associações que você especifica com o parâmetro _bindingType_ ao criar uma associação `addFromSelectionAsync`com os métodos . `addFromPromptAsync` `addFromNamedItemAsync`
 

@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Suplementos do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889202"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958718"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -20,7 +20,7 @@ Os suplementos do Office são protegidos por um ambiente de tempo de execução 
 
 - Somente o acesso indireto ao thread de interface do usuário do aplicativo cliente do Office é permitido.
 
-- Interações modais não são permitidas , por exemplo, chamadas para JavaScript `alert`e `confirm``prompt` funções não são permitidas porque são modais.
+- Interações modais não são permitidas , por exemplo, chamadas para JavaScript `alert`e `confirm``prompt` métodos não são permitidos porque são modais.
 
 Além disso, a estrutura de runtime oferece os seguintes benefícios para garantir que um Suplemento do Office não possa danificar o ambiente do usuário.
 

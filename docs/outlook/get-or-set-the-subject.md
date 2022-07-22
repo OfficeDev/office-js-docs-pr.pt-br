@@ -3,12 +3,12 @@ title: Obter ou definir o assunto em um suplemento do Outlook
 description: Saiba como obter ou definir o assunto de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f0e3166e142978873d390040c58d263d416e0d
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713088"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959067"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obter ou definir o assunto ao compor um compromisso ou uma mensagem no Outlook
 
@@ -41,14 +41,14 @@ Esta seção mostra um exemplo de código que obtém o assunto do compromisso ou
 </Rule>
 ```
 
-Para usar **item.subject.getAsync**, forneça um método de retorno de chamada que verifique o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional _asyncContext_. É possível obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o assunto como texto sem formatação usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
+Para usar **item.subject.getAsync**, forneça uma função de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para a função de retorno de chamada por meio do  _parâmetro opcional asyncContext_ . Você pode obter o status, os resultados e eventuais erros usando o parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o assunto como texto sem formatação usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the subject of the item being composed.
@@ -80,14 +80,14 @@ function write(message){
 
 Esta seção mostra um exemplo de código que define o assunto do compromisso ou da mensagem que o usuário está compondo. Semelhante ao exemplo anterior, o código a seguir considera uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso ou uma mensagem.
 
-Para usar **item.subject.setAsync**, especifique uma cadeia de até 255 caracteres no parâmetro de dados. Outra opção é fornecer um método de retorno de chamada e os argumentos para o método de retorno de chamada no parâmetro _asyncContext_. Você deve verificar o status, o resultado e eventuais mensagens de erro no parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, **setAsync** inserirá a cadeia de caracteres de assunto especificada como texto sem formatação, substituindo o assunto existente pelo item.
+Para usar **item.subject.setAsync**, especifique uma cadeia de caracteres de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer uma função de retorno de chamada e quaisquer argumentos para a função de retorno de chamada no  _parâmetro asyncContext_ . Você deve verificar o status, o resultado e eventuais mensagens de erro no parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, **setAsync** inserirá a cadeia de caracteres de assunto especificada como texto sem formatação, substituindo o assunto existente pelo item.
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the subject of the item being composed.

@@ -3,12 +3,12 @@ title: Obter e definir metadados em um suplemento do Outlook
 description: Gerencie dados personalizados no suplemento do Outlook usando configurações de roaming ou propriedades personalizadas.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ae9f2377c40d22b091f994de958b882507938a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b2cbb79288f7e62de8b4baae164ec9747cb83190
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712717"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959046"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obter e definir metadados de suplemento para um suplemento do Outlook
 
@@ -63,7 +63,7 @@ Office.initialize = function () {
 
 Continuando com o exemplo anterior, a função JavaScript a seguir, `setAddInSetting`, mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) para definir uma configuração denominada `cookie` com a data de hoje e manter os dados usando o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) para salvar todas as configurações de roaming de volta no servidor.
 
-O `set` método criará a configuração se a configuração ainda não existir e atribuirá a configuração ao valor especificado. O `saveAsync` método salva as configurações de roaming de forma assíncrona. Este exemplo de código passa um método de retorno de chamada, `saveMyAddInSettingsCallback``saveAsync` para Quando a chamada assíncrona é concluída, `saveMyAddInSettingsCallback` é chamado usando um parâmetro, _asyncResult_. Esse parâmetro é um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que contém o resultado e detalhes sobre a chamada assíncrona. Você pode usar o parâmetro opcional _userContext_ para passar as informações de estado de chamada assíncrona à função de retorno de chamada.
+O `set` método criará a configuração se a configuração ainda não existir e atribuirá a configuração ao valor especificado. O `saveAsync` método salva as configurações de roaming de forma assíncrona. Este exemplo de código passa uma função de retorno de chamada, `saveMyAddInSettingsCallback``saveAsync` para Quando a chamada assíncrona é concluída, `saveMyAddInSettingsCallback` é chamada usando um parâmetro, _asyncResult_. Esse parâmetro é um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que contém o resultado e detalhes sobre a chamada assíncrona. Você pode usar o parâmetro opcional _userContext_ para passar as informações de estado de chamada assíncrona à função de retorno de chamada.
 
 ```js
 // Set a roaming setting.
@@ -75,7 +75,7 @@ function setAddInSetting() {
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
-// Callback method after saving custom roaming settings.
+// Callback function after saving custom roaming settings.
 function saveMyAddInSettingsCallback(asyncResult) {
   if (asyncResult.status == Office.AsyncResultStatus.Failed) {
     // Handle the failure.
@@ -116,9 +116,9 @@ Antes de poder usar propriedades personalizadas, você precisa carregá-las cham
 
 ### <a name="custom-properties-example"></a>Exemplo de propriedades personalizadas
 
-O exemplo a seguir mostra um conjunto de métodos simplificado para um suplemento do Outlook que usa propriedades personalizadas. Você pode usar este exemplo como ponto de partida para o seu suplemento que usa propriedades personalizadas.
+O exemplo a seguir mostra um conjunto simplificado de funções e métodos para um suplemento do Outlook que usa propriedades personalizadas. Você pode usar este exemplo como ponto de partida para o seu suplemento que usa propriedades personalizadas.
 
-Este exemplo inclui os métodos a seguir.
+Este exemplo inclui as seguintes funções e métodos.
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_): inicializa o suplemento e carrega o conjunto de propriedades personalizadas do Exchange Server.
 

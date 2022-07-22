@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Suplementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao suplemento do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889188"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958528"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Suplementos do Office
 
@@ -253,7 +253,7 @@ A seguir está o exemplo completo do blob JSON.
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Registrar a guia contextual com o Office com requestCreateControls
 
-A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) . Normalmente, isso é feito na função atribuída ou `Office.initialize` com o `Office.onReady` método. Para obter mais informações sobre esses métodos e inicializar o suplemento, consulte [Inicializar seu suplemento do Office](../develop/initialize-add-in.md). No entanto, você pode chamar o método a qualquer momento após a inicialização.
+A guia contextual é registrada com o Office chamando o [método Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) . Normalmente, isso é feito na função atribuída ou `Office.initialize` com a `Office.onReady` função. Para obter mais informações sobre essas funções e inicializar o suplemento, consulte [Inicializar seu Suplemento do Office](../develop/initialize-add-in.md). No entanto, você pode chamar o método a qualquer momento após a inicialização.
 
 > [!IMPORTANT]
 > O `requestCreateControls` método pode ser chamado apenas uma vez em uma determinada sessão de um suplemento. Um erro será gerado se for chamado novamente.
@@ -272,7 +272,7 @@ Office.onReady(async () => {
 
 Normalmente, uma guia contextual personalizada deve aparecer quando um evento iniciado pelo usuário altera o contexto do suplemento. Considere um cenário no qual a guia deve estar visível quando, e somente quando, um gráfico (na planilha padrão de uma pasta de trabalho do Excel) é ativado.
 
-Comece atribuindo manipuladores. Isso normalmente é feito `Office.onReady` no método, como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) `onActivated` `onDeactivated` aos eventos e a todos os gráficos na planilha.
+Comece atribuindo manipuladores. Isso normalmente é feito `Office.onReady` na função, como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) `onActivated` `onDeactivated` aos eventos e a todos os gráficos na planilha.
 
 ```javascript
 Office.onReady(async () => {

@@ -1,16 +1,16 @@
 ---
 ms.date: 06/15/2022
-description: Entenda Excel funções personalizadas que não usam um runtime compartilhado e seu runtime javaScript específico.
-title: Runtime somente javaScript para funções personalizadas
+description: Entenda as funções personalizadas do Excel que não usam um runtime compartilhado e seu runtime específico do JavaScript.
+title: Tempo de execução somente de JavaScript para funções personalizadas
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0d3298e95ab39f976c3fbfd5c0cc4ecdd1369721
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229663"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958405"
 ---
-# <a name="javascript-only-runtime-for-custom-functions"></a>Runtime somente javaScript para funções personalizadas
+# <a name="javascript-only-runtime-for-custom-functions"></a>Tempo de execução somente de JavaScript para funções personalizadas
 
 As funções personalizadas que não usam um runtime compartilhado usam um runtime somente JavaScript projetado para otimizar o desempenho dos cálculos.
 
@@ -51,7 +51,7 @@ Os métodos a seguir estão disponíveis no `Storage` objeto.
 
 ### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime.storage
 
-O exemplo de código a seguir chama `OfficeRuntime.storage.setItem` a função para definir uma chave e um valor em `storage`.
+O exemplo de código a seguir chama o `OfficeRuntime.storage.setItem` método para definir uma chave e um valor em `storage`.
 
 ```js
 function StoreValue(key, value) {
@@ -70,6 +70,6 @@ Saiba como [depurar funções personalizadas](custom-functions-debugging.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Autenticação para funções personalizadas sem um runtime compartilhado](custom-functions-authentication.md)
-* [Criar funções personalizadas no Excel](custom-functions-overview.md)
-* [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Autenticação para funções personalizadas sem um tempo de execução compartilhado](custom-functions-authentication.md)
+- [Criar funções personalizadas no Excel](custom-functions-overview.md)
+- [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md)

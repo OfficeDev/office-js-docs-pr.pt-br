@@ -3,12 +3,12 @@ title: Programação assíncrona em Suplementos do Office
 description: Saiba como a biblioteca JavaScript do Office usa programação assíncrona em Suplementos do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 64965d06544126584d7b17d078f4db9d464b39f0
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889496"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958857"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -191,7 +191,7 @@ function write(message){
 
 Em vez de transmitir a função de retorno de chamada e aguardar até que a função retorne antes da continuação da execução, o padrão de programação de promessas retorna imediatamente retorna um objeto de promessa que representa o resultado desejado. No entanto, ao contrário da verdadeira programação síncrona, nos bastidores o cumprimento do resultado prometido é, na verdade, adiado até que o ambiente de tempo de execução dos Suplementos do Office possa concluir a solicitação. Um manipulador *onError* é fornecido para atender a situações em que a solicitação não pode ser cumprida.
 
-A API JavaScript do Office fornece o [método Office.select](/javascript/api/office#Office_select_expression__callback_) para dar suporte ao padrão de promessas para trabalhar com objetos de associação existentes. O objeto promise `Office.select` retornado ao método dá suporte apenas aos quatro métodos que você pode acessar diretamente do objeto [Binding](/javascript/api/office/office.binding) : [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) e [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
+A API JavaScript do Office fornece a [função Office.select](/javascript/api/office#Office_select_expression__callback_) para dar suporte ao padrão de promessas para trabalhar com objetos de associação existentes. O objeto promise `Office.select` retornado à função dá suporte apenas aos quatro métodos que você pode acessar diretamente do objeto [Binding](/javascript/api/office/office.binding) : [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) e [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
 
 O padrão de promessas para trabalhar com associações assume esse formato.
 
@@ -199,7 +199,7 @@ O padrão de promessas para trabalhar com associações assume esse formato.
 
 O *parâmetro selectorExpression* `"bindings#bindingId"`assume o formato , em que *bindingId* é o nome ( `id`) de uma associação que você criou anteriormente no documento ou planilha (usando um dos métodos "addFrom" `Bindings` da coleção: `addFromNamedItemAsync`, ou `addFromPromptAsync``addFromSelectionAsync`). Por exemplo, a expressão do seletor `bindings#cities` especifica que você deseja acessar a associação com uma **ID** de "cidades".
 
-O *parâmetro onError* é uma função de tratamento de erro que usa um único parâmetro do tipo que pode ser usado para acessar um objeto, `select` se o método não acessar a `AsyncResult` `Error` associação especificada. O exemplo a seguir mostra uma função de manipulador de erro básica que pode ser transmitida para o parâmetro *onError*.
+O *parâmetro onError* é uma função de tratamento de erro que usa um único parâmetro do tipo que pode ser usado para acessar um objeto, `select` se a função não conseguir acessar a `AsyncResult` `Error` associação especificada. O exemplo a seguir mostra uma função de manipulador de erro básica que pode ser transmitida para o parâmetro *onError*.
 
 ```js
 function onError(result){
@@ -217,7 +217,7 @@ Substitua *o espaço reservado BindingObjectAsyncMethod* por uma chamada para `B
 
 `Binding` Depois que uma promessa de objeto é atendida, ela pode ser reutilizada na chamada de método encadeada como se fosse uma associação (o runtime do suplemento não tentará novamente de forma assíncrona cumprir a promessa). Se a `Binding` promessa de objeto não puder ser atendida, o runtime do suplemento tentará novamente acessar o objeto de associação na próxima vez que um de seus métodos assíncronos for invocado.
 
-`select` O exemplo de código a `id` seguir usa o método para recuperar uma associação com o "`cities`" `Bindings` da coleção e, em seguida, chama o método [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) para adicionar um manipulador de eventos para o evento [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) da associação.
+`select` O exemplo de código a seguir usa a `id` função para recuperar uma associação com o "`cities`" `Bindings` da coleção e, em seguida, chama o método [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) para adicionar um manipulador de eventos para o evento [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) da associação.
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> A `Binding` promessa de objeto retornada `Office.select` pelo método fornece acesso apenas aos quatro métodos do `Binding` objeto. Se você precisar acessar qualquer um dos outros `Binding` membros do objeto, `Bindings.getAllAsync` `Document.bindings` `Bindings.getByIdAsync` deverá usar a propriedade e os métodos para recuperar o `Binding` objeto. Por exemplo, `Binding` se você precisar acessar qualquer uma das propriedades do objeto ( `document`as , `id`ou `type` propriedades) ou precisar acessar as propriedades dos objetos [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding](/javascript/api/office/office.tablebinding) , `getByIdAsync` `getAllAsync` `Binding` deverá usar os métodos ou os métodos para recuperar um objeto.
+> A `Binding` promessa de objeto retornada `Office.select` pela função fornece acesso apenas aos quatro métodos do `Binding` objeto. Se você precisar acessar qualquer um dos outros `Binding` membros do objeto, `Bindings.getAllAsync` `Document.bindings` `Bindings.getByIdAsync` deverá usar a propriedade e os métodos para recuperar o `Binding` objeto. Por exemplo, `Binding` se você precisar acessar qualquer uma das propriedades do objeto ( `document`as , `id`ou `type` propriedades) ou precisar acessar as propriedades dos objetos [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding](/javascript/api/office/office.tablebinding) , `getByIdAsync` `getAllAsync` `Binding` deverá usar os métodos ou os métodos para recuperar um objeto.
 
 ## <a name="pass-optional-parameters-to-asynchronous-methods"></a>Passar parâmetros opcionais para métodos assíncronos
 
@@ -363,10 +363,10 @@ function getDocumentFilePath() {
 }
 ```
 
-Quando esse método precisa ser aguardado, ele `await` pode ser chamado com a palavra-chave ou como a função passada para uma `then` função.
+Quando essa função precisa ser aguardada, ela pode `await` ser chamada com a palavra-chave ou passada para uma `then` função.
 
 > [!NOTE]
-> Essa técnica é especialmente útil quando você precisa chamar uma das APIs `run` comuns dentro de uma chamada do método em um dos modelos de objeto específicos do aplicativo. Para obter um exemplo da função acima usada dessa maneira, consulte o arquivoHome.js exemplo [ Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+> Essa técnica é especialmente útil quando você precisa chamar uma API `run` Comum dentro de uma chamada da função em um modelo de objeto específico do aplicativo. Para obter um exemplo da `getDocumentFilePath` função que está sendo usada dessa maneira, consulte o arquivo [Home.js exemplo Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
 
 A seguir está um exemplo usando TypeScript.
 

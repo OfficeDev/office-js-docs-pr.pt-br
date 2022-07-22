@@ -3,12 +3,12 @@ title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889608"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959060"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
@@ -53,7 +53,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: existe mais de um controle de conteúdo com o mesmo nome e a falha na colisão é definida como `true`.|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|O item nomeado não pode ser associado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo de coerção `table`.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os métodos `addRowsAsync` ou o `deleteAllDataValuesAsync` objeto em `TableBinding` dados do tipo de coerção `matrix`.|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar o método `addRowsAsync` ou o `deleteAllDataValuesAsync` objeto em `TableBinding` dados do tipo de coerção `matrix`.|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|

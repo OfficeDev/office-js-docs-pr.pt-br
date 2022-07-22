@@ -3,16 +3,16 @@ title: Usar opções de pesquisa no suplemento do Word para localizar texto
 description: Saiba como usar as opções de pesquisa em seu suplemento do Word.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 988349275dc350a342dfcb80e8e999c76de78e7d
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 64ffd3b32329dae98f869abaabcb3218e57a4a34
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229705"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958997"
 ---
 # <a name="use-search-options-in-your-word-add-in-to-find-text"></a>Usar opções de pesquisa no suplemento do Word para localizar texto
 
-Os suplementos frequentemente precisam agir com base no texto de um documento. Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](/javascript/api/word/word.body), [Parágrafo](/javascript/api/word/word.paragraph), [Intervalo](/javascript/api/word/word.range), [Tabela](/javascript/api/word/word.table), [ Coluna](/javascript/api/word/word.tablerow)e o objeto [ContentControl](/javascript/api/word/word.contentcontrol) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](/javascript/api/word/word.searchoptions). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
+Os suplementos frequentemente precisam agir com base no texto de um documento. Um método de pesquisa é exposto por cada controle de conteúdo (isso inclui [Corpo](/javascript/api/word/word.body)[, Parágrafo](/javascript/api/word/word.paragraph)[, Intervalo](/javascript/api/word/word.range)[, Tabela](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow) e o objeto [ContentControl](/javascript/api/word/word.contentcontrol) base). Esse método usa uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um [objeto SearchOptions](/javascript/api/word/word.searchoptions) . Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
 
 ## <a name="search-options"></a>Opções de pesquisa
 

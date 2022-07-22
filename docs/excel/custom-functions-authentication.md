@@ -1,16 +1,16 @@
 ---
-ms.date: 06/15/2022
+title: Autenticação para funções personalizadas sem um tempo de execução compartilhado
 description: Autenticar usuários usando funções personalizadas que não usam um runtime compartilhado.
-title: Autenticação para funções personalizadas sem um runtime compartilhado
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 7ff7b1dca67e9e25f14ef07bd1c088608f254427
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229677"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958422"
 ---
-# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>Autenticação para funções personalizadas sem um runtime compartilhado
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>Autenticação para funções personalizadas sem um tempo de execução compartilhado
 
 Em alguns cenários, uma função personalizada que não usa um runtime compartilhado precisará autenticar o usuário para acessar recursos protegidos. Funções personalizadas que não usam uma execução de runtime compartilhado em um runtime somente javaScript. Por isso, se o suplemento tiver um painel de tarefas, você precisará passar dados entre o runtime somente JavaScript e o runtime de suporte a HTML usado pelo painel de tarefas. Faça isso usando o objeto [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) e uma API de Caixa de Diálogo especial.
 
@@ -31,7 +31,7 @@ Quando você precisa se autenticar de um suplemento de função personalizada qu
 Se um token não existir, você deverá usar a `OfficeRuntime.dialog` API para solicitar que o usuário entre. Depois que um usuário insere suas credenciais, o token de acesso resultante pode ser armazenado como um item em `OfficeRuntime.storage`.
 
 > [!NOTE]
-> O runtime somente JavaScript usa um objeto de caixa de diálogo ligeiramente diferente do objeto de diálogo no runtime do mecanismo do navegador usado pelos painéis de tarefas. Ambos são chamados de "API de Caixa de Diálogo", mas usam [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) para autenticar usuários no runtime somente JavaScript *, não* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
+> O runtime somente JavaScript usa um objeto de caixa de diálogo ligeiramente diferente do objeto de diálogo no runtime do mecanismo do navegador usado pelos painéis de tarefas. Ambos são chamados de "API de Caixa de Diálogo", mas usam [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) para autenticar usuários no runtime somente JavaScript *, não* [no Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
 
 O diagrama a seguir descreve esse processo básico. A linha pontilhada indica que as funções personalizadas e o painel de tarefas do suplemento fazem parte do suplemento como um todo, embora usem runtimes separados.
 
@@ -73,8 +73,8 @@ Quando o painel de tarefas precisa do token de acesso, ele pode recuperar o toke
  * @customfunction GETTOKEN
  */
 function receiveTokenFromCustomFunction() {
-  var key = "token";
-  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  const key = "token";
+  const tokenSendStatus = document.getElementById('tokenSendStatus');
   OfficeRuntime.storage.getItem(key).then(function (result) {
      tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
      document.getElementById('tokenTextBox2').value = result;
@@ -108,7 +108,7 @@ function getTokenViaDialog(url) {
       // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
-      var intervalId = setInterval(function () {
+      const intervalId = setInterval(function () {
         count++;
         if(_cachedToken) {
           resolve(_cachedToken);
@@ -147,5 +147,5 @@ Saiba como [depurar funções personalizadas](custom-functions-debugging.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Runtime somente javaScript para funções personalizadas](custom-functions-runtime.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Tempo de execução somente de JavaScript para funções personalizadas](custom-functions-runtime.md)
+- [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -4,12 +4,12 @@ description: Crie um suplemento do Excel que cria, preenche, filtra e classifica
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 554fa885cb91671f97103425d572d8bf1f3b6437
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659714"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958387"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -77,7 +77,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     - Localize e exclua toda a função `run()`.
 
-1. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o código a seguir imediatamente após essa linha. Observação:
+1. Na chamada de função `Office.onReady`, localize a linha `if (info.host === Office.HostType.Excel) {` e adicione o seguinte código imediatamente após ela. Observação:
 
     - A primeira parte desse código determina se a versão do Excel do usuário oferece suporte a uma versão do Excel.js que inclua todas as APIs que essa série de tutoriais usará. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a IU que chamaria APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento que são compatíveis com sua versão do Excel.
 
@@ -225,7 +225,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-table` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -276,7 +276,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `filter-table` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `filter-table` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -352,7 +352,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `sort-table` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -447,7 +447,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-chart` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -792,7 +792,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
 1. Adicione o código a seguir a **popup.js**. Observe o seguinte sobre este código.
 
-   - *Todas as páginas que chamam APIs na biblioteca Office.JS devem primeiro garantir que a biblioteca tenha sido totalmente inicializada.* A melhor maneira de fazer isso é chamando o método `Office.onReady()`. Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`. A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office.js; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.
+   - *Todas as páginas que chamam APIs na biblioteca Office.JS devem primeiro garantir que a biblioteca tenha sido totalmente inicializada.* A melhor maneira de fazer isso é chamando a função `Office.onReady()`. Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`. A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office.js; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.
 
     ```js
     (function () {
@@ -918,7 +918,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o código a seguir logo após essa linha. Você criará o método `openDialog` em uma etapa posterior.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `freeze-header` e adicione o seguinte código após ela. Você criará o método `openDialog` em uma etapa posterior.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

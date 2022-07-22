@@ -3,12 +3,12 @@ title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Proj
 description: Crie um suplemento do painel de tarefas para o Project Standard 2013, Project Professional 2013 ou versões posteriores usando o gerador Yeoman para suplementos do Office.
 ms.date: 07/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4b1c392413c05a190b032ed9e3a0343470b02f
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: 69353b94da05dd0a8cfd6347beb7c5b3f4fd81e0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765290"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959025"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -107,7 +107,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
 1. Crie um arquivo JavaScript denominado JSOM_Sample.js na mesma pasta do arquivo de JSOMCall.html.
 
-   O código a seguir obtém as informações de contexto e documentação do aplicativo usando funções no arquivo Office.js. O `text` objeto é a ID do controle `textarea` no arquivo HTML.
+   O código a seguir obtém o contexto do aplicativo e as informações do documento usando métodos no Office.js arquivo. O `text` objeto é a ID do controle `textarea` no arquivo HTML.
 
    A **\_variável projDoc** é inicializada com um `ProjectDocument` objeto. O código inclui algumas funções simples de tratamento de erros e `getContextValues` a função que obtém o contexto do aplicativo e as propriedades de contexto do documento do projeto. Para saber mais sobre o modelo de objeto JavaScript para o Project, confira [API do JavaScript para Office](../reference/javascript-api-for-office.md).
 
@@ -124,7 +124,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -173,16 +173,16 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    Para obter informações sobre as funções no arquivo Office.debug.js, consulte a [API JavaScript do Office](../reference/javascript-api-for-office.md). Por exemplo, a `getDocumentUrl` função obtém a URL ou o caminho do arquivo do projeto aberto.
 
-1. Adicione funções JavaScript que chamam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
+1. Adicione funções JavaScript que chamam métodos assíncronos Office.js e Project-15.js para obter os dados selecionados:
 
-   - Por exemplo, `getSelectedDataAsync` é uma função geral em Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](/javascript/api/office/office.asyncresult).
+   - Por exemplo, `getSelectedDataAsync` é um método geral em Office.js que obtém texto não formatado para os dados selecionados. Para obter mais informações, consulte [o objeto Document](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1)).
 
    - A `getSelectedTaskAsync` função em Project-15.js obtém o GUID da tarefa selecionada. Da mesma forma, a `getSelectedResourceAsync` função obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
 
    - A `getTaskAsync` função obtém o nome da tarefa e os nomes dos recursos atribuídos. Se a tarefa estiver em uma lista de tarefas sincronizada do SharePoint, `getTaskAsync` obterá a ID da tarefa na lista do SharePoint; caso contrário, a ID da tarefa do SharePoint será 0.
 
      > [!NOTE]
-     > Para fins de demonstração, o código de exemplo inclui um bug. Se `taskGuid` for indefinido, a função `getTaskAsync` falhará. Se você obter um GUID de tarefa válido e, em seguida, selecionar uma tarefa diferente, `getTaskAsync` a função obterá dados para a tarefa mais recente que foi operada pela `getSelectedTaskAsync` função.
+     > Para fins de demonstração, o código de exemplo inclui um bug. Se `taskGuid` for indefinido, a `getTaskAsync` função falhará. Se você obter um GUID de tarefa válido e, em seguida, selecionar uma tarefa diferente, `getTaskAsync` a função obterá dados para a tarefa mais recente que foi operada pela `getSelectedTaskAsync` função.
   
    - `getTaskFields`, `getResourceFields`e são `getProjectFields` funções locais que chamam `getTaskFieldAsync`, ou `getResourceFieldAsync``getProjectFieldAsync` várias vezes para obter campos especificados de uma tarefa ou um recurso. No arquivo project-15.debug.js, a `ProjectTaskFields` enumeração `ProjectResourceFields` e a enumeração mostram quais campos têm suporte.
 
@@ -191,7 +191,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
    - Se o projeto for sincronizado com uma lista de tarefas do SharePoint, `getWSSUrlAsync` a função obterá a URL e o nome da lista de tarefas. Se o projeto não estiver sincronizado com uma lista de tarefas do SharePoint, `getWSSUrlAsync` a função falhará.
 
      > [!NOTE]
-     > Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use `getProjectFieldAsync` `WSSUrl` `WSSList` a função com as constantes e as constantes na enumeração [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) .
+     > Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use `getProjectFieldAsync` `WSSUrl` `WSSList` o método com o e as constantes na enumeração [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) .
 
    Cada uma das funções no código a seguir inclui uma função anônima que é especificada por `function (asyncResult)`, que é um retorno de chamada que obtém o resultado assíncrono. Em vez de funções anônimas, você poderia usar funções nomeadas, que podem ajudar na capacidade de manutenção de suplementos complexos.
 
@@ -548,9 +548,9 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-1. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro _de_ operação. A operação pode ser `addHandlerAsync` ou `removeHandlerAsync`.
+1. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro *de* operação. A operação pode ser `addHandlerAsync` ou `removeHandlerAsync`.
 
-   As `manageTaskEventHandler`funções , `manageResourceEventHandler`e `manageViewEventHandler` podem adicionar ou remover um manipulador de eventos, conforme especificado pelo _parâmetro docMethod_ .
+   As `manageTaskEventHandler`funções , `manageResourceEventHandler`e `manageViewEventHandler` podem adicionar ou remover um manipulador de eventos, conforme especificado pelo *parâmetro docMethod* .
 
     ```js
     // Task selection changed event handler.
@@ -759,7 +759,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Id da WSS: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. Selecione o **botão Obter Campos da** Tarefa. A `getTaskFields` função chama a função `getTaskfieldAsync` várias vezes para o nome da tarefa, o índice, a data de início, a duração, a prioridade e as anotações da tarefa.
+1. Selecione o **botão Obter Campos da** Tarefa. A `getTaskFields` função chama o método `getTaskFieldAsync` várias vezes para o nome da tarefa, o índice, a data de início, a duração, a prioridade e as anotações da tarefa.
 
     - Nome: `T2`
     - ID: `2`
