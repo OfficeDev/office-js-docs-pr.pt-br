@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 ms.localizationpriority: high
-ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746087"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959053"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -88,7 +88,7 @@ O código VSTO interage com o documento por meio de objetos .NET, como `Microsof
 
 A lógica empresarial, algoritmos, funções auxiliares e um código semelhante geralmente formam o coração de um suplemento VSTO. Esse código funciona independentemente da interface de usuário e do código do documento para executar a análise, conectar-se a serviços de backend, executar cálculos e muito mais. Esse é o código que pode ser compartilhado para que você não precise escrevê-lo novamente em JavaScript.
 
-Vamos examinar o Suplemento VSTO. No código a seguir, cada seção é identificada como um código de DOCUMENTO, IU ou ALGORÍTIMO.
+Vamos examinar o suplemento VSTO. No código a seguir, cada seção é identificada como um código de documento, IU ou de algoritmo.
 
 ```csharp
 // *** UI CODE ***
@@ -308,7 +308,7 @@ Dois projetos serão criados:
 
 1. No código anterior, digite o número **sslPort** que você salvou anteriormente pelo arquivo **. JSON**.
 
-No código anterior, a cadeia de caracteres retornada será processada para substituir alimentações de linha de retorno de carro por marcas `<br>` HTML. Algumas vezes, você pode encontrar situações em que um valor de retorno que funcione perfeitamente para o .NET precisará ser ajustado no Suplemento do Office para trabalhar conforme o esperado no Suplemento VSTO . Nesse caso, a API REST e a biblioteca de classes compartilhadas só se preocupam em retornar a cadeia de caracteres. O método `showUnicode()` é responsável pela formatação de valores retornados corretamente para a apresentação.
+No código anterior, a cadeia de caracteres retornada será processada para substituir alimentações de linha de retorno de carro por marcas `<br>` HTML. Algumas vezes, você pode encontrar situações em que um valor de retorno que funcione perfeitamente para o .NET precisará ser ajustado no Suplemento do Office para trabalhar conforme o esperado no Suplemento VSTO . Nesse caso, a API REST e a biblioteca de classes compartilhadas só se preocupam em retornar a cadeia de caracteres. A função `showUnicode()` é responsável por formatar corretamente os valores de retorno para apresentação.
 
 ### <a name="allow-cors-from-the-office-add-in"></a>Permitir CORS no Suplemento do Office
 

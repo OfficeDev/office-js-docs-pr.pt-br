@@ -3,12 +3,12 @@ title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 708b02cabdfafad599171839b29195d49009f37c
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650581"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958359"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -57,7 +57,7 @@ Os suplementos também podem acessar serviços da Microsoft e de outros que ofer
 
 - Precisa de acesso a um serviço fora do seu controle.
 
-Usando este método, o seu suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) para inicializar o fluxo do OAuth2.
+Usando esse método, seu suplemento solicita que o usuário entre no serviço usando o método [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) para inicializar o fluxo OAuth2.
 
 ## <a name="callback-tokens"></a>Tokens de retorno de chamada
 

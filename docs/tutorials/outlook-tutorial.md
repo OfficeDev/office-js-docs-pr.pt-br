@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Outlook que insere G
 ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 53b1b30c940ef3b6b1fdaeeecf95e5afb172c472
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797649"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958373"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -413,7 +413,7 @@ ul {
 }
 ```
 
-Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa. Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código. Observe que esse código usa jQuery para registrar eventos e usa a função **messageParent** para enviar as opções do usuário de volta ao chamador.
+Agora que você definiu a IU da caixa de diálogo, você pode escrever código que realmente faz alguma coisa. Crie um arquivo na pasta **./src/settings** chamado **dialog.js** e adicione o seguinte código. Observe que esse código usa jQuery para registrar eventos e usa o método `messageParent` para enviar as opções do usuário de volta ao chamador.
 
 ```js
 (function(){

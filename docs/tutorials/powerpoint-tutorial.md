@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do PowerPoint que inser
 ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: add58a3fc15f70b9c395e2f85c5eb5b2bb6e2bd5
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797663"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958878"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -447,7 +447,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-1. No arquivo **Home.js**, substitua `TODO9` pelo seguinte código para definir as funções de navegação. Cada uma dessas funções utiliza a função `goToByIdAsync` para selecionar um slide com base na sua posição no documento (primeiro, último, anterior e próximo).
+1. No arquivo **Home.js**, substitua `TODO9` pelo código a seguir para definir as funções de navegação. Cada uma dessas funções usa o método `goToByIdAsync` para selecionar um slide com base em sua posição no documento (primeiro, último, anterior e próximo).
 
     ```js
     function goToFirstSlide() {

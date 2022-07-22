@@ -3,12 +3,12 @@ title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge
 description: Saiba como depurar suplementos do Office que usam Microsoft Edge WebView2 (baseados em Chromium) no VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711011"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959074"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
@@ -77,7 +77,7 @@ Estas instruções assumem que você tem experiência com o uso da linha de coma
 1. Execute a funcionalidade no seu complemento que chama as linhas com pontos de interrupção. Você verá que os pontos de interrupção foram atingidos e você pode inspecionar variáveis locais.
 
    > [!NOTE]
-   > Pontos de interrupção em chamadas de `Office.initialize` ou `Office.onReady` são ignorados. Para obter detalhes sobre esses métodos, consulte [Inicialize seu Suplemento do Office](../develop/initialize-add-in.md).
+   > Pontos de interrupção em chamadas de `Office.initialize` ou `Office.onReady` são ignorados. Para obter detalhes sobre essas funções, consulte [Inicializar seu Suplemento do Office](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
 > A melhor maneira de interromper uma sessão de depuração é selecionar **Shift+F5** ou escolher **Executar > Interromper Depuração** no menu. Esta ação deve fechar a janela do servidor de Nó e tentar fechar o aplicativo host, mas haverá um aviso no aplicativo host perguntando se você deseja salvar o documento ou não. Faça uma escolha apropriada e deixe o aplicativo host fechar. Evite fechar manualmente a janela de Nó ou o aplicativo host. Fazer isso pode causar bugs, especialmente quando você interrompe e inicia sessões de depuração repetidamente.

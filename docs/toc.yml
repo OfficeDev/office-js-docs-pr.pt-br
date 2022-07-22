@@ -313,7 +313,7 @@ items:
             href: testing/runtime-logging.md
           - name: Depurar um comando de função com um runtime não compartilhado
             href: testing/debug-function-command.md
-          - name: Depurar os métodos inicializar e onReady
+          - name: Depurar as funções initialize e onReady
             href: testing/debug-initialize-onready.md
           - name: Erros
             items:

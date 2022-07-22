@@ -3,12 +3,12 @@ title: Depurar suplementos do Office
 description: Localize a diretrizes de depuração do Suplemento do Office para seu ambiente de desenvolvimento.
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797481"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958759"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Visão geral da depuração de Suplementos do Office
 
@@ -36,7 +36,7 @@ O restante deste artigo está preocupado apenas com a depuração do JavaScript 
 
 Existem alguns casos especiais em que o processo de depuração difere do normal para uma determinada combinação de plataforma, aplicativo do Office e ambiente de desenvolvimento. Se você estiver depurando qualquer um desses casos especiais, use os links nesta seção para encontrar a orientação adequada. Caso contrário, vá para [Orientação geral](#general-guidance).
 
-- **Depurando os métodos `Office.initialize` ou `Office.onReady`**: [Depure os métodos initialize e onReady](debug-initialize-onready.md).
+- **Depurando a função `Office.initialize` ou `Office.onReady`**:[Depure as funções initialize e onReady](debug-initialize-onready.md).
 - **Depuração de uma função personalizada do Excel em um ambiente de execução _não compartilhado_**: [Depuração de funções personalizadas em um ambiente de execução não compartilhado](../excel/custom-functions-debugging.md).
 - **Depurando um [comando de função](../design/add-in-commands.md#types-of-add-in-commands) em um ambiente de execução _não compartilhado_**: 
     - Suplementos do Outlook em um computador de desenvolvimento Windows: [Comandos de função de depuração em suplementos do Outlook](../outlook/debug-ui-less.md) 
