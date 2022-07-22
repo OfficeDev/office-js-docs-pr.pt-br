@@ -14,7 +14,7 @@ Este artigo pressupõe que você esteja usando um editor de texto para criar o s
 
 - Um arquivo de manifesto XML (GetDoc_App.xml) para o suplemento, disponível em uma pasta de rede compartilhada ou catálogo de suplementos. O arquivo de manifesto deve apontar para o local do arquivo HTML mencionado anteriormente.
 
-Você também pode criar um suplemento para PowerPoint usando o [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou o gerador [Yeoman para suplementos do Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou para o Word usando o [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou o gerador [Yeoman para suplementos do Office](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
+Você também pode criar um suplemento para o PowerPoint usando o [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou o gerador [Yeoman para Suplementos do Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou para o Word usando o [Gerador do Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou [Yeoman para Suplementos do Office](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Conceitos fundamentais para a criação de um suplemento de painel de tarefas
 
@@ -128,10 +128,10 @@ O exemplo de código a seguir mostra o manipulador de eventos `Office.initialize
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
 
-        // Execute sendFile when submit is clicked
+        // Execute sendFile when submit is clicked.
         $('#submit').click(function () {
             sendFile();
         });
@@ -150,11 +150,11 @@ function updateStatus(message) {
 
 Quando você escolhe o **botão** Enviar na interface do usuário, o suplemento `sendFile` chama a função, que contém uma chamada para o [método Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . O `getFileAsync` método usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_.
 
-O _parâmetro fileType_ espera uma das três constantes da enumeração [FileType](/javascript/api/office/office.filetype): `Office.FileType.Compressed` ("compactada **"),Office.FileType.PDF** ("pdf") ou **Office. FileType.Text** ("text"). O suporte de tipo de arquivo atual para cada plataforma está listado nos comentários [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . Quando você passa Compactado para o parâmetro _fileType_, `getFileAsync` o método retorna o documento como um arquivo de apresentação do PowerPoint 2013 (.pptx) ou arquivo de documento do *Word 2013 (*.docx) criando uma cópia temporária do arquivo no computador local.
+O  _parâmetro fileType_ espera uma das três constantes da enumeração [FileType](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` ("compactada"), **Office.FileType.PDF** ("pdf") ou **Office.FileType.Text** ("text"). O suporte de tipo de arquivo atual para cada plataforma está listado nos comentários [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . Quando você passa Compactado para o parâmetro _fileType_, `getFileAsync` o método retorna o documento como um arquivo de apresentação do PowerPoint 2013 (.pptx) ou arquivo de documento do *Word 2013 (*.docx) criando uma cópia temporária do arquivo no computador local.
 
 O `getFileAsync` método retorna uma referência ao arquivo como um [objeto File](/javascript/api/office/office.file) . O `File` objeto expõe quatro membros: a propriedade [size](/javascript/api/office/office.file#office-office-file-size-member) , [a propriedade sliceCount](/javascript/api/office/office.file#office-office-file-slicecount-member) , o método [getSliceAsync](/javascript/api/office/office.file#office-office-file-getsliceasync-member(1)) e [o método closeAsync](/javascript/api/office/office.file#office-office-file-closeasync-member(1)) . A `size` propriedade retorna o número de bytes no arquivo. Retorna `sliceCount` o número de [objetos Slice](/javascript/api/office/office.slice) (discutidos mais adiante neste artigo) no arquivo.
 
-Use o código a seguir para obter o PowerPoint ou o documento do Word `File` `Document.getFileAsync` como um objeto usando o método e, em seguida, faz uma chamada para a função definida `getSlice` localmente. Observe que o objeto `File` , uma variável de contador e o número total de fatias no arquivo são passados `getSlice` na chamada para um objeto anônimo.
+Use o código a seguir para obter o documento do PowerPoint ou do Word `File` `Document.getFileAsync` como um objeto usando o método e, em seguida, faz uma chamada para a função definida `getSlice` localmente. Observe que o objeto `File` , uma variável de contador e o número total de fatias no arquivo são passados `getSlice` na chamada para um objeto anônimo.
 
 ```js
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
@@ -183,8 +183,8 @@ function sendFile() {
 }
 ```
 
-A função local `getSlice` faz uma chamada para o `File.getSliceAsync` método para recuperar uma fatia do `File` objeto. O `getSliceAsync` método retorna um `Slice` objeto da coleção de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Assim como outras funções na API JavaScript para Office, `getSliceAsync` o método também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada de método.
-O ion `getSlice` faz uma chamada para o **método File.getSliceAsync** para recuperar uma fatia do **objeto** File. O método **getSliceAsync** retorna um objeto **Slice** do conjunto de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Assim como outras funções na API JavaScript Office, o método **getSliceAsync** também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada de método.
+A função local `getSlice` faz uma chamada para o `File.getSliceAsync` método para recuperar uma fatia do `File` objeto. O `getSliceAsync` método retorna um `Slice` objeto da coleção de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Assim como outros métodos na API JavaScript para Office, `getSliceAsync` o método também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada de método.
+O ion `getSlice` faz uma chamada para o **método File.getSliceAsync** para recuperar uma fatia do **objeto** File. O método **getSliceAsync** retorna um objeto **Slice** do conjunto de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Assim como outros métodos na API JavaScript do Office, o método **getSliceAsync** também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada de método.
 
 O `Slice` objeto fornece acesso aos dados contidos no arquivo. A menos que especificado de outra forma _no_ parâmetro de opções do `getFileAsync` método, o `Slice` objeto tem 4 MB de tamanho. O `Slice` objeto expõe três propriedades: [tamanho](/javascript/api/office/office.slice#office-office-slice-size-member), [dados](/javascript/api/office/office.slice#office-office-slice-data-member) e [índice](/javascript/api/office/office.slice#office-office-slice-index-member). A `size` propriedade obtém o tamanho, em bytes, da fatia. A `index` propriedade obtém um inteiro que representa a posição da fatia na coleção de fatias.
 
@@ -203,7 +203,7 @@ function getSlice(state) {
 }
 ```
 
-A `Slice.data` propriedade retorna os dados brutos do arquivo como uma matriz de bytes. Se os dados forem no formato de texto (ou seja, XML ou texto sem formatação), a fatia contém o texto não processado. Se você passar em **Office. FileType.Compressed para** o _parâmetro fileType_ `Document.getFileAsync`de , a fatia contém os dados binários do arquivo como uma matriz de bytes. No caso de um arquivo do PowerPoint ou do Word, as fatias contêm matrizes de bytes.
+A `Slice.data` propriedade retorna os dados brutos do arquivo como uma matriz de bytes. Se os dados forem no formato de texto (ou seja, XML ou texto sem formatação), a fatia contém o texto não processado. Se você passar **Office.FileType.Compressed** para o parâmetro _fileType_ `Document.getFileAsync`de , a fatia conterá os dados binários do arquivo como uma matriz de bytes. No caso de um arquivo do PowerPoint ou do Word, as fatias contêm matrizes de bytes.
 
 Você deve implementar sua própria função (ou usar uma biblioteca disponível) para converter dados da matriz de bytes em uma cadeia de caracteres com codificação por Base64. Para saber mais sobre a codificação por Base64 com JavaScript, confira [Codificação e decodificação por Base64](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding).
 
@@ -212,7 +212,7 @@ Depois de converter os dados para Base64, você pode transmiti-los para um servi
 Adicione o seguinte código para enviar uma fatia para um serviço Web.
 
 > [!NOTE]
-> Esse código envia um PowerPoint ou arquivo do Word para o servidor Web em várias fatias. O servidor Web ou serviço deve acrescentar cada fatia individual em um único arquivo e, em seguida, salvá-la como um arquivo .pptx ou .docx, antes que você possa executar qualquer manipulação nele.
+> Esse código envia um arquivo do PowerPoint ou do Word para o servidor Web em várias fatias. O servidor Web ou serviço deve acrescentar cada fatia individual em um único arquivo e, em seguida, salvá-la como um arquivo .pptx ou .docx, antes que você possa executar qualquer manipulação nele.
 
 ```js
 function sendSlice(slice, state) {

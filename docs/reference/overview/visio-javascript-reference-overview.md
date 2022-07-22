@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 666b525dde96c6d281d5acf6d905e592b172bea3
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 0743057c2f562485c3edb5d3bd82266c13b7e13f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889622"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958885"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -23,10 +23,10 @@ Um diagrama integrado do Visio é um diagrama armazenado em uma biblioteca de do
 
 É possível usar as APIs JavaScript do Visio para:
 
-* Interagir com os elementos de diagrama do Visio, como páginas e formas.
-* Criar uma marcação visual na tela do diagrama do Visio.
-* Adicionar manipuladores personalizados para eventos com o mouse no desenho.
-* Expôr dados de diagrama, como texto da forma, dados da forma e hiperlinks, em sua solução.
+- Interagir com os elementos de diagrama do Visio, como páginas e formas.
+- Criar uma marcação visual na tela do diagrama do Visio.
+- Adicionar manipuladores personalizados para eventos com o mouse no desenho.
+- Expôr dados de diagrama, como texto da forma, dados da forma e hiperlinks, em sua solução.
 
 Este artigo descreve como usar as APIs JavaScript do Visio com o Visio na Web para desenvolver suas soluções para o SharePoint Online. Ele apresenta os principais conceitos que são fundamentais para o uso das APIs, como `EmbeddedSession`, `RequestContext` e dos objetos proxy do JavaScript, além dos métodos `sync()`, `Visio.run()`, and `load()`. Os exemplos de código mostram como aplicar esses conceitos.
 
@@ -45,7 +45,7 @@ session.init().then(function () {
 
 `Visio.run()` executa um script em lote que executa ações no modelo de objeto do Visio. Os comandos em lotes incluem definições de objetos proxy JavaScript locais e métodos `sync()` que sincronizam o estado entre objetos locais e do Visio, e a resolução de promessa. A vantagem do envio de solicitações em lotes com o método `Visio.run()` é que, quando a promessa é resolvida, todos os objetos de página controlados que foram alocados durante a execução são automaticamente liberados.
 
-O método run recebe a sessão e o objeto RequestContext e retorna uma promessa (normalmente, apenas o resultado de `context.sync()`). É possível executar a operação em lote fora do `Visio.run()`. No entanto, todas as referências aos objetos de página devem ser rastreadas e gerenciadas manualmente nesse cenário.
+A função `run` recebe na sessão e no objeto RequestContext e retorna uma promessa (normalmente, apenas o resultado de `context.sync()`). É possível executar a operação em lote fora do `Visio.run()`. No entanto, todas as referências aos objetos de página devem ser rastreadas e gerenciadas manualmente nesse cenário.
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -97,7 +97,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemplo: imprimir todo o texto de formas na página ativa
 
 O exemplo a seguir mostra como imprimir o valor de texto de forma de um objeto de formas de matriz.
-O método `Visio.run()` contém um lote de instruções. Como parte deste lote, o sistema cria um objeto proxy que faz referência a formas no documento ativo.
+A função `Visio.run()` contém um lote de instruções. Como parte deste lote, o sistema cria um objeto proxy que faz referência a formas no documento ativo.
 
 Todos esses comandos são enfileirados e executados quando `context.sync()` é chamado. O método `sync()` retorna uma promessa que pode ser usada para encadeá-lo com outras operações.
 
@@ -137,7 +137,7 @@ O sistema retorna erros usando um objeto Error composto por um código e uma men
 
 Você pode usar o exemplo nesta seção para começar. Este exemplo mostra como exibir o texto da forma selecionada em um diagrama do Visio via programação. Para começar, crie uma página clássica no SharePoint Online ou edite uma página existente. Adicione uma Web Part de editor de script à página e copie e cole o código a seguir.
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>
