@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1f7950007a9139767cd31901ccf64c9fb1ebdf7c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484026"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958378"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -76,7 +76,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
     - Localize e exclua toda a função `run()`.
 
-1. Na chamada do método `Office.onReady`, localize a linha `if (info.host === Office.HostType.Word) {` e adicione o código a seguir imediatamente após essa linha. Observação:
+1. Na chamada de função `Office.onReady`, localize a linha `if (info.host === Office.HostType.Word) {` e adicione o seguinte código imediatamente após ela. Observação:
 
     - A primeira parte desse código determina se a versão do Word do usuário dá suporte a uma versão do Word.js que inclui todas as APIs usadas em todos os estágios deste tutorial. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chamaria APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento compatíveis com sua versão do Word.
     - A segunda parte desse código adiciona um manipulador de eventos para o botão `insert-paragraph`.
@@ -183,7 +183,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-paragraph` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-paragraph` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
@@ -227,7 +227,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-style` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-style` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
@@ -273,7 +273,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-custom-style` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `apply-custom-style` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
@@ -345,7 +345,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `change-font` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `change-font` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
@@ -378,7 +378,7 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
 
 1. Na função `insertTextIntoRange()`, substitua `TODO1` com o seguinte código. Observação:
 
-   - o método serve para inserir a abreviação ["(C2R)"] no final do Intervalo cujo texto é "Clique para Executar". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+   - A função destina-se a inserir a abreviatura ["(C2R)"] no final do intervalo cujo texto é "Clique para Executar". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
    - O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser inserida no objeto `Range`.
 
@@ -465,7 +465,7 @@ async function insertTextIntoRange() {
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-into-range` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-into-range` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
@@ -495,7 +495,7 @@ async function insertTextIntoRange() {
 
 1. Na função `insertTextBeforeRange()`, substitua `TODO1` com o seguinte código. Observação:
 
-   - O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Microsoft 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+   - A função destina-se a adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Microsoft 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
    - O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser adicionada.
 
@@ -544,7 +544,7 @@ async function insertTextIntoRange() {
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-outside-range` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-text-outside-range` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
@@ -569,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. Dentro da função`replaceText()`, substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
+1. Na função `replaceText()`, substitua `TODO1` pelo código a seguir. Observe que a função destina-se a substituir a cadeia de caracteres "vários" pela cadeia de caracteres "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
     ```js
     const doc = context.document;
@@ -630,13 +630,13 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Localize a chamada do método `Office.onReady`, próximo à parte superior e adicione o seguinte código imediatamente antes dessa linha. Esse código importa a variável que você definida anteriormente no arquivo **./base64Image.js**.
+1. Localize a chamada de função `Office.onReady` na parte superior do arquivo e adicione o código a seguir imediatamente antes dessa linha. Esse código importa a variável que você definida anteriormente no arquivo **./base64Image.js**.
 
     ```js
     import { base64Image } from "../../base64Image";
     ```
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `replace-text` e adicione o seguinte código após essa linha.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de clique ao botão `replace-text` e adicione o código a seguir após essa linha.
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
@@ -679,7 +679,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-image` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-image` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
@@ -727,7 +727,7 @@ Conclua as seguintes etapas para definir a imagem que será inserida no document
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-html` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-html` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
@@ -819,7 +819,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-table` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `insert-table` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
@@ -877,7 +877,7 @@ Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich
 
 1. Abra o arquivo **./src/taskpane/taskpane.js**.
 
-1. Na chamada do método `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-content-control` e adicione o seguinte código após ela.
+1. Na chamada de função `Office.onReady`, localize a linha que atribui um manipulador de cliques ao botão `create-content-control` e adicione o seguinte código após ela.
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
