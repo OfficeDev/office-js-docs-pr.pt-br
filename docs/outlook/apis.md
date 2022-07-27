@@ -1,14 +1,14 @@
 ---
 title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
-ms.date: 06/30/2022
+ms.date: 07/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 583d2b07a0590e7a04b052d5675320b8ea73a61f
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: bd0bcdd3dfac6def9443b09d9797bfd0667c3b3d
+ms.sourcegitcommit: 15714ef1118083032e640413ede69a162c43daed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660253"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "67037812"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
@@ -48,24 +48,35 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > essas verificações não são necessárias para APIs que estão na versão do conjunto de requisitos especificada no manifesto.
 
-Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto no **\<Requirements\>** elemento. Para saber mais, confira os [Manifestos de Suplementos do Outlook](manifests.md) e [Noções básicas sobre os conjuntos de requisitos de APIs do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+Especifique o conjunto de requisitos mínimo que proporciona suporte ao conjunto essencial de APIs para seu cenário, sem o qual os recursos do suplemento não funcionam. Especifique o conjunto de requisitos no manifesto. A marcação varia dependendo do manifesto que você está usando. 
 
-O **\<Methods\>** elemento não se aplica aos suplementos do Outlook, portanto, você não pode declarar suporte para métodos específicos.
+- **Manifesto XML**: use o **\<Requirements\>** elemento. Observe que não **\<Methods\>** há suporte **\<Requirements\>** para o elemento filho em suplementos do Outlook, portanto, você não pode declarar suporte para métodos específicos.
+- **Manifesto do Teams (versão prévia):** use a propriedade "extensions.capabilities". 
+
+Para obter mais informações, consulte [manifestos de suplemento do Outlook](manifests.md) e [Noções básicas sobre conjuntos de requisitos da API do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 ## <a name="permissions"></a>Permissões
 
-Seu suplemento requer as permissões apropriadas para usar as APIs de que precisa. Há quatro níveis de permissões. Para obter mais detalhes, confira [Noções básicas sobre suplementos do Outlook](understanding-outlook-add-in-permissions.md).
+Seu suplemento requer as permissões apropriadas para usar as APIs de que precisa. Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no manifesto. A marcação varia dependendo do tipo de manifesto.
+
+- **Manifesto XML**: use o **\<Permissions\>** elemento.
+- **Manifesto do Teams (versão prévia):** use a propriedade "authorization.permissions.resourceSpecific". 
+
+Há quatro níveis de permissões. Para obter mais detalhes, confira [Noções básicas sobre suplementos do Outlook](understanding-outlook-add-in-permissions.md).
 
 <br/>
 
-|Nível da permissão|Descrição|
-|:-----|:-----|
-| **Restrito** | Permite o uso de entidades, mas não de expressões regulares. |
-| **Leitura de item** | Além do que é permitido em **Restrito**, ele permite:<ul><li>expressões regulares</li><li>acesso de leitura para a API do suplemento do Outlook</li><li>obter as propriedades do item e o token de retorno de chamada</li></ul> |
-| **Leitura/gravação** | Além do que é permitido em **Leitura do item**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
-| **Leitura/gravação de caixa de correio** | Além do que é permitido em **Leitura/gravação**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
+|Nível da permissão</br>Nome do manifesto XML|Nível da permissão</br>Nome do manifesto do Teams|Descrição|
+|:-----|:-----|:-----|
+| **Restrito** | **MailboxItem.Restricted.User** | Permite o uso de entidades, mas não de expressões regulares. |
+| **ReadItem** | **MailboxItem.Read.User** | Além do que é permitido em **Restrito**, ele permite:<ul><li>expressões regulares</li><li>acesso de leitura para a API do suplemento do Outlook</li><li>obter as propriedades do item e o token de retorno de chamada</li></ul> |
+| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | Além do que é permitido no **ReadItem**, ele permite:<ul><li>acesso completo à API do Suplemento do Outlook, exceto `makeEwsRequestAsync`</li><li>definição das propriedades do item</li></ul> |
+| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | Além do que é permitido em **ReadWriteItem**, ele permite:<ul><li>criar, ler, gravar itens e pastas</li><li>enviar itens</li><li>chamar [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
-Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento **\<Permissions\>** no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md).
+> [!NOTE]
+> Há uma permissão complementar necessária para suplementos que usam o recurso de acréscimo ao enviar. Com o manifesto XML, você especifica a permissão no [elemento ExtendedPermissions](/javascript/api/manifest/extendedpermissions) . Para obter detalhes [, consulte Implementar append-on-send em seu suplemento do Outlook](append-on-send.md). Com o manifesto do Teams (versão prévia), você especifica essa permissão com o nome **Mailbox.AppendOnSend.User** em um objeto adicional na matriz "authorization.permissions.resourceSpecific".
+
+Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para obter informações sobre problemas de segurança, consulte [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md).
 
 ## <a name="mailbox-object"></a>Objeto Mailbox
 
