@@ -1,16 +1,16 @@
 ---
 title: Cartão de valor da entidade de tipos de dados da API JavaScript do Excel
 description: Saiba como usar cartões de valor de entidade com tipos de dados em seu suplemento do Excel.
-ms.date: 07/14/2022
+ms.date: 07/28/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889153"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177648"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>Usar cartões com tipos de dados de valor de entidade (versão prévia)
 
@@ -76,6 +76,31 @@ const entity: Excel.EntityCellValue = {
 A captura de tela a seguir mostra um cartão de valor de entidade que usa o snippet de código anterior. A captura de tela mostra as informações **de ID** do **produto, nome** **do produto,** **imagem, quantidade** por unidade e preço **unitário** do snippet de código anterior.
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="Uma captura de tela mostrando um tipo de dados de valor de entidade com a janela de layout do cartão exibida. O cartão mostra o nome do produto, a ID do produto, a quantidade por unidade e as informações de preço unitário.":::
+
+### <a name="property-metadata"></a>Metadados de propriedade
+
+As propriedades da entidade têm um `propertyMetadata` campo opcional que usa o [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) objeto e oferece as `excludeFrom``attribution`propriedades , e `sublabel`. O snippet de código a seguir mostra como adicionar um `sublabel` `"Unit Price"` à propriedade do snippet de código anterior. Nesse caso, o sub-rótulo identifica o tipo de moeda.
+
+> [!NOTE]
+> O `propertyMetadata` campo só está disponível em tipos de dados aninhados nas propriedades da entidade.
+
+```TypeScript
+// This code snippet is an excerpt from the `properties` field of the 
+// preceding `EntityCellValue` snippet. "Unit Price" is a property of 
+// an entity value.
+        "Unit Price": {
+            type: Excel.CellValueType.formattedNumber,
+            basicValue: product.unitPrice,
+            numberFormat: "$* #,##0.00",
+            propertyMetadata: {
+              sublabel: "USD"
+            }
+        },
+```
+
+A captura de tela a seguir mostra um cartão de valor de entidade que usa o snippet de código anterior, `sublabel` exibindo os metadados de propriedade de **USD** ao lado da propriedade **Preço** Unitário.
+
+:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="Uma captura de tela mostrando o sub-rótulo USD ao lado do Preço Unitário.":::
 
 ## <a name="card-layout"></a>Layout do cartão
 

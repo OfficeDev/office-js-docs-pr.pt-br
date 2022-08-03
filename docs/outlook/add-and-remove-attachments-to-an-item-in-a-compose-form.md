@@ -1,14 +1,14 @@
 ---
 title: Adicionar e remover os anexos em um suplemento do Outlook
 description: Use várias APIs de anexo para gerenciar os arquivos ou itens do Outlook anexados ao item que o usuário está redigindo.
-ms.date: 07/07/2022
+ms.date: 08/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b82a9edb0a3ed43386b63d12f1a87b21b2ab634b
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 23a1ce1a64d308f0ea51152726bf4d99d7a6300b
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958338"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177683"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
 
@@ -77,6 +77,39 @@ Office.initialize = function () {
 function write(message){
     document.getElementById('message').innerText += message;
 }
+```
+
+Para adicionar uma imagem base64 embutida ao corpo de uma mensagem que está sendo composta, `Office.context.mailbox.item.body.getAsync` primeiro você deve obter o corpo da mensagem atual usando o método antes de inserir a imagem usando o `addFileAttachmentFromBase64Async` método. Caso contrário, a imagem não será renderizada na mensagem depois de inserida. Para obter diretrizes, consulte o exemplo de JavaScript a seguir, que adiciona uma imagem base64 embutida ao início de um corpo de mensagem.
+
+```js
+const mailItem = Office.context.mailbox.item;
+const base64String =
+  "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0S+bUAAAAMdFJOUwAQIDBAUI+fr7/P7yEupu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7dfLdoMwDEVR6Cspzf9/b20QYOthS5Zn0Z2kVdY6O2WULrFYLBaLxd5ur4mDZD14b8ogWS/dtxV+dmx9ysA2QUj9TQRWv5D7HyKwuIW9n0vc8tkpHP0W4BOg3wQ8wtlvA+PC1e8Ao8Ld7wFjQtHvAiNC2e8DdqHqKwCrUPc1gE1AfRVgEXBfB+gF0lcCWoH2tYBOYPpqQCNwfT3QF9i+AegJfN8CtAWhbwJagtS3AbIg9o2AJMh9M5C+SVGBvx6zAfmT0r+Bv8JMwP4kyFPir+cswF5KL3WLv14zAFBCLf56Tw9cparFX4upgaJUtPhrOS1QlY5W+vWTXrGgBFB/b72ev3/0igUdQPppP/nfowfKUUEFcP207y/yxKmgAYQ+PywoAFOfCH3A2MdCFzD3kdADBvq10AGG+pXQBgb7pdAEhvuF0AIc/VtoAK7+JciAs38KIuDugyAC/v4hiMCE/i7IwLRBsh68N2WQjMVisVgs9i5bln8LGScNcCrONQAAAABJRU5ErkJggg==";
+
+// Get the current body of the message.
+mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
+  if (bodyResult.status === Office.AsyncResultStatus.Succeeded) {
+    // Insert the base64 image to the beginning of the message body.
+    const options = { isInline: true, asyncContext: bodyResult.value };
+    mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
+      if (attachResult.status === Office.AsyncResultStatus.Succeeded) {
+        let body = attachResult.asyncContext;
+        body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
+        mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
+          if (setResult.status === Office.AsyncResultStatus.Succeeded) {
+            console.log("Inline base64 image added to message.");
+          } else {
+            console.log(setResult.error.message);
+          }
+        });
+      } else {
+        console.log(attachResult.error.message);
+      }
+    });
+  } else {
+    console.log(bodyResult.error.message);
+  }
+});
 ```
 
 ### <a name="attach-an-outlook-item"></a>Anexar um item do Outlook

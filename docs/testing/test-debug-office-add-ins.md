@@ -1,14 +1,14 @@
 ---
 title: Testar os Suplementos do Office
 description: Saiba como testar seu Suplemento do Office.
-ms.date: 12/02/2021
+ms.date: 07/28/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d69d57e677e7f06457f49fef60df63bc6f9577fa
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 0cb3241bf88edf10f165587ddac24d1261b30162
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712731"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177676"
 ---
 # <a name="test-office-add-ins"></a>Testar os Suplementos do Office
 
@@ -24,7 +24,7 @@ Os Suplementos do Office são executados em grandes plataformas, então é neces
 > [!IMPORTANT]
 > Os suplementos comercializados pelo AppSource passam por um processo de validação que inclui testes em todas as plataformas. Além disso, os suplementos são testados para o Office na Web em todos os principais navegadores modernos, incluindo o Microsoft Edge (WebView2 baseado em Chromium), Chrome e Safari. Teste adequadamente nessas plataformas e navegadores antes de enviar ao AppSource. Para obter mais informações sobre validação, veja [Políticas de certificação de marketplace comercial](/legal/marketplace/certification-policies), principalmente a [seção 1120.3](/legal/marketplace/certification-policies#11203-functionality) e a [página de aplicativo e disponibilidade do Suplemento do Office](/javascript/api/requirement-sets).
 >
-> O AppSource não usa o Internet Explorer ou a versão herdada do Microsoft Edge (WebView1) para testar suplementos no Office na Web. Mas se um número significativo de seus usuários usará o Edge herdado para abrir o Office na Web, você deve testar com ele. (O Office na Web não abre no Internet Explorer, portanto você não pode e não precisa testar o Office na Web com o Internet Explorer.) Para obter mais informações, consulte [Suporte ao Internet Explorer 11](../develop/support-ie-11.md) e [Solução de problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues). O Office ainda oferece suporte a esses navegadores para runtimes de suplementos, portanto, se você acha que encontrou um bug na forma como os suplementos são executados neles, crie um problema para o repositório [office js](https://github.com/OfficeDev/office-js/issues/new/choose).
+> O AppSource não usa o Internet Explorer ou a versão herdada do Microsoft Edge (WebView1) para testar suplementos no Office na Web. Mas se um número significativo de seus usuários usará o Edge herdado para abrir o Office na Web, você deve testar com ele. (O Office na Web não abre no Internet Explorer, portanto você não pode e não precisa testar o Office na Web com o Internet Explorer.) Para obter mais informações, consulte [Suporte ao Internet Explorer 11](../develop/support-ie-11.md) e [Solução de problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues). O Office ainda oferece suporte a esses navegadores para runtimes de suplementos, portanto, se você acha que encontrou um bug na forma como os suplementos são executados neles, crie um problema para o repositório [office js](https://github.com/OfficeDev/office-js/issues/new/choose).
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>Fazer sideload de suplemento para teste
 

@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar problemas de erros de desenvolvimento em Suplementos do Office.
-ms.date: 06/10/2022
+ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712759"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177662"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -72,7 +72,7 @@ A seguir estão algumas das causas desse erro. Se você descobrir causas adicion
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>O suplemento não funciona no Edge, mas funciona em outros navegadores
 
-Consulte [Solução de problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
+Consulte [Solução de problemas do Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues).
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>O suplemento do Excel gera erros, mas não consistentemente
 

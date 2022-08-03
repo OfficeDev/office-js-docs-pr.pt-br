@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 05/01/2022
+ms.date: 07/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fedeb7f7e1e972a2a7fe4befa5a990ff8cc698d
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: a4063720f8866d9538865f4514841d8dc8d0a84c
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659651"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177669"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -17,12 +17,13 @@ Os Suplementos do Office são aplicativos Web exibidos usando iFrames durante a 
 Qual navegador é usado depende do:
 
 - O sistema operacional do computador.
-- Se o suplemento está em execução no Office na Web, No Microsoft 365 ou no Office 2013 ou posterior.
+- Se o suplemento está em execução no Office na Web, No Microsoft 365 ou perpétuo (também chamado de "compra não assinatura" ou "compra avuária") do Office 2013 ou posterior.
+- Nas versões perpétuas do Office, se o suplemento está em execução na variação "consumidor" ou "comercial" (também chamado de "licenciado por volume" ou "LTSC").
 
 > [!IMPORTANT]
 > **Internet Explorer ainda usado em Suplementos do Office**
 >
-> Algumas combinações de plataformas e versões do Office, incluindo versões de compra única por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
+> Algumas combinações de plataformas e versões do Office, incluindo versões perpétuas por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
 >
 > - Office na Web abre mais no Internet Explorer. Consequentemente, [o AppSource](/office/dev/store/submit-to-appsource-via-partner-center) não testa mais suplementos no Office na Web usando o Internet Explorer como navegador.
 > - O AppSource ainda testa combinações de versões da plataforma e da área de trabalho *do Office que* usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
@@ -30,16 +31,52 @@ Qual navegador é usado depende do:
 >
 > Para obter mais informações sobre como dar suporte ao Internet Explorer e configurar uma mensagem de falha normal em seu suplemento, consulte [Suporte do Internet Explorer 11](../develop/support-ie-11.md).
 
-A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
+As seções a seguir especificam qual navegador é usado para as várias plataformas e sistemas operacionais.
+
+## <a name="non-windows-platforms"></a>Plataformas não Windows
+
+Para essas plataformas, somente a plataforma determina o navegador usado.
+
+|SO|Versão do Office|Navegador|
+|:-----|:-----|:-----|
+|qualquer|Office na Web|O navegador no qual o Office está aberto.<br>(Mas observe que Office na Web não será aberto no Internet Explorer.<br>A tentativa de fazer isso abre Office na Web no Edge.) |
+|Mac|qualquer|Safari com WKWebView|
+|iOS|qualquer|Safari com WKWebView|
+|Android|qualquer|Chrome|
+
+## <a name="perpetual-versions-of-office-on-windows"></a>Versões perpétuas do Office no Windows
+
+Para versões perpétuas do Office no Windows, o navegador usado é determinado pela versão do Office, se a licença é consumidor ou comercial e se o Edge WebView2 (baseado em Chromium) está instalado. A versão do Windows não importa, mas observe que os Suplementos da Web do Office não têm suporte em versões anteriores ao Windows 7 e Office 2021 não têm suporte em versões anteriores ao Windows 10.
+
+Para determinar se o Office 2016 ou o Office 2019 é consumidor ou comercial, use o formato da versão e do número de build do Office. (Para o Office 2013 e Office 2021, a distinção entre comercial e consumidor não importa.)
+
+- **Consumidor**: para o Office 2016 e 2019, `YYMM (xxxxx.xxxxxx)`o formato é , terminando com dois blocos de cinco dígitos; por exemplo, `2206 (Build 15330.20264`.
+- **Comercial**: 
+
+    - Para o Office 2016, o formato `16.0.xxxx.xxxxx`é , terminando com dois blocos de *quatro* dígitos; por exemplo, `16.0.5197.1000`.
+    - Para o Office 2019, o formato `1808 (xxxxx.xxxxxx)`é , terminando com dois blocos de *cinco* dígitos; por exemplo, `1808 (Build 10388.20027)`. Observe que o ano e o mês são sempre `1808`.
+
+|Versão do Office|Consumidor versus Comercial|Edge WebView2 (baseado Chromium) instalado?|Navegador|
+|:-----|:-----|:-----|:-----|:-----|
+|Office 2013 | Não importa, não importa. |Não importa, não importa.|Internet Explorer 11|
+|Office 2016| Comercial |Não importa, não importa.|Internet Explorer 11|
+|Office 2019| Comercial |Não importa, não importa.|Internet Explorer 11|
+|Office 2016 para Office 2019| Consumidor |Não |Microsoft Edge<sup>1, 2</sup> com WebView original (EdgeHTML)</br>Se o Edge não estiver instalado, o Internet Explorer 11 será usado.|
+|Office 2016 para Office 2019|  Consumidor |Sim<sup>3</sup>|Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado)|
+|Office 2021| Não importa, não importa. |Sim<sup>3</sup> |Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado)|
+
+<sup>1</sup> Quando você usa o Microsoft Edge, o Narrador do Windows (às vezes chamado de "leitor de tela") `<title>` lê a marca na página que é aberta no painel de tarefas. No Internet Explorer 11, o Narrador lê a barra de título do painel de tarefas, **\<DisplayName\>** que vem do valor no manifesto do suplemento.
+
+<sup>2</sup> Se o suplemento **\<Runtimes\>** incluir o elemento no manifesto, ele não usará o Microsoft Edge com o WebView original (EdgeHTML). Se as condições para usar o Microsoft Edge com WebView2 (Chromium baseadas em Chromium) forem atendidas, o suplemento usará esse navegador. Caso contrário, ele usará o Internet Explorer 11. Para mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes).
+
+<sup>3</sup> Em versões do Windows anteriores Windows 11, o controle WebView2 deve ser instalado para que o Office possa inseri-lo. Ele é instalado com recursos Office 2021 ou posterior, mas não é instalado automaticamente com o Microsoft Edge. Se você tiver uma versão anterior do Office perpétuo, use as instruções para instalar o controle no [Microsoft Edge WebView2/Inserir conteúdo da Web... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+
+## <a name="microsoft-365-subscription-on-windows"></a>Assinatura do Microsoft 365 no Windows
+
+Para a assinatura do Office no Windows, o navegador usado é determinado pelo sistema operacional, pela versão do Office e se o Edge WebView2 (baseado em Chromium) está instalado.
 
 |SO|Versão do Office|Edge WebView2 (baseado Chromium) instalado?|Navegador|
 |:-----|:-----|:-----|:-----|
-|qualquer|Office na Web|Não aplicável|O navegador no qual o Office está aberto.<br>(Mas observe que Office na Web não será aberto no Internet Explorer.<br>A tentativa de fazer isso abre Office na Web no Edge.) |
-|Mac|qualquer|Não aplicável|Safari com WKWebView|
-|iOS|qualquer|Não aplicável|Safari com WKWebView|
-|Android|qualquer|Não aplicável|Chrome|
-|Windows 7, 8.1, 10, 11 | Office 2013 sem assinatura para Office 2019|Não importa, não importa.|Internet Explorer 11|
-|Windows 10, 11 | não assinatura Office 2021 ou posterior|Sim|Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado)|
 |Windows 7 | Microsoft 365| Não importa, não importa. | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp; 1903| Microsoft 365 | Não| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp; 16.0.11629<sup>2</sup>| Não importa, não importa.|Internet Explorer 11|
@@ -47,25 +84,26 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Janela 11 | Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.20424<sup>2</sup>| Não |Microsoft Edge<sup>1, 3</sup> com WebView original (EdgeHTML)|
 |Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.20424<sup>2</sup>| Sim<sup>4</sup>|  Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado) |
 
-<sup>1</sup> Quando o Microsoft Edge está sendo usado, o Narrador do Windows (às vezes chamado de "leitor de tela") `<title>` lê a marca na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, **\<DisplayName\>** que vem do valor no manifesto do suplemento.
+<sup>1</sup> Quando você usa o Microsoft Edge, o Narrador do Windows (às vezes chamado de "leitor de tela") `<title>` lê a marca na página que é aberta no painel de tarefas. No Internet Explorer 11, o Narrador lê a barra de título do painel de tarefas, **\<DisplayName\>** que vem do valor no manifesto do suplemento.
 
 <sup>2</sup> Consulte a página [histórico de atualizações](/officeupdates/update-history-office365-proplus-by-date) e como encontrar [a versão do cliente do Office e o canal de atualização](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) para obter mais detalhes.
 
 <sup>3</sup> Se o suplemento **\<Runtimes\>** incluir o elemento no manifesto, ele não usará o Microsoft Edge com o WebView original (EdgeHTML). Se as condições para usar o Microsoft Edge com WebView2 (Chromium baseadas em Chromium) forem atendidas, o suplemento usará esse navegador. Caso contrário, ele usará o Internet Explorer 11, independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes).
 
-<sup>4</sup> Em versões do Windows anteriores Windows 11, o controle WebView2 deve ser instalado para que o Office possa inseri-lo. Ele é instalado com o Microsoft 365, versão 2101 ou posterior e com compra única Office 2021 ou posterior; mas não é instalado automaticamente com o Microsoft Edge. Se você tiver uma versão anterior do Microsoft 365 ou do Office de compra única, use as instruções para instalar o controle no [Microsoft Edge WebView2/Inserir conteúdo da Web... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). Em builds do Microsoft 365 anteriores a 16.0.14326.xxxxx, você também deve criar a chave do **RegistroHKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** e definir seu valor como `dword:00000001`.
+<sup>4</sup> Em versões do Windows anteriores Windows 11, o controle WebView2 deve ser instalado para que o Office possa inseri-lo. Ele é instalado com o Microsoft 365, versão 2101 ou posterior, mas não é instalado automaticamente com o Microsoft Edge. Se você tiver uma versão anterior do Microsoft 365, use as instruções para instalar o controle no [Microsoft Edge WebView2/Inserir conteúdo da Web... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). Em builds do Microsoft 365 anteriores a 16.0.14326.xxxxx, você também deve criar a chave do **RegistroHKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** e definir seu valor como `dword:00000001`.
 
-> [!IMPORTANT]
-> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do suplemento tiver plataformas que usam o Internet Explorer 11, para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você terá duas opções.
->
-> - Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou em JavaScript posterior ou em TypeScript e, em seguida, compile seu código em JavaScript ES5 usando um compilador como [babel](https://babeljs.io/) ou [tsc](https://www.typescriptlang.org/index.html).
-> - Escreva no ECMAScript 2015 ou em JavaScript posterior, mas também carregue uma biblioteca de [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) , como [core-js](https://github.com/zloirock/core-js) , que permite que o IE execute seu código.
->
-> Para obter mais informações sobre essas opções, consulte [Suporte do Internet Explorer 11](../develop/support-ie-11.md).
->
-> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização. Para saber mais, confira [Determinar em runtime se o suplemento está em execução no Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
+## <a name="working-with-internet-explorer"></a>Trabalhando com o Internet Explorer
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Solução de problemas do Microsoft Edge
+O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se algum dos usuários do suplemento tiver plataformas que usam o Internet Explorer 11, para usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você terá duas opções.
+
+- Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou em JavaScript posterior ou em TypeScript e, em seguida, compile seu código em JavaScript ES5 usando um compilador como [babel](https://babeljs.io/) ou [tsc](https://www.typescriptlang.org/index.html).
+- Escreva no ECMAScript 2015 ou em JavaScript posterior, mas também carregue uma biblioteca de [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) , como [core-js](https://github.com/zloirock/core-js) , que permite que o IE execute seu código.
+
+Para obter mais informações sobre essas opções, consulte [Suporte do Internet Explorer 11](../develop/support-ie-11.md).
+
+Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização. Para saber mais, confira [Determinar em runtime se o suplemento está em execução no Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
+
+## <a name="troubleshoot-microsoft-edge-issues"></a>Solucionar problemas do Microsoft Edge
 
 ### <a name="service-workers-are-not-working"></a>Os Trabalhadores do Serviço não estão funcionando
 
