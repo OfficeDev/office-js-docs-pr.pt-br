@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 07/27/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4063720f8866d9538865f4514841d8dc8d0a84c
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177669"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274159"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -20,10 +20,13 @@ Qual navegador é usado depende do:
 - Se o suplemento está em execução no Office na Web, No Microsoft 365 ou perpétuo (também chamado de "compra não assinatura" ou "compra avuária") do Office 2013 ou posterior.
 - Nas versões perpétuas do Office, se o suplemento está em execução na variação "consumidor" ou "comercial" (também chamado de "licenciado por volume" ou "LTSC").
 
+> [!NOTE]
+> Este artigo pressupõe que o suplemento está em execução em um documento que não  está protegido com o [Windows Proteção de Informações (WIP)](/windows/uwp/enterprise/wip-hub). Para documentos protegidos por WIP, há algumas exceções às informações neste artigo. Para obter mais informações, consulte [documentos protegidos por WIP](#wip-protected-documents).
+
 > [!IMPORTANT]
 > **Internet Explorer ainda usado em Suplementos do Office**
 >
-> Algumas combinações de plataformas e versões do Office, incluindo versões perpétuas por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
+> Algumas combinações de plataformas e versões do Office, incluindo versões perpétuas comerciais por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
 >
 > - Office na Web abre mais no Internet Explorer. Consequentemente, [o AppSource](/office/dev/store/submit-to-appsource-via-partner-center) não testa mais suplementos no Office na Web usando o Internet Explorer como navegador.
 > - O AppSource ainda testa combinações de versões da plataforma e da área de trabalho *do Office que* usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
@@ -124,6 +127,17 @@ Uma causa conhecida é que o Microsoft Edge exige que o localhost tenha uma isen
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obter erros ao tentar baixar um arquivo PDF
 
 Não há suporte para o download direto de blobs como arquivos PDF em um suplemento quando o Edge é o navegador. A solução alternativa é criar um aplicativo Web simples que baixa blobs como arquivos PDF. No suplemento, chame o método `Office.context.ui.openBrowserWindow(url)` e passe a URL do aplicativo Web. Isso abrirá o aplicativo Web em uma janela do navegador fora do Office.
+
+## <a name="wip-protected-documents"></a>Documentos protegidos por WIP
+
+Os suplementos em execução em um documento protegido por [WIP](/windows/uwp/enterprise/wip-hub) nunca usam **o Microsoft Edge com o WebView2 (Chromium baseado em dados)**. Nas seções Versões perpétuas do [Office no Windows](#perpetual-versions-of-office-on-windows) e da Assinatura do [Microsoft 365 no Windows](#microsoft-365-subscription-on-windows) anteriormente neste artigo, substitua **o Microsoft Edge pelo WebView original (EdgeHTML)** pelo **Microsoft Edge por WebView2 (baseado em Chromium)** sempre que o último aparecer.
+
+Para determinar se um documento está protegido por WIP, siga estas etapas:
+
+1. Abra o arquivo.
+1. Selecione a **guia Arquivo** na faixa de opções.
+1. Selecione **Informações**.
+1. No canto superior esquerdo da página  Informações, logo abaixo do nome do arquivo, um documento habilitado para WIP terá o ícone de pasta seguido por **Gerenciado por Trabalho (...)**.
 
 ## <a name="see-also"></a>Confira também
 
