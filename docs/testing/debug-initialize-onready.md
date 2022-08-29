@@ -3,12 +3,12 @@ title: Depurar as funções initialize e onReady
 description: Saiba como depurar as funções Office.initialize e Office.onReady.
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d26c0f2686477f74fbe65550b7d35cc69e7be71
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4dca551d8a016e7aad16cfdc02590f0a51455852
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958843"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423248"
 ---
 # <a name="debug-the-initialize-and-onready-functions"></a>Depurar as funções initialize e onReady
 
@@ -26,3 +26,7 @@ Felizmente, há uma exceção. Você pode depurar essas funções usando Office 
 
 > [!TIP]
 > Para obter informações mais detalhadas, consulte [Suplementos de depuração no Office na Web](debug-add-ins-in-office-online.md).
+
+## <a name="see-also"></a>Confira também
+
+- [Runtimes em Suplementos do Office](runtimes.md)

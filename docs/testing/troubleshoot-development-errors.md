@@ -3,12 +3,12 @@ title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar problemas de erros de desenvolvimento em Suplementos do Office.
 ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177662"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423192"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -80,7 +80,7 @@ Consulte [Solucionar problemas de suplementos do Excel para possíveis](../excel
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erros de validação de esquema de manifesto em projetos do Visual Studio
 
-Se você estiver usando recursos mais recentes que exigem alterações no arquivo de manifesto, poderá receber erros de validação no Visual Studio. Por exemplo, ao adicionar o elemento **\<Runtimes\>** para implementar o runtime de JavaScript compartilhado, você poderá ver o seguinte erro de validação.
+Se você estiver usando recursos mais recentes que exigem alterações no arquivo de manifesto, poderá receber erros de validação no Visual Studio. Por exemplo, ao adicionar o elemento **\<Runtimes\>** para implementar o [runtime compartilhado](runtimes.md#shared-runtime), você poderá ver o seguinte erro de validação.
 
 **O elemento 'Host' no namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' tem o elemento filho inválido 'Runtimes' no namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
@@ -120,4 +120,5 @@ Quando você estiver carregando a Biblioteca JavaScript do Office de uma cópia 
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
 - [Solucionar erros de usuários com Suplementos do Office](testing-and-troubleshooting.md)
+- [Runtimes em Suplementos do Office](runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

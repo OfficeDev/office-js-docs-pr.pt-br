@@ -3,12 +3,12 @@ title: Atalhos de teclado personalizados em Suplementos do Office
 description: Saiba como adicionar atalhos de teclado personalizados, também conhecidos como combinações de teclas, ao suplemento do Office.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 462e5bfdd4e7f825318d6affb631beafc7c08fe5
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659980"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423017"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Adicionar atalhos de teclado personalizados aos suplementos do Office
 
@@ -31,7 +31,7 @@ Há duas pequenas alterações no manifesto a serem feitas. Uma é habilitar o s
 
 ### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurar o suplemento para usar um runtime compartilhado
 
-Adicionar atalhos de teclado personalizados exige que o suplemento use o runtime compartilhado. Para obter mais informações, [configure um suplemento para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adicionar atalhos de teclado personalizados exige que o suplemento use o [runtime compartilhado](../testing/runtimes.md#shared-runtime). Para obter mais informações, [configure um suplemento para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Vincular o arquivo de mapeamento ao manifesto
 

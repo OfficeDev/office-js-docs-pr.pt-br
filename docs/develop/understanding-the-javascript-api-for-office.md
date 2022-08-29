@@ -3,12 +3,12 @@ title: Entendendo a API JavaScript do Office
 description: Uma introdução à API do JavaScript do Office.
 ms.date: 03/18/2020
 ms.localizationpriority: high
-ms.openlocfilehash: dd7eb6cac4f76307d6ec9ecbb30da15057903687
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 66e2c9b68e9514c7172c19de51373e0c4edef7d7
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744196"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422892"
 ---
 # <a name="understanding-the-office-javascript-api"></a>Entendendo a API JavaScript do Office
 
@@ -34,3 +34,4 @@ Um suplemento do Office pode usar as APIs JavaScript para Office para interagir 
 - [Carregando o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md)
 - [Fazendo referência à biblioteca da API JavaScript do Office](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

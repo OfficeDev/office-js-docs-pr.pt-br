@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 07/11/2022
+ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6c0b5d9547bbc0661d6410391f894586cdaffab3
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 0503a0cfae39e58c11fefc6cc87a239d7ecdbc05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797502"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318806"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -46,13 +46,9 @@ Os pontos de extensão são as maneiras como os suplementos se integram ao Outlo
 
 Os suplementos do Outlook são ativados quando o usuário está redigindo ou lendo uma mensagem ou compromisso, mas não em outros tipos de item. Entretanto, os suplementos *não* são ativados se o item de mensagem atual, em um formulário de redação ou de leitura, estiver em uma das seguintes situações:
 
-- Protegido por IRM (Gerenciamento de Direitos de Informação) ou criptografado de outras maneiras para proteção. Uma mensagem assinada digitalmente é um exemplo, já que a assinatura digital se baseia em um desses mecanismos.
+- Protegido pelo IRM (Gerenciamento de Direitos de Informação) ou criptografado de outras maneiras para proteção e acessado do Outlook em clientes não Windows. Uma mensagem assinada digitalmente é um exemplo, já que a assinatura digital se baseia em um desses mecanismos.
 
-  > [!IMPORTANT]
-  >
-  > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-  >
-  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre este recurso em visualização prévia, consultar[ Ativação de suplementos em itens protegidos pelo Gerenciamento de Direitos de Informação (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - Um relatório de entrega ou notificação que tem a classe de mensagem IPM.Report.*, incluindo NDRs (notificações de falha na entrega) e notificações de leitura, falha na leitura e atraso.
 
@@ -63,15 +59,15 @@ Os suplementos do Outlook são ativados quando o usuário está redigindo ou len
 - Em uma [caixa de correio de grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), em uma caixa de correio compartilhada\*, em uma caixa de correio de outro usuário\*, em uma [caixa de correio de arquivo](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), ou em uma pasta pública.
 
   > [!IMPORTANT]
-  > \* Suporte para cenários de acesso de delegados (por exemplo, pastas compartilhadas da caixa de correio de outro usuário) foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). O suporte a caixas de correio compartilhadas agora está em visualização no Outlook no Windows e no Mac. Para saber mais, consultar [Habilitar pastas compartilhadas e cenários de caixas de correio compartilhada](delegate-access.md).
+  > \* Suporte para cenários de acesso de delegados (por exemplo, pastas compartilhadas da caixa de correio de outro usuário) foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). O suporte a caixas de correio compartilhadas agora está em visualização no Outlook no Windows e no Mac. Para saber mais, confira [Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada](delegate-access.md).
 
 - Usando um formulário personalizado.
 
 - Criado através de MAPI simples. O MAPI simples é usado quando um usuário do Office cria ou envia um email de um aplicativo do Office no Windows com o Outlook fechado. Por exemplo, um usuário pode criar um email do Outlook enquanto trabalha no Word, o que dispara uma janela de composição do Outlook sem iniciar o aplicativo Outlook completo. No entanto, se o Outlook já estiver em execução quando o usuário criar o email a partir do Word, esse não será um cenário MAPI simples para que os suplementos do Outlook funcionem no formulário de composição, desde que outros requisitos de ativação sejam atendidos.
 
-Em geral, o Outlook pode ativar suplementos no formato de leitura para itens na pasta Itens Enviados, com exceção dos suplementos que são ativados baseados em cadeias de correspondências de entidades conhecidas. Para saber mais sobre os motivos por trás disso, confira "Suporte para entidades conhecidas" em [Corresponder cadeias em um item do Outlook como entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md).
+Em geral, o Outlook pode ativar suplementos no formato de leitura para itens na pasta Itens Enviados, com exceção dos suplementos que são ativados baseados em cadeias de correspondências de entidades conhecidas. Para obter mais informações sobre os motivos por trás disso, consulte [Suporte para entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
-Atualmente, há considerações adicionais ao projetar e implementar suplementos para clientes móveis. Para saber mais, consulte [Adicionar suporte móvel a um suplemento do Outlook](add-mobile-support.md#compose-mode-and-appointments).
+Atualmente, há considerações adicionais ao projetar e implementar suplementos para clientes móveis. Para saber mais, confira [Adicionar suporte móvel a um suplemento do Outlook](add-mobile-support.md#compose-mode-and-appointments).
 
 ## <a name="supported-clients"></a>Clientes com suporte
 

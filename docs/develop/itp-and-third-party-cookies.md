@@ -3,16 +3,16 @@ title: Desenvolver seu Suplemento do Office para trabalhar com o ITP ao usar coo
 description: Como trabalhar com suplementos do ITP e do Office ao usar cookies de terceiros
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b01051fa39441fddb2453b0bd95a0629ebf3ef65
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889266"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423087"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Desenvolver seu Suplemento do Office para trabalhar com o ITP ao usar cookies de terceiros
 
-Se o suplemento do Office exigir cookies de terceiros, esses cookies serão bloqueados se a PREVENÇÃO de Rastreamento Inteligente (ITP) for usada pelo runtime do navegador que carregou o suplemento. Você pode estar usando cookies de terceiros para autenticar usuários ou para outros cenários, como armazenar configurações.
+Se o suplemento do Office exigir cookies de terceiros, esses cookies serão bloqueados se o [Runtime](../testing/runtimes.md) que carregou seu suplemento usar a PREVENÇÃO de Rastreamento Inteligente (ITP). Você pode estar usando cookies de terceiros para autenticar usuários ou para outros cenários, como armazenar configurações.
 
 Se o Suplemento do Office e o site precisarem contar com cookies de terceiros, use as etapas a seguir para trabalhar com o ITP.
 

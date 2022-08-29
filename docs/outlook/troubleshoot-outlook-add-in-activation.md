@@ -1,14 +1,14 @@
 ---
 title: Solução de problemas de ativação de suplementos contextuais do Outlook
 description: Possíveis motivos pelos quais o suplemento não é ativado conforme o esperado.
-ms.date: 06/03/2022
+ms.date: 08/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 40175139f83a026226bf500c7f949ff37e3f21b2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: c0034eccc1143e3af9867702cdf7cefa6f6a8c53
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891932"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318883"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
@@ -70,14 +70,13 @@ Use uma das abordagens a seguir para verificar se um suplemento está desabilita
 
 Se o seu suplemento do Outlook é um suplemento de leitura e deve ser ativado quando o usuário está exibindo uma mensagem (inclusive mensagens de email, solicitações de reunião, respostas e cancelamentos de reunião) ou um compromisso, embora esses itens geralmente sejam compatíveis com suplementos, há exceções. Verifique se o item selecionado é um dos [listados em que os suplementos do Outlook não são ativados](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-Além disso, já que os compromissos sempre são salvos no formato Rich Text, uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) que especifica um valor **PropertyName** de **BodyAsHTML** não ativaria um suplemento em um compromisso ou uma mensagem salva em texto sem formatação ou no formato Rich Text.
+Além disso, como os compromissos são sempre salvos no Formato Rich Text, uma [regra ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) que especifica um valor **PropertyName** de **BodyAsHTML** não ativaria um suplemento em um compromisso ou mensagem salva em texto sem formatação ou formato Rich Text.
 
-Mesmo se um item de email não for um dos tipos de acima, se ele não veio de uma versão do Exchange Server com no mínimo o Exchange 2013, as propriedades e entidades conhecidas, como o endereço SMTP do remetente, não seriam identificadas no item. Regras de ativação que dependem dessas entidades ou propriedades não seriam atendidas e o suplemento não seria ativado.
+Mesmo que um item de email não seja um dos tipos acima, se o item não tiver sido entregue por uma versão do Exchange Server que seja pelo menos o Exchange 2013, as entidades e propriedades conhecidas, como o endereço SMTP do remetente, não serão identificadas no item. Todas as regras de ativação que dependem dessas entidades ou propriedades não serão atendidas e o suplemento não será ativado.
 
-Se seu suplemento é um suplemento de redação e deve ser ativado quando o usuário cria uma mensagem ou solicitação de reunião, verifique se o item não está protegido por IRM. No entanto, há algumas exceções.
+No Outlook em clientes além do Windows, se o suplemento for ativado quando o usuário estiver redigindo uma mensagem ou solicitação de reunião, verifique se o item não está protegido pelo IRM (Gerenciamento de Direitos de Informação).
 
-1. Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-1. A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte em versão prévia, consulte a ativação de suplemento em [itens protegidos pelo GERENCIAMENTO de Direitos de Informação (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 
@@ -183,7 +182,7 @@ Já que as expressões regulares nas regras de ativação fazem parte do arquivo
 
 Os clientes avançados do Outlook usam um mecanismo de expressões regulares diferente daquele usado pelo Outlook na Web e pelos dispositivos móveis. Clientes avançados do Outlook usam o mecanismo de expressões regulares C++ fornecido como parte da biblioteca de modelo padrão do Visual Studio. Esse mecanismo é compatível com as normas ECMAScript 5. O Outlook na Web e os dispositivos móveis usam a avaliação da expressão regular que faz parte do JavaScript, é fornecida pelo navegador e dá suporte a um subconjunto dos ECMAScript 5.
 
-Embora, na maioria dos casos, esses clientes do Outlook encontre as mesmas correspondências para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se o regex incluir uma classe de caractere personalizada com base em classes de caractere predefinida, um cliente avançado do Outlook poderá retornar resultados diferentes do Outlook na Web e em dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em aplicativos diferentes, use em `(\d|\w)` vez disso.
+Embora, na maioria dos casos, esses clientes do Outlook encontre as mesmas correspondências para a mesma expressão regular em uma regra de ativação, há exceções. Por exemplo, se o regex incluir uma classe de caractere personalizada com base em classes de caractere predefinida, um cliente avançado do Outlook poderá retornar resultados diferentes de Outlook na Web dispositivos móveis. Por exemplo, classes de caracteres que contêm classes de caracteres abreviadas `[\d\w]` dentro delas retornam resultados diferentes. Nesse caso, para evitar resultados diferentes em aplicativos diferentes, use em `(\d|\w)` vez disso.
 
 Teste sua expressão regular minuciosamente. Se ela retornar resultados diferentes, reescreva a expressão regular para ficar compatível em ambos os mecanismos. Para verificar os resultados de avaliação em um cliente avançado do Outlook, escreva um programa C++ pequeno que aplica a expressão regular em uma amostra do texto que você está tentando corresponder. Sendo executado no Visual Studio, o programa de teste C++ usaria a biblioteca de modelo padrão, simulando o comportamento do cliente avançado do Outlook ao executar a mesma expressão regular. Para verificar os resultados de avaliação do Outlook na Web ou nos dispositivos móveis, use seu avaliador de expressão regular JavaScript favorito.
 

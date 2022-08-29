@@ -1,18 +1,18 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de Suplementos do Office.
-ms.date: 07/18/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 3092503ad8c4afedc253b0c5a2f14369572b17f3
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958718"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422961"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
-## <a name="understanding-the-add-in-runtime"></a>Noções básicas sobre o tempo de execução do suplemento
+## <a name="process-security"></a>Segurança do processo
 
 Os suplementos do Office são protegidos por um ambiente de tempo de execução de suplemento, um modelo de permissões com várias camadas e administradores de desempenho. Essa estrutura protege a experiência do usuário das seguintes maneiras.
 
@@ -31,6 +31,9 @@ Além disso, a estrutura de runtime oferece os seguintes benefícios para garant
 - Facilita a instalação e a desinstalação do suplemento.
 
 E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos.
+
+> [!NOTE]
+> Em alguns cenários, diferentes recursos de um suplemento são executados em runtimes separados. Para simplificar, este artigo usa o singular "runtime". Para obter mais informações, [consulte Runtimes em Suplementos do Office](../testing/runtimes.md). 
 
 As seções a seguir descrevem brevemente como a arquitetura de runtime dá suporte à execução de suplementos em clientes do Office em dispositivos baseados no Windows, em dispositivos Mac OS X e em navegadores da Web.
 

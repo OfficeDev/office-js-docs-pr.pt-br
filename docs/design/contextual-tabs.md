@@ -3,12 +3,12 @@ title: Criar guias contextuais personalizadas em Suplementos do Office
 description: Saiba como adicionar guias contextuais personalizadas ao suplemento do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 09cd7ad6e9c8f4e8370df430a5b79a70d7bf0dd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958528"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423052"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Criar guias contextuais personalizadas em Suplementos do Office
 
@@ -55,7 +55,7 @@ A seguir estão as principais etapas para incluir uma guia contextual personaliz
 
 ## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurar o suplemento para usar um runtime compartilhado
 
-Adicionar guias contextuais personalizadas exige que o suplemento use o runtime compartilhado. Para obter mais informações, [consulte Configurar um suplemento para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adicionar guias contextuais personalizadas exige que o suplemento use o [runtime compartilhado](../testing/runtimes.md#shared-runtime). Para obter mais informações, [consulte Configurar um suplemento para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Definir os grupos e controles que aparecem na guia
 
@@ -419,7 +419,7 @@ Para abrir qualquer painel de tarefas que não seja o painel de tarefas padrão,
 
 > [!IMPORTANT]
 >
-> - Quando um `sourceLocation` é especificado para a ação, o painel de tarefas *não usa* o runtime compartilhado. Ele é executado em um novo runtime do JavaScript.
+> - Quando um `sourceLocation` é especificado para a ação, o painel de tarefas *não usa* o runtime compartilhado. Ele é executado em um novo runtime separado.
 > - Não mais de um painel de tarefas pode usar o runtime compartilhado, portanto, `ShowTaskpane` não mais de uma ação do tipo pode omitir a `sourceLocation` propriedade.
 
 ```json

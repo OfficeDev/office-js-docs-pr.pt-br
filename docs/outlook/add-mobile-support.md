@@ -1,18 +1,18 @@
 ---
 title: Adicionar suporte móvel a um suplemento do Outlook
-description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
-ms.date: 07/16/2021
+description: Saiba como adicionar suporte para o Outlook Mobile, incluindo como atualizar o manifesto do suplemento e alterar seu código para cenários móveis, se necessário.
+ms.date: 04/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496968"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318876"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
-O uso de comandos de Outlook Mobile permite que os usuários acessem a mesma funcionalidade (com algumas limitações[) que](#code-considerations) eles já têm no Outlook na Web, Windows e Mac. A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
+O uso de comandos de suplemento no Outlook Mobile permite que os usuários acessem a mesma funcionalidade (com algumas [limitações) que](#code-considerations) eles já têm no Outlook na Web, Windows e Mac. A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 
 ## <a name="updating-the-manifest"></a>Atualização do manifesto
 
@@ -72,7 +72,7 @@ Criar um suplemento para o Mobile traz algumas considerações adicionais.
 
 O método [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) não é suportado no Outlook Mobile. Os suplementos devem preferir obter as informações da API Office.js sempre que possível. Se os suplementos exigem informações que não são expostas pela API Office.js devem usar as [APIs REST do Outlook](/outlook/rest/) para acessar as caixas de correio do usuário.
 
-O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão de [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova [propriedade Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) que pode ser usada para encontrar o ponto de extremidade da API REST para o usuário.
+O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão do [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova propriedade [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) que pode ser usada para localizar o ponto de extremidade da API REST para o usuário.
 
 ### <a name="pinch-zoom"></a>Pinçar e zoom
 
@@ -84,11 +84,14 @@ Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, 
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 
-Atualmente, os complementos no Outlook Mobile só suportam a ativação ao ler mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os complementos integrados do provedor de reunião online podem ser ativados no modo Organizador de Compromissos. Para saber mais sobre essa exceção (incluindo APIs disponíveis), consulte [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
+Atualmente, os suplementos no Outlook Mobile só dão suporte à ativação durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, há duas exceções:
+
+1. Os suplementos integrados do provedor de reunião online podem ser ativados no modo Organizador de Compromissos. Para obter mais informações sobre essa exceção (incluindo APIs disponíveis), consulte Criar um suplemento [móvel do Outlook para um provedor de reunião online](online-meeting.md#available-apis).
+1. Os suplementos que registram anotações de compromisso e outros detalhes do CRM (gerenciamento de relacionamento com o cliente) ou serviços de anotações podem ser ativados no modo Participante do Compromisso. Para obter mais informações sobre essa exceção (incluindo APIs disponíveis), consulte as anotações de compromisso de log para um aplicativo externo nos [suplementos móveis do Outlook](mobile-log-appointments.md#available-apis).
 
 ### <a name="unsupported-apis"></a>APIs sem suporte
 
-AS APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são suportadas pelo Outlook Mobile. As APIs a seguir de conjuntos de requisitos anteriores também não são suportadas.
+As APIs introduzidas no conjunto de requisitos 1.6 ou posterior não são compatíveis com o Outlook Mobile. As APIs a seguir de conjuntos de requisitos anteriores também não têm suporte.
 
 - [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)

@@ -3,12 +3,12 @@ title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889335"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422940"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>Contexto de solicitação
 
-O aplicativo do Office e seu complemento são executados em dois processos diferentes. Como eles usam diferentes ambientes de tempo de execução, os suplementos exigem um objeto `RequestContext` para conectar o suplemento a objetos no Office, como planilhas, intervalos, gráficos e tabelas. Esse objeto `RequestContext` é fornecido como um argumento ao chamar `*.run`.
+O aplicativo do Office e seu suplemento são executados em processos diferentes. Como eles usam diferentes ambientes de tempo de execução, os suplementos exigem um objeto `RequestContext` para conectar o suplemento a objetos no Office, como planilhas, intervalos, gráficos e tabelas. Esse objeto `RequestContext` é fornecido como um argumento ao chamar `*.run`.
 
 ## <a name="proxy-objects"></a>Objetos proxy
 

@@ -1,26 +1,26 @@
 ---
 title: Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
-description: Use a Office API JavaScript para criar um painel de tarefas no Office 2013.
+description: Use a API JavaScript do Office para criar um painel de tarefas no Office 2013.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f878d8276bc34f14a69480760aa225dcca6ddb
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: a6072538fe7328a71767394adf67398ebe4f0911
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229656"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422863"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Você pode usar o [Office API JavaScript para](../reference/javascript-api-for-office.md) criar suplementos de conteúdo ou painel de tarefas para Office aplicativos cliente 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
+Você pode usar a [API JavaScript do Office](../reference/javascript-api-for-office.md) para criar suplementos de conteúdo ou painel de tarefas para aplicativos cliente do Office 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
 
-1. **Objetos comuns compartilhados com Office suplementos.** Esses objetos [incluem Office](/javascript/api/office), [Contexto](/javascript/api/office/office.context) e [AsyncResult](/javascript/api/office/office.asyncresult). O `Office` objeto é o objeto raiz da API Office JavaScript. O `Context` objeto representa o ambiente de runtime do suplemento. Ambos `Office` e `Context` são os objetos fundamentais para qualquer Office suplemento. O `AsyncResult` objeto representa os resultados de uma operação assíncrona, `getSelectedDataAsync` como os dados retornados ao método, que lê o que um usuário selecionou em um documento.
+1. **Objetos comuns compartilhados com outros Suplementos do Office.** Esses objetos [incluem Office](/javascript/api/office), [Context](/javascript/api/office/office.context) e [AsyncResult](/javascript/api/office/office.asyncresult). O `Office` objeto é o objeto raiz da API JavaScript do Office. O `Context` objeto representa o ambiente de runtime do suplemento. Ambos `Office` e `Context` são os objetos fundamentais para qualquer Suplemento do Office. O `AsyncResult` objeto representa os resultados de uma operação assíncrona, `getSelectedDataAsync` como os dados retornados ao método, que lê o que um usuário selecionou em um documento.
 
-2. **O objeto Document.** A maioria da API disponível para suplementos de conteúdo e painel de tarefas é exposta por meio dos métodos, propriedades e eventos do [objeto Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou painel de tarefas pode usar a propriedade [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) para acessar o objeto **Document** e, por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como os objetos [Bindings](/javascript/api/office/office.bindings) e [CustomXmlParts](/javascript/api/office/office.customxmlparts), e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)), [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) e [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). O `Document` objeto também fornece a [](/javascript/api/office/office.document#office-office-document-mode-member) propriedade de modo para determinar se um documento é somente leitura ou no modo de edição, a propriedade [de URL](/javascript/api/office/office.document#office-office-document-url-member) para obter a URL do documento atual e o acesso ao [Configurações objeto.](/javascript/api/office/office.settings) O `Document` objeto também dá suporte à adição de manipuladores de eventos para o [evento SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
+2. **O objeto Document.** A maioria da API disponível para suplementos de conteúdo e painel de tarefas é exposta por meio dos métodos, propriedades e eventos do [objeto Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou painel de tarefas pode usar a propriedade [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) para acessar o objeto **Document** e, por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como os objetos [Bindings](/javascript/api/office/office.bindings) e [CustomXmlParts](/javascript/api/office/office.customxmlparts) , e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)), [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) e [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . O `Document` objeto também fornece a [](/javascript/api/office/office.document#office-office-document-mode-member) propriedade de modo para determinar se um documento é somente leitura ou no modo de edição, a propriedade [de URL](/javascript/api/office/office.document#office-office-document-url-member) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings). O `Document` objeto também dá suporte à adição de manipuladores de eventos para o [evento SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
 
-   Um suplemento `Document` de conteúdo ou painel de tarefas pode acessar o objeto somente depois que o DOM e o ambiente de runtime tiverem sido carregados, normalmente no manipulador de eventos para o [evento Office.initialize](/javascript/api/office). Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
+   Um suplemento de `Document` conteúdo ou painel de tarefas pode acessar o objeto somente depois que o DOM e o ambiente de runtime tiverem sido carregados, normalmente no manipulador de eventos do evento [Office.initialize](/javascript/api/office) . Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
 
 3. **Objetos para trabalhar com recursos específicos.** Para trabalhar com recursos específicos da API, use os seguintes objetos e métodos.
 
@@ -35,11 +35,11 @@ Você pode usar o [Office API JavaScript para](../reference/javascript-api-for-o
 > [!IMPORTANT]
 > Alguns membros da API não têm suporte em todos os aplicativos do Office que podem hospedar suplementos de conteúdo e de painel de tarefas. Para determinar quais membros têm suporte, confira o seguinte:
 
-Para obter um resumo do Office da API JavaScript em aplicativos Office cliente, consulte Noções básicas sobre Office [API JavaScript](understanding-the-javascript-api-for-office.md).
+Para obter um resumo do suporte à API JavaScript do Office em aplicativos cliente do Office, consulte [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md).
 
 ## <a name="read-and-write-to-an-active-selection-in-a-document-spreadsheet-or-presentation"></a>Ler e gravar em uma seleção ativa em um documento, planilha ou apresentação
 
-Você pode ler ou gravar na seleção atual do usuário em um documento, planilha ou apresentação. Dependendo do aplicativo Office para seu suplemento, você pode especificar o tipo de estrutura de dados a ser lida ou gravada como um parâmetro nos métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) e [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) do objeto [Document](/javascript/api/office/office.document). Por exemplo, você pode especificar qualquer tipo de dados (texto, HTML, dados tabulares ou Open XML do Office) para o Word, texto e dados tabulares para o Excel e texto para o PowerPoint e o Project. Você também pode criar manipuladores de eventos para detectar alterações na seleção do usuário. O exemplo a seguir obtém dados da seleção como texto usando o `getSelectedDataAsync` método.
+Você pode ler ou gravar na seleção atual do usuário em um documento, planilha ou apresentação. Dependendo do aplicativo do Office para seu suplemento, você pode especificar o tipo de estrutura de dados a ser lida ou gravada como um parâmetro nos métodos [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) e [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) do objeto [Document](/javascript/api/office/office.document) . Por exemplo, você pode especificar qualquer tipo de dados (texto, HTML, dados tabulares ou Open XML do Office) para o Word, texto e dados tabulares para o Excel e texto para o PowerPoint e o Project. Você também pode criar manipuladores de eventos para detectar alterações na seleção do usuário. O exemplo a seguir obtém dados da seleção como texto usando o `getSelectedDataAsync` método.
 
 
 ```js
@@ -93,7 +93,7 @@ Para saber mais e obter exemplos, consulte [Associar a regiões em um documento 
 
 Se o suplemento de painel de tarefas for executado no PowerPoint ou no Word, você poderá usar os métodos [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)), [File.getSliceAsync](/javascript/api/office/office.file#office-office-file-getsliceasync-member(1)) e [File.closeAsync](/javascript/api/office/office.file#office-office-file-closeasync-member(1)) para obter um documento ou apresentação inteira.
 
-Ao chamar, `Document.getFileAsync` você obtém uma cópia do documento em um [objeto](/javascript/api/office/office.file) File. O `File` objeto fornece acesso ao documento em "partes" representadas como [objetos Slice](/javascript/api/office/office.slice) . Ao chamar`getFileAsync`, você pode especificar o tipo de arquivo (texto ou formato XML Office compactado) e o tamanho das fatias (até 4 MB). Para acessar o conteúdo do objeto `File` , `File.getSliceAsync` chame o que retorna os dados brutos na [propriedade Slice.data](/javascript/api/office/office.slice#office-office-slice-data-member) . Se tiver especificado o formato compactado, você obterá os dados do arquivo como uma matriz de bytes. Se estiver transmitindo o arquivo para um serviço Web, você poderá transformar os dados brutos compactados em uma cadeia de caracteres codificada na base 64 antes do envio. Por fim, quando terminar de obter fatias do arquivo, use o `File.closeAsync` método para fechar o documento.
+Ao chamar, `Document.getFileAsync` você obtém uma cópia do documento em um [objeto](/javascript/api/office/office.file) File. O `File` objeto fornece acesso ao documento em "partes" representadas como [objetos Slice](/javascript/api/office/office.slice) . Ao chamar `getFileAsync`, você pode especificar o tipo de arquivo (texto ou formato OPEN XML do Office compactado) e o tamanho das fatias (até 4 MB). Para acessar o conteúdo do objeto `File` , `File.getSliceAsync` chame o que retorna os dados brutos na [propriedade Slice.data](/javascript/api/office/office.slice#office-office-slice-data-member) . Se tiver especificado o formato compactado, você obterá os dados do arquivo como uma matriz de bytes. Se estiver transmitindo o arquivo para um serviço Web, você poderá transformar os dados brutos compactados em uma cadeia de caracteres codificada na base 64 antes do envio. Por fim, quando terminar de obter fatias do arquivo, use o `File.closeAsync` método para fechar o documento.
 
 Para saber mais, veja como [obter todo o documento por meio de um suplemento para PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
@@ -107,7 +107,7 @@ Você também pode usar o método [CustomXmlParts.getByIdAsync](/javascript/api/
 
 Para adicionar uma nova parte XML personalizada a um documento, use `Document.customXmlParts` a propriedade para obter as partes XML personalizadas que estão no documento e chame o [método CustomXmlParts.addAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-addasync-member(1)) .
 
-Para obter informações detalhadas sobre como gerenciar partes XML personalizadas com um suplemento do painel de tarefas, consulte Entender quando e como usar o [Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md) em seu suplemento do Word.
+Para obter informações detalhadas sobre como gerenciar partes XML personalizadas com um suplemento do painel de tarefas, consulte Entender quando e como usar o [Office Open XML em seu suplemento do Word](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
 ## <a name="persisting-add-in-settings"></a>Persistir configurações de suplemento
 
@@ -125,13 +125,13 @@ Para obter mais detalhes sobre como trabalhar com dados personalizados usando os
 
 ## <a name="read-properties-of-a-project-document"></a>Ler propriedades de um documento de projeto
 
-Se o suplemento de painel de tarefas for executado no Project, o suplemento poderá ler dados de alguns dos campos de projeto, recursos e campos de tarefa do projeto ativo. Para fazer isso, você usa os métodos e os eventos do objeto [ProjectDocument](/javascript/api/office/office.document), `Document` que estende o objeto para fornecer funcionalidades Project específicas do banco de dados.
+Se o suplemento de painel de tarefas for executado no Project, o suplemento poderá ler dados de alguns dos campos de projeto, recursos e campos de tarefa do projeto ativo. Para fazer isso, use os métodos e eventos do objeto [ProjectDocument](/javascript/api/office/office.document) , `Document` que estende o objeto para fornecer funcionalidade adicional específica do Project.
 
 Para obter exemplos de leitura de dados do Project, consulte [Criar seu primeiro suplemento de painel de tarefas do Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 ## <a name="permissions-model-and-governance"></a>Modelo de permissões e governança
 
-Seu suplemento usa o `Permissions` elemento em seu manifesto para solicitar permissão para acessar o nível de funcionalidade que ele requer da API Office JavaScript. Por exemplo, se o suplemento exigir acesso de leitura/gravação ao documento, `ReadWriteDocument` seu manifesto deverá especificar como o valor de texto em seu `Permissions` elemento. Uma vez existem permissões para proteger a privacidade e a segurança do usuário, como prática recomendada, você deve solicitar o nível mínimo de permissões necessárias para seus recursos. O exemplo a seguir mostra como solicitar a permissão **ReadDocument** no manifesto de um painel de tarefas.
+Seu suplemento usa o elemento em `Permissions` seu manifesto para solicitar permissão para acessar o nível de funcionalidade que ele requer da API JavaScript do Office. Por exemplo, se o suplemento exigir acesso de leitura/gravação ao documento, `ReadWriteDocument` seu manifesto deverá especificar como o valor de texto em seu `Permissions` elemento. Uma vez existem permissões para proteger a privacidade e a segurança do usuário, como prática recomendada, você deve solicitar o nível mínimo de permissões necessárias para seus recursos. O exemplo a seguir mostra como solicitar a permissão **ReadDocument** no manifesto de um painel de tarefas.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -151,4 +151,5 @@ Para obter mais informações, consulte [Solicitando permissões para uso de API
 
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para os manifestos dos Suplementos do Office](../develop/add-in-manifests.md)
-- [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)
+- [Solucionar erros de usuários com suplementos do Office](../testing/testing-and-troubleshooting.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

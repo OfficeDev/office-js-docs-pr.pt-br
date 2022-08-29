@@ -1,22 +1,22 @@
 ---
 title: Usar regras de ativação de expressões regulares para mostrar um suplemento
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
-ms.date: 07/08/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f145df063f550351941eee5132a7b6b9d3267c04
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713067"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423311"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
-Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Também há outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais são ativados somente no modo de leitura. O Outlook não ativa suplementos contextuais quando o usuário está redigindo um item. Também há outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
 Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
-O Outlook avalia expressões regulares com base em regras para o intérprete de JavaScript usado pelo navegador no computador cliente. O Outlook dá suporte à mesma lista de caracteres especiais que têm suporte em todos os processadores XML. A tabela a seguir lista os caracteres especiais. Você pode usar esses caracteres em uma expressão regular especificando a sequência de escape para o caractere correspondente, conforme descrito na tabela a seguir.
+O Outlook avalia expressões regulares com base em regras para o intérprete de JavaScript usado pelo navegador no computador cliente. O Outlook dá suporte à mesma lista de caracteres especiais que têm suporte em todos os processadores XML. A tabela a seguir lista os caracteres especiais. Você pode usar esses caracteres em uma expressão regular especificando a sequência de escape do caractere correspondente, conforme descrito na tabela a seguir.
 
 |Caractere|Descrição|Sequência de escape a ser usada|
 |:-----|:-----|:-----|
@@ -34,15 +34,15 @@ Uma regra `ItemHasRegularExpressionMatch` é útil para controlar a ativação d
 |:-----|:-----|
 |`RegExName`|Especifica o nome da expressão regular para que você possa referir-se à expressão no código de seu suplemento.|
 |`RegExValue`|Especifica a expressão regular que será avaliada para determinar se o suplemento deve ser mostrado.|
-|`PropertyName`|Especifica o nome da propriedade em relação à qual a expressão regular será avaliada. Os valores permitidos são `BodyAsHTML`, `BodyAsPlaintext`, `SenderSMTPAddress` e `Subject`.<br/><br/>Se você especificar `BodyAsHTML`, o Outlook só aplicará a expressão regular se o corpo do item for HTML. Caso contrário, o Outlook não retornará nenhuma correspondência para essa expressão regular.<br/><br/>Se você especificar `BodyAsPlaintext`, o Outlook sempre aplicará a expressão regular no corpo do item.<br/><br/>**Observação:** Você deve configurar o `PropertyName` atributo para `BodyAsPlaintext` se você especificar o `Highlight` atributo para o `Rule` elemento.|
+|`PropertyName`|Especifica o nome da propriedade em relação à qual a expressão regular será avaliada. Os valores permitidos são `BodyAsHTML`, `BodyAsPlaintext`, `SenderSMTPAddress` e `Subject`.<br/><br/>Se você especificar `BodyAsHTML`, o Outlook só aplicará a expressão regular se o corpo do item for HTML. Caso contrário, o Outlook não retornará nenhuma correspondência para essa expressão regular.<br/><br/>Se você especificar `BodyAsPlaintext`, o Outlook sempre aplicará a expressão regular no corpo do item.<br/><br/>**Importante:** Se você precisar especificar o atributo **Highlight** para o **\<Rule\>** elemento, deverá definir o atributo **PropertyName** como `BodyAsPlaintext`. |
 |`IgnoreCase`|Especifica se deve ignorar maiúsculas e minúsculas ao fazer a correspondência da expressão regular especificada por `RegExName`.|
-| `Highlight` | Especifica como o cliente deve realçar texto correspondente. Esse elemento só pode aplicado em `Rule` elementos dentro de `ExtensionPoint` elementos. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`.<br/><br/>**Observação:** Você deve configurar o `PropertyName` atributo para `BodyAsPlaintext` se você especificar o `Highlight` atributo para o `Rule` elemento. |
+| `Highlight` | Especifica como o cliente deve realçar texto correspondente. Esse elemento só pode aplicado em `Rule` elementos dentro de `ExtensionPoint` elementos. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`.<br/><br/>**Importante:** Para especificar o **atributo Highlight** no elemento **\<Rule\>** , você deve definir o atributo **PropertyName** como `BodyAsPlaintext`. |
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Práticas recomendadas para usar expressões regulares em regras
 
 Preste atenção especial ao seguinte ao usar expressões regulares.
 
-- Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do corpo de um item, a expressão regular deverá filtrar mais o corpo e não tentar retornar todo o corpo do item. O uso de uma expressão regular como `.*` para tentar obter todo o corpo de um item nem sempre retorna os resultados esperados.
+- Se você especificar uma `ItemHasRegularExpressionMatch` regra no corpo de um item, a expressão regular deverá filtrar ainda mais o corpo e não deve tentar retornar todo o corpo do item. Usar uma expressão regular, como `.*` tentar obter todo o corpo de um item, nem sempre retorna os resultados esperados.
 - O corpo de texto sem formatação retornado em um navegador pode ser sutilmente diferente do retornado em outro. Se você usa uma regra `ItemHasRegularExpressionMatch` com `BodyAsPlaintext` como atributo `PropertyName`, teste sua expressão regular em todos os navegadores compatíveis com o suplemento.
 
     Como diferentes navegadores usam diferentes maneiras de obter o corpo de texto de um item selecionado, você deve se certificar de que sua expressão regular dê suporte a diferenças sutis que possam ser retornadas como parte do corpo de texto. Por exemplo, alguns navegadores, como o Internet Explorer 9, usam a propriedade `innerText` do DOM. Outros, como o Firefox, usam o método `.textContent()` para obter o corpo de texto de um item. Além disso, navegadores diferentes podem retornar quebras de linha diferentes: uma quebra de linha é `\r\n` no Internet Explorer e `\n` no Firefox e no Chrome. Para saber mais, confira [Compatibilidade do DOM do W3C – HTML](https://quirksmode.org/dom/html/).
@@ -89,7 +89,7 @@ A regra `ItemHasRegularExpressionMatch` a seguir ativa o suplemento sempre que u
 Uma regra `ItemHasKnownEntity` ativa um suplemento com base na existência de uma entidade no assunto ou no corpo do item selecionado. O tipo [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) define as entidades compatíveis. A aplicação de uma expressão regular em uma regra `ItemHasKnownEntity` traz praticidade quando a ativação é baseada em um subconjunto de valores de uma entidade (por exemplo, um conjunto específico de URLs ou números de telefone com determinado código de área).
 
 > [!NOTE]
-> O Outlook só pode extrair cadeias de caracteres de entidade em inglês, independentemente da localidade padrão especificada no manifesto. Somente as mensagens são compatíveis com o tipo entidade `MeetingSuggestion`; os compromissos, não. Não é possível extrair entidades de itens na pasta **Itens enviados** nem é possível usar uma regra `ItemHasKnownEntity` para ativar um suplemento para itens na pasta **Itens enviados**.
+> O Outlook só pode extrair cadeias de caracteres de entidade em inglês, independentemente da localidade padrão especificada no manifesto. Somente mensagens dão suporte ao `MeetingSuggestion` tipo de entidade; os compromissos não dão suporte a isso. Você não pode extrair entidades de itens na pasta Itens  Enviados, `ItemHasKnownEntity` nem pode usar uma regra para ativar um suplemento para itens na pasta **Itens** Enviados.
 
 A regra `ItemHasKnownEntity` é compatível com os atributos da tabela a seguir. Embora a especificação de uma expressão regular seja opcional em uma regra `ItemHasKnownEntity`, se você optar por usar uma expressão regular como filtro de entidade, deverá especificar ambos os atributos `RegExFilter` e `FilterName`.
 
@@ -125,7 +125,7 @@ Você pode obter correspondências com uma expressão regular usando os métodos
 Quando as expressões regulares são avaliadas, as correspondências são retornadas para seu suplemento em um objeto de matriz. Para `getRegExMatches`, esse objeto tem o identificador do nome da expressão regular.
 
 > [!NOTE]
-> O Outlook não retorna correspondências em uma ordem específica na matriz. Além disso, não considere que as correspondências são retornadas pela mesma ordem nessa matriz, ainda que você execute o mesmo suplemento em cada um desses clientes no mesmo item e na mesma caixa de correio.
+> O Outlook não retorna as corresponde em nenhuma ordem específica na matriz. Além disso, você não deve supor que as correspondeções sejam retornadas na mesma ordem nessa matriz, mesmo quando você executa o mesmo suplemento em cada um desses clientes no mesmo item na mesma caixa de correio.
 
 ### <a name="examples"></a>Exemplos
 

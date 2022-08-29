@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: feb2859eb518cfd64f4b3682313452b1b452859f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743630"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423129"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -23,7 +23,7 @@ A caixa de diálogo aberta com essa API tem as seguintes características.
 
 - [Não é restrita](https://en.wikipedia.org/wiki/Dialog_box).
 - É uma instância do navegador completamente separada do painel de tarefas, ou seja:
-  - Tem o seu próprio ambiente de tempo de execução do JavaScript, objeto de janela e variáveis globais.
+  - Ele tem seu próprio ambiente de runtime e objeto de janela e variáveis globais.
   - Não há nenhum ambiente de execução compartilhado com o painel de tarefas.
   - Não compartilha o mesmo armazenamento de sessão (a propriedade [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) como o painel de tarefas.
 - A primeira página aberta na caixa de diálogo deve estar hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta, se houver.
@@ -68,7 +68,7 @@ Alguns suplementos de exemplo de autenticação que usam a API da Caixa de Diál
 
 ## <a name="use-authentication-libraries-with-the-dialog-box"></a>Usar bibliotecas de autenticação com a caixa de diálogo
 
-Como a caixa de diálogo do Office e o painel de tarefas são executados em diferentes instâncias de runtime do JavaScript e do navegador, você deve usar bibliotecas de autenticação/autorização de forma diferente de como elas são usadas quando a autenticação e a autorização ocorrem na mesma janela. As seções a seguir descrevem as maneiras pelas quais você pode ou não usar essas bibliotecas.
+Como a caixa de diálogo do Office e o painel de tarefas são [executados em diferentes instâncias de runtime](../testing/runtimes.md#browser-runtime) do navegador, você deve usar bibliotecas de autenticação/autorização de forma diferente de como elas são usadas quando a autenticação e a autorização ocorrem na mesma janela. As seções a seguir descrevem as maneiras pelas quais você pode ou não usar essas bibliotecas.
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>Geralmente, você não pode usar o cache interno da biblioteca para armazenar tokens
 

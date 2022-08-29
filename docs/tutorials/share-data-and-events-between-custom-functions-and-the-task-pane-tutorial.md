@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b61ac6305586e5de2f53a0950fd6a52a0503eafd
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: b19569ce191f0c7dafc0877984a0f05595380e05
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958720"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422744"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -33,7 +33,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
 
 1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
 1. Abra o arquivo **manifest.xml**.
-1. Substitua (ou adicione) a seguinte **\<Requirements\>** seção XML para exigir o [ conjunto de requisitos de tempo de execução compartilhado](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Substitua (ou adicione) o XML da seção a **\<Requirements\>** seguir para exigir o conjunto [de requisitos de Tempo de Execução Compartilhado](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
     ```
 
     > [!NOTE]
-    > Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+    > **\<Runtimes\>** Se o suplemento incluir o elemento no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Localize o elemento **\<Page\>**. Em seguida, altere o local de origem de **Functions.Page.Url** para **Taskpane.Url**.
 
@@ -106,7 +106,7 @@ Siga estas etapas para configurar o projeto de suplemento para usar um runtime c
 
 ## <a name="configure-the-webpackconfigjs-file"></a>Configurar o arquivo webpack.config.js
 
-O **webpack.config.js** construirá vários carregadores de tempo de execução. É necessário modificá-lo para carregar apenas o tempo de execução JavaScript compartilhado por meio do arquivo **taskpane.html**.
+O **webpack.config.js** construirá vários carregadores de tempo de execução. Você precisa modificá-lo para carregar apenas o runtime compartilhado por meio **dotaskpane.html** arquivo.
 
 1. Abra o arquivo **webpack.config.js**.
 1. Vá para seção `plugins:`.
@@ -147,7 +147,7 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
     ```
 
     > [!NOTE]
-    > Você também pode remover os arquivos **functions.html** e **commands.html**. O **taskpane.htm** l carregará o código **functions.js** e **commands.js** no tempo de execução JavaScript compartilhado por meio das atualizações do webpack que você acabou de fazer.
+    > Você também pode remover os arquivos **functions.html** e **commands.html**. O **taskpane.html** carrega o **functions.js** e **commands.js** no runtime compartilhado por meio das atualizações do webpack que você acabou de fazer.
 
 1. Salve suas alterações e execute o projeto. Verifique se ele é carregado e executado sem erros.
 
@@ -275,4 +275,4 @@ Após a inicialização do Excel, você pode usar os botões do painel de tarefa
 
 ## <a name="see-also"></a>Confira também
 
-- [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -1,23 +1,22 @@
 ---
 title: Chamada da comunidade de Suplementos do Microsoft Office
 description: A agenda, o agendamento e os recursos da comunidade de Suplementos mensais do Microsoft Office.
-ms.date: 08/04/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ad3d2c1113295c2e441a31317fc3c5ac9886b5e9
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274152"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318869"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Chamada da comunidade de Suplementos do Microsoft Office
 
 A chamada da comunidade de Suplementos do Microsoft Office é uma chamada mensal em que você pode saber mais sobre novos recursos, práticas de desenvolvimento e informações adicionais sobre como criar suplementos do Office. A chamada da comunidade ocorre na segunda quarta-feira de cada mês às 8h no Horário do Pacífico. Você pode baixar o convite do calendário em https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-august-10th-call"></a>Agenda da chamada de 10 de agosto
+## <a name="agenda-for-september-14th-call"></a>Agenda para a chamada de 14 de setembro
 
-- Demonstração de bibliotecas OOXML.
-- Integre seu site com suplementos do Excel.
+A agenda da chamada de setembro será postada cerca de uma semana antes da chamada.
 
 ## <a name="previous-calls"></a>Chamadas anteriores
 

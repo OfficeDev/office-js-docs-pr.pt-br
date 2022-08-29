@@ -1,14 +1,14 @@
 ---
 title: Glossário de termos de Suplementos do Office
 description: Um glossário de termos comumente usados em toda a documentação de Suplementos do Office.
-ms.date: 06/15/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77bf8a04886e35b3678dfa3054ca166c2aed2512
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660211"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423290"
 ---
 # <a name="office-add-ins-glossary"></a>Glossário de Suplementos do Office
 
@@ -74,9 +74,9 @@ Uma **função personalizada** é uma função definida pelo usuário que é emp
 
 ## <a name="custom-functions-runtime"></a>runtime de funções personalizadas
 
-Um **runtime de funções personalizadas** é um runtime somente JavaScript que executa apenas funções personalizadas. Ele não tem interface do usuário e não pode interagir com Office.js APIs. Se o suplemento tiver apenas funções personalizadas, esse será um bom runtime leve a ser usado. Se suas funções personalizadas precisam interagir com o painel de tarefas ou Office.js APIs, configure um runtime de JavaScript compartilhado. Consulte [Configure seu Suplemento do Office para usar em um tempo de execução do JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
+Um **runtime de funções personalizadas** é um [runtime somente JavaScript](../testing/runtimes.md#javascript-only-runtime) que executa funções personalizadas em algumas combinações de host e plataforma do Office. Ele não tem interface do usuário e não pode interagir com Office.js APIs. Se o suplemento tiver apenas funções personalizadas, esse será um bom runtime leve a ser usado. Se suas funções personalizadas precisam interagir com o painel de tarefas ou Office.js APIs, configure um [runtime compartilhado](../testing/runtimes.md#shared-runtime). Consulte [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
 
-Confira também: [runtime do JavaScript](#javascript-runtime), [runtime de JavaScript compartilhado, runtime compartilhado](#shared-javascript-runtime-shared-runtime).
+Consulte também: [runtime](#runtime), [runtime compartilhado](#shared-runtime).
 
 ## <a name="host"></a>host
 
@@ -84,11 +84,7 @@ Confira também: [runtime do JavaScript](#javascript-runtime), [runtime de JavaS
 
 Consulte também: [aplicativo](#application), [cliente](#client), aplicativo [do Office, cliente do Office](#office-application-office-client).
 
-## <a name="javascript-runtime"></a>Runtime do JavaScript
 
-O **runtime do JavaScript** é o ambiente de host do navegador no qual o suplemento é executado. No Office no Windows e no Office no Mac, o runtime do JavaScript é um controle de navegador inserido (ou modo de exibição da Web), como Internet Explorer, Edge Legacy, Edge WebView2 ou Safari. Diferentes partes de um suplemento são executadas em runtimes separados do JavaScript. Por exemplo, comandos de suplemento, funções personalizadas e código do painel de tarefas normalmente usam runtimes javaScript separados, a menos que você configure um runtime de JavaScript compartilhado. Consulte [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md) para obter mais informações.
-
-Confira também: [runtime de funções personalizadas](#custom-functions-runtime), [runtime de JavaScript compartilhado, runtime compartilhado](#shared-javascript-runtime-shared-runtime), [modo de exibição da Web](#webview).
 
 ## <a name="office-application-office-client"></a>Aplicativo do Office, cliente do Office
 
@@ -116,13 +112,15 @@ Uma **faixa** de opções é uma barra de comandos que organiza os recursos de u
 
 ## <a name="runtime"></a>Runtime
 
-Consulte: [runtime do JavaScript](#javascript-runtime).
+Um **runtime** é o ambiente de host (incluindo um mecanismo JavaScript e geralmente também um mecanismo de renderização HTML) no qual o suplemento é executado. No Office no Windows e no Office no Mac, o runtime é um controle de navegador inserido (ou modo de exibição da Web), como Internet Explorer, Edge Legacy, Edge WebView2 ou Safari. Diferentes partes de um suplemento são executadas em runtimes separados. Por exemplo, comandos de suplemento, funções personalizadas e código do painel de tarefas normalmente usam runtimes separados, a menos que você configure um [runtime compartilhado](../testing/runtimes.md#shared-runtime). Consulte [Runtimes em Suplementos e](../testing/runtimes.md) [Navegadores do Office usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md) para obter mais informações.
 
-## <a name="shared-javascript-runtime-shared-runtime"></a>runtime de JavaScript compartilhado, runtime compartilhado
+Consulte também: [runtime de funções personalizadas](#custom-functions-runtime), [runtime compartilhado](#shared-runtime), [modo de exibição da Web](#webview).
 
-Um **runtime de JavaScript** compartilhado, ou **runtime** compartilhado, permite que todo o código em seu suplemento, incluindo painel de tarefas, comandos de suplemento e funções personalizadas, seja executado no mesmo runtime do JavaScript e continue em execução mesmo quando o painel de tarefas estiver fechado. Confira Configurar seu Suplemento do Office para usar um [runtime de JavaScript](../develop/configure-your-add-in-to-use-a-shared-runtime.md) compartilhado e dicas para usar o [runtime de JavaScript](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) compartilhado em seu Suplemento do Office para saber mais.
+## <a name="shared-runtime"></a>runtime compartilhado
 
-Consulte também: [runtime de funções personalizadas](#custom-functions-runtime), [runtime do JavaScript](#javascript-runtime).
+Um **runtime** compartilhado permite que todo o código no suplemento, incluindo painel de tarefas, comandos de suplemento e funções personalizadas, seja executado no mesmo runtime e continue em execução mesmo quando o painel de tarefas estiver fechado. Confira [o runtime compartilhado](../testing/runtimes.md#shared-runtime) e [dicas para usar o runtime compartilhado em seu Suplemento do Office](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) para saber mais.
+
+Consulte também: [runtime de funções personalizadas](#custom-functions-runtime), [runtime](#runtime).
 
 ## <a name="task-pane"></a>painel de tarefas
 
@@ -138,7 +136,7 @@ Confira também: [início rápido](#quick-start).
 
 ## <a name="custom-functions-only-add-in"></a>suplemento somente para funções personalizadas
 
-Um suplemento que contém uma função personalizada, mas nenhuma interface do usuário, como um painel de tarefas. As funções personalizadas nesse tipo de suplemento são executadas em um runtime somente JavaScript. Uma função personalizada que inclui uma interface do usuário pode usar um runtime compartilhado ou uma combinação de um runtime somente JavaScript e um runtime de suporte a HTML. Recomendamos que, se você tiver uma interface do usuário, use um runtime compartilhado. 
+Um suplemento que contém uma função personalizada, mas nenhuma interface do usuário, como um painel de tarefas. As funções personalizadas nesse tipo de suplemento são executadas em um [runtime somente JavaScript](../testing/runtimes.md#javascript-only-runtime). Uma função personalizada que inclui uma interface do usuário pode usar um runtime compartilhado ou uma combinação de um runtime somente JavaScript e um runtime de suporte a HTML. Recomendamos que, se você tiver uma interface do usuário, use um runtime compartilhado. 
 
 Consulte também: [função personalizada](#custom-function), [runtime de funções personalizadas](#custom-functions-runtime).
 

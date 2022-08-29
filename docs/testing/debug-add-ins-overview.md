@@ -3,12 +3,12 @@ title: Depurar suplementos do Office
 description: Localize a diretrizes de depuração do Suplemento do Office para seu ambiente de desenvolvimento.
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: f23e55b2d3ceb84e32365ffbbcb9efafedfebcfc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958759"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423269"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Visão geral da depuração de Suplementos do Office
 
@@ -63,7 +63,7 @@ A seguir, as diretrizes gerais para a depuração no Windows. A depuração no W
     - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
     - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 
-Para obter informações sobre qual runtime do navegador está sendo usado, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+Para obter informações sobre qual runtime está sendo usado, consulte [Navegadores](../concepts/browsers-used-by-office-web-add-ins.md) usados por [Suplementos e Runtimes do Office em Suplementos do Office](runtimes.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -86,3 +86,7 @@ Não há versões da área de trabalho do Office para Linux, portanto, você pre
 ## <a name="debug-add-ins-in-staging-or-production"></a>Depurar suplementos em preparo ou produção
 
 Para depurar um suplemento que já está em preparo ou produção, anexe um depurador da interface do usuário do suplemento. Para obter instruções, [Anexe um depurador no painel de tarefas](attach-debugger-from-task-pane.md).
+
+## <a name="see-also"></a>Confira também
+
+- [Runtimes em Suplementos do Office](runtimes.md)

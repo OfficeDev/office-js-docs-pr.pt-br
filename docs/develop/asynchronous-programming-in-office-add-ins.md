@@ -3,12 +3,12 @@ title: Programação assíncrona em Suplementos do Office
 description: Saiba como a biblioteca JavaScript do Office usa programação assíncrona em Suplementos do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ce317e2d0648d114fe3716fc47d8cc1315369fc4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958857"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423066"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -398,3 +398,4 @@ readDocumentFileAsync(): Promise<any> {
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

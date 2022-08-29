@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um Suplemento VSTO e um Suplemento do Office.
 title: 'Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office usando uma biblioteca de códigos compartilhados'
 ms.localizationpriority: high
-ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: c3d73336975b7b544b3eabbf0b83a25df0b2962d
+ms.sourcegitcommit: 41b95d8bfd3ad525908ff165bd6c9318e1f0f792
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959053"
+ms.lasthandoff: 08/17/2022
+ms.locfileid: "67364667"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um Suplemento VSTO e um Suplemento do Office com uma biblioteca de códigos compartilhados
 
@@ -63,10 +63,6 @@ Este tutorial usa a solução PnP [Biblioteca compartilhada do Suplemento VSTO p
 1. Baixe a solução PnP [Biblioteca compartilhada do Suplemento VSTO para o Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) para trabalhar em um arquivo em seu computador.
 1. Inicie o Visual Studio 2019 e abra a solução **/start/Cell-Analyzer.sln**.
 1. No menu **Depurar**, selecione **Iniciar Depuração**.
-1. No **Gerenciador de soluções**, clique com o botão direito do mouse no projeto **Cell-Analyzer** e escolha **Propriedades**.
-1. Escolha a categoria **Assinatura** nas propriedades.
-1. Escolha **Assinar os manifestos ClickOnce** e, em seguida, escolha **Criar certificado de teste**.
-1. Na caixa de diálogo **Criar Certificado de Teste**, digite e confirme uma senha. Em seguida, escolha **OK**.
 
 O suplemento é um painel de tarefas personalizado do Excel. Você pode selecionar qualquer célula com o texto e escolher o botão **Mostrar o Unicode**. Na seção **Resultado**, o suplemento exibirá uma lista de cada caractere no texto junto com seu número Unicode correspondente.
 

@@ -5,12 +5,12 @@ ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 393777730a6f4889d7d053382fd885de3714a4d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 361be486ee45cae87b5cd66e2099dc939418a491
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744363"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422870"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Usar tipos de dados com funções personalizadas no Excel (visualização)
 
@@ -99,4 +99,4 @@ function getEntityAttribute(value, attribute) {
 
 * [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
 * [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
-* [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+* [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -1,26 +1,26 @@
 ---
-title: Habilitar o SSO (logon único) Outlook suplementos que usam a ativação baseada em evento
+title: Habilitar o SSO (logon único) em suplementos do Outlook que usam a ativação baseada em evento
 description: Saiba como habilitar o SSO ao trabalhar em um suplemento de ativação baseado em evento.
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 477ecb8c0ab84ab472763f83e342258998749861
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229726"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423115"
 ---
-# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Habilitar o SSO (logon único) Outlook suplementos que usam a ativação baseada em evento
+# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Habilitar o SSO (logon único) em suplementos do Outlook que usam a ativação baseada em evento
 
-Quando um Outlook suplemento usa a ativação baseada em evento, os eventos são executados em um runtime separado do JavaScript. Depois de concluir as etapas em Autenticar um usuário com um token de logon único em um suplemento do Outlook, siga [as](authenticate-a-user-with-an-sso-token.md) etapas adicionais descritas neste artigo para habilitar o SSO para o código de manipulação de eventos. Depois de habilitar o SSO, você poderá chamar a [API getAccessToken()](/javascript/api/office-runtime/officeruntime.auth) para obter um token de acesso com a identidade do usuário.
+Quando um suplemento do Outlook usa a ativação baseada em evento, os eventos são executados em um [runtime separado](../testing/runtimes.md). Depois de concluir as etapas em Autenticar um usuário com um token de logon único em um suplemento do [Outlook](authenticate-a-user-with-an-sso-token.md), siga as etapas adicionais descritas neste artigo para habilitar o SSO para o código de manipulação de eventos. Depois de habilitar o SSO, você poderá chamar a [API getAccessToken()](/javascript/api/office-runtime/officeruntime.auth) para obter um token de acesso com a identidade do usuário.
 
 > [!IMPORTANT]
-> Embora `OfficeRuntime.auth.getAccessToken` e `Office.auth.getAccessToken` execute a mesma funcionalidade de recuperar um token de acesso, `OfficeRuntime.auth.getAccessToken` recomendamos chamar seu suplemento baseado em evento. Essa API tem suporte em todas as Outlook cliente que dão suporte à ativação e ao SSO baseados em eventos. Por outro lado, `Office.auth.getAccessToken` só há suporte no Outlook no Windows a partir da versão 2111 (build 14701.20000).
+> Embora `OfficeRuntime.auth.getAccessToken` e `Office.auth.getAccessToken` execute a mesma funcionalidade de recuperar um token de acesso, `OfficeRuntime.auth.getAccessToken` recomendamos chamar seu suplemento baseado em evento. Essa API tem suporte em todas as versões de cliente do Outlook que dão suporte à ativação baseada em eventos e SSO. Por outro lado, só `Office.auth.getAccessToken` há suporte no Outlook no Windows a partir da versão 2111 (build 14701.20000).
 
-Para Outlook no Windows, no manifesto do suplemento Outlook, você identifica um único arquivo JavaScript a ser carregado para ativação baseada em evento. Você também precisa especificar para Office que esse arquivo tem permissão para dar suporte ao SSO. Faça isso criando uma lista de todos os suplementos e seus arquivos JavaScript para fornecer Office por meio de um URI conhecido.
+Para o Outlook no Windows, no manifesto do suplemento do Outlook, você identifica um único arquivo JavaScript a ser carregado para ativação baseada em evento. Você também precisa especificar ao Office que esse arquivo tem permissão para dar suporte ao SSO. Faça isso criando uma lista de todos os suplementos e seus arquivos JavaScript para fornecer ao Office por meio de um URI conhecido.
 
 > [!NOTE]
-> As etapas neste artigo se aplicam somente ao executar seu Outlook suplemento no Windows. Isso ocorre porque Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web usa um arquivo HTML que pode referenciar o mesmo arquivo JavaScript.
+> As etapas neste artigo se aplicam somente ao executar seu suplemento do Outlook no Windows. Isso ocorre porque o Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web usa um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript.
 
 ## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>Listar suplementos permitidos com um URI conhecido
 
@@ -44,5 +44,5 @@ A origem refere-se a um padrão de esquema + subdomínio + domínio + porta. O n
 
 ## <a name="see-also"></a>Confira também
 
-- [Autenticar um usuário com um token de logon único em um Outlook suplemento](authenticate-a-user-with-an-sso-token.md)
-- [Configurar seu Outlook para ativação baseada em evento](autolaunch.md)
+- [Autenticar um usuário com um token de logon único em um suplemento do Outlook](authenticate-a-user-with-an-sso-token.md)
+- [Configurar seu suplemento do Outlook para ativação baseada em evento](autolaunch.md)

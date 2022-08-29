@@ -3,12 +3,12 @@ title: Chamar APIs JavaScript do Excel de uma função personalizada
 description: Saiba quais APIs JavaScript do Excel você pode chamar de sua função personalizada.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958415"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423185"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar APIs JavaScript do Excel de uma função personalizada
 
@@ -18,7 +18,7 @@ Chame APIs JavaScript do Excel de suas funções personalizadas para obter dados
 - Uma função personalizada definirá o formato de número da célula para os valores retornados após o cálculo.
 
 > [!IMPORTANT]
-> Para chamar APIs JavaScript do Excel de sua função personalizada, você precisará usar um runtime de JavaScript compartilhado. Consulte [Configure seu Suplemento do Office para usar em um tempo de execução do JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
+> Para chamar APIs JavaScript do Excel de sua função personalizada, você precisará usar um [runtime compartilhado](../testing/runtimes.md#shared-runtime). Consulte [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md) para saber mais.
 
 ## <a name="code-sample"></a>Exemplo de código
 
@@ -68,4 +68,4 @@ Em vez disso, faça alterações no Excel a partir do contexto de um botão da f
 ## <a name="see-also"></a>Confira também
 
 - [Compartilhar dados e eventos entre funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

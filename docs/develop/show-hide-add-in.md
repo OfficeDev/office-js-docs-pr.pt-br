@@ -1,18 +1,18 @@
 ---
 title: 'Mostre ou oculte o painel de tarefas de seu Suplemento do Office '
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente.
-ms.date: 07/18/2022
+ms.date: 08/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 8122282414fcc9472fc300acd07da354d5a282f0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958605"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422878"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Mostre ou oculte o painel de tarefas de seu Suplemento do Office 
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 Você pode mostrar o painel de tarefas do suplemento do Office chamando o `Office.addin.showAsTaskpane()` método.
 
@@ -47,7 +47,7 @@ Como `Office.addin.showAsTaskpane()` é um método assíncrono, seu código cont
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurar o suplemento para usar o runtime compartilhado
 
-Para usar os `showAsTaskpane()` métodos `hide()` e os métodos, o suplemento deve usar o runtime compartilhado. Para obter mais informações, [consulte Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md).
+Para usar os `showAsTaskpane()` métodos `hide()` e os métodos, o suplemento deve usar o [runtime compartilhado](../testing/runtimes.md#shared-runtime). Para obter mais informações, [consulte Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="preservation-of-state-and-event-listeners"></a>Preservação de ouvintes de estado e eventos
 
@@ -69,7 +69,7 @@ Para registrar um manipulador para o evento, você não usa um método "adiciona
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
-    if (args.visibilityMode = "Taskpane"); {
+    if (args.visibilityMode == "Taskpane") {
         // Code that runs whenever the task pane is made visible.
         // For example, an Excel.run() that loads the names of
         // all worksheets and passes them to the task pane UI.
@@ -82,7 +82,7 @@ A função retorna outra função que *desregisia* o manipulador. Aqui está um 
 ```javascript
 const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -99,7 +99,7 @@ O `onVisibilityModeChanged` método é assíncrono e retorna uma promessa, o que
 // the returned deregister handler to removeVisibilityModeHandler.
 const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -115,5 +115,5 @@ await removeVisibilityModeHandler();
 
 ## <a name="see-also"></a>Confira também
 
-- [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Execute o código em seu Suplemento do Office quando o documento for aberto](run-code-on-document-open.md)

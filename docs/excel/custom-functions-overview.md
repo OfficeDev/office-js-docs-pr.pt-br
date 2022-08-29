@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 3eb87c0f2a40dd7650582bb564710aefe43ede0f
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 12740615215913b0201426f929dbcb803c866648
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660267"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422758"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -36,7 +36,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> Se seu suplemento de função personalizada usará um painel de tarefas ou um botão da faixa de opções, além de executar o código de função personalizada, você precisará configurar um tempo de execução de JavaScript compartilhado. Para saber mais, consulte [Configurar seu Suplemento do Office para usar um runtime de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> Se o suplemento de função personalizada usar um painel de tarefas ou um botão da faixa de opções, além de executar o código de função personalizada, você precisará configurar um [runtime compartilhado](../testing/runtimes.md#shared-runtime). Para saber mais, confira [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Como uma função personalizada é definida em código
 
@@ -76,7 +76,7 @@ O arquivo de manifesto XML para um suplemento que define funções personalizada
 - Usa elementos **\<ExtensionPoint\>** e **\<Resources\>** que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
 - Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas.
 
-Se você estiver usando o [Gerador do Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Se você estiver usando o gerador [Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md) para criar arquivos, recomendamos ajustar seu manifesto para usar um runtime compartilhado, pois esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções em [Configurar seu suplemento do Excel para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 Para ver um manifesto de trabalho completo de um suplemento de exemplo, confira o manifesto em [um dos nossos repositórios Github de exemplos de Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
@@ -96,8 +96,9 @@ Outra maneira fácil de experimentar as funções personalizadas é usar o [Scri
 
 ## <a name="see-also"></a>Confira também
 
-* [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Conjuntos de requisitos de funções personalizadas](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
-* [Diretrizes de nomenclatura de funções personalizadas](custom-functions-naming.md)
-* [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
-* [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Saiba mais sobre o Programa para Desenvolvedores do Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Conjuntos de requisitos de funções personalizadas](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
+- [Diretrizes de nomenclatura de funções personalizadas](custom-functions-naming.md)
+- [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
+- [Configurar seu Suplemento do Office para usar um runtime compartilhado](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

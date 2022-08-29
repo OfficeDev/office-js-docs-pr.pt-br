@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 09b4d5b2b9fc92c977217df94730b3e6e56cacaa
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659987"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422968"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -153,7 +153,7 @@ O exemplo de manifesto XML a seguir hospeda sua página principal do suplemento 
 O elemento opcional [VersionOverrides](/javascript/api/manifest/versionoverrides) merece uma menção especial. Ele contém marcação infantil que habilita a recursos de suplemento adicionais. Alguns deles são:
 
 - Personalizando a faixa de opções do Office e os menus.
-- Personalizando como o Office funcionará com o runtime do navegador incorporado no qual os suplementos serão executados.
+- Personalizando como o Office funciona com os runtimes inseridos nos quais os suplementos são executados.
 - Configurando como o suplemento interage com o Azure Active Directory e o Microsoft Graph para o Logon único.
 
 Alguns elementos descendentes de `VersionOverrides` têm valores que substituem os valores do elemento pai `OfficeApp`. Por exemplo, o elemento `Hosts` em `VersionOverrides` substitui o elemento `Hosts` em `OfficeApp`.

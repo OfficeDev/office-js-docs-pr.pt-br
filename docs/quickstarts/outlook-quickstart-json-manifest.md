@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples com um manifesto 
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091045"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422751"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Criar um suplemento do Outlook com um manifesto do Teams (versão prévia)
 
@@ -177,7 +177,7 @@ Adicione um botão personalizado à faixa de opções que insere texto em um cor
 
 1. Para gravar em uma mensagem, as permissões do suplemento precisam ser geradas. Role até a propriedade `authorization.permissions.resourceSpecific[0].name` e altere o valor para `MailboxItem.ReadWrite.User`.
 
-1. Quando um comando de suplemento executa código em vez de abrir um painel de tarefas, ele deve executar o código em um runtime do JavaScript separado do modo de exibição da Web incorporado no qual o código do painel de tarefas é executado. Portanto, o manifesto deve especificar um runtime adicional. Role até a propriedade `extension.runtimes` e adicione o seguinte objeto à matriz `runtimes`. Certifique-se de colocar uma vírgula após o objeto que já está na matriz. Observe o seguinte sobre esta marcação:
+1. Quando um comando de suplemento executa o código em vez de abrir um painel de tarefas, ele deve executar o código em um runtime separado do modo de exibição da Web inserido em que o código do painel de tarefas é executado. Portanto, o manifesto deve especificar um runtime adicional. Role até a propriedade `extension.runtimes` e adicione o seguinte objeto à matriz `runtimes`. Certifique-se de colocar uma vírgula após o objeto que já está na matriz. Observe o seguinte sobre esta marcação.
 
     - O valor da propriedade `actions[0].id` deve ser exatamente igual ao nome da função que você adicionou ao arquivo **commands.ts**, nesse caso, `insertHelloWorld`. Em uma etapa posterior, você se referirá ao item por essa ID.
 

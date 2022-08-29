@@ -3,22 +3,22 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745866"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423304"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
 Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, assim como diversos erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.
 
 > [!NOTE]
-> O recurso de log de tempo de execução está disponível para Office 2016 ou posterior na área de trabalho.
+> O recurso de log de runtime está disponível no momento para o Office 2016 ou posterior na área de trabalho.
 
 > [!IMPORTANT]
-> O log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com seu manifesto de suplemento.
+> o log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>Use o log de tempo de execução na linha de comandos
 
@@ -85,14 +85,14 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    De `<bundle id>` definida como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente.
+    Defina `<bundle id>` como um dos valores a seguir para habilitar o log de runtime para o aplicativo correspondente.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-O exemplo a seguir habilita o log de tempo de execução para o Word e abre o arquivo de log.
+O exemplo a seguir habilita o log de runtime para o Word e abre o arquivo de log.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -108,7 +108,7 @@ Para desativar o log de tempo de execução, use o comando `defaults delete`:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-O exemplo a seguir desativará o log de tempo de execução do Word.
+O exemplo a seguir desativará o log de runtime para o Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
@@ -146,3 +146,4 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Runtimes em Suplementos do Office](runtimes.md)

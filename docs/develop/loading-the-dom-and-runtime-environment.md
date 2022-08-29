@@ -3,16 +3,16 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: Carregue o ambiente de runtime do DOM e dos Suplementos do Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: be93b261c8beacdb7b4e8cd08448abf06b14607e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 707b6f6f743767571cf0ab7f465ddf84f117a63b
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958682"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423073"
 ---
-# <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
+# <a name="load-the-dom-and-runtime-environment"></a>Carregar o DOM e o ambiente de runtime
 
-Um suplemento deve garantir que o DOM e o ambiente de tempo de execução de Suplementos do Office sejam carregados antes de executar sua própria lógica personalizada.
+Antes de executar sua própria lógica personalizada, um suplemento deve garantir que o DOM e o ambiente de [runtime](../testing/runtimes.md) de suplementos do Office sejam carregados.
 
 ## <a name="startup-of-a-content-or-task-pane-add-in"></a>Inicialização de um suplemento de conteúdo ou de painel de tarefas
 
@@ -62,3 +62,4 @@ Os eventos a seguir ocorrem quando um suplemento do Outlook é iniciado.
 
 - [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

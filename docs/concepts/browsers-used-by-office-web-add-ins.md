@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274159"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422947"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -142,3 +142,4 @@ Para determinar se um documento está protegido por WIP, siga estas etapas:
 ## <a name="see-also"></a>Confira também
 
 - [Requisitos para a Execução de Suplementos do Office](requirements-for-running-office-add-ins.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

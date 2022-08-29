@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 07/27/2021
+ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484668"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318890"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -45,7 +45,7 @@ A figura a seguir mostra os quatro níveis de permissões e descreve os recursos
 
 **Relacionando o modelo de quatro níveis de permissão com o usuário final, o desenvolvedor e o administrador**
 
-![Modelo de permissões de 4 camadas para o esquema de aplicativos de email v1.1.](../images/add-in-permission-tiers.png)
+![Diagrama do modelo de permissões de quatro camadas para o esquema de aplicativos de email v1.1.](../images/add-in-permission-tiers.png)
 
 ## <a name="appsource-add-in-integrity"></a>AppSource: Integridade do suplemento
 
@@ -61,9 +61,9 @@ A [AppSource](https://appsource.microsoft.com) hospeda suplementos que podem ser
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto da desabilitação da configuração das **experiências conectadas opcionais** depende do cliente, mas geralmente significa que os suplementos instalados pelo usuário e o acesso à Office Store não são permitidos. Os suplementos implantados pelo administrador de TI de uma organização por meio da [Implantação Centralizada](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) ainda estarão disponíveis.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto de desabilitar a configuração  de experiências conectadas opcionais depende do cliente, mas geralmente significa que suplementos instalados pelo usuário e acesso à Office Store não são permitidos. Os suplementos implantados pelo administrador de TI de uma organização por meio da [Implantação Centralizada](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) ainda estarão disponíveis.
 
-- Windows\*, Mac: o botão **Obter Suplementos** não é exibido para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
+- Windows\*, Mac: o **botão Obter Suplementos** não é exibido para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
 - Android, iOS: a caixa de diálogo **Obter suplementos** mostra somente suplementos implantados pelo administrador.
 - Navegador: a disponibilidade de suplementos e o acesso ao repositório não são afetadas, para que os usuários possam continuar a [gerenciar seus suplementos](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), incluindo aqueles implantados pelo administrador.
 
@@ -76,16 +76,13 @@ Para obter o comportamento geral do suplemento, confira [privacidade e seguranç
 
 O modelo de segurança aborda questões de segurança, privacidade e desempenho de usuários finais das seguintes maneiras.
 
-- Mensagens do usuário final no Outlook que são protegidas por IRM (Gerenciamento de Direitos de Informação) não interagem com os suplementos do Outlook.
+- As mensagens do usuário final protegidas pelo IRM (Gerenciamento de Direitos de Informação) do Outlook não interagem com suplementos do Outlook em clientes não Windows.
 
-  > [!IMPORTANT]
-  > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-  >
-  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - Antes de instalar um suplemento do AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode fazer em seus dados e devem confirmar explicitamente para continuar. Nenhum suplemento do Outlook é enviado automaticamente por push para um computador cliente sem validação manual pelo usuário ou administrador.
 
-- A concessão de permissão **restrita** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. Conceder a permissão de **item de leitura** permite que o suplemento do Outlook acesse informações de identificação pessoal, como nomes de remetentes e destinatários e endereços de email, somente no item atual.
+- A concessão da permissão **restricted** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. A concessão da permissão **de item** de leitura permite que o suplemento do Outlook acesse informações de identificação pessoal, como nomes de remetente e destinatário e endereços de email, somente no item atual.
 
 - Um usuário final pode instalar um suplemento do Outlook somente para si mesmo. Os suplementos do Outlook que afetam uma organização são instalados por um administrador.
 
@@ -130,7 +127,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
     <Permissions>ReadItem</Permissions>
   ```
 
-- Os desenvolvedores podem solicitar a permissão **restrita** se o suplemento do Outlook for ativado em um tipo específico de itens do Outlook (compromisso ou mensagem) ou em entidades específicas extraídas (endereço número de telefone, URL) presentes no assunto ou no corpo do item. Por exemplo, a regra a seguir ativa o suplemento do Outlook se uma ou mais dessas três entidades, número de telefone, endereços postais ou URL, aparece no assunto ou no corpo da mensagem atual.
+- Os desenvolvedores podem  solicitar a permissão restrita se o suplemento do Outlook for ativado em um tipo específico de item do Outlook (compromisso ou mensagem) ou em entidades extraídas específicas (número de telefone, endereço, URL) presentes no assunto ou no corpo do item. Por exemplo, a regra a seguir ativa o suplemento do Outlook se uma ou mais dessas três entidades, número de telefone, endereços postais ou URL, aparece no assunto ou no corpo da mensagem atual.
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -144,7 +141,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
     </Rule>
   ```
 
-- Os desenvolvedores devem solicitar a permissão de **item de leitura** quando o suplemento do Outlook precisar ler as propriedades do item atual, que não sejam as entidades padrão extraídas, ou gravar propriedades personalizadas definidas pelo suplemento no item atual, mas não precisar ler ou gravar em outros itens ou criar e enviar uma mensagem na caixa de correio do usuário. Por exemplo, um desenvolvedor deve solicitar a permissão de **item de leitura** quando o suplemento do Outlook precisa procurar por uma entidade como sugestão de reunião, sugestão de tarefa, endereço de email ou nome de contato no assunto ou no corpo do item, ou usar uma expressão regular para ser ativado.
+- Os desenvolvedores devem solicitar a permissão de **item** de leitura se o suplemento do Outlook precisar ler propriedades do item atual que não sejam as entidades extraídas padrão ou gravar propriedades personalizadas definidas pelo suplemento no item atual, mas não exigir leitura ou gravação em outros itens ou criar ou enviar uma mensagem na caixa de correio do usuário. Por exemplo, um desenvolvedor deve solicitar a permissão **read item** quando o suplemento do Outlook precisa procurar por uma entidade como sugestão de reunião, sugestão de tarefa, endereço de email ou nome de contato no assunto ou no corpo do item, ou usar uma expressão regular para ser ativado.
 
 - Os desenvolvedores devem solicitar a permissão **read/write item** quando o suplemento do Outlook precisa gravar propriedades do item redigido, como nomes, endereços de email, corpo e assunto, ou precisa adicionar ou remover anexos do item.
 
@@ -162,7 +159,7 @@ Os desenvolvedores devem estar cientes dos limites de uso do recurso para a ativ
 
 Os desenvolvedores devem estar atentos e planejar o seguinte.
 
-- Desenvolvedores não podem usar controles ActiveX em suplementos porque esses não têm suporte.
+- Os desenvolvedores não podem usar controles ActiveX em suplementos porque não têm suporte.
 
 - Os desenvolvedores devem fazer o seguinte ao enviar um suplemento do Outlook à AppSource.
 

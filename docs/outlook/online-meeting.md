@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797656"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320655"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
@@ -326,7 +326,7 @@ Várias restrições se aplicam.
 - Somente suplementos instalados pelo administrador aparecerão na tela de composição da reunião, substituindo a opção padrão do Teams ou do Skype. Os suplementos instalados pelo usuário não serão ativados.
 - O ícone de suplemento deve estar em escala de cinza usando código hexadecimal `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 - Há suporte para apenas um comando de função no modo Organizador de Compromissos (redigir).
-- O suplemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo limite de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o suplemento abriu para autenticação, etc. é excluído do período de tempo limite.
+- O suplemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo limite de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o suplemento abriu para autenticação, por exemplo, é excluído do período de tempo limite.
 
 ## <a name="see-also"></a>Confira também
 

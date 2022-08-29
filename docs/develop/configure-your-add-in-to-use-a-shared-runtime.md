@@ -1,23 +1,23 @@
 ---
-title: Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
-description: Configure seu suplemento do Office para usar um tempo de execução de JavaScript compartilhado para oferecer suporte à faixa de opções adicional, painel de tarefas e recursos de funções personalizadas.
+title: Configurar seu Suplemento do Office para usar um runtime compartilhado
+description: Configure seu Suplemento do Office para usar um runtime compartilhado para dar suporte a recursos adicionais de faixa de opções, painel de tarefas e funções personalizadas.
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: e6b10cc2d342d95a8542146ecbd95d750322421f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889475"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422933"
 ---
-# <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado
+# <a name="configure-your-office-add-in-to-use-a-shared-runtime"></a>Configurar seu Suplemento do Office para usar um runtime compartilhado
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-É possível configurar o Suplemento do Office para executar todo o seu código em um único tempo de execução JavaScript compartilhado (também conhecido como tempo de execução compartilhado). Isso permite uma melhor coordenação em seu suplemento e acesso ao DOM e CORS de todas as partes de seu suplemento. Ele também ativa recursos adicionais, como a execução de código quando o documento é aberto ou a ativação ou desativação de botões da faixa de opções. Para configurar seu suplemento para usar um tempo de execução JavaScript compartilhado, siga as instruções neste artigo.
+Você pode configurar seu Suplemento do Office para executar todo o código em um único [runtime compartilhado](../testing/runtimes.md#shared-runtime). Isso permite uma melhor coordenação em seu suplemento e acesso ao DOM e CORS de todas as partes de seu suplemento. Ele também ativa recursos adicionais, como a execução de código quando o documento é aberto ou a ativação ou desativação de botões da faixa de opções. Para configurar seu suplemento para usar um tempo de execução compartilhado, siga as instruções neste artigo.
 
-## <a name="create-the-add-in-project"></a>Criar o projeto de suplemento
+## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
 Se você estiver iniciando um novo projeto, use o [Gerador Yeoman para Suplementos do Office](yeoman-generator-overview.md) para criar um projeto de suplemento do Excel, PowerPoint ou Word.
 
@@ -97,7 +97,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
 
 ## <a name="configure-the-webpackconfigjs-file"></a>Configurar o arquivo webpack.config.js
 
-O **webpack.config.js** construirá vários carregadores de tempo de execução. É necessário modificá-lo para carregar apenas o tempo de execução JavaScript compartilhado por meio do arquivo **taskpane.html**.
+O **webpack.config.js** construirá vários carregadores de tempo de execução. Você precisa modificá-lo para carregar apenas o runtime compartilhado por meio **dotaskpane.html** arquivo.
 
 1. Inicie Visual Studio Code e abra o projeto de suplemento gerado.
 1. Abra o arquivo **webpack.config.js**.
@@ -138,14 +138,14 @@ O **webpack.config.js** construirá vários carregadores de tempo de execução.
    ```
 
 > [!NOTE]
-> Se o seu projeto tiver um arquivo **functions.html** ou um arquivo **commands.html**, eles podem ser removidos. O **taskpane.html** carregará o código **functions.js** e **commands.js** no tempo de execução JavaScript compartilhado por meio das atualizações do webpack que você acabou de fazer.
+> Se o seu projeto tiver um arquivo **functions.html** ou um arquivo **commands.html**, eles podem ser removidos. O **taskpane.html** carregará o **códigofunctions.js** e **commands.jsno** runtime compartilhado por meio das atualizações do webpack que você acabou de fazer.
 
 ## <a name="test-your-office-add-in-changes"></a>Teste as alterações do Suplemento do Office
 
-É possível confirmar que está usando o tempo de execução de JavaScript compartilhado corretamente usando as instruções a seguir.
+Você pode confirmar que está usando o runtime compartilhado corretamente usando as instruções a seguir.
 
 1. Abra o arquivo **taskpane.js**.
-1. Substitua todo o conteúdo do arquivo pelo código a seguir. Isso exibirá uma contagem de quantas vezes o painel de tarefas foi aberto. A adição do evento onVisibilityModeChanged só tem suporte em um tempo de execução JavaScript compartilhado.
+1. Substitua todo o conteúdo do arquivo pelo código a seguir. Isso exibirá uma contagem de quantas vezes o painel de tarefas foi aberto. A adição do evento onVisibilityModeChanged só tem suporte em um runtime compartilhado.
 
     ```javascript
     /*global document, Office*/
@@ -180,7 +180,7 @@ Cada vez que você abre o painel de tarefas, a contagem de quantas vezes ele foi
 
 ## <a name="runtime-lifetime"></a>Duração do tempo de execução
 
-Ao adicionar o elemento `Runtime`, você também especifica um tempo de vida com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar as vantagens dos recursos, como iniciar seu suplemento quando o documento for aberto, continuar a executar o código depois que o painel de tarefas for fechado ou usar CORS e DOM de funções personalizadas.
+Ao adicionar o elemento **\<Runtime\>** , você também especifica um tempo de vida com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar os recursos, como iniciar o suplemento quando o documento for aberto, continuar executando o código após o fechamento do painel de tarefas ou usar o CORS e o DOM nas funções personalizadas.
 
 > [!NOTE]
 > O valor de vida útil padrão é `short`, mas recomendamos usar `long` em suplementos do Excel, PowerPoint e Word. Se você definir seu tempo de execução como `short` neste exemplo, seu suplemento será iniciado quando um dos botões da faixa de opções for pressionado, mas poderá ser encerrado após a execução do manipulador de faixa de opções. Da mesma forma, o suplemento será iniciado quando o painel de tarefas for aberto, mas pode ser encerrado quando o painel de tarefas for fechado.
@@ -192,13 +192,13 @@ Ao adicionar o elemento `Runtime`, você também especifica um tempo de vida com
 ```
 
 > [!NOTE]
-> Se o suplemento incluir o elemento `Runtimes` no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> **\<Runtimes\>** Se o suplemento incluir o elemento no manifesto (necessário para um runtime compartilhado) e as condições para usar o Microsoft Edge com WebView2 (baseado em Chromium) forem atendidas, ele usará esse controle WebView2. Se as condições não forem atendidas, ele usará o Internet Explorer 11, independentemente da versão do Windows ou Microsoft 365. Para obter mais informações, consulte [Runtimes](/javascript/api/manifest/runtimes) e [Navegadores usados pelos suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
-## <a name="about-the-shared-javascript-runtime"></a>Sobre o tempo de execução de JavaScript compartilhado
+## <a name="about-the-shared-runtime"></a>Sobre o runtime compartilhado
 
-No Windows ou Mac, seu suplemento executará o código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de tempo de execução JavaScript separados. Isso cria limitações, como não poder compartilhar facilmente dados globais e não poder acessar todas as funcionalidades do CORS a partir de uma função customizada.
+No Windows ou mac, seu suplemento executará código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de runtime separados. Isso cria limitações, como não poder compartilhar facilmente dados globais e não poder acessar todas as funcionalidades do CORS a partir de uma função customizada.
 
-No entanto, você pode configurar o Suplemento do Office para compartilhar código no mesmo tempo de execução JavaScript (também conhecido como tempo de execução compartilhado). Isso permite uma melhor coordenação entre o suplemento e o acesso ao DOM e CORS do painel de tarefas de todas as partes do suplemento.
+No entanto, você pode configurar seu Suplemento do Office para compartilhar código no mesmo runtime (também conhecido como runtime compartilhado). Isso permite uma melhor coordenação entre o suplemento e o acesso ao DOM e CORS do painel de tarefas de todas as partes do suplemento.
 
 Configurar um tempo de execução compartilhado permite os seguintes cenários.
 
@@ -212,7 +212,7 @@ Configurar um tempo de execução compartilhado permite os seguintes cenários.
   - As funções personalizadas terão suporte CORS completo.
   - Funções personalizadas podem chamar APIs Office.js para ler dados de documentos de planilhas.
 
-Para Office no Windows, o tempo de execução compartilhado usa Microsoft Edge com WebView2 (baseado em Chromium) se as condições para usá-lo forem atendidas conforme explicado em [Navegadores usados por suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Caso contrário, ele usa o Internet Explorer 11. Além disso, todos os botões que seu suplemento exibir na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo tempo de execução do JavaScript.
+Para Office no Windows, o tempo de execução compartilhado usa Microsoft Edge com WebView2 (baseado em Chromium) se as condições para usá-lo forem atendidas conforme explicado em [Navegadores usados por suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Caso contrário, ele usa o Internet Explorer 11. Além disso, todos os botões que seu suplemento exibir na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo runtime.
 
 ![Diagrama de uma função personalizada, painel de tarefas e botões da faixa de opções em execução em um tempo de execução de navegador compartilhado no Excel.](../images/custom-functions-in-browser-runtime.png)
 
@@ -233,3 +233,4 @@ Não projete seu suplemento para usar vários painéis de tarefas se você plane
 - [Execute o código em seu Suplemento do Office quando o documento for aberto](run-code-on-document-open.md)
 - [Mostre ou oculte o painel de tarefas de seu Suplemento do Office ](show-hide-add-in.md)
 - [Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

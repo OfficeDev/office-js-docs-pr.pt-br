@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 502c9247a6c63775c562dab7479e0ca926f14154
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958836"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423045"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -36,7 +36,7 @@ As APIs de habilitação/desabilitação pertencem ao conjunto de requisitos [Ri
 
 ## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
-As APIs e a marcação de manifesto descritas neste artigo exigem que o manifesto do suplemento especifique que ele deve usar um tempo de execução compartilhado. Para fazer isso, execute as etapas a seguir.
+As APIs e a marcação de manifesto descritas neste artigo exigem que o manifesto do suplemento especifique que ele deve usar um [runtime compartilhado](../testing/runtimes.md#shared-runtime). Para fazer isso, execute as etapas a seguir.
 
 1. No elemento [Runtimes](/javascript/api/manifest/runtimes) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um **\<Runtimes\>** elemento no manifesto, crie-o como o primeiro filho **\<Host\>** sob o elemento na **\<VersionOverrides\>** seção.)
 2. Na seção [Resources.Urls](/javascript/api/manifest/resources) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, onde `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.

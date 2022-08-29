@@ -2,14 +2,14 @@
 title: Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook (versão prévia)
 description: Saiba como lidar com os eventos ao enviar em seu suplemento do Outlook usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 08/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660246"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320648"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook (versão prévia)
 
@@ -18,7 +18,7 @@ Os `OnMessageSend` e `OnAppointmentSend` os eventos aproveitam os Alertas Inteli
 O passo a passo a seguir usa o `OnMessageSend` evento. Ao final deste passo a passo, você terá um suplemento executado sempre que uma mensagem estiver sendo enviada e verificará se o usuário esqueceu de adicionar um documento ou imagem mencionado no email.
 
 > [!IMPORTANT]
-> Os `OnMessageSend` eventos `OnAppointmentSend` e os eventos só estão disponíveis em versão prévia com uma assinatura do Microsoft 365 no Outlook no Windows. Para obter mais detalhes, [consulte Como visualizar](autolaunch.md#how-to-preview). Eventos de visualização não devem ser usados em suplementos de produção.
+> Os `OnMessageSend` eventos `OnAppointmentSend` e os eventos só estão disponíveis em versão prévia com uma assinatura do Microsoft 365 no Outlook no Windows e na Web. Para obter mais detalhes, [consulte Como visualizar](autolaunch.md#how-to-preview). Eventos de visualização não devem ser usados em suplementos de produção.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -26,7 +26,7 @@ O `OnMessageSend` evento está disponível por meio do recurso de ativação bas
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), que cria um projeto de suplemento com o [Gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md).
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -40,7 +40,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.11">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -51,7 +51,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -118,7 +118,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -224,6 +224,16 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O su
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
+
+## <a name="update-the-commands-html-file"></a>Atualizar o arquivo HTML dos comandos
+
+1. Na pasta **./src/commands** , abra **commands.html**.
+
+1. Imediatamente antes da marca **de cabeçalho** de fechamento (`</head>`), adicione uma entrada de script para o código JavaScript de manipulação de eventos.
+
+   ```js
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
+   ```
 
 1. Salve suas alterações.
 

@@ -3,12 +3,12 @@ title: Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge
 description: Saiba como depurar suplementos do Office que usam Microsoft Edge WebView2 (baseados em Chromium) no VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: 58c676ada092ff31737da4b257bbd6e5e158c0dc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959074"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423297"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Depurar suplementos no Windows usando Visual Studio Code e Microsoft Edge WebView2 (baseado em Chromium)
 
@@ -145,3 +145,4 @@ Se seu projeto não tiver sido criado com o Yo Office, você precisará criar um
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Anexar um depurador do painel de tarefas](attach-debugger-from-task-pane.md)
+- [Runtimes em Suplementos do Office](runtimes.md)

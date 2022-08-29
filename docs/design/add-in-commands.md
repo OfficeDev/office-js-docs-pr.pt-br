@@ -3,12 +3,12 @@ title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
 ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 30a548e9d831952e372d044257f520130882848c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659672"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423059"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -36,8 +36,8 @@ Há dois tipos de comandos de suplemento, com base no tipo de ação que o coman
 - **Comandos do painel de tarefas**: O botão ou item de menu abre o painel de tarefas do suplemento. Você adiciona esse tipo de comando de suplemento com marcação no manifesto. O "código por trás" do comando é fornecido pelo Office.
 - **Comandos de função**: O item de botão ou menu executa qualquer JavaScript arbitrário. O código quase sempre chama APIs na Biblioteca JavaScript do Office, mas não precisa. Esse tipo de suplemento normalmente não exibe nenhuma interface do usuário além do próprio item de menu ou botão. Observe o seguinte sobre comandos de função:
 
-   - A função disparada pode chamar o método [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) para mostrar uma caixa de diálogo, que é uma boa maneira de exibir um erro, mostrar o progresso ou solicitar a entrada do usuário. Se o suplemento estiver configurado para usar um runtime compartilhado, a função também poderá chamar o método [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)).
-   - O runtime do JavaScript no qual o comando de função é executado é um runtime completo baseado em navegador. Ele pode renderizar HTML e chamar a Internet para enviar ou obter dados.
+   - A função disparada pode chamar o método [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) para mostrar uma caixa de diálogo, que é uma boa maneira de exibir um erro, mostrar o progresso ou solicitar a entrada do usuário. Se o suplemento estiver configurado para usar um [runtime](../testing/runtimes.md#shared-runtime) compartilhado, a função também poderá chamar o [método showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) .
+   - O runtime no qual o comando de função é executado é um [runtime completo baseado em navegador](../testing/runtimes.md#browser-runtime). Ele pode renderizar HTML e chamar a Internet para enviar ou obter dados.
 
 ## <a name="command-capabilities"></a>Recursos de comandos
 

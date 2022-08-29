@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para o Angular
 description: Use Angular para criar um Suplemento do Office como um aplicativo de página única.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bbac0f94b731b2853e17ed3db785b50ea99ef6e4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958472"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422953"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Dar suporte ao Internet Explorer se você estiver carregando dinamicamente Office.js
 
-Com base na versão do Windows e no cliente da área de trabalho do Office em que o suplemento está em execução, o suplemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de alguns `window.history` APIs, mas essas APIs não funcionam no runtime do IE inserido em clientes da área de trabalho do Windows. Quando essas APIs não funcionam, seu suplemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá ser carregado antes Office.js. Nesse caso, você deve desabilitar as `window.history` APIs adicionando o código a seguir à página de **index.htmldo suplemento** .
+Com base na versão do Windows e no cliente da área de trabalho do Office em que o suplemento está em execução, o suplemento pode estar usando o Internet Explorer 11. (Para obter mais detalhes, consulte [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depende de alguns `window.history` APIs, mas essas APIs não funcionam no runtime do IE que às vezes é usado para executar Suplementos do Office em clientes da área de trabalho do Windows. Quando essas APIs não funcionam, seu suplemento pode não funcionar corretamente, por exemplo, ele pode carregar um painel de tarefas em branco. Para atenuar isso, Office.js anula essas APIs. No entanto, se você estiver carregando dinamicamente Office.js, o AngularJS poderá ser carregado antes Office.js. Nesse caso, você deve desabilitar as `window.history` APIs adicionando o código a seguir à página de **index.htmldo suplemento** .
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

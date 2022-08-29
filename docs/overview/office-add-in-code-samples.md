@@ -3,12 +3,12 @@ title: Amostras de código de suplemento do Office
 description: Uma lista de exemplos de código de suplementos do Office para ajudá-lo a aprender e criar seus próprios suplementos.
 ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091024"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423262"
 ---
 # <a name="office-add-in-code-samples"></a>Amostras de código de suplemento do Office
 
@@ -79,7 +79,7 @@ Os exemplos a seguir mostram como construir o Suplemento do Office mais simples 
 | [Suplemento do Office de Logon único (SSO) com ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado com base no ASP.NET. |
 | [Suplemento Office dee Logon único (SSO) com Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado no Node.js.|
 
-## <a name="shared-javascript-runtime"></a>Tempo de execução de JavaScript compartilhado
+## <a name="shared-runtime"></a>Tempo de execução compartilhado
 
 | Nome                | Descrição         |
 |:--------------------|:--------------------|

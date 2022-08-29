@@ -3,16 +3,16 @@ title: Execute o código em seu Suplemento do Office quando o documento for aber
 description: Saiba como executar código em seu suplemento do Office quando o documento for aberto.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1c3277a349dc4054da5f089c62331296590021
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ef580151a5b3289c801f3e872988cbb3474bd8e0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958436"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422912"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Execute o código em seu Suplemento do Office quando o documento for aberto
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 Você pode configurar seu Suplemento do Office para carregar e executar código assim que o documento for aberto. Isso será útil se você precisar registrar manipuladores de eventos, pré-carregar dados para o painel de tarefas, sincronizar a interface do usuário ou executar outras tarefas antes que o suplemento fique visível.
 
@@ -104,6 +104,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="see-also"></a>Confira também
 
-- [Configure seu Suplemento do Office para usar um tempo de execução de JavaScript compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurar seu Suplemento do Office para usar um runtime compartilhado](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Compartilhar dados e eventos entre funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Trabalhar com eventos usando a API JavaScript do Excel](../excel/excel-add-ins-events.md)
+- [Runtimes em Suplementos do Office](../testing/runtimes.md)

@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797614"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423227"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu suplemento do Outlook para ativação baseada em evento
 
@@ -18,7 +18,9 @@ Sem o recurso de ativação baseada em evento, um usuário precisa iniciar expli
 Ao final deste passo a passo, você terá um suplemento que é executado sempre que um novo item é criado e define o assunto.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto [de requisitos 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), com eventos adicionais agora compatíveis com o conjunto de requisitos [1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+>
+> Não há suporte para a ativação baseada em eventos no Outlook no iOS ou Android.
 
 ## <a name="supported-events"></a>Eventos com suporte
 
@@ -38,8 +40,10 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 |`OnAppointmentTimeChanged`|Ao alterar a data/hora ao compor um compromisso.<br><br>Objeto de dados específico do evento: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 |`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao redigir um compromisso. Se a data/hora for alterada, o `OnAppointmentTimeChanged` evento também será acionado.<br><br>Objeto de dados específico do evento: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 |`OnInfoBarDismissClicked`|Ao ignorar uma notificação ao redigir uma mensagem ou item de compromisso. Somente o suplemento que adicionou a notificação será notificado.<br><br>Objeto de dados específico do evento: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
-|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup>|
-|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup>|
+|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar) ou editar um rascunho.|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentOrganizer`|Ao criar um novo compromisso ou editar um existente.|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 
 > [!NOTE]
 > <sup>1</sup> Suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (build 18362) ou Windows Server 2019 versão 1903 para execução.
@@ -76,7 +80,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -87,7 +91,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -172,7 +176,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -189,10 +193,12 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
 </VersionOverrides>
 ```
 
-O Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências `Resources` a ambos os arquivos no nó do manifesto, pois a plataforma do Outlook determina se deve usar HTML ou JavaScript com base no cliente do Outlook. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML `Runtime` no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
+O Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências `Resources` a ambos os arquivos no nó do manifesto, pois a plataforma do Outlook determina se deve usar HTML ou JavaScript com base no cliente do Outlook. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML **\<Runtime\>** no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
 
 > [!TIP]
-> Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
+> 
+> - Para saber mais sobre runtimes em suplementos, consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).
+> - Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
 
@@ -321,8 +327,6 @@ Você pode implantar suplementos baseados em eventos carregando o manifesto por 
 
 ![A página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Carregar aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource e Office Store no aplicativo: a capacidade de implantar suplementos baseados em eventos ou atualizar suplementos existentes para incluir o recurso de ativação baseada em evento deve estar disponível em breve.
-
 > [!IMPORTANT]
 > Os suplementos baseados em eventos são restritos somente a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter suplementos baseados em eventos do AppSource ou da Office Store no aplicativo. Para saber mais, confira as [opções de listagem do AppSource para seu suplemento do Outlook baseado em eventos](autolaunch-store-options.md).
 
@@ -356,13 +360,21 @@ Algumas Office.js APIs que alteram ou alteram a interface do usuário não são 
 
 ### <a name="requesting-external-data"></a>Como solicitar dados externos
 
-Você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)uma API Web padrão que emite solicitações HTTP para interagir com servidores.
+Você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou usando [XMLHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)uma API Web padrão que emite solicitações HTTP para interagir com servidores.
 
-Lembre-se de que você deve usar medidas de segurança adicionais ao fazer XmlHttpRequests, exigindo a [Mesma](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) Política de [Origem e CORS simples](https://www.w3.org/TR/cors/).
+Lembre-se de que você deve usar medidas de segurança adicionais ao usar objetos XMLHttpRequest, exigindo a Política de Mesma Origem e [CORS simples (](https://developer.mozilla.org/docs/Web/HTTP/CORS)Compartilhamento de Recursos entre Origens).[](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 
-Uma implementação de CORS simples não pode usar cookies e dá suporte apenas a métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho em CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`ou `multipart/form-data`.
+Uma [implementação de CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests) simples:
 
-O suporte completo ao CORS estará disponível em breve.
+- Não é possível usar cookies.
+- Só dá suporte a métodos simples, como `GET`, `HEAD`e `POST`.
+- Aceita cabeçalhos simples com nomes de campo`Accept``Accept-Language`, ou `Content-Language`.
+- Pode usar o `Content-Type`, desde que o tipo de conteúdo `application/x-www-form-urlencoded`seja , `text/plain`ou `multipart/form-data`.
+- Não é possível ter ouvintes de eventos registrados no objeto retornado por `XMLHttpRequest.upload`.
+- Não é possível usar objetos `ReadableStream` em solicitações.
+
+> [!NOTE]
+> O suporte completo a CORS está disponível no Outlook na Web, Mac e Windows (a partir da versão 2201, build 16.0.14813.10000).
 
 ## <a name="see-also"></a>Confira também
 
