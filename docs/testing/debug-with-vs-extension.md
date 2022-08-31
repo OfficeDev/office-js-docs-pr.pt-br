@@ -3,12 +3,12 @@ title: Depurar os suplementos no Windows usando Visual Studio Code e Microsoft E
 description: Saiba como depurar suplementos do Office que usam o Versão Prévia do Microsoft Edge WebView (EdgeHTML) usando a Extensão do Depurador de Suplementos do Office no VS Code.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e503d3a79b5fa4b797bb9c6ee657b7d8916109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8dc709893070e4bfd9d7ae39adb591496594c6ab
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423234"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464843"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de Depurador de Suplementos do Microsoft Office para o Visual Studio Code
 
@@ -37,7 +37,7 @@ Estas instruções pressupõem que você tenha experiência com o uso da linha d
 
 1. A primeira etapa depende do projeto e de como ele foi criado.
 
-   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o [Gerador Yeoman para Suplemento do Office](../develop/yeoman-generator-overview.md). Use qualquer um de nossos guias de início rápido, como o [início rápido do suplemento do Outlook](../quickstarts/outlook-quickstart.md), para fazer isso. 
+   - Se você quiser criar um projeto para experimentar a depuração no Visual Studio Code, use o gerador [Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md). Use qualquer um dos nossos guias de início rápido, como o início rápido do suplemento do [Outlook](../quickstarts/outlook-quickstart.md), para fazer isso.
    - Se você quiser depurar um projeto existente que foi criado com Yo Office, pule para a próxima etapa.
    - Se você quiser depurar um projeto existente que não foi criado com o Yo Office, execute o procedimento no Apêndice e [](#appendix) retorne à próxima etapa deste procedimento.
 

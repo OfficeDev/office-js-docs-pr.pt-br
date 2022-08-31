@@ -1,14 +1,14 @@
 ---
 title: Chamar APIs JavaScript do Excel de uma função personalizada
 description: Saiba quais APIs JavaScript do Excel você pode chamar de sua função personalizada.
-ms.date: 07/18/2022
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d1cbf6d07e4ede5b8309e899828f8f1d8ad1fa0
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423185"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464829"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Chamar APIs JavaScript do Excel de uma função personalizada
 
@@ -48,18 +48,16 @@ async function getRangeValue(address) {
 
 ## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitações de chamar APIs JavaScript do Excel por meio de uma função personalizada
 
-Não chame APIs JavaScript do Excel de uma função personalizada que altere o ambiente do Excel. Isso significa que suas funções personalizadas não devem fazer o seguinte:
+Um suplemento de funções personalizadas pode chamar APIs JavaScript do Excel, mas você deve ter cuidado com quais APIs ele chama. Não chame APIs JavaScript do Excel de uma função personalizada que altere células fora da célula que executa a função personalizada. Alterar outras células ou o ambiente do Excel pode resultar em baixo desempenho, tempos limite e loops infinitos no aplicativo excel. Isso significa que suas funções personalizadas não devem fazer o seguinte:
 
 - Inserir, excluir ou formatar células na planilha.
 - Altere o valor de outra célula.
 - Mover, renomear, excluir ou adicionar planilhas a uma pasta de trabalho.
-- Altere qualquer uma das opções de ambiente, como modo de cálculo ou exibições de tela.
 - Adicione nomes a uma pasta de trabalho.
-- Defina propriedades ou execute a maioria dos métodos.
+- Definir propriedades.
+- Altere qualquer uma das opções de ambiente do Excel, como modo de cálculo ou exibições de tela.
 
-Alterar o Excel pode resultar em baixo desempenho, tempos limite e loops infinitos. Os cálculos de função personalizados não devem ser executados enquanto um recálculo do Excel está ocorrendo, pois isso resultará em resultados imprevisíveis.
-
-Em vez disso, faça alterações no Excel a partir do contexto de um botão da faixa de opções ou do painel de tarefas.
+O suplemento de funções personalizadas pode ler informações de células fora da célula que executa a função personalizada, mas não deve executar operações de gravação em outras células. Em vez disso, faça alterações em outras células ou no ambiente do Excel a partir do contexto de um botão da faixa de opções ou de um painel de tarefas. Além disso, os cálculos de função personalizados não devem ser executados enquanto um recálculo do Excel está ocorrendo, pois esse cenário cria resultados imprevisíveis.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como práticas recomendadas para um SPA (aplicativo de página única).
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ca50e637d4b6557f508c682d2c3219f4f7dedca7
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958675"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464836"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -41,7 +41,7 @@ Para obter as práticas recomendadas no design da caixa de diálogo, consulte [c
 
 ### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>Manipular bloqueadores de pop-up com Office na Web
 
-Tentar exibir uma caixa de diálogo ao Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Se isso acontecer, Office na Web abrirá um prompt semelhante ao seguinte.
+Tentar exibir uma caixa de diálogo ao Office na Web pode fazer com que o bloqueador pop-up do navegador bloqueie a caixa de diálogo. Se isso acontecer, Office na Web abrirá um prompt semelhante ao seguinte:
 
 ![Captura de tela mostrando o prompt com uma breve descrição e os botões Permitir e Ignorar que um suplemento pode gerar para evitar bloqueadores pop-up no navegador](../images/dialog-prompt-before-open.png)
 

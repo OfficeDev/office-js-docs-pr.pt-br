@@ -1,18 +1,21 @@
 ---
 title: Suplementos de extensão de módulo do Outlook
 description: Crie aplicativos que sejam executados no Outlook, a fim de facilitar o acesso às informações comerciais e à ferramentas de produtividade, sem que os usuários precisem sair do Outlook.
-ms.date: 05/27/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6715a98cca70fbf5e7a2caae2fa2d37e35479d19
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d234f4e1aad77b3cc30d0e9bc9450ec79af958aa
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151868"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464801"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Suplementos de extensão de módulo do Outlook
 
 Suplementos de extensão de módulo aparecem na barra de navegação do Outlook ao lado de emails, tarefas e calendários. Uma extensão de módulo não está limitada ao uso de informações de emails e compromissos. Você pode criar aplicativos para o Outlook a fim de facilitar o acesso às informações comerciais e às ferramentas de produtividade, sem que os usuários precisem sair do Outlook.
+
+> [!TIP]
+> Não há suporte para extensões de módulo no manifesto do [Teams (](../develop/json-manifest-overview.md)versão prévia), mas você pode criar uma experiência muito semelhante para os usuários criando uma guia pessoal que é aberta [no Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). No período de visualização antecipada do manifesto do Teams nos Suplementos do Outlook, não é possível combinar um Suplemento do Outlook e uma guia pessoal no mesmo manifesto e instalá-los como uma unidade. Estamos trabalhando nisso, mas, enquanto isso, você deve criar aplicativos separados para o suplemento e a guia pessoal. Ambos podem usar arquivos no mesmo domínio.
 
 > [!NOTE]
 > As extensões de módulo são compatíveis apenas para o Outlook 2016 ou posterior no Windows.  
@@ -31,7 +34,9 @@ Quando mais de um suplemento é carregado, mostra a palavra **Suplementos**. Cli
 
 ![Mostra a barra de navegação expandida quando mais de uma extensão de módulo é carregada no Outlook.](../images/outlook-module-navigationbar-more.png)
 
-Quando você clica em uma extensão, o Outlook substitui o módulo embutido por seus módulos personalizados, para que os usuários possam interagir com o suplemento. Você pode usar todos os recursos da API JavaScript do Outlook no suplemento e criar botões de comando na faixa de opções do Outlook que interagirão com o conteúdo do suplemento. A captura de tela a seguir mostra um suplemento de exemplo integrado à barra de navegação do Outlook e que tem comandos da faixa de opções que atualizarão o conteúdo do suplemento.
+Quando você clica em uma extensão, o Outlook substitui o módulo embutido por seus módulos personalizados, para que os usuários possam interagir com o suplemento. Você pode usar alguns dos recursos da API JavaScript do Outlook em seu suplemento. APIs que assumem logicamente um item específico do Outlook, como uma mensagem ou compromisso, não funcionam em extensões de módulo. O módulo também pode incluir comandos de função na faixa de opções do Outlook que interagem com a página do suplemento. Para facilitar isso, seus comandos de função chamam o [método Office.onReady ou Office.initialize](../develop/initialize-add-in.md) e o [método Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) . Para ver como um suplemento do Outlook de extensão de módulo está configurado, consulte o exemplo de horas faturáveis de extensões de módulo [do Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
+
+A captura de tela a seguir mostra um suplemento que está integrado à barra de navegação do Outlook e tem comandos da faixa de opções que atualizarão a página do suplemento.
 
 ![Mostra a interface do usuário de uma extensão de módulo.](../images/outlook-module-extension.png)
 
