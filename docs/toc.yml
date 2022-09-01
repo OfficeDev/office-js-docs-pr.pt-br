@@ -337,6 +337,8 @@ items:
             href: develop/usability-testing.md
           - name: Validar o manifesto de suplemento do Office
             href: testing/troubleshoot-manifest.md
+          - name: Runtimes em Suplementos do Office
+            href: testing/runtimes.md
       - name: Publicar
         items:
           - name: Publicar Suplementos do Office
@@ -638,6 +640,8 @@ items:
             href: outlook/outlook-mobile-addins.md
           - name: Criar um suplemento de reunião online
             href: outlook/online-meeting.md
+          - name: Registrar anotações de compromisso no celular
+            href: outlook/mobile-log-appointments.md
           - name: Suplementos ao enviar
             href: outlook/outlook-on-send-addins.md
           - name: Acrescentar ao enviar
