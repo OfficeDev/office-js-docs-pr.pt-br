@@ -1,14 +1,14 @@
 ---
 title: Runtimes em Suplementos do Office
 description: Saiba mais sobre os runtimes usados pelos Suplementos do Office.
-ms.date: 08/10/2022
+ms.date: 08/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3507667aced648a9ca528eea9009b08d473bceb2
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d28f6db028d2f4c7036db51ccc5dbcc2144bdf3
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423318"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616039"
 ---
 # <a name="runtimes-in-office-add-ins"></a>Runtimes em Suplementos do Office
 
@@ -18,8 +18,8 @@ Os Suplementos do Office são executados em runtimes inseridos no Office. Como u
 
 Há dois tipos de runtimes usados pelos Suplementos do Office:
 
-- **Runtime somente JavaScript**: um mecanismo JavaScript complementado com suporte para [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS Completo (](https://developer.mozilla.org/docs/Web/HTTP/CORS)Compartilhamento de Recursos entre Origens) e [armazenamento local](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
-- **Runtime do navegador**: inclui todos os recursos de um runtime somente JavaScript e adiciona um mecanismo [](https://developer.mozilla.org/docs/Glossary/Rendering_engine) de renderização que renderiza HTML.
+- **Runtime somente JavaScript**: um mecanismo JavaScript complementado com suporte para [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS Completo (](https://developer.mozilla.org/docs/Web/HTTP/CORS)Compartilhamento de Recursos entre Origens) e armazenamento de dados do lado do cliente. (Ele não dá suporte ao [armazenamento local ou](https://developer.mozilla.org/docs/Web/API/Window/localStorage) cookies.) 
+- **Runtime do navegador**: inclui todos os recursos de um runtime somente JavaScript e adiciona suporte para armazenamento [local](https://developer.mozilla.org/docs/Web/API/Window/localStorage)[, mecanismo](https://developer.mozilla.org/docs/Glossary/Rendering_engine) de renderização que renderiza HTML e cookies.
 
 Os detalhes sobre esses tipos são posteriormente neste artigo no [runtime somente javaScript](#javascript-only-runtime) e [no runtime do navegador](#browser-runtime).
 
@@ -118,7 +118,7 @@ Para obter mais informações, [consulte Persistir](../develop/persisting-add-in
 
 ## <a name="javascript-only-runtime"></a>Runtime somente JavaScript
 
-O runtime somente JavaScript usado em Suplementos do Office é uma modificação de um runtime código aberto criado originalmente para [React Native](https://reactnative.dev/). Ele contém um mecanismo JavaScript complementado com suporte para [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS Completo (](https://developer.mozilla.org/docs/Web/HTTP/CORS)Compartilhamento de Recursos entre Origens) e [armazenamento local](https://developer.mozilla.org/docs/Web/API/Window/localStorage). Ele não tem um mecanismo de renderização e não dá suporte a cookies.
+O runtime somente JavaScript usado em Suplementos do Office é uma modificação de um runtime código aberto criado originalmente para [React Native](https://reactnative.dev/). Ele contém um mecanismo JavaScript complementado com suporte para [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS Completo (](https://developer.mozilla.org/docs/Web/HTTP/CORS)Compartilhamento de Recursos entre Origens) e [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). Ele não tem um mecanismo de renderização e não dá suporte a cookies ou [armazenamento local](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
 Esse tipo de runtime é usado em tarefas baseadas em eventos do Outlook somente no Office no Windows e em funções *personalizadas do* Excel, exceto quando as funções personalizadas estão compartilhando [um runtime](#shared-runtime). 
 

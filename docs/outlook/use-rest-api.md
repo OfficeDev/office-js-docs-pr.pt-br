@@ -1,14 +1,14 @@
 ---
 title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
-ms.date: 07/08/2022
+ms.date: 09/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c2717bf5d3cb440022ac31f815b7bf4c32d9eb4e
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 8630cc6c075d80546e019ba41f57d46d97eb0f13
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797691"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615998"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
@@ -19,12 +19,9 @@ O namespace [Office.context.mailbox.item](/javascript/api/requirement-sets/outlo
 >
 > Os pontos de extremidade REST do Outlook serão totalmente desativados em 30 de novembro de 2022 (para obter mais detalhes, consulte o comunicado de [novembro de 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Você deve migrar suplementos existentes para usar o [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Para obter diretrizes, consulte [Comparar os pontos de extremidade da API REST do Microsoft Graph e do Outlook](/outlook/rest/compare-graph).
 >
-> Para ajudá-lo com a migração, os suplementos ativos que usam o serviço REST antes de 30 de novembro de 2022 estão qualificados para uma isenção para continuar usando o serviço até que o suporte estendido termine para o [Outlook 2019 em 14 de outubro de 2025](/lifecycle/end-of-support/end-of-support-2025). Essa isenção se baseia na ID de manifesto do suplemento e se aplica a suplementos hospedados pelo AppSource e liberados de forma privada. Os suplementos devem atender às seguintes condições para serem qualificados para a isenção.
+> Para ajudá-lo com a migração, os suplementos ativos que usam o serviço REST estão qualificados para uma isenção para continuar usando o serviço até que o suporte estendido termine para o [Outlook 2019 em 14 de outubro de 2025](/lifecycle/end-of-support/end-of-support-2025). Isso inclui novos suplementos desenvolvidos após 30 de novembro de 2022. A isenção é baseada na ID de manifesto do suplemento e se aplica a suplementos hospedados pelo AppSource e liberados de forma privada.
 >
-> - A [ID](/javascript/api/manifest/id) do suplemento deve ser válida e exclusiva. Os suplementos hospedados no AppSource recebem automaticamente um GUID, enquanto os suplementos liberados de forma privada devem ser atribuídos manualmente a um no manifesto.
-> - Se o suplemento atender a vários clientes e não estiver hospedado no AppSource, a instância de suplemento usada por cada cliente deverá usar a mesma ID de manifesto. Se o suplemento usar uma ID diferente por cliente, ele não estará qualificado para uma isenção e deverá ser migrado para o Microsoft Graph antes de novembro de 2022.
->
-> Para garantir a isenção do suplemento, preencha o formulário de verificação do suplemento da [API REST](https://aka.ms/RESTCheck) antes de novembro de 2022. Para obter mais informações, consulte a postagem no blog de chamada da comunidade de [suplementos do Office de fevereiro de 2022](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/).
+> A identificação automática de tráfego de suplementos do Outlook que usam o serviço REST está sendo testada para validação de isenção. Se você quiser participar desta fase de teste, preencha o formulário de verificação do suplemento da [API REST](https://aka.ms/RESTCheck) antes de novembro de 2022. Para obter mais informações, consulte a postagem no blog de chamada da comunidade de [suplementos do Office de agosto de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/).
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 

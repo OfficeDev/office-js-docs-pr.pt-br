@@ -1,14 +1,14 @@
 ---
 title: Manipulando erros e eventos na caixa de diálogo do Office
 description: Saiba como interceptar e manipular erros ao abrir e usar a caixa de diálogo do Office.
-ms.date: 07/18/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8eefe4ee868a3cdc52ee8d425271435404bc04
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: d3bdae7d4dddcd92a54a46fec0d5854a1a18a0bc
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889454"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616032"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>Manipular erros e eventos na caixa de diálogo do Office
 
@@ -34,6 +34,7 @@ Além dos erros gerais da plataforma e do sistema, quatro erros são específico
 |12005|A URL passada para `displayDialogAsync` usa o protocolo HTTP. HTTPS é necessário. (Em algumas versões do Office, o texto da mensagem de erro retornado com 12005 é o mesmo retornado para 12004.)|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez.|
 |12009|O usuário opta por ignorar a caixa de diálogo. Esse erro pode ocorrer no Office na Web, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Para obter mais informações, consulte [Tratamento de bloqueadores pop-up com Office na Web](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web).|
+|12011| O suplemento está em execução no Office na Web e a configuração do navegador do usuário está bloqueando pop-ups. Isso geralmente acontece quando o navegador é Herdado do Edge e o domínio do suplemento está em uma zona de segurança diferente do domínio que a caixa de diálogo está tentando abrir. Outro cenário que dispara esse erro é que o navegador é o Safari e está configurado para bloquear todos os pop-ups. Considere responder a esse erro com um prompt para o usuário alterar a configuração do navegador ou usar um navegador diferente.|
 
 Quando `displayDialogAsync` é chamado, ele passa um [objeto AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Quando a chamada é bem-sucedida, a caixa de diálogo é aberta e `value` a propriedade do objeto `AsyncResult` é um [objeto Dialog](/javascript/api/office/office.dialog) . Para obter um exemplo disso, consulte [Enviar informações da caixa de diálogo para a página host](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Quando a chamada para `displayDialogAsync` falhar, a caixa de diálogo não é criada, `status` `AsyncResult` `Office.AsyncResultStatus.Failed`a propriedade do objeto é definida como e `error` a propriedade do objeto é preenchida. Você sempre deve fornecer um retorno de chamada que testa `status` e responde quando é um erro. Para obter um exemplo que relata a mensagem de erro, independentemente de seu número de código, consulte o código a seguir. (A `showNotification` função, não definida neste artigo, exibe ou registra o erro. Para obter um exemplo de como você pode implementar essa função em seu suplemento, consulte o Exemplo de API de Caixa de Diálogo [do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 

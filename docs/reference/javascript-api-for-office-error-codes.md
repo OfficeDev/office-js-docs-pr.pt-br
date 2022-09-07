@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
-ms.date: 02/08/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959060"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615990"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
@@ -93,6 +93,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |12006|||A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12007|||Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez. Lançada por chamada de `displayDialogAsync`.|
 |12009|||O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Lançada por chamada de `displayDialogAsync`.|
+|12011|||O navegador do usuário é configurado de uma maneira que bloqueia pop-ups. Esse erro pode ocorrer no Office na Web se o navegador for Safari e ele estiver configurado para bloquear pop-ups ou se o navegador for o Edge Legacy e o domínio do suplemento estiver em uma zona de segurança diferente do domínio que a caixa de diálogo está tentando abrir. Lançada por chamada de `displayDialogAsync`.|
 |13nnn|||Consulte [Causas e tratamento de erros de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## <a name="binding-creation-error-conditions"></a>Condições do erro de criação de associação
