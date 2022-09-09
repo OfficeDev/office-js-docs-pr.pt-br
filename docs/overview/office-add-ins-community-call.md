@@ -1,14 +1,14 @@
 ---
 title: Chamada da comunidade de Suplementos do Microsoft Office
 description: A agenda, o agendamento e os recursos da comunidade de Suplementos mensais do Microsoft Office.
-ms.date: 08/11/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: d7b33a4d1ce69641b6750f15963f4e4695574512
+ms.sourcegitcommit: 2ea81c2bf181c185de9c1508ab8e618f3e396708
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318869"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "67633740"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Chamada da comunidade de Suplementos do Microsoft Office
 
@@ -22,6 +22,8 @@ A agenda da chamada de setembro será postada cerca de uma semana antes da chama
 
 Perdeu uma chamada da comunidade anterior? Confira os seguintes recursos de blog para acompanhar a discussão!
 
+- [10 de agosto de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
+- [13 de julho de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
 - [8 de junho de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
 - [11 de maio de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
 - [13 de abril de 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-04-13/)
