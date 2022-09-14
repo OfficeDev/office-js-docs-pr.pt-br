@@ -2,23 +2,23 @@
 title: Depurar seu suplemento do Outlook baseado em evento
 description: Saiba como depurar seu suplemento do Outlook que implementa a ativação baseada em evento.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 9b6a1d9a013b7c8e22632bdd04fb74e06c804a01
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797488"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674680"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>Depurar seu suplemento do Outlook baseado em evento
 
-Este artigo fornece diretrizes de depuração à medida que [você implementa a](autolaunch.md) ativação baseada em eventos em seu suplemento. O recurso de ativação baseada em evento foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) com eventos adicionais agora disponíveis na versão prévia. Para obter mais informações, consulte [eventos com suporte](autolaunch.md#supported-events).
+Este artigo fornece diretrizes de depuração à medida que [você implementa a](autolaunch.md) ativação baseada em eventos em seu suplemento. O recurso de ativação baseada em evento foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), com eventos adicionais agora disponíveis em conjuntos de requisitos subsequentes. Para obter mais informações, consulte [Eventos com suporte](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
 > Esse recurso de depuração só tem suporte no Outlook no Windows com uma assinatura do Microsoft 365.
 
-Neste artigo, discutiremos os principais estágios para habilitar a depuração.
+Este artigo discute os principais estágios para habilitar a depuração.
 
 - [Marcar o suplemento para depuração](#mark-your-add-in-for-debugging)
 - [Configurar Visual Studio Code](#configure-visual-studio-code)
@@ -43,10 +43,10 @@ Se você usou o Gerador Yeoman para Suplementos do Office para criar seu projeto
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Inicie a área de trabalho do Outlook (ou reinicie o Outlook se ele já estiver aberto).
-1. Redigir uma nova mensagem ou compromisso. Você deverá ver a caixa de diálogo a seguir. Não *interaja* com a caixa de diálogo ainda.
+1. Inicie o Outlook ou reinicie-o se ele já estiver aberto.
+1. Redigir uma nova mensagem ou compromisso. A caixa de diálogo Manipulador baseado em Evento de Depuração deve aparecer. Não *interaja* com a caixa de diálogo ainda.
 
-    ![Captura de tela da caixa de diálogo do manipulador baseado em Evento de Depuração.](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![A caixa de diálogo do manipulador baseado em Evento de Depuração no Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Configurar Visual Studio Code
 
@@ -72,18 +72,18 @@ Se você usou o Gerador Yeoman para Suplementos do Office para criar seu projeto
     }
     ```
 
-### <a name="other"></a>Other
+### <a name="other"></a>Outros
 
 1. Crie uma nova pasta chamada **Depuração** (talvez na pasta **Área de** Trabalho).
 1. Abra o Visual Studio Code.
 1. Vá para **Abrir** > **Pasta de Arquivo**, navegue até a pasta que você acabou de criar e escolha **Selecionar Pasta**.
-1. Na Barra de Atividades, selecione o item **Depurar** (Ctrl+Shift+D).
+1. Na Barra de Atividades, selecione **Executar e Depurar** (Ctrl+Shift+D).
 
-    ![Captura de tela do ícone Depurar na Barra de Atividades.](../images/vs-code-debug.png)
+    ![O ícone Executar e Depurar na Barra de Atividades.](../images/vs-code-debug.png)
 
 1. Selecione o **link criar um arquivo launch.json** .
 
-    ![Captura de tela do link para criar um arquivo launch.json no Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![O link localizado na opção Executar e Depurar para criar um arquivo launch.json no Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. Na lista **suspensa Selecionar Ambiente** , selecione **Edge: Iniciar** para criar um arquivo launch.json.
 1. Adicione o trecho a seguir à sua lista de configurações. Salve suas alterações.
@@ -113,9 +113,9 @@ Se você usou o Gerador Yeoman para Suplementos do Office para criar seu projeto
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Coloque pontos de interrupção bundle.js onde você deseja que o depurador pare.
-1. Na lista **suspensa DEBUG** , selecione o nome **Depuração Direta** e, em seguida, **selecione Executar**.
+1. Na lista **suspensa DEBUG** , selecione **Depuração** Direta e, em seguida, selecione o **ícone Iniciar Depuração** .
 
-    ![Captura de tela da seleção de Depuração Direta nas opções de configuração na lista suspensa Visual Studio Code Depuração.](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![A opção Depuração Direta selecionada nas opções de configuração na lista suspensa Visual Studio Code Depuração.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Depurar
 

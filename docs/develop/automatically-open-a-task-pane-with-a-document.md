@@ -1,20 +1,23 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
 description: Saiba como configurar um Suplemento do Office para abrir automaticamente quando um documento for aberto.
-ms.date: 09/14/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ea5981fc8469d391ff03c1d3eefd70c57e41d4cb
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889489"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674622"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de suplemento em seu Suplemento do Office para estender a interface do usuário do Office adicionando botões à faixa de opções do aplicativo do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas.
 
 Alguns cenários exigem que um painel de tarefas abra automaticamente quando um documento é aberto, sem a interação explícita do usuário. Você pode usar o recurso de painel de tarefas autoopen, introduzido no conjunto de [requisitos AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), para abrir automaticamente um painel de tarefas quando seu cenário exigir.
+
+> [!NOTE]
+> Para configurar um painel de tarefas para abrir imediatamente quando o suplemento estiver instalado, mas não necessariamente sempre que o documento for aberto posteriormente, consulte Abrir automaticamente um painel de tarefas quando um [suplemento for instalado](automatically-open-on-installation.md).
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
@@ -160,4 +163,5 @@ Você pode testar o exemplo anterior usando sua assinatura do Microsoft 365 para
 ## <a name="see-also"></a>Confira também
 
 - Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Abrir automaticamente um painel de tarefas quando um suplemento é instalado](automatically-open-on-installation.md)
 - [Participe do programa de desenvolvedor do Microsoft 365.](/office/developer-program/office-365-developer-program)

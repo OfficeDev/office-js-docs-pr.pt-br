@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423227"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674748"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu suplemento do Outlook para ativação baseada em evento
 
@@ -18,16 +18,13 @@ Sem o recurso de ativação baseada em evento, um usuário precisa iniciar expli
 Ao final deste passo a passo, você terá um suplemento que é executado sempre que um novo item é criado e define o assunto.
 
 > [!NOTE]
-> O suporte para esse recurso foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), com eventos adicionais agora compatíveis com o conjunto de requisitos [1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
+> O suporte para esse recurso foi introduzido no conjunto de requisitos [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), com eventos adicionais agora disponíveis em conjuntos de requisitos subsequentes. Para obter detalhes sobre o conjunto de requisitos mínimos de um evento e os clientes e plataformas que [](#supported-events) dão suporte a ele, consulte Eventos com suporte e conjuntos de requisitos compatíveis com servidores [Exchange e clientes do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
 > Não há suporte para a ativação baseada em eventos no Outlook no iOS ou Android.
 
 ## <a name="supported-events"></a>Eventos com suporte
 
 A tabela a seguir lista os eventos que estão disponíveis no momento e os clientes com suporte para cada evento. Quando um evento é gerado, o manipulador recebe um `event` objeto que pode incluir detalhes específicos para o tipo de evento. A **coluna** Descrição inclui um link para o objeto relacionado quando aplicável.
-
-> [!IMPORTANT]
-> Os eventos ainda em versão prévia só podem estar disponíveis com uma assinatura do Microsoft 365 e em um conjunto limitado de clientes com suporte, conforme mostrado na tabela a seguir. Para obter detalhes de configuração do cliente, [consulte Como visualizar](#how-to-preview) neste artigo. Eventos de visualização não devem ser usados em suplementos de produção.
 
 |Evento|Descrição|Conjunto de requisitos mínimo e clientes com suporte|
 |---|---|---|
@@ -40,31 +37,17 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 |`OnAppointmentTimeChanged`|Ao alterar a data/hora ao compor um compromisso.<br><br>Objeto de dados específico do evento: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 |`OnAppointmentRecurrenceChanged`|Ao adicionar, alterar ou remover os detalhes de recorrência ao redigir um compromisso. Se a data/hora for alterada, o `OnAppointmentTimeChanged` evento também será acionado.<br><br>Objeto de dados específico do evento: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 |`OnInfoBarDismissClicked`|Ao ignorar uma notificação ao redigir uma mensagem ou item de compromisso. Somente o suplemento que adicionou a notificação será notificado.<br><br>Objeto de dados específico do evento: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
-|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
-|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
-|`OnMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar) ou editar um rascunho.|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
-|`OnAppointmentOrganizer`|Ao criar um novo compromisso ou editar um existente.|[Visualização](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnMessageSend`|Ao enviar um item de mensagem. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentSend`|Ao enviar um item de compromisso. Para saber mais, confira o passo a passo [de Alertas Inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnMessageCompose`|Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar) ou editar um rascunho.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
+|`OnAppointmentOrganizer`|Ao criar um novo compromisso ou editar um existente.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 
 > [!NOTE]
 > <sup>1</sup> Suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (build 18362) ou Windows Server 2019 versão 1903 para execução.
 
-### <a name="how-to-preview"></a>Como visualizar
-
-Convidamos você a experimentar os eventos agora em versão prévia! Informe-nos seus cenários e como podemos melhorar fornecendo comentários por meio do GitHub (consulte a  seção Comentários no final desta página).
-
-Para visualizar esses eventos quando disponível:
-
-- Para Outlook na Web:
-  - [Configure a versão direcionada em seu locatário do Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
-  - Fazer referência **à biblioteca beta** na CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) da compilação TypeScript e IntelliSense pode ser encontrado na CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`.
-- Para o Outlook na nova interface do usuário do Mac:
-  - O build mínimo necessário é 16,54 (21101001). Ingresse [no programa Office Insider](https://insider.office.com/join/Mac) e escolha o **Canal Beta** para acesso aos builds beta do Office.
-- Para o Outlook no Windows:
-  - O build mínimo necessário é 16.0.14511.10000. Ingresse [no programa Office Insider](https://insider.office.com/join/windows) e escolha o **Canal Beta** para acesso aos builds beta do Office.
-
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o [gerador Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md).
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -140,10 +123,10 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
-              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
+              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
               
-              <!-- Other available events (currently released) -->
+              <!-- Other available events -->
               <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
@@ -152,12 +135,10 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
-              -->
-
-              <!-- Other available events (currently in preview) -->
-              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              <LaunchEvent Type="OnMessageCompose" FunctionName="onMessageComposeHandler" />
+              <LaunchEvent Type="OnAppointmentOrganizer" FunctionName="onAppointmentOrganizerHandler" />
               -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
@@ -218,10 +199,10 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     * See LICENSE in the project root for license information.
     */
 
-    function onMessageComposeHandler(event) {
+    function onNewMessageComposeHandler(event) {
       setSubject(event);
     }
-    function onAppointmentComposeHandler(event) {
+    function onNewAppointmentComposeHandler(event) {
       setSubject(event);
     }
     function setSubject(event) {
@@ -242,8 +223,8 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
-    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. Salve suas alterações.
@@ -255,7 +236,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
 
 1. Na pasta **./src/commands** , abra **commands.html**.
 
-1. Imediatamente antes da marca **de cabeçalho** de fechamento (`<\head>`), adicione uma entrada de script para incluir o código JavaScript de manipulação de eventos.
+1. Imediatamente antes da marca **de cabeçalho** de fechamento (`</head>`), adicione uma entrada de script para incluir o código JavaScript de manipulação de eventos.
 
     ```html
     <script type="text/javascript" src="../launchevent/launchevent.js"></script>
@@ -289,6 +270,7 @@ Nesse cenário, você adicionará a manipulação para compor novos itens.
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
@@ -325,10 +307,12 @@ O log de runtime também está disponível para esse recurso no Windows. Para ob
 
 Você pode implantar suplementos baseados em eventos carregando o manifesto por meio do Centro de administração do Microsoft 365. No portal de administração, expanda **a seção Configurações** no painel de navegação e selecione **Aplicativos integrados**. Na página **Aplicativos integrados** , escolha a **ação Carregar aplicativos personalizados** .
 
-![A página Aplicativos integrados no Centro de administração do Microsoft 365, incluindo a ação Carregar aplicativos personalizados.](../images/outlook-deploy-event-based-add-ins.png)
+![A página Aplicativos integrados no Centro de administração do Microsoft 365 com a ação Carregar aplicativos personalizados realçada.](../images/outlook-deploy-event-based-add-ins.png)
 
 > [!IMPORTANT]
-> Os suplementos baseados em eventos são restritos somente a implantações gerenciadas pelo administrador. Por enquanto, os usuários não podem obter suplementos baseados em eventos do AppSource ou da Office Store no aplicativo. Para saber mais, confira as [opções de listagem do AppSource para seu suplemento do Outlook baseado em eventos](autolaunch-store-options.md).
+> Os suplementos baseados em eventos são restritos somente a implantações gerenciadas pelo administrador. Os usuários não podem ativar suplementos baseados em eventos do AppSource ou da Office Store no aplicativo. Para saber mais, confira [as opções de listagem do AppSource para seu suplemento do Outlook baseado em eventos](autolaunch-store-options.md).
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Limitações e comportamento de ativação baseado em evento
 

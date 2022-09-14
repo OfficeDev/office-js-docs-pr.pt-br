@@ -3,12 +3,12 @@ title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: b365be937058f818a97dd7a73176a56f76b36098
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464822"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674621"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
@@ -23,7 +23,7 @@ Este artigo pressupõe que você tenha um projeto de suplemento que precisa ser 
 
 Para depurar seu suplemento usando o Office na Web:
 
-1. Execute o projeto no localhost e o sideload em um documento Office na Web. Para obter instruções detalhadas de sideload, consulte [Sideload de Suplementos do Office na Web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
+1. Execute o projeto no localhost e o sideload em um documento Office na Web. Para obter instruções detalhadas de sideload, consulte [Sideload manual de Suplementos do Office na Web](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
 
 2. Abra as ferramentas de desenvolvedor do navegador. Isso geralmente é feito pressionando F12. Abra a ferramenta de depurador e use-a para definir pontos de interrupção e inspecionar variáveis. Para obter ajuda detalhada sobre como usar a ferramenta do navegador, consulte um dos seguintes:
 

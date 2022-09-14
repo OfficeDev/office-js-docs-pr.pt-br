@@ -4,12 +4,12 @@ description: Aprenda a criar um suplemento do painel de tarefas simples do Excel
 ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d172e3b61fa4b8b66cc79b2cd364b3f2f0b37d96
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 7dc9219988743bd4dbebfbfa28e6570bc56f9c56
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797495"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674649"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Usar o Vue para criar um suplemento do painel de tarefas do Excel
 
@@ -213,7 +213,7 @@ O projeto de suplemento que você criou com o gerador Yeoman contém um código 
 1. Execute o suplemento e o sideload do suplemento no Excel. Siga as instruções para a plataforma que você usará:
 
    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-   - Navegador Web:[Realizar Sideload de Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - Navegador da Web: [fazer sideload de Suplementos do Office para Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
    - iPad: [Sideload de suplementos do Office no iPad](../testing/sideload-an-office-add-in-on-ipad.md)
    - Mac: [Sideload de suplementos do Office no Mac](../testing/sideload-an-office-add-in-on-mac.md)
 

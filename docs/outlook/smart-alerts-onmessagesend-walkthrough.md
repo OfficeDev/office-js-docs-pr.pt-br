@@ -1,32 +1,32 @@
 ---
-title: Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook (versão prévia)
+title: Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 description: Saiba como lidar com os eventos ao enviar em seu suplemento do Outlook usando a ativação baseada em evento.
 ms.topic: article
-ms.date: 08/10/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: cabe56d247a009886939f1738b5f135724c40f1d
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320648"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674635"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook (versão prévia)
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Usar Alertas Inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 
 Os `OnMessageSend` e `OnAppointmentSend` os eventos aproveitam os Alertas Inteligentes, que permitem executar a lógica depois que um usuário seleciona **Enviar em sua** mensagem ou compromisso do Outlook. O manipulador de eventos permite que você conceda aos usuários a oportunidade de melhorar seus emails e convites de reunião antes que eles sejam enviados.
 
 O passo a passo a seguir usa o `OnMessageSend` evento. Ao final deste passo a passo, você terá um suplemento executado sempre que uma mensagem estiver sendo enviada e verificará se o usuário esqueceu de adicionar um documento ou imagem mencionado no email.
 
-> [!IMPORTANT]
-> Os `OnMessageSend` eventos `OnAppointmentSend` e os eventos só estão disponíveis em versão prévia com uma assinatura do Microsoft 365 no Outlook no Windows e na Web. Para obter mais detalhes, [consulte Como visualizar](autolaunch.md#how-to-preview). Eventos de visualização não devem ser usados em suplementos de produção.
+> [!NOTE]
+> O `OnMessageSend` e `OnAppointmentSend` os eventos foram introduzidos no [conjunto de requisitos 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). Confira, [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-O `OnMessageSend` evento está disponível por meio do recurso de ativação baseada em evento. Para entender como configurar seu suplemento para usar esse recurso, use outros eventos disponíveis, configure a visualização para esse evento, depure seu suplemento e muito mais, consulte Configurar seu suplemento do [Outlook](autolaunch.md) para ativação baseada em evento.
+O `OnMessageSend` evento está disponível por meio do recurso de ativação baseada em evento. Para entender como configurar seu suplemento para usar esse recurso, use outros eventos disponíveis, depure seu suplemento e muito mais, consulte Configurar seu suplemento do Outlook para ativação baseada em [evento](autolaunch.md).
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), que cria um projeto de suplemento com o [Gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md).
+Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), que cria um projeto de suplemento com o gerador [Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md).
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -40,7 +40,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.11">
+      <bt:Sets DefaultMinVersion="1.12">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -137,7 +137,7 @@ Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs
 
 > [!TIP]
 >
-> - Para **obter as opções sendMode** disponíveis com os eventos `OnMessageSend` `OnAppointmentSend` e os eventos, consulte [as opções de SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - Para **obter as opções sendMode** disponíveis com os eventos `OnMessageSend` `OnAppointmentSend` e os eventos, consulte [as opções de SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options).
 > - Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implementar a manipulação de eventos
@@ -278,9 +278,16 @@ Nesse cenário, você adicionará a manipulação para enviar uma mensagem. O su
 
 1. Adicione um anexo e envie a mensagem novamente. Não deve haver nenhum alerta desta vez.
 
+## <a name="deploy-to-users"></a>Implantar para usuários
+
+Semelhante a outros suplementos baseados em eventos, os suplementos que usam o recurso Alertas Inteligentes devem ser implantados pelo administrador de uma organização. Para obter diretrizes sobre como implantar seu suplemento por meio do Centro de administração do Microsoft 365, consulte a seção Implantar para usuários  em Configurar seu suplemento do Outlook para ativação baseada [em evento](autolaunch.md#deploy-to-users).
+
+> [!IMPORTANT]
+> Os suplementos que usam o recurso Alertas Inteligentes só poderão ser publicados no AppSource se a propriedade [SendMode](/javascript/api/manifest/launchevent#available-sendmode-options) `SoftBlock` do manifesto estiver definida como a opção `PromptUser` ou a opção. Se a propriedade **SendMode** `Block`de um suplemento estiver definida como , ela só poderá ser implantada pelo administrador de uma organização, pois falhará na validação do AppSource. Para saber mais sobre como publicar seu suplemento baseado em eventos no AppSource, consulte as opções de listagem do [AppSource para seu suplemento do Outlook baseado em eventos](autolaunch-store-options.md).
+
 ## <a name="smart-alerts-feature-behavior-and-scenarios"></a>Cenários e comportamento de recursos de Alertas Inteligentes
 
-As descrições das **opções e recomendações do SendMode** para quando usá-las são detalhadas [nas opções Do SendMode disponíveis](/javascript/api/manifest/launchevent). O exemplo a seguir descreve o comportamento do recurso para determinados cenários.
+As descrições das **opções e recomendações do SendMode** para quando usá-las são detalhadas [nas opções Do SendMode disponíveis](/javascript/api/manifest/launchevent#available-sendmode-options). O exemplo a seguir descreve o comportamento do recurso para determinados cenários.
 
 ### <a name="add-in-is-unavailable"></a>O suplemento não está disponível
 
@@ -320,7 +327,7 @@ Se a `SoftBlock` opção `Block` ou for usada, o usuário não poderá enviar o 
 
 ## <a name="limitations"></a>Limitações
 
-Como os `OnMessageSend` eventos e `OnAppointmentSend` os eventos têm suporte por meio do recurso de ativação baseada em evento, as mesmas limitações de recursos se aplicam aos suplementos que são ativados como resultado desses eventos. Para obter uma descrição dessas limitações, consulte o comportamento e as limitações de [ativação baseada em eventos](autolaunch.md#event-based-activation-behavior-and-limitations).
+Como os `OnMessageSend` eventos e `OnAppointmentSend` os eventos têm suporte por meio do recurso de ativação baseada em evento, as mesmas limitações de recursos se aplicam aos suplementos que são ativados como resultado desses eventos. Para obter uma descrição dessas limitações, consulte [o comportamento e as limitações da ativação baseada em eventos](autolaunch.md#event-based-activation-behavior-and-limitations).
 
 Além dessas restrições, apenas uma instância de cada evento `OnMessageSend` `OnAppointmentSend` pode ser declarada no manifesto. Se você precisar de vários `OnMessageSend` ou `OnAppointmentSend` eventos, deverá declarar cada um deles em um manifesto ou suplemento separado.
 
@@ -328,7 +335,7 @@ Embora uma mensagem de diálogo alertas inteligentes possa ser alterada para se 
 
 - A barra de título do diálogo. O nome do suplemento sempre é exibido lá.
 - O formato da mensagem. Por exemplo, você não pode alterar o tamanho e a cor da fonte do texto nem inserir uma lista com marcadores.
-- As opções de diálogo. Por exemplo, as **opções Enviar Mesmo** **Assim e** Não Enviar são fixas e dependem da [opção SendMode selecionada](/javascript/api/manifest/launchevent) .
+- As opções de diálogo. Por exemplo, as **opções Enviar Mesmo** **Assim e** Não Enviar são fixas e dependem da [opção SendMode selecionada](/javascript/api/manifest/launchevent#available-sendmode-options) .
 - Caixas de diálogo de informações de progresso e processamento de ativação baseada em evento. Por exemplo, o texto e as opções que aparecem nas caixas de diálogo tempo limite e operação de execução longa não podem ser alterados.
 
 ## <a name="see-also"></a>Confira também

@@ -93,6 +93,9 @@ items:
               - name: Abrir automaticamente um painel de tarefas com um documento
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: Abrir automaticamente um painel de tarefas na instalação do suplemento
+                href: develop/automatically-open-on-installation.md
+                displayName: manifest
               - name: Configure seu suplemento para usar um tempo de execução compartilhado
                 href: develop/configure-your-add-in-to-use-a-shared-runtime.md
               - name: Executar o código no documento aberto
@@ -626,7 +629,7 @@ items:
             href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
             displayName: Outlook
           - name: Referência da API – versão mais recente
-            href: reference/outlook-api-reference-1-11.md
+            href: reference/outlook-api-reference-latest.md
             displayName: Outlook
           - name: Diretrizes de design de suplementos do Outlook
             href: outlook/outlook-addin-design.md

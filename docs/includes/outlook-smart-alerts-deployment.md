@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Os suplementos que usam o recurso [Alertas](../outlook/smart-alerts-onmessagesend-walkthrough.md) Inteligentes só poderão ser publicados no AppSource se a propriedade [SendMode](/javascript/api/manifest/launchevent#available-sendmode-options) `SoftBlock` do manifesto estiver definida como a opção `PromptUser` ou a opção. Se a propriedade **SendMode** `Block`de um suplemento estiver definida como , ela só poderá ser implantada pelo administrador de uma organização, pois falhará na validação do AppSource.
