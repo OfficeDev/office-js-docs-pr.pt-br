@@ -3,12 +3,12 @@ title: Glossário de termos de Suplementos do Office
 description: Um glossário de termos comumente usados em toda a documentação de Suplementos do Office.
 ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
+ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423290"
+ms.lasthandoff: 09/16/2022
+ms.locfileid: "67735320"
 ---
 # <a name="office-add-ins-glossary"></a>Glossário de Suplementos do Office
 
@@ -78,13 +78,17 @@ Um **runtime de funções personalizadas** é um [runtime somente JavaScript](..
 
 Consulte também: [runtime](#runtime), [runtime compartilhado](#shared-runtime).
 
+## <a name="custom-functions-only-add-in"></a>suplemento somente para funções personalizadas
+
+Um suplemento que contém uma função personalizada, mas nenhuma interface do usuário, como um painel de tarefas. As funções personalizadas nesse tipo de suplemento são executadas em um [runtime somente JavaScript](../testing/runtimes.md#javascript-only-runtime). Uma função personalizada que inclui uma interface do usuário pode usar um runtime compartilhado ou uma combinação de um runtime somente JavaScript e um runtime de suporte a HTML. Recomendamos que, se você tiver uma interface do usuário, use um runtime compartilhado.
+
+Consulte também: [função personalizada](#custom-function), [runtime de funções personalizadas](#custom-functions-runtime).
+
 ## <a name="host"></a>host
 
 **\<Host\>** normalmente se refere a um aplicativo do Office. Os aplicativos do Office ou hosts que dão suporte a Suplementos do Office são Excel, OneNote, Outlook, PowerPoint, Project e Word.
 
 Consulte também: [aplicativo](#application), [cliente](#client), aplicativo [do Office, cliente do Office](#office-application-office-client).
-
-
 
 ## <a name="office-application-office-client"></a>Aplicativo do Office, cliente do Office
 
@@ -133,12 +137,6 @@ Consulte também: [modo de exibição da Web](#webview).
 Um **tutorial** é um auxílio de ensino projetado para ajudar as pessoas a aprender a usar um produto ou procedimento. No contexto de Suplementos do Office, um tutorial orienta um desenvolvedor de suplementos pelo processo completo de desenvolvimento de suplementos para um aplicativo específico, como o Excel. Isso envolve seguir 20 ou mais etapas e é um investimento de tempo maior do que um [início rápido](#quick-start).
 
 Confira também: [início rápido](#quick-start).
-
-## <a name="custom-functions-only-add-in"></a>suplemento somente para funções personalizadas
-
-Um suplemento que contém uma função personalizada, mas nenhuma interface do usuário, como um painel de tarefas. As funções personalizadas nesse tipo de suplemento são executadas em um [runtime somente JavaScript](../testing/runtimes.md#javascript-only-runtime). Uma função personalizada que inclui uma interface do usuário pode usar um runtime compartilhado ou uma combinação de um runtime somente JavaScript e um runtime de suporte a HTML. Recomendamos que, se você tiver uma interface do usuário, use um runtime compartilhado. 
-
-Consulte também: [função personalizada](#custom-function), [runtime de funções personalizadas](#custom-functions-runtime).
 
 ## <a name="web-add-in"></a>suplemento Web
 
