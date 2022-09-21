@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em evento.
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 09/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 17f6815728beeb722f79db4ddc3c61e0f8e96f59
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674748"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857575"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu suplemento do Outlook para ativação baseada em evento
 
@@ -177,7 +177,7 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
 O Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências `Resources` a ambos os arquivos no nó do manifesto, pois a plataforma do Outlook determina se deve usar HTML ou JavaScript com base no cliente do Outlook. Dessa forma, para configurar a manipulação de eventos, forneça o local do HTML **\<Runtime\>** no elemento e, em seu elemento filho, `Override` forneça o local do arquivo JavaScript embutido ou referenciado pelo HTML.
 
 > [!TIP]
-> 
+>
 > - Para saber mais sobre runtimes em suplementos, consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).
 > - Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
 
@@ -316,13 +316,13 @@ Você pode implantar suplementos baseados em eventos carregando o manifesto por 
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Limitações e comportamento de ativação baseado em evento
 
-Espera-se que os manipuladores de eventos de inicialização de suplementos sejam de curta execução, leves e não invasivos possíveis. Após a ativação, o suplemento expirará em aproximadamente 300 segundos, o período máximo permitido para a execução de suplementos baseados em eventos. Para sinalizar que seu suplemento concluiu o processamento de um evento de inicialização, recomendamos que o manipulador associado chame o `event.completed` método. (Observe que o código incluído após a instrução `event.completed` não tem garantia de execução.) Sempre que um evento que seus identificadores de suplemento são disparados, o suplemento é reativado e executa o manipulador de eventos associado e a janela de tempo limite é redefinida. O suplemento termina após o tempo limite, ou o usuário fecha a janela de composição ou envia o item.
+Espera-se que os manipuladores de eventos de inicialização de suplementos sejam de curta execução, leves e não invasivos possíveis. Após a ativação, o suplemento expirará em aproximadamente 300 segundos, o período máximo permitido para a execução de suplementos baseados em eventos. Para sinalizar que o suplemento concluiu o processamento de um evento de inicialização, o manipulador de eventos associado deve chamar o `event.completed` método. (Observe que não há garantia de execução do `event.completed` código incluído após a instrução.) Sempre que um evento que seus identificadores de suplemento são disparados, o suplemento é reativado e executa o manipulador de eventos associado e a janela de tempo limite é redefinida. O suplemento termina após o tempo limite, ou o usuário fecha a janela de composição ou envia o item.
 
 Se o usuário tiver vários suplementos que assinaram o mesmo evento, a plataforma do Outlook iniciará os suplementos em nenhuma ordem específica. Atualmente, apenas cinco suplementos baseados em eventos podem ser executados ativamente.
 
 Em todos os clientes do Outlook com suporte, o usuário deve permanecer no item de email atual em que o suplemento foi ativado para que ele seja concluído em execução. Navegar para longe do item atual (por exemplo, alternar para outra janela ou guia de composição) encerra a operação de suplemento. O suplemento também encerra a operação quando o usuário envia a mensagem ou o compromisso que está redigindo.
 
-Não há suporte para importações no arquivo JavaScript em que você implementa o tratamento para ativação baseada em eventos no cliente windows.
+Não há suporte para importações no arquivo JavaScript em que você implementa o tratamento para ativação baseada em evento no cliente windows.
 
 Algumas Office.js APIs que alteram ou alteram a interface do usuário não são permitidas de suplementos baseados em eventos. A seguir estão as APIs bloqueadas.
 

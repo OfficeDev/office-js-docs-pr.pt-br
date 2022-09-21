@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Documentação de Suplementos do Office
-summary: Use Office de Suplementos do Office para criar soluções que estendem aplicativos Office e interagem com conteúdo em documentos do Office e em Outlook de email e itens de calendário. Com os Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office na Web, Windows, Mac e dispositivos móveis.
+summary: Use a plataforma suplementos do Office para criar soluções que estendem aplicativos do Office e interagem com conteúdo em documentos do Office e em mensagens de email do Outlook e itens de calendário. Com os Suplementos do Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas em Office na Web, Windows, Mac e dispositivos móveis.
 brand: office
 metadata:
   title: Documentação de Suplementos do Office
@@ -11,37 +11,37 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 02/10/2022
-  ms.openlocfilehash: 07d8e2c8c9dc1dff799c2a1be6ba65e1b4fffc28
-  ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
+  ms.openlocfilehash: 8074f9c01d456532f60d3d3365dbde16e3819e30
+  ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 05/17/2022
-  ms.locfileid: "65432194"
+  ms.lasthandoff: 09/21/2022
+  ms.locfileid: "67857526"
 highlightedContent:
   items:
   - itemType: overview
     title: Visão geral da plataforma de Suplementos do Office
     url: overview/office-add-ins.md
   - itemType: quickstart
-    title: Configurar um Excel em 5 minutos
+    title: Configurar um suplemento do Excel em 5 minutos
     url: quickstarts/excel-quickstart-jquery.md
   - itemType: learn
-    title: 'Microsoft Learn: Introdução Office personalização do cliente com suplementos'
-    url: /learn/modules/intro-office-add-ins
+    title: 'Microsoft Learn: Introdução à personalização de cliente do Office com suplementos'
+    url: /training/modules/intro-office-add-ins
   - itemType: learn
-    title: 'Microsoft Learn: estender Office clientes com Office suplementos'
-    url: /learn/paths/m365-office-add-in-associate
+    title: 'Microsoft Learn: Estender clientes do Office com suplementos do Office'
+    url: /training/paths/m365-office-add-in-associate
   - itemType: sample
-    title: Exemplos de Office suplementos
+    title: Exemplos de suplementos do Office
     url: overview/office-add-in-code-samples.md
   - itemType: how-to-guide
-    title: Office guia do iniciante de suplementos
+    title: Guia do Iniciante para Suplementos do Office
     url: overview/learning-path-beginner.md
   - itemType: reference
     title: Documentação de Referência da API JavaScript do Office
     url: /javascript/api/overview
   - itemType: whats-new
-    title: Microsoft 365 blog do desenvolvedor
+    title: Blog do desenvolvedor do Microsoft 365
     url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
 conceptualContent:
   title: Seu percurso do desenvolvedor
@@ -57,18 +57,18 @@ conceptualContent:
       text: Testar e experimentar com Script Lab
     - url: quickstarts/outlook-quickstart.md
       itemType: quickstart
-      text: Configurar um Outlook em 5 minutos
+      text: Configurar um suplemento do Outlook em 5 minutos
     - url: quickstarts/powerpoint-quickstart.md
       itemType: quickstart
-      text: Configurar um PowerPoint em 5 minutos
+      text: Configurar um suplemento do PowerPoint em 5 minutos
   - title: Compilar
     links:
     - url: tutorials/excel-tutorial.md
       itemType: tutorial
-      text: Desenvolver um Excel completo
+      text: Desenvolver um suplemento completo do Excel
     - url: tutorials/outlook-tutorial.md
       itemType: tutorial
-      text: Descubra o Outlook de suplementos
+      text: Descubra o tutorial do suplemento do Outlook
     - url: overview/patterns-and-practices-overview.md
       itemType: sample
       text: Usar padrões e práticas comuns
@@ -98,10 +98,10 @@ conceptualContent:
     links:
     - url: /office/dev/store
       itemType: overview
-      text: Validar seu Office suplemento
+      text: Validar seu Suplemento do Office
     - url: /office/dev/store/add-in-submission-guide
       itemType: how-to-guide
-      text: Examinar o guia Microsoft 365 App Store de envio
+      text: Examinar o guia de envio de App Store Microsoft 365
   - title: Envolva-se
     links:
     - url: https://developer.microsoft.com/microsoft-365/dev-program

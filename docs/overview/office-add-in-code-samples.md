@@ -1,14 +1,14 @@
 ---
 title: Amostras de código de suplemento do Office
 description: Uma lista de exemplos de código de suplementos do Office para ajudá-lo a aprender e criar seus próprios suplementos.
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
-ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 25a2312d26578c25c0ed2a3098df0d43008f9ac4
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423262"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857561"
 ---
 # <a name="office-add-in-code-samples"></a>Amostras de código de suplemento do Office
 
@@ -23,21 +23,19 @@ Os exemplos a seguir mostram como construir o Suplemento do Office mais simples 
 - [Suplemento "Olá, mundo" do PowerPoint](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Suplemento do Word "Olá, mundo"](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
-<br>
-
----
-
----
-
 ## <a name="blazor-webassembly"></a>Blazor WebAssembly
 
+Se o seu plano de fundo de desenvolvimento estiver na criação de Suplementos do VSTO, os exemplos a seguir mostrarão como criar Suplementos da Web do Office usando o WebAssembly do .NET Blazor. Você pode manter grande parte do código em C# e Visual Studio.
+
 - [Criar um suplemento do Excel do Blazor WebAssembly](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Criar um suplemento Blazor WebAssembly do Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
 - [Criar um suplemento do Word do Blazor WebAssembly](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 
 | Name                | Descrição         |
 |:--------------------|:--------------------|
+| [Gerenciador de tipos de dados](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (versão prévia) | Cria um suplemento do Excel que permite criar e explorar tipos de dados em suas pastas de trabalho. Os tipos de dados permitem que os desenvolvedores de suplementos organizem estruturas de dados complexas como objetos, como valores de número formatados, imagens da Web e valores de entidade. |
 | [Abrir no Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Crie uma nova planilha do Excel no Microsoft Teams contendo os dados que você definir.|
 | [Inserir um arquivo Excel externo e preenchê-lo com dados JSON](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insira um modelo existente de um arquivo externo do Excel na pasta de trabalho do Excel aberta no momento. Em seguida, preencha o modelo com dados de um serviço Web JSON. |
 | [Crie guias contextuais personalizadas na faixa de opções](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Crie uma guia contextual personalizada na faixa de opções na interface do usuário do Office. O exemplo cria uma tabela e, quando o usuário move o foco dentro da tabela, a guia personalizada é exibida. Quando o usuário sai da tabela, a guia personalizada fica oculta. |
@@ -62,12 +60,6 @@ Os exemplos a seguir mostram como construir o Suplemento do Office mais simples 
 | [Obter, editar e definir conteúdo OOXML em um documento do Word com um suplemento do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | Este exemplo mostra como obter, editar e definir conteúdo OOXML em um documento do Word. O complemento de exemplo fornece um bloco de rascunho para obter o Office Open XML para seu próprio conteúdo e testar seus próprios trechos de código editados do Office Open XML.|
 | [Carregar e gravar Open XML no seu suplemento do Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | Este exemplo de suplemento mostra como adicionar uma variedade de tipos de conteúdos avançados a um documento do Word usando o método setSelectedDataAsync com tipo de coerção ooxml. O suplemento também oferece a capacidade de mostrar a marcação do Office Open XML para cada tipo de conteúdo de exemplo na página. |
 
-<br>
-
----
-
----
-
 ## <a name="authentication-authorization-and-single-sign-on-sso"></a>Autenticação, autorização e logon único (SSO)
 
 | Nome                | Descrição         |
@@ -78,6 +70,12 @@ Os exemplos a seguir mostram como construir o Suplemento do Office mais simples 
 | [Autenticação do suplemento do Outlook para Microsoft Graph](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). | Crie um suplemento do Outlook que se conecte ao Microsoft Graph e acesse pastas de trabalho armazenadas no OneDrive for Business para redigir uma nova mensagem de email. |
 | [Suplemento do Office de Logon único (SSO) com ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado com base no ASP.NET. |
 | [Suplemento Office dee Logon único (SSO) com Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use o API `getAccessToken` no Office.js para dar ao suplemento acesso a dados do Microsoft Graph. Este exemplo é criado no Node.js.|
+
+## <a name="office"></a>Office
+
+| Nome                | Descrição         |
+|:--------------------|:--------------------|
+| [Salvar configurações personalizadas no suplemento do Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | Salve as configurações personalizadas dentro de um Suplemento do Office. O suplemento armazena dados como pares chave-valor, usando o recipiente de propriedades da API JavaScript para Office, cookies do navegador, armazenamento da Web (localStorage e sessionStorage) ou armazenando os dados em um div oculto no documento. |
 
 ## <a name="shared-runtime"></a>Tempo de execução compartilhado
 

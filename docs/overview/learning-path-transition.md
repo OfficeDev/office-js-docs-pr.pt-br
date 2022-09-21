@@ -4,12 +4,12 @@ description: Um roteiro recomendado para desenvolvedores experientes de suplemen
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151767"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857519"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guia do desenvolvedor do suplemento VSTO
 
@@ -50,7 +50,7 @@ Não se pode aprender a dirigir lendo o manual do proprietário, então comece a
 
 ## <a name="step-4-understand-the-javascript-library"></a>Etapa 4: Entenda a biblioteca JavaScript
 
-Obtenha uma visão geral da biblioteca JavaScript do Office com este tutorial do Microsoft Learn: [Entenda as APIs JavaScript do Office](/learn/modules/intro-office-add-ins/3-apis).
+Obtenha uma visão geral da biblioteca JavaScript do Office com este tutorial do treinamento do Microsoft Learn: Entenda [as APIs JavaScript do Office](/training/modules/intro-office-add-ins/3-apis).
 
 Em seguida, explore as APIs do Office JavaScript com a [ferramenta Script Lab](explore-with-script-lab.md) – uma área restrita para executar e explorar as APIs.
 

@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
-Bem-vindo ao repositório de documentação de Suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação para conceitos de API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você exiba esse conteúdo [no](https://docs.microsoft.com/office/dev/add-ins) Microsoft Docs site.
+Bem-vindo ao repositório de documentação de Suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação para conceitos de API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você exiba esse conteúdo [no](https://learn.microsoft.com/office/dev/add-ins) Microsoft Docs site.
 
 > **Observação**: você pode encontrar os arquivos de origem da documentação de referência da API JavaScript do Office no repositório [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) .
 
