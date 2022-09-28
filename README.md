@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
-Bem-vindo ao repositório de documentação de Suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação para conceitos de API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você exiba esse conteúdo [no](https://learn.microsoft.com/office/dev/add-ins) Microsoft Docs site.
+Bem-vindo ao repositório de documentação de Suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação para conceitos de API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você exiba a documentação [de Suplementos do Office](https://learn.microsoft.com/office/dev/add-ins) no Microsoft Learn.
 
 > **Observação**: você pode encontrar os arquivos de origem da documentação de referência da API JavaScript do Office no repositório [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) .
 
@@ -19,7 +19,7 @@ Se você estiver vendo o comportamento do produto que difere da documentação, 
 - Etapas para reproduzir o problema.
 - Mensagens de erro e saída do console.
 
-Recomendamos que você faça a bifurcação, a correção e uma solicitação de recebimento das suas alterações propostas. Para mais detalhes, confira [Contribuir para este artigo](Contributing.md).
+We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
 
 Se o problema não estiver relacionado à documentação de Suplementos do Office, poste-o em um dos canais a seguir.
 
@@ -39,7 +39,7 @@ Obtenha uma área restrita, ferramentas e outros recursos gratuitos de que você
 
 ## <a name="copyright"></a>Direitos autorais
 
-Copyright (C) 2016 Microsoft Corporation. Todos os direitos reservados.
+Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 
-Este projeto adotou o [Código de Conduta de Software Livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Para saber mais, confira as [Perguntas frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contate [opencode@microsoft.com](mailto:opencode@microsoft.com) se tiver outras dúvidas ou comentários.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

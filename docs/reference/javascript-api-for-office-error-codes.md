@@ -3,12 +3,12 @@ title: Códigos de erro comuns da API do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API Comum do Office.
 ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: d77b4c0c458e11da0057f06a5088ef8a28e4ccd2
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67615990"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092977"
 ---
 # <a name="office-common-api-error-codes"></a>Códigos de erro comuns da API do Office
 
@@ -20,7 +20,7 @@ Consulte [os modelos de API](../develop/understanding-the-javascript-api-for-off
 
 A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as condições que indicam.
 
-|**Error.code**|**Error.name**|**Error.message**|**Condição**|
+|Error.code|Error.name|Error.message|Condição|
 |:-----|:-----|:-----|:-----|
 |1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|Não há suporte para o tipo de coerção no aplicativo do Office. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
 |1001|Erro de Leitura de Dados|A seleção atual não tem suporte.|Não há suporte para a seleção atual do usuário (ou seja, é algo diferente dos tipos de coerção com suporte).|
@@ -33,7 +33,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita a leitura de dados além dos limites de dados definidos pelo aplicativo do Office.|
 |1009|Erro de Leitura de Dados|O tipo de arquivo especificado não tem suporte.|O usuário envia um tipo de arquivo inválido.|
 |2000|Erro de Gravação de Dados|Não há suporte para o tipo de objeto de dados fornecido. |Um objeto de dados sem suporte foi fornecido.|
-|2001|Erro de Gravação de Dados|Não é possível gravar na seleção atual.|Não há suporte para a seleção atual do usuário para uma operação de gravação. (Por exemplo, quando o usuário seleciona uma imagem.)|
+|2001|Erro de Gravação de Dados|Não é possível gravar na seleção atual.|The user's current selection is not supported for a write operation. (For example, when the user selects an image.)|
 |2002|Erro de Gravação de Dados|O objeto de dados fornecido não é compatível com a forma ou com as dimensões da seleção atual.|Várias células são selecionadas (e a forma de seleção não corresponde à forma dos dados). Várias células são selecionadas (e as dimensões da seleção não correspondem às dimensões dos dados).|
 |2003|Erro de Gravação de Dados|A operação de definição falhou porque o objeto de dados fornecido substituirá os dados.|Uma única célula está selecionada e o objeto de dados fornecido substitui os dados na planilha.|
 |2004|Erro de Gravação de Dados|O objeto de dados fornecido não corresponde ao tamanho da seleção atual.|O usuário fornece um objeto maior do que o tamanho da seleção atual.|
@@ -43,13 +43,13 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2008|Erro de Gravação de Dados|TBD|TBD|
 |2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelo aplicativo do Office.|
 |2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
-|3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|
+|3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|The user's selection is not supported for binding. (For example, the user is selecting an image or other non-supported object.)|
 |3001|Erro de Criação de Associação|TBD|TBD|
 |3002|Erro de Associação Inválida|A ligação especificada não existe.|O desenvolvedor tenta associar a uma associação não existente ou removida.|
 |3003|Erro de Criação de Associação|Não há suporte para várias seleções não contíguas.|O usuário está fazendo várias seleções.|
-|3004|Erro de Criação de Associação|Não é possível criar uma ligação com a seleção atual e o tipo de ligação especificada.|Há várias condições em que isso pode acontecer. Confira a seção "Condições de erro de criação de associação" posteriormente neste artigo.|
+|3004|Erro de Criação de Associação|Não é possível criar uma ligação com a seleção atual e o tipo de ligação especificada.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
 |3005|Operação de Associação Inválida|Operação sem suporte neste tipo de associação.|O desenvolvedor envia uma operação adicionar linha ou adicionar coluna em um tipo de associação que não é do tipo de coerção `table`.|
-|3006|Erro de Criação de Associação|O item nomeado não existe.|Não foi possível encontrar o item nomeado. Não existe um controle de conteúdo ou uma tabela com esse nome.|
+|3006|Erro de Criação de Associação|O item nomeado não existe.|The named item cannot be found. No content control or table with that name exists.|
 |3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: existe mais de um controle de conteúdo com o mesmo nome e a falha na colisão é definida como `true`.|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|O item nomeado não pode ser associado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo de coerção `table`.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
@@ -70,15 +70,15 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |6000|Nó inválido|O nó especificado não foi encontrado.|O `CustomXmlPart` nó não foi encontrado.|
 |6100|Erro no XML personalizado|Erro no XML personalizado|Chamada de API inválida.|
 |7000|ID inválida|A ID especificada não existe.|ID inválida.|
-|7001|Navegação inválida|O objeto está localizado em um local em onde a navegação não é suportada.|O usuário pode encontrar o objeto, mas não é possível navegar até ele. (Por exemplo, no Word, a associação ocorre com o cabeçalho, rodapé ou um comentário.)|
+|7001|Navegação inválida|O objeto está localizado em um local em onde a navegação não é suportada.|The user can find the object, but cannot navigate to it. (For example, in Word, the binding is to the header, footer, or a comment.)|
 |7002|Navegação inválida|O objeto está bloqueado ou protegido.|O usuário está tentando navegar até um intervalo bloqueado ou protegido.|
 |7004|Navegação inválida|A operação falhou porque o índice está fora do intervalo.|O usuário está tentando navegar até um índice fora do intervalo.|
-|8000|Parâmetro Ausente|Não foi possível formatar a célula da tabela porque faltam alguns valores de parâmetro. Verifique os parâmetros e tente novamente.|Faltam alguns parâmetros no método cellFormat. Por exemplo, faltam células, formatações ou parâmetros de tableOptions.|
-|8010|Valor inválido|Um ou mais parâmetros de célula têm valores que não são permitidos. Verifique os valores e tente novamente.|A enumeração de referência de células comuns não está definida. Por exemplo, Todos, Dados, Cabeçalhos.|
-|8011|Valor inválido|Um ou mais parâmetros tableOptions possuem valores que não são permitidos. Verifique os valores e tente novamente.|Um dos valores em tableOptions é inválido.|
-|8012|Valor inválido|Um ou mais parâmetros de formato possuem valores que não são permitidos. Verifique os valores e tente novamente.|Um dos valores no formato é inválido.|
-|8020|Fora do intervalo|O valor de índice de linha está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de linhas.|O índice de linha é superior ao maior índice de linha da tabela ou menor do que 0.|
-|8021|Fora do intervalo|O valor de índice de coluna está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de colunas.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
+|8000|Parâmetro Ausente|We couldn't format the table cell because some parameter values are missing. Double-check the parameters and try again.|The cellFormat method is missing some parameters. For example, there are missing cells, format, or tableOptions parameters.|
+|8010|Valor inválido|One or more of the cells parameters have values that aren't allowed. Double-check the values and try again.|The common cells reference enumeration is not defined. For example, All, Data, Headers.|
+|8011|Valor inválido|One or more of the tableOptions parameters have values that aren't allowed. Double-check the values and try again.|Um dos valores em tableOptions é inválido.|
+|8012|Valor inválido|One or more of the format parameters have values that aren't allowed. Double-check the values and try again.|Um dos valores no formato é inválido.|
+|8020|Fora do intervalo|The row index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of rows.|O índice de linha é superior ao maior índice de linha da tabela ou menor do que 0.|
+|8021|Fora do intervalo|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
 |9020|Erro de resposta genérica|Ocorreu um erro interno.|Refere-se a uma condição de erro interna, que pode ocorrer por vários motivos.|
@@ -86,25 +86,25 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |9022|Mensagem em erro de repositório diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro repositório.|A ID do EWS para a mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
 |9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à rede ou à Internet.|
 |9043|Tipo de anexo sem suporte|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, `item.getAttachmentContentAsync` gera esse erro se o anexo for uma imagem inserida no Formato Rich Text ou se for um tipo de item diferente de um email ou item de calendário (como um contato ou item de tarefa).|
-|12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
-|12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
-|12004|||O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|
-|12005|||A URL passada para `displayDialogAsync` usa o protocolo HTTP. HTTPS é necessário. Lançada por chamada de `displayDialogAsync`. (Em algumas versões do Office, a mensagem de erro retornada com 12005 é a mesma retornada para 12004.)|
-|12006|||A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
-|12007|||Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez. Lançada por chamada de `displayDialogAsync`.|
-|12009|||O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Lançada por chamada de `displayDialogAsync`.|
-|12011|||O navegador do usuário é configurado de uma maneira que bloqueia pop-ups. Esse erro pode ocorrer no Office na Web se o navegador for Safari e ele estiver configurado para bloquear pop-ups ou se o navegador for o Edge Legacy e o domínio do suplemento estiver em uma zona de segurança diferente do domínio que a caixa de diálogo está tentando abrir. Lançada por chamada de `displayDialogAsync`.|
-|13nnn|||Consulte [Causas e tratamento de erros de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|12002|*Não aplicável.*|*Não aplicável.*|Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
+|12003|*Não aplicável.*|*Não aplicável.*|A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
+|12004|*Não aplicável.*|*Não aplicável.*|O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|
+|12005|*Não aplicável.*|*Não aplicável.*|A URL passada para `displayDialogAsync` usa o protocolo HTTP. HTTPS é necessário. Lançada por chamada de `displayDialogAsync`. (Em algumas versões do Office, a mensagem de erro retornada com 12005 é a mesma retornada para 12004.)|
+|12006|*Não aplicável.*|*Não aplicável.*|A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
+|12007|*Não aplicável.*|*Não aplicável.*|Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez. Lançada por chamada de `displayDialogAsync`.|
+|12009|*Não aplicável.*|*Não aplicável.*|O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Lançada por chamada de `displayDialogAsync`.|
+|12011|*Não aplicável.*|*Não aplicável.*|O navegador do usuário é configurado de uma maneira que bloqueia pop-ups. Esse erro pode ocorrer no Office na Web se o navegador for Safari e ele estiver configurado para bloquear pop-ups ou se o navegador for o Edge Legacy e o domínio do suplemento estiver em uma zona de segurança diferente do domínio que a caixa de diálogo está tentando abrir. Lançada por chamada de `displayDialogAsync`.|
+|13nnn|*Não aplicável.*|*Não aplicável.*|Consulte [Causas e tratamento de erros de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## <a name="binding-creation-error-conditions"></a>Condições do erro de criação de associação
 
-Quando uma associação for criada na API, indique o tipo de associação que deseja usar. A tabela a seguir lista os tipos de associação e os comportamentos de associação resultantes esperados.
+When a binding is created in the API, indicate the binding type that you want to use. The following tables lists the binding types and the resulting binding behaviors that are expected.
 
 ### <a name="behavior-in-excel"></a>Comportamento no Excel
 
 A tabela a seguir resume o comportamento de associação no Excel.
 
-|**Tipo de associação especificado**|**Seleção real**|**Comportamento**|
+|Tipo de associação especificado|Seleção real|Comportamento|
 |:-----|:-----|:-----|
 |Matriz|Intervalo de células (incluindo dentro de uma tabela e uma única célula)|Uma associação de tipo `matrix` é criada nas células selecionadas. Nenhuma modificação no documento é esperada.|
 |Matriz|Texto selecionado na célula|Uma associação de tipo `matrix` é criada em toda a célula. Nenhuma modificação no documento é esperada.|
@@ -124,7 +124,7 @@ A tabela a seguir resume o comportamento de associação no Excel.
 
 A tabela a seguir resume o comportamento de associação no Word.
 
-|**Tipo de associação especificado**|**Seleção real**|**Comportamento**|
+|Tipo de associação especificado|Seleção real|Comportamento|
 |:-----|:-----|:-----|
 |Matriz|Texto|Não é possível criar a associação.|
 |Matriz|Tabela inteira|Uma associação de tipo `matrix` é criada. O documento é alterado e um controle de conteúdo deve encapsular a tabela. |
@@ -132,7 +132,7 @@ A tabela a seguir resume o comportamento de associação no Word.
 |Matriz|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
 |Tabela|Texto|Não é possível criar a associação.|
 |Tabela|Tabela inteira|Uma associação de tipo `text` é criada.|
-|Tabela|Intervalo dentro de uma tabela|Não é possível criar a associação.|
+|Table|Intervalo dentro de uma tabela|Não é possível criar a associação.|
 |Tabela|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
 |Texto|Tabela inteira|Uma associação de tipo `text` é criada.|
 |Texto|Intervalo dentro de uma tabela|Não é possível criar a associação.|

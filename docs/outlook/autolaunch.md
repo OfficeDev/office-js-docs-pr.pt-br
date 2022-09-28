@@ -4,12 +4,12 @@ description: Saiba como configurar seu suplemento do Outlook para ativação bas
 ms.topic: article
 ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c544f9c10a6fec30d26a994f8e29a48c0d02aa49
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: 0e38f7e9c9d9f06ec7f427b12c04b30d6abf0112
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990424"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093005"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar seu suplemento do Outlook para ativação baseada em evento
 
@@ -43,7 +43,7 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 |`OnAppointmentOrganizer`|Ao criar um novo compromisso ou editar um existente.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>– Windows<sup>1</sup><br>– Navegador da Web|
 
 > [!NOTE]
-> <sup>1</sup> Suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (build 18362) ou Windows Server 2019 versão 1903 para execução.
+> <sup>1</sup> Os suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (build 18362) ou windows server 2019 versão 1903 para execução.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 

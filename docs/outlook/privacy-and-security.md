@@ -3,12 +3,12 @@ title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
 ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318890"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092872"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -26,7 +26,7 @@ Esse artigo descreve as possíveis permissões que os suplementos do Outlook pod
 
 ## <a name="permissions-model"></a>Modelo de permissões
 
-Como a percepção dos clientes de segurança do suplemento pode afetar a sua adoção, a segurança do suplemento do Outlook conta com um modelo de permissões hierárquico. Um suplemento do Outlook divulga o nível de permissões necessárias, identificando os possíveis acessos e ações que o suplemento pode realizar em dados da caixa de correio do cliente.
+Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
 A versão 1.1 do esquema do manifesto inclui quatro níveis de permissões.
 
@@ -80,11 +80,11 @@ O modelo de segurança aborda questões de segurança, privacidade e desempenho 
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
-- Antes de instalar um suplemento do AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode fazer em seus dados e devem confirmar explicitamente para continuar. Nenhum suplemento do Outlook é enviado automaticamente por push para um computador cliente sem validação manual pelo usuário ou administrador.
+- Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
 - A concessão da permissão **restricted** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. A concessão da permissão **de item** de leitura permite que o suplemento do Outlook acesse informações de identificação pessoal, como nomes de remetente e destinatário e endereços de email, somente no item atual.
 
-- Um usuário final pode instalar um suplemento do Outlook somente para si mesmo. Os suplementos do Outlook que afetam uma organização são instalados por um administrador.
+- An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
 
 - Os usuários finais podem instalar suplementos do Outlook que permitem cenários dependentes do contexto, o que é atraente para os usuários e reduz os riscos de segurança.
 
@@ -153,7 +153,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
 
 ### <a name="resource-usage-tuning"></a>Ajuste de uso do recurso
 
-Os desenvolvedores devem estar cientes dos limites de uso do recurso para a ativação e incorporar o ajuste no seu fluxo de trabalho de desenvolvimento para reduzir a chance de ter um suplemento com mau desempenho negando serviço do host. Os desenvolvedores devem seguir as diretrizes ao criar regras de ativação conforme descrito em [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). Se um suplemento do Outlook deve ser executado em um cliente avançado do Outlook, os desenvolvedores devem verificar se o suplemento tem desempenho dentro dos limites de uso do recurso.
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
 
 ### <a name="other-measures-to-promote-user-security"></a>Outras medidas para promover a segurança do usuário
 

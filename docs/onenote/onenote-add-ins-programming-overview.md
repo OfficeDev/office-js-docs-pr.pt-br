@@ -5,16 +5,16 @@ ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: d44a01cf0f676057ca072cff74e2e80057f645f4
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889174"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092907"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
-O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
+OneNote introduces a JavaScript API for OneNote add-ins on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -22,9 +22,9 @@ O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Voc
 
 Os suplementos consistem de dois componentes básicos:
 
-- Um **aplicativo Web** consiste em uma página da Web e qualquer JavaScript, CSS ou outros arquivos necessários. Esses arquivos são hospedados em um servidor Web ou serviço de hospedagem da Web, como Microsoft Azure. No OneNote na Web, o aplicativo Web é exibido em um controle de navegador ou iframe.
+- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a browser control or iframe.
 
-- Um **manifesto XML** que especifica a URL da página da Web do suplemento e os requisitos de acesso, as configurações e os recursos para o suplemento. Este arquivo é armazenado no cliente. Os suplementos do OneNote usam o mesmo formato de [manifesto](../develop/add-in-manifests.md) como outros suplementos do Office.
+- An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 
 ### <a name="office-add-in--manifest--webpage"></a>Suplemento do Office = Manifesto + Página da Web
 
@@ -32,25 +32,25 @@ Os suplementos consistem de dois componentes básicos:
 
 ## <a name="using-the-javascript-api"></a>Usar a API JavaScript
 
-Os suplementos usam o contexto de tempo de execução do aplicativo do Office para acessar a API de JavaScript. A API tem duas camadas:
+Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
 - Uma **API específica do aplicativo** para operações específicas do OneNote, acessada por meio do objeto `Application`.
 - Uma **API comum** compartilhada entre aplicativos do Office, acessada por meio do objeto `Document`.
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>Acessar uma API específica do aplicativo por meio do objeto *Aplicativo*.
 
-Use o objeto `Application` para acessar os objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com as APIs específicas do aplicativo, você executa operações em lote nos objetos proxy. O fluxo básico é semelhante a este:
+Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
 
 1. Obtenha a instância do aplicativo do contexto.
 
-2. Crie um proxy que representa o objeto do OneNote com o qual você deseja trabalhar. Você interage com sincronia com os objetos proxy lendo e gravar suas propriedades e chamando seus métodos.
+2. Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods.
 
-3. Chame `load` no proxy para preenchê-lo com valores de propriedade especificados no parâmetro. Essa chamada é adicionada à fila de comandos.
+3. Call `load` on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands.
 
    > [!NOTE]
    > Chamadas de método para a API (como `context.application.getActiveSection().pages;`) também são adicionadas à fila.
 
-4. Chame `context.sync` para executar todos os comandos na fila na ordem em que eles estão. Isso sincroniza o estado entre o momento em que os scripts e os objetos reais estão sendo executados, além de recuperar as propriedades dos objetos do OneNote carregados para uso no seu script. Você pode usar o objeto promessa retornado para o encadeamento ações adicionais.
+4. Call `context.sync` to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
 Por exemplo:
 
@@ -83,7 +83,7 @@ Você pode encontrar objetos do OneNote e operações compatíveis na [Referênc
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte às APIs que um suplemento precisa. Para obter informações detalhadas dos conjuntos de requisitos da API JavaScript do OneNote, consulte [Conjuntos de requisitos da API JavaScript do OneNote](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
@@ -114,7 +114,7 @@ Os suplementos do OneNote dão suporte apenas às APIs comuns a seguir.
 | [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` |
 | [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo |
 | [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | As configurações são compatíveis apenas com os suplementos de conteúdo |
-| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
+| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*Nenhum.*|
 
 Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).
 

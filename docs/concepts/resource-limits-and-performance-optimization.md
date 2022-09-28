@@ -3,16 +3,16 @@ title: Limites de recurso e otimização de desempenho para Suplementos do Offic
 description: Saiba mais sobre os limites de recursos da plataforma de Suplementos do Office, incluindo CPU e memória.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bec9579db1461f16d36d97646c4fce418c2e11
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8465eb654795b538182e01d33b2fc57ddb35eaa0
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889195"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092900"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
-Para criar a melhor experiência para os usuários, verifique se o desempenho do Suplemento do Office está dentro dos limites específicos para uso de memória e núcleo de CPU, confiabilidade e, para suplementos do Outlook, tempo de resposta para avaliar expressões regulares. Esses limites de uso de recursos de tempo de execução aplicam-se aos suplementos em execução em clientes do Office para Windows e OS X, mas não a aplicativos móveis ou a um navegador.
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
 
 Também é possível otimizar o desempenho dos suplementos em dispositivos móveis e para área de trabalho aprimorando o uso de recursos no design e na implementação de suplementos.
 
@@ -38,14 +38,14 @@ Os limites de uso de recursos em tempo de execução se aplicam a todos os tipos
 
 ### <a name="outlook-add-ins"></a>Suplementos do Outlook
 
-Se qualquer suplemento do Outlook exceder os limites anteriores para núcleo da CPU, uso de memória ou limite de tolerância a falhas, o Outlook desativa o suplemento. O Centro de Administração do Exchange exibe o status de desativação do aplicativo.
+If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
 > Mesmo que apenas clientes avançados do Outlook, e não o Outlook Online ou dispositivos móveis, monitorarem o uso de recursos, se um cliente avançado desativar um suplemento do Outlook, o suplemento também é desativado para uso no Outlook Online e dispositivos móveis.
 
 Além das regras de núcleo de CPU, memória e confiabilidade, os suplementos do Outlook devem observar as regras a seguir na ativação.
 
-- **Tempo de resposta de expressões regulares**: um limite padrão de 1.000 milissegundos para que o Outlook avalie todas as expressões regulares no manifesto de um suplemento do Outlook. Exceder o limite faz com que o Outlook repita a avaliação posteriormente.
+- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
     Usando uma política de grupo ou uma configuração específica do aplicativo no Registro do Windows, os administradores podem ajustar esse valor de limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold** .
 
@@ -69,7 +69,7 @@ Essas limitações normalmente são excedida por intervalos grandes. Seu supleme
 Se qualquer suplemento de conteúdo ou painel de tarefas exceder os limites anteriores no uso do núcleo da CPU ou da memória ou no limite de tolerância a falhas, o aplicativo do Office correspondente exibirá um aviso para o usuário. Nesse momento, o usuário poderá executar uma destas ações:
 
 - Reiniciar o suplemento.
-- Cancelar outros alertas sobre a ultrapassagem desse limite. O ideal é que o usuário exclua o suplemento do documento. Continuar a usar o suplemento poderia causar ainda mais problemas de desempenho e estabilidade.  
+- Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
 ## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>Verificar problemas de uso de recursos no Log de Telemetria
 
@@ -77,23 +77,23 @@ O Office fornece um Log de Telemetria que mantém um registro de determinados ev
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-Para cada evento que o Log de Telemetria acompanha para um suplemento, há a data/hora de ocorrência, a ID do evento, a severidade e o título descritivo curto do evento, o nome amigável e a ID exclusiva do suplemento, e o aplicativo que registrou em log o evento. Você pode atualizar o Log de Telemetria para ver os eventos atualmente acompanhados. A tabela a seguir mostra exemplos de suplementos do Outlook que foram acompanhados no log de Telemetria.
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**Data/Hora**|**ID do Evento**|**Severidade**|**Título**|**Arquivo**|**ID**|**Aplicativo**|
+|Data/Hora|ID do Evento|Severity|Título|Arquivo|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|08/10/2012 17:57:10|7 ||manifesto de suplemento baixado com êxito|Quem é quem|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|8/10/2012 17:57:01|7 ||manifesto de suplemento baixado com êxito|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|08/10/2012 17:57:10|7 |*Não aplicável*|manifesto de suplemento baixado com êxito|Quem é quem|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|8/10/2012 17:57:01|7 |*Não aplicável*|manifesto de suplemento baixado com êxito|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Suplementos do Office em geral.
 
-|**ID do Evento**|**Título**|**Severidade**|**Descrição**|
+|ID do Evento|Título|Severity|Descrição|
 |:-----|:-----|:-----|:-----|
-|7 |Manifesto de suplemento baixado com êxito||O manifesto do Suplemento do Office foi carregado e lido com êxito pelo aplicativo do Office.|
+|7 |Manifesto de suplemento baixado com êxito|*Não aplicável*|O manifesto do Suplemento do Office foi carregado e lido com êxito pelo aplicativo do Office.|
 |8 |Manifesto de suplemento não baixado|Crítico|O aplicativo do Office não pôde carregar o arquivo de manifesto para o Suplemento do Office do catálogo do SharePoint, catálogo corporativo ou AppSource.|
 |9 |Não foi possível analisar a marcação do suplemento|Crítico|O aplicativo do Office carregou o manifesto do Suplemento do Office, mas não pôde ler a marcação HTML do aplicativo.|
 |10|O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
-|15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O suplemento do Outlook listado na coluna Arquivo  foi desabilitado pelo Outlook porque ele tempo limiteu repetidamente ao tentar corresponder a uma expressão regular.|
-|18 |Suplemento fechado com êxito||O aplicativo do Office pôde fechar o Suplemento do Office com êxito.|
+|15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres|*Não aplicável*|Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O suplemento do Outlook listado na coluna Arquivo  foi desabilitado pelo Outlook porque ele tempo limiteu repetidamente ao tentar corresponder a uma expressão regular.|
+|18 |Suplemento fechado com êxito|*Não aplicável*|O aplicativo do Office pôde fechar o Suplemento do Office com êxito.|
 |19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para obter mais detalhes, examine o log **de Alertas do Microsoft Office** usando o windows Visualizador de Eventos no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para obter mais detalhes, examine o log **de Alertas do Microsoft Office** usando o windows Visualizador de Eventos no computador que encontrou o erro.|
 
@@ -105,7 +105,7 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 
 - Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. Você pode fazer isso por meio do [método setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também lida com os dados em blocos definidos, em vez dos dados não associados aleatoriamente. Outra opção é usar [o assíncrono](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) para lidar com suas Promessas.
 
-- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o progreso na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, consulte [Noções básicas de Web workers](https://www.html5rocks.com/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers.
+- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use web workers to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/). See [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for more information about the Web Workers API.
 
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
 

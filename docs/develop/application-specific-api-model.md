@@ -1,14 +1,14 @@
 ---
 title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
-ms.date: 07/18/2022
+ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422940"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092886"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
@@ -26,9 +26,9 @@ Os Suplementos do Office são sites que aparecem dentro de um contêiner de nave
 
 ## <a name="run-function"></a>Função *.run
 
-`Excel.run`, `Word.run` e `OneNote.run` executam uma função que especifica as ações a serem executadas no Excel, no Word e no OneNote. `*.run` cria automaticamente um contexto de solicitação que pode ser usado para interagir com objetos do Excel. Ao concluir `*.run`, uma promessa será resolvida e todos os objetos que foram alocados em tempo de execução serão lançados automaticamente.
+`Excel.run`, `OneNote.run`e `PowerPoint.run`execute uma `Word.run` função que especifica as ações a serem executadas no Excel, no Word e no OneNote. `*.run` cria automaticamente um contexto de solicitação que pode ser usado para interagir com objetos do Excel. Ao concluir `*.run`, uma promessa será resolvida e todos os objetos que foram alocados em tempo de execução serão lançados automaticamente.
 
-O exemplo a seguir mostra como usar `Excel.run`. O mesmo padrão também é usado com o Word e o OneNote.
+O exemplo a seguir mostra como usar `Excel.run`. O mesmo padrão também é usado com o OneNote, o PowerPoint e o Word.
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > Se estiver apenas chamando métodos ou definindo propriedades em um objeto proxy, não é necessário chamar o método `load()`. O método `load()` só é necessário quando você deseja ler propriedades em um objeto proxy.
 
-Assim como as solicitações para definir propriedades ou invocar métodos em objetos proxy, as solicitações para carregar propriedades em objetos proxy são adicionadas à fila de comandos pendentes no contexto de solicitação, sendo executadas na próxima vez que você chamar o método `sync()`. É possível enfileirar quantas chamadas de `load()` forem necessárias no contexto de solicitação.
+Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
 #### <a name="scalar-and-navigation-properties"></a>Propriedades escalares e de navegação
 
@@ -180,7 +180,7 @@ console.log (tableCount.value);
 
 A definição de propriedades em um objeto com propriedades de navegação aninhadas pode ser uma tarefa complicada. Como uma alternativa para definir propriedades individuais usando caminhos de navegação, conforme descrito acima, use o método `object.set()` disponível em todos os objetos nas APIs JavaScript baseadas em promessas. Com esse método, é possível definir várias propriedades de um objeto de uma vez passando outro objeto do mesmo tipo Office.js ou um objeto JavaScript com propriedades que são estruturadas, como as propriedades do objeto no qual o método é chamado.
 
-O exemplo de código a seguir define várias propriedades do formato de um intervalo chamando o método `set()` e passando um objeto JavaScript com nomes e tipos de propriedade que espelham a estrutura das propriedades no objeto `Range`. Este exemplo supõe que há dados no intervalo **B2:E2**.
+The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
 
 ```js
 await Excel.run(async (context) => {

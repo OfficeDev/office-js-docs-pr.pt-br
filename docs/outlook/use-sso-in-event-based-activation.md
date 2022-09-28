@@ -3,19 +3,19 @@ title: Habilitar o SSO (logon único) em suplementos do Outlook que usam a ativa
 description: Saiba como habilitar o SSO ao trabalhar em um suplemento de ativação baseado em evento.
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9a162e0ebe43c400f1b526d321cf049675047a6b
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423115"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092928"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Habilitar o SSO (logon único) em suplementos do Outlook que usam a ativação baseada em evento
 
 Quando um suplemento do Outlook usa a ativação baseada em evento, os eventos são executados em um [runtime separado](../testing/runtimes.md). Depois de concluir as etapas em Autenticar um usuário com um token de logon único em um suplemento do [Outlook](authenticate-a-user-with-an-sso-token.md), siga as etapas adicionais descritas neste artigo para habilitar o SSO para o código de manipulação de eventos. Depois de habilitar o SSO, você poderá chamar a [API getAccessToken()](/javascript/api/office-runtime/officeruntime.auth) para obter um token de acesso com a identidade do usuário.
 
 > [!IMPORTANT]
-> Embora `OfficeRuntime.auth.getAccessToken` e `Office.auth.getAccessToken` execute a mesma funcionalidade de recuperar um token de acesso, `OfficeRuntime.auth.getAccessToken` recomendamos chamar seu suplemento baseado em evento. Essa API tem suporte em todas as versões de cliente do Outlook que dão suporte à ativação baseada em eventos e SSO. Por outro lado, só `Office.auth.getAccessToken` há suporte no Outlook no Windows a partir da versão 2111 (build 14701.20000).
+> Embora `OfficeRuntime.auth.getAccessToken` e `Office.auth.getAccessToken` execute a mesma funcionalidade de recuperar um token de acesso, `OfficeRuntime.auth.getAccessToken` recomendamos chamar seu suplemento baseado em evento. Essa API tem suporte em todas as versões de cliente do Outlook que dão suporte à ativação baseada em eventos e SSO. Por outro lado, só `Office.auth.getAccessToken` há suporte no Outlook no Windows a partir da versão 2111 (Build 14701.20000).
 
 Para o Outlook no Windows, no manifesto do suplemento do Outlook, você identifica um único arquivo JavaScript a ser carregado para ativação baseada em evento. Você também precisa especificar ao Office que esse arquivo tem permissão para dar suporte ao SSO. Faça isso criando uma lista de todos os suplementos e seus arquivos JavaScript para fornecer ao Office por meio de um URI conhecido.
 

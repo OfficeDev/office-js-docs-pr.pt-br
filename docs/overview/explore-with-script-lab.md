@@ -1,16 +1,16 @@
 ---
 title: Explore a API JavaScript do Office usando o Script Lab
 description: Use o script Lab para explorar a funcionalidade de protótipo e a API do Office JS.
-ms.date: 01/14/2022
+ms.date: 09/27/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 568628f60b36a3c6bcb7dd3ab3856e86d96956b7
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 327810e43d87894f2850f93bd07000f1cdae98f3
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744631"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092984"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explore a API JavaScript do Office usando o Script Lab
 
@@ -20,7 +20,7 @@ Os suplementos [Script Lab](https://appsource.microsoft.com/product/office/WA104
 
 O Script Lab é uma ferramenta para quem deseja saber como desenvolver suplementos do Office usando a API JavaScript do Office no Excel, no Outlook, no Word e no PowerPoint. Ele fornece IntelliSense para que você possa ver o que está disponível e que foi criado na estrutura de Mônaco, a mesma estrutura usada pelo código do Visual Studio. Por meio do Script Lab, você pode acessar uma biblioteca de amostras para experimentar rapidamente recursos ou até mesmo usar um exemplo como o ponto de partida para o seu próprio código. Você pode até usar o Script Lab para experimentar as APIs de visualização.
 
-Parece bom até agora? Dê uma olhada neste vídeo de um minuto para ver o Script Lab em ação.
+Parece bom? Dê uma olhada neste vídeo de um minuto para ver Script Lab em ação.
 
 [![Visualização de vídeo mostrando o Script Lab em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Visualização de vídeo do Script Lab')](https://aka.ms/scriptlabvideo)
 
@@ -57,20 +57,20 @@ Você pode importar um trecho para o Script Lab especificando a URL para o [do G
 
 O Script Lab tem suporte para o Excel, o Word e o PowerPoint nos clientes a seguir.
 
-- Assinatura do Microsoft 365
+- Office no Windows\*
 - Office 2016 ou posterior no Mac
 - Office na Web
 
 O Script Lab para Outlook está disponível para os seguintes clientes.
 
-- Assinatura do Microsoft 365
+- Outlook no Windows\*
 - Outlook 2016 ou posterior no Mac
 - Outlook na Web ao usar os navegadores Chrome, Microsoft Edge ou Safari
 
-Para obter mais detalhes sobre o Script Lab para Outlook, confira a [postagem do blog](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/) relacionada.
+Para obter mais detalhes sobre o Script Lab para Outlook, confira a [postagem do blog](https://devblogs.microsoft.com/microsoft365dev/script-lab-now-supports-outlook/) relacionada.
 
 > [!IMPORTANT]
-> O Script Lab não funciona mais com combinações de plataforma e versão do Office que usam o Internet Explorer para hospedar suplementos. Isso inclui versões do Office de compra única por meio do Office 2019. Para obter mais informações, confira [Navegadores usados ​​pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> \*Script Lab funciona mais com combinações de plataforma e versão do Office que usam o Internet Explorer para hospedar suplementos. Isso inclui versões perpétuas do Office por meio do Office 2019. Para obter mais informações, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

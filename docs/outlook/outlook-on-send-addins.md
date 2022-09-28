@@ -3,16 +3,16 @@ title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f4507fdf442e55cfa6e1b3310f6009f9c6a0b85d
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958969"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092998"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
-O recurso Ao enviar para suplementos do Outlook fornece uma maneira de manipular uma mensagem ou item de reunião, ou impede que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar. Por exemplo, você pode usar o recurso Ao enviar para:
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
 
 - Impedir que um usuário envie informações confidenciais ou deixe a linha de assunto em branco.  
 - Adicionar um destinatário específico à linha CC em mensagens ou à linha destinatários opcionais em reuniões.
@@ -27,7 +27,7 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para o re
 
 | Client | Exchange Online | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) |
 |---|:---:|:---:|:---:|
-|Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim|Sim|
+|Windows:<br>Versão 1910 (Build 12130.20272) ou posterior|Sim|Sim|Sim|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|
 |Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|
 |Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Sim|Sim|
@@ -70,7 +70,7 @@ Atualmente, o recurso Ao enviar tem as seguintes limitações.
   > Ao executar `npm run validate` para [validar](../testing/troubleshoot-manifest.md) o manifesto do suplemento, você receberá o erro "O suplemento caixa de correio que contém o evento ItemSend é inválido. O manifesto do suplemento caixa de correio contém o evento ItemSend em VersionOverrides, o que não é permitido." Essa mensagem é exibida porque os suplementos que usam o evento, que é necessário para esta versão do recurso ao enviar, não podem ser publicados `ItemSend` no AppSource. Você ainda poderá realizar o sideload e executar o suplemento, desde que nenhum outro erro de validação seja encontrado.
 
 - **Manifesto** &ndash; Somente um evento `ItemSend` tem suporte por suplemento. Se você tiver dois ou mais eventos `ItemSend` em um manifesto, haverá falha na validação.
-- **Desempenho**&ndash; Várias idas e voltas ao servidor Web que hospeda o suplemento podem afetar o desempenho do suplemento. Considere os efeitos sobre o desempenho quando você cria suplemento que exigem várias mensagens ou operações baseadas em reuniões.
+- **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Enviar mais tarde** (somente Mac) &ndash; Se houver suplementos Ao enviar, o recurso **Enviar mais tarde** ficará indisponível.
 
 Além disso, não é recomendável `item.close()` que você chame o manipulador de eventos ao enviar, pois o fechamento do item deve ocorrer automaticamente após a conclusão do evento.
@@ -357,8 +357,8 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 
 |Cenário|Recurso Ao enviar da caixa de correio 1|Recurso Ao enviar da caixa de correio 2|Sessão Web do Outlook (clássico)|Resultado|Com suporte?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|2|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|1|Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Not currently supported. As a workaround, use scenario 3.|
+|2|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Not currently supported. As a workaround, use scenario 3.|
 |3|Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
 |4|Habilitado|Desabilitado|Nova sessão|Nenhum suplemento Ao envio é executado; item de mensagem ou de reunião é enviado.|Com suporte.|
 
@@ -608,7 +608,7 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-Para saber mais sobre como adicionar um destinatário à linha CC e verificar se a mensagem de e-mail inclui uma linha de assunto ao enviar e para ver as APIs que você pode usar, consulte o [exemplo Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send). O código é bem comentado.
+To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>Depurar suplementos do Outlook que usam ao enviar
 

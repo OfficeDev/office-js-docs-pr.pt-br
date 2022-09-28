@@ -3,12 +3,12 @@ title: Tratamento de erro com as APIs JavaScript específicas do aplicativo
 description: Saiba mais sobre o Excel, o Word, o PowerPoint e outra lógica de tratamento de erro da API JavaScript específica do aplicativo para contabilização de erros de runtime.
 ms.date: 07/05/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e5443f8b13acd3c907c89ce12ca5da62f343b3
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713194"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092991"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>Tratamento de erro com as APIs JavaScript específicas do aplicativo
 
@@ -47,7 +47,7 @@ async function tryCatch(callback) {
 
 Quando uma solicitação de API JavaScript do Office falha ao ser executada com êxito, a API retorna um objeto de erro que contém as propriedades a seguir.
 
-- **code**:  A propriedade `code` de uma mensagem de erro contém uma cadeia de caracteres que faz parte da lista `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes`. Por exemplo, o código de erro "InvalidReference" indica que a referência não é válida para a operação especificada. Os códigos de erro não são localizados.
+- **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
 - **message**: a propriedade `message` de uma mensagem de erro contém um resumo do erro na cadeia de caracteres localizada. A mensagem de erro não se destina aos usuários finais; você deve usar o código de erro e a lógica de negócios adequada para determinar a mensagem de erro que seu suplemento mostra aos usuários finais.
 
@@ -65,49 +65,49 @@ As tabelas a seguir listam os erros que apIs específicas do aplicativo podem re
 
 |Código de erro | Mensagem de erro | Notas |
 |:----------|:--------------|:------|
-|`AccessDenied` |Você não pode realizar a operação solicitada.| |
-|`ActivityLimitReached`|O limite de atividades foi alcançado.| |
-|`ApiNotAvailable`|A API solicitada não está disponível.| |
-|`ApiNotFound`|Não foi possível encontrar a API que você está tentando usar. Ele pode estar disponível em uma versão mais recente do Excel. Consulte o [artigo de conjuntos de requisitos da API JavaScript do Excel](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) para obter mais informações.| |
-|`BadPassword`|A senha fornecida está incorreta.| |
-|`Conflict`|A solicitação não pôde ser processada devido a um conflito.| |
-|`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está ausente.| |
-|`GeneralException`|Ocorreu um erro interno ao processar a solicitação.| |
-|`InsertDeleteConflict`|A tentativa de operação de exclusão ou inserção resultou em um conflito.| |
-|`InvalidArgument` |O argumento é inválido, está ausente ou tem um formato incorreto.| |
-|`InvalidBinding` |Esta associação de objetos não é mais válida devido às atualizações anteriores.| |
-|`InvalidOperation`|A tentativa de operação é inválida no objeto.| |
-|`InvalidOperationInCellEditMode`|A operação não está disponível enquanto o Excel está no modo editar célula. Saia do modo de edição usando as **teclas Enter** ou **Tab** ou selecionando outra célula e tente novamente.| |
-|`InvalidReference`|Esta referência não é válida para a operação atual.| |
-|`InvalidRequest`  |Não é possível processar a solicitação.| |
-|`InvalidSelection`|A seleção atual é inválida para esta operação.| |
-|`ItemAlreadyExists`|O recurso que está sendo criado já existe.| |
-|`ItemNotFound` |O recurso solicitado não existe.| |
-|`MemoryLimitReached`|O limite de memória foi atingido. Não foi possível concluir sua ação.| |
+|`AccessDenied` |Você não pode realizar a operação solicitada.|*Nenhum.* |
+|`ActivityLimitReached`|O limite de atividades foi alcançado.|*Nenhum.* |
+|`ApiNotAvailable`|A API solicitada não está disponível.|*Nenhum.* |
+|`ApiNotFound`|Não foi possível encontrar a API que você está tentando usar. Ele pode estar disponível em uma versão mais recente do Excel. Consulte o [artigo de conjuntos de requisitos da API JavaScript do Excel](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) para obter mais informações.|*Nenhum.* |
+|`BadPassword`|A senha fornecida está incorreta.|*Nenhum.* |
+|`Conflict`|A solicitação não pôde ser processada devido a um conflito.|*Nenhum.* |
+|`ContentLengthRequired`|Um `Content-length` cabeçalho HTTP está ausente.|*Nenhum.* |
+|`GeneralException`|Ocorreu um erro interno ao processar a solicitação.|*Nenhum.* |
+|`InsertDeleteConflict`|A tentativa de operação de exclusão ou inserção resultou em um conflito.|*Nenhum.* |
+|`InvalidArgument` |O argumento é inválido, está ausente ou tem um formato incorreto.|*Nenhum.* |
+|`InvalidBinding` |Esta associação de objetos não é mais válida devido às atualizações anteriores.|*Nenhum.* |
+|`InvalidOperation`|A tentativa de operação é inválida no objeto.|*Nenhum.* |
+|`InvalidOperationInCellEditMode`|A operação não está disponível enquanto o Excel está no modo editar célula. Saia do modo de edição usando as **teclas Enter** ou **Tab** ou selecionando outra célula e tente novamente.|*Nenhum.* |
+|`InvalidReference`|Esta referência não é válida para a operação atual.|*Nenhum.* |
+|`InvalidRequest`  |Não é possível processar a solicitação.|*Nenhum.* |
+|`InvalidSelection`|A seleção atual é inválida para esta operação.|*Nenhum.* |
+|`ItemAlreadyExists`|O recurso que está sendo criado já existe.|*Nenhum.* |
+|`ItemNotFound` |O recurso solicitado não existe.|*Nenhum.* |
+|`MemoryLimitReached`|O limite de memória foi atingido. Não foi possível concluir sua ação.|*Nenhum.* |
 |`NotImplemented`|O recurso solicitado não foi implementado.| Isso pode significar que a API está em versão prévia ou só tem suporte em uma plataforma específica (como somente online). Confira [o aplicativo cliente do Office e a disponibilidade da plataforma para Suplementos do Office](/javascript/api/requirement-sets) para obter mais informações.|
-|`RequestAborted`|A solicitação foi anulada durante o tempo de execução.| |
+|`RequestAborted`|A solicitação foi anulada durante o tempo de execução.|*Nenhum.* |
 |`RequestPayloadSizeLimitExceeded`|O tamanho da carga da solicitação excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| Esse erro ocorre somente em Office na Web.|
 |`ResponsePayloadSizeLimitExceeded`|O tamanho da carga de resposta excedeu o limite. Consulte o [artigo Limites de recursos e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|  Esse erro ocorre somente em Office na Web.|
-|`ServiceNotAvailable`|O serviço não está disponível.| |
-|`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.| |
-|`UnsupportedFeature`|A operação falhou porque a planilha de origem contém um ou mais recursos sem suporte.| |
-|`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.| |
+|`ServiceNotAvailable`|O serviço não está disponível.|*Nenhum.* |
+|`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.|*Nenhum.* |
+|`UnsupportedFeature`|A operação falhou porque a planilha de origem contém um ou mais recursos sem suporte.|*Nenhum.* |
+|`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|*Nenhum.* |
 
 ### <a name="excel-specific-error-codes-and-messages"></a>Mensagens e códigos de erro específicos do Excel
 
 |Código de erro | Mensagem de erro | Notas |
 |:----------|:--------------|:------|
-|`EmptyChartSeries`|A operação tentada falhou porque a série de gráficos está vazia.| |
-|`FilteredRangeConflict`|A operação tentada causa um conflito com um intervalo filtrado.| |
+|`EmptyChartSeries`|A operação tentada falhou porque a série de gráficos está vazia.|*Nenhum.* |
+|`FilteredRangeConflict`|A operação tentada causa um conflito com um intervalo filtrado.|*Nenhum.* |
 |`FormulaLengthExceedsLimit`|O código de bytes da fórmula aplicada excede o limite máximo de comprimento. Para o Office em computadores de 32 bits, o limite de comprimento do código de bytes é de 16384 caracteres. Em computadores de 64 bits, o limite de comprimento do código de bytes é de 32768 caracteres.| Esse erro ocorre no Excel na Web e na área de trabalho.|
-|`InactiveWorkbook`|A operação falhou porque várias pastas de trabalho estão abertas e a pasta de trabalho que está sendo chamada por essa API perdeu o foco.| |
-|`MergedRangeConflict`|Não é possível concluir a operação. Uma tabela não pode se sobrepor a outra tabela, um relatório de tabela dinâmica, resultados de consulta, células mescladas ou um mapa XML.|
-|`NonBlankCellOffSheet`|O Microsoft Excel não pode inserir novas células porque ele efetuaria push de células não vazias para fora do final da planilha. Essas células não vazias podem parecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para abrir espaço para o que você deseja inserir e tente novamente.| |
+|`InactiveWorkbook`|A operação falhou porque várias pastas de trabalho estão abertas e a pasta de trabalho que está sendo chamada por essa API perdeu o foco.|*Nenhum.* |
+|`MergedRangeConflict`|Não é possível concluir a operação. Uma tabela não pode se sobrepor a outra tabela, um relatório de tabela dinâmica, resultados de consulta, células mescladas ou um mapa XML.|*Nenhum.* |
+|`NonBlankCellOffSheet`|O Microsoft Excel não pode inserir novas células porque ele efetuaria push de células não vazias para fora do final da planilha. Essas células não vazias podem parecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para abrir espaço para o que você deseja inserir e tente novamente.|*Nenhum.* |
 |`OperationCellsExceedLimit`|A operação tentada afeta mais do que o limite de 33554000 células.| Se o `TableColumnCollection.add API` erro for disparado, confirme se não há dados não intencionais dentro da planilha, mas fora da tabela. Em particular, verifique se há dados nas colunas mais à direita da planilha. Remova os dados não intencionais para resolver esse erro. Uma maneira de verificar quantas células uma operação processa é executar o seguinte cálculo: `(number of table rows) x (16383 - (number of table columns))`. O número 16383 é o número máximo de colunas compatíveis com o Excel. <br><br>Esse erro ocorre somente em Excel na Web. |
-|`PivotTableRangeConflict`|A operação tentada causa um conflito com um intervalo de Tabela Dinâmica.| |
-|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo com suporte. Consulte o [artigo Limites de recursos e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.| |
-|`RefreshWorkbookLinksBlocked`|A operação falhou porque o usuário não concedeu permissão para atualizar links de pasta de trabalho externa.| |
-|`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma folha Macro ou Gráfico.| |
+|`PivotTableRangeConflict`|A operação tentada causa um conflito com um intervalo de Tabela Dinâmica.|*Nenhum.* |
+|`RangeExceedsLimit`|A contagem de células no intervalo excedeu o número máximo com suporte. Consulte o [artigo Limites de recursos e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.|*Nenhum.* |
+|`RefreshWorkbookLinksBlocked`|A operação falhou porque o usuário não concedeu permissão para atualizar links de pasta de trabalho externa.|*Nenhum.* |
+|`UnsupportedSheet`|Esse tipo de planilha não dá suporte a essa operação, pois é uma folha Macro ou Gráfico.|*Nenhum.* |
 
 ## <a name="error-notifications"></a>Notificações de erro
 

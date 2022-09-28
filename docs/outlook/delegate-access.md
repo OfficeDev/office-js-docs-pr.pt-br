@@ -3,12 +3,12 @@ title: Habilitar pastas compartilhadas e cenários de caixa de correio compartil
 description: Discute como configurar o suporte a suplementos para pastas compartilhadas (também conhecido como acesso delegado) e caixas de correio compartilhadas.
 ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c6884c18e4cb9916fcec20e6b732b0d20918e2f
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857554"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092921"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada em um suplemento do Outlook
 
@@ -20,13 +20,13 @@ A tabela a seguir mostra combinações de cliente-servidor com suporte para esse
 
 | Client | Exchange Online | Exchange 2019 local<br>(Atualização Cumulativa 1 ou posterior) | Exchange 2016 local<br>(Atualização Cumulativa 6 ou posterior) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>versão 1910 (build 12130.20272) ou posterior|Sim|Sim\*|Sim\*|Sim\*|
+|Windows:<br>Versão 1910 (Build 12130.20272) ou posterior|Sim|Sim\*|Sim\*|Sim\*|
 |Mac:<br>build 16.47 ou posterior|Sim|Sim|Sim|Sim|
 |Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|Não aplicável|
 |Navegador da Web:<br>interface do usuário clássica do Outlook|Não aplicável|Não|Não|Não|
 
 > [!NOTE]
-> \* O suporte para esse recurso em um ambiente do Exchange local está disponível a partir da versão 2206 (build 15330.20000) para o Canal Atual e versão 2207 (build 15427.20000) para o Canal Empresarial Mensal.
+> \* O suporte para esse recurso em um ambiente do Exchange local está disponível a partir da versão 2206 (Build 15330.20000) para o Canal Atual e a Versão 2207 (Build 15427.20000) para o Canal Empresarial Mensal.
 
 > [!IMPORTANT]
 > O suporte para esse recurso foi introduzido no conjunto de requisitos [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (para obter detalhes, consulte [clientes e plataformas](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). No entanto, observe que a matriz de suporte do recurso é um superconjunto do conjunto de requisitos.

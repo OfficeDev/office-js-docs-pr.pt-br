@@ -3,12 +3,12 @@ title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
-ms.translationtype: HT
+ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689380"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092879"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
@@ -77,21 +77,21 @@ Os filhos de **\<OfficeApp\>** são geralmente divididos em duas categorias noci
 
 As propriedades do manifesto base especificam características do suplemento que *qualquer* tipo de extensão do Microsoft 365 deve ter. Isso inclui guias do Teams e extensões de mensagem, não apenas suplementos do Office. Essas características incluem um nome público e uma ID exclusiva. A tabela a seguir mostra um mapeamento de algumas propriedades críticas de nível superior na versão prévia do manifesto JSON para os elementos XML no manifesto atual, em que o princípio de mapeamento *finalidade* é a finalidade da marcação.
 
-|Propriedade JSON|Objetivo|Elemento XML|Comentários|
+|Propriedade JSON|Objetivo|Elementos XML|Comentários|
 |:-----|:-----|:-----|:-----|
-|"$schema"| Identifica o esquema do manifesto. | atributos de **\<OfficeApp\>** e **\<VersionOverrides\>** | |
-|"id"| GUID do suplemento. | **\<Id\>**| |
-|"versão"| A versão do suplemento. | **\<Version\>** | |
-|"manifestVersion"| Versão do esquema do manifesto. |  atributos de **\<OfficeApp\>** | |
-|"nome"| O nome do suplemento. | **\<DisplayName\>** | |
-|"descrição"| Descrição pública do suplemento.  | **\<Description\>** | |
-|"accentColor"||| Essa propriedade não tem equivalente no manifesto XML atual e não é usada na versão prévia do manifesto JSON. Mas ela deve estar presente. |
-|"developer"| Identifica o desenvolvedor do suplemento. | **\<ProviderName\>** | |
-|"localizationInfo"| Configura a localidade padrão e outras localidades com suporte. | **\<DefaultLocale\>** e **\<Override\>** | |
+|"$schema"| Identifica o esquema do manifesto. | atributos de **\<OfficeApp\>** e **\<VersionOverrides\>** |*Nenhum.* |
+|"id"| GUID do suplemento. | **\<Id\>**|*Nenhum.* |
+|"versão"| A versão do suplemento. | **\<Version\>** |*Nenhum.* |
+|"manifestVersion"| Versão do esquema do manifesto. |  atributos de **\<OfficeApp\>** |*Nenhum.* |
+|"nome"| O nome do suplemento. | **\<DisplayName\>** |*Nenhum.* |
+|"descrição"| Descrição pública do suplemento.  | **\<Description\>** |*Nenhum.* |
+|"accentColor"|*Nenhum.* |*Nenhum.* | Essa propriedade não tem equivalente no manifesto XML atual e não é usada na versão prévia do manifesto JSON. Mas ela deve estar presente. |
+|"developer"| Identifica o desenvolvedor do suplemento. | **\<ProviderName\>** |*Nenhum.* |
+|"localizationInfo"| Configura a localidade padrão e outras localidades com suporte. | **\<DefaultLocale\>** e **\<Override\>** |*Nenhum.* |
 |"webApplicationInfo"| Identifica o aplicativo Web do suplemento como ele é conhecido no Azure Active Directory. | **\<WebApplicationInfo\>** | No manifesto XML atual, o elemento **\<WebApplicationInfo\>** está dentro de **\<VersionOverrides\>**, não no manifesto base. |
 |"autorização"| Identifica todas as permissões do Microsoft Graph que o suplemento precisa. | **\<WebApplicationInfo\>** | No manifesto XML atual, o elemento **\<WebApplicationInfo\>** está dentro de **\<VersionOverrides\>**, não no manifesto base. |
 
-Os elementos **\<Hosts\>**, **\<Requirements\>** e **\<ExtendedOverrides\>** fazem parte do manifesto base no manifesto XML atual. Mas conceitos e finalidades associados a esses elementos são configurados dentro da propriedade "extensão" da versão prévia do manifesto JSON. 
+Os elementos **\<Hosts\>**, **\<Requirements\>** e **\<ExtendedOverrides\>** fazem parte do manifesto base no manifesto XML atual. Mas conceitos e finalidades associados a esses elementos são configurados dentro da propriedade "extensão" da versão prévia do manifesto JSON.
 
 #### <a name="extension-property"></a>propriedade "extensão"
 
@@ -102,22 +102,22 @@ A propriedade "extensão" na versão prévia do manifesto JSON representa, princ
 
 A tabela a seguir mostra um mapeamento de algumas propriedades filho de alto nível da propriedade "extensão" na versão prévia do manifesto JSON para elementos XML no manifesto atual. A notação de ponto é usada para referenciar propriedades filho.
 
-|Propriedade JSON|Objetivo|Elemento XML|Comentários|
+|Propriedade JSON|Objetivo|Elementos XML|Comentários|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | Identifica os conjuntos de requisitos que o suplemento precisa para ser instalado. | **\<Requirements\>** e **\<Sets\>** | |
-| "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **\<Hosts\>** |  |
+| "requirements.capabilities" | Identifica os conjuntos de requisitos que o suplemento precisa para ser instalado. | **\<Requirements\>** e **\<Sets\>** |*Nenhum.* |
+| "requirements.scopes" | Identifica os aplicativos do Office nos quais o suplemento pode ser instalado. | **\<Hosts\>** |*Nenhum.* |
 | "faixas de opções" | As faixas de opções que o suplemento personaliza. | **\<Hosts\>**, **ExtensionPoints** e vários elementos **\*FormFactor** | As propriedade "faixas de opções" é uma matriz de objetos anônimos que mesclam as finalidades desses três elementos. Consulte [a tabela "faixas de opções"](#ribbons-table).|
 | "alternativas" | Especifica a compatibilidade de versões anteriores com um suplemento COM equivalente, XLL ou ambos. | **\<EquivalentAddins\>** | Consulte [EquivalentAddins - Consulte também ](/javascript/api/manifest/equivalentaddins#see-also) para obter informações de segundo plano. |
-| "runtimes"  | Configura vários tipos de suplementos que têm pouca ou nenhuma interface do usuário, como suplementos somente de função personalizada e [comandos de função](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>** e **\<ExtensionPoint\>** (do tipo CustomFunctions) |  |
-| "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **\<Event\>** e **\<ExtensionPoint\>** (do tipo Events) |  |
+| "runtimes"  | Configura vários tipos de suplementos que têm pouca ou nenhuma interface do usuário, como suplementos somente de função personalizada e [comandos de função](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>** e **\<ExtensionPoint\>** (do tipo CustomFunctions) |*Nenhum.* |
+| "autoRunEvents" | Remove um manipulador de eventos de um evento especificado. | **\<Event\>** e **\<ExtensionPoint\>** (do tipo Events) |*Nenhum.* |
 
 ##### <a name="ribbons-table"></a>tabela "faixas de opções"
 
 A tabela a seguir mapeia as propriedades filho dos objetos filho anônimos nas "faixas de opções" matriz em elementos XML no manifesto atual. 
 
-|Propriedade JSON|Objetivo|Elemento XML|Comentários|
+|Propriedade JSON|Objetivo|Elementos XML|Comentários|
 |:-----|:-----|:-----|:-----|
-| "contextos" | Especifica as superfícies de comando que o suplemento personaliza. | vários elementos **\*CommandSurface**, como **PrimaryCommandSurface** e **MessageReadCommandSurface** |  |
+| "contextos" | Especifica as superfícies de comando que o suplemento personaliza. | vários elementos **\*CommandSurface**, como **PrimaryCommandSurface** e **MessageReadCommandSurface** |*Nenhum.* |
 | "guias" | Configura guias personalizadas da faixa de opções. | **\<CustomTab\>** | Os nomes e a hierarquia das propriedades descendentes de "guias" correspondem de perto aos descendentes de **\<CustomTab\>**.  |
 
 ## <a name="sample-preview-json-manifest"></a>Exemplo da versão prévia do manifesto JSON
