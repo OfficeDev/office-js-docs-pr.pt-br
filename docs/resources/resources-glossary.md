@@ -1,14 +1,14 @@
 ---
 title: Glossário de termos de Suplementos do Office
 description: Um glossário de termos comumente usados em toda a documentação de Suplementos do Office.
-ms.date: 08/19/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
-ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
+ms.openlocfilehash: ef8df6e344698f7d67ebe7afe1759e13630b385d
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2022
-ms.locfileid: "67735320"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234911"
 ---
 # <a name="office-add-ins-glossary"></a>Glossário de Suplementos do Office
 
@@ -96,6 +96,14 @@ Consulte também: [aplicativo](#application), [cliente](#client), aplicativo [do
 
 Consulte também: [aplicativo](#application), [cliente](#client), [host](#host).
 
+## <a name="perpetual"></a>Perpétuo
+
+**Perpétuo** refere-se a versões do Office disponíveis por meio de um contrato de licenciamento por volume ou canais de varejo.
+
+Outro conteúdo da Microsoft pode usar o **termo não assinatura** para representar esse conceito.
+
+Consulte também: [varejo, perpétuo](#retail-retail-perpetual) de varejo, [licenciado por volume, licença por volume perpétua, licenciamento por volume](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## <a name="platform"></a>plataforma
 
 Uma **plataforma** geralmente se refere ao sistema operacional que executa o aplicativo do Office. As plataformas que dão suporte a Suplementos do Office incluem navegadores da Web, Windows, Mac, iPad e Windows.
@@ -109,6 +117,14 @@ Confira também: [tutorial](#tutorial).
 ## <a name="requirement-set"></a>conjunto de requisitos
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
+
+## <a name="retail-retail-perpetual"></a>varejo, varejo perpétuo
+
+**Varejo** refere-se a versões perpétuas do Office disponíveis por meio de canais de varejo. Elas não incluem versões fornecidas por uma assinatura do Microsoft 365 nem por um contrato de licenciamento por volume.
+
+Outro conteúdo da Microsoft pode usar o termo compra **única** ou **consumidor** para representar esse conceito.
+
+Consulte também: [perpétuo](#perpetual)
 
 ## <a name="ribbon-ribbon-button"></a>faixa de opções, botão da faixa de opções
 
@@ -126,6 +142,10 @@ Um **runtime** compartilhado permite que todo o código no suplemento, incluindo
 
 Consulte também: [runtime de funções personalizadas](#custom-functions-runtime), [runtime](#runtime).
 
+## <a name="subscription"></a>Assinatura
+
+**A** assinatura refere-se a versões do Office disponíveis com uma assinatura do Microsoft 365.
+
 ## <a name="task-pane"></a>painel de tarefas
 
 Os painéis de tarefas são superfícies de interface ou exibições da Web que normalmente aparecem no lado direito da janela no Excel, Outlook, PowerPoint e Word. Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados. Use painéis de tarefas quando você não precisar ou não puder inserir a funcionalidade diretamente no documento. Consulte [painéis de tarefas em Suplementos do Office](../design/task-pane-add-ins.md) para saber mais.
@@ -137,6 +157,14 @@ Consulte também: [modo de exibição da Web](#webview).
 Um **tutorial** é um auxílio de ensino projetado para ajudar as pessoas a aprender a usar um produto ou procedimento. No contexto de Suplementos do Office, um tutorial orienta um desenvolvedor de suplementos pelo processo completo de desenvolvimento de suplementos para um aplicativo específico, como o Excel. Isso envolve seguir 20 ou mais etapas e é um investimento de tempo maior do que um [início rápido](#quick-start).
 
 Confira também: [início rápido](#quick-start).
+
+## <a name="volume-licensed-volume-licensed-perpetual-volume-licensing"></a>licenciamento perpétuo, perpétuo licenciado por volume e licenciado por volume
+
+**Licenciado por volume** refere-se a uma versão perpétua do Office disponível por meio de um contrato de licenciamento por volume entre a Microsoft e sua empresa.
+
+Outro conteúdo da Microsoft pode usar o termo **comercial** para representar esse conceito.
+
+Consulte também: [perpétuo](#perpetual)
 
 ## <a name="web-add-in"></a>suplemento Web
 

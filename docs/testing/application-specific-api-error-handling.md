@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erro com as APIs JavaScript específicas do aplicativo
 description: Saiba mais sobre o Excel, o Word, o PowerPoint e outra lógica de tratamento de erro da API JavaScript específica do aplicativo para contabilização de erros de runtime.
-ms.date: 07/05/2022
+ms.date: 09/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: f26c38e7582fbb372deae8b160b8a284d8ce4ce9
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092991"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234890"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>Tratamento de erro com as APIs JavaScript específicas do aplicativo
 
@@ -100,6 +100,7 @@ As tabelas a seguir listam os erros que apIs específicas do aplicativo podem re
 |`EmptyChartSeries`|A operação tentada falhou porque a série de gráficos está vazia.|*Nenhum.* |
 |`FilteredRangeConflict`|A operação tentada causa um conflito com um intervalo filtrado.|*Nenhum.* |
 |`FormulaLengthExceedsLimit`|O código de bytes da fórmula aplicada excede o limite máximo de comprimento. Para o Office em computadores de 32 bits, o limite de comprimento do código de bytes é de 16384 caracteres. Em computadores de 64 bits, o limite de comprimento do código de bytes é de 32768 caracteres.| Esse erro ocorre no Excel na Web e na área de trabalho.|
+|`GeneralException`|*Vários.*|As APIs de tipos de dados retornam `GeneralException` erros com mensagens de erro dinâmicas. Essas mensagens referenciam a célula que é a origem do erro e o problema que está causando o erro, como: "A célula A1 não tem a propriedade necessária `type`."|
 |`InactiveWorkbook`|A operação falhou porque várias pastas de trabalho estão abertas e a pasta de trabalho que está sendo chamada por essa API perdeu o foco.|*Nenhum.* |
 |`MergedRangeConflict`|Não é possível concluir a operação. Uma tabela não pode se sobrepor a outra tabela, um relatório de tabela dinâmica, resultados de consulta, células mescladas ou um mapa XML.|*Nenhum.* |
 |`NonBlankCellOffSheet`|O Microsoft Excel não pode inserir novas células porque ele efetuaria push de células não vazias para fora do final da planilha. Essas células não vazias podem parecer vazias, mas têm valores em branco, alguma formatação ou uma fórmula. Exclua linhas ou colunas suficientes para abrir espaço para o que você deseja inserir e tente novamente.|*Nenhum.* |
