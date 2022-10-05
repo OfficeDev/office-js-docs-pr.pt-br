@@ -55,6 +55,8 @@ items:
           - name: Navegadores usados pelos Suplementos do Office
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Runtimes em Suplementos do Office
+            href: testing/runtimes.md
           - name: Suporte ao Internet Explorer 11
             href: develop/support-ie-11.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
@@ -344,8 +346,6 @@ items:
             href: develop/usability-testing.md
           - name: Validar o manifesto de suplemento do Office
             href: testing/troubleshoot-manifest.md
-          - name: Runtimes em Suplementos do Office
-            href: testing/runtimes.md
       - name: Publicar
         items:
           - name: Publicar Suplementos do Office
