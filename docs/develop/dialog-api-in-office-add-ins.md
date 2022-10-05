@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conheça os conceitos básicos da criação de uma caixa de diálogo em um Suplemento do Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 947b08575d100c639a440c1ca25d45199b4507ad
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423101"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466954"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -64,7 +64,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 Para ver um suplemento de exemplo que faz isso, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example). Para obter mais exemplos que usam `displayDialogAsync`, consulte [Exemplos](#samples).
 
-Defina os dois valores como 100% para ter uma verdadeira experiência de tela inteira. O máximo real é 99,5%, e a janela ainda poderá ser movida e redimensionada.
+Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
 > [!NOTE]
 > Apenas uma caixa de diálogo pode ser aberta em uma janela do host. Tentar abrir outra caixa de diálogo gera um erro. Por exemplo, se um usuário abrir uma caixa de diálogo de um painel de tarefas, ela não poderá abrir uma segunda caixa de diálogo de uma página diferente no painel de tarefas. No entanto, quando uma caixa de diálogo é aberta em um [comando de suplemento](../design/add-in-commands.md), o comando abre um arquivo HTML novo (mas não visto) sempre que ele é selecionado. Isso cria uma nova janela do host (não vista) para que cada janela possa iniciar sua própria caixa de diálogo. Para obter mais informações, confira [Erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).
@@ -100,7 +100,7 @@ if (loginSuccess) {
 > [!IMPORTANT]
 >
 > - A `messageParent` função é uma das *duas* APIs JS do Office que podem ser chamadas na caixa de diálogo.
-> - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported`. Para obter informações sobre ele, consulte [Especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, não há suporte para essa API Outlook 2016 compra única (ou seja, a versão MSI).
+> - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported`. Para obter informações sobre ele, consulte [Especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, essa API não é compatível com Outlook 2016 perpétua licenciada por volume (ou seja, a versão MSI).
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
 
@@ -126,7 +126,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 >
 > - O Office transmite um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para o retorno de chamada. Ele representa o resultado de tentativas de abrir a caixa de diálogo,  Ela não representa o resultado de eventos na caixa diálogo. Para saber mais sobre essa distinção, confira [Manipular erros e eventos](dialog-handle-errors-events.md).
 > - A propriedade `value` do `asyncResult` é definida como um objeto [Dialog](/javascript/api/office/office.dialog) que existe na página host, não no contexto da execução da caixa de diálogo.
-> - O `processMessage` é a função que manipula o evento. Você pode dar a ele o nome que desejar.
+> - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - A variável `dialog` é declarada em um escopo mais amplo do que o retorno de chamada porque ela também é referenciada em `processMessage`.
 
 Veja a seguir um exemplo simples de um manipulador para o evento `DialogMessageReceived`.
@@ -159,7 +159,7 @@ function processMessage(arg) {
 
 Para ver um suplemento de exemplo que usa essas técnicas, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-Se o suplemento precisa abrir uma página diferente do painel de tarefas depois de receber a mensagem, é possível usar o método `window.location.replace` (ou `window.location.href`) como a última linha do manipulador. Apresentamos um exemplo a seguir.
+If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
 ```js
 function processMessage(arg) {
@@ -194,9 +194,9 @@ if (loginSuccess) {
 >
 > - A variável `loginSuccess` poderia ser inicializada por meio da leitura da resposta HTTP no provedor de identidade.
 > - A implementação do e `getProfile` das `getError` funções não é mostrada. Cada uma delas obtém dados de um parâmetro de consulta ou do corpo da resposta HTTP.
-> - São enviados objetos anônimos de diferentes tipos se a entrada for bem-sucedida ou não. Ambos têm uma propriedade `messageType`, mas um tem uma propriedade `profile` e o outro tem uma propriedade `error`.
+> - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
-O código do manipulador na página host usa o valor da propriedade `messageType` para ramificar como no exemplo a seguir. A função `showUserName` é a mesma do exemplo anterior e a função `showNotification` exibe o erro na interface do usuário da página host.
+The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
 ```js
 function processMessage(arg) {
@@ -385,7 +385,7 @@ Por exemplo, seu código pode usar a função [Office.onReady ou Office.initiali
 
 ## <a name="close-the-dialog-box"></a>Fechar a caixa de diálogo
 
-Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer isso, o manipulador de eventos de clique do botão deve usar `messageParent` para informar a página host em que o botão foi clicado. Apresentamos um exemplo a seguir.
+You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
 ```js
 function closeButtonClick() {

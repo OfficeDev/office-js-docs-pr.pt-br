@@ -1,14 +1,14 @@
 ---
 title: Obter e definir categorias
 description: Como gerenciar categorias na caixa de correio e no item.
-ms.date: 07/07/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d31cb8da4cdaf4a88141a1eac927748b1399e0d9
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: a94aba61d513becf2fa1af27ff388b1286e94707
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712822"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467101"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 
@@ -22,7 +22,10 @@ No Outlook, um usuário pode aplicar categorias a mensagens e compromissos como 
 Somente categorias na lista mestra em sua caixa de correio estão disponíveis para você aplicar a uma mensagem ou compromisso. Você pode usar a API para adicionar, obter e remover categorias mestras.
 
 > [!IMPORTANT]
-> Para que o suplemento gerencie a lista mestra de categorias, você deve `Permissions` definir o nó no manifesto como `ReadWriteMailbox`.
+> Para que o suplemento gerencie a lista mestra de categorias, ele deve solicitar a permissão de caixa de correio de leitura **/** gravação no manifesto. A marcação varia dependendo do tipo de manifesto.
+>
+> - **Manifesto XML**: defina o **\<Permissions\>** elemento **como ReadWriteMailbox**.
+> - **Manifesto do Teams (** versão prévia):defina a propriedade "name" de um objeto na matriz "authorization.permissions.resourceSpecific" como "Mailbox.ReadWrite.User".
 
 ### <a name="add-master-categories"></a>Adicionar categorias mestras
 
@@ -141,4 +144,3 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>Confira também
 
 - [Permissões do Outlook](understanding-outlook-add-in-permissions.md)
-- [Elemento Permissions no manifesto](/javascript/api/manifest/permissions)

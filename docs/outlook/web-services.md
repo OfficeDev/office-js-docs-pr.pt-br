@@ -1,34 +1,34 @@
 ---
 title: Usar os Serviços Web do Exchange a partir de um suplemento do Outlook
 description: Fornece um exemplo que mostra como um suplemento do Outlook pode solicitar informações dos Serviços Web do Exchange.
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 94fff26fc7f9c16e2e385d6c44c128e4b03f968e
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958941"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467010"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Chamar serviços Web de um suplemento do Outlook
 
-O suplemento pode usar os EWS (Serviços Web do Exchange) de um computador que esteja executando o Exchange Server 2013, um serviço Web que está disponível no servidor que fornece o local de origem para interface do usuário do suplemento ou um serviço Web que está disponível na Internet. Este artigo fornece um exemplo que mostra como um suplemento do Outlook pode solicitar informações dos EWS.
+Your add-in can use Exchange Web Services (EWS) from a computer that is running Exchange Server 2013, a web service that is available on the server that provides the source location for the add-in's UI, or a web service that is available on the Internet. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
-A maneira usada para chamar um serviço Web varia com base em onde o serviço Web está localizado. A Tabela 1 lista as diferentes maneiras que podem ser usadas para chamar um serviço Web baseado no local.
+The way that you call a web service varies based on where the web service is located. Table 1 lists the different ways that you can call a web service based on location.
 
 **Tabela 1. Maneiras de chamar serviços Web de um suplemento do Outlook**
 
 |**Local do serviço Web**|**Maneira de chamar o serviço Web**|
 |:-----|:-----|
-|O servidor Exchange que hospeda a caixa de correio do cliente|Use o método [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para chamar operações EWS com suporte dos suplementos. O servidor Exchange que hospeda a caixa de correio também expõe os EWS.|
-|O servidor Web que fornece o local de origem para a interface do usuário|Chame o serviço Web usando técnicas JavaScript padrão. O código JavaScript no quadro da interface do usuário é executado no contexto do servidor Web que fornece a interface do usuário. Portanto, ele pode chamar serviços Web nesse servidor sem causar um erro de script entre sites.|
-|Todos os outros locais|Crie um proxy para o serviço Web no servidor Web que fornece o local de origem para a interface do usuário. Se você não fornecer um proxy, erros de script entre sites impedirão a execução do suplemento. Uma maneira de fornecer um proxy é usar JSON/P. Para saber mais, confira [Privacidade e segurança para suplementos do Office](../concepts/privacy-and-security.md).|
+|O servidor Exchange que hospeda a caixa de correio do cliente|Use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to call EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
+|O servidor Web que fornece o local de origem para a interface do usuário|Call the web service by using standard JavaScript techniques. The JavaScript code in the UI frame runs in the context of the web server that provides the UI. Therefore, it can call web services on that server without causing a cross-site scripting error.|
+|Todos os outros locais|Create a proxy for the web service on the web server that provides the source location for the UI. If you do not provide a proxy, cross-site scripting errors will prevent your add-in from running. One way to provide a proxy is by using JSON/P. For more information, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>Usar o método makeEwsRequestAsync para acessar operações dos EWS
 
 Você pode usar o método [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para fazer uma solicitação dos EWS ao servidor Exchange que hospeda a caixa de correio do usuário.
 
-Os EWS oferecem suporte a diferentes operações em um servidor Exchange, por exemplo, operações no nível do item para copiar, localizar, atualizar ou enviar um item e operações no nível da pasta para criar, acessar ou atualizar uma pasta. Para executar uma operação dos EWS, crie uma solicitação SOAP XML para a operação. Quando a operação termina, você recebe uma resposta SOAP XML que contém dados que são relevantes para a operação. As solicitações e respostas SOAP dos EWS seguem o esquema definido no arquivo Messages.xsd. Como outros arquivos de esquema dos EWS, o arquivo Message.xsd está localizado no diretório virtual do IIS que hospeda os EWS.
+EWS supports different operations on an Exchange server; for example, item-level operations to copy, find, update, or send an item, and folder-level operations to create, get, or update a folder. To perform an EWS operation, create an XML SOAP request for that operation. When the operation finishes, you get an XML SOAP response that contains data that is relevant to the operation. EWS SOAP requests and responses follow the schema defined in the Messages.xsd file. Like other EWS schema files, the Message.xsd file is located in the IIS virtual directory that hosts EWS.
 
 Para usar o `makeEwsRequestAsync` método para iniciar uma operação EWS, forneça o seguinte:
 
@@ -154,7 +154,7 @@ O exemplo a seguir descreve como você pode usar o `makeEwsRequestAsync` método
 
 1. Use os resultados da operação dos EWS de acordo com as suas necessidades.
 
-A tabela a seguir lista as operações dos EWS compatíveis com suplementos. Para ver exemplos de solicitações e respostas SOAP, escolha o link para cada operação. Para saber mais sobre operações dos EWS, confira [Operações dos EWS no Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
+The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
 **Tabela 2. Operações compatíveis do EWS**
 
@@ -188,7 +188,12 @@ Quando você usa o `makeEwsRequestAsync` método, a solicitação é autenticada
 > [!NOTE]
 > O administrador do servidor deve usar o cmdlet [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) ou [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) para definir o parâmetro _OAuthAuthentication_ `true` como no diretório EWS `makeEwsRequestAsync` do servidor de Acesso ao Cliente para permitir que o método faça solicitações EWS.
 
-O suplemento deve especificar a permissão `ReadWriteMailbox` no manifesto do suplemento para usar o `makeEwsRequestAsync` método. Para obter informações sobre como usar a `ReadWriteMailbox` permissão, consulte a seção [Permissão ReadWriteMailbox](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) em [Noções básicas sobre permissões de suplemento do Outlook](understanding-outlook-add-in-permissions.md).
+Para usar o método `makeEwsRequestAsync` , o suplemento deve solicitar a permissão de caixa de correio de leitura **/** gravação no manifesto. A marcação varia dependendo do tipo de manifesto.
+
+- **Manifesto XML**: defina o **\<Permissions\>** elemento **como ReadWriteMailbox**.
+- **Manifesto do Teams (** versão prévia):defina a propriedade "name" de um objeto na matriz "authorization.permissions.resourceSpecific" como "Mailbox.ReadWrite.User".
+
+Para obter informações sobre como usar a **permissão de caixa de correio** de leitura/gravação, consulte [a permissão de caixa de correio de leitura/gravação](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
 
 ## <a name="see-also"></a>Confira também
 

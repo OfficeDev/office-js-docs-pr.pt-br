@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 08/04/2022
+ms.date: 09/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: bd4f20c969acf07423e15269b361469ea17eee39
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422947"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466940"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -17,8 +17,8 @@ Os Suplementos do Office são aplicativos Web exibidos usando iFrames durante a 
 Qual navegador é usado depende do:
 
 - O sistema operacional do computador.
-- Se o suplemento está em execução no Office na Web, No Microsoft 365 ou perpétuo (também chamado de "compra não assinatura" ou "compra avuária") do Office 2013 ou posterior.
-- Nas versões perpétuas do Office, se o suplemento está em execução na variação "consumidor" ou "comercial" (também chamado de "licenciado por volume" ou "LTSC").
+- Se o suplemento está em execução no Office na Web, no Office baixado de uma assinatura do Microsoft 365 ou no Office 2013 ou posterior perpétuo.
+- Nas versões perpétuas do Office no Windows, se o suplemento está em execução na variação "varejo" ou "licenciado por volume".
 
 > [!NOTE]
 > Este artigo pressupõe que o suplemento está em execução em um documento que não  está protegido com o [Windows Proteção de Informações (WIP)](/windows/uwp/enterprise/wip-hub). Para documentos protegidos por WIP, há algumas exceções às informações neste artigo. Para obter mais informações, consulte [documentos protegidos por WIP](#wip-protected-documents).
@@ -26,10 +26,10 @@ Qual navegador é usado depende do:
 > [!IMPORTANT]
 > **Internet Explorer ainda usado em Suplementos do Office**
 >
-> Algumas combinações de plataformas e versões do Office, incluindo versões perpétuas comerciais por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
+> Algumas combinações de plataformas e versões do Office, incluindo versões perpétuas licenciadas por volume por meio do Office 2019, ainda usam o controle webview que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado neste artigo. Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
 >
 > - Office na Web abre mais no Internet Explorer. Consequentemente, [o AppSource](/office/dev/store/submit-to-appsource-via-partner-center) não testa mais suplementos no Office na Web usando o Internet Explorer como navegador.
-> - O AppSource ainda testa combinações de versões da plataforma e da área de trabalho *do Office que* usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
+> - O AppSource ainda testa combinações de versões da plataforma e da área de trabalho *do Office que* usam o Internet Explorer. No entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
 > - A [Script Lab não dá](../overview/explore-with-script-lab.md) mais suporte ao Internet Explorer.
 >
 > Para obter mais informações sobre como dar suporte ao Internet Explorer e configurar uma mensagem de falha normal em seu suplemento, consulte [Suporte do Internet Explorer 11](../develop/support-ie-11.md).
@@ -49,24 +49,23 @@ Para essas plataformas, somente a plataforma determina o navegador usado.
 
 ## <a name="perpetual-versions-of-office-on-windows"></a>Versões perpétuas do Office no Windows
 
-Para versões perpétuas do Office no Windows, o navegador usado é determinado pela versão do Office, se a licença é consumidor ou comercial e se o Edge WebView2 (baseado em Chromium) está instalado. A versão do Windows não importa, mas observe que os Suplementos da Web do Office não têm suporte em versões anteriores ao Windows 7 e Office 2021 não têm suporte em versões anteriores ao Windows 10.
+Para versões perpétuas do Office no Windows, o navegador usado é determinado pela versão do Office, se a licença é comercial ou licenciada por volume e se o Edge WebView2 (baseado em Chromium) está instalado. A versão do Windows não importa, mas observe que os Suplementos da Web do Office não têm suporte em versões anteriores ao Windows 7 e Office 2021 não têm suporte em versões anteriores ao Windows 10.
 
-Para determinar se o Office 2016 ou o Office 2019 é consumidor ou comercial, use o formato da versão e do número de build do Office. (Para o Office 2013 e Office 2021, a distinção entre comercial e consumidor não importa.)
+Para determinar se o Office 2016 ou o Office 2019 é comercial ou licenciado por volume, use o formato da versão e do número de build do Office. (Para o Office 2013 e Office 2021, a distinção entre o volume licenciado e o varejo não importa.)
 
-- **Consumidor**: para o Office 2016 e 2019, `YYMM (xxxxx.xxxxxx)`o formato é , terminando com dois blocos de cinco dígitos; por exemplo, `2206 (Build 15330.20264`.
-- **Comercial**: 
+- **Varejo**: para o Office 2016 e 2019, `YYMM (xxxxx.xxxxxx)`o formato é , terminando com dois blocos de cinco dígitos; por exemplo, `2206 (Build 15330.20264`.
+- **Licenciado por volume**:
+  - Para o Office 2016, o formato `16.0.xxxx.xxxxx`é , terminando com dois blocos de *quatro* dígitos; por exemplo, `16.0.5197.1000`.
+  - Para o Office 2019, o formato `1808 (xxxxx.xxxxxx)`é , terminando com dois blocos de *cinco* dígitos; por exemplo, `1808 (Build 10388.20027)`. Observe que o ano e o mês são sempre `1808`.
 
-    - Para o Office 2016, o formato `16.0.xxxx.xxxxx`é , terminando com dois blocos de *quatro* dígitos; por exemplo, `16.0.5197.1000`.
-    - Para o Office 2019, o formato `1808 (xxxxx.xxxxxx)`é , terminando com dois blocos de *cinco* dígitos; por exemplo, `1808 (Build 10388.20027)`. Observe que o ano e o mês são sempre `1808`.
-
-|Versão do Office|Consumidor versus Comercial|Edge WebView2 (baseado Chromium) instalado?|Navegador|
-|:-----|:-----|:-----|:-----|:-----|
-|Office 2013 | Não importa, não importa. |Não importa, não importa.|Internet Explorer 11|
-|Office 2016| Comercial |Não importa, não importa.|Internet Explorer 11|
-|Office 2019| Comercial |Não importa, não importa.|Internet Explorer 11|
-|Office 2016 para Office 2019| Consumidor |Não |Microsoft Edge<sup>1, 2</sup> com WebView original (EdgeHTML)</br>Se o Edge não estiver instalado, o Internet Explorer 11 será usado.|
-|Office 2016 para Office 2019|  Consumidor |Sim<sup>3</sup>|Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado)|
-|Office 2021| Não importa, não importa. |Sim<sup>3</sup> |Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado)|
+| Versão do Office | Varejo versus licenciado por volume | Edge WebView2 (baseado Chromium) instalado? | Navegador |
+|:-----|:-----|:-----|:-----|
+| Office 2013 | Não importa, não importa. | Não importa, não importa. | Internet Explorer 11 |
+| Office 2016 | Licenciado por volume | Não importa, não importa. | Internet Explorer 11 |
+| Office 2019 | Licenciado por volume | Não importa, não importa. | Internet Explorer 11 |
+| Office 2016 para Office 2019 | Varejo | Não | Microsoft Edge<sup>1, 2</sup> com WebView original (EdgeHTML)</br>Se o Edge não estiver instalado, o Internet Explorer 11 será usado. |
+| Office 2016 para Office 2019 | Varejo | Sim<sup>3</sup> | Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado) |
+| Office 2021 | Não importa, não importa. | Sim<sup>3</sup> | Microsoft Edge<sup>1</sup> com WebView2 (Chromium baseado) |
 
 <sup>1</sup> Quando você usa o Microsoft Edge, o Narrador do Windows (às vezes chamado de "leitor de tela") `<title>` lê a marca na página que é aberta no painel de tarefas. No Internet Explorer 11, o Narrador lê a barra de título do painel de tarefas, **\<DisplayName\>** que vem do valor no manifesto do suplemento.
 
@@ -74,7 +73,7 @@ Para determinar se o Office 2016 ou o Office 2019 é consumidor ou comercial, us
 
 <sup>3</sup> Em versões do Windows anteriores Windows 11, o controle WebView2 deve ser instalado para que o Office possa inseri-lo. Ele é instalado com recursos Office 2021 ou posterior, mas não é instalado automaticamente com o Microsoft Edge. Se você tiver uma versão anterior do Office perpétuo, use as instruções para instalar o controle no [Microsoft Edge WebView2/Inserir conteúdo da Web... com o Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-## <a name="microsoft-365-subscription-on-windows"></a>Assinatura do Microsoft 365 no Windows
+## <a name="microsoft-365-subscription-office-on-windows"></a>Assinatura do Microsoft 365 office no Windows
 
 Para a assinatura do Office no Windows, o navegador usado é determinado pelo sistema operacional, pela versão do Office e se o Edge WebView2 (baseado em Chromium) está instalado.
 
@@ -130,7 +129,7 @@ Não há suporte para o download direto de blobs como arquivos PDF em um supleme
 
 ## <a name="wip-protected-documents"></a>Documentos protegidos por WIP
 
-Os suplementos em execução em um documento protegido por [WIP](/windows/uwp/enterprise/wip-hub) nunca usam **o Microsoft Edge com o WebView2 (Chromium baseado em dados)**. Nas seções Versões perpétuas do [Office no Windows](#perpetual-versions-of-office-on-windows) e da Assinatura do [Microsoft 365 no Windows](#microsoft-365-subscription-on-windows) anteriormente neste artigo, substitua **o Microsoft Edge pelo WebView original (EdgeHTML)** pelo **Microsoft Edge por WebView2 (baseado em Chromium)** sempre que o último aparecer.
+Os suplementos em execução em um documento protegido por [WIP](/windows/uwp/enterprise/wip-hub) nunca usam **o Microsoft Edge com o WebView2 (Chromium baseado em dados)**. Nas seções Versões perpétuas do [Office no Windows](#perpetual-versions-of-office-on-windows) e do [Office de Assinatura do Microsoft 365 no Windows](#microsoft-365-subscription-office-on-windows) anteriormente neste artigo, substitua **o Microsoft Edge pelo WebView original (EdgeHTML)** pelo **Microsoft Edge por WebView2 (baseado em Chromium)** sempre que o último aparecer.
 
 Para determinar se um documento está protegido por WIP, siga estas etapas:
 

@@ -3,19 +3,19 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660281"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466975"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
-Um suplemento do Outlook é composto por dois componentes: o manifesto de suplemento XML e uma página da Web, compatível com a biblioteca JavaScript para Suplementos do Office (office.js). O manifesto descreve como o suplemento integra-se a clientes do Outlook. Apresentamos um exemplo a seguir.
+An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
 
  > [!NOTE]
- > Todos os valores da URL no exemplo a seguir começam com "https://appdemo.contoso.com". Esse valor é um espaço reservado. Em um manifesto válido real, esses valores contêm URLs https da Web válidas.
+ > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -227,7 +227,7 @@ Um suplemento do Outlook é composto por dois componentes: o manifesto de suplem
 
 ## <a name="schema-versions"></a>Versões de esquema
 
-Nem todos os clientes do Outlook oferecem suporte aos recursos mais recentes e alguns usuários terão uma versão mais antiga do Outlook. Ter versões do esquema permite que os desenvolvedores compilem suplementos compatíveis com versões anteriores, usando os recursos mais recentes quando estiverem disponíveis, mas ainda funcionando em versões mais antigas.
+Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
 O elemento **\<VersionOverrides\>** no manifesto é um exemplo disso. Todos os elementos definidos dentro de **\<VersionOverrides\>** substituirão o mesmo elemento na outra parte do manifesto. Isso significa que, sempre que possível, o Outlook usará o que está na seção **\<VersionOverrides\>** para configurar o suplemento. No entanto, se a versão do Outlook não oferecer suporte a uma determinada versão de **\<VersionOverrides\>**, o Outlook a ignorará e dependerá das informações no restante do manifesto. 
 
@@ -238,15 +238,15 @@ As versões atuais do esquema são:
 
 |Versão|Descrição|
 |:-----|:-----|
-|v1.0|Oferece suporte à versão 1.0 da API JavaScript do Office. Para suplementos do Outlook, isso oferece suporte ao formulário de leitura. |
+|v1.0|Supports version 1.0 of the Office JavaScript API. For Outlook add-ins, this supports read form. |
 |v1.1|Dá suporte à versão 1.1 da API JavaScript do Office e **\<VersionOverrides\>**. Para suplementos do Outlook, isso acrescenta o suporte ao formulário de composição.|
 |**\<VersionOverrides\>** 1.0|Dá suporte a versões posteriores da API JavaScript do Office. Oferece suporte aos comandos de suplemento.|
-|**\<VersionOverrides\>** 1.1|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento e adiciona suporte para recursos mais recentes, como [painéis de tarefas fixáveis](pinnable-taskpane.md) e suplementos para dispositivos móveis.|
+|**\<VersionOverrides\>** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
 
 Este artigo abordará os requisitos de um manifesto da versão 1.1. Mesmo que seu manifesto de suplemento use o elemento **\<VersionOverrides\>**, ainda é importante incluir os elementos do manifesto da versão 1.1 para permitir que seu suplemento funcione com clientes mais antigos que não oferecem suporte a **\<VersionOverrides\>**.
 
 > [!NOTE]
-> O Outlook usa um esquema para validar manifestos. O esquema requer que os elementos no manifesto apareçam em uma ordem específica. Se você incluir elementos fora do pedido exigido, poderá ocorrer erros ao fazer o carregamento lateral do seu suplemento. Você pode carregar o [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) para ajudar a criar seu manifesto com elementos na ordem necessária.
+> Outlook uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. You can download the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to help create your manifest with elements in the required order.
 
 ## <a name="root-element"></a>Elemento root
 
@@ -266,11 +266,11 @@ O elemento root para o manifesto de suplementos do Outlook é **\<OfficeApp\>**.
 </OfficeApp>
 ```
 
-## <a name="version"></a>Version
+## <a name="version"></a>Versão
 
-Esta é a versão do suplemento específico. Se um desenvolvedor atualiza algo no manifesto, a versão deve ser incrementada também. Dessa forma, quando o novo manifesto é instalado, ele substitui o existente, e o usuário recebe a nova funcionalidade. Se esse suplemento foi enviado para o repositório, o novo manifesto precisa ser re-enviado e revalidado. Em seguida, usuários desse suplemento obterão o novo manifesto atualizado automaticamente em algumas horas, depois da aprovação.
+This is the version of the specific add-in. If a developer updates something in the manifest, the version must be incremented as well. This way, when the new manifest is installed, it will overwrite the existing one and the user will get the new functionality. If this add-in was submitted to the store, the new manifest will have to be re-submitted and re-validated. Then, users of this add-in will get the new updated manifest automatically in a few hours, after it is approved.
 
-Se as permissões solicitadas do suplemento mudarem, os usuários serão solicitados a atualizar e novamente concordar com o suplemento. Se o administrador tiver instalado esse suplemento para toda a organização, o administrador precisará primeiro concordar novamente. Os usuários continuarão a ver a funcionalidade antiga enquanto isso.
+If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will continue to see old functionality in the meantime.
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
@@ -379,7 +379,7 @@ A tabela a seguir descreve o comportamento do navegador quando o seu suplemento 
 |Cliente Outlook|Domínio definido<br>em AppDomains?|Comportamento do navegador|
 |---|---|---|
 |Todos os clientes|Sim|O link é aberto no painel de tarefas do suplemento.|
-|Outlook 2016 para Windows (compra única)<br>Outlook 2013 no Windows|Não|O link é aberto no Internet Explorer 11.|
+|– Outlook 2016 no Windows (perpétuo licenciado por volume)<br>- Outlook 2013 no Windows (perpétuo)|Não|O link é aberto no Internet Explorer 11.|
 |Outros clientes|Não|O link é aberto no navegador padrão do usuário.|
 
 Para mais detalhes, confira [Especificar os domínios que você deseja abrir na janela do suplemento](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
@@ -422,13 +422,13 @@ Para obter detalhes e exemplos das regras de ativação, confira [Regras de ativ
 
 ## <a name="next-steps-add-in-commands"></a>Próximas etapas: Comandos de suplemento
 
-Após definir um manifesto básico, defina os comandos de suplemento para seu suplemento. Os comandos de suplemento apresentam um botão na faixa de opções para que os usuários possam ativar o suplemento de uma maneira simples e intuitiva. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 Para obter um exemplo de suplemento que defina comandos de suplementos, confira [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 
 ## <a name="next-steps-add-mobile-support"></a>Próximas etapas: Adicionar suporte móvel
 
-Os suplementos podem, opcionalmente, adicionar suporte para o Outlook mobile. O Outlook Mobile dá suporte a comandos de suplemento de maneira semelhante ao Outlook no Windows e no Mac. Para saber mais, veja [Adicionar suporte para comandos de suplementos no Outlook Mobile](add-mobile-support.md).
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
 ## <a name="see-also"></a>Confira também
 

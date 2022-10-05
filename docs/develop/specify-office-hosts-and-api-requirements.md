@@ -3,26 +3,26 @@ title: Especificar hosts do Office e requisitos de API
 description: Saiba como especificar os aplicativos do Office e os requisitos de API para que seu suplemento funcione conforme o esperado.
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1520160e75c0e67eddfae8f8413bc929f35f7f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f4953d18a0d9d09c7f7e15a5fdfbad8525a1fdb8
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889363"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466905"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Especificar requisitos da API e de aplicativos do Office
 
 Seu Suplemento do Office pode depender de um aplicativo específico do Office (também chamado de host do Office) ou de membros específicos da API JavaScript do Office (office.js). Por exemplo, o suplemento pode:
 
 - Executar em um único aplicativo do Office (por exemplo, Word ou Excel) ou diversos aplicativos.
-- Use as APIs JavaScript do Office que só estão disponíveis em algumas versões do Office. Por exemplo, a versão de compra única do Excel 2016 não dá suporte a todas as APIs relacionadas ao Excel na biblioteca JavaScript do Office.
+- Use as APIs JavaScript do Office que só estão disponíveis em algumas versões do Office. Por exemplo, a versão perpétua licenciada por volume Excel 2016 não dá suporte a todas as APIs relacionadas ao Excel na biblioteca JavaScript do Office.
 
 Nessas situações, você precisa garantir que seu suplemento nunca esteja instalado em aplicativos do Office ou em versões do Office nas quais ele não possa ser executado.
 
 Também há cenários em que você deseja controlar quais recursos do suplemento ficam visíveis para os usuários com base no aplicativo do Office e na versão do Office. Dois exemplos são:
 
 - Seu suplemento tem recursos que são úteis no Word e no PowerPoint, como manipulação de texto, mas tem alguns recursos adicionais que só fazem sentido no PowerPoint, como recursos de gerenciamento de slides. Você precisa ocultar os recursos somente do PowerPoint quando o suplemento estiver em execução no Word.
-- Seu suplemento tem um recurso que requer um método de API JavaScript do Office que tem suporte em algumas versões de um aplicativo do Office, como a assinatura do Excel, mas não tem suporte em outros, como compra única Excel 2016. Mas seu suplemento tem outros recursos que exigem apenas métodos de API JavaScript do Office com  suporte no Excel 2016. Nesse cenário, você precisa que o suplemento seja instalável no Excel 2016, mas o recurso que requer o método sem suporte deve estar oculto dos usuários de Excel 2016.
+- Seu suplemento tem um recurso que requer um método de API JavaScript do Office com suporte em algumas versões de um aplicativo do Office, como o Excel da assinatura do Microsoft 365, mas não tem suporte em outros, como aplicativos perpétuos licenciados por volume Excel 2016. Mas seu suplemento tem outros recursos que exigem apenas métodos de API JavaScript do Office com  suporte em aplicativos perpétuos licenciados por volume Excel 2016. Nesse cenário, você precisa que o suplemento seja instalável nessa versão do Excel 2016, mas o recurso que requer o método sem suporte deve estar oculto desses usuários.
 
 Este artigo ajuda você a entender quais opções você deve escolher para garantir que seu suplemento funcione conforme o esperado e atinja o público mais amplo possível.
 
@@ -88,7 +88,7 @@ Para simplificar o processo de especificação das APIs de que seu suplemento pr
 
 Os conjuntos de requisitos têm controle de versão. Por exemplo, as APIs que dão suporte [a Caixas de](../develop/dialog-api-in-office-add-ins.md) Diálogo estão no conjunto de requisitos DialogApi 1.1. Quando apIs adicionais que habilitam mensagens de um painel de tarefas para uma caixa de diálogo foram lançadas, elas foram agrupadas em DialogApi 1.2, juntamente com todas as APIs no DialogApi 1.1. *Cada versão de um conjunto de requisitos é um superconjunto de todas as versões anteriores.*
 
-O suporte ao conjunto de requisitos varia de acordo com o aplicativo do Office, a versão do aplicativo do Office e a plataforma na qual ele está em execução. Por exemplo, o DialogApi 1.2 não tem suporte em versões de compra avures do Office antes do Office 2021, mas o DialogApi 1.1 tem suporte em todas as versões de compra avures de volta para o Office 2013. Você deseja que seu suplemento seja instalado em cada combinação de plataforma e versão do Office que dá suporte às APIs que ele usa, portanto, você sempre deve especificar no manifesto a versão  mínima de cada conjunto de requisitos que seu suplemento requer. Os detalhes sobre como fazer isso são posteriormente neste artigo.
+O suporte ao conjunto de requisitos varia de acordo com o aplicativo do Office, a versão do aplicativo do Office e a plataforma na qual ele está em execução. Por exemplo, o DialogApi 1.2 não tem suporte em versões perpétuas licenciadas por volume do Office antes do Office 2021, mas o DialogApi 1.1 tem suporte em todas as versões perpétuas de volta ao Office 2013. Você deseja que seu suplemento seja instalado em cada combinação de plataforma e versão do Office que dá suporte às APIs que ele usa, portanto, você sempre deve especificar no manifesto a versão  mínima de cada conjunto de requisitos que seu suplemento requer. Os detalhes sobre como fazer isso são posteriormente neste artigo.
 
 > [!TIP]
 > Para obter mais informações sobre o controle de versão do conjunto de requisitos, consulte a disponibilidade dos conjuntos de requisitos do [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) e, para obter as listas completas de conjuntos de requisitos e informações sobre as APIs em cada uma, comece com os conjuntos de requisitos do Suplemento [do Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets). Os tópicos de referência para a maioria Office.js APIs também especificam o conjunto de requisitos ao qual pertencem (se houver).
@@ -163,7 +163,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
    // Code that uses API members from the WordApi 1.1 requirement set.
 } else {
-   // Provide diminished experience here. E.g., run alternate code when the user's Word is one-time purchase Word 2013 (which does not support WordApi 1.1).
+   // Provide diminished experience here. E.g., run alternate code when the user's Word is perpetual Word 2013 (which does not support WordApi 1.1).
 }
 ```
 

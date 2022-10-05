@@ -3,20 +3,20 @@ title: Diretrizes de ícone de estilo novo para suplementos do Office
 description: Diretrizes para usar ícones de estilo Fresh em Suplementos do Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 261f684648e8fb57a3aa291b785b33e511f83865
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: bd2cb372b79bef7f8c81deb778862f6bfd91d742
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092942"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467003"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo novo para suplementos do Office
 
-As versões do Office 2013+ (sem assinatura) do Office usam a iconografia de estilo Fresh da Microsoft. Se você preferir que seus ícones correspondam ao estilo Monoline do Microsoft 365, consulte as diretrizes de ícone de estilo [Monoline para Suplementos do Office](add-in-icons-monoline.md).
+As versões do Office 2013+ (perpétua) do Office usam a iconografia de estilo Fresh da Microsoft. Se você preferir que seus ícones correspondam ao estilo Monoline do Microsoft 365, consulte as diretrizes de ícone de estilo [Monoline para Suplementos do Office](add-in-icons-monoline.md).
 
 ## <a name="office-fresh-visual-style"></a>Estilo visual do Office Fresh
 
-Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para se ajustar melhor aos clientes sem assinatura do Office.
+Os ícones Fresh incluem apenas elementos comunicativos essenciais. Elementos não essenciais, como perspectiva, gradientes e uma fonte de luz, foram removidos. Os ícones simplificados suportam a análise mais rápida de comandos e controles. Siga esse estilo para se ajustar melhor aos clientes perpétuos do Office.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

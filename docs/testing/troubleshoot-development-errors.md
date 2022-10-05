@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de desenvolvimento com Suplementos do Office
 description: Saiba como solucionar problemas de erros de desenvolvimento em Suplementos do Office.
-ms.date: 07/28/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9271322bd37fece80decb527891a2f2faadce654
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423192"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467172"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Solucionar erros de desenvolvimento com Suplementos do Office
 
@@ -90,8 +90,11 @@ Se isso ocorrer, você poderá atualizar os arquivos XSD que o Visual Studio usa
 
 1. Abra seu projeto no Visual Studio.
 1. No **Gerenciador de Soluções**, abra o manifest.xml arquivo. O manifesto normalmente está no primeiro projeto em sua solução.
-1. Escolha **a janela Exibir** > **Propriedades** (F4).
-1. Na Janela **Propriedades**, escolha as reticências (...) para abrir o editor de **Esquemas XML** . Aqui você pode encontrar o local exato da pasta de todos os arquivos de esquema que seu projeto usa.
+1. Selecione **Exibir** > **Janela de Propriedades** (F4).
+1. Defina a seleção de cursor no manifest.xml para que a **janela** Propriedades mostre as **propriedades do Documento XML** .
+1. Na janela **Propriedades** , selecione a propriedade **Esquemas** e, em seguida, selecione as reticências (...) para abrir o editor de Esquemas **XML** . Aqui você pode encontrar o local exato da pasta de todos os arquivos de esquema que seu projeto usa.
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="janela Propriedades mostrando as propriedades do documento XML.":::
 
 ### <a name="update-the-xsd-files"></a>Atualizar os arquivos XSD
 

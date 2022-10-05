@@ -1,25 +1,25 @@
 ---
 title: Crie suplementos do Outlook para formulários de redação
 description: Saiba mais sobre os cenários e recursos dos suplementos do Outlook nos formulários de redação.
-ms.date: 02/09/2021
+ms.date: 10/03/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: ef81b21eaa0bc63a5bf38757cb188e8850ade443
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484007"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467248"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Criar suplementos do Outlook para formulários de redação
 
-A partir da versão 1.1 do esquema para manifestos de Suplementos do Office e v1.1 do Office.js, você pode criar suplementos de composição, que são suplementos do Outlook ativados em formulários de composição. Em contraste com suplementos de leitura (suplementos do Outlook que são ativados no modo de leitura quando um usuário está exibindo uma mensagem ou um compromisso), os suplementos de composição estão disponíveis nos seguintes cenários de usuário.
+Você pode criar suplementos de composição, que são suplementos do Outlook ativados em formulários de composição. Ao contrário dos suplementos de leitura (suplementos do Outlook que são ativados no modo de leitura quando um usuário está exibindo uma mensagem ou compromisso), os suplementos de composição estão disponíveis nos seguintes cenários de usuário.
 
 - Redação de nova mensagem, solicitação de reunião ou compromisso em um formulário de redação.
 
 - Exibição ou edição de compromisso existente, ou item de reunião no qual o usuário seja o organizador.
 
    > [!NOTE]
-   > Se o usuário estiver na versão RTM do Outlook 2013 e do Exchange 2013 e estiver exibindo um item de reunião organizado pelo usuário, o usuário poderá encontrar suplementos de leitura disponíveis. A partir da versão do Office 2013 SP1, há uma alteração de modo que, no mesmo cenário, somente suplementos de composição podem ser ativados e estar disponíveis.
+   > If the user is on the RTM release of Outlook 2013 and Exchange 2013 and is viewing a meeting item organized by the user, the user can find read add-ins available. Starting in the Office 2013 SP1 release, there's a change such that in the same scenario, only compose add-ins can activate and be available.
 
 - Redação de uma mensagem de resposta embutida ou resposta a uma mensagem em um formulário de redação separado.
 
@@ -29,7 +29,7 @@ A partir da versão 1.1 do esquema para manifestos de Suplementos do Office e v1
 
 - Encaminhamento ou resposta a uma solicitação de reunião ou a um item de reunião.
 
-Em cada um desses cenários de composição, são mostrados os botões de comando do suplemento definidos por este. Para suplementos mais antigos que não implementam comandos de suplemento, os usuários podem escolher **Suplementos do Office** na faixa de opções para abrir o painel de seleção de suplementos, escolher e iniciar um suplemento de composição. A figura a seguir mostra comandos de suplemento em um formulário de composição.
+In each of these compose scenarios, any add-in command buttons defined by the add-in are shown. For older add-ins that do not implement add-in commands, users can choose **Office Add-ins** in the ribbon to open the add-in selection pane, and then choose and start a compose add-in. The following figure shows add-in commands in a compose form.
 
 ![Mostra um fomulário de criação do Outlook com comandos de suplementos.](../images/compose-form-commands.png)
 

@@ -3,27 +3,27 @@ title: Suporte ao Internet Explorer 11
 description: Saiba como dar suporte ao Internet Explorer 11 e javascript ES5 em seu suplemento.
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 6d78083a23a660fc5d16ff1ad6e654ce02a58d25
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136422"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466884"
 ---
 # <a name="support-internet-explorer-11"></a>Suporte ao Internet Explorer 11
 
 > [!IMPORTANT]
-> **O Internet Explorer ainda é Office suplementos**
+> **Internet Explorer ainda usado em Suplementos do Office**
 >
-> Algumas combinações de plataformas e versões do Office, incluindo versões de compra única por meio do Office 2019, ainda usam o controle de modo de exibição da Web que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado em Navegadores usados por [suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
+> Algumas combinações de plataformas e versões do Office, incluindo versões de compra única por meio do Office 2019, ainda usam o controle de modo de exibição da Web que vem com o Internet Explorer 11 para hospedar suplementos, conforme explicado em Navegadores usados pelos [Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Recomendamos (mas não exige) que você continue a dar suporte a essas combinações, pelo menos de maneira mínima, fornecendo aos usuários do seu suplemento uma mensagem de falha normal quando o suplemento é iniciado no modo de exibição da Web do Internet Explorer. Lembre-se destes pontos adicionais:
 >
 > - Office na Web abre mais no Internet Explorer. Consequentemente, [o AppSource](/office/dev/store/submit-to-appsource-via-partner-center) não testa mais suplementos no Office na Web usando o Internet Explorer como navegador.
-> - O AppSource ainda testa combinações de versões de plataforma e área de  trabalho do Office que usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
+> - O AppSource ainda testa combinações de versões da plataforma e da área de trabalho *do Office que* usam o Internet Explorer, no entanto, ele só emite um aviso quando o suplemento não dá suporte ao Internet Explorer; o suplemento não é rejeitado pelo AppSource.
 > - A [Script Lab não dá](../overview/explore-with-script-lab.md) mais suporte ao Internet Explorer.
 
-Office suplementos são aplicativos Web exibidos dentro de IFrames durante a execução em Office na Web. Office suplementos são exibidos usando controles de navegador inseridos durante a execução em Office no Windows ou Office no Mac. Os controles de navegador inseridos são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.
+Os Suplementos do Office são aplicativos Web exibidos dentro de IFrames durante a execução Office na Web. Os Suplementos do Office são exibidos usando controles de navegador inseridos durante a execução no Office no Windows ou no Office no Mac. Os controles de navegador inseridos são fornecidos pelo sistema operacional ou por um navegador instalado no computador do usuário.
 
-Se você planeja dar suporte a versões mais antigas do Windows e Office, seu suplemento deve funcionar no controle de navegador inserível baseado no Internet Explorer 11 (IE11). Para obter informações sobre quais combinações de Windows e Office usam o controle de navegador baseado em IE11, consulte Navegadores usados por Office [Suplementos](../concepts/browsers-used-by-office-web-add-ins.md).
+Se você planeja dar suporte a versões mais antigas do Windows e do Office, seu suplemento deve funcionar no controle de navegador inserível baseado no Internet Explorer 11 (IE11). Para obter informações sobre quais combinações do Windows e do Office usam o controle de navegador baseado no IE11, consulte Navegadores usados [pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não dá suporte a alguns recursos html5, como mídia, gravação e localização. Se o suplemento precisar dar suporte ao Internet Explorer 11, você deverá projetar o suplemento para evitar esses recursos sem suporte ou o suplemento deverá detectar quando o Internet Explorer está sendo usado e fornecer uma experiência alternativa que não usa os recursos sem suporte. Para obter mais informações, [consulte Determinar em runtime se o suplemento está em execução no Internet Explorer](#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
@@ -41,10 +41,10 @@ Há dois transcompiladores populares. Ambos podem trabalhar com arquivos de orig
 - [Babel](https://babeljs.io/)
 - [Tsc](https://www.typescriptlang.org/index.html)
 
-Consulte a documentação de qualquer um deles para obter informações sobre como instalar e configurar o transcompilador em seu projeto de suplemento. Recomendamos que você use um executor de tarefas, como [o Grunt](https://gruntjs.com/) ou [o WebPack](https://webpack.js.org/) , para automatizar a transpilação. Para obter um suplemento de exemplo que usa tsc, [consulte Office Suplemento Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React). Para obter um exemplo que usa o babel, consulte [o Suplemento Armazenamento Offline](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin).
+Consulte a documentação de qualquer um deles para obter informações sobre como instalar e configurar o transcompilador em seu projeto de suplemento. Recomendamos que você use um executor de tarefas, como [o Grunt](https://gruntjs.com/) ou [o WebPack](https://webpack.js.org/) , para automatizar a transpilação. Para obter um suplemento de exemplo que usa tsc, consulte o Suplemento [do Office do Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React). Para obter um exemplo que usa babel, consulte [o Suplemento de Armazenamento Offline](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin).
 
 > [!NOTE]
-> Se você estiver usando Visual Studio (não Visual Studio Code), o tsc provavelmente será mais fácil de usar. Você pode instalar o suporte para ele com um pacote nuget. Para obter mais informações, [consulte JavaScript e TypeScript no Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Para usar o babel com Visual Studio, crie um script de build ou use o Gerenciador do Executor de Tarefas no Visual Studio com ferramentas como o Executor de Tarefas do [WebPack](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou o Executor de Tarefas [NPM](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner).
+> Se você estiver usando o Visual Studio (não Visual Studio Code), o tsc provavelmente será mais fácil de usar. Você pode instalar o suporte para ele com um pacote nuget. Para obter mais informações, [consulte JavaScript e TypeScript no Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Para usar o babel com o Visual Studio, crie um script de build ou use o Gerenciador de Executores de Tarefas no Visual Studio com ferramentas como o Executor de Tarefas do [WebPack](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou o [Executor de Tarefas NPM](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner).
 
 ### <a name="use-a-polyfill"></a>Usar um polyfill
 
@@ -52,7 +52,7 @@ Um [polyfill é](https://en.wikipedia.org/wiki/Polyfill_(programming)) o JavaScr
 
 Para usar uma biblioteca de polyfill, carregue-a como qualquer outro arquivo ou módulo JavaScript. Por exemplo, `<script>` você pode usar uma marca no arquivo HTML da home page do suplemento ( `<script src="/js/core-js.js"></script>`por exemplo), `import` ou pode usar uma instrução em um arquivo JavaScript (por exemplo, `import 'core-js';`). Quando o mecanismo JavaScript `startsWith`vir um método como , primeiro ele procurará ver se há um método desse nome incorporado à linguagem. Se houver, ele chamará o método nativo. Se, e somente se, o método não for interno, o mecanismo procurará por ele em todos os arquivos carregados. Portanto, a versão polido não é usada em navegadores que dão suporte à versão nativa.
 
-Importar toda a biblioteca core-js importará todos os recursos do core-js. Você também pode importar apenas os polyfills que seu Office suplemento requer. Para obter instruções sobre como fazer isso, consulte [APIs do CommonJS](https://github.com/zloirock/core-js#commonjs-api). A biblioteca core-js tem a maioria dos polyfills de que você precisa. Há algumas exceções detalhadas na seção [Polyfills Ausentes](https://github.com/zloirock/core-js#missing-polyfills) da documentação do core-js. Por exemplo, ele não dá suporte `fetch`, mas você pode usar o [polyfill fetch](https://github.com/github/fetch) .
+Importar toda a biblioteca core-js importará todos os recursos do core-js. Você também pode importar apenas os polyfills que seu Suplemento do Office requer. Para obter instruções sobre como fazer isso, consulte [APIs do CommonJS](https://github.com/zloirock/core-js#commonjs-api). A biblioteca core-js tem a maioria dos polyfills de que você precisa. Há algumas exceções detalhadas na seção [Polyfills Ausentes](https://github.com/zloirock/core-js#missing-polyfills) da documentação do core-js. Por exemplo, ele não dá suporte `fetch`, mas você pode usar o [polyfill fetch](https://github.com/github/fetch) .
 
 Para obter um suplemento de exemplo que usa core.js, consulte [o Suplemento do Word Angular2 StyleChecker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
@@ -72,8 +72,8 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
     //     features that are not supported in IE.
     //  2. Enable the add-in to gracefully fail by putting a message in the UI that
     //     says something similar to: 
-    //      "This add-in won't run in your version of Office. Please upgrade to 
-    //      either one-time purchase Office 2021 or to a Microsoft 365 account."          
+    //      "This add-in won't run in your version of Office. Please upgrade 
+    //      either to perpetual Office 2021 or to a Microsoft 365 account."          
 
 }
 ```

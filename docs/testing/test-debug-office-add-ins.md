@@ -3,12 +3,12 @@ title: Testar os Suplementos do Office
 description: Saiba como testar seu Suplemento do Office.
 ms.date: 07/28/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0cb3241bf88edf10f165587ddac24d1261b30162
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
-ms.translationtype: HT
+ms.openlocfilehash: 56052182eafae59d42044ce4be40e086e51e8103
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177676"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467234"
 ---
 # <a name="test-office-add-ins"></a>Testar os Suplementos do Office
 
@@ -16,7 +16,7 @@ Esta seção contém orientações sobre testes, depuração de bugs e solução
 
 ## <a name="test-cross-platform-and-for-multiple-versions-of-office"></a>Testar plataforma cruzada e para várias versões do Office
 
-Os Suplementos do Office são executados em grandes plataformas, então é necessário testar um suplemento em todas as plataformas em que seus usuários podem estar executando o Office. Isso normalmente inclui o Office na Web, Office no Windows (tanto assinatura como compra avulsa), Office no Mac, Office no iOS e (para suplementos do Outlook) Office no Android. No entanto, pode haver algumas situações em que você tem certeza de que nenhum de seus usuários estará trabalhando em algumas plataformas. Por exemplo, se você estiver criando um suplemento para uma empresa que exige que seus usuários trabalhem com computadores Windows e assinatura do Office, não será necessário testar o Office no Mac ou o Windows de compra avulsa.
+Os Suplementos do Office são executados em grandes plataformas, então é necessário testar um suplemento em todas as plataformas em que seus usuários podem estar executando o Office. Isso geralmente inclui Office na Web, Office no Windows (assinatura perpétua e do Microsoft 365), Office no Mac, Office no iOS e (para suplementos do Outlook) Office no Android. No entanto, pode haver algumas situações em que você tem certeza de que nenhum de seus usuários estará trabalhando em algumas plataformas. Por exemplo, se você estiver criando um suplemento para uma empresa que exige que seus usuários trabalhem com computadores Windows e office de assinatura, não será necessário testar o Office no Mac ou o Office perpétuo no Windows.
 
 > [!NOTE]
 > Em computadores Windows, a versão do Windows e do Office determinarão qual controle de navegador será usado pelos suplementos. Para obter mais informações, veja [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -28,7 +28,7 @@ Os Suplementos do Office são executados em grandes plataformas, então é neces
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>Fazer sideload de suplemento para teste
 
-Você pode usar o sideload para instalar um Suplemento do Office para teste sem precisar primeiro colocá-lo em um catálogo de suplementos. O procedimento para sideload de um suplemento varia de acordo com a plataforma e, em alguns casos, por produto também. Os artigos a seguir descrevem como realizar sideload de Suplementos do Office em uma plataforma específica ou em um produto específico.
+You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
 - [Fazer sideload de Suplementos do Office no Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 

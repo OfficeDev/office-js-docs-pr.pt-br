@@ -1,18 +1,20 @@
 ---
 title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
-ms.date: 04/09/2020
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 73a13787dac7a6e74db6b919cc01a6dd33d29ab5
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660134"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467018"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 
-Suplementos contextuais são suplementos do Outlook ativados com base no texto de um compromisso ou de uma mensagem. Usando suplementos contextuais, um usuário pode iniciar tarefas relacionadas a uma mensagem sem sair dela, o que resulta em uma experiência de usuário mais fácil e mais avançada.
+Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 A seguir estão exemplos de suplementos contextuais.
 
@@ -56,11 +58,11 @@ Há várias restrições em suplementos contextuais:
 Como uma entidade ou expressão regular que não estiver realçada não iniciará o suplemento contextual, os suplementos devem conter pelo menos um elemento `Rule` com o atributo `Highlight` definido como `all`.
 
 > [!NOTE]
-> Os tipos de entidade `EmailAddress` e `Url` não dão suporte ao realce, portanto, não podem ser usados para iniciar um suplemento contextual. No entanto, eles podem ser combinados em um tipo de regra `RuleCollection` como critérios de ativação adicionais.
+> The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
 
 ## <a name="how-to-launch-a-contextual-add-in"></a>Como iniciar um suplemento contextual
 
-O usuário inicia o suplemento contextual por meio de texto, tanto uma entidade conhecida quanto uma expressão regular do desenvolvedor. Normalmente, o usuário identifica um suplemento contextual porque a entidade está realçada. O exemplo a seguir mostra como o realce aparece em uma mensagem. Aqui, a entidade (um endereço) está na cor azul e sublinhada com uma linha pontilhada azul. Um usuário inicia o suplemento contextual clicando na entidade realçada. 
+A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity. 
 
 **Exemplo de texto com a entidade realçada (um endereço)**
 
@@ -70,11 +72,11 @@ Quando há várias entidades ou suplementos contextuais em uma mensagem, existem
 
 - Se houver várias entidades, o usuário terá que clicar em uma entidade diferente para iniciar o suplemento.
 - Se uma entidade ativar vários suplementos, cada suplemento abrirá uma nova guia. O usuário alterna entre guias para alternar entre os suplementos. Por exemplo, um nome e um endereço podem acionar um suplemento de telefone e um mapa.
-- Se uma única cadeia de caracteres contiver várias entidades que ativam vários suplementos, toda a cadeia será realçada e um clique na cadeia de caracteres mostra todos os suplementos relevantes à cadeia em guias separadas. Por exemplo, uma cadeia de caracteres que descreve uma reunião proposta em um restaurante pode ativar o suplemento Reunião Sugerida e um suplemento de classificação de restaurantes.
+- If a single string contains multiple entities that activate multiple add-ins, the entire string is highlighted, and clicking the string shows all add-ins relevant to the string on separate tabs. For example, a string that describes a proposed meeting at a restaurant might activate the Suggested Meeting add-in and a restaurant rating add-in.
 
 ## <a name="how-a-contextual-add-in-displays"></a>Como um suplemento contextual é exibido
 
-Um suplemento contextual ativado aparece em um cartão, que é uma janela separada perto a entidade. O cartão normalmente aparecerá abaixo da entidade e centralizado o máximo possível em relação à entidade. Se não houver espaço suficiente embaixo da entidade, o cartão será colocado acima dela. A captura de tela a seguir mostra a entidade realçada e, abaixo dela, um suplemento (Bing Mapas) ativado em um cartão.
+An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there is not enough room below the entity, the card is placed above it. The following screenshot shows the highlighted entity, and below it, an activated add-in (Bing Maps) in a card.
 
 **Exemplo de um suplemento exibido em um cartão**
 

@@ -1,18 +1,18 @@
 ---
 title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
-ms.date: 09/02/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b460dbd150ec4806c562cf0fb2bc6e920beaa4c5
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 9f62b2514f05341531a826c29e18c593a590fca0
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857547"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467213"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
-O namespace [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) fornece acesso a vários dos campos comuns das mensagens e dos compromissos. No entanto, em alguns cenários um suplemento talvez precise acessar os dados que não são expostos pelo namespace. Por exemplo, o suplemento pode depender de propriedades personalizadas definidas por um aplicativo externo ou ela precisa pesquisar na caixa de correio do usuário pelas mensagens do mesmo remetente. Nessas situações, as [APIs REST do Outlook](/outlook/rest) é o método recomendado para recuperar as informações.
+The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
 
 > [!IMPORTANT]
 > **As APIs REST do Outlook foram preteridas**
@@ -25,15 +25,16 @@ O namespace [Office.context.mailbox.item](/javascript/api/requirement-sets/outlo
 
 ## <a name="get-an-access-token"></a>Obter um token de acesso
 
-As APIs REST do Outlook exigem um token portador no cabeçalho `Authorization`. Normalmente, os aplicativos usam fluxos do OAuth2 para recuperar um token. No entanto, os suplementos podem recuperar um token sem implementar o OAuth2 usando o novo método [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) introduzido no conjunto de requisitos de Caixa de Correio 1.5.
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
 
 Ao definir a opção `isRest` como `true`, você poderá solicitar um token compatível com APIs REST.
 
 ### <a name="add-in-permissions-and-token-scope"></a>Permissões de suplementos e escopo do token
 
-É importante levar em consideração o nível de acesso que seu suplemento precisará com as APIs REST. Na maioria dos casos, o token retornado por `getCallbackTokenAsync` fornecerá acesso somente leitura ao item atual. Isso é verdadeiro mesmo que seu suplemento especifique o nível de permissão `ReadWriteItem` em seu manifesto.
+É importante levar em consideração o nível de acesso que seu suplemento precisará com as APIs REST. Na maioria dos casos, o token retornado por `getCallbackTokenAsync` fornecerá acesso somente leitura ao item atual. Isso é verdadeiro mesmo se o suplemento especificar o nível de permissão de item de leitura [/](understanding-outlook-add-in-permissions.md#readwrite-item-permission) gravação em seu manifesto.
 
-Se seu suplemento exigirá acesso de gravação para o item atual ou outros itens na caixa de correio do usuário, o suplemento precisará especificar o nível de permissão `ReadWriteMailbox` em seu manifesto. Nesse caso, o token retornado conterá acesso de leitura/gravação às mensagens, aos eventos e aos contatos do usuário.
+Se o suplemento exigir acesso de gravação ao item atual ou a outros itens na caixa de correio do usuário, o suplemento deverá especificar a permissão de leitura [/gravação da caixa de correio](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
+nível em seu manifesto. Nesse caso, o token retornado conterá acesso de leitura/gravação às mensagens, aos eventos e aos contatos do usuário.
 
 ### <a name="example"></a>Exemplo
 
@@ -79,7 +80,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>Obter a URL da API REST
 
-A informação final que seu suplemento precisa para chamar a API REST é o nome do host que deve usar para enviar solicitações de API. Estas informações estão na propriedade [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties).
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property.
 
 ### <a name="example"></a>Exemplo
 

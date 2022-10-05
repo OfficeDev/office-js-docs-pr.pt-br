@@ -4,21 +4,21 @@ description: Saiba como criar um Suplemento do Outlook simples com um manifesto 
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 407c4ccd4249008c203c760a01d8579989a12e4c
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422751"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467220"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Criar um suplemento do Outlook com um manifesto do Teams (versão prévia)
 
 Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Outlook que exibe uma propriedade de uma mensagem selecionada, aciona uma notificação no painel de leitura e insere texto em uma mensagem no painel de redação. Esse suplemento usará uma versão prévia do manifesto formatado em JSON que as extensões do Teams, como guias personalizadas e extensões de mensagens, usam. Para obter mais informações sobre esse manifesto, confira [Manifesto do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
 
 > [!NOTE]
-> O novo manifesto está disponível para pré-visualização e está sujeito a alterações com base nos comentários. Incentivamos os desenvolvedores de suplementos experientes a experimentá-lo. A versão prévia do manifesto não deve ser usada em suplementos de produção. 
+> O novo manifesto está disponível para pré-visualização e está sujeito a alterações com base nos comentários. Incentivamos os desenvolvedores de suplementos experientes a experimentá-lo. O manifesto de visualização não deve ser usado em suplementos de produção.
 
-A versão prévia só tem suporte na assinatura do Office no Windows. 
+A versão prévia só tem suporte no Office da assinatura do Microsoft 365 no Windows.
 
 > [!TIP]
 > Se você quiser criar um suplemento do Outlook usando o manifesto XML, confira [Compilar seu primeiro suplemento do Outlook](outlook-quickstart.md).

@@ -1,14 +1,14 @@
 ---
 title: Obter ou definir dados de item em um suplemento do Outlook
 description: Dependendo da ativação do suplemento ser em um formulário de leitura ou de composição, as propriedades que estão disponíveis para o suplemento no item variam.
-ms.date: 12/10/2019
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd512f45dc9e77fc4a150da4ee8b8924799670a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8349d81b376aa55d239a88a5d4598381fd8bfc4d
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483389"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467269"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obter e configurar dados de item do Outlook em formulários de leitura ou composição
 
@@ -18,7 +18,7 @@ Por exemplo, as propriedades [dateTimeCreated](/javascript/api/requirement-sets/
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>Propriedades de item disponíveis nos formulários de leitura e de redação
 
-A Tabela 1 mostra as propriedades de nível de item na API JavaScript Office que estão disponíveis em cada modo (leitura e redação) de complementos de email. Normalmente, essas propriedades disponíveis em formulários de leitura são somente leitura e as disponíveis nos formulários de redação são de leitura/gravação, com exceção das propriedades [itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), [conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), que são sempre somente leitura, independentemente.
+A Tabela 1 mostra as propriedades de nível de item na API JavaScript do Office que estão disponíveis em cada modo (leitura e redação) de suplementos de email. Normalmente, essas propriedades disponíveis em formulários de leitura são somente leitura e as disponíveis nos formulários de redação são leitura/gravação, com exceção das propriedades [itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), [conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) , que são sempre somente leitura, independentemente.
 
 Para as propriedades do nível de item restantes disponíveis em formulários de composição, como o suplemento e o usuário podem estar lendo ou gravando a mesma propriedade ao mesmo tempo, os métodos para obtê-los ou defini-los s no modo redigir são assíncronos e, portanto, o tipo de objeto retornado por essas propriedades também podem ser diferentes entre os formulários de composição e de leitura. Para saber mais sobre como usar métodos assíncronos para obter ou definir propriedades de nível de item no modo de composição, confira [Obter e definir dados de item em um formulário de composição no Outlook](get-and-set-item-data-in-a-compose-form.md).
 
@@ -56,12 +56,11 @@ Para as propriedades do nível de item restantes disponíveis em formulários de
 
 Se o suplemento do Outlook é ativado nos formulários de leitura, você pode obter um token de retorno de chamada do Exchange. Esse token pode ser usado no código do lado do servidor para acessar o item completo via EWS (Serviços Web do Exchange).
 
-Ao especificar a permissão **ReadItem** no manifesto do suplemento, você poderá usar o método [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para obter um token de retorno de chamada do Exchange, a propriedade [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) para obter a URL do ponto de extremidade do EWS para a caixa de correio do usuário e [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para obter a identificação EWS para o item selecionado. Você pode então passar o token de retorno de chamada, a URL de ponto de extremidade de EWS e a ID de item EWS para código do lado do servidor a fim de acessar a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e obter mais propriedades do item.
-
+Ao especificar a permissão de [item](understanding-outlook-add-in-permissions.md#read-item-permission) de leitura no manifesto do suplemento, você pode usar o método [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para obter um token de retorno de chamada do Exchange, a propriedade [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) para obter a URL do ponto de extremidade EWS para a caixa de correio do usuário e [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) para obter a ID do EWS para o item selecionado. Você pode então passar o token de retorno de chamada, a URL de ponto de extremidade de EWS e a ID de item EWS para código do lado do servidor a fim de acessar a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e obter mais propriedades do item.
 
 ## <a name="access-ews-from-a-read-or-compose-add-in"></a>Acessar os EWS de um suplemento de leitura ou de redação
 
-Você também pode usar o método [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para acessar as operações do EWS (Serviços Web do Exchange) [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) diretamente do suplemento. Você pode usar essas operações para obter e definir muitas propriedades de um item especificado. Esse método está disponível para os suplementos do Outlook independentemente de estes serem ativados em formulário de leitura ou de composição, desde que você especifique a permissão **ReadWriteMailbox** no manifesto do suplemento.
+Você também pode usar o método [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para acessar as operações do EWS (Serviços Web do Exchange) [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) diretamente do suplemento. Você pode usar essas operações para obter e definir muitas propriedades de um item especificado. Esse método está disponível para suplementos do Outlook, independentemente de o suplemento ter sido ativado em um formulário de leitura ou redação, desde que você especifique a permissão de caixa de correio de leitura **/** gravação no manifesto do suplemento. Para obter mais informações sobre **a permissão de caixa de correio de leitura/** gravação, consulte [Noções básicas sobre permissões de suplemento do Outlook](understanding-outlook-add-in-permissions.md)
 
 Para saber mais sobre o uso de **makeEwsRequestAsync** para acessar as operações EWS, confira [Chamar serviços Web de um suplemento do Outlook](web-services.md).
 

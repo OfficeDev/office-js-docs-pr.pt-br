@@ -1,18 +1,20 @@
 ---
 title: Usar regras de ativação de expressões regulares para mostrar um suplemento
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
-ms.date: 08/19/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: ed2fbbfcf7bf55e04f4ec6f225e29fb43ec99639
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423311"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467087"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
 Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais são ativados somente no modo de leitura. O Outlook não ativa suplementos contextuais quando o usuário está redigindo um item. Também há outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
@@ -144,7 +146,7 @@ O exemplo a seguir usa `getRegExMatches` do item atual para definir uma variáve
 const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
 
-Várias correspondências são armazenadas como elementos de matriz nesse objeto. O exemplo a seguir mostra como repetir correspondências para uma expressão regular denominada `reg1` a fim de construir uma cadeia de caracteres para exibir como HTML.
+Multiple matches are stored as array elements in that object. The following code example shows how to iterate over the matches for a regular expression named  `reg1` to build a string to display as HTML.
 
 ```js
 function initDialer()

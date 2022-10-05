@@ -5,38 +5,38 @@ ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0503a0cfae39e58c11fefc6cc87a239d7ecdbc05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: fd17728f840188fbedfdeba7d3ee8f97852d702a
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318806"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467255"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
-Os suplementos do Outlook são integrações construídas por terceiros no Outlook, utilizando nossa plataforma baseada na web. Os suplementos para Outlook têm três aspectos chave:
+Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
 
 - O mesmo suplemento e lógica de negócios funcionam em desktop (Outlook no Windows e Mac), na Web (Microsoft 365 e Outlook.com) e em dispositivos móveis.
 - Os suplementos do Outlook consistem em um manifesto, que descreve como o suplemento se integra ao Outlook (por exemplo, um botão ou um painel de tarefas), e o código JavaScript/HTML, que compõe a interface do usuário e lógica de negócios do suplemento.
 - Os suplementos do Outlook podem ser adquiridos na [AppSource](https://appsource.microsoft.com) ou [sideloaded](sideload-outlook-add-ins-for-testing.md) por usuários finais ou administradores.
 
-Os suplementos Outlook são diferentes dos suplementos COM ou VSTO, que são integrações mais antigas específicas do Outlook rodando no Windows. Ao contrário dos COM suplementos, os suplementos Outlook não têm nenhum código fisicamente instalado no dispositivo do usuário ou no cliente Outlook. Para um Outlook suplemento, o Outlook lê o manifesto e conecta os controles especificados na IU, e depois carrega o JavaScript e o HTML. Todos os componentes da web são executados no contexto de um navegador em uma caixa de areia.
+Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser in a sandbox.
 
-Os itens do Outlook que suportam suplementos incluem mensagens de email, solicitações de reuniões, respostas e cancelamentos, e compromissos. Cada suplemento do Outlook define o contexto no qual ele está disponível, incluindo os tipos de itens e se o usuário está lendo ou compondo um item.
+The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>Pontos de extensão
 
-Os pontos de extensão são as maneiras como os suplementos se integram ao Outlook. A seguir estão as maneiras pelas quais isso pode ser feito.
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done.
 
-- Os suplementos podem declarar botões que aparecem nas superfícies de comando em mensagens e compromissos. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **Suplemento com botões de comando na Faixa de Opções**
 
     ![Comando de função de suplemento.](../images/uiless-command-shape.png)
 
-- Os suplementos podem desvincular correspondências de expressões regulares ou entidades detectadas em mensagens e compromissos. Para saber mais, confira [Suplementos contextuais do Outlook](contextual-outlook-add-ins.md).
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **Suplemento contextual para uma entidade realçada (um endereço)**
 
@@ -56,7 +56,7 @@ Os suplementos do Outlook são ativados quando o usuário está redigindo ou len
 
 - Um arquivo .msg aberto no sistema de arquivos.
 
-- Em uma [caixa de correio de grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), em uma caixa de correio compartilhada\*, em uma caixa de correio de outro usuário\*, em uma [caixa de correio de arquivo](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), ou em uma pasta pública.
+- Em uma [caixa de correio de grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), em uma caixa de correio compartilhada\*, em uma caixa de correio de outro usuário\*, em uma [caixa de correio de arquivo](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox), ou em uma pasta pública.
 
   > [!IMPORTANT]
   > \* Suporte para cenários de acesso de delegados (por exemplo, pastas compartilhadas da caixa de correio de outro usuário) foi introduzido no [conjunto de requisitos 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). O suporte a caixas de correio compartilhadas agora está em visualização no Outlook no Windows e no Mac. Para saber mais, confira [Habilitar pastas compartilhadas e cenários de caixa de correio compartilhada](delegate-access.md).

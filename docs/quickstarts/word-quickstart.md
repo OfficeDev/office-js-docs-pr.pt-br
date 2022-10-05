@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 06/10/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: cf16287aa7bc52b9a716ca07db3b86a9ec5ff22c
-ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
-ms.translationtype: HT
+ms.openlocfilehash: b0d60a9b86847a968efa82eaf556af107f21f390
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "66789112"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467262"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -84,7 +84,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 ### <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo o [tutorial do suplemento Word](../tutorials/word-tutorial.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -100,7 +100,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 3. Nomeie seu projeto e selecione **Criar**.
 
-4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -108,7 +108,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -134,7 +134,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     </body>
     ```
 
-2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -234,7 +234,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     })();
     ```
 
-3. Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -265,13 +265,13 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML no projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **suplementos do My Office**.
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. Salve o arquivo.
 
@@ -287,9 +287,9 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando **F5** ou escolhendo **Depurar** > **Iniciar Depuração** para iniciar o Word com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. (Caso esteja usando uma versão de compra avulsa do Office, em vez da versão do Microsoft 365, os botões personalizados não serão compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
+2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. (Se você estiver usando a versão perpétua licenciada por volume do Office, em vez da versão do Microsoft 365 ou de uma versão perpétua de varejo, não há suporte para botões personalizados. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
     ![Captura de tela do aplicativo Word com o botão Mostrar Painel de tarefas realçado.](../images/word-quickstart-addin-0.png)
 
