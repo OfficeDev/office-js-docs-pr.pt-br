@@ -421,17 +421,17 @@ items:
             href: excel/excel-add-ins-comments.md
             displayName: Excel
           - name: Tipos de dados
-            displayName: preview
+            displayName: Excel
             items:
               - name: Visão Geral
                 href: excel/excel-data-types-overview.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: Conceitos
                 href: excel/excel-data-types-concepts.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: Cartões de valor de entidade
                 href: excel/excel-data-types-entity-card.md
-                displayName: 'Excel, preview'
+                displayName: Excel
           - name: Validação de dados
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -548,7 +548,7 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Tipos de dados
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions, preview'
+            displayName: 'Excel, Custom Functions'
           - name: Chamar APIs de JavaScript do Excel
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'

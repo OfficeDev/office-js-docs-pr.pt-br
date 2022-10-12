@@ -1,14 +1,14 @@
 ---
 title: Dentro do token de identidade do Exchange em um suplemento do Outlook
 description: Saiba mais sobre o conteúdo de um token de identidade do usuário do Exchange gerado a partir de um suplemento do Outlook.
-ms.date: 10/31/2019
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7d586203395521deb14e18a3ae52b01459224b75
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484051"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546428"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Dentro do token de identidade do Exchange
 
@@ -42,7 +42,7 @@ A tabela a seguir descreve as partes do cabeçalho do token.
 
 ## <a name="identity-token-payload"></a>Carga de token de identidade
 
-A carga contém as declarações de autenticação que identificam a conta de email e identificam o Exchange Server que enviou o token. O exemplo a seguir mostra a aparência de seção de carga.
+The payload contains the authentication claims that identify the email account and identify the Exchange server that sent the token. The following example shows what the payload section looks like.
 
 ```JSON
 { 
@@ -66,10 +66,10 @@ A tabela a seguir lista as partes da carga do token de identidade.
 
 | Declaração | Descrição |
 |:-----|:-----|
-| `aud` | A URL do suplemento que solicitou o token. Um token só será válido se for enviado do suplemento está sendo executado no navegador do cliente. Se o suplemento usa o esquema de manifestos v1.1 de Suplementos do Office, essa URL é a URL especificada no primeiro elemento `SourceLocation`, no tipo de formulário `ItemRead` ou `ItemEdit`, o que ocorrer primeiro como parte do elemento [FormSettings](/javascript/api/manifest/formsettings) no manifesto do suplemento. |
+| `aud` | A URL do suplemento que solicitou o token. Um token só será válido se for enviado do suplemento está sendo executado no navegador do cliente. A URL do suplemento é especificada no manifesto. A marcação depende do tipo de manifesto.</br></br>**Manifesto XML:** Se o suplemento usar o esquema de manifestos de Suplementos do Office v1.1, essa URL será a URL **\<SourceLocation\>** especificada no primeiro elemento, `ItemRead` `ItemEdit`sob o tipo de formulário ou, o que ocorrer primeiro como parte do [elemento FormSettings](/javascript/api/manifest/formsettings) no manifesto do suplemento.</br></br>**Manifesto do Teams (versão prévia):** A URL é especificada na propriedade "extensions.audienceClaimUrl". |
 | `iss` | Um identificador exclusivo para o Exchange Server que emitiu o token. Todos os tokens emitidos por esse Exchange Server terão o mesmo identificador. |
-| `nbf` | A data e a hora do início da validade do token. O valor é o número de segundos desde 1º de janeiro de 1970. |
-| `exp` | A data e a hora de validade do token. O valor é o número de segundos desde 1º de janeiro de 1970. |
+| `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
+| `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
 | `appctxsender` | Um identificador exclusivo para o Exchange Server que enviou o contexto do aplicativo. |
 | `isbrowserhostedapp` | Indica se o suplemento está hospedado em um navegador. |
 | `appctx` | O contexto do aplicativo para o token. |
@@ -84,7 +84,7 @@ As informações na declaração appctx fornecem o identificador exclusivo da co
 
 ## <a name="identity-token-signature"></a>Assinatura de token de identidade
 
-A assinatura é criada pelo hash das seções de cabeçalho e carga com o algoritmo especificado no cabeçalho e usando o certificado X509 autoassinado localizado no servidor no local especificado na carga. Seu serviço Web pode validar essa assinatura para ajudar a garantir que o token de identidade é proveniente do servidor esperado.
+The signature is created by hashing the header and payload sections with the algorithm specified in the header and using the self-signed X509 certificate located on the server at the location specified in the payload. Your web service can validate this signature to help make sure that the identity token comes from the server that you expect to send it.
 
 ## <a name="see-also"></a>Confira também
 

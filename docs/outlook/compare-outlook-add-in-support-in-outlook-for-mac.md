@@ -1,14 +1,14 @@
 ---
 title: Comparar o suporte a suplementos do Outlook no Outlook no Mac
 description: Saiba como o suporte a suplementos no Outlook no Mac se compara a outros clientes do Outlook.
-ms.date: 09/21/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f991865921583561e4c2db2132fad3ceba3625
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: c38e546575446254d54ad13e5d75d997ca6cd6d8
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990410"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546442"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar o suporte a suplementos do Outlook no Outlook para Mac com outros clientes do Outlook
 
@@ -20,7 +20,7 @@ Para obter informações sobre o novo suporte à interface do usuário, consulte
 
 | Área | Outlook na Web, Windows e dispositivos móveis | Outlook no Mac |
 |:-----|:-----|:-----|
-| Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**OBSERVAÇÃO**: no Outlook para Mac, somente o build 16.35.308 ou posterior dá suporte ao salvamento de uma reunião. Caso contrário, o `saveAsync` método falhará quando chamado de uma reunião no modo de composição. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
+| Versões com suporte do office.js| Todas as APIs Office.js. | Todas as APIs Office.js.<br><br>**OBSERVAÇÃO**: no Outlook para Mac, somente o build 16.35.308 ou posterior dá suporte ao salvamento de uma reunião. Caso contrário, o `saveAsync` método falhará quando chamado de uma reunião no modo de composição. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
 | Instâncias de uma série de compromissos recorrentes | <ul><li>Pode obter a ID do item e outras propriedades de um compromisso mestre ou a instância de compromisso de uma série recorrente.</li><li>Pode usar [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para exibir uma instância ou o mestre de uma série recorrente.</li></ul> | <ul><li>Pode obter a ID do item e outras propriedades do compromisso mestre, mas não de uma instância de uma série recorrente.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | Tipo de destinatário do participante de um compromisso | Pode usar [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) para identificar o tipo de destinatário de um participante. | `EmailAddressDetails.recipientType` retorna `undefined` para participantes do compromisso. |
 | Cadeia de caracteres de versão do aplicativo cliente | O formato da cadeia de [caracteres de versão retornada por diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) depende do tipo real de cliente. Por exemplo:<ul><li>Outlook no Windows: `15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão retornada `Diagnostics.hostVersion` pelo Outlook no Mac: `15.0 (140325)` |
