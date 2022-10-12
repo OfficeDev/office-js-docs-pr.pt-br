@@ -2,14 +2,14 @@
 title: Implementar append-on-send em seu suplemento do Outlook
 description: Saiba como implementar o recurso de acréscimo ao enviar em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 07/07/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712969"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541140"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar append-on-send em seu suplemento do Outlook
 
@@ -22,7 +22,14 @@ Ao final deste passo a passo, você terá um suplemento do Outlook que pode inse
 
 Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
 
+> [!NOTE]
+> Se você quiser usar o manifesto do [Teams para Suplementos do Office (](../develop/json-manifest-overview.md)versão prévia), conclua o início rápido alternativo no Outlook com um manifesto do [Teams (](../quickstarts/outlook-quickstart-json-manifest.md)versão prévia), mas ignore todas as seções após a seção  Experimentar.
+
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
+
+Para configurar o manifesto, abra a guia para o tipo de manifesto que você está usando.
+
+# <a name="xml-manifest"></a>[Manifesto XML](#tab/xmlmanifest)
 
 Para habilitar o recurso de acréscimo ao enviar em seu suplemento, `AppendOnSend` você deve incluir a permissão na coleção [de ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
@@ -38,7 +45,7 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.3">
+          <bt:Sets DefaultMinVersion="1.9">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -118,6 +125,58 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
       </VersionOverrides>
     </VersionOverrides>
     ```
+
+# <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
+
+1. Abra o arquivo manifest.json.
+
+1. Adicione o objeto a seguir à matriz "extensions.runtimes". Observe o seguinte sobre este código.
+
+   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.9" para que o suplemento não possa ser instalado em plataformas e versões do Office em que esse recurso não tem suporte. 
+   - A "id" do runtime é definida como o nome descritivo "function_command_runtime".
+   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando de função.
+   - A propriedade "lifetime" é definida como "short", o que significa que o runtime é iniciado quando o botão de comando de função é selecionado e desligado quando a função é concluída. (Em determinados casos raros, o runtime é desligado antes que o manipulador seja concluído. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
+   - Há uma ação para executar uma função chamada "appendDisclaimerOnSend". Você criará essa função em uma etapa posterior.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.9"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "function_command_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "appendDisclaimerOnSend",
+                "type": "executeFunction",
+                "displayName": "appendDisclaimerOnSend"
+            }
+        ]
+    }
+    ```
+
+1. Na matriz "authorization.permissions.resourceSpecific", adicione o objeto a seguir. Certifique-se de que ele esteja separado de outros objetos na matriz com uma vírgula.
+
+    ```json
+    {
+      "name": "Mailbox.AppendOnSend.User",
+      "type": "Delegated"
+    }
+    ```
+
+---
 
 > [!TIP]
 > Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).

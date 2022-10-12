@@ -1,20 +1,20 @@
 ---
 title: Obter ou definir o assunto em um suplemento do Outlook
 description: Saiba como obter ou definir o assunto de uma mensagem ou compromisso em um suplemento do Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 79e38a310bf62eae55ef020c2f6c978ace824255
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959067"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541126"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obter ou definir o assunto ao compor um compromisso ou uma mensagem no Outlook
 
-A API JavaScript do Office fornece métodos assíncronos ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) e [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) para obter e definir o assunto de um compromisso ou mensagem que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento em formulários de composição.
+A API JavaScript do Office fornece métodos assíncronos ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) e [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) para obter e definir o assunto de um compromisso ou mensagem que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto XML do suplemento adequadamente para o Outlook ativar o suplemento [em formulários de composição](compose-scenario.md). Não há suporte para regras de ativação em suplementos que usam um manifesto do [Teams para suplementos do Office (versão prévia).](../develop/json-manifest-overview.md)
 
-A propriedade **subject** está disponível para acesso de leitura nos formulários de leitura e de redação de compromissos e de mensagens. Em um formulário de leitura, é possível acessar a propriedade diretamente do objeto pai, como em:
+The **subject** property is available for read access in both compose and read forms of appointments and messages. In a read form, you can access the property directly from the parent object, as in:
 
 ```js
 item.subject
@@ -32,7 +32,7 @@ Assim como na maioria dos métodos assíncronos na API JavaScript do Office, **g
 
 ## <a name="get-the-subject"></a>Obter o assunto
 
-Esta seção mostra um exemplo de código que obtém o assunto do compromisso ou da mensagem que o usuário está compondo e o exibe. Este exemplo de código assume uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso ou uma mensagem, conforme mostrado abaixo.
+Esta seção mostra um exemplo de código que obtém o assunto do compromisso ou da mensagem que o usuário está compondo e o exibe. Este exemplo de código assume uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso ou uma mensagem, conforme mostrado abaixo. Não há suporte para regras de ativação em suplementos que usam um manifesto do [Teams para Suplementos do Office (versão prévia).](../develop/json-manifest-overview.md)
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -78,7 +78,7 @@ function write(message){
 
 ## <a name="set-the-subject"></a>Definir o assunto
 
-Esta seção mostra um exemplo de código que define o assunto do compromisso ou da mensagem que o usuário está compondo. Semelhante ao exemplo anterior, o código a seguir considera uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso ou uma mensagem.
+Esta seção mostra um exemplo de código que define o assunto do compromisso ou da mensagem que o usuário está compondo. Semelhante ao exemplo anterior, o código a seguir considera uma regra no manifesto do suplemento que ativa o suplemento em um formulário de composição para um compromisso ou uma mensagem. Não há suporte para regras de ativação em suplementos que usam um manifesto do [Teams para Suplementos do Office (versão prévia).](../develop/json-manifest-overview.md)
 
 Para usar **item.subject.setAsync**, especifique uma cadeia de caracteres de até 255 caracteres no parâmetro de dados. Opcionalmente, você pode fornecer uma função de retorno de chamada e quaisquer argumentos para a função de retorno de chamada no  _parâmetro asyncContext_ . Você deve verificar o status, o resultado e eventuais mensagens de erro no parâmetro de saída _asyncResult_ do retorno de chamada. Se a chamada assíncrona for bem-sucedida, **setAsync** inserirá a cadeia de caracteres de assunto especificada como texto sem formatação, substituindo o assunto existente pelo item.
 
@@ -130,7 +130,7 @@ function write(message){
 - [Obter e definir dados de item do Outlook em formulários de leitura ou composição](item-data.md)
 - [Criar suplementos do Outlook para formulários de composição](compose-scenario.md)
 - [Programação assíncrona em Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)
-- [Obter, configurar ou adicionar destinatários ao criar um compromisso ou uma mensagem no Outlook](get-set-or-add-recipients.md)  
+- [Obter, definir ou adicionar destinatários ao criar um compromisso ou uma mensagem no Outlook](get-set-or-add-recipients.md)  
 - [Inserir dados no corpo ao criar um compromisso ou uma mensagem no Outlook](insert-data-in-the-body.md)
 - [Obter ou definir o local ao criar um compromisso no Outlook](get-or-set-the-location-of-an-appointment.md)
 - [Obter ou definir a hora ao criar um compromisso no Outlook](get-or-set-the-time-of-an-appointment.md)

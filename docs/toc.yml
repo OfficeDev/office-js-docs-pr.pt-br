@@ -643,6 +643,11 @@ items:
             href: outlook/contextual-outlook-add-ins.md
           - name: Suplementos de extensão de módulo
             href: outlook/extension-module-outlook-add-ins.md
+          - name: Seleção de vários itens
+            href: outlook/item-multi-select.md
+            displayName: preview
+          - name: Painel de tarefas fixável
+            href: outlook/pinnable-taskpane.md
           - name: Suplementos do Outlook Mobile
             href: outlook/outlook-mobile-addins.md
           - name: Criar um suplemento de reunião online
@@ -666,8 +671,6 @@ items:
               - name: Opções de AppSource
                 href: outlook/autolaunch-store-options.md
                 displayName: event-based activation
-          - name: Painel de tarefas fixável
-            href: outlook/pinnable-taskpane.md
           - name: Pastas compartilhadas e caixas de correio compartilhadas
             href: outlook/delegate-access.md
             displayName: delegate access

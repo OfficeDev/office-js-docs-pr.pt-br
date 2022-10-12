@@ -1,20 +1,20 @@
 ---
 title: Obter ou definir a hora do compromisso em um suplemento do Outlook
 description: Saiba como obter ou definir a hora de início e término de um compromisso em um suplemento do Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6109932c9a741a65b97095a1cb97dcdfc2306e1c
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: c7aa40fda15c613aca869af8b277d4deb6fbf833
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958331"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541230"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obter ou definir a hora ao compor um compromisso no Outlook
 
-A API JavaScript do Office fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) e [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) para obter e definir a hora de início ou término de um compromisso que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento em formulários de composição, conforme descrito em Criar [suplementos do Outlook](compose-scenario.md) para formulários de redação.
+A API JavaScript do Office fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) e [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) para obter e definir a hora de início ou término de um compromisso que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto XML do suplemento adequadamente para o Outlook ativar o suplemento em formulários de composição, conforme descrito em Criar [suplementos do Outlook](compose-scenario.md) para formulários de redação. Não há suporte para regras de ativação em suplementos que usam um manifesto do [Teams para suplementos do Office (versão prévia).](../develop/json-manifest-overview.md)
 
-As propriedades [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) e [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) estão disponíveis para compromissos tanto em formulários de composição quanto de leitura. No formulário de leitura, você pode acessar as propriedades diretamente do objeto pai, como em:
+The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In a read form, you can access the properties directly from the parent object, as in:
 
 ```js
 item.start
@@ -42,7 +42,7 @@ Assim como na maioria dos métodos assíncronos na API JavaScript do Office, **g
 
 ## <a name="get-the-start-or-end-time"></a>Obter a hora de início ou de término
 
-Esta seção mostra um exemplo de código que obtém a hora de início do compromisso que o usuário está compondo e a exibe. Você pode usar o mesmo código e substituir a propriedade **start** pela propriedade **end** para obter a hora de término. Este exemplo de código assume uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação de um compromisso, conforme mostrado abaixo.
+This section shows a code sample that gets the start time of the appointment that the user is composing and displays the time. You can use the same code and replace the **start** property by the **end** property to get the end time. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment, as shown below.
 
 ```XML
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
@@ -87,7 +87,7 @@ function write(message){
 
 ## <a name="set-the-start-or-end-time"></a>Definir a hora de início ou de término
 
-Esta seção mostra um exemplo de código que define a hora de início do compromisso ou da mensagem que o usuário está redigindo. Você pode usar o mesmo código e substituir a propriedade **start** pela propriedade **end** para definir a hora de término. Observe que se o formulário de redação de compromisso já tiver uma hora de início, definir a hora de início ajustará a hora de término para manter a duração anterior do compromisso. Se o formulário de redação de compromisso já tiver uma hora de término, definir a hora de término ajustará a hora de término e a duração. Se o compromisso tiver sido definido como um evento de dia inteiro, definir a hora de início ajustará a hora de término para 24 horas depois e desmarcará a interface do usuário do evento de dia inteiro no formulário de redação.
+This section shows a code sample that sets the start time of the appointment or message that the user is composing. You can use the same code and replace the **start** property by the **end** property to set the end time. Note that if the appointment compose form already has an existing start time, setting the start time subsequently will adjust the end time to maintain any previous duration for the appointment. If the appointment compose form already has an existing end time, setting the end time subsequently will adjust both the duration and end time. If the appointment has been set as an all-day event, setting the start time will adjust the end time to 24 hours later, and uncheck the UI for the all-day event in the compose form.
 
 Semelhante ao exemplo anterior, o código a seguir considera uma regra no manifesto do suplemento que ativa o suplemento em um formulário de redação para um compromisso.
 

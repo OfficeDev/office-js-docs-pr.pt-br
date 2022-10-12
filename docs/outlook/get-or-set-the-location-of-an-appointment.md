@@ -1,14 +1,14 @@
 ---
 title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bf03e0e470bb5aea811c09bb7b88cc5a915a7a13
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958983"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541236"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
@@ -28,7 +28,7 @@ A tabela a seguir lista as APIs de localização e os modos (ou seja, Redigir ou
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizador/Redigir |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizador/Redigir |
 
-Para usar os métodos disponíveis apenas para compor suplementos, configure o manifesto do suplemento para ativar o suplemento no modo Organizador/Redigir. Consulte [Criar suplementos do Outlook para redigir formulários](compose-scenario.md) para obter mais detalhes.
+Para usar os métodos disponíveis apenas para compor suplementos, configure o manifesto XML do suplemento para ativar o suplemento no modo Organizador/Redigir. Consulte [Criar suplementos do Outlook para redigir formulários](compose-scenario.md) para obter mais detalhes. Não há suporte para regras de ativação em suplementos que usam um manifesto do [Teams para suplementos do Office (versão prévia).](../develop/json-manifest-overview.md)
 
 ## <a name="use-the-enhancedlocation-api"></a>Usar a `enhancedLocation` API
 
@@ -202,4 +202,4 @@ function write(message){
 ## <a name="see-also"></a>Confira também
 
 - [Criar seu primeiro suplemento do Outlook](../quickstarts/outlook-quickstart.md)
-- [Programação assíncrona nos Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Programação assíncrona em Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)

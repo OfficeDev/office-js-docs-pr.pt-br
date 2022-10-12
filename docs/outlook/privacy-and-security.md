@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 08/09/2022
+ms.date: 10/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 560c9bbdfcde849b66d86e9c000d78f094b3e561
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092872"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541245"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -28,16 +28,9 @@ Esse artigo descreve as possíveis permissões que os suplementos do Outlook pod
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-A versão 1.1 do esquema do manifesto inclui quatro níveis de permissões.
+Há quatro níveis de permissões.
 
-**Tabela 1. Níveis de permissão do suplemento**
-
-|**Nível de permissão**|**Valor no manifesto de suplemento do Outlook**|
-|:-----|:-----|
-|Restricted|Restricted|
-|Leitura de item|ReadItem|
-|Leitura/gravação de item|ReadWriteItem|
-|Leitura/gravação de caixa de correio|ReadWriteMailbox|
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 Os quatro níveis de permissão são cumulativos: a permissão **leitura/gravação de caixa de correio** inclui as permissões **leitura/gravação de item**, **leitura de item** e **restrita**, **leitura/gravação de item** inclui **leitura de item** e **restrita** e a permissão **leitura de item** inclui **restrita**.
 
@@ -116,18 +109,34 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
 
 - Os desenvolvedores solicitam um nível adequado de permissão para um suplemento do Outlook, com base em como o suplemento do Outlook deve ser ativado e na sua necessidade de ler ou gravar determinadas propriedades de um item, ou de criar e enviar um item.
 
-- Os desenvolvedores solicitam permissão usando o elemento [Permissions](/javascript/api/manifest/permissions) no manifesto do suplemento do Outlook, atribuindo um valor **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox** conforme o caso.
+- Conforme mencionado acima, os desenvolvedores solicitam permissão no manifesto.
 
-  > [!NOTE]
-  > Observe que a permissão **ReadWriteItem** está disponível a partir do esquema de manifesto v1.1.
-
-  Os exemplos a seguir exigem a permissão **read item**.
+  O exemplo a seguir solicita **a permissão de leitura de item** no manifesto XML.
 
   ```XML
-    <Permissions>ReadItem</Permissions>
+  <Permissions>ReadItem</Permissions>
   ```
 
+  O exemplo a seguir solicita **a permissão de leitura de item** no manifesto do Teams (versão prévia).
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
 - Os desenvolvedores podem  solicitar a permissão restrita se o suplemento do Outlook for ativado em um tipo específico de item do Outlook (compromisso ou mensagem) ou em entidades extraídas específicas (número de telefone, endereço, URL) presentes no assunto ou no corpo do item. Por exemplo, a regra a seguir ativa o suplemento do Outlook se uma ou mais dessas três entidades, número de telefone, endereços postais ou URL, aparece no assunto ou no corpo da mensagem atual.
+
+> [!NOTE]
+> As regras de ativação, como visto neste exemplo, não têm suporte em suplementos que usam o manifesto do [Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
 
   ```XML
     <Permissions>Restricted</Permissions>

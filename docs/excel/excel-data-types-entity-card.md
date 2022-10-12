@@ -1,20 +1,18 @@
 ---
 title: Cartão de valor da entidade de tipos de dados da API JavaScript do Excel
 description: Saiba como usar cartões de valor de entidade com tipos de dados em seu suplemento do Excel.
-ms.date: 07/28/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177648"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540981"
 ---
-# <a name="use-cards-with-entity-value-data-types-preview"></a>Usar cartões com tipos de dados de valor de entidade (versão prévia)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="use-cards-with-entity-value-data-types"></a>Usar cartões com tipos de dados de valor de entidade
 
 Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para criar janelas modais de cartão na interface do usuário do Excel com tipos de dados de valor de entidade. Esses cartões podem exibir informações adicionais contidas em um valor de entidade, além do que já está visível em uma célula, como imagens relacionadas, informações de categoria de produto e atribuições de dados.
 

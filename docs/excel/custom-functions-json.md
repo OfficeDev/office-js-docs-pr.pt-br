@@ -1,14 +1,14 @@
 ---
 title: Criar manualmente metadados JSON para funções personalizadas no Excel
 description: Defina metadados JSON para funções personalizadas no Excel e associe suas propriedades de nome e ID de função.
-ms.date: 12/28/2021
+ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: b4bc9139b3e46bc64749a58537737db2f048ee82
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958577"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540995"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Criar manualmente metadados JSON para funções personalizadas
 
@@ -56,7 +56,7 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 
 ```json
 {
-  "allowCustomDataForDataTypeAny": true, // This property is currently only available in public preview.
+  "allowCustomDataForDataTypeAny": true,
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -140,16 +140,12 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 
 ## <a name="metadata-reference"></a>Referência de metadados
 
-### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (versão prévia)
-
-> [!NOTE]
-> Atualmente `allowCustomDataForDataTypeAny` , a propriedade está disponível em versão prévia pública e é compatível apenas com o Office no Windows. Os recursos de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use oa recursos de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
->
-> Para experimentar essa propriedade no Office no Windows, você deve ter um número de build do Excel maior ou igual a 16.0.14623.20002. Para usar esse recurso, você precisa ingressar no [ Programa Office Insider](https://insider.office.com/) e, em seguida, escolher o nível Insider do **Canal beta**. Para saber mais, confira [ingressar no Programa Office Insider](https://insider.office.com/join/windows).
+### <a name="allowcustomdatafordatatypeany"></a>allowCustomDataForDataTypeAny
 
 A `allowCustomDataForDataTypeAny` propriedade é um tipo de dados booliano. Definir esse valor para permitir `true` que uma função personalizada aceite tipos de dados como parâmetros e valores retornados. Para saber mais, confira [Funções personalizadas e tipos de dados](custom-functions-data-types-concepts.md).
 
-Ao contrário da maioria das outras propriedades de metadados JSON, `allowCustomDataForDataTypeAny` é uma propriedade de nível superior e não contém sub-propriedades. Consulte o exemplo de código [de metadados JSON](#json-metadata-example) anterior para obter um exemplo de como formatar essa propriedade.
+> [!NOTE]
+> Ao contrário da maioria das outras propriedades de metadados JSON, `allowCustomDataForDataTypeAny` é uma propriedade de nível superior e não contém sub-propriedades. Consulte o exemplo de código [de metadados JSON](#json-metadata-example) anterior para obter um exemplo de como formatar essa propriedade.
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 
@@ -158,7 +154,7 @@ A `allowErrorForDataTypeAny` propriedade é um tipo de dados booliano. Definir o
 > [!NOTE]
 > Ao contrário das outras propriedades de metadados JSON, `allowErrorForDataTypeAny` é uma propriedade de nível superior e não contém sub-propriedades. Consulte o exemplo de código [de metadados JSON](#json-metadata-example) anterior para obter um exemplo de como formatar essa propriedade.
 
-### <a name="functions"></a>functions
+### <a name="functions"></a>funções
 
 A propriedade `functions` é um conjunto de objetos de funções personalizadas. A tabela a seguir lista as propriedades de cada objeto.
 
@@ -168,9 +164,9 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 | `helpUrl`     | string    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Sim      | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada.                                            |
 | `name`        | string    | Sim      | O nome da função que é exibida aos usuários finais no Excel. No Excel, esse nome de função é prefixado pelo namespace de funções personalizadas especificado no arquivo de manifesto XML. |
-| `options`     | object    | Não       | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes.                                                          |
+| `options`     | objeto    | Não       | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes.                                                          |
 | `parameters`  | array     | Sim      | Matriz que define os parâmetros de entrada para a função. Consulte [os parâmetros](#parameters) para obter detalhes.                                                                             |
-| `result`      | object    | Sim      | Objeto que define o tipo de informação que é retornada pela função do Excel. Confira [resultado](#result) para obter detalhes.                                                                 |
+| `result`      | objeto    | Sim      | Objeto que define o tipo de informação que é retornada pela função do Excel. Confira [resultado](#result) para obter detalhes.                                                                 |
 
 ### <a name="options"></a>options
 
@@ -197,7 +193,7 @@ A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a se
 |  `optional`  | booliano | Não | Se for `true`, o parâmetro será opcional. |
 |`repeating`| booliano | Não | Se `true`, os parâmetros são preenchidos de uma matriz especificada. Observe que todas as funções que repetem parâmetros são consideradas parâmetros opcionais por definição.  |
 
-### <a name="result"></a>result
+### <a name="result"></a>resultado
 
 O objeto `result` que define o tipo de informação que é retornado pela função. A tabela a seguir lista as propriedades do objeto `result`.
 

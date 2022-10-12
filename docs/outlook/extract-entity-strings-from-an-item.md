@@ -1,18 +1,21 @@
 ---
 title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
-ms.date: 07/07/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5540873be2969e15cea1a5773bb9fba850d9a1
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 512999272c720f5b87480c49d60c649bc6a886ad
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958990"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541272"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
-Este artigo descreve como criar o suplemento do Outlook **Exibir entidades**, que extrai instâncias de cadeia de caracteres de entidades conhecidas compatíveis no assunto e no corpo do item do Outlook escolhido. Esse item pode ser um compromisso, uma mensagem de email ou solicitação, resposta ou cancelamento de reunião.
+This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
+
+> [!NOTE]
+> O recurso suplemento do Outlook descrito neste artigo usa regras de ativação, que não têm suporte em suplementos que usam um manifesto do Teams para [Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
 
 As entidades compatíveis incluem:
 
@@ -22,7 +25,7 @@ As entidades compatíveis incluem:
 
 - **Endereço de email**: um endereço de email SMTP.
 
-- **Sugestão de reunião**: uma sugestão de reunião, como uma referência a um evento. Observe que somente as mensagens, e não compromissos, dão suporte à extração de sugestões de reunião.
+- **Meeting suggestion**: A meeting suggestion, such as a reference to an event. Note that only messages but not appointments support extracting meeting suggestions.
 
 - **Número do telefone**: um número de telefone brasileiro.
 
@@ -30,11 +33,11 @@ As entidades compatíveis incluem:
 
 - **URL**
 
-A maioria dessas entidades depende de reconhecimento de linguagem natural, que é baseado no aprendizado da máquina de grandes quantidades de dados. Esse reconhecimento não é determinístico e às vezes depende do contexto do item do Outlook.
+Most of these entities rely on natural language recognition, which is based on machine learning of large amounts of data. This recognition is nondeterministic and sometimes depends on the context in the Outlook item.
 
-O Outlook ativa o suplemento de entidades sempre que o usuário seleciona um compromisso, uma mensagem de email ou uma solicitação, resposta ou cancelamento de reunião para visualização. Durante a inicialização, o suplemento de entidades de exemplo lê todas as instâncias das entidades compatíveis do item atual.
+Outlook activates the entities add-in whenever the user selects an appointment, email message, or meeting request, response, or cancellation for viewing. During initialization, the sample entities add-in reads all instances of the supported entities from the current item.
 
-O suplemento fornece botões para o usuário escolher um tipo de entidade. Quando o usuário seleciona uma entidade, o suplemento exibe instâncias da entidade selecionada no painel do suplemento. As seções a seguir listam o manifesto XML e arquivos HTML e JavaScript do suplemento de entidades, e realçam o código que dá suporte à extração de entidade respectiva.
+The add-in provides buttons for the user to choose a type of entity. When the user selects an entity, the add-in displays instances of the selected entity in the add-in pane. The following sections list the XML manifest, and HTML and JavaScript files of the entities add-in, and highlight the code that supports the respective entity extraction.
 
 ## <a name="xml-manifest"></a>Manifesto XML
 
@@ -50,7 +53,7 @@ O suplemento de entidade tem duas regras de ativação unidas por um operador l�
 
 Essas regras especificam que o Outlook deve ativar esse suplemento quando o item selecionado no momento no Painel de Leitura ou no inspetor de leitura é um compromisso ou uma mensagem (incluindo mensagem de email ou solicitação, resposta ou cancelamento de reunião).
 
-A seguir temos o manifesto do suplemento das entidades. Ele usa a versão 1.1 do esquema de manifestos de suplementos do Office.
+The following is the manifest of the entities add-in. It uses version 1.1 of the schema for Office Add-ins manifests.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +99,7 @@ xsi:type="MailApp">
 
 ## <a name="html-implementation"></a>Implementação HTML
 
-O arquivo HTML do suplemento de entidades especifica botões para o usuário selecionar cada tipo de entidade e outro botão para limpar instâncias exibidas de uma entidade. Ele inclui um arquivo JavaScript, default_entities.js, que é descrito na próxima seção em [Implementação de JavaScript](#javascript-implementation). O arquivo JavaScript inclui os manipuladores de evento para cada um dos botões.
+The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.
 
 Observe que todos os suplementos do Outlook devem incluir o office.js. O arquivo HTML a seguir inclui a versão 1.1 do office.js na CDN (rede de distribuição de conteúdo).
 
@@ -141,7 +144,7 @@ Observe que todos os suplementos do Outlook devem incluir o office.js. O arquivo
 
 ## <a name="style-sheet"></a>Folha de estilos
 
-O suplemento de entidades usa um arquivo CSS opcional, default_entities.css, para especificar o layout da saída. A seguir temos uma listagem do arquivo CSS.
+The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.
 
 ```CSS
 {
@@ -251,17 +254,17 @@ Quando o usuário clica no botão  Obter Informações de Contato, `myGetContact
 
 - A cadeia de caracteres que representa o nome comercial associado ao contato na propriedade [Contact.businessName](/javascript/api/outlook/office.contact#outlook-office-contact-businessname-member).
 
-- A matriz de números de telefone associada ao contato na propriedade [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member). Cada número de telefone é representado por um objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber).
+- The array of telephone numbers associated with the contact from the [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) property. Each telephone number is represented by a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object.
 
 - Para cada membro **PhoneNumber** na matriz de números de telefone, a cadeia de caracteres que representa o número de telefone da propriedade [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member).
 
-- A matriz de URLs associada ao contato na propriedade [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member). Cada URL é representada como uma cadeia de caracteres em um membro da matriz.
+- The array of URLs associated with the contact from the [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) property. Each URL is represented as a string in an array member.
 
-- A matriz de endereços de email associada ao contato na propriedade [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member). Cada endereço de email é representado como uma cadeia de caracteres em um membro da matriz.
+- The array of email addresses associated with the contact from the [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) property. Each email address is represented as a string in an array member.
 
-- A matriz de endereços postais associada ao contato na propriedade [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member). Cada endereço postal é representado como uma cadeia de caracteres em um membro da matriz.
+- The array of postal addresses associated with the contact from the [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) property. Each postal address is represented as a string in an array member.
 
-`myGetContacts` forma uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada contato. A seguir apresentamos o código JavaScript relacionado.
+`myGetContacts` forms a local HTML string in `htmlText` to display the data for each contact. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the Contact entity on the item.
@@ -327,7 +330,7 @@ function myGetContacts()
 
 ## <a name="extracting-email-addresses"></a>Extrair endereços de email
 
-Quando o usuário clica no botão **Obter Endereços de Email**, o manipulador de eventos `myGetEmailAddresses` obtém uma matriz de endereços de email SMTP na propriedade [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) do objeto `_MyEntities`, caso algum seja extraído. Cada endereço de email extraído é armazenado como uma cadeia de caracteres na matriz. `myGetEmailAddresses` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de endereços de email extraídos. A seguir apresentamos o código JavaScript relacionado.
+When the user clicks the **Get Email Addresses** button, the `myGetEmailAddresses` event handler obtains an array of SMTP email addresses from the [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) property of the `_MyEntities` object, if any was extracted. Each extracted email address is stored as a string in the array. `myGetEmailAddresses` forms a local HTML string in `htmlText` to display the list of extracted email addresses. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
@@ -356,7 +359,7 @@ Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSugges
 
 - A cadeia de caracteres que foi identificada como uma sugestão de reunião na propriedade [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member).
 
-- A matriz de participantes da reunião na propriedade [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member). Cada participante é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
+- The array of meeting attendees from the [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) property. Each attendee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - Para cada participante, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member).
 
@@ -370,7 +373,7 @@ Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSugges
 
 - A cadeia de caracteres que representa a hora de término da sugestão de reunião na propriedade [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-end-member).
 
-`myGetMeetingSuggestions` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada uma das sugestões de reunião. A seguir apresentamos o código JavaScript relacionado.
+`myGetMeetingSuggestions` forms a local HTML string in `htmlText` to display the data for each of the meeting suggestions. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the MeetingSuggestion entity on the 
@@ -426,7 +429,7 @@ function myGetMeetingSuggestions() {
 
 ## <a name="extracting-phone-numbers"></a>Extrair números de telefone
 
-Quando o usuário clica no botão **Obter Números de Telefone**, o manipulador de eventos `myGetPhoneNumbers` obtém uma matriz de números de telefone na propriedade [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) do objeto `_MyEntities`, caso algum seja extraído. Cada número de telefone extraído é armazenado como objeto [PhoneNumber](/javascript/api/outlook/office.phonenumber) na matriz. `myGetPhoneNumbers` obtém mais dados sobre cada número de telefone:
+When the user clicks the **Get Phone Numbers** button, the `myGetPhoneNumbers` event handler obtains an array of phone numbers from the [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) property of the `_MyEntities` object, if any was extracted. Each extracted phone number is stored as a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object in the array. `myGetPhoneNumbers` obtains further data about each phone number:
 
 - A cadeia de caracteres que representa o tipo de número de telefone, por exemplo, número de telefone residencial, na propriedade [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member).
 
@@ -434,7 +437,7 @@ Quando o usuário clica no botão **Obter Números de Telefone**, o manipulador 
 
 - A cadeia de caracteres que foi originalmente identificada como o número de telefone na propriedade [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-originalphonestring-member).
 
-`myGetPhoneNumbers` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada um dos números de telefone. A seguir apresentamos o código JavaScript relacionado.
+`myGetPhoneNumbers` forms a local HTML string in `htmlText` to display the data for each of the phone numbers. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the phone number entity on the item.
@@ -470,17 +473,17 @@ function myGetPhoneNumbers()
 
 ## <a name="extracting-task-suggestions"></a>Extrair sugestões de tarefa
 
-Quando o usuário clica no botão **Obter Sugestões de Tarefa**, o manipulador de eventos `myGetTaskSuggestions` obtém uma matriz de sugestões de tarefa na propriedade [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) do objeto `_MyEntities`, caso algum seja extraído. Cada sugestão de tarefa extraída é armazenada como um objeto [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) da matriz. `myGetTaskSuggestions` obtém dados adicionais sobre cada sugestão de tarefa:
+When the user clicks the **Get Task Suggestions** button, the `myGetTaskSuggestions` event handler obtains an array of task suggestions from the [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) property of the `_MyEntities` object, if any was extracted. Each extracted task suggestion is stored as a [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object in the array. `myGetTaskSuggestions` obtains further data about each task suggestion:
 
 - A cadeia de caracteres que foi originalmente identificada como uma sugestão de tarefa na propriedade [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member).
 
-- A matriz dos destinatários da tarefa na propriedade [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member). Cada destinatário é representado por um objeto [EmailUser](/javascript/api/outlook/office.emailuser).
+- The array of task assignees from the [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) property. Each assignee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - Para cada destinatário, o nome na propriedade [EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member).
 
 - Para cada destinatário, o endereço SMTP da propriedade [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member).
 
-`myGetTaskSuggestions` forma de uma cadeia de caracteres HTML local em `htmlText` para exibir os dados de cada sugestão de tarefa. A seguir apresentamos o código JavaScript relacionado.
+`myGetTaskSuggestions` forms a local HTML string in `htmlText` to display the data for each task suggestion. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the task suggestion entity on the item.
@@ -528,7 +531,7 @@ function myGetTaskSuggestions()
 
 ## <a name="extracting-urls"></a>Extrair URLs
 
-Quando o usuário clica no botão **Obter URLs**, o manipulador de eventos `myGetUrls` obtém uma matriz de URLs na propriedade [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) do objeto `_MyEntities`, caso algum seja extraído. Cada URL extraída é armazenada como uma cadeia de caracteres na matriz. `myGetUrls` forma uma cadeia de caracteres HTML local em `htmlText` para exibir a lista de URLs extraídas.
+When the user clicks the **Get URLs** button, the `myGetUrls` event handler obtains an array of URLs from the [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) property of the `_MyEntities` object, if any was extracted. Each extracted URL is stored as a string in the array. `myGetUrls` forms a local HTML string in `htmlText` to display the list of extracted URLs.
 
 ```js
 // Gets instances of the URL entity on the item.
@@ -549,7 +552,7 @@ function myGetUrls()
 
 ## <a name="clearing-displayed-entity-strings"></a>Limpar cadeias de caracteres de entidade exibidas
 
-Por fim, o suplemento de entidades especifica um manipulador de eventos `myClearEntitiesBox` que limpa as cadeias de caracteres exibidas. A seguir apresentamos o código relacionado.
+Lastly, the entities add-in specifies a  `myClearEntitiesBox` event handler which clears any displayed strings. The following is the related code.
 
 ```js
 // Clears the div with id="entities_box".

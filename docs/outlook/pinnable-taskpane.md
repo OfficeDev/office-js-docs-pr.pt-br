@@ -1,20 +1,20 @@
 ---
 title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
-ms.date: 07/07/2020
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 834d43a6046ddaa63a7c8899cfd5b07d0ea80ef6
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797460"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541119"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
-A forma do [painel de tarefas](add-in-commands-for-outlook.md#launch-a-task-pane) da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer a interface do usuário a fim de obter interações mais detalhadas (preenchimento de vários campos etc.). Esse painel de tarefas pode ser exibido no painel de leitura durante a exibição de uma lista de mensagens, permitindo o processamento rápido de uma mensagem.
+The [task pane](add-in-commands-for-outlook.md#launch-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensagem no painel de leitura e selecionar uma nova mensagem, o painel de tarefas será fechado automaticamente, por padrão. Para um suplemento bastante usado, o usuário pode optar por manter esse painel aberto, eliminando a necessidade de reativar o suplemento em cada mensagem. Com os painéis de tarefas fixáveis, o suplemento pode fornecer essa opção aos usuários.
+However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
 > Embora o recurso de painéis de tarefas fixáveis tenha sido introduzido no conjunto de requisitos [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), ele está disponível apenas para assinantes do Microsoft 365 usando o seguinte:
@@ -29,14 +29,16 @@ No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensag
 > - Compromissos/Reuniões
 > - Outlook.com
 
+> [!TIP]
+> Se você planeja publicar [](../publish/publish.md) seu suplemento do Outlook no [AppSource](https://appsource.microsoft.com) e ele está configurado para um painel de tarefas fixável, para passar na validação do [AppSource](/legal/marketplace/certification-policies), o conteúdo do suplemento não deve ser estático e deve exibir claramente os dados relacionados à mensagem que está aberta ou selecionada na caixa de correio.
+
 ## <a name="support-task-pane-pinning"></a>Suporte para fixação do painel de tarefas
 
-A primeira etapa consiste em adicionar o suporte para fixação no [manifesto](manifests.md) do suplemento. Para fazer isso, adicione o elemento [SupportsPinning](/javascript/api/manifest/action#supportspinning) ao elemento `Action`, que descreve o botão do painel de tarefas.
+A primeira etapa consiste em adicionar o suporte para fixação no manifesto do suplemento. A marcação varia dependendo do tipo de manifesto.
 
-O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Portanto, você deve incluir um elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) nas versões 1.0 e 1.1.
+# <a name="xml-manifest"></a>[Manifesto XML](#tab/xmlmanifest)
 
-> [!NOTE]
-> Se você pretende [publicar](../publish/publish.md) seu suplemento do Outlook em [AppSource](https://appsource.microsoft.com), quando usar o elemento **SupportsPinning**, para passar a [validação da AppSource](/legal/marketplace/certification-policies), o conteúdo do seu suplemento não deve ser estático e deve exibir claramente os dados relacionados à mensagem que está aberta ou selecionada na caixa de correio.
+Adicione o [elemento SupportsPinning](/javascript/api/manifest/action#supportspinning) ao elemento **\<Action\>** que descreve o botão do painel de tarefas. Apresentamos um exemplo a seguir.
 
 ```xml
 <!-- Task pane button -->
@@ -58,6 +60,26 @@ O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Porta
 </Control>
 ```
 
+**\<SupportsPinning\>** O elemento é definido no esquema VersionOverrides v1.1, portanto, você precisará incluir um elemento [VersionOverrides](/javascript/api/manifest/versionoverrides) para v1.0 e v1.1.
+
+# <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
+
+Adicione uma propriedade "fixável", `true`definida como , para o objeto na matriz "actions" que define o botão ou item de menu que abre o painel de tarefas. Apresentamos um exemplo a seguir.
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
+---
+
 Para ver um exemplo completo, confira o controle `msgReadOpenPaneButton` na [amostra de manifesto command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
 ## <a name="handling-ui-updates-based-on-currently-selected-message"></a>Atualizações de tratamento da interface do usuário com base na mensagem atualmente selecionada
@@ -66,7 +88,7 @@ Para atualizar a interface do usuário ou as variáveis internas do painel de ta
 
 ### <a name="implement-the-event-handler"></a>Implementar o manipulador de eventos
 
-O manipulador de eventos deve aceitar um parâmetro exclusivo, que é um objeto literal. A propriedade `type` desse objeto será definida como `Office.EventType.ItemChanged`. Ao chamar o evento, o objeto `Office.context.mailbox.item` já estará atualizado para refletir o item atualmente selecionado.
+The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
 
 ```js
 function itemChanged(eventArgs) {
@@ -89,7 +111,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Registrar o manipulador de eventos
 
-Use o método [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) para registrar o manipulador de eventos para o evento `Office.EventType.ItemChanged`. Você deve fazer isso na função `Office.initialize` do painel de tarefas.
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {
