@@ -1,14 +1,14 @@
 ---
 title: Teste do Internet Explorer 11
 description: Teste seu Suplemento do Office no Internet Explorer 11.
-ms.date: 05/01/2022
+ms.date: 10/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab904a3b086990cb9b10e2f266ddacafb4cba94
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 887d71e8e054a39c474ef300aeeb588933499ed8
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423325"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574156"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Testar seu Suplemento do Office no Internet Explorer 11
 
@@ -47,6 +47,8 @@ Há duas maneiras de alternar o modo de exibição da Web do Internet Explorer. 
 
 - Seu projeto foi desenvolvido com o Visual Studio e o IIS. Não é baseado node.js segurança.
 - Você quer ser absolutamente robusto em seus testes.
+- Você não pode usar o canal Beta para o Microsoft 365 em seu computador de desenvolvimento.
+- Você está desenvolvendo em um Mac. 
 - Se, por algum motivo, a ferramenta de linha de comando não funcionar.
 
 ### <a name="switch-via-the-command-line"></a>Alternar por meio da linha de comando
