@@ -4,12 +4,12 @@ description: Saiba como ativar o suplemento do Outlook quando várias mensagens 
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
-ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
+ms.openlocfilehash: 9d81d698facfc4535b3945d8cee4c97492fc8a88
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68546435"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574141"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>Ativar o suplemento do Outlook em várias mensagens (versão prévia)
 
@@ -21,7 +21,7 @@ As seções a seguir explicam como configurar seu suplemento para recuperar a li
 > O recurso de seleção de vários itens só está disponível em versão prévia com uma assinatura do Microsoft 365 no Outlook no Windows. Os recursos em versão prévia não devem ser usados em suplementos de produção. Convidamos você a testar esse recurso em ambientes de teste ou desenvolvimento e receber comentários de boas-vindas sobre sua experiência por meio  do GitHub (consulte a seção Comentários no final desta página).
 
 > [!NOTE]
-> No momento, o recurso de seleção de vários itens não tem suporte no manifesto do [Teams (](../develop/json-manifest-overview.md)versão prévia), mas a equipe de recursos está trabalhando para disponibilizar isso.
+> No momento, não há suporte para o recurso de seleção de itens no manifesto do [Teams (](../develop/json-manifest-overview.md)versão prévia), mas a equipe está trabalhando para disponibilizar isso.
 
 ## <a name="prerequisites-to-preview-item-multi-select"></a>Pré-requisitos para visualizar a seleção de vários itens
 
