@@ -1,17 +1,17 @@
 ---
 title: Visão geral dos tipos de dados em suplementos do Excel
 description: Os tipos de dados na API JavaScript do Excel permitem que os desenvolvedores de Suplementos do Office trabalhem com valores numéricos formatados, imagens da Web, entidades, matrizes dentro de entidades e erros aprimorados como tipos de dados.
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2d19eacc23d64f472f32363fc93155b6e023ba04
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 92f541d3b1296de5545bfb0016448f49043abcba
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540974"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607433"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins"></a>Visão geral dos tipos de dados em suplementos do Excel
 
@@ -23,6 +23,9 @@ Os tipos de dados expandem o suporte à API JavaScript do Excel além dos quatro
 
 Para saber como usar APIs de tipos de dados, comece com o artigo de [conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md) .
 
+> [!NOTE]
+> Para começar a experimentar com tipos de dados imediatamente, instale o [Script Lab](../overview/explore-with-script-lab.md) no Excel e confira a seção Tipos de  dados em nossa **biblioteca de Exemplos**. Você também pode explorar os Script Lab exemplos em nosso repositório [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types).
+
 ## <a name="data-types-and-custom-functions"></a>Tipos de dados e funções personalizadas
 
 Os tipos de dados aprimoram o poder das funções personalizadas. As funções personalizadas aceitam tipos de dados como entradas para funções personalizadas e saídas de funções personalizadas, e funções personalizadas usam o mesmo esquema JSON para tipos de dados que a API JavaScript do Excel. Esse esquema JSON de tipos de dados é mantido conforme as funções personalizadas calculam e avaliam. Para saber mais sobre a integração de tipos de dados com suas funções personalizadas, consulte [Funções personalizadas e tipos de dados](custom-functions-data-types-concepts.md).
@@ -31,5 +34,6 @@ Os tipos de dados aprimoram o poder das funções personalizadas. As funções p
 
 - [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
 - [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md)
-- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
 - [Funções e tipos de dados personalizados](custom-functions-data-types-concepts.md)
+- [Criar e explorar tipos de dados no Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
+- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

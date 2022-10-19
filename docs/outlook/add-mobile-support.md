@@ -1,14 +1,14 @@
 ---
 title: Adicionar suporte móvel a um suplemento do Outlook
 description: Saiba como adicionar suporte para o Outlook Mobile, incluindo como atualizar o manifesto do suplemento e alterar seu código para cenários móveis, se necessário.
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: c84b4aeb04cd2c8b3c2f0a7afa9fd1631c22afc5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318876"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607538"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -16,9 +16,11 @@ O uso de comandos de suplemento no Outlook Mobile permite que os usuários acess
 
 ## <a name="updating-the-manifest"></a>Atualização do manifesto
 
-A primeira etapa para habilitar os comandos de suplemento no Outlook Mobile é defini-los no manifesto do suplemento. O esquema [VersionOverrides](/javascript/api/manifest/versionoverrides) versão 1.1 define um novo fator forma para dispositivos móveis, o [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
-Esse elemento contém todas as informações para carregar o suplemento em clientes móveis. Isso permite que você defina elementos de interface completamente diferentes e arquivos JavaScript para a experiência móvel.
+The first step to enabling add-in commands in Outlook Mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+
+This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
 
 O exemplo a seguir mostra um único botão do painel de tarefas em um `MobileFormFactor` elemento.
 
@@ -59,10 +61,10 @@ O exemplo a seguir mostra um único botão do painel de tarefas em um `MobileFor
 Isso é muito semelhante aos elementos que aparecem em um elemento [DesktopFormFactor](/javascript/api/manifest/desktopformfactor), com algumas diferenças importantes.
 
 - O elemento [OfficeTab](/javascript/api/manifest/officetab) não é usado.
-- O elemento [ExtensionPoint](/javascript/api/manifest/extensionpoint) deve ter apenas um elemento filho. Se o suplemento apenas adiciona um botão, o elemento filho deve ser um elemento [Control](/javascript/api/manifest/control). Se o suplemento adiciona mais de um botão, o elemento filho deve ser um elemento [Group](/javascript/api/manifest/group) que contém vários elementos `Control`.
+- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If the add-in only adds one button, the child element should be a [Control](/javascript/api/manifest/control) element. If the add-in adds more than one button, the child element should be a [Group](/javascript/api/manifest/group) element that contains multiple `Control` elements.
 - Não há nenhum tipo `Menu` equivalente ao elemento `Control`.
 - O elemento [Supertip](/javascript/api/manifest/supertip) não é usado.
-- Os tamanhos de ícone obrigatórios são diferentes. Suplementos móveis devem, no mínimo, dar suporte a ícones de 25 x 25, 32 x 32 e 48 x 48 pixels.
+- The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons.
 
 ## <a name="code-considerations"></a>Considerações sobre código
 
@@ -70,17 +72,17 @@ Criar um suplemento para o Mobile traz algumas considerações adicionais.
 
 ### <a name="use-rest-instead-of-exchange-web-services"></a>Usar REST em vez de Serviços Web do Exchange
 
-O método [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) não é suportado no Outlook Mobile. Os suplementos devem preferir obter as informações da API Office.js sempre que possível. Se os suplementos exigem informações que não são expostas pela API Office.js devem usar as [APIs REST do Outlook](/outlook/rest/) para acessar as caixas de correio do usuário.
+The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method is not supported in Outlook Mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](/outlook/rest/) to access the user's mailbox.
 
 O conjunto de requisitos de caixa de correio 1.5 introduziu uma nova versão do [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) que pode solicitar um token de acesso compatível com as APIs REST e uma nova propriedade [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) que pode ser usada para localizar o ponto de extremidade da API REST para o usuário.
 
 ### <a name="pinch-zoom"></a>Pinçar e zoom
 
-Por padrão, os usuários podem usar o gesto de “pinçar/zoom” para aplicar zoom aos painéis de tarefas. Se isso não fizer sentido em seu cenário, desative esse recurso em seu HTML.
+By default users can use the "pinch zoom" gesture to zoom in on task panes. If this does not make sense for your scenario, be sure to disable pinch zoom in your HTML.
 
 ### <a name="close-task-panes"></a>Fechar painéis de tarefas
 
-Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, exigem que o usuário os feche para retornar à mensagem. Considere o uso do método [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) para fechar o painel de tarefas quando seu cenário estiver concluído.
+In Outlook Mobile, task panes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) method to close the task pane when your scenario is complete.
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 

@@ -1,20 +1,20 @@
 ---
 title: Funções personalizadas e tipos de dados
 description: Use os tipos de dados do Excel com suas funções personalizadas e Suplementos do Office.
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
-ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.localizationpriority: medium
+ms.openlocfilehash: 6ea2287dbf83a5acc45f64c6f5071e504e66bbce
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540988"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607426"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel"></a>Usar tipos de dados com funções personalizadas no Excel
 
-Os tipos de dados expandem a API JavaScript do Excel para dar suporte a tipos de dados além dos quatro tipos de valor de célula originais (cadeia de caracteres, número, booliano e erro). Os tipos de dados incluem suporte para imagens da Web, valores de número formatados, valores de entidade e matrizes nos valores da entidade.
+Os tipos de dados expandem a API JavaScript do Excel para dar suporte a tipos de dados além dos quatro tipos de valor de célula originais (cadeia de caracteres, número, booliano e erro). Os tipos de dados incluem suporte para imagens da Web, valores de número formatados, entidades e matrizes dentro de entidades.
 
 Esses tipos de dados ampliam o poder das funções personalizadas, pois as funções personalizadas aceitam tipos de dados como valores de entrada e saída. Você pode gerar tipos de dados por meio de funções personalizadas ou levar os tipos de dados existentes como argumentos de função nos cálculos. Depois que o esquema JSON de um tipo de dados é definido, esse esquema é mantido em todos os cálculos.
 
@@ -29,23 +29,9 @@ As funções personalizadas podem reconhecer tipos de dados e aceitá-los como v
 
 ## <a name="enable-data-types-for-custom-functions"></a>Habilitar tipos de dados para funções personalizadas
 
-Para usar esse recurso, você precisa atualizar manualmente os metadados JSON. Para mais testes temporários, você pode personalizar as configurações do Script Lab em vez de atualizar manualmente os metadados JSON. As seções a seguir descrevem essas etapas mais detalhadamente.
-
-### <a name="manually-update-json-metadata"></a>Atualizar manualmente os metadados JSON
-
 Projetos de funções personalizadas incluem um arquivo de metadados JSON. Esse arquivo de metadados JSON difere do esquema JSON usado pelas APIs de tipos de dados. Para usar a integração de tipos de dados com funções personalizadas, o arquivo de metadados JSON de funções personalizadas deve ser atualizado manualmente para incluir a propriedade `allowCustomDataForDataTypeAny`. Defina essa propriedade como `true`.
 
-For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
-
-### <a name="script-lab-option"></a>Opção Script Lab
-
-A integração de funções personalizadas com tipos de dados está disponível para teste com o Script Lab, além da atualização manual de metadados JSON descrita na seção anterior. Para saber mais sobre o Script Lab, consulte [Explorar a API JavaScript do Office usando o Script Lab](../overview/explore-with-script-lab.md). Para testar esse recurso com o Script Lab, atualize as configurações usando as etapas a seguir.
-
-1. Abra o painel de tarefas Script Lab **Código**.
-1. No canto inferior direito, selecione o botão **Configurações**.
-1. Vá para **Configurações do Usuário** e insira `allowCustomDataForDataTypeAny: true`.
-
-![Captura de tela mostrando as etapas para habilitar tipos de dados para funções personalizadas no Script Lab.](../images/custom-functions-script-lab-data-type.png)
+Para obter uma descrição completa do processo manual de criação de metadados JSON, consulte [Criar manualmente metadados JSON para funções personalizadas](custom-functions-json.md). Consulte [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) para obter detalhes adicionais sobre essa propriedade.
 
 ## <a name="output-a-formatted-number-value"></a>Gerar um valor de número formatado
 
@@ -92,6 +78,10 @@ function getEntityAttribute(value, attribute) {
     }
 }
 ```
+
+## <a name="next-steps"></a>Próximas etapas
+
+Para experimentar funções personalizadas e tipos de dados, instale o [Script Lab](../overview/explore-with-script-lab.md) no Excel e experimente os tipos de dados: snippet de funções [personalizadas](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/16-custom-functions/data-types-custom-functions.yaml) em nossa biblioteca **de Exemplos**.
 
 ## <a name="see-also"></a>Confira também
 

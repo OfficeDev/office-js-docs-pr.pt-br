@@ -1,18 +1,18 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Os suplementos móveis do Outlook têm suporte em todas as contas comerciais do Microsoft 365 e Outlook.com contas.
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa314ad91646e2ed4de47cae1bcbb8cfb1f121a
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: ca09ba550d8d2ed6e9003e85a8d042f413a6ab52
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318799"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607559"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
-Os suplementos agora funcionam no Outlook Mobile, usando as mesmas APIs disponíveis para outros pontos de extremidade do Outlook. Se você já tiver criado um suplemento para Outlook, é fácil fazê-lo funcionar no Outlook Mobile.
+Add-ins now work on Outlook Mobile, using the same APIs available for other Outlook endpoints. If you've built an add-in for Outlook already, it's easy to get it working on Outlook Mobile.
 
 Os suplementos móveis do Outlook têm suporte em todas as contas comerciais do Microsoft 365 e Outlook.com contas. No entanto, o suporte não está disponível atualmente em contas do Gmail.
 
@@ -28,15 +28,17 @@ Os suplementos móveis do Outlook têm suporte em todas as contas comerciais do 
 
 ## <a name="whats-different-on-mobile"></a>Qual é a diferença no celular?
 
-- O tamanho pequeno e as rápidas interações tornam o projeto para celular um desafio. Para garantir experiências de qualidade para nossos clientes, estamos definindo critérios rígidos de validação que devem ser cumpridos por um suplemento que declara suporte a celular de forma a ser aprovado na AppSource.
+- The small size and quick interactions make designing for mobile a challenge. To ensure quality experiences for our customers, we are setting strict validation criteria that must be met by an add-in declaring mobile support, in order to be approved in AppSource.
   - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
   - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 - Em geral, somente o modo de Leitura de Mensagem tem suporte no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do manifesto. No entanto, há algumas exceções:
   1. O modo Organizador de Compromissos tem suporte para suplementos integrados do provedor de reunião online que, em vez disso, declaram o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Consulte o [artigo Criar um suplemento móvel do Outlook para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
   1. O modo participante do compromisso tem suporte para suplementos integrados criados por provedores de aplicativos crm (gerenciamento de relacionamento com o cliente) e anotações. Esses suplementos devem declarar o ponto de extensão [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee). Consulte as [anotações de compromisso de log para um aplicativo externo no artigo de suplementos](mobile-log-appointments.md) móveis do Outlook para saber mais sobre esse cenário.
 
-- A API [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
+- The [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API is not supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
 
 - Quando você envia o suplemento para a loja com [MobileFormFactor](/javascript/api/manifest/mobileformfactor) no manifesto, precisará concordar com nosso adendo de suplementos no iOS e precisará enviar sua ID de desenvolvedor Apple para verificação.
 
@@ -44,13 +46,13 @@ Os suplementos móveis do Outlook têm suporte em todas as contas comerciais do 
 
 ## <a name="what-makes-a-good-scenario-for-mobile-add-ins"></a>O que forma um bom cenário para suplementos móveis?
 
-Lembre-se de que o tamanho médio da sessão Outlook em um telefone é bem menor do que em um PC. Isso significa que seu suplemento deve ser rápido e o cenário deve permitir que o usuário entre, saia e prossiga com seu fluxo de email.
+Remember that the average Outlook session length on a phone is much shorter than on a PC. That means your add-in must be fast, and the scenario must allow the user to get in, get out, and get on with their email workflow.
 
 Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
-- O suplemento traz informações valiosas para o Outlook, para ajudar os usuários na triagem dos emails e a responder adequadamente. Exemplo: um suplemento CRM que permite ao usuário ver informações do cliente e compartilhar informações apropriadas.
+- The add-in brings valuable information into Outlook, helping users triage their email and respond appropriately. Example: a CRM add-in that lets the user see customer information and share appropriate information.
 
-- O suplemento agrega valor ao conteúdo do email do usuário, salvando as informações em um controle, uma colaboração ou um sistema semelhante. Exemplo: um suplemento que permite aos usuários ativar emails em itens de tarefa para acompanhamento de projetos, ou tíquetes de ajuda, para uma equipe de suporte.
+- The add-in adds value to the user's email content by saving the information to a tracking, collaboration, or similar system. Example: an add-in that lets users turn emails into task items for project tracking, or help tickets for a support team.
 
 **Uma interação de usuário de exemplo para criar um cartão do Trello com base em uma mensagem de email no iOS**
 
@@ -66,7 +68,7 @@ Estes são exemplos de cenários que fazem sentido no Outlook Mobile.
 
 Para testar um suplemento no Outlook Mobile, primeiro realizar o [sideload](sideload-outlook-add-ins-for-testing.md) de um suplemento em uma conta do Microsoft 365 ou Outlook.com na Web, no Windows ou no Mac. Verifique se o manifesto está formatado corretamente para conter `MobileFormFactor` ou se ele não será carregado no cliente do Outlook no celular.
 
-Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
+After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 
 A solução de problemas em dispositivos móveis pode ser difícil, pois talvez você não tenha as ferramentas com as que está acostumado. No entanto, uma opção para solucionar problemas no iOS é usar o Fiddler (confira este tutorial sobre como [usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 

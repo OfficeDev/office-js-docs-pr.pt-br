@@ -1,18 +1,22 @@
 ---
 title: Manifestos do suplemento do Outlook
-description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
-ms.date: 05/27/2020
+description: Obtenha uma visão geral dos dois tipos de manifestos disponíveis para suplementos do Outlook.
+ms.date: 10/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: a22b5180fee6b4f9f0663eff54b57510016202a2
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466975"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607552"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
-An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
+Um suplemento do Outlook consiste em dois componentes: o manifesto do suplemento e um aplicativo Web compatível com a biblioteca JavaScript para suplementos do Office (office.js). O manifesto descreve como o suplemento integra-se a clientes do Outlook.
+
+Há dois formatos possíveis para o manifesto: XML e JSON. Você pode saber mais sobre o manifesto JSON no manifesto [do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Este artigo é sobre o manifesto XML.
+
+A seguir está um exemplo do manifesto XML.
 
  > [!NOTE]
  > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
@@ -418,7 +422,6 @@ As regras de ativação podem ser usadas para ativar um suplemento com base em u
 - A presença de um anexo
 
 Para obter detalhes e exemplos das regras de ativação, confira [Regras de ativação para suplementos do Outlook](activation-rules.md).
-
 
 ## <a name="next-steps-add-in-commands"></a>Próximas etapas: Comandos de suplemento
 

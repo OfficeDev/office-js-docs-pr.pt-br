@@ -1,14 +1,14 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 09/03/2021
+ms.date: 10/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: d8ae8971c4095e5314885514226cd8f52728fb07
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958359"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607524"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -19,7 +19,8 @@ O suplemento do Outlook pode acessar informações de qualquer lugar na Internet
 Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento autenticar e obter tokens de acesso para fazer uma chamada para a [API do Microsoft Graph](/graph/overview). Esse recurso reduz conflitos porque o usuário não precisa inserir credenciais.
 
 > [!NOTE]
-> Atualmente, a API de logon único é compatível com Word, Excel, Outlook e PowerPoint. Para mais informações sobre onde a API Logon Único tem suporte no momento, veja [Conjuntos de requisitos IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para a locação do Microsoft 365. Para informações sobre como fazer isso, consulte [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 
@@ -29,6 +30,9 @@ Considere usar tokens de acesso SSO se o suplemento:
   - Um serviço que não seja da Microsoft que você controle
 
 O método de autenticação SSO usa o [Fluxo Em Nome De do OAuth2 fornecido pelo Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). Ele exige o registro do suplemento no [Portal de Registro do Aplicativo](https://apps.dev.microsoft.com/) e a especificação dos escopos necessários do Microsoft Graph no manifesto.
+
+> [!NOTE]
+> Se o suplemento estiver usando o manifesto do [Teams para Suplementos do Office (](../develop/json-manifest-overview.md)versão prévia), haverá alguma configuração de manifesto, mas os escopos do Microsoft Graph não são especificados. Os suplementos habilitados para SSO que usam o manifesto do Teams podem ser sideload, mas não podem ser implantados de outra maneira no momento.
 
 Usando este método, o suplemento pode obter um token de acesso com escopo para a API de back-end do servidor. O suplemento usa isso como um token de portador no cabeçalho `Authorization` para autenticar um retorno de chamada para sua API. Nesse ponto, o servidor pode:
 
@@ -61,7 +65,7 @@ Usando esse método, seu suplemento solicita que o usuário entre no serviço us
 
 ## <a name="callback-tokens"></a>Tokens de retorno de chamada
 
-Os tokens de retorno de chamada fornecem acesso à caixa de correio do usuário a partir do back-end do servidor, usando [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou a [API REST do Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Considere usar tokens de retorno de chamada se seu suplemento:
+Callback tokens provide access to the user's mailbox from your server back-end, either using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), or the [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Consider using callback tokens if your add-in:
 
 - Precisar acessar a caixa de correio do usuário a partir do back-end do servidor.
 

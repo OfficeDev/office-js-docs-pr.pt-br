@@ -2,14 +2,14 @@
 title: Registrar anotações de compromisso em um aplicativo externo em suplementos móveis do Outlook
 description: Saiba como configurar um suplemento móvel do Outlook para registrar anotações de compromisso e outros detalhes em um aplicativo externo.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 310585d821f12bfd400b7b1eaf780ab756bf5a3f
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a980b68c603154c42112f525ec6285b740ce38a5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320673"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607580"
 ---
 # <a name="log-appointment-notes-to-an-external-application-in-outlook-mobile-add-ins"></a>Registrar anotações de compromisso em um aplicativo externo em suplementos móveis do Outlook
 
@@ -35,6 +35,8 @@ Essa opção permitirá que um usuário registre e exiba suas anotações e outr
 ### <a name="configure-the-manifest"></a>Configurar o manifesto
 
 Para permitir que os usuários registrem anotações de compromisso com seu suplemento, você deve configurar o ponto de extensão [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) no manifesto sob o elemento pai `MobileFormFactor`. Não há suporte para outros fatores forma.
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. No editor de código, abra o projeto de início rápido.
 
@@ -284,6 +286,8 @@ Essa opção permitirá que um usuário registre e exiba suas anotações e outr
 ### <a name="configure-the-manifest"></a>Configurar o manifesto
 
 Para permitir que os usuários registrem anotações de compromisso com seu suplemento, você deve configurar o ponto de extensão [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) no manifesto sob o elemento pai `MobileFormFactor`. Não há suporte para outros fatores forma.
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. No editor de código, abra o projeto de início rápido.
 

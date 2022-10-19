@@ -1,16 +1,16 @@
 ---
 title: Cartão de valor da entidade de tipos de dados da API JavaScript do Excel
 description: Saiba como usar cartões de valor de entidade com tipos de dados em seu suplemento do Excel.
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 1cb6c49e0e8cb07afb4b7c78a360be6c2391437a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540981"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607566"
 ---
 # <a name="use-cards-with-entity-value-data-types"></a>Usar cartões com tipos de dados de valor de entidade
 
@@ -32,7 +32,7 @@ A propriedade de valor [`properties`](/javascript/api/excel/excel.entitycellvalu
 O snippet de código a seguir mostra o JSON de um valor de entidade com vários tipos de dados aninhados em `properties`.
 
 > [!NOTE]
-> Para ver como usar esse JSON em um exemplo de código completo, visite o repositório [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) .
+> Para experimentar esse snippet de código JSON em um exemplo completo, abra o [Script Lab](../overview/explore-with-script-lab.md) no Excel e selecione Tipos de dados: criar cartões de entidade [de](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) dados em uma tabela em nossa biblioteca **de Exemplos**.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -114,7 +114,7 @@ O snippet de código JSON do valor da entidade a `card` seguir mostra um layout 
 Em cada seção do cartão, você pode especificar elementos `layout`como , `title`e `properties`. A `layout` chave usa o [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) objeto e aceita o valor `"List"`. A `properties` chave aceita uma matriz de cadeias de caracteres. Observe que os valores `properties` , como `"Product ID"`, têm tipos de dados correspondentes na seção anterior do artigo de propriedades [do](#card-properties) cartão. As seções também podem ser recolhíveis e podem ser definidas com valores boolianos como recolhidos ou não recolhidos quando o cartão de entidade é aberto na interface do usuário do Excel.
 
 > [!NOTE]
-> Para ver como usar esse JSON em um exemplo de código completo, visite o repositório [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) .
+> Para experimentar esse snippet de código JSON em um exemplo completo, abra o [Script Lab](../overview/explore-with-script-lab.md) no Excel e selecione Tipos de dados: criar cartões de entidade [de](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) dados em uma tabela em nossa biblioteca **de Exemplos**.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -169,7 +169,7 @@ A propriedade do provedor de dados exibe uma imagem no canto inferior esquerdo d
 O snippet de código JSON a `provider` seguir mostra um valor de entidade que usa a propriedade para especificar uma atribuição de provedor de dados para a entidade.
 
 > [!NOTE]
-> Para ver como usar esse JSON em um exemplo de código completo, visite o repositório [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) .
+> Para experimentar esse snippet de código JSON em um exemplo completo, abra o [Script Lab](../overview/explore-with-script-lab.md) no Excel e selecione Tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) propriedades de atribuição de valor de entidade em nossa biblioteca **de Exemplos**.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -193,8 +193,13 @@ A captura de tela a seguir mostra um cartão de valor de entidade que usa o snip
 
 :::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="Uma captura de tela mostrando um tipo de dados de valor de entidade com a janela de layout do cartão exibida. O cartão mostra a atribuição do provedor de dados no canto inferior esquerdo.":::
 
+## <a name="next-steps"></a>Próximas etapas
+
+Experimente o [exemplo Criar e explorar tipos de dados no Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) em nosso repositório [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) . Este exemplo orienta você durante a criação e o sideload de um suplemento que cria e edita tipos de dados em uma pasta de trabalho.
+
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
 - [Conceitos básicos dos tipos de dados do Excel](excel-data-types-concepts.md)
+- [Criar e explorar tipos de dados no Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

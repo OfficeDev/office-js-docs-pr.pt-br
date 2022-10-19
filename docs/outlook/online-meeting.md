@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: f422107d69dd3cdcc9a01feaee0b97dcd7e5e1f3
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320655"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607573"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
@@ -24,9 +24,22 @@ Neste artigo, você aprenderá a configurar seu suplemento do Outlook para permi
 
 Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
 
+> [!NOTE]
+> Se você quiser usar o manifesto do [Teams para Suplementos do Office (](../develop/json-manifest-overview.md)versão prévia), conclua o início rápido alternativo no Outlook com um manifesto do [Teams (](../quickstarts/outlook-quickstart-json-manifest.md)versão prévia), mas ignore todas as seções após a seção  Experimentar.
+
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o **\<VersionOverrides\>** nó no manifesto. Se você estiver criando um suplemento que só terá suporte no Outlook na Web, Windows e Mac, selecione a guia **Windows, Mac e Web** para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione **a guia** Móvel.
+Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o manifesto. A marcação difere dependendo de duas variáveis:
+
+- O tipo de plataforma de destino; móvel ou não móvel.
+- O tipo de manifesto; Manifesto xml ou [do Teams para suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
+
+Se o suplemento usar um manifesto XML e o suplemento só tiver suporte no Outlook na Web, no Windows e no Mac, selecione a guia **Windows, Mac e** Web para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione **a guia** Móvel.
+
+Se o suplemento usar o manifesto do Teams (versão prévia), selecione a guia **Manifesto do Teams (versão prévia do** desenvolvedor).
+
+> [!NOTE]
+> No momento, o manifesto do Teams (versão prévia) só tem suporte no Outlook no Windows. Estamos trabalhando para trazer suporte para outras plataformas, incluindo plataformas móveis.
 
 # <a name="windows-mac-web"></a>[Windows, Mac, Web](#tab/non-mobile)
 
@@ -194,6 +207,137 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
+
+1. Abra o **arquivo manifest.json** .
+
+1. Localize *o primeiro* objeto na matriz "authorization.permissions.resourceSpecific" e defina sua propriedade "name" como "MailboxItem.ReadWrite.User". Deve ser assim quando terminar.
+
+    ```json
+    {
+        "name": "MailboxItem.ReadWrite.User",
+        "type": "Delegated"
+    }
+    ```
+
+1. Na matriz "validDomains", altere a URL para "https://contoso.com", que é a URL do provedor de reunião online fictício. A matriz deverá ter esta aparência quando você terminar.
+
+    ```json
+    "validDomains": [
+        "https://contoso.com"
+    ],
+    ```
+
+1. Adicione o objeto a seguir à matriz "extensions.runtimes". Observe o seguinte sobre este código.
+
+   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.3" para que o runtime não seja iniciado em plataformas e versões do Office em que não há suporte para esse recurso.
+   - A "id" do runtime é definida como o nome descritivo "online_meeting_runtime".
+   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando de função.
+   - A propriedade "lifetime" é definida como "short", o que significa que o runtime é iniciado quando o botão de comando de função é selecionado e desligado quando a função é concluída. (Em determinados casos raros, o runtime é desligado antes que o manipulador seja concluído. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
+   - Há uma ação para executar uma função chamada "insertContosoMeeting". Você criará essa função em uma etapa posterior.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "online_meeting_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://contoso.com/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertContosoMeeting",
+                "type": "executeFunction",
+                "displayName": "insertContosoMeeting"
+            }
+        ]
+    }
+    ```
+
+1. Substitua a matriz "extensions.ribbons" pelo seguinte. Observe o seguinte sobre esta marcação.
+
+   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.3" para que as personalizações da faixa de opções não apareçam em plataformas e versões do Office em que não há suporte para esse recurso.
+   - A matriz "contexts" especifica que a faixa de opções está disponível somente na janela do organizador de detalhes da reunião.
+   - Haverá um grupo de controle personalizado na guia da faixa de opções padrão (da janela do organizador de detalhes da reunião) rotulado como **reunião da Contoso**.
+   - O grupo terá um botão rotulado **Adicionar uma reunião da Contoso**.
+   - A "actionId" do botão foi definida como "insertContosoMeeting", que corresponde à "id" da ação que você criou na etapa anterior.
+
+    ```json
+    "ribbons": [
+      {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "scopes": [
+                "mail"
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "contexts": [
+            "meetingDetailsOrganizer"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "id": "apptComposeGroup",
+                        "label": "Contoso meeting",
+                        "controls": [
+                            {
+                                "id": "insertMeetingButton",
+                                "type": "button",
+                                "label": "Add a Contoso meeting",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "file": "icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "file": "icon-32.png"
+                                    },
+                                    {
+                                        "size": 64,
+                                        "file": "icon-64_02.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "file": "icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Add a Contoso meeting",
+                                    "description": "Add a Contoso meeting to this appointment."
+                                },
+                                "actionId": "insertContosoMeeting",
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+    ```
 
 ---
 

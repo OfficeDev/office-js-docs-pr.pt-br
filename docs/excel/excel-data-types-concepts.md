@@ -1,17 +1,17 @@
 ---
 title: Conceitos básicos dos tipos de dados da API JavaScript do Excel
 description: Conheça os principais conceitos para usar os tipos de dados do Excel no Suplemento do Office.
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 65a69838500733f8be08a15a99baa167a946b82a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541147"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607447"
 ---
 # <a name="excel-data-types-core-concepts"></a>Conceitos básicos dos tipos de dados do Excel
 
@@ -79,6 +79,8 @@ const myDate: Excel.FormattedNumberCellValue = {
 };
 ```
 
+Comece a experimentar valores numéricos formatados abrindo Script Lab [](../overview/explore-with-script-lab.md) e verificando os tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet de números formatados em nossa **biblioteca de Exemplos**.
+
 ## <a name="entity-values"></a>Valores de entidade
 
 Um valor de entidade é um contêiner dos tipos de dados, semelhante a um objeto em programação orientada a objetos. As entidades também suportam matrizes como propriedades de um valor de entidade. O objeto [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) permite que os suplementos definam propriedades como `type`, `text` e `properties`. A propriedade `properties` permite que o valor de entidade defina e contenha tipos de dados adicionais.
@@ -108,6 +110,8 @@ const myEntity: Excel.EntityCellValue = {
 
 Os valores de entidade também oferecem uma propriedade `layouts` que cria um cartão para a entidade. O cartão é exibido como uma janela modal na interface do usuário do Excel e pode exibir informações adicionais contidas no valor da entidade, além do que é visível na célula. Para saber mais, confira [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md).
 
+Para explorar os tipos de dados de entidade, comece [](../overview/explore-with-script-lab.md) indo para Script Lab excel e abrindo os tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) criar cartões de entidade de dados em um snippet de tabela em nossa biblioteca **de exemplos**. Os [tipos de dados: valores de entidade com](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml) referências e tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) os snippets de propriedades de atribuição de valor de entidade oferecem uma visão mais profunda dos recursos da entidade.
+
 ### <a name="linked-entities"></a>Entidades Vinculadas
 
 Os valores de entidade vinculados ou objetos [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) são um tipo de valor de entidade. Esses objetos integram os dados fornecidos por um serviço externo e podem exibir esses dados como um [cartão de entidade](excel-data-types-entity-card.md), como valores de entidade regulares. Os [Tipos de dados de Ações e Geografia](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) disponíveis através da interface do usuário do Excel são valores de entidade vinculados.
@@ -129,6 +133,8 @@ const myImage: Excel.WebImageCellValue = {
     basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
+
+Experimente tipos de dados de imagem da [Web abrindo Script Lab](../overview/explore-with-script-lab.md) e selecionando os tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml) snippet de imagens da Web em nossa **biblioteca de Exemplos**.
 
 ## <a name="improved-error-support"></a>Suporte a erros aprimorado
 
@@ -153,9 +159,18 @@ Veja a seguir uma lista de todos os objetos de erro com suporte expandido por me
 
 Cada um dos objetos de erro pode acessar uma enumeração por meio da propriedade `errorSubType`, e essa enumeração contém dados adicionais sobre o erro. Por exemplo, o objeto de erro `BlockedErrorCellValue` pode acessar a enumeração [BlockedErrorCellValueSubType](/javascript/api/excel/excel.blockederrorcellvaluesubtype). O enumeração `BlockedErrorCellValueSubType` oferece dados adicionais sobre o que causou o erro.
 
+Saiba mais sobre os objetos de erro de tipos de dados verificando os tipos de dados [:](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml) defina o snippet de valores de erro em nossa [biblioteca Script Lab](../overview/explore-with-script-lab.md) **Exemplos**.
+
+## <a name="next-steps"></a>Próximas etapas
+
+Saiba como os tipos de dados de entidade estendem o potencial dos suplementos do Excel além de uma grade bidimensional com o artigo Usar cartões com tipos de dados de valor [de](excel-data-types-entity-card.md) entidade.
+
+Use o exemplo Criar e explorar tipos de dados no [Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) em nosso repositório [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) para experimentar mais profundamente os tipos de dados criando e fazendo sideload de um suplemento que cria e edita tipos de dados em uma pasta de trabalho.
+
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral dos tipos de dados em suplementos do Excel](excel-data-types-overview.md)
 - [Usar cartões com tipos de dados de valor de entidade](excel-data-types-entity-card.md)
-- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Criar e explorar tipos de dados no Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Funções e tipos de dados personalizados](custom-functions-data-types-concepts.md)
+- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
