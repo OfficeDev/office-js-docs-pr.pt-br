@@ -2,52 +2,49 @@
 title: Criar um suplemento do Outlook para um provedor de reunião online
 description: Discute como configurar um suplemento do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 10/17/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f422107d69dd3cdcc9a01feaee0b97dcd7e5e1f3
-ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.openlocfilehash: 7c2cdb9f6369fd851a13fe45df132482b0ccdc0e
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2022
-ms.locfileid: "68607573"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767179"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook para um provedor de reunião online
 
-Configurar uma reunião online é uma experiência fundamental para um usuário do Outlook e é fácil criar uma reunião do [Teams com o Outlook](/microsoftteams/teams-add-in-for-outlook). No entanto, criar uma reunião online no Outlook com um serviço que não seja da Microsoft pode ser complicado. Ao implementar esse recurso, os provedores de serviços podem simplificar a criação e a experiência de ingresso na reunião online para os usuários do suplemento do Outlook.
+Configurar uma reunião online é uma experiência fundamental para um usuário do Outlook e é fácil [criar uma reunião do Teams com o Outlook](/microsoftteams/teams-add-in-for-outlook). No entanto, criar uma reunião online no Outlook com um serviço que não seja da Microsoft pode ser complicado. Ao implementar esse recurso, os provedores de serviços podem simplificar a criação de reuniões online e a experiência de junção para os usuários do suplemento do Outlook.
 
 > [!IMPORTANT]
-> Esse recurso é compatível com Outlook na Web, Windows, Mac, Android e iOS com uma assinatura do Microsoft 365.
+> Esse recurso tem suporte em Outlook na Web, Windows, Mac, Android e iOS com uma assinatura do Microsoft 365.
 
-Neste artigo, você aprenderá a configurar seu suplemento do Outlook para permitir que os usuários organizem e ingressem em uma reunião usando seu serviço de reunião online. Ao longo deste artigo, usaremos um provedor de serviços de reunião online fictício, "Contoso".
+Neste artigo, você aprenderá a configurar seu suplemento do Outlook para permitir que os usuários organizem e participem de uma reunião usando seu serviço de reunião online. Ao longo deste artigo, usaremos um provedor de serviços de reunião online fictício, "Contoso".
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
-
-> [!NOTE]
-> Se você quiser usar o manifesto do [Teams para Suplementos do Office (](../develop/json-manifest-overview.md)versão prévia), conclua o início rápido alternativo no Outlook com um manifesto do [Teams (](../quickstarts/outlook-quickstart-json-manifest.md)versão prévia), mas ignore todas as seções após a seção  Experimentar.
+Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de suplemento com o gerador Yeoman para Suplementos do Office.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o manifesto. A marcação difere dependendo de duas variáveis:
+Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o manifesto. A marcação é diferente dependendo de duas variáveis:
 
 - O tipo de plataforma de destino; móvel ou não móvel.
-- O tipo de manifesto; Manifesto xml ou [do Teams para suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
+- O tipo de manifesto; [XML ou o manifesto do Teams para suplementos do Office (versão prévia)](../develop/json-manifest-overview.md).
 
-Se o suplemento usar um manifesto XML e o suplemento só tiver suporte no Outlook na Web, no Windows e no Mac, selecione a guia **Windows, Mac e** Web para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione **a guia** Móvel.
+Se o suplemento usar um manifesto XML e o suplemento só tiver suporte em Outlook na Web, Windows e Mac, selecione a guia **Windows, Mac e Web** para obter diretrizes. No entanto, se o suplemento também tiver suporte no Outlook no Android e no iOS, selecione a guia **Móvel** .
 
-Se o suplemento usar o manifesto do Teams (versão prévia), selecione a guia **Manifesto do Teams (versão prévia do** desenvolvedor).
+Se o suplemento usar o manifesto do Teams (versão prévia), selecione a guia **Manifesto do Teams (versão prévia do desenvolvedor).**
 
-> [!NOTE]
-> No momento, o manifesto do Teams (versão prévia) só tem suporte no Outlook no Windows. Estamos trabalhando para trazer suporte para outras plataformas, incluindo plataformas móveis.
+> [!IMPORTANT]
+> Os provedores de reunião online ainda não têm suporte para o manifesto do Teams (versão prévia). Estamos trabalhando para fornecer esse suporte em breve.
 
 # <a name="windows-mac-web"></a>[Windows, Mac, Web](#tab/non-mobile)
 
 1. No editor de código, abra o projeto de início rápido do Outlook que você criou.
 
-1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
+1. Abra o arquivo **manifest.xml** localizado na raiz do projeto.
 
-1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas abertas e fechadas) e substitua-o pelo XML a seguir.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -113,13 +110,13 @@ Se o suplemento usar o manifesto do Teams (versão prévia), selecione a guia **
 
 # <a name="mobile"></a>[Dispositivo móvel](#tab/mobile)
 
-Para permitir que os usuários criem uma reunião online a partir de seu dispositivo móvel, o ponto de extensão [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) é configurado no manifesto sob o elemento pai **\<MobileFormFactor\>**. Esse ponto de extensão não tem suporte em outros fatores forma.
+Para permitir que os usuários criem uma reunião online a partir de seu dispositivo móvel, o [ponto de extensão MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) está configurado no manifesto no elemento **\<MobileFormFactor\>** pai . Esse ponto de extensão não tem suporte em outros fatores de formulário.
 
 1. No editor de código, abra o projeto de início rápido do Outlook que você criou.
 
-1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
+1. Abra o arquivo **manifest.xml** localizado na raiz do projeto.
 
-1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas abertas e fechadas) e substitua-o pelo XML a seguir.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -210,9 +207,12 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
 
 # <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
 
-1. Abra o **arquivo manifest.json** .
+> [!IMPORTANT]
+> Os provedores de reunião online ainda não têm suporte para o [manifesto do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Essa guia é para uso futuro.
 
-1. Localize *o primeiro* objeto na matriz "authorization.permissions.resourceSpecific" e defina sua propriedade "name" como "MailboxItem.ReadWrite.User". Deve ser assim quando terminar.
+1. Abra o arquivo **manifest.json** .
+
+1. Localize o *primeiro* objeto na matriz "authorization.permissions.resourceSpecific" e defina sua propriedade "name" como "MailboxItem.ReadWrite.User". Deve ser assim quando terminar.
 
     ```json
     {
@@ -221,7 +221,7 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
     }
     ```
 
-1. Na matriz "validDomains", altere a URL para "https://contoso.com", que é a URL do provedor de reunião online fictício. A matriz deverá ter esta aparência quando você terminar.
+1. Na matriz "validDomains", altere a URL para "https://contoso.com", que é a URL do provedor de reunião online fictício. A matriz deve ser assim quando você terminar.
 
     ```json
     "validDomains": [
@@ -231,10 +231,10 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
 
 1. Adicione o objeto a seguir à matriz "extensions.runtimes". Observe o seguinte sobre este código.
 
-   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.3" para que o runtime não seja iniciado em plataformas e versões do Office em que não há suporte para esse recurso.
+   - A "minVersion" do conjunto de requisitos da caixa de correio está definida como "1.3" para que o runtime não seja iniciado em plataformas e versões do Office em que esse recurso não tenha suporte.
    - A "id" do runtime é definida como o nome descritivo "online_meeting_runtime".
-   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando de função.
-   - A propriedade "lifetime" é definida como "short", o que significa que o runtime é iniciado quando o botão de comando de função é selecionado e desligado quando a função é concluída. (Em determinados casos raros, o runtime é desligado antes que o manipulador seja concluído. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
+   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando da função.
+   - A propriedade "lifetime" é definida como "curta", o que significa que o runtime é iniciado quando o botão de comando da função é selecionado e é desligado quando a função é concluída. (Em certos casos raros, o runtime é desligado antes da conclusão do manipulador. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
    - Há uma ação para executar uma função chamada "insertContosoMeeting". Você criará essa função em uma etapa posterior.
 
     ```json
@@ -268,11 +268,11 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
 
 1. Substitua a matriz "extensions.ribbons" pelo seguinte. Observe o seguinte sobre esta marcação.
 
-   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.3" para que as personalizações da faixa de opções não apareçam em plataformas e versões do Office em que não há suporte para esse recurso.
-   - A matriz "contexts" especifica que a faixa de opções está disponível somente na janela do organizador de detalhes da reunião.
-   - Haverá um grupo de controle personalizado na guia da faixa de opções padrão (da janela do organizador de detalhes da reunião) rotulado como **reunião da Contoso**.
-   - O grupo terá um botão rotulado **Adicionar uma reunião da Contoso**.
-   - A "actionId" do botão foi definida como "insertContosoMeeting", que corresponde à "id" da ação que você criou na etapa anterior.
+   - A "minVersion" do conjunto de requisitos da caixa de correio é definida como "1.3" para que as personalizações de faixa de opções não apareçam em plataformas e versões do Office em que esse recurso não tem suporte.
+   - A matriz "contextos" especifica que a faixa de opções está disponível apenas na janela organizador de detalhes da reunião.
+   - Haverá um grupo de controle personalizado na guia faixa de opções padrão (da janela organizador de detalhes da reunião) rotulada de **reunião contoso**.
+   - O grupo terá um botão rotulado **Adicionar uma reunião contoso**.
+   - O "actionId" do botão foi definido como "insertContosoMeeting", que corresponde à "id" da ação criada na etapa anterior.
 
     ```json
     "ribbons": [
@@ -342,15 +342,15 @@ Para permitir que os usuários criem uma reunião online a partir de seu disposi
 ---
 
 > [!TIP]
-> Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md) e Adicionar suporte para comandos de suplemento [para Outlook Mobile](add-mobile-support.md).
+> Para saber mais sobre manifestos para suplementos do Outlook, confira [Manifestos de suplementos do Outlook](manifests.md) e [Adicionar suporte para comandos de suplemento para o Outlook Mobile](add-mobile-support.md).
 
 ## <a name="implement-adding-online-meeting-details"></a>Implementar a adição de detalhes da reunião online
 
-Nesta seção, saiba como o script de suplemento pode atualizar a reunião de um usuário para incluir detalhes da reunião online. A seguir, aplica-se a todas as plataformas com suporte.
+Nesta seção, saiba como seu script de suplemento pode atualizar a reunião de um usuário para incluir detalhes da reunião online. O seguinte se aplica a todas as plataformas com suporte.
 
 1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** no editor de código.
 
-1. Substitua todo o conteúdo do arquivo **commands.js** pelo JavaScript a seguir.
+1. Substitua todo o conteúdo do **arquivocommands.js** pelo JavaScript a seguir.
 
     ```js
     // 1. How to construct online meeting details.
@@ -414,52 +414,52 @@ Nesta seção, saiba como o script de suplemento pode atualizar a reunião de um
 
 ## <a name="testing-and-validation"></a>Teste e validação
 
-Siga as diretrizes usuais para [testar e validar](testing-and-tips.md) seu suplemento e, em seguida, fazer [sideload](sideload-outlook-add-ins-for-testing.md) do manifesto no Outlook na Web, Windows ou Mac. Se o suplemento também der suporte a dispositivos móveis, reinicie o Outlook em seu dispositivo Android ou iOS após o sideload. Depois que o suplemento for sideload, crie uma nova reunião e verifique se a alternância do Microsoft Teams ou skype foi substituída pela sua.
+Siga as diretrizes habituais para [testar e validar o suplemento](testing-and-tips.md) e, em seguida, [carregar](sideload-outlook-add-ins-for-testing.md) o manifesto em Outlook na Web, Windows ou Mac. Se o suplemento também for compatível com o celular, reinicie o Outlook em seu dispositivo Android ou iOS após o sideload. Depois que o suplemento estiver sideload, crie uma nova reunião e verifique se o alternância do Microsoft Teams ou do Skype é substituído pelo seu.
 
 ### <a name="create-meeting-ui"></a>Criar interface do usuário da reunião
 
-Como organizador da reunião, você deverá ver telas semelhantes às três imagens a seguir ao criar uma reunião.
+Como organizador da reunião, você deve ver telas semelhantes às três imagens a seguir ao criar uma reunião.
 
-[![A tela criar reunião no Android com a opção Contoso desativada.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![A tela criar reunião no Android com uma alternância de carregamento da Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![A tela criar reunião no Android com a opção Contoso ativada.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![A tela criar reunião no Android com o alternância contoso.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![A tela criar reunião no Android com um alternância contoso de carregamento.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![A tela criar reunião no Android com o alternância Contoso.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Ingressar na interface do usuário da reunião
 
-Como participante da reunião, você deverá ver uma tela semelhante à imagem a seguir ao exibir a reunião.
+Como participante da reunião, você deve ver uma tela semelhante à imagem a seguir ao exibir a reunião.
 
-[![A tela ingressar na reunião no Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![A tela de reunião de junção no Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> O **botão** Ingressar só tem suporte no Outlook na Web, Mac, Android e iOS. Se você vir apenas um link de reunião, mas não vir o botão  Ingressar em um cliente com suporte, pode ser que o modelo de reunião online para seu serviço não esteja registrado em nossos servidores. Consulte a [seção Registrar seu modelo de reunião online](#register-your-online-meeting-template) para obter detalhes.
+> O botão **Ingressar** só tem suporte em Outlook na Web, Mac, Android e iOS. Se você vir apenas um link de reunião, mas não vir o botão **Ingressar** em um cliente com suporte, pode ser que o modelo de reunião online para seu serviço não esteja registrado em nossos servidores. Consulte a seção [Registrar seu modelo de reunião online](#register-your-online-meeting-template) para obter detalhes.
 
 ## <a name="register-your-online-meeting-template"></a>Registrar seu modelo de reunião online
 
-Registrar seu suplemento de reunião online é opcional. Ela só se aplica se você quiser exibir o botão **Ingressar** em reuniões, além do link da reunião. Depois de desenvolver seu suplemento de reunião online e quiser registrá-lo, crie um problema do GitHub usando as diretrizes a seguir. Entraremos em contato com você para coordenar uma linha do tempo de registro.
+Registrar seu suplemento de reunião online é opcional. Ela só se aplica se você quiser exibir o botão **Ingressar** em reuniões, além do link de reunião. Depois de desenvolver seu suplemento de reunião online e desejar registrá-lo, crie um problema do GitHub usando as diretrizes a seguir. Entraremos em contato com você para coordenar uma linha do tempo de registro.
 
 > [!IMPORTANT]
-> O **botão** Ingressar só tem suporte no Outlook na Web, Mac, Android e iOS.
+> O botão **Ingressar** só tem suporte em Outlook na Web, Mac, Android e iOS.
 
 1. Crie um [novo problema do GitHub](https://github.com/OfficeDev/office-js/issues/new).
-1. Defina **o Título** do novo problema como "Outlook: Registrar o modelo de reunião online para meu serviço", substituindo `my-service` pelo nome do serviço.
-1. No corpo do problema, substitua `newBody` o texto existente pela cadeia de caracteres definida na variável ou semelhante na seção Implementar a adição de detalhes da reunião [online](#implement-adding-online-meeting-details) anteriormente neste artigo.
+1. Defina o **título** do novo problema como "Outlook: registre o modelo de reunião online para meu serviço", substituindo `my-service` pelo nome do serviço.
+1. No corpo do problema, substitua o texto existente pela cadeia de caracteres definida na `newBody` variável ou semelhante da seção [Implementar a adição de detalhes da reunião online](#implement-adding-online-meeting-details) anteriormente neste artigo.
 1. Clique **em Enviar novo problema**.
 
-![Uma nova tela de problema do GitHub com o conteúdo de exemplo da Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
+![Uma nova tela de problemas do GitHub com o conteúdo de exemplo da Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>APIs disponíveis
 
 As APIs a seguir estão disponíveis para esse recurso.
 
-- APIs do Organizador de Compromissos
+- APIs organizadoras de compromissos
   - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1)))
   - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) ([Hora](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) ([Local](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Hora](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Assunto](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
   - [Office.context.roamingSettings](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
-- Manipular fluxo de autenticação
+- Manipular fluxo de auth
   - [APIs de caixa de diálogo](../develop/dialog-api-in-office-add-ins.md)
 
 ## <a name="restrictions"></a>Restrições
@@ -467,10 +467,10 @@ As APIs a seguir estão disponíveis para esse recurso.
 Várias restrições se aplicam.
 
 - Aplicável somente a provedores de serviços de reunião online.
-- Somente suplementos instalados pelo administrador aparecerão na tela de composição da reunião, substituindo a opção padrão do Teams ou do Skype. Os suplementos instalados pelo usuário não serão ativados.
-- O ícone de suplemento deve estar em escala de cinza usando código hexadecimal `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
-- Há suporte para apenas um comando de função no modo Organizador de Compromissos (redigir).
-- O suplemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período de tempo limite de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo que o suplemento abriu para autenticação, por exemplo, é excluído do período de tempo limite.
+- Somente os suplementos instalados pelo administrador serão exibidos na tela de composição da reunião, substituindo a opção padrão teams ou Skype. Os suplementos instalados pelo usuário não serão ativados.
+- O ícone de suplemento deve estar em escala de cinza usando o código `#919191` hex ou o equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
+- Há suporte para apenas um comando de função no modo Organizador de Compromissos (compose).
+- O suplemento deve atualizar os detalhes da reunião no formulário de compromisso dentro do período limite de um minuto. No entanto, qualquer tempo gasto em uma caixa de diálogo, o suplemento aberto para autenticação, por exemplo, é excluído do período limite.
 
 ## <a name="see-also"></a>Confira também
 

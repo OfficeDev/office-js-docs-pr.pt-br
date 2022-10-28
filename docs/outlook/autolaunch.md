@@ -2,14 +2,14 @@
 title: Configurar o suplemento do Outlook para ativação baseada em eventos
 description: Saiba como configurar o suplemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ce2821ed5d226ff2c6a2b3c718d5711689523ac6
-ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
+ms.openlocfilehash: b5ae744350389ed222284808a67a9b7c30211136
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2022
-ms.locfileid: "68664676"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767172"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurar o suplemento do Outlook para ativação baseada em eventos
 
@@ -21,6 +21,9 @@ Ao final deste passo a passo, você terá um suplemento que é executado sempre 
 > O suporte para esse recurso foi introduzido no [conjunto de requisitos 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), com eventos adicionais agora disponíveis em conjuntos de requisitos subsequentes. Para obter detalhes sobre o conjunto de requisitos mínimos de um evento e os clientes e plataformas que dão suporte a ele, consulte [Eventos com suporte](#supported-events) e [conjuntos de requisitos com suporte por servidores do Exchange e clientes do Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
 > A ativação baseada em eventos não tem suporte no Outlook no iOS ou no Android.
+
+> [!IMPORTANT]
+> A ativação baseada em eventos ainda não tem suporte para o manifesto do [Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Estamos trabalhando para fornecer esse suporte em breve.
 
 ## <a name="supported-events"></a>Eventos com suporte
 
@@ -37,10 +40,10 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 |`OnAppointmentTimeChanged`|appointmentTimeChanged|Ao alterar a data/hora durante a composição de um compromisso.<br><br>Objeto de dados específico do evento: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
 |`OnAppointmentRecurrenceChanged`|appointmentRecurrenceChanged|Ao adicionar, alterar ou remover os detalhes de recorrência durante a composição de um compromisso. Se a data/hora for alterada, o `OnAppointmentTimeChanged` evento também será acionado.<br><br>Objeto de dados específico do evento: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
 |`OnInfoBarDismissClicked`|infoBarDismissClicked|Ao descartar uma notificação ao compor uma mensagem ou item de compromisso. Somente o suplemento que adicionou a notificação será notificado.<br><br>Objeto de dados específico do evento: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
-|`OnMessageSend`|messageSending|Ao enviar um item de mensagem. Para saber mais, confira o [passo a passo alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web|
-|`OnAppointmentSend`|appointmentSending|Ao enviar um item de compromisso. Para saber mais, confira o [passo a passo alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web|
-|`OnMessageCompose`|messageComposeOpened|Ao compor uma nova mensagem (inclui responder, responder tudo e encaminhar) ou editar um rascunho.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web|
-|`OnAppointmentOrganizer`|appointmentOrganizerOpened|Ao criar um novo compromisso ou editar um existente.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web|
+|`OnMessageSend`|messageSending|Ao enviar um item de mensagem. Para saber mais, confira o [passo a passo alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
+|`OnAppointmentSend`|appointmentSending|Ao enviar um item de compromisso. Para saber mais, confira o [passo a passo alertas inteligentes](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
+|`OnMessageCompose`|messageComposeOpened|Ao compor uma nova mensagem (inclui responder, responder tudo e encaminhar) ou editar um rascunho.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
+|`OnAppointmentOrganizer`|appointmentOrganizerOpened|Ao criar um novo compromisso ou editar um existente.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>– Navegador da Web<br>- Nova interface do usuário do Mac|
 
 > [!NOTE]
 > <sup>1</sup> Os suplementos baseados em eventos no Outlook no Windows exigem um mínimo de Windows 10 versão 1903 (Build 18362) ou Windows Server 2019 Versão 1903 para execução.
@@ -48,9 +51,6 @@ A tabela a seguir lista os eventos que estão disponíveis no momento e os clien
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
 Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de suplemento com o [gerador Yeoman para Suplementos do Office](../develop/yeoman-generator-overview.md).
-
-> [!NOTE]
-> Se você quiser usar o [manifesto do Teams para suplementos do Office (versão prévia),](../develop/json-manifest-overview.md) conclua o início rápido alternativo no [Outlook com um manifesto do Teams (versão prévia),](../quickstarts/outlook-quickstart-json-manifest.md) mas ignore todas as seções após a seção **Experimentar** .
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -184,6 +184,9 @@ Para habilitar a ativação baseada em evento do suplemento, você deve configur
 O Outlook no Windows usa um arquivo JavaScript, enquanto Outlook na Web e na nova interface do usuário do Mac usam um arquivo HTML que pode fazer referência ao mesmo arquivo JavaScript. Você deve fornecer referências a esses dois arquivos no `Resources` nó do manifesto, pois a plataforma do Outlook finalmente determina se deve usar HTML ou JavaScript com base no cliente do Outlook. Como tal, para configurar o tratamento de eventos, forneça o local do HTML no elemento e, em **\<Runtime\>** seguida, em seu `Override` elemento filho forneça o local do arquivo JavaScript inlined ou referenciado pelo HTML.
 
 # <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> A ativação baseada em eventos ainda não tem suporte para o [manifesto do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Essa guia é para uso futuro.
 
 1. Abra o arquivo **manifest.json** .
 

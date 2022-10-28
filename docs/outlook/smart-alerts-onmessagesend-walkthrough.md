@@ -2,14 +2,14 @@
 title: Usar alertas inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 description: Saiba como lidar com os eventos enviados no suplemento do Outlook usando a ativação baseada em eventos.
 ms.topic: article
-ms.date: 10/19/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f047323be0752023eee0c357f0a2e90627c0b896
-ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
+ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2022
-ms.locfileid: "68664648"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767165"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Usar alertas inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 
@@ -27,9 +27,6 @@ O `OnMessageSend` evento está disponível por meio do recurso de ativação bas
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
 Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), que cria um projeto de suplemento com o [gerador Yeoman para suplementos do Office](../develop/yeoman-generator-overview.md).
-
-> [!NOTE]
-> Se você quiser usar o [manifesto do Teams para suplementos do Office (versão prévia),](../develop/json-manifest-overview.md) conclua o início rápido alternativo no [Outlook com um manifesto do Teams (versão prévia),](../quickstarts/outlook-quickstart-json-manifest.md) mas ignore todas as seções após a seção **Experimentar** .
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -148,6 +145,9 @@ Para configurar o manifesto, selecione a guia para o tipo de manifesto que você
 > - Para saber mais sobre manifestos para suplementos do Outlook, confira [Manifestos de suplementos do Outlook](manifests.md).
 
 # <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Ainda não há suporte para alertas inteligentes para o [manifesto do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Essa guia é para uso futuro.
 
 1. Abra o arquivo **manifest.json** .
 
@@ -431,10 +431,13 @@ Embora uma mensagem de diálogo Alertas Inteligentes possa ser alterada para se 
 
 Embora alertas inteligentes e o [recurso de envio](outlook-on-send-addins.md) forneçam aos seus usuários a oportunidade de melhorar suas mensagens e convites de reunião antes de serem enviados, alertas inteligentes são um recurso mais recente que oferece mais flexibilidade com a forma como você solicita aos usuários mais ações. As principais diferenças entre os dois recursos são descritas na tabela a seguir.
 
+> [!IMPORTANT]
+> Ainda não há suporte para alertas inteligentes para o manifesto do Teams (versão prévia). Estamos trabalhando para fornecer esse suporte em breve.
+
 |Atributo|Alertas Inteligentes|Em envio|
 |-----|-----|-----|
 |**Conjunto de requisitos com suporte mínimo**|[Caixa de correio 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Caixa de correio 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Clientes do Outlook com suporte**|-Windows<br>– Navegador da Web (interface do usuário moderna)|-Windows<br>– Navegador da Web (interface do usuário clássica e moderna)<br>- Mac (interface do usuário clássica e nova) |
+|**Clientes do Outlook com suporte**|-Windows<br>– Navegador da Web (interface do usuário moderna)<br>- Mac (nova interface do usuário)|-Windows<br>– Navegador da Web (interface do usuário clássica e moderna)<br>- Mac (interface do usuário clássica e nova) |
 |**Eventos com suporte**|**Manifesto XML**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Manifesto do Teams (versão prévia)**<br>- "messageSending"<br>- "appointmentSending"|**Manifesto XML**<br>- `ItemSend`<br><br>**Manifesto do Teams (versão prévia)**<br>– Sem suporte|
 |**Propriedade de extensão manifest**|**Manifesto XML**<br>- `LaunchEvent`<br><br>**Manifesto do Teams (versão prévia)**<br>- "AutoRunEvents"|**Manifesto XML**<br>- `Events`<br><br>**Manifesto do Teams (versão prévia)**<br>– Sem suporte|
 |**Opções de modo de envio com suporte**|– Usuário prompt<br>- Bloco macio<br>- Bloquear (sem suporte se o suplemento usar um manifesto do Teams (versão prévia))|Bloquear|

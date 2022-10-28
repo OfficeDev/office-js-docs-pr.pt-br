@@ -1,17 +1,17 @@
 ---
-title: Implementar append-on-send em seu suplemento do Outlook
-description: Saiba como implementar o recurso de acréscimo ao enviar em seu suplemento do Outlook.
+title: Implementar o append-on-send em seu suplemento do Outlook
+description: Saiba como implementar o recurso append-on-send no suplemento do Outlook.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: c8239634b6c9ca281255caf89276fb1b454efc84
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541140"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767158"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar append-on-send em seu suplemento do Outlook
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar o append-on-send em seu suplemento do Outlook
 
 Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem é enviada.
 
@@ -20,10 +20,7 @@ Ao final deste passo a passo, você terá um suplemento do Outlook que pode inse
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
-Conclua [o início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) , que cria um projeto de suplemento com o gerador Yeoman para suplementos do Office.
-
-> [!NOTE]
-> Se você quiser usar o manifesto do [Teams para Suplementos do Office (](../develop/json-manifest-overview.md)versão prévia), conclua o início rápido alternativo no Outlook com um manifesto do [Teams (](../quickstarts/outlook-quickstart-json-manifest.md)versão prévia), mas ignore todas as seções após a seção  Experimentar.
+Conclua o [início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) que cria um projeto de suplemento com o gerador Yeoman para Suplementos do Office.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
@@ -31,15 +28,15 @@ Para configurar o manifesto, abra a guia para o tipo de manifesto que você est�
 
 # <a name="xml-manifest"></a>[Manifesto XML](#tab/xmlmanifest)
 
-Para habilitar o recurso de acréscimo ao enviar em seu suplemento, `AppendOnSend` você deve incluir a permissão na coleção [de ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
+Para habilitar o recurso append-on-send em seu suplemento, você deve incluir a `AppendOnSend` permissão na coleção de [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
-Para esse cenário, em vez de executar `action` a função ao escolher  o botão Executar uma ação, você executará a `appendOnSend` função.
+Para esse cenário, em vez de executar a `action` função ao escolher o botão **Executar uma ação** , você executará a `appendOnSend` função.
 
 1. No editor de código, abra o projeto de início rápido.
 
-1. Abra o **manifest.xml** arquivo localizado na raiz do seu projeto.
+1. Abra o arquivo **manifest.xml** localizado na raiz do projeto.
 
-1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas de abertura e fechamento) e substitua-o pelo XML a seguir.
+1. Selecione o nó inteiro **\<VersionOverrides\>** (incluindo marcas abertas e fechadas) e substitua-o pelo XML a seguir.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -128,14 +125,17 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
 
 # <a name="teams-manifest-developer-preview"></a>[Manifesto do Teams (versão prévia do desenvolvedor)](#tab/jsonmanifest)
 
+> [!IMPORTANT]
+> Ainda não há suporte para o [manifesto do Teams para Suplementos do Office (versão prévia)](../develop/json-manifest-overview.md). Essa guia é para uso futuro.
+
 1. Abra o arquivo manifest.json.
 
 1. Adicione o objeto a seguir à matriz "extensions.runtimes". Observe o seguinte sobre este código.
 
-   - O "minVersion" do conjunto de requisitos de Caixa de Correio é definido como "1.9" para que o suplemento não possa ser instalado em plataformas e versões do Office em que esse recurso não tem suporte. 
+   - A "minVersion" do conjunto de requisitos da caixa de correio é definida como "1.9" para que o suplemento não possa ser instalado em plataformas e versões do Office em que esse recurso não tem suporte. 
    - A "id" do runtime é definida como o nome descritivo "function_command_runtime".
-   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando de função.
-   - A propriedade "lifetime" é definida como "short", o que significa que o runtime é iniciado quando o botão de comando de função é selecionado e desligado quando a função é concluída. (Em determinados casos raros, o runtime é desligado antes que o manipulador seja concluído. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
+   - A propriedade "code.page" é definida como a URL do arquivo HTML sem interface do usuário que carregará o comando da função.
+   - A propriedade "lifetime" é definida como "curta", o que significa que o runtime é iniciado quando o botão de comando da função é selecionado e é desligado quando a função é concluída. (Em certos casos raros, o runtime é desligado antes da conclusão do manipulador. Consulte [Runtimes em Suplementos do Office](../testing/runtimes.md).)
    - Há uma ação para executar uma função chamada "appendDisclaimerOnSend". Você criará essa função em uma etapa posterior.
 
     ```json
@@ -167,7 +167,7 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
     }
     ```
 
-1. Na matriz "authorization.permissions.resourceSpecific", adicione o objeto a seguir. Certifique-se de que ele esteja separado de outros objetos na matriz com uma vírgula.
+1. Na matriz "authorization.permissions.resourceSpecific", adicione o objeto a seguir. Certifique-se de que ele está separado de outros objetos na matriz com uma vírgula.
 
     ```json
     {
@@ -179,20 +179,20 @@ Para esse cenário, em vez de executar `action` a função ao escolher  o botão
 ---
 
 > [!TIP]
-> Para saber mais sobre manifestos para suplementos do Outlook, consulte [manifestos de suplemento do Outlook](manifests.md).
+> Para saber mais sobre manifestos para suplementos do Outlook, confira [Manifestos de suplementos do Outlook](manifests.md).
 
-## <a name="implement-append-on-send-handling"></a>Implementar a manipulação de acréscimo ao enviar
+## <a name="implement-append-on-send-handling"></a>Implementar o tratamento de apêndice em envio
 
-Em seguida, implemente acrescentando o evento de envio.
+Em seguida, implemente a anexação no evento de envio.
 
 > [!IMPORTANT]
-> Se o suplemento também [`ItemSend`](outlook-on-send-addins.md)implementa a manipulação de eventos ao enviar usando, `AppendOnSendAsync` chamar o manipulador ao enviar retornará um erro, pois não há suporte para esse cenário.
+> Se o suplemento também implementar o [tratamento de eventos no envio usando `ItemSend`](outlook-on-send-addins.md), chamar `AppendOnSendAsync` o manipulador de envio retornará um erro, pois esse cenário não terá suporte.
 
-Para esse cenário, você implementará anexar um aviso de isenção de responsabilidade ao item quando o usuário enviar.
+Para esse cenário, você implementará a anexação de uma isenção de responsabilidade ao item quando o usuário enviar.
 
 1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** no editor de código.
 
-1. Após a `action` função, insira a seguinte função JavaScript.
+1. Após a `action` função, insira a função JavaScript a seguir.
 
     ```js
     function appendDisclaimerOnSend(event) {
@@ -226,17 +226,17 @@ Para esse cenário, você implementará anexar um aviso de isenção de responsa
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciado se ele ainda não estiver em execução e seu suplemento será sideload.
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar esse comando, o servidor Web local será iniciado se ele ainda não estiver em execução e seu suplemento for sideload.
 
     ```command&nbsp;line
     npm start
     ```
 
-1. Crie uma nova mensagem e adicione-se à **linha** Para.
+1. Crie uma nova mensagem e adicione-se à linha **To** .
 
-1. No menu de faixa de opções ou estouro, escolha **Executar uma ação**.
+1. No menu faixa de opções ou estouro, escolha **Executar uma ação**.
 
-1. Envie a mensagem e, em seguida, abra-a na  pasta Caixa de Entrada ou Itens Enviados para exibir o aviso de isenção de responsabilidade acrescentado.
+1. Envie a mensagem e abra-a na **caixa de entrada** ou na pasta **Itens Enviados** para exibir o aviso de isenção de responsabilidade acrescentado.
 
     ![Uma mensagem de exemplo com o aviso de isenção de responsabilidade acrescentado ao enviar Outlook na Web.](../images/outlook-web-append-disclaimer.png)
 
