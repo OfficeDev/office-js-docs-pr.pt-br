@@ -1,12 +1,12 @@
 > [!IMPORTANT]
-> No momento, os atalhos de teclado só têm suporte Excel e somente nessas plataformas e builds:
+> Atualmente, os atalhos de teclado só têm suporte no Excel e somente nessas plataformas e builds:
 >
->- Excel no Windows: Versão 2102 (Build 13801.20632)
->- Excel no Mac: 16.48
+>- Excel no Windows: versão 2102 (Build 13801.20632) e posterior
+>- Excel no Mac: 16.48 e posterior
 >- Excel Online
 
 > [!NOTE]
-> Os atalhos de teclado funcionam somente em plataformas que suportam os seguintes conjuntos de requisitos. Para obter mais informações sobre conjuntos de requisitos e como trabalhar com eles, consulte [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
+> Os atalhos de teclado funcionam apenas em plataformas que dão suporte aos seguintes conjuntos de requisitos. Para saber mais sobre os conjuntos de requisitos e como trabalhar com eles, consulte [Especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md).
 >
 > - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
-> - Também será necessário se o complemento permitir que o usuário personalize atalhos de teclado: [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+> - Também necessário se o suplemento permitir que o usuário personalize atalhos de teclado: [TecladoShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
