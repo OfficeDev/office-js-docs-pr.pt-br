@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples com um manifesto 
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 407c4ccd4249008c203c760a01d8579989a12e4c
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: fcb553e10649c6cdcf430267e72f67ece8a5cb3f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68467220"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810054"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Criar um suplemento do Outlook com um manifesto do Teams (versão prévia)
 
@@ -18,7 +18,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 > [!NOTE]
 > O novo manifesto está disponível para pré-visualização e está sujeito a alterações com base nos comentários. Incentivamos os desenvolvedores de suplementos experientes a experimentá-lo. O manifesto de visualização não deve ser usado em suplementos de produção.
 
-A versão prévia só tem suporte no Office da assinatura do Microsoft 365 no Windows.
+A visualização só tem suporte no Office baixado de uma assinatura do Microsoft 365 e instalado no Windows.
 
 > [!TIP]
 > Se você quiser criar um suplemento do Outlook usando o manifesto XML, confira [Compilar seu primeiro suplemento do Outlook](outlook-quickstart.md).
@@ -177,7 +177,7 @@ Adicione um botão personalizado à faixa de opções que insere texto em um cor
 
 1. Para gravar em uma mensagem, as permissões do suplemento precisam ser geradas. Role até a propriedade `authorization.permissions.resourceSpecific[0].name` e altere o valor para `MailboxItem.ReadWrite.User`.
 
-1. Quando um comando de suplemento executa o código em vez de abrir um painel de tarefas, ele deve executar o código em um runtime separado do modo de exibição da Web inserido em que o código do painel de tarefas é executado. Portanto, o manifesto deve especificar um runtime adicional. Role até a propriedade `extension.runtimes` e adicione o seguinte objeto à matriz `runtimes`. Certifique-se de colocar uma vírgula após o objeto que já está na matriz. Observe o seguinte sobre esta marcação.
+1. Quando um comando de suplemento executa o código em vez de abrir um painel de tarefas, ele deve executar o código em um runtime separado do webview inserido em que o código do painel de tarefas é executado. Portanto, o manifesto deve especificar um runtime adicional. Role até a propriedade `extension.runtimes` e adicione o seguinte objeto à matriz `runtimes`. Certifique-se de colocar uma vírgula após o objeto que já está na matriz. Observe o seguinte sobre esta marcação.
 
     - O valor da propriedade `actions[0].id` deve ser exatamente igual ao nome da função que você adicionou ao arquivo **commands.ts**, nesse caso, `insertHelloWorld`. Em uma etapa posterior, você se referirá ao item por essa ID.
 

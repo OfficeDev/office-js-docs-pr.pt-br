@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ea167f338834245975f2e752803e264ddb8da5e6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c10893d60f64d875d92aec979a5700630b2cf96c
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483930"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810243"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -16,7 +16,7 @@ Suplementos de conteúdo são superfícies que podem ser incorporadas diretament
 
 *Figura 1. Layout típico dos suplementos de conteúdo*
 
-![Layout típico para os complementos de conteúdo em um Office aplicativo.](../images/overview-with-app-content.png)
+![Layout típico para suplementos de conteúdo em um aplicativo do Office.](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -25,23 +25,23 @@ Suplementos de conteúdo são superfícies que podem ser incorporadas diretament
 
 ## <a name="variants"></a>Variantes
 
-Os tamanhos de Excel e PowerPoint de conteúdo Office área de trabalho e Microsoft 365 são especificados pelo usuário.
+Os tamanhos de suplemento de conteúdo para Excel e PowerPoint na área de trabalho do Office e em um navegador da Web são especificados pelo usuário.
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
-Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
 *Figura 2. Menu de personalidade no Windows*
 
-![Menu de personalidade de 12x32 pixels Windows desktop.](../images/personality-menu-win.png)
+![Menu de personalidade de 12x32 pixels na área de trabalho do Windows.](../images/personality-menu-win.png)
 
 No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço ocupado para 34 x 32 pixels, como mostrado.
 
 *Figura 3. Menu de personalidade no Mac*
 
-![Menu de personalidade de 34 x 32 pixels na área de trabalho mac.](../images/personality-menu-mac.png)
+![Menu de personalidade de 34x32 pixels na área de trabalho mac.](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implementação
 
@@ -49,9 +49,9 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
 
-- Verifique se o seu Office de usuário funcionará em um [aplicativo ou plataforma Office específico](/javascript/api/requirement-sets).
+- Verifique se seu Suplemento do Office funcionará em um [aplicativo ou plataforma específico do Office](/javascript/api/requirement-sets).
 - Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
-- Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
+- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## <a name="see-also"></a>Confira também
 

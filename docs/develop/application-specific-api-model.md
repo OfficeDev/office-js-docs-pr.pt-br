@@ -3,22 +3,22 @@ title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseada em promessas para suplementos do Excel, do OneNote e do Word.
 ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: d24b435318e1f462cd05ba25dbdd7f9a6018715f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092886"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810173"
 ---
 # <a name="application-specific-api-model"></a>Modelo de API específico do aplicativo
 
 Este artigo descreve como usar o modelo de API para criar suplementos no Excel, Word, PowerPoint e OneNote. Ele introduz os conceitos fundamentais do uso de APIs baseadas em promessas.
 
 > [!NOTE]
-> Esse modelo não tem suporte nos clientes do Office 2013. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](/javascript/api/requirement-sets).
+> Esse modelo não tem suporte para clientes do Office 2013 nem do Outlook. Use o [modelo de API Comum](office-javascript-api-object-model.md) para trabalhar com essas versões do Office. Para notas completas sobre disponibilidade de plataforma, confira [Disponibilidade de plataforma e de Aplicativo cliente do Office para Suplementos do Office](/javascript/api/requirement-sets).
 
 > [!TIP]
-> Os exemplos nesta página usam as APIs JavaScript do Excel, mas os conceitos também se aplicam às APIs JavaScript do OneNote, do PowerPoint, do Visio e do Word.
+> Os exemplos nesta página usam as APIs JavaScript do Excel, mas os conceitos também se aplicam às APIs do OneNote, PowerPoint, Visio e Word JavaScript.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Caráter assíncrono das APIs baseadas em promessas
 
@@ -26,7 +26,7 @@ Os Suplementos do Office são sites que aparecem dentro de um contêiner de nave
 
 ## <a name="run-function"></a>Função *.run
 
-`Excel.run`, `OneNote.run`e `PowerPoint.run`execute uma `Word.run` função que especifica as ações a serem executadas no Excel, no Word e no OneNote. `*.run` cria automaticamente um contexto de solicitação que pode ser usado para interagir com objetos do Excel. Ao concluir `*.run`, uma promessa será resolvida e todos os objetos que foram alocados em tempo de execução serão lançados automaticamente.
+`Excel.run`, `OneNote.run`, `PowerPoint.run`e `Word.run` execute uma função que especifica as ações a serem executadas no Excel, Word e OneNote. `*.run` cria automaticamente um contexto de solicitação que pode ser usado para interagir com objetos do Excel. Ao concluir `*.run`, uma promessa será resolvida e todos os objetos que foram alocados em tempo de execução serão lançados automaticamente.
 
 O exemplo a seguir mostra como usar `Excel.run`. O mesmo padrão também é usado com o OneNote, o PowerPoint e o Word.
 
@@ -155,7 +155,7 @@ Esteja ciente de que algumas das propriedades em um objeto podem ter o mesmo nom
 Se você chamar o método `load()` em um objeto (ou coleção) sem especificar nenhum parâmetro, todas as propriedades escalares do objeto ou dos objetos da coleção serão carregadas. Carregar dados não necessários desacelerá o seu suplemento. Sempre especifique explicitamente quais propriedades devem ser carregadas.
 
 > [!IMPORTANT]
-> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As propriedades a seguir são excluídas dessas operações de carregamento.
+> A quantidade de dados retornados por uma declaração `load` sem parâmetros pode exceder os limites de tamanho do serviço. Para reduzir os riscos a suplementos mais antigos, algumas propriedades não são retornadas por `load` sem a solicitação explícita. As propriedades a seguir são excluídas dessas operações de carga.
 >
 > * `Excel.Range.numberFormatCategories`
 
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>Algumas propriedades não podem ser definidas diretamente.
 
-Algumas propriedades não podem ser definidas, apesar de serem graváveis. Essas propriedades fazem parte de uma propriedade pai que deve ser definida como um único objeto. Isso porque essa propriedade pai depende das subpropriedades com relações lógicas específicas. Essas propriedades pai devem ser definidas usando notação literal de objeto para definir o objeto inteiro, em vez de definir subpropriedades individuais do objeto. Um exemplo disso é encontrado na página [PageLayout](/javascript/api/excel/excel.pagelayout). A `zoom` propriedade deve ser definida com um único [objeto PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , conforme mostrado aqui.
+Algumas propriedades não podem ser definidas, apesar de serem graváveis. Essas propriedades fazem parte de uma propriedade pai que deve ser definida como um único objeto. Isso porque essa propriedade pai depende das subpropriedades com relações lógicas específicas. Essas propriedades pai devem ser definidas usando notação literal de objeto para definir o objeto inteiro, em vez de definir subpropriedades individuais do objeto. Um exemplo disso é encontrado na página [PageLayout](/javascript/api/excel/excel.pagelayout). A `zoom` propriedade deve ser definida com um único objeto [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , conforme mostrado aqui.
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.

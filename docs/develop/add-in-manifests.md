@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 60368d74cad0d1b8c0562888613d960f52b21a74
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422968"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810222"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -44,7 +44,7 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 
 ### <a name="required-elements-by-office-add-in-type"></a>Elementos obrigatórios de acordo com o tipo de Suplemento do Office
 
-| Elemento                                                                                      | Conteúdo    | Painel de tarefas    | Outlook      |
+| Elemento                                                                                      | Conteúdo    | Painel de tarefas    | Email<br>(Outlook)      |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | Obrigatório   | Obrigatório     | Obrigatório     |
 | [Id][]                                                                                       | Obrigatório   | Obrigatório     | Obrigatório     |
@@ -107,7 +107,7 @@ Todas as URLs, como os locais dos arquivos de origem especificados no elemento [
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
-Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](/javascript/api/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/legal/marketplace/certification-policies).
 
@@ -115,7 +115,7 @@ Use apenas o elemento [AppDomains](/javascript/api/manifest/appdomains) para esp
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office na Web, o painel de tarefas pode ser navegado por qualquer URL. Entretanto, em plataformas de área de trabalho, se o suplemento tentar ir para uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](/javascript/api/manifest/sourcelocation) do arquivo de manifesto), essa URL será aberta em uma nova janela do navegador fora do painel de suplementos do aplicativo do Office.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](/javascript/api/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
@@ -158,7 +158,7 @@ O elemento opcional [VersionOverrides](/javascript/api/manifest/versionoverrides
 
 Alguns elementos descendentes de `VersionOverrides` têm valores que substituem os valores do elemento pai `OfficeApp`. Por exemplo, o elemento `Hosts` em `VersionOverrides` substitui o elemento `Hosts` em `OfficeApp`.
 
-O elemento `VersionOverrides` tem seu próprio esquema, na verdade quatro deles, dependendo do tipo de ação e dos recursos que utiliza. Os esquemas são:
+The `VersionOverrides` element has its own schema, actually four of them, depending on the type of add-in and the features it uses. The schemas are:
 
 - [Painel de tarefas 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [Conteúdo 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
@@ -205,7 +205,7 @@ Seu suplemento pode fazer chamadas API do Office.js a partir do domínio referen
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML de manifesto v1.1
 
-As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para suplementos de conteúdo, de painel de tarefas e do Outlook.
+As seções a seguir mostram exemplos de arquivos XML v1.1 de manifesto para conteúdo, painel de tarefas e suplementos de email (Outlook).
 
 # <a name="task-pane"></a>[Painel de tarefas](#tab/tabid-1)
 

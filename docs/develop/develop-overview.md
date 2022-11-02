@@ -3,12 +3,12 @@ title: 'Desenvolver Suplementos do Office '
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
-ms.translationtype: HT
+ms.openlocfilehash: 82573d90f9fa22cb524da01226995e861c258b81
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752873"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810019"
 ---
 # <a name="develop-office-add-ins"></a>Desenvolver Suplementos do Office 
 
@@ -23,7 +23,7 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 
 ### <a name="yeoman-generator"></a>Gerador do Yeoman
 
-O gerador Yeoman para Suplementos do Office pode ser usado para criar um projeto de Suplemento do Office com Node.js que pode ser gerenciado com o Visual Studio Code ou qualquer outro editor. O gerador pode criar Suplementos do Office para qualquer um dos seguintes:
+The Yeoman generator for Office Add-ins can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
 
 - Excel
 - OneNote
@@ -49,7 +49,7 @@ Um suplemento do Office consiste em duas partes.
 
 - O aplicativo Web que defina a interface do usuário e a funcionalidade de componentes do suplemento, como painéis de tarefas, suplementos de conteúdo e caixas de diálogo.
 
-O aplicativo Web usa a API JavaScript para Office para interagir com o conteúdo do documento do Office no qual o suplemento está sendo executado. Seu suplemento também pode fazer outras coisas que os aplicativos Web normalmente fazem, como chamar serviços Web externos, facilitar a autenticação do usuário e mais.
+The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
 ### <a name="define-an-add-ins-settings-and-capabilities"></a>Definir as configurações e os recursos do suplemento
 
@@ -83,7 +83,7 @@ Um suplemento do Office pode usar as APIs JavaScript para Office para interagir 
 
 #### <a name="explore-apis-with-script-lab"></a>Explorar as APIs com o Script Lab
 
-O Script Lab é um suplemento que permite explorar a API JavaScript para Office e executar trechos de código enquanto você trabalha em um programa do Office, como o Excel ou o Word. Ele está disponível gratuitamente através do [AppSource](https://appsource.microsoft.com/product/office/WA104380862) e é uma ferramenta útil para incluir no seu kit de ferramentas de desenvolvimento ao prototipar e verificar a funcionalidade desejada no suplemento. No Script Lab, você pode acessar uma biblioteca de exemplos internos para experimentar APIs rapidamente ou até mesmo usar uma amostra como o ponto de partida para o seu próprio código.
+O Script Lab é um suplemento que permite explorar a API JavaScript para Office e executar trechos de código enquanto você trabalha em um programa do Office, como o Excel ou o Word. Ele está disponível gratuitamente através do AppSource e é uma ferramenta útil para incluir no seu kit de ferramentas de desenvolvimento ao prototipar e verificar a funcionalidade desejada no suplemento. No Script Lab, você pode acessar uma biblioteca de exemplos internos para experimentar APIs rapidamente ou até mesmo usar uma amostra como o ponto de partida para o seu próprio código.
 
 O vídeo de um minuto a seguir mostra o Script Lab em ação.
 
@@ -107,7 +107,7 @@ Para obter mais informações sobre como estender a Interface de Usuário do Off
 
 ## <a name="next-steps"></a>Próximos passos
 
-Este artigo descreveu as diferentes maneiras de criar suplementos do Office, apresentou as maneiras como um suplemento pode estender a IU do Office, descreveu os conjuntos de API e apresentou o Script Lab como uma ferramenta valiosa para explorar as APIs de JavaScript do Office e a funcionalidade de suplemento de criação de protótipo. Agora que você já explorou estas informações introdutórias, considere continuar sua jornada de suplementos do Office ao longo dos caminhos a seguir.
+This article has outlined the different ways to create Office Add-ins, introduced the ways that an add-in can extend the Office UI, described the API sets, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
 
 ### <a name="create-an-office-add-in"></a>Criar um Suplemento do Office
 

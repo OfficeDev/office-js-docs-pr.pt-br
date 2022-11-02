@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Saiba como a autenticação e a autorização funcionam nos Suplementos do Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
-ms.translationtype: HT
+ms.openlocfilehash: c93e4c36155f582a56f42f5aeb6c567b61df0e1d
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496750"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810320"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -102,7 +102,7 @@ Em alguns cenários, talvez você não queira usar o SSO. Por exemplo, talvez se
 
 Seu suplemento pode conectar usuários usando a [ plataforma de identidade da Microsoft](/azure/active-directory/develop) como provedor de autenticação. Depois que o usuário estiver conectado, você poderá usar a plataforma de identidade da Microsoft para autorizar o suplemento no [Microsoft Graph](/graph) ou em outros serviços gerenciados pela Microsoft. Use essa abordagem como um método de entrada alternativo quando o SSO por meio do Office não estiver disponível. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente, mesmo quando o SSO estiver disponível. Por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquela com o qual eles estão atualmente conectados no Office.
 
-É importante observar que a plataforma de identidade da Microsoft não permite que sua página de entrada seja aberta em um iframe. Quando um Suplemento do Office está sendo executado no *Office na Web*, o painel de tarefas é um iframe. Isso significa que será necessário abrir a página de entrada usando uma caixa de diálogo aberta com a API de diálogo do Office. Isso afeta o modo como você usa bibliotecas auxiliares de autenticação. Para saber mais, confira [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md).
+É importante observar que a plataforma de identidade da Microsoft não permite que sua página de entrada seja aberta em um iframe. Quando um Suplemento do Office está em execução no *Office na Web*, o painel de tarefas é um iframe. Isso significa que será necessário abrir a página de entrada usando uma caixa de diálogo aberta com a API de diálogo do Office. Isso afeta o modo como você usa bibliotecas auxiliares de autenticação. Para saber mais, confira [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md).
 
 Para obter informações sobre como implementar a autenticação com a plataforma de identidade da Microsoft, confira a [Visão geral da plataforma de Identidade da Microsoft (v 2.0)](/azure/active-directory/develop/v2-overview). A documentação contém muitos tutoriais e guias, bem como links para exemplos e bibliotecas relevantes. Conforme explicado em [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md), talvez seja necessário ajustar o código nos exemplos para executar na caixa de diálogo do Office.
 
@@ -115,7 +115,7 @@ Você pode obter autorização para os dados do Microsoft Graph para seu supleme
 Serviços online populares, incluindo o Google, o Facebook, o LinkedIn, o SalesForce e o GitHub, permitem que os desenvolvedores forneçam acesso para os usuários a suas contas em outros aplicativos. Isso dá a você a capacidade de incluir esses serviços no seu Suplemento do Office. Para obter uma visão geral das maneiras como seu suplemento pode fazer isso, confira [Autorizar serviços externos em seu Suplemento do Office](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Antes de começar a codificar, descubra se a fonte de dados permite que a página de entrada seja aberta em um iframe. Quando um Suplemento do Office está sendo executado no *Office na Web*, o painel de tarefas é um iframe. Se a fonte de dados não permitir que a página de entrada seja aberta em um iframe, você precisará abrir a página de entrada em uma caixa de diálogo aberta com a API de diálogo do Office. Para saber mais, confira [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md).
+> Antes de começar a codificar, descubra se a fonte de dados permite que a página de entrada seja aberta em um iframe. Quando um Suplemento do Office está em execução no *Office na Web*, o painel de tarefas é um iframe. Se a fonte de dados não permitir que a página de entrada seja aberta em um iframe, você precisará abrir a página de entrada em uma caixa de diálogo aberta com a API de diálogo do Office. Para saber mais, confira [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md).
 
 ## <a name="see-also"></a>Confira também
 

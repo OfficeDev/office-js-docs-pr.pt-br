@@ -4,12 +4,12 @@ description: Saiba como mover seu trecho do Script Lab para um projeto Yo Office
 ms.topic: how-to
 ms.date: 04/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 038d25610e5ef5cc3e4cdbedb2d2a184294c673e
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
-ms.translationtype: HT
+ms.openlocfilehash: 725ce9b44c55b46e6d0ab0c085973947fcf88201
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863291"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810145"
 ---
 # <a name="create-a-standalone-office-add-in-from-your-script-lab-code"></a>Criar um suplemento autônomo do Office com base em seu código do Script Lab
 
@@ -58,7 +58,7 @@ Nas próximas etapas, você copiará o código de várias guias no Script Lab.
 
 1. No VS Code, abra o arquivo **/src/taskpane/taskpane.ts**. Se você estiver usando um projeto JavaScript, o nome do arquivo será **taskpane.js**.
 1. No Script Lab, selecione a guia **Script**.
-1. Copie todo o código na guia **Script** para a área de transferência. Substitua todo o conteúdo de **taskpane.ts** (ou **taskpane.js** para JavaScript) pelo código que você copiou.
+1. Copie todo o código na guia **Script** para a área de transferência. Substitua todo o conteúdo de **taskpane.ts** (ou **taskpane.js** para JavaScript) pelo código copiado.
 
 ### <a name="copy-task-pane-html"></a>Copiar HTML do painel de tarefas
 

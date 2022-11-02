@@ -3,19 +3,19 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: b89212b859274d4ac52ecb92be4ac995d3a8790b
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423304"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810040"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
 Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, assim como diversos erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.
 
 > [!NOTE]
-> O recurso de log de runtime está disponível no momento para o Office 2016 ou posterior na área de trabalho.
+> O recurso de log de runtime está disponível atualmente para o Office 2016 ou posterior na área de trabalho.
 
 > [!IMPORTANT]
 > o log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
@@ -71,11 +71,11 @@ Habilitar o log de tempo de execução na linha de comando é a maneira mais rá
 
 A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`.
 
-![Captura de tela do editor do Registro com uma chave do Registro RuntimeLogging.](../images/runtime-logging-registry.png)
+![Captura de tela do editor do registro com uma chave de registro do RuntimeLogging.](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Log de tempo de execução no Mac
 
-1. Verifique se você está executando o build de área de trabalho do Office 2016 **16.27** (19071500) ou posterior.
+1. Verifique se você está executando a compilação de área de trabalho do Office 2016 **16.27.19071500** ou posterior.
 
 2. Abra o **Terminal** e defina uma preferência de log de tempo de execução usando o comando `defaults`:
 
@@ -92,7 +92,7 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-O exemplo a seguir habilita o log de runtime para o Word e abre o arquivo de log.
+O exemplo a seguir habilita o log de runtime para o Word e, em seguida, abre o arquivo de log.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -108,7 +108,7 @@ Para desativar o log de tempo de execução, use o comando `defaults delete`:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-O exemplo a seguir desativará o log de runtime para o Word.
+O exemplo a seguir desativará o log de runtime do Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
@@ -125,17 +125,17 @@ Para usar o log do tempo de execução para solucionar problemas ao carregar um 
 
 2. Se nada acontecer e você não vir seu suplemento (e ele não estiver aparecendo na caixa de diálogo de suplementos), abra o arquivo de log.
 
-3. Procure pela ID de seu suplemento no arquivo de log, definida no seu manifesto. No arquivo de log, essa ID está marcada como `SolutionId`.
+3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
 ## <a name="known-issues-with-runtime-logging"></a>Problemas conhecidos com o log de tempo de execução
 
-Talvez você veja mensagens no arquivo de log que são confusas ou que estão classificadas incorretamente. Por exemplo:
+You might see messages in the log file that are confusing or that are classified incorrectly. For example:
 
 - A mensagem `Medium Current host not in add-in's host list` seguida por `Unexpected Parsed manifest targeting different host` é incorretamente classificada como um erro.
 
 - Se você vir a mensagem `Unexpected Add-in is missing required manifest fields    DisplayName` e ela não contiver uma SolutionId, o erro provavelmente não está relacionado ao suplemento que você está depurando.
 
-- Todas as mensagens `Monitorable` indicam erros esperados do ponto de vista do sistema. Às vezes, indicam um problema com o seu manifesto, como um elemento que foi soletrado incorretamente e que foi ignorado, mas que não fez com que o manifesto falhasse.
+- Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.
 
 ## <a name="see-also"></a>Confira também
 
@@ -146,4 +146,4 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 - [Depurar os suplementos usando as ferramentas de desenvolvedor para o Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor para Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Depurar suplementos usando ferramentas de desenvolvedor no Microsoft Edge (baseado em Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 
-- [Runtimes em Suplementos do Office](runtimes.md)
+- [Runtimes em suplementos do Office](runtimes.md)

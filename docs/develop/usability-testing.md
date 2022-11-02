@@ -1,20 +1,20 @@
 ---
 title: Teste de usabilidade de Suplementos do Office
-description: Saiba como testar o design do suplemento com usuários reais.
+description: Saiba como testar seu design de suplemento com usuários reais.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b884ae8232360b8778b832b8ded90f3d3a857911
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 49a2af983615779160886961e8269e4588d0fc9e
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136325"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810278"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
-Um excelente design de suplemento considera os comportamentos do usuário. Como seus próprios conceitos prévios influenciam suas decisões de design, é importante testar designs com usuários reais para garantir que seus suplementos funcionem bem para seus clientes.
+A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers.
 
-Você pode executar testes de usabilidade de maneiras diferentes. Para muitos desenvolvedores de suplementos, os estudos de usabilidade remotos e nãomoderados são mais tempo e econômicos. Vários serviços de teste populares facilitam isso; a seguir estão alguns exemplos.
+Você pode executar testes de usabilidade de diferentes maneiras. Para muitos desenvolvedores de suplementos, os estudos de usabilidade remotos e nãomoderados são os mais demorados e econômicos. Vários serviços de teste populares facilitam isso; a seguir estão alguns exemplos.
 
 - [UserTesting.com](https://www.UserTesting.com)
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
@@ -22,18 +22,18 @@ Você pode executar testes de usabilidade de maneiras diferentes. Para muitos de
 
 Esses serviços de teste o ajudam a simplificar a criação do plano de teste e remover a necessidade de buscar participantes ou moderar os testes.
 
-Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
+You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-appsource-via-partner-center) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](/javascript/api/requirement-sets).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
-## <a name="1-sign-up-for-a-testing-service"></a>1. Inscrever-se em um serviço de teste
+## <a name="1-sign-up-for-a-testing-service"></a>1. Inscreva-se para um serviço de teste
 
 Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remoto não moderado](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
 ## <a name="2-develop-your-research-questions"></a>2. Desenvolva as perguntas da sua pesquisa
 
-As perguntas da pesquisa definem os objetivos de sua pesquisa e guiam seu plano de teste. Suas perguntas o ajudarão a identificar os participantes para recrutar e as tarefas que eles executarão. Certifique-se de que suas perguntas de pesquisa sejam o mais específicas possível. Você também pode procurar responder perguntas mais amplas.
+Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
 
 A seguir estão alguns exemplos de perguntas de pesquisa.
 
@@ -48,7 +48,7 @@ A seguir estão alguns exemplos de perguntas de pesquisa.
 - Os usuários entendem o significado dos ícones na barra de comandos, antes de clicar neles?
 - Os usuários localizam o menu configurações com facilidade?
 
-É importante obter dados de toda a jornada do usuário – da descoberta do suplemento à instalação e utilização dele. Considere as perguntas de pesquisa que abordam os seguintes aspectos da experiência do usuário do suplemento.
+É importante obter dados de toda a jornada do usuário – da descoberta do suplemento à instalação e utilização dele. Considere perguntas de pesquisa que abordam os seguintes aspectos da experiência do usuário do suplemento.
 
 - Localização do suplemento na Loja
 - Escolha da instalação do suplemento
@@ -62,43 +62,43 @@ Saiba mais em [Coleta de respostas concretas versus dados subjetivos](https://he
 
 ## <a name="3-identify-participants-to-target"></a>3. Identifique os participantes que serão o alvo
 
-O teste remoto de serviços pode oferecer a você o controle de várias características dos participantes do teste. Pense cuidadosamente sobre que tipos de usuários você deseja buscar. Nos seus estágios iniciais de coleta de dados, talvez seja melhor recrutar uma ampla variedade de participantes para identificar problemas de usabilidade mais óbvios. Posteriormente, você pode optar por grupos segmentados como usuários avançados do Office, ocupações específicas ou faixas etárias específicas.
+Remote testing services can give you control over many characteristics of your test participants. Think carefully about what kinds of users you want to target. In your early stages of data collection, it might be better to recruit a wide variety of participants to identify more obvious usability issues. Later, you might choose to target groups like advanced Office users, particular occupations, or specific age ranges.
 
 ## <a name="4-create-the-participant-screener"></a>4. Crie o verificador de participantes
 
-O verificador é o conjunto de perguntas e requisitos que você apresentará aos participantes do teste em potencial para verificá-los para o teste. Tenha em mente que os participantes de serviços como UserTesting.com têm interesse financeiro em se qualificar para seu teste. É uma boa ideia incluir perguntas difíceis em sua verificação se desejar excluir determinados usuários do teste. 
+The screener is the set of questions and requirements you will present to prospective test participants to screen them for your test. Keep in mind that participants for services like UserTesting.com have a financial interest in qualifying for your test. It's a good idea to include trick questions in your screener if you want to  exclude certain users from the test. 
 
 Por exemplo, se deseja encontrar participantes que estão familiarizados com o GitHub, para filtrar os usuários que possam se mostrar incorretamente, inclua respostas falsas na lista de possíveis respostas.
 
 **Com quais dos seguintes repositórios de código fonte você tem familiaridade?**  
- a. SourceShelf [*Rejeitar*]  
- b. CodeContainer [*Rejeitar*]  
- c. GitHub [*Deve selecionar*]  
- d. BitBucket [*Pode selecionar*]  
- e. CloudForge [*Pode selecionar*]  
+ a. SourceShelf  [*Reject*]  
+ b. CodeContainer  [*Reject*]  
+ c. GitHub  [*Must select*]  
+ d. BitBucket  [*May select*]  
+ e. CloudForge  [*May select*]  
 
 Se estiver planejando testar uma compilação em funcionamento do suplemento, as perguntas a seguir podem verificar os usuários que conseguirão fazer isso.
 
 **Este teste requer a versão mais recente do Microsoft PowerPoint. Você tem a versão mais recente do PowerPoint?**  
  a. Sim [*Deve selecionar*]  
- b. Não [*Rejeitar*]  
- c. Não sei [*Rejeitar*]  
+ b. No [*Reject*]  
+ c. I don’t know [*Reject*]  
 
 **Este teste requer a instalação de um suplemento gratuito para o PowerPoint e a criação de uma conta gratuita para usá-lo. Deseja instalar um suplemento e criar uma conta gratuita?**  
  a. Sim [*Deve selecionar*]  
- b. Não [*Rejeitar*]  
+ b. No [*Reject*]  
 
 Saiba mais em [Práticas recomendadas do verificador de perguntas](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices).
 
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. Crie tarefas e perguntas para os participantes
 
-Tente priorizar o que você quer testar para que seja possível limitar o número de tarefas e perguntas do participante. Alguns serviços pagam os participantes apenas para um determinado período para que você certifique-se de não excedê-lo.
+Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
 
-Tente observar como os participantes se comportam em vez de perguntar sobre eles sempre que possível. Se você precisar perguntar sobre comportamentos, pergunte o que os participantes fizeram no passado, em vez do que o que eles esperariam fazer em uma situação. Isso tende a fornecer resultados mais confiáveis.
+Try to observe participant behaviors instead of asking about them, whenever possible. If you need to ask about behaviors, ask about what participants have done in the past, rather than what they would expect to do in a situation. This tends to give more reliable results.
 
-O principal desafio no teste não moderado é garantir que seus participantes entendam suas tarefas e cenários. Suas orientações devem ser *claras e concisas*. Inevitavelmente, se houver potencial para confusão, alguém ficará confuso.
+The main challenge in unmoderated testing is making sure your participants understand your tasks and scenarios. Your directions should be *clear and concise*. Inevitably, if there is potential for confusion, someone will be confused.
 
-Não pense que o usuário estará na tela que deve estar em um determinado momento durante o teste. Considere informar a tela em que eles precisam estar para iniciar a próxima tarefa.
+Don't assume that your user will be on the screen they’re supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
 
 Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
 
@@ -106,36 +106,36 @@ Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc
 
 Você pode testar o suplemento em funcionamento ou testar um protótipo. Observe que se você desejar testar o suplemento em funcionamento, será necessário buscar participantes que tenham a versão mais recente do Office, que estejam dispostos a instalar o suplemento e a criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Depois será preciso garantir que o suplemento foi instalado com êxito.
 
-Em média, são necessários cerca de cinco minutos para orientar os usuários sobre como instalar um suplemento. A seguir, um exemplo de etapas de instalação claras e concisas. Ajuste as etapas com base nas condições específicas do teste.
+On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
-**Instale o suplemento (insira o nome do suplemento aqui) para PowerPoint, usando as instruções a seguir.**
+**Instale o suplemento (insira o nome do suplemento aqui) para o PowerPoint, usando as instruções a seguir.**
 
 1. Abra o Microsoft PowerPoint.
 1. Selecione **Apresentação em Branco.**
-1. Vá para **Inserir > Meus Suplementos.**
-1. Na janela pop-up, escolha **Loja.**
+1. Vá para **Inserir** > **Meus Suplementos**.
+1. Na janela pop-up, escolha **Armazenar**.
 1. Digite (Nome do suplemento) na caixa de pesquisa.
 1. Escolha (Nome do suplemento).
 1. Tire um momento para observar a página da Loja de forma a se familiarizar com o suplemento.
 1. Escolha **Adicionar** para instalar o suplemento.
 
-Você pode testar um protótipo em qualquer nível de interação e fidelidade visual. Para vinculação e interatividade mais complexas, considere uma ferramenta de criação de protótipo como a [InVision](https://www.invisionapp.com). Se você deseja testar telas estáticas, é possível hospedar imagens online e enviar a URL correspondente para os participantes ou fornecer um link para uma apresentação online do PowerPoint. 
+You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](https://www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation. 
 
 ## <a name="7-run-a-pilot-test"></a>7. Execute um teste piloto
 
-Pode ser difícil acertar no protótipo e na lista de tarefas/perguntas. Os usuários podem ficar confusos com as tarefas ou podem se perder em seu protótipo. Você deve fazer um teste piloto 1 a 3 usuários para trabalhar corrigir os inevitáveis problemas com o formato do teste. Isso ajudará a garantir que suas perguntas sejam claras, que o protótipo esteja configurado corretamente e que você esteja capturando o tipo de dados que está procurando.
+It can be tricky to get the prototype and your task/question list right. Users might be confused by tasks, or might get lost in your prototype. You should run a pilot test with 1-3 users to work out the inevitable issues with the test format. This will help to ensure that your questions are clear, that the prototype is set up correctly, and that you’re capturing the type of data you’re looking for.
 
 ## <a name="8-run-the-test"></a>8. Execute o teste
 
-Depois que você solicitar o teste, receberá notificações por email quando os participantes o concluírem. A menos que tenha direcionado para um grupo específico de participantes, os testes normalmente são concluídos dentro de algumas horas.
+After you order your test, you will get email notifications when participants complete it. Unless you’ve targeted a specific group of participants, the tests are usually completed within a few hours.
 
 ## <a name="9-analyze-results"></a>9. Analise os resultados
 
-Essa é a parte em que você tenta fazer com que os dados coletados façam sentido. Ao assistir os vídeos de teste, anote os problemas e os êxitos do usuário. Evite tentar interpretar o significado dos dados até que tenha exibido todos os resultados.
+This is the part where you try to make sense of the data you’ve collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results.
 
-Um único participante com um problema de usabilidade não é suficiente para gerar uma alteração no design. Dois ou mais participantes que encontram o mesmo problema sugere que outros usuários no geral também encontrarão esse problema.
+A single participant having a usability issue is not enough to warrant making a change to the design. Two or more participants encountering the same issue suggests that other users in the general population will also encounter that issue.
 
-Em geral, tome cuidado com como você usa seus dados para tirar conclusões. Não caia na armadilha de tentar fazer com que os dados se ajustem a uma determinada narrativa. Seja honesto sobre o que os dados realmente comprovam, refutam ou apenas falham em oferecer informações. Mantenha a mente aberta. O comportamento do usuário com frequência desafia as expectativas do designer.
+In general, be careful about how you use your data to draw conclusions. Don’t fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer’s expectations.
 
 ## <a name="see-also"></a>Confira também
 

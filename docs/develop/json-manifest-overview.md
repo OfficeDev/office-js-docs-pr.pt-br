@@ -3,27 +3,27 @@ title: Manifesto do Teams para Suplementos do Office (versão prévia)
 description: Obtenha uma visão geral da versão prévia do manifesto JSON.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c0b9b2432d29a1a02fb23fad506a05dfe4f41430
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: 130fa48ed9426d9a63dbdde4f1bdb24ca31cad73
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466898"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810348"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifesto do Teams para Suplementos do Office (versão prévia)
 
-A Microsoft está fazendo várias melhorias na plataforma de desenvolvedor do Microsoft 365. Essas melhorias fornecem mais consistência no desenvolvimento, implantação, instalação e administração de todos os tipos de extensões do Microsoft 365, incluindo os suplementos do Office. Essas alterações são compatíveis com os suplementos existentes. 
+A Microsoft está fazendo várias melhorias na plataforma de desenvolvedor do Microsoft 365. Essas melhorias fornecem mais consistência no desenvolvimento, implantação, instalação e administração de todos os tipos de extensões do Microsoft 365, incluindo os suplementos do Office. Essas alterações são compatíveis com os suplementos existentes.
 
 Uma melhoria importante na qual estamos trabalhando é a capacidade de criar uma única unidade de distribuição para todas as extensões do Microsoft 365 usando o mesmo formato de manifesto e esquema, com base no manifesto atual do Teams formatado em JSON.
 
-Demos um primeiro passo importante para essas metas, possibilitando que você crie Suplementos do Outlook, em execução somente no Windows, com uma versão do manifesto JSON do Teams.
+Demos um primeiro passo importante para essas metas, tornando possível criar suplementos do Outlook, executando somente no Windows, com uma versão do manifesto JSON do Teams.
 
 > [!NOTE]
 > O novo manifesto está disponível para visualização e está sujeito a alterações com base nos comentários. Incentivamos os desenvolvedores de suplementos experientes a experimentá-lo. O manifesto de visualização não deve ser usado em suplementos de produção.
 
 Durante o período de visualização inicial, as limitações a seguir se aplicam.
 
-- A versão prévia do manifesto do Teams dá suporte apenas a suplementos do Outlook e somente à assinatura do Microsoft 365 office no Windows. Estamos trabalhando para estender o suporte para o Excel, o PowerPoint e o Word.
+- A versão prévia do manifesto do Teams só dá suporte a suplementos do Outlook e somente no Office baixado de uma assinatura do Microsoft 365 instalada no Windows. Estamos trabalhando para estender o suporte para o Excel, o PowerPoint e o Word.
 - Ainda não é possível combinar e realizar sideload de um suplemento com um aplicativo do Teams, como uma guia pessoal do Teams ou outros tipos de extensão do Microsoft 365. Nos próximos meses, continuaremos a estender a versão prévia para dar suporte a esses cenários e fornecer ferramentas adicionais para atualizar manifestos para o formato de visualização prévia.
 
 > [!TIP]
