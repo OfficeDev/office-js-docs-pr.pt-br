@@ -2,14 +2,14 @@
 title: Usar alertas inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 description: Saiba como lidar com os eventos enviados no suplemento do Outlook usando a ativação baseada em eventos.
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 11/2/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
-ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
+ms.openlocfilehash: 408c3684d325a9cbdd4a3f6e489db636ff52e028
+ms.sourcegitcommit: 9c65c19298bf749836e3db1b7cf5e8c1387a2bf2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/28/2022
-ms.locfileid: "68767165"
+ms.lasthandoff: 11/04/2022
+ms.locfileid: "68842086"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Usar alertas inteligentes e os eventos OnMessageSend e OnAppointmentSend no suplemento do Outlook
 
@@ -23,6 +23,18 @@ O passo a passo a seguir usa o `OnMessageSend` evento. Ao final deste passo a pa
 ## <a name="prerequisites"></a>Pré-requisitos
 
 O `OnMessageSend` evento está disponível por meio do recurso de ativação baseado em evento. Para entender como configurar o suplemento para usar esse recurso, use outros eventos disponíveis, depure seu suplemento e muito mais, consulte [Configurar o suplemento do Outlook para ativação baseada em eventos](autolaunch.md).
+
+### <a name="supported-clients-and-platforms"></a>Clientes e plataformas com suporte
+
+A tabela a seguir lista combinações cliente-servidor com suporte para o recurso Alertas Inteligentes, incluindo o mínimo necessário Exchange Server Atualização Cumulativa, quando aplicável. Não há suporte para combinações excluídas.
+
+|Client|Exchange Online|Exchange 2019 local (Atualização Cumulativa 12 ou posterior)|Exchange 2016 local (Atualização Cumulativa 22 ou posterior) |
+|-----|-----|-----|-----|
+|**Windows**<br>Versão 2206 (Build 15330.20196) ou posterior|Sim|Sim|Sim|
+|**Mac**<br>Versão 16.65.827.0 ou posterior|Sim|Não aplicável|Não aplicável|
+|**Navegador da Web (interface do usuário moderna)**|Sim|Não aplicável|Não aplicável|
+|**iOS**|Não aplicável|Não aplicável|Não aplicável|
+|**Android**|Não aplicável|Não aplicável|Não aplicável|
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
